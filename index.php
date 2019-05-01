@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Ieasa - Observatorio</title>
+		<title>Ieasa - Observatorio Ambiental</title>
 	</head>
 
 	<body>
