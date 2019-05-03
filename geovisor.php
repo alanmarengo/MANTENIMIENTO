@@ -19,6 +19,7 @@
 		
 		html,body{
 			height:100%;
+			background-color:#333333 !important;
 		}
 		
 		.navbar {
@@ -42,6 +43,12 @@
 			
 			border:none !Important;
 			border-right:2px #464646 solid !Important;
+			color:#31cbfd !Important;
+			
+		}
+		
+		.navbar .dropdown-toggle::after {
+			
 			color:#31cbfd !Important;
 			
 		}
@@ -89,10 +96,36 @@
 			font-family:"Raleway", sans-serif;
 			font-weight:400;
 			font-size:18px;
-			margin:0 0 0 0.9em;
+			margin:0 0 0 0.9em;			
+			position: relative;
+			top: -2px;
+			
+		}
+		
+		.nav-link-death {
+			
+			cursor:text !Important;
+			
+		}	
+		
+		.nav-link-death:hover {
+			
+			text-decoration:none;
+			
+		}	
+
+		.navbar ul li a {
+			
+			font-size:12px !Important;
 			
 		}
 
+		.navbar .dropdown-toggle {
+			
+			color:#FFFFFF !Important;
+			
+		}
+		
 		.flex-fill {
 			flex:1;
 		}
@@ -185,15 +218,34 @@
 	
 	<div class="nav navbar-expand navbar-right" style="display: inline-block;" id="navToolbar">
 		<ul class="navbar-nav">
-			<li class="nav-item nav-item-button active">
-				<a class="nav-link" href="#">
-					Texto
+			<li class="nav-item">
+				<a class="nav-link nav-link-death nav-item">Infraestructura</a>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Todas:
 				</a>
+				<div class="dropdown-menu" style="text-align:right;" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="#">Maquinaria</a>
+					<a class="dropdown-item" href="#">Equipos</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#">Todos</a>
+				</div>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">
-					Texto
+				<a class="nav-link nav-link-death nav-item">Estado</a>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Terminado:
 				</a>
+				<div class="dropdown-menu" style="text-align:right;" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="#">Sin Iniciar</a>
+					<a class="dropdown-item" href="#">En Proceso</a>
+					<a class="dropdown-item" href="#">Terminado</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#">Sin Especificar</a>
+				</div>
 			</li>
 		</ul>
 	</div>

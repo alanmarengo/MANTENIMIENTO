@@ -5,7 +5,15 @@
 	padding:.6rem 1rem !Important;
 	
 }
-		
+
+#navToolbar .dropdown-menu {
+	
+	left:auto !Important;
+	right:0 !Important;
+	text-align:right !Important;
+	
+}
+
 #navbarIcons {
 	
 	display:inline !Important;

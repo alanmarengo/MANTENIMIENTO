@@ -20,10 +20,14 @@ function ol_map() {
 		var newHeight = windowTotalHeight - otherElementsTotalHeight;
 		var oldHeight = $(this.div).height();
 		
-		var percentualHeight = newHeight * 100 / windowTotalHeight;
+		/*var percentualHeight = newHeight * 100 / windowTotalHeight;
 		
 		if (newHeight > oldHeight) {
 			$(this.div).height(percentualHeight+"%");
+		}*/
+		
+		if (newHeight > oldHeight) {
+			$(this.div).height(newHeight);
 		}
 	
 	}
