@@ -105,14 +105,22 @@
 		.nav-link-death {
 			
 			cursor:text !Important;
+			color:rgba(255,255,255,.5) !Important;
 			
 		}	
 		
 		.nav-link-death:hover {
 			
-			text-decoration:none;
+			text-decoration:none !Important;
+			color:rgba(255,255,255,.5) !Important;
 			
 		}	
+		
+		.nav-link-separator {
+			
+			opacity:0.5;
+			
+		}
 
 		.navbar ul li a {
 			
@@ -206,7 +214,7 @@
 
 <nav class="navbar navbar-dark bg-light" id="nav-2">
 	
-	<div class="nav navbar-expand" style="display: inline-block;" id="navSubtitle">
+	<div class="nav navbar-expand" id="navSubtitle">
 		<ul class="navbar-nav">
 			<li class="nav-item nav-item-button active">
 				<h3 class="nav-item nav-title-label">
@@ -218,6 +226,16 @@
 	
 	<div class="nav navbar-expand navbar-right" style="display: inline-block;" id="navToolbar">
 		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a href="#" class="nav-link">
+					<img src="./images/toolbar.icon.zoomext.png">
+				</a>
+			</li>
+			<li>
+				<a class="nav-link nav-link-death nav-link-separator nav-item">
+					<span>|</span>
+				</a>
+			</li>
 			<li class="nav-item">
 				<a class="nav-link nav-link-death nav-item">Infraestructura</a>
 			</li>
@@ -231,6 +249,11 @@
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#">Todos</a>
 				</div>
+			</li>
+			<li>
+				<a class="nav-link nav-link-death nav-link-separator nav-item">
+					<span>|</span>
+				</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link nav-link-death nav-item">Estado</a>

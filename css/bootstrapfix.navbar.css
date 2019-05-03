@@ -1,8 +1,59 @@
+@media (min-width: 600px) {
+  #navSubtitle {
+    visibility: visible;
+	position:auto;
+  }
+}
+
+@media (max-width: 600px) {
+  #navSubtitle {
+    visibility: hidden;
+	position:absolute;
+  }
+}
+
+@media (min-width: 395px) {
+  #visibility {
+    visibility: visible;
+	position:auto;
+  }
+  #nav-2 {
+    visibility: visible;
+	position:auto;
+  }
+}
+
+@media (max-width: 395px) {
+  #navIcons {
+    visibility: hidden;
+	position:absolute;
+  }
+  #nav-2 {
+    visibility: hidden;
+	position:absolute;
+  }
+}
+
+#logo_ieasa {
+	
+	position:relative !important;
+	top:-5px;
+	left:6px;
+	
+}
+
 #nav-2 {
 	
 	display:block !important;
 	background-color:#4c4c4e !important;
 	padding:.6rem 1rem !Important;
+	min-height:2.8em;
+	
+}
+
+#navSubtitle {
+	
+	display:inline-block !Important;
 	
 }
 
@@ -14,23 +65,17 @@
 	
 }
 
-#navbarIcons {
+#navIcons {
 	
 	display:inline !Important;
+	position:relative;
+	top:4px;
 	
 }
 
-#navbarIcons ul {
+#navIcons ul {
 	
 	width:auto !Important;
-	
-}
-
-#logo_ieasa {
-	
-	position:relative !important;
-	top:-5px;
-	left:6px;
 	
 }
 
