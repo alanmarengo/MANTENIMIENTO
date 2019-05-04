@@ -29,7 +29,7 @@ function ol_map() {
 		
 		if (newHeight > oldHeight) {
 			$(this.div).height(newHeight);
-			$(".panel").height(newHeight);
+			$(".panel").height(newHeight+2);
 			$(".panel").css("top",$(this.div).offset().top);
 		}
 	
