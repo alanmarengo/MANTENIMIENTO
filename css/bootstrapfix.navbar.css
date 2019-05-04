@@ -1,11 +1,11 @@
-@media (min-width: 600px) {
+@media (min-width: 660px) {
   #navSubtitle {
     visibility: visible;
 	position:auto;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 660px) {
   #navSubtitle {
     visibility: hidden;
 	position:absolute;

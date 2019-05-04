@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="./css/bootstrapfix.navbar.css"/>
 	
 	<link rel="stylesheet" href="./css/map.css"/>
+	<link rel="stylesheet" href="./css/panel.css"/>
 	
 	<link rel="stylesheet" href="./js/openlayers/ol.css"/>
 	
@@ -26,6 +27,7 @@
 			
 			display:block !important;
 			background-color:#333333 !important;
+			z-index:10 !important;
 			
 		}
 		
@@ -140,7 +142,7 @@
 				
 	</style>	
 
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	
@@ -156,7 +158,10 @@
 			
 			geomap = new ol_map();
 			geomap.container.fixSize([document.getElementById("nav-1"),document.getElementById("nav-2")]);
+			
 			geomap.map.create();
+			
+			geomap.panel.start();
 			
 		});
 		
@@ -276,6 +281,39 @@
 </nav>
 
 <div id="map"></div>
+
+<div id="panel-left" class="phanel panel container-fluid">
+		
+	<div class="panel-container">
+	
+		<div class="panel-body">
+		
+			<div class="panel-title">
+			
+				<h3>LOREM IPSUM SIR AMET</h3>
+			
+			</div>
+			
+			<div class="panel-content">
+			
+				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+			
+			</div>
+		
+		</div>
+	
+	</div>
+	
+	<div class="panel-arrow-container">
+		<div class="panel-arrow">
+			<a href="#" class="panel-arrow-link" data-state="1">
+				<img src="./images/panel.icon.arrow.1.png">
+			</a>
+		</div>
+	</div>
+	
+</div>
 
 </body>
 </html>
