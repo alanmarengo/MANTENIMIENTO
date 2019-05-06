@@ -6,6 +6,7 @@
 	z-index:0 !Important;
 
 }
+
 .panel-container {
 	
 	background-color:RGBA(76,76,78,0.6);
@@ -47,11 +48,5 @@
 	
 	font-weight:700;
 	font-size:18px;
-	
-}
-
-.panel-content {
-	
-	font-size:12px;
 	
 }

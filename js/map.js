@@ -3,6 +3,7 @@ function ol_map() {
 	this.container = {};
 	this.panel = {};
 	this.map = {};
+	this.popup = {};
 	this.map.baselayers = {};
 	
 	this.container.div = document.getElementById("map");
@@ -106,6 +107,26 @@ function ol_map() {
 			});
 			
 		});
+		
+	}
+	
+	// POPUP SCRIPTS
+	
+	this.popup.startInterface = function() {
+		
+		$(".popup-header-button-toggleable").on("click",function() {
+			
+			$(this).closest(".nav").find(".popup-header-button-toggleable").not(this).removeClass("popup-header-button-active");
+			
+			$(this).addClass("popup-header-button-active");
+			
+		});
+		
+	}
+	
+	this.popup.start = function() {
+		
+		this.startInterface();
 		
 	}
 	

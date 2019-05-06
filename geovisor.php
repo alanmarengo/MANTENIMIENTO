@@ -6,13 +6,19 @@
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="./css/bootstrapfix.navbar.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700" rel="stylesheet">
 	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
+	
+	<link rel="stylesheet" href="./css/fontawesome-free-5.8.1-web-all.min.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	
+	<link rel="stylesheet" href="./css/pretty-checkbox.css"/>
+	<link href="https://cdn.materialdesignicons.com/3.6.95/css/materialdesignicons.min.css" rel="stylesheet">
+	    
+	<link rel="stylesheet" href="./css/bootstrapfix.navbar.css"/>	
 	<link rel="stylesheet" href="./css/map.css"/>
 	<link rel="stylesheet" href="./css/panel.css"/>
+	<link rel="stylesheet" href="./css/popup.css"/>
 	
 	<link rel="stylesheet" href="./js/openlayers/ol.css"/>
 	
@@ -145,7 +151,7 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-	
+		
 	<script src="./js/openlayers/ol.js" type="text/javascript"></script>
 	
 	<script src="./js/map.js" type="text/javascript"></script>
@@ -162,6 +168,8 @@
 			geomap.map.create();
 			
 			geomap.panel.start();
+			
+			geomap.popup.start();
 			
 		});
 		
@@ -313,6 +321,163 @@
 		</div>
 	</div>
 	
+</div>
+
+<div class="popup" id="popup-busqueda">
+
+	<div class="row">
+	
+		<div class="col col-md-3" style="background-color:red;">
+			1
+		</div>
+	
+		<div class="col col-md-6 col-xs-12" style="background-color:green;">
+		
+			<div class="row">			
+				
+				<div class="col col-md-12 col-xs-12 popup-header">
+				
+					<div class="nav navbar-expand popup-nav">
+					
+						<ul class="navbar-nav">
+							<li class="nav-item nav-item-button popup-header-li active">
+								<a class="popup-header-button popup-header-button-toggleable" href="#">
+									<span>BÚSQUEDA</span>
+								</a>
+							</li>
+							<li class="nav-item nav-item-button popup-header-li">
+								<a class="popup-header-button popup-header-button-toggleable" href="#">
+									<span>BÚSQUEDA AVANZADA</span>
+								</a>
+							</li>
+						</ul>
+						
+					</div>
+				
+					<div class="nav navbar-expand popup-nav popup-nav-right">
+					
+						<ul class="navbar-nav">
+							<li class="nav-item nav-item-button popup-header-li active">
+								<a class="popup-header-button" href="#">
+									<span>IR AL MAPA</span>
+								</a>
+							</li>
+						</ul>
+						
+					</div>
+				
+				</div>
+			
+			</div>
+		
+			<div class="row">				
+				
+				<div class="col col-md-5 col-xs-12" style="background-color:blue;">
+					
+					<div class="popup-panel-tree">
+					
+						<div class="popup-panel-tree-header">
+							<div class="pretty p-icon p-rotate">
+								<div class="state p-primary">
+									<label class="pretty-label-null">SELECCIONE LA OBRA O PROYECTO</label>
+								</div>
+							</div>
+						</div>
+						
+						<div class="popup-panel-tree-content">
+							
+							<div class="popup-panel-tree-item">
+								<div class="pretty p-icon p-rotate">
+									<input type="checkbox" />
+									<div class="state p-primary">
+										<i class="icon mdi mdi-check"></i>
+										<label>AHRSC</label>
+									</div>
+								</div>
+							</div>
+							
+							<div class="popup-panel-tree-item">
+								<div class="pretty p-icon p-rotate">
+									<input type="checkbox" />
+									<div class="state p-primary">
+										<i class="icon mdi mdi-check"></i>
+										<label>GNEA</label>
+									</div>
+								</div>
+							</div>
+							
+							<div class="popup-panel-tree-item">
+								<div class="pretty p-icon p-rotate">
+									<input type="checkbox" />
+									<div class="state p-primary">
+										<i class="icon mdi mdi-check"></i>
+										<label>GAS</label>
+									</div>
+								</div>
+							</div>
+							
+							<div class="popup-panel-tree-item">
+								<div class="pretty p-icon p-rotate">
+									<input type="checkbox" />
+									<div class="state p-primary">
+										<i class="icon mdi mdi-check"></i>
+										<label>ENERGÍA EÓLICA</label>
+									</div>
+								</div>
+							</div>
+							
+							<div class="popup-panel-tree-item">
+								<div class="pretty p-icon p-rotate">
+									<input type="checkbox" />
+									<div class="state p-primary">
+										<i class="icon mdi mdi-check"></i>
+										<label>BIOMASA</label>
+									</div>
+								</div>
+							</div>
+							
+							<div class="popup-panel-tree-item">
+								<div class="pretty p-icon p-rotate">
+									<input type="checkbox" />
+									<div class="state p-primary">
+										<i class="icon mdi mdi-check"></i>
+										<label>COMERCIALIZACIÓN ENERGÍA</label>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						
+						<div class="popup-panel-tree-header">
+							<div class="pretty p-icon p-rotate">
+								<div class="state p-primary">
+									<label class="pretty-label-null">SELECCIONE LA OBRA INFORMACIÓN</label>
+								</div>
+							</div>
+						</div>
+					
+					</div>
+					
+				</div>				
+			
+				<div class="col col-md-7 col-xs-12" style="background-color:orange;">
+					
+					<div class="panel-content">
+					
+					</div>
+					
+				</div>
+			
+			</div>
+		
+		</div>
+	
+		<div class="col col-md-3" style="background-color:red;">
+			3
+		</div>
+	
+	</div>
+
 </div>
 
 </body>
