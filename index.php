@@ -19,8 +19,8 @@
     <script src="./js/map.js" type="text/javascript"></script>
 
     <script type="text/javascript">
-        $(document).ready(function() {
-        });
+    $(document).ready(function() {
+    });
     </script>
 </head>
 
@@ -40,9 +40,15 @@
 
         <div class="nav navbar-expand navbar-right" style="display: inline-block;" id="navIcons">
             <ul class="navbar-nav">
-                <li class="nav-item nav-item-button active">
-                    <a class="nav-link nav-link-button" href="#">
+                <li class="nav-item nav-item-search">
+                    <a class="nav-link nav-item-button nav-link-button">
                         <i class="fa fa-search"></i>
+                        <input type="text" placeholder="Buscar en todo el sitio">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-item-button nav-link-button" href="#">
+                        <i class="fa fa-question-circle"></i>
                     </a>
                 </li>
                 <li class="nav-item">

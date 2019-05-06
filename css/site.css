@@ -98,3 +98,26 @@ body {
 .flex-fill {
     flex: 1;
 }
+
+#nav-1 .nav-item-search a {
+    width: auto;
+}
+
+#nav-1 .nav-item-search a input[type=text] {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    border-left: solid 1px #666;
+    margin-left: .6em;
+    padding: 0px .6em;
+    line-height: auto;
+}
+
+#nav-1 .nav-item-search a input[type=text]::placeholder {
+    color: #fff;
+    opacity: .8;
+}
+
+#nav-1 .nav-item-search a input[type=text]:focus {
+    outline: none;
+}
