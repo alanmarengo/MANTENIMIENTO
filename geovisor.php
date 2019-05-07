@@ -8,9 +8,9 @@
 	
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700" rel="stylesheet">
 	
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
-	
-	<link rel="stylesheet" href="./css/fontawesome-free-5.8.1-web-all.min.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>	
+
+    <link rel="stylesheet" href="./fontawesome-5.8.1/css/all.min.css" />
 	
 	<link rel="stylesheet" href="./css/pretty-checkbox.css"/>
 	<link href="https://cdn.materialdesignicons.com/3.6.95/css/materialdesignicons.min.css" rel="stylesheet">
@@ -33,7 +33,7 @@
 			
 			display:block !important;
 			background-color:#333333 !important;
-			z-index:10 !important;
+			z-index:2100 !important;
 			
 		}
 		
@@ -327,11 +327,7 @@
 
 	<div class="row">
 	
-		<div class="col col-md-3" style="background-color:red;">
-			1
-		</div>
-	
-		<div class="col col-md-6 col-xs-12" style="background-color:green;">
+		<div class="col col-popup mx-auto col-md-6 col-sm-12 col-xs-12">
 		
 			<div class="row">			
 				
@@ -372,7 +368,7 @@
 		
 			<div class="row">				
 				
-				<div class="col col-md-5 col-xs-12" style="background-color:blue;">
+				<div class="col col-md-5 col-sm-12 col-xs-12" style="background-color:blue;">
 					
 					<div class="popup-panel-tree">
 					
@@ -455,25 +451,93 @@
 								</div>
 							</div>
 						</div>
+						
+						<div class="popup-panel-tree-content">
+							
+							<div class="simple-tree">
+								<div class="popup-panel-tree-item">
+									<i class="fa fa-folder"></i>
+									<a href="#">
+										<span>Categoría</span>
+									</a>
+									<a href="#" class="simple-tree-pm-button">
+										<i class="fa fa-plus-circle"></i>
+									</a>
+								</div>
+							</div>
+							
+							
+							
+							<div class="popup-panel-tree-item">
+								<div class="pretty p-icon p-rotate">
+									<input type="checkbox" />
+									<div class="state p-primary">
+										<i class="icon mdi mdi-check"></i>
+										<label>GNEA</label>
+									</div>
+								</div>
+							</div>
+							
+							<div class="popup-panel-tree-item">
+								<div class="pretty p-icon p-rotate">
+									<input type="checkbox" />
+									<div class="state p-primary">
+										<i class="icon mdi mdi-check"></i>
+										<label>GAS</label>
+									</div>
+								</div>
+							</div>
+							
+							<div class="popup-panel-tree-item">
+								<div class="pretty p-icon p-rotate">
+									<input type="checkbox" />
+									<div class="state p-primary">
+										<i class="icon mdi mdi-check"></i>
+										<label>ENERGÍA EÓLICA</label>
+									</div>
+								</div>
+							</div>
+							
+							<div class="popup-panel-tree-item">
+								<div class="pretty p-icon p-rotate">
+									<input type="checkbox" />
+									<div class="state p-primary">
+										<i class="icon mdi mdi-check"></i>
+										<label>BIOMASA</label>
+									</div>
+								</div>
+							</div>
+							
+							<div class="popup-panel-tree-item">
+								<div class="pretty p-icon p-rotate">
+									<input type="checkbox" />
+									<div class="state p-primary">
+										<i class="icon mdi mdi-check"></i>
+										<label>COMERCIALIZACIÓN ENERGÍA</label>
+									</div>
+								</div>
+							</div>
+							
+						</div>
 					
 					</div>
 					
 				</div>				
 			
-				<div class="col col-md-7 col-xs-12" style="background-color:orange;">
+				<div class="col col-md-7 col-sm-12 col-xs-12" style="background-color:orange;">
 					
 					<div class="panel-content">
+					
+						COntenido
 					
 					</div>
 					
 				</div>
+				
+				
 			
 			</div>
 		
-		</div>
-	
-		<div class="col col-md-3" style="background-color:red;">
-			3
 		</div>
 	
 	</div>

@@ -7,7 +7,7 @@
 
 }
 
-.popup .col:not(.popup-header):not(.panel-tree), .popup .row {
+.popup .col:not(.popup-header):not(.panel-tree):not(.col-popup), .popup .row {
 	
 	padding:0 !Important;
 	margin:0 !Important;
@@ -103,4 +103,37 @@
 	padding:8px 10px;
 	background-color:#FFFFFF;
 	
+}
+
+.simple-tree .popup-panel-tree-item {
+	
+	border-bottom:1px solid #dedede;
+	padding-bottom:2px;
+	
+}
+
+.simple-tree .popup-panel-tree-item a {
+	
+	font-size: 0.7em;
+	position: relative;
+	top: -1px;
+	left: 1px;
+	color: #4c4c4e;
+	font-weight:700;
+	
+}
+
+.simple-tree .popup-panel-tree-item a:hover {
+	
+	text-decoration:none;
+	
+}
+
+.simple-tree-pm-button {
+	
+	position:relative;
+	display:block;
+	top:1px !Important;
+	float:right;
+	font-size:13px !Important;
 }

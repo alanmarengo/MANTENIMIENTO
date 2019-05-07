@@ -3,7 +3,7 @@
 	position:fixed;
 	padding:0px !Important;
     width:410px;
-	z-index:0 !Important;
+	z-index:2000 !Important;
 
 }
 
