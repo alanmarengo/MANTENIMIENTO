@@ -122,6 +122,36 @@ function ol_map() {
 			
 		});
 		
+		$(".popup-panel-tree-item-header").on("click",function() {
+			
+			if (this.parentNode.getAttribute("data-state") == 1) {
+				
+				$(this).find(".popup-panel-tree-item-icon").removeClass("far").removeClass("popup-icon-active").addClass("fas");
+				
+				$(this).find(".popup-panel-tree-item-label").removeClass("popup-text-active");
+				
+				$(this).find(".popup-panel-tree-item-icon-toggler").removeClass("fa-minus-circle").addClass("fa-plus-circle");
+				
+				$(this).next(".popup-panel-tree-item-subpanel").slideToggle("slow");
+				
+				this.parentNode.setAttribute("data-state",0);
+				
+			}else{
+				
+				$(this).find(".popup-panel-tree-item-icon").addClass("far").addClass("popup-icon-active").removeClass("fas");
+				
+				$(this).find(".popup-panel-tree-item-label").addClass("popup-text-active");
+				
+				$(this).find(".popup-panel-tree-item-icon-toggler").removeClass("fa-plus-circle").addClass("fa-minus-circle");
+				
+				$(this).next(".popup-panel-tree-item-subpanel").slideToggle("slow");
+				
+				this.parentNode.setAttribute("data-state",1);
+				
+			}
+			
+		});
+		
 	}
 	
 	this.popup.start = function() {

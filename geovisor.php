@@ -454,69 +454,113 @@
 						
 						<div class="popup-panel-tree-content">
 							
-							<div class="simple-tree">
-								<div class="popup-panel-tree-item">
-									<i class="fa fa-folder"></i>
-									<a href="#">
-										<span>Categoría</span>
-									</a>
-									<a href="#" class="simple-tree-pm-button">
-										<i class="fa fa-plus-circle"></i>
-									</a>
-								</div>
-							</div>
+							<div class="simple-tree">							
 							
-							
-							
-							<div class="popup-panel-tree-item">
-								<div class="pretty p-icon p-rotate">
-									<input type="checkbox" />
-									<div class="state p-primary">
-										<i class="icon mdi mdi-check"></i>
-										<label>GNEA</label>
+								<div class="popup-panel-tree-item" data-state="0">
+									<div class="popup-panel-tree-item-header">
+										<i class="fas fa-folder popup-panel-tree-item-icon popup-icon"></i>
+										<a href="#" class="popup-panel-tree-item-label popup-text">
+											<span>Categoría</span>
+										</a>
+										<a href="#" class="simple-tree-pm-button">
+											<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
+										</a>
+									</div>
+									<div class="popup-panel-tree-item-subpanel">
+										<ul>
+											<li>
+												<i class="fa fa-cube popup-text-active"></i>
+												Aprovechamientos
+											</li>											
+											<li>Construcciones</li>											
+											<li>
+												<i class="fa fa-cube popup-text-active"></i>
+												Planeamientos
+											</li>
+											<li>Reserva Ecológica</li>
+										</ul>
 									</div>
 								</div>
-							</div>
-							
-							<div class="popup-panel-tree-item">
-								<div class="pretty p-icon p-rotate">
-									<input type="checkbox" />
-									<div class="state p-primary">
-										<i class="icon mdi mdi-check"></i>
-										<label>GAS</label>
+								
+								<div class="popup-panel-tree-item" data-state="0">
+									<div class="popup-panel-tree-item-header">
+										<i class="fas fa-folder popup-panel-tree-item-icon popup-icon"></i>
+										<a href="#" class="popup-panel-tree-item-label popup-text">
+											<span>Categoría</span>
+										</a>
+										<a href="#" class="simple-tree-pm-button">
+											<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
+										</a>
+									</div>
+									<div class="popup-panel-tree-item-subpanel">
+										<ul>
+											<li>
+												<i class="fa fa-cube popup-text-active"></i>
+												Aprovechamientos
+											</li>											
+											<li>Construcciones</li>											
+											<li>
+												<i class="fa fa-cube popup-text-active"></i>
+												Planeamientos
+											</li>
+											<li>Reserva Ecológica</li>
+										</ul>
 									</div>
 								</div>
-							</div>
-							
-							<div class="popup-panel-tree-item">
-								<div class="pretty p-icon p-rotate">
-									<input type="checkbox" />
-									<div class="state p-primary">
-										<i class="icon mdi mdi-check"></i>
-										<label>ENERGÍA EÓLICA</label>
+								
+								<div class="popup-panel-tree-item" data-state="0">
+									<div class="popup-panel-tree-item-header">
+										<i class="fas fa-folder popup-panel-tree-item-icon popup-icon"></i>
+										<a href="#" class="popup-panel-tree-item-label popup-text">
+											<span>Categoría</span>
+										</a>
+										<a href="#" class="simple-tree-pm-button">
+											<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
+										</a>
+									</div>
+									<div class="popup-panel-tree-item-subpanel">
+										<ul>
+											<li>
+												<i class="fa fa-cube popup-text-active"></i>
+												Aprovechamientos
+											</li>											
+											<li>Construcciones</li>											
+											<li>
+												<i class="fa fa-cube popup-text-active"></i>
+												Planeamientos
+											</li>
+											<li>Reserva Ecológica</li>
+										</ul>
 									</div>
 								</div>
-							</div>
-							
-							<div class="popup-panel-tree-item">
-								<div class="pretty p-icon p-rotate">
-									<input type="checkbox" />
-									<div class="state p-primary">
-										<i class="icon mdi mdi-check"></i>
-										<label>BIOMASA</label>
+								
+								<div class="popup-panel-tree-item" data-state="0">
+									<div class="popup-panel-tree-item-header">
+										<i class="fas fa-folder popup-panel-tree-item-icon popup-icon"></i>
+										<a href="#" class="popup-panel-tree-item-label popup-text">
+											<span>Categoría</span>
+										</a>
+										<a href="#" class="simple-tree-pm-button">
+											<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
+										</a>
+									</div>
+									<div class="popup-panel-tree-item-subpanel">
+										<ul>
+											<li>
+												<i class="fa fa-cube popup-text-active"></i>
+												Aprovechamientos
+											</li>											
+											<li>Construcciones</li>											
+											<li>
+												<i class="fa fa-cube popup-text-active"></i>
+												Planeamientos
+											</li>
+											<li>Reserva Ecológica</li>
+										</ul>
 									</div>
 								</div>
-							</div>
-							
-							<div class="popup-panel-tree-item">
-								<div class="pretty p-icon p-rotate">
-									<input type="checkbox" />
-									<div class="state p-primary">
-										<i class="icon mdi mdi-check"></i>
-										<label>COMERCIALIZACIÓN ENERGÍA</label>
-									</div>
-								</div>
-							</div>
+								
+							</div>		
 							
 						</div>
 					
@@ -526,7 +570,7 @@
 			
 				<div class="col col-md-7 col-sm-12 col-xs-12" style="background-color:orange;">
 					
-					<div class="panel-content">
+					<div class="popup-panel-content">
 					
 						COntenido
 					
