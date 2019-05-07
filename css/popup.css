@@ -199,5 +199,43 @@
 	height:100%;
 	padding:10px;
 	background-color:#FFFFFF;
+	overflow:auto;
+	
+}
+
+.popup-panel-content .image {
+	
+	border-radius:3px;
+	
+}
+
+.popup-panel-content .title {
+	
+	font-weight:700;
+	font-size:16px;
+	margin:10px 0;
+	
+}
+
+.popup-panel-content .button {
+	
+	background-color: #333333;
+	color: #FFFFFF;
+	font-weight: 700;
+	font-size: 13px;
+	height: 29px;
+	line-height: 29px;
+	border-radius: 3px;
+	text-align:center;
+	width:100%;
+	display:block;
+	
+}
+
+.popup-panel-content .button:hover {
+	
+	text-decoration: none !Important;
+	color: #FFFFFF !Important;
+	background-color: #3c3c3c;
 	
 }
