@@ -6,14 +6,15 @@
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700" rel="stylesheet">	
+	<link href="./fonts/gotham/gotham.css" rel="stylesheet">	
 	
 	<link rel="stylesheet" href="./css/bootstrap.css"/>	
 
     <link rel="stylesheet" href="./fontawesome-5.8.1/css/all.min.css" />
 	
 	<link rel="stylesheet" href="./css/pretty-checkbox.css"/>
-	<link href="https://cdn.materialdesignicons.com/3.6.95/css/materialdesignicons.min.css" rel="stylesheet">
+	<link href="https://cdn.materialdesignicons.com/3.6.95/css/materialdesignicons.min.css" rel="stylesheet"> <!-- CHECKBOX FONTS -->
 	    
 	<link rel="stylesheet" href="./css/bootstrapfix.navbar.css"/>	
 	<link rel="stylesheet" href="./css/map.css"/>
@@ -43,8 +44,8 @@
 			color:#FFFFFF !Important;
 			top:3px;
 			position:relative;
-			font-family:"Raleway", sans-serif;
-			font-weight:700;
+			font-family:"Gotham Black Regular";
+			
 		}
 		
 		.navbar-toggler, .navbar-toggler:focus, .navbar-toggler:active {
@@ -101,7 +102,7 @@
 		.nav-title-label {
 			
 			color:#FFFFFF;			
-			font-family:"Raleway", sans-serif;
+			font-family:"Gotham Light";
 			font-weight:400;
 			font-size:18px;
 			margin:0 0 0 0.9em;			
