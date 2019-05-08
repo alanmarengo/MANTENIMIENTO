@@ -147,6 +147,7 @@
 			
 			margin-left:auto !Important;
 			margin-right:auto !Important;
+			width:100%;
 			
 		}
 		
