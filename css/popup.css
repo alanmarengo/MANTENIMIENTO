@@ -81,6 +81,7 @@
 .popup-panel-content {
 	
 	font-size:12px;
+	font-family:"Gotham light";
 	
 }
 
@@ -114,12 +115,12 @@
 
 .simple-tree .popup-panel-tree-item a {
 	
-	font-size: 0.7em;
+	font-size: 0.8em;
 	position: relative;
 	top: -1px;
 	left: 1px;
-	color: #4c4c4e;
-	font-weight:700;
+	color: #4c4c4e;	
+	font-family:"Gotham Bold";
 	
 }
 
@@ -159,15 +160,16 @@
     list-style-type: none;
 
 }
-	
+
 .popup-text {
 	
 	color:#333333;
 	
 }
 
-.popup-text-active {
-	
+.popup-text-active:not(i) {
+		
+	font-family:"Gotham bold";
 	color:#31cbfd !Important;
 	
 }
@@ -186,7 +188,7 @@
 
 .popup-panel-tree-item-subpanel li {
 	
-	font-weight: 400;
+	font-family:"Gotham Light";
 	font-size: 0.8em;
 	color: #828282;
 	padding:2px 0;
@@ -211,9 +213,9 @@
 
 .popup-panel-content .title {
 	
-	font-weight:700;
-	font-size:16px;
-	margin:10px 0;
+	font-family:"Gotham Bold";
+	font-size:18px;
+	margin:20px 0 13px 0;
 	
 }
 
@@ -221,7 +223,7 @@
 	
 	background-color: #333333;
 	color: #FFFFFF;
-	font-weight: 700;
+	font-family:"Gotham bold";
 	font-size: 13px;
 	height: 29px;
 	line-height: 29px;

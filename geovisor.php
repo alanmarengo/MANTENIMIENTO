@@ -105,7 +105,7 @@
 			font-family:"Gotham Light";
 			font-weight:400;
 			font-size:18px;
-			margin:0 0 0 0.9em;			
+			margin:0.45em 0 0 1.5em;			
 			position: relative;
 			top: -2px;
 			
@@ -140,6 +140,13 @@
 		.navbar .dropdown-toggle {
 			
 			color:#FFFFFF !Important;
+			
+		}
+		
+		.nav-row {
+			
+			margin-left:auto !Important;
+			margin-right:auto !Important;
 			
 		}
 		
@@ -229,63 +236,73 @@
 
 <nav class="navbar navbar-dark bg-light" id="nav-2">
 	
-	<div class="nav navbar-expand" id="navSubtitle">
-		<ul class="navbar-nav">
-			<li class="nav-item nav-item-button active">
-				<h3 class="nav-item nav-title-label">
-					Geovisor general de IEASA
-				</h3>
-			</li>
-		</ul>
-	</div>
+	<div class="row nav-row">
 	
-	<div class="nav navbar-expand navbar-right" style="display: inline-block;" id="navToolbar">
-		<ul class="navbar-nav">
-			<li class="nav-item">
-				<a href="#" class="nav-link">
-					<img src="./images/toolbar.icon.zoomext.png">
-				</a>
-			</li>
-			<li>
-				<a class="nav-link nav-link-death nav-link-separator nav-item">
-					<span>|</span>
-				</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link nav-link-death nav-item">Infraestructura</a>
-			</li>
-			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					Todas:
-				</a>
-				<div class="dropdown-menu" style="text-align:right;" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="#">Maquinaria</a>
-					<a class="dropdown-item" href="#">Equipos</a>
-					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="#">Todos</a>
-				</div>
-			</li>
-			<li>
-				<a class="nav-link nav-link-death nav-link-separator nav-item">
-					<span>|</span>
-				</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link nav-link-death nav-item">Estado</a>
-			</li>
-			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					Terminado:
-				</a>
-				<div class="dropdown-menu" style="text-align:right;" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="#">Sin Iniciar</a>
-					<a class="dropdown-item" href="#">En Proceso</a>
-					<a class="dropdown-item" href="#">Terminado</a>
-					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="#">Sin Especificar</a>
-				</div>
-			</li>
-		</ul>
+		<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+	
+			<div class="nav navbar-expand" id="navSubtitle">
+				<ul class="navbar-nav">
+					<li class="nav-item nav-item-button active">
+						<h3 class="nav-item nav-title-label">
+							Geovisor general de IEASA
+						</h3>
+					</li>
+				</ul>
+			</div>
+	
+		</div>
+	
+		<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+		
+			<div class="nav navbar-expand navbar-right" style="display: inline-block;" id="navToolbar">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a href="#" class="nav-link">
+							<img src="./images/toolbar.icon.zoomext.png">
+						</a>
+					</li>
+					<li>
+						<a class="nav-link nav-link-death nav-link-separator nav-item">
+							<span>|</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link nav-link-death nav-item">Infraestructura</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Todas:
+						</a>
+						<div class="dropdown-menu" style="text-align:right;" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="#">Maquinaria</a>
+							<a class="dropdown-item" href="#">Equipos</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Todos</a>
+						</div>
+					</li>
+					<li>
+						<a class="nav-link nav-link-death nav-link-separator nav-item">
+							<span>|</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link nav-link-death nav-item">Estado</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Terminado:
+						</a>
+						<div class="dropdown-menu" style="text-align:right;" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="#">Sin Iniciar</a>
+							<a class="dropdown-item" href="#">En Proceso</a>
+							<a class="dropdown-item" href="#">Terminado</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Sin Especificar</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+	
 	</div>
 	
 </nav>
