@@ -61,11 +61,11 @@
 .pretty .state label {
   position: initial;
   display: inline-block;
-  font-weight: 600;
+  font-family:"Gotham bold";
   margin: 0;
   text-indent: 1.5em;
   min-width: calc(1em + 2px);
-  font-size: 13px;
+  font-size: 0.7em;
   position: relative;
   top: -1px;
   left: 1px;

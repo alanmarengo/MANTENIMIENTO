@@ -6,14 +6,15 @@
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700" rel="stylesheet">	
+	<link href="./fonts/gotham/gotham.css" rel="stylesheet">	
 	
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
-	
-	<link rel="stylesheet" href="./css/fontawesome-free-5.8.1-web-all.min.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link rel="stylesheet" href="./css/bootstrap.css"/>	
+
+    <link rel="stylesheet" href="./fontawesome-5.8.1/css/all.min.css" />
 	
 	<link rel="stylesheet" href="./css/pretty-checkbox.css"/>
-	<link href="https://cdn.materialdesignicons.com/3.6.95/css/materialdesignicons.min.css" rel="stylesheet">
+	<link href="https://cdn.materialdesignicons.com/3.6.95/css/materialdesignicons.min.css" rel="stylesheet"> <!-- CHECKBOX FONTS -->
 	    
 	<link rel="stylesheet" href="./css/bootstrapfix.navbar.css"/>	
 	<link rel="stylesheet" href="./css/map.css"/>
@@ -33,7 +34,7 @@
 			
 			display:block !important;
 			background-color:#333333 !important;
-			z-index:10 !important;
+			z-index:2100 !important;
 			
 		}
 		
@@ -43,8 +44,8 @@
 			color:#FFFFFF !Important;
 			top:3px;
 			position:relative;
-			font-family:"Raleway", sans-serif;
-			font-weight:700;
+			font-family:"Gotham Black Regular";
+			
 		}
 		
 		.navbar-toggler, .navbar-toggler:focus, .navbar-toggler:active {
@@ -101,10 +102,10 @@
 		.nav-title-label {
 			
 			color:#FFFFFF;			
-			font-family:"Raleway", sans-serif;
+			font-family:"Gotham Light";
 			font-weight:400;
 			font-size:18px;
-			margin:0 0 0 0.9em;			
+			margin:0.45em 0 0 1.5em;			
 			position: relative;
 			top: -2px;
 			
@@ -142,14 +143,23 @@
 			
 		}
 		
+		.nav-row {
+			
+			margin-left:auto !Important;
+			margin-right:auto !Important;
+			width:100%;
+			
+		}
+		
 		.flex-fill {
 			flex:1;
 		}
 				
 	</style>	
 
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="./js/jquery-3.2.1.min.js"></script>
+	<script src="./js/bootstrap.js"></script>
+	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 		
 	<script src="./js/openlayers/ol.js" type="text/javascript"></script>
@@ -227,63 +237,73 @@
 
 <nav class="navbar navbar-dark bg-light" id="nav-2">
 	
-	<div class="nav navbar-expand" id="navSubtitle">
-		<ul class="navbar-nav">
-			<li class="nav-item nav-item-button active">
-				<h3 class="nav-item nav-title-label">
-					Geovisor general de IEASA
-				</h3>
-			</li>
-		</ul>
-	</div>
+	<div class="row nav-row">
 	
-	<div class="nav navbar-expand navbar-right" style="display: inline-block;" id="navToolbar">
-		<ul class="navbar-nav">
-			<li class="nav-item">
-				<a href="#" class="nav-link">
-					<img src="./images/toolbar.icon.zoomext.png">
-				</a>
-			</li>
-			<li>
-				<a class="nav-link nav-link-death nav-link-separator nav-item">
-					<span>|</span>
-				</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link nav-link-death nav-item">Infraestructura</a>
-			</li>
-			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					Todas:
-				</a>
-				<div class="dropdown-menu" style="text-align:right;" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="#">Maquinaria</a>
-					<a class="dropdown-item" href="#">Equipos</a>
-					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="#">Todos</a>
-				</div>
-			</li>
-			<li>
-				<a class="nav-link nav-link-death nav-link-separator nav-item">
-					<span>|</span>
-				</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link nav-link-death nav-item">Estado</a>
-			</li>
-			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					Terminado:
-				</a>
-				<div class="dropdown-menu" style="text-align:right;" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="#">Sin Iniciar</a>
-					<a class="dropdown-item" href="#">En Proceso</a>
-					<a class="dropdown-item" href="#">Terminado</a>
-					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="#">Sin Especificar</a>
-				</div>
-			</li>
-		</ul>
+		<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+	
+			<div class="nav navbar-expand" id="navSubtitle">
+				<ul class="navbar-nav">
+					<li class="nav-item nav-item-button active">
+						<h3 class="nav-item nav-title-label">
+							Geovisor general de IEASA
+						</h3>
+					</li>
+				</ul>
+			</div>
+	
+		</div>
+	
+		<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+		
+			<div class="nav navbar-expand navbar-right" style="display: inline-block;" id="navToolbar">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a href="#" class="nav-link">
+							<img src="./images/toolbar.icon.zoomext.png">
+						</a>
+					</li>
+					<li>
+						<a class="nav-link nav-link-death nav-link-separator nav-item">
+							<span>|</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link nav-link-death nav-item">Infraestructura</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Todas:
+						</a>
+						<div class="dropdown-menu" style="text-align:right;" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="#">Maquinaria</a>
+							<a class="dropdown-item" href="#">Equipos</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Todos</a>
+						</div>
+					</li>
+					<li>
+						<a class="nav-link nav-link-death nav-link-separator nav-item">
+							<span>|</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link nav-link-death nav-item">Estado</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Terminado:
+						</a>
+						<div class="dropdown-menu" style="text-align:right;" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="#">Sin Iniciar</a>
+							<a class="dropdown-item" href="#">En Proceso</a>
+							<a class="dropdown-item" href="#">Terminado</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Sin Especificar</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+	
 	</div>
 	
 </nav>
@@ -327,11 +347,7 @@
 
 	<div class="row">
 	
-		<div class="col col-md-3" style="background-color:red;">
-			1
-		</div>
-	
-		<div class="col col-md-6 col-xs-12" style="background-color:green;">
+		<div class="col col-popup mx-auto col-md-6 col-sm-12 col-xs-12">
 		
 			<div class="row">			
 				
@@ -372,7 +388,7 @@
 		
 			<div class="row">				
 				
-				<div class="col col-md-5 col-xs-12" style="background-color:blue;">
+				<div class="col col-md-5 col-sm-12 col-xs-12" style="background-color:blue;">
 					
 					<div class="popup-panel-tree">
 					
@@ -455,25 +471,146 @@
 								</div>
 							</div>
 						</div>
+						
+						<div class="popup-panel-tree-content">
+							
+							<div class="simple-tree">							
+							
+								<div class="popup-panel-tree-item" data-state="0">
+									<div class="popup-panel-tree-item-header">
+										<i class="fas fa-folder popup-panel-tree-item-icon popup-icon"></i>
+										<a href="#" class="popup-panel-tree-item-label popup-text">
+											<span>Categoría</span>
+										</a>
+										<a href="#" class="simple-tree-pm-button">
+											<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
+										</a>
+									</div>
+									<div class="popup-panel-tree-item-subpanel">
+										<ul>
+											<li>
+												<i class="fa fa-cube popup-text-active"></i>
+												Aprovechamientos
+											</li>											
+											<li>Construcciones</li>											
+											<li>
+												<i class="fa fa-cube popup-text-active"></i>
+												Planeamientos
+											</li>
+											<li>Reserva Ecológica</li>
+										</ul>
+									</div>
+								</div>
+								
+								<div class="popup-panel-tree-item" data-state="0">
+									<div class="popup-panel-tree-item-header">
+										<i class="fas fa-folder popup-panel-tree-item-icon popup-icon"></i>
+										<a href="#" class="popup-panel-tree-item-label popup-text">
+											<span>Categoría</span>
+										</a>
+										<a href="#" class="simple-tree-pm-button">
+											<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
+										</a>
+									</div>
+									<div class="popup-panel-tree-item-subpanel">
+										<ul>
+											<li>
+												<i class="fa fa-cube popup-text-active"></i>
+												Aprovechamientos
+											</li>											
+											<li>Construcciones</li>											
+											<li>
+												<i class="fa fa-cube popup-text-active"></i>
+												Planeamientos
+											</li>
+											<li>Reserva Ecológica</li>
+										</ul>
+									</div>
+								</div>
+								
+								<div class="popup-panel-tree-item" data-state="0">
+									<div class="popup-panel-tree-item-header">
+										<i class="fas fa-folder popup-panel-tree-item-icon popup-icon"></i>
+										<a href="#" class="popup-panel-tree-item-label popup-text">
+											<span>Categoría</span>
+										</a>
+										<a href="#" class="simple-tree-pm-button">
+											<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
+										</a>
+									</div>
+									<div class="popup-panel-tree-item-subpanel">
+										<ul>
+											<li>
+												<i class="fa fa-cube popup-text-active"></i>
+												Aprovechamientos
+											</li>											
+											<li>Construcciones</li>											
+											<li>
+												<i class="fa fa-cube popup-text-active"></i>
+												Planeamientos
+											</li>
+											<li>Reserva Ecológica</li>
+										</ul>
+									</div>
+								</div>
+								
+								<div class="popup-panel-tree-item" data-state="0">
+									<div class="popup-panel-tree-item-header">
+										<i class="fas fa-folder popup-panel-tree-item-icon popup-icon"></i>
+										<a href="#" class="popup-panel-tree-item-label popup-text">
+											<span>Categoría</span>
+										</a>
+										<a href="#" class="simple-tree-pm-button">
+											<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
+										</a>
+									</div>
+									<div class="popup-panel-tree-item-subpanel">
+										<ul>
+											<li>
+												<i class="fa fa-cube popup-text-active"></i>
+												Aprovechamientos
+											</li>											
+											<li>Construcciones</li>											
+											<li>
+												<i class="fa fa-cube popup-text-active"></i>
+												Planeamientos
+											</li>
+											<li>Reserva Ecológica</li>
+										</ul>
+									</div>
+								</div>
+								
+							</div>		
+							
+						</div>
 					
 					</div>
 					
 				</div>				
 			
-				<div class="col col-md-7 col-xs-12" style="background-color:orange;">
+				<div class="col col-md-7 col-sm-12 col-xs-12" style="background-color:orange;">
 					
-					<div class="panel-content">
+					<div class="popup-panel-content">
 					
+						<img class="image" src="./images/popup.map.png" width="100%">
+					
+						<p class="title">Detallas de la Geografía del Lugar</p>
+						<p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						
+						<a href="#" class="popup-text-active">Link</a>
+						
+						<p class="mt-10">
+							<a href="#" class="button">AGREGAR AL MAPA</a>
+						</p>
+						
 					</div>
 					
 				</div>
+				
+				
 			
 			</div>
 		
-		</div>
-	
-		<div class="col col-md-3" style="background-color:red;">
-			3
 		</div>
 	
 	</div>

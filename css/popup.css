@@ -7,7 +7,7 @@
 
 }
 
-.popup .col:not(.popup-header):not(.panel-tree), .popup .row {
+.popup .col:not(.popup-header):not(.panel-tree):not(.col-popup), .popup .row {
 	
 	padding:0 !Important;
 	margin:0 !Important;
@@ -47,7 +47,7 @@
 		
 	background-color:#333333;
 	color:#FFFFFF;
-	font-weight:700;
+	font-family:"Gotham bold";
 	font-size:13px;
 	height:24px;
 	line-height:24px;
@@ -81,12 +81,13 @@
 .popup-panel-content {
 	
 	font-size:12px;
+	font-family:"Gotham light";
 	
 }
 
 .popup-panel-tree {
 	
-	background-color:#FFFFFF;
+	background-color:#f6f6f6;
 	
 }
 
@@ -102,5 +103,141 @@
 	
 	padding:8px 10px;
 	background-color:#FFFFFF;
+	
+}
+
+.simple-tree .popup-panel-tree-item {
+	
+	border-bottom:1px solid #dedede;
+	padding-bottom:2px;
+	
+}
+
+.simple-tree .popup-panel-tree-item a {
+	
+	font-size: 0.8em;
+	position: relative;
+	top: -1px;
+	left: 1px;
+	color: #4c4c4e;	
+	font-family:"Gotham Bold";
+	
+}
+
+.simple-tree .popup-panel-tree-item a:hover {
+	
+	text-decoration:none;
+	
+}
+
+.simple-tree-pm-button {
+	
+	position:relative;
+	display:block;
+	top:1px !Important;
+	float:right;
+	font-size:13px !Important;
+	margin-top:2px;
+}
+
+.popup-panel-tree-item-header {
+
+	cursor:pointer;
+
+}
+
+.popup-panel-tree-item-subpanel {
+	
+	display:none;
+	
+}
+
+.popup-panel-tree-item-subpanel ul {
+
+    padding: 0px 0px 0px 12px;
+    margin: auto auto 8px 8px;
+    border-left: 1px solid #ccc;
+    list-style-type: none;
+
+}
+
+.popup-text {
+	
+	color:#333333;
+	
+}
+
+.popup-text-active:not(i) {
+		
+	font-family:"Gotham bold";
+	color:#31cbfd !Important;
+	
+}
+
+.popup-icon {
+	
+	color:#828282;
+	
+}
+
+.popup-icon-active {
+	
+	color:#31cbfd !Important;
+	
+}
+
+.popup-panel-tree-item-subpanel li {
+	
+	font-family:"Gotham Light";
+	font-size: 0.8em;
+	color: #828282;
+	padding:2px 0;
+	
+}
+
+.popup-panel-content {
+	
+	width:100%;
+	height:100%;
+	padding:10px;
+	background-color:#FFFFFF;
+	overflow:auto;
+	
+}
+
+.popup-panel-content .image {
+	
+	border-radius:3px;
+	
+}
+
+.popup-panel-content .title {
+	
+	font-family:"Gotham Bold";
+	font-size:18px;
+	margin:20px 0 13px 0;
+	
+}
+
+.popup-panel-content .button {
+	
+	background-color: #333333;
+	color: #FFFFFF;
+	font-family:"Gotham bold";
+	font-size: 13px;
+	height: 29px;
+	line-height: 29px;
+	border-radius: 3px;
+	text-align:center;
+	width:100%;
+	display:block;
+	
+}
+
+.popup-panel-content .button:hover {
+	
+	text-decoration: none !Important;
+	color: #FFFFFF !Important;
+	background-color: #3c3c3c;
 	
 }
