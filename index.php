@@ -111,6 +111,98 @@
             <span class="sr-only">Siguiente</span>
         </a>
     </div>
+
+<div id="page">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-6">1</div>
+                <div class="col-md-6">2</div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">3</div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-12">4</div>
+                        <div class="col-md-12">5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">4</div>
+                        <div class="col-md-12">5</div>
+                    </div>
+                </div>
+                <div class="col-md-6">3</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">3</div>
+                <div class="col-md-4">3</div>
+                <div class="col-md-4">3</div>
+            </div>
+        </div>
+        <div class="col-md-3 side-right">
+            <div class="row">
+                <div class="col-md-12">6</div>
+                <div class="col-md-12">7</div>
+                <div class="col-md-12">8</div>
+                <div class="col-md-12">9</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row footer">
+        <div class="col-md-3 themed-grid-col" style="padding: 10px;">
+            <img src="./images/logo-footer.jpg" style="width: 100%; max-width: 250px; height: auto;" />
+        </div>
+        <div class="col-md-3 themed-grid-col" style="font-size: .9em; padding: 10px;">
+            <b>DIRECCION</b><br />
+            AV. PASEO COLON 505 PISO 6,<br />
+            CIUDAD DE BUENOS AIRES, ARGENTINA
+        </div>
+        <div class="col-md-3 themed-grid-col" style="font-size: .9em; padding: 10px;">
+            <b>TELEFONO</b><br />
+            (+54 11) 5276-4050 INT: 127
+        </div>
+        <div class="col-md-3 social-media" style="padding: 10px;">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-youtube"></a>
+            <a href="#" class="fab fa-twitter"></a>
+        </div>
+    </div>
+
+
+</div>
+
+
+    <!-- <div class="grid-container">
+        <div class="item-paneles">
+            <div class="grid-left">
+            
+            </div>
+        </div>
+        <div class="item-acciones">
+            <div class="grid-right">
+                <div class="item-mediateca">
+                    b
+                </div>
+                <div class="item-geovisores">
+                    c
+                </div>
+                <div class="item-indicadores">
+                    d
+                </div>
+                <div class="item-enlaces">
+                    e
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+
 </body>
 
 </html>
