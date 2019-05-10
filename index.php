@@ -5,10 +5,11 @@
     <title>Ieasa - Observatorio Ambiental</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="./fontawesome-5.8.1/css/all.min.css" />
-    <link rel="stylesheet" href="./css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./css/bootstrapfix.navbar.css" />
-    <link rel="stylesheet" href="./css/site.css" />
+    <link rel="stylesheet" type="text/css" href="./fontawesome-5.8.1/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="./fonts/gotham/gotham.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/bootstrapfix.navbar.css" />
+    <link rel="stylesheet" type="text/css" href="./css/site.css" />
 
     <script src="./js/jquery-3.2.1.min.js"></script>
     <script src="./js/bootstrap.bundle.min.js"></script>
@@ -115,40 +116,40 @@
 <div id="page">
     <div class="row">
         <div class="col-md-9">
-            <div class="row">
-                <div class="col-md-6">1</div>
-                <div class="col-md-6">2</div>
+            <div class="row row-1">
+                <div class="col-md-6 modulo-1-1">1</div>
+                <div class="col-md-6 modulo-1-2">2</div>
             </div>
-            <div class="row">
-                <div class="col-md-8">3</div>
+            <div class="row row-2">
+                <div class="col-md-8 modulo-2-1">3</div>
                 <div class="col-md-4">
                     <div class="row">
-                        <div class="col-md-12">4</div>
-                        <div class="col-md-12">5</div>
+                        <div class="col-md-12 modulo-2-2">4</div>
+                        <div class="col-md-12 modulo-2-3">5</div>
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row row-3">
                 <div class="col-md-6">
                     <div class="row">
-                        <div class="col-md-12">4</div>
-                        <div class="col-md-12">5</div>
+                        <div class="col-md-12 modulo-3-1">4</div>
+                        <div class="col-md-12 modulo-3-2">5</div>
                     </div>
                 </div>
-                <div class="col-md-6">3</div>
+                <div class="col-md-6 modulo-3-3">3</div>
             </div>
-            <div class="row">
-                <div class="col-md-4">3</div>
-                <div class="col-md-4">3</div>
-                <div class="col-md-4">3</div>
+            <div class="row row-4">
+                <div class="col-md-4 modulo-4-1">3</div>
+                <div class="col-md-4 modulo-4-2">3</div>
+                <div class="col-md-4 modulo-4-3">3</div>
             </div>
         </div>
         <div class="col-md-3 side-right">
             <div class="row">
-                <div class="col-md-12">6</div>
-                <div class="col-md-12">7</div>
-                <div class="col-md-12">8</div>
-                <div class="col-md-12">9</div>
+                <div class="col-md-12 link-1">6</div>
+                <div class="col-md-12 link-2">7</div>
+                <div class="col-md-12 link-3">8</div>
+                <div class="col-md-12 link-4">9</div>
             </div>
         </div>
     </div>
@@ -175,34 +176,6 @@
 
 
 </div>
-
-
-    <!-- <div class="grid-container">
-        <div class="item-paneles">
-            <div class="grid-left">
-            
-            </div>
-        </div>
-        <div class="item-acciones">
-            <div class="grid-right">
-                <div class="item-mediateca">
-                    b
-                </div>
-                <div class="item-geovisores">
-                    c
-                </div>
-                <div class="item-indicadores">
-                    d
-                </div>
-                <div class="item-enlaces">
-                    e
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-
-
 </body>
 
 </html>
