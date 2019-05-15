@@ -90,18 +90,33 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img class="d-block w-100" src="./images/index/slide1.jpg" alt="...">
+                <div class="carousel-caption">
+                    <p>GEOVISOR DE INFORMACION INTEGRADA</p>
+                </div>                
             </div>
             <div class="carousel-item">
                 <img class="d-block w-100" src="./images/index/slide2.jpg" alt="...">
+                <div class="carousel-caption">
+                    <p>SABIAS DE LA EXISTENCIA DE LA LAMPREA<br /> EN EL RIO SANTA CRUZ?</p>
+                </div>                
             </div>
             <div class="carousel-item">
                 <img class="d-block w-100" src="./images/index/slide3.jpg" alt="...">
+                <div class="carousel-caption">
+                    <p>CAMPO DE HIELO PATAGONIA SUR (HPS)</p>
+                </div>                
             </div>
             <div class="carousel-item">
                 <img class="d-block w-100" src="./images/index/slide4.jpg" alt="...">
+                <div class="carousel-caption">
+                    <p>NUESTRO COMPROMISO CON EL MACA TOBIANO</p>
+                </div>                
             </div>
             <div class="carousel-item">
                 <img class="d-block w-100" src="./images/index/slide5.jpg" alt="...">
+                <div class="carousel-caption">
+                    <p>MISION DE IEASA</p>
+                </div>                
             </div>
         </div>
         <a class="carousel-control-prev" href="#main-slider" role="button" data-slide="prev">
