@@ -118,6 +118,7 @@
         <div class="col-md-9">
             <div class="row modulo-row">
                 <div class="col-md-6 modulo-wrap modulo-1">
+                    <div class="modulo-opacity"></div>
                     <div class="modulo-text">
                         IEASA EN EL TERRITORIO
                     </div>
@@ -128,6 +129,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 modulo-wrap modulo-2">
+                    <div class="modulo-opacity"></div>
                     <div class="modulo-text">
                         OBSERVATORIO AHRSC
                     </div>
@@ -140,6 +142,7 @@
             </div>
             <div class="row modulo-row">
                 <div class="col-md-6 modulo-wrap modulo-3">
+                    <div class="modulo-opacity"></div>
                     <div class="modulo-text">
                         INDICADORES AMBIENTALES AHRSC
                     </div>
@@ -152,6 +155,7 @@
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-12 modulo-wrap modulo-4">
+                            <div class="modulo-opacity"></div>
                             <div class="modulo-text">
                                 HIGIENE Y SEGURIDAD LABORAL
                             </div>
@@ -162,6 +166,7 @@
                             </div>
                         </div>
                         <div class="col-md-12 modulo-wrap modulo-5">
+                            <div class="modulo-opacity"></div>
                             <div class="modulo-text">
                                 PLAN DE GESTION DE CALIDAD
                             </div>
@@ -178,6 +183,7 @@
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-12 modulo-wrap modulo-6">
+                            <div class="modulo-opacity"></div>
                             <div class="modulo-text">
                                 COMUNICACION Y GESTION PARTICIPATIVA
                             </div>
@@ -188,6 +194,7 @@
                             </div>
                         </div>
                         <div class="col-md-12 modulo-wrap modulo-7">
+                            <div class="modulo-opacity"></div>
                             <div class="modulo-text">
                                 EXPLORA LAS OBRAS DE LOS AHRSC EN 2D Y 3D
                             </div>
@@ -200,6 +207,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 modulo-wrap modulo-8">
+                    <div class="modulo-opacity"></div>
                     <div class="modulo-text">
                         APROVECHAMIENTOS HIDROELECTRICOS DEL RIO SANTA CRUZ
                     </div>
@@ -212,6 +220,7 @@
             </div>
             <div class="row modulo-row">
                 <div class="col-md-4 modulo-wrap modulo-9">
+                    <div class="modulo-opacity"></div>
                     <div class="modulo-text">
                         EL RIO SANTA CRUZ EN NUMEROS
                     </div>
@@ -222,6 +231,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 modulo-wrap modulo-10">
+                    <div class="modulo-opacity"></div>
                     <div class="modulo-text">
                         PLAN DE GESTION AMBIENTAL<br />
                         (PGA - AHRSC)
@@ -233,6 +243,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 modulo-wrap modulo-11">
+                    <div class="modulo-opacity"></div>
                     <div class="modulo-text">
                         SIT SANTA CRUZ
                     </div>
