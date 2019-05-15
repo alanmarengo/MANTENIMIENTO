@@ -15,11 +15,15 @@
 	
 	<link rel="stylesheet" href="./css/pretty-checkbox.css"/>
 	<link href="https://cdn.materialdesignicons.com/3.6.95/css/materialdesignicons.min.css" rel="stylesheet"> <!-- CHECKBOX FONTS -->
+	
+	<link rel="stylesheet" href="./css/perfect-scrollbar.css"/>
 	    
 	<link rel="stylesheet" href="./css/bootstrapfix.navbar.css"/>	
 	<link rel="stylesheet" href="./css/map.css"/>
 	<link rel="stylesheet" href="./css/panel.css"/>
 	<link rel="stylesheet" href="./css/popup.css"/>
+	<link rel="stylesheet" href="./css/scrollbars.css"/>
+	<link rel="stylesheet" href="./css/geovisor/style.css"/>
 	
 	<link rel="stylesheet" href="./js/openlayers/ol.css"/>
 	
@@ -160,11 +164,14 @@
 	<script src="./js/jquery-3.2.1.min.js"></script>
 	<script src="./js/bootstrap.js"></script>
 	
+	<script src="./js/perfect-scrollbar.js"></script>
+	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 		
 	<script src="./js/openlayers/ol.js" type="text/javascript"></script>
 	
 	<script src="./js/map.js" type="text/javascript"></script>
+	<script src="./js/scrollbars.js" type="text/javascript"></script>
 	
 	<script type="text/javascript">
 	
@@ -180,6 +187,11 @@
 			geomap.panel.start();
 			
 			geomap.popup.start();
+			
+			scrollbars = new scrollbars();
+			
+			scrollbars.updateSize();
+			scrollbars.create();
 			
 		});
 		
@@ -357,12 +369,12 @@
 					
 						<ul class="navbar-nav">
 							<li class="nav-item nav-item-button popup-header-li active">
-								<a class="popup-header-button popup-header-button-toggleable" href="#">
+								<a class="popup-header-button popup-header-button-toggleable" href="#" data-target="#geovisor-popup-basic">
 									<span>BÚSQUEDA</span>
 								</a>
 							</li>
 							<li class="nav-item nav-item-button popup-header-li">
-								<a class="popup-header-button popup-header-button-toggleable" href="#">
+								<a class="popup-header-button popup-header-button-toggleable" href="#" data-target="#geovisor-popup-search">
 									<span>BÚSQUEDA AVANZADA</span>
 								</a>
 							</li>
@@ -386,230 +398,8 @@
 			
 			</div>
 		
-			<div class="row">				
-				
-				<div class="col col-md-5 col-sm-12 col-xs-12" style="background-color:blue;">
-					
-					<div class="popup-panel-tree">
-					
-						<div class="popup-panel-tree-header">
-							<div class="pretty p-icon p-rotate">
-								<div class="state p-primary">
-									<label class="pretty-label-null">SELECCIONE LA OBRA O PROYECTO</label>
-								</div>
-							</div>
-						</div>
-						
-						<div class="popup-panel-tree-content">
-							
-							<div class="popup-panel-tree-item">
-								<div class="pretty p-icon p-rotate">
-									<input type="checkbox" />
-									<div class="state p-primary">
-										<i class="icon mdi mdi-check"></i>
-										<label>AHRSC</label>
-									</div>
-								</div>
-							</div>
-							
-							<div class="popup-panel-tree-item">
-								<div class="pretty p-icon p-rotate">
-									<input type="checkbox" />
-									<div class="state p-primary">
-										<i class="icon mdi mdi-check"></i>
-										<label>GNEA</label>
-									</div>
-								</div>
-							</div>
-							
-							<div class="popup-panel-tree-item">
-								<div class="pretty p-icon p-rotate">
-									<input type="checkbox" />
-									<div class="state p-primary">
-										<i class="icon mdi mdi-check"></i>
-										<label>GAS</label>
-									</div>
-								</div>
-							</div>
-							
-							<div class="popup-panel-tree-item">
-								<div class="pretty p-icon p-rotate">
-									<input type="checkbox" />
-									<div class="state p-primary">
-										<i class="icon mdi mdi-check"></i>
-										<label>ENERGÍA EÓLICA</label>
-									</div>
-								</div>
-							</div>
-							
-							<div class="popup-panel-tree-item">
-								<div class="pretty p-icon p-rotate">
-									<input type="checkbox" />
-									<div class="state p-primary">
-										<i class="icon mdi mdi-check"></i>
-										<label>BIOMASA</label>
-									</div>
-								</div>
-							</div>
-							
-							<div class="popup-panel-tree-item">
-								<div class="pretty p-icon p-rotate">
-									<input type="checkbox" />
-									<div class="state p-primary">
-										<i class="icon mdi mdi-check"></i>
-										<label>COMERCIALIZACIÓN ENERGÍA</label>
-									</div>
-								</div>
-							</div>
-							
-						</div>
-						
-						<div class="popup-panel-tree-header">
-							<div class="pretty p-icon p-rotate">
-								<div class="state p-primary">
-									<label class="pretty-label-null">SELECCIONE LA OBRA INFORMACIÓN</label>
-								</div>
-							</div>
-						</div>
-						
-						<div class="popup-panel-tree-content">
-							
-							<div class="simple-tree">							
-							
-								<div class="popup-panel-tree-item" data-state="0">
-									<div class="popup-panel-tree-item-header">
-										<i class="fas fa-folder popup-panel-tree-item-icon popup-icon"></i>
-										<a href="#" class="popup-panel-tree-item-label popup-text">
-											<span>Categoría</span>
-										</a>
-										<a href="#" class="simple-tree-pm-button">
-											<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
-										</a>
-									</div>
-									<div class="popup-panel-tree-item-subpanel">
-										<ul>
-											<li>
-												<i class="fa fa-cube popup-text-active"></i>
-												Aprovechamientos
-											</li>											
-											<li>Construcciones</li>											
-											<li>
-												<i class="fa fa-cube popup-text-active"></i>
-												Planeamientos
-											</li>
-											<li>Reserva Ecológica</li>
-										</ul>
-									</div>
-								</div>
-								
-								<div class="popup-panel-tree-item" data-state="0">
-									<div class="popup-panel-tree-item-header">
-										<i class="fas fa-folder popup-panel-tree-item-icon popup-icon"></i>
-										<a href="#" class="popup-panel-tree-item-label popup-text">
-											<span>Categoría</span>
-										</a>
-										<a href="#" class="simple-tree-pm-button">
-											<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
-										</a>
-									</div>
-									<div class="popup-panel-tree-item-subpanel">
-										<ul>
-											<li>
-												<i class="fa fa-cube popup-text-active"></i>
-												Aprovechamientos
-											</li>											
-											<li>Construcciones</li>											
-											<li>
-												<i class="fa fa-cube popup-text-active"></i>
-												Planeamientos
-											</li>
-											<li>Reserva Ecológica</li>
-										</ul>
-									</div>
-								</div>
-								
-								<div class="popup-panel-tree-item" data-state="0">
-									<div class="popup-panel-tree-item-header">
-										<i class="fas fa-folder popup-panel-tree-item-icon popup-icon"></i>
-										<a href="#" class="popup-panel-tree-item-label popup-text">
-											<span>Categoría</span>
-										</a>
-										<a href="#" class="simple-tree-pm-button">
-											<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
-										</a>
-									</div>
-									<div class="popup-panel-tree-item-subpanel">
-										<ul>
-											<li>
-												<i class="fa fa-cube popup-text-active"></i>
-												Aprovechamientos
-											</li>											
-											<li>Construcciones</li>											
-											<li>
-												<i class="fa fa-cube popup-text-active"></i>
-												Planeamientos
-											</li>
-											<li>Reserva Ecológica</li>
-										</ul>
-									</div>
-								</div>
-								
-								<div class="popup-panel-tree-item" data-state="0">
-									<div class="popup-panel-tree-item-header">
-										<i class="fas fa-folder popup-panel-tree-item-icon popup-icon"></i>
-										<a href="#" class="popup-panel-tree-item-label popup-text">
-											<span>Categoría</span>
-										</a>
-										<a href="#" class="simple-tree-pm-button">
-											<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
-										</a>
-									</div>
-									<div class="popup-panel-tree-item-subpanel">
-										<ul>
-											<li>
-												<i class="fa fa-cube popup-text-active"></i>
-												Aprovechamientos
-											</li>											
-											<li>Construcciones</li>											
-											<li>
-												<i class="fa fa-cube popup-text-active"></i>
-												Planeamientos
-											</li>
-											<li>Reserva Ecológica</li>
-										</ul>
-									</div>
-								</div>
-								
-							</div>		
-							
-						</div>
-					
-					</div>
-					
-				</div>				
-			
-				<div class="col col-md-7 col-sm-12 col-xs-12" style="background-color:orange;">
-					
-					<div class="popup-panel-content">
-					
-						<img class="image" src="./images/popup.map.png" width="100%">
-					
-						<p class="title">Detallas de la Geografía del Lugar</p>
-						<p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-						
-						<a href="#" class="popup-text-active">Link</a>
-						
-						<p class="mt-10">
-							<a href="#" class="button">AGREGAR AL MAPA</a>
-						</p>
-						
-					</div>
-					
-				</div>
-				
-				
-			
-			</div>
+			<?php include("./geovisor.popup.basic.php"); ?>
+			<?php include("./geovisor.popup.search.php"); ?>
 		
 		</div>
 	
