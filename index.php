@@ -78,6 +78,7 @@
     </nav>
 
 
+<div id="page_index">
     <div id="main-slider" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#main-slider" data-slide-to="0" class="active"></li>
@@ -113,59 +114,159 @@
         </a>
     </div>
 
-<div id="page">
     <div class="row">
         <div class="col-md-9">
-            <div class="row row-1">
-                <div class="col-md-6 modulo-1-1">1</div>
-                <div class="col-md-6 modulo-1-2">2</div>
-            </div>
-            <div class="row row-2">
-                <div class="col-md-8 modulo-2-1">3</div>
-                <div class="col-md-4">
-                    <div class="row">
-                        <div class="col-md-12 modulo-2-2">4</div>
-                        <div class="col-md-12 modulo-2-3">5</div>
+            <div class="row modulo-row">
+                <div class="col-md-6 modulo-wrap modulo-1">
+                    <div class="modulo-text">
+                        IEASA EN EL TERRITORIO
+                    </div>
+                    <div class="modulo-hover">
+                        <p class="modulo-hover-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 modulo-wrap modulo-2">
+                    <div class="modulo-text">
+                        OBSERVATORIO AHRSC
+                    </div>
+                    <div class="modulo-hover">
+                        <p class="modulo-hover-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="row row-3">
+            <div class="row modulo-row">
+                <div class="col-md-6 modulo-wrap modulo-3">
+                    <div class="modulo-text">
+                        INDICADORES AMBIENTALES AHRSC
+                    </div>
+                    <div class="modulo-hover">
+                        <p class="modulo-hover-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                        </p>
+                    </div>
+                </div>
                 <div class="col-md-6">
                     <div class="row">
-                        <div class="col-md-12 modulo-3-1">4</div>
-                        <div class="col-md-12 modulo-3-2">5</div>
+                        <div class="col-md-12 modulo-wrap modulo-4">
+                            <div class="modulo-text">
+                                HIGIENE Y SEGURIDAD LABORAL
+                            </div>
+                            <div class="modulo-hover">
+                                <p class="modulo-hover-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-12 modulo-wrap modulo-5">
+                            <div class="modulo-text">
+                                PLAN DE GESTION DE CALIDAD
+                            </div>
+                            <div class="modulo-hover">
+                                <p class="modulo-hover-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 modulo-3-3">3</div>
             </div>
-            <div class="row row-4">
-                <div class="col-md-4 modulo-4-1">3</div>
-                <div class="col-md-4 modulo-4-2">3</div>
-                <div class="col-md-4 modulo-4-3">3</div>
+            <div class="row modulo-row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12 modulo-wrap modulo-6">
+                            <div class="modulo-text">
+                                COMUNICACION Y GESTION PARTICIPATIVA
+                            </div>
+                            <div class="modulo-hover">
+                                <p class="modulo-hover-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-12 modulo-wrap modulo-7">
+                            <div class="modulo-text">
+                                EXPLORA LAS OBRAS DE LOS AHRSC EN 2D Y 3D
+                            </div>
+                            <div class="modulo-hover">
+                                <p class="modulo-hover-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 modulo-wrap modulo-8">
+                    <div class="modulo-text">
+                        APROVECHAMIENTOS HIDROELECTRICOS DEL RIO SANTA CRUZ
+                    </div>
+                    <div class="modulo-hover">
+                        <p class="modulo-hover-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row modulo-row">
+                <div class="col-md-4 modulo-wrap modulo-9">
+                    <div class="modulo-text">
+                        EL RIO SANTA CRUZ EN NUMEROS
+                    </div>
+                    <div class="modulo-hover">
+                        <p class="modulo-hover-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 modulo-wrap modulo-10">
+                    <div class="modulo-text">
+                        PLAN DE GESTION AMBIENTAL<br />
+                        (PGA - AHRSC)
+                    </div>
+                    <div class="modulo-hover">
+                        <p class="modulo-hover-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 modulo-wrap modulo-11">
+                    <div class="modulo-text">
+                        SIT SANTA CRUZ
+                    </div>
+                    <div class="modulo-hover">
+                        <p class="modulo-hover-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-md-3 side-right">
             <div class="row">
-                <div class="col-md-12 link-1">6</div>
-                <div class="col-md-12 link-2">7</div>
-                <div class="col-md-12 link-3">8</div>
-                <div class="col-md-12 link-4">9</div>
+                <div class="col-md-12 link-1">1</div>
+                <div class="col-md-12 link-2">2</div>
+                <div class="col-md-12 link-3">3</div>
+                <div class="col-md-12 link-4">4</div>
             </div>
         </div>
     </div>
 
     <div class="row footer">
-        <div class="col-md-3 themed-grid-col" style="padding: 10px;">
+        <div class="col-md-3" style="padding: 10px;">
             <img src="./images/logo-footer.jpg" style="width: 100%; max-width: 250px; height: auto;" />
         </div>
-        <div class="col-md-3 themed-grid-col" style="font-size: .9em; padding: 10px;">
+        <div class="col-md-3" style="font-size: .9em; padding: 10px;">
+            <b>TELEFONO</b><br />
+            (+54 11) 5276-4050 INT: 127<br />
+            <br />
             <b>DIRECCION</b><br />
             AV. PASEO COLON 505 PISO 6,<br />
             CIUDAD DE BUENOS AIRES, ARGENTINA
         </div>
-        <div class="col-md-3 themed-grid-col" style="font-size: .9em; padding: 10px;">
-            <b>TELEFONO</b><br />
-            (+54 11) 5276-4050 INT: 127
+        <div class="col-md-3" style="font-size: .9em; padding: 10px;">
         </div>
         <div class="col-md-3 social-media" style="padding: 10px;">
             <a href="#" class="fab fa-facebook-f"></a>
