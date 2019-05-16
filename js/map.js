@@ -116,9 +116,15 @@ function ol_map() {
 		
 		$(".popup-header-button-toggleable").on("click",function() {
 			
+			var thistar = this.getAttribute("data-target");
+			
 			$(this).closest(".nav").find(".popup-header-button-toggleable").not(this).removeClass("popup-header-button-active");
 			
 			$(this).addClass("popup-header-button-active");
+			
+			$(".geovisor-toggleable-content").removeClass("geovisor-toggleable-content-active");
+			
+			$(thistar).addClass("geovisor-toggleable-content-active");
 			
 		});
 		
@@ -132,7 +138,11 @@ function ol_map() {
 				
 				$(this).find(".popup-panel-tree-item-icon-toggler").removeClass("fa-minus-circle").addClass("fa-plus-circle");
 				
-				$(this).next(".popup-panel-tree-item-subpanel").slideToggle("slow");
+				$(this).next(".popup-panel-tree-item-subpanel").slideToggle("slow",function() {					
+					
+					scrollbars.redrawElement("#scrollbar-content-basic-2");
+					
+				});
 				
 				this.parentNode.setAttribute("data-state",0);
 				
@@ -144,7 +154,11 @@ function ol_map() {
 				
 				$(this).find(".popup-panel-tree-item-icon-toggler").removeClass("fa-plus-circle").addClass("fa-minus-circle");
 				
-				$(this).next(".popup-panel-tree-item-subpanel").slideToggle("slow");
+				$(this).next(".popup-panel-tree-item-subpanel").slideToggle("slow",function() {					
+					
+					scrollbars.redrawElement("#scrollbar-content-basic-2");
+					
+				});
 				
 				this.parentNode.setAttribute("data-state",1);
 				
