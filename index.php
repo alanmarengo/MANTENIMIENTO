@@ -139,7 +139,11 @@
                     </div>
                     <div class="modulo-hover">
                         <p class="modulo-hover-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                            Mapa de proyectos, obras en construcción y operación de IEASAA
+                            <br />
+                            <a href="#" class="modulo-hover-icon">
+                                <i class="fa fa-plus-circle fa-2x"></i>
+                            </a>
                         </p>
                     </div>
                 </div>
@@ -150,7 +154,10 @@
                     </div>
                     <div class="modulo-hover">
                         <p class="modulo-hover-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                            Ámbito de estudio y evaluación de la información estratégica de los AHRSC desde el punto de vista ambiental y del proyecto. Proporciona distintos instrumentos que facilitan el acceso y la divulgación pública del conocimiento para la implementación de una gestión sostenible                            <br />
+                            <a href="#" class="modulo-hover-icon">
+                                <i class="fa fa-plus-circle fa-2x"></i>
+                            </a>
                         </p>
                     </div>
                 </div>
@@ -164,6 +171,10 @@
                     <div class="modulo-hover">
                         <p class="modulo-hover-text">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                            <br />
+                            <a href="#" class="modulo-hover-icon">
+                                <i class="fa fa-plus-circle fa-2x"></i>
+                            </a>
                         </p>
                     </div>
                 </div>
@@ -177,6 +188,10 @@
                             <div class="modulo-hover">
                                 <p class="modulo-hover-text">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                                    <br />
+                                    <a href="#" class="modulo-hover-icon">
+                                        <i class="fa fa-plus-circle fa-2x"></i>
+                                    </a>
                                 </p>
                             </div>
                         </div>
@@ -188,6 +203,10 @@
                             <div class="modulo-hover">
                                 <p class="modulo-hover-text">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                                    <br />
+                                    <a href="#" class="modulo-hover-icon">
+                                        <i class="fa fa-plus-circle fa-2x"></i>
+                                    </a>
                                 </p>
                             </div>
                         </div>
@@ -205,6 +224,10 @@
                             <div class="modulo-hover">
                                 <p class="modulo-hover-text">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                                    <br />
+                                    <a href="#" class="modulo-hover-icon">
+                                        <i class="fa fa-plus-circle fa-2x"></i>
+                                    </a>
                                 </p>
                             </div>
                         </div>
@@ -216,6 +239,10 @@
                             <div class="modulo-hover">
                                 <p class="modulo-hover-text">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                                    <br />
+                                    <a href="#" class="modulo-hover-icon">
+                                        <i class="fa fa-plus-circle fa-2x"></i>
+                                    </a>
                                 </p>
                             </div>
                         </div>
@@ -229,6 +256,10 @@
                     <div class="modulo-hover">
                         <p class="modulo-hover-text">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                            <br />
+                            <a href="#" class="modulo-hover-icon">
+                                <i class="fa fa-plus-circle fa-2x"></i>
+                            </a>
                         </p>
                     </div>
                 </div>
@@ -242,6 +273,10 @@
                     <div class="modulo-hover">
                         <p class="modulo-hover-text">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                            <br />
+                            <a href="#" class="modulo-hover-icon">
+                                <i class="fa fa-plus-circle fa-2x"></i>
+                            </a>
                         </p>
                     </div>
                 </div>
@@ -254,6 +289,10 @@
                     <div class="modulo-hover">
                         <p class="modulo-hover-text">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                            <br />
+                            <a href="#" class="modulo-hover-icon">
+                                <i class="fa fa-plus-circle fa-2x"></i>
+                            </a>
                         </p>
                     </div>
                 </div>
@@ -265,6 +304,10 @@
                     <div class="modulo-hover">
                         <p class="modulo-hover-text">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                            <br />
+                            <a href="#" class="modulo-hover-icon">
+                                <i class="fa fa-plus-circle fa-2x"></i>
+                            </a>
                         </p>
                     </div>
                 </div>
@@ -303,6 +346,19 @@
 
 
 </div>
+
+    <script type='text/javascript'>
+        $(document).ready(function () {
+            $('.modulo-wrap').hover( 
+                function () {
+                    $(this).find('.modulo-text').hide();
+                },
+                function () {
+                    $(this).find('.modulo-text').show();
+                }
+            )
+        });
+    </script>
 </body>
 
 </html>
