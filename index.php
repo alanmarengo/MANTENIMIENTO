@@ -139,7 +139,7 @@
                     </div>
                     <div class="modulo-hover">
                         <p class="modulo-hover-text">
-                            Mapa de proyectos, obras en construcción y operación de IEASAA
+                            Mapa de proyectos, obras en construcción y operación de IEASA.
                             <br />
                             <a href="#" class="modulo-hover-icon">
                                 <i class="fa fa-plus-circle fa-2x"></i>
@@ -154,7 +154,8 @@
                     </div>
                     <div class="modulo-hover">
                         <p class="modulo-hover-text">
-                            Ámbito de estudio y evaluación de la información estratégica de los AHRSC desde el punto de vista ambiental y del proyecto. Proporciona distintos instrumentos que facilitan el acceso y la divulgación pública del conocimiento para la implementación de una gestión sostenible                            <br />
+                            Ámbito de estudio y evaluación de la información estratégica de los AHRSC desde el punto de vista ambiental y del proyecto. Proporciona distintos instrumentos que facilitan el acceso y la divulgación pública del conocimiento para la implementación de una gestión sostenible.
+                            <br />
                             <a href="#" class="modulo-hover-icon">
                                 <i class="fa fa-plus-circle fa-2x"></i>
                             </a>
@@ -170,7 +171,7 @@
                     </div>
                     <div class="modulo-hover">
                         <p class="modulo-hover-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                            Permite realizar el seguimiento de parámetros y variables de los programas del Plan de Gestión Ambiental (PGA) de los Aprovechamientos del Río Santa Cruz para comprender los fenómenos ambientales y territoriales.
                             <br />
                             <a href="#" class="modulo-hover-icon">
                                 <i class="fa fa-plus-circle fa-2x"></i>
@@ -187,7 +188,7 @@
                             </div>
                             <div class="modulo-hover">
                                 <p class="modulo-hover-text">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                                    Acciones de prevención de riesgos del trabajo.
                                     <br />
                                     <a href="#" class="modulo-hover-icon">
                                         <i class="fa fa-plus-circle fa-2x"></i>
@@ -202,7 +203,7 @@
                             </div>
                             <div class="modulo-hover">
                                 <p class="modulo-hover-text">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                                    Accedé al Plan de Gestión de Calidad  de las obras.
                                     <br />
                                     <a href="#" class="modulo-hover-icon">
                                         <i class="fa fa-plus-circle fa-2x"></i>
@@ -223,7 +224,7 @@
                             </div>
                             <div class="modulo-hover">
                                 <p class="modulo-hover-text">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                                    Acciones de comunicación, relación con actores sociales y participación comunitaria.
                                     <br />
                                     <a href="#" class="modulo-hover-icon">
                                         <i class="fa fa-plus-circle fa-2x"></i>
@@ -238,8 +239,6 @@
                             </div>
                             <div class="modulo-hover">
                                 <p class="modulo-hover-text">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
-                                    <br />
                                     <a href="#" class="modulo-hover-icon">
                                         <i class="fa fa-plus-circle fa-2x"></i>
                                     </a>
@@ -255,7 +254,7 @@
                     </div>
                     <div class="modulo-hover">
                         <p class="modulo-hover-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                            Ingresá a la información del proyecto de las presas Cóndor Cliff (CC) y La Barrancosa (LB), que proveerán electricidad al Sistema Argentino de Interconexión (SADI).
                             <br />
                             <a href="#" class="modulo-hover-icon">
                                 <i class="fa fa-plus-circle fa-2x"></i>
@@ -272,7 +271,7 @@
                     </div>
                     <div class="modulo-hover">
                         <p class="modulo-hover-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                            Encontrá y visualizá información sobre recursos hídricos, modelos, información hidrometeorológica, sedimentológica e hidroambiental del río Santa (...)
                             <br />
                             <a href="#" class="modulo-hover-icon">
                                 <i class="fa fa-plus-circle fa-2x"></i>
@@ -288,7 +287,7 @@
                     </div>
                     <div class="modulo-hover">
                         <p class="modulo-hover-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                            Facilita el seguimiento de las acciones que brindan sostenibilidad al proyecto en sus distintas etapas. Planifica y ejecuta monitoreos sistemáticos para  el estudio de la evolución del ambiente.
                             <br />
                             <a href="#" class="modulo-hover-icon">
                                 <i class="fa fa-plus-circle fa-2x"></i>
@@ -303,7 +302,7 @@
                     </div>
                     <div class="modulo-hover">
                         <p class="modulo-hover-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium, dui et iaculis tempus, tortor nunc faucibus massa, convallis porta.
+                            Información espacial de la provincia de Santa Cruz, orientada a la gestión, análisis y ajuste de políticas en campos específicos de interés para la administración pública (...)
                             <br />
                             <a href="#" class="modulo-hover-icon">
                                 <i class="fa fa-plus-circle fa-2x"></i>
