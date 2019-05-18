@@ -79,7 +79,7 @@
 
 
 <div id="page_index">
-    <div id="main-slider" class="carousel slide" data-ride="carousel">
+    <div id="main-slider" class="carousel slide" data-ride="carousel" data-interval="3000">
         <ol class="carousel-indicators">
             <li data-target="#main-slider" data-slide-to="0" class="active"></li>
             <li data-target="#main-slider" data-slide-to="1"></li>
@@ -314,10 +314,46 @@
         </div>
         <div class="col-md-3 side-right">
             <div class="row">
-                <div class="col-md-12 link-1">1</div>
-                <div class="col-md-12 link-2">2</div>
-                <div class="col-md-12 link-3">3</div>
-                <div class="col-md-12 link-4">4</div>
+                <div class="col-md-12 link-wrap link-1">
+                    <div class="link-text">
+                        RECURSOS EN MEDIATECA
+                    </div>
+                    <div class="link-hover">
+                        <p class="link-hover-text">
+                        Accedé a informes, materiales audiovisuales, gráficos, información geográfica y datos estadísticos
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-12 link-wrap link-2">
+                    <div class="link-text">
+                        HERRAMIENTAS GEOGRÁFICAS
+                    </div>
+                    <div class="link-hover">
+                        <p class="link-hover-text">
+                        Accedé a la información georreferenciada para realizar consultas y gestionar datos en geovisores 
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-12 link-wrap link-3">
+                    <div class="link-text">
+                        INDICADORES
+                    </div>
+                    <div class="link-hover">
+                        <p class="link-hover-text">
+                        Accedé a paneles de indicadores desarrollados para el seguimiento de los proyectos y el análisis ambiental
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-12 link-wrap link-4">
+                    <div class="link-text">
+                        ESTADÍSTICAS
+                    </div>
+                    <div class="link-hover">
+                        <p class="link-hover-text">
+                        Accedé a los datos generados en el desarrollo de los proyectos para su consulta y tratamiento
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -327,6 +363,9 @@
             <img src="./images/logo-footer.jpg" style="width: 100%; max-width: 250px; height: auto;" />
         </div>
         <div class="col-md-3" style="font-size: .9em; padding: 10px;">
+            <b>CONTACTO</b>
+            <br />
+            <br />
             <b>TELEFONO</b><br />
             (+54 11) 5276-4050 INT: 127<br />
             <br />
@@ -335,6 +374,9 @@
             CIUDAD DE BUENOS AIRES, ARGENTINA
         </div>
         <div class="col-md-3" style="font-size: .9em; padding: 10px;">
+            <b>ENLACES</b>
+            <br />
+            <br />
         </div>
         <div class="col-md-3 social-media" style="padding: 10px;">
             <a href="#" class="fab fa-facebook-f"></a>
@@ -354,6 +396,14 @@
                 },
                 function () {
                     $(this).find('.modulo-text').show();
+                }
+            )
+            $('.link-wrap').hover( 
+                function () {
+                    $(this).find('.link-text').hide();
+                },
+                function () {
+                    $(this).find('.link-text').show();
                 }
             )
         });

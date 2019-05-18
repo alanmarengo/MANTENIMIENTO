@@ -1,7 +1,6 @@
 html,
 body {
     height: 100%;
-    min-width: 640px;
     background-color: #333333 !important;
     font-family: 'Gotham Book', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -212,16 +211,16 @@ body {
         margin-top: 1em;
     }
     
-    .modulo-wrap:hover .modulo-hover {
-        visibility: visible;
-        opacity: 1;
-    }
-    
     .modulo-hover-text {
         text-align: center;
         padding: 1em 3em;
         transition: .2s;
         transform: translateX(-1em);
+    }
+    
+    .modulo-wrap:hover .modulo-hover {
+        visibility: visible;
+        opacity: 1;
     }
     
     .modulo-wrap:hover .modulo-hover-text {
@@ -292,29 +291,72 @@ body {
 
 
     .side-right {
-        padding: 10px 40px;
+        padding: 40px 60px 20px 40px;
 
+        .link-wrap {
+            position: relative;
+            background-color: #747474;
+            min-height: @modulo_height - 50px;
+            margin-bottom: 50px;
+        }
+
+        .link-text {
+            font-size: 1.2em;
+            font-weight: bolder;
+            padding: .5em .5em;
+            color: #fff;
+            position: relative;
+            float: left;
+            text-align: center;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%);        
+        }
+    
+        .link-hover {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #dedede;
+            color: #333;
+            visibility: hidden;
+            opacity: 0;
+            display: flex;
+            transition: opacity .2s, visibility .2s;
+            font-weight: bolder;
+        }
+        
+        .link-hover-text {
+            padding: 1em 1em;
+            transition: .2s;
+            transform: translateX(-1em);
+        }
+    
+        .link-wrap:hover .link-hover {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .link-wrap:hover .link-hover-text {
+            transform: translateX(0);
+        }
+        
         .link-1 {
-            background-color: #666;
-            min-height: @modulo_height - 20px;
-            margin-bottom: 10px;
+            box-shadow: 20px -20px 0px #fea91a;
         }
 
         .link-2 {
-            background-color: #666;
-            min-height: @modulo_height - 10px;
-            margin-bottom: 10px;
+            box-shadow: 20px -20px 0px #8e2f4f;
         }
 
         .link-3 {
-            background-color: #666;
-            min-height: @modulo_height - 10px;
-            margin-bottom: 10px;
+            box-shadow: 20px -20px 0px #585dc5;
         }
 
         .link-4 {
-            background-color: #666;
-            min-height: @modulo_height - 10px;
+            box-shadow: 20px -20px 0px #330033;
         }
     }
 }
@@ -323,6 +365,8 @@ body {
     padding: 1em 2em;
 
     .social-media {
+        text-align: center;
+
         .fab {
             color: #ccc;
             background: #222;
@@ -365,6 +409,14 @@ body {
 }
 
 
+@media (max-width: 768px) {
+    .side-right {
+        padding: 40px 60px 20px 40px;
+    }
 
+    .footer .social-media {
+        text-align: left;
+    }
+}
 
 
