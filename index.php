@@ -1,6 +1,4 @@
-<?php
-include 'header.php';
-?>
+<?php include("./header.php"); ?>
 
 <div id="page_index">
     <div id="main-slider" class="carousel slide" data-ride="carousel" data-interval="3000">
@@ -281,28 +279,27 @@ include 'header.php';
             </div>
         </div>
     </div>
+</div>
     
-    <script type='text/javascript'>
-        $(document).ready(function () {
-            $('.modulo-wrap').hover( 
-                function () {
-                    $(this).find('.modulo-text').hide();
-                },
-                function () {
-                    $(this).find('.modulo-text').show();
-                }
-            )
-            $('.link-wrap').hover( 
-                function () {
-                    $(this).find('.link-text').hide();
-                },
-                function () {
-                    $(this).find('.link-text').show();
-                }
-            )
-        });
-    </script>
+<script type='text/javascript'>
+    $(document).ready(function () {
+        $('.modulo-wrap').hover( 
+            function () {
+                $(this).find('.modulo-text').hide();
+            },
+            function () {
+                $(this).find('.modulo-text').show();
+            }
+        )
+        $('.link-wrap').hover( 
+            function () {
+                $(this).find('.link-text').hide();
+            },
+            function () {
+                $(this).find('.link-text').show();
+            }
+        )
+    });
+</script>
 
-<?php
-include 'footer.php';
-?>
+<?php include("./footer.php"); ?>
