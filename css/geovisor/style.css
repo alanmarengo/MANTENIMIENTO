@@ -1,0 +1,11 @@
+.geovisor-toggleable-content {
+	
+	display:none;
+	
+}
+
+.geovisor-toggleable-content-active {
+	
+	display:flex !important;
+	
+}
