@@ -15,6 +15,7 @@
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/popper-1.12.9.min.js"></script>
     <script src="./js/openlayers/ol.js" type="text/javascript"></script>
+    <script src="./js/site.js" type="text/javascript"></script>
     <script src="./js/map.js" type="text/javascript"></script>
 </head>
 
@@ -37,7 +38,7 @@
                 <li class="nav-item nav-item-search">
                     <a class="nav-link nav-item-button nav-link-button">
                         <i class="fa fa-search"></i>
-                        <input type="text" placeholder="Buscar en todo el sitio">
+                        <input id="main-search" name="main-search" type="text" placeholder="Buscar en todo el sitio">
                     </a>
                 </li>
                 <li class="nav-item">

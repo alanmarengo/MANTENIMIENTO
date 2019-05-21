@@ -6,12 +6,12 @@
             <b>CONTACTO</b>
             <br />
             <br />
-            <b>TELEFONO</b><br />
+            <b>TELÉFONO</b><br />
             (+54 11) 5276-4050 INT: 127<br />
             <br />
-            <b>DIRECCION</b><br />
-            AV. PASEO COLON 505 PISO 6,<br />
-            CIUDAD DE BUENOS AIRES, ARGENTINA
+            <b>DIRECCIÓN</b><br />
+            Av. Paseo Colón 505 Piso 6,<br />
+            Ciudad de Buenos Aires, Argentina
         </div>
         <div class="col-md-3" style="font-size: .9em; padding: 10px;">
             <b>ENLACES</b>

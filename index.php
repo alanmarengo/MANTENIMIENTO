@@ -1,7 +1,7 @@
 <?php include("./header.php"); ?>
 
 <div id="page_index">
-    <div id="main-slider" class="carousel slide" data-ride="carousel" data-interval="3000">
+    <div id="main-slider" class="carousel slide" data-ride="carousel" data-interval="300000">
         <ol class="carousel-indicators">
             <li data-target="#main-slider" data-slide-to="0" class="active"></li>
             <li data-target="#main-slider" data-slide-to="1"></li>
@@ -37,18 +37,20 @@
             <div class="carousel-item">
                 <img class="d-block w-100" src="./images/index/slide5.jpg" alt="...">
                 <div class="carousel-caption">
-                    <p>MISION DE IEASA</p>
+                    <p>MISIÓN DE IEASA</p>
                 </div>                
             </div>
         </div>
+
         <a class="carousel-control-prev" href="#main-slider" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
             <span class="sr-only">Anterior</span>
         </a>
         <a class="carousel-control-next" href="#main-slider" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
             <span class="sr-only">Siguiente</span>
         </a>
+
     </div>
 
     <div class="row">
@@ -121,7 +123,7 @@
                         <div class="col-md-12 modulo-wrap modulo-5">
                             <div class="modulo-opacity"></div>
                             <div class="modulo-text">
-                                PLAN DE GESTION DE CALIDAD
+                                PLAN DE GESTIÓN DE CALIDAD
                             </div>
                             <div class="modulo-hover">
                                 <p class="modulo-hover-text">
@@ -142,7 +144,7 @@
                         <div class="col-md-12 modulo-wrap modulo-6">
                             <div class="modulo-opacity"></div>
                             <div class="modulo-text">
-                                COMUNICACION Y GESTION PARTICIPATIVA
+                                COMUNICACIÓN Y GESTIÓN PARTICIPATIVA
                             </div>
                             <div class="modulo-hover">
                                 <p class="modulo-hover-text">
@@ -172,7 +174,7 @@
                 <div class="col-md-6 modulo-wrap modulo-8">
                     <div class="modulo-opacity"></div>
                     <div class="modulo-text">
-                        APROVECHAMIENTOS HIDROELECTRICOS DEL RIO SANTA CRUZ
+                        APROVECHAMIENTOS HIDROELÉCTRICOS DEL RÍO SANTA CRUZ
                     </div>
                     <div class="modulo-hover">
                         <p class="modulo-hover-text">
@@ -189,7 +191,7 @@
                 <div class="col-md-4 modulo-wrap modulo-9">
                     <div class="modulo-opacity"></div>
                     <div class="modulo-text">
-                        EL RIO SANTA CRUZ EN NUMEROS
+                        EL RÍO SANTA CRUZ EN NÚMEROS
                     </div>
                     <div class="modulo-hover">
                         <p class="modulo-hover-text">
@@ -204,7 +206,7 @@
                 <div class="col-md-4 modulo-wrap modulo-10">
                     <div class="modulo-opacity"></div>
                     <div class="modulo-text">
-                        PLAN DE GESTION AMBIENTAL<br />
+                        PLAN DE GESTIÓN AMBIENTAL<br />
                         (PGA - AHRSC)
                     </div>
                     <div class="modulo-hover">
@@ -266,7 +268,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-md-12 link-wrap link-4">
+                <div class="col-md-12 link-wrap link-4" style="margin-bottom: 0px!important;">
                     <div class="link-text">
                         ESTADÍSTICAS
                     </div>
