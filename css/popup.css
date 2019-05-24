@@ -7,7 +7,7 @@
 
 }
 
-.popup .col:not(.popup-header):not(.panel-tree):not(.col-popup), .popup .row {
+.popup-col, .popup-row {
 	
 	padding:0 !Important;
 	margin:0 !Important;
