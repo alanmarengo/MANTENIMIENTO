@@ -17,6 +17,45 @@
             <b>ENLACES</b>
             <br />
             <br />
+
+
+    <div id="footer-slider" class="carousel slide" data-ride="carousel" data-interval="3000">
+        <ol class="carousel-indicators">
+            <li data-target="#footer-slider" data-slide-to="0" class="active"></li>
+            <li data-target="#footer-slider" data-slide-to="1"></li>
+            <li data-target="#footer-slider" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <a href="#">- Integración Energética Argentina SA</a><br />
+                <a href="#">- Hidro Santa Cruz</a><br />
+                <a href="#">- Sec. de Gob. de  Ambiente y Desarrollo Sustentable - IDE </a><br />
+            </div>
+            <div class="carousel-item">
+                <a href="#">link 4</a><br />
+                <a href="#">link 5</a><br />
+                <a href="#">link 6</a><br />
+            </div>
+            <div class="carousel-item">
+                <a href="#">link 7</a><br />
+                <a href="#">link 8</a><br />
+                <a href="#">link 9</a><br />
+            </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#footer-slider" role="button" data-slide="prev">
+            <span><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#footer-slider" role="button" data-slide="next">
+            <span><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+            <span class="sr-only">Siguiente</span>
+        </a>
+
+    </div>
+
+
+
         </div>
         <div class="col-md-3 social-media" style="padding: 10px;">
             <a href="#" class="fab fa-facebook-f"></a>
