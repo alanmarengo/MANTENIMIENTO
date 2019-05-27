@@ -1,0 +1,32 @@
+.blue-button {
+	
+	background-color: #31cbfd;
+    color: #FFFFFF;
+    font-family: "Gotham bold";
+    font-size: 13px;
+    padding: 5px 10px;
+    border-radius: 3px;
+	width:100%;
+	height:100%;
+	text-align:center;
+	
+}
+
+.blue-button:hover {
+
+	text-decoration:none !Important;
+	color:#464542 !Important;	
+	background-color:#EFEFEF;
+	border:solid 1px #464542;
+	
+}
+
+.blue-button span {
+	
+	height:10px;
+	position:relative;
+	top:50%;
+	margin-top:-10px;
+	display:block;
+	
+}

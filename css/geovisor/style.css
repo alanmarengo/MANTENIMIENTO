@@ -1,11 +1,35 @@
 .geovisor-toggleable-content {
 	
 	display:none;
+	background:white !important;
 	
 }
 
 .geovisor-toggleable-content-active {
 	
 	display:flex !important;
+	
+}
+
+.geovisor-form-group .col {
+	
+	text-align:center !Important;
+	padding:10px 10px !Important;
+	
+}
+
+.geovisor-form-group input, .geovisor-form-group select {
+	
+	margin-left:3%;
+	width:85%;
+	border:none;
+	
+}
+
+.geovisor-form-group input[type=date] {
+	
+	margin-left:3%;
+	width:75%;
+	border:none;
 	
 }

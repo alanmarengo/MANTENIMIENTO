@@ -17,6 +17,7 @@
 	<link href="https://cdn.materialdesignicons.com/3.6.95/css/materialdesignicons.min.css" rel="stylesheet"> <!-- CHECKBOX FONTS -->
 	
 	<link rel="stylesheet" href="./css/perfect-scrollbar.css"/>
+	<link rel="stylesheet" href="./css/bootstrap-select.css"/>
 	    
 	<link rel="stylesheet" href="./css/bootstrapfix.navbar.css"/>	
 	<link rel="stylesheet" href="./css/map.css"/>
@@ -24,6 +25,9 @@
 	<link rel="stylesheet" href="./css/popup.css"/>
 	<link rel="stylesheet" href="./css/scrollbars.css"/>
 	<link rel="stylesheet" href="./css/geovisor/style.css"/>
+	<link rel="stylesheet" href="./css/geovisor/buttons.css"/>
+	<link rel="stylesheet" href="./css/geovisor/display.css"/>
+	<link rel="stylesheet" href="./css/geovisor/forms.css"/>
 	
 	<link rel="stylesheet" href="./js/openlayers/ol.css"/>
 	
@@ -161,10 +165,13 @@
 				
 	</style>	
 
-	<script src="./js/jquery-3.2.1.min.js"></script>
-	<script src="./js/bootstrap.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 	
 	<script src="./js/perfect-scrollbar.js"></script>
+	<script src="./js/bootstrap-select.js"></script>
+	<script src="./js/bootstrap-select-init.js"></script>
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 		
@@ -192,6 +199,8 @@
 			
 			scrollbars.updateSize();
 			scrollbars.create();
+			
+			$(".selectpicker").selectpicker();
 			
 		});
 		
@@ -347,8 +356,8 @@
 	
 	<div class="panel-arrow-container">
 		<div class="panel-arrow">
-			<a href="#" class="panel-arrow-link" data-state="1">
-				<img src="./images/panel.icon.arrow.1.png">
+			<a href="#" class="panel-arrow-link" data-state="0">
+				<img src="./images/panel.icon.arrow.0.png">
 			</a>
 		</div>
 	</div>
@@ -357,11 +366,11 @@
 
 <div class="popup" id="popup-busqueda">
 
-	<div class="row">
+	<div class="row popup-row">
 	
 		<div class="col col-popup mx-auto col-md-6 col-sm-12 col-xs-12">
 		
-			<div class="row">			
+			<div class="row popup-row">			
 				
 				<div class="col col-md-12 col-xs-12 popup-header">
 				
@@ -399,7 +408,6 @@
 			</div>
 		
 			<?php include("./geovisor.popup.basic.php"); ?>
-			<?php include("./geovisor.popup.search.php"); ?>
 		
 		</div>
 	
