@@ -14,6 +14,7 @@
                     </span>
                 </div>
             </div>
+            <div id="uxUrl"></div>
         </div>
         <div class="col-md-4">
         </div>
@@ -66,124 +67,15 @@
 <script type='text/javascript'>
 $(document).ready(function() {
     var model = {
+        apiUrl: '',
         filters: {
             orden: 0,
             searchText: '',
-            dateStart: '',
-            dateEnd: '',
-            groups: [{
-                    title: 'Documentos',
-                    collapsed: false,
-                    items: [{
-                            id: 1,
-                            label: 'Externos',
-                            checked: true
-                        },
-                        {
-                            id: 2,
-                            label: 'Proyecto',
-                            checked: false
-                        },
-                        {
-                            id: 3,
-                            label: 'Ambiente PGA',
-                            checked: false
-                        },
-                        {
-                            id: 4,
-                            label: 'Ambientes Complementarios',
-                            checked: false
-                        }
-                    ]
-                },
-                {
-                    title: 'Proyecto',
-                    collapsed: true,
-                    items: [
-                    {
-                        id: 1,
-                        label: 'item #1',
-                        checked: false
-                    }, 
-                    {
-                        id: 2,
-                        label: 'item #2',
-                        checked: false
-                    }, 
-                    {
-                        id: 3,
-                        label: 'item #3',
-                        checked: false
-                    }, 
-                    {
-                        id: 4,
-                        label: 'item #4',
-                        checked: false
-                    }, 
-                    {
-                        id: 5,
-                        label: 'item #5',
-                        checked: false
-                    }, 
-                    {
-                        id: 6,
-                        label: 'item #6',
-                        checked: false
-                    }, 
-                    ]
-                },
-                {
-                    title: 'Tema',
-                    collapsed: true,
-                    items: [{
-                        id: 1,
-                        label: 'item',
-                        checked: false
-                    }, ]
-                },
-                {
-                    title: 'Subtema',
-                    collapsed: true,
-                    items: [{
-                        id: 1,
-                        label: 'item',
-                        checked: false
-                    }, ]
-                },
-                {
-                    title: 'Temporada',
-                    collapsed: true,
-                    items: [{
-                        id: 1,
-                        label: 'item',
-                        checked: false
-                    }, ]
-                },
-            ]
+            dateStart: '', // USAR MOMENTJS
+            dateEnd: '', // USAR MOMENTJS
+            groups: null
         },
-        data: {
-            docs: [{
-                    id: 1,
-                    title: 'TITULO DEL DOCUMENTO 1',
-                    authors: 'autores',
-                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut pretium justo. Pellentesque pellentesque eu dolor et auctor. Phasellus dolor augue, sodales in vehicula a, feugiat suscipit velit. In hac habitasse platea dictumst. Nam vitae ultrices dolor. Donec facilisis, diam placerat sagittis iaculis, lacus mi convallis urna, sit amet elementum mi lacus non purus. Donec purus tellus, malesuada sed tempus a, scelerisque a ligula. Aliquam pulvinar urna a vehicula condimentum.'
-                },
-                {
-                    id: 2,
-                    title: 'TITULO DEL DOCUMENTO 2',
-                    authors: 'autores',
-                    description: 'Quisque mattis sagittis cursus. Fusce at maximus tellus. Phasellus et purus mauris. In rutrum aliquam feugiat. Curabitur quis ipsum id velit pretium ornare. Nulla in sollicitudin enim, quis consectetur diam. Etiam at orci pharetra, convallis lectus et, aliquet velit. Sed magna risus, consectetur et diam eu, varius condimentum ex.'
-                },
-                {
-                    id: 3,
-                    title: 'TITULO DEL DOCUMENTO 3',
-                    authors: 'autores',
-                    description: 'Curabitur enim est, imperdiet vel nulla ut, congue efficitur lorem. In et tempor leo. Phasellus suscipit nulla arcu, eu hendrerit libero tincidunt at. Sed sodales ultrices ante, non rutrum nunc iaculis quis. Aenean dignissim finibus augue maximus fermentum. Vestibulum vel turpis quis orci tempor fringilla eu quis sapien. Curabitur nec sem tincidunt, eleifend odio vitae, posuere quam.'
-                }
-            ],
-            medias: [],
-            techs: [],
-        }
+        data: null
     };
 
     init();
@@ -217,7 +109,7 @@ $(document).ready(function() {
         let index = $(this).data('group');
         let collapsed = $($(this).data('target')).hasClass('show');
         let group = model.filters.groups[index];
-        
+
         collapseAllGroups();
         group.collapsed = collapsed;
         groupsTitleRender();
@@ -231,23 +123,21 @@ $(document).ready(function() {
     //-----------------------------------------------------
     function init() {
         filtersLoad();
-
-        //encadenar
         dataLoad();
     }
 
     function filtersLoad() {
-        // ajax
-
-        // RENDER
+        // AJAX...
+        model.filters.groups = fakeFilters();
         filtersRender();
     }
 
     function dataLoad() {
-        // ajax
-
-        // RENDER
+        // AJAX...
+        model.data = fakeData();
         dataRender();
+
+        $('#uxUrl').html(makeUrlFilter());
     }
 
     function dataRender() {
@@ -326,9 +216,9 @@ $(document).ready(function() {
                     <div class="doc-authors">${doc.authors}</div>
                     <div class="doc-description">${doc.description}</div>
                     <div class="doc-links">
-                        <a href="#" class="btn btn-dark">RECURSOS AUDIOVISUALES</a>
-                        <a href="#" class="btn btn-dark">RECURSOS TECNICOS</a>
-                        <a href="#" class="btn btn-dark">RECURSOS ASOCIADOS</a>
+                        <a class="btn btn-dark">RECURSOS AUDIOVISUALES</a>
+                        <a class="btn btn-dark">RECURSOS TECNICOS</a>
+                        <a class="btn btn-dark">RECURSOS ASOCIADOS</a>
                     </div>
                 </div>
             `;
@@ -349,12 +239,159 @@ $(document).ready(function() {
         });
         return qty;
     }
-    
+
+    function idItemsChecked(group) {
+        let qs = '';
+        $.each(group.items, function(iindex, item) {
+            if (item.checked) {
+                qs += `${item.id}_`;
+            }
+        });
+        return qs;
+    }
+
     function groupsTitleRender() {
         $.each(model.filters.groups, function(gindex, group) {
-            let html = `${group.title} (${qtyItemsNotChecked(group)}) <i class="fa fa-${group.collapsed ? 'plus' : 'minus'}-circle"></i>`;
+            let html =
+                `${group.title} (${qtyItemsNotChecked(group)}) <i class="fa fa-${group.collapsed ? 'plus' : 'minus'}-circle"></i>`;
             $(`#group-${gindex}-title`).html(html);
         });
+    }
+
+    function makeUrlFilter() {
+        let params = { 
+            s: model.filters.searchText, 
+            o: model.filters.orden,
+            ds: moment('01/05/2019', 'DD/MM/YYYY').format('YYYYMMDD'),
+            de: moment('31/05/2019', 'DD/MM/YYYY').format('YYYYMMDD'),
+            g0: idItemsChecked(model.filters.groups[0]),
+            g1: idItemsChecked(model.filters.groups[1]),
+            g2: idItemsChecked(model.filters.groups[2]),
+            g3: idItemsChecked(model.filters.groups[3]),
+            g4: idItemsChecked(model.filters.groups[4]),
+        };
+        return jQuery.param(params);
+    }
+
+    function fakeFilters() {
+        return [{
+                title: 'Documentos',
+                collapsed: false,
+                items: [{
+                        id: 1,
+                        label: 'Externos',
+                        checked: true
+                    },
+                    {
+                        id: 2,
+                        label: 'Proyecto',
+                        checked: false
+                    },
+                    {
+                        id: 3,
+                        label: 'Ambiente PGA',
+                        checked: false
+                    },
+                    {
+                        id: 4,
+                        label: 'Ambientes Complementarios',
+                        checked: false
+                    }
+                ]
+            },
+            {
+                title: 'Proyecto',
+                collapsed: true,
+                items: [{
+                        id: 1,
+                        label: 'item #1',
+                        checked: false
+                    },
+                    {
+                        id: 2,
+                        label: 'item #2',
+                        checked: false
+                    },
+                    {
+                        id: 3,
+                        label: 'item #3',
+                        checked: false
+                    },
+                    {
+                        id: 4,
+                        label: 'item #4',
+                        checked: false
+                    },
+                    {
+                        id: 5,
+                        label: 'item #5',
+                        checked: false
+                    },
+                    {
+                        id: 6,
+                        label: 'item #6',
+                        checked: false
+                    },
+                ]
+            },
+            {
+                title: 'Tema',
+                collapsed: true,
+                items: [{
+                    id: 1,
+                    label: 'item',
+                    checked: false
+                }, ]
+            },
+            {
+                title: 'Subtema',
+                collapsed: true,
+                items: [{
+                    id: 1,
+                    label: 'item',
+                    checked: false
+                }, ]
+            },
+            {
+                title: 'Temporada',
+                collapsed: true,
+                items: [{
+                    id: 1,
+                    label: 'item',
+                    checked: false
+                }, ]
+            },
+        ];
+    }
+
+    function fakeData() {
+        return {
+            docs: fakeDocs(),
+            medias: [],
+            techs: [],
+        }
+    }
+
+    function fakeDocs() {
+        return [{
+                id: 1,
+                title: 'TITULO DEL DOCUMENTO 1',
+                authors: 'autores',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut pretium justo. Pellentesque pellentesque eu dolor et auctor. Phasellus dolor augue, sodales in vehicula a, feugiat suscipit velit. In hac habitasse platea dictumst. Nam vitae ultrices dolor. Donec facilisis, diam placerat sagittis iaculis, lacus mi convallis urna, sit amet elementum mi lacus non purus. Donec purus tellus, malesuada sed tempus a, scelerisque a ligula. Aliquam pulvinar urna a vehicula condimentum.'
+            },
+            {
+                id: 2,
+                title: 'TITULO DEL DOCUMENTO 2',
+                authors: 'autores',
+                description: 'Quisque mattis sagittis cursus. Fusce at maximus tellus. Phasellus et purus mauris. In rutrum aliquam feugiat. Curabitur quis ipsum id velit pretium ornare. Nulla in sollicitudin enim, quis consectetur diam. Etiam at orci pharetra, convallis lectus et, aliquet velit. Sed magna risus, consectetur et diam eu, varius condimentum ex.'
+            },
+            {
+                id: 3,
+                title: 'TITULO DEL DOCUMENTO 3',
+                authors: 'autores',
+                description: 'Curabitur enim est, imperdiet vel nulla ut, congue efficitur lorem. In et tempor leo. Phasellus suscipit nulla arcu, eu hendrerit libero tincidunt at. Sed sodales ultrices ante, non rutrum nunc iaculis quis. Aenean dignissim finibus augue maximus fermentum. Vestibulum vel turpis quis orci tempor fringilla eu quis sapien. Curabitur nec sem tincidunt, eleifend odio vitae, posuere quam.'
+            }
+        ];
     }
 });
 </script>
