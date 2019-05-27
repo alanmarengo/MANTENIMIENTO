@@ -152,10 +152,6 @@ body {
     
 }
 
-
-
-
-
 #page_index {
     @carousel_height: 400px;
     @modulo_height: 300px;
@@ -399,6 +395,123 @@ body {
         }
     }
 }
+
+#page_mediateca {
+    background-color: #fff;
+
+    .page-title {
+        background-color: #000;
+        padding: 10px 30px;
+        color: #fff;
+        font-size: 1.4em;
+
+    }
+
+    .page-search {
+        background-color: #ddd;
+        padding: 30px 30px 10px 30px;
+
+    }
+
+    .nav-tabs {
+        background-color: #ddd;
+
+        .nav-link {
+            background-color: #fff;
+            margin-left: 10px;
+            font-weight: bolder;
+            padding: 10px 30px;
+        }
+
+        .active {
+            background-color: #bbb;
+        }
+    }
+    
+    #uxFiltersChecked {
+        padding: 10px 0px; 
+
+        .btn {
+            margin-bottom: 4px;
+        }
+    }
+
+    .filters-header {
+        padding: 10px 20px ; 
+        font-weight: bolder;
+        color: #fea91a;
+    }
+
+    #uxFilters {
+        padding: 0px 0px 10px 10px; 
+
+        .card {
+            border: none;
+        }
+
+        .card-header {
+            padding: 0px;
+            background-color: #fff;
+            border-top: 1px solid #f0f0f0!important;
+            border-bottom: 1px solid #f0f0f0!important;
+        }
+
+        .card-body {
+            padding: 0px;
+        } 
+    
+        .group-title {
+            font-weight: bolder;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .filters-group-item {
+            margin: 0px;
+            padding: 4px 14px 8px 14px;
+        }
+
+        .list-group-item {
+            border: none;
+            border-bottom: solid 1px #ccc;
+        }
+
+        .list-group-item-action {
+            border: none;
+        }
+    }
+
+    .doc {
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        .doc-icon {
+            height: 40px;
+            width: auto;
+        }
+
+        .doc-authors {
+            font-weight: bolder;
+            padding: 10px 0px;
+        }
+
+        .doc-title {
+            font-size: 1.2em;
+            font-weight: bolder;
+        }
+
+        .doc-links {
+            padding-top: 20px;
+
+            .btn:hover {
+                border-color: #fea91a;
+                background-color: #fea91a;
+            }
+        }
+    }
+
+}
+
 
 .footer {
     @carousel_height: 200px;
