@@ -6,7 +6,7 @@
 		
 		<div class="popup-panel-tree">			
 		
-			<div id="popup-panel-section-1">
+			<div id="popup-panel-section-1" class="geovisor-toggleable-content block">
 			
 				<div class="popup-panel-tree-header">
 					<div class="pretty p-icon p-rotate">
