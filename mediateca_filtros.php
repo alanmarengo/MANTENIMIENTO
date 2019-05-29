@@ -37,8 +37,8 @@ $recordset = pg_query($conn,$SQL);
 function draw_tupla($row)
 {
        echo '{';
-       echo '"filtro_nombre":"'.$row[1].'",';
-       echo '"filtro_id":"'.$row[0].'",';
+       echo '"filtro_nombre":"'.$row[0].'",';
+       echo '"filtro_id":"'.$row[1].'",';
        echo '"valor_id":"'.$row[2].'",';
        echo '"valor_desc":"'.$row[3].'",';
        echo '"parent_filtro_id":"'.$row[4].'",';
