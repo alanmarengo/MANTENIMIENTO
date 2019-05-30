@@ -1,4 +1,4 @@
-<div class="row popup-row geovisor-toggleable-content" id="geovisor-popup-search">				
+<div class="row geovisor-toggleable-content" id="geovisor-popup-search">				
 				
 	<div class="col col-md-12 col-sm-12 col-xs-12 geovisor-form-group">
 		

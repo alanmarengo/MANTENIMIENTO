@@ -122,9 +122,27 @@ function ol_map() {
 			
 			$(this).addClass("popup-header-button-active");
 			
-			$(".geovisor-toggleable-content").removeClass("geovisor-toggleable-content-active");
+		});
+		
+		$("#btn-popup-basic").on("click",function() {
 			
-			$(thistar).addClass("geovisor-toggleable-content-active");
+			$("#geovisor-popup-search").slideUp();
+			$("#popup-panel-section-1").slideDown();
+			$("#scrollbar-content-basic-2").css("height","160px");
+			$("#scrollbar-content-basic-3").css("height","430px");
+			scrollbars.redrawElement("#scrollbar-content-basic-2");
+			scrollbars.redrawElement("#scrollbar-content-basic-3");
+			
+		});
+		
+		$("#btn-popup-advanced").on("click",function() {
+			
+			$("#geovisor-popup-search").slideDown();
+			$("#popup-panel-section-1").slideUp();
+			$("#scrollbar-content-basic-2").css("height","260px");
+			$("#scrollbar-content-basic-3").css("height","300px");
+			scrollbars.redrawElement("#scrollbar-content-basic-2");
+			scrollbars.redrawElement("#scrollbar-content-basic-3");
 			
 		});
 		
