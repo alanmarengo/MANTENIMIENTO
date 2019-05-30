@@ -29,7 +29,7 @@
             </span>
         </button>
 
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="./index.php">
             Observatorio
             <img src="./images/ieasa_logo.png" id="logo_ieasa" height="30">
         </a>
