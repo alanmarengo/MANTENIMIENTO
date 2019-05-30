@@ -5,19 +5,36 @@
         Recursos en Mediateca
     </div>
     <div class="col-md-12 page-search">
-        <div class="col-md-6">
-            <div class="input-group mb-3">
-                <input id="uxSearchText" name="uxSearchText" type="text" class="form-control">
-                <div class="input-group-append">
-                    <span class="input-group-text" id="uxSearchButton">
-                        <i class="fa fa-search"></i>
-                    </span>
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="input-group mb-3">
+                    <input id="uxSearchText" name="uxSearchText" type="text" class="form-control">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="uxSearchButton">
+                            <i class="fa fa-search"></i>
+                        </span>
+                    </div>
+                </div>
+                <div id="uxUrl"></div>
+            </div>
+            <div class="col-md-6" style="display: flex; flex-flow: row wrap; align-items: right;">
+                <label style="line-height: 40px; padding-right: 6px;">Ordenar por:</label>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        A - Z
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">A - Z</a>
+                        <a class="dropdown-item" href="#">Z - A</a>
+                        <a class="dropdown-item" href="#">Mas visitados</a>
+                    </div>
                 </div>
             </div>
-            <div id="uxUrl"></div>
+
         </div>
-        <div class="col-md-4">
-        </div>
+
     </div>
     <div class="col-md-12 page-tabs">
         <ul class="nav nav-tabs" id="uxTabs" role="tablist">
@@ -67,13 +84,13 @@
 <script type='text/javascript'>
 $(document).ready(function() {
     var model = {
-        apiUrl: '',
+        apiUrlBase: 'http://observatorio.atic.com.ar',
         filters: {
             orden: 0,
             searchText: '',
             dateStart: '', // USAR MOMENTJS
             dateEnd: '', // USAR MOMENTJS
-            groups: null
+            groups: initFiltersGroups()
         },
         data: null
     };
@@ -127,9 +144,21 @@ $(document).ready(function() {
     }
 
     function filtersLoad() {
-        // AJAX...
-        model.filters.groups = fakeFilters();
-        filtersRender();
+        model.filters.groups = initFiltersGroups();
+
+        $.getJSON(model.apiUrlBase + '/mediateca_filtros.php', function(data) {
+            $.each(data, function(index, value) {
+                let gindex = value.filtro_id;
+                model.filters.groups[gindex].items.push(
+                    {
+                        id: value.valor_id,
+                        label: value.valor_desc,
+                        checked: false
+                    }
+                );
+            });
+            filtersRender();
+        });
     }
 
     function dataLoad() {
@@ -244,9 +273,13 @@ $(document).ready(function() {
         let qs = '';
         $.each(group.items, function(iindex, item) {
             if (item.checked) {
-                qs += `${item.id}_`;
+                qs += item.id + ',';
             }
         });
+
+        if (qs != '')
+            qs = qs.substr(0, qs.length - 1);
+
         return qs;
     }
 
@@ -259,18 +292,42 @@ $(document).ready(function() {
     }
 
     function makeUrlFilter() {
-        let params = { 
-            s: model.filters.searchText, 
+        let params = {
+            s: model.filters.searchText,
             o: model.filters.orden,
-            ds: moment('01/05/2019', 'DD/MM/YYYY').format('YYYYMMDD'),
-            de: moment('31/05/2019', 'DD/MM/YYYY').format('YYYYMMDD'),
+            ds: moment('01/05/2019', 'DD/MM/YYYY').format('DD/MM/YYYY'),
+            de: moment('31/05/2019', 'DD/MM/YYYY').format('DD/MM/YYYY'),
             g0: idItemsChecked(model.filters.groups[0]),
             g1: idItemsChecked(model.filters.groups[1]),
             g2: idItemsChecked(model.filters.groups[2]),
             g3: idItemsChecked(model.filters.groups[3]),
-            g4: idItemsChecked(model.filters.groups[4]),
         };
         return jQuery.param(params);
+    }
+
+    function initFiltersGroups() {
+        return [
+            {
+                title: 'Documentos',
+                collapsed: false,
+                items: []
+            },
+            {
+                title: 'Proyecto',
+                collapsed: true,
+                items: []
+            },
+            {
+                title: 'Tema',
+                collapsed: true,
+                items: []
+            },
+            {
+                title: 'Subtema',
+                collapsed: true,
+                items: []
+            },
+        ];
     }
 
     function fakeFilters() {
