@@ -238,7 +238,7 @@
         </div>
         <div class="col-md-3 side-right">
             <div class="row">
-                <div class="col-md-12 link-wrap link-1">
+                <a href="./mediateca.php" class="col-md-12 link-wrap link-1">
                     <div class="link-text">
                         RECURSOS EN MEDIATECA
                     </div>
@@ -247,7 +247,7 @@
                         Accedé a informes, materiales audiovisuales, gráficos, información geográfica y datos estadísticos
                         </p>
                     </div>
-                </div>
+                </a>
                 <div class="col-md-12 link-wrap link-2">
                     <div class="link-text">
                         HERRAMIENTAS GEOGRÁFICAS
