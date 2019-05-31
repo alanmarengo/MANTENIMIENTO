@@ -9,10 +9,15 @@
     <link rel="stylesheet" type="text/css" href="./fonts/gotham/gotham.css"/>
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="./css/bootstrapfix.navbar.css" />
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap-datepicker.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap-select.css" />
     <link rel="stylesheet" type="text/css" href="./css/site.css" />
 
     <script src="./js/jquery-3.2.1.min.js"></script>
     <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/bootstrap-datepicker.min.js"></script>
+    <script src="./js/bootstrap-datepicker.es.min.js"></script>
+    <script src="./js/bootstrap-select.js"></script>
     <script src="./js/popper-1.12.9.min.js"></script>
     <script src="./js/openlayers/ol.js" type="text/javascript"></script>
     <script src="./js/moment.js"></script>

@@ -18,23 +18,15 @@
                 </div>
                 <div id="uxUrl"></div>
             </div>
-            <div class="col-md-6" style="display: flex; flex-flow: row wrap; align-items: right;">
-                <label style="line-height: 40px; padding-right: 6px;">Ordenar por:</label>
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        A - Z
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">A - Z</a>
-                        <a class="dropdown-item" href="#">Z - A</a>
-                        <a class="dropdown-item" href="#">Mas visitados</a>
-                    </div>
-                </div>
+
+            <div class="col-md-6 text-right">
+                <select id="uxOrden" class="selectpicker">
+                    <option value="0">A - Z</option>
+                    <option value="1">Z - A</option>
+                    <option value="2">Más vistos</option>
+                </select>
             </div>
-
         </div>
-
     </div>
     <div class="col-md-12 page-tabs">
         <ul class="nav nav-tabs" id="uxTabs" role="tablist">
@@ -61,6 +53,26 @@
                     <div class="col-md-3">
                         <div class="filters-header">Refina sus resultados</div>
                         <div id="uxFilters"></div>
+
+                        <div class="row">
+                            <div class="col-md-4" style="padding-left: 46px; padding-top: 6px;">Desde:</div>
+                            <div class="input-group col-md-8">
+                                <input id="uxDesde" type="text" class="form-control date">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4" style="padding-left: 46px; padding-top: 6px">Hasta:</div>
+                            <div class="input-group col-md-8">
+                                <input id="uxHasta" type="text" class="form-control date">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-md-9">
                         <div id="uxFiltersChecked"></div>
@@ -85,6 +97,7 @@
 $(document).ready(function() {
     var model = {
         apiUrlBase: 'http://observatorio.atic.com.ar',
+        tab: 0,
         filters: {
             orden: 0,
             searchText: '',
@@ -96,6 +109,12 @@ $(document).ready(function() {
     };
 
     init();
+
+    $('.date').datepicker({
+        format: "dd/mm/yyyy",
+        language: "es",
+        autoclose: true
+    });
 
     // TEXT SEARCH
     $('#uxSearchButton').on('click', function() {
@@ -113,7 +132,7 @@ $(document).ready(function() {
     });
 
     // ADD FILTER
-    $('#uxFilters').on('click', '.filters-group-item', function() {
+    $('#uxFilters').on('click', '.filters-group-item', function(e) {
         let group = $(this).data('group');
         let item = $(this).data('item');
         model.filters.groups[group].items[item].checked = true;
@@ -132,6 +151,23 @@ $(document).ready(function() {
         groupsTitleRender();
     });
 
+    // FECHA DESDE
+    $('#uxDesde').on('change', function() {
+        model.filters.dateStart = $('#uxDesde').val();
+        dataLoad()
+    });
+
+    // FECHA HASTA
+    $('#uxHasta').on('change', function() {
+        model.filters.dateEnd = $('#uxHasta').val();
+        dataLoad()
+    });
+
+    // ORDEN
+    $('#uxOrden').on('change', function() {
+        model.filters.orden = $('#uxOrden').val();
+        dataLoad()
+    });
 
 
 
@@ -149,13 +185,11 @@ $(document).ready(function() {
         $.getJSON(model.apiUrlBase + '/mediateca_filtros.php', function(data) {
             $.each(data, function(index, value) {
                 let gindex = value.filtro_id;
-                model.filters.groups[gindex].items.push(
-                    {
-                        id: value.valor_id,
-                        label: value.valor_desc,
-                        checked: false
-                    }
-                );
+                model.filters.groups[gindex].items.push({
+                    id: value.valor_id,
+                    label: value.valor_desc,
+                    checked: false
+                });
             });
             filtersRender();
         });
@@ -192,15 +226,17 @@ $(document).ready(function() {
 
                     <div id="group-${gindex}-body" class="collapse ${group.collapsed ? '' : 'show'}"
                         data-parent="#uxFilters">
-                        <div class="card-body">
+                        <div class="card-body group-container-items" style="max-height: 14em; overflow-y: scroll;">
                             <ul class="list-group">
             `;
 
             $.each(group.items, function(iindex, item) {
                 if (!item.checked) {
                     html += `
-                        <button type="button" class="filters-group-item list-group-item list-group-item-action" data-group="${gindex}" data-item="${iindex}">${item.label}</button>
-                    `
+                        <button type="button" class="filters-group-item list-group-item list-group-item-action" 
+                            data-group="${gindex}" 
+                            data-item="${iindex}">${item.label}</button>
+                    `;
                 }
             });
 
@@ -295,128 +331,43 @@ $(document).ready(function() {
         let params = {
             s: model.filters.searchText,
             o: model.filters.orden,
-            ds: moment('01/05/2019', 'DD/MM/YYYY').format('DD/MM/YYYY'),
-            de: moment('31/05/2019', 'DD/MM/YYYY').format('DD/MM/YYYY'),
-            g0: idItemsChecked(model.filters.groups[0]),
-            g1: idItemsChecked(model.filters.groups[1]),
-            g2: idItemsChecked(model.filters.groups[2]),
-            g3: idItemsChecked(model.filters.groups[3]),
+            ds: model.filters.dateStart != '' ? moment(model.filters.dateStart, 'DD/MM/YYYY').format(
+                'DD/MM/YYYY') : '',
+            de: model.filters.dateEnd != '' ? moment(model.filters.dateEnd, 'DD/MM/YYYY').format(
+                'DD/MM/YYYY') : '',
+            proyecto: idItemsChecked(model.filters.groups[0]),
+            documento: idItemsChecked(model.filters.groups[model.tab == 0 ? 1 : 2]),
+            tema: idItemsChecked(model.filters.groups[3]),
+            subtema: idItemsChecked(model.filters.groups[4]),
         };
         return jQuery.param(params);
     }
 
     function initFiltersGroups() {
-        return [
-            {
-                title: 'Documentos',
-                collapsed: false,
-                items: []
-            },
-            {
-                title: 'Proyecto',
-                collapsed: true,
-                items: []
-            },
-            {
-                title: 'Tema',
-                collapsed: true,
-                items: []
-            },
-            {
-                title: 'Subtema',
-                collapsed: true,
-                items: []
-            },
-        ];
-    }
-
-    function fakeFilters() {
         return [{
-                title: 'Documentos',
+                title: 'Proyecto',
                 collapsed: false,
-                items: [{
-                        id: 1,
-                        label: 'Externos',
-                        checked: true
-                    },
-                    {
-                        id: 2,
-                        label: 'Proyecto',
-                        checked: false
-                    },
-                    {
-                        id: 3,
-                        label: 'Ambiente PGA',
-                        checked: false
-                    },
-                    {
-                        id: 4,
-                        label: 'Ambientes Complementarios',
-                        checked: false
-                    }
-                ]
+                items: []
             },
             {
-                title: 'Proyecto',
+                title: 'Area de Gestión',
                 collapsed: true,
-                items: [{
-                        id: 1,
-                        label: 'item #1',
-                        checked: false
-                    },
-                    {
-                        id: 2,
-                        label: 'item #2',
-                        checked: false
-                    },
-                    {
-                        id: 3,
-                        label: 'item #3',
-                        checked: false
-                    },
-                    {
-                        id: 4,
-                        label: 'item #4',
-                        checked: false
-                    },
-                    {
-                        id: 5,
-                        label: 'item #5',
-                        checked: false
-                    },
-                    {
-                        id: 6,
-                        label: 'item #6',
-                        checked: false
-                    },
-                ]
+                items: []
+            },
+            {
+                title: 'Recursos técnicos',
+                collapsed: true,
+                items: []
             },
             {
                 title: 'Tema',
                 collapsed: true,
-                items: [{
-                    id: 1,
-                    label: 'item',
-                    checked: false
-                }, ]
+                items: []
             },
             {
                 title: 'Subtema',
                 collapsed: true,
-                items: [{
-                    id: 1,
-                    label: 'item',
-                    checked: false
-                }, ]
-            },
-            {
-                title: 'Temporada',
-                collapsed: true,
-                items: [{
-                    id: 1,
-                    label: 'item',
-                    checked: false
-                }, ]
+                items: []
             },
         ];
     }
