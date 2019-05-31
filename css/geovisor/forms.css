@@ -33,6 +33,30 @@
 	
 }
 
+.form-group-dark-big-input {
+	
+	background-color:#29363c;
+	border-radius:3px;
+	border:none;
+	
+}
+
+.form-group-dark-big-input i {
+	
+	color:#FFFFFF;
+	
+}
+
+.form-group-dark-big-input input[type=text] {
+	
+	background:transparent;
+	border:none;
+	font-size:14px;
+	color:#FFFFFF;
+	font-weight:700;
+	
+}
+
 .selectpicker {
 	
 	background:white;
