@@ -1,0 +1,84 @@
+#layers-wrapper {
+	
+	margin-top:30px;
+	width:100%;
+	
+}
+
+.layer-container {
+	
+	width: 325px;
+	border:2px solid;
+	display:none;
+	
+}
+
+.layer-header, .layer-container-header {
+	
+	height:34px;
+	
+}
+
+.layer-header a, .layer-container-header a {
+	
+	position:relative;
+	top:4px;
+	left:10px;
+	color:white;
+	font-weight:400;
+	
+}
+
+.layer-header a:hover, .layer-container-header a:hover {
+	
+	text-decoration:none;
+	
+}
+
+.layer-header span, .layer-container-header span {
+	
+	position:relative;
+	top:2.5px;
+	left:13px;
+	font-size:13px;
+	font-family:"Raleway";
+	font-weight:400;
+	
+}
+
+#abr-container {
+	
+	width:40px;
+	display:inline-block;
+	vertical-align:top;
+	
+}
+
+#layers-container {
+	
+	width:318px;
+	display:inline-block;
+	vertical-align:top;
+	
+}
+
+.abr {
+	
+	width:44px;
+	height:36px;
+	border:2px solid transparent;
+	text-align:center;
+	line-height:32px;
+	font-size:18px;
+	font-weight:bold;
+	cursor:pointer;
+	font-family:"Gotham bold";
+	font-size:16px;
+	
+}
+
+.abr-green {
+	
+	border-color:green;
+	
+}

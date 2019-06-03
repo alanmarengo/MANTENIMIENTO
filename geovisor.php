@@ -1,3 +1,6 @@
+<?php include("pgconfig.php"); ?>
+<?php include("geovisor.fn.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,6 +31,9 @@
 	<link rel="stylesheet" href="./css/geovisor/buttons.css"/>
 	<link rel="stylesheet" href="./css/geovisor/display.css"/>
 	<link rel="stylesheet" href="./css/geovisor/forms.css"/>
+	<link rel="stylesheet" href="./css/geovisor/layers.css"/>
+	<link rel="stylesheet" href="./css/geovisor/sizers.css"/>
+	<link rel="stylesheet" href="./css/geovisor/spacers.css"/>
 	
 	<link rel="stylesheet" href="./js/openlayers/ol.css"/>
 	
@@ -334,38 +340,7 @@
 
 <div id="map"></div>
 
-<div id="panel-left" class="phanel panel container-fluid">
-		
-	<div class="panel-container">
-	
-		<div class="panel-body">
-		
-			<div class="panel-title">
-			
-				<h3>LOREM IPSUM SIR AMET</h3>
-			
-			</div>
-			
-			<div class="panel-content">
-			
-				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-			
-			</div>
-		
-		</div>
-	
-	</div>
-	
-	<div class="panel-arrow-container">
-		<div class="panel-arrow">
-			<a href="#" class="panel-arrow-link" data-state="0">
-				<img src="./images/panel.icon.arrow.0.png">
-			</a>
-		</div>
-	</div>
-	
-</div>
+<?php include("geovisor.panel.php"); ?>
 
 <div class="popup" id="popup-busqueda">
 
