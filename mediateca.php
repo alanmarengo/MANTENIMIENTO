@@ -29,68 +29,29 @@
         </div>
     </div>
     <div class="col-md-12 page-tabs">
-        <ul class="nav nav-tabs" id="uxTabs" role="tablist">
+        <ul class="nav nav-tabs">
             <li class="nav-item">
-                <a class="nav-link active" id="uxDocsTab" data-toggle="tab" href="#uxDocsTabContent" role="tab">
-                    DOCUMENTOS <span id="uxQtyDocs"></span>
-                </a>
+                <a class="nav-link active" data-tab="0" href="#">DOCUMENTOS <span id="uxQtyDocs"></span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="uxMediasTab" data-toggle="tab" href="#uxMediasTabContent" role="tab">
-                    RECURSOS AUDIOVISUALES <span id="uxQtyMedias"></span>
-                </a>
+                <a class="nav-link" data-tab="1" href="#">RECURSOS AUDIOVISUALES <span id="uxQtyMedias"></span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="uxTechsTab" data-toggle="tab" href="#uxTechsTabContent" role="tab">
-                    RECURSOS TECNICOS <span id="uxQtyTechs"></span>
-                </a>
+                <a class="nav-link" data-tab="2" href="#">RECURSOS TECNICOS <span id="uxQtyTechs"></span></a>
             </li>
         </ul>
 
-        <div class="tab-content" id="uxTabsContent">
-            <div class="tab-pane fade show active" id="uxDocsTabContent" role="tabpanel" aria-labelledby="home-tab">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="filters-header">Refina sus resultados</div>
-                        <div id="uxFilters"></div>
-
-                        <div class="row">
-                            <div class="col-md-4" style="padding-left: 46px; padding-top: 6px;">Desde:</div>
-                            <div class="input-group col-md-8">
-                                <input id="uxDesde" type="text" class="form-control date">
-                                <div class="input-group-append">
-                                    <span class="input-group-text"><i class="fa fa-calendar"></i></span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-4" style="padding-left: 46px; padding-top: 6px">Hasta:</div>
-                            <div class="input-group col-md-8">
-                                <input id="uxHasta" type="text" class="form-control date">
-                                <div class="input-group-append">
-                                    <span class="input-group-text"><i class="fa fa-calendar"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-9">
-                        <div id="uxFiltersChecked"></div>
-                        <div id="uxDocs"></div>
-                    </div>
-                </div>
+        <div class="row">
+            <div id="x0" class="col-md-3">
+                <div class="filters-header">Refina sus resultados</div>
+                <div id="uxFilters"></div>
             </div>
-            <div class="tab-pane fade" id="uxMediasTabContent" role="tabpanel">...</div>
-            <div class="tab-pane fade" id="uxTechsTabContent" role="tabpanel">...</div>
+            <div class="col-md-9">
+                <div id="uxFiltersChecked"></div>
+                <div id="uxData"></div>
+            </div>
         </div>
-
-
-
     </div>
-
-
-
-
 </div>
 
 <script type='text/javascript'>
@@ -101,20 +62,18 @@ $(document).ready(function() {
         filters: {
             orden: 0,
             searchText: '',
-            dateStart: '', // USAR MOMENTJS
-            dateEnd: '', // USAR MOMENTJS
+            dateStart: '', 
+            dateEnd: '',
             groups: initFiltersGroups()
         },
-        data: null
+        data: {
+            docs: [],
+            medias: [],
+            techs: [],
+        }
     };
 
     init();
-
-    $('.date').datepicker({
-        format: "dd/mm/yyyy",
-        language: "es",
-        autoclose: true
-    });
 
     // TEXT SEARCH
     $('#uxSearchButton').on('click', function() {
@@ -123,7 +82,7 @@ $(document).ready(function() {
     });
 
     // REMOVE FILTER
-    $('#uxDocsTabContent').on('click', '.filters-checked', function() {
+    $('body').on('click', '.filters-checked', function() {
         let group = $(this).data('group');
         let item = $(this).data('item');
         model.filters.groups[group].items[item].checked = false;
@@ -132,7 +91,7 @@ $(document).ready(function() {
     });
 
     // ADD FILTER
-    $('#uxFilters').on('click', '.filters-group-item', function(e) {
+    $('body').on('click', '.filters-group-item', function(e) {
         let group = $(this).data('group');
         let item = $(this).data('item');
         model.filters.groups[group].items[item].checked = true;
@@ -141,7 +100,7 @@ $(document).ready(function() {
     });
 
     // GROUP COLLAPSE
-    $('#uxFilters').on('click', '.group-title', function() {
+    $('body').on('click', '.group-title', function() {
         let index = $(this).data('group');
         let collapsed = $($(this).data('target')).hasClass('show');
         let group = model.filters.groups[index];
@@ -151,27 +110,30 @@ $(document).ready(function() {
         groupsTitleRender();
     });
 
-    // FECHA DESDE
-    $('#uxDesde').on('change', function() {
-        model.filters.dateStart = $('#uxDesde').val();
-        dataLoad()
-    });
-
-    // FECHA HASTA
-    $('#uxHasta').on('change', function() {
-        model.filters.dateEnd = $('#uxHasta').val();
-        dataLoad()
-    });
-
     // ORDEN
     $('#uxOrden').on('change', function() {
         model.filters.orden = $('#uxOrden').val();
         dataLoad()
     });
 
+    // CLICK ON TAB
+    $('a[data-tab]').on('click', function (e) {
+        $(`a[data-tab="${model.tab}"]`).removeClass('active');
+        model.tab = $(this).data('tab');
+        $(`a[data-tab="${model.tab}"]`).addClass('active');
+        
+        if (model.tab == 2) {
+            model.filters.groups[1].visible = false;
+            model.filters.groups[2].visible = true;
+        }
+        else {
+            model.filters.groups[1].visible = true;
+            model.filters.groups[2].visible = false;
+        }
 
-
-
+        filtersRender();
+        dataRender();
+    })
 
     //-----------------------------------------------------
     function init() {
@@ -181,7 +143,6 @@ $(document).ready(function() {
 
     function filtersLoad() {
         model.filters.groups = initFiltersGroups();
-
         $.getJSON(model.apiUrlBase + '/mediateca_filtros.php', function(data) {
             $.each(data, function(index, value) {
                 let gindex = value.filtro_id;
@@ -196,17 +157,53 @@ $(document).ready(function() {
     }
 
     function dataLoad() {
-        // AJAX...
-        model.data = fakeData();
-        dataRender();
+        let url = model.apiUrlBase + '/mediateca_find.php?' + makeUrlFilter();
+        $('#uxUrl').html(url);
 
-        $('#uxUrl').html(makeUrlFilter());
+        $.getJSON(url, function(data) {
+            model.data.docs = [];
+            model.data.medias = [];
+            model.data.techs = [];
+            $.each(data, function(index, value) {
+                if (value.Solapa == 0) {
+                    model.data.docs.push({
+                        id: value.Id,
+                        title: value.Titulo,
+                        authors: value.Autores,
+                        description: value.Descripcion
+                    });
+                }
+                else if (value.Solapa == 1) {
+                    model.data.medias.push({
+                        id: value.Id,
+                        link: value.LinkImagen,
+                        title: value.Titulo
+                    });
+                }
+                else if (value.Solapa == 2) {
+                    model.data.techs.push({
+                        id: value.Id,
+                        metatag: value.MetaTag,
+                        title: value.Titulo,
+                        description: value.Descripcion
+                    });
+                }
+            });
+            dataRender();
+        });
     }
 
     function dataRender() {
-        docsRender();
-        //mediasRender();
-        //techsRender();
+        if (model.tab == 0)
+            docsRender();
+        else if (model.tab == 1)
+            mediasRender();
+        else if (model.tab == 2)
+            techsRender();
+
+        $('#uxQtyDocs').html(`(${model.data.docs.length})`);
+        $('#uxQtyMedias').html(`(${model.data.medias.length})`);
+        $('#uxQtyTechs').html(`(${model.data.techs.length})`);
 
         $('#uxSearchText').focus();
     }
@@ -215,42 +212,94 @@ $(document).ready(function() {
         let html = '';
         html += `<div class="accordion" id="uxFilters">`;
         $.each(model.filters.groups, function(gindex, group) {
-            html += `
-                <div class="card">
-                    <div class="card-header" id="group-${gindex}-header">
-                        <button id="group-${gindex}-title" class="group-title btn btn-link" type="button" data-toggle="collapse"
-                            data-target="#group-${gindex}-body" data-group="${gindex}">
-                            ...
-                        </button>
+            if (group.visible) {
+                html += `
+                    <div class="card">
+                        <div class="card-header" id="group-${gindex}-header">
+                            <button id="group-${gindex}-title" class="group-title btn btn-link" type="button" data-toggle="collapse"
+                                data-target="#group-${gindex}-body" data-group="${gindex}">
+                                ...
+                            </button>
+                        </div>
+
+                        <div id="group-${gindex}-body" class="collapse ${group.collapsed ? '' : 'show'}"
+                            data-parent="#uxFilters">
+                            <div class="card-body group-container-items" style="max-height: 14em; overflow-y: scroll;">
+                                <ul class="list-group">
+                `;
+
+                $.each(group.items, function(iindex, item) {
+                    if (!item.checked) {
+                        html += `
+                            <button type="button" class="filters-group-item list-group-item list-group-item-action" 
+                                data-group="${gindex}" 
+                                data-item="${iindex}">${item.label}</button>
+                        `;
+                    }
+                });
+
+                html += `
+                                </ul>
+                            </div>
+                        </div>
                     </div>
+                `;
+            }
+        });
 
-                    <div id="group-${gindex}-body" class="collapse ${group.collapsed ? '' : 'show'}"
-                        data-parent="#uxFilters">
-                        <div class="card-body group-container-items" style="max-height: 14em; overflow-y: scroll;">
-                            <ul class="list-group">
-            `;
-
-            $.each(group.items, function(iindex, item) {
-                if (!item.checked) {
-                    html += `
-                        <button type="button" class="filters-group-item list-group-item list-group-item-action" 
-                            data-group="${gindex}" 
-                            data-item="${iindex}">${item.label}</button>
-                    `;
-                }
-            });
-
-            html += `
-                            </ul>
+        html += `
+            <div class="card">
+                <div class="card-header" id="group-desde-header" style="padding: 5px 4px 5px 16px;">
+                    <div class="row">
+                        <div class="col-md-4">
+                            Desde:
+                        </div>
+                        <div class="col-md-8 text-right">
+                            <input id="uxDesde" value="${model.filters.dateStart}" type="text" class="date" style='border: none; width: 100px;'>
+                            <i class="fa fa-calendar"></i>
                         </div>
                     </div>
                 </div>
-            `;
-        });
+            </div>
+        `
+
+        html += `
+            <div class="card">
+                <div class="card-header" id="group-hasta-header" style="padding: 5px 4px 5px 16px;">
+                    <div class="row">
+                        <div class="col-md-4">
+                            Hasta:
+                        </div>
+                        <div class="col-md-8 text-right">
+                            <input id="uxHasta" value="${model.filters.dateEnd}" type="text" class="date" style='border: none; width: 100px;'>
+                            <i class="fa fa-calendar"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `
         html += `</div>`;
         $('#uxFilters').html(html);
 
         groupsTitleRender();
+        checkedsRender();
+
+        // BIND EVENTS DATE PICKER
+        $('.date').datepicker({
+            format: "dd/mm/yyyy",
+            language: "es",
+            autoclose: true
+        });
+
+        $('#uxDesde').on('changeDate', function(e) {
+            model.filters.dateStart = $('#uxDesde').val();
+            dataLoad()
+        });
+
+        $('#uxHasta').on('changeDate', function(e) {
+            model.filters.dateEnd = $('#uxHasta').val();
+            dataLoad()
+        });
     }
 
     function checkedsRender() {
@@ -267,9 +316,6 @@ $(document).ready(function() {
     }
 
     function docsRender() {
-        $('#uxQtyDocs').html(`(${model.data.docs.length})`);
-        checkedsRender();
-
         let html = '';
         $.each(model.data.docs, function(index, doc) {
             html += `
@@ -288,7 +334,31 @@ $(document).ready(function() {
                 </div>
             `;
         });
-        $('#uxDocs').html(html);
+        $('#uxData').html(html);
+    }
+
+    function mediasRender() {
+        let html = '';
+        $.each(model.data.medias, function(index, item) {
+            html += `
+                <div class="media">
+                </div>
+            `;
+        });
+        $('#uxData').html(html);
+    }
+
+    function techsRender() {
+        let html = '';
+        $.each(model.data.techs, function(index, item) {
+            html += `
+                <div class="tech row" style="margin-bottom: 6px; margin-left: 0px;">
+                        <span class="badge badge-warning" style="color: #fff; font-size: 100%; padding: 8px; margin-right: 6px;">${item.title}</span>
+                        ${item.description}
+                </div>
+            `;
+        });
+        $('#uxData').html(html);
     }
 
     function collapseAllGroups() {
@@ -347,30 +417,42 @@ $(document).ready(function() {
         return [{
                 title: 'Proyecto',
                 collapsed: false,
+                visible: true,
                 items: []
             },
             {
                 title: 'Area de Gestión',
                 collapsed: true,
+                visible: true,
                 items: []
             },
             {
                 title: 'Recursos técnicos',
                 collapsed: true,
+                visible: false,
                 items: []
             },
             {
                 title: 'Tema',
                 collapsed: true,
+                visible: true,
                 items: []
             },
             {
                 title: 'Subtema',
                 collapsed: true,
+                visible: true,
                 items: []
             },
         ];
     }
+
+
+
+
+
+
+
 
     function fakeData() {
         return {
