@@ -77,9 +77,14 @@ $(document).ready(function() {
 
     // TEXT SEARCH
     $('#uxSearchButton').on('click', function() {
-        model.filters.searchText = $('#uxSearchText').val();
-        dataLoad()
+        refreshSearchText();
     });
+
+    $('#uxSearchText').on('keypress',function(e) {
+        if(e.which == 13) {
+            refreshSearchText();
+        }
+    });    
 
     // REMOVE FILTER
     $('body').on('click', '.filters-checked', function() {
@@ -138,6 +143,11 @@ $(document).ready(function() {
     //-----------------------------------------------------
     function init() {
         filtersLoad();
+        dataLoad();
+    }
+
+    function refreshSearchText() {
+        model.filters.searchText = $('#uxSearchText').val();
         dataLoad();
     }
 
@@ -204,8 +214,6 @@ $(document).ready(function() {
         $('#uxQtyDocs').html(`(${model.data.docs.length})`);
         $('#uxQtyMedias').html(`(${model.data.medias.length})`);
         $('#uxQtyTechs').html(`(${model.data.techs.length})`);
-
-        $('#uxSearchText').focus();
     }
 
     function filtersRender() {
@@ -288,7 +296,9 @@ $(document).ready(function() {
         $('.date').datepicker({
             format: "dd/mm/yyyy",
             language: "es",
-            autoclose: true
+            autoclose: true,
+            clearBtn: true,
+            toggleActive: true
         });
 
         $('#uxDesde').on('changeDate', function(e) {
@@ -444,43 +454,6 @@ $(document).ready(function() {
                 visible: true,
                 items: []
             },
-        ];
-    }
-
-
-
-
-
-
-
-
-    function fakeData() {
-        return {
-            docs: fakeDocs(),
-            medias: [],
-            techs: [],
-        }
-    }
-
-    function fakeDocs() {
-        return [{
-                id: 1,
-                title: 'TITULO DEL DOCUMENTO 1',
-                authors: 'autores',
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut pretium justo. Pellentesque pellentesque eu dolor et auctor. Phasellus dolor augue, sodales in vehicula a, feugiat suscipit velit. In hac habitasse platea dictumst. Nam vitae ultrices dolor. Donec facilisis, diam placerat sagittis iaculis, lacus mi convallis urna, sit amet elementum mi lacus non purus. Donec purus tellus, malesuada sed tempus a, scelerisque a ligula. Aliquam pulvinar urna a vehicula condimentum.'
-            },
-            {
-                id: 2,
-                title: 'TITULO DEL DOCUMENTO 2',
-                authors: 'autores',
-                description: 'Quisque mattis sagittis cursus. Fusce at maximus tellus. Phasellus et purus mauris. In rutrum aliquam feugiat. Curabitur quis ipsum id velit pretium ornare. Nulla in sollicitudin enim, quis consectetur diam. Etiam at orci pharetra, convallis lectus et, aliquet velit. Sed magna risus, consectetur et diam eu, varius condimentum ex.'
-            },
-            {
-                id: 3,
-                title: 'TITULO DEL DOCUMENTO 3',
-                authors: 'autores',
-                description: 'Curabitur enim est, imperdiet vel nulla ut, congue efficitur lorem. In et tempor leo. Phasellus suscipit nulla arcu, eu hendrerit libero tincidunt at. Sed sodales ultrices ante, non rutrum nunc iaculis quis. Aenean dignissim finibus augue maximus fermentum. Vestibulum vel turpis quis orci tempor fringilla eu quis sapien. Curabitur nec sem tincidunt, eleifend odio vitae, posuere quam.'
-            }
         ];
     }
 });
