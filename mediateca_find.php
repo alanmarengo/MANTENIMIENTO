@@ -35,8 +35,9 @@ $SQL = "SELECT row_to_json(T)::text AS r FROM"
         . "recurso_desc AS \"Descripcion\","
         . "recurso_path_url AS \"LinkImagen\","
         . "recurso_categoria_desc AS \"MetaTag\","
-        . "CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END AS \"Autores\""
-        . "FROM mod_mediateca.mediateca_find('$qt','$desde','$hasta','$proyecto','$clase','$subclase','$tipo_doc') ORDER BY tipo_formato_solapa,recurso_titulo ASC"
+        . "CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END AS \"Autores\","
+        . "estudios_id"
+        . " FROM mod_mediateca.mediateca_find('$qt','$desde','$hasta','$proyecto','$clase','$subclase','$tipo_doc') ORDER BY tipo_formato_solapa,recurso_titulo ASC"
         . ")T";
 
 $recordset = pg_query($conn,$SQL);
