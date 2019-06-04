@@ -45,7 +45,7 @@ function DrawContainers() {
 				</a>
 				<span><?php echo $r["cod_nom"]; ?> (<?php echo $r["layer_count"]; ?>)</span>		
 			</div>
-			<div class="layer-container-body">
+			<div class="layer-container-body scrollbar-content">
 				<?php DrawLayers($r["clase_id"]); ?>
 			</div>
 		</div>
@@ -62,7 +62,7 @@ function DrawLayers($clase_id) {
 	
 	$conn = pg_connect($string_conn);
 	
-	$query_string = "SELECT * FROM mod_geovisores.vw_layers WHERE clase_id = " . $clase_id . " ORDER BY clase_id ASC";
+	$query_string = "SELECT * FROM mod_geovisores.vw_layers WHERE clase_id = " . $clase_id . " ORDER BY layer_desc ASC";
 	
 	$query = pg_query($conn,$query_string);
 	
@@ -70,11 +70,26 @@ function DrawLayers($clase_id) {
 		
 		?>
 		
-		<div class="layer-header">
-			<a href="javascript:void(0);">
+		<div class="layer-header" data-state="0">
+			<!--<a href="javascript:void(0);">
 				<i class="fa fa-eye"></i>
+			</a>-->
+			
+			<div class="pretty p-default p-curve p-toggle">
+				<input type="checkbox" class="layer-checkbox" data-layer="<?php echo $r["layer_wms_layer"]; ?>" data-wms="<?php echo $r["layer_wms_server"]; ?>"/>
+				<div class="state p-success p-on">
+					<i class="fa fa-eye"></i>
+				</div>
+				<div class="state p-danger p-off">
+					<i class="fa fa-eye-slash"></i>
+				</div>
+			</div>
+
+			<span><?php echo $r["layer_desc"]; ?></span>
+			
+			<a href="#" class="simple-tree-pm-button">
+				<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
 			</a>
-			<span><?php echo $r["layer_desc"]; ?></span>		
 		</div>
 		
 		<?php

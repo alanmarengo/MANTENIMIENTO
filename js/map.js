@@ -33,6 +33,13 @@ function ol_map() {
 			$(".panel").height(newHeight+2);
 			$(".panel").css("top",$(this.div).offset().top);
 		}
+		
+		var lc_top = $("#layers-container").offset().top+42;
+		var lc_newheight = $(document).height() - lc_top;
+		
+		$(".layer-container-body").height(lc_newheight);				
+		scrollbars.redrawElement(".scrollbar-content");
+		
 	
 	}
 	
@@ -64,6 +71,54 @@ function ol_map() {
 		});
 	
 		this.ol_object.addLayer(this.baselayers.openstreets);
+		
+		this.createLayers = function() {
+			
+			$(".layer-checkbox").each(function(i,v) {
+				
+				v.layer = false;
+				
+				v.onclick = function() {
+					
+					if (!v.layer) {
+						
+						var layer_name = v.getAttribute("data-layer");
+						var layer_wms = v.getAttribute("data-wms");
+						
+						v.layer = new ol.layer.Tile({
+							visible:true,
+							source: new ol.source.TileWMS({
+								url: layer_wms,
+								params: {
+									'LAYERS': layer_name,
+									'VERSION': '1.1.1',
+									'FORMAT': 'image/png',
+									'TILED': false
+								}
+							})
+						});
+				
+						this.ol_object.addLayer(v.layer);
+						
+					}
+					
+					console.log(v.layer);
+					
+					if (v.checked) {
+						
+						v.layer.setVisible(true);
+						
+					}else{
+						
+						v.layer.setVisible(false);
+						
+					}
+					
+				}.bind(this)
+				
+			}.bind(this));
+			
+		}
 		
 	}
 	
@@ -123,7 +178,9 @@ function ol_map() {
 				$(".layer-container").not(".layer-container[data-cid="+this.getAttribute("data-cid")+"]").hide();
 				$(".layer-container[data-cid="+this.getAttribute("data-cid")+"]").show();
 				
-				$("#abr-container").first(".panel-abr").prepend(this);
+				$("#abr-container").first(".panel-abr").prepend(this);			
+				scrollbars.redrawElement(".scrollbar-content");
+				scrollbars.updateSize();
 				
 			}
 			
