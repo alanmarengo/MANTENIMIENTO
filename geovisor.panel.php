@@ -11,8 +11,8 @@
 					<div class="form-group form-group-dark-big-input w85p mt-30 ml-20">
 						
 						<i class="fa fa-search"></i>
-						<input type="text" placeholder="BUSCAR INFORMACIÓN" class="icon-input ml-20 w75p">
-						<span class="text-white" id="info-cant">(15)</span>
+						<input type="text" placeholder="BUSCAR INFORMACIÓN" class="icon-input ml-20 w75p" id="panel-seach-input">
+						<!--<span class="text-white" id="info-cant">(15)</span>-->
 					
 					</div>
 					
