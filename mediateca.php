@@ -275,7 +275,7 @@ $(document).ready(function() {
 
                         <div id="group-${gindex}-body" class="collapse ${group.collapsed ? '' : 'show'}"
                             data-parent="#uxFilters">
-                            <div class="card-body group-container-items" style="max-height: 14em; overflow-y: scroll;">
+                            <div data-simplebar class="card-body group-container-items" style="max-height: 14em; overflow-y: auto;">
                                 <ul class="list-group">
                 `;
 
