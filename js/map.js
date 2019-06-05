@@ -74,55 +74,15 @@ function ol_map() {
 		
 		this.createLayers = function() {
 			
-			$(".layer-checkbox").each(function(i,v) {
-				
-				v.layer = false;
-				
-				v.onclick = function() {
-					
-					if (!v.layer) {
-						
-						var layer_name = v.getAttribute("data-layer");
-						var layer_wms = v.getAttribute("data-wms");
-						
-						v.layer = new ol.layer.Tile({
-							visible:true,
-							source: new ol.source.TileWMS({
-								url: layer_wms,
-								params: {
-									'LAYERS': layer_name,
-									'VERSION': '1.1.1',
-									'FORMAT': 'image/png',
-									'TILED': false
-								}
-							})
-						});
-				
-						this.ol_object.addLayer(v.layer);
-						
-					}
-					
-					console.log(v.layer);
-					
-					if (v.checked) {
-						
-						v.layer.setVisible(true);
-						
-					}else{
-						
-						v.layer.setVisible(false);
-						
-					}
-					
-				}.bind(this)
-				
-			}.bind(this));
+			//
 			
 		}
 		
 	}
 	
 	// PANEL SCRIPTS 
+	
+	this.panel.map = this.map;
 	
 	this.panel.start = function() {
 		
@@ -202,7 +162,7 @@ function ol_map() {
 			
 			$(v).on("click",function() {
 			
-				this.UpdatePopupListBasic("basic");
+				this.UpdatePopupListBasic();
 				
 			}.bind(this));
 			
@@ -210,11 +170,9 @@ function ol_map() {
 		
 		$("#btn-adv-search").on("click",function() {
 			
-			var filter = $("#frm-adv-search").serialize();
+			this.UpdatePopupListAdvanced();
 			
-			alert(filter);
-			
-		});
+		}.bind(this));
 		
 		$("form input").val("");
 		$("form select").prop("selectedIndex", 0);
@@ -222,7 +180,7 @@ function ol_map() {
 		
 	}
 	
-	this.panel.UpdatePopupListBasic = function(mode) {
+	this.panel.UpdatePopupListBasic = function() {
 		
 		var filter = [];
 		
@@ -292,7 +250,75 @@ function ol_map() {
 	
 	this.panel.UpdatePopupListAdvanced = function(mode) {
 		
-		alert("adv");
+		var filter = $("#frm-adv-search").serialize();
+		
+		var req = $.ajax({
+			
+			async:false,
+			type:"post",
+			data:filter,
+			url:"./php/filter-proyectos-advanced.php",
+			success:function(d){}
+			
+		});
+		
+	}
+	
+	this.panel.AddLayer = function(clase_id,layer_id) {
+		
+		$(".abr[data-cid="+clase_id+"]").show();
+		$(".abr[data-cid="+clase_id+"]").trigger("click");
+		$(".layer-group[data-layer="+layer_id+"]").show();
+		
+		if (!document.getElementById("layer-checkbox-"+layer_id).layer) {
+					
+			var layer_name = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-layer");
+			var layer_wms = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-wms");
+			
+			document.getElementById("layer-checkbox-"+layer_id).layer = new ol.layer.Tile({
+				visible:true,
+				source: new ol.source.TileWMS({
+					url: layer_wms,
+					params: {
+						'LAYERS': layer_name,
+						'VERSION': '1.1.1',
+						'FORMAT': 'image/png',
+						'TILED': false
+					}
+				})
+			});
+			
+			document.getElementById("layer-checkbox-"+layer_id).layer.setVisible(false);
+			
+			this.map.ol_object.addLayer(document.getElementById("layer-checkbox-"+layer_id).layer);
+			
+			$("#layer-checkbox-"+layer_id).bind("click",function() {
+				
+				if (this.checked) {
+					
+					this.layer.setVisible(true);
+					
+				}else{
+					
+					this.layer.setVisible(false);
+					
+				}
+				
+			});
+			
+		}
+		
+		$("#transp-value-"+layer_id).val(100+"%");
+		
+		$( "#slider-range-"+layer_id ).slider({			
+			values: [ 100 ],
+			slide: function( event, ui ) {
+				$("#transp-value-"+layer_id).val(ui.values[ 0 ]+"%");
+				document.getElementById("layer-checkbox-"+layer_id).layer.setOpacity(ui.values[0]/100);				
+			}
+		});
+			
+		//$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
 		
 	}
 	
@@ -373,6 +399,30 @@ function ol_map() {
 				this.parentNode.setAttribute("data-state",1);
 				
 			}
+			
+		});
+		
+		$(".btn-plus-layer").each(function(i,v) {
+			
+			$(v).on("click",function() {
+				
+				$(this).parent().next().slideToggle("slow",function() {
+					
+					if ($(this).children("i").hasClass("fa-minus-circle")) {
+						
+						$(this).children("i").removeClass("fa-minus-circle");
+						$(this).children("i").addClass("fa-plus-circle");
+						
+					}else{
+						
+						$(this).children("i").removeClass("fa-plus-circle");
+						$(this).children("i").addClass("fa-minus-circle");
+						
+					}
+					
+				});
+				
+			});
 			
 		});
 		

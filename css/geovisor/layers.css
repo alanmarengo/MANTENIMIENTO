@@ -13,6 +13,12 @@
 	
 }
 
+.layer-group {
+	
+	display:none;
+	
+}
+
 .layer-header, .layer-container-header {
 	
 	height:34px;
@@ -67,6 +73,31 @@
 	
 }
 
+.layer-body {
+	
+	display:none;
+	margin-left:10px;
+	font-size:12px;
+	
+}
+
+.layer-opacity {
+
+    padding: 10px;
+    background: RGBA(0,0,0,0.2);
+    margin: 10px;
+
+}
+
+.transp-value {
+
+    background: none;
+    color: white;
+    float: right;
+    width: 36px;
+
+}
+
 #abr-container {
 	
 	width:40px;
@@ -95,6 +126,7 @@
 	cursor:pointer;
 	font-family:"Gotham bold";
 	font-size:16px;
+	display:none;
 	
 }
 

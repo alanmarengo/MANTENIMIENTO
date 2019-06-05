@@ -13,6 +13,7 @@
 	<link href="./fonts/gotham/gotham.css" rel="stylesheet">	
 	
 	<link rel="stylesheet" href="./css/bootstrap.css"/>	
+	<link rel="stylesheet" href="./js/jquery-ui/jquery-ui.min.css"/>	
 
     <link rel="stylesheet" href="./fontawesome-5.8.1/css/all.min.css" />
 	
@@ -33,6 +34,7 @@
 	<link rel="stylesheet" href="./css/geovisor/forms.css"/>
 	<link rel="stylesheet" href="./css/geovisor/layers.css"/>
 	<link rel="stylesheet" href="./css/geovisor/sizers.css"/>
+	<link rel="stylesheet" href="./css/geovisor/sliders.css"/>
 	<link rel="stylesheet" href="./css/geovisor/spacers.css"/>
 	
 	<link rel="stylesheet" href="./js/openlayers/ol.css"/>
@@ -169,14 +171,12 @@
 			flex:1;
 		}
 				
-	</style>	
-
-	<script
-			  src="https://code.jquery.com/jquery-3.4.1.js"
-			  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-			  crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+	</style>
+	
+	<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="./js/popper-1.12.9.min.js"></script>
+	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="./js/jquery-ui/jquery-ui.min.js"></script>
 	
 	<script src="./js/perfect-scrollbar.js"></script>
 	<script src="./js/bootstrap-select.js"></script>
