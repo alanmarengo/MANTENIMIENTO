@@ -59,24 +59,27 @@ $(document).ready(function() {
     var model = {
         apiUrlBase: 'http://observatorio.atic.com.ar',
         tab: 0,
+        stopLoad: false,
         filters: {
             orden: 0,
             searchText: '',
             dateStart: '', 
             dateEnd: '',
+            estudio: null,
             groups: initFiltersGroups()
         },
         data: {
             docs: [],
             medias: [],
             techs: [],
-        }
+        },
+        ficha: null
     };
 
     init();
 
     // TEXT SEARCH
-    $('#uxSearchButton').on('click', function() {
+    $('#uxSearchText').on('focusout', function() {
         refreshSearchText();
     });
 
@@ -91,6 +94,7 @@ $(document).ready(function() {
         let group = $(this).data('group');
         let item = $(this).data('item');
         model.filters.groups[group].items[item].checked = false;
+        setEstudio(null);
         filtersRender();
         dataLoad()
     });
@@ -100,6 +104,7 @@ $(document).ready(function() {
         let group = $(this).data('group');
         let item = $(this).data('item');
         model.filters.groups[group].items[item].checked = true;
+        setEstudio(null);
         filtersRender();
         dataLoad()
     });
@@ -123,9 +128,7 @@ $(document).ready(function() {
 
     // CLICK ON TAB
     $('a[data-tab]').on('click', function (e) {
-        $(`a[data-tab="${model.tab}"]`).removeClass('active');
-        model.tab = $(this).data('tab');
-        $(`a[data-tab="${model.tab}"]`).addClass('active');
+        setSolapa($(this).data('tab'));
         
         if (model.tab == 2) {
             model.filters.groups[1].visible = false;
@@ -140,6 +143,37 @@ $(document).ready(function() {
         dataRender();
     })
 
+    // CLICK EN LINKS DE FICHA
+    $('body').on('click', '.estudios-link', function(e) {
+        model.stopLoad = true;
+        setSolapa($(this).data('solapa'));
+        setEstudio($(this).data('estudio'));
+        model.stopLoad = false;
+
+        filtersRender();
+        dataLoad()
+    });
+
+    function setSolapa(solapa) {
+        $(`a[data-tab="${model.tab}"]`).removeClass('active');
+        model.tab = solapa;
+        $(`a[data-tab="${model.tab}"]`).addClass('active');
+    }
+
+    function setEstudio(estudio) {
+        if (estudio)
+            filtersReset();
+        
+        model.filters.estudio = estudio;
+    }
+
+    function filtersReset() {
+        $('#uxSearchText').val('');
+        $('#uxDesde').datepicker('clearDates');
+        $('#uxHasta').datepicker('clearDates');
+        uncheckAllGroups();
+    }
+
     //-----------------------------------------------------
     function init() {
         filtersLoad();
@@ -148,6 +182,7 @@ $(document).ready(function() {
 
     function refreshSearchText() {
         model.filters.searchText = $('#uxSearchText').val();
+        setEstudio(null);
         dataLoad();
     }
 
@@ -167,8 +202,12 @@ $(document).ready(function() {
     }
 
     function dataLoad() {
+        if (model.stopLoad)
+            return;
+
         let url = model.apiUrlBase + '/mediateca_find.php?' + makeUrlFilter();
         $('#uxUrl').html(url);
+
 
         $.getJSON(url, function(data) {
             model.data.docs = [];
@@ -180,14 +219,16 @@ $(document).ready(function() {
                         id: value.Id,
                         title: value.Titulo,
                         authors: value.Autores,
-                        description: value.Descripcion
+                        description: value.Descripcion,
+                        estudio: value.estudios_id
                     });
                 }
                 else if (value.Solapa == 1) {
                     model.data.medias.push({
                         id: value.Id,
                         link: value.LinkImagen,
-                        title: value.Titulo
+                        title: value.Titulo,
+                        estudio: value.estudios_id
                     });
                 }
                 else if (value.Solapa == 2) {
@@ -195,10 +236,12 @@ $(document).ready(function() {
                         id: value.Id,
                         metatag: value.MetaTag,
                         title: value.Titulo,
-                        description: value.Descripcion
+                        description: value.Descripcion,
+                        estudio: value.estudios_id
                     });
                 }
             });
+            
             dataRender();
         });
     }
@@ -337,9 +380,9 @@ $(document).ready(function() {
                     <div class="doc-authors">${doc.authors}</div>
                     <div class="doc-description">${doc.description}</div>
                     <div class="doc-links">
-                        <a class="btn btn-dark">RECURSOS AUDIOVISUALES</a>
-                        <a class="btn btn-dark">RECURSOS TECNICOS</a>
-                        <a class="btn btn-dark">RECURSOS ASOCIADOS</a>
+                        <a data-solapa="1" data-estudio="${doc.estudio}" class="btn btn-dark estudios-link">RECURSOS AUDIOVISUALES</a>
+                        <a data-solapa="2" data-estudio="${doc.estudio}" class="btn btn-dark estudios-link">RECURSOS TECNICOS</a>
+                        <a data-solapa="0" data-estudio="${doc.estudio}" class="btn btn-dark estudios-link">RECURSOS ASOCIADOS</a>
                     </div>
                 </div>
             `;
@@ -351,7 +394,8 @@ $(document).ready(function() {
         let html = '';
         $.each(model.data.medias, function(index, item) {
             html += `
-                <div class="media">
+                <div class="media col-md-2">
+                    <img src="${model.apiUrlBase}/media/${item.LinkImagen}" />
                 </div>
             `;
         });
@@ -369,6 +413,14 @@ $(document).ready(function() {
             `;
         });
         $('#uxData').html(html);
+    }
+
+    function uncheckAllGroups() {
+        $.each(model.filters.groups, function(gindex, group) {
+            $.each(group.items, function(iindex, item) {
+                item.checked = false;
+            });
+        });
     }
 
     function collapseAllGroups() {
@@ -419,7 +471,9 @@ $(document).ready(function() {
             documento: idItemsChecked(model.filters.groups[model.tab == 0 ? 1 : 2]),
             tema: idItemsChecked(model.filters.groups[3]),
             subtema: idItemsChecked(model.filters.groups[4]),
+            estudio_id: model.filters.estudio
         };
+
         return jQuery.param(params);
     }
 
