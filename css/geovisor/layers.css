@@ -46,6 +46,27 @@
 	
 }
 
+.layer-header .pretty {
+	
+	position:relative;
+	left:9px;
+	top:3px;
+	width:15px;
+	
+}
+
+.layer-header .simple-tree-pm-button {
+	
+	left:-25px;
+	
+}
+
+.layer-header .simple-tree-pm-button i {
+	
+	color:white;
+	
+}
+
 #abr-container {
 	
 	width:40px;

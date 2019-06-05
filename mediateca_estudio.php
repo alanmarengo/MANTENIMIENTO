@@ -6,15 +6,7 @@ header('Content-Type: application/json');
  * s=condor&o=0&ds=19%2F06%2F2019&de=18%2F06%2F2019&proyecto=1&documento=1%2C3&tema=5&subtema=37
  */
 
-$qt         =  $_REQUEST['s'];
-$desde      =  $_REQUEST['ds'];
-$hasta      =  $_REQUEST['de'];
-$proyecto   =  $_REQUEST['proyecto'];
-$clase      =  $_REQUEST['tema'];
-$subclase   =  $_REQUEST['subtema'];
-$tipo_doc   =  $_REQUEST['documento'];
-$orden      =  $_REQUEST['0'];
-$estudio_id =  $_REQUEST['estudio_id'];
+$estudio_id         =  $_REQUEST['estudio_id'];
 
 function IsSetVar($var)
 {
@@ -25,9 +17,6 @@ function IsSetVar($var)
 };
 
 $conn = pg_connect("host=localhost port=5432 dbname=ahrsc user=postgres password=plahe100%");
-
-if (!IsSetVar($estudio_id))
-{
 
 $SQL = "SELECT row_to_json(T)::text AS r FROM"
         . "("
@@ -41,26 +30,8 @@ $SQL = "SELECT row_to_json(T)::text AS r FROM"
         . "recurso_categoria_desc AS \"MetaTag\","
         . "CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END AS \"Autores\","
         . "estudios_id"
-        . " FROM mod_mediateca.mediateca_find('$qt','$desde','$hasta','$proyecto','$clase','$subclase','$tipo_doc') ORDER BY tipo_formato_solapa,recurso_titulo ASC"
-        . ")T";
-}
-else
-{
-   $SQL = "SELECT row_to_json(T)::text AS r FROM"
-        . "("
-        . "SELECT "
-        . "tipo_formato_solapa AS \"Solapa\","
-        . "origen_id,"
-        . "origen_id_especifico AS \"Id\","
-        . "recurso_titulo AS \"Titulo\","
-        . "recurso_desc AS \"Descripcion\","
-        . "recurso_path_url AS \"LinkImagen\","
-        . "recurso_categoria_desc AS \"MetaTag\","
-        . "CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END AS \"Autores\","
-        . "estudios_id"
         . " FROM mod_catalogo.vw_catalogo_data C WHERE estudios_id=$estudio_id ORDER BY tipo_formato_solapa,recurso_titulo ASC"
-        . ")T"; 
-};
+        . ")T";
 
 $recordset = pg_query($conn,$SQL);
 

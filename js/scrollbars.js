@@ -8,6 +8,12 @@ function scrollbars() {
 			
 		});
 		
+		$(".layer-container-body").each(function(i,v) {
+			
+			new PerfectScrollbar(v);
+			
+		});
+		
 	}
 	
 	this.updateSize = function() {
@@ -30,7 +36,11 @@ function scrollbars() {
 	
 	this.redrawElement = function(e) {
 		
-		new PerfectScrollbar(e);
+		$(e).each(function(i,v) {
+			
+			new PerfectScrollbar(v);
+			
+		});
 		
 	}
 

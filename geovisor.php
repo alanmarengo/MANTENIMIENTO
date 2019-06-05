@@ -195,19 +195,20 @@
 	
 		$(document).ready(function () { 
 			
+			scrollbars = new scrollbars();
+			scrollbars.create();
+			
 			geomap = new ol_map();
 			geomap.container.fixSize([document.getElementById("nav-1"),document.getElementById("nav-2")]);
 			
 			geomap.map.create();
+			geomap.map.createLayers();
 			
 			geomap.panel.start();
 			
 			geomap.popup.start();
 			
-			scrollbars = new scrollbars();
-			
 			scrollbars.updateSize();
-			scrollbars.create();
 			
 			$(".selectpicker").selectpicker();
 			
@@ -373,7 +374,7 @@
 					
 						<ul class="navbar-nav">
 							<li class="nav-item nav-item-button popup-header-li active">
-								<a class="popup-header-button" href="#">
+								<a class="popup-header-button" href="#" onclick="$('#popup-busqueda').hide();">
 									<span>IR AL MAPA</span>
 								</a>
 							</li>
