@@ -482,8 +482,8 @@ body {
     }
 
     .doc {
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding: 20px;
+        margin-right: 20px;
 
         .doc-icon {
             height: 40px;
@@ -498,6 +498,7 @@ body {
         .doc-title {
             font-size: 1.2em;
             font-weight: bolder;
+            cursor: pointer;
         }
 
         .doc-links {
@@ -514,8 +515,28 @@ body {
         }
     }
 
-}
+    .modal-body {
+        padding: 20px 40px!important;
+        background-color: #ddd;
 
+        .ficha-title {
+            font-size: 2em;
+            font-weight: bolder;
+        }
+
+        div {
+            margin-bottom: 5px;
+        }
+
+        .ficha-proyecto {
+            font-weight: bolder;
+        }
+
+        .ficha-description {
+            padding: 10px 0px 20px;
+        }
+    }
+}
 
 .footer {
     @carousel_height: 200px;
