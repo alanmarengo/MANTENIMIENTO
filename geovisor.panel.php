@@ -11,7 +11,7 @@
 					<div class="form-group form-group-dark-big-input w85p mt-30 ml-20">
 						
 						<i class="fa fa-search"></i>
-						<input type="text" placeholder="BUSCAR INFORMACIÓN" class="icon-input ml-20 w75p" id="panel-seach-input">
+						<input type="text" readonly="readonly" placeholder="BUSCAR INFORMACIÓN" class="icon-input ml-20 w75p" id="panel-seach-input">
 						<!--<span class="text-white" id="info-cant">(15)</span>-->
 					
 					</div>
@@ -42,8 +42,8 @@
 	
 	<div class="panel-arrow-container">
 		<div class="panel-arrow">
-			<a href="#" class="panel-arrow-link" data-state="0">
-				<img src="./images/panel.icon.arrow.0.png">
+			<a href="#" class="panel-arrow-link" id="panel-arrow-link" data-state="1">
+				<img src="./images/panel.icon.arrow.1.png">
 			</a>
 		</div>
 	</div>	

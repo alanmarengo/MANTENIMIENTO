@@ -28,6 +28,7 @@
 	<link rel="stylesheet" href="./css/panel.css"/>
 	<link rel="stylesheet" href="./css/popup.css"/>
 	<link rel="stylesheet" href="./css/scrollbars.css"/>
+	<link rel="stylesheet" href="./css/sidenav.css"/>
 	<link rel="stylesheet" href="./css/geovisor/style.css"/>
 	<link rel="stylesheet" href="./css/geovisor/buttons.css"/>
 	<link rel="stylesheet" href="./css/geovisor/display.css"/>
@@ -51,6 +52,12 @@
 			display:block !important;
 			background-color:#333333 !important;
 			z-index:2100 !important;
+			
+		}
+		
+		#nav-1 {
+			
+			z-index:2200 !important;
 			
 		}
 		
@@ -191,14 +198,15 @@
 	
 	<script type="text/javascript">
 	
-		
-	
 		$(document).ready(function () { 
 			
 			scrollbars = new scrollbars();
 			scrollbars.create();
 			
 			geomap = new ol_map();
+			
+			geomap.nav.start();
+			
 			geomap.container.fixSize([document.getElementById("nav-1"),document.getElementById("nav-2")]);
 			
 			geomap.map.create();
@@ -219,177 +227,174 @@
 </head>
 <body>
 
-<nav class="navbar navbar-dark bg-light" id="nav-1">
+<?php include("./htmlnav.php"); ?>
 
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon">   
-			<i class="fa fa-navicon"></i>
-		</span>
-	</button>
-	
-	<a class="navbar-brand" href="#">
-		Observatorio
-		<img src="./images/ieasa_logo.png" id="logo_ieasa" height="30">
-	</a>
-	
-	<div class="nav navbar-expand navbar-right" style="display: inline-block;" id="navIcons">
-		<ul class="navbar-nav">
-			<li class="nav-item nav-item-button active">
-				<a class="nav-link nav-link-button" href="#">
-					<i class="fa fa-search"></i>
-				</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link nav-item-button nav-link-button" href="#">
-					<i class="fa fa-user"></i>
-				</a>
-			</li>
-		</ul>
-	</div>
- 
-	<div class="collapse navbar-collapse" id="navbarNav">
-		<ul class="navbar-nav">
-			<li class="nav-item active">
-				<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#">Features</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#">Pricing</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link disabled" href="#">Disabled</a>
-			</li>
-		</ul>
-	</div>
-	
-</nav>
+<div id="page">
 
-<nav class="navbar navbar-dark bg-light" id="nav-2">
-	
-	<div class="row nav-row">
-	
-		<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-	
-			<div class="nav navbar-expand" id="navSubtitle">
-				<ul class="navbar-nav">
-					<li class="nav-item nav-item-button active">
-						<h3 class="nav-item nav-title-label">
-							Geovisor general de IEASA
-						</h3>
-					</li>
-				</ul>
-			</div>
-	
-		</div>
-	
-		<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+	<nav class="navbar navbar-dark bg-light" id="nav-1">
 		
-			<div class="nav navbar-expand navbar-right" style="display: inline-block;" id="navToolbar">
-				<ul class="navbar-nav">
-					<li class="nav-item">
-						<a href="#" class="nav-link">
-							<img src="./images/toolbar.icon.zoomext.png">
-						</a>
-					</li>
-					<li>
-						<a class="nav-link nav-link-death nav-link-separator nav-item">
-							<span>|</span>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link nav-link-death nav-item">Infraestructura</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Todas:
-						</a>
-						<div class="dropdown-menu" style="text-align:right;" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">Maquinaria</a>
-							<a class="dropdown-item" href="#">Equipos</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">Todos</a>
-						</div>
-					</li>
-					<li>
-						<a class="nav-link nav-link-death nav-link-separator nav-item">
-							<span>|</span>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link nav-link-death nav-item">Estado</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Terminado:
-						</a>
-						<div class="dropdown-menu" style="text-align:right;" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">Sin Iniciar</a>
-							<a class="dropdown-item" href="#">En Proceso</a>
-							<a class="dropdown-item" href="#">Terminado</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">Sin Especificar</a>
-						</div>
-					</li>
-				</ul>
-			</div>
-	
-	</div>
-	
-</nav>
-
-<div id="map"></div>
-
-<?php include("geovisor.panel.php"); ?>
-
-<div class="popup" id="popup-busqueda">
-
-	<div class="row popup-row">
-	
-		<div class="col col-popup mx-auto col-md-6 col-sm-12 col-xs-12">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" onclick="geomap.nav.go();">
+			<span class="navbar-toggler-icon">   
+				<i class="fa fa-navicon"></i>
+			</span>
+		</button>
 		
-			<div class="row popup-row">			
-				
-				<div class="col col-md-12 col-xs-12 popup-header">
-				
-					<div class="nav navbar-expand popup-nav">
-					
-						<ul class="navbar-nav">
-							<li class="nav-item nav-item-button popup-header-li active">
-								<a class="popup-header-button popup-header-button-toggleable popup-header-button-active" href="#" id="btn-popup-basic">
-									<span>BÚSQUEDA</span>
-								</a>
-							</li>
-							<li class="nav-item nav-item-button popup-header-li">
-								<a class="popup-header-button popup-header-button-toggleable" href="#" id="btn-popup-advanced">
-									<span>BÚSQUEDA AVANZADA</span>
-								</a>
-							</li>
-						</ul>
-						
+		<a class="navbar-brand" href="#">
+			Observatorio
+			<img src="./images/ieasa_logo.png" id="logo_ieasa" height="30">
+		</a>
+		
+		<div class="nav navbar-expand navbar-right" style="display: inline-block;" id="navIcons">
+			<ul class="navbar-nav">
+				<li class="nav-item nav-item-button active">
+					<a class="nav-link nav-link-button" href="#">
+						<i class="fa fa-search"></i>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link nav-link-button" href="#" id="navbarDropdown-help" role="button" data-toggle="dropdown" aria-expanded="false">
+						<i class="fa fa-question"></i>
+					</a>
+					<div class="dropdown-menu"  style="text-align:right; position:absolute; left:-90px; z-index:999999;" aria-labelledby="navbarDropdown-help">
+						<a class="dropdown-item" href="#">Video Explicativo</a>
 					</div>
-				
-					<div class="nav navbar-expand popup-nav popup-nav-right">
+				</li>
+				<li class="nav-item">
+					<a class="nav-link nav-item-button nav-link-button" href="#">
+						<i class="fa fa-user"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+		
+	</nav>
+
+	<nav class="navbar navbar-dark bg-light" id="nav-2">
+		
+		<div class="row nav-row">
+		
+			<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+		
+				<div class="nav navbar-expand" id="navSubtitle">
+					<ul class="navbar-nav">
+						<li class="nav-item nav-item-button active">
+							<h3 class="nav-item nav-title-label">
+								Geovisor general de IEASA
+							</h3>
+						</li>
+					</ul>
+				</div>
+		
+			</div>
+		
+			<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+			
+				<div class="nav navbar-expand navbar-right" style="display: inline-block;" id="navToolbar">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a href="#" class="nav-link">
+								<img src="./images/toolbar.icon.zoomext.png">
+							</a>
+						</li>
+						<li>
+							<a class="nav-link nav-link-death nav-link-separator nav-item">
+								<span>|</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link nav-link-death nav-item">Infraestructura</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-maq" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Todas:
+							</a>
+							<div class="dropdown-menu" style="text-align:right;" aria-labelledby="navbarDropdown-maq">
+								<a class="dropdown-item" href="#">Maquinaria</a>
+								<a class="dropdown-item" href="#">Equipos</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Todos</a>
+							</div>
+						</li>
+						<li>
+							<a class="nav-link nav-link-death nav-link-separator nav-item">
+								<span>|</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link nav-link-death nav-item">Estado</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-po" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Terminado:
+							</a>
+							<div class="dropdown-menu" style="text-align:right;" aria-labelledby="navbarDropdown-po">
+								<a class="dropdown-item" href="#">Sin Iniciar</a>
+								<a class="dropdown-item" href="#">En Proceso</a>
+								<a class="dropdown-item" href="#">Terminado</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Sin Especificar</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+		
+		</div>
+		
+	</nav>
+
+	<div id="map"></div>
+
+	<?php include("geovisor.panel.php"); ?>
+
+	<div class="popup" id="popup-busqueda">
+
+		<div class="row popup-row">
+		
+			<div class="col col-popup mx-auto col-md-6 col-sm-12 col-xs-12">
+			
+				<div class="row popup-row">			
 					
-						<ul class="navbar-nav">
-							<li class="nav-item nav-item-button popup-header-li active">
-								<a class="popup-header-button" href="#" onclick="$('#popup-busqueda').hide();">
-									<span>IR AL MAPA</span>
-								</a>
-							</li>
-						</ul>
+					<div class="col col-md-12 col-xs-12 popup-header">
+					
+						<div class="nav navbar-expand popup-nav">
 						
+							<ul class="navbar-nav">
+								<li class="nav-item nav-item-button popup-header-li active">
+									<a class="popup-header-button popup-header-button-toggleable popup-header-button-active" href="#" id="btn-popup-basic">
+										<span>BÚSQUEDA</span>
+									</a>
+								</li>
+								<li class="nav-item nav-item-button popup-header-li">
+									<a class="popup-header-button popup-header-button-toggleable" href="#" id="btn-popup-advanced">
+										<span>BÚSQUEDA AVANZADA</span>
+									</a>
+								</li>
+							</ul>
+							
+						</div>
+					
+						<div class="nav navbar-expand popup-nav popup-nav-right">
+						
+							<ul class="navbar-nav">
+								<li class="nav-item nav-item-button popup-header-li active">
+									<a class="popup-header-button" href="#" onclick="$('#popup-busqueda').hide();">
+										<span>IR AL MAPA</span>
+									</a>
+								</li>
+							</ul>
+							
+						</div>
+					
 					</div>
 				
 				</div>
 			
+				<?php include("./geovisor.popup.basic.php"); ?>
+			
 			</div>
 		
-			<?php include("./geovisor.popup.basic.php"); ?>
-		
 		</div>
-	
+
 	</div>
 
 </div>
