@@ -64,16 +64,20 @@
 		
 			<div class="scrollbar-content-inner">
 		
-			<img class="image" src="./images/popup.map.png" width="100%">
-		
-				<p class="title">Detalles de la Geografía del Lugar</p>
-				<p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<div id="mini-map">
 				
-				<a href="#" class="popup-text-active">Link</a>
+				</div>
+			
+				<div id="layer-preview-inner">
+			
+					<p class="title" id="layer-preview-title">Datos de Capa</p>
+					<p class="content">Seleccione una capa para ver su descripción</p>
+					
+					<p class="mt-10">
+						<a href="#" class="button" id="btn-layer-preview-addlayer">AGREGAR AL MAPA</a>
+					</p>
 				
-				<p class="mt-10">
-					<a href="#" class="button">AGREGAR AL MAPA</a>
-				</p>
+				</div>
 				
 			</div>
 		

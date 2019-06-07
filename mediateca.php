@@ -159,6 +159,9 @@ $(document).ready(function() {
         setEstudio($(this).data('estudio'));
         model.stopLoad = false;
 
+        if (model.tab == 0)
+            model.ra = 1;
+
         filtersRender();
         dataLoad()
     });
@@ -176,6 +179,10 @@ $(document).ready(function() {
 
     //-----------------------------------------------------
     function init() {
+        var urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('s'))
+            $('#uxSearchText').val(urlParams.get('s'))
+
         filtersLoad();
         dataLoad();
     }
@@ -210,6 +217,7 @@ $(document).ready(function() {
 
 
         $.getJSON(url, function(data) {
+            model.ra = 0;
             model.data.docs = [];
             model.data.medias = [];
             model.data.techs = [];
@@ -418,15 +426,23 @@ $(document).ready(function() {
     }
 
     function fichaRender() {
+        let htmlLinkVisor = '';
+        if (model.ficha.linkvisor != '')
+            htmlLinkVisor = `<a href="${model.ficha.linkvisor}" target="_blank" class="btn btn-warning">Visualizar</a>`;
+
+        let htmlLinkDescarga = '';
+        if (model.ficha.linkdescarga != '')
+            htmlLinkDescarga = `<a href="${model.ficha.linkdescarga}" target="_blank" class="btn btn-warning">Descargar</a>`;
+        
         let html = '';
         html += `
             <div class="ficha-title">${model.ficha.title}</div>
             <div class="ficha-temporal">${model.ficha.temporal}</div>
-            <div class="ficha-proyecto">${model.ficha.proyecto}</div>
+            <div class="ficha-estudio">${model.ficha.estudio}</div>
             <div class="ficha-authors">${model.ficha.authors}</div>
             <div class="ficha-description">${model.ficha.description}</div>
-            <a href="${model.ficha.linkvisor}" target="_blank" class="btn btn-warning">Visualizar</a>
-            <a href="${model.ficha.linkdescarga}" target="_blank" class="btn btn-warning">Descargar</a>
+            ${htmlLinkVisor}
+            ${htmlLinkDescarga}
         `;
         $('#uxFicha .modal-body').html(html);
     }
@@ -469,9 +485,9 @@ $(document).ready(function() {
         let html = '';
         $.each(model.data.techs, function(index, item) {
             html += `
-                <div class="tech row" data-id="${item.id}" data-origen="${item.origen_id}" style="margin-bottom: 6px; margin-left: 0px;">
-                    <span class="badge badge-warning" style="color: #fff; font-size: 100%; padding: 8px; margin-right: 6px;">${item.title}</span>
-                    ${item.description}
+                <div class="tech row" data-id="${item.id}" data-origen="${item.origen_id}" style="margin-bottom: 6px; margin-left: 0px; cursor: pointer;">
+                    <span class="badge badge-warning" style="color: #fff; font-size: 100%; padding: 8px; margin-right: 6px;">${item.metatag}</span>
+                    ${item.title}
                 </div>
             `;
         });
@@ -534,7 +550,8 @@ $(document).ready(function() {
             documento: idItemsChecked(model.filters.groups[model.tab == 0 ? 1 : 2]),
             tema: idItemsChecked(model.filters.groups[3]),
             subtema: idItemsChecked(model.filters.groups[4]),
-            estudio_id: model.filters.estudio
+            estudio_id: model.filters.estudio,
+            ra: model.ra
         };
 
         return jQuery.param(params);

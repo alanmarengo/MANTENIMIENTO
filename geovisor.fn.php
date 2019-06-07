@@ -70,26 +70,87 @@ function DrawLayers($clase_id) {
 		
 		?>
 		
-		<div class="layer-header" data-state="0">
-			<!--<a href="javascript:void(0);">
-				<i class="fa fa-eye"></i>
-			</a>-->
-			
-			<div class="pretty p-default p-curve p-toggle">
-				<input type="checkbox" class="layer-checkbox default-empty-checkbox" data-layer="<?php echo $r["layer_wms_layer"]; ?>" data-wms="<?php echo $r["layer_wms_server"]; ?>"/>
-				<div class="state p-success p-on">
+		<div class="layer-group" data-state="0" data-layer="<?php echo $r["layer_id"]; ?>" data-cid="<?php echo $r["clase_id"]; ?>">
+		
+			<div class="layer-header">
+				<!--<a href="javascript:void(0);">
 					<i class="fa fa-eye"></i>
+				</a>-->
+				
+				<div class="pretty p-default p-curve p-toggle">
+					<input type="checkbox" class="layer-checkbox default-empty-checkbox" id="layer-checkbox-<?php echo $r["layer_id"]; ?>" data-layer="<?php echo $r["layer_wms_layer"]; ?>" data-wms="<?php echo $r["layer_wms_server"]; ?>"/>
+					<div class="state p-success p-on">
+						<i class="fa fa-eye"></i>
+					</div>
+					<div class="state p-danger p-off">
+						<i class="fa fa-eye-slash"></i>
+					</div>
 				</div>
-				<div class="state p-danger p-off">
-					<i class="fa fa-eye-slash"></i>
-				</div>
-			</div>
 
-			<span><?php echo $r["layer_desc"]; ?></span>
+				<span><?php echo $r["layer_desc"]; ?></span>
+				
+				<a href="#" class="simple-tree-pm-button ml-1 btn-plus-layer">
+					<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
+				</a>
+				
+				<a href="#" class="simple-tree-pm-button">
+					<i class="fa fa-trash popup-panel-tree-item-icon-toggler popup-icon"></i>
+				</a>
+			</div>
 			
-			<a href="#" class="simple-tree-pm-button">
-				<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
-			</a>
+			<div class="layer-body">
+			
+				<div class="layer-icons">
+				
+					<div class="layer-icon">
+						<a href="javascript:void(0);">
+							<img src="./images/geovisor/icons/layer-bar-zoom.png">
+						</a>
+					</div>
+				
+					<div class="layer-icon">
+						<a href="javascript:void(0);">
+							<img src="./images/geovisor/icons/layer-bar-info.png">
+						</a>
+					</div>
+				
+					<div class="layer-icon">
+						<a href="javascript:void(0);">
+							<img src="./images/geovisor/icons/layer-bar-relleno.png">
+						</a>
+					</div>
+				
+					<div class="layer-icon" onclick="$('#layer-opacity-<?php echo $r["layer_id"]; ?>').slideToggle('slow');">
+						<a href="javascript:void(0);">
+							<img src="./images/geovisor/icons/layer-bar-gota.png">
+						</a>
+					</div>
+				
+					<div class="layer-icon">
+						<a href="javascript:void(0);">
+							<img src="./images/geovisor/icons/layer-bar-download.png">
+						</a>
+					</div>
+				
+				</div>
+			
+				<div class="layer-opacity" id="layer-opacity-<?php echo $r["layer_id"]; ?>">
+					
+					<div class="opacity-bullet-content">
+						<div class="opacity-bullet"></div>
+					</div>
+					
+					<p>
+						<label for="transp-value-<?php echo $r["layer_id"]; ?>">Opacidad:</label>
+						<input type="text" id="transp-value-<?php echo $r["layer_id"]; ?>" class="transp-value" readonly="readonly" style="border:0;">
+					</p>
+					
+					<div class="slider-range" id="slider-range-<?php echo $r["layer_id"]; ?>"></div>
+					
+				</div>
+			
+			</div>
+		
 		</div>
 		
 		<?php

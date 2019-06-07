@@ -58,7 +58,7 @@ function ol_map() {
 		})
 		
 		this.ol_object = new ol.Map({
-			layers:[],
+			layers:[this.baselayers.openstreets],
 			target: 'map',
 			extent: [-13281237.21183002,-7669922.0600572005,-738226.6183457375,-1828910.1066171727],
 			controls: [],
@@ -69,60 +69,31 @@ function ol_map() {
 				maxZoom: 21
 			})
 		});
-	
-		this.ol_object.addLayer(this.baselayers.openstreets);
+		
+		this.ol_object_mini = new ol.Map({
+			layers:[this.baselayers.openstreets],
+			target: 'mini-map',
+			extent: [-13281237.21183002,-7669922.0600572005,-738226.6183457375,-1828910.1066171727],
+			controls: [],
+			view: new ol.View({
+				center: [-7176058.888636417,-4680928.505993671],
+				zoom:3.8,
+				minZoom: 3.8,
+				maxZoom: 21
+			})
+		});
 		
 		this.createLayers = function() {
 			
-			$(".layer-checkbox").each(function(i,v) {
-				
-				v.layer = false;
-				
-				v.onclick = function() {
-					
-					if (!v.layer) {
-						
-						var layer_name = v.getAttribute("data-layer");
-						var layer_wms = v.getAttribute("data-wms");
-						
-						v.layer = new ol.layer.Tile({
-							visible:true,
-							source: new ol.source.TileWMS({
-								url: layer_wms,
-								params: {
-									'LAYERS': layer_name,
-									'VERSION': '1.1.1',
-									'FORMAT': 'image/png',
-									'TILED': false
-								}
-							})
-						});
-				
-						this.ol_object.addLayer(v.layer);
-						
-					}
-					
-					console.log(v.layer);
-					
-					if (v.checked) {
-						
-						v.layer.setVisible(true);
-						
-					}else{
-						
-						v.layer.setVisible(false);
-						
-					}
-					
-				}.bind(this)
-				
-			}.bind(this));
+			//
 			
 		}
 		
 	}
 	
 	// PANEL SCRIPTS 
+	
+	this.panel.map = this.map;
 	
 	this.panel.start = function() {
 		
@@ -196,13 +167,16 @@ function ol_map() {
 			
 			$("#popup-busqueda").show();
 			
-		});
+			this.map.ol_object_mini.updateSize();
+			this.map.ol_object_mini.render();
+			
+		}.bind(this));
 		
 		$(".basic-filter-checkbox").each(function(i,v) {
 			
 			$(v).on("click",function() {
 			
-				this.UpdatePopupListBasic("basic");
+				this.UpdatePopupListBasic();
 				
 			}.bind(this));
 			
@@ -210,11 +184,9 @@ function ol_map() {
 		
 		$("#btn-adv-search").on("click",function() {
 			
-			var filter = $("#frm-adv-search").serialize();
+			this.UpdatePopupListAdvanced();
 			
-			alert(filter);
-			
-		});
+		}.bind(this));
 		
 		$("form input").val("");
 		$("form select").prop("selectedIndex", 0);
@@ -222,7 +194,7 @@ function ol_map() {
 		
 	}
 	
-	this.panel.UpdatePopupListBasic = function(mode) {
+	this.panel.UpdatePopupListBasic = function() {
 		
 		var filter = [];
 		
@@ -292,7 +264,161 @@ function ol_map() {
 	
 	this.panel.UpdatePopupListAdvanced = function(mode) {
 		
-		alert("adv");
+		var filter = $("#frm-adv-search").serialize();
+		
+		var req = $.ajax({
+			
+			async:false,
+			type:"post",
+			data:filter,
+			url:"./php/filter-proyectos-advanced.php",
+			success:function(d){}
+			
+		});
+		
+		$("#filtered-layer-list").html(req.responseText);		
+		
+		scrollbars.redrawElement(".scrollbar-content");
+		scrollbars.updateSize();		
+		
+		$(".popup-panel-tree-item-header").on("click",function() {			
+			
+			if (this.parentNode.getAttribute("data-state") == 1) {
+				
+				$(this).find(".popup-panel-tree-item-icon").removeClass("far").removeClass("popup-icon-active").addClass("fas");
+				
+				$(this).find(".popup-panel-tree-item-label").removeClass("popup-text-active");
+				
+				$(this).find(".popup-panel-tree-item-icon-toggler").removeClass("fa-minus-circle").addClass("fa-plus-circle");
+				
+				$(this).next(".popup-panel-tree-item-subpanel").slideToggle("slow",function() {					
+					
+					scrollbars.redrawElement("#scrollbar-content-basic-2");
+					
+				});
+				
+				this.parentNode.setAttribute("data-state",0);
+				
+			}else{
+				
+				$(this).find(".popup-panel-tree-item-icon").addClass("far").addClass("popup-icon-active").removeClass("fas");
+				
+				$(this).find(".popup-panel-tree-item-label").addClass("popup-text-active");
+				
+				$(this).find(".popup-panel-tree-item-icon-toggler").removeClass("fa-plus-circle").addClass("fa-minus-circle");
+				
+				$(this).next(".popup-panel-tree-item-subpanel").slideToggle("slow",function() {					
+					
+					scrollbars.redrawElement("#scrollbar-content-basic-2");
+					
+				});
+				
+				this.parentNode.setAttribute("data-state",1);
+				
+			}
+			
+		});
+		
+	}
+	
+	this.panel.PreviewLayer = function(layer_id) {
+		
+		var req = $.ajax({
+			
+			async:false,
+			url:"./php/get-layer-preview.php",
+			type:"post",
+			data:{layer_id:layer_id},
+			success:function(d){}
+			
+		});
+		
+		$("#layer-preview-inner").html(req.responseText);
+		
+		if (!document.getElementById("layer-checkbox-"+layer_id).layer_preview) {
+			
+			var layer_name = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-layer");
+			var layer_wms = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-wms");
+			
+			document.getElementById("layer-checkbox-"+layer_id).layer_preview = new ol.layer.Tile({
+				visible:true,
+				source: new ol.source.TileWMS({
+					url: layer_wms,
+					params: {
+						'LAYERS': layer_name,
+						'VERSION': '1.1.1',
+						'FORMAT': 'image/png',
+						'TILED': false
+					}
+				})
+			});
+			
+			this.map.ol_object_mini.addLayer(document.getElementById("layer-checkbox-"+layer_id).layer_preview);
+
+		}else{
+			
+			document.getElementById("layer-checkbox-"+layer_id).layer_preview.setVisible(true);
+			this.map.ol_object_mini.zoomToExtent(document.getElementById("layer-checkbox-"+layer_id).layer_preview.getDataExtent());
+			
+		}
+		
+	}
+	
+	this.panel.AddLayer = function(clase_id,layer_id) {
+		
+		$(".abr[data-cid="+clase_id+"]").show();
+		$(".abr[data-cid="+clase_id+"]").trigger("click");
+		$(".layer-group[data-layer="+layer_id+"]").show();
+		
+		if (!document.getElementById("layer-checkbox-"+layer_id).layer) {
+					
+			var layer_name = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-layer");
+			var layer_wms = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-wms");
+			
+			document.getElementById("layer-checkbox-"+layer_id).layer = new ol.layer.Tile({
+				visible:true,
+				source: new ol.source.TileWMS({
+					url: layer_wms,
+					params: {
+						'LAYERS': layer_name,
+						'VERSION': '1.1.1',
+						'FORMAT': 'image/png',
+						'TILED': false
+					}
+				})
+			});
+			
+			document.getElementById("layer-checkbox-"+layer_id).layer.setVisible(false);
+			
+			this.map.ol_object.addLayer(document.getElementById("layer-checkbox-"+layer_id).layer);
+			
+			$("#layer-checkbox-"+layer_id).bind("click",function() {
+				
+				if (this.checked) {
+					
+					this.layer.setVisible(true);
+					
+				}else{
+					
+					this.layer.setVisible(false);
+					
+				}
+				
+			});
+			
+		}
+		
+		$("#transp-value-"+layer_id).val(100+"%");
+		
+		$( "#slider-range-"+layer_id ).slider({			
+			values: [ 100 ],
+			slide: function( event, ui ) {
+				$("#transp-value-"+layer_id).val(ui.values[ 0 ]+"%");
+				document.getElementById("layer-checkbox-"+layer_id).layer.setOpacity(ui.values[0]/100);				
+			}
+		});
+			
+		//$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
 		
 	}
 	
@@ -375,6 +501,30 @@ function ol_map() {
 			}
 			
 		});
+		
+		$(".btn-plus-layer").each(function(i,v) {
+			
+			$(v).on("click",function() {
+				
+				$(v).parent().next().slideToggle("slow");
+					
+				if ($(v).children("i").hasClass("fa-minus-circle")) {
+					
+					$(v).children("i").removeClass("fa-minus-circle");
+					$(v).children("i").addClass("fa-plus-circle");
+					
+				}else{
+						
+					$(v).children("i").removeClass("fa-plus-circle");
+					$(v).children("i").addClass("fa-minus-circle");
+						
+				}
+				
+			});
+			
+		});
+		
+		$("#btn-popup-basic").trigger("click");
 		
 	}
 	

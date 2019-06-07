@@ -47,7 +47,7 @@
 				
 					<div class="form-group">
 
-						<input type="text" placeholder="Proyecto...">
+						<?php echo DrawComboSimple("sub_proyecto_id","sub_proyecto_desc","mod_catalogo","sub_proyecto",true,"Proyecto",-1,"adv-search-proyecto-combo","adv-search-proyecto-combo"); ?>
 					
 					</div>
 				
@@ -91,7 +91,7 @@
 				
 					<div class="form-group">			
 				
-						<?php echo DrawComboSimple("responsable_id","responsable_desc","mod_catalogo","vw_estudio_responsable",true,"Responsable",-1,"adv-search-responsable-combo","adv-search-responsable-combo"); ?>
+						<?php echo DrawComboSimple("responsable_desc","responsable_desc","mod_catalogo","vw_estudio_responsable",true,"Responsable","","adv-search-responsable-combo","adv-search-responsable-combo"); ?>
 					
 					</div>
 				
