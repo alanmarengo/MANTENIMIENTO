@@ -100,8 +100,46 @@ function DrawLayers($clase_id) {
 			
 			<div class="layer-body">
 			
-				<div class="layer-opacity" id="layer-opacity-<?php echo $r["layer_id"]; ?>">
+				<div class="layer-icons">
 				
+					<div class="layer-icon">
+						<a href="javascript:void(0);">
+							<img src="./images/geovisor/icons/layer-bar-zoom.png">
+						</a>
+					</div>
+				
+					<div class="layer-icon">
+						<a href="javascript:void(0);">
+							<img src="./images/geovisor/icons/layer-bar-info.png">
+						</a>
+					</div>
+				
+					<div class="layer-icon">
+						<a href="javascript:void(0);">
+							<img src="./images/geovisor/icons/layer-bar-relleno.png">
+						</a>
+					</div>
+				
+					<div class="layer-icon" onclick="$('#layer-opacity-<?php echo $r["layer_id"]; ?>').slideToggle('slow');">
+						<a href="javascript:void(0);">
+							<img src="./images/geovisor/icons/layer-bar-gota.png">
+						</a>
+					</div>
+				
+					<div class="layer-icon">
+						<a href="javascript:void(0);">
+							<img src="./images/geovisor/icons/layer-bar-download.png">
+						</a>
+					</div>
+				
+				</div>
+			
+				<div class="layer-opacity" id="layer-opacity-<?php echo $r["layer_id"]; ?>">
+					
+					<div class="opacity-bullet-content">
+						<div class="opacity-bullet"></div>
+					</div>
+					
 					<p>
 						<label for="transp-value-<?php echo $r["layer_id"]; ?>">Opacidad:</label>
 						<input type="text" id="transp-value-<?php echo $r["layer_id"]; ?>" class="transp-value" readonly="readonly" style="border:0;">

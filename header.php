@@ -23,6 +23,10 @@
     <script src="./js/moment.js"></script>
     <script src="./js/site.js" type="text/javascript"></script>
     <script src="./js/map.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css">
+    <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+
 </head>
 
 <body>
