@@ -31,10 +31,18 @@ body {
 	
 }
 
+.nav-link-fixed {
+	
+	background-color:#333333 !important;
+	color:#FFFFFF !important;
+	
+}
+
 .nav-link-active {
 	
 	background-color:#828282 !important;
 	color:#FFFFFF !important;
+	cursor:default;
 	
 }
 

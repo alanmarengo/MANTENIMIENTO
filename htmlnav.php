@@ -3,10 +3,16 @@
 	<div class="navbar-collapse">
 		<ul class="navbar-nav">
 			<li class="nav-item active">
-				<a class="nav-link nav-link-active" href="#">Inicio</span></a>
+				<a class="nav-link nav-link-fixed" href="#">
+					<span>Menu</span>					
+					<i class="fa fa-window-close" onclick="$('.navbar-toggler').trigger('click');"></i>
+				</a>
 			</li>
 			<li class="nav-item active">
-				<a class="nav-link" href="#">Acerca de la plataforma de proyectos de IEASA<span class="sr-only">(current)</span></a>
+				<a class="nav-link nav-link-active" href="#"><span>Inicio</span></a>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link" href="#">Acerca de la plataforma de proyectos de IEASA</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">Observatorio Ambiental de los AHRSC</a>
@@ -18,7 +24,7 @@
 				<div class="dropdown dropdown-2">
 					<ul class="navbar-nav collapsed">
 						<li class="nav-item active">
-							<a class="nav-link" href="#">Visor IEASA<span class="sr-only">(current)</span></a>
+							<a class="nav-link" href="#">Visor IEASA</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#">Visor Ambiental</a>
