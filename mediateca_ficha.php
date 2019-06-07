@@ -7,7 +7,7 @@ $id                =  $_REQUEST['id'];
 
 $conn = pg_connect("host=localhost port=5432 dbname=ahrsc user=postgres password=plahe100%");
 
-$SQL = "SELECT * FROM mod_mediateca.get_ficha_recurso($origen_id, $id) T";
+$SQL = "SELECT * FROM mod_mediateca.get_ficha_recurso($origen_id, $id) T limit 1";
 
 $recordset = pg_query($conn,$SQL);
 

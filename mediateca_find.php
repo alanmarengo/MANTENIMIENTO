@@ -40,8 +40,10 @@ $SQL = "SELECT row_to_json(T)::text AS r FROM"
         . "recurso_path_url AS \"LinkImagen\","
         . "recurso_categoria_desc AS \"MetaTag\","
         . "CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END AS \"Autores\","
-        . "estudios_id"
-        . " FROM mod_mediateca.mediateca_find('$qt','$desde','$hasta','$proyecto','$clase','$subclase','$tipo_doc') ORDER BY tipo_formato_solapa,recurso_titulo ASC"
+        . "MAX(estudios_id) AS estudios_id"
+        . " FROM mod_mediateca.mediateca_find('$qt','$desde','$hasta','$proyecto','$clase','$subclase','$tipo_doc') "
+        . " GROUP BY tipo_formato_solapa,origen_id,origen_id_especifico,recurso_titulo,recurso_desc,recurso_path_url,recurso_categoria_desc,CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END"
+        . " ORDER BY tipo_formato_solapa,recurso_titulo ASC"
         . ")T";
 }
 else
