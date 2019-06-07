@@ -31,10 +31,26 @@ body {
 	
 }
 
+
 .nav-link-fixed {
 	
 	background-color:#333333 !important;
 	color:#FFFFFF !important;
+	cursor:default;
+	
+}
+
+.nav-link-fixed i {
+	
+	cursor:pointer;
+	float:right;
+	margin-top:8px;
+	
+}
+
+.nav-link-fixed i:hover {
+	
+	opacity:0.5;
 	
 }
 
