@@ -3,7 +3,7 @@
 include("../pgconfig.php");
 
 $proyectos = $_POST["proyectos"];
-
+$proyectos = array(3);
 $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 	
 $conn = pg_connect($string_conn);
@@ -17,8 +17,8 @@ if (sizeof($proyectos)>0) {
 	$get_layers = pg_fetch_assoc($get_layers_query);
 
 	$layer_ids = $get_layers["layer_ids"];
-		
-	$query_string = "SELECT clase_id,subclase_id,clase_desc,subclase_desc FROM mod_geovisores.vw_catalogo_search WHERE sub_proyecto_id IN (".implode(",",$proyectos).") GROUP BY clase_id,subclase_id,clase_desc,subclase_desc ORDER BY clase_desc ASC, subclase_desc ASC;";
+	
+	$query_string = "SELECT clase_id,subclase_id,clase_desc,subclase_desc FROM mod_geovisores.vw_catalogo_search WHERE sub_proyecto_id IN ($layer_ids) GROUP BY clase_id,subclase_id,clase_desc,subclase_desc ORDER BY clase_desc ASC, subclase_desc ASC;";
 
 	$query = pg_query($conn,$query_string);
 
@@ -42,7 +42,7 @@ if (sizeof($proyectos)>0) {
 			
 				<?php
 				
-				$layer_query_string = "SELECT * FROM mod_geovisores.vw_layers WHERE clase_id = " . $r["clase_id"] . " AND subclase_id = " . $r["subclase_id"] . " AND layer_id IN (" . $layer_ids . ")";
+				$layer_query_string = "SELECT DISTINCT * FROM mod_geovisores.vw_layers WHERE clase_id = " . $r["clase_id"] . " AND subclase_id = " . $r["subclase_id"] . " AND layer_id IN (" . $layer_ids . ") ORDER BY layer_desc ASC";
 				$layer_query = pg_query($conn,$layer_query_string);
 				
 				while($l = pg_fetch_assoc($layer_query)) {

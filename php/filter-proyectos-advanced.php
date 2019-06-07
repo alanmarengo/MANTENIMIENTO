@@ -76,7 +76,7 @@ while($r = pg_fetch_assoc($query)) {
 			
 			if ((!empty($r["clase_id"])) && (!empty($r["subclase_id"]))) {		
 			
-				$layer_query_string = "SELECT * FROM mod_geovisores.vw_layers WHERE clase_id = " . $r["clase_id"] . " AND subclase_id = " . $r["subclase_id"] . " AND layer_id IN (" . $layer_ids . ")";
+				$layer_query_string = "SELECT DISTINCT * FROM mod_geovisores.vw_layers WHERE clase_id = " . $r["clase_id"] . " AND subclase_id = " . $r["subclase_id"] . " AND layer_id IN (" . $layer_ids . ") ORDER BY layer_desc ASC";
 				$layer_query = pg_query($conn,$layer_query_string);
 			
 				while($l = pg_fetch_assoc($layer_query)) {

@@ -63,5 +63,7 @@
             <a href="#" class="fab fa-twitter"></a>
         </div>
     </div>
+	
+</div>
 </body>
 </html>

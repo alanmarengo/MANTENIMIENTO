@@ -12,6 +12,9 @@
     <link rel="stylesheet" type="text/css" href="./css/bootstrap-datepicker.min.css" />
     <link rel="stylesheet" type="text/css" href="./css/bootstrap-select.css" />
     <link rel="stylesheet" type="text/css" href="./css/site.css" />
+    <link rel="stylesheet" type="text/css" href="./css/perfect-scrollbar.css" />
+    <link rel="stylesheet" type="text/css" href="./css/scrollbars.css" />
+    <link rel="stylesheet" type="text/css" href="./css/sidenav-index.css" />
 
     <script src="./js/jquery-3.2.1.min.js"></script>
     <script src="./js/bootstrap.bundle.min.js"></script>
@@ -20,19 +23,41 @@
     <script src="./js/bootstrap-select.js"></script>
     <script src="./js/popper-1.12.9.min.js"></script>
     <script src="./js/openlayers/ol.js" type="text/javascript"></script>
+    <script src="./js/perfect-scrollbar.js" type="text/javascript"></script>
+    <script src="./js/scrollbars.js" type="text/javascript"></script>
     <script src="./js/moment.js"></script>
     <script src="./js/site.js" type="text/javascript"></script>
     <script src="./js/map.js" type="text/javascript"></script>
+    <script src="./js/nav.js" type="text/javascript"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css">
     <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
-
+	
+	<script type="text/javascript">
+	
+		window.addEventListener("load",function() {	
+			
+			setNav();					
+			
+			scrollbars = new scrollbars();
+			scrollbars.create();
+			scrollbars.updateSize();
+			
+		});
+	
+	</script>
+	
 </head>
 
 <body>
+
+<?php include("./htmlnav.php"); ?>
+
+<div id="page">
+
     <nav class="navbar navbar-dark bg-light" id="nav-1">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" 
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" onclick="nav();">
             <span class="navbar-toggler-icon">
                 <i class="fa fa-navicon"></i>
             </span>

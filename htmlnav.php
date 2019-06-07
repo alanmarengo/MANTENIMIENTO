@@ -1,4 +1,4 @@
-<div class="col-md-3 col-lg-3 col-sm-12 col-xs-12 navbar-sidebar" id="navbarNav" data-state="0">
+<div class="col-md-3 col-lg-3 col-sm-12 col-xs-12 navbar-sidebar scrollbar-content" id="navbarNav" data-state="0">
  
 	<div class="navbar-collapse">
 		<ul class="navbar-nav">

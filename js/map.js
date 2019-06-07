@@ -9,8 +9,19 @@ function ol_map() {
 	
 	this.nav.start = function() {
 		
+		var docheight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+	
 		var width_nav = $("#navbarNav").width();
 		$("#navbarNav").css("left","-"+width_nav+"px");
+		$("#navbarNav").css("display","block");
+		$("#navbarNav").height(docheight);
+		
+		$("#navbarNav .nav-link").bind("click",function() {			
+						
+			scrollbars.redrawElement(".scrollbar-content");
+			
+		});
+		
 		
 	}
 	
@@ -426,7 +437,19 @@ function ol_map() {
 		});
 		
 		var js = JSON.parse(reqExtent.responseText);
+		
+		var allLayers = geomap.map.ol_object_mini.getLayers().getArray();
+		
+		for (var i=0; i<allLayers.length; i++) {
 			
+			if (allLayers[i].get('name') != "openstreets") {
+				
+				allLayers[i].setVisible(false);
+			
+			}
+			
+		}
+		
 		document.getElementById("layer-checkbox-"+layer_id).layer_preview.setVisible(true);
 		
 		var extent = ol.proj.transformExtent(
