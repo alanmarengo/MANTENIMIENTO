@@ -52,7 +52,17 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="uxFicha" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 <script type='text/javascript'>
 $(document).ready(function() {
@@ -63,7 +73,7 @@ $(document).ready(function() {
         filters: {
             orden: 0,
             searchText: '',
-            dateStart: '', 
+            dateStart: '',
             dateEnd: '',
             estudio: null,
             groups: initFiltersGroups()
@@ -83,11 +93,11 @@ $(document).ready(function() {
         refreshSearchText();
     });
 
-    $('#uxSearchText').on('keypress',function(e) {
-        if(e.which == 13) {
+    $('#uxSearchText').on('keypress', function(e) {
+        if (e.which == 13) {
             refreshSearchText();
         }
-    });    
+    });
 
     // REMOVE FILTER
     $('body').on('click', '.filters-checked', function() {
@@ -127,14 +137,13 @@ $(document).ready(function() {
     });
 
     // CLICK ON TAB
-    $('a[data-tab]').on('click', function (e) {
+    $('a[data-tab]').on('click', function(e) {
         setSolapa($(this).data('tab'));
-        
+
         if (model.tab == 2) {
             model.filters.groups[1].visible = false;
             model.filters.groups[2].visible = true;
-        }
-        else {
+        } else {
             model.filters.groups[1].visible = true;
             model.filters.groups[2].visible = false;
         }
@@ -150,32 +159,30 @@ $(document).ready(function() {
         setEstudio($(this).data('estudio'));
         model.stopLoad = false;
 
+        if (model.tab == 0)
+            model.ra = 1;
+
         filtersRender();
         dataLoad()
     });
 
-    function setSolapa(solapa) {
-        $(`a[data-tab="${model.tab}"]`).removeClass('active');
-        model.tab = solapa;
-        $(`a[data-tab="${model.tab}"]`).addClass('active');
-    }
+    // CLICK EN DOC PARA POPUP FICHA
+    $('body').on('click', '.doc-title, .tech', function(e) {
+        let id = $(this).data('id');
+        let origen_id = $(this).data('origen');
+        fichaLoad(id, origen_id);
+    });
 
-    function setEstudio(estudio) {
-        if (estudio)
-            filtersReset();
-        
-        model.filters.estudio = estudio;
-    }
 
-    function filtersReset() {
-        $('#uxSearchText').val('');
-        $('#uxDesde').datepicker('clearDates');
-        $('#uxHasta').datepicker('clearDates');
-        uncheckAllGroups();
-    }
+
+
 
     //-----------------------------------------------------
     function init() {
+        var urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('s'))
+            $('#uxSearchText').val(urlParams.get('s'))
+
         filtersLoad();
         dataLoad();
     }
@@ -210,6 +217,7 @@ $(document).ready(function() {
 
 
         $.getJSON(url, function(data) {
+            model.ra = 0;
             model.data.docs = [];
             model.data.medias = [];
             model.data.techs = [];
@@ -217,23 +225,24 @@ $(document).ready(function() {
                 if (value.Solapa == 0) {
                     model.data.docs.push({
                         id: value.Id,
+                        origen_id: value.origen_id,
                         title: value.Titulo,
                         authors: value.Autores,
                         description: value.Descripcion,
                         estudio: value.estudios_id
                     });
-                }
-                else if (value.Solapa == 1) {
+                } else if (value.Solapa == 1) {
                     model.data.medias.push({
                         id: value.Id,
+                        origen_id: value.origen_id,
                         link: value.LinkImagen,
                         title: value.Titulo,
                         estudio: value.estudios_id
                     });
-                }
-                else if (value.Solapa == 2) {
+                } else if (value.Solapa == 2) {
                     model.data.techs.push({
                         id: value.Id,
+                        origen_id: value.origen_id,
                         metatag: value.MetaTag,
                         title: value.Titulo,
                         description: value.Descripcion,
@@ -241,9 +250,57 @@ $(document).ready(function() {
                     });
                 }
             });
-            
+
             dataRender();
         });
+    }
+
+    function fichaLoad(id, origen_id) {
+        let qs = {
+            id: id,
+            origen_id: origen_id
+        };
+        let url = model.apiUrlBase + '/mediateca_ficha.php?' + jQuery.param(qs);
+        $.getJSON(url, function(data) {
+            model.ficha = {
+                id: data.Id,
+                origen_id: data.origen_id,
+                title: data.titulo,
+                temporal: data.temporal,
+                authors: data.autores,
+                description: data.descripcion,
+                estudio: data.estudio,
+                linkvisor: data.linkvisor,
+                linkdescarga: data.linkdescarga,
+                fecha: data.fecha,
+                tema_subtema: data.tema_subtema,
+                proyecto: data.proyecto,
+                estudio_id: data.estudio_id
+            };
+
+            fichaRender();
+            $('#uxFicha').modal('show');
+        });
+    }
+
+    function setSolapa(solapa) {
+        $(`a[data-tab="${model.tab}"]`).removeClass('active');
+        model.tab = solapa;
+        $(`a[data-tab="${model.tab}"]`).addClass('active');
+    }
+
+    function setEstudio(estudio) {
+        if (estudio)
+            filtersReset();
+
+        model.filters.estudio = estudio;
+    }
+
+    function filtersReset() {
+        $('#uxSearchText').val('');
+        $('#uxDesde').datepicker('clearDates');
+        $('#uxHasta').datepicker('clearDates');
+        uncheckAllGroups();
     }
 
     function dataRender() {
@@ -368,12 +425,34 @@ $(document).ready(function() {
         });
     }
 
+    function fichaRender() {
+        let htmlLinkVisor = '';
+        if (model.ficha.linkvisor != '')
+            htmlLinkVisor = `<a href="${model.ficha.linkvisor}" target="_blank" class="btn btn-warning">Visualizar</a>`;
+
+        let htmlLinkDescarga = '';
+        if (model.ficha.linkdescarga != '')
+            htmlLinkDescarga = `<a href="${model.ficha.linkdescarga}" target="_blank" class="btn btn-warning">Descargar</a>`;
+        
+        let html = '';
+        html += `
+            <div class="ficha-title">${model.ficha.title}</div>
+            <div class="ficha-temporal">${model.ficha.temporal}</div>
+            <div class="ficha-estudio">${model.ficha.estudio}</div>
+            <div class="ficha-authors">${model.ficha.authors}</div>
+            <div class="ficha-description">${model.ficha.description}</div>
+            ${htmlLinkVisor}
+            ${htmlLinkDescarga}
+        `;
+        $('#uxFicha .modal-body').html(html);
+    }
+
     function docsRender() {
         let html = '';
         $.each(model.data.docs, function(index, doc) {
             html += `
                 <div class="doc">
-                    <div class="doc-title">
+                    <div class="doc-title" data-id="${doc.id}" data-origen="${doc.origen_id}">
                         <img class="doc-icon" src="./images/icon-pdf-file.png" />
                         ${doc.title}
                     </div>
@@ -406,9 +485,9 @@ $(document).ready(function() {
         let html = '';
         $.each(model.data.techs, function(index, item) {
             html += `
-                <div class="tech row" style="margin-bottom: 6px; margin-left: 0px;">
-                        <span class="badge badge-warning" style="color: #fff; font-size: 100%; padding: 8px; margin-right: 6px;">${item.title}</span>
-                        ${item.description}
+                <div class="tech row" data-id="${item.id}" data-origen="${item.origen_id}" style="margin-bottom: 6px; margin-left: 0px; cursor: pointer;">
+                    <span class="badge badge-warning" style="color: #fff; font-size: 100%; padding: 8px; margin-right: 6px;">${item.metatag}</span>
+                    ${item.title}
                 </div>
             `;
         });
@@ -471,7 +550,8 @@ $(document).ready(function() {
             documento: idItemsChecked(model.filters.groups[model.tab == 0 ? 1 : 2]),
             tema: idItemsChecked(model.filters.groups[3]),
             subtema: idItemsChecked(model.filters.groups[4]),
-            estudio_id: model.filters.estudio
+            estudio_id: model.filters.estudio,
+            ra: model.ra
         };
 
         return jQuery.param(params);
