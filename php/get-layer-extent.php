@@ -21,6 +21,8 @@ st_xmax(st_expand(st_extent(st_transform(T.the_geom, 3857)), 200::double precisi
 st_ymax(st_expand(st_extent(st_transform(T.the_geom, 3857)), 200::double precision)::box3d) AS maxy'
 FROM \"" . $data["layer_schema"] . "\".\"" . $data["layer_table"] . "\"";
 
-echo $query_string;
+$extent = pg_fetch_assoc(pg_query($conn,$query_string));
+
+var_dump($extent);
 
 ?>
