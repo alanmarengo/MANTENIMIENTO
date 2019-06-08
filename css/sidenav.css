@@ -107,3 +107,7 @@ body {
     line-height: auto;
 
 }
+
+#main-search:focus {
+        outline: none;
+    }

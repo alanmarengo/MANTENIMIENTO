@@ -194,6 +194,7 @@
 	<script src="./js/openlayers/ol.js" type="text/javascript"></script>
 	
 	<script src="./js/map.js" type="text/javascript"></script>
+	<script src="./js/site.js" type="text/javascript"></script>
 	<script src="./js/scrollbars.js" type="text/javascript"></script>
 	
 	<script type="text/javascript">
