@@ -113,6 +113,25 @@
 	
 }
 
+.layer-basico-container {
+	
+	background-color:transparent;
+	
+}
+
+#layer-title, #layer-desc {
+	
+	color:white;
+	
+}
+
+#layer-desc {
+
+	margin-top:20px;
+	text-align:justify;
+	
+}
+
 .colorpicker-bullet-content {
 	
 	width:24px;
