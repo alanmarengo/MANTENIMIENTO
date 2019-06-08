@@ -52,7 +52,7 @@
 	
 }
 
-.layer-header .pretty {
+.layer-header .pretty,.layer-container-header .pretty {
 	
 	position:relative;
 	left:9px;
@@ -81,7 +81,7 @@
 	
 }
 
-.layer-opacity {
+.layer-opacity,.layer-colorpicker {
 
     padding: 0 10px 10px 10px;
     background: RGBA(0,0,0,0.2);
@@ -102,6 +102,29 @@
 }
 
 .opacity-bullet {
+	
+	width:14px;
+	height:14px;
+    background: RGBA(0,0,0,0.2);
+	transform: rotate(45deg);
+	position: relative;
+	top: 8px;
+	left: 2px;
+	
+}
+
+.colorpicker-bullet-content {
+	
+	width:24px;
+	height:14px;
+	overflow:hidden;
+	position:relative;
+	left: 130px;
+	top: -14px;
+	
+}
+
+.colorpicker-bullet {
 	
 	width:14px;
 	height:14px;

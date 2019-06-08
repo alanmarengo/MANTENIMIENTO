@@ -37,6 +37,7 @@
 	<link rel="stylesheet" href="./css/geovisor/sizers.css"/>
 	<link rel="stylesheet" href="./css/geovisor/sliders.css"/>
 	<link rel="stylesheet" href="./css/geovisor/spacers.css"/>
+	<link rel="stylesheet" href="./js/colorpicker/css/colorpicker.css"/>
 	
 	<link rel="stylesheet" href="./js/openlayers/ol.css"/>
 	
@@ -188,6 +189,7 @@
 	<script src="./js/perfect-scrollbar.js"></script>
 	<script src="./js/bootstrap-select.js"></script>
 	<script src="./js/bootstrap-select-init.js"></script>
+	<script src="./js/colorpicker/js/colorpicker.js"></script>
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 		
@@ -347,57 +349,7 @@
 	<div id="map"></div>
 
 	<?php include("geovisor.panel.php"); ?>
-
-	<div class="popup" id="popup-busqueda">
-
-		<div class="row popup-row">
-		
-			<div class="col col-popup mx-auto col-md-6 col-sm-12 col-xs-12">
-			
-				<div class="row popup-row">			
-					
-					<div class="col col-md-12 col-xs-12 popup-header">
-					
-						<div class="nav navbar-expand popup-nav">
-						
-							<ul class="navbar-nav">
-								<li class="nav-item nav-item-button popup-header-li active">
-									<a class="popup-header-button popup-header-button-toggleable popup-header-button-active" href="#" id="btn-popup-basic">
-										<span>BÚSQUEDA</span>
-									</a>
-								</li>
-								<li class="nav-item nav-item-button popup-header-li">
-									<a class="popup-header-button popup-header-button-toggleable" href="#" id="btn-popup-advanced">
-										<span>BÚSQUEDA AVANZADA</span>
-									</a>
-								</li>
-							</ul>
-							
-						</div>
-					
-						<div class="nav navbar-expand popup-nav popup-nav-right">
-						
-							<ul class="navbar-nav">
-								<li class="nav-item nav-item-button popup-header-li active">
-									<a class="popup-header-button" href="#" onclick="$('#popup-busqueda').hide();">
-										<span>IR AL MAPA</span>
-									</a>
-								</li>
-							</ul>
-							
-						</div>
-					
-					</div>
-				
-				</div>
-			
-				<?php include("./geovisor.popup.basic.php"); ?>
-			
-			</div>
-		
-		</div>
-
-	</div>
+	<?php include("geovisor.popup.php"); ?>
 
 </div>
 

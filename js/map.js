@@ -160,6 +160,39 @@ function ol_map() {
 		
 	}
 	
+	this.map.zoomToLayerExtent = function(layer_id) {
+		
+		var js = this.getLayerExtent(layer_id);
+		
+		var extent = ol.proj.transformExtent(
+			[js.minx,js.miny,js.maxx,js.maxy],
+			"EPSG:3857", "EPSG:3857"
+		);
+		
+		this.ol_object.getView().fit(extent,{duration:1000});
+		this.ol_object.updateSize();
+		this.ol_object.render();
+		
+	}
+	
+	this.map.getLayerExtent = function(layer_id) {
+		
+		var reqExtent = $.ajax({
+			
+			async:false,
+			url:"./php/get-layer-extent.php",
+			type:"post",
+			data:{layer_id:layer_id},
+			success:function(d){}
+				
+		});
+		
+		var js = JSON.parse(reqExtent.responseText);
+		
+		return js;
+		
+	}
+	
 	// PANEL SCRIPTS 
 	
 	this.panel.map = this.map;
@@ -426,17 +459,7 @@ function ol_map() {
 
 		}
 		
-		var reqExtent = $.ajax({
-			
-			async:false,
-			url:"./php/get-layer-extent.php",
-			type:"post",
-			data:{layer_id:layer_id},
-			success:function(d){}
-				
-		});
-		
-		var js = JSON.parse(reqExtent.responseText);
+		var js = this.map.getLayerExtent(layer_id);
 		
 		var allLayers = geomap.map.ol_object_mini.getLayers().getArray();
 		
@@ -504,6 +527,9 @@ function ol_map() {
 				}
 				
 			});
+			
+			document.getElementById("layer-checkbox-"+layer_id).layer.colorpicker = true;
+			$("#layer-colorpicker-inner-"+layer_id).ColorPicker({flat: true, width:"100%"});
 			
 		}
 		
@@ -641,11 +667,57 @@ function ol_map() {
 		
 		$("#btn-popup-basic").trigger("click");
 		
+		$(".layer-container-header .pretty .layer-checkbox").each(function(i,v) {
+			
+			$(v).on("click",function() {
+				
+				if (v.checked) {
+					
+					$(v).closest(".layer-container").find(".layer-container-body").find(".layer-checkbox:visible:not(:checked)").trigger("click");
+					
+				}else{
+					
+					$(v).closest(".layer-container").find(".layer-container-body").find(".layer-checkbox:visible:checked").trigger("click");				
+					
+				}
+				
+			});
+			
+		});
+		
+	}
+	
+	this.popup.fixSize = function(otherElements) {
+		
+		var docheight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+		var docwidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+		
+		var otherElementsTotalHeight = 0;
+		
+		var left = $("#panel-left").width()+50;
+		var nwidth = docwidth - left - 50;
+		
+		var windowTotalHeight = $(document).height();
+		
+		for (var i=0; i<otherElements.length; i++) {
+			
+			otherElementsTotalHeight += $(otherElements[i]).outerHeight();
+		
+		}
+		
+		var nheight = docheight - otherElementsTotalHeight;
+		
+		$("#popup-busqueda").width(nwidth);
+		$("#popup-busqueda").height(nheight);
+		$("#popup-busqueda").css("left",left+"px");
+		
 	}
 	
 	this.popup.start = function() {
 		
 		this.startInterface();
+		this.fixSize([document.getElementById("nav-1"),document.getElementById("nav-2")]);
+		$(".popup").draggable({handle:".popup-header"});
 		
 	}
 	
