@@ -84,7 +84,7 @@ function DrawLayers($clase_id) {
 				</a>-->
 				
 				<div class="pretty p-default p-curve p-toggle">
-					<input type="checkbox" class="layer-checkbox default-empty-checkbox" id="layer-checkbox-<?php echo $r["layer_id"]; ?>" data-layer="<?php echo $r["layer_wms_layer"]; ?>" data-wms="<?php echo $r["layer_wms_server"]; ?>"/>
+					<input type="checkbox" class="layer-checkbox default-empty-checkbox" id="layer-checkbox-<?php echo $r["layer_id"]; ?>" data-lid="<?php echo $r["layer_id"]; ?>" data-cid="<?php echo $r["clase_id"]; ?>" data-added="0" data-layer="<?php echo $r["layer_wms_layer"]; ?>" data-wms="<?php echo $r["layer_wms_server"]; ?>"/>
 					<div class="state p-success p-on">
 						<i class="fa fa-eye"></i>
 					</div>

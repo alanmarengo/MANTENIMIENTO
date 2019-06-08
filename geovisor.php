@@ -33,6 +33,7 @@
 	<link rel="stylesheet" href="./css/geovisor/buttons.css"/>
 	<link rel="stylesheet" href="./css/geovisor/display.css"/>
 	<link rel="stylesheet" href="./css/geovisor/forms.css"/>
+	<link rel="stylesheet" href="./css/geovisor/inputs.css"/>
 	<link rel="stylesheet" href="./css/geovisor/layers.css"/>
 	<link rel="stylesheet" href="./css/geovisor/sizers.css"/>
 	<link rel="stylesheet" href="./css/geovisor/sliders.css"/>
@@ -221,7 +222,23 @@
 			
 			scrollbars.updateSize();
 			
-			$(".selectpicker").selectpicker();
+			$(".selectpicker").selectpicker();		
+			
+			<?php if (isset($_GET["l"])) { ?>
+				
+			var s_clase = [<?php echo $_GET["c"]; ?>];
+			var s_layers = [<?php echo $_GET["l"]; ?>];
+			var s_visibles = [<?php echo $_GET["v"]; ?>];
+			for (var i=0; i<s_layers.length; i++) { 
+				geomap.panel.AddLayer(s_clase[i],s_layers[i]);
+				if (s_visibles[i]) { 
+					document.getElementById("layer-checkbox-"+s_layers[i]).click(); 
+				}
+			}
+							
+			<?php } ?>
+			
+			<?php if (isset($_GET["ca"])) { ?> $(".panel-abr[data-cid="+<?php echo $_GET["ca"]; ?>+"]").trigger("click"); <?php } ?>
 			
 		});
 		
@@ -259,7 +276,7 @@
 					<a class="nav-link nav-link-button" href="#" id="navbarDropdown-help" role="button" data-toggle="dropdown" aria-expanded="false">
 						<i class="fa fa-question-circle"></i>
 					</a>
-					<div class="dropdown-menu"  style="text-align:right; position:absolute; left:-90px; z-index:999999;" aria-labelledby="navbarDropdown-help">
+					<div class="dropdown-menu"  style="text-align:right; position:absolute; left:22%; top:105%; z-index:999999;" aria-labelledby="navbarDropdown-help">
 						<a class="dropdown-item" href="#">Video Explicativo</a>
 					</div>
 				</li>
@@ -297,47 +314,38 @@
 					<ul class="navbar-nav">
 						<li class="nav-item">
 							<a href="#" class="nav-link">
-								<img src="./images/toolbar.icon.zoomext.png">
-							</a>
-						</li>
-						<li>
-							<a class="nav-link nav-link-death nav-link-separator nav-item">
-								<span>|</span>
+								<img src="./images/toolbar.icon.buffer.png">
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link nav-link-death nav-item">Infraestructura</a>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-maq" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Todas:
-							</a>
-							<div class="dropdown-menu" style="text-align:right;" aria-labelledby="navbarDropdown-maq">
-								<a class="dropdown-item" href="#">Maquinaria</a>
-								<a class="dropdown-item" href="#">Equipos</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#">Todos</a>
-							</div>
-						</li>
-						<li>
-							<a class="nav-link nav-link-death nav-link-separator nav-item">
-								<span>|</span>
+							<a href="#" class="nav-link">
+								<img src="./images/toolbar.icon.ptopografico.png">
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link nav-link-death nav-item">Estado</a>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-po" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Terminado:
+							<a href="#" class="nav-link">
+								<img src="./images/toolbar.icon.medicion.png">
 							</a>
-							<div class="dropdown-menu" style="text-align:right;" aria-labelledby="navbarDropdown-po">
-								<a class="dropdown-item" href="#">Sin Iniciar</a>
-								<a class="dropdown-item" href="#">En Proceso</a>
-								<a class="dropdown-item" href="#">Terminado</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#">Sin Especificar</a>
-							</div>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link">
+								<img src="./images/toolbar.icon.coordenadas.png">
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link">
+								<img src="./images/toolbar.icon.dibujo.png">
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link">
+								<img src="./images/toolbar.icon.print.png">
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link" onclick="geomap.map.share();">
+								<img src="./images/toolbar.icon.share.png">
+							</a>
 						</li>
 					</ul>
 				</div>
@@ -350,6 +358,7 @@
 
 	<?php include("geovisor.panel.php"); ?>
 	<?php include("geovisor.popup.php"); ?>
+	<?php include("geovisor.popup-share.php"); ?>
 
 </div>
 

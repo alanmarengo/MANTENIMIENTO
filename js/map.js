@@ -193,6 +193,54 @@ function ol_map() {
 		
 	}
 	
+	this.map.share = function() {
+		
+		var s_layers = [];
+		var s_visibles = [];
+		var s_clase = [];
+		var clase_active = $(".panel-abr[data-active=1]").attr("data-cid");
+		
+		var zoom = this.ol_object.getView().getZoom();
+		var center = this.ol_object.getView().getCenter();
+		
+		$(".panel-abr:visible").each(function(i,v) {
+			
+			s_clase.push(this.getAttribute("data-cid"));
+			
+		});
+		
+		$(".layer-checkbox[data-added=1]").each(function(i,v) {
+			
+			if (v.layer) {
+				
+				var visible = 0;
+				
+				if (v.layer.getVisible()) { visible = 1; }
+				
+				s_layers.push(v.getAttribute("data-lid"));
+				s_visibles.push(visible);
+				s_clase.push(v.getAttribute("data-cid"));
+				
+			}
+			
+		});
+		
+		var s_link = "http://observatorio.atic.com.ar/geovisor.php?";
+			s_link += "fk=0";
+			s_link += "&c=" + s_clase.join(",");
+			s_link += "&ca=" + clase_active;
+			s_link += "&l=" + s_layers.join(",");
+			s_link += "&v=" + s_visibles.join(",");
+			s_link += "&cen=" + center;
+			s_link += "&z=" + zoom;
+		
+		$("#input-share").val(s_link);
+		
+		$(".popup").hide();
+		$("#popup-share").show();
+		
+	}
+	
 	// PANEL SCRIPTS 
 	
 	this.panel.map = this.map;
@@ -267,6 +315,7 @@ function ol_map() {
 		
 		$("#panel-seach-input").on("focus",function() {
 			
+			$(".popup").hide();
 			$("#popup-busqueda").show();
 			
 			this.map.ol_object_mini.updateSize();
@@ -514,6 +563,8 @@ function ol_map() {
 			
 			this.map.ol_object.addLayer(document.getElementById("layer-checkbox-"+layer_id).layer);
 			
+			$("#layer-checkbox-"+layer_id).attr("data-added","1");
+			
 			$("#layer-checkbox-"+layer_id).bind("click",function() {
 				
 				if (this.checked) {
@@ -552,12 +603,15 @@ function ol_map() {
 		$(".layer-group[data-layer="+layer_id+"]").hide();
 		document.getElementById("layer-checkbox-"+layer_id).layer.setVisible(false);
 		
+		$("#layer-checkbox-"+layer_id).attr("data-added","0");
+		
 		var visibles = $(".layer-container[data-cid="+clase_id+"] .layer-group:visible").length;
 		
 		if (visibles == 0) {
 			
 			$(".layer-container[data-cid="+clase_id+"]").hide();
 			$(".panel-abr[data-cid="+clase_id+"]").hide();
+			$(".panel-abr[data-cid="+clase_id+"]").attr("data-active","0");
 			
 		}
 		
@@ -710,6 +764,10 @@ function ol_map() {
 		$("#popup-busqueda").width(nwidth);
 		$("#popup-busqueda").height(nheight);
 		$("#popup-busqueda").css("left",left+"px");
+		
+		$("#popup-share").width(nwidth);
+		$("#popup-share").height(nheight);
+		$("#popup-share").css("left",left+"px");
 		
 	}
 	
