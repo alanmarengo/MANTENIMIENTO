@@ -200,6 +200,12 @@ function ol_map() {
 		var s_clase = [];
 		var clase_active = $(".panel-abr[data-active=1]").attr("data-cid");
 		
+		if (clase_active == undefined) {
+			
+			clase_active = "";
+			
+		}
+		
 		var zoom = this.ol_object.getView().getZoom();
 		var center = this.ol_object.getView().getCenter();
 		
@@ -225,7 +231,7 @@ function ol_map() {
 			
 		});
 		
-		var s_link = "http://observatorio.atic.com.ar/geovisor.php?";
+		var s_link = SITEURL+"geovisor.php?";
 			s_link += "fk=0";
 			s_link += "&c=" + s_clase.join(",");
 			s_link += "&ca=" + clase_active;

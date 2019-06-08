@@ -196,6 +196,7 @@
 		
 	<script src="./js/openlayers/ol.js" type="text/javascript"></script>
 	
+	<script src="./js/config.js" type="text/javascript"></script>
 	<script src="./js/map.js" type="text/javascript"></script>
 	<script src="./js/site.js" type="text/javascript"></script>
 	<script src="./js/scrollbars.js" type="text/javascript"></script>
@@ -229,6 +230,7 @@
 			var s_clase = [<?php echo $_GET["c"]; ?>];
 			var s_layers = [<?php echo $_GET["l"]; ?>];
 			var s_visibles = [<?php echo $_GET["v"]; ?>];
+			
 			for (var i=0; i<s_layers.length; i++) { 
 				geomap.panel.AddLayer(s_clase[i],s_layers[i]);
 				if (s_visibles[i]) { 
@@ -238,7 +240,25 @@
 							
 			<?php } ?>
 			
-			<?php if (isset($_GET["ca"])) { ?> $(".panel-abr[data-cid="+<?php echo $_GET["ca"]; ?>+"]").trigger("click"); <?php } ?>
+			<?php if ((isset($_GET["ca"])) && (!empty($_GET["ca"]))) { ?> 
+				
+				var ca = <?php echo $_GET["ca"]; ?>;
+				
+				$(".panel-abr[data-cid="+ca+"]").trigger("click"); 
+				
+			<?php } ?>
+			
+			<?php if ((isset($_GET["z"])) && (!empty($_GET["z"]))) { ?> 
+			
+			geomap.map.ol_object.getView().setZoom(<?php echo $_GET["z"]; ?>);
+							
+			<?php } ?>
+			
+			<?php if ((isset($_GET["cen"])) && (!empty($_GET["cen"]))) { ?> 
+			
+			geomap.map.ol_object.getView().setCenter(ol.proj.transform([<?php echo $_GET["cen"]; ?>], 'EPSG:3857', 'EPSG:3857'));
+							
+			<?php } ?>
 			
 		});
 		
@@ -318,27 +338,27 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link">
+							<a href="#" class="nav-link nav-toolbar-link">
 								<img src="./images/toolbar.icon.ptopografico.png">
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link">
+							<a href="#" class="nav-link nav-toolbar-link">
 								<img src="./images/toolbar.icon.medicion.png">
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link">
+							<a href="#" class="nav-link nav-toolbar-link">
 								<img src="./images/toolbar.icon.coordenadas.png">
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link">
+							<a href="#" class="nav-link nav-toolbar-link">
 								<img src="./images/toolbar.icon.dibujo.png">
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link">
+							<a href="#" class="nav-link nav-toolbar-link">
 								<img src="./images/toolbar.icon.print.png">
 							</a>
 						</li>

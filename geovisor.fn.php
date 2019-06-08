@@ -166,6 +166,12 @@ function DrawLayers($clase_id) {
 					<div class="slider-range" id="slider-range-<?php echo $r["layer_id"]; ?>"></div>
 					
 				</div>
+				
+				<div class="layer-legend" id="layer-legend-<?php echo $r["layer_id"]; ?>">
+				
+					<img src="<?php echo $r["layer_wms_server"]; ?>?Service=WMS&REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=12&HEIGHT=12&LAYER=<?php echo $r["layer_wms_layer"]; ?>">
+				
+				</div>
 			
 			</div>
 		
