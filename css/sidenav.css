@@ -92,3 +92,18 @@ body {
 	padding:0 30px !important;
 	
 }
+
+#main-search {
+
+    background-color: transparent;
+    border: none;
+        border-left-color: currentcolor;
+        border-left-style: none;
+        border-left-width: medium;
+    color: #fff;
+    border-left: solid 1px #666;
+    margin-left: .6em;
+    padding: 0 .6em;
+    line-height: auto;
+
+}

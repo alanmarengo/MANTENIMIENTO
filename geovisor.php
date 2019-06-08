@@ -107,7 +107,7 @@
 			
 			color:#34ccfe !Important;
 			margin:0 0.3em !Important;
-			width:2.4em;
+			min-width:2.4em;
 			background-color:#4a4849;
 			text-align:center;
 			border-radius:3px;
@@ -249,11 +249,12 @@
 				<li class="nav-item nav-item-button active">
 					<a class="nav-link nav-link-button" href="#">
 						<i class="fa fa-search"></i>
+                        <input id="main-search" name="main-search" type="text" placeholder="Buscar en todo el sitio">
 					</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link nav-link-button" href="#" id="navbarDropdown-help" role="button" data-toggle="dropdown" aria-expanded="false">
-						<i class="fa fa-question"></i>
+						<i class="fa fa-question-circle"></i>
 					</a>
 					<div class="dropdown-menu"  style="text-align:right; position:absolute; left:-90px; z-index:999999;" aria-labelledby="navbarDropdown-help">
 						<a class="dropdown-item" href="#">Video Explicativo</a>
