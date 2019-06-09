@@ -272,7 +272,49 @@ function ol_map() {
 	
 	this.map.ptopografico = function() {
 		
-		//this.ol_object.addInteraction(this.ptopografico_instance);
+		var source = new ol.source.Vector({
+			wrapX: false
+		});
+		
+		var sourcePoints = new ol.source.Vector({
+			wrapX: false
+		});
+		
+		var layerVector = new ol.layer.Vector({
+			source: source
+		});
+		
+		var layerPointVector = new ol.layer.Vector({
+			source: sourcePoints
+		});
+		
+		this.map.ol_object.addLayer(layerVector);
+		this.map.ol_object.addLayer(layerPointVector);
+		
+		var draw = new ol.interaction.Draw({
+			source: source,
+			type:"LineString"			
+		});
+
+		draw.on('drawend', function (e) {
+			
+			var format = new ol.format.WKT();
+			
+			var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:3857', 'EPSG:4326'));		
+			
+			var wktext = wkt;
+			
+			var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:4326', 'EPSG:3857'));	
+			
+			this.DrawChart(wktext);
+			
+			this.map.ol_object.removeInteraction(this.interaction);
+			
+			//layerVector.getSource().clear();	
+			
+		}.bind(this));
+		
+		this.ol_object.addInteraction(draw);
 		
 	}
 	
