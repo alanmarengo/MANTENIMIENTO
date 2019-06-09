@@ -41,6 +41,16 @@
 	padding:0 10px;
 	
 }
+		
+.popup-dark .popup-header{
+	
+	background-color:RGBA(33,33,33,0.6);
+	color:#4c4c4e;
+	border-radius:3px;
+	height:40px;
+	padding:0 10px;
+	
+}
 
 .popup-header-li {
 		
@@ -60,6 +70,26 @@
 	line-height:24px;
 	padding:5px 10px;
 	border-radius:3px;
+	
+}
+
+.popup-dark .popup-header-button {
+		
+	color:#333333;
+	background-color:transparent;
+	color:#FFFFFF;
+	font-family:"Gotham bold";
+	font-size:13px;
+	height:24px;
+	line-height:24px;
+	padding:5px 10px;
+	border-radius:3px;
+	
+}
+
+.popup-dark .popup-row {
+	
+	background-color:RGBA(33,33,33,0.6);
 	
 }
 
