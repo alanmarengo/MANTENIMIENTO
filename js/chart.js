@@ -312,4 +312,6 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 		
 	});
 	
+	$("#perfil-topografico").draggable({ handle:"#perfil-topografico-header" });
+	
 }

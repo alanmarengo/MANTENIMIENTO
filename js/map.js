@@ -163,12 +163,16 @@ function ol_map() {
 				
 				if (layer.getVisible() && layer.get('name')!='openstreets') {
 					
-					url = layer.getSource().getGetFeatureInfoUrl(evt.coordinate, viewResolution, 'EPSG:3857', {
-						'INFO_FORMAT': 'text/html',
-							'FEATURE_COUNT': '300'
-					});	
+					if(layer.getSource().getGetFeatureInfoUrl) {
 					
-					alert(url);
+						url = layer.getSource().getGetFeatureInfoUrl(evt.coordinate, viewResolution, 'EPSG:3857', {
+							'INFO_FORMAT': 'text/html',
+								'FEATURE_COUNT': '300'
+						});	
+					
+						alert(url);
+					
+					}
 				}
 				
 			});
