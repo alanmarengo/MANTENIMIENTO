@@ -9,13 +9,13 @@
 				</a>
 			</li>
 			<li class="nav-item active">
-				<a class="nav-link nav-link-active" href="#"><span>Inicio</span></a>
+				<a class="nav-link nav-link-active" href="./index.php"><span>Inicio</span></a>
 			</li>
 			<li class="nav-item active">
 				<a class="nav-link" href="#">Acerca de la plataforma de proyectos de IEASA</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">Observatorio Ambiental de los AHRSC</a>
+				<a class="nav-link" href="./page.php">Observatorio Ambiental de los AHRSC</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="javascript:void(0)" onclick="$(this).next().slideToggle('fast')" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -48,7 +48,7 @@
 				</div>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">Mediateca</a>
+				<a class="nav-link" href="./mediateca.php">Mediateca</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="javascript:void(0)" onclick="$(this).next().slideToggle('fast')" id="navbarDropdown-2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -60,7 +60,7 @@
 							<a class="nav-link" href="#">Actividades y Talleres de los proyectos</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">SIT Santa Cruz (link externo a página web del SIT Santa Cruz)</a>
+							<a class="nav-link" target="_blank" href="http://hidrosantacruz.com.ar">SIT Santa Cruz (link externo a página web del SIT Santa Cruz)</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#">Dirección Nacional de Análisis de Riesgo</a>
@@ -114,7 +114,7 @@
 				<a class="nav-link" href="http://hidrosantacruz.com.ar" target="_blank">Hidro Santa Cruz</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">Contacto</a>
+				<a class="nav-link" href="./contacto.php">Contacto</a>
 			</li>
 		</ul>
 	</div>
