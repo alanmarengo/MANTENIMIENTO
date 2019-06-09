@@ -46,9 +46,14 @@
 
 .flclose {
 	
-	color: white;
 	position: relative;
 	top: -3px;
+	
+}
+
+.flclose a {
+	
+	color: white !important;
 	
 }
 
