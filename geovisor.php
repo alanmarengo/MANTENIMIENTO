@@ -299,7 +299,6 @@
 		<a class="navbar-brand" href="#">
 			Observatorio
 			<img src="./images/ieasa_logo.png" id="logo_ieasa" height="30">
-			<div id="map-tools-wrapper"></div>
 		</a>
 		
 		<div class="nav navbar-expand navbar-right" style="display: inline-block;" id="navIcons">
@@ -356,9 +355,14 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.ptopografico();">
+							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.ptopografico();" id="navbarDropdown-ptopografico" role="button" data-toggle="dropdown" aria-expanded="false">
 								<img src="./images/toolbar.icon.ptopografico.png">
 							</a>
+							<div class="dropdown-menu"  style="text-align:right; position:absolute; left:22%; top:105%; z-index:999999;" aria-labelledby="navbarDropdown-ptopografico">
+								<a class="dropdown-item" href="#" id="map-tools-wrapper">
+									
+								</a>
+							</div>
 						</li>
 						<li class="nav-item">
 							<a href="#" class="nav-link nav-toolbar-link">
