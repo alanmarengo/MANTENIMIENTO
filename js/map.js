@@ -281,20 +281,20 @@ function ol_map() {
 		});
 		
 		this.ptopografico.layerVector = new ol.layer.Vector({
-			source: source
-		});
+			source: this.ptopografico.source
+		}.bind(this));
 		
 		this.ptopografico.layerPointVector = new ol.layer.Vector({
-			source: sourcePoints
-		});
+			source: this.ptopografico.sourcePoints
+		}.bind(this));
 		
 		this.ol_object.addLayer(layerVector);
 		this.ol_object.addLayer(layerPointVector);
 		
 		var draw = new ol.interaction.Draw({
-			source: source,
+			source: this.ptopografico.source,
 			type:"LineString"			
-		});
+		}.bind(this));
 
 		draw.on('drawend', function (e) {
 			
