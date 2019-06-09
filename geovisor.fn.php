@@ -120,13 +120,13 @@ function DrawLayers($clase_id) {
 						</a>
 					</div>
 				
-					<div class="layer-icon" onclick="$('#layer-colorpicker-<?php echo $r["layer_id"]; ?>').slideToggle('slow');">
+					<div class="layer-icon" onclick="$('.layer-tool-wrapper').not('#layer-colorpicker-<?php echo $r["layer_id"]; ?>').hide(); $('#layer-colorpicker-<?php echo $r["layer_id"]; ?>').slideToggle('slow');">
 						<a href="javascript:void(0);">
 							<img src="./images/geovisor/icons/layer-bar-relleno.png">
 						</a>
 					</div>
 				
-					<div class="layer-icon" onclick="$('#layer-opacity-<?php echo $r["layer_id"]; ?>').slideToggle('slow');">
+					<div class="layer-icon" onclick="$('.layer-tool-wrapper').not('#layer-opacity-<?php echo $r["layer_id"]; ?>').hide(); $('#layer-opacity-<?php echo $r["layer_id"]; ?>').slideToggle('slow');">
 						<a href="javascript:void(0);">
 							<img src="./images/geovisor/icons/layer-bar-gota.png">
 						</a>
@@ -140,7 +140,7 @@ function DrawLayers($clase_id) {
 				
 				</div>
 			
-				<div class="layer-colorpicker" id="layer-colorpicker-<?php echo $r["layer_id"]; ?>">
+				<div class="layer-colorpicker layer-tool-wrapper" id="layer-colorpicker-<?php echo $r["layer_id"]; ?>">
 					
 					<div class="colorpicker-bullet-content">
 						<div class="colorpicker-bullet"></div>
@@ -152,7 +152,7 @@ function DrawLayers($clase_id) {
 					
 				</div>
 			
-				<div class="layer-opacity" id="layer-opacity-<?php echo $r["layer_id"]; ?>">
+				<div class="layer-opacity layer-tool-wrapper" id="layer-opacity-<?php echo $r["layer_id"]; ?>">
 					
 					<div class="opacity-bullet-content">
 						<div class="opacity-bullet"></div>
@@ -169,8 +169,8 @@ function DrawLayers($clase_id) {
 				
 				<div class="layer-legend" id="layer-legend-<?php echo $r["layer_id"]; ?>">
 				
-					<img src="<?php echo $r["layer_wms_server"]; ?>?Service=WMS&REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=12&HEIGHT=12&LAYER=<?php echo $r["layer_wms_layer"]; ?>">
-				
+					<img src="<?php echo $r["layer_wms_server"]; ?>&version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer=<?php echo $r["layer_wms_layer"]; ?>&format=image/png&STYLE=default" width="120">
+					
 				</div>
 			
 			</div>

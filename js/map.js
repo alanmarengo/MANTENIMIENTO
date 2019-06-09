@@ -152,6 +152,29 @@ function ol_map() {
 			})
 		});
 		
+		this.ol_object.addEventListener("click",function(evt) {
+			
+			var view = this.getView();
+			
+			var viewResolution = (view.getResolution());
+			var url = '';
+			
+			this.getLayers().forEach(function (layer, i, layers) {				
+				
+				if (layer.getVisible() && layer.get('name')!='openstreets') {
+					
+					url = layer.getSource().getGetFeatureInfoUrl(evt.coordinate, viewResolution, 'EPSG:3857', {
+						'INFO_FORMAT': 'text/html',
+							'FEATURE_COUNT': '300'
+					});	
+					
+					alert(url);
+				}
+				
+			});
+			
+		});
+		
 		this.createLayers = function() {
 			
 			//
