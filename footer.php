@@ -1,6 +1,6 @@
     <div class="row footer">
         <div class="col-md-3" style="padding: 10px;">
-            <img src="./images/logo-footer.jpg" style="width: 100%; max-width: 250px; height: auto;" />
+            <img src="./images/logo-footer.png" style="width: 100%; max-width: 250px; height: auto;" />
         </div>
         <div class="col-md-3" style="font-size: .9em; padding: 10px;">
             <b>CONTACTO</b>
