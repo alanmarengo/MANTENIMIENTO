@@ -288,8 +288,8 @@ function ol_map() {
 			source: this.ptopografico.sourcePoints
 		});
 		
-		this.ol_object.addLayer(layerVector);
-		this.ol_object.addLayer(layerPointVector);
+		this.ol_object.addLayer(this.ptopografico.layerVector);
+		this.ol_object.addLayer(this.ptopografico.layerPointVector);
 		
 		var draw = new ol.interaction.Draw({
 			source: this.ptopografico.source,
