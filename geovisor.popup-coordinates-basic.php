@@ -22,7 +22,7 @@
 			</td>
 		</table>
 		
-		<div id="coord-capture-wrapper">
+		<div id="coord-capture-wrapper" class="mt-10">
 		
 			<table id="coord-capture-table">
 			

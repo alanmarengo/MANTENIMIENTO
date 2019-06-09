@@ -328,14 +328,14 @@ function ol_map() {
 	
 	this.map.saveCoordinate = function() {
 		
-		document.getElementById("coord-3857").innerHTML = document.getElementById("cap-coord-3857").innerHTML;
-		document.getElementById("coord-4326").innerHTML = document.getElementById("cap-coord-4326").innerHTML;
-		document.getElementById("coord-22195").innerHTML = document.getElementById("cap-coord-22195").innerHTML;
+		$("#coord-3857").html($("#cap-coord-3857 .custom-mouse-position").html());
+		$("#coord-4326").html($("#cap-coord-4326 .custom-mouse-position").html());
+		$("#coord-22195").html($("#cap-coord-22195 .custom-mouse-position").html());
 		
 		$("#coord-tbl").hide();
 		$("#coord-hint").hide();
 		$("#coord-capture-wrapper").show();
-		alert("save");
+		
 		this.map_object.deactivateCoordinates();
 		this.un("click",this.map_object.saveCoordinate);
 		
