@@ -125,5 +125,7 @@ function addControl(control,name,map,control_type,auto_activate,icon,removeOnClo
 			} // END OF SWITCH
 		
 		}
+		
+		$("#perfil-topografico").draggable({handle:"#perfil-topografico-header"});
 
 }
