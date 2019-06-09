@@ -288,8 +288,8 @@ function ol_map() {
 			source: sourcePoints
 		});
 		
-		this.map.ol_object.addLayer(layerVector);
-		this.map.ol_object.addLayer(layerPointVector);
+		this.ol_object.addLayer(layerVector);
+		this.ol_object.addLayer(layerPointVector);
 		
 		var draw = new ol.interaction.Draw({
 			source: source,
@@ -308,7 +308,7 @@ function ol_map() {
 			
 			this.DrawChart(wktext);
 			
-			this.map.ol_object.removeInteraction(this.interaction);
+			this.ol_object.removeInteraction(this.interaction);
 			
 			//layerVector.getSource().clear();	
 			
