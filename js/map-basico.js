@@ -103,12 +103,6 @@ function ol_map() {
 			$(".panel").css("top",$(this.div).offset().top);
 		}
 		
-		var lc_top = $("#layers-container").offset().top+42;
-		var lc_newheight = $(document).height() - lc_top;
-		
-		$(".layer-container-body").height(lc_newheight);				
-		scrollbars.redrawElement(".scrollbar-content");
-		
 	
 	}
 	
@@ -152,29 +146,6 @@ function ol_map() {
 			})
 		});
 		
-		this.ol_object.addEventListener("click",function(evt) {
-			
-			var view = this.getView();
-			
-			var viewResolution = (view.getResolution());
-			var url = '';
-			
-			this.getLayers().forEach(function (layer, i, layers) {				
-				
-				if (layer.getVisible() && layer.get('name')!='openstreets') {
-					
-					url = layer.getSource().getGetFeatureInfoUrl(evt.coordinate, viewResolution, 'EPSG:3857', {
-						'INFO_FORMAT': 'text/html',
-							'FEATURE_COUNT': '300'
-					});	
-					
-					alert(url);
-				}
-				
-			});
-			
-		});
-		
 		this.createLayers = function() {
 			
 			//
@@ -213,108 +184,6 @@ function ol_map() {
 		var js = JSON.parse(reqExtent.responseText);
 		
 		return js;
-		
-	}
-	
-	this.map.share = function() {
-		
-		var s_layers = [];
-		var s_visibles = [];
-		var s_clase = [];
-		var clase_active = $(".panel-abr[data-active=1]").attr("data-cid");
-		
-		if (clase_active == undefined) {
-			
-			clase_active = "";
-			
-		}
-		
-		var zoom = this.ol_object.getView().getZoom();
-		var center = this.ol_object.getView().getCenter();
-		
-		$(".panel-abr:visible").each(function(i,v) {
-			
-			s_clase.push(this.getAttribute("data-cid"));
-			
-		});
-		
-		$(".layer-checkbox[data-added=1]").each(function(i,v) {
-			
-			if (v.layer) {
-				
-				var visible = 0;
-				
-				if (v.layer.getVisible()) { visible = 1; }
-				
-				s_layers.push(v.getAttribute("data-lid"));
-				s_visibles.push(visible);
-				s_clase.push(v.getAttribute("data-cid"));
-				
-			}
-			
-		});
-		
-		var s_link = SITEURL+"geovisor.php?";
-			s_link += "fk=0";
-			s_link += "&c=" + s_clase.join(",");
-			s_link += "&ca=" + clase_active;
-			s_link += "&l=" + s_layers.join(",");
-			s_link += "&v=" + s_visibles.join(",");
-			s_link += "&cen=" + center;
-			s_link += "&z=" + zoom;
-		
-		$("#input-share").val(s_link);
-		
-		$(".popup").hide();
-		$("#popup-share").show();
-		
-	}
-	
-	this.map.ptopografico = function() {
-		
-		this.ptopografico.source = new ol.source.Vector({
-			wrapX: false
-		});
-		
-		this.ptopografico.sourcePoints = new ol.source.Vector({
-			wrapX: false
-		});
-		
-		this.ptopografico.layerVector = new ol.layer.Vector({
-			source: this.ptopografico.source
-		});
-		
-		this.ptopografico.layerPointVector = new ol.layer.Vector({
-			source: this.ptopografico.sourcePoints
-		});
-		
-		this.ol_object.addLayer(this.ptopografico.layerVector);
-		this.ol_object.addLayer(this.ptopografico.layerPointVector);
-		
-		var draw = new ol.interaction.Draw({
-			source: this.ptopografico.source,
-			type:"LineString"			
-		});
-
-		draw.on('drawend', function (e) {
-			
-			var format = new ol.format.WKT();
-			
-			var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:3857', 'EPSG:4326'));		
-			
-			var wktext = wkt;
-			
-			var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:4326', 'EPSG:3857'));	
-			
-			DrawChart(wktext,this.ptopografico.layerVector,this.ptopografico.sourcePoints);
-			
-			this.ol_object.removeInteraction(draw);
-			
-			//geomap.map.ptopografico.layerVector.getSource().clear();	
-			
-		}.bind(this));
-		
-		this.ol_object.addInteraction(draw);
 		
 	}
 	
@@ -392,7 +261,6 @@ function ol_map() {
 		
 		$("#panel-seach-input").on("focus",function() {
 			
-			$(".popup").hide();
 			$("#popup-busqueda").show();
 			
 			this.map.ol_object_mini.updateSize();
@@ -640,8 +508,6 @@ function ol_map() {
 			
 			this.map.ol_object.addLayer(document.getElementById("layer-checkbox-"+layer_id).layer);
 			
-			$("#layer-checkbox-"+layer_id).attr("data-added","1");
-			
 			$("#layer-checkbox-"+layer_id).bind("click",function() {
 				
 				if (this.checked) {
@@ -680,15 +546,12 @@ function ol_map() {
 		$(".layer-group[data-layer="+layer_id+"]").hide();
 		document.getElementById("layer-checkbox-"+layer_id).layer.setVisible(false);
 		
-		$("#layer-checkbox-"+layer_id).attr("data-added","0");
-		
 		var visibles = $(".layer-container[data-cid="+clase_id+"] .layer-group:visible").length;
 		
 		if (visibles == 0) {
 			
 			$(".layer-container[data-cid="+clase_id+"]").hide();
 			$(".panel-abr[data-cid="+clase_id+"]").hide();
-			$(".panel-abr[data-cid="+clase_id+"]").attr("data-active","0");
 			
 		}
 		
@@ -841,10 +704,6 @@ function ol_map() {
 		$("#popup-busqueda").width(nwidth);
 		$("#popup-busqueda").height(nheight);
 		$("#popup-busqueda").css("left",left+"px");
-		
-		$("#popup-share").width(nwidth);
-		$("#popup-share").height(nheight);
-		$("#popup-share").css("left",left+"px");
 		
 	}
 	

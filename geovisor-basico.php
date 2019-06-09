@@ -24,11 +24,8 @@
 	<link rel="stylesheet" href="./css/bootstrap-select.css"/>
 	    
 	<link rel="stylesheet" href="./css/bootstrapfix.navbar.css"/>	
-	<link rel="stylesheet" href="./css/bootbox.css"/>
-	<link rel="stylesheet" href="./css/fl-windows.css"/>
 	<link rel="stylesheet" href="./css/map.css"/>
 	<link rel="stylesheet" href="./css/panel.css"/>
-	<link rel="stylesheet" href="./css/perfil-topografico.css"/>
 	<link rel="stylesheet" href="./css/popup.css"/>
 	<link rel="stylesheet" href="./css/scrollbars.css"/>
 	<link rel="stylesheet" href="./css/sidenav.css"/>
@@ -36,7 +33,6 @@
 	<link rel="stylesheet" href="./css/geovisor/buttons.css"/>
 	<link rel="stylesheet" href="./css/geovisor/display.css"/>
 	<link rel="stylesheet" href="./css/geovisor/forms.css"/>
-	<link rel="stylesheet" href="./css/geovisor/inputs.css"/>
 	<link rel="stylesheet" href="./css/geovisor/layers.css"/>
 	<link rel="stylesheet" href="./css/geovisor/sizers.css"/>
 	<link rel="stylesheet" href="./css/geovisor/sliders.css"/>
@@ -188,29 +184,20 @@
 	<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="./js/popper-1.12.9.min.js"></script>
 	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="./js/jquery-ui/jquery-ui.min.js"></script>	
-
-	<script src="https://code.highcharts.com/highcharts.js"></script>
-	<script src="https://code.highcharts.com/highcharts-more.js"></script>
-	<script src="https://code.highcharts.com/modules/funnel.js"></script>
-	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script type="text/javascript" src="./js/jquery-ui/jquery-ui.min.js"></script>
 	
 	<script src="./js/perfect-scrollbar.js"></script>
 	<script src="./js/bootstrap-select.js"></script>
 	<script src="./js/bootstrap-select-init.js"></script>
 	<script src="./js/colorpicker/js/colorpicker.js"></script>
-	<script src="./js/bootbox.min.js"></script>
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 		
 	<script src="./js/openlayers/ol.js" type="text/javascript"></script>
 	
-	<script src="./js/chart.js" type="text/javascript"></script>
-	<script src="./js/config.js" type="text/javascript"></script>
-	<script src="./js/map.js" type="text/javascript"></script>
+	<script src="./js/map-basico.js" type="text/javascript"></script>
 	<script src="./js/site.js" type="text/javascript"></script>
 	<script src="./js/scrollbars.js" type="text/javascript"></script>
-	<script src="./js/flwindows.js" type="text/javascript"></script>
 	
 	<script type="text/javascript">
 	
@@ -218,9 +205,6 @@
 			
 			scrollbars = new scrollbars();
 			scrollbars.create();
-			
-			FLWindows = new ini_flwindows();
-			FLWindows.Start();
 			
 			geomap = new ol_map();
 			
@@ -237,42 +221,7 @@
 			
 			scrollbars.updateSize();
 			
-			$(".selectpicker").selectpicker();		
-			
-			<?php if (isset($_GET["l"])) { ?>
-				
-			var s_clase = [<?php echo $_GET["c"]; ?>];
-			var s_layers = [<?php echo $_GET["l"]; ?>];
-			var s_visibles = [<?php echo $_GET["v"]; ?>];
-			
-			for (var i=0; i<s_layers.length; i++) { 
-				geomap.panel.AddLayer(s_clase[i],s_layers[i]);
-				if (s_visibles[i]) { 
-					document.getElementById("layer-checkbox-"+s_layers[i]).click(); 
-				}
-			}
-							
-			<?php } ?>
-			
-			<?php if ((isset($_GET["ca"])) && (!empty($_GET["ca"]))) { ?> 
-				
-				var ca = <?php echo $_GET["ca"]; ?>;
-				
-				$(".panel-abr[data-cid="+ca+"]").trigger("click"); 
-				
-			<?php } ?>
-			
-			<?php if ((isset($_GET["z"])) && (!empty($_GET["z"]))) { ?> 
-			
-			geomap.map.ol_object.getView().setZoom(<?php echo $_GET["z"]; ?>);
-							
-			<?php } ?>
-			
-			<?php if ((isset($_GET["cen"])) && (!empty($_GET["cen"]))) { ?> 
-			
-			geomap.map.ol_object.getView().setCenter(ol.proj.transform([<?php echo $_GET["cen"]; ?>], 'EPSG:3857', 'EPSG:3857'));
-							
-			<?php } ?>
+			$(".selectpicker").selectpicker();
 			
 		});
 		
@@ -296,7 +245,6 @@
 		<a class="navbar-brand" href="#">
 			Observatorio
 			<img src="./images/ieasa_logo.png" id="logo_ieasa" height="30">
-			<div id="map-tools-wrapper"></div>
 		</a>
 		
 		<div class="nav navbar-expand navbar-right" style="display: inline-block;" id="navIcons">
@@ -349,38 +297,50 @@
 					<ul class="navbar-nav">
 						<li class="nav-item">
 							<a href="#" class="nav-link">
-								<img src="./images/toolbar.icon.buffer.png">
+								<img src="./images/toolbar.icon.zoomext.png">
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.ptopografico();" id="navbarDropdown-ptopografico" role="button" data-toggle="dropdown" aria-expanded="false">
-								<img src="./images/toolbar.icon.ptopografico.png">
+							<a class="nav-link nav-link-death nav-item">Proyecto Santa Cruz</a>
+						</li>
+						<li>
+							<a class="nav-link nav-link-death nav-link-separator nav-item">
+								<span>|</span>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link nav-toolbar-link">
-								<img src="./images/toolbar.icon.medicion.png">
+							<a class="nav-link nav-link-death nav-item">Infraestructura</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-maq" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Todas:
+							</a>
+							<div class="dropdown-menu" style="text-align:right;" aria-labelledby="navbarDropdown-maq">
+								<a class="dropdown-item" href="#">Maquinaria</a>
+								<a class="dropdown-item" href="#">Equipos</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Todos</a>
+							</div>
+						</li>
+						<li>
+							<a class="nav-link nav-link-death nav-link-separator nav-item">
+								<span>|</span>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link nav-toolbar-link">
-								<img src="./images/toolbar.icon.coordenadas.png">
-							</a>
+							<a class="nav-link nav-link-death nav-item">Estado</a>
 						</li>
-						<li class="nav-item">
-							<a href="#" class="nav-link nav-toolbar-link">
-								<img src="./images/toolbar.icon.dibujo.png">
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-po" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Terminado:
 							</a>
-						</li>
-						<li class="nav-item">
-							<a href="#" class="nav-link nav-toolbar-link">
-								<img src="./images/toolbar.icon.print.png">
-							</a>
-						</li>
-						<li class="nav-item">
-							<a href="#" class="nav-link" onclick="geomap.map.share();">
-								<img src="./images/toolbar.icon.share.png">
-							</a>
+							<div class="dropdown-menu" style="text-align:right;" aria-labelledby="navbarDropdown-po">
+								<a class="dropdown-item" href="#">Sin Iniciar</a>
+								<a class="dropdown-item" href="#">En Proceso</a>
+								<a class="dropdown-item" href="#">Terminado</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Sin Especificar</a>
+							</div>
 						</li>
 					</ul>
 				</div>
@@ -391,13 +351,7 @@
 
 	<div id="map"></div>
 
-	<?php include("geovisor.panel.php"); ?>
-	<?php include("geovisor.popup.php"); ?>
-	<?php include("geovisor.popup-share.php"); ?>
-	
-	<?php include("html-flwindows-perfil-topografico.php"); ?>
-	
-	
+	<?php include("geovisor.panel-basico.php"); ?>
 
 </div>
 

@@ -54,6 +54,8 @@ $query_string = "SELECT clase_id,subclase_id,clase_desc,subclase_desc FROM mod_g
 
 $query = pg_query($conn,$query_string);
 
+$results = false;
+
 while($r = pg_fetch_assoc($query)) {
 
 ?>
@@ -102,6 +104,18 @@ while($r = pg_fetch_assoc($query)) {
 
 <?php
 
+$results = true;
+
+}
+
+if (!$results) {
+	
+?>
+
+<p>No se encontraron capas asociadas a estos proyectos</p>
+
+<?php
+	
 }
 
 ?>

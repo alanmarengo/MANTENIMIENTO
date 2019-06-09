@@ -40,9 +40,15 @@ function DrawContainers() {
 		
 		<div class="layer-container" data-color="<?php echo $r["color_hex"]; ?>" data-cid="<?php echo $r["clase_id"]; ?>" style="border-color:<?php echo $r["color_hex"]; ?>;">
 			<div class="layer-container-header" style="background-color:<?php echo $r["color_head"]; ?>;">
-				<a href="javascript:void(0);">
-					<i class="fa fa-eye"></i>
-				</a>
+				<div class="pretty p-default p-curve p-toggle">
+					<input type="checkbox" class="layer-checkbox default-empty-checkbox" id="layer-checkbox-<?php echo $r["layer_id"]; ?>" data-layer="<?php echo $r["layer_wms_layer"]; ?>" data-wms="<?php echo $r["layer_wms_server"]; ?>"/>
+					<div class="state p-success p-on">
+						<i class="fa fa-eye"></i>
+					</div>
+					<div class="state p-danger p-off">
+						<i class="fa fa-eye-slash"></i>
+					</div>
+				</div>
 				<span><?php echo $r["cod_nom"]; ?> (<?php echo $r["layer_count"]; ?>)</span>		
 			</div>
 			<div class="layer-container-body scrollbar-content">
@@ -78,7 +84,7 @@ function DrawLayers($clase_id) {
 				</a>-->
 				
 				<div class="pretty p-default p-curve p-toggle">
-					<input type="checkbox" class="layer-checkbox default-empty-checkbox" id="layer-checkbox-<?php echo $r["layer_id"]; ?>" data-layer="<?php echo $r["layer_wms_layer"]; ?>" data-wms="<?php echo $r["layer_wms_server"]; ?>"/>
+					<input type="checkbox" class="layer-checkbox default-empty-checkbox" id="layer-checkbox-<?php echo $r["layer_id"]; ?>" data-lid="<?php echo $r["layer_id"]; ?>" data-cid="<?php echo $r["clase_id"]; ?>" data-added="0" data-layer="<?php echo $r["layer_wms_layer"]; ?>" data-wms="<?php echo $r["layer_wms_server"]; ?>"/>
 					<div class="state p-success p-on">
 						<i class="fa fa-eye"></i>
 					</div>
@@ -103,38 +109,50 @@ function DrawLayers($clase_id) {
 				<div class="layer-icons">
 				
 					<div class="layer-icon">
-						<a href="javascript:void(0);">
+						<a href="javascript:void(0);" onclick="geomap.map.zoomToLayerExtent(<?php echo $r["layer_id"]; ?>);">
 							<img src="./images/geovisor/icons/layer-bar-zoom.png">
 						</a>
 					</div>
 				
 					<div class="layer-icon">
-						<a href="javascript:void(0);">
+						<a href="<?php echo $r["layer_metadata_url"]; ?>" target="_blank">
 							<img src="./images/geovisor/icons/layer-bar-info.png">
 						</a>
 					</div>
 				
-					<div class="layer-icon">
+					<div class="layer-icon" onclick="$('.layer-tool-wrapper').not('#layer-colorpicker-<?php echo $r["layer_id"]; ?>').hide(); $('#layer-colorpicker-<?php echo $r["layer_id"]; ?>').slideToggle('slow');">
 						<a href="javascript:void(0);">
 							<img src="./images/geovisor/icons/layer-bar-relleno.png">
 						</a>
 					</div>
 				
-					<div class="layer-icon" onclick="$('#layer-opacity-<?php echo $r["layer_id"]; ?>').slideToggle('slow');">
+					<div class="layer-icon" onclick="$('.layer-tool-wrapper').not('#layer-opacity-<?php echo $r["layer_id"]; ?>').hide(); $('#layer-opacity-<?php echo $r["layer_id"]; ?>').slideToggle('slow');">
 						<a href="javascript:void(0);">
 							<img src="./images/geovisor/icons/layer-bar-gota.png">
 						</a>
 					</div>
 				
 					<div class="layer-icon">
-						<a href="javascript:void(0);">
+						<a href="<?php echo $r["layer_download_url"]; ?>" target="_blank">
 							<img src="./images/geovisor/icons/layer-bar-download.png">
 						</a>
 					</div>
 				
 				</div>
 			
-				<div class="layer-opacity" id="layer-opacity-<?php echo $r["layer_id"]; ?>">
+				<div class="layer-colorpicker layer-tool-wrapper" id="layer-colorpicker-<?php echo $r["layer_id"]; ?>">
+					
+					<div class="colorpicker-bullet-content">
+						<div class="colorpicker-bullet"></div>
+					</div>
+					
+					<div id="layer-colorpicker-inner-<?php echo $r["layer_id"]; ?>">
+					
+					</div>
+					
+				</div>
+			
+				<div class="layer-opacity layer-tool-wrapper" id="layer-opacity-<?php echo $r["layer_id"]; ?>">
 					
 					<div class="opacity-bullet-content">
 						<div class="opacity-bullet"></div>
@@ -146,6 +164,12 @@ function DrawLayers($clase_id) {
 					</p>
 					
 					<div class="slider-range" id="slider-range-<?php echo $r["layer_id"]; ?>"></div>
+					
+				</div>
+				
+				<div class="layer-legend" id="layer-legend-<?php echo $r["layer_id"]; ?>">
+				
+					<img src="<?php echo $r["layer_wms_server"]; ?>&version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer=<?php echo $r["layer_wms_layer"]; ?>&format=image/png&STYLE=default" width="120">
 					
 				</div>
 			
