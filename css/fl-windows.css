@@ -21,9 +21,11 @@
 .fl-window-header {
 	
 	background-color: #296d7a;
-	height:22px;
-	line-height:22px;
-	cursor:move;
+	/*height: 22px;
+	line-height: 22px;*/
+	cursor: move;
+	padding: 10px;
+	color: white;
 	
 }
 
