@@ -10,36 +10,36 @@
             <li data-target="#main-slider" data-slide-to="4"></li>
         </ol>
         <div class="carousel-inner">
-            <div class="carousel-item active">
+            <a href="./geovisor.php" class="carousel-item active">
                 <img class="d-block w-100" src="./images/index/slide1.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>GEOVISOR DE INFORMACION INTEGRADA</p>
                 </div>                
-            </div>
-            <div class="carousel-item">
+            </a>
+            <a href="./page.php" class="carousel-item">
                 <img class="d-block w-100" src="./images/index/slide2.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>SABIAS DE LA EXISTENCIA DE LA LAMPREA<br /> EN EL RIO SANTA CRUZ?</p>
                 </div>                
-            </div>
-            <div class="carousel-item">
+            </a>
+            <a href="./page.php" class="carousel-item">
                 <img class="d-block w-100" src="./images/index/slide3.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>CAMPO DE HIELO PATAGONIA SUR (HPS)</p>
                 </div>                
-            </div>
-            <div class="carousel-item">
+            </a>
+            <a href="./page.php" class="carousel-item">
                 <img class="d-block w-100" src="./images/index/slide4.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>NUESTRO COMPROMISO CON EL MACA TOBIANO</p>
                 </div>                
-            </div>
-            <div class="carousel-item">
+            </a>
+            <a href="./mision.php" class="carousel-item">
                 <img class="d-block w-100" src="./images/index/slide5.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>MISIÓN DE IEASA</p>
                 </div>                
-            </div>
+            </a>
         </div>
 
         <a class="carousel-control-prev" href="#main-slider" role="button" data-slide="prev">
@@ -65,7 +65,7 @@
                         <p class="modulo-hover-text">
                             Mapa de proyectos, obras en construcción y operación de IEASA.
                             <br />
-                            <a href="#" class="modulo-hover-icon">
+                            <a href="./page.php" class="modulo-hover-icon">
                                 <i class="fa fa-plus-circle fa-2x"></i>
                             </a>
                         </p>
@@ -97,7 +97,7 @@
                         <p class="modulo-hover-text">
                             Permite realizar el seguimiento de parámetros y variables de los programas del Plan de Gestión Ambiental (PGA) de los Aprovechamientos del Río Santa Cruz para comprender los fenómenos ambientales y territoriales.
                             <br />
-                            <a href="#" class="modulo-hover-icon">
+                            <a href="./page.php" class="modulo-hover-icon">
                                 <i class="fa fa-plus-circle fa-2x"></i>
                             </a>
                         </p>
@@ -114,7 +114,7 @@
                                 <p class="modulo-hover-text">
                                     Acciones de prevención de riesgos del trabajo.
                                     <br />
-                                    <a href="#" class="modulo-hover-icon">
+                                    <a href="./page.php" class="modulo-hover-icon">
                                         <i class="fa fa-plus-circle fa-2x"></i>
                                     </a>
                                 </p>
@@ -129,7 +129,7 @@
                                 <p class="modulo-hover-text">
                                     Accedé al Plan de Gestión de Calidad  de las obras.
                                     <br />
-                                    <a href="#" class="modulo-hover-icon">
+                                    <a href="./geovisor.php" class="modulo-hover-icon">
                                         <i class="fa fa-plus-circle fa-2x"></i>
                                     </a>
                                 </p>
@@ -150,7 +150,7 @@
                                 <p class="modulo-hover-text">
                                     Acciones de comunicación, relación con actores sociales y participación comunitaria.
                                     <br />
-                                    <a href="#" class="modulo-hover-icon">
+                                    <a href="./page.php" class="modulo-hover-icon">
                                         <i class="fa fa-plus-circle fa-2x"></i>
                                     </a>
                                 </p>
@@ -163,7 +163,7 @@
                             </div>
                             <div class="modulo-hover">
                                 <p class="modulo-hover-text">
-                                    <a href="#" class="modulo-hover-icon">
+                                    <a href="./geovisor.php?geovisor=1" class="modulo-hover-icon">
                                         <i class="fa fa-plus-circle fa-2x"></i>
                                     </a>
                                 </p>
@@ -180,7 +180,7 @@
                         <p class="modulo-hover-text">
                             Ingresá a la información del proyecto de las presas Cóndor Cliff (CC) y La Barrancosa (LB), que proveerán electricidad al Sistema Argentino de Interconexión (SADI).
                             <br />
-                            <a href="#" class="modulo-hover-icon">
+                            <a href="./page.php" class="modulo-hover-icon">
                                 <i class="fa fa-plus-circle fa-2x"></i>
                             </a>
                         </p>
@@ -197,7 +197,7 @@
                         <p class="modulo-hover-text">
                             Encontrá y visualizá información sobre recursos hídricos, modelos, información hidrometeorológica, sedimentológica e hidroambiental del río Santa (...)
                             <br />
-                            <a href="#" class="modulo-hover-icon">
+                            <a href="./page.php" class="modulo-hover-icon">
                                 <i class="fa fa-plus-circle fa-2x"></i>
                             </a>
                         </p>
@@ -213,7 +213,7 @@
                         <p class="modulo-hover-text">
                             Facilita el seguimiento de las acciones que brindan sostenibilidad al proyecto en sus distintas etapas. Planifica y ejecuta monitoreos sistemáticos para  el estudio de la evolución del ambiente.
                             <br />
-                            <a href="#" class="modulo-hover-icon">
+                            <a href="./page.php" class="modulo-hover-icon">
                                 <i class="fa fa-plus-circle fa-2x"></i>
                             </a>
                         </p>
@@ -228,7 +228,7 @@
                         <p class="modulo-hover-text">
                             Información espacial de la provincia de Santa Cruz, orientada a la gestión, análisis y ajuste de políticas en campos específicos de interés para la administración pública (...)
                             <br />
-                            <a href="#" class="modulo-hover-icon">
+                            <a target="_blank" href="http://hidrosantacruz.com.ar" class="modulo-hover-icon">
                                 <i class="fa fa-plus-circle fa-2x"></i>
                             </a>
                         </p>
@@ -248,7 +248,7 @@
                         </p>
                     </div>
                 </a>
-                <div class="col-md-12 link-wrap link-2">
+                <a href="./geovisor.php" class="col-md-12 link-wrap link-2">
                     <div class="link-text">
                         HERRAMIENTAS GEOGRÁFICAS
                     </div>
@@ -257,8 +257,8 @@
                         Accedé a la información georreferenciada para realizar consultas y gestionar datos en geovisores 
                         </p>
                     </div>
-                </div>
-                <div class="col-md-12 link-wrap link-3">
+                </a>
+                <a href="./page.php" class="col-md-12 link-wrap link-3">
                     <div class="link-text">
                         INDICADORES
                     </div>
@@ -267,8 +267,8 @@
                         Accedé a paneles de indicadores desarrollados para el seguimiento de los proyectos y el análisis ambiental
                         </p>
                     </div>
-                </div>
-                <div class="col-md-12 link-wrap link-4" style="margin-bottom: 0px!important;">
+                </a>
+                <a href="./page.php" class="col-md-12 link-wrap link-4" style="margin-bottom: 0px!important;">
                     <div class="link-text">
                         ESTADÍSTICAS
                     </div>
@@ -277,7 +277,7 @@
                         Accedé a los datos generados en el desarrollo de los proyectos para su consulta y tratamiento
                         </p>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>

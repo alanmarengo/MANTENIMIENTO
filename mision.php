@@ -13,7 +13,7 @@
             </p>
         </div>
 
-        <div class="col-md-12 page-section-3">
+        <div class="col-md-12 page-section-3" style="background-image: url(./images/mision_banner.jpg);">
         </div>
 
         <div class="col-md-12 page-section-4">
