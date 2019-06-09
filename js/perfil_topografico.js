@@ -40,6 +40,8 @@ function PerfilTopografico(map) {
 		
 		this.DrawChart(wktext);
 		
+		map.removeInteraction(this.interaction);
+		
 		//layerVector.getSource().clear();		
 		
 		
@@ -361,9 +363,9 @@ function PerfilTopografico(map) {
 		
 	}
 	
-	var bbox_msg = "<div><p class='w200 iblock-vt'><span>Perfil Topográfico</span></p><div class='bootbox-msg-icon bootbox-fix-icon ico-perfil-topografico-2 iblock-vt'></div></div>";
+	/*var bbox_msg = "<div><p class='w200 iblock-vt'><span>Perfil Topográfico</span></p><div class='bootbox-msg-icon bootbox-fix-icon ico-perfil-topografico-2 iblock-vt'></div></div>";
 		bbox_msg += "<p>Cree una traza haciendo click en un punto de origen y doble click en el punto final.</p>";
 		
-	this.addControl = new addControl(draw,"Perfil Topográfico",map,'interaction',false,'ico-perfil-topografico',$("#perfil-topografico-header .flclose"),true,bbox_msg,false);
+	this.addControl = new addControl(draw,"Perfil Topográfico",map,'interaction',false,'ico-perfil-topografico',$("#perfil-topografico-header .flclose"),true,bbox_msg,false);*/
 	
 }

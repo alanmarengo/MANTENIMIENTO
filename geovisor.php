@@ -359,11 +359,6 @@
 							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.ptopografico();" id="navbarDropdown-ptopografico" role="button" data-toggle="dropdown" aria-expanded="false">
 								<img src="./images/toolbar.icon.ptopografico.png">
 							</a>
-							<div class="dropdown-menu"  style="text-align:right; position:absolute; left:22%; top:105%; z-index:999999;" aria-labelledby="navbarDropdown-ptopografico">
-								<a class="dropdown-item" href="#" id="">
-									
-								</a>
-							</div>
 						</li>
 						<li class="nav-item">
 							<a href="#" class="nav-link nav-toolbar-link">
