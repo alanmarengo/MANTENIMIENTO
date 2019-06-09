@@ -6,7 +6,7 @@
 						
 		<div class="map-controls-layers-panel-icon flclose" title="Cerrar">
 			<a href="javascript:void(0);" onclick="$('#perfil-topografico').hide(); geomap.map.ptopografico.layerVector.getSource().clear();">
-				<i class="fa fa-window-close"></i>
+				X
 			</a>
 		</div>		
 			

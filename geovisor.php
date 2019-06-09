@@ -34,6 +34,7 @@
 	<link rel="stylesheet" href="./css/sidenav.css"/>
 	<link rel="stylesheet" href="./css/geovisor/style.css"/>
 	<link rel="stylesheet" href="./css/geovisor/buttons.css"/>
+	<link rel="stylesheet" href="./css/geovisor/coordinates.css"/>
 	<link rel="stylesheet" href="./css/geovisor/display.css"/>
 	<link rel="stylesheet" href="./css/geovisor/forms.css"/>
 	<link rel="stylesheet" href="./css/geovisor/inputs.css"/>
@@ -312,6 +313,7 @@
 						<i class="fa fa-question-circle"></i>
 					</a>
 					<div class="dropdown-menu"  style="text-align:right; position:absolute; left:22%; top:105%; z-index:999999;" aria-labelledby="navbarDropdown-help">
+						<a class="dropdown-item" href="#">Manual de Usuario</a>
 						<a class="dropdown-item" href="#">Video Explicativo</a>
 					</div>
 				</li>
@@ -363,7 +365,7 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link nav-toolbar-link">
+							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.coordinates();">
 								<img src="./images/toolbar.icon.coordenadas.png">
 							</a>
 						</li>
@@ -394,6 +396,7 @@
 	<?php include("geovisor.panel.php"); ?>
 	<?php include("geovisor.popup.php"); ?>
 	<?php include("geovisor.popup-share.php"); ?>
+	<?php include("geovisor.popup-coordinates.php"); ?>
 	
 	<?php include("html-flwindows-perfil-topografico.php"); ?>
 	

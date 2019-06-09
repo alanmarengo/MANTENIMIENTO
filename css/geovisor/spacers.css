@@ -18,7 +18,7 @@
 
 .ml-5 {
 	
-	margin-left:5px;
+	margin-left:5px !important;
 	
 }
 
@@ -43,6 +43,18 @@
 .mt-30 {
 	
 	margin-top:30px;
+	
+}
+
+.p-10 {
+	
+	padding:10px !Important;
+	
+}
+
+.p-20 {
+	
+	padding:20px !Important;
 	
 }
 
