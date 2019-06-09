@@ -327,7 +327,7 @@ function ol_map() {
 	}
 	
 	this.map.saveCoordinate = function() {
-		
+		alert($("#cap-coord-3857 .custom-mouse-position").html());
 		$("#coord-3857").html($("#cap-coord-3857 .custom-mouse-position").html());
 		$("#coord-4326").html($("#cap-coord-4326 .custom-mouse-position").html());
 		$("#coord-22195").html($("#cap-coord-22195 .custom-mouse-position").html());
