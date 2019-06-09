@@ -328,11 +328,9 @@ function ol_map() {
 	
 	this.map.saveCoordinate = function(e) {
 		
-		alert(e.coordinate);
-		
-		$("#coord-3857").html($("#cap-coord-3857 .custom-mouse-position").html());
-		$("#coord-4326").html($("#cap-coord-4326 .custom-mouse-position").html());
-		$("#coord-22195").html($("#cap-coord-22195 .custom-mouse-position").html());
+		$("#coord-3857").html($("#cap-coord-3857 .custom-mouse-position").html(e.coordinate));
+		$("#coord-4326").html($("#cap-coord-4326 .custom-mouse-position").html(e.coordinate.transform('EPSG:3857', 'EPSG:4326')));
+		$("#coord-22195").html($("#cap-coord-22195 .custom-mouse-position").html(e.coordinate.transform('EPSG:3857', 'EPSG:22195')));
 		
 		$("#coord-tbl").hide();
 		$("#coord-hint").hide();
