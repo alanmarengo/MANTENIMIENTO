@@ -272,19 +272,19 @@ function ol_map() {
 	
 	this.map.ptopografico = function() {
 		
-		var source = new ol.source.Vector({
+		this.ptopografico.source = new ol.source.Vector({
 			wrapX: false
 		});
 		
-		var sourcePoints = new ol.source.Vector({
+		this.ptopografico.sourcePoints = new ol.source.Vector({
 			wrapX: false
 		});
 		
-		var layerVector = new ol.layer.Vector({
+		this.ptopografico.layerVector = new ol.layer.Vector({
 			source: source
 		});
 		
-		var layerPointVector = new ol.layer.Vector({
+		this.ptopografico.layerPointVector = new ol.layer.Vector({
 			source: sourcePoints
 		});
 		
@@ -306,11 +306,11 @@ function ol_map() {
 			
 			var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:4326', 'EPSG:3857'));	
 			
-			DrawChart(wktext,layerVector,sourcePoints);
+			DrawChart(wktext,this.ptopografico.layerVector,this.ptopografico.sourcePoints);
 			
 			this.ol_object.removeInteraction(this.interaction);
 			
-			//layerVector.getSource().clear();	
+			//geomap.map.ptopografico.layerVector.getSource().clear();	
 			
 		}.bind(this));
 		
