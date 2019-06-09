@@ -270,6 +270,12 @@ function ol_map() {
 		
 	}
 	
+	this.map.ptopografico = function() {
+		
+		this.ol_object.addInteraction(this.ptopografico_instance);
+		
+	}
+	
 	// PANEL SCRIPTS 
 	
 	this.panel.map = this.map;

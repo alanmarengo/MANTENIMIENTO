@@ -24,6 +24,8 @@
 	<link rel="stylesheet" href="./css/bootstrap-select.css"/>
 	    
 	<link rel="stylesheet" href="./css/bootstrapfix.navbar.css"/>	
+	<link rel="stylesheet" href="./css/bootbox.css"/>
+	<link rel="stylesheet" href="./css/fl-windows.css"/>
 	<link rel="stylesheet" href="./css/map.css"/>
 	<link rel="stylesheet" href="./css/panel.css"/>
 	<link rel="stylesheet" href="./css/popup.css"/>
@@ -191,15 +193,19 @@
 	<script src="./js/bootstrap-select.js"></script>
 	<script src="./js/bootstrap-select-init.js"></script>
 	<script src="./js/colorpicker/js/colorpicker.js"></script>
+	<script src="./js/bootbox.min.js"></script>
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 		
 	<script src="./js/openlayers/ol.js" type="text/javascript"></script>
 	
 	<script src="./js/config.js" type="text/javascript"></script>
+	<script src="./js/addControl.js" type="text/javascript"></script>
 	<script src="./js/map.js" type="text/javascript"></script>
 	<script src="./js/site.js" type="text/javascript"></script>
 	<script src="./js/scrollbars.js" type="text/javascript"></script>
+	<script src="./js/perfil_topografico.js" type="text/javascript"></script>
+	<script src="./js/flwindows.js" type="text/javascript"></script>
 	
 	<script type="text/javascript">
 	
@@ -208,6 +214,9 @@
 			scrollbars = new scrollbars();
 			scrollbars.create();
 			
+			FLWindows = new ini_flwindows();
+			FLWindows.Start();
+			
 			geomap = new ol_map();
 			
 			geomap.nav.start();
@@ -215,7 +224,9 @@
 			geomap.container.fixSize([document.getElementById("nav-1"),document.getElementById("nav-2")]);
 			
 			geomap.map.create();
-			geomap.map.createLayers();
+			geomap.map.createLayers();						
+			
+			geomap.map.ptopografico_instance = new PerfilTopografico(geomap.map.ol_object);
 			
 			geomap.panel.start();
 			
@@ -282,6 +293,7 @@
 		<a class="navbar-brand" href="#">
 			Observatorio
 			<img src="./images/ieasa_logo.png" id="logo_ieasa" height="30">
+			<div id="map-tools-wrapper"></div>
 		</a>
 		
 		<div class="nav navbar-expand navbar-right" style="display: inline-block;" id="navIcons">
@@ -338,7 +350,7 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link nav-toolbar-link">
+							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.ptopografico();">
 								<img src="./images/toolbar.icon.ptopografico.png">
 							</a>
 						</li>
@@ -379,6 +391,10 @@
 	<?php include("geovisor.panel.php"); ?>
 	<?php include("geovisor.popup.php"); ?>
 	<?php include("geovisor.popup-share.php"); ?>
+	
+	<?php include("html-flwindows-perfil-topografico.php"); ?>
+	
+	
 
 </div>
 
