@@ -271,7 +271,7 @@ function ol_map() {
 	}
 	
 	this.map.ptopografico = function() {
-		
+		console.log(this.ptopografico_instance);
 		this.ol_object.addInteraction(this.ptopografico_instance);
 		
 	}
