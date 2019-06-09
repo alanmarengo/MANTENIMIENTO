@@ -1,4 +1,4 @@
-function DrawChart(wkt) {
+function DrawChart(wkt,layerVector) {
 		
 	$.getJSON('./php/CMD-get-mde.php?wkt='+wkt, function (data) {
 		
