@@ -1,6 +1,4 @@
-<?php include("./geovisor.popup.search.php"); ?>
-
-<div class="popup-row row" id="geovisor-popup-basic">				
+<div class="popup-row row">				
 				
 	<div class="popup-col col col-sm-12 col-md-12 col-sm-12 col-xs-12 p-30">
 		
