@@ -44,6 +44,14 @@
 	
 }
 
+.flclose {
+	
+	color: white;
+	position: relative;
+	top: -3px;
+	
+}
+
 .fl-window-header .maximize { 
 
 	display:none;
