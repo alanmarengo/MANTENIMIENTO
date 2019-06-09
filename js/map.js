@@ -308,7 +308,7 @@ function ol_map() {
 			
 			DrawChart(wktext,this.ptopografico.layerVector,this.ptopografico.sourcePoints);
 			
-			this.ol_object.removeInteraction(this.interaction);
+			this.ol_object.removeInteraction(draw);
 			
 			//geomap.map.ptopografico.layerVector.getSource().clear();	
 			
