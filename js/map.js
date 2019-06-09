@@ -152,6 +152,8 @@ function ol_map() {
 			})
 		});
 		
+		this.ol_object.map_object = this;
+		
 		this.ol_object.addEventListener("click",function(evt) {
 			
 			var view = this.getView();
@@ -271,6 +273,71 @@ function ol_map() {
 		
 		$(".popup").hide();
 		$("#popup-share").show();
+		
+	}
+	
+	this.map.activateCoordinates = function() {
+		
+		this.mouse_position_3857 = new ol.control.MousePosition({
+			coordinateFormat: ol.coordinate.createStringXY(3),
+			projection: 'EPSG:3857',
+			className: 'custom-mouse-position',
+			target: document.getElementById('coord-3857')
+		});
+		
+		this.mouse_position_4326 = new ol.control.MousePosition({
+			coordinateFormat: ol.coordinate.createStringXY(3),
+			projection: 'EPSG:4326',
+			className: 'custom-mouse-position',
+			target: document.getElementById('coord-4326')
+		});
+		
+		this.mouse_position_22195 = new ol.control.MousePosition({
+			coordinateFormat: ol.coordinate.createStringXY(3),
+			projection: 'EPSG:22195',
+			className: 'custom-mouse-position',
+			target: document.getElementById('coord-22195')
+		});
+		
+		this.ol_object.addControl(this.mouse_position_3857);
+		this.ol_object.addControl(this.mouse_position_4326);
+		this.ol_object.addControl(this.mouse_position_22195);
+		
+		this.ol_object.on("click",this.saveCoordinate);
+		
+		$("#coord-tbl").show();
+		$("#coord-hint").show();
+		$("#coord-capture-wrapper").hide();
+		
+	}
+	
+	this.map.deactivateCoordinates = function() {
+		
+		this.ol_object.removeControl(this.mouse_position_3857);
+		this.ol_object.removeControl(this.mouse_position_4326);
+		this.ol_object.removeControl(this.mouse_position_22195);
+		
+	}
+	
+	this.map.coordinates = function() {
+		
+		$(".popup").hide();
+		$("#popup-coordinates").show();
+		
+	}
+	
+	this.map.saveCoordinate = function() {
+		alert($("#cap-coord-3857 .custom-mouse-position").html());
+		$("#coord-3857").html($("#cap-coord-3857 .custom-mouse-position").html());
+		$("#coord-4326").html($("#cap-coord-4326 .custom-mouse-position").html());
+		$("#coord-22195").html($("#cap-coord-22195 .custom-mouse-position").html());
+		
+		$("#coord-tbl").hide();
+		$("#coord-hint").hide();
+		$("#coord-capture-wrapper").show();
+		
+		this.map_object.deactivateCoordinates();
+		this.un("click",this.map_object.saveCoordinate);
 		
 	}
 	
@@ -849,6 +916,10 @@ function ol_map() {
 		$("#popup-share").width(nwidth);
 		$("#popup-share").height(nheight);
 		$("#popup-share").css("left",left+"px");
+		
+		$("#popup-coordinates").width(nwidth/3);
+		$("#popup-coordinates").height(nheight);
+		$("#popup-coordinates").css("right","20px");
 		
 	}
 	

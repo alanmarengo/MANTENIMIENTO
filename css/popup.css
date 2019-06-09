@@ -116,6 +116,21 @@
 	
 }
 
+.popup-header-button-active-fixed {
+
+	color:#FFFFFF !Important;
+	text-decoration:none !Important;
+	background-color:#31cbfd !Important;
+	
+}
+
+.popup-header-button-active-fixed:hover {
+
+	opacity:0.5;
+	text-decoration:none !Important;
+	
+}
+
 .popup-panel-content {
 	
 	font-size:12px;
