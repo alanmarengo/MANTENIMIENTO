@@ -170,7 +170,47 @@ $(document).ready(function() {
     $('body').on('click', '.doc-title, .tech', function(e) {
         let id = $(this).data('id');
         let origen_id = $(this).data('origen');
-        fichaLoad(id, origen_id);
+        fichaLoad(id, origen_id, function() {
+            fichaRender();
+            $('#uxFicha').modal('show');
+        });
+    });
+
+    // CLICK EN MEDIA-PREVIEW
+    $('body').on('click', '.media', function(e) {
+        let id = $(this).data('id');
+        let origen_id = $(this).data('origen');
+        let row = $(this).data('row');
+        $('.media-preview').removeClass('show')
+
+        fichaLoad(id, origen_id, function() {
+            let html = `
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div style="
+                            width: 100%;
+                            height:260px;
+                            background-image: url(${model.ficha.linkimagen});
+                            background-repeat: no-repeat;
+                            background-position: center center;
+                            background-size: cover;    
+                        "></div>
+                    </div>
+                    <div class="col-sm-6 preview-datos">
+                        <div class="preview-title">${model.ficha.title}</div>
+                        <div class="preview-estudio">${model.ficha.estudio}</div>
+                        <div class="preview-autores">Autores: ${model.ficha.authors}</div>
+                        <div class="preview-fecha">Fecha: ${model.ficha.fecha}</div>
+                        <div class="preview-tema-subtema">Tema/Subtema: ${model.ficha.tema_subtema}</div>
+                        <div class="preview-proyecto">Proyecto: ${model.ficha.proyecto}</div>
+                        <div class="preview-imagenes">
+                        </div>
+                        <a href="" class="btn btn-warning btn-xs">Imagenes asociadas</a>
+                    </div>
+                </div>
+            `
+            $('.media-preview').html(html);
+        });
     });
 
 
@@ -213,8 +253,8 @@ $(document).ready(function() {
             return;
 
         let url = model.apiUrlBase + '/mediateca_find.php?' + makeUrlFilter();
-        $('#uxUrl').html(url);
-
+        //TODO: SACAR EN PRODUCCION
+        //$('#uxUrl').html(url);
 
         $.getJSON(url, function(data) {
             model.ra = 0;
@@ -232,13 +272,26 @@ $(document).ready(function() {
                         estudio: value.estudios_id
                     });
                 } else if (value.Solapa == 1) {
-                    model.data.medias.push({
+
+
+                    let item = {
                         id: value.Id,
                         origen_id: value.origen_id,
-                        link: value.LinkImagen,
+                        //TODO: USAR value.LinkImagen
+                        //link: value.LinkImagen,
+                        link: `./sga/${value.Id}.jpg`,
                         title: value.Titulo,
                         estudio: value.estudios_id
-                    });
+                    };
+                    model.data.medias.push(item);
+
+                    //TODO: ELIMINAR PUSH ADICIONALES
+                    model.data.medias.push(item);
+                    model.data.medias.push(item);
+                    model.data.medias.push(item);
+                    model.data.medias.push(item);
+
+
                 } else if (value.Solapa == 2) {
                     model.data.techs.push({
                         id: value.Id,
@@ -255,21 +308,27 @@ $(document).ready(function() {
         });
     }
 
-    function fichaLoad(id, origen_id) {
+    function fichaLoad(id, origen_id, callbackRender) {
         let qs = {
             id: id,
             origen_id: origen_id
         };
         let url = model.apiUrlBase + '/mediateca_ficha.php?' + jQuery.param(qs);
+        
         $.getJSON(url, function(data) {
             model.ficha = {
-                id: data.Id,
+                id: data.id,
                 origen_id: data.origen_id,
                 title: data.titulo,
                 temporal: data.temporal,
                 authors: data.autores,
                 description: data.descripcion,
                 estudio: data.estudio,
+            
+                //TODO: CAMBIAR CUANDO LO ARREGLE MARTIN, DEBE VENIR EL DATO EN EL JSON
+                //linkimagen: data.linkdescarga, 
+                linkimagen: `./sga/${data.id}.jpg`,
+
                 linkvisor: data.linkvisor,
                 linkdescarga: data.linkdescarga,
                 fecha: data.fecha,
@@ -278,8 +337,7 @@ $(document).ready(function() {
                 estudio_id: data.estudio_id
             };
 
-            fichaRender();
-            $('#uxFicha').modal('show');
+            callbackRender();
         });
     }
 
@@ -471,13 +529,48 @@ $(document).ready(function() {
 
     function mediasRender() {
         let html = '';
+        html += `<div class="container">`;
+        html += `<div class="row">`;
+        
+        let row = 0;
+        let col = 0;
         $.each(model.data.medias, function(index, item) {
-            html += `
-                <div class="media col-md-2">
-                    <img src="${model.apiUrlBase}/media/${item.LinkImagen}" />
+            let i = `
+                <div class="media col-sm-2" data-toggle="collapse" href="#uxPreview_${row}" data-id="${item.id}" data-origen="${item.origen_id}" data-row="${row}" style="display: block;">
+                    <div style="
+                        height:100px;
+                        background-image: url(${item.link});
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        background-size: cover;    
+                        cursor: pointer;                    
+                    ">
+                    </div>
+                    <div style="font-size: .6em; padding: 4px 0px 4px; min-height: 40px;">
+                        ${row} / ${col} - ${item.title.substr(0, 40)} 
+                    </div>
                 </div>
             `;
+            html += i;
+
+            col++;
+            if (col == 6) {
+                html += `
+                    <div id="uxPreview_${row}" class="collapse col-sm-12 media-preview">
+                    </div>
+                `;
+                row++;
+                col = 0;
+            }
         });
+
+        html += `
+            <div id="uxPreview_${row}" class="collapse col-sm-12 media-preview">
+            </div>
+        `;
+        html += `</div>`;
+        html += `</div>`;
+
         $('#uxData').html(html);
     }
 
