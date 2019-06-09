@@ -307,7 +307,7 @@ function ol_map() {
 		
 		$("#coord-tbl").show();
 		$("#coord-hint").show();
-		$("#coord-capture-table").hide();
+		$("#coord-capture-wrapper").hide();
 		
 	}
 	
@@ -334,7 +334,7 @@ function ol_map() {
 		
 		$("#coord-tbl").hide();
 		$("#coord-hint").hide();
-		$("#coord-capture-table").show();
+		$("#coord-capture-wrapper").show();
 		alert("save");
 		this.map_object.deactivateCoordinates();
 		this.un("click",this.map_object.saveCoordinate);
