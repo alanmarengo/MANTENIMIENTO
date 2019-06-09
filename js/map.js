@@ -306,7 +306,7 @@ function ol_map() {
 			
 			var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:4326', 'EPSG:3857'));	
 			
-			this.DrawChart(wktext);
+			DrawChart(wktext);
 			
 			this.ol_object.removeInteraction(this.interaction);
 			

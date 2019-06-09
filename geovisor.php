@@ -205,12 +205,11 @@
 		
 	<script src="./js/openlayers/ol.js" type="text/javascript"></script>
 	
+	<script src="./js/chart.js" type="text/javascript"></script>
 	<script src="./js/config.js" type="text/javascript"></script>
-	<script src="./js/addControl.js" type="text/javascript"></script>
 	<script src="./js/map.js" type="text/javascript"></script>
 	<script src="./js/site.js" type="text/javascript"></script>
 	<script src="./js/scrollbars.js" type="text/javascript"></script>
-	<script src="./js/perfil_topografico.js" type="text/javascript"></script>
 	<script src="./js/flwindows.js" type="text/javascript"></script>
 	
 	<script type="text/javascript">
@@ -230,9 +229,7 @@
 			geomap.container.fixSize([document.getElementById("nav-1"),document.getElementById("nav-2")]);
 			
 			geomap.map.create();
-			geomap.map.createLayers();						
-			
-			geomap.map.ptopografico_instance = new PerfilTopografico(geomap.map.ol_object);
+			geomap.map.createLayers();
 			
 			geomap.panel.start();
 			
