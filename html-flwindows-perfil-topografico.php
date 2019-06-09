@@ -5,7 +5,9 @@
 		<p class="filter-container-title">PERFIL TOPOGRÁFICO</p>
 						
 		<div class="map-controls-layers-panel-icon flclose" title="Cerrar">
-			<i class="fa fa-window-close" onclick="$('.navbar-toggler').trigger('click');"></i>
+			<a href="javascript:void(0);" onclick="$('#perfil-topografico').hide();">
+				<i class="fa fa-window-close"></i>
+			</a>
 		</div>		
 			
 	</div>
