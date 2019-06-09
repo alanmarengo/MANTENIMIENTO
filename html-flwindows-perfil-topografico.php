@@ -4,9 +4,9 @@
 		
 		<p class="filter-container-title">PERFIL TOPOGRÁFICO</p>
 						
-		<div class="map-controls-layers-panel-icon flclose" title="Cerrar"></div>		
-		<div class="map-controls-layers-panel-icon minimize" title="Minimizar"></div>
-		<div class="map-controls-layers-panel-icon maximize" title="Maximizar"></div>			
+		<div class="map-controls-layers-panel-icon flclose" title="Cerrar">
+			<i class="fa fa-window-close" onclick="$('.navbar-toggler').trigger('click');"></i>
+		</div>		
 			
 	</div>
 					
