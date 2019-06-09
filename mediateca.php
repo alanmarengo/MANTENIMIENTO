@@ -153,7 +153,7 @@ $(document).ready(function() {
     })
 
     // CLICK EN LINKS DE FICHA
-    $('body').on('click', '.estudios-link', function(e) {
+    $('body').on('click', '.estudios-link, .media-preview-link', function(e) {
         model.stopLoad = true;
         setSolapa($(this).data('solapa'));
         setEstudio($(this).data('estudio'));
@@ -184,10 +184,34 @@ $(document).ready(function() {
         $('.media-preview').removeClass('show')
 
         fichaLoad(id, origen_id, function() {
+            let imagenes = ``;
+            $.each(model.ficha.linkimagenes, function(index, value) {
+                if (index > 4)
+                    return;
+
+                //TODO: REEMPLAZAR CUANDO LA DATA ESTE LISTA
+                //let linkimg = value.recurso_path_url;
+                let linkimg = `./sga/${index}.jpg`;
+                imagenes += `
+                    <div style="width: 18%; display: inline-block;">
+                        <div class="media-extra" data-target="#uxPreview_${row}" style="
+                                cursor: pointer;
+                                width: 100%;
+                                height:60px;
+                                background-image: url(${linkimg});
+                                background-repeat: no-repeat;
+                                background-position: center center;
+                                background-size: cover;    
+                            "></div>
+                    </div>
+                `
+            });
+
             let html = `
                 <div class="row">
                     <div class="col-sm-6">
-                        <div style="
+                        <div class="preview-image" 
+                        style="
                             width: 100%;
                             height:260px;
                             background-image: url(${model.ficha.linkimagen});
@@ -203,17 +227,22 @@ $(document).ready(function() {
                         <div class="preview-fecha">Fecha: ${model.ficha.fecha}</div>
                         <div class="preview-tema-subtema">Tema/Subtema: ${model.ficha.tema_subtema}</div>
                         <div class="preview-proyecto">Proyecto: ${model.ficha.proyecto}</div>
-                        <div class="preview-imagenes">
+                        <div class="preview-imagenes" style="overflow: hide;">
+                            ${imagenes}
                         </div>
-                        <a href="" class="btn btn-warning btn-xs">Imagenes asociadas</a>
+                        <a class="media-preview-link btn btn-warning btn-xs" data-solapa="1" data-estudio="${model.ficha.estudio_id}">Imagenes asociadas</a>
                     </div>
                 </div>
             `
-            $('.media-preview').html(html);
+            $('#uxPreview_' + row).html(html);
         });
     });
 
-
+    $('body').on('click', '.media-extra', function(e) {
+        let target = $(this).data('target')
+        let link = $(this).css('background-image');
+        $(target).find('.preview-image').css('background-image', link);
+    });
 
 
 
@@ -254,7 +283,7 @@ $(document).ready(function() {
 
         let url = model.apiUrlBase + '/mediateca_find.php?' + makeUrlFilter();
         //TODO: SACAR EN PRODUCCION
-        //$('#uxUrl').html(url);
+        $('#uxUrl').html(url);
 
         $.getJSON(url, function(data) {
             model.ra = 0;
@@ -299,7 +328,7 @@ $(document).ready(function() {
                         metatag: value.MetaTag,
                         title: value.Titulo,
                         description: value.Descripcion,
-                        estudio: value.estudios_id
+                        estudio: value.estudios_id,
                     });
                 }
             });
@@ -334,7 +363,8 @@ $(document).ready(function() {
                 fecha: data.fecha,
                 tema_subtema: data.tema_subtema,
                 proyecto: data.proyecto,
-                estudio_id: data.estudio_id
+                estudio_id: data.estudio_id,
+                linkimagenes: data.linkimagenes
             };
 
             callbackRender();
