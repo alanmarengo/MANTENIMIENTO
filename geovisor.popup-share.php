@@ -1,4 +1,4 @@
-<div class="popup" id="popup-share">
+<div class="popup popup-dark" id="popup-share">
 
 	<div class="row popup-row popup-header">		
 				
