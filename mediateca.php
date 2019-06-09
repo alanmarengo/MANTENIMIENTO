@@ -577,7 +577,7 @@ $(document).ready(function() {
                     ">
                     </div>
                     <div style="font-size: .6em; padding: 4px 0px 4px; min-height: 40px;">
-                        ${row} / ${col} - ${item.title.substr(0, 40)} 
+                        ${item.title.substr(0, 40)} 
                     </div>
                 </div>
             `;
