@@ -1,6 +1,6 @@
 .fl-window {
 	
-	background:#3e8b83;
+	background:RGBA(33,33,33,0.6);
 	margin-bottom:10px;
 	position:fixed;
 	z-index:10000;
@@ -20,7 +20,7 @@
 
 .fl-window-header {
 	
-	background-color: #296d7a;
+	background:RGBA(33,33,33,0.6);
 	/*height: 22px;
 	line-height: 22px;*/
 	cursor: move;
