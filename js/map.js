@@ -306,6 +306,7 @@ function ol_map() {
 		this.ol_object.on("click",this.saveCoordinate);
 		
 		$("#coord-tbl").show();
+		$("#btn-popup-capturar").hide();
 		$("#coord-hint").show();
 		$("#coord-capture-wrapper").hide();
 		
@@ -337,7 +338,8 @@ function ol_map() {
 		$("#cap-coord-22195").html(coord_22195);
 		
 		$("#coord-tbl").hide();
-		$("#coord-hint").hide();
+		$("#btn-popup-capturar").show();
+		$("#coord-capture-wrapper").show();
 		$("#coord-capture-wrapper").show();
 		
 		this.map_object.deactivateCoordinates();
