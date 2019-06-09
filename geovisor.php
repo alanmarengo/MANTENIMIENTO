@@ -187,7 +187,12 @@
 	<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="./js/popper-1.12.9.min.js"></script>
 	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="./js/jquery-ui/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="./js/jquery-ui/jquery-ui.min.js"></script>	
+
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/highcharts-more.js"></script>
+	<script src="https://code.highcharts.com/modules/funnel.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
 	
 	<script src="./js/perfect-scrollbar.js"></script>
 	<script src="./js/bootstrap-select.js"></script>
