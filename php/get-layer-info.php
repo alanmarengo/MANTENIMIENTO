@@ -23,7 +23,7 @@ for ($i=0; $i<sizeof($results); $i++) {
 	
 }
 
-$layer_names = array_unique($layer_names);
+$layer_names = array_values(array_unique($layer_names));
 
 
 
