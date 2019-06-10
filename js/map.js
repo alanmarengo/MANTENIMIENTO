@@ -962,8 +962,10 @@ function ol_map() {
 		$("#popup-coordinates").css("right","20px");
 		
 		$("#popup-info").width(nwidth/3);
-		$("#popup-info").height(nheight-100);
+		$("#popup-info").height(400);
 		$("#popup-info").css("right","20px");
+		
+		$("#info-wrapper").height(400);
 		
 	}
 	
