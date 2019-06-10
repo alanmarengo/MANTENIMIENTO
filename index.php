@@ -164,7 +164,7 @@
 
 
 
-<div class="video" style="display: block;">
+<div class="video" style="display: none;">
    <video width="450" height="225" controls poster="image">
      <source src="http://observatorio.atic.com.ar/video_3d/LB_3.mp4" type="video/mp4" />
      Your browser does not support the video tag.
