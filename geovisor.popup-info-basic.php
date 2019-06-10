@@ -4,7 +4,7 @@
 		
 		<p class="popup-subtitle">INFORMACIÓN</p>
 				
-		<div id="info-wrapper" class="mt-10">
+		<div id="info-wrapper" class="mt-10 scrollbar-content">
 		
 			
 		

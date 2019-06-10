@@ -213,6 +213,9 @@ function ol_map() {
 				
 			});
 			
+			scrollbars.redrawElement("#info-wrapper");
+			scrollbars.redrawElement("#info-wrapper");
+			
 		});
 		
 		this.createLayers = function() {
@@ -959,7 +962,7 @@ function ol_map() {
 		$("#popup-coordinates").css("right","20px");
 		
 		$("#popup-info").width(nwidth/3);
-		$("#popup-info").height(nheight);
+		$("#popup-info").height(400);
 		$("#popup-info").css("right","20px");
 		
 	}
