@@ -37,6 +37,8 @@ var_dump($layer_names);
 
 for ($i=0; $i<sizeof($layer_names); $i++) {
 	
+	echo "LAYER[".$i."]" . $layer_names[2];
+	
 	$query_string = "SELECT DISTINCT layer_schema,layer_table FROM mod_geovisores.vw_layers WHERE layer_wms_layer = '" . $layer_names[$i] . "' LIMIT 1";
 
 	$query = pg_query($conn,$query_string);
