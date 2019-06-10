@@ -480,11 +480,11 @@ function ol_map() {
 		
 		this.ol_object.addInteraction(this.bufferdraw);
 		
-		$(".nav-toolbar-link").not("#navbarDropdown-drawing").each(function(i,v) {
+		$(".nav-toolbar-link").not("#navbarDropdown-buffer").each(function(i,v) {
 			
 			$(v).bind("click",function() {
 						
-				this.ol_object.removeInteraction(this.draw);
+				this.ol_object.removeInteraction(this.bufferdraw);
 				
 			}.bind(this));
 			
@@ -1221,6 +1221,10 @@ function ol_map() {
 		$("#popup-drawing").width(nwidth/3);
 		$("#popup-drawing").height(300);
 		$("#popup-drawing").css("right","20px");
+		
+		$("#popup-buffer").width(nwidth/3);
+		$("#popup-buffer").height(300);
+		$("#popup-buffer").css("right","20px");
 		
 		$("#info-wrapper").height(400);
 		
