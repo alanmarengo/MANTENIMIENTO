@@ -9,7 +9,7 @@ $gids = array();
 
 for ($i=0; $i<sizeof($results); $i++) {
 	
-	$sep = explode(";",$results[$i];
+	$sep = explode(";",$results[$i]);
 	
 	array_push($layer_names,$sep[0]);
 	$gids[$sep[0]] = $sep[1];
