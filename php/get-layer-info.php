@@ -4,7 +4,7 @@ include("../pgconfig.php");
 
 $results = $_POST["r"];
 
-var_dump($_results)
+var_dump($_POST)
 
 /*$gid = $_POST["gid"];
 $layer_name = $_POST["layer_name"];
