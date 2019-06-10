@@ -156,18 +156,23 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-md-12 modulo-wrap modulo-7">
+                        <div class="col-md-12 modulo-wrap video-wrap modulo-7">
                             <div class="modulo-opacity"></div>
                             <div class="modulo-text">
                                 EXPLORA LAS OBRAS DE LOS AHRSC EN 2D Y 3D
                             </div>
-                            <div class="modulo-hover">
-                                <p class="modulo-hover-text">
-                                    <a href="./geovisor.php?geovisor=1" class="modulo-hover-icon">
-                                        <i class="fa fa-plus-circle fa-2x"></i>
-                                    </a>
-                                </p>
-                            </div>
+
+
+
+<div class="video" style="display: block;">
+   <video width="450" height="225" controls poster="image">
+     <source src="http://observatorio.atic.com.ar/video_3d/LB_3.mp4" type="video/mp4" />
+     Your browser does not support the video tag.
+   </video>
+</div>
+
+
+
                         </div>
                     </div>
                 </div>
@@ -285,6 +290,21 @@
     
 <script type='text/javascript'>
     $(document).ready(function () {
+        $('.modulo-wrap.video-wrap').hover( 
+            function () {
+                $(this).find('.video').show()
+                $(this).find('video')[0].play()
+
+                $(this).find('.modulo-text').hide();
+            },
+            function () {
+                $(this).find('video')[0].pause()
+                $(this).find('.video').hide()
+                $(this).find('.modulo-text').show();
+            }
+        )
+
+
         $('.modulo-wrap').hover( 
             function () {
                 $(this).find('.modulo-text').hide();
