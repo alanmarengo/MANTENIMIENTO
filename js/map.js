@@ -200,7 +200,7 @@ function ol_map() {
 				var gid = $(v).attr("x");
 				var layer_name = $(v).attr("y");
 				
-				if (!results[layer_name]) { results[layer_name] = {}; result[layer_name]["points"] = []; }
+				if (!results[layer_name]) { results[layer_name] = {}; results[layer_name]["points"] = []; }
 				
 				layers.push(layer_name);
 				results[layer_name]["points"].push(gid);
