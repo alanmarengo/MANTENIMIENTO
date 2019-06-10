@@ -43,6 +43,8 @@ while($r = pg_fetch_assoc($query)) {
 
 $html .= "</table>";
 
+$html .= "<div style=\"text-align:center\">";
+
 $html .= "<p>";
 $html .= "<a ";
 $html .= "class=\"popup-header-button popup-header-button-toggleable popup-header-button-active-fixed\" ";
@@ -69,6 +71,8 @@ $html .= ">";
 $html .= "<span>VER RECURSOS ASOCIADOS</span>";
 $html .= "</a>";
 $html .= "</p>";
+
+$html .= "</div>";
 
 echo $html;
 
