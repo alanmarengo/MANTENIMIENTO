@@ -2,9 +2,24 @@
 
 include("../pgconfig.php");
 
-//$results = $_POST["r"];
+$results = $_POST["results"];
 
-var_dump($_POST)
+$layer_names = array();
+$gids = array();
+
+for ($i=0; $i<sizeof($results); $i++) {
+	
+	$sep = explode(";",$results[$i];
+	
+	array_push($layer_names,$sep[0]);
+	$gids[$sep[0]] = $sep[1];
+	
+}
+
+$layer_names = array_unique($layer_names);
+
+var_dump($layer_names);
+var_dump($gids);
 
 /*$gid = $_POST["gid"];
 $layer_name = $_POST["layer_name"];

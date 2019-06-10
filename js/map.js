@@ -192,7 +192,6 @@ function ol_map() {
 				
 			});
 			
-			var layers = [];
 			var results = [];
 			
 			$("#popup-results").children().each(function(i,v) {
@@ -200,21 +199,16 @@ function ol_map() {
 				var gid = $(v).attr("x");
 				var layer_name = $(v).attr("y");
 				
-				if (!results[layer_name]) { results[layer_name] = []; results[layer_name]["points"] = []; }
-				
-				layers.push(layer_name);
-				results[layer_name]["points"].push(gid);
+				results.push(layer_name + ";" + gid);
 				
 			});
-			console.log(results);
+			
 			var req = $.ajax({
 				
 				async:false,
 				type:"POST",
 				data:{
-					layers:layers,
-					results:results,
-					test:"algo"
+					results:results
 				},
 				url:"./php/get-layer-info.php",
 				success:function(d) {}
