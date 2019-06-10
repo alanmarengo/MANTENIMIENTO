@@ -314,7 +314,7 @@ function ol_map() {
 	
 	this.map.print = function() {
 		
-		/*this.ol_object.once('rendercomplete', function(event) {
+		this.ol_object.once('rendercomplete', function(event) {
 			
 			var canvas = event.context.canvas;
 			
@@ -327,9 +327,7 @@ function ol_map() {
 			}
         });
 		
-        this.ol_object.renderSync();*/
-		
-		window.print();
+        this.ol_object.renderSync();
 		
 	}
 	
