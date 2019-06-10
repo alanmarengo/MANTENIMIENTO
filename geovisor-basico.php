@@ -301,7 +301,14 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link nav-link-death nav-item">Proyecto Santa Cruz</a>
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-proy" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Proyectos:
+							</a>
+							<div class="dropdown-menu" style="text-align:right;" aria-labelledby="navbarDropdown-proy">
+								<?php ListaProyectos(); ?>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Sin Especificar</a>
+							</div>
 						</li>
 						<li>
 							<a class="nav-link nav-link-death nav-link-separator nav-item">

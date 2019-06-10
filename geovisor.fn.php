@@ -1,5 +1,27 @@
 <?php
 
+function ListaProyectos() {			
+
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+	
+	$conn = pg_connect($string_conn);
+	
+	$query_string = "SELECT proyecto_id,proyecto_titulo FROM mod_geovisores.proyectos ORDER BY proyecto_titulo ASC";
+	
+	$query = pg_query($conn,$query_string);
+	
+	while ($r = pg_fetch_assoc($query)) {
+		
+		?>
+		
+		<a class="dropdown-item" href="#"><?php echo $r["proyecto_titulo"]; ?></a>
+		
+		<?php
+		
+	}
+	
+}
+
 function DrawAbr() {			
 
 	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
