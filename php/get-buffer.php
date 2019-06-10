@@ -9,7 +9,7 @@ $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . 
 	
 $conn = pg_connect($string_conn);
 
-$query_string = "SELECT * FROM mod_geovisores.gfi_buffer('" . $wkt . "','" . $implode(",",$layers) . "');";
+$query_string = "SELECT * FROM mod_geovisores.gfi_buffer('" . $wkt . "','" . implode(",",$layers) . "');";
 echo $query_string;
 /*$query = pg_query($conn,$query_string);
 
