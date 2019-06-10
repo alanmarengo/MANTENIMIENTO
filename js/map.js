@@ -452,15 +452,13 @@ function ol_map() {
 		
 		this.bufferdraw.on('drawend', function (e) {
 			
-			var format = new ol.format.WKT();
+			var format = new ol.format.WKT();			
 			
-			var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:3857', 'EPSG:4326'));		
+			var circle = ol.geom.Polygon.fromCircle(e.feature.getGeometry());
 			
-			var wktext = wkt;
+			var wkt = format.writeGeometry(circle.transform('EPSG:3857', 'EPSG:4326'));		
 			
-			var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:4326', 'EPSG:3857'));	
-			
-			console.log(wkt);
+			var wkt = format.writeGeometry(circle.transform('EPSG:4326', 'EPSG:3857'));	
 			
 			this.ol_object.removeInteraction(this.bufferdraw);
 			
