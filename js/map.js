@@ -161,7 +161,7 @@ function ol_map() {
 			$("#info-wrapper").empty();
 			
 			var view = this.getView();
-			var map = this;
+			var map = this.map_object;
 			
 			var viewResolution = (view.getResolution());
 			var url = '';
