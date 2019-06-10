@@ -29,13 +29,13 @@ while($r = pg_fetch_assoc($query)) {
 	foreach ($r as $item => $value){
 		
 		if(( strpos( $r, "geom" ) === false) && (strpos( $r, "id" ) === false)) {
-			echo "\"bar\" exists in the haystack variable";
-		}
 		
-		$html .= "<tr>";
-		$html .= "<td>" . $item . "</td>";
-		$html .= "<td>" . $value . "</td>";	
-		$html .= "</tr>";
+			$html .= "<tr>";
+			$html .= "<td>" . $item . "</td>";
+			$html .= "<td>" . $value . "</td>";	
+			$html .= "</tr>";
+		
+		}
 	
 	}
 	
