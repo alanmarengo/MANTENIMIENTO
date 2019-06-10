@@ -351,7 +351,7 @@
 				<div class="nav navbar-expand navbar-right" style="display: inline-block;" id="navToolbar">
 					<ul class="navbar-nav navbar-toolbar">
 						<li class="nav-item">
-							<a href="#" class="nav-link nav-toolbar-link">
+							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.buffer();" id="navbarDropdown-buffer" role="button" data-toggle="dropdown" aria-expanded="false">
 								<img src="./images/toolbar.icon.buffer.png">
 							</a>
 						</li>

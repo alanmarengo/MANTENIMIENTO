@@ -161,6 +161,7 @@ function ol_map() {
 			$("#info-wrapper").empty();
 			
 			var view = this.getView();
+			var map = this;
 			
 			var viewResolution = (view.getResolution());
 			var url = '';
@@ -185,44 +186,7 @@ function ol_map() {
 							
 						})
 						
-						document.getElementById("popup-results").innerHTML += req.responseText;
-						
-						var results = [];
-						
-						var entered = false;
-						
-						$("#popup-results").children().each(function(i,v) {
-							
-							var gid = $(v).attr("x");
-							var layer_name = $(v).attr("y");
-							
-							results.push(layer_name + ";" + gid);
-							
-							entered = true;
-							
-						});
-						
-						if (entered) {
-						
-							var req = $.ajax({
-								
-								async:false,
-								type:"POST",
-								data:{
-									results:results
-								},
-								url:"./php/get-layer-info.php",
-								success:function(d) {}
-								
-							});
-							
-							document.getElementById("info-wrapper").innerHTML += req.responseText;
-									
-							$("#popup-info").show();
-							
-							scrollbars.redrawElement("#info-wrapper");
-					
-						}
+						map.parseGFI(req.responseText);
 					
 					}
 					
@@ -236,6 +200,49 @@ function ol_map() {
 			
 			//
 			
+		}
+		
+	}
+	
+	this.map.parseGFI = function(response) {
+						
+		document.getElementById("popup-results").innerHTML += response;
+		
+		var results = [];
+		
+		var entered = false;
+		
+		$("#popup-results").children().each(function(i,v) {
+			
+			var gid = $(v).attr("x");
+			var layer_name = $(v).attr("y");
+			
+			results.push(layer_name + ";" + gid);
+			
+			entered = true;
+			
+		});
+		
+		if (entered) {
+		
+			var req = $.ajax({
+				
+				async:false,
+				type:"POST",
+				data:{
+					results:results
+				},
+				url:"./php/get-layer-info.php",
+				success:function(d) {}
+				
+			});
+			
+			document.getElementById("info-wrapper").innerHTML += req.responseText;
+					
+			$("#popup-info").show();
+			
+			scrollbars.redrawElement("#info-wrapper");
+	
 		}
 		
 	}
@@ -411,6 +418,52 @@ function ol_map() {
 		
 		this.map_object.deactivateCoordinates();
 		this.un("click",this.map_object.saveCoordinate);
+		
+	}
+	
+	this.map.buffer = function() {
+		
+		if (!this.buffer.source) {
+			
+			this.buffer.source = new ol.source.Vector({
+				wrapX: false
+			});
+			
+			var source = this.buffer.source;
+			
+			this.buffer.layerVector = new ol.layer.Vector({
+				source: source
+			});
+			
+			this.ol_object.addLayer(this.buffer.layerVector);
+			
+		}
+		
+		if (this.bufferdraw) {
+				
+			this.ol_object.removeInteraction(this.bufferdraw);
+				
+		}
+			
+		this.bufferdraw = new ol.interaction.Draw({
+			source: this.buffer.source,
+			type:"Circle"			
+		});
+		
+		this.ol_object.addInteraction(this.bufferdraw);
+		
+		$(".nav-toolbar-link").not("#navbarDropdown-drawing").each(function(i,v) {
+			
+			$(v).bind("click",function() {
+						
+				this.ol_object.removeInteraction(this.draw);
+				
+			}.bind(this));
+			
+		}.bind(this));
+		
+		$(".popup").not("#popup-busqueda").hide();
+		$("#popup-drawing").show();
 		
 	}
 	
