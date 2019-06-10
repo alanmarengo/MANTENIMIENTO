@@ -29,6 +29,10 @@ $layer_names = array_unique($layer_names);
 
 var_dump($layer_names);
 
+$layer_names = array_values($layer_names);
+
+var_dump($layer_names);
+
 $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 	
 $conn = pg_connect($string_conn);
