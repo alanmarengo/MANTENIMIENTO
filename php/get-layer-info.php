@@ -23,8 +23,11 @@ for ($i=0; $i<sizeof($results); $i++) {
 	
 }
 
+var_dump($layer_names);
+
 $layer_names = array_unique($layer_names);
-//$layer_names = array_values($layer_names);
+
+var_dump($layer_names);
 
 $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 	
@@ -32,11 +35,9 @@ $conn = pg_connect($string_conn);
 
 $html = "";
 
-var_dump($layer_names);
-
 for ($i=0; $i<sizeof($layer_names); $i++) {
 	
-	echo "LAYER[".$i."]" . $layer_names[$i];
+	echo "LAYER[".$i."]" . $layer_names[2];
 	
 	$query_string = "SELECT DISTINCT layer_schema,layer_table FROM mod_geovisores.vw_layers WHERE layer_wms_layer = '" . $layer_names[$i] . "' LIMIT 1";
 
