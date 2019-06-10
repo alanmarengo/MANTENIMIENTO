@@ -462,12 +462,20 @@ function ol_map() {
 			
 			this.ol_object.removeInteraction(this.bufferdraw);
 			
+			var layers = [];
+			
+			$(".layer-checkbox[data-added=1]").each(function(i,v) {
+				
+				layers.push(this.getAttribute("data-lid"));
+				
+			});
+			
 			var req = $.ajax({
 				
 				async:false,
 				type:"post",
 				url:"./php/get-buffer.php",
-				data:{wkt:wkt},
+				data:{wkt:wkt,layers:layers},
 				success:function(d){}
 				
 			});
