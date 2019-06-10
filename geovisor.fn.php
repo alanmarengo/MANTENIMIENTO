@@ -14,7 +14,7 @@ function ListaProyectos() {
 		
 		?>
 		
-		<a class="dropdown-item" href="#"><?php echo $r["proyecto_titulo"]; ?></a>
+		<a class="dropdown-item" href="#" data-id="<?php echo $r["proyecto_id"]; ?>"><?php echo $r["proyecto_titulo"]; ?></a>
 		
 		<?php
 		

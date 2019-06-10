@@ -308,10 +308,10 @@ function ol_map() {
 			$(v).find(".dropdown-item").each(function(j,x) {
 				
 				$(x).bind("click",function() {
-					alert($(this).attr("data-id"));
-					/*$(this).parent().prev().html($(this).text());
+					
+					$(this).parent().prev().html($(this).text());
 					$(this).parent().prev().attr("data-val",($(this).attr("data-id")));
-					map.updateParams();*/
+					map.updateParams();
 					
 				});
 				
