@@ -48,9 +48,9 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 
 	$query = pg_query($conn,$query_string);
 
-	$html .= "<table class=\"popup-table\" class=\"gfi-info-table\" cellpadding=\"5\">";
-
 	while($r = pg_fetch_assoc($query)) {
+
+		$html .= "<table class=\"popup-table\" class=\"gfi-info-table\" cellpadding=\"5\">";
 		
 		foreach ($r as $item => $value){
 			
@@ -64,10 +64,11 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 			}
 		
 		}
+	
+		$html .= "</table>";
+		$html .= "<br><hr><br>";
 		
 	}
-	
-	$html .= "</table>";
 
 	$html .= "<div style=\"text-align:center\" class=\"mt-20\">";
 
@@ -97,6 +98,8 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 	$html .= "<span>VER RECURSOS ASOCIADOS</span>";
 	$html .= "</a>";
 	$html .= "</p>";
+		
+	$html .= "<br><hr><br>";
 
 	$html .= "</div>";
 
