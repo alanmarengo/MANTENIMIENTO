@@ -495,6 +495,13 @@ function ol_map() {
 			type:"LineString"			
 		});
 
+		draw.on('drawstart', function (e) {		
+		
+			if (this.ptopografico.source) { this.ptopografico.source.clear(); }
+			if (this.ptopografico.sourcePoints) { this.ptopografico.source.clear(); }	
+			
+		}.bind(this));
+		
 		draw.on('drawend', function (e) {
 			
 			var format = new ol.format.WKT();
