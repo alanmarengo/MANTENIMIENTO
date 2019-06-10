@@ -242,7 +242,7 @@ function ol_map() {
 				
 			});
 			
-			document.getElementById("panel-basico-inner").innerHTML += req.responseText;
+			document.getElementById("panel-basico-inner").innerHTML = req.responseText;
 	
 		}
 		
