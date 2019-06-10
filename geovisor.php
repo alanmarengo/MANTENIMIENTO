@@ -361,7 +361,7 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link nav-toolbar-link">
+							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.medicion();" id="navbarDropdown-medicion" role="button" data-toggle="dropdown" aria-expanded="false">
 								<img src="./images/toolbar.icon.medicion.png">
 							</a>
 						</li>

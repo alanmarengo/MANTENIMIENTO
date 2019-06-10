@@ -399,6 +399,64 @@ function ol_map() {
 		
 	}
 	
+	this.map.medicion = function() {
+		
+		this.ptopografico.source = new ol.source.Vector({
+			wrapX: false
+		});
+		
+		this.ptopografico.sourcePoints = new ol.source.Vector({
+			wrapX: false
+		});
+		
+		this.ptopografico.layerVector = new ol.layer.Vector({
+			source: this.ptopografico.source
+		});
+		
+		this.ptopografico.layerPointVector = new ol.layer.Vector({
+			source: this.ptopografico.sourcePoints
+		});
+		
+		this.ol_object.addLayer(this.ptopografico.layerVector);
+		this.ol_object.addLayer(this.ptopografico.layerPointVector);
+		
+		var draw = new ol.interaction.Draw({
+			source: this.ptopografico.source,
+			type:"LineString"			
+		});
+
+		draw.on('drawend', function (e) {
+			
+			var format = new ol.format.WKT();
+			
+			var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:3857', 'EPSG:4326'));		
+			
+			var wktext = wkt;
+			
+			var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:4326', 'EPSG:3857'));	
+			
+			alert(wkt);
+			
+			this.ol_object.removeInteraction(draw);
+			
+			//geomap.map.ptopografico.layerVector.getSource().clear();	
+			
+		}.bind(this));
+		
+		this.ol_object.addInteraction(draw);
+		
+		$(".nav-toolbar-link").not("#navbarDropdown-medicion").each(function(i,v) {
+			
+			$(v).bind("click",function() {
+						
+				this.ol_object.removeInteraction(draw);
+				
+			}.bind(this));
+			
+		}.bind(this));
+		
+	}
+	
 	this.map.ptopografico = function() {
 		
 		this.ptopografico.source = new ol.source.Vector({
