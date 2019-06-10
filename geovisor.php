@@ -313,7 +313,7 @@
 					<a class="nav-link nav-link-button" href="#" id="navbarDropdown-help" role="button" data-toggle="dropdown" aria-expanded="false">
 						<i class="fa fa-question-circle"></i>
 					</a>
-					<div class="dropdown-menu"  style="text-align:right; position:absolute; left:22%; top:105%; z-index:999999;" aria-labelledby="navbarDropdown-help">
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown-help">
 						<a class="dropdown-item" href="#">Manual de Usuario</a>
 						<a class="dropdown-item" href="#">Video Explicativo</a>
 					</div>
