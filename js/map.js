@@ -186,7 +186,7 @@ function ol_map() {
 							
 						})
 						
-						map.parseGFI(req.responseText);
+						map.parseGFI(req.responseText,"popup-info","info-wrapper");
 					
 					}
 					
@@ -204,7 +204,7 @@ function ol_map() {
 		
 	}
 	
-	this.map.parseGFI = function(response) {
+	this.map.parseGFI = function(response,containerID,wrapperID) {
 						
 		document.getElementById("popup-results").innerHTML += response;
 		
@@ -237,11 +237,11 @@ function ol_map() {
 				
 			});
 			
-			document.getElementById("info-wrapper").innerHTML += req.responseText;
+			document.getElementById(wrapperID).innerHTML += req.responseText;
 					
-			$("#popup-info").show();
+			$("#"+containerID).show();
 			
-			scrollbars.redrawElement("#info-wrapper");
+			scrollbars.redrawElement(wrapperID);
 	
 		}
 		
@@ -480,9 +480,7 @@ function ol_map() {
 				
 			});
 			
-			document.getElementById("info-buffer").innerHTML = req.responseText;
-			
-			$("#popup-buffer").show();
+			this.parseGFI(req.responseText,"popup-buffer","info-buffer");
 			
 		}.bind(this));
 		

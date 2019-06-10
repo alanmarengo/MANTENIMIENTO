@@ -146,10 +146,104 @@ function ol_map() {
 			})
 		});
 		
-		this.createLayers = function() {
+		this.proylayer = new ol.layer.Tile({
+			visible:true,
+			source: new ol.source.TileWMS({
+				url: "http://observatorio.atic.com.ar/cgi-bin/mapserver?map=wms_atic",
+				params: {
+					'LAYERS': 'proyectos',
+					'VERSION': '1.1.1',
+					'FORMAT': 'image/png',
+					'TILED': false,
+					'proyecto_id':-1,
+					'tipo':-1,
+					'estado':-1
+				}
+			})
+		});
+		
+		this.ol_object.addLayer(this.proylayer);	
+		
+		this.ol_object.map_object = this;
+		
+		this.ol_object.addEventListener("click",function(evt) {
+				
+			$("#popup-results").empty();
+			$("#info-wrapper").empty();
 			
-			//
+			var view = this.getView();
+			var map = this.map_object;
 			
+			var viewResolution = (view.getResolution());
+			var url = '';
+			
+			this.getLayers().forEach(function (layer, i, layers) {				
+				
+				if (layer.getVisible() && layer.get('name')!='openstreets') {
+					
+					if(layer.getSource().getGetFeatureInfoUrl) {
+					
+						url = layer.getSource().getGetFeatureInfoUrl(evt.coordinate, viewResolution, 'EPSG:3857', {
+							'INFO_FORMAT': 'text/html',
+								'FEATURE_COUNT': '300'
+						});	
+					
+						var req = $.ajax({
+							
+							async:false,
+							type:"GET",
+							url:url,
+							success:function(d){}
+							
+						})
+						
+						map.parseGFI(req.responseText,"popup-info","info-wrapper");
+					
+					}
+					
+				}
+				
+			});
+			
+		});
+		
+	}
+	
+	this.map.parseGFI = function(response,containerID,wrapperID) {
+						
+		document.getElementById("popup-results").innerHTML += response;
+		
+		var results = [];
+		
+		var entered = false;
+		
+		$("#popup-results").children().each(function(i,v) {
+			
+			var gid = $(v).attr("x");
+			var layer_name = $(v).attr("y");
+			
+			results.push(layer_name + ";" + gid);
+			
+			entered = true;
+			
+		});
+		
+		if (entered) {
+		
+			var req = $.ajax({
+				
+				async:false,
+				type:"POST",
+				data:{
+					results:results
+				},
+				url:"./php/get-layer-info-basico.php",
+				success:function(d) {}
+				
+			});
+			
+			document.getElementById("panel-basico-inner").innerHTML += req.responseText;
+	
 		}
 		
 	}

@@ -213,7 +213,6 @@
 			geomap.container.fixSize([document.getElementById("nav-1"),document.getElementById("nav-2")]);
 			
 			geomap.map.create();
-			geomap.map.createLayers();
 			
 			geomap.panel.start();
 			
@@ -353,7 +352,12 @@
 	<div id="map"></div>
 
 	<?php include("geovisor.panel-basico.php"); ?>
+	<?php include("geovisor.popup-info.php"); ?>
 
+	<div id="popup-results">
+	
+	</div>
+	
 </div>
 
 </body>
