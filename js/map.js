@@ -452,7 +452,7 @@ function ol_map() {
 			
 		$("#buffer-hint").show();
 		$("#info-buffer").empty();
-		source.clear();
+		this.buffer.source.clear();
 		
 		this.bufferdraw.on('drawend', function (e) {
 			
