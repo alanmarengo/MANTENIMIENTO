@@ -37,7 +37,7 @@ var_dump($layer_names);
 
 for ($i=0; $i<sizeof($layer_names); $i++) {
 	
-	echo "LAYER[".$i."]" . $layer_names[2];
+	echo "LAYER[".$i."]" . $layer_names[$i];
 	
 	$query_string = "SELECT DISTINCT layer_schema,layer_table FROM mod_geovisores.vw_layers WHERE layer_wms_layer = '" . $layer_names[$i] . "' LIMIT 1";
 
@@ -47,9 +47,9 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 
 	$schema = $data["layer_schema"];
 	$table= $data["layer_table"];
-	echo "<p>$query_string</p>";
+	
 	$query_string2 = "SELECT * FROM \"$schema\".\"$table\" WHERE gid IN (" . implode(",",$gids[$layer_names[$i]]) . ")";
-	echo "<p>$query_string</p>";
+	
 	$query2 = pg_query($conn,$query_string2);
 		
 	$html .= "<h3>CAPA: " . $layer_names[$i] . "</h3>";
