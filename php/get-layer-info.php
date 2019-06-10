@@ -43,6 +43,33 @@ while($r = pg_fetch_assoc($query)) {
 
 $html .= "</table>";
 
+$html .= "<p>";
+$html .= "<a ";
+$html .= "class=\"popup-header-button popup-header-button-toggleable popup-header-button-active-fixed\" ";
+$html .= "href=\"#\" ";
+$html .= ">";
+$html .= "<span>EXPORTAR TABLA</span>";
+$html .= "</a>";
+$html .= "</p>";
+
+$html .= "<p>";
+$html .= "<a ";
+$html .= "class=\"popup-header-button popup-header-button-toggleable popup-header-button-active-fixed\" ";
+$html .= "href=\"#\" ";
+$html .= ">";
+$html .= "<span>VER MODELO 3D</span>";
+$html .= "</a>";
+$html .= "</p>";
+
+$html .= "<p>";
+$html .= "<a ";
+$html .= "class=\"popup-header-button popup-header-button-toggleable popup-header-button-active-fixed\" ";
+$html .= "href=\"#\" ";
+$html .= ">";
+$html .= "<span>VER RECURSOS ASOCIADOS</span>";
+$html .= "</a>";
+$html .= "</p>";
+
 echo $html;
 
 ?>
