@@ -350,7 +350,7 @@
 				<div class="nav navbar-expand navbar-right" style="display: inline-block;" id="navToolbar">
 					<ul class="navbar-nav navbar-toolbar">
 						<li class="nav-item">
-							<a href="#" class="nav-link">
+							<a href="#" class="nav-link nav-toolbar-link">
 								<img src="./images/toolbar.icon.buffer.png">
 							</a>
 						</li>
