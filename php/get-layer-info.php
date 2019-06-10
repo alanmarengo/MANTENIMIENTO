@@ -43,7 +43,7 @@ while($r = pg_fetch_assoc($query)) {
 
 $html .= "</table>";
 
-$html .= "<div style=\"text-align:center\">";
+$html .= "<div style=\"text-align:center\" class=\"mt-20\">";
 
 $html .= "<p>";
 $html .= "<a ";
