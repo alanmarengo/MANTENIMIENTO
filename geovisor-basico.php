@@ -304,7 +304,7 @@
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-proy" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								Proyectos:
 							</a>
-							<div class="dropdown-menu" style="text-align:right;" aria-labelledby="navbarDropdown-proy">
+							<div class="dropdown-menu licombo" style="text-align:right;" aria-labelledby="navbarDropdown-proy">
 								<?php ListaProyectos(); ?>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="#">Sin Especificar</a>

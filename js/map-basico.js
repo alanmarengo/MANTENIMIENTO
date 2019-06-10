@@ -287,6 +287,20 @@ function ol_map() {
 	
 	this.panel.start = function() {
 		
+		$(".dropdown-menu").each(function(i,v) {
+			
+			$(v).find(".dropdown-item").each(function(j,x) {
+				
+				$(x).on("click",function() {
+					
+					$(this).parent().prev().html($(this).text());
+					
+				});
+				
+			});
+			
+		});
+		
 		$(".default-empty-checkbox").each(function(i,v) {
 			
 			v.checked = false;
