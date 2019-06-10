@@ -2,7 +2,7 @@
 
 include("../pgconfig.php");
 
-$results = $_POST["results"];
+$results = $_POST["r"];
 
 var_dump($_results)
 
