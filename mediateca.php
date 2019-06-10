@@ -190,8 +190,8 @@ $(document).ready(function() {
                     return;
 
                 //TODO: REEMPLAZAR CUANDO LA DATA ESTE LISTA
-                //let linkimg = value.recurso_path_url;
-                let linkimg = `./sga/${index}.jpg`;
+                let linkimg = value.recurso_path_url;
+                //let linkimg = `./sga/${index}.jpg`;
                 imagenes += `
                     <div style="width: 18%; display: inline-block;">
                         <div class="media-extra" data-target="#uxPreview_${row}" style="
@@ -283,7 +283,7 @@ $(document).ready(function() {
 
         let url = model.apiUrlBase + '/mediateca_find.php?' + makeUrlFilter();
         //TODO: SACAR EN PRODUCCION
-        $('#uxUrl').html(url);
+        //$('#uxUrl').html(url);
 
         $.getJSON(url, function(data) {
             model.ra = 0;
@@ -307,18 +307,18 @@ $(document).ready(function() {
                         id: value.Id,
                         origen_id: value.origen_id,
                         //TODO: USAR value.LinkImagen
-                        //link: value.LinkImagen,
-                        link: `./sga/${value.Id}.jpg`,
+                        link: value.LinkImagen,
+                        //link: `./sga/${value.Id}.jpg`,
                         title: value.Titulo,
                         estudio: value.estudios_id
                     };
                     model.data.medias.push(item);
 
                     //TODO: ELIMINAR PUSH ADICIONALES
-                    model.data.medias.push(item);
-                    model.data.medias.push(item);
-                    model.data.medias.push(item);
-                    model.data.medias.push(item);
+                    //model.data.medias.push(item);
+                    //model.data.medias.push(item);
+                    //model.data.medias.push(item);
+                    //model.data.medias.push(item);
 
 
                 } else if (value.Solapa == 2) {
@@ -355,8 +355,8 @@ $(document).ready(function() {
                 estudio: data.estudio,
             
                 //TODO: CAMBIAR CUANDO LO ARREGLE MARTIN, DEBE VENIR EL DATO EN EL JSON
-                //linkimagen: data.linkdescarga, 
-                linkimagen: `./sga/${data.id}.jpg`,
+                linkimagen: data.linkdescarga, 
+                //linkimagen: `./sga/${data.id}.jpg`,
 
                 linkvisor: data.linkvisor,
                 linkdescarga: data.linkdescarga,

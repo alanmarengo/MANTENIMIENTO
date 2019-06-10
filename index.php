@@ -180,7 +180,7 @@
                         <p class="modulo-hover-text">
                             Ingresá a la información del proyecto de las presas Cóndor Cliff (CC) y La Barrancosa (LB), que proveerán electricidad al Sistema Argentino de Interconexión (SADI).
                             <br />
-                            <a href="./page.php" class="modulo-hover-icon">
+                            <a href="./geovisor.php?geovisor=1" class="modulo-hover-icon">
                                 <i class="fa fa-plus-circle fa-2x"></i>
                             </a>
                         </p>
@@ -248,7 +248,7 @@
                         </p>
                     </div>
                 </a>
-                <a href="./geovisor.php" class="col-md-12 link-wrap link-2">
+                <a href="./herramientas.php" class="col-md-12 link-wrap link-2">
                     <div class="link-text">
                         HERRAMIENTAS GEOGRÁFICAS
                     </div>
