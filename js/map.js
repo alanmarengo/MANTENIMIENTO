@@ -122,7 +122,8 @@ function ol_map() {
 			type: 'base',
 			visible: true,
 			source: new ol.source.XYZ({
-				url: '//{a-c}.tile.openstreetmaps.org/{z}/{x}/{y}.png'
+				url: '//{a-c}.tile.openstreetmaps.org/{z}/{x}/{y}.png',
+				crossOrigin: 'anonymous'
 			})
 		})
 		
@@ -313,7 +314,7 @@ function ol_map() {
 	
 	this.map.print = function() {
 		
-		this.ol_object.once('rendercomplete', function(event) {
+		/*this.ol_object.once('rendercomplete', function(event) {
 			
 			var canvas = event.context.canvas;
 			
@@ -326,7 +327,9 @@ function ol_map() {
 			}
         });
 		
-        this.ol_object.renderSync();
+        this.ol_object.renderSync();*/
+		
+		window.print();
 		
 	}
 	
@@ -770,7 +773,8 @@ function ol_map() {
 						'VERSION': '1.1.1',
 						'FORMAT': 'image/png',
 						'TILED': false
-					}
+					},
+					crossOrigin: 'anonymous'
 				})
 			});
 			
