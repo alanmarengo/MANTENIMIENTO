@@ -186,40 +186,49 @@ function ol_map() {
 						})
 						
 						document.getElementById("popup-results").innerHTML += req.responseText;
+						
+						var results = [];
+						
+						var entered = false;
+						
+						$("#popup-results").children().each(function(i,v) {
+							
+							var gid = $(v).attr("x");
+							var layer_name = $(v).attr("y");
+							
+							results.push(layer_name + ";" + gid);
+							
+							entered = true;
+							
+						});
+						
+						if (entered) {
+						
+							var req = $.ajax({
+								
+								async:false,
+								type:"POST",
+								data:{
+									results:results
+								},
+								url:"./php/get-layer-info.php",
+								success:function(d) {}
+								
+							});
+							
+							document.getElementById("info-wrapper").innerHTML += req.responseText;
+									
+							$("#popup-info").show();
+							
+							scrollbars.redrawElement("#info-wrapper");
+					
+						}
 					
 					}
+					
 				}
 				
 			});
-			
-			var results = [];
-			
-			$("#popup-results").children().each(function(i,v) {
-				
-				var gid = $(v).attr("x");
-				var layer_name = $(v).attr("y");
-				
-				results.push(layer_name + ";" + gid);
-				
-			});
-			
-			var req = $.ajax({
-				
-				async:false,
-				type:"POST",
-				data:{
-					results:results
-				},
-				url:"./php/get-layer-info.php",
-				success:function(d) {}
-				
-			});
-			
-			document.getElementById("info-wrapper").innerHTML += req.responseText;
-					
-			$("#popup-info").show();	
-			
-			scrollbars.redrawElement("#info-wrapper");
 			
 		});
 		
