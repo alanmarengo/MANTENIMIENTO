@@ -213,7 +213,6 @@
 			geomap.container.fixSize([document.getElementById("nav-1"),document.getElementById("nav-2")]);
 			
 			geomap.map.create();
-			geomap.map.createLayers();
 			
 			geomap.panel.start();
 			
@@ -255,11 +254,11 @@
                         <input id="main-search" name="main-search" type="text" placeholder="Buscar en todo el sitio">
 					</a>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item dropdown">
 					<a class="nav-link nav-link-button" href="#" id="navbarDropdown-help" role="button" data-toggle="dropdown" aria-expanded="false">
 						<i class="fa fa-question-circle"></i>
 					</a>
-					<div class="dropdown-menu"  style="text-align:right; position:absolute; left:22%; top:105%; z-index:999999;" aria-labelledby="navbarDropdown-help">
+					<div class="dropdown-menu"  style="position:absolute; left:-350%; text-align:right;" aria-labelledby="navbarDropdown-help">
 						<a class="dropdown-item" href="#">Manual de Usuario</a>
 						<a class="dropdown-item" href="#">Video Explicativo</a>
 					</div>
@@ -301,8 +300,15 @@
 								<img src="./images/toolbar.icon.zoomext.png">
 							</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link nav-link-death nav-item">Proyecto Santa Cruz</a>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" data-val="-1" href="#" id="navbarDropdown-proy" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Proyectos:
+							</a>
+							<div class="dropdown-menu licombo" style="text-align:right;" aria-labelledby="navbarDropdown-proy">
+								<?php ListaProyectos(); ?>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" data-id="-1" href="#">Sin Especificar</a>
+							</div>
 						</li>
 						<li>
 							<a class="nav-link nav-link-death nav-link-separator nav-item">
@@ -313,14 +319,14 @@
 							<a class="nav-link nav-link-death nav-item">Infraestructura</a>
 						</li>
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-maq" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<a class="nav-link dropdown-toggle" data-val="-1" href="#" id="navbarDropdown-infra" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								Todas:
 							</a>
-							<div class="dropdown-menu" style="text-align:right;" aria-labelledby="navbarDropdown-maq">
-								<a class="dropdown-item" href="#">Maquinaria</a>
-								<a class="dropdown-item" href="#">Equipos</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#">Todos</a>
+							<div class="dropdown-menu" style="text-align:right;" aria-labelledby="navbarDropdown-infra">
+								<a class="dropdown-item" href="#" data-id="1">Hidroeléctrica</a>
+								<a class="dropdown-item" href="#" data-id="2">Eólica</a>
+								<div class="dropdown-divider" data-id="3">A</div>
+								<a class="dropdown-item" data-id="-1" href="#">Todos</a>
 							</div>
 						</li>
 						<li>
@@ -332,15 +338,16 @@
 							<a class="nav-link nav-link-death nav-item">Estado</a>
 						</li>
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-po" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<a class="nav-link dropdown-toggle" data-val="-1" href="#" id="navbarDropdown-estado" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								Terminado:
 							</a>
-							<div class="dropdown-menu" style="text-align:right;" aria-labelledby="navbarDropdown-po">
-								<a class="dropdown-item" href="#">Sin Iniciar</a>
-								<a class="dropdown-item" href="#">En Proceso</a>
-								<a class="dropdown-item" href="#">Terminado</a>
+							<div class="dropdown-menu" style="text-align:right;" aria-labelledby="navbarDropdown-estado">
+								<a class="dropdown-item" href="#" data-id="1">Sin Iniciar</a>
+								<a class="dropdown-item" href="#" data-id="2">En Proceso</a>
+								<a class="dropdown-item" href="#" data-id="4">Fase Final</a>
+								<a class="dropdown-item" href="#" data-id="5">Terminado</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#">Sin Especificar</a>
+								<a class="dropdown-item" data-id="-1" href="#">Sin Especificar</a>
 							</div>
 						</li>
 					</ul>
@@ -353,7 +360,12 @@
 	<div id="map"></div>
 
 	<?php include("geovisor.panel-basico.php"); ?>
+	<?php include("geovisor.popup-info.php"); ?>
 
+	<div id="popup-results">
+	
+	</div>
+	
 </div>
 
 </body>

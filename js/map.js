@@ -122,7 +122,8 @@ function ol_map() {
 			type: 'base',
 			visible: true,
 			source: new ol.source.XYZ({
-				url: '//{a-c}.tile.openstreetmaps.org/{z}/{x}/{y}.png'
+				url: '//{a-c}.tile.openstreetmaps.org/{z}/{x}/{y}.png',
+				crossOrigin: 'anonymous'
 			})
 		})
 		
@@ -156,7 +157,11 @@ function ol_map() {
 		
 		this.ol_object.addEventListener("click",function(evt) {
 			
+			$("#popup-results").empty();
+			$("#info-wrapper").empty();
+			
 			var view = this.getView();
+			var map = this.map_object;
 			
 			var viewResolution = (view.getResolution());
 			var url = '';
@@ -172,9 +177,19 @@ function ol_map() {
 								'FEATURE_COUNT': '300'
 						});	
 					
-						alert(url);
+						var req = $.ajax({
+							
+							async:false,
+							type:"GET",
+							url:url,
+							success:function(d){}
+							
+						})
+						
+						map.parseGFI(req.responseText,"popup-info","info-wrapper");
 					
 					}
+					
 				}
 				
 			});
@@ -185,6 +200,49 @@ function ol_map() {
 			
 			//
 			
+		}
+		
+	}
+	
+	this.map.parseGFI = function(response,containerID,wrapperID) {
+						
+		document.getElementById("popup-results").innerHTML += response;
+		
+		var results = [];
+		
+		var entered = false;
+		
+		$("#popup-results").children().each(function(i,v) {
+			
+			var gid = $(v).attr("x");
+			var layer_name = $(v).attr("y");
+			
+			results.push(layer_name + ";" + gid);
+			
+			entered = true;
+			
+		});
+		
+		if (entered) {
+		
+			var req = $.ajax({
+				
+				async:false,
+				type:"POST",
+				data:{
+					results:results
+				},
+				url:"./php/get-layer-info.php",
+				success:function(d) {}
+				
+			});
+			
+			document.getElementById(wrapperID).innerHTML += req.responseText;
+					
+			$("#"+containerID).show();
+			
+			scrollbars.redrawElement(wrapperID);
+	
 		}
 		
 	}
@@ -271,8 +329,27 @@ function ol_map() {
 		
 		$("#input-share").val(s_link);
 		
-		$(".popup").hide();
+		$(".popup").not("#popup-busqueda").hide();
 		$("#popup-share").show();
+		
+	}
+	
+	this.map.print = function() {
+		
+		this.ol_object.once('rendercomplete', function(event) {
+			
+			var canvas = event.context.canvas;
+			
+			if (navigator.msSaveBlob) {
+				navigator.msSaveBlob(canvas.msToBlob(), 'map.png');
+			} else {
+				canvas.toBlob(function(blob) {
+					saveAs(blob, 'map.png');
+				});
+			}
+        });
+		
+        this.ol_object.renderSync();
 		
 	}
 	
@@ -313,7 +390,7 @@ function ol_map() {
 	
 	this.map.coordinates = function() {
 		
-		$(".popup").hide();
+		$(".popup").not("#popup-busqueda").hide();
 		$("#popup-coordinates").show();
 		
 	}
@@ -344,32 +421,243 @@ function ol_map() {
 		
 	}
 	
+	this.map.buffer = function() {
+		
+		if (!this.buffer.source) {
+			
+			this.buffer.source = new ol.source.Vector({
+				wrapX: false
+			});
+			
+			var source = this.buffer.source;
+			
+			this.buffer.layerVector = new ol.layer.Vector({
+				source: source
+			});
+			
+			this.ol_object.addLayer(this.buffer.layerVector);
+			
+		}
+		
+		if (this.bufferdraw) {
+				
+			this.ol_object.removeInteraction(this.bufferdraw);
+				
+		}
+			
+		this.bufferdraw = new ol.interaction.Draw({
+			source: this.buffer.source,
+			type:"Circle"			
+		});
+			
+		$("#buffer-hint").show();
+		$("#info-buffer").empty();
+		this.buffer.source.clear();
+		
+		this.bufferdraw.on('drawend', function (e) {
+			
+			var format = new ol.format.WKT();			
+			
+			var circle = ol.geom.Polygon.fromCircle(e.feature.getGeometry());
+			
+			var wkt = format.writeGeometry(circle.transform('EPSG:3857', 'EPSG:4326'));		
+			
+			var wkt = format.writeGeometry(circle.transform('EPSG:4326', 'EPSG:3857'));	
+			
+			this.ol_object.removeInteraction(this.bufferdraw);
+			
+			var layers = [];
+			
+			$(".layer-checkbox[data-added=1]").each(function(i,v) {
+				
+				layers.push(this.getAttribute("data-lid"));
+				
+			});
+			
+			$("#popup-info").hide();
+			$("#buffer-hint").hide();
+			
+			var req = $.ajax({
+				
+				async:false,
+				type:"post",
+				url:"./php/get-buffer.php",
+				data:{wkt:wkt,layers:layers},
+				success:function(d){}
+				
+			});
+			
+			this.parseGFI(req.responseText,"popup-buffer","info-buffer");
+			
+		}.bind(this));
+		
+		this.ol_object.addInteraction(this.bufferdraw);
+		
+		$(".nav-toolbar-link").not("#navbarDropdown-buffer").each(function(i,v) {
+			
+			$(v).bind("click",function() {
+						
+				this.ol_object.removeInteraction(this.bufferdraw);
+				
+			}.bind(this));
+			
+		}.bind(this));
+		
+		$(".popup").not("#popup-busqueda").hide();
+		$("#popup-buffer").show();
+		
+	}
+	
+	this.map.drawing = function(type) {
+		
+		if (!this.drawing.source) {
+			
+			this.drawing.source = new ol.source.Vector({
+				wrapX: false
+			});
+			
+			var source = this.drawing.source;
+			
+			this.drawing.layerVector = new ol.layer.Vector({
+				source: source
+			});
+			
+			this.ol_object.addLayer(this.drawing.layerVector);
+			
+		}
+			
+		if (!type) { type = "Point"; }
+		
+		if (this.draw) {
+				
+			this.ol_object.removeInteraction(this.draw);
+				
+		}
+			
+		this.draw = new ol.interaction.Draw({
+			source: this.drawing.source,
+			type:type			
+		});
+		
+		this.ol_object.addInteraction(this.draw);
+		
+		$(".nav-toolbar-link").not("#navbarDropdown-drawing").each(function(i,v) {
+			
+			$(v).bind("click",function() {
+						
+				this.ol_object.removeInteraction(this.draw);
+				
+			}.bind(this));
+			
+		}.bind(this));
+		
+		$(".popup").not("#popup-busqueda").hide();
+		$("#popup-drawing").show();
+		
+	}
+	
+	this.map.medicion = function() {
+		
+		if (!this.medicion.source) {
+		
+			this.medicion.source = new ol.source.Vector({
+				wrapX: false
+			});
+			
+			this.medicion.sourcePoints = new ol.source.Vector({
+				wrapX: false
+			});
+			
+			this.medicion.layerVector = new ol.layer.Vector({
+				source: this.medicion.source
+			});
+			
+			this.medicion.layerPointVector = new ol.layer.Vector({
+				source: this.medicion.sourcePoints
+			});
+			
+			this.ol_object.addLayer(this.medicion.layerVector);
+			this.ol_object.addLayer(this.medicion.layerPointVector);
+		
+		}
+		
+		var draw = new ol.interaction.Draw({
+			source: this.medicion.source,
+			type:"LineString"			
+		});
+
+		draw.on('drawend', function (e) {
+			
+			var format = new ol.format.WKT();
+			
+			var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:3857', 'EPSG:4326'));		
+			
+			var wktext = wkt;
+			
+			var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:4326', 'EPSG:3857'));	
+			
+			this.ol_object.removeInteraction(draw);
+			
+			var req = $.ajax({
+				
+				async:false,
+				type:"post",
+				url:"./php/get-medicion.php",
+				data:{wkt:wkt},
+				success:function(d){}
+				
+			});
+			
+			document.getElementById("info-medicion").innerHTML = req.responseText;
+			
+			$("#popup-medicion").show();
+			
+		}.bind(this));
+		
+		this.ol_object.addInteraction(draw);
+		
+		$(".nav-toolbar-link").not("#navbarDropdown-medicion").each(function(i,v) {
+			
+			$(v).bind("click",function() {
+						
+				this.ol_object.removeInteraction(draw);
+				
+			}.bind(this));
+			
+		}.bind(this));
+		
+	}
+	
 	this.map.ptopografico = function() {
 		
-		this.ptopografico.source = new ol.source.Vector({
-			wrapX: false
-		});
+		if (!this.ptopografico.source) {
 		
-		this.ptopografico.sourcePoints = new ol.source.Vector({
-			wrapX: false
-		});
+			this.ptopografico.source = new ol.source.Vector({
+				wrapX: false
+			});
+			
+			this.ptopografico.sourcePoints = new ol.source.Vector({
+				wrapX: false
+			});
+			
+			this.ptopografico.layerVector = new ol.layer.Vector({
+				source: this.ptopografico.source
+			});
+			
+			this.ptopografico.layerPointVector = new ol.layer.Vector({
+				source: this.ptopografico.sourcePoints
+			});
+			
+			this.ol_object.addLayer(this.ptopografico.layerVector);
+			this.ol_object.addLayer(this.ptopografico.layerPointVector);
 		
-		this.ptopografico.layerVector = new ol.layer.Vector({
-			source: this.ptopografico.source
-		});
-		
-		this.ptopografico.layerPointVector = new ol.layer.Vector({
-			source: this.ptopografico.sourcePoints
-		});
-		
-		this.ol_object.addLayer(this.ptopografico.layerVector);
-		this.ol_object.addLayer(this.ptopografico.layerPointVector);
+		}
 		
 		var draw = new ol.interaction.Draw({
 			source: this.ptopografico.source,
 			type:"LineString"			
 		});
-
+		
 		draw.on('drawend', function (e) {
 			
 			var format = new ol.format.WKT();
@@ -384,11 +672,21 @@ function ol_map() {
 			
 			this.ol_object.removeInteraction(draw);
 			
-			//geomap.map.ptopografico.layerVector.getSource().clear();	
+			this.ptopografico.layerVector.getSource().clear();	
 			
 		}.bind(this));
 		
 		this.ol_object.addInteraction(draw);
+		
+		$(".nav-toolbar-link").not("#navbarDropdown-ptopografico").each(function(i,v) {
+			
+			$(v).bind("click",function() {
+						
+				this.ol_object.removeInteraction(draw);
+				
+			}.bind(this));
+			
+		}.bind(this));
 		
 	}
 	
@@ -706,7 +1004,8 @@ function ol_map() {
 						'VERSION': '1.1.1',
 						'FORMAT': 'image/png',
 						'TILED': false
-					}
+					},
+					crossOrigin: 'anonymous'
 				})
 			});
 			
@@ -921,8 +1220,27 @@ function ol_map() {
 		$("#popup-share").css("left",left+"px");
 		
 		$("#popup-coordinates").width(nwidth/3);
-		$("#popup-coordinates").height(nheight);
+		$("#popup-coordinates").height(210);
 		$("#popup-coordinates").css("right","20px");
+		
+		$("#popup-info").width(nwidth/3);
+		$("#popup-info").height(400);
+		$("#popup-info").css("right","20px");
+		
+		$("#popup-medicion").width(nwidth/3);
+		$("#popup-medicion").height(300);
+		$("#popup-medicion").css("right","20px");
+		
+		$("#popup-drawing").width(nwidth/2);
+		$("#popup-drawing").height(300);
+		$("#popup-drawing").css("right","20px");
+		
+		$("#popup-buffer").width(nwidth/3);
+		$("#popup-buffer").height(400);
+		$("#info-buffer").height(300);
+		$("#popup-buffer").css("right","20px");
+		
+		$("#info-wrapper").height(400);
 		
 	}
 	

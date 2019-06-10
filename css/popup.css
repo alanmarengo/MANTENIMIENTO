@@ -294,3 +294,34 @@
 	background-color: #3c3c3c;
 	
 }
+
+.gfi-info-table {
+	
+	width:93%;
+	
+}
+
+.popup-table {
+	
+	
+	
+}
+
+.popup-table tr td {
+	
+	border-top:1px solid white;
+	border-left:1px solid white;
+	
+}
+
+.popup-table tr td:last-child {
+	
+	border-right:1px solid white;
+	
+}
+
+.popup-table tr:last-child td {
+	
+	border-bottom:1px solid white;
+	
+}

@@ -207,6 +207,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 		
 	<script src="./js/openlayers/ol.js" type="text/javascript"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
 	
 	<script src="./js/chart.js" type="text/javascript"></script>
 	<script src="./js/config.js" type="text/javascript"></script>
@@ -310,11 +311,11 @@
                         <input id="main-search" name="main-search" type="text" placeholder="Buscar en todo el sitio">
 					</a>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item dropdown">
 					<a class="nav-link nav-link-button" href="#" id="navbarDropdown-help" role="button" data-toggle="dropdown" aria-expanded="false">
 						<i class="fa fa-question-circle"></i>
 					</a>
-					<div class="dropdown-menu"  style="text-align:right; position:absolute; left:22%; top:105%; z-index:999999;" aria-labelledby="navbarDropdown-help">
+					<div class="dropdown-menu" style="position:absolute; left:-350%; text-align:right;" aria-labelledby="navbarDropdown-help">
 						<a class="dropdown-item" href="#">Manual de Usuario</a>
 						<a class="dropdown-item" href="#">Video Explicativo</a>
 					</div>
@@ -350,9 +351,9 @@
 			<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
 			
 				<div class="nav navbar-expand navbar-right" style="display: inline-block;" id="navToolbar">
-					<ul class="navbar-nav">
+					<ul class="navbar-nav navbar-toolbar">
 						<li class="nav-item">
-							<a href="#" class="nav-link">
+							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.buffer();" id="navbarDropdown-buffer" role="button" data-toggle="dropdown" aria-expanded="false">
 								<img src="./images/toolbar.icon.buffer.png">
 							</a>
 						</li>
@@ -362,7 +363,7 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link nav-toolbar-link">
+							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.medicion();" id="navbarDropdown-medicion" role="button" data-toggle="dropdown" aria-expanded="false">
 								<img src="./images/toolbar.icon.medicion.png">
 							</a>
 						</li>
@@ -372,17 +373,17 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link nav-toolbar-link">
+							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.drawing();">
 								<img src="./images/toolbar.icon.dibujo.png">
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link nav-toolbar-link">
+							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.print();">
 								<img src="./images/toolbar.icon.print.png">
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link" onclick="geomap.map.share();">
+							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.share();">
 								<img src="./images/toolbar.icon.share.png">
 							</a>
 						</li>
@@ -397,12 +398,18 @@
 
 	<?php include("geovisor.panel.php"); ?>
 	<?php include("geovisor.popup.php"); ?>
-	<?php include("geovisor.popup-share.php"); ?>
+	<?php include("geovisor.popup-buffer.php"); ?>
 	<?php include("geovisor.popup-coordinates.php"); ?>
+	<?php include("geovisor.popup-drawing.php"); ?>
+	<?php include("geovisor.popup-info.php"); ?>
+	<?php include("geovisor.popup-medicion.php"); ?>
+	<?php include("geovisor.popup-share.php"); ?>
 	
 	<?php include("html-flwindows-perfil-topografico.php"); ?>
 	
+	<div id="popup-results">
 	
+	</div>
 
 </div>
 
