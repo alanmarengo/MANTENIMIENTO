@@ -1232,7 +1232,7 @@ function ol_map() {
 		
 		$("#popup-buffer").width(nwidth/3);
 		$("#popup-buffer").height(400);
-		$("#info-buffer").height(400);
+		$("#info-buffer").height(300);
 		$("#popup-buffer").css("right","20px");
 		
 		$("#info-wrapper").height(400);
