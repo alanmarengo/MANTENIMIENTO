@@ -192,16 +192,16 @@ function ol_map() {
 				
 			});
 			
-			var results = {};
+			var results = {data:{}};
 			
 			$("#popup-results").children().each(function(i,v) {
 				
 				var gid = $(v).attr("x");
 				var layer_name = $(v).attr("y");
 				
-				if (!results[layer_name]) { results[layer_name] = {}; results[layer_name]["points"] = []; }
+				if (!results.data[layer_name]) { results.data[layer_name] = {}; result.datas[layer_name]["points"] = []; }
 				
-				results[layer_name]["points"].push(gid);
+				results.data[layer_name]["points"].push(gid);
 				
 			});
 				
