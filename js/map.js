@@ -292,21 +292,14 @@ function ol_map() {
 			target: document.getElementById('coord-4326')
 		});
 		
-		this.mouse_position_22195 = new ol.control.MousePosition({
-			coordinateFormat: ol.coordinate.createStringXY(3),
-			projection: 'EPSG:22195',
-			className: 'custom-mouse-position',
-			target: document.getElementById('coord-22195')
-		});
-		
 		this.ol_object.addControl(this.mouse_position_3857);
 		this.ol_object.addControl(this.mouse_position_4326);
-		this.ol_object.addControl(this.mouse_position_22195);
 		
 		this.ol_object.on("click",this.saveCoordinate);
 		
 		$("#coord-tbl").show();
 		$("#coord-hint").show();
+		$("#btn-popup-capturar").hide();
 		$("#coord-capture-wrapper").hide();
 		
 	}
@@ -315,7 +308,6 @@ function ol_map() {
 		
 		this.ol_object.removeControl(this.mouse_position_3857);
 		this.ol_object.removeControl(this.mouse_position_4326);
-		this.ol_object.removeControl(this.mouse_position_22195);
 		
 	}
 	
@@ -326,14 +318,25 @@ function ol_map() {
 		
 	}
 	
-	this.map.saveCoordinate = function() {
-		alert($("#cap-coord-3857 .custom-mouse-position").html());
-		$("#coord-3857").html($("#cap-coord-3857 .custom-mouse-position").html());
-		$("#coord-4326").html($("#cap-coord-4326 .custom-mouse-position").html());
-		$("#coord-22195").html($("#cap-coord-22195 .custom-mouse-position").html());
+	this.map.saveCoordinate = function(e) {
+		
+		var lon = e.coordinate[0];
+		var lat = e.coordinate[1];
+		
+		var coordarray4326 = ol.proj.transform(e.coordinate,'EPSG:3857', 'EPSG:4326');
+		
+		var lon4326 = coordarray4326[0];
+		var lat4326 = coordarray4326[1];		
+		
+		var coord_3875 = parseFloat(lon).toFixed(3) + "," + parseFloat(lat).toFixed(3);
+		var coord_4326 = parseFloat(lon4326).toFixed(3) + "," + parseFloat(lat4326).toFixed(3);
+		
+		$("#cap-coord-3857").html(coord_3875);
+		$("#cap-coord-4326").html(coord_4326);
 		
 		$("#coord-tbl").hide();
 		$("#coord-hint").hide();
+		$("#btn-popup-capturar").show();
 		$("#coord-capture-wrapper").show();
 		
 		this.map_object.deactivateCoordinates();
