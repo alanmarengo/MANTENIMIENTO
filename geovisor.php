@@ -205,6 +205,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 		
 	<script src="./js/openlayers/ol.js" type="text/javascript"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
 	
 	<script src="./js/chart.js" type="text/javascript"></script>
 	<script src="./js/config.js" type="text/javascript"></script>
