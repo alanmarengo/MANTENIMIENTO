@@ -6,7 +6,7 @@
 		<a class="popup-header-button popup-header-button-toggleable popup-header-button-active-fixed" href="#" onclick="geomap.map.activateCoordinates()" id="btn-popup-capturar">
 			<span>CAPTURAR</span>
 		</a>
-		<span class="ml-5 fs-10" id="coord-hint">(Click en el mapa para capturar)</span>
+		<span class="ml-5 fs-10 tool-hint" id="coord-hint">(Click en el mapa para capturar)</span>
 		<table id="coord-tbl" class="mt-10">
 			<tr>
 				<td>EPSG:3857</td>

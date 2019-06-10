@@ -491,7 +491,7 @@ function ol_map() {
 		}.bind(this));
 		
 		$(".popup").not("#popup-busqueda").hide();
-		$("#popup-drawing").show();
+		$("#popup-buffer").show();
 		
 	}
 	
