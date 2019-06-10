@@ -287,11 +287,13 @@ function ol_map() {
 		var infra = $("#navbarDropdown-infra").attr("data-val");
 		var estado = $("#navbarDropdown-estado").attr("data-val");
 		
-		var test = "Proyecto: " + proyecto + "\n";
-			test += "Infraestructura: " + infra + "\n";
-			test += "Estado: " + estado + "\n";
+		this.proylayer.getSource().updateParams({
+			'proyecto_id':proyecto,
+			'tipo':infra,
+			'estado':estado
+		});
 		
-		alert(test);
+		this.proylayer.changed();
 		
 	}
 	
