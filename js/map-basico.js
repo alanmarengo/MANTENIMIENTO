@@ -285,7 +285,7 @@ function ol_map() {
 		
 		var proyecto = $("#navbarDropdown-proy").attr("data-val");
 		var infra = $("#navbarDropdown-infra").attr("data-val");
-		var estado = $("#navbarDropdown-prestadoy").attr("data-val");
+		var estado = $("#navbarDropdown-estado").attr("data-val");
 		
 		var test = "Proyecto: " + proyecto + "\n";
 			test += "Infraestructura: " + infra + "\n";
