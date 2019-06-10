@@ -206,7 +206,7 @@ function ol_map() {
 				results[layer_name]["points"].push(gid);
 				
 			});
-				
+			console.log(results);
 			var req = $.ajax({
 				
 				async:false,
