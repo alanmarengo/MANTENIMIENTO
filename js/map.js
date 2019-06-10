@@ -205,7 +205,7 @@ function ol_map() {
 				
 			});
 				
-			alert(results);
+			console.log(results);
 				
 			/*var req = $.ajax({
 				
