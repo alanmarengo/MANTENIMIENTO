@@ -258,7 +258,7 @@
 					<a class="nav-link nav-link-button" href="#" id="navbarDropdown-help" role="button" data-toggle="dropdown" aria-expanded="false">
 						<i class="fa fa-question-circle"></i>
 					</a>
-					<div class="dropdown-menu"  style="text-align:right;" aria-labelledby="navbarDropdown-help">
+					<div class="dropdown-menu"  style="position:absolute; left:-350%; text-align:right;" aria-labelledby="navbarDropdown-help">
 						<a class="dropdown-item" href="#">Manual de Usuario</a>
 						<a class="dropdown-item" href="#">Video Explicativo</a>
 					</div>
@@ -301,7 +301,7 @@
 							</a>
 						</li>
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-proy" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<a class="nav-link dropdown-toggle" data-val="-1" href="#" id="navbarDropdown-proy" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								Proyectos:
 							</a>
 							<div class="dropdown-menu licombo" style="text-align:right;" aria-labelledby="navbarDropdown-proy">
@@ -319,13 +319,13 @@
 							<a class="nav-link nav-link-death nav-item">Infraestructura</a>
 						</li>
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-maq" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<a class="nav-link dropdown-toggle" data-val="-1" href="#" id="navbarDropdown-infra" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								Todas:
 							</a>
-							<div class="dropdown-menu" style="text-align:right;" aria-labelledby="navbarDropdown-maq">
-								<a class="dropdown-item" href="#">Maquinaria</a>
-								<a class="dropdown-item" href="#">Equipos</a>
-								<div class="dropdown-divider"></div>
+							<div class="dropdown-menu" style="text-align:right;" aria-labelledby="navbarDropdown-infra">
+								<a class="dropdown-item" href="#" data-id="1">Hidroeléctrica</a>
+								<a class="dropdown-item" href="#" data-id="2">Eólica</a>
+								<div class="dropdown-divider" data-id="3">A</div>
 								<a class="dropdown-item" href="#">Todos</a>
 							</div>
 						</li>
@@ -338,13 +338,14 @@
 							<a class="nav-link nav-link-death nav-item">Estado</a>
 						</li>
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-po" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<a class="nav-link dropdown-toggle" data-val="-1" href="#" id="navbarDropdown-estado" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								Terminado:
 							</a>
-							<div class="dropdown-menu" style="text-align:right;" aria-labelledby="navbarDropdown-po">
-								<a class="dropdown-item" href="#">Sin Iniciar</a>
-								<a class="dropdown-item" href="#">En Proceso</a>
-								<a class="dropdown-item" href="#">Terminado</a>
+							<div class="dropdown-menu" style="text-align:right;" aria-labelledby="navbarDropdown-estado">
+								<a class="dropdown-item" href="#" data-id="1">Sin Iniciar</a>
+								<a class="dropdown-item" href="#" data-id="2">En Proceso</a>
+								<a class="dropdown-item" href="#" data-id="4">Fase Final</a>
+								<a class="dropdown-item" href="#" data-id="5">Terminado</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="#">Sin Especificar</a>
 							</div>

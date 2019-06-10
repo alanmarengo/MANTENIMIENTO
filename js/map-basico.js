@@ -281,11 +281,27 @@ function ol_map() {
 		
 	}
 	
+	this.map.updateParams = function() {
+		
+		var proyecto = $("#navbarDropdown-proy").attr("data-val");
+		var infra = $("#navbarDropdown-infra").attr("data-val");
+		var estado = $("#navbarDropdown-prestadoy").attr("data-val");
+		
+		var test = "Proyecto: " + proyecto + "\n";
+		var test += "Infraestructura: " + infra + "\n";
+		var test += "Estado: " + estado + "\n";
+		
+		alert(test);
+		
+	}
+	
 	// PANEL SCRIPTS 
 	
 	this.panel.map = this.map;
 	
 	this.panel.start = function() {
+		
+		var map = this.map;
 		
 		$(".dropdown-menu").each(function(i,v) {
 			
@@ -294,6 +310,8 @@ function ol_map() {
 				$(x).bind("click",function() {
 					
 					$(this).parent().prev().html($(this).text());
+					$(this).parent().prev().attr("data-val",($(this).attr("data-id")));
+					map.updateParams();
 					
 				});
 				
