@@ -254,7 +254,7 @@
                         <input id="main-search" name="main-search" type="text" placeholder="Buscar en todo el sitio">
 					</a>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item dropdown">
 					<a class="nav-link nav-link-button" href="#" id="navbarDropdown-help" role="button" data-toggle="dropdown" aria-expanded="false">
 						<i class="fa fa-question-circle"></i>
 					</a>
@@ -300,7 +300,7 @@
 								<img src="./images/toolbar.icon.zoomext.png">
 							</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-proy" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								Proyectos:
 							</a>
