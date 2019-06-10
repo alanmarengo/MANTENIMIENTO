@@ -28,7 +28,7 @@ while($r = pg_fetch_assoc($query)) {
 	
 	foreach ($r as $item => $value){
 		
-		if(( strpos( $r, "geom" ) === false) && (strpos( $r, "id" ) === false)) {
+		if(( strpos( $item, "geom" ) === false) && (strpos( $item, "id" ) === false)) {
 		
 			$html .= "<tr>";
 			$html .= "<td>" . $item . "</td>";
