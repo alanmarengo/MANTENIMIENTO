@@ -49,7 +49,9 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 	$query = pg_query($conn,$query_string);
 
 	while($r = pg_fetch_assoc($query)) {
-
+		
+		$html .= "<h3>CAPA: " . $layer_names[$i] . "</h3>";
+		
 		$html .= "<table class=\"popup-table\" class=\"gfi-info-table\" cellpadding=\"5\">";
 		
 		foreach ($r as $item => $value){
