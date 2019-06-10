@@ -207,11 +207,11 @@ function ol_map() {
 				
 			console.log(results);
 				
-			/*var req = $.ajax({
+			var req = $.ajax({
 				
 				async:false,
 				type:"POST",
-				data:{gid:gid,layer_name:layer_name},
+				data:{results:results},
 				url:"./php/get-layer-info.php",
 				success:function(d) {}
 				
@@ -221,7 +221,7 @@ function ol_map() {
 					
 			$("#popup-info").show();	
 			
-			scrollbars.redrawElement("#info-wrapper");*/
+			scrollbars.redrawElement("#info-wrapper");
 			
 		});
 		

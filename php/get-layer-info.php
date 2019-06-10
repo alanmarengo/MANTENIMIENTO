@@ -2,7 +2,11 @@
 
 include("../pgconfig.php");
 
-$gid = $_POST["gid"];
+$results = $_POST["results"];
+
+var_dump($_results)
+
+/*$gid = $_POST["gid"];
 $layer_name = $_POST["layer_name"];
 
 $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
@@ -74,6 +78,6 @@ $html .= "</p>";
 
 $html .= "</div>";
 
-echo $html;
+echo $html;*/
 
 ?>
