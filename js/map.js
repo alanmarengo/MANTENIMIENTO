@@ -460,6 +460,8 @@ function ol_map() {
 			
 			var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:4326', 'EPSG:3857'));	
 			
+			console.log(wkt);
+			
 			this.ol_object.removeInteraction(this.bufferdraw);
 			
 			var req = $.ajax({
