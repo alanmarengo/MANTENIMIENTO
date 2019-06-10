@@ -19,23 +19,25 @@ $schema = $data["layer_schema"];
 $table= $data["layer_table"];
 
 $query_string = "SELECT * FROM \"$schema\".\"$table\" WHERE gid = $gid";
-echo $query_string;
+
 $query = pg_query($conn,$query_string);
 
 $html = "<table>";
 
 while($r = pg_fetch_assoc($query)) {
 	
-	$html .= "<tr>";
-	
 	foreach ($r as $item => $value){
-	
+		
+		if(( strpos( $r, "geom" ) === false) && (strpos( $r, "id" ) === false)) {
+			echo "\"bar\" exists in the haystack variable";
+		}
+		
+		$html .= "<tr>";
 		$html .= "<td>" . $item . "</td>";
-		$html .= "<td>" . $value . "</td>";
+		$html .= "<td>" . $value . "</td>";	
+		$html .= "</tr>";
 	
 	}
-	
-	$html .= "</tr>";
 	
 }
 
