@@ -288,8 +288,8 @@ function ol_map() {
 		var estado = $("#navbarDropdown-prestadoy").attr("data-val");
 		
 		var test = "Proyecto: " + proyecto + "\n";
-		var test += "Infraestructura: " + infra + "\n";
-		var test += "Estado: " + estado + "\n";
+			test += "Infraestructura: " + infra + "\n";
+			test += "Estado: " + estado + "\n";
 		
 		alert(test);
 		
