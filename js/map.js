@@ -449,6 +449,8 @@ function ol_map() {
 			source: this.buffer.source,
 			type:"Circle"			
 		});
+			
+		$("#buffer-hint").show();
 		
 		this.bufferdraw.on('drawend', function (e) {
 			
@@ -471,6 +473,7 @@ function ol_map() {
 			});
 			
 			$("#popup-info").hide();
+			$("#buffer-hint").hide();
 			
 			var req = $.ajax({
 				
