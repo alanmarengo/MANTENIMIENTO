@@ -470,6 +470,8 @@ function ol_map() {
 				
 			});
 			
+			$("#popup-info").hide();
+			
 			var req = $.ajax({
 				
 				async:false,
@@ -1229,7 +1231,7 @@ function ol_map() {
 		$("#popup-drawing").css("right","20px");
 		
 		$("#popup-buffer").width(nwidth/3);
-		$("#popup-buffer").height(300);
+		$("#popup-buffer").height(400);
 		$("#popup-buffer").css("right","20px");
 		
 		$("#info-wrapper").height(400);
