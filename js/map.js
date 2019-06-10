@@ -1226,7 +1226,7 @@ function ol_map() {
 		$("#popup-medicion").height(300);
 		$("#popup-medicion").css("right","20px");
 		
-		$("#popup-drawing").width(nwidth/3);
+		$("#popup-drawing").width(nwidth/2);
 		$("#popup-drawing").height(300);
 		$("#popup-drawing").css("right","20px");
 		
