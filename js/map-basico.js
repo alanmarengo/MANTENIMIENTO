@@ -293,7 +293,7 @@ function ol_map() {
 			'estado':estado
 		});
 		
-		this.proylayer.getSource().clear();
+		this.proylayer.changed();
 		
 	}
 	
