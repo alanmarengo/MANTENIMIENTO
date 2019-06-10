@@ -62,7 +62,9 @@
 		}
 		
 		#nav-1 {
-			
+		    height: 70px;
+    		padding-top: 14px;
+	
 			z-index:2200 !important;
 			
 		}
