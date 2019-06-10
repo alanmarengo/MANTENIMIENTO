@@ -397,10 +397,13 @@
 	<?php include("geovisor.popup.php"); ?>
 	<?php include("geovisor.popup-share.php"); ?>
 	<?php include("geovisor.popup-coordinates.php"); ?>
+	<?php include("geovisor.popup-info.php"); ?>
 	
 	<?php include("html-flwindows-perfil-topografico.php"); ?>
 	
+	<div id="popup-results">
 	
+	</div>
 
 </div>
 

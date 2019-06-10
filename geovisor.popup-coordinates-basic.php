@@ -2,7 +2,7 @@
 				
 	<div class="popup-col col col-sm-12 col-md-12 col-sm-12 col-xs-12 p-10 fs-12">
 		
-		<p>Coordenadas</p>
+		<p class="popup-subtitle">COORDENADAS</p>
 		<a class="popup-header-button popup-header-button-toggleable popup-header-button-active-fixed" href="#" onclick="geomap.map.activateCoordinates()" id="btn-popup-capturar">
 			<span>CAPTURAR</span>
 		</a>

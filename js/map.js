@@ -156,6 +156,9 @@ function ol_map() {
 		
 		this.ol_object.addEventListener("click",function(evt) {
 			
+			$("#popup-results").empty();
+			$("#info-wrapper").empty();
+			
 			var view = this.getView();
 			
 			var viewResolution = (view.getResolution());
@@ -172,10 +175,41 @@ function ol_map() {
 								'FEATURE_COUNT': '300'
 						});	
 					
-						alert(url);
+						var req = $.ajax({
+							
+							async:false,
+							type:"GET",
+							url:url,
+							success:function(d){}
+							
+						})
+						
+						document.getElementById("popup-results").innerHTML += req.responseText;
+						
+						$(".popup").hide();
+						$("#popup-info").show();						
 					
 					}
 				}
+				
+			});
+			
+			$("#popup-results").children().each(function(i,v) {
+				
+				var gid = $(v).attr("x");
+				var layer_name = $(v).attr("y");
+				
+				var req = $.ajax({
+					
+					async:false,
+					type:"POST",
+					data:{gid:gid,layer_name:layer_name},
+					url:"./php/get-layer-info.php",
+					success:function(d) {}
+					
+				});
+				
+				document.getElementById("info-wrapper").innerHTML += req.responseText;
 				
 			});
 			
@@ -923,6 +957,10 @@ function ol_map() {
 		$("#popup-coordinates").width(nwidth/3);
 		$("#popup-coordinates").height(nheight);
 		$("#popup-coordinates").css("right","20px");
+		
+		$("#popup-info").width(nwidth/3);
+		$("#popup-info").height(nheight);
+		$("#popup-info").css("right","20px");
 		
 	}
 	
