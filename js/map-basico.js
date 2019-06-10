@@ -291,7 +291,7 @@ function ol_map() {
 			
 			$(v).find(".dropdown-item").each(function(j,x) {
 				
-				$(x).on("click",function() {
+				$(x).bind("click",function() {
 					
 					$(this).parent().prev().html($(this).text());
 					
