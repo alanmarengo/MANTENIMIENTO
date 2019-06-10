@@ -401,27 +401,27 @@ function ol_map() {
 	
 	this.map.medicion = function() {
 		
-		this.ptopografico.source = new ol.source.Vector({
+		this.medicion.source = new ol.source.Vector({
 			wrapX: false
 		});
 		
-		this.ptopografico.sourcePoints = new ol.source.Vector({
+		this.medicion.sourcePoints = new ol.source.Vector({
 			wrapX: false
 		});
 		
-		this.ptopografico.layerVector = new ol.layer.Vector({
-			source: this.ptopografico.source
+		this.medicion.layerVector = new ol.layer.Vector({
+			source: this.medicion.source
 		});
 		
-		this.ptopografico.layerPointVector = new ol.layer.Vector({
-			source: this.ptopografico.sourcePoints
+		this.medicion.layerPointVector = new ol.layer.Vector({
+			source: this.medicion.sourcePoints
 		});
 		
-		this.ol_object.addLayer(this.ptopografico.layerVector);
-		this.ol_object.addLayer(this.ptopografico.layerPointVector);
+		this.ol_object.addLayer(this.medicion.layerVector);
+		this.ol_object.addLayer(this.medicion.layerPointVector);
 		
 		var draw = new ol.interaction.Draw({
-			source: this.ptopografico.source,
+			source: this.medicion.source,
 			type:"LineString"			
 		});
 
@@ -435,11 +435,23 @@ function ol_map() {
 			
 			var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:4326', 'EPSG:3857'));	
 			
-			alert(wkt);
-			
 			this.ol_object.removeInteraction(draw);
 			
-			//geomap.map.ptopografico.layerVector.getSource().clear();	
+			var req = $.ajax({
+				
+				async:false,
+				type:"post",
+				url:"./php/get-medicion.php",
+				data:{wkt:wkt},
+				success:function(d){}
+				
+			});
+			
+			document.getElementById("info-medicion").innerHTML = req.responseText;
+			
+			$("#popup-medicion").show();
+			
+			this.medicion.source.clear();
 			
 		}.bind(this));
 		
@@ -1051,6 +1063,10 @@ function ol_map() {
 		$("#popup-info").width(nwidth/3);
 		$("#popup-info").height(400);
 		$("#popup-info").css("right","20px");
+		
+		$("#popup-medicion").width(nwidth/3);
+		$("#popup-medicion").height(300);
+		$("#popup-medicion").css("right","20px");
 		
 		$("#info-wrapper").height(400);
 		
