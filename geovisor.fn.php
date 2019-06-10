@@ -114,7 +114,7 @@ function DrawLayers($clase_id) {
 						</a>
 					</div>
 				
-					<div class="layer-icon">
+					<div class="layer-icon" onclick="$(this).children('a').trigger('click');">
 						<a href="<?php echo $r["layer_metadata_url"]; ?>" target="_blank">
 							<img src="./images/geovisor/icons/layer-bar-info.png">
 						</a>
@@ -132,7 +132,7 @@ function DrawLayers($clase_id) {
 						</a>
 					</div>
 				
-					<div class="layer-icon">
+					<div class="layer-icon" onclick="$(this).children('a').trigger('click');">
 						<a href="<?php echo $r["layer_download_url"]; ?>" target="_blank">
 							<img src="./images/geovisor/icons/layer-bar-download.png">
 						</a>
