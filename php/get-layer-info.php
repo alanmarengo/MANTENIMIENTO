@@ -12,7 +12,14 @@ for ($i=0; $i<sizeof($results); $i++) {
 	$sep = explode(";",$results[$i]);
 	
 	array_push($layer_names,$sep[0]);
-	$gids[$sep[0]] = $sep[1];
+	
+	if (!$gids[$sep[0]]) {
+		
+		$gids[$sep[0]] = array();
+		
+	}
+	
+	array_push($gids[$sep[0]],$sep[1]);
 	
 }
 
