@@ -211,7 +211,11 @@ function ol_map() {
 				
 				async:false,
 				type:"POST",
-				data:{layers:layers,results:results},
+				data:{
+					layers:layers,
+					results:results,
+					test:"algo"
+				},
 				url:"./php/get-layer-info.php",
 				success:function(d) {}
 				
