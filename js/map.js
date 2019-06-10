@@ -494,13 +494,6 @@ function ol_map() {
 			source: this.ptopografico.source,
 			type:"LineString"			
 		});
-
-		draw.on('drawstart', function (e) {		
-		
-			if (this.ptopografico.source) { this.ptopografico.source.clear(); }
-			if (this.ptopografico.sourcePoints) { this.ptopografico.source.clear(); }	
-			
-		}.bind(this));
 		
 		draw.on('drawend', function (e) {
 			
