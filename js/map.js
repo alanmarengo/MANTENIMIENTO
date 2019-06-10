@@ -186,7 +186,7 @@ function ol_map() {
 						
 						document.getElementById("popup-results").innerHTML += req.responseText;
 						
-						$(".popup").hide();
+						//$(".popup").hide();
 						$("#popup-info").show();						
 					
 					}
@@ -213,7 +213,6 @@ function ol_map() {
 				
 			});
 			
-			scrollbars.redrawElement("#info-wrapper");
 			scrollbars.redrawElement("#info-wrapper");
 			
 		});
