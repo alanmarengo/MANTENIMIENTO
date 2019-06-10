@@ -451,7 +451,7 @@ function ol_map() {
 			
 			$("#popup-medicion").show();
 			
-			this.medicion.source.clear();
+			geomap.map.medicion.layerVector.getSource().clear();	
 			
 		}.bind(this));
 		
@@ -509,7 +509,7 @@ function ol_map() {
 			
 			this.ol_object.removeInteraction(draw);
 			
-			//geomap.map.ptopografico.layerVector.getSource().clear();	
+			geomap.map.ptopografico.layerVector.getSource().clear();	
 			
 		}.bind(this));
 		
