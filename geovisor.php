@@ -348,7 +348,7 @@
 			<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
 			
 				<div class="nav navbar-expand navbar-right" style="display: inline-block;" id="navToolbar">
-					<ul class="navbar-nav">
+					<ul class="navbar-nav navbar-toolbar">
 						<li class="nav-item">
 							<a href="#" class="nav-link">
 								<img src="./images/toolbar.icon.buffer.png">

@@ -427,6 +427,12 @@ function ol_map() {
 		
 		this.ol_object.addInteraction(draw);
 		
+		$(".nav-toolbar-link").not("#navbarDropdown-ptopografico").bind("click",function() {
+						
+			this.ol_object.removeInteraction(draw);
+			
+		}.bind(this);
+		
 	}
 	
 	// PANEL SCRIPTS 
