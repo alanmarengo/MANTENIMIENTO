@@ -311,6 +311,25 @@ function ol_map() {
 		
 	}
 	
+	this.map.print = function() {
+		
+		this.ol_object.once('rendercomplete', function(event) {
+			
+			var canvas = event.context.canvas;
+			
+			if (navigator.msSaveBlob) {
+				navigator.msSaveBlob(canvas.msToBlob(), 'map.png');
+			} else {
+				canvas.toBlob(function(blob) {
+					saveAs(blob, 'map.png');
+				});
+			}
+        });
+		
+        this.ol_object.renderSync();
+		
+	}
+	
 	this.map.activateCoordinates = function() {
 		
 		this.mouse_position_3857 = new ol.control.MousePosition({

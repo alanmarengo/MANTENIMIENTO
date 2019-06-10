@@ -375,7 +375,7 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link nav-toolbar-link">
+							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.print();">
 								<img src="./images/toolbar.icon.print.png">
 							</a>
 						</li>
