@@ -185,9 +185,6 @@ function ol_map() {
 						})
 						
 						document.getElementById("popup-results").innerHTML += req.responseText;
-						
-						//$(".popup").hide();
-						$("#popup-info").show();						
 					
 					}
 				}
@@ -210,6 +207,8 @@ function ol_map() {
 				});
 				
 				document.getElementById("info-wrapper").innerHTML += req.responseText;
+						
+				$("#popup-info").show();	
 				
 			});
 			

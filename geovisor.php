@@ -380,7 +380,7 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link" onclick="geomap.map.share();">
+							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.share();">
 								<img src="./images/toolbar.icon.share.png">
 							</a>
 						</li>
