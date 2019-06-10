@@ -108,8 +108,8 @@ function DrawLayers($clase_id) {
 			
 				<div class="layer-icons">
 				
-					<div class="layer-icon">
-						<a href="javascript:void(0);" onclick="geomap.map.zoomToLayerExtent(<?php echo $r["layer_id"]; ?>);">
+					<div class="layer-icon" onclick="geomap.map.zoomToLayerExtent(<?php echo $r["layer_id"]; ?>);">
+						<a href="javascript:void(0);">
 							<img src="./images/geovisor/icons/layer-bar-zoom.png">
 						</a>
 					</div>
