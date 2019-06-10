@@ -24,9 +24,7 @@ for ($i=0; $i<sizeof($results); $i++) {
 }
 
 $layer_names = array_unique($layer_names);
-$layer_names = array_values($layer_names);
-
-
+//$layer_names = array_values($layer_names);
 
 $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 	
