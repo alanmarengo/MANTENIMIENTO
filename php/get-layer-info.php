@@ -52,7 +52,7 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 
 	while($r = pg_fetch_assoc($query2)) {
 		
-		$html .= "<table class=\"popup-table\" class=\"gfi-info-table\" cellpadding=\"5\">";
+		$html .= "<table class=\"popup-table gfi-info-table\" cellpadding=\"5\">";
 		
 		foreach ($r as $item => $value){
 			
