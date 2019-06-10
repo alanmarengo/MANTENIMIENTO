@@ -22,7 +22,7 @@ $query_string = "SELECT * FROM \"$schema\".\"$table\" WHERE gid = $gid";
 
 $query = pg_query($conn,$query_string);
 
-$html = "<table class=\"popup-table\" cellpadding=\"5\">";
+$html = "<table class=\"popup-table\" id=\"gfi-info-table\" cellpadding=\"5\">";
 
 while($r = pg_fetch_assoc($query)) {
 	
