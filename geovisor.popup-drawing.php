@@ -1,4 +1,4 @@
-<div class="popup popup-dark" id="popup-medicion">
+<div class="popup popup-dark" id="popup-drawing">
 
 	<div class="row popup-row popup-header">		
 				
@@ -8,7 +8,7 @@
 			
 				<ul class="navbar-nav">
 					<li class="nav-item nav-item-button popup-header-li active">
-						<a class="popup-header-button" href="#" onclick="$('#popup-medicion').hide(); geomap.map.medicion.layerVector.getSource().clear()">
+						<a class="popup-header-button" href="#" onclick="$('#popup-drawing').hide(); geomap.map.ol_object.removeInteraction(geomap.map.draw); geomap.map.drawing.layerVector.getSource().clear();">
 							<span>X</span>
 						</a>
 					</li>
@@ -20,6 +20,6 @@
 	
 	</div>
 
-	<?php include("./geovisor.popup-medicion-basic.php"); ?>
+	<?php include("./geovisor.popup-drawing-basic.php"); ?>
 
 </div>

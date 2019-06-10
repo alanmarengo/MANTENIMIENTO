@@ -371,7 +371,7 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link nav-toolbar-link">
+							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.drawing();">
 								<img src="./images/toolbar.icon.dibujo.png">
 							</a>
 						</li>
@@ -396,10 +396,11 @@
 
 	<?php include("geovisor.panel.php"); ?>
 	<?php include("geovisor.popup.php"); ?>
-	<?php include("geovisor.popup-share.php"); ?>
 	<?php include("geovisor.popup-coordinates.php"); ?>
+	<?php include("geovisor.popup-drawing.php"); ?>
 	<?php include("geovisor.popup-info.php"); ?>
 	<?php include("geovisor.popup-medicion.php"); ?>
+	<?php include("geovisor.popup-share.php"); ?>
 	
 	<?php include("html-flwindows-perfil-topografico.php"); ?>
 	

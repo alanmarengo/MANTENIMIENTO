@@ -192,28 +192,36 @@ function ol_map() {
 				
 			});
 			
+			var results = {};
+			
 			$("#popup-results").children().each(function(i,v) {
 				
 				var gid = $(v).attr("x");
 				var layer_name = $(v).attr("y");
 				
-				var req = $.ajax({
-					
-					async:false,
-					type:"POST",
-					data:{gid:gid,layer_name:layer_name},
-					url:"./php/get-layer-info.php",
-					success:function(d) {}
-					
-				});
+				if (!results[layer_name]) { results[layer_name] = {}; results[layer_name][points] = []; }
 				
-				document.getElementById("info-wrapper").innerHTML += req.responseText;
-						
-				$("#popup-info").show();	
+				results[layer_name][points].push(gid);
+				
+			});
+				
+			alert(results);
+				
+			/*var req = $.ajax({
+				
+				async:false,
+				type:"POST",
+				data:{gid:gid,layer_name:layer_name},
+				url:"./php/get-layer-info.php",
+				success:function(d) {}
 				
 			});
 			
-			scrollbars.redrawElement("#info-wrapper");
+			document.getElementById("info-wrapper").innerHTML += req.responseText;
+					
+			$("#popup-info").show();	
+			
+			scrollbars.redrawElement("#info-wrapper");*/
 			
 		});
 		
@@ -307,7 +315,7 @@ function ol_map() {
 		
 		$("#input-share").val(s_link);
 		
-		$(".popup").hide();
+		$(".popup").not("#popup-busqueda").hide();
 		$("#popup-share").show();
 		
 	}
@@ -368,7 +376,7 @@ function ol_map() {
 	
 	this.map.coordinates = function() {
 		
-		$(".popup").hide();
+		$(".popup").not("#popup-busqueda").hide();
 		$("#popup-coordinates").show();
 		
 	}
@@ -399,26 +407,78 @@ function ol_map() {
 		
 	}
 	
+	this.map.drawing = function(type) {
+		
+		if (!this.drawing.source) {
+			
+			this.drawing.source = new ol.source.Vector({
+				wrapX: false
+			});
+			
+			var source = this.drawing.source;
+			
+			this.drawing.layerVector = new ol.layer.Vector({
+				source: source
+			});
+			
+			this.ol_object.addLayer(this.drawing.layerVector);
+			
+		}
+			
+		if (!type) { type = "Point"; }
+		
+		if (this.draw) {
+				
+			this.ol_object.removeInteraction(this.draw);
+				
+		}
+			
+		this.draw = new ol.interaction.Draw({
+			source: this.drawing.source,
+			type:type			
+		});
+		
+		this.ol_object.addInteraction(this.draw);
+		
+		$(".nav-toolbar-link").not("#navbarDropdown-drawing").each(function(i,v) {
+			
+			$(v).bind("click",function() {
+						
+				this.ol_object.removeInteraction(this.draw);
+				
+			}.bind(this));
+			
+		}.bind(this));
+		
+		$(".popup").not("#popup-busqueda").hide();
+		$("#popup-drawing").show();
+		
+	}
+	
 	this.map.medicion = function() {
 		
-		this.medicion.source = new ol.source.Vector({
-			wrapX: false
-		});
+		if (!this.medicion.source) {
 		
-		this.medicion.sourcePoints = new ol.source.Vector({
-			wrapX: false
-		});
+			this.medicion.source = new ol.source.Vector({
+				wrapX: false
+			});
+			
+			this.medicion.sourcePoints = new ol.source.Vector({
+				wrapX: false
+			});
+			
+			this.medicion.layerVector = new ol.layer.Vector({
+				source: this.medicion.source
+			});
+			
+			this.medicion.layerPointVector = new ol.layer.Vector({
+				source: this.medicion.sourcePoints
+			});
+			
+			this.ol_object.addLayer(this.medicion.layerVector);
+			this.ol_object.addLayer(this.medicion.layerPointVector);
 		
-		this.medicion.layerVector = new ol.layer.Vector({
-			source: this.medicion.source
-		});
-		
-		this.medicion.layerPointVector = new ol.layer.Vector({
-			source: this.medicion.sourcePoints
-		});
-		
-		this.ol_object.addLayer(this.medicion.layerVector);
-		this.ol_object.addLayer(this.medicion.layerPointVector);
+		}
 		
 		var draw = new ol.interaction.Draw({
 			source: this.medicion.source,
@@ -451,8 +511,6 @@ function ol_map() {
 			
 			$("#popup-medicion").show();
 			
-			this.medicion.layerVector.getSource().clear();	
-			
 		}.bind(this));
 		
 		this.ol_object.addInteraction(draw);
@@ -471,24 +529,28 @@ function ol_map() {
 	
 	this.map.ptopografico = function() {
 		
-		this.ptopografico.source = new ol.source.Vector({
-			wrapX: false
-		});
+		if (!this.ptopografico.source) {
 		
-		this.ptopografico.sourcePoints = new ol.source.Vector({
-			wrapX: false
-		});
+			this.ptopografico.source = new ol.source.Vector({
+				wrapX: false
+			});
+			
+			this.ptopografico.sourcePoints = new ol.source.Vector({
+				wrapX: false
+			});
+			
+			this.ptopografico.layerVector = new ol.layer.Vector({
+				source: this.ptopografico.source
+			});
+			
+			this.ptopografico.layerPointVector = new ol.layer.Vector({
+				source: this.ptopografico.sourcePoints
+			});
+			
+			this.ol_object.addLayer(this.ptopografico.layerVector);
+			this.ol_object.addLayer(this.ptopografico.layerPointVector);
 		
-		this.ptopografico.layerVector = new ol.layer.Vector({
-			source: this.ptopografico.source
-		});
-		
-		this.ptopografico.layerPointVector = new ol.layer.Vector({
-			source: this.ptopografico.sourcePoints
-		});
-		
-		this.ol_object.addLayer(this.ptopografico.layerVector);
-		this.ol_object.addLayer(this.ptopografico.layerPointVector);
+		}
 		
 		var draw = new ol.interaction.Draw({
 			source: this.ptopografico.source,
@@ -1067,6 +1129,10 @@ function ol_map() {
 		$("#popup-medicion").width(nwidth/3);
 		$("#popup-medicion").height(300);
 		$("#popup-medicion").css("right","20px");
+		
+		$("#popup-drawing").width(nwidth/3);
+		$("#popup-drawing").height(300);
+		$("#popup-drawing").css("right","20px");
 		
 		$("#info-wrapper").height(400);
 		
