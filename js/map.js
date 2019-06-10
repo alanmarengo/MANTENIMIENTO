@@ -966,7 +966,7 @@ function ol_map() {
 		$("#popup-share").css("left",left+"px");
 		
 		$("#popup-coordinates").width(nwidth/3);
-		$("#popup-coordinates").height(nheight);
+		$("#popup-coordinates").height(210);
 		$("#popup-coordinates").css("right","20px");
 		
 		$("#popup-info").width(nwidth/3);
