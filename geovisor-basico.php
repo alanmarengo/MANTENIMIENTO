@@ -307,7 +307,7 @@
 							<div class="dropdown-menu licombo" style="text-align:right;" aria-labelledby="navbarDropdown-proy">
 								<?php ListaProyectos(); ?>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#">Sin Especificar</a>
+								<a class="dropdown-item" data-id="-1" href="#">Sin Especificar</a>
 							</div>
 						</li>
 						<li>
@@ -326,7 +326,7 @@
 								<a class="dropdown-item" href="#" data-id="1">Hidroeléctrica</a>
 								<a class="dropdown-item" href="#" data-id="2">Eólica</a>
 								<div class="dropdown-divider" data-id="3">A</div>
-								<a class="dropdown-item" href="#">Todos</a>
+								<a class="dropdown-item" data-id="-1" href="#">Todos</a>
 							</div>
 						</li>
 						<li>
@@ -347,7 +347,7 @@
 								<a class="dropdown-item" href="#" data-id="4">Fase Final</a>
 								<a class="dropdown-item" href="#" data-id="5">Terminado</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#">Sin Especificar</a>
+								<a class="dropdown-item" data-id="-1" href="#">Sin Especificar</a>
 							</div>
 						</li>
 					</ul>

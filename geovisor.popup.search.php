@@ -11,7 +11,7 @@
 					<div class="form-group">
 						
 						<i class="fa fa-search"></i>
-						<input type="text" placeholder="Búsqueda..." class="icon-input">
+						<input type="text" placeholder="Búsqueda..." name="adv-search-busqueda" class="icon-input">
 					
 					</div>
 				
