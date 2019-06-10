@@ -396,6 +396,7 @@
 
 	<?php include("geovisor.panel.php"); ?>
 	<?php include("geovisor.popup.php"); ?>
+	<?php include("geovisor.popup-buffer.php"); ?>
 	<?php include("geovisor.popup-coordinates.php"); ?>
 	<?php include("geovisor.popup-drawing.php"); ?>
 	<?php include("geovisor.popup-info.php"); ?>

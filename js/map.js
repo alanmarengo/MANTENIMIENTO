@@ -450,6 +450,34 @@ function ol_map() {
 			type:"Circle"			
 		});
 		
+		this.bufferdraw.on('drawend', function (e) {
+			
+			var format = new ol.format.WKT();
+			
+			var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:3857', 'EPSG:4326'));		
+			
+			var wktext = wkt;
+			
+			var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:4326', 'EPSG:3857'));	
+			
+			this.ol_object.removeInteraction(this.bufferdraw);
+			
+			var req = $.ajax({
+				
+				async:false,
+				type:"post",
+				url:"./php/get-buffer.php",
+				data:{wkt:wkt},
+				success:function(d){}
+				
+			});
+			
+			document.getElementById("info-buffer").innerHTML = req.responseText;
+			
+			$("#popup-buffer").show();
+			
+		}.bind(this));
+		
 		this.ol_object.addInteraction(this.bufferdraw);
 		
 		$(".nav-toolbar-link").not("#navbarDropdown-drawing").each(function(i,v) {
