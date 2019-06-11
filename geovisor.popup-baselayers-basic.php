@@ -7,7 +7,7 @@
 		<div id="info-baselayers" class="mt-10 scrollbar-content">
 		
 			<div class="pretty p-default p-round" style="font-size:20px;">
-				<input type="radio" name="radio-baselayers" checked="checked" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.openstreets);">
+				<input type="radio" name="radio-baselayers" id="baselayer-default-radio" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.openstreets);">
 				<div class="state">
 					<label>Openstreets Maps</label>
 				</div>
