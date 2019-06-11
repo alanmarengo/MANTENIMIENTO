@@ -633,7 +633,7 @@ function ol_map() {
 			
 			var layers = [];
 			
-			$(".layer-checkbox[data-added=1]:checked").each(function(i,v) {
+			$(".layer-checkbox[data-added=1]:checked:visible").each(function(i,v) {
 				
 				layers.push(this.getAttribute("data-lid"));
 				
