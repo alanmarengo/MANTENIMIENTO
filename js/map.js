@@ -235,7 +235,7 @@ function ol_map() {
 					
 				}
 				if (isBase == false) {
-					console.log(layer);
+					console.log(layer.getSource());
 					alert(layer.layer_id + " :: " + isBase);
 				}
 				
