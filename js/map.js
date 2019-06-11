@@ -231,7 +231,7 @@ function ol_map() {
 					
 				}
 				
-				if (layer.getVisible() && !isBase {
+				if (layer.getVisible() && !isBase) {
 					
 					if(layer.getSource().getGetFeatureInfoUrl) {
 					
