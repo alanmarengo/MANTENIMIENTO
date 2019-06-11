@@ -442,6 +442,7 @@ function ol_map() {
 		var req = $.ajax({
 			
 			async:false,
+			url:"./php/get-csv.php",
 			type:"POST",
 			data:{q:query},
 			type:"post",
