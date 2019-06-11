@@ -234,8 +234,10 @@ function ol_map() {
 					}
 					
 				}
-				
-				alert(layer.layer_id + " :: " + isBase);
+				if (isBase == false) {
+					console.log(layer);
+					alert(layer.layer_id + " :: " + isBase);
+				}
 				
 				if ((layer.getVisible()) && (isBase == false)) {
 					
@@ -1178,14 +1180,13 @@ function ol_map() {
 						'LAYERS': layer_name,
 						'VERSION': '1.1.1',
 						'FORMAT': 'image/png',
-						'TILED': false
+						'TILED': false,
+						'clase_id':clase_id,
+						'layer_id':layer_id
 					},
 					crossOrigin: 'anonymous'
 				})
 			});
-			
-			document.getElementById("layer-checkbox-"+layer_id).layer.clase_id = clase_id;
-			document.getElementById("layer-checkbox-"+layer_id).layer.layer_id = layer_id;
 			
 			document.getElementById("layer-checkbox-"+layer_id).layer.setVisible(false);
 			
