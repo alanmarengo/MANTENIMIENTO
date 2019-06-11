@@ -156,23 +156,11 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-md-12 modulo-wrap video-wrap modulo-7">
+                        <div class="video-hover col-md-12 modulo-wrap modulo-7">
                             <div class="modulo-opacity"></div>
                             <div class="modulo-text">
                                 EXPLORA LAS OBRAS DE LOS AHRSC EN 2D Y 3D
                             </div>
-
-
-
-<div class="video" style="display: none;">
-   <video width="450" height="225" controls poster="image">
-     <source src="http://observatorio.atic.com.ar/video_3d/LB_3.mp4" type="video/mp4" />
-     Your browser does not support the video tag.
-   </video>
-</div>
-
-
-
                         </div>
                     </div>
                 </div>
@@ -286,10 +274,22 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="uxVideo" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <video width="800" height="450" controls poster="image">
+                    <source src="http://observatorio.atic.com.ar/video_3d/LB_3.mp4" type="video/mp4" />
+                    Tu navegador no soporta reproducir este video.
+                </video>
+            </div>
+        </div>
+    </div>
 </div>
     
 <script type='text/javascript'>
     $(document).ready(function () {
+        /*
         $('.modulo-wrap.video-wrap').hover( 
             function () {
                 $(this).find('.video').show()
@@ -303,7 +303,16 @@
                 $(this).find('.modulo-text').show();
             }
         )
+        */
 
+        $('.video-hover').on('click', function() {
+            $('#uxVideo').modal('show');
+            $('#uxVideo video')[0].play();
+        });
+
+        $('#uxVideo').on('hidden.bs.modal', function () {
+            $('#uxVideo video')[0].pause();
+        })
 
         $('.modulo-wrap').hover( 
             function () {
