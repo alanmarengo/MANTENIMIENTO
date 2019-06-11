@@ -215,42 +215,6 @@ function ol_map() {
 		
 	}
 	
-	this.map.loadGeovisor = function(geovid) {
-		
-		var req = $.ajax({
-			
-			async:false,
-			type:"POST",
-			url:SITEURL+"php/get-geovisor.php",
-			data:{geovid:geovid},
-			success:function(d){}
-			
-		});
-		
-		var js = JSON.parse(req.responseText);
-		
-		for (var i=0; i<js.data.length; i++) {
-			
-			if (js.data[i].iniciar_panel == "t") {
-				
-				$(".layer-checkbox[data-lid="+js.data[i].layer_id+"]").each(function(i,v) {
-					
-					this.panel.addLayer(v.getAttribute("data-cid"),v.getAttribute("data-lid"));
-					
-					if (js.data[i].iniciar_visible == "t") {
-						
-						v.click();
-						
-					}
-					
-				}.bind(this));
-				
-			}
-			
-		}
-		
-	}
-	
 	this.map.parseGFI = function(response,containerID,wrapperID) {
 						
 		document.getElementById("popup-results").innerHTML += response;
@@ -1307,6 +1271,42 @@ function ol_map() {
 	}	
 	
 	this.map.panel = this.panel;
+	
+	this.map.loadGeovisor = function(geovid) {
+		
+		var req = $.ajax({
+			
+			async:false,
+			type:"POST",
+			url:"./php/get-geovisor.php",
+			data:{geovid:geovid},
+			success:function(d){}
+			
+		});
+		
+		var js = JSON.parse(req.responseText);
+		
+		for (var i=0; i<js.data.length; i++) {
+			
+			if (js.data[i].iniciar_panel == "t") {
+				
+				$(".layer-checkbox[data-lid="+js.data[i].layer_id+"]").each(function(i,v) {
+					
+					this.panel.addLayer(v.getAttribute("data-cid"),v.getAttribute("data-lid"));
+					
+					if (js.data[i].iniciar_visible == "t") {
+						
+						v.click();
+						
+					}
+					
+				}.bind(this));
+				
+			}
+			
+		}
+		
+	}
 	
 	this.popup.start = function() {
 		
