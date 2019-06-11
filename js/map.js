@@ -259,7 +259,7 @@ function ol_map() {
 			
 		}
 		
-		this.ol_object.getView().fitExtent(js.geovisor_extent, this.ol_object.getSize());
+		this.ol_object.getView().fit(js.geovisor_extent, this.ol_object.getSize());
 		
 	}
 	
