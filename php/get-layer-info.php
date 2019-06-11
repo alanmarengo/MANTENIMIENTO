@@ -77,7 +77,7 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 
 	$html .= "<p>";
 	$html .= "<a ";
-	$html .= "class=\"popup-header-button popup-header-button-toggleable popup-header-button-active-fixed\" onclick=\"geomap.map.exportCSV();\"";
+	$html .= "class=\"popup-header-button popup-header-button-toggleable popup-header-button-active-fixed\" onclick=\"geomap.map.exportCSV(this);\"";
 	$html .= "href=\"#\" data-q=\"".encrypt($query_string2)."\"";
 	$html .= ">";
 	$html .= "<span>EXPORTAR TABLA</span>";
