@@ -238,7 +238,7 @@ function ol_map() {
 			if (js.data[i].iniciar_panel == "t") {
 				
 				$(".layer-checkbox[data-lid="+js.data[i].layer_id+"]").each(function(i,v) {
-					
+					alert(js.data[i].iniciar_visible);
 					panel.AddLayer(v.getAttribute("data-cid"),v.getAttribute("data-lid"));
 					
 					if (js.data[i].iniciar_visible == "t") {
