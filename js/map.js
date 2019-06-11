@@ -412,7 +412,7 @@ function ol_map() {
 			
 			async:false,
 			type:"POST",
-			url:"./php/get-coord-transformed.php",
+			url:SITEURL+"php/get-coord-transformed.php",
 			data:{lon:lon,lat:lat},
 			success:function(d){}
 			
