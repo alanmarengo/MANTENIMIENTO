@@ -31,9 +31,9 @@ function parseSQLToCSV($recordset)
 				
 				if (!in_array($bannedIndexes,$index)) {
 					
-							$json.= "\"".$fieldname."\"";
+					$json.= "\"".$fieldname."\"";
 						
-						}}
+				}
 				
   			};
   			
