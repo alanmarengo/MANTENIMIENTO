@@ -34,10 +34,10 @@ $json = "{";
 $json .= "\"geovisor_id\":$geovid,";
 $json .= "\"geovisor_desc\":\"" . $data["geovisor_desc"] . "\",";
 $json .= "\"geovisor_extent\":\"" . $data["geovisor_extent"] . "\",";
-$json .= "\"minx\":\"" . $data["geovisor_extent"][0] . "\",";
-$json .= "\"maxx\":\"" . $data["geovisor_extent"][1] . "\",";
-$json .= "\"miny\":\"" . $data["geovisor_extent"][2] . "\",";
-$json .= "\"maxy\":\"" . $data["geovisor_extent"][3] . "\",";
+$json .= "\"minx\":\"" . $geoext[0] . "\",";
+$json .= "\"maxx\":\"" . $geoext[1] . "\",";
+$json .= "\"miny\":\"" . $geoext[2] . "\",";
+$json .= "\"maxy\":\"" . $geoext[3] . "\",";
 $json .= "\"data\":[";
 
 while ($r = pg_fetch_assoc($query)) {
