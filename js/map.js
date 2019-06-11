@@ -231,7 +231,7 @@ function ol_map() {
 			
 		});
 		
-		this.map.geovisor = geovid;
+		this.geovisor = geovid;
 		
 		var js = JSON.parse(req.responseText);
 		
