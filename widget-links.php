@@ -1,10 +1,10 @@
 <div class="widget-link" style="background-color:#ffa91b; right:0px; top:140px;">
-	<a href="#">
+	<a href="./mediateca.php">
 			
 	</a>
 </div>
 <div class="widget-link" style="background-color:#8e2f4f; right:0px; top:200px;">
-	<a href="#">
+	<a href="./geovisor.php">
 		
 	</a>
 </div>
