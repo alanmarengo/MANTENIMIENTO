@@ -204,9 +204,32 @@ function ol_map() {
 		
 	}
 	
+	this.map.activateClases = function(arrid) {
+		
+		for (var i=0; i<arrid.length; i++) {
+			
+			$(".panel-abr[data-cid="+arrid[i]+"]").attr("data-active",1);
+			$(".panel-abr[data-cid="+arrid[i]+"]").show();
+			
+		}
+		
+	}
+	
 	this.map.loadGeovisor = function(geovid) {
 		
-		alert(geovid);
+		var req = $.ajax({
+			
+			async:false,
+			type:"POST",
+			url:SITEURL+"php/get-geovisor.php",
+			data:{geovid:geovid},
+			success:function(d){}
+			
+		});
+		
+		var js = JSON.parse(req.responseText);
+		
+		console.log(js);
 		
 	}
 	
