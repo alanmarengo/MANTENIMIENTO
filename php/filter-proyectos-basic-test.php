@@ -15,7 +15,9 @@ if (isset($proyectos)>0) {
 	$get_layers_query = pg_query($conn,$get_layers_query_string);
 
 	$get_layers = pg_fetch_assoc($get_layers_query);
-
+	
+	var_dump($get_layers);
+	
 	$layer_ids = $get_layers["layer_ids"];
 	
 	if ($layer_ids != "") {
@@ -32,7 +34,7 @@ if (isset($proyectos)>0) {
 			<div class="popup-panel-tree-item-header">
 				<i class="fas fa-folder popup-panel-tree-item-icon popup-icon"></i>
 				<a href="#" class="popup-panel-tree-item-label popup-text">
-					<span><?php echo $r["clase_desc"] . " - " . $r["subclase_desc"]; ?></span>
+					<span><?php echo $r["clase_id"] . " - " . $r["subclase_id"] . " - " . $r["clase_desc"] . " - " . $r["subclase_desc"]; ?></span>
 				</a>
 				<a href="#" class="simple-tree-pm-button">
 					<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
