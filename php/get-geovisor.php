@@ -10,7 +10,7 @@ $conn = pg_connect($string_conn);
 
 $query_string = "SELECT * FROM mod_geovisores.geovisor_capa_inicial WHERE geovisor_id = " . $geovid;
 
-$query = pg_quert($conn,$query_string);
+$query = pg_query($conn,$query_string);
 
 $json = "{\"data\":[";
 
@@ -26,6 +26,6 @@ while ($r = pg_fetch_assoc($query)) {
 
 $json .= "]}";
 
-$html = "";
+echo $json;
 
 ?>
