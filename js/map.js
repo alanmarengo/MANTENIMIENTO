@@ -7,6 +7,8 @@ function ol_map() {
 	this.popup = {};
 	this.map.baselayers = {};
 	
+	this.map.geovisor = -1;
+	
 	this.nav.start = function() {
 		
 		var docheight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
@@ -217,8 +219,6 @@ function ol_map() {
 	
 	this.map.panel = this.panel;
 	
-	this.map.filteringLayers = [];
-	
 	this.map.loadGeovisor = function(geovid) {
 		
 		var req = $.ajax({
@@ -231,13 +231,13 @@ function ol_map() {
 			
 		});
 		
+		this.map.geovisor = geovid;
+		
 		var js = JSON.parse(req.responseText);
 		
 		var panel = this.panel;
 		
 		for (var i=0; i<js.data.length; i++) {
-			
-			this.filteringLayers.push(js.data[i].layer_id);
 			
 			if (js.data[i].iniciar_panel == "t") {
 				
@@ -880,13 +880,13 @@ function ol_map() {
 			
 		});
 		
-		alert(this.map.filteringLayers);
+		var geovisor = this.map.geovisor;
 		
 		var req = $.ajax({
 			
 			async:false,
 			type:"post",
-			data:{proyectos:filter},
+			data:{proyectos:filter,geovisor:geovisor},
 			url:"./php/filter-proyectos-basic.php",
 			success:function(d){}
 			
