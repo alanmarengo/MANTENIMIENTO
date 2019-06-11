@@ -13,8 +13,10 @@ $query_string = "SELECT * FROM mod_geovisores.gfi_buffer('" . $wkt . "','" . imp
 
 $query = pg_query($conn,$query_string);
 
-$data = pg_fetch_assoc($query);
+while ($r = pg_fetch_assoc($query)) {
 
-echo $data["img_tag"];
+	echo $r["img_tag"];
+
+}
 
 ?>
