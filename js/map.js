@@ -211,6 +211,8 @@ function ol_map() {
 			$("#popup-results").empty();
 			$("#info-wrapper").empty();
 			
+			this.map_object.gfiAddedLayers = [];
+			
 			var view = this.getView();
 			var map = this.map_object;
 			
@@ -219,42 +221,61 @@ function ol_map() {
 			
 			this.getLayers().forEach(function (layer, i, layers) {				
 				
-				var baselayer_names = ["openstreets","opentopo","bing","bing_roads","bing_aerials","google_base"];
-				var isBase = false;
+				var alreadyAdded = false;
 				
-				for (var i=0; i<baselayer_names.length; i++) {
+				for (var i=0; i<map.gfiAddedLayers.length; i++) {
 					
-					if (layer.get('name') == baselayer_names[i]) {
+					if (map.gfiAddedLayers[i] == layer.layer_id) {
 						
-						isBase = true;
+						alreadyAdded = true;
 						break;
 						
 					}
 					
 				}
 				
-				if (layer.getVisible() && !isBase) {
+				if (!alreadyAdded) {
+				
+					var baselayer_names = ["openstreets","opentopo","bing","bing_roads","bing_aerials","google_base"];
+					var isBase = false;
 					
-					if(layer.getSource().getGetFeatureInfoUrl) {
-					
-						url = layer.getSource().getGetFeatureInfoUrl(evt.coordinate, viewResolution, 'EPSG:3857', {
-							'INFO_FORMAT': 'text/html',
-								'FEATURE_COUNT': '300'
-						});	
-					
-						var req = $.ajax({
-							
-							async:false,
-							type:"GET",
-							url:url,
-							success:function(d){}
-							
-						})
+					for (var i=0; i<baselayer_names.length; i++) {
 						
-						map.parseGFI(req.responseText,"popup-info","info-wrapper");
-					
+						if (layer.get('name') == baselayer_names[i]) {
+							
+							isBase = true;
+							break;
+							
+						}
+						
 					}
 					
+					if (layer.getVisible() && !isBase) {
+						
+						if(layer.getSource().getGetFeatureInfoUrl) {
+						
+							url = layer.getSource().getGetFeatureInfoUrl(evt.coordinate, viewResolution, 'EPSG:3857', {
+								'INFO_FORMAT': 'text/html',
+									'FEATURE_COUNT': '300'
+							});	
+						
+							var req = $.ajax({
+								
+								async:false,
+								type:"GET",
+								url:url,
+								success:function(d){}
+								
+							})
+							
+							map.parseGFI(req.responseText,"popup-info","info-wrapper");
+						
+						}
+						
+					}
+					
+					map.gfiAddedLayers.push(layer.layer_id);
+				
 				}
 				
 			});
@@ -1177,6 +1198,9 @@ function ol_map() {
 					crossOrigin: 'anonymous'
 				})
 			});
+			
+			document.getElementById("layer-checkbox-"+layer_id).layer.clase_id = clase_id;
+			document.getElementById("layer-checkbox-"+layer_id).layer.layer_id = layer_id;
 			
 			document.getElementById("layer-checkbox-"+layer_id).layer.setVisible(false);
 			
