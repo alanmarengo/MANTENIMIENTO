@@ -259,6 +259,8 @@ function ol_map() {
 			
 		}
 		
+		this.ol_object.getView().fitExtent(js.geovisor_extent, this.ol_object.getSize());
+		
 	}
 	
 	this.map.parseGFI = function(response,containerID,wrapperID) {
