@@ -217,6 +217,8 @@ function ol_map() {
 	
 	this.map.panel = this.panel;
 	
+	this.map.filteringLayers = [];
+	
 	this.map.loadGeovisor = function(geovid) {
 		
 		var req = $.ajax({
@@ -231,11 +233,11 @@ function ol_map() {
 		
 		var js = JSON.parse(req.responseText);
 		
-		console.log(js);
-		
 		var panel = this.panel;
 		
 		for (var i=0; i<js.data.length; i++) {
+			
+			this.filteringLayers.push(js.data[i].layer_id);
 			
 			if (js.data[i].iniciar_panel == "t") {
 				
@@ -877,6 +879,8 @@ function ol_map() {
 			}
 			
 		});
+		
+		alert(this.map.filteringLayers);
 		
 		var req = $.ajax({
 			
