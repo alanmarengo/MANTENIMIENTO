@@ -29,6 +29,7 @@
 	<link rel="stylesheet" href="./css/popup.css"/>
 	<link rel="stylesheet" href="./css/scrollbars.css"/>
 	<link rel="stylesheet" href="./css/sidenav.css"/>
+	<link rel="stylesheet" href="./css/widget-links.css"/>
 	<link rel="stylesheet" href="./css/geovisor/style.css"/>
 	<link rel="stylesheet" href="./css/geovisor/buttons.css"/>
 	<link rel="stylesheet" href="./css/geovisor/display.css"/>
@@ -198,6 +199,7 @@
 	<script src="./js/map-basico.js" type="text/javascript"></script>
 	<script src="./js/site.js" type="text/javascript"></script>
 	<script src="./js/scrollbars.js" type="text/javascript"></script>
+	<script src="./js/widget-links.js" type="text/javascript"></script>
 	
 	<script type="text/javascript">
 	
@@ -361,6 +363,8 @@
 
 	<?php include("geovisor.panel-basico.php"); ?>
 	<?php include("geovisor.popup-info.php"); ?>
+	
+	<?php include("widget-links.php"); ?>
 
 	<div id="popup-results">
 	
