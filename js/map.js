@@ -229,7 +229,25 @@ function ol_map() {
 		
 		var js = JSON.parse(req.responseText);
 		
-		console.log(js);
+		for (var i=0; i<js.data.length; i++) {
+			
+			if (js.data[i].iniciar_panel == "t") {
+				
+				$(".layer-checkbox[data-lid="+js.data[i].layer_id+"]").each(function(i,v) {
+					
+					this.panel.addLayer(v.getAttribute("data-cid"),v.getAttribute("data-lid"));
+					
+					if (js.data[i].iniciar_visible == "t") {
+						
+						v.click();
+						
+					}
+					
+				});
+				
+			}
+			
+		}
 		
 	}
 	
