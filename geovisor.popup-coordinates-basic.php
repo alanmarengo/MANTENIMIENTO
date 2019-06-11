@@ -32,15 +32,15 @@
 				</td>			
 				<tr>
 					<td>Condor Clift</td>
-					<td><span id="cap-coord-10001"></td>
+					<td><span id="cap-coord-100001"></td>
 				</td>
 				<tr>
 					<td>Barrancosa</td>
-					<td><span id="cap-coord-10002"></td>
+					<td><span id="cap-coord-100002"></td>
 				</td>
 				<tr>
 					<td>Lambert</td>
-					<td><span id="cap-coord-10003"></td>
+					<td><span id="cap-coord-100003"></td>
 				</td>
 				
 			</table>

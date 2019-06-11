@@ -12,32 +12,26 @@ $conn = pg_connect($string_conn);
 $query_string = "SELECT * FROM mod_geovisores.get_coord(100001,$lon,$lat)";
 $query = pg_query($conn,$query_string);
 $data = pg_fetch_assoc($query);
-$lon10001 = $data["lon"];
-$lat10001 = $data["lat"];
-
-echo $query_string;
+$lon100001 = $data["lon"];
+$lat100001 = $data["lat"];
 
 $query_string = "SELECT * FROM mod_geovisores.get_coord(100002,$lon,$lat)";
 $query = pg_query($conn,$query_string);
 $data = pg_fetch_assoc($query);
-$lon10002 = $data["lon"];
-$lat10002 = $data["lat"];
-
-echo $query_string;
+$lon100002 = $data["lon"];
+$lat100002 = $data["lat"];
 
 $query_string = "SELECT * FROM mod_geovisores.get_coord(100003,$lon,$lat)";
 $query = pg_query($conn,$query_string);
 $data = pg_fetch_assoc($query);
-$lon10003 = $data["lon"];
-$lat10003 = $data["lat"];
-
-echo $query_string;
+$lon100003 = $data["lon"];
+$lat100003 = $data["lat"];
 
 $json = "{";
 
-$json .= "\"coord10001\":{\"lon\":\"$lon10001\",\"lat\":\"$lat10001\",\"label\":\"Condor Clift\"},";
-$json .= "\"coord10002\":{\"lon\":\"$lon10002\",\"lat\":\"$lat10002\",\"label\":\"Barrancosa\"},";
-$json .= "\"coord10003\":{\"lon\":\"$lon10003\",\"lat\":\"$lat10003\",\"label\":\"Lambert\"}";
+$json .= "\"coord100001\":{\"lon\":\"$lon100001\",\"lat\":\"$lat100001\",\"label\":\"Condor Clift\"},";
+$json .= "\"coord100002\":{\"lon\":\"$lon100002\",\"lat\":\"$lat100002\",\"label\":\"Barrancosa\"},";
+$json .= "\"coord100003\":{\"lon\":\"$lon100003\",\"lat\":\"$lat100003\",\"label\":\"Lambert\"}";
 
 $json .= "}";
 

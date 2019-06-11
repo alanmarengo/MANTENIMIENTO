@@ -422,9 +422,9 @@ function ol_map() {
 		
 		$("#cap-coord-3857").html(coord_3875);
 		$("#cap-coord-4326").html(coord_4326);
-		$("#cap-coord-10001").html(js.coord10001.lon+","+js.coord10001.lat);
-		$("#cap-coord-10002").html(js.coord10002.lon+","+js.coord10002.lat);
-		$("#cap-coord-10003").html(js.coord10003.lon+","+js.coord10003.lat);
+		$("#cap-coord-100001").html(js.coord100001.lon+","+js.coord100001.lat);
+		$("#cap-coord-100002").html(js.coord100002.lon+","+js.coord100002.lat);
+		$("#cap-coord-100003").html(js.coord100003.lon+","+js.coord100003.lat);
 		
 		$("#coord-tbl").hide();
 		$("#coord-hint").hide();
