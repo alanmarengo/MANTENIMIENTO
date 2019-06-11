@@ -405,8 +405,8 @@ function ol_map() {
 		var lon4326 = coordarray4326[0];
 		var lat4326 = coordarray4326[1];		
 		
-		var coord_3875 = parseFloat(lon).toFixed(3) + "," + parseFloat(lat).toFixed(3);
-		var coord_4326 = parseFloat(lon4326).toFixed(3) + "," + parseFloat(lat4326).toFixed(3);
+		var coord_3875 = parseFloat(lon).toFixed(3) + " , " + parseFloat(lat).toFixed(3);
+		var coord_4326 = parseFloat(lon4326).toFixed(3) + " , " + parseFloat(lat4326).toFixed(3);
 		
 		var req = $.ajax({
 			
@@ -422,9 +422,9 @@ function ol_map() {
 		
 		$("#cap-coord-3857").html(coord_3875);
 		$("#cap-coord-4326").html(coord_4326);
-		$("#cap-coord-100001").html(js.coord100001.lon+","+js.coord100001.lat);
-		$("#cap-coord-100002").html(js.coord100002.lon+","+js.coord100002.lat);
-		$("#cap-coord-100003").html(js.coord100003.lon+","+js.coord100003.lat);
+		$("#cap-coord-100001").html(js.coord100001.lon+" , "+js.coord100001.lat);
+		$("#cap-coord-100002").html(js.coord100002.lon+" , "+js.coord100002.lat);
+		$("#cap-coord-100003").html(js.coord100003.lon+" , "+js.coord100003.lat);
 		
 		$("#coord-tbl").hide();
 		$("#coord-hint").hide();
