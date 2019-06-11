@@ -25,7 +25,7 @@
 			<br>
 		
 			<div class="pretty p-default p-round" style="font-size:20px;">
-				<input type="radio" name="radio-baselayers" checked="checked" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bingroads);">
+				<input type="radio" name="radio-baselayers" checked="checked" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_roads);">
 				<div class="state">
 					<label>Bing Caminos</label>
 				</div>
@@ -34,7 +34,7 @@
 			<br>
 		
 			<div class="pretty p-default p-round" style="font-size:20px;">
-				<input type="radio" name="radio-baselayers" checked="checked" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bingaerials);">
+				<input type="radio" name="radio-baselayers" checked="checked" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
 				<div class="state">
 					<label>Bing Satelital</label>
 				</div>
