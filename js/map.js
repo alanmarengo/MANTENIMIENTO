@@ -220,7 +220,7 @@ function ol_map() {
 			var url = '';
 			
 			this.getLayers().forEach(function (layer, i, layers) {				
-				
+				console.log(map.gfiAddedLayers);
 				var alreadyAdded = false;
 				
 				for (var i=0; i<map.gfiAddedLayers.length; i++) {
