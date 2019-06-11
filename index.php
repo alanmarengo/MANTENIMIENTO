@@ -161,6 +161,11 @@
                             <div class="modulo-text">
                                 EXPLORA LAS OBRAS DE LOS AHRSC EN 2D Y 3D
                             </div>
+                            <div class="modulo-hover">
+                                <p class="modulo-hover-text">
+                                    <i class="fa fa-play-circle fa-4x"></i>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
