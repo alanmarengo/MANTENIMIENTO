@@ -208,7 +208,6 @@ function ol_map() {
 		
 		this.ol_object.addEventListener("click",function(evt) {
 			
-			$("#popup-results").empty();
 			$("#info-wrapper").empty();
 			
 			this.map_object.gfiAddedLayers = [];
@@ -234,13 +233,12 @@ function ol_map() {
 					}
 					
 				}
-				if (isBase == false) {					
-					alert(layer.getSource().getParams().layer_id + " :: " + isBase + " VISIBLE: " + layer.getVisible());
-				}
 				
 				if ((layer.getVisible()) && (isBase == false)) {
 					
-					if(layer.getSource().getGetFeatureInfoUrl) {
+					if(layer.getSource().getGetFeatureInfoUrl) {						
+			
+						$("#popup-results").empty();
 					
 						url = layer.getSource().getGetFeatureInfoUrl(evt.coordinate, viewResolution, 'EPSG:3857', {
 							'INFO_FORMAT': 'text/html',
