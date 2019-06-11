@@ -1,6 +1,7 @@
 <?php
 
 include("../pgconfig.php");
+include("../tools.php");
 
 $results = $_POST["results"];
 
@@ -76,8 +77,8 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 
 	$html .= "<p>";
 	$html .= "<a ";
-	$html .= "class=\"popup-header-button popup-header-button-toggleable popup-header-button-active-fixed\" ";
-	$html .= "href=\"#\" ";
+	$html .= "class=\"popup-header-button popup-header-button-toggleable popup-header-button-active-fixed\" onclick=\"geomap.map.exportCSV();\"";
+	$html .= "href=\"#\" data-q=\"".encrtpy($query_string2)."\"";
 	$html .= ">";
 	$html .= "<span>EXPORTAR TABLA</span>";
 	$html .= "</a>";

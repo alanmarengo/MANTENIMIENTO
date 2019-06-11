@@ -63,17 +63,30 @@ pg_close($conn);
 
 function encrypt($string) {
 	
-	$encrypted = explode($string);
+	$new_string = "";
 	
-	for ($i=0; $i<sizeof($start); $i++) {
+	for ($i=0; $i<strlen($string); $i++) {
 		
-		$encrypted[$i] = chr($start[$i]);
+		$new_string .= ord(substr($string,$i,1)) . ";";
 		
 	}
 	
-	$encrypted = implode(" ",$start);
+	return $new_string;
 	
-	return $encrypted;
+}
+
+function decrypt($string) {
+	
+	$new_string = "";
+	$arr = explode(";",$string);
+	
+	for ($i=0; $i<sizeof($arr); $i++) {
+		
+		$new_string .= chr($arr[$i]) . "";
+		
+	}
+	
+	return $new_string;
 	
 }
 

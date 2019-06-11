@@ -435,6 +435,14 @@ function ol_map() {
 		
 	}
 	
+	this.map.exportCSV = function(node) {
+		
+		var query = node.getAttribute(node);
+		
+		alert(query);
+		
+	}
+	
 	this.map.share = function() {
 		
 		var s_layers = [];
