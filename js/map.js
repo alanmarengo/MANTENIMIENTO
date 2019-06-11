@@ -231,6 +231,8 @@ function ol_map() {
 		
 		var js = JSON.parse(req.responseText);
 		
+		console.log(js);
+		
 		var panel = this.panel;
 		
 		for (var i=0; i<js.data.length; i++) {
@@ -242,7 +244,7 @@ function ol_map() {
 					panel.AddLayer(v.getAttribute("data-cid"),v.getAttribute("data-lid"));
 					
 					if (js.data[i].iniciar_visible == "t") {
-						alert("visible");
+						
 						v.click();
 						
 					}
