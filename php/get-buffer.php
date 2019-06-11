@@ -8,9 +8,9 @@ $layers = $_POST["layers"];
 $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 	
 $conn = pg_connect($string_conn);
-echo $wkt;/*
-$query_string = "SELECT * FROM mod_geovisores.gfi_buffer('" . $wkt . "','" . implode(",",$layers) . "');";
 
+$query_string = "SELECT * FROM mod_geovisores.gfi_buffer('" . $wkt . "','" . implode(",",$layers) . "');";
+echo $query_string;/*
 $query = pg_query($conn,$query_string);
 
 $data = pg_fetch_assoc($query);
