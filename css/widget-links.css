@@ -14,6 +14,14 @@
 
 }
 
+.widget-link a {
+
+	width:100%;
+	height:100%;
+	display:block;
+
+}
+
 .widget-link:last-child {
 
 	margin-bottom:0px;
