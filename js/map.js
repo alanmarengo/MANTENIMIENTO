@@ -215,8 +215,6 @@ function ol_map() {
 		
 	}
 	
-	this.map.panel = this.panel;
-	
 	this.map.loadGeovisor = function(geovid) {
 		
 		var req = $.ajax({
@@ -1306,7 +1304,9 @@ function ol_map() {
 		
 		$("#info-wrapper").height(400);
 		
-	}
+	}	
+	
+	this.map.panel = this.panel;
 	
 	this.popup.start = function() {
 		
