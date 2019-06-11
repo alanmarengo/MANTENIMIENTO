@@ -14,18 +14,22 @@
 
 }
 
+.widget-link:hover {
+
+	-webkit-transition: width 1s ease-in-out;
+    -moz-transition: width 1s ease-in-out;
+    -o-transition: width 1s ease-in-out;
+    transition: width 1s ease-in-out;
+    width:40px;
+	
+}
+
 .widget-link a {
 
 	width:100%;
 	height:100%;
 	display:block;
 
-}
-
-.widget-link a:hover {
-
-	opacity:0.5;
-	
 }
 
 .widget-link:last-child {

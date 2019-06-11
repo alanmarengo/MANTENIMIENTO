@@ -199,7 +199,6 @@
 	<script src="./js/map-basico.js" type="text/javascript"></script>
 	<script src="./js/site.js" type="text/javascript"></script>
 	<script src="./js/scrollbars.js" type="text/javascript"></script>
-	<script src="./js/widget-links.js" type="text/javascript"></script>
 	
 	<script type="text/javascript">
 	
