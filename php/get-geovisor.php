@@ -13,11 +13,18 @@ $query_string = "SELECT * FROM mod_geovisores.geovisor WHERE geovisor_id = " . $
 
 $data = pg_fetch_assoc(pg_query($conn,$query_string));
 
+echo "<br><br>";
 var_dump($data["geovisor_extent"]);
 
 $geoext = str_replace(array("[","]"),array("",""),$data["geovisor_extent"]);
 
+echo "<br><br>";
 var_dump($geoext);
+
+$geoext = explode(",",$geoext);
+
+var_dump($geoext);
+echo "<br><br>";
 
 $query_string = "SELECT * FROM mod_geovisores.geovisor_capa_inicial WHERE geovisor_id = " . $geovid;
 
