@@ -140,6 +140,7 @@ function ol_map() {
 		})
 
 		this.baselayers.bingmaps = new ol.source.BingMaps({
+			name:'bing',
 			key: 'AmqIEhx8ko1O3p1Npagu9_Egw7e8quBgM03p6_xdFqjSfJa6kWv_iUU2nO1htz1G',
 			imagerySet: 'Road',
 			culture: 'ar-ES',
@@ -147,12 +148,14 @@ function ol_map() {
 		})
 
 		this.baselayers.bing_roads = new ol.layer.Tile({
+			name:'bing_roads',
 			preload: Infinity,
 			source: this.baselayers.bingmaps,
 			visible:false
 		})
 
 		this.baselayers.bing_aerials = new ol.layer.Tile({
+			name:'bing_aerials',
 			preload: Infinity,
 			visible:false,
 			source: new ol.source.BingMaps({
@@ -162,20 +165,14 @@ function ol_map() {
 		})
 
 		this.baselayers.google = new ol.layer.Tile({
+			name:'google_base',
 			visible:false,
 			source: new ol.source.TileImage({ 
 				url: 'http://mt{0-3}.googleapis.com/vt?&x={x}&y={y}&z={z}&hl=es&gl=AR'
 			})
 		})
-
-		this.baselayers.google_satelital = new ol.layer.Tile({
-			visible:false,
-			source: new ol.source.TileImage({ 
-				url: 'http://khm{0-3}.googleapis.com/kh?v=742&hl=pl&&x={x}&y={y}&z={z}&hl=es&gl=AR' 
-			})
-		})
 		
-		this.baselayers.collection = [this.baselayers.openstreets,this.baselayers.opentopo,this.baselayers.bing_roads,this.baselayers.bing_aerials,this.baselayers.google,this.baselayers.google_satelital];
+		this.baselayers.collection = [this.baselayers.openstreets,this.baselayers.opentopo,this.baselayers.bing_roads,this.baselayers.bing_aerials,this.baselayers.google];
 		
 		this.ol_object = new ol.Map({
 			layers:this.baselayers.collection,
@@ -220,7 +217,21 @@ function ol_map() {
 			
 			this.getLayers().forEach(function (layer, i, layers) {				
 				
-				if (layer.getVisible() && layer.get('name')!='openstreets') {
+				var baselayer_names = ["openstreets","opentopo","bing","bing_roads","bing_aerials","google_base"];
+				var isBase = false;
+				
+				for (var i=0; i<baselayer_names.length; i++) {
+					
+					if (layer.get('name') == baselayer_names[i]) {
+						
+						isBase = true;
+						break;
+						
+					}
+					
+				}
+				
+				if (layer.getVisible() && !isBase {
 					
 					if(layer.getSource().getGetFeatureInfoUrl) {
 					

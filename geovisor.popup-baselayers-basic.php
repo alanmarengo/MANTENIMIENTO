@@ -45,18 +45,11 @@
 			<div class="pretty p-default p-round" style="font-size:20px;">
 				<input type="radio" name="radio-baselayers" checked="checked" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.google);">
 				<div class="state">
-					<label>Google</label>
+					<label>Google Maps</label>
 				</div>
 			</div>
 			
 			<br>
-		
-			<div class="pretty p-default p-round" style="font-size:20px;">
-				<input type="radio" name="radio-baselayers" checked="checked" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.google_satelital);">
-				<div class="state">
-					<label>Google Satelital</label>
-				</div>
-			</div>
 		
 		</div>
 		
