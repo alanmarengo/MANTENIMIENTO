@@ -17,12 +17,9 @@ $geoext = str_replace(array("[","]"),array("",""),$data["geovisor_extent"]);
 
 $geoext = explode(",",$geoext);
 
-var_dump($geoext);
-echo "<br><br>";
+$query_string2 = "SELECT * FROM mod_geovisores.geovisor_capa_inicial WHERE geovisor_id = " . $geovid;
 
-$query_string = "SELECT * FROM mod_geovisores.geovisor_capa_inicial WHERE geovisor_id = " . $geovid;
-
-$query = pg_query($conn,$query_string);
+$query2 = pg_query($conn,$query_string2);
 
 $json = "{";
 $json .= "\"geovisor_id\":$geovid,";
@@ -34,7 +31,7 @@ $json .= "\"miny\":\"" . $geoext[2] . "\",";
 $json .= "\"maxy\":\"" . $geoext[3] . "\",";
 $json .= "\"data\":[";
 
-while ($r = pg_fetch_assoc($query)) {
+while ($r = pg_fetch_assoc($query2)) {
 	
 	$json .= "{";
 	$json .= "\"layer_id\":" . $r["layer_id"] . ",";
