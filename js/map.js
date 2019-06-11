@@ -452,6 +452,7 @@ function ol_map() {
 		
 		var flink = document.createElement("a");
 			flink.href = "./csv.php?csv="+req.responseText;
+			flink.target = "_blank";
 			
 		document.body.appendChild(flink);
 		
