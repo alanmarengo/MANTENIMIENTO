@@ -59,6 +59,22 @@ $recordset = pg_query($conn,$SQL);
 echo parseSQLToCSV($recordset);
 
 pg_close($conn);
-* /
+*/
+
+function encrypt($string) {
+	
+	$encrypted = explode($string);
+	
+	for ($i=0; $i<sizeof($start); $i++) {
+		
+		$encrypted[$i] = chr($start[$i]);
+		
+	}
+	
+	$encrypted = implode(" ",$start);
+	
+	return $encrypted;
+	
+}
 
 ?>
