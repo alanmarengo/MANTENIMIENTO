@@ -258,9 +258,7 @@ function ol_map() {
 			}
 			
 		}
-		
-		alert(js.geovisor_extent.typeof);
-		
+		console.log(js.geovisor_extent);
 		var extent = ol.proj.transformExtent(
 			[js.minx,js.miny,js.maxx,js.maxy],
 			"EPSG:3857", "EPSG:3857"
