@@ -60,7 +60,7 @@
 							<a class="nav-link" href="#">Actividades y Talleres de los proyectos</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" target="_blank" href="http://hidrosantacruz.com.ar">SIT Santa Cruz (link externo a página web del SIT Santa Cruz)</a>
+							<a class="nav-link" target="_blank" href="http://hidrosantacruz.com.ar">SIG Ambiental Santa cruz</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#">Dirección Nacional de Análisis de Riesgo</a>

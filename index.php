@@ -227,7 +227,7 @@
                 <div class="col-md-4 modulo-wrap modulo-11">
                     <div class="modulo-opacity"></div>
                     <div class="modulo-text">
-                        SIT SANTA CRUZ
+                        SIG AMBIENTAL SANTA CRUZ
                     </div>
                     <div class="modulo-hover">
                         <p class="modulo-hover-text">
