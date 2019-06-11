@@ -104,7 +104,7 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 		
 	$html .= "<br><hr><br>";
 	
-	$html .= "<p>" . encrypt($query_string2) . "</p>";
+	$html .= "<p>" <?php echo encrypt($query_string2); ?>"</p>";
 	
 	$html .= "</div>";
 
