@@ -2,8 +2,8 @@
 
 include("../pgconfig.php");
 
-//$geovid = $_POST["geovid"];
-$geovid = $_GET["geovid"];
+$geovid = $_POST["geovid"];
+//$geovid = $_GET["geovid"];
 
 $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 	
