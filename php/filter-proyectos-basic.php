@@ -11,7 +11,7 @@ $conn = pg_connect($string_conn);
 
 if (isset($proyectos)>0) {
 	
-	if ( != -1) {
+	if ($geovisor != -1) {
 	
 		$get_layers_query_string = "SELECT string_agg(layer_id::text, ', ') AS layer_ids FROM mod_geovisores.layers_find('','','','".implode(",",$proyectos)."',-1,-1,-1,'',-1,-1) AND layer_id IN(SELECT layer_id FROM mod_geovisores.capa_inicial WHERE geovisor_id = " . $geovisor . ");";
 	
