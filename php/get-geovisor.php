@@ -17,8 +17,8 @@ $query_string = "SELECT * FROM mod_geovisores.geovisor_capa_inicial WHERE geovis
 
 $query = pg_query($conn,$query_string);
 
-$geoext = str_replace(array("[","]",array("",""),$data["geovisor_extent"]));
-echo "geoext " . $geoext;
+$geoext = str_replace(array("[","]",array("",""),implode(",",$data["geovisor_extent"])));
+
 $geoext = explode(",",$geoext);
 var_dump($geoext);
 
