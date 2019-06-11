@@ -13,6 +13,8 @@ $query_string = "SELECT * FROM mod_geovisores.geovisor WHERE geovisor_id = " . $
 
 $data = pg_fetch_assoc(pg_query($conn,$query_string));
 
+var_dump($data["geovisor_extent"]);
+
 $query_string = "SELECT * FROM mod_geovisores.geovisor_capa_inicial WHERE geovisor_id = " . $geovid;
 
 $query = pg_query($conn,$query_string);
