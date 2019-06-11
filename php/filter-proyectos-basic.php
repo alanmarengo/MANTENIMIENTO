@@ -21,8 +21,6 @@ if (isset($proyectos)>0) {
 		
 	}
 	
-	echo $get_layers_query_string;
-	
 	$get_layers_query = pg_query($conn,$get_layers_query_string);
 
 	$get_layers = pg_fetch_assoc($get_layers_query);

@@ -940,11 +940,13 @@ function ol_map() {
 		
 		var filter = $("#frm-adv-search").serialize();
 		
+		var geovisor = this.map.geovisor;
+		
 		var req = $.ajax({
 			
 			async:false,
 			type:"post",
-			data:filter,
+			data:filter+"&geovisor="+geovisor,
 			url:"./php/filter-proyectos-advanced.php",
 			success:function(d){}
 			

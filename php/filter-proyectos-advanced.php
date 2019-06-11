@@ -13,6 +13,7 @@ $param["subclase_id"] = -1;
 $param["responsable"] = "";
 $param["esia_id"] = -1;
 $param["objeto_id"] = -1;
+$param["geovisor"] = -1;
 
 if (isset($_POST["adv-search-busqueda"])) { $param["busqueda"] = $_POST["adv-search-busqueda"]; }
 if (isset($_POST["adv-search-fdesde"])) { $param["fdesde"] = $_POST["adv-search-fdesde"]; }
@@ -23,6 +24,7 @@ if (isset($_POST["adv-search-subclase-combo"])) { $param["subclase_id"] = $_POST
 if (isset($_POST["adv-search-responsable-combo"])) { $param["responsable"] = $_POST["adv-search-responsable-combo"]; }
 if (isset($_POST["adv-search-esia-combo"])) { $param["esia_id"] = $_POST["adv-search-esia-combo"]; }
 if (isset($_POST["adv-search-objeto-combo"])) { $param["objeto_id"] = $_POST["adv-search-objeto-combo"]; }
+if (isset($_POST["geovisor"])) { $param["geovisor"] = $_POST["geovisor"]; }
 
 //var_dump($_POST);
 //var_dump($param);
@@ -30,19 +32,39 @@ if (isset($_POST["adv-search-objeto-combo"])) { $param["objeto_id"] = $_POST["ad
 $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 	
 $conn = pg_connect($string_conn);
+
+if ($param["geovisor"] != -1) {
+
+	$get_layers_query_string = "SELECT string_agg(layer_id::text, ', ') AS layer_ids FROM mod_geovisores.layers_find(";
+	$get_layers_query_string .= "'".$param["busqueda"]."',";
+	$get_layers_query_string .= "'".$param["fdesde"]."',";
+	$get_layers_query_string .= "'".$param["fhasta"]."',";
+	$get_layers_query_string .= "'".$param["proyecto_id"]."',";
+	$get_layers_query_string .= "".$param["clase_id"].",";
+	$get_layers_query_string .= "".$param["subclase_id"].",";
+	$get_layers_query_string .= "-1,";
+	$get_layers_query_string .= "'".$param["responsable"]."',";
+	$get_layers_query_string .= "".$param["esia_id"].",";
+	$get_layers_query_string .= "".$param["objeto_id"]."";
+	$get_layers_query_string .= ") WHERE layer_id IN(SELECT layer_id FROM mod_geovisores.geovisor_capa_inicial WHERE geovisor_id = " . $param["geovisor"] . ");";
+
+}else{
 	
-$get_layers_query_string = "SELECT string_agg(layer_id::text, ', ') AS layer_ids FROM mod_geovisores.layers_find(";
-$get_layers_query_string .= "'".$param["busqueda"]."',";
-$get_layers_query_string .= "'".$param["fdesde"]."',";
-$get_layers_query_string .= "'".$param["fhasta"]."',";
-$get_layers_query_string .= "'".$param["proyecto_id"]."',";
-$get_layers_query_string .= "".$param["clase_id"].",";
-$get_layers_query_string .= "".$param["subclase_id"].",";
-$get_layers_query_string .= "-1,";
-$get_layers_query_string .= "'".$param["responsable"]."',";
-$get_layers_query_string .= "".$param["esia_id"].",";
-$get_layers_query_string .= "".$param["objeto_id"]."";
-$get_layers_query_string .= ");";
+	$get_layers_query_string = "SELECT string_agg(layer_id::text, ', ') AS layer_ids FROM mod_geovisores.layers_find(";
+	$get_layers_query_string .= "'".$param["busqueda"]."',";
+	$get_layers_query_string .= "'".$param["fdesde"]."',";
+	$get_layers_query_string .= "'".$param["fhasta"]."',";
+	$get_layers_query_string .= "'".$param["proyecto_id"]."',";
+	$get_layers_query_string .= "".$param["clase_id"].",";
+	$get_layers_query_string .= "".$param["subclase_id"].",";
+	$get_layers_query_string .= "-1,";
+	$get_layers_query_string .= "'".$param["responsable"]."',";
+	$get_layers_query_string .= "".$param["esia_id"].",";
+	$get_layers_query_string .= "".$param["objeto_id"]."";
+	$get_layers_query_string .= ");";
+
+	
+}
 	
 $get_layers_query = pg_query($conn,$get_layers_query_string);
 
