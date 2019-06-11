@@ -30,8 +30,8 @@ $lat10003 = $data["lat"];
 
 $json = "{";
 
-$json .= "\"coord10001\":{\"lon\":\"$lon10001\",\"lat\":\"$lat10001\",\"label\":\"Condor Clift\"}";
-$json .= "\"coord10002\":{\"lon\":\"$lon10002\",\"lat\":\"$lat10002\",\"label\":\"Barrancosa\"}";
+$json .= "\"coord10001\":{\"lon\":\"$lon10001\",\"lat\":\"$lat10001\",\"label\":\"Condor Clift\"},";
+$json .= "\"coord10002\":{\"lon\":\"$lon10002\",\"lat\":\"$lat10002\",\"label\":\"Barrancosa\"},";
 $json .= "\"coord10003\":{\"lon\":\"$lon10003\",\"lat\":\"$lat10003\",\"label\":\"Lambert\"}";
 
 $json .= "}";
