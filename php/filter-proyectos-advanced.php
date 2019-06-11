@@ -73,7 +73,7 @@ $get_layers = pg_fetch_assoc($get_layers_query);
 
 $layer_ids = $get_layers["layer_ids"];
 	
-$query_string = "SELECT clase_id,subclase_id,clase_desc,subclase_desc FROM mod_geovisores.vw_catalogo_search WHERE sub_proyecto_id IN (".$param["proyecto_id"].") GROUP BY clase_id,subclase_id,clase_desc,subclase_desc ORDER BY clase_desc ASC, subclase_desc ASC;";
+$query_string = "SELECT clase_id,subclase_id,clase_desc,subclase_desc FROM mod_geovisores.vw_layers WHERE layer_id IN ($layer_ids) GROUP BY clase_id,subclase_id,clase_desc,subclase_desc ORDER BY clase_desc ASC, subclase_desc ASC;";
 
 $query = pg_query($conn,$query_string);
 
