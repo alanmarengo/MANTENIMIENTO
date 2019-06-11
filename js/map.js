@@ -239,7 +239,7 @@ function ol_map() {
 				
 				$(".layer-checkbox[data-lid="+js.data[i].layer_id+"]").each(function(i,v) {
 					
-					panel.addLayer(v.getAttribute("data-cid"),v.getAttribute("data-lid"));
+					panel.AddLayer(v.getAttribute("data-cid"),v.getAttribute("data-lid"));
 					
 					if (js.data[i].iniciar_visible == "t") {
 						
