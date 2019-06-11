@@ -9,12 +9,26 @@ function parseSQLToCSV($recordset)
  			$TotalColum = pg_num_fields($recordset);
  
   			//$json.= '"columnas":[';
-  
+			
+			$bannedIndexes = array();
+			$bannedFields = array("geom");
+			
   			for ($index = 0; $index < $TotalColum; $index++) 
   			{
 				if($index<>0) {$json.= ";";}; 
 				$fieldname = pg_field_name($recordset, $index);
 				$json.= "\"".$fieldname."\"";
+				
+				for ($j=0; $j<sizeof($bannedFields); $j++) {
+					
+					if (in_array($bannedFields[$j],$fieldname)) {
+						
+						array_push($bannedIndexes,$i);
+						
+					}
+					
+				}
+				
   			};
   			
   			$json.= "\n\r";
@@ -35,7 +49,11 @@ function parseSQLToCSV($recordset)
   		
   					if($index<>0) {$json.= ";";}; 
   					
-  		 				$json.= "\"".$row[$index]."\"";
+						if (!in_array($bannedIndexes,$index)) {
+					
+							$json.= "\"".$row[$index]."\"";
+						
+						}
   	 			}
   	      
   			};
