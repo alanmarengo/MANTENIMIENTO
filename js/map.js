@@ -439,7 +439,17 @@ function ol_map() {
 		
 		var query = node.getAttribute("data-q");
 		
-		alert(query);
+		var req = $.ajax({
+			
+			async:false,
+			type:"POST",
+			data:{q:query},
+			type:"post",
+			success:function(d){}
+			
+		});
+		
+		alert(req.responseText);
 		
 	}
 	
