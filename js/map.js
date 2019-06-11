@@ -437,7 +437,7 @@ function ol_map() {
 	
 	this.map.exportCSV = function(node) {
 		
-		var query = node.getAttribute(node);
+		var query = node.getAttribute("data-q");
 		
 		alert(query);
 		
