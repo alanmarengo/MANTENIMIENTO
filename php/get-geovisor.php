@@ -8,11 +8,19 @@ $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . 
 	
 $conn = pg_connect($string_conn);
 
+$query_string = "SELECT * FROM mod_geovisores.geovisor WHERE geovisor_id = " . $geovid;
+
+$data = pg_fetch_assoc(pg_query($conn,$query_string));
+
 $query_string = "SELECT * FROM mod_geovisores.geovisor_capa_inicial WHERE geovisor_id = " . $geovid;
 
 $query = pg_query($conn,$query_string);
 
-$json = "{\"data\":[";
+$json = "{";
+$json .= "\"geovisor_id\":$geovid,";
+$json .= "\"geovisor_desc\":\"" . $data["geovisor_desc"] . "\",";
+$json .= "\"geovisor_extent\":\"" . $data["geovisor_extent"] . "\",";
+$json .= "\"data\":[";
 
 while ($r = pg_fetch_assoc($query)) {
 	
