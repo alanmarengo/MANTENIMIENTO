@@ -132,7 +132,8 @@ function ol_map() {
 		this.ol_object = new ol.Map({
 			layers:[this.baselayers.openstreets],
 			target: 'map',
-			extent: [-13281237.21183002,-7669922.0600572005,-738226.6183457375,-1828910.1066171727],
+			//extent: [-13281237.21183002,-7669922.0600572005,-738226.6183457375,-1828910.1066171727],
+			extent: [-7896625.3,-6516011.3,-7787431.5,-6449377.4],
 			controls: [],
 			view: new ol.View({
 				center: [-7176058.888636417,-4680928.505993671],
@@ -259,12 +260,12 @@ function ol_map() {
 			
 		}
 		
-		var extent = ol.proj.transformExtent(
+		/*var extent = ol.proj.transformExtent(
 			js.geovisor_extent,
 			"EPSG:3857", "EPSG:3857"
 		);
 		
-		this.ol_object.getView().fit(extent, this.ol_object.getSize());
+		this.ol_object.getView().fit(extent, this.ol_object.getSize());*/
 		
 	}
 	
