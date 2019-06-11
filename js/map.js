@@ -260,11 +260,11 @@ function ol_map() {
 		}
 		
 		var extent = ol.proj.transformExtent(
-			js.geovisor_extent,
+			[js.geovisor_extent[0],js.geovisor_extent[1],js.geovisor_extent[2],js.geovisor_extent[3]],
 			"EPSG:3857", "EPSG:3857"
 		);
-		alert(extent);
-		//this.ol_object.getView().fit(extent, this.ol_object.getSize());
+		
+		this.ol_object.getView().fit(extent, this.ol_object.getSize());
 		
 	}
 	
