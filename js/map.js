@@ -450,7 +450,11 @@ function ol_map() {
 			
 		});
 		
-		alert(req.responseText);
+		var flink = document.createElement("a");
+			flink.href = "./csv.php?csv="+req.responseText;
+			flink.click();
+		
+		$(flink).remove();
 		
 	}
 	
