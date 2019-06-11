@@ -7,7 +7,7 @@
     <div class="col-md-12 page-search">
         <div class="row">
 
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="input-group mb-3">
                     <input id="uxSearchText" name="uxSearchText" type="text" class="form-control">
                     <div class="input-group-append">
@@ -19,7 +19,8 @@
                 <div id="uxUrl"></div>
             </div>
 
-            <div class="col-md-6 text-right">
+            <div class="col-md-8 text-right">
+                Ordenar por:
                 <select id="uxOrden" class="selectpicker">
                     <option value="0">A - Z</option>
                     <option value="1">Z - A</option>
