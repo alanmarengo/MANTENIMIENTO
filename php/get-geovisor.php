@@ -18,8 +18,8 @@ while ($r = pg_fetch_assoc($query)) {
 	
 	$json .= "{";
 	$json .= "\"layer_id\":" . $r["layer_id"] . ",";
-	$json .= "\"iniciar_visible\":" . $r["iniciar_visible"] . ",";
-	$json .= "\"iniciar_panel\":" . $r["iniciar_panel"] . "";
+	$json .= "\"iniciar_visible\":\"" . $r["iniciar_visible"] . "\",";
+	$json .= "\"iniciar_panel\":\"" . $r["iniciar_panel"] . "\"";
 	$json .= "}";
 	
 }
