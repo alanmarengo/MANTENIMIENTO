@@ -137,9 +137,9 @@ function ol_map() {
 			controls: [],
 			view: new ol.View({
 				center: [-7176058.888636417,-4680928.505993671],
-				zoom:3.8,
-				minZoom: 3.8,
-				maxZoom: 21
+				//zoom:3.8,
+				//minZoom: 3.8,
+				//maxZoom: 21
 			})
 		});
 		
