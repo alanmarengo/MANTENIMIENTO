@@ -29,6 +29,18 @@
 				<tr>
 					<td>EPSG:4326</td>
 					<td><span id="cap-coord-4326"></td>
+				</td>			
+				<tr>
+					<td>EPSG:10001</td>
+					<td><span id="cap-coord-10001"></td>
+				</td>
+				<tr>
+					<td>EPSG:10002</td>
+					<td><span id="cap-coord-10002"></td>
+				</td>
+				<tr>
+					<td>EPSG:10003</td>
+					<td><span id="cap-coord-10003"></td>
 				</td>
 				
 			</table>

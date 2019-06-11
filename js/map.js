@@ -408,8 +408,23 @@ function ol_map() {
 		var coord_3875 = parseFloat(lon).toFixed(3) + "," + parseFloat(lat).toFixed(3);
 		var coord_4326 = parseFloat(lon4326).toFixed(3) + "," + parseFloat(lat4326).toFixed(3);
 		
+		var req = $.ajax({
+			
+			async:false,
+			type:"POST",
+			url:"./php/get-coord-transformed.php",
+			data:{lon:lon,lat:lat},
+			success:function(d){}
+			
+		});
+		
+		var js = JSON.parse(req.responseText);
+		
 		$("#cap-coord-3857").html(coord_3875);
 		$("#cap-coord-4326").html(coord_4326);
+		$("#cap-coord-10001").html(js.coord10001.lon+","+js.coord10001.lat);
+		$("#cap-coord-10002").html(js.coord10002.lon+","+js.coord10002.lat);
+		$("#cap-coord-10003").html(js.coord10003.lon+","+js.coord10003.lat);
 		
 		$("#coord-tbl").hide();
 		$("#coord-hint").hide();
