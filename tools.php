@@ -23,7 +23,7 @@ function parseSQLToCSV($recordset)
 					
 					if (in_array($bannedFields[$j],$fieldname)) {
 						
-						array_push($bannedIndexes,$i);
+						array_push($bannedIndexes,$index);
 						
 					}
 					
