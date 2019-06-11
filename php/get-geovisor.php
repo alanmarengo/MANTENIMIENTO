@@ -17,19 +17,14 @@ $query_string = "SELECT * FROM mod_geovisores.geovisor_capa_inicial WHERE geovis
 
 $query = pg_query($conn,$query_string);
 
-$geoext = str_replace(array("[","]",array("",""),implode(",",$data["geovisor_extent"])));
-
-$geoext = explode(",",$geoext);
-var_dump($geoext);
-
 $json = "{";
 $json .= "\"geovisor_id\":$geovid,";
 $json .= "\"geovisor_desc\":\"" . $data["geovisor_desc"] . "\",";
 $json .= "\"geovisor_extent\":\"" . $data["geovisor_extent"] . "\",";
-$json .= "\"minx\":\"" . $geoext[0] . "\",";
-$json .= "\"maxx\":\"" . $geoext[1] . "\",";
-$json .= "\"miny\":\"" . $geoext[2] . "\",";
-$json .= "\"maxy\":\"" . $geoext[3] . "\",";
+$json .= "\"minx\":\"" . $data["geovisor_extent"][0] . "\",";
+$json .= "\"maxx\":\"" . $data["geovisor_extent"][1] . "\",";
+$json .= "\"miny\":\"" . $data["geovisor_extent"][2] . "\",";
+$json .= "\"maxy\":\"" . $data["geovisor_extent"][3] . "\",";
 $json .= "\"data\":[";
 
 while ($r = pg_fetch_assoc($query)) {
