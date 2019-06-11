@@ -1,15 +1,13 @@
 window.addEventListener("load",function() {
 	
 	$(".widget-link").hover(
-		function() {
-			$(this).animate({
-				width:"40px"
-			}
+		function() {			
+			$(this).addClass("widget-link-hovered");
+			$(this).removeClass("widget-link-unhovered");
 		},700),		
-		function() {
-			$(this).animate({
-				width:"20px"
-			}
+		function() {			
+			$(this).addClass("widget-link-unhovered");
+			$(this).removeClass("widget-link-hovered");
 		},700)
 	);
 	

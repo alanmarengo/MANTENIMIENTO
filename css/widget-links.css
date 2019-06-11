@@ -1,25 +1,28 @@
-#widget-links {
-
-	position:fixed;
-	right:0px;
-	top:140px;
-	
-}
-
 .widget-link {
 
+	position:fixed;
 	width:20px;
 	height:40px;
 	margin-bottom:20px;
 
 }
 
-.widget-link:hover {
+.widget-link-unhovered {
 
-	-webkit-transition: width 1s ease-in-out;
-    -moz-transition: width 1s ease-in-out;
-    -o-transition: width 1s ease-in-out;
-    transition: width 1s ease-in-out;
+	-webkit-transition: width 0.5s ease-in-out;
+    -moz-transition: width 0.5s ease-in-out;
+    -o-transition: width 0.5s ease-in-out;
+    transition: width 0.5s ease-in-out;
+    width:20px;
+	
+}
+
+.widget-link-hovered {
+
+	-webkit-transition: width 0.5s ease-in-out;
+    -moz-transition: width 0.5s ease-in-out;
+    -o-transition: width 0.5s ease-in-out;
+    transition: width 0.5s ease-in-out;
     width:40px;
 	
 }

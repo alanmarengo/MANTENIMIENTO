@@ -1,22 +1,20 @@
-<div id="widget-links" class="widget-links">
-	<div class="widget-link">
-		<a href="#" style="background-color:#ffa91b;">
+<div class="widget-link" style="background-color:#ffa91b; right:0px; top:140px;">
+	<a href="#">
 			
-		</a>
-	</div>
-	<div class="widget-link">
-		<a href="#" style="background-color:#8e2f4f;">
-			
-		</a>
-	</div>
-	<div class="widget-link">
-		<a href="#" style="background-color:#585dc5;">
-			
-		</a>
-	</div>
-	<div class="widget-link">
-		<a href="#" style="background-color:#310133;">
-			
-		</a>
-	</div>
+	</a>
+</div>
+<div class="widget-link" style="background-color:#8e2f4f; right:0px; top:200px;">
+	<a href="#">
+		
+	</a>
+</div>
+<div class="widget-link" style="background-color:#585dc5; right:0px; top:260px;">
+	<a href="#">
+		
+	</a>
+</div>
+<div class="widget-link" style="background-color:#310133; right:0px; top:320px;">
+	<a href="#">
+		
+	</a>
 </div>
