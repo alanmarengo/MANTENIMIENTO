@@ -41,11 +41,19 @@
 	
 }
 
-.layer-header span, .layer-container-header span {
+.layer-header span, .layer-container-header span:not(.abr-layer-count) {
 	
 	position:relative;
 	top:2.5px;
 	left:13px;
+	font-size:13px;
+	font-family:"Raleway";
+	font-weight:400;
+	
+}
+
+.abr-layer-count{
+	
 	font-size:13px;
 	font-family:"Raleway";
 	font-weight:400;

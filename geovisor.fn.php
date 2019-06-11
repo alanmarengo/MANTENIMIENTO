@@ -71,7 +71,7 @@ function DrawContainers() {
 						<i class="fa fa-eye-slash"></i>
 					</div>
 				</div>
-				<span><?php echo $r["cod_nom"]; ?> (<span id="abr-layer-count-<?php echo $r["clase_id"]; ?>"></span>)</span>		
+				<span><?php echo $r["cod_nom"]; ?> (<span id="abr-layer-count-<?php echo $r["clase_id"]; ?>" class="abr-layer-count"></span>)</span>		
 			</div>
 			<div class="layer-container-body scrollbar-content">
 				<?php DrawLayers($r["clase_id"]); ?>

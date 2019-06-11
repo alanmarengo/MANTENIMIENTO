@@ -1161,7 +1161,7 @@ function ol_map() {
 	this.panel.updateLayerCountPanelLabel = function(clase_id) {
 		
 		var cant = $(".layer-container[data-cid="+clase_id+"]:visible").find(".layer-group:visible").length;
-		$("#abr-layer-count-"+clase_id+"]").html(cant);
+		$("#abr-layer-count-"+clase_id).html(cant);
 		
 	}
 	
