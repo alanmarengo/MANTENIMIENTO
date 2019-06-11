@@ -105,7 +105,7 @@
 			
 		}
 		
-		.navbar-right .nav-item {
+		.navbar-right .nav-item, #subtoolsIcons ul .dropdown {
 			
 			display:inline-block !Important;
 			
@@ -121,6 +121,12 @@
 			border-radius:3px;
 			position:relative;
 			top:1px;
+			
+		}
+		
+		.nav-link-button:hover {
+			
+			opacity:0.75;
 			
 		}
 		
@@ -325,7 +331,7 @@
 					<a class="nav-link nav-link-button" href="#" id="navbarDropdown-help" role="button" data-toggle="dropdown" aria-expanded="false">
 						<i class="fa fa-question-circle"></i>
 					</a>
-					<div class="dropdown-menu" style="position:absolute; left:-350%; text-align:right;" aria-labelledby="navbarDropdown-help">
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-help">
 						<a class="dropdown-item" href="#">Manual de Usuario</a>
 						<a class="dropdown-item" href="#">Video Explicativo</a>
 					</div>
@@ -363,37 +369,37 @@
 				<div class="nav navbar-expand navbar-right" style="display: inline-block;" id="navToolbar">
 					<ul class="navbar-nav navbar-toolbar">
 						<li class="nav-item">
-							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.buffer();" id="navbarDropdown-buffer" role="button" data-toggle="dropdown" aria-expanded="false">
+							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.buffer();" id="navbarDropdown-buffer" role="button" data-toggle="dropdown" aria-expanded="false" alt="Herramienta Buffer" title="Herramienta Buffer">
 								<img src="./images/toolbar.icon.buffer.png">
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.ptopografico();" id="navbarDropdown-ptopografico" role="button" data-toggle="dropdown" aria-expanded="false">
+							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.ptopografico();" id="navbarDropdown-ptopografico" role="button" data-toggle="dropdown" aria-expanded="false" alt="Perfil Topográfico" title="Perfil Topográfico">
 								<img src="./images/toolbar.icon.ptopografico.png">
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.medicion();" id="navbarDropdown-medicion" role="button" data-toggle="dropdown" aria-expanded="false">
+							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.medicion();" id="navbarDropdown-medicion" role="button" data-toggle="dropdown" aria-expanded="false" alt="Medir" title="Medir">
 								<img src="./images/toolbar.icon.medicion.png">
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.coordinates();">
+							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.coordinates();" alt="Capturar Coordenadas" title="Capturar Coordenadas">
 								<img src="./images/toolbar.icon.coordenadas.png">
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.drawing();">
+							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.drawing();" alt="Dibujar" title="Dibujar">
 								<img src="./images/toolbar.icon.dibujo.png">
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.print();">
+							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.print();" alt="Imprimir" title="Imprimir">
 								<img src="./images/toolbar.icon.print.png">
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.share();">
+							<a href="#" class="nav-link nav-toolbar-link" onclick="geomap.map.share();" alt="Compartir Vista" title="Compartir Vista">
 								<img src="./images/toolbar.icon.share.png">
 							</a>
 						</li>
@@ -405,9 +411,32 @@
 	</nav>
 
 	<div id="map"></div>
+	
+	<div id="bottom-tools">
+		<div class="nav" id="subtoolsIcons">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link nav-item-button nav-link-button" href="#" onclick="geomap.map.ol_object.getView().setZoom(geomap.map.ol_object.getView().getZoom() + 1);">
+						<i class="fa fa-plus"></i>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link nav-item-button nav-link-button" href="#" onclick="geomap.map.ol_object.getView().setZoom(geomap.map.ol_object.getView().getZoom() - 1);">
+						<i class="fa fa-minus"></i>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link nav-link-button" href="#" onclick="$('#popup-baselayers').toggle()" alt="Seleccionar Capa Base" title="Seleccionar Capa Base">
+						<i class="fa fa-layer-group"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
 
 	<?php include("geovisor.panel.php"); ?>
 	<?php include("geovisor.popup.php"); ?>
+	<?php include("geovisor.popup-baselayers.php"); ?>
 	<?php include("geovisor.popup-buffer.php"); ?>
 	<?php include("geovisor.popup-coordinates.php"); ?>
 	<?php include("geovisor.popup-drawing.php"); ?>

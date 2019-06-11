@@ -128,9 +128,57 @@ function ol_map() {
 				crossOrigin: 'anonymous'
 			})
 		})
+	
+		this.baselayers.opentopo = new ol.layer.Tile({
+			name: 'opentopo',
+			title: 'OpenTopo',
+			type: 'base',
+			visible: false,
+			source: new ol.source.XYZ({
+				url: '//{a-c}.tile.opentopomap.org/{z}/{x}/{y}.png'
+			})
+		})
+
+		this.baselayers.bingmaps = new ol.source.BingMaps({
+			key: 'AmqIEhx8ko1O3p1Npagu9_Egw7e8quBgM03p6_xdFqjSfJa6kWv_iUU2nO1htz1G',
+			imagerySet: 'Road',
+			culture: 'ar-ES',
+			visible:false
+		})
+
+		this.baselayers.bing_roads = new ol.layer.Tile({
+			preload: Infinity,
+			source: this.baselayers.bingmaps,
+			visible:false
+		})
+
+		this.baselayers.bing_aerials = new ol.layer.Tile({
+			preload: Infinity,
+			visible:false,
+			source: new ol.source.BingMaps({
+				key: 'AmqIEhx8ko1O3p1Npagu9_Egw7e8quBgM03p6_xdFqjSfJa6kWv_iUU2nO1htz1G',
+				imagerySet: 'Aerial'
+			})
+		})
+
+		this.baselayers.google = new ol.layer.Tile({
+			visible:false,
+			source: new ol.source.TileImage({ 
+				url: 'http://mt{0-3}.googleapis.com/vt?&x={x}&y={y}&z={z}&hl=es&gl=AR'
+			})
+		})
+
+		this.baselayers.google_satelital = new ol.layer.Tile({
+			visible:false,
+			source: new ol.source.TileImage({ 
+				url: 'http://khm{0-3}.googleapis.com/kh?v=742&hl=pl&&x={x}&y={y}&z={z}&hl=es&gl=AR' 
+			})
+		})
+		
+		this.baselayers.collection = [this.baselayers.openstreets,this.baselayers.opentopo,this.baselayers.bing_roads,this.baselayers.bing_aerials,this.baselayers.google,this.baselayers.google_satelital];
 		
 		this.ol_object = new ol.Map({
-			layers:[this.baselayers.openstreets],
+			layers:this.baselayers.collection,
 			target: 'map',
 			extent: [-13281237.21183002,-7669922.0600572005,-738226.6183457375,-1828910.1066171727],
 			controls: [],
@@ -141,6 +189,8 @@ function ol_map() {
 				maxZoom: 21
 			})
 		});
+		
+		this.baseLayer = this.baselayers.openstreets;		
 		
 		this.ol_object_mini = new ol.Map({
 			layers:[this.baselayers.openstreets],
@@ -203,6 +253,25 @@ function ol_map() {
 			//
 			
 		}
+		
+	}
+		
+	this.map.setBaseLayer = function(layerObj) {
+		
+		for (var i=0; i<this.baselayers.collection.length; i++) {
+				
+			this.baselayers.collection[i].setVisible(false);
+		
+		}
+		
+		layerObj.setVisible(true);
+		this.baseLayer = layerObj;
+		
+	}	
+	
+	this.map.getBaseLayer = function() {
+		
+		return this.baseLayer;
 		
 	}
 	
@@ -1332,6 +1401,11 @@ function ol_map() {
 		$("#popup-drawing").width(nwidth/2);
 		$("#popup-drawing").height(300);
 		$("#popup-drawing").css("right","20px");
+		
+		$("#popup-baselayers").width(nwidth/3);
+		$("#popup-baselayers").height(400);
+		$("#info-baselayers").height(300);
+		$("#popup-baselayers").css("right","20px");
 		
 		$("#popup-buffer").width(nwidth/3);
 		$("#popup-buffer").height(400);

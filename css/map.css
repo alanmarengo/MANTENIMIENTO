@@ -19,3 +19,36 @@
 	position:relative;
 	
 }
+
+#bottom-tools {
+	
+	width:50px;
+	position:fixed;
+	bottom:20px;
+	right:6px;
+	
+}
+
+#bottom-tools .nav-item {
+	
+	margin-bottom:5px;
+	
+}
+
+#bottom-tools .nav-item:last-child {
+	
+	margin-bottom:0px;
+	
+}
+
+#info-baselayers {
+	
+	font-size:18px;
+	
+}
+
+#info-baselayers .state label {
+	
+	color:#FFFFFF !important;
+	
+}
