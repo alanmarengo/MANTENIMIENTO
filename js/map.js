@@ -259,7 +259,7 @@ function ol_map() {
 			
 		}
 		
-		console.log(js.geovisor_extent);
+		alert(js.geovisor_extent.typeof);
 		
 		var extent = ol.proj.transformExtent(
 			[js.minx,js.miny,js.maxx,js.maxy],
