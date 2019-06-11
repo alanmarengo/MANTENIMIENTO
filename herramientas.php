@@ -29,14 +29,14 @@
             <a id="mapas"></a>
             <div class="row" style="padding-left: 20px;">
                 <div class="col-md-4 page-box">
-                    <div href="./geovisor.php" class="box">
+                    <div href="./geovisor-basico.php" class="box">
                         <div class="page-box-image" style="background-image: url(./images/herramientas/1.png);"></div>
                         <p class="page-box-title">VISOR IEASA</p>
                         <p class="page-box-description">Conocé la localización y características técnicas de los proyectos y de las obras de IEASA distribuidas en todo el país.</p>
                     </div>
                 </div>
                 <div class="col-md-4 page-box">
-                    <div href="./geovisor.php" class="box">
+                    <div href="" class="box">
                         <div class="page-box-image" style="background-image: url(./images/herramientas/2.png);"></div>
                         <p class="page-box-title">DE COMUNICACION Y GESTION PARTICIPATIVA</p>
                         <p class="page-box-description">Conocé la localización de las actividades de IEASA en territorio en el marco del proyecto  AHRSC que permiten fortalecer la comunicación y participación de toda la comunidad.</p>
@@ -47,28 +47,28 @@
             <a id="visores"></a>
             <div class="row" style="padding-left: 20px;">
                 <div class="col-md-4 page-box">
-                    <div href="./geovisor.php?geovisor=1" class="box">
+                    <div href="./geovisor.php" class="box">
                         <div class="page-box-image" style="background-image: url(./images/herramientas/3.png);"></div>
                         <p class="page-box-title">GEOVISOR INTEGRAL</p>
                         <p class="page-box-description">Visualizá, gestioná y accedé en línea a la totalidad de la información de este Observatorio y conectate e integrá información de otros organismos externos, tanto para consulta como para generar nueva información.</p>
                     </div>
                 </div>
                 <div class="col-md-4 page-box">
-                    <div href="./geovisor.php" class="box">
+                    <div href="" class="box">
                         <div class="page-box-image" style="background-image: url(./images/herramientas/4.png);"></div>
                         <p class="page-box-title">GEOVISOR DE OBRA AHRSC</p>
                         <p class="page-box-description">Visualizá y consultá las características técnicas de los proyectos de AHRSC, a través de la documentación ejecutiva y de los modelos tridimensionales con tecnología BIM que contiene toda la información técnica y física en una base de datos inteligente y dinámica.</p>
                     </div>
                 </div>
                 <div class="col-md-4 page-box">
-                    <div href="./geovisor.php" class="box">
+                    <div href="http://hidrosantacruz.com.ar" class="box">
                         <div class="page-box-image" style="background-image: url(./images/herramientas/5.png);"></div>
                         <p class="page-box-title">SIT</p>
                         <p class="page-box-description">Accedé al geovisor del Sistema de Información Territorial de Santa Cruz (SIT) con información espacial pública de la provincia orientadas a la gestión y toma de decisiones.</p>
                     </div>
                 </div>
                 <div class="col-md-4 page-box">
-                    <div href="./geovisor.php" class="box">
+                    <div href="" class="box">
                         <div class="page-box-image" style="background-image: url(./images/herramientas/6.png);"></div>
                         <p class="page-box-title">GEOVISOR AHRSC</p>
                         <p class="page-box-description">Conocé los AHRSC,  sus características técnicas y toda la información ambiental de línea de base y monitoreos actuales. Indagá y generá tu propia información y vinculate a otros organismos externos para integrar nueva información.</p>
@@ -88,8 +88,8 @@
                 </div>
 
                 <div class="col-md-12">
-                    <div style="border: solid 1px #ccc; margin-bottom: 20px; background-color: #fff;">
-                        <div class="row">
+                    <div class="geonetwork">
+                        <a href="http://observatorio.ieasa.com.ar:8080/geonetwork" class="row">
                             <div class="col-md-4">
                                 <div class="page-box-image2" style="background-image: url(./images/herramientas/7.png);"></div>
                             </div>
@@ -99,7 +99,7 @@
                                     Esta aplicación instalada en servidores de la empresa, de código abierto y diseñado para la catalogación de recursos georreferenciados, permite la búsqueda y acceso en múltiples formatos de la información geográfica y servicios de IEASA. Accedé a través del siguiente link.
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             
