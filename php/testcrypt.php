@@ -1,8 +1,9 @@
 <?php
 
 include("../pgconfig.php");
+include("../tools.php");
 
-$results = $_POST["results"];
+$results = "ca_escombreras;10";
 
 $layer_names = array();
 $gids = array();
@@ -102,7 +103,9 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 	$html .= "</p>";
 		
 	$html .= "<br><hr><br>";
-
+	
+	$html .= "<p>" . encrypt($query_string2) . "</p>";
+	
 	$html .= "</div>";
 
 }
