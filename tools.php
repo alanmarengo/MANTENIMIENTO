@@ -15,19 +15,23 @@ function parseSQLToCSV($recordset)
 			
   			for ($index = 0; $index < $TotalColum; $index++) 
   			{
+				$banned = false;
 				if($index<>0) {$json.= ";";}; 
 				$fieldname = pg_field_name($recordset, $index);
-				$json.= "\"".$fieldname."\"";
 				
 				for ($j=0; $j<sizeof($bannedFields); $j++) {
 					
 					if (in_array($bannedFields[$j],$fieldname)) {
 						
 						array_push($bannedIndexes,$index);
+						$banned = true;
+						break;
 						
 					}
 					
 				}
+				
+				if (!$banned) { $json.= "\"".$fieldname."\""; }
 				
   			};
   			
