@@ -235,7 +235,7 @@ function ol_map() {
 					
 				}
 				if (isBase == false) {					
-					alert(layer.getSource().getParams().layer_id + " :: " + isBase + " VISIBLE: " + layer.getVisible() + " CONDICION: " + isBase == false);
+					alert(layer.getSource().getParams().layer_id + " :: " + isBase + " VISIBLE: " + layer.getVisible());
 				}
 				
 				if ((layer.getVisible()) && (isBase == false)) {
