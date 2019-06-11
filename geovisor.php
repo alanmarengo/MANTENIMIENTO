@@ -32,6 +32,7 @@
 	<link rel="stylesheet" href="./css/popup.css"/>
 	<link rel="stylesheet" href="./css/scrollbars.css"/>
 	<link rel="stylesheet" href="./css/sidenav.css"/>
+	<link rel="stylesheet" href="./css/widget-links.css"/>
 	<link rel="stylesheet" href="./css/geovisor/style.css"/>
 	<link rel="stylesheet" href="./css/geovisor/buttons.css"/>
 	<link rel="stylesheet" href="./css/geovisor/coordinates.css"/>
@@ -445,6 +446,9 @@
 	<?php include("geovisor.popup-share.php"); ?>
 	
 	<?php include("html-flwindows-perfil-topografico.php"); ?>
+	
+	<?php include("widget-links.php"); ?>
+	
 	
 	<div id="popup-results">
 	
