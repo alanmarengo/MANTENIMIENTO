@@ -1130,6 +1130,8 @@ function ol_map() {
 				document.getElementById("layer-checkbox-"+layer_id).layer.setOpacity(ui.values[0]/100);				
 			}
 		});
+		
+		this.updateLayerCountPanelLabel(clase_id);
 			
 		//$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
 		
@@ -1151,6 +1153,15 @@ function ol_map() {
 			$(".panel-abr[data-cid="+clase_id+"]").attr("data-active","0");
 			
 		}
+		
+		this.updateLayerCountPanelLabel(clase_id);
+		
+	}
+	
+	this.panel.updateLayerCountPanelLabel = function(clase_id) {
+		
+		var cant = $(".layer-container[data-cid="+clase_id+"]:visible").find(".layer-group:visible").size();
+		$("#abr-layer-count-"+clase_id+"]").html(cant);
 		
 	}
 	

@@ -52,7 +52,7 @@ function DrawContainers() {
 	
 	$conn = pg_connect($string_conn);
 	
-	$query_string = "SELECT clase_id,cod_nom,color_hex,color_head,cod_clase_alf,mod_geovisores.get_layers_count_by_clase(clase_id) AS layer_count FROM mod_catalogo.clase ORDER BY clase_id ASC";
+	$query_string = "SELECT clase_id,cod_nom,color_hex,color_head,cod_clase_alf FROM mod_catalogo.clase ORDER BY clase_id ASC";
 	
 	$query = pg_query($conn,$query_string);
 	
@@ -71,7 +71,7 @@ function DrawContainers() {
 						<i class="fa fa-eye-slash"></i>
 					</div>
 				</div>
-				<span><?php echo $r["cod_nom"]; ?> (<?php echo $r["layer_count"]; ?>)</span>		
+				<span><?php echo $r["cod_nom"]; ?> (<span id="abr-layer-count-<?php echo $r["clase_id"]; ?>"></span>)</span>		
 			</div>
 			<div class="layer-container-body scrollbar-content">
 				<?php DrawLayers($r["clase_id"]); ?>
