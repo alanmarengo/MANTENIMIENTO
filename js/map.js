@@ -439,7 +439,26 @@ function ol_map() {
 		
 		var query = node.getAttribute("data-q");
 		
-		alert(query);
+		var req = $.ajax({
+			
+			async:false,
+			url:"./php/get-csv.php",
+			type:"POST",
+			data:{q:query},
+			type:"post",
+			success:function(d){}
+			
+		});
+		
+		/*var flink = document.createElement("a");
+			flink.href = "./csv.php?csv="+req.responseText;
+			flink.target = "_blank";
+			
+		document.body.appendChild(flink);
+		
+			flink.click();
+		
+		$(flink).remove();*/
 		
 	}
 	
