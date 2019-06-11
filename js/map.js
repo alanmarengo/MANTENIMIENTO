@@ -245,7 +245,7 @@ function ol_map() {
 						
 					}
 					
-				});
+				}.bind(this));
 				
 			}
 			
