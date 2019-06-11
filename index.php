@@ -1,7 +1,7 @@
 <?php include("./header.php"); ?>
 
 <div id="page_index">
-    <div id="main-slider" class="carousel slide" data-ride="carousel" data-interval="3000">
+    <div id="main-slider" class="carousel slide" data-ride="carousel" data-interval="300000">
         <ol class="carousel-indicators">
             <li data-target="#main-slider" data-slide-to="0" class="active"></li>
             <li data-target="#main-slider" data-slide-to="1"></li>
@@ -15,30 +15,45 @@
                 <div class="carousel-caption">
                     <p>GEOVISOR DE INFORMACION INTEGRADA</p>
                 </div>                
+                <div class="slide-hover">
+                    Permite recorrer el territorio e indagar toda la información de las obras e instalaciones en operación de IEASA y su documentación relacionada. 
+                </div>
             </a>
             <a href="./page.php" class="carousel-item">
                 <img class="d-block w-100" src="./images/index/slide2.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>SABIAS DE LA EXISTENCIA DE LA LAMPREA<br /> EN EL RIO SANTA CRUZ?</p>
                 </div>                
+                <div class="slide-hover">
+                    Trabajamos para profundizar el conocimiento biológico y ecológico de una primitiva y poco conocida especie nativa
+                </div>
             </a>
             <a href="./page.php" class="carousel-item">
                 <img class="d-block w-100" src="./images/index/slide3.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>CAMPO DE HIELO PATAGONIA SUR (HPS)</p>
                 </div>                
+                <div class="slide-hover">
+                    Apoyamos el quehacer del IANIGLIA para ampliar los estudios y el conocimiento de los glaciares en el HPS en la alta cuenca del río Santa Cruz
+                </div>
             </a>
             <a href="./page.php" class="carousel-item">
                 <img class="d-block w-100" src="./images/index/slide4.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>NUESTRO COMPROMISO CON EL MACA TOBIANO</p>
                 </div>                
+                <div class="slide-hover">
+                    Colaboramos con el Proyecto Macá Tobiano para proteger a esta especie emblemática y endémica de Santa Cruz
+                </div>
             </a>
             <a href="./mision.php" class="carousel-item">
                 <img class="d-block w-100" src="./images/index/slide5.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>MISIÓN DE IEASA</p>
                 </div>                
+                <div class="slide-hover">
+                    Proveer energía eficaz y eficientemente, acompañando las políticas públicas del estado nacional dentro de un marco de respeto socioambiental que contribuya a mejorar la calidad de vida de las personas y el desarrollo de la comunidad. 
+                </div>
             </a>
         </div>
 
@@ -50,7 +65,6 @@
             <span><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
             <span class="sr-only">Siguiente</span>
         </a>
-
     </div>
 
     <div class="row">
@@ -319,6 +333,16 @@
             $('#uxVideo video')[0].pause();
         })
 
+        $('.carousel-item').hover( 
+            function () {
+                $(this).find('.carousel-caption').hide();
+                $(this).find('.slide-hover').css('display', 'flex');
+            },
+            function () {
+                $(this).find('.slide-hover').hide();
+                $(this).find('.carousel-caption').show();
+            }
+        )
         $('.modulo-wrap').hover( 
             function () {
                 $(this).find('.modulo-text').hide();
