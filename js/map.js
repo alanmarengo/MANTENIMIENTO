@@ -219,59 +219,42 @@ function ol_map() {
 			var viewResolution = (view.getResolution());
 			var url = '';
 			
-			this.getLayers().forEach(function (layer, i, layers) {				
-				console.log(map.gfiAddedLayers);
-				var alreadyAdded = false;
+			this.getLayers().forEach(function (layer, i, layers) {		
 				
-				for (var i=0; i<map.gfiAddedLayers.length; i++) {
+				var baselayer_names = ["openstreets","opentopo","bing","bing_roads","bing_aerials","google_base"];
+				var isBase = false;
+				
+				for (var i=0; i<baselayer_names.length; i++) {
 					
-					if (map.gfiAddedLayers[i] == layer.layer_id) {
+					if (layer.get('name') == baselayer_names[i]) {
 						
-						alreadyAdded = true;
+						isBase = true;
 						break;
 						
 					}
 					
 				}
 				
-				if (!alreadyAdded) {
-				
-					var baselayer_names = ["openstreets","opentopo","bing","bing_roads","bing_aerials","google_base"];
-					var isBase = false;
+				if (layer.getVisible() && !isBase) {
 					
-					for (var i=0; i<baselayer_names.length; i++) {
-						
-						if (layer.get('name') == baselayer_names[i]) {
-							
-							isBase = true;
-							break;
-							
-						}
-						
-					}
+					if(layer.getSource().getGetFeatureInfoUrl) {
 					
-					if (layer.getVisible() && !isBase) {
-						
-						if(layer.getSource().getGetFeatureInfoUrl) {
-						
-							url = layer.getSource().getGetFeatureInfoUrl(evt.coordinate, viewResolution, 'EPSG:3857', {
-								'INFO_FORMAT': 'text/html',
-									'FEATURE_COUNT': '300'
-							});	
-						
-							var req = $.ajax({
-								
-								async:false,
-								type:"GET",
-								url:url,
-								success:function(d){}
-								
-							})
+						url = layer.getSource().getGetFeatureInfoUrl(evt.coordinate, viewResolution, 'EPSG:3857', {
+							'INFO_FORMAT': 'text/html',
+								'FEATURE_COUNT': '300'
+						});	
+					
+						var req = $.ajax({
 							
-							map.parseGFI(req.responseText,"popup-info","info-wrapper");
+							async:false,
+							type:"GET",
+							url:url,
+							success:function(d){}
+							
+						})
 						
-						}
-						
+						map.parseGFI(req.responseText,"popup-info","info-wrapper");
+					
 					}
 					
 					map.gfiAddedLayers.push(layer.layer_id);
