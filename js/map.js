@@ -204,6 +204,12 @@ function ol_map() {
 		
 	}
 	
+	this.map.loadGeovisor = function(geovid) {
+		
+		alert(geovid);
+		
+	}
+	
 	this.map.parseGFI = function(response,containerID,wrapperID) {
 						
 		document.getElementById("popup-results").innerHTML += response;

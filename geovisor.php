@@ -243,40 +243,50 @@
 			
 			$(".selectpicker").selectpicker();		
 			
-			<?php if (isset($_GET["l"])) { ?>
-				
-			var s_clase = [<?php echo $_GET["c"]; ?>];
-			var s_layers = [<?php echo $_GET["l"]; ?>];
-			var s_visibles = [<?php echo $_GET["v"]; ?>];
+			<?php if (isset($_GET["geovisor"])) { ?>
 			
-			for (var i=0; i<s_layers.length; i++) { 
-				geomap.panel.AddLayer(s_clase[i],s_layers[i]);
-				if (s_visibles[i]) { 
-					document.getElementById("layer-checkbox-"+s_layers[i]).click(); 
+				geomap.map.loadGeovisor(<?php echo $_GET["geovisor"]; ?>);
+			
+			<?php }else{ ?>
+			
+				<?php if (isset($_GET["l"])) { ?>
+					
+				var s_clase = [<?php echo $_GET["c"]; ?>];
+				var s_layers = [<?php echo $_GET["l"]; ?>];
+				var s_visibles = [<?php echo $_GET["v"]; ?>];
+				
+				for (var i=0; i<s_layers.length; i++) { 
+					geomap.panel.AddLayer(s_clase[i],s_layers[i]);
+					if (s_visibles[i]) { 
+						document.getElementById("layer-checkbox-"+s_layers[i]).click(); 
+					}
 				}
-			}
-							
-			<?php } ?>
-			
-			<?php if ((isset($_GET["ca"])) && (!empty($_GET["ca"]))) { ?> 
+								
+				<?php } ?>
 				
-				var ca = <?php echo $_GET["ca"]; ?>;
+				<?php if ((isset($_GET["ca"])) && (!empty($_GET["ca"]))) { ?> 
+					
+					var ca = <?php echo $_GET["ca"]; ?>;
+					
+					$(".panel-abr[data-cid="+ca+"]").trigger("click"); 
+					
+				<?php } ?>
 				
-				$(".panel-abr[data-cid="+ca+"]").trigger("click"); 
+				<?php if ((isset($_GET["z"])) && (!empty($_GET["z"]))) { ?> 
 				
+				geomap.map.ol_object.getView().setZoom(<?php echo $_GET["z"]; ?>);
+								
+				<?php } ?>
+				
+				<?php if ((isset($_GET["cen"])) && (!empty($_GET["cen"]))) { ?> 
+				
+				geomap.map.ol_object.getView().setCenter(ol.proj.transform([<?php echo $_GET["cen"]; ?>], 'EPSG:3857', 'EPSG:3857'));
+								
+				<?php } ?>
+			
 			<?php } ?>
 			
-			<?php if ((isset($_GET["z"])) && (!empty($_GET["z"]))) { ?> 
 			
-			geomap.map.ol_object.getView().setZoom(<?php echo $_GET["z"]; ?>);
-							
-			<?php } ?>
-			
-			<?php if ((isset($_GET["cen"])) && (!empty($_GET["cen"]))) { ?> 
-			
-			geomap.map.ol_object.getView().setCenter(ol.proj.transform([<?php echo $_GET["cen"]; ?>], 'EPSG:3857', 'EPSG:3857'));
-							
-			<?php } ?>
 			
 		});
 		
