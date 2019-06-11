@@ -2,7 +2,7 @@
 
 	position:fixed;
 	right:0px;
-	top:100px;
+	top:140px;
 	
 }
 
@@ -20,6 +20,12 @@
 	height:100%;
 	display:block;
 
+}
+
+.widget-link a:hover {
+
+	opacity:0.5;
+	
 }
 
 .widget-link:last-child {
