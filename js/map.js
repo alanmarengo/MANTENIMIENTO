@@ -259,7 +259,12 @@ function ol_map() {
 			
 		}
 		
-		this.ol_object.getView().fit(js.geovisor_extent, this.ol_object.getSize());
+		var extent = ol.proj.transformExtent(
+			js.geovisor_extent,
+			"EPSG:3857", "EPSG:3857"
+		);
+		
+		this.ol_object.getView().fitExtent(extent, this.ol_object.getSize());
 		
 	}
 	
