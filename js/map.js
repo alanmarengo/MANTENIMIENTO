@@ -435,32 +435,6 @@ function ol_map() {
 		
 	}
 	
-	this.map.exportCSV = function(node) {
-		
-		var query = node.getAttribute("data-q");
-		
-		var req = $.ajax({
-			
-			async:false,
-			url:"./php/get-csv.php",
-			type:"POST",
-			data:{q:query},
-			type:"post",
-			success:function(d){}
-			
-		});
-		
-		var flink = document.createElement("a");
-			flink.href = "./csv.php?csv="+req.responseText;
-			
-		document.body.appendChild(flink);
-		
-			flink.click();
-		
-		$(flink).remove();
-		
-	}
-	
 	this.map.share = function() {
 		
 		var s_layers = [];
