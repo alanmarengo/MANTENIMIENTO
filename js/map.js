@@ -504,7 +504,7 @@ function ol_map() {
 	
 	this.map.print = function() {
 		
-		$(".layer-checkbox[data-added=1]:visible:checked").each(function(i,v) {
+		/*$(".layer-checkbox[data-added=1]:visible:checked").each(function(i,v) {
 			
 			$(v).parent().parent().next(".layer-body").children(".layer-legend").clone().appendTo("#print-legend-wrapper");
 			
@@ -523,7 +523,15 @@ function ol_map() {
 			}
         });
 		
-        this.ol_object.renderSync();
+        this.ol_object.renderSync();*/
+		
+		
+
+		html2canvas(document.querySelector("#map")).then(canvas => {
+			document.body.appendChild(canvas)
+		});
+
+
 		
 	}
 	

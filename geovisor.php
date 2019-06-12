@@ -204,6 +204,7 @@
 	<script src="https://code.highcharts.com/highcharts-more.js"></script>
 	<script src="https://code.highcharts.com/modules/funnel.js"></script>
 	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 	
 	<script src="./js/perfect-scrollbar.js"></script>
 	<script src="./js/bootstrap-select.js"></script>
