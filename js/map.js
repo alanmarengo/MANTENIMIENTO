@@ -415,7 +415,7 @@ function ol_map() {
 			
 		}
 		
-		var array_geovisor = [ js.minx, js.maxx, js.miny, js.maxy ];
+		var array_geovisor = [ parseFloat(js.minx), parseFloat(js.maxx), parseFloat(js.miny), parseFloat(js.maxy) ];
 		
 		console.log(array_geovisor);
 		console.log([ -8149293.741521936, -6378849.225655933, -7812129.881098088, -6226949.882287896 ]);
