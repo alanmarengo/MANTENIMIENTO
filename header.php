@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="./css/perfect-scrollbar.css" />
     <link rel="stylesheet" type="text/css" href="./css/scrollbars.css" />
     <link rel="stylesheet" type="text/css" href="./css/sidenav-index.css" />
+	<link rel="stylesheet" type="text/css" href="./css/widget-links.css"/>
 
     <script src="./js/jquery-3.2.1.min.js"></script>
     <script src="./js/bootstrap.bundle.min.js"></script>
@@ -29,6 +30,7 @@
     <script src="./js/site.js" type="text/javascript"></script>
     <script src="./js/map.js" type="text/javascript"></script>
     <script src="./js/nav.js" type="text/javascript"></script>
+    <script src="./js/widget-links.js" type="text/javascript"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css">
     <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
