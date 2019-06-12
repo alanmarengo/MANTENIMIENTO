@@ -189,11 +189,7 @@ function DrawLayers($clase_id) {
 					
 				</div>
 				
-				<div class="layer-legend" id="layer-legend-<?php echo $r["layer_id"]; ?>">
-				
-					<img src="<?php echo $r["layer_wms_server"]; ?>&version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer=<?php echo $r["layer_wms_layer"]; ?>&format=image/png&STYLE=default" width="120">
-					
-				</div>
+				<div class="layer-legend" id="layer-legend-<?php echo $r["layer_id"]; ?>"></div>
 			
 			</div>
 		
