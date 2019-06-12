@@ -418,10 +418,10 @@ function ol_map() {
 		
 		var extent = ol.proj.transformExtent(
 			[js.minx,js.miny,js.maxx,js.maxy],
-			"EPSG:3857", "EPSG:3857"
+			"EPSG:4326", "EPSG:3857"
 		);
 		
-		this.ol_object.getView().fit(ext,this.ol_object.getSize(),{duration:1000});
+		this.ol_object.getView().fit(extent,this.ol_object.getSize(),{duration:1000});
 		this.ol_object.updateSize();
 		this.ol_object.render();
 			
