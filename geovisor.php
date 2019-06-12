@@ -296,7 +296,7 @@
 			
 			<?php } ?>
 			
-			window.addEventListenerÇ("resize",geomap.resize);
+			window.addEventListener("resize",geomap.resize);
 			
 		});
 		
