@@ -1,0 +1,17 @@
+.jump-nav-default li a {
+	
+	background-color:#464542;
+	color:#FFFFFF;
+	text-decoration:none;
+	font-size:11px;
+	
+}
+
+.jump-nav-default li a:hover {
+	
+	background-color:#31cbfd;
+	color:#FFFFFF;
+	text-decoration:none;
+	
+}
+
