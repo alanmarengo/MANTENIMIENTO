@@ -91,18 +91,18 @@ function ol_map() {
 		
 		if (document.getElementById("navbarNav").getAttribute("data-state") == "0") {			
 			
-			$("#navbarNav").animate({left:"-"+width_nav+"px"},700);
-			$("#page").animate({left:"0px"},700);
+			$("#navbarNav").css({left:"-"+width_nav+"px"});
+			$("#page").css({left:"0px"});
 			
 			if (document.getElementById("panel-left")) {
 				
 				if ($("#panel-arrow-link").attr("data-state") == 0) {
 					
-					$("#panel-left").animate({ left:"-370px" });
+					$("#panel-left").css({ left:"-370px" });
 					
 				}else{
 					
-					$("#panel-left").animate({ left:"0px" });
+					$("#panel-left").css({ left:"0px" });
 					
 				}
 				
@@ -110,18 +110,18 @@ function ol_map() {
 			
 		}else{
 			
-			$("#navbarNav").animate({left:"0px"},700);
-			$("#page").animate({left:width_nav+"px"},700);
+			$("#navbarNav").css({left:"0px"});
+			$("#page").css({left:width_nav+"px"});
 			
 			if (document.getElementById("panel-left")) {
 				
 				if ($("#panel-arrow-link").attr("data-state") == 0) {
 					
-					$("#panel-left").animate({ left:(width_nav - 370) + "px" });
+					$("#panel-left").css({ left:(width_nav - 370) + "px" });
 					
 				}else{
 					
-					$("#panel-left").animate({ left:width_nav + "px" });
+					$("#panel-left").css({ left:width_nav + "px" });
 					
 				}
 				
