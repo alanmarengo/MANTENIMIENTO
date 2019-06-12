@@ -421,7 +421,7 @@ function ol_map() {
 			"EPSG:3857", "EPSG:3857"
 		);
 		
-		var array_geovisor = [js.geovisor_extent];
+		var array_geovisor = js.geovisor_extent;
 		var array_literal = [ -8149293.741521936, -6378849.225655933, -7812129.881098088, -6226949.882287896 ];
 		var arra_geovisor_from_string = [array_geovisor[0],array_geovisor[1],array_geovisor[2],array_geovisor[3]];
 		var arra_geovisor_from_string_parsed = [parseFloat(array_geovisor[0]),parseFloat(array_geovisor[1]),parseFloat(array_geovisor[2]),parseFloat(array_geovisor[3])];
