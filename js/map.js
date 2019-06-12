@@ -538,6 +538,8 @@ function ol_map() {
 			
 			a.click();
 			
+			$(a).remove();
+			
 		});
 
 
