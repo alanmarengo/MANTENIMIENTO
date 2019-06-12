@@ -23,11 +23,11 @@
 				</div>
 			
 			</div>
+
+			<?php include("./geovisor.popup-baselayers-basic.php"); ?>
 	
 		</div>
 	
 	</div>
-
-	<?php include("./geovisor.popup-baselayers-basic.php"); ?>
 
 </div>
