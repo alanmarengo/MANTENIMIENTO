@@ -426,7 +426,7 @@ function ol_map() {
 		this.ol_object.render();*/
 			
 		this.ol_object.once("postcompose",function() {			
-		
+			console.log([js.minx,js.miny,js.maxx,js.maxy]);
 			this.getView().fit([ -8149293.741521936, -6378849.225655933, -7812129.881098088, -6226949.882287896 ],{size:this.getSize()});
 			this.updateSize();
 			this.render();
