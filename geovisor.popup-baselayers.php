@@ -2,7 +2,7 @@
 	
 	<div class="row">
 	
-		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+		<div class="ml-auto col-lg-3 col-md-3 col-sm-12 col-xs-12">
 	
 			<div class="row popup-row popup-header">		
 						
