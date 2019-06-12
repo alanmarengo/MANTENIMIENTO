@@ -136,7 +136,8 @@ function ol_map() {
 			type: 'base',
 			visible: false,
 			source: new ol.source.XYZ({
-				url: '//{a-c}.tile.opentopomap.org/{z}/{x}/{y}.png'
+				url: '//{a-c}.tile.opentopomap.org/{z}/{x}/{y}.png',
+				crossOrigin: 'anonymous'
 			})
 		})
 
@@ -145,14 +146,16 @@ function ol_map() {
 			key: 'AmqIEhx8ko1O3p1Npagu9_Egw7e8quBgM03p6_xdFqjSfJa6kWv_iUU2nO1htz1G',
 			imagerySet: 'Road',
 			culture: 'ar-ES',
-			visible:false
+			visible:false,
+			crossOrigin: 'anonymous'
 		})
 
 		this.baselayers.bing_roads = new ol.layer.Tile({
 			name:'bing_roads',
 			preload: Infinity,
 			source: this.baselayers.bingmaps,
-			visible:false
+			visible:false,
+			crossOrigin: 'anonymous'
 		})
 
 		this.baselayers.bing_aerials = new ol.layer.Tile({
@@ -161,7 +164,8 @@ function ol_map() {
 			visible:false,
 			source: new ol.source.BingMaps({
 				key: 'AmqIEhx8ko1O3p1Npagu9_Egw7e8quBgM03p6_xdFqjSfJa6kWv_iUU2nO1htz1G',
-				imagerySet: 'Aerial'
+				imagerySet: 'Aerial',
+				crossOrigin: 'anonymous'
 			})
 		})
 
@@ -169,7 +173,8 @@ function ol_map() {
 			name:'google_base',
 			visible:true,
 			source: new ol.source.TileImage({ 
-				url: 'http://mt{0-3}.googleapis.com/vt?&x={x}&y={y}&z={z}&hl=es&gl=AR'
+				url: 'http://mt{0-3}.googleapis.com/vt?&x={x}&y={y}&z={z}&hl=es&gl=AR',
+				crossOrigin: 'anonymous'
 			})
 		})
 		
@@ -360,8 +365,6 @@ function ol_map() {
 			[js.minx,js.miny,js.maxx,js.maxy],
 			"EPSG:3857", "EPSG:3857"
 		);
-		
-		console.log(js);
 		
 		this.ol_object.getView().fit(extent,{duration:1000});
 		this.ol_object.updateSize();
