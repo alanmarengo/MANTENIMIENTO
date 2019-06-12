@@ -909,26 +909,6 @@ function ol_map() {
 	
 	this.panel.start = function() {
 		
-		$("#main-search").on("keyup",function(e) {
-			
-			if (e.which == 13) {
-				
-				var flink = document.createElement("a");
-					flink.setAttribute("target","_blank");
-					flink.href = "./mediateca.php?s="+this.value;
-					flink.id = "flink-search";
-					flink.className = "flink";
-				
-					document.body.appendChild(flink);
-					
-				//	flink.click();
-					
-				//	$(flink).remove();
-				
-			}
-			
-		});
-		
 		$(".default-empty-checkbox").each(function(i,v) {
 			
 			v.checked = false;
