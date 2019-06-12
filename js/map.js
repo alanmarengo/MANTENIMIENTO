@@ -1451,6 +1451,9 @@ function ol_map() {
 		$("#popup-preloader").css("left","50%");
 		$("#popup-preloader").css("margin-left","-" + ((nwidth/3)/2) + "px");
 		
+		$("#print-legend-wrapper").width(nwidth/3);
+		$("#print-legend-wrapper").height(300);
+		
 		$("#popup-buffer").css("right","20px");
 		
 		$("#info-wrapper").height(400);
