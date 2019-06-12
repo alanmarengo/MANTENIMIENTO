@@ -24,13 +24,14 @@
 				<div class="dropdown dropdown-2">
 					<ul class="navbar-nav collapsed">
 						<li class="nav-item active">
-							<a class="nav-link" href="#">Visor IEASA</a>
+							<a class="nav-link" href="./geovisor-basico.php">Visor IEASA</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#">Visor Ambiental</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Visor de Proyectos</a>
+							<a class="nav-link" href="./geovisor.php?geovisor=1
+">Visor de Proyectos</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#">Visor Interinstitucional</a>
@@ -42,7 +43,7 @@
 							<a class="nav-link" href="#">Visor de Higiene y Seguridad (restringido)</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Geoservicios y catálogo de metadatos</a>
+							<a class="nav-link" href="./herramientas?target=servicios">Geoservicios y catálogo de metadatos</a>
 						</li>
 					</ul>
 				</div>
@@ -102,7 +103,7 @@
 							<a class="nav-link" href="#">Modelizaciones</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">PLAHE</a>
+							<a class="nav-link" href="http://plahe.com.ar">PLAHE</a>
 						</li>
 					</ul>
 				</div>
