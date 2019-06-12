@@ -426,8 +426,9 @@ function ol_map() {
 		this.ol_object.render();*/
 			
 		this.ol_object.once("postcompose",function() {			
-			//console.log([parseFloat(js.minx),parseFloat(js.miny),parseFloat(js.maxx),parseFloat(js.maxy)]);
-			this.getView().fit([parseFloat(js.minx),parseFloat(js.miny),parseFloat(js.maxx),parseFloat(js.maxy)],{size:this.getSize()});
+			console.log("ARRAY: " + [parseFloat(js.minx),parseFloat(js.miny),parseFloat(js.maxx),parseFloat(js.maxy)]);
+			console.log("ARRAY LITERAL " + [ -8149293.741521936, -6378849.225655933, -7812129.881098088, -6226949.882287896 ]);
+			//this.getView().fit([parseFloat(js.minx),parseFloat(js.miny),parseFloat(js.maxx),parseFloat(js.maxy)],{size:this.getSize()});
 			//this.getView().fit([ -8149293.741521936, -6378849.225655933, -7812129.881098088, -6226949.882287896 ],{size:this.getSize()});
 			this.updateSize();
 			this.render();
