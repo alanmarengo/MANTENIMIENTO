@@ -531,6 +531,7 @@ function ol_map() {
 			
 			var a = document.createElement('a');
 			// toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
+			document.body.appendChild("a");
 			a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
 			a.download = 'captura.jpg';
 			a.click();
