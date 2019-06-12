@@ -421,10 +421,7 @@ function ol_map() {
 			"EPSG:3857", "EPSG:3857"
 		);
 		
-		console.log("ARRAY: " + [parseFloat(js.minx),parseFloat(js.maxx),parseFloat(js.miny),parseFloat(js.maxy)]);
-		console.log("ARRAY LITERAL " + [ -8149293.741521936, -6378849.225655933, -7812129.881098088, -6226949.882287896 ]);
-		console.log("ARRAY LITERAL " + extent);
-		this.ol_object.getView().fit([parseFloat(js.minx),parseFloat(js.maxx),parseFloat(js.miny),parseFloat(js.maxy)],{size:this.ol_object.getSize()});
+		this.ol_object.getView().fit(js.geovisor_extent,{size:this.ol_object.getSize()});
 		//this.ol_object.getView().fit([ -8149293.741521936, -6378849.225655933, -7812129.881098088, -6226949.882287896 ],{size:this.ol_object.getSize()});
 		this.ol_object.updateSize();
 		this.ol_object.render();
