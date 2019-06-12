@@ -3,8 +3,8 @@
 include("./pgconfig.php");
 include("./tools.php");
 
-header("Content-Type: text/csv");
-header("Content-Disposition: attachment; filename=file.csv");
+//header("Content-Type: text/csv");
+//header("Content-Disposition: attachment; filename=file.csv");
 
 $q = $_POST["q"];
 
