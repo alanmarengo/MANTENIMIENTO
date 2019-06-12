@@ -242,6 +242,7 @@
 			
 			geomap.map.create();
 			geomap.map.createLayers();
+			geomap.map.createPrintLegendDiv();
 			
 			geomap.panel.start();
 			

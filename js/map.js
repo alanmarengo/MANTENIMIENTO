@@ -273,6 +273,15 @@ function ol_map() {
 			
 		}
 		
+		this.createPrintLegendDiv = function() {
+			
+			var div = document.createElement("div");
+				div.id = "print-legend-wrapper";
+			
+			document.getElementById("map").appendChild(div);
+			
+		}
+		
 	}
 		
 	this.map.setBaseLayer = function(layerObj) {
