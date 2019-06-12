@@ -422,7 +422,7 @@ function ol_map() {
 		);
 		
 		var array_literal = [parseFloat(js.minx),parseFloat(js.maxx),parseFloat(js.miny),parseFloat(js.maxy)];
-		var array_geovisor = geovisor_extent_string.split(",");
+		var array_geovisor = js.geovisor_extent_string.split(",");
 		
 		console.log("ANDANDO: " + array_literal);
 		console.log("GEOVISOR ARRAY: " + js.geovisor_extent);
