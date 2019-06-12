@@ -502,8 +502,10 @@ function ol_map() {
 		
 	}
 	
-	this.map.print = function() {
-		
+	this.map.print = function() {					
+			
+		$("#print-legend-wrapper").show();
+			
 		$(".layer-checkbox[data-added=1]:visible:checked").each(function(i,v) {
 			
 			$(v).parent().parent().next(".layer-body").children(".layer-legend").clone().appendTo("#print-legend-wrapper");
@@ -524,8 +526,6 @@ function ol_map() {
         });
 		
         this.ol_object.renderSync();*/
-		
-		
 
 		html2canvas(document.querySelector("#map")).then(canvas => {
 			
@@ -541,6 +541,7 @@ function ol_map() {
 			$(a).remove();
 			
 			$("#print-legend-wrapper").empty();
+			$("#print-legend-wrapper").hide();
 			
 		});
 
