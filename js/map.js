@@ -414,7 +414,7 @@ function ol_map() {
 			}
 			
 		}
-		var ext = ol.extent.boundingExtent([js.minx,js.miny,js.maxx,js.maxy]);
+		var ext = ol.extent.boundingExtent([js.minx,js.miny],[js.maxx,js.maxy]);
 		
 		var extent = ol.proj.transformExtent(
 			[js.minx,js.miny,js.maxx,js.maxy],
