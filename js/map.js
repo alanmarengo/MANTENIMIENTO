@@ -830,6 +830,8 @@ function ol_map() {
 		
 		draw.on('drawend', function (e) {
 			
+			$("#popup-preloader").show();
+			
 			var format = new ol.format.WKT();
 			
 			var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:3857', 'EPSG:4326'));		

@@ -1,5 +1,5 @@
 function DrawChart(wkt,layerVector,sourcePoints) {
-		
+	
 	$.getJSON('./php/CMD-get-mde.php?wkt='+wkt, function (data) {
 		
 		$("#popup-preloader").show();
