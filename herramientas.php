@@ -149,6 +149,7 @@
         </div>
     </div>
 </div>
+<?php include("./widget-links.php"); ?>
 
 <script type='text/javascript'>
 $(document).ready(function() {
