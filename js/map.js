@@ -414,10 +414,16 @@ function ol_map() {
 			}
 			
 		}
+		var ext = ol.extent.boundingExtent([js.minx,js.miny,js.maxx,js.maxy]);
+		
+		var extent = ol.proj.transformExtent(
+			[js.minx,js.miny,js.maxx,js.maxy],
+			"EPSG:3857", "EPSG:3857"
+		);
 		
 		this.ol_object.once("postrender",function() {			
 		
-			this.getView().fit([js.minx,js.miny,js.maxx,js.maxy],{duration:1000});
+			this.getView().fit([js.minx,js.miny,js.maxx,js.maxy],this.getSize(),{duration:1000});
 			this.updateSize();
 			this.render();
 			
