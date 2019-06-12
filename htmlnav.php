@@ -103,7 +103,7 @@
 							<a class="nav-link" href="#">Modelizaciones</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">PLAHE</a>
+							<a class="nav-link" href="http://plahe.com.ar">PLAHE</a>
 						</li>
 					</ul>
 				</div>
