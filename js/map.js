@@ -431,7 +431,7 @@ function ol_map() {
 		console.log("ARRAY FSTRING " + arra_geovisor_from_string);
 		console.log("ARRAY FSTRING PARSED " + arra_geovisor_from_string_parsed);
 		
-		this.ol_object.getView().fit(array_geovisor,{size:this.ol_object.getSize()});
+		this.ol_object.getView().fit(array_literal,{size:this.ol_object.getSize()});
 		//this.ol_object.getView().fit([ -8149293.741521936, -6378849.225655933, -7812129.881098088, -6226949.882287896 ],{size:this.ol_object.getSize()});
 		this.ol_object.updateSize();
 		this.ol_object.render();
