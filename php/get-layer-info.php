@@ -78,7 +78,7 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 	$html .= "<p>";
 	$html .= "<a ";
 	$html .= "class=\"popup-header-button popup-header-button-toggleable popup-header-button-active-fixed\"";
-	$html .= "href=\"./get-csv.php?q=\"".encrypt(str_replace("geom,","",$query_string2))."\" target=\"_blank\"";
+	$html .= "href=\"./csv.php?q=".encrypt(str_replace("geom,","",$query_string2))."\" target=\"_blank\"";
 	$html .= ">";
 	$html .= "<span>EXPORTAR TABLA</span>";
 	$html .= "</a>";
