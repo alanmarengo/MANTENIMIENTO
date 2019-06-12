@@ -1468,10 +1468,10 @@ function ol_map() {
 		$("#popup-drawing").height(300);
 		$("#popup-drawing").css("right","20px");
 		
-		//$("#popup-baselayers").width(nwidth/3);
+		$("#popup-baselayers").width(nwidth/3);
 		$("#popup-baselayers").height(400);
 		$("#info-baselayers").height(300);
-		//$("#popup-baselayers").css("right","20px");
+		$("#popup-baselayers").css("right","20px");
 		
 		$("#popup-buffer").width(nwidth/3);
 		$("#popup-buffer").height(400);
