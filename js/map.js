@@ -1476,7 +1476,6 @@ function ol_map() {
 		$("#popup-buffer").css("right","20px");
 		
 		$("#popup-preloader").width(nwidth/3);
-		$("#popup-preloader").height(400);
 		$("#popup-preloader").css("top","50%");
 		$("#popup-preloader").css("margin-top","-200px");
 		$("#popup-preloader").css("left","50%");
