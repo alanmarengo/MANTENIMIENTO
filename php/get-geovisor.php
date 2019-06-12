@@ -25,6 +25,7 @@ $json = "{";
 $json .= "\"geovisor_id\":$geovid,";
 $json .= "\"geovisor_desc\":\"" . $data["geovisor_desc"] . "\",";
 $json .= "\"geovisor_extent\":[" . $data["geovisor_extent"] . "],";
+$json .= "\"geovisor_extent_string\":\"" . $data["geovisor_extent"] . "\",";
 $json .= "\"minx\":\"" . $geoext[0] . "\",";
 $json .= "\"maxx\":\"" . $geoext[1] . "\",";
 $json .= "\"miny\":\"" . $geoext[2] . "\",";
