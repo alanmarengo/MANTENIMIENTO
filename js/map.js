@@ -414,24 +414,10 @@ function ol_map() {
 			}
 			
 		}
-		//var ext = ol.extent.boundingExtent([js.minx,js.miny],[js.maxx,js.maxy]);
 		
-		var extent = ol.proj.transformExtent(
-			[parseFloat(js.minx),parseFloat(js.miny),parseFloat(js.maxx),parseFloat(js.maxy)],
-			"EPSG:3857", "EPSG:3857"
-		);
+		var array_geovisor = [ js.minx, js.maxx, js.miny, js.maxy ];
 		
-		var array_geovisor = js.geovisor_extent;
-		var array_literal = [ -8149293.741521936, -6378849.225655933, -7812129.881098088, -6226949.882287896 ];
-		var arra_geovisor_from_string = [array_geovisor[0],array_geovisor[1],array_geovisor[2],array_geovisor[3]];
-		var arra_geovisor_from_string_parsed = [parseFloat(array_geovisor[0]),parseFloat(array_geovisor[1]),parseFloat(array_geovisor[2]),parseFloat(array_geovisor[3])];
-		
-		console.log("ARRAY GEOVISOR " + array_geovisor);
-		console.log("ARRAY LITERAL " + array_literal);
-		console.log("ARRAY FSTRING " + arra_geovisor_from_string);
-		console.log("ARRAY FSTRING PARSED " + arra_geovisor_from_string_parsed);
-		
-		this.ol_object.getView().fit(array_literal,{size:this.ol_object.getSize()});
+		this.ol_object.getView().fit(array_geovisor,{size:this.ol_object.getSize()});
 		//this.ol_object.getView().fit([ -8149293.741521936, -6378849.225655933, -7812129.881098088, -6226949.882287896 ],{size:this.ol_object.getSize()});
 		this.ol_object.updateSize();
 		this.ol_object.render();
