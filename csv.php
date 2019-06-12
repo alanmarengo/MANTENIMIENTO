@@ -14,8 +14,10 @@ $conn = pg_connect($string_conn);
 
 $query = pg_query($conn,decrypt($q));
 
-$csv = parseSQLToCSV($query);
+echo $query;
 
-echo $csv;
+//$csv = parseSQLToCSV($query);
+
+//echo $csv;
 
 ?>
