@@ -423,7 +423,7 @@ function ol_map() {
 		
 		this.ol_object.once("postrender",function() {			
 		
-			this.getView().fit(ext,this.getSize(),{duration:1000});
+			this.getView().fit(extent,this.getSize(),{duration:1000});
 			this.updateSize();
 			this.render();
 			
