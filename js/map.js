@@ -327,7 +327,7 @@ function ol_map() {
 			
 			async:false,
 			type:"POST",
-			url:SITEURL+"php/get-geovisor.php",
+			url:"./php/get-geovisor.php",
 			data:{geovid:geovid},
 			success:function(d){}
 			
@@ -608,7 +608,7 @@ function ol_map() {
 			
 			async:false,
 			type:"POST",
-			url:SITEURL+"php/get-coord-transformed.php",
+			url:"./php/get-coord-transformed.php",
 			data:{lon:lon,lat:lat},
 			success:function(d){}
 			
@@ -908,6 +908,24 @@ function ol_map() {
 	this.panel.map = this.map;
 	
 	this.panel.start = function() {
+		
+		$("#main-search").on("keyup",function(e) {
+			
+			if (e.which == 13) {
+				
+				var flink = document.createElement("a");
+					flink.setAttribute("target","_blank";
+					flink.href = "./mediateca.php?s="+this.value;
+				
+					document.body.appendChild(flink);
+					
+					flink.click();
+					
+					$(flink).remove();
+				
+			}
+			
+		});
 		
 		$(".default-empty-checkbox").each(function(i,v) {
 			
