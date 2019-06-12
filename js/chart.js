@@ -2,6 +2,8 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 		
 	$.getJSON('./php/CMD-get-mde.php?wkt='+wkt, function (data) {
 		
+		$("#popup-preloader").show();
+		
 		$("#perfil_topografico_min_max").html("<p>Altura Máxima: "+data.max+" Mts.</p><p>Altura Mínima: "+data.min + " Mts.")
 		
 		layerVector.points = data.points;
@@ -100,7 +102,10 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 					
 				}
 			}]
-		});
+		});	
+		
+		$("#popup-preloader").hide();
+		
 	});
 	
 	Highcharts.theme = {

@@ -444,6 +444,7 @@
 	<?php include("geovisor.popup-drawing.php"); ?>
 	<?php include("geovisor.popup-info.php"); ?>
 	<?php include("geovisor.popup-medicion.php"); ?>
+	<?php include("geovisor.popup-preloader.php"); ?>
 	<?php include("geovisor.popup-share.php"); ?>
 	
 	<?php include("html-flwindows-perfil-topografico.php"); ?>

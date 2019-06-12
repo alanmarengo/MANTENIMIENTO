@@ -1432,6 +1432,15 @@ function ol_map() {
 		$("#info-buffer").height(300);
 		$("#popup-buffer").css("right","20px");
 		
+		$("#popup-preloader").width(nwidth/3);
+		$("#popup-preloader").height(400);
+		$("#popup-preloader").css("top","50%");
+		$("#popup-preloader").css("margin-top","-200px");
+		$("#popup-preloader").css("left","50%");
+		$("#popup-preloader").css("margin-left","-" + ((nwidth/3)/2) + "px");
+		
+		$("#popup-buffer").css("right","20px");
+		
 		$("#info-wrapper").height(400);
 		
 	}
