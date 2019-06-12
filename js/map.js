@@ -9,6 +9,14 @@ function ol_map() {
 	
 	this.map.geovisor = -1;
 	
+	this.resize = function() {
+		
+		geomap.nav.start();
+		geomap.nav.reset();
+		geomap.container.fixSize([document.getElementById("nav-1"),document.getElementById("nav-2")]);
+		
+	}
+	
 	this.nav.start = function() {
 		
 		var docheight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
@@ -77,6 +85,52 @@ function ol_map() {
 		
 	}
 	
+	this.nav.reset = function() {
+		
+		var width_nav = $("#navbarNav").width();
+		
+		if (document.getElementById("navbarNav").getAttribute("data-state") == "0") {			
+			
+			$("#navbarNav").css({left:"-"+width_nav+"px"});
+			$("#page").css({left:"0px"});
+			
+			if (document.getElementById("panel-left")) {
+				
+				if ($("#panel-arrow-link").attr("data-state") == 0) {
+					
+					$("#panel-left").css({ left:"-370px" });
+					
+				}else{
+					
+					$("#panel-left").css({ left:"0px" });
+					
+				}
+				
+			}
+			
+		}else{
+			
+			$("#navbarNav").css({left:"0px"});
+			$("#page").css({left:width_nav+"px"});
+			
+			if (document.getElementById("panel-left")) {
+				
+				if ($("#panel-arrow-link").attr("data-state") == 0) {
+					
+					$("#panel-left").css({ left:(width_nav - 370) + "px" });
+					
+				}else{
+					
+					$("#panel-left").css({ left:width_nav + "px" });
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
 	this.container.div = document.getElementById("map");
 
 	this.container.fixSize = function(otherElements) {
@@ -101,7 +155,8 @@ function ol_map() {
 		
 		if (newHeight > oldHeight) {
 			$(this.div).height(newHeight);
-			$(".panel").height(newHeight+2);
+			$(".panel").height((newHeight+2)+8);
+			$("#map").height((newHeight+2)+8);
 			$(".panel").css("top",$(this.div).offset().top);
 		}
 		
@@ -135,7 +190,8 @@ function ol_map() {
 			type: 'base',
 			visible: false,
 			source: new ol.source.XYZ({
-				url: '//{a-c}.tile.opentopomap.org/{z}/{x}/{y}.png'
+				url: '//{a-c}.tile.opentopomap.org/{z}/{x}/{y}.png',
+				crossOrigin: 'anonymous'
 			})
 		})
 
@@ -144,14 +200,16 @@ function ol_map() {
 			key: 'AmqIEhx8ko1O3p1Npagu9_Egw7e8quBgM03p6_xdFqjSfJa6kWv_iUU2nO1htz1G',
 			imagerySet: 'Road',
 			culture: 'ar-ES',
-			visible:false
+			visible:false,
+			crossOrigin: 'anonymous'
 		})
 
 		this.baselayers.bing_roads = new ol.layer.Tile({
 			name:'bing_roads',
 			preload: Infinity,
 			source: this.baselayers.bingmaps,
-			visible:false
+			visible:false,
+			crossOrigin: 'anonymous'
 		})
 
 		this.baselayers.bing_aerials = new ol.layer.Tile({
@@ -160,7 +218,8 @@ function ol_map() {
 			visible:false,
 			source: new ol.source.BingMaps({
 				key: 'AmqIEhx8ko1O3p1Npagu9_Egw7e8quBgM03p6_xdFqjSfJa6kWv_iUU2nO1htz1G',
-				imagerySet: 'Aerial'
+				imagerySet: 'Aerial',
+				crossOrigin: 'anonymous'
 			})
 		})
 
@@ -168,7 +227,8 @@ function ol_map() {
 			name:'google_base',
 			visible:true,
 			source: new ol.source.TileImage({ 
-				url: 'http://mt{0-3}.googleapis.com/vt?&x={x}&y={y}&z={z}&hl=es&gl=AR'
+				url: 'http://mt{0-3}.googleapis.com/vt?&x={x}&y={y}&z={z}&hl=es&gl=AR',
+				crossOrigin: 'anonymous'
 			})
 		})
 		
@@ -272,6 +332,15 @@ function ol_map() {
 			
 		}
 		
+		this.createPrintLegendDiv = function() {
+			
+			var div = document.createElement("div");
+				div.id = "print-legend-wrapper";
+			
+			document.getElementById("map").appendChild(div);
+			
+		}
+		
 	}
 		
 	this.map.setBaseLayer = function(layerObj) {
@@ -312,7 +381,7 @@ function ol_map() {
 			
 			async:false,
 			type:"POST",
-			url:SITEURL+"php/get-geovisor.php",
+			url:"./php/get-geovisor.php",
 			data:{geovid:geovid},
 			success:function(d){}
 			
@@ -346,14 +415,10 @@ function ol_map() {
 			
 		}
 		
-		var extent = ol.proj.transformExtent(
-			[js.minx,js.miny,js.maxx,js.maxy],
-			"EPSG:3857", "EPSG:3857"
-		);
+		var array_geovisor = [ parseFloat(js.minx), parseFloat(js.maxx), parseFloat(js.miny), parseFloat(js.maxy) ];
 		
-		console.log(js);
-		
-		this.ol_object.getView().fit(extent,{duration:1000});
+		this.ol_object.getView().fit(array_geovisor,{size:this.ol_object.getSize()});
+		//this.ol_object.getView().fit([ -8149293.741521936, -6378849.225655933, -7812129.881098088, -6226949.882287896 ],{size:this.ol_object.getSize()});
 		this.ol_object.updateSize();
 		this.ol_object.render();
 		
@@ -435,33 +500,6 @@ function ol_map() {
 		
 	}
 	
-	this.map.exportCSV = function(node) {
-		
-		var query = node.getAttribute("data-q");
-		
-		var req = $.ajax({
-			
-			async:false,
-			url:"./php/get-csv.php",
-			type:"POST",
-			data:{q:query},
-			type:"post",
-			success:function(d){}
-			
-		});
-		
-		var flink = document.createElement("a");
-			flink.href = "./csv.php?csv="+req.responseText;
-			flink.target = "_blank";
-			
-		document.body.appendChild(flink);
-		
-			flink.click();
-		
-		$(flink).remove();
-		
-	}
-	
 	this.map.share = function() {
 		
 		var s_layers = [];
@@ -516,7 +554,15 @@ function ol_map() {
 		
 	}
 	
-	this.map.print = function() {
+	this.map.print = function() {					
+			
+		$("#print-legend-wrapper").show();
+			
+		$(".layer-checkbox[data-added=1]:visible:checked").each(function(i,v) {
+			
+			$(v).parent().parent().next(".layer-body").children(".layer-legend").clone().appendTo("#print-legend-wrapper");
+			
+		});/*
 		
 		this.ol_object.once('rendercomplete', function(event) {
 			
@@ -531,7 +577,27 @@ function ol_map() {
 			}
         });
 		
-        this.ol_object.renderSync();
+        this.ol_object.renderSync();*/
+
+		html2canvas(document.querySelector("#map")).then(canvas => {
+			
+			var a = document.createElement('a');
+			// toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
+			a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+			a.download = 'captura.jpg';
+			
+			document.body.appendChild(a);
+			
+			a.click();
+			
+			$(a).remove();
+			
+			$("#print-legend-wrapper").empty();
+			$("#print-legend-wrapper").hide();
+			
+		});
+
+
 		
 	}
 	
@@ -594,7 +660,7 @@ function ol_map() {
 			
 			async:false,
 			type:"POST",
-			url:SITEURL+"php/get-coord-transformed.php",
+			url:"./php/get-coord-transformed.php",
 			data:{lon:lon,lat:lat},
 			success:function(d){}
 			
@@ -856,6 +922,8 @@ function ol_map() {
 		});
 		
 		draw.on('drawend', function (e) {
+			
+			$("#popup-preloader").show();
 			
 			var format = new ol.format.WKT();
 			
@@ -1235,6 +1303,8 @@ function ol_map() {
 			document.getElementById("layer-checkbox-"+layer_id).layer.colorpicker = true;
 			$("#layer-colorpicker-inner-"+layer_id).ColorPicker({flat: true, width:"100%"});
 			
+			$("#layer-legend-"+layer_id).html("<img src=\"" + layer_wms + "&version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer="+layer_name+"&format=image/png&STYLE=default\" width=\"120\">");
+			
 		}
 		
 		$("#transp-value-"+layer_id).val(100+"%");
@@ -1435,7 +1505,10 @@ function ol_map() {
 		
 		$("#popup-coordinates").width(nwidth/3);
 		$("#popup-coordinates").height(210);
-		$("#popup-coordinates").css("right","20px");
+		$("#popup-coordinates").css("right","60px");
+		$("#popup-coordinates").css("bottom","53px");
+		$("#popup-coordinates").css("top","auto");
+		$("#popup-coordinates").css("left","auto");
 		
 		$("#popup-info").width(nwidth/3);
 		$("#popup-info").height(400);
@@ -1457,6 +1530,17 @@ function ol_map() {
 		$("#popup-buffer").width(nwidth/3);
 		$("#popup-buffer").height(400);
 		$("#info-buffer").height(300);
+		$("#popup-buffer").css("right","20px");
+		
+		$("#popup-preloader").width(nwidth/3);
+		$("#popup-preloader").css("top","50%");
+		$("#popup-preloader").css("margin-top","-200px");
+		$("#popup-preloader").css("left","50%");
+		$("#popup-preloader").css("margin-left","-" + ((nwidth/3)/2) + "px");
+		
+		$("#print-legend-wrapper").width(nwidth/3);
+		$("#print-legend-wrapper").height(300);
+		
 		$("#popup-buffer").css("right","20px");
 		
 		$("#info-wrapper").height(400);

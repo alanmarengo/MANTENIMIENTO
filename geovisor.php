@@ -204,6 +204,7 @@
 	<script src="https://code.highcharts.com/highcharts-more.js"></script>
 	<script src="https://code.highcharts.com/modules/funnel.js"></script>
 	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 	
 	<script src="./js/perfect-scrollbar.js"></script>
 	<script src="./js/bootstrap-select.js"></script>
@@ -219,7 +220,7 @@
 	<script src="./js/chart.js" type="text/javascript"></script>
 	<script src="./js/config.js" type="text/javascript"></script>
 	<script src="./js/map.js" type="text/javascript"></script>
-	<script src="./js/site.js" type="text/javascript"></script>
+	<script src="./js/site.geovisor.js" type="text/javascript"></script>
 	<script src="./js/scrollbars.js" type="text/javascript"></script>
 	<script src="./js/widget-links.js" type="text/javascript"></script>
 	<script src="./js/flwindows.js" type="text/javascript"></script>
@@ -242,6 +243,7 @@
 			
 			geomap.map.create();
 			geomap.map.createLayers();
+			geomap.map.createPrintLegendDiv();
 			
 			geomap.panel.start();
 			
@@ -294,7 +296,7 @@
 			
 			<?php } ?>
 			
-			
+			window.addEventListener("resize",geomap.resize);
 			
 		});
 		
@@ -444,6 +446,7 @@
 	<?php include("geovisor.popup-drawing.php"); ?>
 	<?php include("geovisor.popup-info.php"); ?>
 	<?php include("geovisor.popup-medicion.php"); ?>
+	<?php include("geovisor.popup-preloader.php"); ?>
 	<?php include("geovisor.popup-share.php"); ?>
 	
 	<?php include("html-flwindows-perfil-topografico.php"); ?>

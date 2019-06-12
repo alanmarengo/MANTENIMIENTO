@@ -11,7 +11,7 @@ function parseSQLToCSV($recordset)
   			//$json.= '"columnas":[';
 			
 			$bannedIndexes = array();
-			$bannedFields = array("geom");
+			$bannedFields = array("id","geom");
 			
   			for ($index = 0; $index < $TotalColum; $index++) 
   			{
@@ -24,14 +24,16 @@ function parseSQLToCSV($recordset)
 					if (in_array($bannedFields[$j],$fieldname)) {
 						
 						array_push($bannedIndexes,$index);
-						$banned = true;
-						break;
 						
 					}
 					
 				}
 				
-				if (!$banned) { $json.= "\"".$fieldname."\""; }
+				if (!in_array($bannedIndexes,$index)) {
+					
+					$json.= "\"".$fieldname."\"";
+						
+				}
 				
   			};
   			

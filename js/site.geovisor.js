@@ -9,8 +9,19 @@ $(document).ready(function() {
 
     $('#main-search').on('keypress', function(e) {
         if (e.which == 13) {
-            let url = "./mediateca.php?s=" + $(this).val();
-            window.location.replace(url);
+			
+			var flink = document.createElement("a");
+				flink.setAttribute("target","_blank");
+				flink.href = "./mediateca.php?s="+this.value;
+				flink.id = "flink-search";
+				flink.className = "flink";
+			
+				document.body.appendChild(flink);
+				
+				flink.click();
+				
+				$(flink).remove();
+				
         }
     });
 });

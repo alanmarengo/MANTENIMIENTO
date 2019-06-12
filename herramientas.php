@@ -9,13 +9,13 @@
         <div class="col-md-12 page-section-2 section-sticky">
             <div class="row">
                 <div class="col-md-4">
-                    <a data-target="#mapas" href="#" class="btn btn-dark btn-block">MAPAS Y VISORES</a>
+                    <a id="link-mapas" data-target="#mapas" href="#" class="btn btn-dark btn-block">MAPAS Y VISORES</a>
                 </div>
                 <div class="col-md-4">
-                    <a data-target="#visores" href="#" class="btn btn-dark btn-block">GEOVISORES</a>
+                    <a id="link-visores" data-target="#visores" href="#" class="btn btn-dark btn-block">GEOVISORES</a>
                 </div>
                 <div class="col-md-4">
-                    <a data-target="#servicios" href="#" class="btn btn-dark btn-block">GEOSERVICIOS</a>
+                    <a id="link-servicios" data-target="#servicios" href="#" class="btn btn-dark btn-block">GEOSERVICIOS</a>
                 </div>
             </div>
         </div>
@@ -149,30 +149,26 @@
         </div>
     </div>
 </div>
+<?php include("./widget-links.php"); ?>
 
 <script type='text/javascript'>
 $(document).ready(function() {
     $('.section-sticky a').on('click', function() {
-        //$('.section-sticky a').removeClass('btn-dark');
-        //$('.section-sticky a').addClass('btn-dark');
-        //$('.section-sticky a').removeClass('btn-warning');
-        //$(this).removeClass('btn-dark');
-        //$(this).addClass('btn-warning');
-        
-        //TODO: COPIADO DE LINK A PORTAPAPELES
-        //...
-
+        let selector = $(this).data('target');
         $('html, body').animate({
-            scrollTop: $($(this).data('target')).offset().top - 80
+            scrollTop: $(selector).offset().top - 80
         }, 500)
     });
-
+    
     $('.box').on('click', function() {
         let href = $(this).attr('href');
         if (href)
             window.location.replace(href);
-
     });
+
+    let target = $.urlParam('target');
+    if (target)
+        $('#link-' + target).trigger('click');
 
 });
 </script>
