@@ -921,7 +921,7 @@ function ol_map() {
 					
 					flink.click();
 					
-					$(flink).remove();
+				//	$(flink).remove();
 				
 			}
 			
