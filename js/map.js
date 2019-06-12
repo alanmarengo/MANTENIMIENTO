@@ -421,13 +421,17 @@ function ol_map() {
 			"EPSG:3857", "EPSG:3857"
 		);
 		
-		this.ol_object.once("postrender",function() {			
+		this.ol_object.getView().fit(ext,this.ol_object.getSize(),{duration:1000});
+		this.ol_object.updateSize();
+		this.ol_object.render();
+			
+		/*this.ol_object.once("postrender",function() {			
 		
 			this.getView().fit(extent,this.getSize(),{duration:1000});
 			this.updateSize();
 			this.render();
 			
-		});
+		});*/
 		
 	}
 	
