@@ -914,7 +914,7 @@ function ol_map() {
 			if (e.which == 13) {
 				
 				var flink = document.createElement("a");
-					flink.setAttribute("target","_blank";
+					flink.setAttribute("target","_blank");
 					flink.href = "./mediateca.php?s="+this.value;
 				
 					document.body.appendChild(flink);
