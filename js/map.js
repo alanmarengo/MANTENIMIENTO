@@ -420,12 +420,13 @@ function ol_map() {
 			"EPSG:3857", "EPSG:3857"
 		);
 		
-		this.ol_object.getView().fit(extent,{duration:1000});
+		this.ol_object.once("postrender",function() {			
 		
-		this.ol_object.on("zoomend",function() {
-			
+			this.ol_object.getView().fit(extent,{duration:1000});
 			this.updateSize();
 			this.render();			
+			
+			alert("postrender");
 			
 		});
 		
