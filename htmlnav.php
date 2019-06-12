@@ -43,7 +43,7 @@
 							<a class="nav-link" href="#">Visor de Higiene y Seguridad (restringido)</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="./herramientas?area=3">Geoservicios y catálogo de metadatos</a>
+							<a class="nav-link" href="./herramientas?target=servicios">Geoservicios y catálogo de metadatos</a>
 						</li>
 					</ul>
 				</div>
