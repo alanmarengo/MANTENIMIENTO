@@ -916,10 +916,12 @@ function ol_map() {
 				var flink = document.createElement("a");
 					flink.setAttribute("target","_blank");
 					flink.href = "./mediateca.php?s="+this.value;
+					flink.id = "flink-search";
+					flink.className = "flink";
 				
 					document.body.appendChild(flink);
 					
-					flink.click();
+				//	flink.click();
 					
 				//	$(flink).remove();
 				
