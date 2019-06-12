@@ -456,7 +456,7 @@ function ol_map() {
 			
 		document.body.appendChild(flink);
 		
-			flink.click();
+			//flink.click();
 		
 		//$(flink).remove();
 		
