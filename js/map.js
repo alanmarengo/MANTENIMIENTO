@@ -414,24 +414,24 @@ function ol_map() {
 			}
 			
 		}
-		var ext = ol.extent.boundingExtent([js.minx,js.miny],[js.maxx,js.maxy]);
+		/*var ext = ol.extent.boundingExtent([js.minx,js.miny],[js.maxx,js.maxy]);
 		
 		var extent = ol.proj.transformExtent(
 			[js.minx,js.miny,js.maxx,js.maxy],
 			"EPSG:3857", "EPSG:3857"
 		);
-		
-		this.ol_object.getView().fit(extent,{size:this.ol_object.getSize()});
+		*/
+	/*	this.ol_object.getView().fit([js.minx,js.miny,js.maxx,js.maxy],{size:this.ol_object.getSize()});
 		this.ol_object.updateSize();
-		this.ol_object.render();
+		this.ol_object.render();*/
 			
-		/*this.ol_object.once("postrender",function() {			
+		this.ol_object.once("postcompose",function() {			
 		
-			this.getView().fit(extent,this.getSize(),{duration:1000});
+			this.getView().fit([js.minx,js.miny,js.maxx,js.maxy],{size:this.getSize()});
 			this.updateSize();
 			this.render();
 			
-		});*/
+		});
 		
 	}
 	
