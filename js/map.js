@@ -9,6 +9,14 @@ function ol_map() {
 	
 	this.map.geovisor = -1;
 	
+	this.resize = function() {
+		
+		geomap.nav.start();
+		geomap.nav.reset();
+		geomap.container.fixSize([document.getElementById("nav-1"),document.getElementById("nav-2")]);
+		
+	}
+	
 	this.nav.start = function() {
 		
 		var docheight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
@@ -68,6 +76,50 @@ function ol_map() {
 				}else{
 					
 					$("#panel-left").animate({ left:"0px" });
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	this.nav.reset = function() {
+		
+		if (document.getElementById("navbarNav").getAttribute("data-state") == "0") {			
+			
+			$("#navbarNav").animate({left:"-"+width_nav+"px"},700);
+			$("#page").animate({left:"0px"},700);
+			
+			if (document.getElementById("panel-left")) {
+				
+				if ($("#panel-arrow-link").attr("data-state") == 0) {
+					
+					$("#panel-left").animate({ left:"-370px" });
+					
+				}else{
+					
+					$("#panel-left").animate({ left:"0px" });
+					
+				}
+				
+			}
+			
+		}else{
+			
+			$("#navbarNav").animate({left:"0px"},700);
+			$("#page").animate({left:width_nav+"px"},700);
+			
+			if (document.getElementById("panel-left")) {
+				
+				if ($("#panel-arrow-link").attr("data-state") == 0) {
+					
+					$("#panel-left").animate({ left:(width_nav - 370) + "px" });
+					
+				}else{
+					
+					$("#panel-left").animate({ left:width_nav + "px" });
 					
 				}
 				
