@@ -540,6 +540,8 @@ function ol_map() {
 			
 			$(a).remove();
 			
+			$("#print-legend-wrapper").empty();
+			
 		});
 
 
