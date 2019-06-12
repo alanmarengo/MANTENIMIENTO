@@ -501,6 +501,12 @@ function ol_map() {
 	
 	this.map.print = function() {
 		
+		$(".layer-checkbox[data-added=1]:visible:checked").each(function(i,v) {
+			
+			$(v).parent().parent().next(".layer-body").children(".layer-legend").clone().appendTo("#print-legend-wrapper");
+			
+		});
+		
 		this.ol_object.once('rendercomplete', function(event) {
 			
 			var canvas = event.context.canvas;
