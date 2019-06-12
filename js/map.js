@@ -451,13 +451,14 @@ function ol_map() {
 		});
 		
 		var flink = document.createElement("a");
+			flink.id="csv-btn";
 			flink.href = "./csv.php?csv="+req.responseText;
 			
 		document.body.appendChild(flink);
 		
 			flink.click();
 		
-		$(flink).remove();
+		//$(flink).remove();
 		
 	}
 	
