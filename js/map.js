@@ -415,18 +415,11 @@ function ol_map() {
 			
 		}
 		
-		var extent = ol.proj.transformExtent(
-			[js.minx,js.miny,js.maxx,js.maxy],
-			"EPSG:3857", "EPSG:3857"
-		);
-		
 		this.ol_object.once("postrender",function() {			
 		
-			this.getView().fit(extent,{duration:1000});
+			this.getView().fit([js.minx,js.miny,js.maxx,js.maxy],{duration:1000});
 			this.updateSize();
-			this.render();			
-			
-			alert("postrender");
+			this.render();
 			
 		});
 		
