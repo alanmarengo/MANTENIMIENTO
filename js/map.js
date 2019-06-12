@@ -421,7 +421,7 @@ function ol_map() {
 			"EPSG:3857", "EPSG:3857"
 		);
 		
-		this.ol_object.getView().fit(extent,{size:this.ol_object.getSize(),duration:1000});
+		this.ol_object.getView().fit(ext,{size:this.ol_object.getSize(),duration:1000});
 		this.ol_object.updateSize();
 		this.ol_object.render();
 			
