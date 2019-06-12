@@ -1471,7 +1471,10 @@ function ol_map() {
 		
 		$("#popup-coordinates").width(nwidth/3);
 		$("#popup-coordinates").height(210);
-		$("#popup-coordinates").css("right","20px");
+		$("#popup-coordinates").css("right","60px");
+		$("#popup-coordinates").css("bottom","53px");
+		$("#popup-coordinates").css("top","auto");
+		$("#popup-coordinates").css("left","auto");
 		
 		$("#popup-info").width(nwidth/3);
 		$("#popup-info").height(400);
