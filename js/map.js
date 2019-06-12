@@ -87,6 +87,8 @@ function ol_map() {
 	
 	this.nav.reset = function() {
 		
+		var width_nav = $("#navbarNav").width();
+		
 		if (document.getElementById("navbarNav").getAttribute("data-state") == "0") {			
 			
 			$("#navbarNav").animate({left:"-"+width_nav+"px"},700);
