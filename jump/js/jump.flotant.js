@@ -33,6 +33,12 @@ Jump.flotant = function() {
 			
 		});
 		
+		$(".jump-flotant-heightfill-top").each(function(i,v) {
+			
+			$(v).css("top",ruleTotalHeight+"px");
+			
+		});
+		
 	}
 	
 	this.fitWidth = function() {

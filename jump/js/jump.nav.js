@@ -29,6 +29,8 @@ Jump.nav = function() {
 			"line-height":height+"px"
 		});
 		
+		Jump.Document.linksHeight = height;
+		
 	}
 	
 }

@@ -23,9 +23,9 @@
 #jump-hamburguer span {
   display: block;
   position: absolute;
-  height: 5px;
+  height: 3px;
   width: 100%;
-  background: #FFFFFF;
+  background: #31cbfd;
   border-radius: 6px;
   opacity: 1;
   left: 0;
