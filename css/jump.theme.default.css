@@ -44,12 +44,12 @@ a:hover {
 	
 	min-height:68px !Important;
 	height:auto !Important;
+	background-color:#333333;
 	
 }
 
 .jump-nav-default li a {
 	
-	background-color:#464542;
 	color:#FFFFFF;
 	text-decoration:none;
 	font-size:11px;
