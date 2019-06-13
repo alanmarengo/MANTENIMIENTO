@@ -37,6 +37,7 @@
 <link rel="stylesheet" href="./css/jump.scroll.css"/>
 <link rel="stylesheet" href="./css/jump.separator.css"/>
 <link rel="stylesheet" href="./css/jump.site.css"/>
+<link rel="stylesheet" href="./css/jump.submenu.css"/>
 <link rel="stylesheet" href="./css/jump.window.css"/>
 
 <!-- JUMP CSS AUX -->
@@ -58,7 +59,6 @@
 
 <!-- BOOTSTRAP + LIBS -->	
 <script type="text/javascript" src="./js/bootstrap.min.js"></script>
-<script src="./js/bootstrap.bundle.min.js"></script>
 <script src="./js/bootstrap-datepicker.min.js"></script>
 <script src="./js/bootstrap-datepicker.es.min.js"></script>
 <script src="./js/bootstrap-select.js"></script>
@@ -79,4 +79,5 @@
 <script src="./js/jump.input.js"></script>
 <script src="./js/jump.nav.js"></script>
 <script src="./js/jump.scroll.js"></script>
+<script src="./js/jump.submenu.js"></script>
 <script src="./js/jump.window.js"></script>

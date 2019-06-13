@@ -30,7 +30,7 @@
   display: block;
   position: absolute;
   height: 3px;
-  width: 100%;
+  width: 80%;
   background: #31cbfd;
   border-radius: 6px;
   opacity: 1;
@@ -46,7 +46,7 @@
 }
 
 #jump-hamburguer span:nth-child(1) {
-  top: 6px;
+  top: 8px;
 }
 
 #jump-hamburguer span:nth-child(2) {
@@ -54,7 +54,7 @@
 }
 
 #jump-hamburguer span:nth-child(3) {
-  top: 36px;
+  top: 34px;
 }
 
 #jump-hamburguer.open span:nth-child(1) {

@@ -119,14 +119,15 @@ a:hover {
 	
 	background-color:#4a4849;
 	border-radius:3px;
-	
-}
-
-.jump-block-inner-toolbar .button:hover {
-	
 	color:#31cbfd;
 	
 }
+
+/*.jump-block-inner-toolbar .button:hover {
+	
+	color:#31cbfd;
+	
+}*/
 
 /*** INPUT ***/
 
@@ -154,5 +155,31 @@ a:hover {
 	
 	color:#FFFFFF;
 	text-decoration:none;
+	
+}
+
+/***  DROPDOWN ***/
+
+.dropdown-menu {
+	
+	background-color:RGBA(33,33,33,0.6);
+	border:none;
+	border-radius:0;
+	padding:0;
+	
+}
+
+.dropdown-item {
+	
+	color:#FFFFFF;
+	font-size:12px;
+	
+}
+
+.dropdown-item:hover {
+	
+	background-color:#31cbfd;
+	color:#FFFFFF;
+	font-size:12px;
 	
 }
