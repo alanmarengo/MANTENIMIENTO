@@ -11,20 +11,21 @@ Jump.block = function() {
 			
 			$(v).css({"margin":margin});
 			
-			console.log("((" + blockHeight + " - " + innerElementHeight + ") / 2))");
-			console.log(margin);
-			
 		});
 		
 		$(".jump-block-inner-toolbar").each(function(i,v) {
 			
-			var innerElementHeight = $(v).attr("data-height");			
+			var innerElementHeight = $(v).height();			
 			var blockHeight = $(v).closest(".jump-navbar").height();			
 			
 			var margin = ((blockHeight - innerElementHeight) / 2);
 			
-			$(v).css({"margin":margin,"height":innerElementHeight+"px"});
+			$(v).css({"margin":margin});
 			
+			$(v).find(".button").css({ "width":innerElementHeight+"px","height":innerElementHeight+"px","line-height":innerElementHeight+"px" });
+			$(v).find(".button").parent().css({ "width":innerElementHeight+"px","height":innerElementHeight+"px","line-height":innerElementHeight+"px" });
+			$(v).find(".input").css({ "height":innerElementHeight,"line-height":innerElementHeight});
+		
 		});
 		
 	}

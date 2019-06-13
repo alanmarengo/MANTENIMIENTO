@@ -1,10 +1,13 @@
-.jump-fa-button {
+.jump-block-inner-toolbar .button {
 
-	line-height:17px;
-	height:36px; /*** LINK WITH jump-block-inner-toolbar[DATA-HEIGHT] ***/
-	width:44px;
 	text-align:center;
-	padding:10px;
 	display:inline-block;
+
+}
+
+.jump-block-inner-toolbar .input {
+
+	/*width:auto;
+	display:inline-block;*/
 
 }

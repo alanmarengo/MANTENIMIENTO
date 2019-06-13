@@ -150,22 +150,24 @@
 			
 			<div class="jump-block">
 			
-				<div class="jump-block-inner-toolbar" data-height="36">
+				<div class="jump-block-inner-toolbar">
 				
 					<ul>
 						<li>
-							<a href="#" class="jump-fa-button">
+							<a href="#" class="button">
 								<i class="fa fa-search"></i>
 							</a>							
-							<input id="main-search" class="jump-input jump-input-bl pl-10 ml-10" name="main-search" type="text" placeholder="Buscar en todo el sitio">
+						</li>
+						<li>								
+							<input id="main-search" class="jump-input jump-input-bl pl-10 ml-10" name="main-search" type="text" placeholder="Buscar en todo el sitio">				
 						</li>
 						<li>
-							<a href="#" class="jump-fa-button">
+							<a href="#" class="button">
 								<i class="fa fa-question-circle"></i>
 							</a>
 						</li>
 						<li>
-							<a href="#" class="jump-fa-button">
+							<a href="#" class="button">
 								<i class="fa fa-user"></i>
 							</a>
 						</li>
