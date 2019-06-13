@@ -140,7 +140,7 @@
 		
 		</div>
 		
-		<div class="jump-container">
+		<div class="jump-container jump-flotant-heightfill-top jump-posabs">
 		
 			<?php include("./html.mediateca.php"); ?>
 			<?php include("./html.site.footer.php"); ?>
