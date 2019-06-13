@@ -42,6 +42,17 @@
 	
 	<link rel="stylesheet" href="./css/jump.theme.default.css"/>
 	
+	<!-- INDEX SCRIPTS -->
+	
+	<link rel="stylesheet" href="../css/site.css"/>
+    <script src="../js/moment.js"></script>
+    <script src="../js/site.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css">
+    <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+	
+	<!-------------------->
+	
 	<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="./js/popper-1.12.9.min.js"></script>
 	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
@@ -61,6 +72,7 @@
 	<script src="./js/jump.js"></script>
 	<script src="./js/jump.block.js"></script>
 	<script src="./js/jump.flotant.js"></script>
+	<script src="./js/jump.input.js"></script>
 	<script src="./js/jump.nav.js"></script>
 	<script src="./js/jump.scroll.js"></script>
 	<script src="./js/jump.window.js"></script>
@@ -117,6 +129,11 @@
 			scroll = new Jump.scroll();
 			scroll.refresh();
 			
+			/*** INPUT ***/
+			
+			jinput = new Jump.input();
+			jinput.initialize();
+			
 		});
 		
 	</script>
@@ -130,7 +147,7 @@
 		
 			<div class="row">
 		
-				<div class="col col-xs-1">
+				<div class="col col-xs-2 col-sm-2 col-md-1 col-lg-1 jump-hamburguer-col">
 			
 					<div class="jump-hamburguer plr-10">
 					
@@ -144,7 +161,7 @@
 					
 				</div>
 				
-				<div class="col col-xs-11 col-sm-11 col-md-3 col-lg-3">
+				<div class="col col-xs-10 col-sm-10 col-md-3 col-lg-3" id="brand-logo">
 					
 					<div class="jump-block">
 					
@@ -165,13 +182,11 @@
 						<div class="jump-block-inner-toolbar">
 						
 							<ul>
-								<li>
-									<a href="#" class="button">
+								<li class="button-input-group">
+									<a href="#" class="button button-input">
 										<i class="fa fa-search"></i>
-									</a>							
-								</li>
-								<li>								
-									<input id="main-search" class="jump-input jump-input-bl pl-10 ml-10" name="main-search" type="text" placeholder="Buscar en todo el sitio">				
+									</a>
+									<input id="main-search" class="jump-input jump-input-bl pl-10" name="main-search" type="text" data-jump-placeholder="Buscar en todo el sitio" placeholder="Buscar en todo el sitio">							
 								</li>
 								<li>
 									<a href="#" class="button">
@@ -195,6 +210,12 @@
 			</div>
 		
 		</div>
+		
+		<div class="jump-container">
+		
+			<?php include("./html.site.php"); ?>
+		
+		</div>
 	
 	</div>
 	
@@ -202,7 +223,7 @@
 	
 		<div class="jump-nav-default jump-nav-inner">
 		
-			<?php include("htmlnav.php"); ?>
+			<?php include("html.nav.php"); ?>
 		
 		</div>
 	
@@ -212,7 +233,7 @@
 	
 		<div class="jump-nav-default jump-nav-inner">
 		
-			<?php include("htmlnav.geovisores.php"); ?>
+			<?php include("html.nav.geovisores.php"); ?>
 		
 		</div>
 	
@@ -222,7 +243,7 @@
 	
 		<div class="jump-nav-default jump-nav-inner">
 		
-			<?php include("htmlnav.vinculaciones_insterinstitucionales.php"); ?>
+			<?php include("html.nav.vinculaciones_insterinstitucionales.php"); ?>
 		
 		</div>
 	
@@ -232,79 +253,13 @@
 	
 		<div class="jump-nav-default jump-nav-inner">
 		
-			<?php include("htmlnav.recursos_hidricos.php"); ?>
+			<?php include("html.nav.recursos_hidricos.php"); ?>
 		
 		</div>
 	
 	</div>
 	
-	<div class="jump-window jump-align-right jump-flotant-heightfill-top col col-xs-12 col-sm-12-col-md-3 col-lg-3">
-	
-		<div class="jump-window-inner p20">
-	
-			<div class="jump-window-header">
-				<span>Capa Base</span>
-				<a href="#" class="jump-window-close">
-					<i class="fas fa-times"></i>
-				</a>
-			</div>
-			
-			<div class="jump-window-body p20">
-				
-				<div id="info-baselayers" class="jump-scrollble">
-			
-					<div class="pretty p-default p-round" style="font-size:20px;">
-						<input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.openstreets);">
-						<div class="state">
-							<label>Openstreets Maps</label>
-						</div>
-					</div>
-					
-					<br>
-				
-					<div class="pretty p-default p-round" style="font-size:20px;">
-						<input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.opentopo);">
-						<div class="state">
-							<label>Open Topo</label>
-						</div>
-					</div>
-					
-					<br>
-				
-					<div class="pretty p-default p-round" style="font-size:20px;">
-						<input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_roads);">
-						<div class="state">
-							<label>Bing Caminos</label>
-						</div>
-					</div>
-					
-					<br>
-				
-					<div class="pretty p-default p-round" style="font-size:20px;">
-						<input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
-						<div class="state">
-							<label>Bing Satelital</label>
-						</div>
-					</div>
-					
-					<br>
-				
-					<div class="pretty p-default p-round" style="font-size:20px;">
-						<input type="radio" name="radio-baselayers" id="baselayer-default-radio" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.google);">
-						<div class="state">
-							<label>Google Maps</label>
-						</div>
-					</div>
-					
-					<br>
-				
-				</div>
-				
-			</div>
-		
-		</div>
-	
-	</div>
+	<?php //include("./popup.baselayers.php"); ?>
 
 </body>
 </html>
