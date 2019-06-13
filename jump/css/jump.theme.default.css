@@ -23,11 +23,18 @@ a:hover {
 	
 }
 
+.row {
+	
+	width:100% !Important;
+	
+}
+
 /*** NAV ***/
 
 #jump-navbar-main {
 	
-	height:68px !Important;
+	min-height:68px !Important;
+	height:auto !Important;
 	
 }
 

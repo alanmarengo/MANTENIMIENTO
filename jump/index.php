@@ -47,10 +47,10 @@
 	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="./js/jquery-ui/jquery-ui.min.js"></script>	
 
-	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<!--<script src="https://code.highcharts.com/highcharts.js"></script>
 	<script src="https://code.highcharts.com/highcharts-more.js"></script>
 	<script src="https://code.highcharts.com/modules/funnel.js"></script>
-	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>-->
 	
 	<script src="https://kit.fontawesome.com/9bc67720de.js"></script>
 	
@@ -128,51 +128,67 @@
 	
 		<div class="jump-navbar" id="jump-navbar-main">
 		
-			<div class="jump-hamburguer plr-10">
+			<div class="row">
+		
+				<div class="col col-xs-12 col-sm-12 col-md-1 col-lg-1">
 			
-				<div id="jump-hamburguer">
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
-			
-			</div>
-			
-			<div class="jump-block">
-			
-				<div class="jump-block-inner">
-				
-					<img src="./images/logo_observatorio_ieasa.png" height="20">
-				
-				</div>
-			
-			</div>
-			
-			<div class="jump-block">
-			
-				<div class="jump-block-inner-toolbar">
-				
-					<ul>
-						<li>
-							<a href="#" class="button">
-								<i class="fa fa-search"></i>
-							</a>							
-						</li>
-						<li>								
-							<input id="main-search" class="jump-input jump-input-bl pl-10 ml-10" name="main-search" type="text" placeholder="Buscar en todo el sitio">				
-						</li>
-						<li>
-							<a href="#" class="button">
-								<i class="fa fa-question-circle"></i>
-							</a>
-						</li>
-						<li>
-							<a href="#" class="button">
-								<i class="fa fa-user"></i>
-							</a>
-						</li>
+					<div class="jump-hamburguer plr-10">
 					
-					</ul>
+						<div id="jump-hamburguer">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					
+					</div>
+					
+				</div>
+				
+				<div class="col col-xs-12 col-sm-12 col-md-3 col-lg-3">
+					
+					<div class="jump-block">
+					
+						<div class="jump-block-inner">
+						
+							<img src="./images/logo_observatorio_ieasa.png" height="20">
+						
+						</div>
+					
+					</div>
+				
+				</div>
+				
+				<div class="col col-xs-12 col-sm-12 col-md-8 col-lg-8">
+				
+					<div class="jump-block">
+					
+						<div class="jump-block-inner-toolbar">
+						
+							<ul>
+								<li>
+									<a href="#" class="button">
+										<i class="fa fa-search"></i>
+									</a>							
+								</li>
+								<li>								
+									<input id="main-search" class="jump-input jump-input-bl pl-10 ml-10" name="main-search" type="text" placeholder="Buscar en todo el sitio">				
+								</li>
+								<li>
+									<a href="#" class="button">
+										<i class="fa fa-question-circle"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="button">
+										<i class="fa fa-user"></i>
+									</a>
+								</li>
+							
+							</ul>
+						
+						</div>
+					
+					</div>
 				
 				</div>
 			
