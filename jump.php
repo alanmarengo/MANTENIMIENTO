@@ -231,7 +231,7 @@
 	
 	</div>
 	
-	<div class="jump-flotant-heightfill jump-flotant-nav jump-scroll jump-flotant-nav-level-2 col col-xs-12 col-sm-12-col-md-3 col-lg-3" data-visible="0" id="nav-geovisores">
+	<div class="jump-flotant-heightfill jump-flotant-nav jump-scroll jump-posfix jump-flotant-nav-level-2 col col-xs-12 col-sm-12-col-md-3 col-lg-3" data-visible="0" id="nav-geovisores">
 	
 		<div class="jump-nav-default jump-nav-inner">
 		
@@ -241,7 +241,7 @@
 	
 	</div>
 	
-	<div class="jump-flotant-heightfill jump-flotant-nav jump-scroll jump-flotant-nav-level-2 col col-xs-12 col-sm-12-col-md-3 col-lg-3" data-visible="0" id="nav-vinculaciones-insterinstitucionales">
+	<div class="jump-flotant-heightfill jump-flotant-nav jump-scroll jump-posfix jump-flotant-nav-level-2 col col-xs-12 col-sm-12-col-md-3 col-lg-3" data-visible="0" id="nav-vinculaciones-insterinstitucionales">
 	
 		<div class="jump-nav-default jump-nav-inner">
 		
@@ -251,7 +251,7 @@
 	
 	</div>
 	
-	<div class="jump-flotant-heightfill jump-flotant-nav jump-scroll jump-flotant-nav-level-2 col col-xs-12 col-sm-12-col-md-3 col-lg-3" data-visible="0" id="nav-recursos-hidricos">
+	<div class="jump-flotant-heightfill jump-flotant-nav jump-scroll jump-posfix jump-flotant-nav-level-2 col col-xs-12 col-sm-12-col-md-3 col-lg-3" data-visible="0" id="nav-recursos-hidricos">
 	
 		<div class="jump-nav-default jump-nav-inner">
 		
