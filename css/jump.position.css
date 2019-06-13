@@ -1,0 +1,11 @@
+.jump-posabs {
+	
+	position:absolute !Important;
+	
+}
+
+.jump-posfix {
+	
+	position:fixed !Important;
+	
+}

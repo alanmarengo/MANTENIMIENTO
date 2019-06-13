@@ -29,6 +29,7 @@
 	<link rel="stylesheet" href="./css/jump.input.css"/>
 	<link rel="stylesheet" href="./css/jump.list.css"/>
 	<link rel="stylesheet" href="./css/jump.nav.css"/>
+	<link rel="stylesheet" href="./css/jump.position.css"/>
 	<link rel="stylesheet" href="./css/jump.scroll.css"/>
 	<link rel="stylesheet" href="./css/jump.separator.css"/>
 	<link rel="stylesheet" href="./css/jump.site.css"/>
@@ -220,7 +221,7 @@
 	
 	</div>
 	
-	<div class="jump-flotant-heightfill jump-flotant-nav jump-scroll col col-xs-12 col-sm-12-col-md-3 col-lg-3" data-visible="0" id="nav-main">
+	<div class="jump-flotant-heightfill jump-flotant-nav jump-scroll jump-posfix col col-xs-12 col-sm-12-col-md-3 col-lg-3" data-visible="0" id="nav-main">
 	
 		<div class="jump-nav-default jump-nav-inner">
 		
