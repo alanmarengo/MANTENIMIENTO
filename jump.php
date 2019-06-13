@@ -146,7 +146,7 @@
 	
 		<div class="jump-navbar" id="jump-navbar-main">
 		
-			<div class="row">
+			<div class="row jump-row">
 		
 				<div class="col col-xs-2 col-sm-2 col-md-1 col-lg-1 jump-hamburguer-col">
 			
