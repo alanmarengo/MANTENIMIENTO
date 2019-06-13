@@ -214,6 +214,7 @@
 		<div class="jump-container">
 		
 			<?php include("./html.site.php"); ?>
+			<?php include("./html.site.footer.php"); ?>
 		
 		</div>
 	
