@@ -6,7 +6,7 @@
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<?php include("./scripts.default.php");
+	<?php include("./scripts.default.php"); ?>
 	
 	<script type="text/javascript">
 	
