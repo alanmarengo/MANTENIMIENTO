@@ -23,7 +23,7 @@ a:hover {
 	
 }
 
-.row {
+.jump-row {
 	
 	width:100% !Important;
 	
@@ -34,7 +34,7 @@ a:hover {
 #brand-logo {
 	
 	position:relative;
-	left:-4%;
+	left:-3%;
 	
 }
 
@@ -44,20 +44,42 @@ a:hover {
 	
 	min-height:68px !Important;
 	height:auto !Important;
+	position: fixed;
+	top: 0px;
+	background-color: #333;
+	z-index: 99000;
 	
 }
-/*** NAV ***/
 
 #jump-navbar-geovisor {
 	
-	min-height:68px !Important;
-	height:auto !Important;
+	min-height:44px !Important;
+	height:44px !Important;
+	position: fixed;
+	top: 68px;
+	background-color: #4c4c4e;
+	z-index: 95000;
+	
+}
+
+#jump-navbar-zoom {
+	
+	min-height:44px !Important;
+	height:44px !Important;
+	position: fixed;
+	background-color: #4c4c4e;
+	z-index: 95000;
+	
+}
+
+.jump-flotant-nav {	
+	
+	background-color:#333333;
 	
 }
 
 .jump-nav-default li a {
 	
-	background-color:#464542;
 	color:#FFFFFF;
 	text-decoration:none;
 	font-size:11px;
@@ -118,14 +140,29 @@ a:hover {
 	
 	background-color:#4a4849;
 	border-radius:3px;
-	
-}
-
-.jump-block-inner-toolbar .button:hover {
-	
 	color:#31cbfd;
 	
 }
+
+.jump-icons-toolbar .button {
+	
+	background-color:#4c4c4e;
+	border-radius:3px;
+	color:#31cbfd;
+	
+}
+
+.jump-icons-toolbar .button:hover {
+	
+	opacity:0.5;
+	
+}
+
+/*.jump-block-inner-toolbar .button:hover {
+	
+	color:#31cbfd;
+	
+}*/
 
 /*** INPUT ***/
 
@@ -153,5 +190,31 @@ a:hover {
 	
 	color:#FFFFFF;
 	text-decoration:none;
+	
+}
+
+/***  DROPDOWN ***/
+
+.dropdown-menu {
+	
+	background-color:#333333;
+	border:none;
+	border-radius:0;
+	padding:0;
+	
+}
+
+.dropdown-item {
+	
+	color:#FFFFFF;
+	font-size:12px;
+	
+}
+
+.dropdown-item:hover {
+	
+	background-color:#31cbfd;
+	color:#FFFFFF;
+	font-size:12px;
 	
 }

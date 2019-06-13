@@ -1,6 +1,6 @@
 .jump-window {
 	
-	z-index:88000;
+	z-index:100000;
 	
 }
 
@@ -8,6 +8,8 @@
 	
 	padding:0 20px;
 	cursor:move;
+	height:36px;
+	line-height:36px;
 	
 }
 

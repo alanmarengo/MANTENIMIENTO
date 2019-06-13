@@ -31,6 +31,7 @@
 <link rel="stylesheet" href="./css/jump.flotant.css"/>
 <link rel="stylesheet" href="./css/jump.hamburguer.css"/>
 <link rel="stylesheet" href="./css/jump.input.css"/>
+<link rel="stylesheet" href="./css/jump.link.css"/>
 <link rel="stylesheet" href="./css/jump.list.css"/>
 <link rel="stylesheet" href="./css/jump.nav.css"/>
 <link rel="stylesheet" href="./css/jump.position.css"/>

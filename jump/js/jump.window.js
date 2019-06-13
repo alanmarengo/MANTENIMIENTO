@@ -2,16 +2,7 @@ Jump.window = function() {
 	
 	this.initialize = function() {
 		
-		$(".jump-window-inner").each(function(i,v) {
-			
-			var height = (Jump.Document.linksHeight/2);
-			
-			$(v).children(".jump-window-header").css({
-				"height":height+"px",
-				"line-height":height+"px"
-			});
-			
-		});
+		
 		
 	}
 	

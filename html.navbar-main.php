@@ -36,7 +36,7 @@
 			
 				<ul>
 					<li class="button-input-group">
-						<a href="#" class="button button-input">
+						<a href="#" class="button button-input jump-link-death">
 							<i class="fa fa-search"></i>
 						</a>
 						<input id="main-search" class="jump-input jump-input-bl pl-10" name="main-search" type="text" data-jump-placeholder="Buscar en todo el sitio" placeholder="Buscar en todo el sitio">							

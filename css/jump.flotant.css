@@ -5,6 +5,11 @@
 	padding:0;
 	margin:0;
 	position:absolute;
-	z-index:2;
+	
+}
+
+.jump-flotant-nav {
+	
+	z-index:20000;
 	
 }
