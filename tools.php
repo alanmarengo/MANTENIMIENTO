@@ -7,68 +7,58 @@ function parseSQLToCSV($recordset)
 			{
 			
  			$TotalColum = pg_num_fields($recordset);
+                        
+                        $fflag_delimitador = false;
  
-  			//$json.= '"columnas":[';
-			
-			$bannedIndexes = array();
-			$bannedFields = array("id","geom");
+                        $omitir_index = array();
+			$omitir_column = array("the_geom","geom");
 			
   			for ($index = 0; $index < $TotalColum; $index++) 
   			{
-				$banned = false;
-				if($index<>0) {$json.= ";";}; 
+				if($fflag_delimitador) {$json.= ";";};
+                                
 				$fieldname = pg_field_name($recordset, $index);
-				
-				for ($j=0; $j<sizeof($bannedFields); $j++) {
-					
-					if (in_array($bannedFields[$j],$fieldname)) {
-						
-						array_push($bannedIndexes,$index);
-						
-					}
-					
-				}
-				
-				if (!in_array($bannedIndexes,$index)) {
-					
-					$json.= "\"".$fieldname."\"";
-						
-				}
-				
+                                
+                                if (!in_array($fieldname, $omitir_column))
+                                {
+                                    $json.= "\"".$fieldname."\"";
+                                    $fflag_delimitador = true;
+                                }
+                                else 
+                                {
+                                    array_push ($omitir_index,$index);
+                                    $fflag_delimitador = false;
+                                };
   			};
   			
   			$json.= "\n\r";
     
   			$flagFirstSeparator = true;
-  
+                         
   			while ($row = pg_fetch_row($recordset)) 
   			{
   	
 				if($flagFirstSeparator)
    				{
-   	 			 //$json.= "[";
    	 			 $flagFirstSeparator = false;
    				}else $json.= "\n\r";
+                                
+                                $fflag_delimitador  = false;
    
   				for ($index = 0; $index < $TotalColum; $index++) 
   				{
-  		
-  					if($index<>0) {$json.= ";";}; 
-  					
-						if (!in_array($bannedIndexes,$index)) {
-					
-							$json.= "\"".$row[$index]."\"";
-						
-						}
+                                        if($fflag_delimitador) {$json.= ";";}; 
+                                        
+                                        if(!in_array($index, $omitir_index))
+                                        {
+                                            $json.= "\"".$row[$index]."\"";
+                                            $fflag_delimitador = true;
+                                        }else $fflag_delimitador = false;                                  
+                                        
   	 			}
   	      
   			};
   			
-   		
- 
-			
-			//echo indent($json);
-			
 			return $json;
 				
 			};
@@ -76,14 +66,16 @@ function parseSQLToCSV($recordset)
 /*			
 $conn = pg_connect("host=localhost port=5432 dbname=ahrsc user=postgres password=plahe100%");
 
-$SQL = "SELECT * FROM mod_catalogo.vw_filtros_values ORDER BY filtro_id ASC";
+$SQL = "SELECT * FROM obra.area_obra_uso";
 
 $recordset = pg_query($conn,$SQL);
 
 echo parseSQLToCSV($recordset);
 
 pg_close($conn);
-*/
+ 
+ */
+
 
 function encrypt($string) {
 	
