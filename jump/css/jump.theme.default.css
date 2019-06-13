@@ -25,6 +25,12 @@ a:hover {
 
 /*** NAV ***/
 
+#jump-navbar-main {
+	
+	height:68px !Important;
+	
+}
+
 .jump-nav-default li a {
 	
 	background-color:#464542;
