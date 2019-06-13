@@ -224,7 +224,7 @@
 	
 		<div class="jump-nav-default jump-nav-inner">
 		
-			<?php include("htmlnav.php"); ?>
+			<?php include("html.nav.php"); ?>
 		
 		</div>
 	
@@ -234,7 +234,7 @@
 	
 		<div class="jump-nav-default jump-nav-inner">
 		
-			<?php include("htmlnav.geovisores.php"); ?>
+			<?php include("html.nav.geovisores.php"); ?>
 		
 		</div>
 	
@@ -244,7 +244,7 @@
 	
 		<div class="jump-nav-default jump-nav-inner">
 		
-			<?php include("htmlnav.vinculaciones_insterinstitucionales.php"); ?>
+			<?php include("html.nav.vinculaciones_insterinstitucionales.php"); ?>
 		
 		</div>
 	
@@ -254,7 +254,7 @@
 	
 		<div class="jump-nav-default jump-nav-inner">
 		
-			<?php include("htmlnav.recursos_hidricos.php"); ?>
+			<?php include("html.nav.recursos_hidricos.php"); ?>
 		
 		</div>
 	
