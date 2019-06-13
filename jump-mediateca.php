@@ -78,6 +78,8 @@
 	<script src="./js/jump.scroll.js"></script>
 	<script src="./js/jump.window.js"></script>
 	
+	<script src="./js/site.js"></script>
+	
 	<script src="./js/popper-1.12.9.min.js"></script>
 	
 	<script type="text/javascript">

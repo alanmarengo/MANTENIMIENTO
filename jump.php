@@ -6,7 +6,8 @@
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">	
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./fontawesome-5.8.1/css/all.min.css" />	
 	
 	<link rel="stylesheet" href="./css/bootstrap.css"/>	
 	<link rel="stylesheet" href="./js/jquery-ui/jquery-ui.min.css"/>	
@@ -64,7 +65,7 @@
 	<script src="https://code.highcharts.com/modules/funnel.js"></script>
 	<script src="https://code.highcharts.com/modules/exporting.js"></script>-->
 	
-	<script src="https://kit.fontawesome.com/9bc67720de.js"></script>
+	<!--<script src="https://kit.fontawesome.com/9bc67720de.js"></script>-->
 	
 	<script src="./js/perfect-scrollbar.js"></script>
 	<script src="./js/bootstrap-select.js"></script>
@@ -77,6 +78,8 @@
 	<script src="./js/jump.nav.js"></script>
 	<script src="./js/jump.scroll.js"></script>
 	<script src="./js/jump.window.js"></script>
+	
+	<script src="./js/site.js"></script>
 	
 	<script src="./js/popper-1.12.9.min.js"></script>
 	
