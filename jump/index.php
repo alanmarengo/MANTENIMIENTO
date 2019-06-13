@@ -130,7 +130,7 @@
 		
 			<div class="row">
 		
-				<div class="col col-xs-12 col-sm-12 col-md-1 col-lg-1">
+				<div class="col col-xs-3 col-sm-3 col-md-1 col-lg-1">
 			
 					<div class="jump-hamburguer plr-10">
 					
@@ -144,7 +144,7 @@
 					
 				</div>
 				
-				<div class="col col-xs-12 col-sm-12 col-md-3 col-lg-3">
+				<div class="col col-xs-9 col-sm-9 col-md-3 col-lg-3">
 					
 					<div class="jump-block">
 					
