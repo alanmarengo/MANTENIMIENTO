@@ -9,7 +9,7 @@
         </ol>
         <div class="carousel-inner">
             <a href="./geovisor.php" class="carousel-item active">
-                <img class="d-block w-100" src="../images/index/slide1.jpg" alt="...">
+                <img class="d-block w-100" src="./images/index/slide1.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>GEOVISOR DE INFORMACION INTEGRADA</p>
                 </div>                
@@ -18,7 +18,7 @@
                 </div>
             </a>
             <a href="./page.php" class="carousel-item">
-                <img class="d-block w-100" src="../images/index/slide2.jpg" alt="...">
+                <img class="d-block w-100" src="./images/index/slide2.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>SABIAS DE LA EXISTENCIA DE LA LAMPREA<br /> EN EL RIO SANTA CRUZ?</p>
                 </div>                
@@ -27,7 +27,7 @@
                 </div>
             </a>
             <a href="./page.php" class="carousel-item">
-                <img class="d-block w-100" src="../images/index/slide3.jpg" alt="...">
+                <img class="d-block w-100" src="./images/index/slide3.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>CAMPO DE HIELO PATAGONIA SUR (HPS)</p>
                 </div>                
@@ -36,7 +36,7 @@
                 </div>
             </a>
             <a href="./page.php" class="carousel-item">
-                <img class="d-block w-100" src="../images/index/slide4.jpg" alt="...">
+                <img class="d-block w-100" src="./images/index/slide4.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>NUESTRO COMPROMISO CON EL MACA TOBIANO</p>
                 </div>                
@@ -45,7 +45,7 @@
                 </div>
             </a>
             <a href="./mision.php" class="carousel-item">
-                <img class="d-block w-100" src="../images/index/slide5.jpg" alt="...">
+                <img class="d-block w-100" src="./images/index/slide5.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>MISIÓN DE IEASA</p>
                 </div>                
