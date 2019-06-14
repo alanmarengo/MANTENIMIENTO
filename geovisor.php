@@ -53,18 +53,12 @@
 		$(document).ready(function(){		
 			
 			/*** FLOTANT ***/
-				
+			
 			flotant = new Jump.flotant();
 			flotant.setFitAgainstRule(".jump-navbar"); // default
-			flotant.fit();
 				
 			flotant.initialize();
-			
-			flotantSubVar = new Jump.flotant();
-			flotantSubVar.setFitAgainstRule("#jump-navbar-main");
-			flotantSubVar.fit();
-			
-			flotantSubVar.initialize();
+			flotant.fitTopElement("#jump-navbar-geovisor","#jump-navbar-main");
 			
 			/*** NAV ***/
 			
@@ -114,8 +108,8 @@
 			
 			Jump.onresize = function() {
 				
-				flotant.fit();
-				flotantSubVar.fit();
+				flotant.initialize();
+				flotant.fitTopElement("#jump-navbar-geovisor","#jump-navbar-main");
 				block.refresh();
 				scroll.refresh();
 				

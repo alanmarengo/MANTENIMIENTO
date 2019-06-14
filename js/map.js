@@ -445,8 +445,8 @@ function ol_map() {
 			
 			$(a).remove();
 			
-			//$("#print-legend-wrapper").empty();
-			//$("#print-legend-wrapper").hide();
+			$("#print-legend-wrapper").empty();
+			$("#print-legend-wrapper").hide();
 			
 		});
 
