@@ -249,6 +249,10 @@
 	<?php include("./popup.coordinates.php"); ?>
 	<?php include("./popup.drawing.php"); ?>
 	<?php include("./popup.share.php"); ?>
+	
+	<div id="popup-results">
+	
+	</div>
 
 </body>
 </html>
