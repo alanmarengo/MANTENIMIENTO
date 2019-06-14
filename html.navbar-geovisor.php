@@ -33,7 +33,7 @@
 						</a>
 					</li>
 					<li class="ml-5">
-						<a class="button" href="javascript:void(0);">
+						<a class="button" href="javascript:void(0);" onclick="geomap.map.print();">
 							<img src="./images/toolbar.icon.print.png">
 						</a>
 					</li>

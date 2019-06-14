@@ -10,6 +10,12 @@ Jump.scroll = function() {
 		
 	}
 	
+	this.refreshElement = function(e) {
+			
+		new PerfectScrollbar(e);
+		
+	}
+	
 	this.refreshElementCollection = function(e) {
 		
 		$(e).each(function(i,v) {

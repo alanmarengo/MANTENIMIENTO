@@ -92,6 +92,20 @@ a:hover {
 	
 }
 
+#layer-preview-inner .title {
+	
+	font-size:18px;
+	font-weight:700;
+	
+}
+
+#layer-preview-inner .content {
+	
+	font-size:12px;
+	font-weight:400;
+	
+}
+
 #layer-preview-inner .button {
 	
 	padding:4px;
@@ -150,6 +164,22 @@ a:hover {
 	
 	background:#333333;
 	color:#FFFFFF;
+	
+}
+
+.form-group .jump-button-fullsize {
+	
+	border-radius:3px;
+	background-color:#31cbfd;
+	color:#FFFFFF;
+	font-size:13px;
+	font-weight:700;
+	
+}
+
+.form-group .jump-button-fullsize:hover {
+	
+	opacity:0.5;
 	
 }
 

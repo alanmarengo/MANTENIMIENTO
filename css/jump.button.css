@@ -17,3 +17,13 @@
 	display:inline-block;*/
 
 }
+
+.jump-button-fullsize {
+	
+	width: 100%;
+	height: 100%;
+	display: block;
+	text-align: center;
+	line-height: 30px;
+	
+}

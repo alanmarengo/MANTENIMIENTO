@@ -1,4 +1,4 @@
-<div class="p30 text-center">
+<div class="p20 text-center">
 	
 	<div class="button-input-group" style="height: 34px; line-height: 34px;">
 		<a href="#" class="button button-input jump-link-death" style="width: 34px; height: 34px; line-height: 34px;">

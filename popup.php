@@ -16,6 +16,8 @@
 		
 		<div class="jump-window-body jump-window-full-body jump-scroll">
 			
+			<?php include("./geovisor.popup.search.php"); ?>
+			
 			<div class="row p0 m0">
 			
 				<div class="col col-xs-12 col-sm-12 col-md-4 col-lg-4 p0 m0">
@@ -36,7 +38,7 @@
 					</div>
 				</div>
 				<div class="col col-xs-12 col-sm-12 col-md-8 col-lg-8">
-					<div id="mini-map" class="p20"></div>
+					<div id="mini-map" class="ptb-10"></div>
 					<div id="layer-preview-inner">
 				
 						<p class="title" id="layer-preview-title">Datos de Capa</p>

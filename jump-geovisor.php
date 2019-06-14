@@ -18,17 +18,33 @@
 
 	<!-- GEOVISOR -->
 
+	<link rel="stylesheet" href="./css/geovisor/forms.css"/>
 	<link rel="stylesheet" href="./css/geovisor/layers.css"/>
 	<link rel="stylesheet" href="./css/geovisor/map.css"/>
 	<link rel="stylesheet" href="./css/geovisor/panel.css"/>
 	<link rel="stylesheet" href="./css/geovisor/popup.css"/>
 	<link rel="stylesheet" href="./css/geovisor/input.css"/>
+	<link rel="stylesheet" href="./css/geovisor/sliders.css"/>
 	<link rel="stylesheet" href="./css/geovisor/style.css"/>
+
+	<!-- COLORPICKER CSS -->
+
+	<link rel="stylesheet" href="./js/colorpicker/css/colorpicker.css"/>
 	
 	<!-- MAP -->
 	
 	<script src="./js/config.js" type="text/javascript"></script>
 	<script src="./js/map.js" type="text/javascript"></script>
+
+	<!-- COLORPICKER JS -->
+	
+	<script src="./js/colorpicker/js/colorpicker.js" type="text/javascript"></script>
+
+	<!-- HTML 2 CANVAS -->
+	
+	<script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+	
+	<script src="./js/colorpicker/js/colorpicker.js" type="text/javascript"></script>
 
 	<script type="text/javascript">
 	

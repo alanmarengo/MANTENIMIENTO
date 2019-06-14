@@ -4,6 +4,12 @@
 	
 }
 
+.p5 {
+	
+	padding:5px !Important;
+	
+}
+
 .p10 {
 	
 	padding:10px !Important;
@@ -37,6 +43,12 @@
 .plr-10 {
 	
 	padding:0px 10px !Important;
+	
+}
+
+.ptb-10 {
+	
+	padding:10px 0px !Important;
 	
 }
 
