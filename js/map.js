@@ -138,7 +138,7 @@ function ol_map() {
 						
 					}
 					
-					alert("LAYER: " + layer.get('name') + " - VISIBLE: " + layer.getVisible() + " - ISBASE: " + isBase);
+					// alert("LAYER: " + layer.get('name') + " - VISIBLE: " + layer.getVisible() + " - ISBASE: " + isBase);
 					
 					if ((layer.getVisible()) && (isBase == false)) {
 						
