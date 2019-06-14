@@ -13,8 +13,7 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 		$("#perfil_topografico_chart").highcharts({
 			chart: {
 				zoomType: 'x',
-				height: '210',
-				width: '100%'
+				margin:0
 			},
 			title: {
 				text: 'Perfil Topográfico',
