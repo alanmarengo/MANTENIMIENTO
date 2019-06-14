@@ -821,11 +821,11 @@ function ol_map() {
 				
 				if (navState == 1) {
 					
-					$(this).animate({"left","0px"},"fast");
+					$(this).animate({"left":"0px"},"fast");
 					
 				}else{
 					
-					$(this).animate({"left",navWidth+"px"},"fast");
+					$(this).animate({"left":navWidth+"px"},"fast");
 					
 				}
 				
