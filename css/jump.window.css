@@ -1,6 +1,14 @@
 .jump-window {
 	
 	z-index:100000;
+	display:none;
+	
+}
+
+.jump-window-visible {
+	
+	z-index:100000;
+	display:block;
 	
 }
 

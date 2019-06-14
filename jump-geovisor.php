@@ -1,3 +1,6 @@
+<?php include("pgconfig.php"); ?>
+<?php include("geovisor.fn.php"); ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,9 +15,17 @@
 	<!-- JUMP THEME -->
 
 	<link rel="stylesheet" href="./css/jump.theme.geovisor.css"/>
+
+	<!-- GEOVISOR -->
+
+	<link rel="stylesheet" href="./css/geovisor/layers.css"/>
+	<link rel="stylesheet" href="./css/geovisor/panel.css"/>
+	<link rel="stylesheet" href="./css/geovisor/input.css"/>
+	<link rel="stylesheet" href="./css/geovisor/style.css"/>
 	
 	<!-- MAP -->
 	
+	<script src="./js/config.js" type="text/javascript"></script>
 	<script src="./js/map.js" type="text/javascript"></script>
 
 	<script type="text/javascript">
@@ -54,7 +65,7 @@
 			/*** FLOTANT ***/
 			
 			jwindow = new Jump.window();
-			//jwindow.initialize();
+			jwindow.initialize();
 			jwindow.setAllWindowsDraggable();
 			
 			/*** BLOCK ***/
@@ -79,7 +90,54 @@
 			geomap.map.create();
 			geomap.map.createLayers();
 			geomap.map.createPrintLegendDiv();
+			
+			geomap.map.panel.fit();
 		
+			<?php if (isset($_GET["geovisor"])) { ?>
+			
+				geomap.map.loadGeovisor(<?php echo $_GET["geovisor"]; ?>);
+			
+			<?php }else{ ?>
+			
+				<?php if (isset($_GET["l"])) { ?>
+					
+				var s_clase = [<?php echo $_GET["c"]; ?>];
+				var s_layers = [<?php echo $_GET["l"]; ?>];
+				var s_visibles = [<?php echo $_GET["v"]; ?>];
+				
+				for (var i=0; i<s_layers.length; i++) { 
+					geomap.panel.AddLayer(s_clase[i],s_layers[i]);
+					if (s_visibles[i]) { 
+						document.getElementById("layer-checkbox-"+s_layers[i]).click(); 
+					}
+				}
+								
+				<?php } ?>
+				
+				<?php if ((isset($_GET["ca"])) && (!empty($_GET["ca"]))) { ?> 
+					
+					var ca = <?php echo $_GET["ca"]; ?>;
+					
+					$(".panel-abr[data-cid="+ca+"]").trigger("click"); 
+					
+				<?php } ?>
+				
+				<?php if ((isset($_GET["z"])) && (!empty($_GET["z"]))) { ?> 
+				
+				geomap.map.ol_object.getView().setZoom(<?php echo $_GET["z"]; ?>);
+								
+				<?php } ?>
+				
+				<?php if ((isset($_GET["cen"])) && (!empty($_GET["cen"]))) { ?> 
+				
+				geomap.map.ol_object.getView().setCenter(ol.proj.transform([<?php echo $_GET["cen"]; ?>], 'EPSG:3857', 'EPSG:3857'));
+								
+				<?php } ?>
+			
+			<?php } ?>
+			 
+			 flotant.toggle('#nav-panel',true);
+			 
 		});
 		
 	</script>
@@ -107,7 +165,7 @@
 	
 	</div>
 	
-	<div class="jump-align-right jump-align-bottom jump-window jump-posfix col col-xs-12 col-sm-12-col-md-3 col-lg-3" id="jump-navbar-zoom">
+	<div class="jump-align-right jump-align-bottom jump-window jump-window-visible jump-posfix col col-xs-12 col-sm-12-col-md-3 col-lg-3" id="jump-navbar-zoom">
 	
 		<div class="jump-nav-default jump-nav-inner">
 		
@@ -122,6 +180,16 @@
 		<div class="jump-nav-default jump-nav-inner">
 		
 			<?php include("html.nav.php"); ?>
+		
+		</div>
+	
+	</div>
+	
+	<div class="jump-flotant-heightfill jump-flotant-nav jump-scroll jump-posfix col col-xs-12 col-sm-12-col-md-3 col-lg-3" data-visible="0" id="nav-panel">
+	
+		<div class="jump-nav-default jump-nav-inner">
+		
+			<?php include("html.nav.panel.php"); ?>
 		
 		</div>
 	
@@ -147,7 +215,7 @@
 	
 	</div>
 	
-	<div class="jump-flotant-heightfill jump-flotant-nav jump-scroll jump-posfix jump-flotant-nav-level-2 col col-xs-12 col-sm-12-col-md-3 col-lg-3" data-visible="0" id="nav-recursos-hidricos">
+	<div class="jump-flotant-heightfill jump-flotant-nav jump-scroll jump-posfix col col-xs-12 col-sm-12-col-md-3 col-lg-3" data-visible="0" id="nav-recursos-hidricos">
 	
 		<div class="jump-nav-default jump-nav-inner">
 		
@@ -157,7 +225,9 @@
 	
 	</div>
 	
+	<?php include("./popup.php"); ?>
 	<?php include("./popup.baselayers.php"); ?>
+	<?php include("./popup.share.php"); ?>
 
 </body>
 </html>

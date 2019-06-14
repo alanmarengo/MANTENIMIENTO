@@ -2,14 +2,15 @@ Jump.window = function() {
 	
 	this.initialize = function() {
 		
-		$(".jump-window-inner").each(function(i,v) {
+		$(".jump-window-full-body").each(function(i,v) {
 			
-			var height = (Jump.Document.linksHeight/2);
+			var headerHeight = $(v).prev(".jump-window-header").height();
+			var windowHeight = $(v).closest(".jump-window").height();
+			var paddingTop = window.getComputedStyle(v, null).getPropertyValue('padding-top').split("px")[0];
 			
-			$(v).children(".jump-window-header").css({
-				"height":height+"px",
-				"line-height":height+"px"
-			});
+			var bodyHeight = ((windowHeight - headerHeight) - (paddingTop*2));
+			
+			$(v).css({"height":bodyHeight+"px"});
 			
 		});
 		
@@ -30,6 +31,12 @@ Jump.window = function() {
 			});
 			
 		});
+		
+	}
+	
+	this.open = function(e) {
+		
+		$(e).show();
 		
 	}
 	

@@ -3,12 +3,171 @@ function ol_map() {
 	this.container = {};
 	this.nav = {};
 	this.panel = {};
-	this.panel.div = document.getElementById("nav-panel");
 	this.map = {};
 	this.popup = {};
 	this.map.baselayers = {};
 	
 	this.map.geovisor = -1;
+	
+	this.resize = function() {
+		
+		geomap.nav.start();
+		geomap.nav.reset();
+		geomap.container.fixSize([document.getElementById("nav-1"),document.getElementById("nav-2")]);
+		
+	}
+	
+	this.nav.start = function() {
+		
+		var docheight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+	
+		var width_nav = $("#navbarNav").width();
+		$("#navbarNav").css("left","-"+width_nav+"px");
+		$("#navbarNav").css("display","block");
+		$("#navbarNav").height(docheight);
+		
+		$("#navbarNav .nav-link").bind("click",function() {			
+						
+			scrollbars.redrawElement(".scrollbar-content");
+			
+		});
+		
+		
+	}
+	
+	this.nav.go = function() {
+		
+		var width_nav = $("#navbarNav").width();
+		
+		if (document.getElementById("navbarNav").getAttribute("data-state") == "0") {
+			
+			$("#navbarNav").animate({left:"0px"},700);
+			$("#page").animate({left:width_nav+"px"},700);
+			
+			document.getElementById("navbarNav").setAttribute("data-state","1");
+			
+			if (document.getElementById("panel-left")) {
+				
+				if ($("#panel-arrow-link").attr("data-state") == 0) {
+					
+					$("#panel-left").animate({ left:(width_nav - 370) + "px" });
+					
+				}else{
+					
+					$("#panel-left").animate({ left:width_nav + "px" });
+					
+				}
+				
+			}
+			
+		}else{
+			
+			$("#navbarNav").animate({left:"-"+width_nav+"px"},700);
+			$("#page").animate({left:"0px"},700);
+			
+			document.getElementById("navbarNav").setAttribute("data-state","0");
+			
+			if (document.getElementById("panel-left")) {
+				
+				if ($("#panel-arrow-link").attr("data-state") == 0) {
+					
+					$("#panel-left").animate({ left:"-370px" });
+					
+				}else{
+					
+					$("#panel-left").animate({ left:"0px" });
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	this.nav.reset = function() {
+		
+		var width_nav = $("#navbarNav").width();
+		
+		if (document.getElementById("navbarNav").getAttribute("data-state") == "0") {			
+			
+			$("#navbarNav").css({left:"-"+width_nav+"px"});
+			$("#page").css({left:"0px"});
+			
+			if (document.getElementById("panel-left")) {
+				
+				if ($("#panel-arrow-link").attr("data-state") == 0) {
+					
+					$("#panel-left").css({ left:"-370px" });
+					
+				}else{
+					
+					$("#panel-left").css({ left:"0px" });
+					
+				}
+				
+			}
+			
+		}else{
+			
+			$("#navbarNav").css({left:"0px"});
+			$("#page").css({left:width_nav+"px"});
+			
+			if (document.getElementById("panel-left")) {
+				
+				if ($("#panel-arrow-link").attr("data-state") == 0) {
+					
+					$("#panel-left").css({ left:(width_nav - 370) + "px" });
+					
+				}else{
+					
+					$("#panel-left").css({ left:width_nav + "px" });
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	this.container.div = document.getElementById("map");
+
+	this.container.fixSize = function(otherElements) {
+		
+		var otherElementsTotalHeight = 0;
+		var windowTotalHeight = $(document).height();
+		
+		for (var i=0; i<otherElements.length; i++) {
+			
+			otherElementsTotalHeight += $(otherElements[i]).outerHeight();
+		
+		}
+	
+		var newHeight = windowTotalHeight - otherElementsTotalHeight;
+		var oldHeight = $(this.div).height();
+		
+		/*var percentualHeight = newHeight * 100 / windowTotalHeight;
+		
+		if (newHeight > oldHeight) {
+			$(this.div).height(percentualHeight+"%");
+		}*/
+		
+		if (newHeight > oldHeight) {
+			$(this.div).height(newHeight);
+			$(".panel").height((newHeight+2)+8);
+			$("#map").height((newHeight+2)+8);
+			$(".panel").css("top",$(this.div).offset().top);
+		}
+		
+		var lc_top = $("#layers-container").offset().top+42;
+		var lc_newheight = $(document).height() - lc_top;
+		
+		$(".layer-container-body").height(lc_newheight);				
+		scrollbars.redrawElement(".scrollbar-content");
+		
+	
+	}
 	
 	// MAP SCRIPTS 
 	
@@ -897,15 +1056,6 @@ function ol_map() {
 		$("form input").val("");
 		$("form select").prop("selectedIndex", 0);
 		$("form select").selectpicker("refresh");
-		
-	}
-	
-	this.panel.fit = function() {
-		
-		var width = $(this.div).width();
-		var layersContainerWidth = width - 40;
-		
-		$("#layers-container").width(layersContainerWidth-5);
 		
 	}
 	

@@ -8,37 +8,37 @@
 			
 				<ul>
 					<li class="ml-5">
-						<a href="#" class="button">
+						<a class="button" href="javascript:void(0);">
 							<img src="./images/toolbar.icon.buffer.png">
 						</a>							
 					</li>
 					<li class="ml-5">
-						<a class="button" href="#">
+						<a class="button" href="javascript:void(0);">
 							<img src="./images/toolbar.icon.ptopografico.png">
 						</a>        
 					</li>
 					<li class="ml-5">
-						<a class="button" href="#">
+						<a class="button" href="javascript:void(0);">
 							<img src="./images/toolbar.icon.medicion.png">
 						</a>
 					</li>
 					<li class="ml-5">
-						<a class="button" href="#">
+						<a class="button" href="javascript:void(0);">
 							<img src="./images/toolbar.icon.coordenadas.png">
 						</a>
 					</li>
 					<li class="ml-5">
-						<a class="button" href="#">
+						<a class="button" href="javascript:void(0);">
 							<img src="./images/toolbar.icon.dibujo.png">
 						</a>
 					</li>
 					<li class="ml-5">
-						<a class="button" href="#">
+						<a class="button" href="javascript:void(0);">
 							<img src="./images/toolbar.icon.print.png">
 						</a>
 					</li>
 					<li class="ml-10">
-						<a class="button" href="#">
+						<a class="button" href="javascript:void(0);" onclick="jwindow.open('#popup-share'); geomap.map.share();">
 							<img src="./images/toolbar.icon.share.png">
 						</a>
 					</li>

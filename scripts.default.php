@@ -38,6 +38,7 @@
 <link rel="stylesheet" href="./css/jump.scroll.css"/>
 <link rel="stylesheet" href="./css/jump.separator.css"/>
 <link rel="stylesheet" href="./css/jump.site.css"/>
+<link rel="stylesheet" href="./css/jump.size.css"/>
 <link rel="stylesheet" href="./css/jump.submenu.css"/>
 <link rel="stylesheet" href="./css/jump.window.css"/>
 
