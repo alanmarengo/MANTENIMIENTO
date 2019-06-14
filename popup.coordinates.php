@@ -11,7 +11,6 @@
 		
 		<div class="jump-window-body p20">
 			
-			<p class="popup-subtitle">COORDENADAS</p>
 			<a class="popup-header-button popup-header-button-toggleable popup-header-button-active-fixed" href="#" onclick="geomap.map.activateCoordinates()" id="btn-popup-capturar">
 				<span>CAPTURAR</span>
 			</a>
@@ -27,7 +26,7 @@
 				</td>
 			</table>
 		
-			<div id="coord-capture-wrapper" class="mt-10">
+			<div id="coord-capture-wrapper" class="mt-20">
 			
 				<table id="coord-capture-table">
 				
