@@ -167,6 +167,9 @@ function ol_map() {
 						})
 						
 						map.parseGFI(req.responseText,"popup-info","info-wrapper");
+						
+						jwindow.close(".geovisor-flotant");
+						jwindow.open("#popup-info");
 					
 					}
 					
@@ -610,9 +613,6 @@ function ol_map() {
 			}.bind(this));
 			
 		}.bind(this));
-		
-		$(".popup").not("#popup-busqueda").hide();
-		$("#popup-buffer").show();
 		
 	}
 	
