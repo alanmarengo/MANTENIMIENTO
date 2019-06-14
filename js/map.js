@@ -1225,7 +1225,7 @@ function ol_map() {
 			
 			if ($("#nav-panel").attr("data-visible") == 0) {
 				
-				flotant.toggle("#nav-panel",true);
+				$("#layer-bullet").trigger("click");
 				
 			}
 			

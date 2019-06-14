@@ -206,7 +206,7 @@
 	
 	</div>
 	
-	<div class="jump-flotant-heightfill jump-flotant-nav jump-scroll jump-posfix col col-xs-12 col-sm-12-col-md-3 col-lg-3" data-visible="0" id="nav-panel">
+	<div class="jump-flotant-heightfill jump-flotant-nav jump-scroll jump-posfix col col-xs-10 col-sm-10-col-md-3 col-lg-3" data-visible="0" id="nav-panel">
 	
 		<div class="jump-nav-default jump-nav-inner">
 		
