@@ -160,6 +160,8 @@ function ol_map() {
 						jwindow.close(".geovisor-flotant");
 						jwindow.open("#popup-info");
 					
+						scroll.refresh();
+					
 					}
 					
 					map.gfiAddedLayers.push(layer.layer_id);
