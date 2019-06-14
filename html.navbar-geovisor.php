@@ -13,7 +13,7 @@
 						</a>							
 					</li>
 					<li class="ml-5">
-						<a class="button" href="javascript:void(0);">
+						<a class="button" href="javascript:void(0);" onclick="geomap.map.ptopografico();">
 							<img src="./images/toolbar.icon.ptopografico.png">
 						</a>        
 					</li>
