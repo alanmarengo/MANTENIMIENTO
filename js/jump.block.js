@@ -5,7 +5,7 @@ Jump.block = function() {
 		$(".jump-block-inner").each(function(i,v) {
 			
 			var innerElementHeight = $(v).height();			
-			var blockHeight = $(v).closest(".jump-navbar").height();
+			var blockHeight = $(v).closest(".jump-block").height();
 			
 			var margin = ((blockHeight - innerElementHeight) / 2);
 			
@@ -16,7 +16,7 @@ Jump.block = function() {
 		$(".jump-block-inner-toolbar").each(function(i,v) {
 			
 			var innerElementHeight = $(v).height();			
-			var blockHeight = $(v).closest(".jump-navbar").height();			
+			var blockHeight = $(v).closest(".jump-block").height();			
 			
 			var margin = ((blockHeight - innerElementHeight) / 2);
 			

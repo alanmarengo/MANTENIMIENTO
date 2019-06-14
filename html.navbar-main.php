@@ -1,6 +1,6 @@
 <div class="row jump-row">
 		
-	<div class="col col-xs-2 col-sm-2 col-md-1 col-lg-1 jump-hamburguer-col" style="height:68px;">
+	<div class="col col-xs-12 col-sm-12 col-md-6 col-lg-6 jump-hamburguer-col" style="height:68px;">
 
 		<div class="jump-hamburguer plr-10">
 		
@@ -12,9 +12,19 @@
 		
 		</div>
 		
+		<div class="jump-block">
+		
+			<div class="jump-block-inner">
+			
+				<img src="./images/logo_observatorio_ieasa.png" height="20">
+			
+			</div>
+		
+		</div>
+		
 	</div>
 	
-	<div class="col col-xs-10 col-sm-10 col-md-3 col-lg-3" style="height:68px;" id="brand-logo">
+	<!--<div class="col col-xs-10 col-sm-10 col-md-3 col-lg-3" style="height:68px;" id="brand-logo">
 		
 		<div class="jump-block">
 		
@@ -26,9 +36,9 @@
 		
 		</div>
 	
-	</div>
+	</div>-->
 	
-	<div class="col col-xs-12 col-sm-12 col-md-8 col-lg-8 text-right" style="height:68px;">
+	<div class="col col-xs-12 col-sm-12 col-md-6 col-lg-6 text-right" style="height:68px;">
 	
 		<div class="jump-block">
 		

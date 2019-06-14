@@ -5,12 +5,12 @@ Jump.nav = function() {
 	
 	this.hamburguer.fit = function() {
 		
-		var hamburguer_height = $(this.div).height();
+		/*var hamburguer_height = $(this.div).height();
 		var hamburguer_parent_navbar_height = $(this.div).closest(".jump-navbar").height();
 		
-		var hamburguer_mtop = ((hamburguer_parent_navbar_height - hamburguer_height) / 2);
+		var hamburguer_mtop = ((hamburguer_parent_navbar_height - hamburguer_height) / 2);*/
 		
-		this.div.style.marginTop = hamburguer_mtop + "px";
+		this.div.style.marginTop = /*hamburguer_mtop + */"13px";
 		
 	}
 	

@@ -4,9 +4,9 @@
 	
 		<div class="jump-block">		
 		
-			<div class="jump-block-inner-toolbar jump-icons-toolbar">
+			<div class="jump-block-inner-toolbar jump-icons-toolbar jump-vertical-list">
 			
-				<ul>
+				<ul class="jump-list-vertical">
 					<li>
 						<a href="javascript:void(0);" class="button" onclick="geomap.map.ol_object.getView().setZoom(geomap.map.ol_object.getView().getZoom() + 1);"">
 							<i class="fa fa-plus"></i>

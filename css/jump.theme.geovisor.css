@@ -104,6 +104,12 @@ a:hover {
 	
 }
 
+.jump-block-inner-toolbar ul li {
+
+    display: inline-block;
+
+}
+
 /*** LAYERS ***/
 
 #filtered-layer-list .popup-panel-tree-item-header {

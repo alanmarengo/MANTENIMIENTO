@@ -6,6 +6,7 @@
 .jump-hamburguer {
 	
 	display:inline-block;
+	vertical-align:top;
 	
 }
 
