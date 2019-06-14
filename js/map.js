@@ -5,6 +5,7 @@ function ol_map() {
 	this.panel = {};
 	this.panel.div = document.getElementById("nav-panel");
 	this.map = {};
+	this.map.infoEnabled = true;
 	this.popup = {};
 	this.map.baselayers = {};
 	
@@ -109,66 +110,70 @@ function ol_map() {
 		
 		this.ol_object.addEventListener("click",function(evt) {
 			
-			$("#info-wrapper").empty();
+			if (this.map_object.infoEnabled) {
 			
-			this.map_object.gfiAddedLayers = [];
-			
-			var view = this.getView();
-			var map = this.map_object;
-			
-			var viewResolution = (view.getResolution());
-			var url = '';
-			
-			this.getLayers().forEach(function (layer, i, layers) {		
+				$("#info-wrapper").empty();
 				
-				var baselayer_names = ["openstreets","opentopo","bing","bing_roads","bing_aerials","google_base"];
-				var isBase = false;
+				this.map_object.gfiAddedLayers = [];
 				
-				for (var i=0; i<baselayer_names.length; i++) {
+				var view = this.getView();
+				var map = this.map_object;
+				
+				var viewResolution = (view.getResolution());
+				var url = '';
+				
+				this.getLayers().forEach(function (layer, i, layers) {		
 					
-					if (layer.get('name') == baselayer_names[i]) {
+					var baselayer_names = ["openstreets","opentopo","bing","bing_roads","bing_aerials","google_base"];
+					var isBase = false;
+					
+					for (var i=0; i<baselayer_names.length; i++) {
 						
-						isBase = true;
-						break;
+						if (layer.get('name') == baselayer_names[i]) {
+							
+							isBase = true;
+							break;
+							
+						}
 						
 					}
 					
-				}
+					if ((layer.getVisible()) && (isBase == false)) {
+						
+						if(layer.getSource().getGetFeatureInfoUrl) {						
 				
-				if ((layer.getVisible()) && (isBase == false)) {
-					
-					if(layer.getSource().getGetFeatureInfoUrl) {						
-			
-						$("#popup-results").empty();
-					
-						url = layer.getSource().getGetFeatureInfoUrl(evt.coordinate, viewResolution, 'EPSG:3857', {
-							'INFO_FORMAT': 'text/html',
-								'FEATURE_COUNT': '300'
-						});	
-					
-						var req = $.ajax({
-							
-							async:false,
-							type:"GET",
-							url:url,
-							success:function(d){}
-							
-						})
+							$("#popup-results").empty();
 						
-						map.parseGFI(req.responseText,"popup-info","info-wrapper");
+							url = layer.getSource().getGetFeatureInfoUrl(evt.coordinate, viewResolution, 'EPSG:3857', {
+								'INFO_FORMAT': 'text/html',
+									'FEATURE_COUNT': '300'
+							});	
 						
-						jwindow.close(".geovisor-flotant");
-						jwindow.open("#popup-info");
-					
-						scroll.refresh();
+							var req = $.ajax({
+								
+								async:false,
+								type:"GET",
+								url:url,
+								success:function(d){}
+								
+							})
+							
+							map.parseGFI(req.responseText,"popup-info","info-wrapper");
+							
+							jwindow.close(".geovisor-flotant");
+							jwindow.open("#popup-info");
+						
+							scroll.refresh();
+						
+						}
+						
+						map.gfiAddedLayers.push(layer.layer_id);
 					
 					}
 					
-					map.gfiAddedLayers.push(layer.layer_id);
-				
-				}
-				
-			});
+				});
+			
+			}
 			
 		});
 		
@@ -307,7 +312,7 @@ function ol_map() {
 					
 			$("#"+containerID).show();
 			
-			scroll.refreshElement(wrapperID);
+			scroll.refresh();
 	
 		}
 		
@@ -525,6 +530,8 @@ function ol_map() {
 	
 	this.map.buffer = function() {
 		
+		this.infoEnabled = false;
+		
 		if (!this.buffer.source) {
 			
 			this.buffer.source = new ol.source.Vector({
@@ -591,6 +598,8 @@ function ol_map() {
 			
 			this.parseGFI(req.responseText,"popup-buffer","info-buffer");
 			
+			this.infoEnabled = true;		
+			
 		}.bind(this));
 		
 		this.ol_object.addInteraction(this.bufferdraw);
@@ -608,6 +617,8 @@ function ol_map() {
 	}
 	
 	this.map.drawing = function(type) {
+		
+		this.infoEnabled = false;
 		
 		if (!this.drawing.source) {
 			
@@ -653,6 +664,8 @@ function ol_map() {
 	}
 	
 	this.map.medicion = function() {
+		
+		this.map.infoEnabled = false;
 		
 		if (!this.medicion.source) {
 		
@@ -708,6 +721,8 @@ function ol_map() {
 			
 			$("#popup-medicion").show();
 			
+			this.infoEnabled = true;
+			
 		}.bind(this));
 		
 		this.ol_object.addInteraction(draw);
@@ -725,6 +740,8 @@ function ol_map() {
 	}
 	
 	this.map.ptopografico = function() {
+		
+		this.map.infoEnabled = false;
 		
 		if (!this.ptopografico.source) {
 		
@@ -771,6 +788,8 @@ function ol_map() {
 			this.ol_object.removeInteraction(draw);
 			
 			this.ptopografico.layerVector.getSource().clear();	
+			
+			this.infoEnabled = true;
 			
 		}.bind(this));
 		
