@@ -12,6 +12,8 @@
 .jump-block-inner-toolbar {
 	
 	height:50%;
+	display:inline-flex;
+	align-items:center;
 	
 }
 

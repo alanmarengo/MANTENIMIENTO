@@ -13,7 +13,7 @@ Jump.block = function() {
 			
 		});
 		
-		$(".jump-block-inner-toolbar").each(function(i,v) {
+		/*$(".jump-block-inner-toolbar").each(function(i,v) {
 			
 			if ($(v).closest(".jump-block").hasClass("jump-block-horizontal")) {
 			
@@ -47,7 +47,7 @@ Jump.block = function() {
 				
 			}
 		
-		});
+		});*/
 		
 	}
 	

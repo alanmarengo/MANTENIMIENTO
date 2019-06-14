@@ -40,7 +40,7 @@
 	
 	<div class="col col-xs-12 col-sm-12 col-md-6 col-lg-6 text-right" style="height:68px;">
 	
-		<div class="jump-block">
+		<div class="jump-block" id="mainbar-icons">
 		
 			<div class="jump-block-inner-toolbar">
 			

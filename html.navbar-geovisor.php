@@ -2,7 +2,7 @@
 	
 	<div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 text-right">
 	
-		<div class="jump-block">
+		<div class="jump-block" id="toolbar-icons">
 		
 			<div class="jump-block-inner-toolbar jump-icons-toolbar">
 			
