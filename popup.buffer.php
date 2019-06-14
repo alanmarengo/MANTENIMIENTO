@@ -4,7 +4,7 @@
 
 		<div class="jump-window-header">
 			<span>Buffer</span>
-			<a href="#" class="jump-window-close" onclick="jwindow.close('#popup-buffer')">
+			<a href="#" class="jump-window-close" onclick="geomap.map.bufferdraw.layerVector.getSource().clear(); geomap.map.ol_object.removeInteraction(geomap.map.bufferdraw); geomap.map.infoEnabled = true; jwindow.close('#popup-buffer')">
 				<i class="fas fa-times"></i>
 			</a>
 		</div>
