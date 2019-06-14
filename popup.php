@@ -23,7 +23,7 @@
 				<div class="col col-xs-12 col-sm-12 col-md-4 col-lg-4 p0 m0">
 					<div class="jump-window-group" id="popup-basic-filters">
 						<div class="jump-window-group-header">
-							<span>SELECCIONE LA OBRA O PROYECTO</span>
+							<span>OBRA O PROYECTO</span>
 						</div>
 						<div class="jump-window-group-body p20">
 							<span><?php echo DrawProyectos(); ?></span>
@@ -31,7 +31,7 @@
 					</div>
 					<div class="jump-window-group">
 						<div class="jump-window-group-header">
-							<span>SELECCIONE LA OBRA INFORMACION</span>
+							<span>BUSCAR INFORMACION</span>
 						</div>
 						<div class="jump-window-group-body jump-scroll" id="filtered-layer-list">
 						</div>	
