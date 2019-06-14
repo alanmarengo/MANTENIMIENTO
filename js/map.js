@@ -1161,6 +1161,7 @@ function ol_map() {
 			var layer_wms = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-wms");
 			
 			document.getElementById("layer-checkbox-"+layer_id).layer = new ol.layer.Tile({
+				name:layer_name,
 				visible:true,
 				source: new ol.source.TileWMS({
 					url: layer_wms,
