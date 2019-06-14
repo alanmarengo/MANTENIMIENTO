@@ -488,13 +488,6 @@ function ol_map() {
 		
 	}
 	
-	this.map.coordinates = function() {
-		
-		$(".popup").not("#popup-busqueda").hide();
-		$("#popup-coordinates").show();
-		
-	}
-	
 	this.map.saveCoordinate = function(e) {
 		
 		var lon = e.coordinate[0];
@@ -665,9 +658,6 @@ function ol_map() {
 			}.bind(this));
 			
 		}.bind(this));
-		
-		$(".popup").not("#popup-busqueda").hide();
-		$("#popup-drawing").show();
 		
 	}
 	
@@ -1365,43 +1355,6 @@ function ol_map() {
 		}
 		
 		var nheight = docheight - otherElementsTotalHeight;
-		
-		$("#popup-busqueda").width(nwidth);
-		$("#popup-busqueda").height(nheight);
-		$("#popup-busqueda").css("left",left+"px");
-		
-		$("#popup-share").width(nwidth);
-		$("#popup-share").height(nheight);
-		$("#popup-share").css("left",left+"px");
-		
-		$("#popup-coordinates").width(nwidth/3);
-		$("#popup-coordinates").height(210);
-		$("#popup-coordinates").css("right","60px");
-		$("#popup-coordinates").css("bottom","53px");
-		$("#popup-coordinates").css("top","auto");
-		$("#popup-coordinates").css("left","auto");
-		
-		$("#popup-info").width(nwidth/3);
-		$("#popup-info").height(400);
-		$("#popup-info").css("right","20px");
-		
-		$("#popup-medicion").width(nwidth/3);
-		$("#popup-medicion").height(300);
-		$("#popup-medicion").css("right","20px");
-		
-		$("#popup-drawing").width(nwidth/2);
-		$("#popup-drawing").height(300);
-		$("#popup-drawing").css("right","20px");
-		
-		$("#popup-baselayers").width(nwidth/3);
-		$("#popup-baselayers").height(400);
-		$("#info-baselayers").height(300);
-		$("#popup-baselayers").css("right","20px");
-		
-		$("#popup-buffer").width(nwidth/3);
-		$("#popup-buffer").height(400);
-		$("#info-buffer").height(300);
-		$("#popup-buffer").css("right","20px");
 		
 		$("#popup-preloader").width(nwidth/3);
 		$("#popup-preloader").css("top","50%");

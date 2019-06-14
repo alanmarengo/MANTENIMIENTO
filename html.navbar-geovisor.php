@@ -23,7 +23,7 @@
 						</a>
 					</li>
 					<li class="ml-5">
-						<a class="button" href="javascript:void(0);">
+						<a class="button" href="javascript:void(0);" onclick="jwindow.open('#popup-coordinates'); geomap.map.activateCoordinates();">
 							<img src="./images/toolbar.icon.coordenadas.png">
 						</a>
 					</li>

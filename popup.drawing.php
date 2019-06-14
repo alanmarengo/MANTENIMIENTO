@@ -1,10 +1,10 @@
-<div class="jump-window jump-align-right jump-flotant-heightfill-top col col-xs-12 col-sm-12-col-md-6 col-lg-6" id="popup-drawing">
+<div class="jump-window jump-align-right jump-flotant-heightfill-top col col-xs-12 col-sm-12-col-md-4 col-lg-4" id="popup-drawing">
 	
 	<div class="jump-window-inner p20">
 
 		<div class="jump-window-header">
 			<span>Dibujar</span>
-			<a href="#" class="jump-window-close">
+			<a href="#" class="jump-window-close" onclick="geomap.map.drawing.layerVector.getSource().clear();">
 				<i class="fas fa-times"></i>
 			</a>
 		</div>

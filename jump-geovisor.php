@@ -246,8 +246,9 @@
 	
 	<?php include("./popup.php"); ?>
 	<?php include("./popup.baselayers.php"); ?>
-	<?php include("./popup.share.php"); ?>
+	<?php include("./popup.coordinates.php"); ?>
 	<?php include("./popup.drawing.php"); ?>
+	<?php include("./popup.share.php"); ?>
 
 </body>
 </html>
