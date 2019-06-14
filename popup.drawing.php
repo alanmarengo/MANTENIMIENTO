@@ -3,7 +3,7 @@
 	<div class="jump-window-inner p20">
 
 		<div class="jump-window-header">
-			<span>Capa Base</span>
+			<span>Dibujar</span>
 			<a href="#" class="jump-window-close">
 				<i class="fas fa-times"></i>
 			</a>

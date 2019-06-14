@@ -247,6 +247,7 @@
 	<?php include("./popup.php"); ?>
 	<?php include("./popup.baselayers.php"); ?>
 	<?php include("./popup.share.php"); ?>
+	<?php include("./popup.drawing.php"); ?>
 
 </body>
 </html>
