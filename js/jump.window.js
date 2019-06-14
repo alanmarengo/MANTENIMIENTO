@@ -55,4 +55,10 @@ Jump.window = function() {
 		
 	}
 	
+	this.close = function(e) {
+		
+		$(e).hide();
+		
+	}
+	
 }

@@ -11,6 +11,7 @@
 	
 	<?php include("./scripts.default.php"); ?>	
 	<?php include("./scripts.openlayers.php"); ?>	
+	<?php include("./scripts.highcharts.php"); ?>	
 
 	<!-- JUMP THEME -->
 
@@ -35,6 +36,7 @@
 	
 	<script src="./js/config.js" type="text/javascript"></script>
 	<script src="./js/map.js" type="text/javascript"></script>
+	<script src="./js/chart.js" type="text/javascript"></script>
 
 	<!-- COLORPICKER JS -->
 	
@@ -248,6 +250,8 @@
 	<?php include("./popup.baselayers.php"); ?>
 	<?php include("./popup.coordinates.php"); ?>
 	<?php include("./popup.drawing.php"); ?>
+	<?php include("./popup.medicion.php"); ?>
+	<?php include("./popup.ptopografico.php"); ?>
 	<?php include("./popup.share.php"); ?>
 	
 	<div id="popup-results">
