@@ -263,6 +263,7 @@
     font-size: 20px;
     text-align: center;
     line-height: 36px;
+	cursor:pointer;
 
 }
 
@@ -271,4 +272,10 @@
 	opacity:0.5;
 	color:#FFFFFF;
 
+}
+
+.layer-bullet-opened {
+	
+	margin-right:-36px;
+	
 }

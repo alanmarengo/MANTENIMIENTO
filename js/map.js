@@ -812,6 +812,13 @@ function ol_map() {
 	
 	this.panel.start = function() {
 		
+		$("#layer-bullet").on("click",function() {
+			
+			flotant.toggle('#nav-panel',true);
+			$(this).toggleClass("layer-bullet-opened");
+			
+		});
+		
 		$("#btn-bus-simple").on("click",function() {
 			
 			$("#geovisor-popup-search").slideUp();
