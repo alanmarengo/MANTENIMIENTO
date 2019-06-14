@@ -9,7 +9,7 @@
 			</a>
 		</div>
 		
-		<div class="jump-window-body p20">
+		<div class="jump-window-body text-center p20">
 			
 			<img src="./images/svg-loaders/oval.svg" alt="" width="50">
 			<p class="mt-10">Cargando...</p>
