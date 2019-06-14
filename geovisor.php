@@ -256,6 +256,8 @@
 	<?php include("./popup.ptopografico.php"); ?>
 	<?php include("./popup.share.php"); ?>
 	
+	<?php include("./widget-links.php"); ?>
+	
 	<div id="popup-results">
 	
 	</div>
