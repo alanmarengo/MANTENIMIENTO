@@ -1,4 +1,4 @@
-<div class="jump-window jump-flotant-heightfill jump-modal col col-xs-12 col-sm-12-col-md-6 col-lg-6 ml-auto mr-auto geovisor-flotant" id="popup-preloader">
+<div class="jump-window jump-flotant-heightfill jump-align-right jump-align-bottom jump-modal col col-xs-12 col-sm-12-col-md-6 col-lg-6 ml-auto mr-auto geovisor-flotant" id="popup-preloader">
 	
 	<div class="jump-window-inner p20">
 
