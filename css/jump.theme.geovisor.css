@@ -72,11 +72,41 @@ a:hover {
 	
 }
 
+#panel-seach-input {
+	
+	background-color:#29363c;
+	
+}
+
 #nav-panel {
 	
 	z-index:90000;
 	
 }
+
+.jump-flotant-nav {	
+	
+	background-color:#333333;
+	
+}
+
+.jump-nav-default li a {
+	
+	color:#FFFFFF;
+	text-decoration:none;
+	font-size:11px;
+	
+}
+
+.jump-nav-default li a:hover {
+	
+	background-color:#31cbfd;
+	color:#FFFFFF;
+	text-decoration:none;
+	
+}
+
+/*** LAYERS ***/
 
 #filtered-layer-list .popup-panel-tree-item-header {
 	
@@ -127,28 +157,6 @@ a:hover {
 .geovisor-flotant .jump-window-body {
 	
 	font-size:12px;
-	
-}
-
-.jump-flotant-nav {	
-	
-	background-color:#333333;
-	
-}
-
-.jump-nav-default li a {
-	
-	color:#FFFFFF;
-	text-decoration:none;
-	font-size:11px;
-	
-}
-
-.jump-nav-default li a:hover {
-	
-	background-color:#31cbfd;
-	color:#FFFFFF;
-	text-decoration:none;
 	
 }
 

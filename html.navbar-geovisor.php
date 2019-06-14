@@ -8,17 +8,17 @@
 			
 				<ul>
 					<li class="ml-5">
-						<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); jwindow.open('#popup-buffer');geomap.map.buffer();">
+						<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); geomap.map.buffer();">
 							<img src="./images/toolbar.icon.buffer.png">
 						</a>							
 					</li>
 					<li class="ml-5">
-						<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); jwindow.open('#popup-ptopografico');geomap.map.ptopografico();">
+						<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); geomap.map.ptopografico();">
 							<img src="./images/toolbar.icon.ptopografico.png">
 						</a>        
 					</li>
 					<li class="ml-5">
-						<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); jwindow.open('#popup-medicion');geomap.map.medicion();">
+						<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); geomap.map.medicion();">
 							<img src="./images/toolbar.icon.medicion.png">
 						</a>
 					</li>
