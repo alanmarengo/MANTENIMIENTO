@@ -664,7 +664,7 @@ function ol_map() {
 	
 	this.map.medicion = function() {
 		
-		this.map.infoEnabled = false;
+		this.infoEnabled = false;
 		
 		if (!this.medicion.source) {
 		
