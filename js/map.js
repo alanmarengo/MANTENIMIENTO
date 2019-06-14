@@ -825,7 +825,7 @@ function ol_map() {
 					
 				}else{
 					
-					$("#layer-bullet").animate({"left":navWidth+"px"},"fast");
+					$("#layer-bullet").animate({"left":(navWidth-89)+"px"},"fast");
 					
 				}
 				
