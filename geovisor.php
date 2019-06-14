@@ -157,7 +157,7 @@
 			
 			<?php } ?>
 			 
-			 flotant.toggle('#nav-panel',true);
+			// flotant.toggle('#nav-panel',true);
 			 
 		});
 		
