@@ -64,7 +64,7 @@
 		
 	background-color:#333333;
 	color:#FFFFFF;
-	font-family:"Gotham bold";
+	font-family:"Montserrat",sans-serif;
 	font-size:13px;
 	height:24px;
 	line-height:24px;
@@ -78,7 +78,7 @@
 	color:#333333;
 	background-color:transparent;
 	color:#FFFFFF;
-	font-family:"Gotham bold";
+	font-family:"Montserrat",sans-serif;
 	font-size:13px;
 	height:24px;
 	line-height:24px;
@@ -134,7 +134,7 @@
 .popup-panel-content {
 	
 	font-size:12px;
-	font-family:"Gotham light";
+	font-family:"Montserrat",sans-serif;
 	
 }
 
@@ -173,7 +173,7 @@
 	top: -1px;
 	left: -3px;
 	color: #4c4c4e;	
-	font-family:"Gotham Bold";
+	font-family:"Montserrat",sans-serif;
 	
 }
 
@@ -222,7 +222,7 @@
 
 .popup-text-active:not(i) {
 		
-	font-family:"Gotham bold";
+	font-family:"Montserrat",sans-serif;
 	color:#31cbfd !Important;
 	
 }
@@ -241,7 +241,7 @@
 
 .popup-panel-tree-item-subpanel li {
 	
-	font-family:"Gotham Light";
+	font-family:"Montserrat",sans-serif;
 	font-size: 0.8em;
 	color: #828282;
 	padding:2px 0;
@@ -266,7 +266,7 @@
 
 .popup-panel-content .title {
 	
-	font-family:"Gotham Bold";
+	font-family:"Montserrat",sans-serif;
 	font-size:18px;
 	margin:20px 0 13px 0;
 	
@@ -276,7 +276,7 @@
 	
 	background-color: #333333;
 	color: #FFFFFF;
-	font-family:"Gotham bold";
+	font-family:"Montserrat",sans-serif;
 	font-size: 13px;
 	height: 29px;
 	line-height: 29px;
