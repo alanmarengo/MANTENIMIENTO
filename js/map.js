@@ -797,7 +797,7 @@ function ol_map() {
 		$("#btn-bus-simple").on("click",function() {
 			
 			$("#geovisor-popup-search").slideUp();
-			$("#popup-panel-section-1").slideDown();
+			$("#popup-basic-filters").slideDown();
 			$("#popup-geovisor .button").removeClass("button-active");
 			$(this).addClass("button-active");
 		});
@@ -805,7 +805,7 @@ function ol_map() {
 		$("#btn-bus-advanced").on("click",function() {
 			
 			$("#geovisor-popup-search").slideDown();
-			$("#popup-panel-section-1").slideUp();
+			$("#popup-basic-filters").slideUp();
 			$("#popup-geovisor .button").removeClass("button-active");
 			$(this).addClass("button-active");
 			
