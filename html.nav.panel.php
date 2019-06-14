@@ -4,7 +4,8 @@
 		<a href="#" class="button button-input jump-link-death" style="width: 34px; height: 34px; line-height: 34px;">
 			<i class="fa fa-search"></i>
 		</a>
-		<input id="panel-seach-input" class="jump-input jump-input pl-10" name="main-search" readonly="readonly" type="text" value="Buscar Información" data-jump-placeholder="Buscar Información" placeholder="Buscar Información" onfocus="jwindow.open('#popup-geovisor');">							
+		<input id="panel-seach-input" class="jump-input jump-input pl-10" name="main-search" readonly="readonly" type="text" value="Buscar Información" data-jump-placeholder="Buscar Información" placeholder="Buscar Información" 
+			onfocus="geomap.map.ol_object_mini.updateSize(); geomap.map.ol_object_mini.render(); jwindow.open('#popup-geovisor');">							
 	</div>
 
 </div>

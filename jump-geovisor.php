@@ -19,7 +19,9 @@
 	<!-- GEOVISOR -->
 
 	<link rel="stylesheet" href="./css/geovisor/layers.css"/>
+	<link rel="stylesheet" href="./css/geovisor/map.css"/>
 	<link rel="stylesheet" href="./css/geovisor/panel.css"/>
+	<link rel="stylesheet" href="./css/geovisor/popup.css"/>
 	<link rel="stylesheet" href="./css/geovisor/input.css"/>
 	<link rel="stylesheet" href="./css/geovisor/style.css"/>
 	
@@ -92,6 +94,7 @@
 			geomap.map.createPrintLegendDiv();
 			
 			geomap.map.panel.fit();
+			geomap.map.panel.start();
 		
 			<?php if (isset($_GET["geovisor"])) { ?>
 			

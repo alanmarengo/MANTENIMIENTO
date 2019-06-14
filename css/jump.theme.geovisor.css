@@ -78,6 +78,38 @@ a:hover {
 	
 }
 
+#filtered-layer-list .popup-panel-tree-item-header {
+	
+	
+	font-size:12px;
+	padding:10px 20px;
+
+}
+
+#layer-preview-inner {
+	
+	color:#333333;
+	
+}
+
+#layer-preview-inner .button {
+	
+	padding:4px;
+	border-radius:3px;
+	background-color:#4c4c4e;
+	color:#FFFFFF;
+	font-size:13px;
+	font-weight:700;
+	padding:10px;
+	
+}
+
+#layer-preview-inner .button:hover {
+	
+	opacity:0.5;
+	
+}
+
 .jump-flotant-nav {	
 	
 	background-color:#333333;
@@ -102,6 +134,12 @@ a:hover {
 
 /*** WINDOWS ***/
 
+#popup-geovisor .jump-window-body {
+	
+	background-color:#FFFFFF;
+	
+}
+
 .jump-window {
 	
 	background:transparent;
@@ -119,16 +157,44 @@ a:hover {
 	
 	padding:4px;
 	border-radius:3px;
-	background-color:#31cbfd;
+	background-color:#4c4c4e;
 	color:#FFFFFF;
 	font-size:13px;
 	font-weight:700;
 	
 }
 
+.jump-window-header .button-active {
+	
+	background-color:#31cbfd;
+	
+}
+
 .jump-window-header .button:hover {
 	
 	opacity:0.5;
+	
+}
+
+.jump-window-header .button-active:hover {
+	
+	opacity:1;
+	
+}
+
+.jump-window-group-header {
+	
+	background-color:#e3e3e3;
+	color:#333333;
+	font-size:12px;
+	font-weight:700;
+	cursor:normal;
+	
+}
+
+.jump-window-group-body {
+	
+	color:#333333;
 	
 }
 
@@ -148,6 +214,12 @@ a:hover {
 	
 	background:RGBA(33,33,33,.6);
 	color:#FFFFFF;
+	
+}
+
+#popup-geovisor .pretty .state label {
+	
+	color:#333333;
 	
 }
 

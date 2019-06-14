@@ -21,6 +21,15 @@
 	
 }
 
+.jump-window-group-header {
+	
+	padding:0 20px;
+	cursor:move;
+	height:36px;
+	line-height:36px;
+	
+}
+
 .jump-window-close {
 	
 	float:right;
