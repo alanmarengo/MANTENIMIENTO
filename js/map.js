@@ -583,9 +583,6 @@ function ol_map() {
 				
 			});
 			
-			$("#popup-info").hide();
-			$("#buffer-hint").hide();
-			
 			var req = $.ajax({
 				
 				async:false,
@@ -598,7 +595,7 @@ function ol_map() {
 			
 			this.parseGFI(req.responseText,"popup-buffer","info-buffer");
 			
-			this.infoEnabled = true;		
+			this.infoEnabled = true;
 			
 		}.bind(this));
 		
