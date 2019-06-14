@@ -574,6 +574,8 @@ function ol_map() {
 			
 			this.ol_object.removeInteraction(this.bufferdraw);
 			
+			this.buffer.source.clear();
+			
 			var layers = [];
 			
 			$(".layer-checkbox[data-added=1]:checked:visible").each(function(i,v) {
