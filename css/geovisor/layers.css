@@ -256,11 +256,19 @@
     top: 15px;
     width: 36px;
     height: 36px;
-	border:1px solid #CCCCCC;
+	color:#FFFFFF;
+	background-color:#31cbfd;
     z-index: 20;
     display: block;
     font-size: 20px;
     text-align: center;
     line-height: 36px;
+
+}
+
+#layer-bullet:hover {
+	
+	opacity:0.5;
+	color:#FFFFFF;
 
 }
