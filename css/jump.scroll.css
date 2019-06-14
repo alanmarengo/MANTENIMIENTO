@@ -1,6 +1,11 @@
 .jump-scroll {
 	
 	overflow-y:auto;
+	
+}
+
+.jump-scroll:not(.jump-posfix):not(.jump-posabs) {
+	
 	position:relative !Important;
 	
 }
