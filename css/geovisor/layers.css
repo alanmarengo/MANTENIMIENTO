@@ -248,3 +248,19 @@
 	border-color:green;
 	
 }
+
+#layer-bullet {
+
+    position: absolute;
+    right: 0px;
+    top: 15px;
+    width: 36px;
+    height: 36px;
+	border:1px solid #CCCCCC;
+    z-index: 20;
+    display: block;
+    font-size: 20px;
+    text-align: center;
+    line-height: 36px;
+
+}

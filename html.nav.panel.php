@@ -1,3 +1,11 @@
+<div id="layer-bullet">
+
+	<a href="javascript:void(0);">
+		<i class="fa fa-layer-group"></i>
+	</a>
+
+</div>
+
 <div class="p20 text-center">
 	
 	<div class="button-input-group ml-auto mr-auto w-50-p" style="height: 34px; line-height: 34px; background-color:#29363c;">
