@@ -8,7 +8,7 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 		
 		layerVector.points = data.points;
 		
-		FLWindows.Maximize(document.getElementById("perfil-topografico"));
+		jwindow.open("#popup-ptopografico");
 		
 		$("#perfil_topografico_chart").highcharts({
 			chart: {
