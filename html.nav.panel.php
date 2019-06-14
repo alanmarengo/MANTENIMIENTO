@@ -1,6 +1,6 @@
 <div class="col col-md-8 col-lg-8 col-xs-12 col-sm-12 p20 ml-auto mr-auto text-center">
 	
-	<div class="button-input-group ml-auto mr-auto w-100-p" style="height: 34px; line-height: 34px; background-color:#29363c;">
+	<div class="button-input-group mr-auto w-100-p" style="height: 34px; line-height: 34px; background-color:#29363c;">
 		<a href="#" class="button button-input jump-link-death" style="width: 34px; height: 34px; line-height: 34px;">
 			<i class="fa fa-search"></i>
 		</a>
