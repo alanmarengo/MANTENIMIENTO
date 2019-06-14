@@ -28,7 +28,7 @@
 						</a>
 					</li>
 					<li class="ml-5">
-						<a class="button" href="javascript:void(0);">
+						<a class="button" href="javascript:void(0);" onclick="jwindow.open('#popup-drawing');">
 							<img src="./images/toolbar.icon.dibujo.png">
 						</a>
 					</li>
