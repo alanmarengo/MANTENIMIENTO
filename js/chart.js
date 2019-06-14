@@ -14,19 +14,24 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 			chart: {
 				zoomType: 'x',
 				margin:0,
-				backgroundColor:'rgba(255, 255, 255, 0.0)',
-				color:'#FFFFFF'
+				backgroundColor:'rgba(255, 255, 255, 0.0)'
 			},
 			title: {
 				text: 'Perfil Topográfico',
 				style: {
 					
-					fontSize:"15px"
+					fontSize:"15px",
+				color:'#FFFFFF'
 					
 				}
 			},
 			subtitle: {
-				text: 'Distancia Total: ' + data.distancia_total + "Km."
+				text: 'Distancia Total: ' + data.distancia_total + "Km.",
+				style: {
+					
+					color:'#FFFFFF'
+					
+				}
 			},
 			xAxis: {
 				type: 'distancia'
