@@ -24,17 +24,6 @@ function ol_map() {
 				crossOrigin: 'anonymous'
 			})
 		})
-		
-		this.baselayers.openstreets_mini = new ol.layer.Tile({
-			name: 'openstreets',
-			title: 'OSM',
-			type: 'base',
-			visible: false,
-			source: new ol.source.XYZ({
-				url: '//{a-c}.tile.openstreetmaps.org/{z}/{x}/{y}.png',
-				crossOrigin: 'anonymous'
-			})
-		})
 	
 		this.baselayers.opentopo = new ol.layer.Tile({
 			name: 'opentopo',
@@ -104,7 +93,7 @@ function ol_map() {
 		this.baseLayer = this.baselayers.openstreets;		
 		
 		this.ol_object_mini = new ol.Map({
-			layers:[this.baselayers.openstreets_mini],
+			layers:[this.baselayers.google],
 			target: 'mini-map',
 			extent: [-13281237.21183002,-7669922.0600572005,-738226.6183457375,-1828910.1066171727],
 			controls: [],
@@ -1119,7 +1108,7 @@ function ol_map() {
 		
 		for (var i=0; i<allLayers.length; i++) {
 			
-			if (allLayers[i].get('name') != "openstreets") {
+			if (allLayers[i].get('name') != "google") {
 				
 				allLayers[i].setVisible(false);
 			

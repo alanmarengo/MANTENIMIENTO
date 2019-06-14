@@ -9,7 +9,7 @@
 			</a>
 		</div>
 		
-		<div class="jump-window-body jump-window-full-body p20">
+		<div class="jump-window-body jump-window-full-body jump-scroll p20">
 			
 			<span class="ml-5 fs-10 tool-hint" id="buffer-hint">(Dibuje un círculo para buscar datos geoespaciales dentro de su área)</span>			
 			
