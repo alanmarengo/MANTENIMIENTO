@@ -592,6 +592,8 @@ function ol_map() {
 				
 			});
 			
+			$("#buffer-hint").hide();
+			
 			this.parseGFI(req.responseText,"popup-buffer","info-buffer");
 			
 			this.infoEnabled = true;
