@@ -4,7 +4,7 @@
 
 		<div class="jump-window-header">
 			<span>Dibujar</span>
-			<a href="#" class="jump-window-close" onclick="geomap.map.drawing.layerVector.getSource().clear(); geomap.map.infoEnabled = true;">
+			<a href="#" class="jump-window-close" onclick="geomap.map.drawing.layerVector.getSource().clear(); geomap.map.ol_object.removeInteraction(geomap.map.draw); geomap.map.infoEnabled = true;">
 				<i class="fas fa-times"></i>
 			</a>
 		</div>
