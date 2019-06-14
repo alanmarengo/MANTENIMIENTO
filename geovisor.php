@@ -103,6 +103,18 @@
 			jinput = new Jump.input();
 			jinput.initialize();
 			
+			/*** ONRESIZE ***/
+			
+			Jump.onresize = function() {
+				
+				flotant.initialize();
+				block.refresh();
+				scroll.refresh();
+				
+			}
+			
+			window.addEventListener("resize",Jump.onresize);
+			
 			/*** MAP ***/
 			
 			geomap = new ol_map();
