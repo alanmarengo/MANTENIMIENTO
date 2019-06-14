@@ -1110,7 +1110,7 @@ function ol_map() {
 		
 		for (var i=0; i<allLayers.length; i++) {
 			
-			if (allLayers[i].get('name') != "google") {
+			if (allLayers[i].get('name') != "google_base") {
 				
 				allLayers[i].setVisible(false);
 			
