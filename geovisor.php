@@ -59,6 +59,11 @@
 				
 			flotant.initialize();
 			
+			flotantSubVar = new Jump.flotant();
+			flotantSubVar.setFitAgainstRule("#jump-navbar-main");
+			
+			flotantSubVar.initialize();
+			
 			/*** NAV ***/
 			
 			nav = new Jump.nav();
@@ -186,7 +191,7 @@
 		
 		</div>
 	
-		<div class="jump-navbar" id="jump-navbar-geovisor">
+		<div class="jump-navbar jump-flotant-nav" id="jump-navbar-geovisor">
 		
 			<?php include("./html.navbar-geovisor.php"); ?>
 		
