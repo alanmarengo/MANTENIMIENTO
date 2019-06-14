@@ -40,7 +40,7 @@
 					<div id="layer-preview-inner">
 				
 						<p class="title" id="layer-preview-title">Datos de Capa</p>
-						<p class="content">Seleccione una capa para ver su descripción</p>
+						<p class="content">Seleccione una capa para ver su descripci&oacute;n</p>
 						
 						<p class="mt-10 text-center">
 							<a href="#" class="button" id="btn-layer-preview-addlayer">AGREGAR AL MAPA</a>
