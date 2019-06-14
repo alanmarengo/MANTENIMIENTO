@@ -246,6 +246,14 @@
 	
 	</div>
 	
+	<div id="layer-bullet" class="jump-flotant-heightfill-top">
+
+		<a href="javascript:void(0);">
+			<i class="fa fa-layer-group"></i>
+		</a>
+
+	</div>
+	
 	<?php include("./popup.php"); ?>
 	<?php include("./popup.baselayers.php"); ?>
 	<?php include("./popup.buffer.php"); ?>
