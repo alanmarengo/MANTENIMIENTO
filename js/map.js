@@ -741,7 +741,7 @@ function ol_map() {
 	
 	this.map.ptopografico = function() {
 		
-		this.map.infoEnabled = false;
+		this.infoEnabled = false;
 		
 		if (!this.ptopografico.source) {
 		
