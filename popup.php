@@ -16,7 +16,7 @@
 		
 		<div class="jump-window-body jump-window-full-body jump-scroll">
 			
-			<?php include("./geovisor.popup.search.php"); ?>
+			<?php include("./popup.advanced-search.php"); ?>
 			
 			<div class="row p0 m0">
 			
