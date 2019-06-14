@@ -14,7 +14,8 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 			chart: {
 				zoomType: 'x',
 				margin:0,
-				backgroundColor:'rgba(255, 255, 255, 0.0)'
+				backgroundColor:'rgba(255, 255, 255, 0.0)',
+				color:'#FFFFFF'
 			},
 			title: {
 				text: 'Perfil Topográfico',
