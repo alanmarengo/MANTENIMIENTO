@@ -73,19 +73,38 @@ Jump.flotant = function() {
 		
 	}
 	
-	this.toggle = function(target,addBackOption) {
+	this.toggle = function(target,addBackOption,onAnimateEnd) {
 		
 		var visible = $(target).attr("data-visible");
 		var navWidth = $(target).attr("data-width");
 		
 		if (visible == 1) {
 			
-			$(target).animate({"left":"-"+navWidth+"px"},"fast");
+			if (onAnimateEnd) {
+			
+				$(target).animate({"left":"-"+navWidth+"px"},"fast",onAnimateEnd);
+			
+			}else{
+				
+				$(target).animate({"left":"-"+navWidth+"px"},"fast");
+				
+			}
+			
 			$(target).attr("data-visible","0");
 			
 		}else{
 			
-			$(target).animate({"left":"0px"},"fast");
+			
+			if (onAnimateEnd) {
+				
+				$(target).animate({"left":"0px"},"fast",onAnimateEnd);
+			
+			}else{
+			
+				$(target).animate({"left":"0px"},"fast");
+			
+			}
+			
 			$(target).attr("data-visible","1");
 			
 			if (addBackOption) {

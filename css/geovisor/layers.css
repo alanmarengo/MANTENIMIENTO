@@ -263,6 +263,8 @@
     text-align: center;
     line-height: 36px;
 	cursor:pointer;
+	z-index:90001;
+	margin-top:20px;
 
 }
 

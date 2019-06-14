@@ -814,8 +814,22 @@ function ol_map() {
 		
 		$("#layer-bullet").on("click",function() {
 			
-			flotant.toggle('#nav-panel',true);
-			$(this).toggleClass("layer-bullet-opened");
+			var navWidth = $("#nav-panel").width();
+			var navState = $("#nav-panel").attr("data-visible");
+			
+			flotant.toggle('#nav-panel',true,function() {
+				
+				if (navState == 1) {
+					
+					$(this).animate({"left","0px"},"fast");
+					
+				}else{
+					
+					$(this).animate({"left",navWidth+"px"},"fast");
+					
+				}
+				
+			});
 			
 		});
 		
