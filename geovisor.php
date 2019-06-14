@@ -56,12 +56,13 @@
 				
 			flotant = new Jump.flotant();
 			flotant.setFitAgainstRule(".jump-navbar"); // default
+			flotant.fit();
 				
 			flotant.initialize();
 			
 			flotantSubVar = new Jump.flotant();
 			flotantSubVar.setFitAgainstRule("#jump-navbar-main");
-			flotantSubVar.fitPosition();
+			flotantSubVar.fit();
 			
 			flotantSubVar.initialize();
 			
@@ -113,7 +114,8 @@
 			
 			Jump.onresize = function() {
 				
-				flotant.initialize();
+				flotant.fit();
+				flotantSubVar.fit();
 				block.refresh();
 				scroll.refresh();
 				
