@@ -1,56 +1,133 @@
-<?php include("./header.php"); ?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
 
-<div id="page_template" class="page">
-    <div class="row">
-        <div class="col-md-12 page-section-1">
-            Template
-        </div>
+	<title>Página</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<?php include("./scripts.default.php"); ?>
+	
+	<script type="text/javascript">
+	
+		$(document).ready(function(){		
+			
+			/*** FLOTANT ***/
+				
+			flotant = new Jump.flotant();
+			flotant.setFitAgainstRule(".jump-navbar"); // default
+				
+			flotant.initialize();
+			
+			/*** NAV ***/
+			
+			nav = new Jump.nav();
+			nav.hamburguer.fit();
+			nav.hamburguer.addBehavior(function() {
+				
+				var addBackOptionSize = $(".jump-sublevel-backoption:visible").length;
+				
+				if (addBackOptionSize > 0) {
+					
+					$(".jump-sublevel-backoption:visible a").trigger("click");
+					
+				}else{
+				
+					$(this).toggleClass('open');
+					flotant.toggle('#nav-main',false);
+				
+				}
+				
+			});			
+			
+			nav.fitNavLinks();	
+			
+			/*** FLOTANT ***/
+			
+			jwindow = new Jump.window();
+			jwindow.initialize();
+			jwindow.setAllWindowsDraggable();
+			
+			/*** BLOCK ***/
+			
+			block = new Jump.block();
+			block.refresh();
+			
+			/*** SCROLL ***/
+			
+			scroll = new Jump.scroll();
+			scroll.refresh();
+			
+			/*** INPUT ***/
+			
+			jinput = new Jump.input();
+			jinput.initialize();
+			
+		});
+		
+	</script>
+	
+</head>
+<body>
 
-        <div class="col-md-12 page-section-2">
-            <h3>Lorem ipsum dolor sit amet</h3>
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis, dui ut interdum fermentum, dui enim gravida odio, eget maximus est nunc eget augue. Aenean rhoncus auctor arcu sit amet viverra. Praesent ultricies feugiat luctus. In ornare commodo libero sit amet aliquet. Integer luctus tortor vitae accumsan varius. Vivamus pulvinar imperdiet euismod. Etiam nulla nisl, sagittis id tempus nec, venenatis sit amet justo. Vestibulum pharetra blandit ante, non aliquam tellus efficitur nec. Nulla ac porttitor odio, eget pulvinar dolor. Aenean consequat posuere justo, sed pharetra neque cursus a. Pellentesque non leo neque.                
-            </p>
-        </div>
+	<div class="jump-site">
+	
+		<div class="jump-navbar" id="jump-navbar-main">
+		
+			<?php include("./html.navbar-main.php"); ?>
+		
+		</div>
+		
+		<div class="jump-container jump-flotant-heightfill-top jump-posabs">
+		
+			<?php include("./section.page.php"); ?>
+			<?php include("./footer.php"); ?>
+		
+		</div>
+	
+	</div>
+	
+	<div class="jump-flotant-heightfill jump-flotant-nav jump-scroll jump-posfix col col-xs-12 col-sm-12-col-md-3 col-lg-3" data-visible="0" id="nav-main">
+	
+		<div class="jump-nav-default jump-nav-inner">
+		
+			<?php include("html.nav.php"); ?>
+		
+		</div>
+	
+	</div>
+	
+	<div class="jump-flotant-heightfill jump-flotant-nav jump-scroll jump-posfix jump-flotant-nav-level-2 col col-xs-12 col-sm-12-col-md-3 col-lg-3" data-visible="0" id="nav-geovisores">
+	
+		<div class="jump-nav-default jump-nav-inner">
+		
+			<?php include("html.nav.geovisores.php"); ?>
+		
+		</div>
+	
+	</div>
+	
+	<div class="jump-flotant-heightfill jump-flotant-nav jump-scroll jump-posfix jump-flotant-nav-level-2 col col-xs-12 col-sm-12-col-md-3 col-lg-3" data-visible="0" id="nav-vinculaciones-insterinstitucionales">
+	
+		<div class="jump-nav-default jump-nav-inner">
+		
+			<?php include("html.nav.vinculaciones_insterinstitucionales.php"); ?>
+		
+		</div>
+	
+	</div>
+	
+	<div class="jump-flotant-heightfill jump-flotant-nav jump-scroll jump-posfix jump-flotant-nav-level-2 col col-xs-12 col-sm-12-col-md-3 col-lg-3" data-visible="0" id="nav-recursos-hidricos">
+	
+		<div class="jump-nav-default jump-nav-inner">
+		
+			<?php include("html.nav.recursos_hidricos.php"); ?>
+		
+		</div>
+	
+	</div>
+	
+	<?php //include("./popup.baselayers.php"); ?>
 
-        <div class="col-md-12 page-section-3" style="background-image: url(./images/index/modulo1.jpg);">
-        </div>
-
-        <div class="col-md-12 page-section-4">
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis, dui ut interdum fermentum, dui enim gravida odio, eget maximus est nunc eget augue. Aenean rhoncus auctor arcu sit amet viverra. Praesent ultricies feugiat luctus. In ornare commodo libero sit amet aliquet. Integer luctus tortor vitae accumsan varius. Vivamus pulvinar imperdiet euismod. Etiam nulla nisl, sagittis id tempus nec, venenatis sit amet justo. Vestibulum pharetra blandit ante, non aliquam tellus efficitur nec. Nulla ac porttitor odio, eget pulvinar dolor. Aenean consequat posuere justo, sed pharetra neque cursus a. Pellentesque non leo neque.                
-            </p>
-        </div>
-
-        <div class="row" style="margin-left: 20px; margin-right: 20px;">
-            <div class="col-md-3 page-box">
-                <div class="page-box-image" style=""></div>
-                <h4>HIDRO</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis, dui</p>
-            </div>
-            <div class="col-md-3 page-box">
-                <div class="page-box-image" style=""></div>
-                <h4>GNEA</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis, dui</p>
-            </div>
-            <div class="col-md-3 page-box">
-                <div class="page-box-image" style=""></div>
-                <h4>EOLICA Y BIOMASA</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis, dui</p>
-            </div>
-            <div class="col-md-3 page-box">
-                <div class="page-box-image" style=""></div>
-                <h4>COMERCIO</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis, dui</p>
-            </div>
-        </div>
-    </div>
-</div>
-<?php include("./widget-links.php"); ?>
-    
-<script type='text/javascript'>
-    $(document).ready(function () {
-    });
-</script>
-
-<?php include("./footer.php"); ?>
+</body>
+</html>
