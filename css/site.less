@@ -377,8 +377,9 @@ body {
     }
     
     .modulo-hover-text {
+        font-size: .9em;
         text-align: center;
-        padding: 1em 3em;
+        padding: 1em 2em;
         transition: .2s;
         transform: translateX(-1em);
     }
@@ -493,6 +494,7 @@ body {
         }
         
         .link-hover-text {
+            text-align: center;
             padding: 1em 1em;
             transition: .2s;
             transform: translateX(-1em);
@@ -801,8 +803,19 @@ body {
 
 }
 
+@media (max-width: 920px) {
+    .side-right {
+        .link-text {
+            font-size: .9em!important;
+        }
+    
+        .link-hover-text {
+            font-size: .7em;
+        }
+    }
+}
 
-@media (max-width: 780px) {
+@media (max-width: 750px) {
     @carousel_height: 250px;
 
     #navIcons {
@@ -811,6 +824,14 @@ body {
 
     .side-right {
         padding: 40px 60px 20px 40px;
+
+        .link-text {
+            font-size: 1.2em!important;
+        }
+    
+        .link-hover-text {
+            font-size: 1em;
+        }
     }
 
     .footer .social-media {
