@@ -1,5 +1,5 @@
 <div id="page_index">
-    <div id="main-slider" class="carousel slide" data-ride="carousel" data-interval="3000000">
+    <div id="main-slider" class="carousel slide" data-ride="carousel" data-interval="3000">
         <ol class="carousel-indicators">
             <li data-target="#main-slider" data-slide-to="0" class="active"></li>
             <li data-target="#main-slider" data-slide-to="1"></li>
