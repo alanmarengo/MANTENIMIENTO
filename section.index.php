@@ -1,5 +1,5 @@
 <div id="page_index">
-    <div id="main-slider" class="carousel slide" data-ride="carousel" data-interval="3000">
+    <div id="main-slider" class="carousel slide" data-ride="carousel" data-interval="3000000">
         <ol class="carousel-indicators">
             <li data-target="#main-slider" data-slide-to="0" class="active"></li>
             <li data-target="#main-slider" data-slide-to="1"></li>
@@ -11,7 +11,7 @@
             <a href="./geovisor.php" class="carousel-item active">
                 <img class="d-block w-100" src="./images/index/slide1.jpg" alt="...">
                 <div class="carousel-caption">
-                    <p>GEOVISOR DE INFORMACION INTEGRADA</p>
+                    <p>GEOVISOR DE INFORMACION INTEGRADA<br /></p>
                 </div>                
                 <div class="slide-hover">
                     Permite recorrer el territorio e indagar toda la información de las obras e instalaciones en operación de IEASA y su documentación relacionada. 
@@ -306,22 +306,6 @@
     
 <script type='text/javascript'>
     $(document).ready(function () {
-        /*
-        $('.modulo-wrap.video-wrap').hover( 
-            function () {
-                $(this).find('.video').show()
-                $(this).find('video')[0].play()
-
-                $(this).find('.modulo-text').hide();
-            },
-            function () {
-                $(this).find('video')[0].pause()
-                $(this).find('.video').hide()
-                $(this).find('.modulo-text').show();
-            }
-        )
-        */
-
         $('.video-hover').on('click', function() {
             $('#uxVideo').modal('show');
             $('#uxVideo video')[0].play();

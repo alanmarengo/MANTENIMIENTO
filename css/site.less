@@ -91,6 +91,10 @@ body {
     color: #FFFFFF !important;
 }
 
+#mainbar-icons {
+    display: visible!important;
+}
+
 .flex-fill {
     flex: 1;
 }
@@ -252,16 +256,17 @@ body {
 }
 
 #page_index {
-    @carousel_height: 600px;
+    @carousel_height: 540px;
     @modulo_height: 300px;
 
     #main-slider {
         .carousel-inner {
-            max-height: @carousel_height;
+            //max-height: @carousel_height;
         } 
         
         .carousel-item {
             img { opacity: .5; }
+            //max-height: @carousel_height;
         }
 
         .carousel-indicators > li {
@@ -287,7 +292,7 @@ body {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: @carousel_height;
+            //height: @carousel_height;
         }
 
         .carousel-control-prev {
@@ -305,9 +310,9 @@ body {
 
     .slide-hover {
         width: 100%;
-        height: @carousel_height;
-        padding-left: 160px;
-        padding-right: 140px;
+        //height: @carousel_height;
+        padding-left: 12%;
+        padding-right: 12%;
         font-size: 1.5em;
         text-align: center;
         position: absolute;
@@ -797,7 +802,7 @@ body {
 }
 
 
-@media (max-width: 680px) {
+@media (max-width: 780px) {
     @carousel_height: 250px;
 
     #navIcons {
@@ -812,18 +817,37 @@ body {
         text-align: left;
     }
     
-    .carousel-inner {
-        max-height: @carousel_height!important;
-    } 
+    #page_index #main-slider {
+        .carousel-inner {
+            //max-height: @carousel_height!important;
+        } 
+    
+        .carousel-control-next {
+            font-size: 2em;
+        }
 
-    .carousel-caption {
-        font-size: 1.4em!important;
-        height: @carousel_height!important;
+        .carousel-control-prev {
+            font-size: 2em;
+        }
+
+        .carousel-caption {
+            font-size: 1.4em!important;
+            //height: @carousel_height!important;
+        }
+    
+        .side-right {
+            padding: 0px;
+        }
+    
+        .slide-hover {
+            font-size: .9em!important;
+        }
     }
 
-    .side-right {
-        padding: 0px;
+    #mainbar-icons {
+        display: none!important;
     }
+
 }
 
 

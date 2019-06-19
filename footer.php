@@ -1,11 +1,8 @@
 <div class="row footer">
-	<div class="col-md-3" style="padding: 10px;">
-		<img src="./images/logo-footer.png" style="width: 100%; max-width: 250px; height: auto;" />
+	<div class="col-md-3" style="padding: 20px 30px;">
+		<img src="./images/logo-footer.png" style="width:80%; max-width: 250px; height: auto;" />
 	</div>
 	<div class="col-md-3" style="font-size: .9em; padding: 10px;">
-		<b>CONTACTO</b>
-		<br />
-		<br />
 		<b>TELÉFONO</b><br />
 		(+54 11) 5276-4050 INT: 127<br />
 		<br />
@@ -60,7 +57,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-md-3 social-media" style="padding: 10px;">
+	<div class="col-md-3 social-media" style="padding: 10px; display: none;">
 		<a href="#" class="fab fa-facebook-f"></a>
 		<a href="#" class="fab fa-youtube"></a>
 		<a href="#" class="fab fa-twitter"></a>
