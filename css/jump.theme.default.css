@@ -57,12 +57,49 @@ a:hover {
 	
 }
 
+#mainbar-icons .jump-block-inner-toolbar ul {
+	
+	display:flex;
+	
+}
+
+#mainbar-icons .jump-block-inner-toolbar ul li a {
+	
+	color:#31cbfd;
+	
+}
+
 #mainbar-icons .button {
 	
 	height:36px;
 	width:36px;
+	display:inline-flex;
+	align-items:center;
+	margin-left:10px;
 	
 }
+
+#mainbar-icons .button a {
+	
+	height:36px;
+	width:36px;
+	display:inline-flex;
+	align-items:center;
+	text-align:center;
+	justify-content:center;
+	
+}
+
+#mainbar-icons .button-grow {
+	
+	height:36px;
+	flex-grow:1;
+	background-color:#4a4849;
+	position: relative;
+	left: -2px;
+	
+}
+
 
 #toolbar-icons {
 	
@@ -178,7 +215,8 @@ a:hover {
 
 .jump-block-inner-toolbar ul li {
 
-    display: inline-block;
+    display: inline-flex;
+	align-items:center;
 
 }
 

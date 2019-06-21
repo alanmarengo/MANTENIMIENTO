@@ -1,19 +1,18 @@
 <!-- CSS -->
 <!-- FONTS -->
 
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="./fontawesome-5.8.1/css/all.min.css" />	
 
 <!-- BOOTSTRAP + LIBS -->
 
 <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="./css/bootstrapfix.navbar.css" />
 <link rel="stylesheet" type="text/css" href="./css/bootstrap-datepicker.min.css" />
 <link rel="stylesheet" type="text/css" href="./css/bootstrap-select.css" />
 <link rel="stylesheet" type="text/css" href="./css/site.css" />
-<link rel="stylesheet" type="text/css" href="./css/perfect-scrollbar.css" />
-<!-- <link rel="stylesheet" type="text/css" href="./css/scrollbars.css" /> -->
-<link rel="stylesheet" type="text/css" href="./css/sidenav-index.css" />
+<!--<link rel="stylesheet" type="text/css" href="./css/perfect-scrollbar.css" />
+ <link rel="stylesheet" type="text/css" href="./css/scrollbars.css" />
+<!--<link rel="stylesheet" type="text/css" href="./css/sidenav-index.css" /> -->
 <link rel="stylesheet" type="text/css" href="./css/widget-links.css"/>
 
 <link rel="stylesheet" href="./js/jquery-ui/jquery-ui.min.css"/>
@@ -25,7 +24,7 @@
 
 <!-- JUMP CSS -->
 
-<link rel="stylesheet" href="./css/jump.align.css"/>
+<!--<link rel="stylesheet" href="./css/jump.align.css"/>
 <link rel="stylesheet" href="./css/jump.block.css"/>
 <link rel="stylesheet" href="./css/jump.button.css"/>
 <link rel="stylesheet" href="./css/jump.flotant.css"/>
@@ -40,7 +39,11 @@
 <link rel="stylesheet" href="./css/jump.site.css"/>
 <link rel="stylesheet" href="./css/jump.size.css"/>
 <link rel="stylesheet" href="./css/jump.submenu.css"/>
-<link rel="stylesheet" href="./css/jump.window.css"/>
+<link rel="stylesheet" href="./css/jump.window.css"/>-->
+<link rel="stylesheet" href="./css/jump.displays.css"/>
+<link rel="stylesheet" href="./css/jump.link.css"/>
+<link rel="stylesheet" href="./css/jump.rowcol.css"/>
+<link rel="stylesheet" href="./css/jump.spacers.css"/>
 
 <!-- JUMP CSS AUX -->
 
@@ -48,7 +51,7 @@
 
 <!-- JUMP THEME -->
 
-<link rel="stylesheet" href="./css/jump.theme.default.css"/>
+<!--<link rel="stylesheet" href="./css/jump.theme.default.css"/>-->
 
 <!-- SCRIPTS -->
 <!-- JQUERY + UI -->	

@@ -1,0 +1,13 @@
+.flexbox {
+
+	display:flex;
+	align-items:center;
+
+}
+
+.iflexbox {
+
+	display:inline-flex;
+	align-items:center;
+
+}
