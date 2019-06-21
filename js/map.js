@@ -76,7 +76,7 @@ function ol_map() {
 		
 		this.baselayers.collection = [this.baselayers.openstreets,this.baselayers.opentopo,this.baselayers.bing_roads,this.baselayers.bing_aerials,this.baselayers.google];
 		
-		document.getElementById("baselayer-default-radio").click();
+		///////document.getElementById("baselayer-default-radio").click();
 		
 		this.ol_object = new ol.Map({
 			layers:this.baselayers.collection,

@@ -1,6 +1,6 @@
 <div id="navbar-tools">
 
-	<div class="row jump-row">
+	<div class="row jump-row default-row">
 		
 		<div class="col col-xs-12 col-sm-12 col-md-4 col-lg-4 ml-10 flexbox col-title">
 				
@@ -51,6 +51,10 @@
 		
 		</div>
 
+	</div>
+	
+	<div class="row jump-row responsive-row">
+	
 	</div>
 
 </div>
