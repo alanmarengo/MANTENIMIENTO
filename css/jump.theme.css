@@ -37,6 +37,14 @@ a:hover {
 	
 }
 
+.page-container {	
+	
+	display:flex;
+	flex-grow:1;
+	position:relative;
+	
+}
+
 /***  DROPDOWN ***/
 
 .dropdown-menu {

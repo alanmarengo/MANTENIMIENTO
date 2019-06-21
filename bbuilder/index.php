@@ -10,6 +10,9 @@
     <script>try{Typekit.load();}catch(e){}</script><!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js?b45bc0"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js?b45bc0"></script><![endif]-->
+	
+	<link rel="stylesheet" type="text/css" href="../fontawesome-5.8.1/css/all.min.css" />
+
     <link rel="stylesheet" href="css/bigsky.aui.css">
     <link rel="stylesheet" href="css/styles.css">
     <link href="favicon.png" rel="shortcut icon" type="image/png">

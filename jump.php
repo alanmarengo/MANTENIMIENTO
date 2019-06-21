@@ -222,7 +222,11 @@
 		<?php include("./html.navbar-main.php"); ?>
 		<?php include("./html.navbar-tools.php"); ?>
 		
-		<div class="page-container" id="map"></div>
+		<div class="page-container">
+			<div id="map"></div>
+		</div>
+		
+		<?php include("./html.nav.php"); ?>
 		
 	</div>
 
