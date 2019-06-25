@@ -113,6 +113,11 @@ $(document).ready(function() {
         let group = $(this).data('group');
         let item = $(this).data('item');
         model.filters.groups[group].items[item].checked = true;
+        
+        //CHECK SUBTEMA VISIBILITY
+        if (group == 3)
+            model.filters.groups[4].visible = true;
+                
         setEstudio(null);
         filtersRender();
         dataLoad()
@@ -413,7 +418,6 @@ $(document).ready(function() {
                         <div class="card-header" id="group-${gindex}-header">
                             <button id="group-${gindex}-title" class="group-title btn btn-link" type="button" data-toggle="collapse"
                                 data-target="#group-${gindex}-body" data-group="${gindex}">
-                                ...
                             </button>
                         </div>
 
@@ -489,11 +493,29 @@ $(document).ready(function() {
         });
 
         $('#uxDesde').on('changeDate', function(e) {
+            let d = moment($('#uxDesde').val(), 'DD/MM/YYYY');
+            let h = moment($('#uxHasta').val(), 'DD/MM/YYYY');
+
+            if(d.isValid() && h.isValid() && d > h) {
+                alert('La fecha desde no puede ser superior a la fecha hasta!')
+                $('#uxDesde').val('');
+                return;
+            }
+
             model.filters.dateStart = $('#uxDesde').val();
             dataLoad()
         });
 
         $('#uxHasta').on('changeDate', function(e) {
+            let d = moment($('#uxDesde').val(), 'DD/MM/YYYY');
+            let h = moment($('#uxHasta').val(), 'DD/MM/YYYY');
+
+            if(d.isValid() && h.isValid() && h < d) {
+                alert('La fecha hasta no puede ser inferior a la fecha desde!')
+                $('#uxHasta').val('');
+                return;
+            }
+
             model.filters.dateEnd = $('#uxHasta').val();
             dataLoad()
         });
@@ -518,7 +540,7 @@ $(document).ready(function() {
             htmlLinkVisor = `<a href="${model.ficha.linkvisor}" target="_blank" class="btn btn-warning">Visualizar</a>`;
 
         let htmlLinkDescarga = '';
-        if (model.ficha.linkdescarga != '')
+        if (model.ficha.linkdescarga != '' && model.ficha.linkdescarga != model.ficha.linkvisor)
             htmlLinkDescarga = `<a href="${model.ficha.linkdescarga}" target="_blank" class="btn btn-warning">Descargar</a>`;
         
         let html = '';
@@ -654,9 +676,9 @@ $(document).ready(function() {
 
     function groupsTitleRender() {
         $.each(model.filters.groups, function(gindex, group) {
-            let html =
+            let html = 
                 `${group.title} (${qtyItemsNotChecked(group)}) <i class="fa fa-${group.collapsed ? 'plus' : 'minus'}-circle"></i>`;
-            $(`#group-${gindex}-title`).html(html);
+                $(`#group-${gindex}-title`).html(html);
         });
     }
 
@@ -707,7 +729,7 @@ $(document).ready(function() {
             {
                 title: 'Subtema',
                 collapsed: true,
-                visible: true,
+                visible: false,
                 items: []
             },
         ];
