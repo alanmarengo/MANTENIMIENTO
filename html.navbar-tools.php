@@ -35,15 +35,18 @@
 					<a class="button" href="javascript:void(0);" id="navbarDropdown-draw" role="button" data-toggle="dropdown" aria-expanded="false">
 						<img src="./images/toolbar.icon.dibujo.png">
 					</a>
-					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-draw" style="min-width:44px !Important; width:44px;">
+					<div class="dropdown-menu dropdown-menu-right" id="dropdown-draw" aria-labelledby="navbarDropdown-draw" style="min-width:30px !Important; width:30px;">
 						<a class="dropdown-item" href="#">
-							<i class="fa fa-bullseye"></i>
+							<i class="far fa-circle fa-2x" style="font-size:8px;"></i>
 						</a>
 						<a class="dropdown-item" href="#">
 							<i class="fa fa-minus"></i>
 						</a>
 						<a class="dropdown-item" href="#">
 							<i class="fa fa-draw-polygon"></i>
+						</a>
+						<a class="dropdown-item" href="#">
+							<i class="far fa-circle"></i>
 						</a>
 					</div> 
 				</li>

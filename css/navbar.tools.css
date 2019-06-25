@@ -14,7 +14,7 @@
 	
 }
 
-#navbar-tools .dropdown-menu a {
+#navbar-tools .dropdown-menu a:not(#dropdown-draw .dropdown-item) {
 	
 	height:36px;
 	line-height:36px;
@@ -114,22 +114,24 @@
 	
 }
 
-#brand {
+#dropdown-draw {
 	
-	display:flex;
-	flex-grow:1;
+	margin-top:10px;
+	margin-right:-3px;
 	
 }
 
-#main-search {
+#dropdown-draw .dropdown-item {
 	
-	width:100%;
-	background-color:none;
-	border:none;
-	color:#FFF;
-	background:transparent;
-	font-size: 12px;
-	border-left: 1px solid #777;
-	padding-left: 8px;
+	width:30px;
+	height:30px ;
+	line-height:30px;
+	
+}
+
+#dropdown-draw .dropdown-item li {
+	
+	font-size:10px;
+	font-weight:400;
 	
 }

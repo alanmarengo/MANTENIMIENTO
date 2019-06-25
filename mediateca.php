@@ -2,27 +2,92 @@
 <html lang="es">
 <head>
 
-	<title>Mediateca</title>
+	<title>Inicio</title>
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<?php include("./scripts.default.php"); ?>
+	<!-- CSS -->
+	<!-- FONTS -->
+
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="./fontawesome-5.8.1/css/all.min.css" />	
+
+	<!-- BOOTSTRAP + LIBS -->
+
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap-datepicker.min.css" />
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap-select.css" />
+	<link rel="stylesheet" type="text/css" href="./css/perfect-scrollbar.css" />
+	<link rel="stylesheet" type="text/css" href="./css/site.css" />
+	
+	<!-- SITE CSS -->
+	
+	<link rel="stylesheet" type="text/css" href="./css/bodyfix.css">
+	<link rel="stylesheet" type="text/css" href="./css/nav.css">
+	<link rel="stylesheet" type="text/css" href="./css/navbar.main.css">
+	<link rel="stylesheet" type="text/css" href="./css/navbar.tools.css">
+	<link rel="stylesheet" type="text/css" href="./css/hamburguer.css">
+	<link rel="stylesheet" type="text/css" href="./css/flexbox.css">
+	
+	<!-- JUMP CSS -->
+	
+	<link rel="stylesheet" type="text/css" href="./css/jump.spacers.css">
+	<link rel="stylesheet" type="text/css" href="./css/jump.displays.css"/>
+	<link rel="stylesheet" type="text/css" href="./css/jump.link.css"/>
+	<link rel="stylesheet" type="text/css" href="./css/jump.rowcol.css"/>
+	<link rel="stylesheet" type="text/css" href="./css/jump.spacers.css"/>
+	<link rel="stylesheet" type="text/css" href="./css/jump.theme.css" />
+	
+	<!-- MAP CSS -->
+	
+	<link rel="stylesheet" type="text/css" href="./css/geovisor/map.css">
+	
+	<!-- SCRIPTS -->
+	<!-- JQUERY + UI -->	
+
+	<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="./js/jquery-ui/jquery-ui.min.js"></script>	
+
+	<!-- POPPER -->	
+	<script src="./js/popper-1.12.9.min.js"></script>
+
+	<!-- BOOTSTRAP + LIBS -->	
+	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+	<script src="./js/bootstrap-datepicker.min.js"></script>
+	<script src="./js/bootstrap-datepicker.es.min.js"></script>
+	<script src="./js/bootstrap-select.js"></script>
+
+	<script src="./js/perfect-scrollbar.js" type="text/javascript"></script>
+	<script src="./js/scrollbars.js" type="text/javascript"></script>
+	<script src="./js/moment.js"></script>
+	<script src="./js/site.js" type="text/javascript"></script>
+	<script src="./js/map.js" type="text/javascript"></script>
+	<script src="./js/widget-links.js" type="text/javascript"></script>
+
+	<!-- JUMP JS -->
+
+	<script src="./js/jump.js"></script>
+	<script src="./js/jump.flotant.js"></script>
+	<script src="./js/jump.nav.js"></script>
+	<script src="./js/jump.scroll.js"></script>
+		
+	<?php include("./scripts.openlayers.php"); ?>	
+	
+	<?php// include("./scripts.default.php"); ?>
 	
 	<script type="text/javascript">
 	
-		$(document).ready(function(){		
+		$(document).ready(function() {
 			
-			/*** FLOTANT ***/
-				
 			flotant = new Jump.flotant();
-			flotant.setFitAgainstRule(".jump-navbar"); // default
-				
-			flotant.initialize();
+			flotant.prepareToggle(".navmenu");
+			flotant.fit();
+			flotant.fitTopElement(".page-container",".jump-navbar");
 			
-			/*** NAV ***/
+			scroll = new Jump.scroll();
+			scroll.refresh();
 			
 			nav = new Jump.nav();
-			nav.hamburguer.fit();
 			nav.hamburguer.addBehavior(function() {
 				
 				var addBackOptionSize = $(".jump-sublevel-backoption:visible").length;
@@ -33,101 +98,105 @@
 					
 				}else{
 				
-					$(this).toggleClass('open');
-					flotant.toggle('#nav-main',false);
+					$("#hamburguer").toggleClass('open');
+					flotant.toggle('#nav-main',false,false,false);
 				
 				}
 				
-			});			
-			
-			nav.fitNavLinks();	
-			
-			/*** FLOTANT ***/
-			
-			jwindow = new Jump.window();
-			jwindow.initialize();
-			jwindow.setAllWindowsDraggable();
-			
-			/*** BLOCK ***/
-			
-			block = new Jump.block();
-			block.refresh();
-			
-			/*** SCROLL ***/
-			
-			scroll = new Jump.scroll();
-			scroll.refresh();
-			
-			/*** INPUT ***/
-			
-			jinput = new Jump.input();
-			jinput.initialize();
+			});	
+
+			window.addEventListener("resize",function() {
+				
+				var docWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+				
+				if (docWidth < 1230) {
+					
+					$("#navbar-main .col-nav").appendTo("#navbar-main .responsive-row");
+					$("#navbar-main .col-nav").removeClass("col-md-3");
+					$("#navbar-main .col-nav").removeClass("col-lg-3");
+					$("#navbar-main .col-nav").addClass("col-md-12");
+					$("#navbar-main .col-nav").addClass("col-lg-12");
+					$("#navbar-main .col-brand").removeClass("col-md-3");
+					$("#navbar-main .col-brand").removeClass("col-lg-3");
+					$("#navbar-main .col-brand").addClass("col-md-12");
+					$("#navbar-main .col-brand").addClass("col-lg-12");
+					
+				}else{
+					
+					$("#navbar-main .col-nav").appendTo("#navbar-main .default-row");
+					$("#navbar-main .col-nav").removeClass("col-md-12");
+					$("#navbar-main .col-nav").removeClass("col-lg-12");
+					$("#navbar-main .col-nav").addClass("col-md-3");
+					$("#navbar-main .col-nav").addClass("col-lg-3");
+					$("#navbar-main .col-brand").removeClass("col-md-12");
+					$("#navbar-main .col-brand").removeClass("col-lg-12");
+					$("#navbar-main .col-brand").addClass("col-md-3");
+					$("#navbar-main .col-brand").addClass("col-lg-3");
+					
+				}
+				
+				if (docWidth < 780) {
+					
+					$("#navbar-tools .col-tools").appendTo("#navbar-tools .responsive-row");
+					$("#navbar-tools .col-tools").removeClass("col-md-3");
+					$("#navbar-tools .col-tools").removeClass("col-lg-3");
+					$("#navbar-tools .col-tools").addClass("col-md-12");
+					$("#navbar-tools .col-tools").addClass("col-lg-12");
+					$("#navbar-tools .col-title").removeClass("col-md-3");
+					$("#navbar-tools .col-title").removeClass("col-lg-3");
+					$("#navbar-tools .col-title").addClass("col-md-12");
+					$("#navbar-tools .col-title").addClass("col-lg-12");
+					
+				}else{
+					
+					$("#navbar-tools .col-tools").appendTo("#navbar-tools .default-row");
+					$("#navbar-tools .col-tools").removeClass("col-md-12");
+					$("#navbar-tools .col-tools").removeClass("col-lg-12");
+					$("#navbar-tools .col-tools").addClass("col-md-3");
+					$("#navbar-tools .col-tools").addClass("col-lg-3");
+					$("#navbar-tools .col-title").removeClass("col-md-12");
+					$("#navbar-tools .col-title").removeClass("col-lg-12");
+					$("#navbar-tools .col-title").addClass("col-md-3");
+					$("#navbar-tools .col-title").addClass("col-lg-3");
+					
+				}				
+				
+				flotant.prepareToggle(".navmenu");
+				flotant.fit();
+				flotant.fitPosition();
+				flotant.fitTopElement(".page-container",".jump-navbar");
+				
+				scroll.refresh();
+				
+			});
 			
 		});
-		
+	
 	</script>
 	
 </head>
 <body>
 
-	<div class="jump-site">
+	<div id="page">
 	
-		<div class="jump-navbar" id="jump-navbar-main">
+		<?php include("./html.navbar-main.php"); ?>
 		
-			<?php include("./html.navbar-main.php"); ?>
-		
-		</div>
-		
-		<div class="jump-container jump-flotant-heightfill-top jump-posabs">
+		<div class="page-container">
 		
 			<?php include("./section.mediateca.php"); ?>
+			
+			<?php include("./html.nav.php"); ?>
+			<?php include("./html.nav.geovisores.php"); ?>
+			<?php include("./html.nav.vinculaciones_insterinstitucionales.php"); ?>
+			<?php include("./html.nav.recursos_hidricos.php"); ?>
+			
 			<?php include("./footer.php"); ?>
-		
+			
 		</div>
-	
+		
 	</div>
 	
-	<div class="jump-flotant-heightfill jump-flotant-nav jump-scroll jump-posfix col col-xs-12 col-sm-12-col-md-3 col-lg-3" data-visible="0" id="nav-main">
 	
-		<div class="jump-nav-default jump-nav-inner">
-		
-			<?php include("html.nav.php"); ?>
-		
-		</div>
-	
-	</div>
-	
-	<div class="jump-flotant-heightfill jump-flotant-nav jump-scroll jump-posfix jump-flotant-nav-level-2 col col-xs-12 col-sm-12-col-md-3 col-lg-3" data-visible="0" id="nav-geovisores">
-	
-		<div class="jump-nav-default jump-nav-inner">
-		
-			<?php include("html.nav.geovisores.php"); ?>
-		
-		</div>
-	
-	</div>
-	
-	<div class="jump-flotant-heightfill jump-flotant-nav jump-scroll jump-posfix jump-flotant-nav-level-2 col col-xs-12 col-sm-12-col-md-3 col-lg-3" data-visible="0" id="nav-vinculaciones-insterinstitucionales">
-	
-		<div class="jump-nav-default jump-nav-inner">
-		
-			<?php include("html.nav.vinculaciones_insterinstitucionales.php"); ?>
-		
-		</div>
-	
-	</div>
-	
-	<div class="jump-flotant-heightfill jump-flotant-nav jump-scroll jump-posfix jump-flotant-nav-level-2 col col-xs-12 col-sm-12-col-md-3 col-lg-3" data-visible="0" id="nav-recursos-hidricos">
-	
-		<div class="jump-nav-default jump-nav-inner">
-		
-			<?php include("html.nav.recursos_hidricos.php"); ?>
-		
-		</div>
-	
-	</div>
-	
-	<?php //include("./popup.baselayers.php"); ?>
 
 </body>
 </html>
