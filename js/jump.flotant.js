@@ -28,7 +28,6 @@ Jump.flotant = function() {
 		
 		$(".jump-flotant-heightfill").each(function(i,v) {
 			
-			$(v).css("top",ruleTotalHeight+"px");
 			$(v).height((Jump.Document.height - ruleTotalHeight)+"px");
 			
 		});
@@ -89,10 +88,23 @@ Jump.flotant = function() {
 		
 	}
 	
-	this.toggle = function(target,addBackOption,onAnimateEnd) {
+	this.prepareToggle = function(target) {
 		
 		var visible = $(target).attr("data-visible");
-		var navWidth = $(target).attr("data-width");
+		var navWidth = $(target).width();
+		
+		if (visible == 0) {
+			
+			$(target).css({"left":"-"+navWidth+"px"});
+			
+		}
+		
+	}
+	
+	this.toggle = function(target,addBackOption,onAnimateEnd,addSectionTitle) {
+		
+		var visible = $(target).attr("data-visible");
+		var navWidth = $(target).width();
 		
 		if (visible == 1) {
 			
@@ -131,16 +143,33 @@ Jump.flotant = function() {
 					$("<li id='jump-back-"+tmphash+"' class='jump-sublevel-backoption'></li>").append(
 						$("<a>Volver</a>")
 							.attr("href","#")
-							.on("click",function() { this.toggle(target,true); $("#jump-back-"+tmphash).remove(); }.bind(this))
+							.on("click",function() { 
+							
+								this.toggle(target,true);
+								
+								$(target).find("ul").find(".jump-sublevel-backoption").remove(); 
+								$(target).find("ul").find(".jump-sublevel-labeloption").remove(); 
+								
+							}.bind(this))
 					)
 				);
 				
-				var height = $("#jump-back-"+tmphash).prev().height();
+			}
+			
+			if (addSectionTitle) {
 				
-				$("#jump-back-"+tmphash).css({
-					"height":height+"px",
-					"line-height":height+"px"
-				});
+				var tmphash = (Date.now().toString(36) + Math.random().toString(36).substr(2, 5)).toUpperCase();
+				var text = $(addSectionTitle).text();
+					text = text.split("(");
+					text = text[0].trim();
+				
+				$(target).find("ul").first().children("li").first().prepend(
+					$("<li id='jump-back-"+tmphash+"' class='jump-sublevel-labeloption'></li>").append(
+						$("<a>"+text+"</a>")
+							.attr("href","#")							
+							.attr("class","jump-link-death")
+					)
+				);
 				
 			}
 			

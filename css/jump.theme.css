@@ -31,7 +31,7 @@ a:hover {
 	height:100%;
 	margin:0;
 	padding:0;
-	position:fixed;
+	position:relative;
 	top:0;
 	left:0;
 	
@@ -41,6 +41,7 @@ a:hover {
 	
 	display:flex;
 	flex-grow:1;
+	flex-direction:column;
 	position:relative;
 	
 }
@@ -68,5 +69,11 @@ a:hover {
 	background-color:#31cbfd;
 	color:#FFFFFF;
 	font-size:12px;
+	
+}
+
+.jump-sublevel-labeloption {
+	
+	background-color:#5c5d5c;
 	
 }

@@ -17,10 +17,13 @@
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap-datepicker.min.css" />
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap-select.css" />
+	<link rel="stylesheet" type="text/css" href="./css/perfect-scrollbar.css" />
 	<link rel="stylesheet" type="text/css" href="./css/site.css" />
 	
 	<!-- SITE CSS -->
 	
+	<link rel="stylesheet" type="text/css" href="./css/geovisor.css">
+	<link rel="stylesheet" type="text/css" href="./css/nav.css">
 	<link rel="stylesheet" type="text/css" href="./css/navbar.main.css">
 	<link rel="stylesheet" type="text/css" href="./css/navbar.tools.css">
 	<link rel="stylesheet" type="text/css" href="./css/hamburguer.css">
@@ -66,6 +69,7 @@
 	<script src="./js/jump.js"></script>
 	<script src="./js/jump.flotant.js"></script>
 	<script src="./js/jump.nav.js"></script>
+	<script src="./js/jump.scroll.js"></script>
 		
 	<?php include("./scripts.openlayers.php"); ?>	
 	
@@ -76,6 +80,14 @@
 		$(document).ready(function() {
 			
 			flotant = new Jump.flotant();
+			flotant.prepareToggle("#nav-main");
+			flotant.prepareToggle("#nav-geovisores");
+			flotant.prepareToggle("#nav-vinculaciones-insterinstitucionales");
+			flotant.prepareToggle("#nav-recursos-hidricos");
+			flotant.fit();
+			
+			scroll = new Jump.scroll();
+			scroll.refresh();
 			
 			nav = new Jump.nav();
 			nav.hamburguer.addBehavior(function() {
@@ -89,7 +101,7 @@
 				}else{
 				
 					$("#hamburguer").toggleClass('open');
-					//flotant.toggle('#nav-main',false);
+					flotant.toggle('#nav-main',false,false,false);
 				
 				}
 				
@@ -153,6 +165,9 @@
 				
 				geomap.map.ol_object.updateSize();
 				geomap.map.ol_object.render();
+				
+				flotant.fit();
+				scroll.refresh();
 				
 			});
 			
@@ -223,12 +238,20 @@
 		<?php include("./html.navbar-tools.php"); ?>
 		
 		<div class="page-container">
-			<div id="map"></div>
+		
+			<div id="map" class="jump-flotant-heightfill"></div>
+			<?php //include("./section.index.php"); ?>
+			
+			<?php include("./html.nav.php"); ?>
+			<?php include("./html.nav.geovisores.php"); ?>
+			<?php include("./html.nav.vinculaciones_insterinstitucionales.php"); ?>
+			<?php include("./html.nav.recursos_hidricos.php"); ?>
+			
 		</div>
 		
-		<?php include("./html.nav.php"); ?>
-		
 	</div>
+	
+	
 
 </body>
 </html>

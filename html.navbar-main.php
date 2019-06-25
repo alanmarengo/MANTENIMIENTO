@@ -1,4 +1,4 @@
-<div class="navbar flebox" id="navbar-main">
+<div class="navbar flebox jump-navbar" id="navbar-main">
 		
 	<div class="row jump-row default-row">
 
@@ -18,7 +18,7 @@
 			
 		</div>
 		
-		<div class="col col-xs-12 col-sm-12 col-md-3 col-lg-3 flexbox col-nav">
+		<div class="col col-xs-12 col-sm-12 col-md-4 col-lg-4 flexbox col-nav">
 				
 			<ul class="ml-10 mr-15">
 				<li>
@@ -33,9 +33,15 @@
 					<a href="#" id="navbarDropdown-help" role="button" data-toggle="dropdown" aria-expanded="false">
 						<i class="fa fa-question-circle"></i>
 					</a>
-					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-help">
-						<a class="dropdown-item" href="#">Manual de Usuario</a>
-						<a class="dropdown-item" href="#">Video Explicativo</a>
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-help" id="dropdown-help">
+						<ul>
+							<li>
+								<a class="dropdown-item" href="#">Manual de Usuario</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="#">Video Explicativo</a>
+							</li>
+						</ul>
 					</div>            
 				</li>
 				<li>

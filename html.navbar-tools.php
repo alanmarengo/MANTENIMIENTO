@@ -1,4 +1,4 @@
-<div id="navbar-tools">
+<div id="navbar-tools" class="jump-navbar">
 
 	<div class="row jump-row default-row">
 		
@@ -11,32 +11,43 @@
 		<div class="col col-xs-12 col-sm-12 col-md-4 col-lg-4 mr-15 flexbox col-tools">
 				
 			<ul>
-				<li class="">
+				<li>
 					<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); geomap.map.buffer();">
 						<img src="./images/toolbar.icon.buffer.png">
 					</a>							
 				</li>
-				<li class="">
+				<li>
 					<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); geomap.map.ptopografico();">
 						<img src="./images/toolbar.icon.ptopografico.png">
 					</a>        
 				</li>
-				<li class="">
+				<li>
 					<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); geomap.map.medicion();">
 						<img src="./images/toolbar.icon.medicion.png">
 					</a>
 				</li>
-				<li class="">
+				<li>
 					<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); jwindow.open('#popup-coordinates'); geomap.map.activateCoordinates();">
 						<img src="./images/toolbar.icon.coordenadas.png">
 					</a>
 				</li>
-				<li class="">
-					<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); jwindow.open('#popup-drawing');">
+				<li class="dropdown">
+					<a class="button" href="javascript:void(0);" id="navbarDropdown-draw" role="button" data-toggle="dropdown" aria-expanded="false">
 						<img src="./images/toolbar.icon.dibujo.png">
 					</a>
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-draw" style="min-width:44px !Important; width:44px;">
+						<a class="dropdown-item" href="#">
+							<i class="fa fa-bullseye"></i>
+						</a>
+						<a class="dropdown-item" href="#">
+							<i class="fa fa-minus"></i>
+						</a>
+						<a class="dropdown-item" href="#">
+							<i class="fa fa-draw-polygon"></i>
+						</a>
+					</div> 
 				</li>
-				<li class="">
+				<li>
 					<a class="button" href="javascript:void(0);" onclick="geomap.map.print();">
 						<img src="./images/toolbar.icon.print.png">
 					</a>
