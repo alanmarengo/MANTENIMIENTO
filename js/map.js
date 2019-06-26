@@ -174,7 +174,18 @@ function ol_map() {
 			
 			}
 			
+		});		
+		
+		this.global_mouse_position_3857 = new ol.control.MousePosition({
+			coordinateFormat: function(coordinate) {
+			  return "EPSG:3875 | " + ol.coordinate.format(coordinate, '{y}, {x}', 4);
+			},
+			projection: 'EPSG:3857',
+			className: 'custom-mouse-position',
+			target: document.getElementById('global-coordinates-span')
 		});
+		
+		this.ol_object.addControl(this.global_mouse_position_3857);
 		
 		this.createLayers = function() {
 			
@@ -909,7 +920,7 @@ function ol_map() {
 				$(".layer-container").not(".layer-container[data-cid="+this.getAttribute("data-cid")+"]").hide();
 				$(".layer-container[data-cid="+this.getAttribute("data-cid")+"]").show();
 				
-				$("#abr-container").first(".panel-abr").prepend(this);			
+				//$("#abr-container").first(".panel-abr").prepend(this);			
 				scroll.refresh();
 				
 			}
@@ -967,15 +978,6 @@ function ol_map() {
 		$("form input").val("");
 		$("form select").prop("selectedIndex", 0);
 		$("form select").selectpicker("refresh");
-		
-	}
-	
-	this.panel.fit = function() {
-		
-		var width = $(this.div).width();
-		var layersContainerWidth = width - 40;
-		
-		$("#layers-container").width(layersContainerWidth-5);
 		
 	}
 	

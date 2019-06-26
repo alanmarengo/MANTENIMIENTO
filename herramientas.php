@@ -19,6 +19,7 @@
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap-select.css" />
 	<link rel="stylesheet" type="text/css" href="./css/perfect-scrollbar.css" />
 	<link rel="stylesheet" type="text/css" href="./css/site.css" />
+	<link rel="stylesheet" type="text/css" href="./css/widget-links.css" />
 	
 	<!-- SITE CSS -->
 	
@@ -195,9 +196,9 @@
 			
 		</div>
 		
-	</div>
+	</div>	
 	
-	
+	<?php include("./widget-links.php"); ?>
 
 </body>
 </html>

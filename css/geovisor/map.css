@@ -4,6 +4,7 @@
 	height:100%;
 	margin:0;
 	padding:0;
+	z-index:1000;
 	
 }
 
@@ -61,5 +62,16 @@
 	position: absolute;
 	display:none;
 	padding:0 20px;
+	
+}
+
+#global-coordinates {
+	
+	position:absolute;
+	right:0;
+	bottom:0;
+	color:#000000;
+	font-size:10px;
+	z-index:1100;
 	
 }

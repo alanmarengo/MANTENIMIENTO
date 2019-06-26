@@ -1,10 +1,12 @@
 #navbar-tools {
 	
+	position:fixed;
 	min-height:44px;
 	width:100%;
 	margin:0;
 	padding:0;
 	background-color:#4c4c4e;
+	z-index:1400
 	
 }
 

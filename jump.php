@@ -1,3 +1,6 @@
+<?php include("pgconfig.php"); ?>
+<?php include("geovisor.fn.php"); ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,7 +9,13 @@
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<!-- CSS -->
+	<!-- CSS -->	
+
+	<!-- PRETTY CHECKBOX -->
+
+	<link rel="stylesheet" href="./css/pretty-checkbox.css"/>
+	<link href="https://cdn.materialdesignicons.com/3.6.95/css/materialdesignicons.min.css" rel="stylesheet"> <!-- CHECKBOX FONTS -->
+	
 	<!-- FONTS -->
 
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
@@ -37,12 +46,25 @@
 	<link rel="stylesheet" type="text/css" href="./css/jump.rowcol.css"/>
 	<link rel="stylesheet" type="text/css" href="./css/jump.spacers.css"/>
 	<link rel="stylesheet" type="text/css" href="./css/jump.theme.css" />
-	
-	<!-- MAP CSS -->
-	
-	<link rel="stylesheet" type="text/css" href="./css/geovisor/map.css">
+
+	<!-- GEOVISOR -->
+
+	<link rel="stylesheet" href="./css/geovisor/forms.css"/>
+	<link rel="stylesheet" href="./css/geovisor/layers.css"/>
+	<link rel="stylesheet" href="./css/geovisor/map.css"/>
+	<link rel="stylesheet" href="./css/geovisor/panel.css"/>
+	<link rel="stylesheet" href="./css/geovisor/popup.css"/>
+	<link rel="stylesheet" href="./css/geovisor/input.css"/>
+	<link rel="stylesheet" href="./css/geovisor/spacers.css"/>
+	<link rel="stylesheet" href="./css/geovisor/sliders.css"/>
+	<link rel="stylesheet" href="./css/geovisor/style.css"/>
+
+	<!-- COLORPICKER CSS -->
+
+	<link rel="stylesheet" href="./js/colorpicker/css/colorpicker.css"/>
 	
 	<!-- SCRIPTS -->
+	
 	<!-- JQUERY + UI -->	
 
 	<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
@@ -64,6 +86,14 @@
 	<script src="./js/map.js" type="text/javascript"></script>
 	<script src="./js/widget-links.js" type="text/javascript"></script>
 
+	<!-- COLORPICKER JS -->
+	
+	<script src="./js/colorpicker/js/colorpicker.js" type="text/javascript"></script>
+
+	<!-- HTML 2 CANVAS -->
+	
+	<script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+
 	<!-- JUMP JS -->
 
 	<script src="./js/jump.js"></script>
@@ -73,6 +103,12 @@
 		
 	<?php include("./scripts.openlayers.php"); ?>	
 	
+	<!-- MAP -->
+	
+	<script src="./js/config.js" type="text/javascript"></script>
+	<script src="./js/map.js" type="text/javascript"></script>
+	<script src="./js/chart.js" type="text/javascript"></script>
+	
 	<?php// include("./scripts.default.php"); ?>
 	
 	<script type="text/javascript">
@@ -80,10 +116,9 @@
 		$(document).ready(function() {
 			
 			flotant = new Jump.flotant();
-			flotant.prepareToggle("#nav-main");
-			flotant.prepareToggle("#nav-geovisores");
-			flotant.prepareToggle("#nav-vinculaciones-insterinstitucionales");
-			flotant.prepareToggle("#nav-recursos-hidricos");
+			flotant.prepareToggle(".navmenu:not(#nav-panel)");
+			flotant.fitTopElement("#navbar-tools","#navbar-main");
+			flotant.fitTopElement(".page-container",".jump-navbar");
 			flotant.fit();
 			
 			scroll = new Jump.scroll();
@@ -167,6 +202,10 @@
 				geomap.map.ol_object.render();
 				
 				flotant.fit();
+				flotant.fitPosition();
+				flotant.fitTopElement("#navbar-tools","#navbar-main");
+				flotant.fitTopElement(".page-container",".jump-navbar");
+				
 				scroll.refresh();
 				
 			});
@@ -179,7 +218,6 @@
 			geomap.map.createLayers();
 			geomap.map.createPrintLegendDiv();
 			
-			geomap.map.panel.fit();
 			geomap.map.panel.start();
 		
 			<?php if (isset($_GET["geovisor"])) { ?>
@@ -239,13 +277,19 @@
 		
 		<div class="page-container">
 		
-			<div id="map" class="jump-flotant-heightfill"></div>
+			<div id="map" class="jump-flotant-heightfill">
+				<div id="global-coordinates">
+					<span id="global-coordinates-span"></span>
+				</div>
+			</div>
 			<?php //include("./section.index.php"); ?>
 			
 			<?php include("./html.nav.php"); ?>
 			<?php include("./html.nav.geovisores.php"); ?>
 			<?php include("./html.nav.vinculaciones_insterinstitucionales.php"); ?>
 			<?php include("./html.nav.recursos_hidricos.php"); ?>
+			
+			<?php include("./html.panel.php"); ?>
 			
 		</div>
 		

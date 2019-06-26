@@ -1,6 +1,7 @@
 #layers-wrapper {
 	
 	width:100%;
+	display:flex;
 	
 }
 
@@ -213,16 +214,15 @@
 #abr-container {
 	
 	width:40px;
-	display:inline-block;
-	vertical-align:top;
+	display:inline-flex;
 	
 }
 
 #layers-container {
 	
 	width:318px;
-	display:inline-block;
-	vertical-align:top;
+	display:inline-flex;
+	flex-grow:1;
 	
 }
 

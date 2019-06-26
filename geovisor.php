@@ -45,8 +45,6 @@
 	<!-- HTML 2 CANVAS -->
 	
 	<script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
-	
-	<script src="./js/colorpicker/js/colorpicker.js" type="text/javascript"></script>
 
 	<script type="text/javascript">
 	
@@ -190,7 +188,7 @@
 	
 		<div class="jump-navbar jump-flotant-nav jump-flotant-heightfill-top" id="jump-navbar-geovisor" data-visible="1">
 		
-			<?php include("./html.navbar-geovisor.php"); ?>
+			<?php include("./html.navbar-tools.php"); ?>
 		
 		</div>
 		
