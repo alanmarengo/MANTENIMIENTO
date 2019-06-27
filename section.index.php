@@ -66,7 +66,7 @@
     </div>
 
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-10">
             <div class="row modulo-row">
                 <div class="col-md-6 modulo-wrap modulo-1">
                     <div class="modulo-opacity"></div>
@@ -100,18 +100,14 @@
                 </div>
             </div>
             <div class="row modulo-row">
-                <div class="col-md-6 modulo-wrap modulo-3">
+                <div class="video-hover col-md-6 modulo-wrap modulo-7">
                     <div class="modulo-opacity"></div>
                     <div class="modulo-text">
-                        INDICADORES AMBIENTALES AHRSC
+                        EXPLORA LAS OBRAS DE LOS AHRSC EN 2D Y 3D
                     </div>
                     <div class="modulo-hover">
                         <p class="modulo-hover-text">
-                            Permite realizar el seguimiento de parámetros y variables de los programas del Plan de Gestión Ambiental (PGA) de los Aprovechamientos del Río Santa Cruz para comprender los fenómenos ambientales y territoriales.
-                            <br />
-                            <a href="./page.php" class="modulo-hover-icon">
-                                <i class="fa fa-plus-circle fa-2x"></i>
-                            </a>
+                            <i class="fa fa-play-circle fa-4x"></i>
                         </p>
                     </div>
                 </div>
@@ -168,14 +164,18 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="video-hover col-md-12 modulo-wrap modulo-7">
+                        <div class="col-md-12 modulo-wrap modulo-3">
                             <div class="modulo-opacity"></div>
                             <div class="modulo-text">
-                                EXPLORA LAS OBRAS DE LOS AHRSC EN 2D Y 3D
+                                INDICADORES AMBIENTALES AHRSC
                             </div>
                             <div class="modulo-hover">
                                 <p class="modulo-hover-text">
-                                    <i class="fa fa-play-circle fa-4x"></i>
+                                    Permite realizar el seguimiento de parámetros y variables de los programas del Plan de Gestión Ambiental (PGA) de los Aprovechamientos del Río Santa Cruz para comprender los fenómenos ambientales y territoriales.
+                                    <br />
+                                    <a href="./page.php" class="modulo-hover-icon">
+                                        <i class="fa fa-plus-circle fa-2x"></i>
+                                    </a>
                                 </p>
                             </div>
                         </div>
@@ -199,19 +199,6 @@
             </div>
             <div class="row modulo-row">
                 <div class="col-md-4 modulo-wrap modulo-9">
-                    <div class="modulo-opacity"></div>
-                    <div class="modulo-text">
-                        EL RÍO SANTA CRUZ EN NÚMEROS
-                    </div>
-                    <div class="modulo-hover">
-                        <p class="modulo-hover-text">
-                            Encontrá y visualizá información sobre recursos hídricos, modelos, información hidrometeorológica, sedimentológica e hidroambiental del río Santa (...)
-                            <br />
-                            <a href="./page.php" class="modulo-hover-icon">
-                                <i class="fa fa-plus-circle fa-2x"></i>
-                            </a>
-                        </p>
-                    </div>
                 </div>
                 <div class="col-md-4 modulo-wrap modulo-10">
                     <div class="modulo-opacity"></div>
@@ -246,46 +233,26 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3 side-right">
+        <div class="col-md-2 side-right">
             <div class="row">
                 <a href="./mediateca.php" class="col-md-12 link-wrap link-1">
                     <div class="link-text">
                         RECURSOS EN MEDIATECA
-                    </div>
-                    <div class="link-hover">
-                        <p class="link-hover-text">
-                        Accedé a informes, materiales audiovisuales, gráficos, información geográfica y datos estadísticos
-                        </p>
                     </div>
                 </a>
                 <a href="./herramientas.php" class="col-md-12 link-wrap link-2">
                     <div class="link-text">
                         HERRAMIENTAS GEOGRÁFICAS
                     </div>
-                    <div class="link-hover">
-                        <p class="link-hover-text">
-                        Accedé a la información georreferenciada para realizar consultas y gestionar datos en geovisores 
-                        </p>
-                    </div>
                 </a>
                 <a href="./page.php" class="col-md-12 link-wrap link-3">
                     <div class="link-text">
                         INDICADORES
                     </div>
-                    <div class="link-hover">
-                        <p class="link-hover-text">
-                        Accedé a paneles de indicadores desarrollados para el seguimiento de los proyectos y el análisis ambiental
-                        </p>
-                    </div>
                 </a>
                 <a href="./page.php" class="col-md-12 link-wrap link-4" style="margin-bottom: 0px!important;">
                     <div class="link-text">
                         ESTADÍSTICAS
-                    </div>
-                    <div class="link-hover">
-                        <p class="link-hover-text">
-                        Accedé a los datos generados en el desarrollo de los proyectos para su consulta y tratamiento
-                        </p>
                     </div>
                 </a>
             </div>
@@ -333,13 +300,24 @@
                 $(this).find('.modulo-text').show();
             }
         )
+
+
         $('.link-wrap').hover( 
             function () {
-                $(this).find('.link-text').hide();
             },
             function () {
-                $(this).find('.link-text').show();
             }
         )
+
+        refreshUI();
+        $(window).resize(function() {
+            refreshUI();
+        });
+
+        function refreshUI() {
+            let w = $('.link-wrap').width();
+            $('.link-wrap').height(w + 30);
+        }
+
     });
 </script>
