@@ -258,15 +258,11 @@ body {
 #page_index {
     @carousel_height: 540px;
     @modulo_height: 300px;
+    @sombra-texto: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,1);
 
     #main-slider {
-        .carousel-inner {
-            //max-height: @carousel_height;
-        } 
-        
         .carousel-item {
-            img { opacity: .5; }
-            //max-height: @carousel_height;
+            img { opacity: .9; }
         }
 
         .carousel-indicators > li {
@@ -292,7 +288,7 @@ body {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            //height: @carousel_height;
+            text-shadow: @sombra-texto;
         }
 
         .carousel-control-prev {
@@ -310,7 +306,6 @@ body {
 
     .slide-hover {
         width: 100%;
-        //height: @carousel_height;
         padding-left: 12%;
         padding-right: 12%;
         font-size: 1.5em;
@@ -325,8 +320,6 @@ body {
         display: none;
         align-items: center;
         justify-content: center;
-      
-        /* transition effect. not necessary */
         transition: opacity .2s, visibility .2s;
     }
 
@@ -348,7 +341,7 @@ body {
         right: 0;
         width: 100%;
         height: 100%;
-        opacity: .3;
+        opacity: .1;
         background-color:#333;
     }
 
@@ -365,8 +358,6 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-      
-        /* transition effect. not necessary */
         transition: opacity .2s, visibility .2s;
     }
 
@@ -407,7 +398,8 @@ body {
         float: left;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);        
+        transform: translate(-50%, -50%);  
+        text-shadow: @sombra-texto;      
     }
 
     .modulo-1 {
@@ -420,7 +412,7 @@ body {
     }
     .modulo-3 {
         background-image: url(../images/index/modulo3.jpg);
-        min-height: @modulo_height;
+        min-height: @modulo_height / 2;
     }
     .modulo-4 {
         background-image: url(../images/index/modulo4.jpg);
@@ -436,7 +428,7 @@ body {
     }
     .modulo-7 {
         background-image: url(../images/index/modulo7.jpg);
-        min-height: @modulo_height / 2;
+        min-height: @modulo_height;
     }
     .modulo-8 {
         background-image: url(../images/index/modulo8.jpg);
@@ -456,73 +448,43 @@ body {
     }
 
     .side-right {
-        padding: 40px 60px 20px 40px;
+        padding: 20px 60px 20px 40px;
+        background-color: #fff;
 
         .link-wrap {
             position: relative;
-            background-color: #747474;
-            min-height: @modulo_height - 40px;
-            margin-bottom: 40px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 50%;
         }
 
         .link-text {
-            font-size: 1.2em;
+            font-size: .8em;
             font-weight: bolder;
-            padding: .5em .5em;
             color: #fff;
             position: relative;
             float: left;
             text-align: center;
-            top: 80%;
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);        
         }
-    
-        .link-hover {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: #dedede;
-            color: #333;
-            visibility: hidden;
-            opacity: 0;
-            display: flex;
-            transition: opacity .2s, visibility .2s;
-            font-weight: bolder;
-        }
-        
-        .link-hover-text {
-            text-align: center;
-            padding: 1em 1em;
-            transition: .2s;
-            transform: translateX(-1em);
-        }
-    
-        .link-wrap:hover .link-hover {
-            visibility: visible;
-            opacity: 1;
-        }
-        
-        .link-wrap:hover .link-hover-text {
-            transform: translateX(0);
-        }
         
         .link-1 {
-            box-shadow: 20px -20px 0px #fea91a;
+            background-color: #fea91a;
         }
 
         .link-2 {
-            box-shadow: 20px -20px 0px #8e2f4f;
+            background-color: #8e2f4f;
         }
 
         .link-3 {
-            box-shadow: 20px -20px 0px #585dc5;
+            background-color: #585dc5;
         }
         
         .link-4 {
-            box-shadow: 20px -20px 0px #330033;
+            background-color: #330033;
         }
     }
 }
@@ -805,14 +767,12 @@ body {
 
 }
 
-@media (max-width: 920px) {
+@media (max-width: 1050px) {
     .side-right {
+        padding: 10px 40px 10px 30px!important;
+        
         .link-text {
-            font-size: .9em!important;
-        }
-    
-        .link-hover-text {
-            font-size: .7em;
+            font-size: .7em!important;
         }
     }
 }
@@ -828,7 +788,7 @@ body {
         padding: 40px 60px 20px 40px;
 
         .link-text {
-            font-size: 1.2em!important;
+            font-size: 1.4em!important;
         }
     
         .link-hover-text {
@@ -855,7 +815,6 @@ body {
 
         .carousel-caption {
             font-size: 1.4em!important;
-            //height: @carousel_height!important;
         }
     
         .side-right {
