@@ -46,6 +46,7 @@
 	<link rel="stylesheet" type="text/css" href="./css/jump.rowcol.css"/>
 	<link rel="stylesheet" type="text/css" href="./css/jump.spacers.css"/>
 	<link rel="stylesheet" type="text/css" href="./css/jump.theme.css" />
+	<link rel="stylesheet" type="text/css" href="./css/jump.window.css" />
 
 	<!-- GEOVISOR -->
 
@@ -99,6 +100,7 @@
 	<script src="./js/jump.js"></script>
 	<script src="./js/jump.flotant.js"></script>
 	<script src="./js/jump.nav.js"></script>
+	<script src="./js/jump.hovimage.js"></script>
 	<script src="./js/jump.scroll.js"></script>
 		
 	<?php include("./scripts.openlayers.php"); ?>	
@@ -123,6 +125,9 @@
 			
 			scroll = new Jump.scroll();
 			scroll.refresh();
+			
+			hovimage = new Jump.hovimage();
+			hovimage.refresh();
 			
 			nav = new Jump.nav();
 			nav.hamburguer.addBehavior(function() {
@@ -294,8 +299,8 @@
 		</div>
 		
 	</div>
-	
-	
+			
+	<?php include("./popup.php"); ?>	
 
 </body>
 </html>

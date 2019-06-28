@@ -5,6 +5,11 @@
 	left:0px;
 	height:100%;
 	padding:0;
+	
+}
+
+.navmenu:not(#nav-panel) {	
+	
 	background-color:#4c4c4e;
 	
 }
