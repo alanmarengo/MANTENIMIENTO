@@ -9,7 +9,7 @@
         </ol>
         <div class="carousel-inner">
             <a href="./geovisor.php" class="carousel-item active">
-                <img class="d-block w-100" src="./images/index/slide1.jpg" alt="...">
+                <img class="d-block w-100" src="./images/index/slide5.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>GEOVISOR DE INFORMACION INTEGRADA<br /></p>
                 </div>                
@@ -45,7 +45,7 @@
                 </div>
             </a>
             <a href="./mision.php" class="carousel-item">
-                <img class="d-block w-100" src="./images/index/slide5.jpg" alt="...">
+                <img class="d-block w-100" src="./images/index/slide1.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>MISIÓN DE IEASA</p>
                 </div>                
