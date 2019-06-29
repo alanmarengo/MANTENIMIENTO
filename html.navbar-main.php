@@ -12,7 +12,9 @@
 			
 			<div id="brand" class="inline-b">
 				
-				<img src="./images/logo_observatorio_ieasa.png" height="20">
+				<a href="./index.php">
+					<img src="./images/logo_observatorio_ieasa.png" height="20">
+				</a>
 				
 			</div>
 			

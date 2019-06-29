@@ -54,6 +54,9 @@ function onresize() {
 		
 	}
 	
+	geomap.map.ol_object.updateSize();
+	geomap.map.ol_object.render();
+	
 	flotant.fit();
 	flotant.fitPosition();
 	flotant.fitTopElement("#navbar-tools","#navbar-main");
