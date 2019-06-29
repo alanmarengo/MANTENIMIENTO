@@ -84,7 +84,7 @@
 	<script src="./js/scrollbars.js" type="text/javascript"></script>
 	<script src="./js/moment.js"></script>
 	<script src="./js/site.js" type="text/javascript"></script>
-	<script src="./js/map.js" type="text/javascript"></script>
+	<script src="./js/onresize.js" type="text/javascript"></script>
 	<script src="./js/widget-links.js" type="text/javascript"></script>
 
 	<!-- COLORPICKER JS -->
@@ -147,7 +147,8 @@
 				
 			});	
 
-			window.addEventListener("resize",function() {
+			window.addEventListener("resize",onresize);
+			/*window.addEventListener("resize",function() {
 				
 				var docWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 				
@@ -214,7 +215,7 @@
 				scroll.refresh();
 				
 			});
-			
+			*/
 			/*** MAP ***/
 			
 			geomap = new ol_map();
@@ -267,6 +268,8 @@
 				<?php } ?>
 			
 			<?php } ?>
+			
+			onresize();
 			
 		});
 	
