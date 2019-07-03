@@ -849,7 +849,7 @@ function ol_map() {
 			
 			$("#geovisor-popup-search").slideUp();
 			$("#popup-basic-filters").slideDown();
-			$("#popup-geovisor .button").removeClass("button-active");
+			$("#popup-header .button").removeClass("button-active");
 			$(this).addClass("button-active");
 		});
 		
@@ -857,7 +857,7 @@ function ol_map() {
 			
 			$("#geovisor-popup-search").slideDown();
 			$("#popup-basic-filters").slideUp();
-			$("#popup-geovisor .button").removeClass("button-active");
+			$("#popup-header .button").removeClass("button-active");
 			$(this).addClass("button-active");
 			
 		});

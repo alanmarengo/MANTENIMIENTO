@@ -14,6 +14,9 @@ function onresize() {
 		$("#navbar-main .col-brand").addClass("col-md-12");
 		$("#navbar-main .col-brand").addClass("col-lg-12");
 		
+		$("#nav-popup").show();
+		$("#popup-geovisor").hide();
+		$("#nav-popup-head").append($("#popup-header"));
 		$("#nav-popup-filter").append($("#geovisor-popup-search"));
 		$("#nav-popup-filter").append($("#popup-basic-filters"));
 		$("#nav-popup-layers").append($("#dynbox-popup-layers"));
@@ -21,6 +24,7 @@ function onresize() {
 		$("#frm-adv-search").find(".col").each(function(i,v) {
 			$(v).attr("class","col col-xs-12 col-sm-12 col-md-12 col-lg-12");
 		});
+		$("#nav-popup-layers .jump-window-group-body").css("overflow-y","visible");
 		
 	}else{
 		
@@ -34,6 +38,9 @@ function onresize() {
 		$("#navbar-main .col-brand").addClass("col-md-3");
 		$("#navbar-main .col-brand").addClass("col-lg-3");
 		
+		$("#nav-popup").hide();
+		$("#popup-geovisor").show();
+		$("#popup-inner").children().first().before($("#popup-header"));
 		$("#popup-body").before($("#geovisor-popup-search"));
 		$("#dynbox-popup-basic-search").append($("#popup-basic-filters"));
 		$("#dynbox-popup-basic-search").append($("#dynbox-popup-layers"));
@@ -42,6 +49,7 @@ function onresize() {
 			var defClass = $(v).attr("data-class");
 			$(v).attr("class",defClass);
 		});
+		$("#dynbox-popup-layers .jump-window-group-body").css("overflow-y","auto");
 		
 	}
 	

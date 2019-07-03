@@ -42,6 +42,7 @@ Jump.window = function() {
 			$(v).find(".jump-window-close").on("click",function() {
 				
 				$(this).closest(".jump-window").hide();
+				$(this).closest(".jump-window-mode").hide();
 				
 			});
 			

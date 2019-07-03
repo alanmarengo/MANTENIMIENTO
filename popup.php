@@ -1,8 +1,8 @@
 <div class="jump-window jump-align-right jump-flotant-heightfill jump-flotant-heightfill-top col col-xs-12 col-sm-12-col-md-8 col-lg-8" id="popup-geovisor">
 
-	<div class="jump-window-inner h-100-p">
+	<div class="jump-window-inner h-100-p" id="popup-inner">
 
-		<div class="jump-window-header">
+		<div class="jump-window-header" id="popup-header">
 			<a href="#" class="button button-active" id="btn-bus-simple">
 				<span>BUSQUEDA</span>
 			</a>
@@ -16,7 +16,7 @@
 		
 		<?php include("./popup.advanced-search.php"); ?>
 		
-		<div class="jump-window-body jump-window-full-body jump-scroll" id="popup-body">
+		<div class="jump-window-body jump-window-full-body" id="popup-body">
 			
 			<div class="jump-row row p0 m0">
 			
@@ -34,7 +34,7 @@
 							<span>BUSCAR INFORMACION</span>
 						</div>
 						<div class="jump-window-group-body flex-grow jump-flotant-height-transform">
-							<div id="filtered-layer-list" class="jump-scroll">
+							<div id="filtered-layer-list">
 							</div>
 						</div>	
 					</div>

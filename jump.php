@@ -20,7 +20,7 @@
 	
 	
 </head>
-<body>
+<body style="overflow:hidden;">
 
 	<div id="page">
 	

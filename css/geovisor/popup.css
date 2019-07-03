@@ -246,9 +246,27 @@
 .popup-panel-tree-item-subpanel li {
 	
 	font-family:"Montserrat",sans-serif;
-	font-size: 0.8em;
-	color: #828282;
+	font-size: 0.7em;
 	padding:2px 0;
+	
+}
+
+.popup-panel-tree-item-subpanel li a {
+	
+	color:#6c6c6e;
+	display:block;
+	width:100%;
+	height:auto%;
+	font-size:11px;
+	font-weight:400;
+	padding: 0 13px;
+	
+}
+
+.popup-panel-tree-item-subpanel li a:hover {
+	
+	color:#4c4c4e;
+	opacity:0.8;
 	
 }
 
@@ -335,7 +353,7 @@
 	font-size:12px;
 	padding:10px;
 	min-height:0;
-	overflow-y:auto;
+	/*overflow-y:auto;*/
 	height:100%;
 	
 }
@@ -389,5 +407,24 @@
 	
 	background-color:#333;
 	color:#FFFFFF;
+	
+}
+
+#nav-popup-layers {
+	
+	height:50%;
+	overflow-y:auto;
+	
+}
+
+#dynbox-popup-layers .jump-window-group-body {
+	
+	overflow-y:auto;
+	
+}
+
+.nav-popup-element {
+	
+	width:97%;
 	
 }
