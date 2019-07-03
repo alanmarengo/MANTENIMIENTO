@@ -20,14 +20,14 @@
 	
 }
 
-.navmenu ul li:not(.popup-panel-tree-item-subpanel li) {
+.navmenu ul li {
 	
 	min-height: 44px;
 	line-height: 44px;
 	
 }
 
-.navmenu ul li a:not(.popup-panel-tree-item-subpanel li a) {
+.navmenu ul li a {
 	
 	display:block;
 	width:100%;
@@ -38,7 +38,7 @@
 	
 }
 
-.navmenu ul li a:hover:not(.jump-link-death):not(.popup-panel-tree-item-subpanel li a) {
+.navmenu ul li a:hover:not(.jump-link-death) {
 	
 	background-color:#31cbfd;
 	color:#FFFFFF;

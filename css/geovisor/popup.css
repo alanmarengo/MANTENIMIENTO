@@ -428,3 +428,32 @@
 	width:97%;
 	
 }
+
+#filtered-layer-list li {
+	
+	min-height:20px !Important;
+	line-height:20px !Important;
+	
+}
+
+#filtered-layer-list li a {
+	
+	font-weight:400 !Important;
+	
+}
+
+#filtered-layer-list li a:hover {
+	
+	background:transparent;
+	color:#6c6c6e;
+	opacity:0.8;
+	
+}
+
+#popup-preview-inner {
+	
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	
+}
