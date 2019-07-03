@@ -2,6 +2,7 @@
 	<div id="nav-popup-head" class="nav-popup-element">
 	</div>
 	<div id="nav-popup-filter" class="nav-popup-element">
+		<?php include("./popup.advanced-search-mobile.php"); ?>
 	</div>
 	<div id="nav-popup-layers" class="nav-popup-element">
 	</div>

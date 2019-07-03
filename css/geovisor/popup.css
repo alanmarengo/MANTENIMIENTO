@@ -396,14 +396,14 @@
 	
 }
 
-#geovisor-popup-search .jump-button-fullsize {
+#geovisor-popup-search .jump-button-fullsize,#geovisor-popup-search-mobile .jump-button-fullsize {
 	
 	background-color:#31cbfd;
 	border-radius:3px;
 	
 }
 
-#geovisor-popup-search .jump-button-fullsize:hover {
+#geovisor-popup-search .jump-button-fullsize:hover,#geovisor-popup-search-mobile .jump-button-fullsize:hover {
 	
 	background-color:#333;
 	color:#FFFFFF;

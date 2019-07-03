@@ -20,13 +20,10 @@ function onresize() {
 		
 		$("#popup-geovisor").hide();
 		$("#nav-popup-head").append($("#popup-header"));
-		$("#nav-popup-filter").append($("#geovisor-popup-search"));
+		$("#nav-popup-filter").append($("#geovisor-popup-search-mobile"));
 		$("#nav-popup-filter").append($("#popup-basic-filters"));
 		$("#nav-popup-layers").append($("#dynbox-popup-layers"));
 		$("#nav-popup-content").append($("#popup-preview-inner"));
-		$("#frm-adv-search").find(".col").each(function(i,v) {
-			$(v).attr("class","col col-xs-12 col-sm-12 col-md-12 col-lg-12");
-		});
 		$("#nav-popup-layers .jump-window-group-body").css("overflow-y","visible");
 		
 	}else{
@@ -51,10 +48,6 @@ function onresize() {
 		$("#dynbox-popup-basic-search").append($("#popup-basic-filters"));
 		$("#dynbox-popup-basic-search").append($("#dynbox-popup-layers"));
 		$("#dynbox-popup-content").append($("#popup-preview-inner"));
-		$("#frm-adv-search").find(".col").each(function(i,v) {
-			var defClass = $(v).attr("data-class");
-			$(v).attr("class",defClass);
-		});
 		$("#dynbox-popup-layers .jump-window-group-body").css("overflow-y","auto");
 		
 	}
@@ -106,13 +99,10 @@ function openPopup() {
 		$("#nav-popup").show();		
 		$("#popup-geovisor").hide();
 		$("#nav-popup-head").append($("#popup-header"));
-		$("#nav-popup-filter").append($("#geovisor-popup-search"));
+		$("#nav-popup-filter").append($("#geovisor-popup-search-mobile"));
 		$("#nav-popup-filter").append($("#popup-basic-filters"));
 		$("#nav-popup-layers").append($("#dynbox-popup-layers"));
 		$("#nav-popup-content").append($("#popup-preview-inner"));
-		$("#frm-adv-search").find(".col").each(function(i,v) {
-			$(v).attr("class","col col-xs-12 col-sm-12 col-md-12 col-lg-12");
-		});
 		$("#nav-popup-layers .jump-window-group-body").css("overflow-y","visible");
 		
 	}else{
@@ -125,10 +115,6 @@ function openPopup() {
 		$("#dynbox-popup-basic-search").append($("#popup-basic-filters"));
 		$("#dynbox-popup-basic-search").append($("#dynbox-popup-layers"));
 		$("#dynbox-popup-content").append($("#popup-preview-inner"));
-		$("#frm-adv-search").find(".col").each(function(i,v) {
-			var defClass = $(v).attr("data-class");
-			$(v).attr("class",defClass);
-		});
 		$("#dynbox-popup-layers .jump-window-group-body").css("overflow-y","auto");
 		
 	}
