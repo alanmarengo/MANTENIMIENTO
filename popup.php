@@ -16,11 +16,11 @@
 		
 		<?php include("./popup.advanced-search.php"); ?>
 		
-		<div class="jump-window-body jump-window-full-body jump-scroll">
+		<div class="jump-window-body jump-window-full-body jump-scroll" id="popup-body">
 			
 			<div class="jump-row row p0 m0">
 			
-				<div class="col col-xs-12 col-sm-12 col-md-5 col-lg-5 p0 m0 flex-column">
+				<div class="col col-xs-12 col-sm-12 col-md-5 col-lg-5 p0 m0 flex-column" id="dynbox-popup-basic-search">
 					<div class="jump-window-group" id="popup-basic-filters">
 						<div class="jump-window-group-header">
 							<span>OBRA O PROYECTO</span>
@@ -29,7 +29,7 @@
 							<span><?php echo DrawProyectos(); ?></span>
 						</div>	
 					</div>
-					<div class="jump-window-group flex-column flex-grow">
+					<div class="jump-window-group flex-column flex-grow" id="dynbox-popup-layers">
 						<div class="jump-window-group-header">
 							<span>BUSCAR INFORMACION</span>
 						</div>
@@ -39,18 +39,20 @@
 						</div>	
 					</div>
 				</div>
-				<div class="col col-xs-12 col-sm-12 col-md-7 col-lg-7 p20 flex-column">
-					<div id="mini-map" class="ptb-10"></div>
-					<div id="layer-preview-block" class="ptb-10"></div>
-					<div id="layer-preview-inner">
-				
-						<p class="title" id="layer-preview-title">Datos de Capa</p>
-						<p class="content">Seleccione una capa para ver su descripci&oacute;n</p>
-						
-						<p class="mt-10 text-center">
-							<a href="#" class="button" id="btn-layer-preview-addlayer">AGREGAR AL MAPA</a>
-						</p>
+				<div class="col col-xs-12 col-sm-12 col-md-7 col-lg-7 p20 flex-column" id="dynbox-popup-content">
+					<div id="popup-preview-inner">
+						<div id="mini-map" class="ptb-10"></div>
+						<div id="layer-preview-block" class="ptb-10"></div>
+						<div id="layer-preview-inner">
 					
+							<p class="title" id="layer-preview-title">Datos de Capa</p>
+							<p class="content">Seleccione una capa para ver su descripci&oacute;n</p>
+							
+							<p class="mt-10 text-center">
+								<a href="#" class="button" id="btn-layer-preview-addlayer">AGREGAR AL MAPA</a>
+							</p>
+						
+						</div>
 					</div>
 				</div>
 			

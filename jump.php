@@ -40,6 +40,7 @@
 			<?php include("./html.nav.geovisores.php"); ?>
 			<?php include("./html.nav.vinculaciones_insterinstitucionales.php"); ?>
 			<?php include("./html.nav.recursos_hidricos.php"); ?>
+			<?php include("./html.nav.popup.php"); ?>
 			
 			<?php include("./html.panel.php"); ?>
 			
