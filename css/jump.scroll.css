@@ -4,7 +4,7 @@
 	
 }
 
-.jump-scroll:not(.jump-posfix):not(.jump-posabs) {
+.jump-scroll:not(.jump-posfix):not(.jump-posabs):not(.navmenu) {
 	
 	position:relative !Important;
 	

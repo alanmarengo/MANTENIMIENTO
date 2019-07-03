@@ -29,11 +29,14 @@
 
 <!-- JUMP CSS -->
 
+<link rel="stylesheet" type="text/css" href="./css/jump.align.css">
+<link rel="stylesheet" type="text/css" href="./css/jump.button.css">
 <link rel="stylesheet" type="text/css" href="./css/jump.spacers.css">
 <link rel="stylesheet" type="text/css" href="./css/jump.displays.css"/>
 <link rel="stylesheet" type="text/css" href="./css/jump.link.css"/>
 <link rel="stylesheet" type="text/css" href="./css/jump.rowcol.css"/>
 <link rel="stylesheet" type="text/css" href="./css/jump.spacers.css"/>
+<link rel="stylesheet" type="text/css" href="./css/jump.scroll.css"/>
 <link rel="stylesheet" type="text/css" href="./css/jump.theme.css" />
 <link rel="stylesheet" type="text/css" href="./css/jump.window.css" />
 

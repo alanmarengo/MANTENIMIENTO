@@ -163,6 +163,8 @@
 	
 	border-bottom:1px solid #dedede;
 	padding-bottom:2px;
+	font-size:12px;
+	padding:10px;
 	
 }
 
@@ -187,10 +189,12 @@
 	
 	position:relative;
 	display:block;
-	top:1px !Important;
+	top:2px !Important;
 	float:right;
 	font-size:13px !Important;
-	margin-top:5px;
+	display:flex;
+	margin-right:5px;
+	/*margin-top:5px;*/
 }
 
 .popup-panel-tree-item-header {
@@ -323,5 +327,67 @@
 .popup-table tr:last-child td {
 	
 	border-bottom:1px solid white;
+	
+}
+
+#filtered-layer-list {
+	
+	font-size:12px;
+	padding:10px;
+	min-height:0;
+	overflow-y:auto;
+	height:100%;
+	
+}
+
+.popup-panel-tree-item {
+	
+	margin:2px 0;
+	
+}
+
+#layer-preview-block {
+	
+	display:flex;
+	flex-grow:1;
+	
+}
+
+#layer-preview-inner {
+	
+	height:150px;
+	width:100%;
+	
+}
+
+#btn-layer-preview-addlayer {
+	
+	background-color:#333;
+	width:100%;
+	display:block;
+	padding:10px;
+	border-radius:3px;
+	text-align:center;
+	
+}
+
+#btn-layer-preview-addlayer:hover {
+	
+	color:#FFF;
+	opacity:0.8;
+	
+}
+
+#geovisor-popup-search .jump-button-fullsize {
+	
+	background-color:#31cbfd;
+	border-radius:3px;
+	
+}
+
+#geovisor-popup-search .jump-button-fullsize:hover {
+	
+	background-color:#333;
+	color:#FFFFFF;
 	
 }

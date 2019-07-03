@@ -1,10 +1,10 @@
-<div class="row geovisor-toggleable-content" id="geovisor-popup-search">				
+<div class="jump-row row geovisor-toggleable-content" id="geovisor-popup-search">				
 				
 	<div class="col col-md-12 col-sm-12 col-xs-12 geovisor-form-group">
 		
-		<form id="frm-adv-search">
+		<form id="frm-adv-search" class="jump-row">
 		
-			<div class="row">
+			<div class="jump-row row">
 			
 				<div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
 				
@@ -41,7 +41,7 @@
 			
 			</div>
 			
-			<div class="row">
+			<div class="jump-row row">
 			
 				<div class="col col-lg-4 col-md-4 col-sm-12 col-xs-12">			
 				
@@ -85,7 +85,7 @@
 			
 			</div>
 			
-			<div class="row">
+			<div class="jump-row row">
 			
 				<div class="col col-lg-4 col-md-4 col-sm-12 col-xs-12">
 				

@@ -47,7 +47,7 @@
 		
 	</div>
 			
-	<?php include("./popup.php"); ?>	
+	<?php include("./popup.php"); ?>
 
 </body>
 </html>
