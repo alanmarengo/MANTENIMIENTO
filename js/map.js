@@ -1264,7 +1264,7 @@ function ol_map() {
 				 	
 				 	sld_result = s.sld_get_encode();
 					
-					layer.updateParams({
+					layer.getSource().updateParams({
 						
 						'sld_body':sld_result
 						
