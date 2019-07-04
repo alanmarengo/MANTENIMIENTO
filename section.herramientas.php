@@ -18,8 +18,7 @@
             </div>
         </div>
 
-        <div style="padding: 30px;">
-
+        <div style="padding: 0px 10px;">
             <div class="col-md-12" style="padding: 0px 20px 20px 20px;">
                 Son instrumentos de visualización y gestión de información geográfica orientados por proyectos o por temas relacionados con las obras de IEASA y fundamentalmente  de los Aprovechamientos Hidroeléctricos del Río Santa Cruz (AHRSC).  Se provee en línea herramientas de indagación y tratamiento de la información geográfica de fácil uso y acceso. Es un recurso integrador de información de diversas disciplinas y fuentes acorde con la complejidad del desarrollo de proyectos de infraestructura energética.
             </div>

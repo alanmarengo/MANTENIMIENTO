@@ -9,7 +9,7 @@
         </ol>
         <div class="carousel-inner">
             <a href="./geovisor.php" class="carousel-item active">
-                <img class="d-block w-100" src="./images/index/slide5.jpg" alt="...">
+                <img class="d-block w-100" src="./images/index/slide1.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>GEOVISOR DE INFORMACION INTEGRADA<br /></p>
                 </div>                
@@ -45,7 +45,7 @@
                 </div>
             </a>
             <a href="./mision.php" class="carousel-item">
-                <img class="d-block w-100" src="./images/index/slide1.jpg" alt="...">
+                <img class="d-block w-100" src="./images/index/slide5.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>MISIÓN DE IEASA</p>
                 </div>                
@@ -55,6 +55,7 @@
             </a>
         </div>
 
+<!--
         <a class="carousel-control-prev" href="#main-slider" role="button" data-slide="prev">
             <span><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
             <span class="sr-only">Anterior</span>
@@ -63,6 +64,7 @@
             <span><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
             <span class="sr-only">Siguiente</span>
         </a>
+-->
     </div>
 
     <div class="row">
@@ -219,7 +221,7 @@
                 <div class="col-md-4 modulo-wrap modulo-11">
                     <div class="modulo-opacity"></div>
                     <div class="modulo-text">
-                        SIG AMBIENTAL SANTA CRUZ
+                        SIG SANTA CRUZ
                     </div>
                     <div class="modulo-hover">
                         <p class="modulo-hover-text">
@@ -237,22 +239,34 @@
             <div class="row">
                 <a href="./mediateca.php" class="col-md-12 link-wrap link-1">
                     <div class="link-text">
-                        RECURSOS EN MEDIATECA
+                        MEDIATECA
+                    </div>
+                    <div class="link-hover" style="display: none;">
+                        <img src="./images/icono_mediateca.png" />
                     </div>
                 </a>
                 <a href="./herramientas.php" class="col-md-12 link-wrap link-2">
                     <div class="link-text">
-                        HERRAMIENTAS GEOGRÁFICAS
+                        GEOVISOR
+                    </div>
+                    <div class="link-hover" style="display: none;">
+                        <img src="./images/icono_geovisor.png" />
                     </div>
                 </a>
                 <a href="./page.php" class="col-md-12 link-wrap link-3">
                     <div class="link-text">
                         INDICADORES
                     </div>
+                    <div class="link-hover" style="display: none;">
+                        <img src="./images/icono_indicadores.png" />
+                    </div>
                 </a>
                 <a href="./page.php" class="col-md-12 link-wrap link-4" style="margin-bottom: 0px!important;">
                     <div class="link-text">
                         ESTADÍSTICAS
+                    </div>
+                    <div class="link-hover" style="display: none;">
+                        <img src="./images/icono_estadisticas.png" />
                     </div>
                 </a>
             </div>
@@ -304,8 +318,12 @@
 
         $('.link-wrap').hover( 
             function () {
+                $(this).find('.link-text').hide();
+                $(this).find('.link-hover').show();
             },
             function () {
+                $(this).find('.link-hover').hide();
+                $(this).find('.link-text').show();
             }
         )
 

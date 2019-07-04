@@ -11,7 +11,7 @@
             </p>
         </div>
 
-        <div class="col-md-12 page-section-3" style="background-image: url(./images/index/modulo1.jpg);">
+        <div class="col-md-12 page-section-3" style="background-image: url(./images/page_banner.jpg);">
         </div>
 
         <div class="col-md-12 page-section-4">
@@ -20,7 +20,7 @@
             </p>
         </div>
 
-        <div class="row" style="margin-left: 20px; margin-right: 20px;">
+        <div class="row" style="margin: 0px 20px 30px 20px;">
             <div class="col-md-3 page-box">
                 <div class="page-box-image" style=""></div>
                 <h4>HIDRO</h4>
