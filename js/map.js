@@ -1241,7 +1241,7 @@ function ol_map() {
 			$("#layer-colorpicker-inner-"+layer_id).ColorPicker({
 				flat: true, 
 				width:"100%",
-				onChange: function (hsb, hex, rgb) {
+				onSubmit: function (hsb, hex, rgb) {
 					alert(hex);
 				}
 			});
