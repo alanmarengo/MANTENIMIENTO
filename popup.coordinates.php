@@ -26,7 +26,7 @@
 				</td>
 			</table>
 		
-			<div id="coord-capture-wrapper" class="mt-20">
+			<div id="coord-capture-wrapper">
 			
 				<table id="coord-capture-table">
 					
@@ -37,7 +37,7 @@
 							</a>
 						</td>
 					</tr>
-					<tr>
+					<tr class="mt-20">
 						<td>EPSG:3857</td>
 						<td><span id="cap-coord-3857"></td>
 					</td>
