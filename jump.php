@@ -12,6 +12,7 @@
 	<?php include("./scripts.default.php"); ?>	
 	<?php include("./scripts.onresize.geovisor.php"); ?>	
 	<?php include("./scripts.openlayers.php"); ?>	
+	<?php include("./scripts.highcharts.php"); ?>	
 	<?php include("./scripts.map.php"); ?>	
 	<?php include("./scripts.document_ready.geovisor.php"); ?>
 	
