@@ -37,7 +37,10 @@
 							</a>
 						</td>
 					</tr>
-					<tr class="mt-20">
+					<tr>
+						<td colspan="2"><br></td>
+					</tr>
+					<tr>
 						<td>EPSG:3857</td>
 						<td><span id="cap-coord-3857"></td>
 					</td>
