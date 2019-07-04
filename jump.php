@@ -50,11 +50,15 @@
 	</div>
 			
 	<?php include("./popup.php"); ?>
+	<?php include("./popup.baselayers.php"); ?>
+	<?php include("./popup.buffer.php"); ?>
 	<?php include("./popup.coordinates.php"); ?>
 	<?php include("./popup.info.php"); ?>
 	<?php include("./popup.medicion.php"); ?>
 	<?php include("./popup.ptopografico.php"); ?>
 	<?php include("./popup.share.php"); ?>
+
+	<div id="popup-results"></div>
 
 </body>
 </html>
