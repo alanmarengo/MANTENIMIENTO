@@ -9,7 +9,7 @@
 			</a>
 		</div>
 		
-		<div class="jump-window-body p20">
+		<div class="jump-window-body jump-window-full-body jump-flotant-height-transform jump-scroll p20">
 					
 			<div id="info-wrapper"></div>
 			
