@@ -1244,7 +1244,7 @@ function ol_map() {
 				width:"100%",
 				onSubmit: function (hsb, hex, rgb) {
 					
-					var layer = document.getElementById("layer-colorpicker-inner-"+layer_id).layer;
+					var layer = document.getElementById("layer-checkbox-"+layer_id).layer;
 					var color = hex;
 					var type = document.getElementById("layer-colorpicker-inner-"+layer_id).getAttribute("data-layer-type");
 					var layer_types = ['','GEOMETRY','LINESTRING','POLYGON','MULTIPOLYGON','MULTILINESTRING','POINT','MULTIPOINT'];
