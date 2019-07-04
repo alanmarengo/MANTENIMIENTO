@@ -1253,7 +1253,7 @@ function ol_map() {
 				  
 				 	//s.set_geometria(POINT);
 				 	//s.set_geometria(POLYGON);
-				 	s.set_geometria(LINE);
+				 	s.set_geometria(layer_types[type]);
 				 	 
 				 	s.set_fill_color(hex);
 				 	s.set_border_color('#F85EC8');
