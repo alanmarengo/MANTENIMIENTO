@@ -1250,9 +1250,7 @@ function ol_map() {
 					var layer_types = ['','GEOMETRY','LINESTRING','POLYGON','MULTIPOLYGON','MULTILINESTRING','POINT','MULTIPOINT'];
 					
 					s = new sldlib();
-				  
-				 	//s.set_geometria(POINT);
-				 	//s.set_geometria(POLYGON);
+					
 				 	s.set_geometria(layer_types[type]);
 				 	 
 				 	s.set_fill_color(hex);
@@ -1263,7 +1261,7 @@ function ol_map() {
 				 	s.set_titulo('test sld');
 				 	
 				 	sld_result = s.sld_get_encode();
-					
+					alert(sld_result);
 					layer.getSource().updateParams({
 						
 						'sld_body':sld_result
