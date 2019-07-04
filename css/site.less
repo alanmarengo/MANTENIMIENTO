@@ -256,11 +256,17 @@ body {
 }
 
 #page_index {
+    margin: auto;
+    max-width: 1024px;
+
     @carousel_height: 540px;
     @modulo_height: 300px;
     @sombra-texto: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,1);
 
     #main-slider {
+        margin-left:-15px; 
+        margin-right: -14px;
+
         .carousel-item {
             img { opacity: .9; }
         }
@@ -681,6 +687,7 @@ body {
 
 .footer {
     @carousel_height: 200px;
+    background-color:#333;
 
     padding: 1em 2em;
     color: #fff;
