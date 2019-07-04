@@ -33,7 +33,7 @@
 		
 	</div>
 	
-	<?php include("./widget-links.php"); ?>
+	<?php //include("./widget-links.php"); ?>
 
 </body>
 </html>
