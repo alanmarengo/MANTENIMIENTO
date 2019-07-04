@@ -1211,7 +1211,8 @@ function ol_map() {
 						'FORMAT': 'image/png',
 						'TILED': false,
 						'clase_id':clase_id,
-						'layer_id':layer_id
+						'layer_id':layer_id,
+						'sld_body':''
 					},
 					crossOrigin: 'anonymous'
 				})
@@ -1242,7 +1243,29 @@ function ol_map() {
 				flat: true, 
 				width:"100%",
 				onSubmit: function (hsb, hex, rgb) {
-					alert(hex);
+					
+					var layer = document.getElementById("layer-colorpicker-inner-"+layer_id).layer;
+					var color = hex;
+					var type = document.getElementById("layer-colorpicker-inner-"+layer_id).getAttribute("data-layer-type");
+					var layer_types = ['','GEOMETRY','LINESTRING','POLYGON','MULTIPOLYGON','MULTILINESTRING','POINT','MULTIPOINT'];
+					
+					s = new sldlib();
+				  
+				 	//s.set_geometria(POINT);
+				 	//s.set_geometria(POLYGON);
+				 	s.set_geometria(LINE);
+				 	 
+				 	s.set_fill_color(hex);
+				 	s.set_border_color('#F85EC8');
+				 	s.set_border_size(4.444444);
+				 	s.set_size(8.3444);
+				 	s.set_simbolo('circle');
+				 	s.set_titulo('test sld');
+				 	
+				 	alert(s.sld_get());
+				 	//encode for wms sld_body
+				 	alert(s.sld_get_encode());
+					
 				}
 			});
 			
