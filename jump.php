@@ -51,6 +51,7 @@
 			
 	<?php include("./popup.php"); ?>
 	<?php include("./popup.coordinates.php"); ?>
+	<?php include("./popup.info.php"); ?>
 	<?php include("./popup.medicion.php"); ?>
 	<?php include("./popup.ptopografico.php"); ?>
 	<?php include("./popup.share.php"); ?>
