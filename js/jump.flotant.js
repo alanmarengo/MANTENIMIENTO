@@ -38,6 +38,14 @@ Jump.flotant = function() {
 			
 		});
 		
+		$(".jump-flotant-height-transform").each(function(i,v) {
+			
+			var height = $(v).height();
+			
+			$(v).css("height",height+"px");
+			
+		});
+		
 	}
 	
 	this.fitTopElement = function(e,fitAgainstRule) {

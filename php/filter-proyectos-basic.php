@@ -60,11 +60,11 @@ if (isset($proyectos)>0) {
 						
 						?>
 						
-						<a href="#" onclick="geomap.panel.PreviewLayer(<?php echo $l["layer_id"]; ?>)">
-							<li>
-								<?php echo $l["layer_desc"]; ?>
-							</li>
-						</a>					
+						<li>
+							<a href="#" onclick="geomap.panel.PreviewLayer(<?php echo $l["layer_id"]; ?>)">
+									<?php echo $l["layer_desc"]; ?>
+							</a>	
+						</li>				
 						
 						<?php
 						

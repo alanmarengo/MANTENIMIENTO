@@ -1,4 +1,4 @@
-<div id="nav-panel" class="navmenu jump-flotant-nav jump-flotant-heightfill jump-flotant-heightfill-top jump-scroll nav-level-1 col col-nav col-xs-12 col-sm-12 col-md-4 col-lg-4">
+<div id="nav-panel" data-visible="1" class="navmenu jump-flotant-nav jump-flotant-heightfill jump-flotant-heightfill-top jump-scroll nav-level-1 col col-nav col-xs-12 col-sm-12 col-md-4 col-lg-4">
 	
 	<div id="nav-panel-inner" data-visible="1">	
 			
@@ -19,7 +19,7 @@
 					<img src="./images/panel.icon.f1.png">
 				</a>
 				<input id="panel-seach-input" class="panel-input pl-10" name="main-search" readonly="readonly" type="text" value="Agregar Información al Mapa" data-jump-placeholder="Agregar Información al Mapa" placeholder="Agregar Información al Mapa" 
-					onfocus="geomap.map.ol_object_mini.updateSize(); geomap.map.ol_object_mini.render(); jwindow.open('#popup-geovisor');">							
+					onfocus="geomap.map.ol_object_mini.updateSize(); geomap.map.ol_object_mini.render(); openPopup();">							
 			</div>
 		
 		</div>

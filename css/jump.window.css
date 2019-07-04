@@ -1,7 +1,21 @@
 .jump-window {
 	
 	z-index:100000;
-	/*display:none;*/
+	display:flex;
+	flex-direction:column;
+	position:absolute;
+	padding:0 !Important;
+	background-color:transparent;
+	display:none;
+	
+}
+
+.jump-window-inner {	
+	
+	padding:20px;
+	height:100%;
+	display:flex;
+	flex-direction:column;
 	
 }
 
@@ -16,8 +30,40 @@
 	
 	padding:0 20px;
 	cursor:move;
+	height:48px;
+	display:flex;
+	align-items:center;
+	background-color:#333333;
+	
+}
+
+.jump-window-header .button {
+	
+	font-size:14px;
 	height:36px;
-	line-height:36px;
+	display:block;
+	padding:0 20px;
+	border-radius:3px;
+	display:flex;
+	align-items:center;
+	
+}
+
+.jump-window-header .button:hover {
+	
+	color:#FFFFFF;
+	
+}
+
+.jump-window-header .button-active {
+	
+	background-color:#31cbfd;
+	
+}
+
+.jump-window-group {
+	
+	width:100%;
 	
 }
 
@@ -27,17 +73,22 @@
 	cursor:move;
 	height:36px;
 	line-height:36px;
+	width:100%;
+	font-size:12px;
+	background-color:#efefef;
 	
 }
 
 .jump-window-close {
 	
-	float:right;
+	margin-left:auto;
 	
 }
 
 .jump-window-body {
 	
-	min-height:200px;
+	display:flex;
+	flex-grow:1;	
+	background-color:#FFFFFF;
 	
 }

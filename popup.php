@@ -1,8 +1,8 @@
-<div class="jump-window jump-align-right jump-flotant-heightfill jump-flotant-heightfill-top col col-xs-12 col-sm-12-col-md-9 col-lg-9" id="popup-geovisor">
-	
-	<div class="jump-window-inner p20 h-100-p">
+<div class="jump-window jump-align-right jump-flotant-heightfill jump-flotant-heightfill-top col col-xs-12 col-sm-12-col-md-8 col-lg-8" id="popup-geovisor">
 
-		<div class="jump-window-header">
+	<div class="jump-window-inner h-100-p" id="popup-inner">
+
+		<div class="jump-window-header" id="popup-header">
 			<a href="#" class="button button-active" id="btn-bus-simple">
 				<span>BUSQUEDA</span>
 			</a>
@@ -14,13 +14,13 @@
 			</a>
 		</div>
 		
-		<div class="jump-window-body jump-window-full-body jump-scroll">
+		<?php include("./popup.advanced-search.php"); ?>
+		
+		<div class="jump-window-body jump-window-full-body" id="popup-body">
 			
-			<?php include("./popup.advanced-search.php"); ?>
+			<div class="jump-row row p0 m0">
 			
-			<div class="row p0 m0">
-			
-				<div class="col col-xs-12 col-sm-12 col-md-4 col-lg-4 p0 m0">
+				<div class="col col-xs-12 col-sm-12 col-md-5 col-lg-5 p0 m0 flex-column" id="dynbox-popup-basic-search">
 					<div class="jump-window-group" id="popup-basic-filters">
 						<div class="jump-window-group-header">
 							<span>OBRA O PROYECTO</span>
@@ -29,25 +29,30 @@
 							<span><?php echo DrawProyectos(); ?></span>
 						</div>	
 					</div>
-					<div class="jump-window-group">
+					<div class="jump-window-group flex-column flex-grow" id="dynbox-popup-layers">
 						<div class="jump-window-group-header">
 							<span>BUSCAR INFORMACION</span>
 						</div>
-						<div class="jump-window-group-body jump-scroll" id="filtered-layer-list">
+						<div class="jump-window-group-body flex-grow jump-flotant-height-transform">
+							<div id="filtered-layer-list">
+							</div>
 						</div>	
 					</div>
 				</div>
-				<div class="col col-xs-12 col-sm-12 col-md-8 col-lg-8">
-					<div id="mini-map" class="ptb-10"></div>
-					<div id="layer-preview-inner">
-				
-						<p class="title" id="layer-preview-title">Datos de Capa</p>
-						<p class="content">Seleccione una capa para ver su descripci&oacute;n</p>
-						
-						<p class="mt-10 text-center">
-							<a href="#" class="button" id="btn-layer-preview-addlayer">AGREGAR AL MAPA</a>
-						</p>
+				<div class="col col-xs-12 col-sm-12 col-md-7 col-lg-7 p20 flex-column" id="dynbox-popup-content">
+					<div id="popup-preview-inner">
+						<div id="mini-map" class="ptb-10"></div>
+						<div id="layer-preview-block" class="ptb-10"></div>
+						<div id="layer-preview-inner">
 					
+							<p class="title" id="layer-preview-title">Datos de Capa</p>
+							<p class="content">Seleccione una capa para ver su descripci&oacute;n</p>
+							
+							<p class="mt-10 text-center">
+								<a href="#" class="button" id="btn-layer-preview-addlayer">AGREGAR AL MAPA</a>
+							</p>
+						
+						</div>
 					</div>
 				</div>
 			

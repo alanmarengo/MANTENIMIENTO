@@ -848,16 +848,18 @@ function ol_map() {
 		$("#btn-bus-simple").on("click",function() {
 			
 			$("#geovisor-popup-search").slideUp();
+			$("#geovisor-popup-search-mobile").slideUp();
 			$("#popup-basic-filters").slideDown();
-			$("#popup-geovisor .button").removeClass("button-active");
+			$("#popup-header .button").removeClass("button-active");
 			$(this).addClass("button-active");
 		});
 		
 		$("#btn-bus-advanced").on("click",function() {
 			
 			$("#geovisor-popup-search").slideDown();
+			$("#geovisor-popup-search-mobile").slideDown();
 			$("#popup-basic-filters").slideUp();
-			$("#popup-geovisor .button").removeClass("button-active");
+			$("#popup-header .button").removeClass("button-active");
 			$(this).addClass("button-active");
 			
 		});
@@ -948,6 +950,12 @@ function ol_map() {
 		}.bind(this));
 		
 		$("#btn-adv-search").on("click",function() {
+			
+			this.UpdatePopupListAdvanced();
+			
+		}.bind(this));
+		
+		$("#btn-adv-search-mobile").on("click",function() {
 			
 			this.UpdatePopupListAdvanced();
 			
@@ -1052,7 +1060,15 @@ function ol_map() {
 	
 	this.panel.UpdatePopupListAdvanced = function(mode) {
 		
-		var filter = $("#frm-adv-search").serialize();
+		if ($("#frm-adv-search:visible").length > 0) {
+			
+			var filter = $("#frm-adv-search").serialize();
+			
+		}else{
+			
+			var filter = $("#frm-adv-search-mobile").serialize();
+			
+		}
 		
 		var geovisor = this.map.geovisor;
 		

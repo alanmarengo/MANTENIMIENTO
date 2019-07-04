@@ -107,12 +107,11 @@ while($r = pg_fetch_assoc($query)) {
 					
 					?>
 					
-					<a href="#" onclick="geomap.panel.PreviewLayer(<?php echo $l["layer_id"]; ?>)">
-						<li>
-							<?php echo $l["layer_desc"]; ?>
-						</li>
-					</a>					
-					
+					<li>
+						<a href="#" onclick="geomap.panel.PreviewLayer(<?php echo $l["layer_id"]; ?>)">
+							<?php echo $l["layer_desc"]; ?>							
+						</a>					
+					</li>
 					<?php
 					
 				}

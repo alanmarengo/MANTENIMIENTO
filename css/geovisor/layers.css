@@ -29,10 +29,11 @@
 .layer-header a, .layer-container-header a {
 	
 	position:relative;
-	top:4px;
+	margin-top:4px;
 	left:10px;
 	color:white;
 	font-weight:400;
+	display:block;
 	
 }
 

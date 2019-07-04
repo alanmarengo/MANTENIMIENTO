@@ -1,12 +1,12 @@
-<div class="jump-row row geovisor-toggleable-content" id="geovisor-popup-search">				
+<div class="jump-row row geovisor-toggleable-content" id="geovisor-popup-search-mobile">				
 				
 	<div class="col col-md-12 col-sm-12 col-xs-12 geovisor-form-group">
 		
-		<form id="frm-adv-search" class="jump-row">
+		<form id="frm-adv-search-mobile" class="jump-row">
 		
 			<div class="jump-row row">
 			
-				<div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12" data-class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				
 					<div class="form-group">
 						
@@ -16,8 +16,12 @@
 					</div>
 				
 				</div>
+				
+			</div>			
+		
+			<div class="jump-row row">
 			
-				<div class="col col-lg-3 col-md-3 col-sm-12 col-xs-12" data-class="col col-lg-3 col-md-3 col-sm-12 col-xs-12">
+				<div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				
 					<div class="form-group">
 				
@@ -27,8 +31,12 @@
 					</div>
 				
 				</div>
+				
+			</div>			
+		
+			<div class="jump-row row">
 			
-				<div class="col col-lg-3 col-md-3 col-sm-12 col-xs-12" data-class="col col-lg-3 col-md-3 col-sm-12 col-xs-12">
+				<div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				
 					<div class="form-group">
 				
@@ -43,7 +51,7 @@
 			
 			<div class="jump-row row">
 			
-				<div class="col col-lg-4 col-md-4 col-sm-12 col-xs-12" data-class="col col-lg-4 col-md-4 col-sm-12 col-xs-12">			
+				<div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">		
 				
 					<div class="form-group">
 
@@ -52,8 +60,12 @@
 					</div>
 				
 				</div>
+				
+			</div>			
+		
+			<div class="jump-row row">
 			
-				<div class="col col-lg-2 col-md-2 col-sm-12 col-xs-12" data-class="col col-lg-2 col-md-2 col-sm-12 col-xs-12">	
+				<div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				
 					<div class="form-group">
 							
@@ -62,8 +74,12 @@
 					</div>
 				
 				</div>
+				
+			</div>			
+		
+			<div class="jump-row row">
 			
-				<div class="col col-lg-3 col-md-3 col-sm-12 col-xs-12" data-class="col col-lg-3 col-md-3 col-sm-12 col-xs-12">	
+				<div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				
 					<div class="form-group">			
 				
@@ -72,8 +88,12 @@
 					</div>
 				
 				</div>
+				
+			</div>			
+		
+			<div class="jump-row row">
 			
-				<div class="col col-lg-3 col-md-3 col-sm-12 col-xs-12" data-class="col col-lg-3 col-md-3 col-sm-12 col-xs-12">	
+				<div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				
 					<div class="form-group">
 				
@@ -87,7 +107,7 @@
 			
 			<div class="jump-row row">
 			
-				<div class="col col-lg-4 col-md-4 col-sm-12 col-xs-12" data-class="col col-lg-4 col-md-4 col-sm-12 col-xs-12">
+				<div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				
 					<div class="form-group">			
 				
@@ -96,8 +116,12 @@
 					</div>
 				
 				</div>
+				
+			</div>			
+		
+			<div class="jump-row row">
 			
-				<div class="col col-lg-2 col-md-2 col-sm-12 col-xs-12" data-class="col col-lg-2 col-md-2 col-sm-12 col-xs-12">
+				<div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				
 					<div class="form-group">			
 				
@@ -106,8 +130,12 @@
 					</div>
 				
 				</div>
+				
+			</div>			
+		
+			<div class="jump-row row">
 			
-				<div class="col col-lg-3 col-md-3 col-sm-12 col-xs-12" data-class="col col-lg-3 col-md-3 col-sm-12 col-xs-12">
+				<div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				
 					<div class="form-group">
 				
@@ -117,19 +145,23 @@
 					</div>
 				
 				</div>
+				
+			</div>			
+		
+			<div class="jump-row row">
 			
-				<div class="col col-lg-3 col-md-3 col-sm-12 col-xs-12" data-class="col col-lg-3 col-md-3 col-sm-12 col-xs-12">
+				<div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				
 					<div class="form-group form-group-button">
 				
-						<a class="jump-button-fullsize" href="#" id="btn-adv-search">
+						<a class="jump-button-fullsize" href="#" id="btn-adv-search-mobile">
 							<span>BUSCAR</span>
 						</a>
 					
 					</div>
 				
 				</div>
-			
+				
 			</div>
 		
 		</form>
