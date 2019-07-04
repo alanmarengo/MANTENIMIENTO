@@ -1262,9 +1262,13 @@ function ol_map() {
 				 	s.set_simbolo('circle');
 				 	s.set_titulo('test sld');
 				 	
-				 	alert(s.sld_get());
-				 	//encode for wms sld_body
-				 	alert(s.sld_get_encode());
+				 	sld_result = s.sld_get_encode();
+					
+					layer.updateParams({
+						
+						'sld_body':sld_result
+						
+					})
 					
 				}
 			});
