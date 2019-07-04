@@ -49,6 +49,7 @@
 	</div>
 			
 	<?php include("./popup.php"); ?>
+	<?php include("./popup.coordinates.php"); ?>
 
 </body>
 </html>
