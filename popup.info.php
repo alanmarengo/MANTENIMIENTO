@@ -1,4 +1,4 @@
-<div class="jump-window jump-align-right jump-flotant-heightfill-top col col-xs-12 col-sm-12-col-md-3 col-lg-3 geovisor-flotant" id="popup-info">
+<div class="jump-window jump-align-right jump-flotant-heightfill  jump-flotant-heightfill-top col col-xs-12 col-sm-12-col-md-3 col-lg-3 geovisor-flotant" id="popup-info">
 	
 	<div class="jump-window-inner p20">
 
