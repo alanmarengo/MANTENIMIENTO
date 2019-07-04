@@ -11,9 +11,7 @@
 		
 		<div class="jump-window-body p20">
 			
-			<a class="popup-header-button popup-header-button-toggleable popup-header-button-active-fixed" href="#" onclick="geomap.map.activateCoordinates()" id="btn-popup-capturar">
-				<span>CAPTURAR</span>
-			</a>
+			
 			<table id="coord-tbl" class="mt-10">
 				<tr id="coord-hint">
 					<td colspan="2">(Click en el mapa para capturar)</td>
@@ -31,7 +29,14 @@
 			<div id="coord-capture-wrapper" class="mt-20">
 			
 				<table id="coord-capture-table">
-				
+					
+					<tr>
+						<td colspan="2">
+							<a class="popup-header-button popup-header-button-toggleable popup-header-button-active-fixed" href="#" onclick="geomap.map.activateCoordinates()" id="btn-popup-capturar">
+								<span>CAPTURAR</span>
+							</a>
+						</td>
+					</tr>
 					<tr>
 						<td>EPSG:3857</td>
 						<td><span id="cap-coord-3857"></td>
