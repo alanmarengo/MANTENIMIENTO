@@ -34,6 +34,7 @@
 	display:flex;
 	align-items:center;
 	background-color:#333333;
+	color:#FFFFFF;
 	
 }
 
@@ -88,6 +89,7 @@
 .jump-window-body {
 	
 	display:flex;
+	flex-direction:column;
 	flex-grow:1;	
 	background-color:#FFFFFF;
 	

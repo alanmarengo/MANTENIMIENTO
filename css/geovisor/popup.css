@@ -457,3 +457,9 @@
 	flex-direction: column;
 	
 }
+
+.jump-window-body:not(#popup-body) {
+	
+	font-size:12px;
+	
+}
