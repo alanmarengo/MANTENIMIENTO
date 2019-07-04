@@ -222,6 +222,7 @@
 	
 	width:40px;
 	display:inline-flex;
+	flex-direction: column;
 	
 }
 
