@@ -50,6 +50,7 @@
 			
 	<?php include("./popup.php"); ?>
 	<?php include("./popup.coordinates.php"); ?>
+	<?php include("./popup.share.php"); ?>
 
 </body>
 </html>
