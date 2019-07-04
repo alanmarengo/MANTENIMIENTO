@@ -59,6 +59,8 @@
 	<?php include("./popup.share.php"); ?>
 
 	<div id="popup-results"></div>
+	
+	<?php include("./widget-links.php"); ?>
 
 </body>
 </html>
