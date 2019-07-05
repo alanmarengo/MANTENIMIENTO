@@ -1246,7 +1246,7 @@ function ol_map() {
 					
 					var layer = document.getElementById("layer-checkbox-"+layer_id).layer;
 					var color = hex;
-					var type = document.getElementById("layer-colorpicker-inner-"+layer_id).getAttribute("data-layer-type");
+					var type = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-layer-type");
 					var layer_types = ['',0,1,2,2,1,0,0];
 					
 					s = new sldlib();
