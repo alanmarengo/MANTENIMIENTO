@@ -1252,8 +1252,7 @@ function ol_map() {
 					s = new sldlib();
 					
 				 	s.set_geometria(layer_types[type]);
-				 	 alert(hex);
-				 	s.set_fill_color(hex);
+				 	s.set_fill_color("#"+hex);
 				 	s.set_border_color('#F85EC8');
 				 	s.set_border_size(4.444444);
 				 	s.set_size(8.3444);
