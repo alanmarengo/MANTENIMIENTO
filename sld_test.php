@@ -11,18 +11,32 @@
 	 
 	 //s.set_geometria(_POINT_);
 	 //s.set_geometria(_POLYGON_);
-	 s.set_geometria(_LINE_);
+	 s.set_geometria(_POLYGON_);
 	 
-	 s.set_fill_color('#F87B5E');
-	 s.set_border_color('#F85EC8');
-	 s.set_border_size(4.444444);
+	 s.set_fill_color('#33c048');
+	 s.set_border_color('#232323');
+	 s.set_border_size(1);
 	 s.set_size(8.3444);
 	 s.set_simbolo('circle');
-	 s.set_titulo('test sld');
+	 s.set_titulo('arqueo_ec_areas');
 	 
-	 alert(s.sld_get());
+	 //alert(s.sld_get());
 	 //encode for wms sld_body
-	 alert(s.sld_get_encode());
+	 
+	 var domparser = new DOMParser();
+	 
+	 a = domparser.parseFromString(s.sld_get(), 'text/xml');
+	 
+	
+	 
+	 /*alert(s.sld_get_encode());*/
+	 
+	 var s = new XMLSerializer();
+    	var str = s.serializeToString(a );
+    	
+    	alert(str);
+    	
+    	 alert(encodeURI(str));
 	 
  };
  
