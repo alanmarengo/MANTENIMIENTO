@@ -48,6 +48,9 @@ function sldlib()
         this.layer_name     = '';
         this.size           = 4.0;         /* Por defecto */
         
+        this.xhttp = new XMLHttpRequest();
+        this.sld_body		= '';
+        
         this.clear = function()
         {
             this.tipo_geometria = -1;           /* -1: NO SET, 0: POINT, 1: LINE, 2: POLIGON */
@@ -61,134 +64,46 @@ function sldlib()
             this.layer_name     = '';
         };
         
-        this.sld_size = function()
+        this.handle_response =  function()
         {
-          return  '<se:Size>'+this.size+'</se:Size>';  
-        };
-        
-        this.sld_fill = function()
-        {
-            return '<se:Fill><se:SvgParameter name="fill">'+this.fill_color+'</se:SvgParameter></se:Fill>'; 
-        };
-        
-        this.sld_boder = function()
-        {
-            var trazo       = '<se:SvgParameter name="stroke">'+this.boder_color+'</se:SvgParameter>';
-            var trazo_size  = '<se:SvgParameter name="stroke-width">'+this.boder_size+'</se:SvgParameter>';
-            var tipo_linea  = '';
-            
-            if(this.tipo_geometria==_POLYGON_)/* Solo para poligonos */
-            {
-                tipo_linea  = '<se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>';
-            };
-            
-            if(this.tipo_geometria==_LINE_)/* Solo para Lineas */
-            {
-                tipo_linea  = '<se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter><se:SvgParameter name="stroke-linecap">square</se:SvgParameter>';
-                trazo       = '<se:SvgParameter name="stroke">'+this.fill_color+'</se:SvgParameter>';
-            };
-            
-            return  '<se:Stroke>'+trazo+trazo_size+tipo_linea+'</se:Stroke>';
-        };
-        
-        this.sld_name = function()
-        {
-           return '<se:Name>'+this.titulo+'</se:Name>';
-        };
-        
-        this.sld_symbol = function()
-        {
-          return  '<se:WellKnownName>'+this.simbolo+'</se:WellKnownName>';  
-        };
-        
-        this.sld_point = function()
-        {
-          var estilo = '';
-          
-          estilo += '<se:Rule>';
-          estilo += this.sld_name();
-          estilo += '<se:PointSymbolizer>';
-          estilo += '<se:Graphic>';
-          estilo += '<se:Mark>';
-          estilo += this.sld_symbol();
-          estilo += this.sld_fill();
-          estilo += this.sld_boder();
-          estilo += '</se:Mark>';
-          estilo += this.sld_size();
-          estilo += '</se:Graphic>';
-          estilo += '</se:PointSymbolizer>';
-          estilo += '</se:Rule>';
-          
-          return estilo;
-        };
-        
-        this.sld_polygon = function()
-        {
-          var estilo = '';
-          
-          estilo += '<se:Rule>';
-          estilo += this.sld_name();
-          estilo += '<se:PolygonSymbolizer>';
-          estilo += this.sld_fill();
-          estilo += this.sld_boder();
-          estilo += '</se:PolygonSymbolizer>';
-          estilo += '</se:Rule>';
-          
-          return estilo;
-        };
-        
-        this.sld_line = function()
-        {
-          var estilo = '';
-          
-          estilo += '<se:Rule>';
-          estilo += this.sld_name();
-          estilo += '<se:LineSymbolizer>';
-          estilo += this.sld_boder();
-          estilo += '</se:LineSymbolizer>';
-          estilo += '</se:Rule>';
-          
-          return estilo;
-        };
-        
-        this.sld_geometria_style = function()
-        {
-          var estilo = '';
-          
-          switch(this.tipo_geometria) 
-          {
-                case _POINT_    : estilo = this.sld_point();    break;
-                case _POLYGON_  : estilo = this.sld_polygon();  break;
-                case _LINE_     : estilo = this.sld_line();     break;
-                default         : estilo = 'ESPECIFIQUE TIPO DE GEOMETRIA sld.set_geometria(int); _POINT_,_POLYGON_,_LINE_';
-          };
-          
-          return estilo;
-        };
+			if (this.xhttp.readyState == 4 && this.xhttp.status == 200) 
+				{
+					this.sld_body = this.xhttp.responseText;
+				};
+		};
         
         this.sld_get = function()
         {
-          var sld = '';
+         var header = '';
+         var url	= '';
           
-          sld += _HEADER_;
-          sld += _DESCRIPTOR_;
-          sld += '<NamedLayer>';
-          sld += this.sld_name();
-          sld += '<UserStyle>';
-          sld += this.sld_name();
-          sld += '<se:FeatureTypeStyle>';
-          sld += this.sld_geometria_style();
-          sld += '</se:FeatureTypeStyle>';
-          sld += '</UserStyle>';
-          sld += '</NamedLayer>';
-          sld += '</StyledLayerDescriptor>';
+         this.sld_body = '';
+        
+         header += 'layer_name='	+this.titulo;
+         header += '&main_color='	+this.fill_color.replace("#", "");
+         header += '&size='			+this.size;
+         header += '&type_geom='	+this.tipo_geometria;
+         header += '&border_color='	+this.boder_color.replace("#", "");
+         header += '&border_size='	+this.boder_size;
+           
+         header = encodeURI(header);
+         
+		 this.xhttp.onreadystatechange = function() 
+		 {
+				this.handle_response();
+		 }.bind(this);
+		 
+		 url = "./sld/sld.php?"+header;
+			
+		 this.xhttp.open("GET", url, false);//esperar
+		 this.xhttp.send();
           
-          return sld;          
+          return this.sld_body;          
         };
         
         this.sld_get_encode = function()
         {
-			return encodeURI(this.sld_get());
+			return encodeURIComponent(this.sld_get());
 		};
         
         this.set_size = function(float_size)
