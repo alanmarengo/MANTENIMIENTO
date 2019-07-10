@@ -1255,8 +1255,8 @@ function ol_map() {
 					
 				 	s.set_geometria(layer_types[type]);
 				 	s.set_fill_color("#"+hex);
-				 	s.set_border_color('#F85EC8');
-				 	s.set_border_size(4.444444);
+				 	s.set_border_color('#CCCCCC');
+				 	s.set_border_size(1);
 				 	s.set_size(8.3444);
 				 	s.set_simbolo('circle');
 				 	s.set_titulo(layer_name);
