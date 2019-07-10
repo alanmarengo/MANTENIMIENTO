@@ -1244,8 +1244,10 @@ function ol_map() {
 				width:"100%",
 				onSubmit: function (hsb, hex, rgb) {
 					
+					//var layer_types = ["","GEOMETRY","LINESTRING","POLYGON","MULTIPOLYGON","MULTILINESTRING","POINT","MULTIPOINT");
 					var layer = document.getElementById("layer-checkbox-"+layer_id).layer;
 					var color = hex;
+					var layer_name = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-layer");
 					var type = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-layer-type");
 					var layer_types = ['',0,1,2,2,1,0,0];
 					
@@ -1257,7 +1259,7 @@ function ol_map() {
 				 	s.set_border_size(4.444444);
 				 	s.set_size(8.3444);
 				 	s.set_simbolo('circle');
-				 	s.set_titulo('test sld');
+				 	s.set_titulo(layer_name);
 				 	
 					
 					alert(s.sld_get());
