@@ -1261,7 +1261,7 @@ function ol_map() {
 				 	s.set_simbolo('circle');
 				 	s.set_titulo(layer_name);
 					
-				 	sld_result = s.sld_get_encode();
+				 	sld_result = s.sld_get();
 					
 					layer.getSource().updateParams({
 						
