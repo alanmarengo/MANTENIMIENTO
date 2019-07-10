@@ -1269,8 +1269,9 @@ function ol_map() {
 						
 					})
 					
-					layer.changed();
-					layer.getSource().changed();
+					//layer.changed();
+					layer.getSource().tileCache.expireCache({});
+					layer.getSource().tileCache.clear();
 					layer.getSource().refresh();
 					
 				}
