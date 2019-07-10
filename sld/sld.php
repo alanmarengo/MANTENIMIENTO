@@ -1,7 +1,7 @@
 <?php
-const _POINT_   =2;
+const _POINT_   =0;
 const _LINE_    =1;
-const _POLYGON_ =0;
+const _POLYGON_ =2;
 
 $simbol = 'circle'; 
 
