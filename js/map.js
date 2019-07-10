@@ -1265,7 +1265,7 @@ function ol_map() {
 					
 					layer.getSource().updateParams({
 						
-						'sld_body':'1'
+						'sld_body':sld_result
 						
 					})
 					
