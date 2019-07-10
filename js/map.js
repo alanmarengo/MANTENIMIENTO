@@ -1270,7 +1270,7 @@ function ol_map() {
 					})
 					
 					layer.changed();
-					layer.getSource().refresh();
+					//layer.getSource().refresh();
 					
 				}
 			});
