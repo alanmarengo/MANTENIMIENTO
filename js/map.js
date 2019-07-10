@@ -1269,8 +1269,9 @@ function ol_map() {
 						
 					})
 					
+					layer.changed();
 					layer.getSource().changed();
-					//layer.getSource().refresh();
+					layer.getSource().refresh();
 					
 				}
 			});
