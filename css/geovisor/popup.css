@@ -450,6 +450,12 @@
 	
 }
 
+#popup-body .jump-row:first-child {
+	
+	height:100%;
+	
+}
+
 #popup-preview-inner {
 	
 	height: 100%;
