@@ -115,7 +115,7 @@ function DrawLayers($clase_id) {
 					</div>
 				</div>
 				
-				<a href="#" onclick="$(this).parent().next().slideToggle('slow');">
+				<a href="#" class="layer-label" onclick="$(this).parent().next().slideToggle('slow');">
 					<span><?php echo $r["layer_desc"]; ?></span>
 				</a>
 				
