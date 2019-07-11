@@ -19,6 +19,12 @@
 	
 }
 
+.layer-header {
+	
+	border-bottom:solid 1px #445056;
+	
+}
+
 .layer-header, .layer-container-header {
 	
 	height:34px;
