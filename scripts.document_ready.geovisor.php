@@ -16,6 +16,7 @@
 		
 		jwindow = new Jump.window();
 		jwindow.setAllWindowsDraggable();
+		jwindow.setAllWindowsResizable();
 		
 		nav = new Jump.nav();
 		nav.hamburguer.addBehavior(function() {

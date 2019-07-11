@@ -50,6 +50,12 @@ Jump.window = function() {
 		
 	}
 	
+	this.setAllWindowsResizable = function() {
+		
+		$(".jump-window").resizable();
+		
+	}
+	
 	this.open = function(e) {
 		
 		$(e).show();
