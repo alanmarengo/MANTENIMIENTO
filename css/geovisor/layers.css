@@ -34,12 +34,10 @@
 
 .layer-header a, .layer-container-header a {
 	
-	position:relative;
-	margin-top:4px;
-	left:10px;
-	color:white;
-	font-weight:400;
-	display:block;
+	left: 10px;
+	color: white;
+	font-weight: 400;
+	display: inline-flex;
 	
 }
 
@@ -85,7 +83,7 @@
 
 .layer-header .simple-tree-pm-button {
 	
-	left:-25px;
+	margin-top:8px;
 	
 }
 
