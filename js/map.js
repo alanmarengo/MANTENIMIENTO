@@ -1385,7 +1385,7 @@ function ol_map() {
 			
 		});
 		
-		$(".btn-plus-layer").each(function(i,v) {
+		/*$(".btn-plus-layer").each(function(i,v) {
 			
 			$(v).on("click",function() {
 				
@@ -1405,7 +1405,7 @@ function ol_map() {
 				
 			});
 			
-		});
+		});*/
 		
 		$("#btn-popup-basic").trigger("click");
 		

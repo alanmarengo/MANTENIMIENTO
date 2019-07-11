@@ -114,12 +114,14 @@ function DrawLayers($clase_id) {
 						<i class="fa fa-eye-slash"></i>
 					</div>
 				</div>
-
-				<span><?php echo $r["layer_desc"]; ?></span>
 				
-				<a href="#" class="simple-tree-pm-button ml-1 btn-plus-layer">
-					<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
+				<a href="#" onclick="$(this).parent().next().slideToggle('slow');">
+					<span><?php echo $r["layer_desc"]; ?></span>
 				</a>
+				
+				<!--<a href="#" class="simple-tree-pm-button ml-1 btn-plus-layer">
+					<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
+				</a>-->
 				
 				<a href="#" class="simple-tree-pm-button" onclick="geomap.panel.removeLayer(<?php echo $r["layer_id"]; ?>,<?php echo $r["clase_id"]; ?>);">
 					<i class="fa fa-trash popup-panel-tree-item-icon-toggler popup-icon"></i>
