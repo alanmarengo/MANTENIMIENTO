@@ -42,7 +42,7 @@ function draw_tupla($row)
        echo '"dato":"'.$row[2].'",';
        echo '"maximo":"'.$row[3].'",';
        echo '"minimo":"'.$row[4].'",';
-       echo '"media":"'.$row[5].'"';
+       echo '"media":"'.$row[5].'",';
        echo '"ultima_act":"'.$row[5].'"';
        echo '}';
        
