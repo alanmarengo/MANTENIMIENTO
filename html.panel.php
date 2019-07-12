@@ -4,7 +4,7 @@
 			
 		<div id="nav-panel-arrow">
 		
-			<a href="#" onclick="flotant.toggle('#nav-panel-inner')" class="jump-hovimage" data-state="1" data-ini-src="./images/panel.icon.arrow.0.png" data-end-src="./images/panel.icon.arrow.1.png">
+			<a href="#" onclick="flotant.toggle('#nav-panel-inner')" class="jump-toggleimage" data-state="1" data-ini-src="./images/panel.icon.arrow.0.png" data-end-src="./images/panel.icon.arrow.1.png">
 			
 				<img src="./images/panel.icon.arrow.1.png">
 			

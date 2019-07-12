@@ -35,19 +35,21 @@
 					<a class="button" href="javascript:void(0);" id="navbarDropdown-draw" role="button" data-toggle="dropdown" aria-expanded="false">
 						<img src="./images/toolbar.icon.dibujo.png">
 					</a>
-					<div class="dropdown-menu dropdown-menu-right" id="dropdown-draw" aria-labelledby="navbarDropdown-draw" style="min-width:30px !Important; width:30px;">
-						<a class="dropdown-item" href="#">
-							<i class="far fa-circle fa-2x" style="font-size:8px;"></i>
+					<div class="dropdown-menu dropdown-menu-right" id="dropdown-draw" aria-labelledby="navbarDropdown-draw" style="min-width:30px !Important; width:30px;">						
+					
+						<a href="#" onclick="">			
+							<img src="./images/geovisor/drawing-bar-point.png">						
 						</a>
-						<a class="dropdown-item" href="#">
-							<i class="fa fa-minus"></i>
+						<a href="#" onclick="">			
+							<img src="./images/geovisor/drawing-bar-line.png">						
 						</a>
-						<a class="dropdown-item" href="#">
-							<i class="fa fa-draw-polygon"></i>
+						<a href="#" onclick="">			
+							<img src="./images/geovisor/drawing-bar-polygon.png">						
 						</a>
-						<a class="dropdown-item" href="#">
-							<i class="far fa-circle"></i>
+						<a href="#" onclick="">			
+							<img src="./images/geovisor/drawing-bar-circle.png">						
 						</a>
+						
 					</div> 
 				</li>
 				<li>

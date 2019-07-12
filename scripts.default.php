@@ -97,4 +97,5 @@
 <script src="./js/jump.hovimage.js"></script>
 <script src="./js/jump.resizer.js"></script>
 <script src="./js/jump.scroll.js"></script>
+<script src="./js/jump.toggleimage.js"></script>
 <script src="./js/jump.window.js"></script>

@@ -4,23 +4,17 @@ Jump.hovimage = function() {
 		
 		$(".jump-hovimage").each(function(i,v) {
 			
-			$(v).on("click",function() {
+			$(v).hover(function() {
 					
-				var state = $(v).attr("data-state");
-				var ini = $(v).attr("data-ini-src");
 				var end = $(v).attr("data-end-src");
+					
+				$(v).children("img").attr("src",end);
 				
-				if (state==0) {
+			},function() {
 					
-					$(v).children("img").attr("src",end);
-					$(v).attr("data-state","1");
+				var ini = $(v).attr("data-ini-src");
 					
-				}else{
-					
-					$(v).children("img").attr("src",ini);
-					$(v).attr("data-state","0");
-					
-				}
+				$(v).children("img").attr("src",ini);
 				
 			});
 			
