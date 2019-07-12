@@ -13,7 +13,6 @@
 .resizer_bar_v {
 	width:2px;
 	height:90%;
-	height:calc(100% - 40px);
 	display:block;
 	position:absolute;
 	cursor:e-resize;
@@ -22,7 +21,6 @@
 
 .resizer_bar_h {
 	width:90%;
-	width:calc(100% - 40px);
 	height:2px;
 	display:block;
 	position:absolute;
