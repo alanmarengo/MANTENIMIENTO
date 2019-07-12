@@ -65,10 +65,10 @@ Jump.resizer = function(element) {
 		bottom_res.style.bottom = "20px";	
 		
 		left_res.style.left = "20px";
-		left_res.style.top = "-1px";
+		left_res.style.top = "20px";
 		
 		right_res.style.right = "20px";
-		right_res.style.bottom = "-1px";	
+		right_res.style.bottom = "20px";	
 	
 		left_top.style.left = 20 + "px";
 		left_top.style.top = 20 + "px";
