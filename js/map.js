@@ -609,7 +609,9 @@ function ol_map() {
 			
 			this.parseGFI(req.responseText,"popup-buffer","info-buffer");
 			
-			this.infoEnabled = true;
+			this.infoEnabled = true;			
+			
+			this.buffer.source.clear();
 			
 		}.bind(this));
 		
