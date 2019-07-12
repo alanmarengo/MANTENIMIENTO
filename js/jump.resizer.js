@@ -59,28 +59,28 @@ Jump.resizer = function(element) {
 		/* POSICIONO CADA ITEM */
 		
 		top_res.style.left = -1 + "px";
-		top_res.style.top = -1 + "px";
+		top_res.style.top = 20 + "px";
 		
 		bottom_res.style.left = "-1px";
-		bottom_res.style.bottom = "-1px";	
+		bottom_res.style.bottom = "20px";	
 		
-		left_res.style.left = "-1px";
+		left_res.style.left = "20px";
 		left_res.style.top = "-1px";
 		
-		right_res.style.right = "-1px";
+		right_res.style.right = "20px";
 		right_res.style.bottom = "-1px";	
 	
-		left_top.style.left = -1 + "px";
-		left_top.style.top = -1 + "px";
+		left_top.style.left = 20 + "px";
+		left_top.style.top = 20 + "px";
 		
-		left_bottom.style.left = "-1px";
-		left_bottom.style.bottom = "-1px";	
+		left_bottom.style.left = "20px";
+		left_bottom.style.bottom = "20px";	
 		
-		right_top.style.right = "-1px";
-		right_top.style.top = "-1px";
+		right_top.style.right = "20px";
+		right_top.style.top = "20px";
 		
-		right_bottom.style.right = "-1px";
-		right_bottom.style.bottom = "-1px";	
+		right_bottom.style.right = "20px";
+		right_bottom.style.bottom = "20px";	
 		
 		/* VARIABLES USADAS PARA DIMENSIONAR */		
 		
