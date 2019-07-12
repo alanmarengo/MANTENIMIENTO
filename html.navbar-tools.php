@@ -49,6 +49,9 @@
 						<a href="#" onclick="geomap.map.drawing('Circle')" class="dropdown-item">			
 							<img src="./images/geovisor/icons/drawing-bar-circle.png">						
 						</a>
+						<a href="#" onclick="" id="btn-draw-cancel" class="dropdown-item">			
+							<img src="./images/geovisor/icons/drawing-bar-none.png">						
+						</a>
 						
 					</div> 
 				</li>

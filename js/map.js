@@ -664,14 +664,12 @@ function ol_map() {
 		
 		this.ol_object.addInteraction(this.draw);
 		
-		$(".nav-toolbar-link").not("#navbarDropdown-drawing").each(function(i,v) {
-			
-			$(v).bind("click",function() {
+		//$(".nav-toolbar-link").not("#navbarDropdown-drawing").each(function(i,v) {
+		
+		$("#btn-draw-cancel").on("click",function() {
 						
-				this.ol_object.removeInteraction(this.draw);
+			this.ol_object.removeInteraction(this.draw);
 				
-			}.bind(this));
-			
 		}.bind(this));
 		
 	}
