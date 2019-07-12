@@ -58,10 +58,10 @@ Jump.resizer = function(element) {
 		
 		/* POSICIONO CADA ITEM */
 		
-		top_res.style.left = -1 + "px";
+		top_res.style.left = 20 + "px";
 		top_res.style.top = 20 + "px";
 		
-		bottom_res.style.left = "-1px";
+		bottom_res.style.left = "20px";
 		bottom_res.style.bottom = "20px";	
 		
 		left_res.style.left = "20px";

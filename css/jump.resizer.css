@@ -12,7 +12,7 @@
 
 .resizer_bar_v {
 	width:2px;
-	height:90%;
+	height:97%;
 	display:block;
 	position:absolute;
 	cursor:e-resize;
@@ -20,7 +20,7 @@
 }
 
 .resizer_bar_h {
-	width:90%;
+	width:97%;
 	height:2px;
 	display:block;
 	position:absolute;
