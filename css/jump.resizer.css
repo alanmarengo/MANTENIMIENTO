@@ -2,8 +2,8 @@
 /* CSS Document */
 
 .resizer_corner {
-	width:10px;
-	height:10px;
+	width:2px;
+	height:2px;
 	display:block;
 	position:absolute;
 	cursor:e-resize;
@@ -11,7 +11,7 @@
 }
 
 .resizer_bar_v {
-	width:5px;
+	width:2px;
 	height:100%;
 	display:block;
 	position:absolute;
@@ -21,14 +21,14 @@
 
 .resizer_bar_h {
 	width:100%;
-	height:5px;
+	height:2px;
 	display:block;
 	position:absolute;
 	cursor:n-resize;
 	z-index:999999999;
 }
 
-.resizer_corner:hover, .resizer_bar_v, .resizer_bar_h {
+.resizer_corner:hover, .resizer_bar_v:hover, .resizer_bar_h:hover {
 	
 	background-color:#31cbfd;
 	
