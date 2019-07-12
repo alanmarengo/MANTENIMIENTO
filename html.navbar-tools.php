@@ -37,16 +37,16 @@
 					</a>
 					<div class="dropdown-menu dropdown-menu-right" id="dropdown-draw" aria-labelledby="navbarDropdown-draw" style="min-width:30px !Important; width:30px;">						
 					
-						<a href="#" onclick="" class="dropdown-item">			
+						<a href="#" onclick="geovisor.map.drawing('point')" class="dropdown-item">			
 							<img src="./images/geovisor/icons/drawing-bar-point.png">						
 						</a>
-						<a href="#" onclick="" class="dropdown-item">			
+						<a href="#" onclick="geovisor.map.drawing('line')" class="dropdown-item">			
 							<img src="./images/geovisor/icons/drawing-bar-line.png">						
 						</a>
-						<a href="#" onclick="" class="dropdown-item">			
+						<a href="#" onclick="geovisor.map.drawing('polygon')" class="dropdown-item">			
 							<img src="./images/geovisor/icons/drawing-bar-polygon.png">						
 						</a>
-						<a href="#" onclick="" class="dropdown-item">			
+						<a href="#" onclick="geovisor.map.drawing('circle')" class="dropdown-item">			
 							<img src="./images/geovisor/icons/drawing-bar-circle.png">						
 						</a>
 						
