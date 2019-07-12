@@ -666,12 +666,12 @@ function ol_map() {
 		
 		//$(".nav-toolbar-link").not("#navbarDropdown-drawing").each(function(i,v) {
 		
-		/*$("#btn-draw-cancel").on("click",function() {
+		$("#btn-draw-cancel").on("click",function() {
 						
 			this.ol_object.removeInteraction(this.draw);
 				
-		}.bind(this));*/
-		
+		}.bind(this));
+	
 	}
 	
 	this.map.medicion = function() {
