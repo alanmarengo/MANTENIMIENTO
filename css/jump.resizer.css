@@ -27,3 +27,9 @@
 	cursor:n-resize;
 	z-index:999999999;
 }
+
+.resizer_corner:hover, .resizer_bar_v, .resizer_bar_h {
+	
+	background-color:#31cbfd;
+	
+}
