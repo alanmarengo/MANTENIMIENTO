@@ -38,16 +38,16 @@
 					<div class="dropdown-menu dropdown-menu-right" id="dropdown-draw" aria-labelledby="navbarDropdown-draw" style="min-width:30px !Important; width:30px;">						
 					
 						<a href="#" onclick="">			
-							<img src="./images/geovisor/drawing-bar-point.png">						
+							<img src="./images/geovisor/icons/drawing-bar-point.png">						
 						</a>
 						<a href="#" onclick="">			
-							<img src="./images/geovisor/drawing-bar-line.png">						
+							<img src="./images/geovisor/icons/drawing-bar-line.png">						
 						</a>
 						<a href="#" onclick="">			
-							<img src="./images/geovisor/drawing-bar-polygon.png">						
+							<img src="./images/geovisor/icons/drawing-bar-polygon.png">						
 						</a>
 						<a href="#" onclick="">			
-							<img src="./images/geovisor/drawing-bar-circle.png">						
+							<img src="./images/geovisor/icons/drawing-bar-circle.png">						
 						</a>
 						
 					</div> 
