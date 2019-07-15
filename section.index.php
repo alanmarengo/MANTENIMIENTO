@@ -201,6 +201,7 @@
             </div>
             <div class="row modulo-row">
                 <div class="col-md-4 modulo-wrap modulo-9">
+                    <div id="uxSensor"></div>
                 </div>
                 <div class="col-md-4 modulo-wrap modulo-10">
                     <div class="modulo-opacity"></div>
@@ -287,6 +288,41 @@
     
 <script type='text/javascript'>
     $(document).ready(function () {
+        var model = {
+            apiUrlBase: 'http://observatorio.atic.com.ar',
+            sensores: [],
+            sensorIndex : 0
+        };
+
+        $.getJSON(model.apiUrlBase + '/json_sensores.php', function(data) {
+            model.sensores = data;
+            sensorRefresh();
+            setInterval(
+                function() { 
+                    sensorRefresh();
+                }, 
+                2000
+            );
+        });
+
+        function sensorRefresh() {
+            let sensor = model.sensores[model.sensorIndex];
+            sensor.dato = model.sensorIndex;
+            let html = `
+                <div class='sensor-estacion'>${sensor.estacion}</div>
+                <div class='sensor-nombre'>${sensor.dato_nombre}</div>
+                <div class='sensor-dato'>${sensor.dato}</div>
+                <div class='sensor-min'>Min: <b>${sensor.minimo}</b></div>
+                <div class='sensor-med'>Med: <b>${sensor.media}</b></div>
+                <div class='sensor-max'>Max: <b>${sensor.maximo}</b></div>
+            `
+            $('#uxSensor').html(html);
+
+            model.sensorIndex++;
+            if (model.sensorIndex >= model.sensores.length)
+                model.sensorIndex = 0;
+        }
+
         $('.video-hover').on('click', function() {
             $('#uxVideo').modal('show');
             $('#uxVideo video')[0].play();
