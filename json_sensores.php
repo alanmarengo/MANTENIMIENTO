@@ -30,7 +30,7 @@ header('Content-Type: application/json');
 
 $conn = pg_connect("host=localhost port=5432 dbname=ahrsc user=postgres password=plahe100%");
 
-$SQL = "SELECT * FROM mod_sensores.vw_sensores_data_index ORDER BY estacion ASC";
+$SQL = "SELECT estacion, dato_nombre, dato, maximo, minimo, to_char(media::float, 'FM999999990.00') as media, ultima_act FROM mod_sensores.vw_sensores_data_index WHERE dato IS NOT NULL ORDER BY estacion ASC";
 
 $recordset = pg_query($conn,$SQL);
 
