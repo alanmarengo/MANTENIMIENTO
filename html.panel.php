@@ -52,7 +52,7 @@
 				</a>
 				<input id="panel-seach-input-layers" class="panel-input pl-10" name="main-search" readonly="readonly" type="text" value="Buscar en las Capas" data-jump-placeholder="Buscar en las Capas" placeholder="Buscar en las Capas" 
 					onfocus="geomap.map.ol_object_mini.updateSize(); geomap.map.ol_object_mini.render(); jwindow.open('#popup-geovisor');">
-				<span class="layers-visible-count jump-posrel l--40"></span>
+				<span class="layers-visible-count jump-posrel l--30"></span>
 			</div>
 		
 		</div>
