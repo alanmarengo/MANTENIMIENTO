@@ -93,6 +93,8 @@
 		
 		<?php } ?>
 		
+		geomap.map.updateLayerCount();
+		
 		window.addEventListener("resize",onresize);
 		onresize();
 		
