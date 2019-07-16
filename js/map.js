@@ -237,7 +237,6 @@ function ol_map() {
 	this.map.updateLayerCount = function() {
 		
 		var count = $(".layer-checkbox[data-added=1]").length;
-		alert(count);
 		$(".layers-visible-count").html("("+count+")");
 		
 	}
