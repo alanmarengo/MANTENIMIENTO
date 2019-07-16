@@ -1295,6 +1295,8 @@ function ol_map() {
 			
 		}
 		
+		$("#layer-checkbox-"+layer_id).attr("data-added","1");
+		
 		$("#transp-value-"+layer_id).val(100+"%");
 		
 		$( "#slider-range-"+layer_id ).slider({			
