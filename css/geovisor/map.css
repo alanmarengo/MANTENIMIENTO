@@ -42,7 +42,7 @@
 
 #popup-baselayers {
 	
-	bottom:10px !Important;
+	bottom:-10px !Important;
 	height:300px !Important;
 	right:40px !Important;
 	
