@@ -5,7 +5,6 @@
 	height:auto;
 	margin:0;
 	padding:0;
-	background-color:#4c4c4e;
 	z-index:1400;
 	bottom:10px;
 	right:10px;
@@ -72,14 +71,8 @@
 	border-radius:3px;
 	margin:0;
 	padding:0;
-	margin-top:5px;
-	
-}
-
-#zoom-navbar ul li:not(.input-li) {
-	
-	margin:0 0 0 5px !Important;
-	width:24px;
+	margin-top:10px;
+	background-color:#4c4c4e;
 	
 }
 
