@@ -36,6 +36,7 @@
 <link rel="stylesheet" type="text/css" href="./css/jump.spacers.css">
 <link rel="stylesheet" type="text/css" href="./css/jump.displays.css"/>
 <link rel="stylesheet" type="text/css" href="./css/jump.link.css"/>
+<link rel="stylesheet" type="text/css" href="./css/jump.position.css"/>
 <link rel="stylesheet" type="text/css" href="./css/jump.resizer.css"/>
 <link rel="stylesheet" type="text/css" href="./css/jump.rowcol.css"/>
 <link rel="stylesheet" type="text/css" href="./css/jump.spacers.css"/>
