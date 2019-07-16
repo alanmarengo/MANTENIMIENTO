@@ -9,7 +9,7 @@
 			<a href="#" class="button ml-10" id="btn-bus-advanced">
 				<span>BUSQUEDA AVANZADA</span>
 			</a>
-			<a href="#" class="jump-window-close" onclick="jwindow.close('#popup-geovisor');">
+			<a href="#" class="jump-window-close" onclick="$('#popup-geovisor').hide();">
 				<i class="fas fa-times"></i>
 			</a>
 		</div>
