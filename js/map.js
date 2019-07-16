@@ -187,6 +187,12 @@ function ol_map() {
 		
 		this.ol_object.addControl(this.global_mouse_position_3857);
 		
+		this.ol_object.addEventListener("click",function() {
+			
+			$("#popup-geovisor").hide();
+			
+		});
+		
 		this.createLayers = function() {
 			
 			//
