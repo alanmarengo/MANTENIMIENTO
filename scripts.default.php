@@ -25,6 +25,7 @@
 <link rel="stylesheet" type="text/css" href="./css/nav.css">
 <link rel="stylesheet" type="text/css" href="./css/navbar.main.css">
 <link rel="stylesheet" type="text/css" href="./css/navbar.tools.css">
+<link rel="stylesheet" type="text/css" href="./css/navbar.zoom.css">
 <link rel="stylesheet" type="text/css" href="./css/hamburguer.css">
 <link rel="stylesheet" type="text/css" href="./css/flexbox.css">
 
