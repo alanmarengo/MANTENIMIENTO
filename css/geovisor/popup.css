@@ -472,6 +472,6 @@
 
 #popup-geovisor {
 	
-	display:block !Important;
+	display:flex !Important;
 	
 }
