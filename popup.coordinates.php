@@ -10,6 +10,7 @@ data-minimizable="1" data-minimized-title="Coordenadas">
 					<i class="fas fa-minus"></i>
 				</a>
 				<a href="#" class="jump-window-close" onclick="geomap.map.drawing.source.clear(); jwindow.close('popup-coordinates')">
+					<i class="fas fa-times"></i>
 				</a>
 			</div>
 		</div>
