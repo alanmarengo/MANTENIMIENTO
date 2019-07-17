@@ -68,14 +68,12 @@ Jump.window = function() {
 	this.open = function(e) {
 		
 		$(e).show();
-		$(e).children(".jump-window-inner").css("visibility","visible");
 		
 	}
 	
 	this.close = function(e) {
 		
 		$(e).hide();
-		$(e).children(".jump-window-inner").css("visibility","hidden");
 		
 	}	
 	
@@ -84,7 +82,6 @@ Jump.window = function() {
 		var e = document.getElementById(id);
 		
 		$(e).hide();
-		$(e).children(".jump-window-inner").css("visibility","hidden");
 		
 		if (!e.minimizedNode) {
 			
@@ -116,7 +113,6 @@ Jump.window = function() {
 		
 				$(this).parent().hide();
 				$(e).show();
-				$(e).children(".jump-window-inner").css("visibility","visible");
 				
 			}
 			
