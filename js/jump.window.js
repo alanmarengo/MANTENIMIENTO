@@ -83,7 +83,7 @@ Jump.window = function() {
 		
 		$(e).hide();
 		
-		if (!e.minimizedNode) {
+		if (!e.minimizedBar) {
 			
 			e.title = e.getAttribute("data-minimized-title");
 			
