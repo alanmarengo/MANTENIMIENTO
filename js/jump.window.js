@@ -115,7 +115,7 @@ Jump.window = function() {
 			e.minimizedBarMaximize.onclick = function() {
 		
 				$(this).parent().hide();
-				$(e).hide();
+				$(e).show();
 				$(e).children(".jump-window-inner").css("visibility","visible");
 				
 			}
