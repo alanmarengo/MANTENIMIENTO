@@ -232,7 +232,14 @@ function ol_map() {
 			
 		}
 		
-	}	
+	}
+	
+	this.map.updateLayerCount = function() {
+		
+		var count = $(".layer-checkbox[data-added=1]").length;
+		$(".layers-visible-count").html("("+count+")");
+		
+	}
 	
 	this.map.panel = this.panel;
 	
@@ -1287,6 +1294,8 @@ function ol_map() {
 			
 		}
 		
+		$("#layer-checkbox-"+layer_id).attr("data-added","1");
+		
 		$("#transp-value-"+layer_id).val(100+"%");
 		
 		$( "#slider-range-"+layer_id ).slider({			
@@ -1297,6 +1306,7 @@ function ol_map() {
 			}
 		});
 		
+		this.map.updateLayerCount();
 		this.updateLayerCountPanelLabel(clase_id);
 			
 		//$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );

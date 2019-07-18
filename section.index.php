@@ -307,11 +307,10 @@
 
         function sensorRefresh() {
             let sensor = model.sensores[model.sensorIndex];
-            sensor.dato = model.sensorIndex;
             let html = `
                 <div class='sensor-estacion'>${sensor.estacion}</div>
                 <div class='sensor-nombre'>${sensor.dato_nombre}</div>
-                <div class='sensor-dato'>${sensor.dato}</div>
+                <div class='sensor-dato'>${sensor.dato} <span class='sensor-unidad'>${sensor.unidad}</span></div>
                 <div class='sensor-min'>Min: <b>${sensor.minimo}</b></div>
                 <div class='sensor-med'>Med: <b>${sensor.media}</b></div>
                 <div class='sensor-max'>Max: <b>${sensor.maximo}</b></div>

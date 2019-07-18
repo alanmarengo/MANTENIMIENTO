@@ -38,6 +38,35 @@
 	
 }
 
+.jump-window-minimized-bar {
+	
+	position:fixed;
+	bottom:0px;
+	right:0px;
+	height:32px;
+	border:1px solid red;
+	z-index:185000;
+	display:flex;
+	justify-content:right;
+	
+}
+
+.jump-window-minimized-bar-node {
+	
+	background-color: #333;
+	display: block;
+	border-radius: 3px;
+	text-align: center;
+	color:#FFF;
+	width:250px;
+	font-size:12px;
+	height: 32px;
+	line-height: 32px;
+	display:none;
+	margin:2px 0 0 2px;
+	
+}
+
 .jump-window-header .button {
 	
 	font-size:14px;
@@ -80,9 +109,22 @@
 	
 }
 
-.jump-window-close {
+.jump-window-icon-bar {
 	
 	margin-left:auto;
+	
+}
+
+.jump-window-maximize {
+	
+	float:right;
+	margin-right:10px;
+	
+}
+
+.jump-window-close:hover, .jump-window-minimize:hover, .jump-window-maximize:hover {
+	
+	opacity:0.8;
 	
 }
 

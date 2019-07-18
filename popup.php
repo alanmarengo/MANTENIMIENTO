@@ -1,4 +1,5 @@
-<div class="jump-window jump-align-right jump-flotant-heightfill jump-flotant-heightfill-top col col-xs-12 col-sm-12-col-md-8 col-lg-8" id="popup-geovisor">
+<div class="jump-window jump-align-right jump-flotant-heightfill jump-flotant-heightfill-top col col-xs-12 col-sm-12-col-md-8 col-lg-8" id="popup-geovisor"
+data-minimizable="1" data-minimized-title="Selección de Capas">
 
 	<div class="jump-window-inner h-100-p" id="popup-inner">
 
@@ -9,9 +10,14 @@
 			<a href="#" class="button ml-10" id="btn-bus-advanced">
 				<span>BUSQUEDA AVANZADA</span>
 			</a>
-			<a href="#" class="jump-window-close">
-				<i class="fas fa-times"></i>
-			</a>
+			<div class="jump-window-icon-bar">
+				<a href="#" class="jump-window-minimize" onclick="jwindow.minimize('popup-geovisor');">
+					<i class="fas fa-minus"></i>
+				</a>
+				<a href="#" class="jump-window-close" onclick="jwindow.close('popup-geovisor');">
+					<i class="fas fa-times"></i>
+				</a>	
+			</div>
 		</div>
 		
 		<?php include("./popup.advanced-search.php"); ?>

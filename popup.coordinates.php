@@ -1,12 +1,18 @@
-<div class="jump-window jump-align-right jump-flotant-heightfill-top col col-xs-12 col-sm-12-col-md-4 col-lg-4 geovisor-flotant" id="popup-coordinates">
+<div class="jump-window jump-align-right jump-flotant-heightfill-top col col-xs-12 col-sm-12-col-md-4 col-lg-4 geovisor-flotant" id="popup-coordinates" 
+data-minimizable="1" data-minimized-title="Coordenadas">
 	
 	<div class="jump-window-inner p20">
 
 		<div class="jump-window-header">
 			<span>Coordenadas</span>
-			<a href="#" class="jump-window-close" onclick="geomap.map.drawing.source.clear();">
-				<i class="fas fa-times"></i>
-			</a>
+			<div class="jump-window-icon-bar">
+				<a href="#" class="jump-window-minimize" onclick="jwindow.minimize('popup-coordinates');">
+					<i class="fas fa-minus"></i>
+				</a>
+				<a href="#" class="jump-window-close" onclick="geomap.map.drawing.source.clear(); jwindow.close('popup-coordinates')">
+					<i class="fas fa-times"></i>
+				</a>
+			</div>
 		</div>
 		
 		<div class="jump-window-body p20">

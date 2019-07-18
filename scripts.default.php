@@ -25,6 +25,7 @@
 <link rel="stylesheet" type="text/css" href="./css/nav.css">
 <link rel="stylesheet" type="text/css" href="./css/navbar.main.css">
 <link rel="stylesheet" type="text/css" href="./css/navbar.tools.css">
+<link rel="stylesheet" type="text/css" href="./css/navbar.zoom.css">
 <link rel="stylesheet" type="text/css" href="./css/hamburguer.css">
 <link rel="stylesheet" type="text/css" href="./css/flexbox.css">
 
@@ -35,6 +36,7 @@
 <link rel="stylesheet" type="text/css" href="./css/jump.spacers.css">
 <link rel="stylesheet" type="text/css" href="./css/jump.displays.css"/>
 <link rel="stylesheet" type="text/css" href="./css/jump.link.css"/>
+<link rel="stylesheet" type="text/css" href="./css/jump.position.css"/>
 <link rel="stylesheet" type="text/css" href="./css/jump.resizer.css"/>
 <link rel="stylesheet" type="text/css" href="./css/jump.rowcol.css"/>
 <link rel="stylesheet" type="text/css" href="./css/jump.spacers.css"/>

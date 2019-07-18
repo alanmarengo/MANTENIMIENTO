@@ -9,3 +9,24 @@
 	position:fixed !Important;
 	
 }
+
+.jump-posrel {
+	
+	position:relative !Important;
+	
+}
+
+/*****************************************************/
+
+
+.l--30 {
+	
+	left:-30px;
+	
+}
+
+.l--40 {
+	
+	left:-40px;
+	
+}

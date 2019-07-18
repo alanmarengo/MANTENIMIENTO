@@ -1,12 +1,18 @@
-<div class="jump-window jump-align-right jump-flotant-heightfill-top col col-xs-12 col-sm-12-col-md-3 col-lg-3 geovisor-flotant" id="popup-baselayers">
+<div class="jump-window col col-xs-12 col-sm-12-col-md-3 col-lg-3 geovisor-flotant" id="popup-baselayers" data-minimizable="1" data-minimized-title="Capas Base">
 	
 	<div class="jump-window-inner p20">
 
 		<div class="jump-window-header">
 			<span>Capa Base</span>
-			<a href="#" class="jump-window-close">
-				<i class="fas fa-times"></i>
-			</a>
+			
+			<div class="jump-window-icon-bar">
+				<a href="#" class="jump-window-minimize" onclick="jwindow.minimize('popup-baselayers');">
+					<i class="fas fa-minus"></i>
+				</a>
+				<a href="#" class="jump-window-close" onclick="jwindow.close('popup-baselayers');">
+					<i class="fas fa-times"></i>
+				</a>	
+			</div>
 		</div>
 		
 		<div class="jump-window-body p20">
@@ -50,7 +56,7 @@
 				<br>
 			
 				<div class="pretty p-default p-round" style="font-size:20px;">
-					<input type="radio" name="radio-baselayers" id="baselayer-default-radio" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.google);">
+					<input type="radio" checked="checked" name="radio-baselayers" id="baselayer-default-radio" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.google);">
 					<div class="state">
 						<label>Google Maps</label>
 					</div>
