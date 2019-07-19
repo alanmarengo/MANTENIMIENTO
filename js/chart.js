@@ -2,7 +2,7 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 	
 	$.getJSON('./php/CMD-get-mde.php?wkt='+wkt, function (data) {
 		
-		$("#popup-preloader").show();
+		jwindow.open("popup-preloader");
 		
 		$("#perfil_topografico_min_max").html("<p>Altura Máxima: "+data.max+" Mts.</p><p>Altura Mínima: "+data.min + " Mts.")
 		
@@ -110,7 +110,7 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 			}]
 		});	
 		
-		$("#popup-preloader").hide();
+		jwindow.close("popup-preloader");
 		
 	});
 	
