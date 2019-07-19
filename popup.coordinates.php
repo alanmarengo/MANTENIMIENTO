@@ -23,11 +23,11 @@ data-minimizable="1" data-minimized-title="Coordenadas">
 					<td colspan="2">(Click en el mapa para capturar)</td>
 				</tr>
 				<tr>
-					<td>EPSG:3857</td>
+					<td>EPSG:3857 &nbsp;&nbsp;</td>
 					<td><span id="coord-3857"></td>
 				</td>
 				<tr>
-					<td>EPSG:4326</td>
+					<td>EPSG:4326 &nbsp;&nbsp;</td>
 					<td><span id="coord-4326"></td>
 				</td>
 			</table>
