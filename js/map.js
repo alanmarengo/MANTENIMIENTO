@@ -471,6 +471,9 @@ function ol_map() {
 	
 	this.map.activateCoordinates = function() {
 		
+		document.getElementById('coord-3857').innerHTML = "";
+		document.getElementById('coord-4326').innerHTML = "";
+		
 		this.mouse_position_3857 = new ol.control.MousePosition({
 			coordinateFormat: ol.coordinate.createStringXY(3),
 			projection: 'EPSG:3857',
