@@ -27,7 +27,7 @@
 					</a>
 				</li>
 				<li>
-					<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); jwindow.open('#popup-coordinates'); geomap.map.activateCoordinates();">
+					<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); jwindow.open('popup-coordinates'); geomap.map.activateCoordinates();">
 						<img src="./images/toolbar.icon.coordenadas.png">
 					</a>
 				</li>
@@ -61,7 +61,7 @@
 					</a>
 				</li>
 				<li class="ml-10">
-					<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); jwindow.open('#popup-share'); geomap.map.share();">
+					<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); jwindow.open('popup-share'); geomap.map.share();">
 						<img src="./images/toolbar.icon.share.png">
 					</a>
 				</li>

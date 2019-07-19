@@ -19,7 +19,7 @@
 					<img src="./images/panel.icon.f1.png">
 				</a>
 				<input id="panel-seach-input" class="panel-input pl-10" name="main-search" readonly="readonly" type="text" value="Agregar Información al Mapa" data-jump-placeholder="Agregar Información al Mapa" placeholder="Agregar Información al Mapa" 
-					onfocus="geomap.map.ol_object_mini.updateSize(); geomap.map.ol_object_mini.render(); openPopup();">							
+					onfocus="geomap.map.ol_object_mini.updateSize(); geomap.map.ol_object_mini.render(); jwindow.open('popup-geovisor');">							
 			</div>
 		
 		</div>

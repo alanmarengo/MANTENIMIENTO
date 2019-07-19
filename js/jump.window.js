@@ -65,15 +65,29 @@ Jump.window = function() {
 		
 	}
 	
-	this.open = function(e) {
+	this.open = function(id) {
+		
+		var e = document.getElementById(id);
+		
+		if (e.minimizedBar) {
+			
+			$(e.minimizedBar).hide();
+			
+		}
 		
 		$(e).show();
+		$(e).css("z-index","100000");
+		$(e).children(".jump-window-inner").show();
 		
 	}
 	
-	this.close = function(e) {
+	this.close = function(id) {
+		
+		var e = document.getElementById(id);
 		
 		$(e).hide();
+		$(e).css("z-index","-999");
+		$(e).children(".jump-window-inner").hide();
 		
 	}	
 	
@@ -82,6 +96,8 @@ Jump.window = function() {
 		var e = document.getElementById(id);
 		
 		$(e).hide();
+		$(e).css("z-index","-999");
+		$(e).children(".jump-window-inner").hide();
 		
 		if (!e.minimizedBar) {
 			
@@ -113,6 +129,8 @@ Jump.window = function() {
 		
 				$(this).parent().hide();
 				$(e).show();
+				$(e).css("z-index","100000");
+				$(e).children(".jump-window-inner").show();
 				
 			}
 			
