@@ -4,12 +4,9 @@
 
 		<div class="jump-window-header">
 			<span></span>
-			<a href="#" class="jump-window-close">
-				<i class="fas fa-times"></i>
-			</a>
 		</div>
 		
-		<div class="jump-window-body text-center p20">
+		<div class="jump-window-body text-center p20" style="background:RGBA(0,0,0,0.8); color:#FFFFFF;">
 			
 			<img src="./images/svg-loaders/oval.svg" alt="" width="50">
 			<p class="mt-10">Cargando...</p>
