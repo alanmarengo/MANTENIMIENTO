@@ -21,7 +21,7 @@
 		jwindow.setAllWindowsDraggable();
 		jwindow.initMinimizing();
 		
-		resize = new Jump.resizer(document.getElementById("popup-geovisor"));
+		//resize = new Jump.resizer(document.getElementById("popup-geovisor"));
 		
 		nav = new Jump.nav();
 		nav.hamburguer.addBehavior(function() {
