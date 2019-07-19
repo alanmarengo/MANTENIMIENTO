@@ -8,7 +8,7 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 		
 		layerVector.points = data.points;
 		
-		jwindow.open("#popup-ptopografico");
+		jwindow.open("popup-ptopografico");
 		
 		$("#perfil_topografico_chart").highcharts({
 			chart: {
