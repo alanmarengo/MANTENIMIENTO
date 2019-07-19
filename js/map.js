@@ -794,7 +794,7 @@ function ol_map() {
 		
 		draw.on('drawend', function (e) {
 			
-			$("#popup-preloader").show();
+			jwindow.open("popup-preloader");
 			
 			var format = new ol.format.WKT();
 			
