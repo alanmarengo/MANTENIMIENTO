@@ -47,23 +47,23 @@ data-minimizable="1" data-minimized-title="Coordenadas">
 						<td colspan="2"><br></td>
 					</tr>
 					<tr>
-						<td>EPSG:3857</td>
+						<td>EPSG:3857 &nbsp;&nbsp;</td>
 						<td><span id="cap-coord-3857"></td>
 					</td>
 					<tr>
-						<td>EPSG:4326</td>
+						<td>EPSG:4326 &nbsp;&nbsp;</td>
 						<td><span id="cap-coord-4326"></td>
 					</td>			
 					<tr>
-						<td>Condor Clift</td>
+						<td>Condor Clift &nbsp;&nbsp;</td>
 						<td><span id="cap-coord-100001"></td>
 					</td>
 					<tr>
-						<td>Barrancosa</td>
+						<td>Barrancosa &nbsp;&nbsp;</td>
 						<td><span id="cap-coord-100002"></td>
 					</td>
 					<tr>
-						<td>Lambert</td>
+						<td>Lambert &nbsp;&nbsp;</td>
 						<td><span id="cap-coord-100003"></td>
 					</td>
 					
