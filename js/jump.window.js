@@ -49,6 +49,12 @@ Jump.window = function() {
 			$(v).draggable({
 				handle:header,
 				 beforeStart: function () {
+					
+					var top = $(v).offset().top;
+					var left = $(v).offset().left;
+					
+					$(v).css("top",top);
+					$(v).css("left",left);
 					$(v).css("bottom","auto");
 					$(v).css("right","auto");
 				}
