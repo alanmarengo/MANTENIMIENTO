@@ -46,7 +46,12 @@ Jump.window = function() {
 			
 			var header = $(v).find(".jump-window-header");
 			
-			$(v).draggable({handle:header});
+			$(v).draggable({
+				handle:header,
+				 beforeStart: function () {
+					console.log('beforeStart::');
+				}
+			});
 			
 			$(v).find(".jump-window-close").on("click",function() {
 				

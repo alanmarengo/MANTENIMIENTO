@@ -67,6 +67,7 @@
 
 <script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="./js/jquery-ui/jquery-ui.min.js"></script>	
+<script type="text/javascript" src="./js/jquery-ui/dragfix.js"></script>	
 
 <!-- POPPER -->	
 <script src="./js/popper-1.12.9.min.js"></script>
