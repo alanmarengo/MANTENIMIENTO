@@ -8,7 +8,16 @@
             <li data-target="#main-slider" data-slide-to="4"></li>
         </ol>
         <div class="carousel-inner">
-            <a href="./geovisor.php" class="carousel-item active">
+            <a href="./mision.php" class="carousel-item active">
+                <img class="d-block w-100" src="./images/index/slide5.jpg" alt="...">
+                <div class="carousel-caption">
+                    <p>MISIÓN DE IEASA</p>
+                </div>                
+                <div class="slide-hover">
+                    Proveer energía eficaz y eficientemente, acompañando las políticas públicas del estado nacional dentro de un marco de respeto socioambiental que contribuya a mejorar la calidad de vida de las personas y el desarrollo de la comunidad. 
+                </div>
+            </a>
+            <a href="./geovisor.php" class="carousel-item">
                 <img class="d-block w-100" src="./images/index/slide1.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>GEOVISOR DE INFORMACION INTEGRADA<br /></p>
@@ -42,15 +51,6 @@
                 </div>                
                 <div class="slide-hover">
                     Colaboramos con el Proyecto Macá Tobiano para proteger a esta especie emblemática y endémica de Santa Cruz
-                </div>
-            </a>
-            <a href="./mision.php" class="carousel-item">
-                <img class="d-block w-100" src="./images/index/slide5.jpg" alt="...">
-                <div class="carousel-caption">
-                    <p>MISIÓN DE IEASA</p>
-                </div>                
-                <div class="slide-hover">
-                    Proveer energía eficaz y eficientemente, acompañando las políticas públicas del estado nacional dentro de un marco de respeto socioambiental que contribuya a mejorar la calidad de vida de las personas y el desarrollo de la comunidad. 
                 </div>
             </a>
         </div>
@@ -151,14 +151,15 @@
             <div class="row modulo-row">
                 <div class="col-md-6">
                     <div class="row">
-                        <div class="col-md-12 modulo-wrap modulo-6">
+                        <div class="col-md-12 modulo-wrap modulo-10">
                             <div class="modulo-opacity"></div>
                             <div class="modulo-text">
-                                COMUNICACIÓN Y GESTIÓN PARTICIPATIVA
+                                PLAN DE GESTIÓN AMBIENTAL<br />
+                                (PGA - AHRSC)
                             </div>
                             <div class="modulo-hover">
                                 <p class="modulo-hover-text">
-                                    Acciones de comunicación, relación con actores sociales y participación comunitaria.
+                                    Facilita el seguimiento de las acciones que brindan sostenibilidad al proyecto en sus distintas etapas. Planifica y ejecuta monitoreos sistemáticos para  el estudio de la evolución del ambiente.
                                     <br />
                                     <a href="./page.php" class="modulo-hover-icon">
                                         <i class="fa fa-plus-circle fa-2x"></i>
@@ -166,6 +167,8 @@
                                 </p>
                             </div>
                         </div>
+                        
+<!--
                         <div class="col-md-12 modulo-wrap modulo-3">
                             <div class="modulo-opacity"></div>
                             <div class="modulo-text">
@@ -181,6 +184,7 @@
                                 </p>
                             </div>
                         </div>
+-->
                     </div>
                 </div>
                 <div class="col-md-6 modulo-wrap modulo-8">
@@ -203,15 +207,14 @@
                 <div class="col-md-4 modulo-wrap modulo-9">
                     <div id="uxSensor"></div>
                 </div>
-                <div class="col-md-4 modulo-wrap modulo-10">
-                    <div class="modulo-opacity"></div>
+                <div class="col-md-4 modulo-wrap modulo-6">
+                <div class="modulo-opacity"></div>
                     <div class="modulo-text">
-                        PLAN DE GESTIÓN AMBIENTAL<br />
-                        (PGA - AHRSC)
+                        COMUNICACIÓN Y GESTIÓN PARTICIPATIVA
                     </div>
                     <div class="modulo-hover">
                         <p class="modulo-hover-text">
-                            Facilita el seguimiento de las acciones que brindan sostenibilidad al proyecto en sus distintas etapas. Planifica y ejecuta monitoreos sistemáticos para  el estudio de la evolución del ambiente.
+                            Acciones de comunicación, relación con actores sociales y participación comunitaria.
                             <br />
                             <a href="./page.php" class="modulo-hover-icon">
                                 <i class="fa fa-plus-circle fa-2x"></i>
