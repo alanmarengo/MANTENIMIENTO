@@ -6,9 +6,9 @@
 			<span></span>
 		</div>
 		
-		<div class="jump-window-body text-center p20" style="background:RGBA(0,0,0,0.8); color:#FFFFFF;">
+		<div class="jump-window-body p20" style="background:RGBA(0,0,0,0.8); color:#FFFFFF; justify-content:center;">
 			
-			<img src="./images/svg-loaders/oval.svg" alt="" width="50">
+			<p><img src="./images/svg-loaders/oval.svg" alt="" width="50"></p>
 			<p class="mt-10">Cargando...</p>
 			
 		</div>
