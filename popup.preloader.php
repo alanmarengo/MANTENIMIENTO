@@ -8,8 +8,8 @@
 		
 		<div class="jump-window-body p20" style="background:RGBA(0,0,0,0.8); color:#FFFFFF; justify-content:center;">
 			
-			<p><img src="./images/svg-loaders/oval.svg" alt="" width="50"></p>
-			<p class="mt-10">Cargando...</p>
+			<p class="text-center"><img src="./images/svg-loaders/oval.svg" alt="" width="50"></p>
+			<p class="mt-10 text-center">Cargando...</p>
 			
 		</div>
 	
