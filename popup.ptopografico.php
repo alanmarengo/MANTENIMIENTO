@@ -9,7 +9,7 @@
 				<a href="#" class="jump-window-minimize" onclick="jwindow.minimize('popup-ptopografico');">
 					<i class="fas fa-minus"></i>
 				</a>
-				<a href="#" class="jump-window-close" onclick="jwindow.close('popup-ptopografico')">
+				<a href="#" class="jump-window-close" onclick="jwindow.close('popup-ptopografico'); geomap.map.ptopografico.layerVector.getSource().clear();">
 					<i class="fas fa-times"></i>
 				</a>
 			</div>
