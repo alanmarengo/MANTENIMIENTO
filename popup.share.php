@@ -1,12 +1,18 @@
-<div class="jump-window jump-align-right jump-flotant-heightfill-top col col-xs-12 col-sm-12-col-md-6 col-lg-6 geovisor-flotant" id="popup-share">
+<div class="jump-window jump-align-right jump-flotant-heightfill-top col col-xs-12 col-sm-12-col-md-6 col-lg-6 geovisor-flotant" id="popup-share"
+ data-minimizable="1" data-minimized-title="Compartir Vista">
 	
 	<div class="jump-window-inner p20">
 
 		<div class="jump-window-header">
 			<span>Compartir Vista</span>
-			<a href="#" class="jump-window-close">
-				<i class="fas fa-times"></i>
-			</a>
+			<div class="jump-window-icon-bar">
+				<a href="#" class="jump-window-minimize" onclick="jwindow.minimize('popup-share');">
+					<i class="fas fa-minus"></i>
+				</a>				
+				<a href="#" class="jump-window-close" onclick="jwindow.close('popup-share')">
+					<i class="fas fa-times"></i>
+				</a>
+			</div>
 		</div>
 		
 		<div class="jump-window-body p20">

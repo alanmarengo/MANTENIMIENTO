@@ -19,6 +19,7 @@
 		
 		jwindow = new Jump.window();
 		jwindow.setAllWindowsDraggable();
+		jwindow.initMinimizing();
 		
 		resize = new Jump.resizer(document.getElementById("popup-geovisor"));
 		
@@ -92,6 +93,8 @@
 			<?php } ?>
 		
 		<?php } ?>
+		
+		geomap.map.updateLayerCount();
 		
 		window.addEventListener("resize",onresize);
 		onresize();

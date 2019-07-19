@@ -31,6 +31,15 @@ Jump.window = function() {
 		
 	}
 	
+	this.initMinimizing = function() {		
+		
+		document.body.jwindowBar = document.createElement("div");
+		document.body.jwindowBar.className = "jump-window-minimized-bar";
+			
+		document.body.appendChild(document.body.jwindowBar);
+		
+	}
+	
 	this.setAllWindowsDraggable = function() {
 		
 		$(".jump-window").each(function(i,v) {
@@ -65,6 +74,53 @@ Jump.window = function() {
 	this.close = function(e) {
 		
 		$(e).hide();
+		
+	}	
+	
+	this.minimize = function(id) {
+		
+		var e = document.getElementById(id);
+		
+		$(e).hide();
+		
+		if (!e.minimizedBar) {
+			
+			e.title = e.getAttribute("data-minimized-title");
+			
+			e.minimizedBar = document.createElement("div");
+			e.minimizedBar.className = "jump-window-minimized-bar-node";
+			
+			e.minimizedBarTitle = document.createElement("span");
+			e.minimizedBarTitle.appendChild(document.createTextNode(e.title));
+			
+			e.minimizedBarMaximize = document.createElement("a");
+			e.minimizedBarMaximize.className = "jump-window-maximize";
+			e.minimizedBarMaximize.setAttribute("href","#");
+			
+			e.minimizedBarMaximizeIcon = document.createElement("i");
+			e.minimizedBarMaximizeIcon.className = "far fa-square";
+			
+			e.minimizedBarMaximize.appendChild(e.minimizedBarMaximizeIcon);
+			
+			e.minimizedBar.appendChild(e.minimizedBarTitle);
+			e.minimizedBar.appendChild(e.minimizedBarMaximize);
+			
+			document.body.jwindowBar.appendChild(e.minimizedBar);
+			
+			$(e.minimizedBar).show();
+			
+			e.minimizedBarMaximize.onclick = function() {
+		
+				$(this).parent().hide();
+				$(e).show();
+				
+			}
+			
+		}else{
+			
+			$(e.minimizedBar).show();
+			
+		}
 		
 	}
 	
