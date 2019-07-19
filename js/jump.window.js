@@ -49,7 +49,8 @@ Jump.window = function() {
 			$(v).draggable({
 				handle:header,
 				 beforeStart: function () {
-					console.log('beforeStart::');
+					$(v).css("bottom","auto");
+					$(v).css("right","auto");
 				}
 			});
 			
