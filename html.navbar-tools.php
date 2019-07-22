@@ -21,10 +21,23 @@
 						<img src="./images/toolbar.icon.ptopografico.png">
 					</a>        
 				</li>
-				<li>
-					<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); geomap.map.medicion();">
+				<li class="dropdown">
+					<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant');">
 						<img src="./images/toolbar.icon.medicion.png">
 					</a>
+					<div class="dropdown-menu dropdown-menu-right" id="dropdown-medicion" aria-labelledby="navbarDropdown-medicion" style="min-width:30px !Important; width:30px;">						
+					
+						<a href="#" onclick="geomap.map.drawing('Line')" class="dropdown-item" onclick="geomap.map.medicion('Line');">			
+							<img src="./images/geovisor/icons/drawing-bar-line.png">						
+						</a>
+						<a href="#" onclick="geomap.map.drawing('Polygon')" class="dropdown-item" onclick="geomap.map.medicion('Polygon');">
+							<img src="./images/geovisor/icons/drawing-bar-polygon.png">						
+						</a>
+						<a href="#" onclick="" id="btn-draw-cancel-medicion" class="dropdown-item">
+							<img src="./images/geovisor/icons/drawing-bar-none.png">						
+						</a>
+						
+					</div> 
 				</li>
 				<li>
 					<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); jwindow.open('popup-coordinates'); geomap.map.activateCoordinates();">

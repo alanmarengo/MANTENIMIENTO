@@ -684,7 +684,7 @@ function ol_map() {
 	
 	}
 	
-	this.map.medicion = function() {
+	this.map.medicion = function(type) {
 		
 		this.infoEnabled = false;
 		
@@ -713,7 +713,7 @@ function ol_map() {
 		
 		var draw = new ol.interaction.Draw({
 			source: this.medicion.source,
-			type:"LineString"			
+			type:type	
 		});
 
 		draw.on('drawend', function (e) {
