@@ -27,7 +27,7 @@
 					</a>
 					<div class="dropdown-menu dropdown-menu-right" id="dropdown-medicion" aria-labelledby="navbarDropdown-medicion" style="min-width:30px !Important; width:30px;">						
 					
-						<a href="#" onclick="geomap.map.drawing('Line')" class="dropdown-item" onclick="geomap.map.medicion('Line');">			
+						<a href="#" onclick="geomap.map.drawing('Line')" class="dropdown-item" onclick="geomap.map.medicion('LineString');">			
 							<img src="./images/geovisor/icons/drawing-bar-line.png">						
 						</a>
 						<a href="#" onclick="geomap.map.drawing('Polygon')" class="dropdown-item" onclick="geomap.map.medicion('Polygon');">
@@ -53,7 +53,7 @@
 						<a href="#" onclick="geomap.map.drawing('Point')" class="dropdown-item">			
 							<img src="./images/geovisor/icons/drawing-bar-point.png">						
 						</a>
-						<a href="#" onclick="geomap.map.drawing('Line')" class="dropdown-item">			
+						<a href="#" onclick="geomap.map.drawing('LineString')" class="dropdown-item">			
 							<img src="./images/geovisor/icons/drawing-bar-line.png">						
 						</a>
 						<a href="#" onclick="geomap.map.drawing('Polygon')" class="dropdown-item">			
