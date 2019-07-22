@@ -562,6 +562,11 @@ function ol_map() {
 		if (this.draw) { this.ol_object.removeInteraction(this.draw); }
 		if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }
 		
+		//if ((this.buffer) && (this.buffer.source)) { this.buffer.source.clear(); }
+		if ((this.drawing) && (this.drawing.source)) { this.drawing.source.clear(); }
+		if ((this.medicion) && (this.medicion.source)) { this.medicion.source.clear(); }
+		if ((this.ptopografico) && (this.ptopografico.source)) { this.ptopografico.source.clear(); }
+		
 		this.infoEnabled = false;
 		
 		if (!this.buffer.source) {
@@ -658,6 +663,11 @@ function ol_map() {
 		if (this.medi_draw) { this.ol_object.removeInteraction(this.medi_draw); }
 		if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
 		if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }
+		
+		if ((this.buffer) && (this.buffer.source)) { this.buffer.source.clear(); }
+		//if ((this.drawing) && (this.drawing.source)) { this.drawing.source.clear(); }
+		if ((this.medicion) && (this.medicion.source)) { this.medicion.source.clear(); }
+		if ((this.ptopografico) && (this.ptopografico.source)) { this.ptopografico.source.clear(); }
 		
 		this.infoEnabled = false;
 		
@@ -771,6 +781,11 @@ function ol_map() {
 		if (this.draw) { this.ol_object.removeInteraction(this.draw); }
 		if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
 		if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }
+				
+		if ((this.buffer) && (this.buffer.source)) { this.buffer.source.clear(); }
+		if ((this.drawing) && (this.drawing.source)) { this.drawing.source.clear(); }
+		//if ((this.medicion) && (this.medicion.source)) { this.medicion.source.clear(); }
+		if ((this.ptopografico) && (this.ptopografico.source)) { this.ptopografico.source.clear(); }
 		
 		this.infoEnabled = false;
 		
@@ -854,7 +869,12 @@ function ol_map() {
 		if (this.modify) { this.ol_object.removeInteraction(this.modify); }
 		if (this.medi_draw) { this.ol_object.removeInteraction(this.medi_draw); }
 		if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
-		if (this.draw) { this.ol_object.removeInteraction(this.draw); }
+		if (this.draw) { this.ol_object.removeInteraction(this.draw); }		
+		
+		if ((this.buffer) && (this.buffer.source)) { this.buffer.source.clear(); }
+		if ((this.drawing) && (this.drawing.source)) { this.drawing.source.clear(); }
+		if ((this.medicion) && (this.medicion.source)) { this.medicion.source.clear(); }
+		//if ((this.ptopografico) && (this.ptopografico.source)) { this.ptopografico.source.clear(); }
 		
 		this.infoEnabled = false;
 		
