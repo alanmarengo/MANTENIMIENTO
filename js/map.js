@@ -556,10 +556,12 @@ function ol_map() {
 	
 	this.map.buffer = function() {
 		
+		if (this.deleteSelect) { this.ol_object.removeInteraction(this.deleteSelect); }
 		if (this.select) { this.ol_object.removeInteraction(this.select); }
 		if (this.modify) { this.ol_object.removeInteraction(this.modify); }
-		if (this.medi_draw) { this.ol_object.removeInteraction(this.medi_draw); }
 		if (this.draw) { this.ol_object.removeInteraction(this.draw); }
+		if (this.medi_draw) { this.ol_object.removeInteraction(this.medi_draw); }
+		if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
 		if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }
 		
 		//if ((this.buffer) && (this.buffer.source)) { this.buffer.source.clear(); }
@@ -656,10 +658,52 @@ function ol_map() {
 		
 	}
 	
-	this.map.drawing = function(type) {
+	this.map.deleteFeature = function() {		
 		
+		if (this.deleteSelect) { this.ol_object.removeInteraction(this.deleteSelect); }
 		if (this.select) { this.ol_object.removeInteraction(this.select); }
 		if (this.modify) { this.ol_object.removeInteraction(this.modify); }
+		if (this.draw) { this.ol_object.removeInteraction(this.draw); }
+		if (this.medi_draw) { this.ol_object.removeInteraction(this.medi_draw); }
+		if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
+		if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }
+		
+		if (this.drawing.source) {
+			
+			if (!this.deleteSelect) {			
+			
+				this.deleteSelect = new ol.interaction.Select({
+					wrapX: false
+				});
+				
+				var layer = this.drawing.layerVector;
+				
+				this.deleteSelect.on("select",function(evt) {
+					
+					var l = evt.target.getFeatures().getLength();
+					
+					evt.target.getFeatures().forEach(function(f) {
+						
+						layer.getSource().removeFeature(f);
+						
+					});;
+					
+				});
+			
+			}
+			
+			this.ol_object.addInteraction(this.deleteSelect);
+			
+		}
+		
+	}
+	
+	this.map.drawing = function(type) {
+		
+		if (this.deleteSelect) { this.ol_object.removeInteraction(this.deleteSelect); }
+		if (this.select) { this.ol_object.removeInteraction(this.select); }
+		if (this.modify) { this.ol_object.removeInteraction(this.modify); }
+		if (this.draw) { this.ol_object.removeInteraction(this.draw); }
 		if (this.medi_draw) { this.ol_object.removeInteraction(this.medi_draw); }
 		if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
 		if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }
@@ -769,6 +813,7 @@ function ol_map() {
 			this.ol_object.removeInteraction(this.draw);
 			this.ol_object.removeInteraction(this.select);
 			this.ol_object.removeInteraction(this.modify);
+			this.drawing.source.clear();
 				
 		}.bind(this));
 	
@@ -776,9 +821,11 @@ function ol_map() {
 	
 	this.map.medicion = function(type) {
 		
+		if (this.deleteSelect) { this.ol_object.removeInteraction(this.deleteSelect); }
 		if (this.select) { this.ol_object.removeInteraction(this.select); }
 		if (this.modify) { this.ol_object.removeInteraction(this.modify); }
 		if (this.draw) { this.ol_object.removeInteraction(this.draw); }
+		if (this.medi_draw) { this.ol_object.removeInteraction(this.medi_draw); }
 		if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
 		if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }
 				
@@ -865,11 +912,13 @@ function ol_map() {
 	
 	this.map.ptopografico = function() {
 		
+		if (this.deleteSelect) { this.ol_object.removeInteraction(this.deleteSelect); }
 		if (this.select) { this.ol_object.removeInteraction(this.select); }
 		if (this.modify) { this.ol_object.removeInteraction(this.modify); }
+		if (this.draw) { this.ol_object.removeInteraction(this.draw); }
 		if (this.medi_draw) { this.ol_object.removeInteraction(this.medi_draw); }
 		if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
-		if (this.draw) { this.ol_object.removeInteraction(this.draw); }		
+		if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }	
 		
 		if ((this.buffer) && (this.buffer.source)) { this.buffer.source.clear(); }
 		if ((this.drawing) && (this.drawing.source)) { this.drawing.source.clear(); }

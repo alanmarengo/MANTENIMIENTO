@@ -14,7 +14,7 @@
 				</a>        
 			</li>
 			<li>
-				<a class="button" href="javascript:void(0);" onclick="jwindow.open('#popup-baselayers');">
+				<a class="button" href="javascript:void(0);" onclick="jwindow.open('popup-baselayers');">
 					<i class="fa fa-layer-group"></i>
 				</a>
 			</li>

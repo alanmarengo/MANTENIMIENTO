@@ -68,6 +68,9 @@
 						<a href="#" onclick="geomap.map.drawing('Modify')" class="dropdown-item">			
 							<img src="./images/geovisor/icons/drawing-bar-edit.png">						
 						</a>
+						<a href="#" onclick="geomap.map.deleteFeature()" class="dropdown-item">			
+							<img src="./images/geovisor/icons/drawing-bar-delete.png">						
+						</a>
 						<a href="#" onclick="" id="btn-draw-cancel" class="dropdown-item">			
 							<img src="./images/geovisor/icons/drawing-bar-none.png">						
 						</a>
