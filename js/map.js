@@ -658,6 +658,35 @@ function ol_map() {
 		
 	}
 	
+	this.map.downloadFeatures = function() {
+		
+		var writer = new ol.format.GeoJSON();
+		var geojsonStr = writer.writeFeatures(this.drawing.source.getFeatures());	
+		
+		var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(geojsonStr));
+		
+		var dlAnchorElem = document.createElement("a");
+		
+		dlAnchorElem.setAttribute("id","jsondltemp");		
+		dlAnchorElem.setAttribute("href",     dataStr     );
+		dlAnchorElem.setAttribute("download", "layers.json");
+		
+		document.body.appendChild(dlAnchorElem);	
+		
+		dlAnchorElem.click();
+		
+		$("body").remove("#jsondltemp");
+	
+		if (this.deleteSelect) { this.ol_object.removeInteraction(this.deleteSelect); }
+		if (this.select) { this.ol_object.removeInteraction(this.select); }
+		if (this.modify) { this.ol_object.removeInteraction(this.modify); }
+		if (this.draw) { this.ol_object.removeInteraction(this.draw); }
+		if (this.medi_draw) { this.ol_object.removeInteraction(this.medi_draw); }
+		if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
+		if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }
+	
+	}
+	
 	this.map.deleteFeature = function() {		
 		
 		if (this.deleteSelect) { this.ol_object.removeInteraction(this.deleteSelect); }
