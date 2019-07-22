@@ -22,7 +22,7 @@
 					</a>        
 				</li>
 				<li class="dropdown">
-					<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant');">
+					<a class="button" href="javascript:void(0);" id="navbarDropdown-medicion" role="button" data-toggle="dropdown" aria-expanded="false" onclick="jwindow.close('.geovisor-flotant');">
 						<img src="./images/toolbar.icon.medicion.png">
 					</a>
 					<div class="dropdown-menu dropdown-menu-right" id="dropdown-medicion" aria-labelledby="navbarDropdown-medicion" style="min-width:30px !Important; width:30px;">						
