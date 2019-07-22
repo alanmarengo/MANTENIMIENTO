@@ -27,10 +27,10 @@
 					</a>
 					<div class="dropdown-menu dropdown-menu-right" id="dropdown-medicion" aria-labelledby="navbarDropdown-medicion" style="min-width:30px !Important; width:30px;">						
 					
-						<a href="#" onclick="geomap.map.drawing('Line')" class="dropdown-item" onclick="geomap.map.medicion('LineString');">			
+						<a href="#" onclick="geomap.map.medicion('LineString')" class="dropdown-item">			
 							<img src="./images/geovisor/icons/drawing-bar-line.png">						
 						</a>
-						<a href="#" onclick="geomap.map.drawing('Polygon')" class="dropdown-item" onclick="geomap.map.medicion('Polygon');">
+						<a href="#" onclick="geomap.map.medicion('Polygon')" class="dropdown-item">
 							<img src="./images/geovisor/icons/drawing-bar-polygon.png">						
 						</a>
 						<a href="#" onclick="" id="btn-draw-cancel-medicion" class="dropdown-item">
@@ -61,6 +61,12 @@
 						</a>
 						<a href="#" onclick="geomap.map.drawing('Circle')" class="dropdown-item">			
 							<img src="./images/geovisor/icons/drawing-bar-circle.png">						
+						</a>
+						<a href="#" onclick="geomap.map.drawing('Select')" class="dropdown-item">			
+							<img src="./images/geovisor/icons/drawing-bar-select.png">						
+						</a>
+						<a href="#" onclick="geomap.map.drawing('Modify')" class="dropdown-item">			
+							<img src="./images/geovisor/icons/drawing-bar-edit.png">						
 						</a>
 						<a href="#" onclick="" id="btn-draw-cancel" class="dropdown-item">			
 							<img src="./images/geovisor/icons/drawing-bar-none.png">						

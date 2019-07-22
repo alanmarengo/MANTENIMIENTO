@@ -424,11 +424,18 @@ function ol_map() {
 	
 	this.map.print = function() {					
 			
+		//$("#print-legend-wrapper").empty();
 		$("#print-legend-wrapper").show();
 			
-		$(".layer-checkbox[data-added=1]:visible:checked").each(function(i,v) {
+		$(".layer-checkbox[data-added=1]:checked").each(function(i,v) {
 			
-			$(v).parent().parent().next(".layer-body").children(".layer-legend").clone().appendTo("#print-legend-wrapper");
+			var src = $(v).parent().parent().next(".layer-body").children(".layer-legend").children("img").attr("src");
+			var newImage = document.createElement("img");
+				newImage.setAttribute("src",src);
+			
+			$("#print-legend-wrapper").append(newImage);
+			
+			//$(v).parent().parent().next(".layer-body").children(".layer-legend").clone().appendTo("#print-legend-wrapper");
 			
 		});/*
 		
@@ -460,8 +467,7 @@ function ol_map() {
 			
 			$(a).remove();
 			
-			$("#print-legend-wrapper").empty();
-			$("#print-legend-wrapper").hide();
+			//$("#print-legend-wrapper").hide();
 			
 		});
 
@@ -549,6 +555,12 @@ function ol_map() {
 	}
 	
 	this.map.buffer = function() {
+		
+		if (this.select) { this.ol_object.removeInteraction(this.select); }
+		if (this.modify) { this.ol_object.removeInteraction(this.modify); }
+		if (this.medi_draw) { this.ol_object.removeInteraction(this.medi_draw); }
+		if (this.draw) { this.ol_object.removeInteraction(this.draw); }
+		if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }
 		
 		this.infoEnabled = false;
 		
@@ -641,6 +653,12 @@ function ol_map() {
 	
 	this.map.drawing = function(type) {
 		
+		if (this.select) { this.ol_object.removeInteraction(this.select); }
+		if (this.modify) { this.ol_object.removeInteraction(this.modify); }
+		if (this.medi_draw) { this.ol_object.removeInteraction(this.medi_draw); }
+		if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
+		if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }
+		
 		this.infoEnabled = false;
 		
 		if (!this.drawing.source) {
@@ -666,25 +684,93 @@ function ol_map() {
 			this.ol_object.removeInteraction(this.draw);
 				
 		}
-			
-		this.draw = new ol.interaction.Draw({
-			source: this.drawing.source,
-			type:type			
-		});
 		
-		this.ol_object.addInteraction(this.draw);
+		switch(type) {
+			
+			case "Select":
+			
+			if (this.select) {
+				
+				this.ol_object.removeInteraction(this.select);	
+			
+			}else{
+			
+				this.select = new ol.interaction.Select({
+					wrapX: false
+				});
+			
+			}
+			
+			this.ol_object.addInteraction(this.select);	
+			this.ol_object.removeInteraction(this.draw);
+			this.ol_object.removeInteraction(this.modify);	
+			
+			break;
+			
+			case "Modify":
+			
+			if (this.modify) {
+				
+				this.ol_object.removeInteraction(this.modify);			
+			
+			}else{
+			
+				if (!this.select) {
+					
+					this.select = new ol.interaction.Select({
+						wrapX: false
+					});
+					
+				}
+				
+				var select = this.select;
+			
+				this.modify = new ol.interaction.Modify({
+					features: select.getFeatures()
+				});
+				
+			}			
+			
+			this.ol_object.addInteraction(this.select);
+			this.ol_object.addInteraction(this.modify);	
+			this.ol_object.removeInteraction(this.draw);
+			
+			break;
+			
+			default:
+			
+			this.draw = new ol.interaction.Draw({
+				source: this.drawing.source,
+				type:type			
+			});
+				
+			this.ol_object.addInteraction(this.draw);	
+			this.ol_object.removeInteraction(this.select);
+			this.ol_object.removeInteraction(this.modify);	
+			
+			break;
+			
+		}
 		
 		//$(".nav-toolbar-link").not("#navbarDropdown-drawing").each(function(i,v) {
 		
 		$("#btn-draw-cancel").on("click",function() {
 						
 			this.ol_object.removeInteraction(this.draw);
+			this.ol_object.removeInteraction(this.select);
+			this.ol_object.removeInteraction(this.modify);
 				
 		}.bind(this));
 	
 	}
 	
 	this.map.medicion = function(type) {
+		
+		if (this.select) { this.ol_object.removeInteraction(this.select); }
+		if (this.modify) { this.ol_object.removeInteraction(this.modify); }
+		if (this.draw) { this.ol_object.removeInteraction(this.draw); }
+		if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
+		if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }
 		
 		this.infoEnabled = false;
 		
@@ -711,48 +797,50 @@ function ol_map() {
 		
 		}
 		
-		var draw = new ol.interaction.Draw({
+		this.medicion.source.clear();
+		
+		this.medi_draw = new ol.interaction.Draw({
 			source: this.medicion.source,
 			type:type	
 		});
 
-		draw.on('drawend', function (e) {
+		this.medi_draw.on('drawend', function (e) {
 			
 			var format = new ol.format.WKT();
 			
-			var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:3857', 'EPSG:4326'));		
+			var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:3857', 'EPSG:4326'));
 			
 			var wktext = wkt;
 			
 			var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:4326', 'EPSG:3857'));	
 			
-			this.ol_object.removeInteraction(draw);
+			this.ol_object.removeInteraction(this.medi_draw);
 			
 			var req = $.ajax({
 				
 				async:false,
 				type:"post",
 				url:"./php/get-medicion.php",
-				data:{wkt:wkt},
+				data:{wkt:wkt,type:type},
 				success:function(d){}
 				
 			});
 			
 			document.getElementById("info-medicion").innerHTML = req.responseText;
 			
-			$("#popup-medicion").show();
+			jwindow.open("popup-medicion");
 			
 			this.infoEnabled = true;
 			
 		}.bind(this));
 		
-		this.ol_object.addInteraction(draw);
+		this.ol_object.addInteraction(this.medi_draw);
 		
 		$(".nav-toolbar-link").not("#navbarDropdown-medicion").each(function(i,v) {
 			
 			$(v).bind("click",function() {
 						
-				this.ol_object.removeInteraction(draw);
+				this.ol_object.removeInteraction(this.medi_draw);
 				
 			}.bind(this));
 			
@@ -761,6 +849,12 @@ function ol_map() {
 	}
 	
 	this.map.ptopografico = function() {
+		
+		if (this.select) { this.ol_object.removeInteraction(this.select); }
+		if (this.modify) { this.ol_object.removeInteraction(this.modify); }
+		if (this.medi_draw) { this.ol_object.removeInteraction(this.medi_draw); }
+		if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
+		if (this.draw) { this.ol_object.removeInteraction(this.draw); }
 		
 		this.infoEnabled = false;
 		
@@ -787,12 +881,12 @@ function ol_map() {
 		
 		}
 		
-		var draw = new ol.interaction.Draw({
+		this.ptopo_draw = new ol.interaction.Draw({
 			source: this.ptopografico.source,
 			type:"LineString"			
 		});
 		
-		draw.on('drawend', function (e) {
+		this.ptopo_draw.on('drawend', function (e) {
 			
 			jwindow.open("popup-preloader");
 			
@@ -806,7 +900,7 @@ function ol_map() {
 			
 			DrawChart(wktext,this.ptopografico.layerVector,this.ptopografico.sourcePoints);
 			
-			this.ol_object.removeInteraction(draw);
+			this.ol_object.removeInteraction(this.ptopo_draw);
 			
 			this.ptopografico.layerVector.getSource().clear();	
 			
@@ -814,13 +908,13 @@ function ol_map() {
 			
 		}.bind(this));
 		
-		this.ol_object.addInteraction(draw);
+		this.ol_object.addInteraction(this.ptopo_draw);
 		
 		$(".nav-toolbar-link").not("#navbarDropdown-ptopografico").each(function(i,v) {
 			
 			$(v).bind("click",function() {
 						
-				this.ol_object.removeInteraction(draw);
+				this.ol_object.removeInteraction(this.ptopo_draw);
 				
 			}.bind(this));
 			
