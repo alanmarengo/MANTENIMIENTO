@@ -11,6 +11,12 @@
 
 }
 
+#page_contacto form .form-group {
+	
+	border:none !Important;
+	
+}
+
 .form-group-button {
 	
 	padding:0;
