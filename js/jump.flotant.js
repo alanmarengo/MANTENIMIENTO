@@ -128,6 +128,12 @@ Jump.flotant = function() {
 			
 			$(target).attr("data-visible","0");
 			
+			if ($(target).attr("id") != "nav-main") {
+			
+				this.toggle("nav-main",false,false,false);
+			
+			}
+			
 		}else{
 			
 			
@@ -154,6 +160,7 @@ Jump.flotant = function() {
 							.on("click",function() { 
 							
 								this.toggle(target,true);
+								this.toggle(".nav-main");
 								
 								$(target).find("ul").find(".jump-sublevel-backoption").remove(); 
 								$(target).find("ul").find(".jump-sublevel-labeloption").remove(); 
