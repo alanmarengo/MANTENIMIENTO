@@ -29,7 +29,7 @@
 			
 		</div>
 		
-		<div class="col col-xs-12 col-sm-12 col-md-3 col-lg-3 flexbox col-nav">
+		<div class="col col-xs-12 col-sm-12 col-md-4 col-lg-4 flexbox col-nav">
 				
 			<ul class="ml-10 mr-15" style="margin-right: 40px !important;">
 				<li class="input-li">						
@@ -38,8 +38,6 @@
 						<i class="fa fa-search"></i>
 					</a>							
 				</li>
-
-<!--
 				<li class="dropdown">
 					<a href="#" id="navbarDropdown-help" role="button" data-toggle="dropdown" aria-expanded="false">
 						<i class="fa fa-question-circle"></i>
@@ -60,7 +58,7 @@
 						<i class="fa fa-user"></i>
 					</a>
 				</li>
--->				
+			
 			</ul>
 					
 		</div>

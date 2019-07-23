@@ -1,6 +1,6 @@
 <div class="row footer">
 	<div class="col-md-3">
-		<img src="./images/logo-footer.png" style="width:80%; max-width: 250px; height: auto;" />
+		<img src="./images/logo-footer.png" style="width:80%; max-width: 150px; height: auto;" />
 	</div>
 	<div class="col-md-3" style="font-size: .9em; padding: 10px;">
 		(+54 11) 5276-4050 INT: 127<br />
