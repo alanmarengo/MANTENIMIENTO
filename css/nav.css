@@ -50,8 +50,10 @@
 
 .jump-sublevel-backoption a {
 	
-	background-color:#333333 !Important;
-	color:white !Important;
+	border-top:1px solid RGBA(0,0,0,.2);
+	background-color:#eaeaed !Important;
+	color:#121212;
+	font-weight:700;
 	
 }
 
