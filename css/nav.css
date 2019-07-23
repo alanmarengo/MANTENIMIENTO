@@ -53,7 +53,7 @@
 	border-top:1px solid RGBA(0,0,0,.2);
 	background-color:#eaeaed !Important;
 	color:#121212;
-	font-weight:700;
+	font-weight:700 !Important;
 	
 }
 
