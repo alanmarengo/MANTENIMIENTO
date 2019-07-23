@@ -1,5 +1,10 @@
 <div class="navbar flebox jump-navbar" id="navbar-main">
-		
+	
+<!---
+	<div class="row jump-row menu-row" style="background-color: #ccc; font-size: 11px; padding: 1px!important;align-items: center;">
+		item1 | item2 | item3
+	</div>
+-->
 	<div class="row jump-row default-row">
 
 		<div class="col col-xs-12 col-sm-12 col-md-4 col-lg-4 flexbox col-brand">
@@ -24,17 +29,17 @@
 			
 		</div>
 		
-		<div class="col col-xs-12 col-sm-12 col-md-4 col-lg-4 flexbox col-nav">
+		<div class="col col-xs-12 col-sm-12 col-md-3 col-lg-3 flexbox col-nav">
 				
-			<ul class="ml-10 mr-15">
-				<li>
-					<a href="#" class="jump-link-death">
+			<ul class="ml-10 mr-15" style="margin-right: 40px !important;">
+				<li class="input-li">						
+					<input id="main-search" name="main-search" type="text" data-jump-placeholder="Buscar en todo el sitio" placeholder="Buscar en todo el sitio">
+					<a href="#" >
 						<i class="fa fa-search"></i>
 					</a>							
 				</li>
-				<li class="input-li">						
-					<input id="main-search" name="main-search" type="text" data-jump-placeholder="Buscar en todo el sitio" placeholder="Buscar en todo el sitio">
-				</li>
+
+<!--
 				<li class="dropdown">
 					<a href="#" id="navbarDropdown-help" role="button" data-toggle="dropdown" aria-expanded="false">
 						<i class="fa fa-question-circle"></i>
@@ -55,7 +60,7 @@
 						<i class="fa fa-user"></i>
 					</a>
 				</li>
-				
+-->				
 			</ul>
 					
 		</div>
