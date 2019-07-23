@@ -28,7 +28,7 @@
 	
 }
 
-.navmenu ul li a {
+.navmenu ul li a:not(.jump-link-death) {
 	
 	display:block;
 	width:100%;
