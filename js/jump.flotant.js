@@ -130,7 +130,6 @@ Jump.flotant = function() {
 			
 		}else{
 			
-			
 			if (onAnimateEnd) {
 				
 				$(target).animate({"left":"0px"},"fast",onAnimateEnd);
@@ -179,6 +178,12 @@ Jump.flotant = function() {
 					)
 				);
 				
+			}
+			
+			if ($(target).attr("id") != "nav-main") {
+			
+				$("#nav-main").hide();
+			
 			}
 			
 		}
