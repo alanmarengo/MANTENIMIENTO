@@ -151,6 +151,9 @@ Jump.flotant = function() {
 						$("<a>Volver</a>")
 							.attr("href","#")
 							.on("click",function() { 
+							
+								$("#nav-main").animate({"left":"0px"},"fast");
+								$("#nav-main").attr("data-visible","1");
 								
 								this.toggle(target,true);
 								
@@ -183,7 +186,7 @@ Jump.flotant = function() {
 			if ($(target).attr("id") != "nav-main") {
 			
 				$("#nav-main").animate({"left":"-"+navWidth+"px"},"fast");
-				$("#nav-main").attr("data-visible","1");
+				$("#nav-main").attr("data-visible","0");
 			
 			}
 			
