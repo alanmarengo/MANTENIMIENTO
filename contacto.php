@@ -1,44 +1,39 @@
-<?php include("./header.php"); ?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
 
-<div id="page_contacto" class="page" style="background-color: #fff;">
-    <div class="row">
-        <div class="col-md-12 page-section-1">
-            Contacto
-        </div>
+	<title>Contacto</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<?php include("./scripts.default.php"); ?>
+	<?php include("./scripts.onresize.php"); ?>		
+	
+	<?php include("./scripts.document_ready.php"); ?>
+	
+</head>
+<body>
 
-        <div class="col-md-12 page-section-3" style="background-image: url(./images/contacto_banner.png);">
-        </div>
+	<div id="page">
+	
+		<?php include("./html.navbar-main.php"); ?>
+		
+		<div class="page-container">
+		
+			<?php include("./section.contacto.php"); ?>
+			
+			<?php include("./html.nav.php"); ?>
+			<?php include("./html.nav.geovisores.php"); ?>
+			<?php include("./html.nav.vinculaciones_insterinstitucionales.php"); ?>
+			<?php include("./html.nav.recursos_hidricos.php"); ?>
+			
+			<?php include("./footer.php"); ?>
+			
+		</div>
+		
+	</div>	
+	
+	<?php include("./widget-links.php"); ?>
 
-        <div class="col-md-12 page-section-4">
-            <form style="padding-left: 40px; padding: 20px 40px 40px 40px;">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Nombre y apellido">
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Asunto">
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <textarea type="text" class="form-control" placeholder="" rows="6"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-lg">ENVIAR</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-
-    </div>
-</div>
-<?php include("./widget-links.php"); ?>
-
-<script type='text/javascript'>
-$(document).ready(function() {});
-</script>
-
-<?php include("./footer.php"); ?>
+</body>
+</html>
