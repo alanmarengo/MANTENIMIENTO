@@ -60,10 +60,15 @@ a:hover {
 
 .jump-sublevel-labeloption {
     background-color: #fff;
-	padding-left:10px;
+	padding-left: 12px;
+	font-weight: 600;
 }
 
 .jump-sublevel-labeloption a {
+	color: #585858;
+}
+
+.jump-sublevel-labeloption a:hover {
 	color: #585858;
 }
 
