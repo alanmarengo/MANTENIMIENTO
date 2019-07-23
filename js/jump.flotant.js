@@ -128,6 +128,12 @@ Jump.flotant = function() {
 			
 			$(target).attr("data-visible","0");
 			
+			if ($(target).attr("id") != "nav-main") {
+			
+				this.toggle("nav-main",false,false,false);
+			
+			}
+			
 		}else{
 			
 			
@@ -138,12 +144,6 @@ Jump.flotant = function() {
 			}else{
 			
 				$(target).animate({"left":"0px"},"fast");
-			
-			}
-			
-			if ($(target).attr("id") != "nav-main") {
-			
-				this.toggle("nav-main",false,false,false);
 			
 			}
 			
