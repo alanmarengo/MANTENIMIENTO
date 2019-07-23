@@ -152,7 +152,9 @@ Jump.flotant = function() {
 							.attr("href","#")
 							.on("click",function() { 
 							
-								$("#nav-main").show();
+								$("#nav-main").animate({"left":"0px"},"fast");
+								$("#nav-main").attr("data-visible","0");
+								
 								this.toggle(target,true);
 								
 								$(target).find("ul").find(".jump-sublevel-backoption").remove(); 
@@ -183,7 +185,8 @@ Jump.flotant = function() {
 			
 			if ($(target).attr("id") != "nav-main") {
 			
-				$("#nav-main").hide();
+				$("#nav-main").animate({"left":"-"+navWidth+"px"},"fast");
+				$("#nav-main").attr("data-visible","1");
 			
 			}
 			
