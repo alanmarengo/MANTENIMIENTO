@@ -151,9 +151,6 @@ Jump.flotant = function() {
 						$("<a>Volver</a>")
 							.attr("href","#")
 							.on("click",function() { 
-							
-								$("#nav-main").animate({"left":"0px"},"fast");
-								$("#nav-main").attr("data-visible","0");
 								
 								this.toggle(target,true);
 								
