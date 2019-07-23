@@ -50,8 +50,8 @@
 
 .jump-sublevel-backoption a {
 	
-	background-color:#121212;
-	color:white;
+	background-color:#121212 !Important;
+	color:white !Important;
 	
 }
 
