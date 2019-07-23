@@ -29,7 +29,7 @@
 
 #hamburguer:hover span:nth-child(1) {
 
-	top: 9px;
+	top: 8px;
 	
 }
 
@@ -60,7 +60,7 @@
 }
 
 #hamburguer span:nth-child(1) {
-  top: 11px;
+  top: 10px;
 }
 
 #hamburguer span:nth-child(2) {
