@@ -59,7 +59,12 @@ a:hover {
 }
 
 .jump-sublevel-labeloption {
-    background-color: #5c5d5c;
+    background-color: #fff;
+	padding-left:10px;
+}
+
+.jump-sublevel-labeloption a {
+	color: #585858;
 }
 
 #panel-seach-input {
