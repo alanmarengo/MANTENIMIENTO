@@ -50,12 +50,12 @@
 
 .jump-sublevel-backoption a {
 	
-	background-color:#121212 !Important;
+	background-color:#333333 !Important;
 	color:white !Important;
 	
 }
 
-.jump-sublevel-backoption a hover{
+.jump-sublevel-backoption a:hover{
 	
 	background-color:#31cbfd !Important;
 	color:white !Important;
