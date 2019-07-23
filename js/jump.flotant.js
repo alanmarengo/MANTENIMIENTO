@@ -152,6 +152,7 @@ Jump.flotant = function() {
 							.attr("href","#")
 							.on("click",function() { 
 							
+								$("#nav-main").show();
 								this.toggle(target,true);
 								
 								$(target).find("ul").find(".jump-sublevel-backoption").remove(); 
