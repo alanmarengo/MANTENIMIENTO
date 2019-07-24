@@ -279,11 +279,14 @@
 
     <div class="modal fade" id="uxVideo" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content video-container">
                 <video width="800" height="450" controls poster="image">
                     <source src="http://observatorio.atic.com.ar/video_3d/LB_3.mp4" type="video/mp4" />
                     Tu navegador no soporta reproducir este video.
                 </video>
+                <div id="uxVideoClose">
+                    <i class="fa fa-times fa-2x"></i>
+                </div>
             </div>
         </div>
     </div>
@@ -333,6 +336,11 @@
         $('#uxVideo').on('hidden.bs.modal', function () {
             $('#uxVideo video')[0].pause();
         })
+
+        $('#uxVideoClose').on('click', function() {
+            $('#uxVideo video')[0].pause();
+            $('#uxVideo').modal('hide');
+        });
 
         $('.carousel-item').hover( 
             function () {

@@ -261,6 +261,34 @@ body {
     @modulo_height: 300px;
     @sombra-texto: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,1);
 
+    .video-container {
+        width: 800px; 
+        height: 450px; 
+        position: relative;
+
+        video {
+            position: absolute; 
+            top: 0; 
+            left: 0;
+        }
+
+        #uxVideoClose {
+            position: absolute; 
+            top: 0; 
+            right: 0; 
+            z-index: 99999; 
+            margin: 10px; 
+            color: #fff; 
+            opacity: .5;
+            cursor: pointer;
+        }
+
+        #uxVideoClose:hover {
+            color: #fff; 
+            opacity: 1;
+        }   
+    }
+
     #main-slider {
         margin-left:-15px; 
         margin-right: -14px;
