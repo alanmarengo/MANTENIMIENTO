@@ -31,6 +31,28 @@
 	
 }
 
+.black-button {
+	
+	background-color: #212529;
+    color: #FFFFFF;
+    font-family: "Montserrat", sans-serif !Important;
+    font-size: 13px;
+    padding: 10px 20px;
+    border-radius: 3px;
+	width:100%;
+	height:100%;
+	text-align:center;
+	
+}
+
+.black-button:hover {
+
+	text-decoration:none !Important;
+	color:#FFFFFF !Important;	
+	background-color:#31cbfd;
+	
+}
+
 .flink {
 	
 	display:none !important;

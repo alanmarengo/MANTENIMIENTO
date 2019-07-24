@@ -48,6 +48,7 @@
 <!-- GEOVISOR -->
 
 <link rel="stylesheet" href="./css/geovisor/align.css"/>
+<link rel="stylesheet" href="./css/geovisor/buttons.css"/>
 <link rel="stylesheet" href="./css/geovisor/forms.css"/>
 <link rel="stylesheet" href="./css/geovisor/stats.css"/>
 <link rel="stylesheet" href="./css/geovisor/map.css"/>

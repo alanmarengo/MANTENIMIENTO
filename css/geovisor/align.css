@@ -3,3 +3,23 @@
 	justify-content:right;
 	
 }
+
+.jus-between {
+	
+	justify-content:space-between;
+	
+}
+
+.jus-between-f100 {
+	
+	justify-content:space-between;
+	display:flex;
+	width:100%;
+	
+}
+
+.align-center {
+	
+	align-items:center;
+	
+}
