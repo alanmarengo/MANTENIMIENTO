@@ -18,7 +18,7 @@
 	
 		<?php include("./html.navbar-main.php"); ?>
 		
-		<div class="page-container" style="background-color: #666;">
+		<div class="page-container" style="background-color: #EAEAED;">
 		
 			<?php include("./section.index.php"); ?>
 			
