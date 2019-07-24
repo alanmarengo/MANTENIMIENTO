@@ -1,0 +1,109 @@
+#dataset-view {
+	
+	background-color:#fff;
+	padding:20px;
+	
+}
+
+#dataset-view .jump-row:nth-child(1) {
+	
+	justify-content:space-between;
+	
+}
+
+#dataset-view .dropdown-toggle {
+	
+	color:#FFF;
+	background-color:#31cbfd !Important;
+	padding:10px;
+	
+	
+}
+
+#dataset-view .date-filters {
+	
+	float:right;
+	margin-top: -5px;
+	
+}
+
+#dataset-view .date-filters ul {
+	
+	list-style-type:none;
+	
+}
+
+#dataset-view .date-filters ul li {
+	
+	display:inline-block;
+	border:1px solid #ccc;
+	padding:5px;
+	
+}
+
+#dataset-view .date-filters ul li input {
+	
+	border:none;
+	font-size:12px;
+	font-weight:400;
+	
+}
+
+#dataset-view .date-filters i {
+	
+	color:#31cbfd;
+	
+}
+
+.dataset {
+	
+	width:100%;
+	height:500px;
+	
+}
+
+.dataset-row {
+	
+	width:100%;
+	height:24px;
+	
+}
+
+.dataset-cell {
+	
+	width:150px;
+	height:32px;	
+	font-size:12px;
+	border-top:1px solid #ccc;
+	border-left:1px solid #ccc;
+	padding:10px;
+	display:inline-flex;
+	align-items:center;
+	
+}
+
+.dataset-cell:last-child {
+	
+	border-right:1px solid #ccc;
+	
+}
+
+.dataset-row:last-child .dataset-cell {
+	
+	border-bottom:1px solid #ccc;
+	
+}
+
+.dataset-cell-header {
+	
+	font-size:12px;
+	justify-content:space-between;
+	
+}
+
+.dataset-cell-header i {
+	
+	font-size:16px;
+	float:right;
+	
+}
