@@ -1,0 +1,65 @@
+#nav-panel {
+	
+	z-index:180000 !Important;
+	display:flex;
+	flex-direction:column;
+	
+}
+
+#nav-panel-arrow {
+	
+	position:absolute;
+	top:23px;
+	left:100%;
+	
+}
+
+#nav-panel-inner {
+	
+	height:100%;
+	display:flex;
+	flex-direction:column;
+	background-color:#59666c;
+	width:100% - 80px;
+	position:relative;
+	left:0px;
+	
+}
+
+#nav-panel .jump-row:nth-child(3) {
+	
+	display:flex;
+	flex-grow:1;
+	
+}
+
+#nav-panel .jump-row:first-child,#nav-panel .jump-row:last-child {
+	
+	display:flex;
+	height:70px;
+	
+}
+
+.panel-input {
+	
+	background:transparent;
+	color:#FFFFFF;
+	font-weight:400;
+	font-size:12px;
+	border:none;
+	
+}
+
+#nav-panel-dataset {
+	
+	background-color:#ffffff;
+	padding:20px;
+	
+}
+
+#nav-panel-dataset-detail {
+	
+	background-color:#eaeaef;
+	padding:20px;
+	
+}
