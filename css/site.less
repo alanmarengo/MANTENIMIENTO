@@ -645,10 +645,18 @@ body {
     .doc {
         padding: 20px;
         margin-right: 20px;
+        border-bottom: 1px solid #ccc;
 
         .doc-icon {
             height: 40px;
             width: auto;
+        }
+
+        .doc-preview {
+            width: 90%;
+            height: auto;
+            max-height: 200px;
+            box-shadow: 2px 2px 2px grey;
         }
 
         .doc-authors {
@@ -659,7 +667,6 @@ body {
         .doc-title {
             font-size: 1.2em;
             font-weight: bolder;
-            cursor: pointer;
         }
 
         .doc-links {
@@ -674,6 +681,15 @@ body {
                 background-color: #fea91a;
             }
         }
+
+        .estudios-link {
+            font-size: .7em;
+        }
+    }
+
+    .doc:hover {
+        background-color: #F9F7F7;
+        cursor: pointer;
     }
 
     .media-preview {
