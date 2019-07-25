@@ -90,7 +90,7 @@
 	
 }
 
-.btn-light {
+.btn-light:not(#dataset-view .dropdown-toggle) {
 	
 	background-color:transparent !important;
 	

@@ -12,10 +12,21 @@
 	
 }
 
-#dataset-view .dropdown-toggle {
+/*31cbfd*/
+.dataset-agroup .dropdown-toggle {
 	
 	color:#FFF;
 	background-color:#31cbfd !Important;
+	padding:10px;
+	
+	
+}
+
+/*31cbfd*/
+#dataset-view .dropdown-toggle:not(.dataset-agroup .dropdown-toggle) {
+	
+	color:#325174;
+	background-color:#ddf2f5 !Important;
 	padding:10px;
 	
 	
@@ -50,6 +61,18 @@
 }
 
 #dataset-view .pagination ul li a {
+	
+	color:#212529;
+	
+}
+
+.dataset-agroup ul li a, .dataset-agroup ul li a.active {
+	
+	color:#212529;
+	
+}
+
+.dataset-agroup ul li a:hover, .dataset-agroup ul li a.active:hover {
 	
 	color:#212529;
 	
@@ -90,6 +113,7 @@
 .dataset-row .filter-option-inner-inner {
 	
 	color:#325174;
+	margin:10px;
 	
 }
 
@@ -186,6 +210,26 @@
 
 .dataset-cell span {
 	
+	
+}
+
+.dataset .filter-option-inner i, .dataset .filter-option-inner .filter-option-inner-inner {
+	
+	display:inline-block;
+	vertical-align:top;
+	
+}
+
+.dataset .dataset-operation-row .filter-option-inner .filter-option-inner-inner {
+	
+	position:relative;
+	left:-15px;
+	
+}
+
+.dataset .filter-option-inner i {
+	
+	margin:10px;
 	
 }
 

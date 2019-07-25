@@ -1,11 +1,15 @@
 <div id="dataset-view" data-visible="1" class="jump-flotant-nav jump-flotant-heightfill col col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	
 	<div class="row jump-row">
-	
-		<select class="selectpicker">
-			<option value="1">Agrupar por Todos</option>
-			<option value="2">No Agrupar</option>
-		</select>
+		
+		<div class="dataset-agroup">
+		
+			<select class="selectpicker">
+				<option value="1">Agrupar por Todos</option>
+				<option value="2">No Agrupar</option>
+			</select>
+		
+		</div>
 		
 		<div class="date-filters">
 		
@@ -238,10 +242,10 @@
 		
 		</div>
 		
-		<div class="dataset-row dataset-row-header">
+		<div class="dataset-row dataset-row-header dataset-operation-row">
 		
 			<div class="dataset-cell">
-				<select class="selectpicker">
+				<select class="selectpicker operation-combo">
 					<option value="-1">OPERACIONES</option>
 					<option value="1">SUMA</option>
 					<option value="2">PROMEDIO</option>
@@ -250,7 +254,7 @@
 					<option value="5">CUENTA</option>
 				</select>
 			</div><div class="dataset-cell">
-				<select class="selectpicker">
+				<select class="selectpicker operation-combo">
 					<option value="-1">OPERACIONES</option>
 					<option value="1">SUMA</option>
 					<option value="2">PROMEDIO</option>
@@ -259,7 +263,7 @@
 					<option value="5">CUENTA</option>
 				</select>
 			</div><div class="dataset-cell">
-				<select class="selectpicker">
+				<select class="selectpicker operation-combo">
 					<option value="-1">OPERACIONES</option>
 					<option value="1">SUMA</option>
 					<option value="2">PROMEDIO</option>
@@ -268,7 +272,7 @@
 					<option value="5">CUENTA</option>
 				</select>
 			</div><div class="dataset-cell">
-				<select class="selectpicker">
+				<select class="selectpicker operation-combo">
 					<option value="-1">OPERACIONES</option>
 					<option value="1">SUMA</option>
 					<option value="2">PROMEDIO</option>
@@ -277,7 +281,7 @@
 					<option value="5">CUENTA</option>
 				</select>
 			</div><div class="dataset-cell">
-				<select class="selectpicker">
+				<select class="selectpicker operation-combo">
 					<option value="-1">OPERACIONES</option>
 					<option value="1">SUMA</option>
 					<option value="2">PROMEDIO</option>
@@ -286,7 +290,7 @@
 					<option value="5">CUENTA</option>
 				</select>
 			</div><div class="dataset-cell">
-				<select class="selectpicker">
+				<select class="selectpicker operation-combo">
 					<option value="-1">OPERACIONES</option>
 					<option value="1">SUMA</option>
 					<option value="2">PROMEDIO</option>
@@ -295,7 +299,7 @@
 					<option value="5">CUENTA</option>
 				</select>
 			</div><div class="dataset-cell">
-				<select class="selectpicker">
+				<select class="selectpicker operation-combo">
 					<option value="-1">OPERACIONES</option>
 					<option value="1">SUMA</option>
 					<option value="2">PROMEDIO</option>
@@ -304,7 +308,7 @@
 					<option value="5">CUENTA</option>
 				</select>
 			</div><div class="dataset-cell">
-				<select class="selectpicker">
+				<select class="selectpicker operation-combo">
 					<option value="-1">OPERACIONES</option>
 					<option value="1">SUMA</option>
 					<option value="2">PROMEDIO</option>
@@ -313,7 +317,7 @@
 					<option value="5">CUENTA</option>
 				</select>
 			</div><div class="dataset-cell">
-				<select class="selectpicker">
+				<select class="selectpicker operation-combo">
 					<option value="-1">OPERACIONES</option>
 					<option value="1">SUMA</option>
 					<option value="2">PROMEDIO</option>
@@ -322,7 +326,7 @@
 					<option value="5">CUENTA</option>
 				</select>
 			</div><div class="dataset-cell">
-				<select class="selectpicker">
+				<select class="selectpicker operation-combo">
 					<option value="-1">OPERACIONES</option>
 					<option value="1">SUMA</option>
 					<option value="2">PROMEDIO</option>
