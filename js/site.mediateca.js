@@ -39,7 +39,7 @@ $(document).ready(function() {
         model.filters.groups[group].items[item].checked = false;
         setEstudio(null);
         filtersRender();
-        dataLoad()
+        dataLoad();
     });
 
     // ADD FILTER
@@ -50,7 +50,7 @@ $(document).ready(function() {
 
         setEstudio(null);
         filtersRender();
-        dataLoad()
+        dataLoad();
     });
 
     // GROUP COLLAPSE
@@ -376,16 +376,13 @@ $(document).ready(function() {
                 `;
 
                 $.each(group.items, function(iindex, item) {
-
-                    html += `
+                    if (!item.checked) {
+                        html += `
                         <button type="button" class="filters-group-item list-group-item list-group-item-action" 
                             data-group="${gindex}" 
                             data-item="${iindex}">${item.label}</button>
-                    `;
-
-
-
-                    if (!item.checked || (item.parentId != null && isParentChecked())) {}
+                        `;
+                    }
                 });
 
                 html += `
@@ -491,7 +488,7 @@ $(document).ready(function() {
             $.each(group.items, function(iindex, item) {
                 if (item.checked) {
                     $('#uxFiltersChecked').append(`
-                        <a class="filters-checked btn btn-warning" data-group="${gindex}" data-item="${iindex}">${item.label} <i class="fa fa-times"></i></a>
+                        <a class="filters-checked btn btn-warning btn-xs" data-group="${gindex}" data-item="${iindex}">${item.label} <i class="fa fa-times"></i></a>
                     `)
                 }
             });
