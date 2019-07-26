@@ -6,6 +6,15 @@ body {
     background-color: #333333 !important;
 }
 
+.page-title {
+    height: 44px;
+    background-color: #4c4c4e;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 9px 26px;
+}
+
 .navbar {
     display: block !important;
     background-color: #333333 !important;
@@ -558,14 +567,6 @@ body {
 #page_mediateca {
     background-color: #fff;
 
-    .page-title {
-        background-color: #000;
-        padding: 10px 30px;
-        color: #fff;
-        font-size: 1.4em;
-
-    }
-
     .page-search {
         background-color: #ddd;
         padding: 30px 50px 10px 50px;
@@ -768,41 +769,45 @@ body {
     padding: 1em 2em;
     color: #fff;
 
-    #footer-slider {
-        .carousel-inner {
-            max-height: @carousel_height;
+    .enlaces {
+        font-size: .9em; padding: 10px; background: RGBA(0,0,0,.2);
 
-            a { color: #fff;}
-        } 
+        #footer-slider {
+            position: relative;
 
-        .carousel-indicators {
-            top: 7em;
-            left: 0px!important;
-            margin-left: none;
-            margin-right: none;
-        }
-
-        .carousel-indicators > li {
-            border-radius: 50%;
-            width: 6px;
-            height: 6px;
-            margin-left: 4px;
-            margin-right: 4px;
-        }
-
-        .carousel-control-prev {
-            opacity: 1;
-            color: #fff;
-            font-size: 1em;
-            top: 122px;
-        }
-
-        .carousel-control-next {
-            opacity: 1;
-            color: #fff;
-            font-size: 1em;
-            top: 122px;
-            left: 64px;
+            .carousel-inner {
+                max-height: @carousel_height;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+    
+                a { color: #fff;}
+            } 
+    
+            .carousel-control-prev {
+                opacity: 1;
+                // color: #333;
+                // background-color: #fff;
+                font-size: 1em;
+                position: absolute!important;
+                width: 20px;
+                top: -20px;
+                right: 24px;
+                left: unset;
+                cursor: pointer;
+            }
+    
+            .carousel-control-next {
+                opacity: 1;
+                // color: #333;
+                // background-color: #fff;
+                font-size: 1em;
+                width: 20px;
+                top: -20px;
+                right: 0px;
+                left: unset;
+                cursor: pointer;
+            }
         }
     }
 

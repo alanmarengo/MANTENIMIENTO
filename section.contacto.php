@@ -1,6 +1,6 @@
 <div id="page_contacto" class="page" style="background-color: #fff;">
     <div class="row">
-        <div class="col-md-12 page-section-1">
+        <div class="col-md-12 page-title">
             Contacto
         </div>
 

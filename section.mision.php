@@ -1,6 +1,6 @@
 <div id="page_mision" class="page">
     <div class="row">
-        <div class="col-md-12 page-section-1">
+        <div class="col-md-12 page-title">
             Mision
         </div>
 

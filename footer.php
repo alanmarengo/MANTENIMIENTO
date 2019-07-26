@@ -7,20 +7,9 @@
 		Av. Paseo Colón 505 Piso 6,<br />
 		Ciudad de Buenos Aires, Argentina
 	</div>
-	<div class="col-md-6" style="font-size: .9em; padding: 10px; background: RGBA(0,0,0,.2); height: 120px;">
+	<div class="col-md-6 enlaces">
 		<b>ENLACES</b>
 		<div id="footer-slider" class="carousel slide" data-ride="carousel" data-interval="3000">
-			<ol class="carousel-indicators" style="top:4.5em;">
-				<li data-target="#footer-slider" data-slide-to="0" class="active"></li>
-				<li data-target="#footer-slider" data-slide-to="1"></li>
-				<li data-target="#footer-slider" data-slide-to="2"></li>
-				<li data-target="#footer-slider" data-slide-to="3"></li>
-				<li data-target="#footer-slider" data-slide-to="4"></li>
-				<li data-target="#footer-slider" data-slide-to="5"></li>
-				<li data-target="#footer-slider" data-slide-to="6"></li>
-				<li data-target="#footer-slider" data-slide-to="7"></li>
-				<li data-target="#footer-slider" data-slide-to="8"></li>
-			</ol>
 			<div class="carousel-inner">
 				<div class="carousel-item active">
 					<a target="_blank" href="http://www.ieasa.com.ar">Integración Energética Argentina SA</a><br />
@@ -58,6 +47,16 @@
 					<a target="_blank" href="http://www.represaspatagonia.com.ar/index.php/es/">UTE Represas Patagonia</a><br />
 				</div>
 			</div>
+
+			
+			<div class="carousel-control-prev" href="#footer-slider" role="button" data-slide="prev">
+				<i class="fa fa-chevron-left"></i>
+			</div>
+			<div class="carousel-control-next" href="#footer-slider" role="button" data-slide="next">
+				<i class="fa fa-chevron-right"></i>
+			</div>
+
+
 		</div>
 	</div>
 	<div class="col-md-3 social-media" style="padding: 10px; display: none;">
