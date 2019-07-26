@@ -2,8 +2,9 @@
 	
 	$(document).ready(function() {
 		
-		/*stats = new ol_stats();
-		stats.panel.start();*/
+		stats = new ol_stats();
+		stats.view.start();
+		
 		$('select.operation-combo').val(-1);
 		$('.selectpicker').selectpicker('refresh')
 		
@@ -24,6 +25,8 @@
 					$(this).next(".dropdown-toggle").find(".filter-option-inner-inner").css({"color":"green"});
 					
 				}
+		
+				$("#update-view").prop("disabled",false);
 				
 			});
 			

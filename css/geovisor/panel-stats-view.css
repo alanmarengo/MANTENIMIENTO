@@ -244,3 +244,33 @@
 	opacity:0.8;
 	
 }
+
+#dataset-view input[type=button] {
+	
+	border:1px solid #ccc;
+	background-color:#ffffff;
+	font-size:12px;
+	color:#353535;
+	cursor:pointer;
+	padding:10px;
+	border-radius:3px;
+	position:relative;
+	top:2px;
+	left:20px;
+	
+}
+
+#dataset-view input[type=button][disabled=disabled] {
+	
+	border:1px solid #ccc;
+	background-color:#dddddd;
+	font-size:12px;
+	color:#aaaaaa;
+	cursor:default;
+	padding:10px;
+	border-radius:3px;
+	position:relative;
+	top:2px;
+	left:20px;
+	
+}

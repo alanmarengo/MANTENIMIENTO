@@ -3,6 +3,8 @@ function ol_stats() {
 	this.panel = {};
 	this.panel.div = document.getElementById("nav-panel");
 	
+	this.view = {};
+	
 	this.panel.start = function() {
 		
 		$(".panel-abr").on("click",function() {
@@ -26,6 +28,16 @@ function ol_stats() {
 			
 		});
 	
+	}
+	
+	this.view.start = function() {		
+		
+		$("#update-view").on("click",function() {
+			
+			$(this).attr("disabled","disabled");
+			
+		});
+		
 	}
 		
 }

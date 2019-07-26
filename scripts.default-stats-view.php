@@ -84,6 +84,7 @@
 <script src="./js/scrollbars.js" type="text/javascript"></script>
 <script src="./js/moment.js"></script>
 <script src="./js/site.js" type="text/javascript"></script>
+<script src="./js/stats.js" type="text/javascript"></script>
 <script src="./js/widget-links.js" type="text/javascript"></script>
 
 <!-- COLORPICKER JS -->

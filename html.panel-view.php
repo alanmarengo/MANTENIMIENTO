@@ -8,6 +8,8 @@
 				<option value="1">Agrupar por Todos</option>
 				<option value="2">No Agrupar</option>
 			</select>
+			
+			<input type="button" value="Actualizar Vista" id="update-view" disabled="disabled">
 		
 		</div>
 		
