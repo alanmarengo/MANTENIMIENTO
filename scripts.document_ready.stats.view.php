@@ -4,34 +4,10 @@
 		
 		stats = new ol_stats();
 		stats.view.start();
+		stats.view.resetSelects();
 		stats.view.getTable(1);
 		
-		$('select.operation-combo').val(-1);
-		$('.selectpicker').selectpicker('refresh')
 		
-		$("select.operation-combo").each(function(i,v) {			
-			
-			$(v).next(".dropdown-toggle").find(".filter-option-inner-inner").before($("<i></i>").attr("class","fa fa-question-circle").css("color","red"));
-			
-			$(v).on("changed.bs.select",function(e, clickedIndex, newValue, oldValue) {
-					
-				if (clickedIndex == 0) {
-						
-					$(this).next(".dropdown-toggle").find(".filter-option-inner-inner").prev("i").attr("class","fa fa-question-circle").css("color","red");					
-					$(this).next(".dropdown-toggle").find(".filter-option-inner-inner").css({"color":"red"});
-					
-				}else{
-						
-					$(this).next(".dropdown-toggle").find(".filter-option-inner-inner").prev("i").attr("class","fa fa-check-circle").css("color","green");
-					$(this).next(".dropdown-toggle").find(".filter-option-inner-inner").css({"color":"green"});
-					
-				}
-		
-				$("#update-view").prop("disabled",false);
-				
-			});
-			
-		});
 		
 		flotant = new Jump.flotant();
 		flotant.prepareToggle(".navmenu:not(#nav-panel)");

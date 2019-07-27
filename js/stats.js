@@ -30,15 +30,73 @@ function ol_stats() {
 	
 	}
 	
-	this.view.start = function() {		
+	this.view.start = function() {	
+	
+		$("#update-view").attr("disabled","disabled");
 		
 		$("#update-view").on("click",function() {
 			
-			$(this).attr("disabled","disabled");
+			$("#update-view").attr("disabled","disabled");
+			
+			var currentPage = 1;
+			
+			if ($(".page-active").length > 0) {
+			
+				currentPage = $(".page-active").attr("data-page");
+			
+			}
+			
+			this.getTable(currentPage);			
+			this.resetSelects();
+			
+		}.bind(this));	
+		
+		this.resetSelects();
+		
+	}
+	
+	this.view.resetSelects = function() {
+		
+		$('select.operation-combo').val(-1);
+		$('.selectpicker').selectpicker('refresh')
+		
+		$("select.operation-combo").each(function(i,v) {			
+			
+			if ($(v).next(".dropdown-toggle").find(".filter-option-inner-inner").prev().length == 0) {
+			
+				$(v).next(".dropdown-toggle").find(".filter-option-inner-inner").before($("<i></i>").attr("class","fa fa-question-circle").css("color","red"));
+			
+			}
+			
+			$(v).on("changed.bs.select",function(e, clickedIndex, newValue, oldValue) {
+					
+				if (clickedIndex == 0) {
+						
+					$(this).next(".dropdown-toggle").find(".filter-option-inner-inner").prev("i").attr("class","fa fa-question-circle").css("color","red");					
+					$(this).next(".dropdown-toggle").find(".filter-option-inner-inner").css({"color":"red"});
+					
+				}else{
+						
+					$(this).next(".dropdown-toggle").find(".filter-option-inner-inner").prev("i").attr("class","fa fa-check-circle").css("color","green");
+					$(this).next(".dropdown-toggle").find(".filter-option-inner-inner").css({"color":"green"});
+					
+				}
+		
+				$("#update-view").prop("disabled",false);
+				
+			});
 			
 		});
 		
-		$(".selectpicker").selectpicker();
+		$("select.filter-combo").each(function(i,v) {	
+			
+			$(v).on("changed.bs.select",function(e, clickedIndex, newValue, oldValue) {
+			
+				$("#update-view").prop("disabled",false);
+			
+			});
+			
+		});
 		
 	}
 	
@@ -54,8 +112,9 @@ function ol_stats() {
 			
 		});
 		
-		$("#dataset-wrapper").html(req.responseText);
-		
+		$("#dataset-wrapper").html(req.responseText);		
+		this.resetSelects();
+			
 		$(".page-item").each(function(i,v) {
 			
 			$(v).on("click",function() {

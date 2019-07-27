@@ -64,7 +64,7 @@ $query = pg_query($conn,$query_string);
 		?>
 		
 		<div class="dataset-cell dataset-cell-header">
-			<select class="selectpicker">		
+			<select class="selectpicker filter-combo">		
 				<option value="-1">Todo</option>
 		<?php
 		
