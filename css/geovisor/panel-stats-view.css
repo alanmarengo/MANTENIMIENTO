@@ -6,6 +6,13 @@
 	
 }
 
+#dataset-wrapper {	
+	
+	display:flex;
+	flex-direction:column;
+	
+}
+
 #dataset-view .jump-row:nth-child(1) {
 	
 	justify-content:space-between;
@@ -100,7 +107,7 @@
 
 .dataset-row .dropdown-toggle {
 	
-	width: 112%;
+	width: 130px;
 	height: 32px;
 	padding: 0;
 	position: relative;
@@ -144,6 +151,8 @@
 .dataset {
 	
 	width:100%;
+	display:flex;
+	flex-direction:column;
 	
 }
 
@@ -178,7 +187,10 @@
 	border-left:1px solid #ccc;
 	padding:10px;
 	display:inline-flex;
+	vertical-align:top;
 	align-items:center;
+	margin-left:-4px;
+	flex-grow:1;
 	
 }
 
@@ -210,6 +222,8 @@
 
 .dataset-cell span {
 	
+	width:100%;
+	overflow:hidden;
 	
 }
 

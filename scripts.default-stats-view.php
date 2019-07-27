@@ -21,7 +21,7 @@
 
 <!-- SITE CSS -->
 
-<link rel="stylesheet" type="text/css" href="./css/bodyfix.css">
+<link rel="stylesheet" type="text/css" href="./css/bodyfix.stats.css">
 <link rel="stylesheet" type="text/css" href="./css/nav.css">
 <link rel="stylesheet" type="text/css" href="./css/navbar.main.css">
 <link rel="stylesheet" type="text/css" href="./css/navbar.tools.css">

@@ -39,5 +39,21 @@ function ol_stats() {
 		});
 		
 	}
+	
+	this.view.getTable = function() {
+		
+		var req = $.ajax({
+			
+			async:false,
+			data:{page:2},
+			type:"POST",
+			url:"./php/get-stats-table.php",
+			success:function(d){}
+			
+		});
+		
+		$("#dataset-wrapper").html(req.responseText);
+		
+	}
 		
 }
