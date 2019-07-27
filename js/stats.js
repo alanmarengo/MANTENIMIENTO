@@ -38,14 +38,16 @@ function ol_stats() {
 			
 		});
 		
+		$(".selectpicker").selectpicker();
+		
 	}
 	
-	this.view.getTable = function() {
+	this.view.getTable = function(page) {
 		
 		var req = $.ajax({
 			
 			async:false,
-			data:{page:2},
+			data:{page:page},
 			type:"POST",
 			url:"./php/get-stats-table.php",
 			success:function(d){}
@@ -53,6 +55,18 @@ function ol_stats() {
 		});
 		
 		$("#dataset-wrapper").html(req.responseText);
+		
+		$(".page-item").each(function(i,v) {
+			
+			$(v).on("click",function() {
+				
+				var pageitem = v.getAttribute("data-page");
+				
+				this.getTable(pageitem);
+				
+			}.bind(this));
+			
+		}.bind(this));
 		
 	}
 		

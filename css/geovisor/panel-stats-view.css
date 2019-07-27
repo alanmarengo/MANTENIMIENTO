@@ -180,7 +180,7 @@
 
 .dataset-cell {
 	
-	width:10%;
+	width:130px;
 	height:100%;	
 	font-size:12px;
 	border-top:1px solid #ccc;
@@ -286,5 +286,11 @@
 	position:relative;
 	top:2px;
 	left:20px;
+	
+}
+
+.page-active {
+	
+	color:#31cbfd !Important;
 	
 }

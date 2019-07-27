@@ -4,7 +4,7 @@
 		
 		stats = new ol_stats();
 		stats.view.start();
-		stats.view.getTable();
+		stats.view.getTable(1);
 		
 		$('select.operation-combo').val(-1);
 		$('.selectpicker').selectpicker('refresh')
