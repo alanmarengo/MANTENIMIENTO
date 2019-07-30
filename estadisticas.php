@@ -1,5 +1,6 @@
 <?php include("pgconfig.php"); ?>
 <?php include("geovisor.fn.php"); ?>
+<?php include("stats.fn.php"); ?>
 
 <!DOCTYPE html>
 <html lang="es">
