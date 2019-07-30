@@ -59,7 +59,7 @@ function DrawDatasets($clase_id) {
 	
 	$conn = pg_connect($string_conn);
 	
-	$query_string = "SELECT DISTINCT * FROM mod_estadistica.vw_dt WHERE clase_id = " . $clase_id . " ORDER BY layer_desc ASC";
+	$query_string = "SELECT DISTINCT * FROM mod_estadistica.vw_dt WHERE clase_id = " . $clase_id . " ORDER BY dt_titulo ASC";
 	
 	$query = pg_query($conn,$query_string);
 	
