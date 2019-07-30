@@ -132,7 +132,9 @@ function ol_stats() {
 	
 	this.dataset.dt_id = 0;
 	
-	this.dataset.loadVars = function(dt_id) {
+	this.dataset.loadVars = function(dt_id) {		
+		
+		this.dataset.dt_id = dt_id;
 		
 		var req = $.ajax({
 			
@@ -163,7 +165,6 @@ function ol_stats() {
 			
 		});
 		
-		this.dataset.dt_id = dt_id;
 		alert(this.dataset.dt_id);
 		
 	}
