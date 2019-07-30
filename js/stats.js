@@ -134,7 +134,7 @@ function ol_stats() {
 	
 	this.dataset.loadVars = function(dt_id) {		
 		
-		this.dataset.dt_id = dt_id;
+		this.dt_id = dt_id;
 		
 		var req = $.ajax({
 			
