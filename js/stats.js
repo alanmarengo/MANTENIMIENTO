@@ -158,7 +158,7 @@ function ol_stats() {
 				
 				if (checks>10) {
 										
-					$(v).property("checked",false);
+					$(v).prop("checked",false);
 					alert("El limite de variables a elegir es de 10, por favor deseleccione una variable para poder marcar esta opción");
 					
 				}
