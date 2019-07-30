@@ -11,10 +11,10 @@
             <a href="./mision.php" class="carousel-item active">
                 <img class="d-block w-100" src="./images/index/slide5.jpg" alt="...">
                 <div class="carousel-caption">
-                    <p>MISIÓN DE IEASA</p>
+                    <p>Observatorio IEASA</p>
                 </div>                
                 <div class="slide-hover">
-                    Proveer energía eficaz y eficientemente, acompañando las políticas públicas del estado nacional dentro de un marco de respeto socioambiental que contribuya a mejorar la calidad de vida de las personas y el desarrollo de la comunidad. 
+                    Accedé a la información generada bajo las más actuales metodologías para conocer y comprender los procesos ambientales, sociales y económicos que se generan a partir de la ejecución de una obra de infraestructura energética y el compromiso de sostenibilidad en su gestión.
                 </div>
             </a>
             <a href="./geovisor.php" class="carousel-item">
@@ -55,16 +55,12 @@
             </a>
         </div>
 
-<!--
-        <a class="carousel-control-prev" href="#main-slider" role="button" data-slide="prev">
-            <span><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
-            <span class="sr-only">Anterior</span>
-        </a>
-        <a class="carousel-control-next" href="#main-slider" role="button" data-slide="next">
-            <span><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
-            <span class="sr-only">Siguiente</span>
-        </a>
--->
+        <div class="carousel-control-prev2" href="#main-slider" role="button" data-slide="prev">
+            <i class="fa fa-chevron-left"></i>
+        </div>
+        <div class="carousel-control-next2" href="#main-slider" role="button" data-slide="next">
+            <i class="fa fa-chevron-right"></i>
+        </div>
     </div>
 
     <div class="row">

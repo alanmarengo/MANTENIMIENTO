@@ -57,6 +57,10 @@
     opacity: 0.5;
 }
 
+#navbar-main ul li a:hover {
+    color: #fff;
+}
+
 #navbar-main ul li a i {
     font-size: 20px;
 }
