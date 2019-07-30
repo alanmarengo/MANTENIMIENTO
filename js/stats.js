@@ -155,7 +155,13 @@ function ol_stats() {
 			$(v).on("click",function() {
 				
 				var checks = $(".dataset-var-check:checked").length;
-				alert(checks);
+				
+				if (checks>10) {
+										
+					$(v).property("checked",false);
+					alert("El limite de variables a elegir es de 10, por favor deseleccione una variable para poder marcar esta opción");
+					
+				}
 				
 			});
 			
