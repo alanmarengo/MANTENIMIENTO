@@ -164,11 +164,13 @@ function ol_stats() {
 		});
 		
 		this.dataset.dt_id = dt_id;
+		alert(this.dataset.dt_id);
 		
 	}
 	
 	this.dataset.proceed = function() {
 		
+		alert(this.dt_id);
 		var dt_id = this.dt_id;
 		var dt_variables = $.map($(':checkbox[class=dataset-var-check\\[\\]]:checked'), function(n, i){
 			  return n.value;
