@@ -10,72 +10,7 @@
 	
 		<div id="panel-dataset-list" class="jump-scroll jump-posrel">
 			
-			<?php
 			
-			$letter = array("A","B","C");
-			
-			for ($i = 0; $i < 3; $i++) {
-				
-			?>
-			
-			<div class="panel-dataset-group-list">
-			
-				<div class="panel-dataset-group-list-header">
-					<span>SELECCIONAR VARIABLE DE ORIGEN <?php echo $letter[$i]; ?></span>
-					<a href="#" class="toggeable-icon">
-						<i class="fa fa-minus-circle"></i>
-					</a>
-				</div>
-				<div class="panel-dataset-group-list-body">
-				
-					<div class="panel-dataset-group-item">							
-						<div class="pretty p-icon p-curve">
-							<input type="checkbox" />
-							<div class="state">
-								<i class="icon mdi mdi-check"></i>
-								<label>Nombre de la Variable</label>
-							</div>
-						</div>
-					</div>
-				
-					<div class="panel-dataset-group-item">							
-						<div class="pretty p-icon p-curve">
-							<input type="checkbox" />
-							<div class="state">
-								<i class="icon mdi mdi-check"></i>
-								<label>Nombre de la Variable</label>
-							</div>
-						</div>
-					</div>
-				
-					<div class="panel-dataset-group-item">							
-						<div class="pretty p-icon p-curve">
-							<input type="checkbox" />
-							<div class="state">
-								<i class="icon mdi mdi-check"></i>
-								<label>Nombre de la Variable</label>
-							</div>
-						</div>
-					</div>
-				
-					<div class="panel-dataset-group-item">							
-						<div class="pretty p-icon p-curve">
-							<input type="checkbox" />
-							<div class="state">
-								<i class="icon mdi mdi-check"></i>
-								<label>Nombre de la Variable</label>
-							</div>
-						</div>
-					</div>
-					
-				</div>
-			
-			</div>
-			<?php
-			
-			}
-			
-			?>
 		
 		</div>
 	

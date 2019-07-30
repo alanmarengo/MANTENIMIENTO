@@ -47,7 +47,7 @@ while ($r = pg_fetch_assoc($query)) {
 		
 				<div class="panel-dataset-group-item">							
 					<div class="pretty p-icon p-curve">
-						<input type="checkbox" />
+						<input type="checkbox" class="dataset-var-check"/>
 						<div class="state">
 							<i class="icon mdi mdi-check"></i>
 							<label><?php echo $r["dt_variable_nombre"]; ?></label>
@@ -63,7 +63,7 @@ while ($r = pg_fetch_assoc($query)) {
 		
 		<div class="panel-dataset-group-item">							
 			<div class="pretty p-icon p-curve">
-				<input type="checkbox" />
+				<input type="checkbox" class="dataset-var-check"/>
 				<div class="state">
 					<i class="icon mdi mdi-check"></i>
 					<label><?php echo $r["dt_variable_nombre"]; ?></label>

@@ -4,6 +4,7 @@ function ol_stats() {
 	this.panel.div = document.getElementById("nav-panel");
 	
 	this.view = {};
+	this.dataset = {};
 	
 	this.panel.start = function() {
 		
@@ -129,7 +130,13 @@ function ol_stats() {
 		
 	}
 	
-	this.loadDatasetVars = function(dt_id) {
+	this.dataset.start = function() {
+		
+		
+		
+	}
+	
+	this.dataset.loadVars = function(dt_id) {
 		
 		var req = $.ajax({
 			
@@ -142,6 +149,17 @@ function ol_stats() {
 		});
 		
 		document.getElementById("panel-dataset-list").innerHTML = req.responseText;
+		
+		$(".dataset-var-check").each(function(i,v) {
+			
+			$(v).on("click",function() {
+				
+				var checks = $(".dataset-var-check:checked").length;
+				alert(checks);
+				
+			});
+			
+		});
 		
 	}
 		
