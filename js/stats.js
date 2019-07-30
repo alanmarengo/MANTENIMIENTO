@@ -141,7 +141,7 @@ function ol_stats() {
 			
 		});
 		
-		alert(req.responseText);
+		document.getElementById("panel-dataset-list").innerHTML = req.responseText;
 		
 	}
 		

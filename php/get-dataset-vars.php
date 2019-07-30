@@ -8,10 +8,76 @@ $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . 
 	
 $conn = pg_connect($string_conn);
 
-$query_string = "SELECT * FROM mod_estadistica.get_dt_variales(".$dt_id.")";
+$query_string = "SELECT * FROM mod_estadistica.get_dt_variales(".$dt_id.") ORDER BY origen ASC";
 
 $query = pg_query($conn,$query_string);
 
-echo "PHP: " . $query_string;
+$origen = "-1";
+
+$first = true;
+
+while ($r = pg_fetch_assoc($query)) {
+	
+	if ($r["origen"] != $origen) {
+		
+		if (!$first) {
+			
+			?>
+			
+			</div>
+				</div>
+			
+			<?php
+			
+		}
+		
+		?>
+		
+		<div class="panel-dataset-group-list">
+			
+			<div class="panel-dataset-group-list-header">
+				<span>SELECCIONAR VARIABLE DE ORIGEN <?php echo $letter[$i]; ?></span>
+				<a href="#" class="toggeable-icon">
+					<i class="fa fa-minus-circle"></i>
+				</a>
+			</div>
+			<div class="panel-dataset-group-list-body">
+		
+				<div class="panel-dataset-group-item">							
+					<div class="pretty p-icon p-curve">
+						<input type="checkbox" />
+						<div class="state">
+							<i class="icon mdi mdi-check"></i>
+							<label><?php echo $r["dt_variable_nombre"]; ?></label>
+						</div>
+					</div>
+				</div>
+		
+		<?php
+		
+	}else{
+		
+		?>
+		
+		<div class="panel-dataset-group-item">							
+			<div class="pretty p-icon p-curve">
+				<input type="checkbox" />
+				<div class="state">
+					<i class="icon mdi mdi-check"></i>
+					<label><?php echo $r["dt_variable_nombre"]; ?></label>
+				</div>
+			</div>
+		</div>
+		
+		<?php
+		
+	}
+	
+	$first = false;
+	
+}
 
 ?>
+		
+	</div>
+</div>
