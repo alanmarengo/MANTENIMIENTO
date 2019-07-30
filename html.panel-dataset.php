@@ -8,6 +8,8 @@
 	
 	<div class="row jump-row">
 	
+		<input type="hidden" name="dt_id" id="inp_dt_id">
+	
 		<div id="panel-dataset-list" class="jump-scroll jump-posrel">
 			
 			
@@ -18,7 +20,7 @@
 	
 	<div class="row jump-row">
 	
-		<select class="selectpicker mt-40">
+		<select class="selectpicker mt-40" id="combo_cruce">
 
 			<option value="-1" selected>Cruce Espacial</option>
 			<?php ComboCruce(); ?>
@@ -29,7 +31,7 @@
 	
 	<div class="row jump-row jus-right">
 	
-		<a href="./estadisticas-vista.php" id="stats-proceed" class="mt-50">SIGUIENTE ></a>
+		<a href="javascript:void(0);" onclick="stats.dataset.proceed();" id="stats-proceed" class="mt-50">SIGUIENTE ></a>
 	
 	</div>
 	

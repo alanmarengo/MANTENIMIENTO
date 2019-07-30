@@ -130,11 +130,7 @@ function ol_stats() {
 		
 	}
 	
-	this.dataset.start = function() {
-		
-		
-		
-	}
+	this.dataset.dt_id = 0;
 	
 	this.dataset.loadVars = function(dt_id) {
 		
@@ -166,6 +162,24 @@ function ol_stats() {
 			});
 			
 		});
+		
+		this.dataset.dt_id = dt_id;
+		
+	}
+	
+	this.dataset.proceed = function() {
+		
+		var dt_id = this.dataset.dt_id;
+		var dt_variables = $.map($(':checkbox[class=dataset-var-check\\[\\]]:checked'), function(n, i){
+			  return n.value;
+		}).join(',');
+		var dt_cruce = $("#combo_cruce").val();
+		
+		var debug = "DT_ID: " + dt_id + "\n";		
+			debug = "DT_VARS: " + dt_variables + "\n";		
+			debug = "DT_CRUCE: " + dt_cruce + "\n";		
+			
+		alert(debug);
 		
 	}
 		
