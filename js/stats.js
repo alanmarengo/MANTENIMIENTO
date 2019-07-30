@@ -131,7 +131,17 @@ function ol_stats() {
 	
 	this.loadDatasetVars = function(dt_id) {
 		
-		alert(dt_id);
+		var req = $.ajax({
+			
+			async:false,
+			url:"./php/get-dataset-vars.php",
+			type:"POST",
+			data:{dt_id:dt_id},
+			success:function(d){}
+			
+		});
+		
+		alert(req.responseText);
 		
 	}
 		
