@@ -39,8 +39,8 @@ while ($r = pg_fetch_assoc($query)) {
 			
 			<div class="panel-dataset-group-list-header">
 				<span>SELECCIONAR VARIABLE DE ORIGEN: <?php echo $r["origen"]; ?></span>
-				<a href="#" class="toggeable-icon" onclick="$(this).children('i').toggleClass('fa-minus-circle'); $(this).parent().next().slideToggle('fast');">
-					<i class="fa fa-plus-circle fa-minus-circle"></i>
+				<a href="#" class="toggeable-icon" onclick="$(this).children('i').switchClass('fa-minus-circle','fa-minus-circle'); $(this).parent().next().slideToggle('fast');">
+					<i class="fa fa-minus-circle"></i>
 				</a>
 			</div>
 			<div class="panel-dataset-group-list-body">
