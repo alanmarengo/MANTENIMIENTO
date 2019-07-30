@@ -20,6 +20,8 @@ while ($r = pg_fetch_assoc($query)) {
 	
 	if ($r["origen"] != $origen) {
 		
+		$origen = $r["origen"];
+		
 		if (!$first) {
 			
 			?>
@@ -36,7 +38,7 @@ while ($r = pg_fetch_assoc($query)) {
 		<div class="panel-dataset-group-list">
 			
 			<div class="panel-dataset-group-list-header">
-				<span>SELECCIONAR VARIABLE DE ORIGEN <?php echo $letter[$i]; ?></span>
+				<span>SELECCIONAR VARIABLE DE ORIGEN: <?php echo $r["origen"]; ?></span>
 				<a href="#" class="toggeable-icon">
 					<i class="fa fa-minus-circle"></i>
 				</a>
