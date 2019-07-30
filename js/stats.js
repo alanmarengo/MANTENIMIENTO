@@ -128,5 +128,11 @@ function ol_stats() {
 		}.bind(this));
 		
 	}
+	
+	this.loadDatasetVars = function(dt_id) {
+		
+		alert(dt_id);
+		
+	}
 		
 }

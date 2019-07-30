@@ -75,7 +75,7 @@ function DrawDatasets($clase_id) {
 			
 				<div class="layer-header">
 					
-					<a href="#" class="layer-label" onclick="$(this).parent().next().slideToggle('slow');">
+					<a href="#" class="layer-label" onclick="ol_stats.loadDatasetVars(<?php echo $r["dt_id"]; ?>)">
 						<span><?php echo $r["dt_titulo"]; ?></span>
 					</a>
 					
