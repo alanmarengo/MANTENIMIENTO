@@ -109,4 +109,26 @@ function DrawDatasets($clase_id) {
 	
 }
 
+function ComboCruce() {		
+
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+	
+	$conn = pg_connect($string_conn);
+	
+	$query_string = "SELECT * FROM mod_estadistica.dt_cruce ORDER BY dt_cruce_etiqueta ASC";
+	
+	$query = pg_query($conn,$query_string);
+	
+	while ($r = pg_fetch_assoc($query)) {
+		
+		?>
+		
+		<option value="<?php echo $r["dt_cruce_table"]; ?>"><?php echo $r["dt_cruce_etiqueta"]; ?></option>
+		
+		<?php
+		
+	}
+	
+}
+
 ?>

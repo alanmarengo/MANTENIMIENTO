@@ -19,11 +19,10 @@
 	<div class="row jump-row">
 	
 		<select class="selectpicker mt-40">
-		
+
 			<option value="-1" selected>Cruce Espacial</option>
-			<option value="1">Provincia</option>
-			<option value="2">Ambiente</option>
-		
+			<?php ComboCruce(); ?>
+
 		</select>
 	
 	</div>
