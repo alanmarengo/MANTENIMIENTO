@@ -30,7 +30,7 @@ function DrawContainersStats() {
 	
 	$conn = pg_connect($string_conn);
 	
-	$query_string = "SELECT clase_id,cod_nom,color_hex,color_head,cod_clase_alf FROM mod_estadistica.vw_dt ORDER BY clase_id ASC";
+	$query_string = "SELECT clase_id,cod_nom,color_hex,color_head,cod_clase_alf FROM mod_catalogo.clase ORDER BY clase_id ASC";
 	
 	$query = pg_query($conn,$query_string);
 	
