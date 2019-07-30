@@ -176,8 +176,8 @@ function ol_stats() {
 		var dt_cruce = $("#combo_cruce").val();
 		
 		var debug = "DT_ID: " + dt_id + "\n";		
-			debug = "DT_VARS: " + dt_variables + "\n";		
-			debug = "DT_CRUCE: " + dt_cruce + "\n";		
+			debug += "DT_VARS: " + dt_variables + "\n";		
+			debug += "DT_CRUCE: " + dt_cruce + "\n";		
 			
 		alert(debug);
 		
