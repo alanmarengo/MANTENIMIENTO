@@ -40,7 +40,7 @@ function DrawContainersStats() {
 		
 		<div class="layer-container" data-color="<?php echo $r["color_hex"]; ?>" data-cid="<?php echo $r["clase_id"]; ?>" style="border-color:<?php echo $r["color_hex"]; ?>;">
 			<div class="layer-container-header" style="background-color:<?php echo $r["color_head"]; ?>;">				
-				<span><?php echo $r["cod_nom"]; ?> (<span id="abr-layer-count-<?php echo $r["clase_id"]; ?>" class="abr-layer-count"></span>)</span>		
+				<span><?php echo $r["cod_nom"]; ?></span>		
 			</div>
 			<div class="layer-container-body scrollbar-content">
 				<?php DrawDatasets($r["clase_id"]); ?>
