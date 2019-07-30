@@ -170,7 +170,7 @@ function ol_stats() {
 	this.dataset.proceed = function() {
 		
 		var dt_id = this.dt_id;
-		var dt_variables = $.map($('.dataset-var:checked'), function(n, i){
+		var dt_variables = $.map($('.dataset-var-check:checked'), function(n, i){
 			  return n.value;
 		}).join(',');
 		
