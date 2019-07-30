@@ -63,21 +63,42 @@ function DrawDatasets($clase_id) {
 	
 	$query = pg_query($conn,$query_string);
 	
-	while ($r = pg_fetch_assoc($query)) {
+	$records = pg_num_rows($query);
+	
+	if ($records>0) {
+	
+		while ($r = pg_fetch_assoc($query)) {
+			
+			?>
+			
+			<div class="layer-group" data-state="0" data-cid="<?php echo $r["clase_id"]; ?>">
+			
+				<div class="layer-header">
+					
+					<a href="#" class="layer-label" onclick="$(this).parent().next().slideToggle('slow');">
+						<span><?php echo $r["dt_titulo"]; ?></span>
+					</a>
+					
+				</div>
+			
+			</div>
+			
+			<?php
+			
+		}
+	
+	}else{
 		
 		?>
 		
 		<div class="layer-group" data-state="0" data-cid="<?php echo $r["clase_id"]; ?>">
-		
+			
 			<div class="layer-header">
 				
-				<a href="#" class="layer-label" onclick="$(this).parent().next().slideToggle('slow');">
-					<span><?php echo $r["dt_titulo"]; ?></span>
-				</a>
+				<p>
+					<span>No se encontraron datasets asociados a esta clase.</span>
+				</p>
 				
-			</div>
-			
-			<div class="layer-body">
 			</div>
 		
 		</div>
