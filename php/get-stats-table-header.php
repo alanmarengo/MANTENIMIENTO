@@ -45,7 +45,7 @@ $rquery_string = $data["query"];
 			
 			<?php			
 		
-			array_push($query_string_a,"SELECT DISTINCT " . $colname. " FROM ($rquery_string) AS filter");
+			array_push($query_string_a,"SELECT DISTINCT " . $colname. "::TEXT FROM ($rquery_string) AS filter");
 			array_push($col,$colname);
 			
 		}
