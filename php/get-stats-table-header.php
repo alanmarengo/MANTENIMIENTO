@@ -120,5 +120,7 @@ $rquery_string = $data["query"];
 	?>
 
 	</div>
+	
+	<input type="hidden" name="colstr" id="colstr" value="<?php echo implode(",",$col); ?>">
 
 </div>

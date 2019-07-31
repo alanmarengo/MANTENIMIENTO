@@ -126,6 +126,10 @@ function ol_stats() {
 	
 	this.view.getTable = function(page,dt_id,dt_variables,dt_cruce) {
 		
+		var colstr = document.getElementById("colstr").value;
+		
+		alert(colstr);
+		
 		var req = $.ajax({
 			
 			async:false,
