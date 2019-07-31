@@ -45,7 +45,7 @@ $rquery_string = $data["query"];
 			
 			<?php			
 		
-			array_push($query_string_a,"SELECT DISTINCT " . $colname. "::TEXT FROM ($rquery_string) AS sub");
+			array_push($query_string_a,"SELECT DISTINCT " . $colname. " FROM ($rquery_string) AS sub");
 			array_push($col,$colname);
 			
 		}
@@ -76,7 +76,7 @@ $rquery_string = $data["query"];
 		while($r = pg_fetch_assoc($query)) {
 			
 		?>
-				<option value="<?php echo $r[$col[$i]]; ?>"><?php echo $r[$col[$i]]; ?></option>
+			<option value="<?php echo $r[$col[$i]]; ?>"><?php echo $r[$col[$i]]; ?></option>
 			
 		<?php
 			
