@@ -7,6 +7,7 @@ $dt_id = $_POST["dt_id"];
 $dt_variables = $_POST["dt_variables"];
 $dt_cruce = $_POST["dt_cruce"];
 $colstr = $_POST["colstr"];
+$colstr_original = $colstr;
 
 $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 	
@@ -38,67 +39,26 @@ echo $new_query_string;
 
 	<?php
 
-	$query_string_a = array();
-	$col = array();
+	$col = explode(",",$colstr_original);
 	
-	$query = pg_query($conn,$rquery_string);
+	$query = pg_query($conn,$rquery_string);	
 	
 	while($r = pg_fetch_assoc($query)) {
 		
-		foreach($r as $colname => $val) {
+		for($i=0; $i<sizeof($col); $i++) {
 			
 			?>
 			
 			<div class="dataset-cell dataset-cell-header">
-				<span><?php echo $colname; ?></span>
-				<i class="fa fa-info-circle"></i>
+				<span><?php echo $r[$col[$i]]; ?></span>
 			</div>
 			
-			<?php			
-		
-			array_push($query_string_a,"SELECT DISTINCT " . $colname. " FROM ($rquery_string) AS sub");
-			array_push($col,$colname);
+			<?php
 			
 		}
 		
 		break;
 		
-	}
-
-	?>
-
-	</div>
-	
-	<div class="dataset-row dataset-row-header dataset-filter-row">
-
-	<?php
-	
-	for ($i=0; $i<sizeof($query_string_a); $i++) {
-		
-		$query = pg_query($conn,$query_string_a[$i]);
-		
-		?>
-		
-		<div class="dataset-cell dataset-cell-header">
-			<select class="selectpicker filter-combo">		
-				<option value="-1">Todo</option>
-		<?php
-		
-		while($r = pg_fetch_assoc($query)) {
-			
-		?>
-			<option value="<?php echo $r[$col[$i]]; ?>"><?php echo $r[$col[$i]]; ?></option>
-			
-		<?php
-			
-		}
-		
-		?>
-			</select>
-		</div>
-			
-		<?php
-	
 	}
 
 	?>
