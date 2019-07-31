@@ -1,8 +1,6 @@
 <?php include("pgconfig.php"); ?>
 <?php include("stats.fn.php"); ?>
 
-<?php var_dump($_POST); ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -34,19 +32,13 @@
 		
 			<?php //include("./section.index.php"); ?>
 			
-			<?php include("./html.nav.php"); ?>
-			<?php include("./html.nav.geovisores.php"); ?>
-			<?php include("./html.nav.vinculaciones_insterinstitucionales.php"); ?>
-			<?php include("./html.nav.recursos_hidricos.php"); ?>
-			<?php include("./html.nav.popup.php"); ?>
-			
-		</div>
-			
 			<div class="row jump-row">
-				SOME
-				<?php //include("./html.panel-view.php"); ?>
+			
+				<?php include("./html.panel-view.php"); ?>
 			
 			</div>
+			
+		</div>
 		
 	</div>
 	
