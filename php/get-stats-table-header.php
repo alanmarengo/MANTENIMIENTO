@@ -38,7 +38,7 @@ $rquery_string = $data["query"];
 		
 		foreach($r as $colname => $val) {
 			
-				if (!in_array($colname,$bannedCols)) {
+				//if (!in_array($colname,$bannedCols)) {
 				
 				?>
 				
@@ -53,7 +53,7 @@ $rquery_string = $data["query"];
 				array_push($coltype,pg_field_type($query,0));
 				array_push($col,$colname);
 			
-			}
+			//}
 			
 		}
 		
