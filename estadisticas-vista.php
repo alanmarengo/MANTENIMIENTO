@@ -1,3 +1,15 @@
+<?php
+
+if (!isset($_POST["dt_id"])) { die("Invalid Token;"); }
+if (!isset($_POST["dt_variables"])) { die("Invalid Token;"); }
+if (!isset($_POST["dt_cruce"])) { die("Invalid Token;"); }
+
+$dt_id = $_POST["dt_id"];
+$dt_variables = $_POST["dt_variables"];
+$dt_cruce = $_POST["dt_cruce"];
+
+?>
+
 <?php include("pgconfig.php"); ?>
 <?php include("stats.fn.php"); ?>
 
@@ -17,8 +29,6 @@
 	<?php include("./scripts.document_ready.stats.view.php"); ?>
 	
 	<?php// include("./scripts.default.php"); ?>
-	
-	
 	
 </head>
 <body>

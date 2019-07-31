@@ -5,9 +5,7 @@
 		stats = new ol_stats();
 		stats.view.start();
 		stats.view.resetSelects();
-		stats.view.getTable(1);
-		
-		
+		stats.view.getTable(1,<?php echo $dt_id . ",'" . $dt_variables . "','" . $dt_cruce . "'"; ?>);
 		
 		flotant = new Jump.flotant();
 		flotant.prepareToggle(".navmenu:not(#nav-panel)");

@@ -101,8 +101,8 @@ function ol_stats() {
 		
 	}
 	
-	this.view.getTable = function(page) {
-		
+	this.view.getTable = function(page,dt_id,dt_variables,dt_cruce) {
+		alert(page + " :: " + dt_id + " :: " + dt_variables + " :: " + dt_cruce);
 		var req = $.ajax({
 			
 			async:false,
@@ -186,24 +186,24 @@ function ol_stats() {
 	}
 	
 	this.dataset.proceed = function() {
-		
+
 		var dt_id = this.dt_id;
 		var dt_variables = $.map($('.dataset-var-check:checked'), function(n, i){
 			  return n.value;
 		}).join(',');
-		
+
 		var dt_cruce = $("#combo_cruce").val();
-		
-		/*var debug = "DT_ID: " + dt_id + "\n";		
-			debug += "DT_VARS: " + dt_variables + "\n";		
-			debug += "DT_CRUCE: " + dt_cruce + "\n";*/	
-		
+
+		/*var debug = "DT_ID: " + dt_id + "\n";
+			debug += "DT_VARS: " + dt_variables + "\n";
+			debug += "DT_CRUCE: " + dt_cruce + "\n";*/
+
 		$("#inp_dt_id").val(dt_id);
 		$("#inp_dt_variables").val(dt_variables);
 		$("#inp_dt_cruce").val(dt_cruce);
-			
+
 		document.getElementById("dt_form").submit();
-		
+
 	}
 		
 }
