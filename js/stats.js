@@ -180,7 +180,7 @@ function ol_stats() {
 			success:function(d){}
 			
 		});
-		
+		alert(req.responseText);
 		document.getElementById("panel-detail-wrapper").innerHTML = req.responseText;
 		
 	}
