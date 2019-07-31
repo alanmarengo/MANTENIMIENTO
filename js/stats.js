@@ -167,6 +167,24 @@ function ol_stats() {
 		
 	}
 	
+	this.dataset.loadContent = function(dt_id) {		
+		
+		this.dt_id = dt_id;
+		
+		var req = $.ajax({
+			
+			async:false,
+			url:"./php/get-dataset-content.php",
+			type:"POST",
+			data:{dt_id:dt_id},
+			success:function(d){}
+			
+		});
+		
+		document.getElementById("panel-detail-wrapper").innerHTML = req.responseText;
+		
+	}
+	
 	this.dataset.proceed = function() {
 		
 		var dt_id = this.dt_id;
