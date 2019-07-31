@@ -128,8 +128,6 @@ function ol_stats() {
 		
 		var colstr = document.getElementById("colstr").value;
 		
-		alert(colstr);
-		
 		var req = $.ajax({
 			
 			async:false,
@@ -137,7 +135,8 @@ function ol_stats() {
 				page:page,
 				dt_id:dt_id,
 				dt_variables:dt_variables,
-				dt_cruce:dt_cruce
+				dt_cruce:dt_cruce,
+				colstr:colstr
 			},
 			type:"POST",
 			url:"./php/get-stats-table.php",
