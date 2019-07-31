@@ -166,6 +166,7 @@ function ol_stats() {
 		var cellWidth = rowWidth / rowChilds;
 		
 		$(".dataset-cell").css("width",cellWidth+"px");
+		$("#dataset-view .dropdown-toggle").css("width",cellWidth+"px");
 		
 	}
 	
