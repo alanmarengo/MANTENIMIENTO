@@ -8,74 +8,11 @@
 	
 	<div class="row jump-row">
 	
+		<input type="hidden" name="dt_id" id="inp_dt_id">
+	
 		<div id="panel-dataset-list" class="jump-scroll jump-posrel">
 			
-			<?php
 			
-			$letter = array("A","B","C");
-			
-			for ($i = 0; $i < 3; $i++) {
-				
-			?>
-			
-			<div class="panel-dataset-group-list">
-			
-				<div class="panel-dataset-group-list-header">
-					<span>SELECCIONAR VARIABLE DE ORIGEN <?php echo $letter[$i]; ?></span>
-					<a href="#" class="toggeable-icon">
-						<i class="fa fa-minus-circle"></i>
-					</a>
-				</div>
-				<div class="panel-dataset-group-list-body">
-				
-					<div class="panel-dataset-group-item">							
-						<div class="pretty p-icon p-curve">
-							<input type="checkbox" />
-							<div class="state">
-								<i class="icon mdi mdi-check"></i>
-								<label>Nombre de la Variable</label>
-							</div>
-						</div>
-					</div>
-				
-					<div class="panel-dataset-group-item">							
-						<div class="pretty p-icon p-curve">
-							<input type="checkbox" />
-							<div class="state">
-								<i class="icon mdi mdi-check"></i>
-								<label>Nombre de la Variable</label>
-							</div>
-						</div>
-					</div>
-				
-					<div class="panel-dataset-group-item">							
-						<div class="pretty p-icon p-curve">
-							<input type="checkbox" />
-							<div class="state">
-								<i class="icon mdi mdi-check"></i>
-								<label>Nombre de la Variable</label>
-							</div>
-						</div>
-					</div>
-				
-					<div class="panel-dataset-group-item">							
-						<div class="pretty p-icon p-curve">
-							<input type="checkbox" />
-							<div class="state">
-								<i class="icon mdi mdi-check"></i>
-								<label>Nombre de la Variable</label>
-							</div>
-						</div>
-					</div>
-					
-				</div>
-			
-			</div>
-			<?php
-			
-			}
-			
-			?>
 		
 		</div>
 	
@@ -83,19 +20,18 @@
 	
 	<div class="row jump-row">
 	
-		<select class="selectpicker mt-40">
-		
+		<select class="selectpicker mt-40" id="combo_cruce">
+
 			<option value="-1" selected>Cruce Espacial</option>
-			<option value="1">Provincia</option>
-			<option value="2">Ambiente</option>
-		
+			<?php ComboCruce(); ?>
+
 		</select>
 	
 	</div>
 	
 	<div class="row jump-row jus-right">
 	
-		<a href="./estadisticas-vista.php" id="stats-proceed" class="mt-50">SIGUIENTE ></a>
+		<a href="javascript:void(0);" onclick="stats.dataset.proceed();" id="stats-proceed" class="mt-50">SIGUIENTE ></a>
 	
 	</div>
 	

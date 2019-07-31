@@ -21,13 +21,13 @@
 
 				<div id="abr-container">
 				
-					<?php include("./sample-stats-abr.php"); ?>
+					<?php DrawAbrStats(); ?>
 				
 				</div>
 				
 				<div id="layers-container">
 				
-					<?php include("./sample-stats-datasets.php"); ?>
+					<?php DrawContainersStats(); ?>
 				
 				</div>
 
