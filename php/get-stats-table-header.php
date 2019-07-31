@@ -38,7 +38,7 @@ $rquery_string = $data["query"];
 		
 		foreach($r as $colname => $val) {
 			
-			//if (!in_array($colname,$bannedCols)) {
+			if (!in_array($colname,$bannedCols)) {
 				
 				?>
 				
@@ -47,15 +47,15 @@ $rquery_string = $data["query"];
 					<i class="fa fa-info-circle"></i>
 				</div>
 				
-				<?php			
+				<?php
 				
-				$query_test = pg_query($conn,"SELECT DISTINCT " . $colname. " FROM ($rquery_string) AS sub LIMIT 1");
+				$query_test = pg_query($conn,"SELECT $colname FROM ($rquery_string) AS sub LIMIT 1");
 				
 				array_push($query_string_a,"SELECT DISTINCT " . $colname. " FROM ($rquery_string) AS sub");
 				array_push($coltype,pg_field_type($query_test,0));
 				array_push($col,$colname);
 			
-			//}
+			}
 			
 		}
 		
@@ -80,18 +80,20 @@ $rquery_string = $data["query"];
 		<div class="dataset-cell dataset-cell-header">
 			<select class="selectpicker filter-combo">		
 				<option value="-1">Todo</option>
-		<?php
-		
-		while($r = pg_fetch_assoc($query)) {
-			
-		?>
-			<option value="<?php echo $r[$col[$i]]; ?>"><?php echo $r[$col[$i]]; ?></option>
-			
-		<?php
-			
-		}
-		
-		?>
+				
+				<?php
+				
+				while($r = pg_fetch_assoc($query)) {
+					
+				?>
+					<option value="<?php echo $r[$col[$i]]; ?>"><?php echo $r[$col[$i]]; ?></option>
+					
+				<?php
+					
+				}
+				
+				?>
+				
 			</select>
 		</div>
 			
