@@ -66,5 +66,7 @@ $new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub ORDER BY
 	<?php
 		
 	}
+	
+	?>
 
 </div>
