@@ -1,6 +1,8 @@
 <?php include("pgconfig.php"); ?>
 <?php include("stats.fn.php"); ?>
 
+<?php var_dump($_POST); ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>

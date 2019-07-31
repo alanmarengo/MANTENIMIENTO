@@ -8,7 +8,13 @@
 	
 	<div class="row jump-row">
 	
-		<input type="hidden" name="dt_id" id="inp_dt_id">
+		<form id="dt_form" method="post" action="./estadisticas-vista.php">
+	
+			<input type="hidden" name="dt_id" id="inp_dt_id">
+			<input type="hidden" name="dt_variables" id="inp_dt_variables">
+			<input type="hidden" name="dt_cruce" id="inp_dt_cruce">
+	
+		</form>
 	
 		<div id="panel-dataset-list" class="jump-scroll jump-posrel">
 			
