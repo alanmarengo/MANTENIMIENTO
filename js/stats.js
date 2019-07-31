@@ -160,6 +160,10 @@ function ol_stats() {
 			
 		}.bind(this));
 		
+		var rowChilds = $(".dataset-row").child().length;
+		
+		alert(rowChilds);
+		
 	}
 	
 	this.dataset.dt_id = 0;
