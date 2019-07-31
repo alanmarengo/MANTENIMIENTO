@@ -17,9 +17,7 @@ $query = pg_query($conn,$query_string);
 
 $data = pg_fetch_assoc($query);
 
-$rquery = $data["query"];
-
-$query = pg_query($conn,$rquery);
+$rquery_string = $data["query"];
 
 ?>
 	
@@ -32,7 +30,7 @@ $query = pg_query($conn,$rquery);
 	$query_string_a = array();
 	$col = array();
 	
-	$query = pg_query($conn,$query_string);
+	$query = pg_query($conn,$rquery_string);
 	
 	while($r = pg_fetch_assoc($query)) {
 		
