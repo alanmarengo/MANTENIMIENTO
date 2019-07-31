@@ -14,16 +14,18 @@ $query = pg_query($conn,$query_string);
 
 $r = pg_fetch_assoc($query);
 
-$query_string_dataset_records = "SELECT * FROM " . $r["dt_table_source"];
+$query_string_dataset_records = "SELECT COUNT(*) AS registros FROM " . $r["dt_table_source"];
 
-$query_dataset_records = pg_num_rows(pg_query($conn,$query_string_dataset_records));
+$query_dataset_records = pg_query($conn,$query_string_dataset_records);
+
+$data_records = pg_fetch_assoc($query_dataset_records);
 
 ?>
 
 <div class="row jump-row panel-dataset-detail-title" id="dataset-detail-header">
 		
 	<p><?php echo $r["dt_titulo"]; ?></p>
-	<p>Numero de Registros: <?php echo $query_dataset_records; ?></p>
+	<p>Numero de Registros: <?php echo $data_records["registros"]; ?></p>
 	<p>Variables: <?php echo $r["var_cant"]; ?></p>
 
 </div>
