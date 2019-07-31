@@ -29,6 +29,7 @@ $rquery_string = $data["query"];
 
 	$query_string_a = array();
 	$col = array();
+	$bannedCols = array("geo_table_base","gid","geo_table_cruce","gid_cruce","cod_temp");
 	
 	$query = pg_query($conn,$rquery_string);
 	
@@ -36,17 +37,21 @@ $rquery_string = $data["query"];
 		
 		foreach($r as $colname => $val) {
 			
-			?>
+				if (!in_array($colname,$bannedCols)) {
+				
+				?>
+				
+				<div class="dataset-cell dataset-cell-header">
+					<span><?php echo $colname; ?></span>
+					<i class="fa fa-info-circle"></i>
+				</div>
+				
+				<?php			
 			
-			<div class="dataset-cell dataset-cell-header">
-				<span><?php echo $colname; ?></span>
-				<i class="fa fa-info-circle"></i>
-			</div>
+				array_push($query_string_a,"SELECT DISTINCT " . $colname. " FROM ($rquery_string) AS sub");
+				array_push($col,$colname);
 			
-			<?php			
-		
-			array_push($query_string_a,"SELECT DISTINCT " . $colname. " FROM ($rquery_string) AS sub");
-			array_push($col,$colname);
+			}
 			
 		}
 		
