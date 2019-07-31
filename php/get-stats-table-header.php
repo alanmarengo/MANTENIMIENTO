@@ -33,7 +33,13 @@ $rquery_string = $data["query"];
 	$query = pg_query($conn,$rquery_string);
 	
 	while($r = pg_fetch_assoc($query)) {
-		var_dump($r);
+		
+		foreach($r as $key => $val) {
+			
+			echo $r . " :: " . $key . " :: " . $val . "<br>";
+			
+		}
+		
 	?>
 		
 		<div class="dataset-cell dataset-cell-header">
