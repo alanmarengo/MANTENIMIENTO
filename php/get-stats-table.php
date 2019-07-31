@@ -19,9 +19,7 @@ $data = pg_fetch_assoc($query);
 
 $rquery = $data["query"];
 
-echo $rquery;
-
-$query = pg_query($conn,$query_string);
+$query = pg_query($conn,$rquery);
 
 ?>
 	
