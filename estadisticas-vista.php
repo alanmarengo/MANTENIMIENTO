@@ -41,8 +41,8 @@
 			<?php include("./html.nav.popup.php"); ?>
 			
 			<div class="row jump-row">
-			
-				<?php include("./html.panel-view.php"); ?>
+				SOME
+				<?php //include("./html.panel-view.php"); ?>
 			
 			</div>
 			
