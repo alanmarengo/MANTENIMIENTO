@@ -20,7 +20,7 @@ $data = pg_fetch_assoc($query);
 
 $rquery_string = $data["query"];
 
-$colstr_select = "\"" . implode("\",\"::TEXT",explode(",",$colstr)) . "\"";
+$colstr_select = "\"" . implode("\"::TEXT,\"",explode(",",$colstr)) . "\"::TEXT";
 $colstr = "\"" . implode("\",\"",explode(",",$colstr)) . "\"";
 
 $colstr_order = str_replace(","," ASC,",$colstr);
