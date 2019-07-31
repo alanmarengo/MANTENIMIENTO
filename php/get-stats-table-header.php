@@ -45,7 +45,7 @@ $rquery_string = $data["query"];
 			
 			<?php
 			
-			echo $rquery;
+			echo $rquery_string;
 			
 		}
 		
