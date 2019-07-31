@@ -160,7 +160,7 @@ function ol_stats() {
 			
 		}.bind(this));
 		
-		var rowChilds = $(".dataset-row").child().length;
+		var rowChilds = $(".dataset-row").children().length;
 		
 		alert(rowChilds);
 		
