@@ -4,7 +4,6 @@
     </div>
     <div class="col-md-12 page-search">
         <div class="row">
-
             <div class="col-md-4">
                 <div class="input-group mb-3">
                     <input id="uxSearchText" name="uxSearchText" type="text" class="form-control">
@@ -39,7 +38,7 @@
                 <a class="nav-link" data-tab="1" href="#">RECURSOS AUDIOVISUALES <span id="uxQtyMedias"></span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-tab="2" href="#">RECURSOS TECNICOS <span id="uxQtyTechs"></span></a>
+                <a class="nav-link" data-tab="2" href="#">RECURSOS TÉCNICOS <span id="uxQtyTechs"></span></a>
             </li>
         </ul>
 

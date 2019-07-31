@@ -580,6 +580,8 @@ body {
 }
 
 #page_mediateca {
+    @filter_color: #666;
+
     background-color: #fff;
 
     .page-search {
@@ -621,6 +623,7 @@ body {
 
     #uxFilters {
         padding: 0px 0px 10px 10px; 
+        color: @filter_color;
 
         .card {
             border: none;
@@ -639,13 +642,16 @@ body {
     
         .group-title {
             font-weight: bolder;
-            color: #333;
             text-decoration: none;
+            color: @filter_color;
+            width: 100%;
+            text-align: left;
         }
 
         .filters-group-item {
             margin: 0px;
             padding: 4px 14px 8px 14px;
+            color: @filter_color;
         }
 
         .list-group-item {
@@ -672,7 +678,7 @@ body {
             width: 90%;
             height: auto;
             max-height: 200px;
-            box-shadow: 2px 2px 2px grey;
+            //box-shadow: 2px 2px 2px grey;
         }
 
         .doc-authors {
