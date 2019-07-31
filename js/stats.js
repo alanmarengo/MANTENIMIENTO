@@ -160,9 +160,12 @@ function ol_stats() {
 			
 		}.bind(this));
 		
+		var rowWidth = $(".dataset-row").first().width();
 		var rowChilds = $(".dataset-row").first().children().length;
 		
-		alert(rowChilds);
+		var cellWidth = rowWidth / rowChilds;
+		
+		$(".dataset-cell").css("width",cellWidth+"px");
 		
 	}
 	
