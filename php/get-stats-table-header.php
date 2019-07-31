@@ -33,12 +33,12 @@ $rquery_string = $data["query"];
 	$bannedCols = array("geo_table_base","gid","geo_table_cruce","gid_cruce","cod_temp");
 	
 	$query = pg_query($conn,$rquery_string);
-	
+	echo $rquery_string;
 	while($r = pg_fetch_assoc($query)) {
 		
 		foreach($r as $colname => $val) {
 			
-				//if (!in_array($colname,$bannedCols)) {
+				if (!in_array($colname,$bannedCols)) {
 				
 				?>
 				
@@ -53,7 +53,7 @@ $rquery_string = $data["query"];
 				array_push($coltype,pg_field_type($query,0));
 				array_push($col,$colname);
 			
-			//}
+			}
 			
 		}
 		
