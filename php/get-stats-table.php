@@ -29,8 +29,6 @@ $colstr_order = substr($colstr_order,0,strlen($colstr)-1) ."\" ASC";;
 
 $new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub ORDER BY " . $colstr_order;
 
-echo $new_query_string;
-
 ?>
 	
 <div class="dataset">
@@ -56,8 +54,6 @@ echo $new_query_string;
 			<?php
 			
 		}
-		
-		break;
 		
 	}
 
