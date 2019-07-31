@@ -50,6 +50,8 @@ $rquery_string = $data["query"];
 			
 		}
 		
+		break;
+		
 	}
 
 	?>
