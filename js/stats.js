@@ -102,11 +102,16 @@ function ol_stats() {
 	}
 	
 	this.view.getTable = function(page,dt_id,dt_variables,dt_cruce) {
-		alert(page + " :: " + dt_id + " :: " + dt_variables + " :: " + dt_cruce);
+		
 		var req = $.ajax({
 			
 			async:false,
-			data:{page:page},
+			data:{
+				page:page,
+				dt_id:dt_id,
+				dt_variables:dt_variables,
+				dt_cruce:dt_cruce
+			},
 			type:"POST",
 			url:"./php/get-stats-table.php",
 			success:function(d){}

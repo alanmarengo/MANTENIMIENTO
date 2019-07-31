@@ -2,21 +2,18 @@
 
 include("../pgconfig.php");
 
-$schema = "mod_estadistica";
-$table = "vw_modprueba";
-$page = 32;
-
-if (isset($_POST["page"])) {
-	
-	$page = $_POST["page"];
-	
-}
+$page = $_POST["page"];
+$dt_id = $_POST["dt_id"];
+$dt_variables = $_POST["dt_variables"];
+$dt_cruce = $_POST["dt_cruce"];
 
 $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 	
 $conn = pg_connect($string_conn);
 
-$query_string = "SELECT * FROM information_schema.columns WHERE table_schema = '".$schema."' AND table_name = '".$table."' ORDER BY ordinal_position ASC;";
+$query_string = "SELECT * FROM mod_estadistica.get_dt_from($dt_id,'$dt_variables','$dt_cruce')";
+
+echo $query_string;
 
 $query = pg_query($conn,$query_string);
 
