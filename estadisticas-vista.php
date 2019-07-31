@@ -32,6 +32,11 @@
 		
 			<?php //include("./section.index.php"); ?>
 			
+			<?php include("./html.nav.php"); ?>
+			<?php include("./html.nav.geovisores.php"); ?>
+			<?php include("./html.nav.vinculaciones_insterinstitucionales.php"); ?>
+			<?php include("./html.nav.recursos_hidricos.php"); ?>
+			
 			<div class="row jump-row">
 			
 				<?php include("./html.panel-view.php"); ?>
