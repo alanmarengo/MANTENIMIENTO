@@ -60,7 +60,7 @@ $rquery_string = $data["query"];
 		break;
 		
 	}
-	var_dump($coltype);
+	
 	?>
 
 	</div>
@@ -129,5 +129,7 @@ $rquery_string = $data["query"];
 	</div>
 	
 	<input type="hidden" name="colstr" id="colstr" value="<?php echo implode(",",$col); ?>">
+	
+	<?php var_dump($coltype); ?>
 
 </div>
