@@ -32,8 +32,6 @@ $rquery_string = $data["query"];
 	
 	$query = pg_query($conn,$rquery_string);
 	
-	$first = true;
-	
 	while($r = pg_fetch_assoc($query)) {
 		
 		foreach($r as $col => $val) {
@@ -44,8 +42,10 @@ $rquery_string = $data["query"];
 				<span><?php echo $col; ?></span>
 				<i class="fa fa-info-circle"></i>
 			</div>
-		
+			
 			<?php
+			
+			echo $rquery;
 			
 		}
 		
@@ -57,6 +57,8 @@ $rquery_string = $data["query"];
 		
 		array_push($query_string_a,"SELECT DISTINCT " . $r["column_name"] . " FROM \"".$schema."\".\"".$table."\"");
 		array_push($col,$r["column_name"]);
+		
+		break;
 		
 	}
 
