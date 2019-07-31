@@ -20,11 +20,79 @@ $data = pg_fetch_assoc($query);
 
 $rquery_string = $data["query"];
 
-$colstr_order = str_replace(","," ASC,",$colstr);
-$colstr_order = substr($colstr_order,0,strlen($colstr)-1);
-
-$new_query_string = "SELECT $colstr FROM ($rquery_string) AS sub ORDER BY " $colstr_order;
-
-echo $new_query_string;
-
 ?>
+	
+<div class="dataset">
+
+	<div class="dataset-row dataset-row-header dataset-columns-row">
+
+	<?php
+
+	$query_string_a = array();
+	$col = array();
+	
+	$query = pg_query($conn,$rquery_string);
+	
+	while($r = pg_fetch_assoc($query)) {
+		
+		foreach($r as $colname => $val) {
+			
+			?>
+			
+			<div class="dataset-cell dataset-cell-header">
+				<span><?php echo $colname; ?></span>
+				<i class="fa fa-info-circle"></i>
+			</div>
+			
+			<?php			
+		
+			array_push($query_string_a,"SELECT DISTINCT " . $colname. " FROM ($rquery_string) AS sub");
+			array_push($col,$colname);
+			
+		}
+		
+		break;
+		
+	}
+
+	?>
+
+	</div>
+	
+	<div class="dataset-row dataset-row-header dataset-filter-row">
+
+	<?php
+	
+	for ($i=0; $i<sizeof($query_string_a); $i++) {
+		
+		$query = pg_query($conn,$query_string_a[$i]);
+		
+		?>
+		
+		<div class="dataset-cell dataset-cell-header">
+			<select class="selectpicker filter-combo">		
+				<option value="-1">Todo</option>
+		<?php
+		
+		while($r = pg_fetch_assoc($query)) {
+			
+		?>
+			<option value="<?php echo $r[$col[$i]]; ?>"><?php echo $r[$col[$i]]; ?></option>
+			
+		<?php
+			
+		}
+		
+		?>
+			</select>
+		</div>
+			
+		<?php
+	
+	}
+
+	?>
+
+	</div>
+
+</div>
