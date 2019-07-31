@@ -48,8 +48,6 @@ $rquery_string = $data["query"];
 			array_push($query_string_a,"SELECT DISTINCT " . $colname. " FROM ($rquery_string)");
 			array_push($col,$colname);
 			
-			echo $query_string_a[sizeof($query_string_a)-1] . "<br>";
-			
 		}
 		
 	}
