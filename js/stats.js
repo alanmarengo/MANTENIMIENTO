@@ -120,6 +120,8 @@ function ol_stats() {
 		
 		document.getElementById("dataset-header").innerHTML = req.responseText;	
 		
+		this.resetSelects();
+		
 	}
 	
 	this.view.getTable = function(page,dt_id,dt_variables,dt_cruce) {
