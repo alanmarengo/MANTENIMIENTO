@@ -101,6 +101,27 @@ function ol_stats() {
 		
 	}
 	
+	this.view.getTableHeader = function(page,dt_id,dt_variables,dt_cruce) {
+		
+		var req = $.ajax({
+			
+			async:false,
+			data:{
+				page:page,
+				dt_id:dt_id,
+				dt_variables:dt_variables,
+				dt_cruce:dt_cruce
+			},
+			type:"POST",
+			url:"./php/get-stats-table-header.php",
+			success:function(d){}
+			
+		});
+		
+		document.getElementById("dataset-header").innerHTML = req.responseText;	
+		
+	}
+	
 	this.view.getTable = function(page,dt_id,dt_variables,dt_cruce) {
 		
 		var req = $.ajax({
@@ -118,9 +139,10 @@ function ol_stats() {
 			
 		});
 		
-		$("#dataset-wrapper").html(req.responseText);		
+		document.getElementById("dataset-content").innerHTML = req.responseText;
+		
 		this.resetSelects();
-			
+
 		$(".page-item").each(function(i,v) {
 			
 			$(v).on("click",function() {

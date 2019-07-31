@@ -36,7 +36,13 @@
 	
 	<div id="dataset-wrapper">
 	
+		<div id="dataset-header">
 		
+		</div>
+		
+		<div id="dataset-content">
+		
+		</div>
 	
 	</div>
 	
