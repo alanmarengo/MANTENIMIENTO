@@ -24,7 +24,7 @@ $colstr_select = "\"" . implode("\"::TEXT,\"",explode(",",$colstr)) . "\"::TEXT"
 $colstr = "\"" . implode("\",\"",explode(",",$colstr)) . "\"";
 
 $colstr_order = str_replace(","," ASC,",$colstr);
-$colstr_order = substr($colstr_order,0,strlen($colstr)-1);
+$colstr_order = substr($colstr_order,0,strlen($colstr)-1) ."\" ASC";;
 
 $new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub ORDER BY " . $colstr_order;
 
