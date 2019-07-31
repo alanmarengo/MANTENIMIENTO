@@ -32,20 +32,26 @@ $rquery_string = $data["query"];
 	
 	$query = pg_query($conn,$rquery_string);
 	
+	$first = true;
+	
 	while($r = pg_fetch_assoc($query)) {
 		
-		foreach($r as $key => $val) {
+		foreach($r as $col => $val) {
 			
-			echo $r . " :: " . $key . " :: " . $val . "<br>";
+			?>
+			
+			<div class="dataset-cell dataset-cell-header">
+				<span><?php echo $col; ?></span>
+				<i class="fa fa-info-circle"></i>
+			</div>
+		
+			<?php
 			
 		}
 		
 	?>
 		
-		<div class="dataset-cell dataset-cell-header">
-			<span><?php echo $r["column_name"]; ?></span>
-			<i class="fa fa-info-circle"></i>
-		</div>
+		
 		
 	<?php
 		
