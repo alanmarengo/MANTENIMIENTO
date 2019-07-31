@@ -15,7 +15,7 @@ $query = pg_query($conn,$query_string);
 $r = pg_fetch_assoc($query);
 
 $query_string_dataset_records = "SELECT * FROM " . $r["dt_table_source"];
-
+echo $query_string_dataset_records;
 $query_dataset_records = pg_num_rows(pg_query($conn,$query_string_dataset_records));
 
 ?>
