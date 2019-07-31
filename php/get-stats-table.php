@@ -33,8 +33,6 @@ $new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub ORDER BY
 	
 <div class="dataset">
 
-	<div class="dataset-row dataset-row-header dataset-columns-row">
-
 	<?php
 
 	$col = explode(",",$colstr_original);
@@ -42,6 +40,12 @@ $new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub ORDER BY
 	$query = pg_query($conn,$rquery_string);	
 	
 	while($r = pg_fetch_assoc($query)) {
+		
+	?>
+
+	<div class="dataset-row dataset-row-header dataset-columns-row">
+	
+	<?php
 		
 		for($i=0; $i<sizeof($col); $i++) {
 			
@@ -54,11 +58,13 @@ $new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub ORDER BY
 			<?php
 			
 		}
-		
-	}
 
-	?>
+		?>
 
 	</div>
+	
+	<?php
+		
+	}
 
 </div>
