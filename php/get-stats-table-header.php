@@ -45,7 +45,7 @@ $rquery_string = $data["query"];
 			
 			<?php			
 		
-			array_push($query_string_a,"SELECT DISTINCT " . $colname. " FROM ($rquery_string)");
+			array_push($query_string_a,"SELECT DISTINCT " . $colname. " FROM ($rquery_string) AS filter");
 			array_push($col,$colname);
 			
 		}
@@ -63,7 +63,7 @@ $rquery_string = $data["query"];
 	<?php
 	
 	for ($i=0; $i<sizeof($query_string_a); $i++) {
-		echo $query_string_a[$i] . "<br>";
+		
 		$query = pg_query($conn,$query_string_a[$i]);
 		
 		?>
@@ -76,7 +76,7 @@ $rquery_string = $data["query"];
 		while($r = pg_fetch_assoc($query)) {
 			
 		?>
-				<option value="<?php echo $r[$col[$i]]; ?>"><?php echo $r[$col[$i]]; ?></option>
+				<option value="<	?php echo $r[$col[$i]]; ?>"><?php echo $r[$col[$i]]; ?></option>
 			
 		<?php
 			
