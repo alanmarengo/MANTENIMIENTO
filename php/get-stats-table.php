@@ -20,6 +20,8 @@ $data = pg_fetch_assoc($query);
 
 $rquery_string = $data["query"];
 
+$colstr = "\"" . implode("\",\"",explode(",",$colstr)) "\"";
+
 $colstr_order = str_replace(","," ASC,",$colstr);
 $colstr_order = substr($colstr_order,0,strlen($colstr)-1);
 
