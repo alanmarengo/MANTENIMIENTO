@@ -58,12 +58,6 @@ $rquery_string = $data["query"];
 	
 	for ($i=0; $i<sizeof($query_string_a); $i++) {
 		
-		?>
-		
-		<div class="dataset-cell dataset-cell-header">
-			<?php echo $col[$i] . " :: " . $r[$col[$i]]; ?>
-		</div>
-		<?php
 		
 		$query = pg_query($conn,$query_string_a[$i]);
 		
