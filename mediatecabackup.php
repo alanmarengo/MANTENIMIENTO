@@ -38,7 +38,7 @@
                 <a class="nav-link" data-tab="1" href="#">RECURSOS AUDIOVISUALES <span id="uxQtyMedias"></span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-tab="2" href="#">RECURSOS TECNICOS <span id="uxQtyTechs"></span></a>
+                <a class="nav-link" data-tab="2" href="#">RECURSOS TÉCNICOS <span id="uxQtyTechs"></span></a>
             </li>
         </ul>
 
@@ -549,7 +549,7 @@ $(document).ready(function() {
                     <div class="doc-description">${doc.description}</div>
                     <div class="doc-links">
                         <a data-solapa="1" data-estudio="${doc.estudio}" class="btn btn-dark estudios-link">RECURSOS AUDIOVISUALES</a>
-                        <a data-solapa="2" data-estudio="${doc.estudio}" class="btn btn-dark estudios-link">RECURSOS TECNICOS</a>
+                        <a data-solapa="2" data-estudio="${doc.estudio}" class="btn btn-dark estudios-link">RECURSOS TÉCNICOS</a>
                         <a data-solapa="0" data-estudio="${doc.estudio}" class="btn btn-dark estudios-link">RECURSOS ASOCIADOS</a>
                     </div>
                 </div>

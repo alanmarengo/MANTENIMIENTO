@@ -534,7 +534,7 @@ $(document).ready(function() {
                         <div class="doc-description">${doc.description}</div>
                         <div class="doc-links">
                             <a data-solapa="1" data-estudio="${doc.estudio}" class="btn btn-dark estudios-link">RECURSOS AUDIOVISUALES</a>
-                            <a data-solapa="2" data-estudio="${doc.estudio}" class="btn btn-dark estudios-link">RECURSOS TECNICOS</a>
+                            <a data-solapa="2" data-estudio="${doc.estudio}" class="btn btn-dark estudios-link">RECURSOS TÉCNICOS</a>
                             <a data-solapa="0" data-estudio="${doc.estudio}" class="btn btn-dark estudios-link">RECURSOS ASOCIADOS</a>
                         </div>
                     </div>
@@ -671,8 +671,14 @@ $(document).ready(function() {
 
     function groupsTitleRender() {
         $.each(model.filters.groups, function(gindex, group) {
-            let html =
-                `${group.title} (${qtyItemsNotChecked(group)}) <i class="fa fa-${group.collapsed ? 'plus' : 'minus'}-circle"></i>`;
+            let html = '';
+
+            if (group.collapsed) {
+                html = group.title + '(' + qtyItemsNotChecked(group) + ') <span><i class="fa fa-plus-circle"></i></span>';
+            } else {
+                html = group.title + '(' + qtyItemsNotChecked(group) + ') <span><i class="fa fa-minus-circle"></i></span>';
+            }
+
             $(`#group-${gindex}-title`).html(html);
         });
     }
