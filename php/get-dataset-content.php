@@ -8,14 +8,14 @@ $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . 
 	
 $conn = pg_connect($string_conn);
 
-$query_string = "SELECT dt_titulo,dt_desc,(SELECT COUNT(*) FROM mod_estadistica.get_dt_variales(vwdt.dt_id)) AS var_cant FROM mod_estadistica.vw_dt vwdt WHERE dt_id = " . $dt_id;
+$query_string = "SELECT dt_titulo,dt_desc,dt_table_source,(SELECT COUNT(*) FROM mod_estadistica.get_dt_variales(vwdt.dt_id)) AS var_cant FROM mod_estadistica.vw_dt vwdt WHERE dt_id = " . $dt_id;
 
 $query = pg_query($conn,$query_string);
 
 $r = pg_fetch_assoc($query);
 
 $query_string_dataset_records = "SELECT * FROM " . $r["dt_table_source"];
-echo $query_string_dataset_records;
+
 $query_dataset_records = pg_num_rows(pg_query($conn,$query_string_dataset_records));
 
 ?>
