@@ -29,6 +29,7 @@ $rquery_string = $data["query"];
 
 	$query_string_a = array();
 	$col = array();
+	$coltype = array();
 	$bannedCols = array("geo_table_base","gid","geo_table_cruce","gid_cruce","cod_temp");
 	
 	$query = pg_query($conn,$rquery_string);
@@ -49,6 +50,7 @@ $rquery_string = $data["query"];
 				<?php			
 			
 				array_push($query_string_a,"SELECT DISTINCT " . $colname. " FROM ($rquery_string) AS sub");
+				array_push($coltype,pg_field_type($query,0));
 				array_push($col,$colname);
 			
 			}
@@ -58,7 +60,7 @@ $rquery_string = $data["query"];
 		break;
 		
 	}
-
+	var_dump($coltype);
 	?>
 
 	</div>
