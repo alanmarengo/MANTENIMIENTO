@@ -40,13 +40,13 @@
 			<?php include("./html.nav.recursos_hidricos.php"); ?>
 			<?php include("./html.nav.popup.php"); ?>
 			
+		</div>
+			
 			<div class="row jump-row">
 				SOME
 				<?php //include("./html.panel-view.php"); ?>
 			
 			</div>
-			
-		</div>
 		
 	</div>
 	
