@@ -33,7 +33,7 @@ $rquery_string = $data["query"];
 	$bannedCols = array("geo_table_base","gid","geo_table_cruce","gid_cruce","cod_temp");
 	
 	$query = pg_query($conn,$rquery_string);
-	echo $rquery_string;
+	
 	while($r = pg_fetch_assoc($query)) {
 		
 		foreach($r as $colname => $val) {
@@ -48,9 +48,11 @@ $rquery_string = $data["query"];
 				</div>
 				
 				<?php			
-			
+				
+				$query_test = pg_query($conn,"SELECT DISTINCT " . $colname. " FROM ($rquery_string) AS sub LIMIT 1");
+				
 				array_push($query_string_a,"SELECT DISTINCT " . $colname. " FROM ($rquery_string) AS sub");
-				array_push($coltype,pg_field_type($query,0));
+				array_push($coltype,pg_field_type($query_test,0));
 				array_push($col,$colname);
 			
 			}
