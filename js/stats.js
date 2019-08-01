@@ -101,7 +101,12 @@ function ol_stats() {
 		
 	}
 	
-	this.view.getTableHeader = function(page,dt_id,dt_variables,dt_cruce) {
+	this.view.getTableHeader = function(page) {		
+		
+		var dt_id = $("#frm-dt #dt_id").val();
+		var dt_variables = $("#frm-dt #dt_v").val();
+		var dt_cruce = $("#frm-dt #dt_c").val();
+		var colstr = $("#colstr").val();
 		
 		var req = $.ajax({
 			
