@@ -101,6 +101,30 @@ function sldlib()
           return this.sld_body;          
         };
         
+        this.sld_get_intervalos = function(id_capa_creada)
+        {
+         var header = '';
+         var url	= '';
+          
+         this.sld_body = '';
+        
+         header = 'id='+id_capa_creada;
+        
+         header = encodeURI(header);
+         
+		 this.xhttp.onreadystatechange = function() 
+		 {
+				this.handle_response();
+		 }.bind(this);
+		 
+		 url = "./sld/sld_interval.php?"+header;
+			
+		 this.xhttp.open("GET", url, false);//esperar
+		 this.xhttp.send();
+          
+          return this.sld_body;          
+        };
+        
         this.sld_get_encode = function()
         {
 			return encodeURIComponent(this.sld_get());
