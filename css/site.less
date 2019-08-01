@@ -581,8 +581,10 @@ body {
 
 #page_mediateca {
     @filter_color: #666;
+    @font_size: 12px;
 
     background-color: #fff;
+    font-size: @font_size;
 
     .page-search {
         background-color: #ddd;
@@ -615,6 +617,10 @@ body {
         }
     }
 
+    .filters-checked {
+        font-size: @font_size;
+    }
+
     .filters-header {
         padding: 10px 20px ; 
         font-weight: bolder;
@@ -641,6 +647,7 @@ body {
         } 
     
         .group-title {
+            font-size: @font_size;
             font-weight: bolder;
             text-decoration: none;
             color: @filter_color;
@@ -705,7 +712,7 @@ body {
         }
 
         .estudios-link {
-            font-size: .7em;
+            font-size: @font_size;
         }
     }
 
@@ -722,7 +729,7 @@ body {
         margin-bottom: 20px;
 
         .preview-datos {
-            font-size: .7em;
+            font-size: .9em;
 
             .preview-title {
                 font-size: 1.4em;

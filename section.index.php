@@ -261,7 +261,7 @@
                         <img src="./images/icono_indicadores.png" />
                     </div>
                 </a>
-                <a href="./page.php" class="col-md-12 link-wrap link-4" style="margin-bottom: 0px!important;">
+                <a href="./estadistica.php" class="col-md-12 link-wrap link-4" style="margin-bottom: 0px!important;">
                     <div class="link-text">
                         ESTADÍSTICAS
                     </div>
