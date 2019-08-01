@@ -29,33 +29,41 @@ $rquery_string = $data["query"];
 
 	$query_string_a = array();
 	$col = array();
-	$coltype = array();
+	$coltypes = array();
 	$bannedCols = array("geo_table_base","gid","geo_table_cruce","gid_cruce","cod_temp");
 	
 	$query = pg_query($conn,$rquery_string);
 	
 	while($r = pg_fetch_assoc($query)) {
-		
+		$i=0;
 		foreach($r as $colname => $val) {
 			
 			//if (!in_array($colname,$bannedCols)) {
 				
+				
+				$query_test = pg_query($conn,"SELECT $colname FROM ($rquery_string) AS sub LIMIT 1");
+				$coltype = pg_field_type($query_test,0);
+				
+				array_push($query_string_a,"SELECT DISTINCT " . $colname. " FROM ($rquery_string) AS sub");
+				array_push($coltypes,$coltype);
+				array_push($col,$colname);
+				
 				?>
 				
-				<div class="dataset-cell dataset-cell-header">
+				<div class="dataset-cell dataset-cell-header" 
+					data-col-index="<?php echo $i; ?>" 
+					data-col-name="<?php echo $colname; ?>"
+					data-col-type="<?php echo $coltype; ?>"
+					>
 					<span><?php echo $colname; ?></span>
 					<i class="fa fa-info-circle"></i>
 				</div>
 				
 				<?php
-				
-				$query_test = pg_query($conn,"SELECT $colname FROM ($rquery_string) AS sub LIMIT 1");
-				
-				array_push($query_string_a,"SELECT DISTINCT " . $colname. " FROM ($rquery_string) AS sub");
-				array_push($coltype,pg_field_type($query_test,0));
-				array_push($col,$colname);
 			
 			//}
+			
+			$i++;
 			
 		}
 		
@@ -77,7 +85,10 @@ $rquery_string = $data["query"];
 		
 		?>
 		
-		<div class="dataset-cell dataset-cell-header">
+		<div class="dataset-cell dataset-cell-header"
+					data-col-index="<?php echo $i; ?>" 
+					data-col-name="<?php echo $col[$i]; ?>"
+					data-col-type="<?php echo $coltypes[$i]; ?>">
 			<select class="selectpicker filter-combo">		
 				<option value="-1">Todo</option>
 				
@@ -112,7 +123,10 @@ $rquery_string = $data["query"];
 	for ($i=0; $i<sizeof($col); $i++) {
 		
 	?>
-		<div class="dataset-cell">
+		<div class="dataset-cell"
+					data-col-index="<?php echo $i; ?>" 
+					data-col-name="<?php echo $col[$i]; ?>"
+					data-col-type="<?php echo $coltypes[$i]; ?>">>
 			<select class="selectpicker operation-combo" tabindex="-98">
 				<option value="-1">OPERACIONES</option>
 				<option value="1">SUMA</option>
@@ -133,7 +147,6 @@ $rquery_string = $data["query"];
 	</div>
 	
 	<input type="hidden" name="colstr" id="colstr" value="<?php echo implode(",",$col); ?>">
-	
-	<?php var_dump($coltype); ?>
+	<input type="hidden" name="coltypestr" id="coltypestr" value="<?php echo implode(",",$coltypes); ?>">
 
 </div>
