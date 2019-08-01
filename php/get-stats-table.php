@@ -103,8 +103,6 @@ if ($no_op) {
 			
 		}
 		
-		//$colstr_select = substr($str,0,strlen($colstr_select)-1);
-		
 	}
 	
 }else{
@@ -118,10 +116,10 @@ if ($no_op) {
 		$colstr_select .= $col[$i] . "::" . $colType[$i] . ",";
 		
 	}
-		
-	//$colstr_select = substr($str,0,strlen($colstr_select)-1);
 	
 }
+
+$colstr_select = substr($colstr_select,0,strlen($colstr_select)-1);
 
 if ($filter_str == "") {
 
