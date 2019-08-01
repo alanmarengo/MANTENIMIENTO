@@ -87,6 +87,7 @@ $colstr_order = " ORDER BY " . $colstr_order;
 
 var_dump($operations);
 var_dump($no_op);
+var_dump($colstr);
 var_dump($colstrType);
 
 if ($no_op) {
