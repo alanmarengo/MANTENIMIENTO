@@ -53,7 +53,7 @@ $rquery_string = $data["query"];
 					
 				}else{
 					
-					$type = "number";
+					$type = "bigint";
 					
 				}
 				
