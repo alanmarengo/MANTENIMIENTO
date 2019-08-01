@@ -134,8 +134,6 @@ if ($filter_str == "") {
 	
 }
 
-echo $new_query_string;
-
 ?>
 	
 <div class="dataset">
