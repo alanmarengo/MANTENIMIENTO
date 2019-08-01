@@ -154,23 +154,27 @@ function ol_stats() {
 			
 		});
 		
-		var req = $.ajax({
-			
-			async:false,
-			data:{
+		var data = {
 				page:page,
 				dt_id:dt_id,
 				dt_variables:dt_variables,
 				dt_cruce:dt_cruce,
 				colstr:colstr,
 				filters:filters
-			},
+			}
+		
+		console.log(data);
+		
+		var req = $.ajax({
+			
+			async:false,
+			data:data,
 			type:"POST",
 			url:"./php/get-stats-table.php",
 			success:function(d){}
 			
 		});
-		alert(req.responseText);
+		
 		document.getElementById("dataset-content").innerHTML = req.responseText;
 		
 		this.resetSelects();
