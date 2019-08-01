@@ -121,13 +121,15 @@ if ($no_op) {
 
 $colstr_select = substr($colstr_select,0,strlen($colstr_select)-1);
 
+$group_by_str = " GROUP BY " . $colstr . " ";
+
 if ($filter_str == "") {
 
 	$new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub $colstr_order";
 
 }else{
 	
-	$new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub WHERE $filter_str $colstr_order";
+	$new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub WHERE $filter_str $group_by_str $colstr_order";
 	
 }
 

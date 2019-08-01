@@ -177,7 +177,7 @@ $rquery_string = $data["query"];
 			<select class="selectpicker operation-combo" tabindex="-98">
 				<option value="-1">OPERACIONES</option>
 				<option value="SUM">SUMA</option>
-				<option value="AVERAGE">PROMEDIO</option>
+				<option value="AVG">PROMEDIO</option>
 				<option value="MIN">MIN</option>
 				<option value="MAX">MAX</option>
 				<option value="COUNT">CUENTA</option>
