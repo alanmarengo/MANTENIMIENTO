@@ -168,6 +168,8 @@ function ol_stats() {
 			
 		});
 		
+		console.log(operations);
+		
 		var data = {
 				page:page,
 				dt_id:dt_id,
