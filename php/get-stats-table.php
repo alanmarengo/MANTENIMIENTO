@@ -97,7 +97,7 @@ if ($no_op) {
 		$colstr_select = "\"" . implode("\"::TEXT,\"",explode(",",$colstr)) . "\"::TEXT";
 	
 	}else{
-		
+		echo "ACA";
 		$col = explode(",",$colstr);
 		$colType = explode(",",$colstrType);
 		$colstr_select = "";
