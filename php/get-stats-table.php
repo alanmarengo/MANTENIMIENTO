@@ -57,10 +57,7 @@ $colstr = "\"" . implode("\",\"",explode(",",$colstr)) . "\"";
 
 $colstr_order = str_replace(","," ASC,",$colstr);
 $colstr_order = substr($colstr_order,0,strlen($colstr)-1) ."\" ASC";;
-
-if (trim($colstr_order) == "") {
-	$colstr_order = " ORDER BY " . $colstr_order;
-}
+$colstr_order = " ORDER BY " . $colstr_order;
 
 if ($filter_str == "") {
 
@@ -82,7 +79,7 @@ echo $new_query_string;
 
 	$col = explode(",",$colstr_original);
 	
-	$query = pg_query($conn,$rquery_string);	
+	$query = pg_query($conn,$new_query_string);	
 	
 	while($r = pg_fetch_assoc($query)) {
 		
