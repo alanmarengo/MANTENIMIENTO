@@ -160,9 +160,17 @@ function ol_stats() {
 		
 		var operations = [];
 		
+		var no_op = false;
+		
 		$(".dataset-operation-row .dataset-cell").each(function(i,v) {
 			
 			var operation = $(this).find(".selectpicker").val();
+			
+			if (operation == -1) {
+				
+				no_op = true;
+				
+			}
 			
 			operations.push(operation);
 			
@@ -178,45 +186,53 @@ function ol_stats() {
 				operations:operations
 			}
 		
-		var req = $.ajax({
-			
-			async:false,
-			data:data,
-			type:"POST",
-			url:"./php/get-stats-table.php",
-			success:function(d){}
-			
-		});
+		if (!no_op) {
 		
-		document.getElementById("dataset-content").innerHTML = req.responseText;
-		
-		this.resetSelects();
+			var req = $.ajax({
+				
+				async:false,
+				data:data,
+				type:"POST",
+				url:"./php/get-stats-table.php",
+				success:function(d){}
+				
+			});
+			
+			document.getElementById("dataset-content").innerHTML = req.responseText;
+			
+			this.resetSelects();
 
-		$(".page-item").each(function(i,v) {
-			
-			$(v).on("click",function() {
+			$(".page-item").each(function(i,v) {
 				
-				var pageitem = v.getAttribute("data-page");
-				
-				this.getTable(pageitem);
+				$(v).on("click",function() {
+					
+					var pageitem = v.getAttribute("data-page");
+					
+					this.getTable(pageitem);
+					
+				}.bind(this));
 				
 			}.bind(this));
 			
-		}.bind(this));
-		
-		var rowWidth = $(".dataset-row").first().width();
-		var rowChilds = $(".dataset-row").first().children().length;
-		
-		var cellWidth = rowWidth / rowChilds;
-		
-		$(".dataset-cell").css("width",cellWidth+"px");
-		$(".dataset-filter-row .dropdown-toggle").css("width",50+"px");
-		$(".dataset-operation-row .dropdown-toggle").css("width",cellWidth+"px");
-		$(".col-filter").on("keydown",function() {
+			var rowWidth = $(".dataset-row").first().width();
+			var rowChilds = $(".dataset-row").first().children().length;
 			
-			$("#update-view").prop("disabled",false);
+			var cellWidth = rowWidth / rowChilds;
 			
-		});
+			$(".dataset-cell").css("width",cellWidth+"px");
+			$(".dataset-filter-row .dropdown-toggle").css("width",50+"px");
+			$(".dataset-operation-row .dropdown-toggle").css("width",cellWidth+"px");
+			$(".col-filter").on("keydown",function() {
+				
+				$("#update-view").prop("disabled",false);
+				
+			});
+		
+		}else{
+			
+			alert("Faltan seleccionar funciones para poder actualizar la vista");
+			
+		}
 		
 	}
 	
