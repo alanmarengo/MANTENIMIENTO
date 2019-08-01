@@ -107,18 +107,30 @@ $rquery_string = $data["query"];
 				
 				<?php
 				
-				while($r = pg_fetch_assoc($query)) {
+				if ($coltypes[$i] == "text") {					
 					
 				?>
-					<option value="<?php echo $r[$col[$i]]; ?>"><?php echo $r[$col[$i]]; ?></option>
+					<option value="=">=</option>
 					
 				<?php
+					
+				}else{					
+					
+				?>
+				
+					<option value="=">=</option>
+					<option value=">">></option>
+					<option value="<"><</option>
+					
+				<?php
+					
 					
 				}
 				
 				?>
 				
 			</select>
+			<input type="text" class="col-filter">
 		</div>
 			
 		<?php
