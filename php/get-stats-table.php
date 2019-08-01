@@ -8,10 +8,43 @@ $dt_variables = $_POST["dt_variables"];
 $dt_cruce = $_POST["dt_cruce"];
 $colstr = $_POST["colstr"];
 $colstr_original = $colstr;
+$filters = -1;
+
+if (isset($_POST["filters"])) {
+	$filters = $_POST["filters"];
+}
 
 $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 	
 $conn = pg_connect($string_conn);
+
+if ($filters != -1) {
+	
+	$filter_str = "";
+	
+	for ($i=0; $i<sizeof($filters); $i++) {
+		
+		if ($filters[$i]["filtertype"] != -1) {
+			
+			$slashes = "";
+			
+			if ($filters[$i]["coltype"] == "text") {
+	
+				$slashes = "\"";
+				
+			}
+			
+			$filter_str .= $filters[$i]["colname"] . " " . $filters[$i]["filtertype"] . " " . $slashes . $filters[$i]["filterval"] . $slashes . " AND";
+			
+		}		
+	
+	}
+	
+	$filter_str = substr($filter_str,0,strlen($filter_str)-4);
+	
+}
+
+echo $filter_str;
 
 $query_string = "SELECT * FROM mod_estadistica.get_dt_from($dt_id,'$dt_variables','$dt_cruce') AS query";
 
