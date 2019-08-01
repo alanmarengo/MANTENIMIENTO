@@ -160,15 +160,13 @@ function ol_stats() {
 		
 		var operations = [];
 		
-		$(".dataset-operations-row .dataset-cell").each(function(i,v) {
+		$(".dataset-operation-row .dataset-cell").each(function(i,v) {
 			
 			var operation = $(this).find(".selectpicker").val();
 			
 			operations.push(operation);
 			
 		});
-		
-		console.log(operations);
 		
 		var data = {
 				page:page,
