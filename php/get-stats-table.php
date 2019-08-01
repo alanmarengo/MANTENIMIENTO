@@ -96,9 +96,7 @@ if ($no_op) {
 		$col = explode(",",$colstr);
 		$colType = explode(",",$colstrType);
 		$colstr_select = "";
-		echo "HERE";
-		echo sizeof($col);
-		var_dump($col);
+		
 		for ($i=0; $i<sizeof($col); $i++) {
 			
 			$colstr_select .= "\"" . $col[$i] . "\"::" . $colType[$i] . ",";
