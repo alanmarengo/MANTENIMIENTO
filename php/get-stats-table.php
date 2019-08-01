@@ -85,11 +85,6 @@ $colstr_order = str_replace(","," ASC,",$colstr) . " ASC";
 //$colstr_order = substr($colstr_order,0,strlen($colstr)-1);
 $colstr_order = " ORDER BY " . $colstr_order;
 
-var_dump($operations);
-var_dump($no_op);
-var_dump($colstr);
-var_dump($colstrType);
-
 if ($no_op) {
 	
 	if ($colstrType == -1) {
@@ -101,7 +96,9 @@ if ($no_op) {
 		$col = explode(",",$colstr);
 		$colType = explode(",",$colstrType);
 		$colstr_select = "";
-		
+		echo "HERE";
+		echo sizeof($col);
+		var_dump($col);
 		for ($i=0; $i<sizeof($col); $i++) {
 			
 			$colstr_select .= "\"" . $col[$i] . "\"::" . $colType[$i] . ",";
