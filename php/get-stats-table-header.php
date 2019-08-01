@@ -58,7 +58,7 @@ $rquery_string = $data["query"];
 				}
 				
 				array_push($query_string_a,"SELECT DISTINCT " . $colname. " FROM ($rquery_string) AS sub");
-				array_push($coltypes,$coltype);
+				array_push($coltypes,$type);
 				array_push($col,$colname);
 				
 				?>
