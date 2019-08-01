@@ -68,7 +68,7 @@ if ($filter_str == "") {
 	$new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub WHERE $filter_str $colstr_order";
 	
 }
-echo $new_query_string;
+
 ?>
 	
 <div class="dataset">
