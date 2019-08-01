@@ -41,9 +41,9 @@ $rquery_string = $data["query"];
 			//if (!in_array($colname,$bannedCols)) {
 				
 				
-				$query_test = pg_query($conn,"SELECT $colname FROM ($rquery_string) AS sub LIMIT 1");
+				$query_test = pg_query($conn,"SELECT \"$colname\",pg_typeof(\"$colname\") FROM ($rquery_string) AS sub LIMIT 1");
 				$coltype = pg_field_type($query_test,0);
-				echo "SELECT $colname FROM ($rquery_string) AS sub LIMIT 1 :: " . $coltype . "<br>";
+				
 				array_push($query_string_a,"SELECT DISTINCT " . $colname. " FROM ($rquery_string) AS sub");
 				array_push($coltypes,$coltype);
 				array_push($col,$colname);
