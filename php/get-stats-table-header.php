@@ -55,7 +55,7 @@ $rquery_string = $data["query"];
 					
 				}else{
 					
-					$type = "bigint";
+					$type = $coltype;
 					
 				}
 				
