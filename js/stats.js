@@ -161,7 +161,7 @@ function ol_stats() {
 				colstr:colstr,
 				filters:filters
 			},
-			type:"GET",
+			type:"POST",
 			url:"./php/get-stats-table.php",
 			success:function(d){}
 			
