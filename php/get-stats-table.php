@@ -44,16 +44,8 @@ if ($filters != -1) {
 	
 }
 
-if ($filter_str == "") {
+$query_string = "SELECT * FROM mod_estadistica.get_dt_from($dt_id,'$dt_variables','$dt_cruce') AS query";
 
-	$query_string = "SELECT * FROM mod_estadistica.get_dt_from($dt_id,'$dt_variables','$dt_cruce') AS query";
-
-}else{
-	
-	$query_string = "SELECT * FROM mod_estadistica.get_dt_from($dt_id,'$dt_variables','$dt_cruce') WHERE $filter_str AS query";
-	
-}
-echo $query_string;
 $query = pg_query($conn,$query_string);
 
 $data = pg_fetch_assoc($query);
@@ -66,7 +58,16 @@ $colstr = "\"" . implode("\",\"",explode(",",$colstr)) . "\"";
 $colstr_order = str_replace(","," ASC,",$colstr);
 $colstr_order = substr($colstr_order,0,strlen($colstr)-1) ."\" ASC";;
 
-$new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub ORDER BY " . $colstr_order;
+
+if ($filter_str == "") {
+
+	$new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub ORDER BY " . $colstr_order;
+
+}else{
+	
+	$new_query_string = "SELECT $colstr_select FROM ($rquery_string) WHERE $filter_str AS sub ORDER BY " . $colstr_order;
+	
+}
 
 ?>
 	
