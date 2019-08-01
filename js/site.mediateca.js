@@ -498,11 +498,11 @@ $(document).ready(function() {
     function fichaRender() {
         let htmlLinkVisor = '';
         if (model.ficha.linkvisor != '')
-            htmlLinkVisor = `<a href="${model.ficha.linkvisor}" target="_blank" class="btn btn-warning">Visualizar</a>`;
+            htmlLinkVisor = `<a href="${model.ficha.linkvisor}" target="_blank" class="btn btn-xs btn-warning">Visualizar</a>`;
 
         let htmlLinkDescarga = '';
         if (model.ficha.linkdescarga != '' && model.ficha.linkdescarga != model.ficha.linkvisor)
-            htmlLinkDescarga = `<a href="${model.ficha.linkdescarga}" target="_blank" class="btn btn-warning">Descargar</a>`;
+            htmlLinkDescarga = `<a href="${model.ficha.linkdescarga}" target="_blank" class="btn btn-xs btn-warning">Descargar</a>`;
 
         let html = '';
         html += `
@@ -522,10 +522,10 @@ $(document).ready(function() {
         $.each(model.data.docs, function(index, doc) {
             html += `
                 <div class="doc row" data-id="${doc.id}" data-origen="${doc.origen_id}">
-                    <div class="col-3">
+                    <div class="col-3" style="padding-right: 0px;">
                         <img class="doc-preview" src="${doc.link_preview}" />
                     </div>
-                    <div class="col-9">
+                    <div class="col-9" style="margin-left: 0px;">
                         <div class="doc-title">
                             <img class="doc-icon" src="./images/icon-pdf-file.png" />
                             ${doc.title}
@@ -563,7 +563,7 @@ $(document).ready(function() {
                         cursor: pointer;                    
                     ">
                     </div>
-                    <div style="font-size: .6em; padding: 4px 0px 4px; min-height: 70px;">
+                    <div style="font-size: .8em; padding: 4px 0px 4px; min-height: 70px;">
                         ${item.title.substr(0, 40)}<br />
                         ${item.autor.substr(0, 40)}<br />
                         ${item.tema.substr(0, 40)}<br />

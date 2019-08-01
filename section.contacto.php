@@ -25,7 +25,7 @@
                         <div class="form-group">
                             <textarea type="text" class="form-control" placeholder="" rows="6"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-lg">ENVIAR</button>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
                     </div>
                 </div>
             </form>
