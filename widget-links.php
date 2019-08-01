@@ -14,7 +14,7 @@
 	</a>
 </div>
 <div class="widget-link" style="background-color:#310133; right:0px; top:320px;">
-	<a href="#">
+	<a href="./estadisticas.php">
 		<img src="./images/icono_estadisticas.png" />
 	</a>
 </div>
