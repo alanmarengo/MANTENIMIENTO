@@ -57,15 +57,15 @@ $colstr = "\"" . implode("\",\"",explode(",",$colstr)) . "\"";
 
 $colstr_order = str_replace(","," ASC,",$colstr);
 $colstr_order = substr($colstr_order,0,strlen($colstr)-1) ."\" ASC";;
-
+$colstr_order = " ORDER BY " . $colstr_order;
 
 if ($filter_str == "") {
 
-	$new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub ORDER BY " . $colstr_order;
+	$new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub" . $colstr_order;
 
 }else{
 	
-	$new_query_string = "SELECT $colstr_select FROM ($rquery_string) WHERE $filter_str AS sub ORDER BY " . $colstr_order;
+	$new_query_string = "SELECT $colstr_select FROM ($rquery_string) WHERE $filter_str AS sub" . $colstr_order;
 	
 }
 
