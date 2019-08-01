@@ -131,7 +131,7 @@ if ($filter_str == "") {
 }else{
 	
 	$new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub WHERE $filter_str $group_by_str $colstr_order";
-	$new_query_string_show = "SELECT $colstr_select FROM (QUERY_ORIGINAL) AS sub WHERE $filter_str $group_by_str $colstr_order";
+	$new_query_string_show = "SELECT $colstr_select FROM (QUERY_ORIGINAL) AS sub WHERE $filter_str $colstr_order";
 	//$new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub $group_by_str HAVING $filter_str $colstr_order";
 	
 }
