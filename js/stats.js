@@ -170,7 +170,7 @@ function ol_stats() {
 			success:function(d){}
 			
 		});
-		
+		alert(req.responseText);
 		document.getElementById("dataset-content").innerHTML = req.responseText;
 		
 		this.resetSelects();
