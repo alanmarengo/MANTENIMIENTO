@@ -51,7 +51,7 @@ $new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub ORDER BY
 			
 			?>
 			
-			<div class="dataset-cell dataset-cell-header">
+			<div class="dataset-cell dataset-cell-header" data-col-index="<?php echo $i; ?>">
 				<span><?php echo $r[$col[$i]]; ?></span>
 			</div>
 			
