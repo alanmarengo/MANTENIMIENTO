@@ -134,6 +134,7 @@ function ol_stats() {
 		var dt_variables = $("#frm-dt #dt_v").val();
 		var dt_cruce = $("#frm-dt #dt_c").val();
 		var colstr = $("#colstr").val();
+		var colstrType = $("#coltypestr").val();
 		
 		var filters = [];
 		
@@ -181,6 +182,7 @@ function ol_stats() {
 				dt_variables:dt_variables,
 				dt_cruce:dt_cruce,
 				colstr:colstr,
+				colstrType:colstrType,
 				filters:filters,
 				operations:operations
 			}

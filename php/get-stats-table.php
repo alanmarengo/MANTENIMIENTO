@@ -8,6 +8,12 @@ $dt_variables = $_POST["dt_variables"];
 $dt_cruce = $_POST["dt_cruce"];
 $colstr = $_POST["colstr"];
 $colstr_original = $colstr;
+
+$colstrType = -1;
+
+if (isset($_POST["colstrType"])) {
+	$colstrType = $_POST["colstrType"];
+}
 $filters = -1;
 
 if (isset($_POST["filters"])) {
@@ -72,6 +78,34 @@ $colstr = "\"" . implode("\",\"",explode(",",$colstr)) . "\"";
 $colstr_order = str_replace(","," ASC,",$colstr) . " ASC";
 //$colstr_order = substr($colstr_order,0,strlen($colstr)-1);
 $colstr_order = " ORDER BY " . $colstr_order;
+
+if ($operations == -1) {
+	
+	if ($colstrType == -1) {
+	
+		$colstr_select = "\"" . implode("\"::TEXT,\"",explode(",",$colstr)) . "\"::TEXT";
+	
+	}else{
+		
+		$col = explode(",",$colstr);
+		$colType = explode(",",$colstrType);
+		$colstr_select = "";
+		
+		for ($i=0; $i<sizeof($col); $i++) {
+			
+			$colstr_select .= "\"" . $col[$i] . "\":" . $colType[$i] . ",";
+			
+		}
+		
+		$colstr_select = substr($str,0,strlen($str)-1);
+		
+	}
+	
+}else{
+	
+	
+	
+}
 
 if ($filter_str == "") {
 
