@@ -161,7 +161,7 @@ function ol_stats() {
 				colstr:colstr,
 				filters:filters
 			},
-			type:"POST",
+			type:"GET",
 			url:"./php/get-stats-table.php",
 			success:function(d){}
 			
@@ -265,8 +265,16 @@ function ol_stats() {
 		$("#inp_dt_id").val(dt_id);
 		$("#inp_dt_variables").val(dt_variables);
 		$("#inp_dt_cruce").val(dt_cruce);
-
-		document.getElementById("dt_form").submit();
+		
+		var flink = "./estadisticas-vista.php?dt_id="+dt_id+"&dt_v="+dt_variables+"&dt_c="+dt_cruce;
+		
+		var flinka = document.createElement("a");
+			flinka.setAttribute("href",flink);
+			
+		document.body.appendChild(flinka);
+		flinka.click();
+		
+		$(flinka).remove();
 
 	}
 		
