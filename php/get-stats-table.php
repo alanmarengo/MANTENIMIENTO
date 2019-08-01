@@ -44,9 +44,15 @@ if ($filters != -1) {
 	
 }
 
-echo $filter_str;
+if ($filter_str == "") {
 
-$query_string = "SELECT * FROM mod_estadistica.get_dt_from($dt_id,'$dt_variables','$dt_cruce') AS query";
+	$query_string = "SELECT * FROM mod_estadistica.get_dt_from($dt_id,'$dt_variables','$dt_cruce') AS query";
+
+}else{
+	
+	$query_string = "SELECT * FROM mod_estadistica.get_dt_from($dt_id,'$dt_variables','$dt_cruce') WHERE $filter_str AS query";
+	
+}
 
 $query = pg_query($conn,$query_string);
 
