@@ -126,15 +126,17 @@ $group_by_str = " GROUP BY " . $colstr . " ";
 if ($filter_str == "") {
 
 	$new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub $colstr_order";
+	$new_query_string_show = "SELECT $colstr_select FROM (QUERY ORIGINAL) AS sub $colstr_order";
 
 }else{
 	
-	//$new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub WHERE $filter_str $group_by_str $colstr_order";
-	$new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub $group_by_str HAVING $filter_str $colstr_order";
+	$new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub WHERE $filter_str $group_by_str $colstr_order";
+	$new_query_string_show = "SELECT $colstr_select FROM (QUERY_ORIGINAL) AS sub WHERE $filter_str $group_by_str $colstr_order";
+	//$new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub $group_by_str HAVING $filter_str $colstr_order";
 	
 }
 
-echo $new_query_string;
+echo $new_query_string_show;
 
 ?>
 	
