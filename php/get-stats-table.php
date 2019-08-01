@@ -101,6 +101,8 @@ if ($operations == -1) {
 		
 	}
 	
+	echo $colstr_select;
+	
 }else{
 	
 	$col = explode(",",$colstr);
@@ -127,7 +129,7 @@ if ($filter_str == "") {
 	
 }
 
-echo $new_query_string;
+//echo $new_query_string;
 
 ?>
 	
