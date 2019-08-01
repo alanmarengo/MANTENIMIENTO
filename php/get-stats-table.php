@@ -53,7 +53,7 @@ if ($filter_str == "") {
 	$query_string = "SELECT * FROM mod_estadistica.get_dt_from($dt_id,'$dt_variables','$dt_cruce') WHERE $filter_str AS query";
 	
 }
-
+echo $query_string;
 $query = pg_query($conn,$query_string);
 
 $data = pg_fetch_assoc($query);
