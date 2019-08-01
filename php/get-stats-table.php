@@ -34,13 +34,13 @@ if ($filters != -1) {
 				
 			}
 			
-			$filter_str .= $filters[$i]["colname"] . " " . $filters[$i]["filtertype"] . " " . $slashes . $filters[$i]["filterval"] . $slashes . " AND";
+			$filter_str .= $filters[$i]["colname"] . " " . $filters[$i]["filtertype"] . " " . $slashes . $filters[$i]["filterval"] . $slashes . " AND ";
 			
 		}		
 	
 	}
 	
-	$filter_str = substr($filter_str,0,strlen($filter_str)-4);
+	$filter_str = substr($filter_str,0,strlen($filter_str)-5);
 	
 }
 
