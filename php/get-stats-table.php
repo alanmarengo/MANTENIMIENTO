@@ -99,7 +99,7 @@ if ($no_op) {
 		
 		for ($i=0; $i<sizeof($col); $i++) {
 			
-			$colstr_select .= "\"" . $col[$i] . "\"::" . $colType[$i] . ",";
+			$colstr_select .= $col[$i] . "::" . $colType[$i] . ",";
 			
 		}
 		echo $colstr_select;
