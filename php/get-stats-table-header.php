@@ -147,23 +147,44 @@ $rquery_string = $data["query"];
 	
 	for ($i=0; $i<sizeof($col); $i++) {
 		
-	?>
+		if ($coltypes[$i] == "text") {
+		
+	?>	
+	
 		<div class="dataset-cell"
 					data-col-index="<?php echo $i; ?>" 
 					data-col-name="<?php echo $col[$i]; ?>"
 					data-col-type="<?php echo $coltypes[$i]; ?>">>
 			<select class="selectpicker operation-combo" tabindex="-98">
 				<option value="-1">OPERACIONES</option>
-				<option value="1">SUMA</option>
-				<option value="2">PROMEDIO</option>
-				<option value="3">MIN</option>
-				<option value="4">MAX</option>
-				<option value="5">CUENTA</option>
+				<option value="MIN">MIN</option>
+				<option value="MAX">MAX</option>
+			</select>
+		</div>
+	
+	<?php		
+	
+		}else{
+		
+	?>
+	
+		<div class="dataset-cell"
+					data-col-index="<?php echo $i; ?>" 
+					data-col-name="<?php echo $col[$i]; ?>"
+					data-col-type="<?php echo $coltypes[$i]; ?>">>
+			<select class="selectpicker operation-combo" tabindex="-98">
+				<option value="-1">OPERACIONES</option>
+				<option value="SUM">SUMA</option>
+				<option value="AVERAGE">PROMEDIO</option>
+				<option value="MIN">MIN</option>
+				<option value="MAX">MAX</option>
+				<option value="COUNT">CUENTA</option>
 			</select>
 		</div>
 			
-	
-	<?php		
+	<?php
+			
+		}
 	
 	}
 

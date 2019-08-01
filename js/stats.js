@@ -158,6 +158,28 @@ function ol_stats() {
 			
 		});
 		
+		var operations = [];
+		
+		$(".dataset-operations-row .dataset-cell").each(function(i,v) {
+			
+			var colname = $(this).attr("data-col-name");
+			var coltype = $(this).attr("data-col-type");
+			var filtertype = $(this).find(".selectpicker").val();
+			var filterval = $(this).find(".col-filter").val();
+			
+			var column = {
+				
+				colname:colname,
+				coltype:coltype,
+				filtertype:filtertype,
+				filterval:filterval
+				
+			}
+			
+			filters.push(column);
+			
+		});
+		
 		var data = {
 				page:page,
 				dt_id:dt_id,
