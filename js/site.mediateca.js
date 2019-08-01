@@ -61,7 +61,8 @@ $(document).ready(function() {
 
         collapseAllGroups();
         group.collapsed = collapsed;
-        groupsTitleRender();
+        filtersRender();
+        //groupsTitleRender();
     });
 
     // ORDEN
@@ -94,7 +95,7 @@ $(document).ready(function() {
             model.ra = 1;
 
         filtersRender();
-        dataLoad()
+        dataLoad();
     });
 
     // CLICK EN DOC PARA POPUP FICHA
@@ -364,8 +365,12 @@ $(document).ready(function() {
                 html += `
                     <div class="card">
                         <div class="card-header" id="group-${gindex}-header">
-                            <button id="group-${gindex}-title" class="group-title btn btn-link" type="button" data-toggle="collapse"
-                                data-target="#group-${gindex}-body" data-group="${gindex}">
+                            <button 
+                                id="group-${gindex}-title" 
+                                class="group-title btn btn-link" type="button" 
+                                data-target="#group-${gindex}-body" 
+                                data-group="${gindex}"
+                                >
                             </button>
                         </div>
 
@@ -671,14 +676,16 @@ $(document).ready(function() {
 
     function groupsTitleRender() {
         $.each(model.filters.groups, function(gindex, group) {
-            let html = '';
-
-            if (group.collapsed) {
-                html = group.title + '(' + qtyItemsNotChecked(group) + ') <span><i class="fa fa-plus-circle"></i></span>';
-            } else {
-                html = group.title + '(' + qtyItemsNotChecked(group) + ') <span><i class="fa fa-minus-circle"></i></span>';
-            }
-
+            let html = `
+                <div class="row">
+                    <div class="col-md-10">
+                        ${group.title} (${qtyItemsNotChecked(group)})
+                    </div>
+                    <div class="col-md-2 text-right" style="padding-right: 6px;">
+                        ${group.collapsed ? '<i class="fa fa-plus-circle"></i>' : '<i class="fa fa-minus-circle"></i>'}
+                    </div>
+                </div>
+            `;
             $(`#group-${gindex}-title`).html(html);
         });
     }
@@ -736,7 +743,7 @@ $(document).ready(function() {
             {
                 title: 'Subtema',
                 collapsed: true,
-                visible: false,
+                visible: true,
                 items: []
             },
         ];

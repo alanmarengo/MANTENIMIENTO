@@ -38,7 +38,7 @@ $rquery_string = $data["query"];
 		$i=0;
 		foreach($r as $colname => $val) {
 			
-			//if (!in_array($colname,$bannedCols)) {
+			if (!in_array($colname,$bannedCols)) {
 				
 				
 				$query_test = pg_query($conn,"SELECT \"$colname\",pg_typeof(\"$colname\") as coltype FROM ($rquery_string) AS sub LIMIT 1");
@@ -74,7 +74,7 @@ $rquery_string = $data["query"];
 				
 				<?php
 			
-			//}
+			}
 			
 			$i++;
 			

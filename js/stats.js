@@ -128,6 +128,28 @@ function ol_stats() {
 		
 		var colstr = document.getElementById("colstr").value;
 		
+		var filters = [];
+		
+		$(".dataset-filter-row .dataset-cell").each(function(i,v) {
+			
+			var colname = $(this).attr("data-col-name");
+			var coltype = $(this).attr("data-col-type");
+			var filtertype = $(this).find(".selectpicker").val();
+			var filterval = $(this).find(".col-filter").val();
+			
+			var column = {
+				
+				colname:colname,
+				coltype:coltype,
+				filtertype:filtertype,
+				filterval:filterval
+				
+			}
+			
+			filters.push(column);
+			
+		});
+		
 		var req = $.ajax({
 			
 			async:false,
@@ -136,7 +158,8 @@ function ol_stats() {
 				dt_id:dt_id,
 				dt_variables:dt_variables,
 				dt_cruce:dt_cruce,
-				colstr:colstr
+				colstr:colstr,
+				filters:filters
 			},
 			type:"POST",
 			url:"./php/get-stats-table.php",
@@ -242,8 +265,16 @@ function ol_stats() {
 		$("#inp_dt_id").val(dt_id);
 		$("#inp_dt_variables").val(dt_variables);
 		$("#inp_dt_cruce").val(dt_cruce);
-
-		document.getElementById("dt_form").submit();
+		
+		var flink = "./estadisticas-vista.php?dt_id="+dt_id+"&dt_v="+dt_variables+"&dt_c="+dt_cruce;
+		alert(flink);
+		var flinka = document.createElement("a");
+			flinka.setAttribute("href",flink);
+			
+		document.body.appendChild(flinka);
+		flinka.click();
+		
+		$(flinka).remove();
 
 	}
 		
