@@ -35,7 +35,9 @@ $rquery_string = $data["query"];
 	$query = pg_query($conn,$rquery_string);
 	
 	while($r = pg_fetch_assoc($query)) {
+		
 		$i=0;
+		
 		foreach($r as $colname => $val) {
 			
 			if (!in_array($colname,$bannedCols)) {

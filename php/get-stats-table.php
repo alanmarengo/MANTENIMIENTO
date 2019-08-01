@@ -104,15 +104,15 @@ if ($no_op) {
 		
 		for ($i=0; $i<sizeof($col); $i++) {
 			
-			$colstr_select .= "\"" . $col[$i] . "\":" . $colType[$i] . ",";
+			$colstr_select .= "\"" . $col[$i] . "\"::" . $colType[$i] . ",";
 			
 		}
-		
-		$colstr_select = substr($str,0,strlen($str)-1);
+		echo $colstr_select;
+		//$colstr_select = substr($str,0,strlen($str)-1);
 		
 	}
 	
-	echo $colstr_select;
+	//echo $colstr_select;
 	
 }else{
 	
