@@ -103,7 +103,17 @@ if ($operations == -1) {
 	
 }else{
 	
+	$col = explode(",",$colstr);
+	$colType = explode(",",$colstrType);
+	$colstr_select = "";
 	
+	for ($i=0; $i<sizeof($col); $i++) {
+		
+		$colstr_select .= "\"" . $col[$i] . "\":" . $colType[$i] . ",";
+		
+	}
+	
+	$colstr_select = substr($str,0,strlen($str)-1);
 	
 }
 
