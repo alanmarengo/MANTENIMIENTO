@@ -55,11 +55,10 @@ $rquery_string = $data["query"];
 $colstr_select = "\"" . implode("\"::TEXT,\"",explode(",",$colstr)) . "\"::TEXT";
 $colstr = "\"" . implode("\",\"",explode(",",$colstr)) . "\"";
 
-$colstr_order = str_replace(","," ASC,",$colstr);
+$colstr_order = str_replace(","," ASC,",$colstr) . " ASC";
 //$colstr_order = substr($colstr_order,0,strlen($colstr)-1);
 $colstr_order = " ORDER BY " . $colstr_order;
-echo $colstr . "<br><br>";
-echo $colstr_order . "<br><br>";
+
 if ($filter_str == "") {
 
 	$new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub $colstr_order";
