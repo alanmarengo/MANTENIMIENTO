@@ -103,7 +103,7 @@ if ($no_op) {
 			
 		}
 		
-		$colstr_select = substr($str,0,strlen($colstr_select)-1);
+		//$colstr_select = substr($str,0,strlen($colstr_select)-1);
 		
 	}
 	
@@ -119,7 +119,7 @@ if ($no_op) {
 		
 	}
 		
-	$colstr_select = substr($str,0,strlen($colstr_select)-1);
+	//$colstr_select = substr($str,0,strlen($colstr_select)-1);
 	
 }
 
