@@ -1,12 +1,12 @@
 <?php
 
-if (!isset($_POST["dt_id"])) { die("Invalid Token;"); }
-if (!isset($_POST["dt_variables"])) { die("Invalid Token;"); }
-if (!isset($_POST["dt_cruce"])) { die("Invalid Token;"); }
+if (!isset($_GET["dt_id"])) { die("Invalid Token;"); }
+if (!isset($_GET["dt_v"])) { die("Invalid Token;"); }
+if (!isset($_GET["dt_c"])) { die("Invalid Token;"); }
 
-$dt_id = $_POST["dt_id"];
-$dt_variables = $_POST["dt_variables"];
-$dt_cruce = $_POST["dt_cruce"];
+$dt_id = $_GET["dt_id"];
+$dt_variables = $_GET["dt_v"];
+$dt_cruce = $_GET["dt_c"];
 
 ?>
 

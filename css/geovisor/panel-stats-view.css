@@ -294,3 +294,15 @@
 	color:#31cbfd !Important;
 	
 }
+
+.col-filter {
+	
+	width:55%;
+	
+}
+
+.dataset-filter-row .dataset-cell, .dataset-operation-row .dataset-cell {
+	
+	background-color:#dff3ff;
+	
+}

@@ -38,14 +38,27 @@ $rquery_string = $data["query"];
 		$i=0;
 		foreach($r as $colname => $val) {
 			
-			//if (!in_array($colname,$bannedCols)) {
+			if (!in_array($colname,$bannedCols)) {
 				
 				
-				$query_test = pg_query($conn,"SELECT $colname FROM ($rquery_string) AS sub LIMIT 1");
-				$coltype = pg_field_type($query_test,0);
-				echo "SELECT $colname FROM ($rquery_string) AS sub LIMIT 1 :: " . $coltype . "<br>";
+				$query_test = pg_query($conn,"SELECT \"$colname\",pg_typeof(\"$colname\") as coltype FROM ($rquery_string) AS sub LIMIT 1");
+				$query_test_data = pg_fetch_assoc($query_test);
+				$coltype = $query_test_data["coltype"];
+				
+				$textTypes = array("varchar","text","unknown","character varying");
+				
+				if (in_array($coltype,$textTypes)) {
+					
+					$type = "text";
+					
+				}else{
+					
+					$type = "number";
+					
+				}
+				
 				array_push($query_string_a,"SELECT DISTINCT " . $colname. " FROM ($rquery_string) AS sub");
-				array_push($coltypes,$coltype);
+				array_push($coltypes,$type);
 				array_push($col,$colname);
 				
 				?>
@@ -61,7 +74,7 @@ $rquery_string = $data["query"];
 				
 				<?php
 			
-			//}
+			}
 			
 			$i++;
 			
@@ -94,18 +107,30 @@ $rquery_string = $data["query"];
 				
 				<?php
 				
-				while($r = pg_fetch_assoc($query)) {
+				if ($coltypes[$i] == "text") {					
 					
 				?>
-					<option value="<?php echo $r[$col[$i]]; ?>"><?php echo $r[$col[$i]]; ?></option>
+					<option value="=">=</option>
 					
 				<?php
+					
+				}else{					
+					
+				?>
+				
+					<option value="=">=</option>
+					<option value=">">></option>
+					<option value="<"><</option>
+					
+				<?php
+					
 					
 				}
 				
 				?>
 				
 			</select>
+			<input type="text" class="col-filter">
 		</div>
 			
 		<?php

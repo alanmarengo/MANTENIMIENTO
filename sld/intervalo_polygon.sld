@@ -98,7 +98,7 @@
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>_valor_</ogc:PropertyName>
-                <ogc:Literal>[4_D</ogc:Literal>
+                <ogc:Literal>[4_D]</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>_valor_</ogc:PropertyName>
