@@ -85,6 +85,8 @@ $colstr_order = str_replace(","," ASC,",$colstr) . " ASC";
 //$colstr_order = substr($colstr_order,0,strlen($colstr)-1);
 $colstr_order = " ORDER BY " . $colstr_order;
 
+var_dump($operations);
+
 if ($no_op) {
 	
 	if ($colstrType == -1) {
