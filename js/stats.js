@@ -129,7 +129,7 @@ function ol_stats() {
 		
 	}
 	
-	this.view.getTable = function(page) {
+	this.view.getTable = function(page,bypassOp) {
 		
 		var dt_id = $("#frm-dt #dt_id").val();
 		var dt_variables = $("#frm-dt #dt_v").val();
@@ -186,7 +186,7 @@ function ol_stats() {
 				operations:operations
 			}
 		
-		if (!no_op) {
+		if ((!no_op) || (bypassOp)) {
 		
 			var req = $.ajax({
 				
@@ -200,7 +200,7 @@ function ol_stats() {
 			
 			document.getElementById("dataset-content").innerHTML = req.responseText;
 			
-			this.resetSelects();
+			//this.resetSelects();
 
 			$(".page-item").each(function(i,v) {
 				
@@ -208,7 +208,7 @@ function ol_stats() {
 					
 					var pageitem = v.getAttribute("data-page");
 					
-					this.getTable(pageitem);
+					this.getTable(pageitem,false);
 					
 				}.bind(this));
 				

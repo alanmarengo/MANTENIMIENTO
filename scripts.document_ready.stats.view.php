@@ -6,7 +6,7 @@
 		stats.view.start();
 		stats.view.resetSelects();
 		stats.view.getTableHeader(1);
-		stats.view.getTable(1);
+		stats.view.getTable(1,true);
 		
 		flotant = new Jump.flotant();
 		flotant.prepareToggle(".navmenu:not(#nav-panel)");
