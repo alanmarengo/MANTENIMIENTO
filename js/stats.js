@@ -162,21 +162,9 @@ function ol_stats() {
 		
 		$(".dataset-operations-row .dataset-cell").each(function(i,v) {
 			
-			var colname = $(this).attr("data-col-name");
-			var coltype = $(this).attr("data-col-type");
-			var filtertype = $(this).find(".selectpicker").val();
-			var filterval = $(this).find(".col-filter").val();
+			var operation = $(this).find(".selectpicker").val();
 			
-			var column = {
-				
-				colname:colname,
-				coltype:coltype,
-				filtertype:filtertype,
-				filterval:filterval
-				
-			}
-			
-			filters.push(column);
+			operations.push(operation);
 			
 		});
 		
@@ -186,7 +174,8 @@ function ol_stats() {
 				dt_variables:dt_variables,
 				dt_cruce:dt_cruce,
 				colstr:colstr,
-				filters:filters
+				filters:filters,
+				operations:operations
 			}
 		
 		var req = $.ajax({

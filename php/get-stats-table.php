@@ -14,6 +14,14 @@ if (isset($_POST["filters"])) {
 	$filters = $_POST["filters"];
 }
 
+$operations = -1;
+
+if (isset($_POST["operations"])) {
+	$operations = $_POST["operations"];
+}
+
+var_dump($operations);
+
 $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 	
 $conn = pg_connect($string_conn);
