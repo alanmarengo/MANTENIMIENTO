@@ -47,8 +47,7 @@ function ol_stats() {
 			
 			}
 			
-			this.getTable(currentPage);			
-			this.resetSelects();
+			this.getTable(currentPage);
 			
 		}.bind(this));	
 		
