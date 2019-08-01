@@ -123,6 +123,8 @@ if ($no_op) {
 	
 	$colstr_select = substr($str,0,strlen($str)-1);
 	
+	echo $colstr_select;
+	
 }
 
 if ($filter_str == "") {
