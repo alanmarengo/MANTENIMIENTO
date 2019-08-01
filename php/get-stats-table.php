@@ -31,10 +31,16 @@ if ($filters != -1) {
 			if ($filters[$i]["coltype"] == "text") {
 	
 				$slashes = "\"";
+				$filter_str .= "\"".$filters[$i]["colname"]."\" ILIKE '%" . $filters[$i]["filterval"] . "%' AND ";
+				
+			}else{
+				
+				$slashes = "";
+				$filter_str .= "\"".$filters[$i]["colname"]."\" " . $filters[$i]["filtertype"] . " " . $slashes . $filters[$i]["filterval"] . $slashes . " AND ";
 				
 			}
 			
-			$filter_str .= "\"".$filters[$i]["colname"]."\" " . $filters[$i]["filtertype"] . " " . $slashes . $filters[$i]["filterval"] . $slashes . " AND ";
+			
 			
 		}		
 	

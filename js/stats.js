@@ -167,8 +167,6 @@ function ol_stats() {
 				filters:filters
 			}
 		
-		console.log(data);
-		
 		var req = $.ajax({
 			
 			async:false,
@@ -203,6 +201,11 @@ function ol_stats() {
 		$(".dataset-cell").css("width",cellWidth+"px");
 		$(".dataset-filter-row .dropdown-toggle").css("width",50+"px");
 		$(".dataset-operation-row .dropdown-toggle").css("width",cellWidth+"px");
+		$(".col-filter").on("keydown",function() {
+			
+			$("#update-view").prop("disabled",false);
+			
+		});
 		
 	}
 	
