@@ -6,6 +6,7 @@ $page = $_POST["page"];
 $dt_id = $_POST["dt_id"];
 $dt_variables = $_POST["dt_variables"];
 $dt_cruce = $_POST["dt_cruce"];
+$operations = $_POST["operations"];
 $colstr = $_POST["colstr"];
 $colstr_original = $colstr;
 
@@ -19,14 +20,19 @@ $filters = -1;
 if (isset($_POST["filters"])) {
 	$filters = $_POST["filters"];
 }
-
-$operations = -1;
-
-if (isset($_POST["operations"])) {
-	$operations = $_POST["operations"];
+	
+$no_op = false;
+	
+for ($i=0; $i<sizeof($operations); $i++) {
+	
+	if ($operations[$i] == -1) {
+		
+		$no_op = true;
+		break;
+		
+	}
+	
 }
-
-var_dump($operations);
 
 $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 	
@@ -79,7 +85,7 @@ $colstr_order = str_replace(","," ASC,",$colstr) . " ASC";
 //$colstr_order = substr($colstr_order,0,strlen($colstr)-1);
 $colstr_order = " ORDER BY " . $colstr_order;
 
-if ($operations == -1) {
+if ($no_op) {
 	
 	if ($colstrType == -1) {
 	
