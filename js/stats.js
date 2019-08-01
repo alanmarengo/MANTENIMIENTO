@@ -129,8 +129,7 @@ function ol_stats() {
 		var dt_id = $("#frm-dt #dt_id").val();
 		var dt_variables = $("#frm-dt #dt_v").val();
 		var dt_cruce = $("#frm-dt #dt_c").val();
-		
-		var colstr = document.getElementById("colstr").value;
+		var colstr = $("#colstr").val();
 		
 		var filters = [];
 		
