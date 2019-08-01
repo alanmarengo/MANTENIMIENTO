@@ -61,15 +61,13 @@ $colstr_order = " ORDER BY " . $colstr_order;
 
 if ($filter_str == "") {
 
-	$new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub";
+	$new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub $colstr_order";
 
 }else{
 	
-	$new_query_string = "SELECT $colstr_select FROM ($rquery_string) WHERE $filter_str AS sub";
+	$new_query_string = "SELECT $colstr_select FROM ($rquery_string) WHERE $filter_str AS sub $colstr_order";
 	
 }
-
-echo $new_query_string;
 
 ?>
 	
