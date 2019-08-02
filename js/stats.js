@@ -107,8 +107,6 @@ function ol_stats() {
 			
 			if (index != undefined) {
 				
-				alert("defined");
-				
 				for (var i=0; i<3; i++) {
 					
 					if (i!=index) {
@@ -119,10 +117,6 @@ function ol_stats() {
 					
 				}
 			
-			}else{
-				
-				alert("undefined");
-				
 			}
 			
 		});
