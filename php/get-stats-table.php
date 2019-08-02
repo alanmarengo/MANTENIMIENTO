@@ -163,7 +163,7 @@ if ($filter_str == "") {
 	
 }
 
-echo $new_query_string;
+//echo $new_query_string;
 
 ?>
 	
