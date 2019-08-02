@@ -102,16 +102,24 @@ function ol_stats() {
 		$("#group-combo-view").on("changed.bs.select",function(e, clickedIndex, newValue, oldValue) {
 			
 			var index = $('option:selected', this).attr("data-col-index");
-			alert(index);
+			
 			$(".dataset-cell-modal").remove();
 			
-			for (var i=0; i<3; i++) {
-				
-				if (i!=index) {
+			if (index != 'undefined') {
+			
+				for (var i=0; i<3; i++) {
 					
-					$(".dataset-cell[data-col-index="+i+"]").append($("<div></div>").attr("class","dataset-cell-modal"));
+					if (i!=index) {
+						
+						$(".dataset-cell[data-col-index="+i+"]").append($("<div></div>").attr("class","dataset-cell-modal"));
+						
+					}
 					
 				}
+			
+			}alert{
+				
+				alert("defined");
 				
 			}
 			
