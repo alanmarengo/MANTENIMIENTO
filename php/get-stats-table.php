@@ -49,7 +49,7 @@ if (($groupby_val == 2) || ($groupby_val == 3)) {
 	
 	if (($groupby_val != 1) && ($groupby_val != -1)) {
 		
-		$group = " GROUP BY $groupbycol";
+		$group = " GROUP BY $groupby_val";
 		
 	}
 	
@@ -165,7 +165,8 @@ if ($filter_str == "") {
 
 echo $new_query_string;
 
-echo "GROUP " . $groupby_val;
+echo "GROUP " . $group;
+echo "GROUPBYVAL " . $groupby_val;
 
 ?>
 	
