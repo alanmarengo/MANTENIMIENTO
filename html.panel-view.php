@@ -4,7 +4,7 @@
 		
 		<div class="dataset-agroup">
 		
-			<select class="selectpicker" class="group-combo-view">
+			<select class="selectpicker" id="group-combo-view" class="group-combo-view">
 				<option value="1">Agrupar por Todos</option>
 				<option value="2">Agrupar Todo</option>
 				<option value="3">No Agrupar</option>
