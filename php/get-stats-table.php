@@ -40,6 +40,14 @@ if (($groupindex == 2) || ($groupindex == 3)) {
 	
 	$no_op = true;
 	
+}else{
+	
+	if ($groupindex != 1) {
+		
+		
+		
+	}
+	
 }
 
 $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
@@ -138,7 +146,7 @@ if ($groupindex == 2) {
 	$distinct = " DISTINCT";
 	
 }
-echo "iN: " . $groupindex;
+
 if ($filter_str == "") {
 
 	$new_query_string = "SELECT$distinct $colstr_select FROM ($rquery_string) AS sub $colstr_order";
@@ -149,7 +157,6 @@ if ($filter_str == "") {
 	//$new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub $group_by_str HAVING $filter_str $colstr_order";
 	
 }
-echo $new_query_string;
 
 ?>
 	

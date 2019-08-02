@@ -119,6 +119,10 @@ function ol_stats() {
 					}
 					
 				}
+				
+				$(this).attr("data-group-column","1");
+				$(this).attr("data-group-column-index",index);
+				$(this).attr("data-group-column-val",val);				
 			
 			}
 			
