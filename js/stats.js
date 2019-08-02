@@ -137,7 +137,7 @@ function ol_stats() {
 		var colgroup = $("#colgroup").val();
 			colgroup = colgroup.split(",");
 			
-		var combo = document.getElementById("group-combo");
+		var combo = document.getElementById("group-combo-view");
 		
 		for (var i=0; i<colgroup.length; i++) {
 			
