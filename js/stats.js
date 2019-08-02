@@ -98,14 +98,22 @@ function ol_stats() {
 			
 		});
 		
-		//$("#group-combo-view").each(function(i,v) {	
+		
 		$("#group-combo-view").on("changed.bs.select",function(e, clickedIndex, newValue, oldValue) {
 			
-			//$(v).on("changed.bs.select",function(e, clickedIndex, newValue, oldValue) {
+			var index = $('option:selected', this).attr("data-col-index");
 			
-				alert($('option:selected', this).attr("data-col-index"));
+			$(".dataset-cell-modal").remove();
 			
-			//});
+			for (var i=0; i<3; i++) {
+				
+				if (i!=index) {
+					
+					$(".dataset-cell[data-col-index="+i+"]").append($("<div></div>").attr("class","dataset-cell-modal"));
+					
+				}
+				
+			}
 			
 		});
 		
