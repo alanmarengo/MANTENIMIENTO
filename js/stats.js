@@ -195,10 +195,11 @@ function ol_stats() {
 		var colstrType = $("#coltypestr").val();
 		var colgroup = $("#colgroup").val();
 		var groupbycol = $("#group-combo-view").attr("data-group-column");
+		var groupby_val = $("#group-combo-view").val();
 		var groupbycol_index = $("#group-combo-view").attr("data-group-column-index");
 		var groupbycol_name = $("#group-combo-view").attr("data-group-column-index");
-		alert(groupbycol_index);
-		if ((groupbycol_index == 2) || (groupbycol_index == 3)) {
+		
+		if ((groupby_val == 2) || (groupby_val == 3)) {
 			
 			bypassOp = true;
 			
