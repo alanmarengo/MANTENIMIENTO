@@ -36,6 +36,8 @@ for ($i=0; $i<sizeof($operations); $i++) {
 	
 }
 
+$group = "";
+
 if (($groupindex == 2) || ($groupindex == 3)) {
 	
 	$no_op = true;
@@ -44,7 +46,7 @@ if (($groupindex == 2) || ($groupindex == 3)) {
 	
 	if ($groupindex != 1) {
 		
-		
+		$group = " GROUP BY $colgroup";
 		
 	}
 	
@@ -149,11 +151,11 @@ if ($groupindex == 2) {
 
 if ($filter_str == "") {
 
-	$new_query_string = "SELECT$distinct $colstr_select FROM ($rquery_string) AS sub $colstr_order";
+	$new_query_string = "SELECT$distinct $colstr_select FROM ($rquery_string) AS sub $colstr_order $group";
 
 }else{
 	
-	$new_query_string = "SELECT$distinct $colstr_select FROM ($rquery_string) AS sub WHERE $filter_str $colstr_order";
+	$new_query_string = "SELECT$distinct $colstr_select FROM ($rquery_string) AS sub WHERE $filter_str $group $colstr_order";
 	//$new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub $group_by_str HAVING $filter_str $colstr_order";
 	
 }
