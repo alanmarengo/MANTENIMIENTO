@@ -194,11 +194,11 @@ function ol_stats() {
 		var colstr = $("#colstr").val();
 		var colstrType = $("#coltypestr").val();
 		var colgroup = $("#colgroup").val();
-		var groupindex = $("#group-combo-view").attr("data-group-column");
-		var groupbycol = $("#group-combo-view").val();
-		var groupbycolindex = $("#group-combo-view").attr("data-group-column-index");
+		var groupbycol = $("#group-combo-view").attr("data-group-column");
+		var groupbycol_index = $("#group-combo-view").attr("data-group-column-index");
+		var groupbycol_name = $("#group-combo-view").attr("data-group-column-index");
 		
-		if ((groupindex == 2) || (groupindex == 3)) {
+		if ((groupbycol_index == 2) || (groupbycol_index == 3)) {
 			
 			bypassOp = true;
 			
@@ -238,7 +238,7 @@ function ol_stats() {
 			
 			if (groupbycol == 1) {
 				
-				if (groupbycolindex == indexCell) {
+				if (groupbycol_index == indexCell) {
 					
 					if (operation == -1) {
 						
