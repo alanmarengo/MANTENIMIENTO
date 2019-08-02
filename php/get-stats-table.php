@@ -10,7 +10,8 @@ $operations = $_POST["operations"];
 $colstr = $_POST["colstr"];
 $colgroup = $_POST["colgroup"];
 $groupbycol = $_POST["groupbycol"];
-$groupindex = $_POST["groupindex"];
+$groupindex = $_POST["groupbycol_index"];
+$groupname = $_POST["groupbycol_name"];
 $colstr_original = $colstr;
 
 $colstrType = -1;
