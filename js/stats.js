@@ -195,6 +195,7 @@ function ol_stats() {
 		var colstrType = $("#coltypestr").val();
 		var colgroup = $("#colgroup").val();
 		var groupindex = $("#group-combo-view").val();
+		var groupbycol = $("#group-combo-view").attr("data-group-column");
 		
 		if ((groupindex == 2) || (groupindex == 3)) {
 			
@@ -233,6 +234,16 @@ function ol_stats() {
 			var operation = $(this).find(".selectpicker").val();
 			
 			if (operation == -1) {
+				
+				if (groupbycol == 1) {
+					
+					alert("FILTRANDO X COLUMNA");
+					
+				}else}
+				
+					alert("FILTRO GENERAL"); 
+				
+				}
 				
 				no_op = true;
 				
