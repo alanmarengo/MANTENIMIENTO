@@ -111,9 +111,8 @@ function ol_stats() {
 	
 	this.view.updateAgroupColModals = function() {
 		
-		var combo = $("#group-combo-view");
-		var index = $('option:selected', combo).attr("data-col-index");
-		var val = $(combo).val();
+		var index = $('option:selected', $("#group-combo-view")).attr("data-col-index");
+		var val = $("#group-combo-view").val();
 		
 		$(".dataset-cell-modal").remove();
 		
