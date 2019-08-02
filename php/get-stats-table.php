@@ -46,7 +46,7 @@ if (($groupindex == 2) || ($groupindex == 3)) {
 	
 }else{
 	
-	if ($groupindex != 1) {
+	if (($groupindex != 1) && ($groupindex != -1)) {
 		
 		$group = " GROUP BY $groupbycol";
 		
