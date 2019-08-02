@@ -163,6 +163,10 @@ if ($filter_str == "") {
 	
 }
 
+echo $new_query_string;
+
+echo "GROUP " . $groupby_val;
+
 ?>
 	
 <div class="dataset">
