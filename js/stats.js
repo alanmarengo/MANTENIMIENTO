@@ -280,7 +280,8 @@ function ol_stats() {
 				operations:operations,
 				colgroup:colgroup,
 				groupbycol_index:groupbycol_index,
-				groupbycol_name:groupbycol_name
+				groupbycol_name:groupbycol_name,
+				groupby_val:groupby_val
 			}
 		
 		if ((!no_op) || (bypassOp)) {

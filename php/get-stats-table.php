@@ -12,6 +12,7 @@ $colgroup = $_POST["colgroup"];
 $groupbycol = $_POST["groupbycol"];
 $groupindex = $_POST["groupbycol_index"];
 $groupname = $_POST["groupbycol_name"];
+$groupby_val = $_POST["groupby_val"];
 $colstr_original = $colstr;
 
 $colstrType = -1;
@@ -40,13 +41,13 @@ for ($i=0; $i<sizeof($operations); $i++) {
 
 $group = "";
 
-if (($groupindex == 2) || ($groupindex == 3)) {
+if (($groupby_val == 2) || ($groupby_val == 3)) {
 	
 	$no_op = true;
 	
 }else{
 	
-	if (($groupindex != 1) && ($groupindex != -1)) {
+	if (($groupby_val != 1) && ($groupby_val != -1)) {
 		
 		$group = " GROUP BY $groupbycol";
 		
