@@ -102,7 +102,7 @@ function ol_stats() {
 		$("#group-combo-view").on("changed.bs.select",function(e, clickedIndex, newValue, oldValue) {
 			
 			var index = $('option:selected', this).attr("data-col-index");
-			
+			alert(index);
 			$(".dataset-cell-modal").remove();
 			
 			for (var i=0; i<3; i++) {
