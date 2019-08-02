@@ -125,7 +125,20 @@ function ol_stats() {
 		document.getElementById("dataset-header").innerHTML = req.responseText;	
 			
 		var colgroup = $("#colgroup").val();
-		alert(colgroup);
+			colgroup = colgroup.split(",");
+			
+		var combo = document.getElementById("group-combo");
+		
+		for (var i=0; i<colgroup.length; i++) {
+			
+			var option = document.createElement("option");
+				option.value = colgroup[i];
+				option.innerHTML = colgroup[i];
+				
+			combo.appendChild(option);
+			
+		}
+			
 		this.resetSelects();
 		
 	}

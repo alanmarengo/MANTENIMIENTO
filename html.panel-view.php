@@ -4,9 +4,10 @@
 		
 		<div class="dataset-agroup">
 		
-			<select class="selectpicker">
+			<select class="selectpicker" id="group-combo">
 				<option value="1">Agrupar por Todos</option>
-				<option value="2">No Agrupar</option>
+				<option value="2">Agrupar Todo</option>
+				<option value="3">No Agrupar</option>
 			</select>
 			
 			<input type="button" value="Actualizar Vista" id="update-view" disabled="disabled">
