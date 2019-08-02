@@ -197,7 +197,7 @@ function ol_stats() {
 		var groupbycol = $("#group-combo-view").attr("data-group-column");
 		var groupbycol_index = $("#group-combo-view").attr("data-group-column-index");
 		var groupbycol_name = $("#group-combo-view").attr("data-group-column-index");
-		
+		alert(groupbycol_index);
 		if ((groupbycol_index == 2) || (groupbycol_index == 3)) {
 			
 			bypassOp = true;
