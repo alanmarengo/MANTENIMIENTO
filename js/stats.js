@@ -103,42 +103,49 @@ function ol_stats() {
 			
 			$("#update-view").prop("disabled",false);
 			
-			var index = $('option:selected', this).attr("data-col-index");
-			var val = $(this).val();
+			this.updateAgroupColModals
 			
-			$(".dataset-cell-modal").remove();
+		}.bind(this));
+		
+	}
+	
+	this.view.updateAgroupColModals = function() {
+		
+		var combo = $("#group-combo-view");
+		var index = $('option:selected', combo).attr("data-col-index");
+		var val = $(combo).val();
+		
+		$(".dataset-cell-modal").remove();
+		
+		if (index != undefined) {
 			
-			if (index != undefined) {
+			for (var i=0; i<3; i++) {
 				
-				for (var i=0; i<3; i++) {
+				if (i!=index) {
 					
-					if (i!=index) {
-						
-						$(".dataset-cell[data-col-index="+i+"]").append($("<div></div>").attr("class","dataset-cell-modal"));
-						
-					}
+					$(".dataset-cell[data-col-index="+i+"]").append($("<div></div>").attr("class","dataset-cell-modal"));
 					
 				}
 				
-				$(this).attr("data-group-column","1");
-				$(this).attr("data-group-column-index",index);
-				$(this).attr("data-group-column-val",val);				
-			
-			}else{
-				
-				$(this).attr("data-group-column","0");
-				$(this).attr("data-group-column-index","-1");
-				$(this).attr("data-group-column-val","-1");		
-				
 			}
 			
-			if ((val == 2) || (val == 3)) {
-				
-				$(".dataset-operation-row .dataset-cell").append($("<div></div>").attr("class","dataset-cell-modal"));
-				
-			}
+			$(this).attr("data-group-column","1");
+			$(this).attr("data-group-column-index",index);
+			$(this).attr("data-group-column-val",val);				
+		
+		}else{
 			
-		});
+			$(this).attr("data-group-column","0");
+			$(this).attr("data-group-column-index","-1");
+			$(this).attr("data-group-column-val","-1");		
+			
+		}
+		
+		if ((val == 2) || (val == 3)) {
+			
+			$(".dataset-operation-row .dataset-cell").append($("<div></div>").attr("class","dataset-cell-modal"));
+			
+		}
 		
 	}
 	
