@@ -278,7 +278,8 @@ function ol_stats() {
 				filters:filters,
 				operations:operations,
 				colgroup:colgroup,
-				groupindex:groupindex
+				groupindex:groupindex,
+				groupbycol:groupbycol
 			}
 		
 		if ((!no_op) || (bypassOp)) {

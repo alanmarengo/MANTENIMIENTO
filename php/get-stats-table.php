@@ -9,6 +9,7 @@ $dt_cruce = $_POST["dt_cruce"];
 $operations = $_POST["operations"];
 $colstr = $_POST["colstr"];
 $colgroup = $_POST["colgroup"];
+$groupbycol = $_POST["groupbycol"];
 $groupindex = $_POST["groupindex"];
 $colstr_original = $colstr;
 
@@ -46,7 +47,7 @@ if (($groupindex == 2) || ($groupindex == 3)) {
 	
 	if ($groupindex != 1) {
 		
-		$group = " GROUP BY $colgroup";
+		$group = " GROUP BY $groupbycol";
 		
 	}
 	
