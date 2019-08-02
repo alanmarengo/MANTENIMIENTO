@@ -101,6 +101,8 @@ function ol_stats() {
 		
 		$("#group-combo-view").on("changed.bs.select",function(e, clickedIndex, newValue, oldValue) {
 			
+			$("#update-view").prop("disabled",false);
+			
 			var index = $('option:selected', this).attr("data-col-index");
 			
 			$(".dataset-cell-modal").remove();
