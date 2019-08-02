@@ -105,8 +105,10 @@ function ol_stats() {
 			
 			$(".dataset-cell-modal").remove();
 			
-			if (index != 'undefined') {
-			
+			if (index != undefined) {
+				
+				alert("defined");
+				
 				for (var i=0; i<3; i++) {
 					
 					if (i!=index) {
@@ -119,7 +121,7 @@ function ol_stats() {
 			
 			}else{
 				
-				alert("defined");
+				alert("undefined");
 				
 			}
 			
