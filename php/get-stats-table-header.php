@@ -30,6 +30,7 @@ $rquery_string = $data["query"];
 	$query_string_a = array();
 	$col = array();
 	$coltypes = array();
+	$colgroup = array();
 	$bannedCols = array("geo_table_base","gid","geo_table_cruce","gid_cruce","cod_temp");
 	
 	$query = pg_query($conn,$rquery_string);
@@ -37,11 +38,17 @@ $rquery_string = $data["query"];
 	while($r = pg_fetch_assoc($query)) {
 		
 		$i=0;
+		$j=0;
 		
 		foreach($r as $colname => $val) {
 			
 			if (!in_array($colname,$bannedCols)) {
 				
+				if ($j<3) {					
+					
+					array_push($colgroup,$colname);
+					
+				}
 				
 				$query_test = pg_query($conn,"SELECT \"$colname\",pg_typeof(\"$colname\") as coltype FROM ($rquery_string) AS sub LIMIT 1");
 				$query_test_data = pg_fetch_assoc($query_test);
@@ -75,6 +82,8 @@ $rquery_string = $data["query"];
 				</div>
 				
 				<?php
+				
+				$j++;
 			
 			}
 			
@@ -196,5 +205,6 @@ $rquery_string = $data["query"];
 	
 	<input type="hidden" name="colstr" id="colstr" value="<?php echo implode(",",$col); ?>">
 	<input type="hidden" name="coltypestr" id="coltypestr" value="<?php echo implode(",",$coltypes); ?>">
+	<input type="hidden" name="colgroup" id="colgroup" value="<?php echo implode(",",$colgroup); ?>">
 
 </div>
