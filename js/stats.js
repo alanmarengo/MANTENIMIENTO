@@ -194,8 +194,8 @@ function ol_stats() {
 		var colstr = $("#colstr").val();
 		var colstrType = $("#coltypestr").val();
 		var colgroup = $("#colgroup").val();
-		var groupindex = $("#group-combo-view").val();
-		var groupbycol = $("#group-combo-view").attr("data-group-column");
+		var groupindex = $("#group-combo-view").attr("data-group-column");
+		var groupbycol = $("#group-combo-view").val();
 		var groupbycolindex = $("#group-combo-view").attr("data-group-column-index");
 		
 		if ((groupindex == 2) || (groupindex == 3)) {
