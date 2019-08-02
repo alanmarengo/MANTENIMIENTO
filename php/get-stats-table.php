@@ -8,6 +8,8 @@ $dt_variables = $_POST["dt_variables"];
 $dt_cruce = $_POST["dt_cruce"];
 $operations = $_POST["operations"];
 $colstr = $_POST["colstr"];
+$colgroup = $_POST["colgroup"];
+$groupindex = $_POST["groupindex"];
 $colstr_original = $colstr;
 
 $colstrType = -1;
@@ -31,6 +33,12 @@ for ($i=0; $i<sizeof($operations); $i++) {
 		break;
 		
 	}
+	
+}
+
+if (($groupindex == 2) || ($groupindex == 3)) {
+	
+	$no_op = true;
 	
 }
 
