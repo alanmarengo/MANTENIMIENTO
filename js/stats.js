@@ -174,6 +174,8 @@ function ol_stats() {
 		var dt_cruce = $("#frm-dt #dt_c").val();
 		var colstr = $("#colstr").val();
 		var colstrType = $("#coltypestr").val();
+		var colgroup = $("#colgroup").val();
+		var groupindex = $("#group-combo-view").val();
 		
 		var filters = [];
 		
@@ -223,7 +225,9 @@ function ol_stats() {
 				colstr:colstr,
 				colstrType:colstrType,
 				filters:filters,
-				operations:operations
+				operations:operations,
+				colgroup:colgroup,
+				groupindex:groupindex
 			}
 		
 		if ((!no_op) || (bypassOp)) {
