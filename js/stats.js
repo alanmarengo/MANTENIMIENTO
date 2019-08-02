@@ -124,6 +124,12 @@ function ol_stats() {
 				$(this).attr("data-group-column-index",index);
 				$(this).attr("data-group-column-val",val);				
 			
+			}else{
+				
+				$(this).attr("data-group-column","0");
+				$(this).attr("data-group-column-index","-1");
+				$(this).attr("data-group-column-val","-1");		
+				
 			}
 			
 			if ((val == 2) || (val == 3)) {
