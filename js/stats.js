@@ -98,13 +98,14 @@ function ol_stats() {
 			
 		});
 		
-		$(".group-combo-view").each(function(i,v) {	
+		//$("#group-combo-view").each(function(i,v) {	
+		$("#group-combo-view").on("changed.bs.select",function(e, clickedIndex, newValue, oldValue) {
 			
-			$(v).on("changed.bs.select",function(e, clickedIndex, newValue, oldValue) {
+			//$(v).on("changed.bs.select",function(e, clickedIndex, newValue, oldValue) {
 			
-				alert($(v).val());
+				alert($(this).val());
 			
-			});
+			//});
 			
 		});
 		
