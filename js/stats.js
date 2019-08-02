@@ -98,7 +98,7 @@ function ol_stats() {
 			
 		});
 		
-		$("#group-combo").each(function(i,v) {	
+		$(".group-combo-view").each(function(i,v) {	
 			
 			$(v).on("changed.bs.select",function(e, clickedIndex, newValue, oldValue) {
 			
