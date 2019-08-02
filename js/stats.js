@@ -123,7 +123,9 @@ function ol_stats() {
 		});
 		
 		document.getElementById("dataset-header").innerHTML = req.responseText;	
-		
+			
+		var colgroup = $("#colgroup").val();
+		alert(colgroup);
 		this.resetSelects();
 		
 	}
