@@ -102,7 +102,7 @@ function ol_stats() {
 			
 			$(v).on("changed.bs.select",function(e, clickedIndex, newValue, oldValue) {
 			
-				alert($(this).val());
+				alert($(v).val());
 			
 			});
 			
