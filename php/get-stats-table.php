@@ -142,7 +142,7 @@ if ($no_op) {
 
 $colstr_select = substr($colstr_select,0,strlen($colstr_select)-1);
 
-$group_by_str = " GROUP BY " . $colstr . " ";
+$group_by_str = " GROUP BY " . $groupby_val . " ";
 
 $distinct = "";
 
@@ -154,7 +154,7 @@ if ($groupby_val == 2) {
 
 if ($filter_str == "") {
 
-	$new_query_string = "SELECT$distinct $colstr_select FROM ($rquery_string) AS sub $colstr_order $group";
+	$new_query_string = "SELECT$distinct $colstr_select FROM ($rquery_string) AS sub $group $colstr_order";
 
 }else{
 	
@@ -162,10 +162,6 @@ if ($filter_str == "") {
 	//$new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub $group_by_str HAVING $filter_str $colstr_order";
 	
 }
-
-echo $new_query_string;
-
-echo "GROUP " . $groupby_val;
 
 ?>
 	
