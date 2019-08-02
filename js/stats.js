@@ -103,7 +103,7 @@ function ol_stats() {
 			
 			//$(v).on("changed.bs.select",function(e, clickedIndex, newValue, oldValue) {
 			
-				alert($(this).val());
+				alert($(this).attr("data-col-index"));
 			
 			//});
 			
@@ -145,6 +145,7 @@ function ol_stats() {
 			var option = document.createElement("option");
 				option.value = colgroup[i];
 				option.innerHTML = colgroup[i];
+				option.setAttribute("data-col-index",i);
 				
 			combo.appendChild(option);
 			
