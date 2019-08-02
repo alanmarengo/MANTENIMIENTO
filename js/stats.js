@@ -239,7 +239,7 @@ function ol_stats() {
 					
 					alert("FILTRANDO X COLUMNA");
 					
-				}else}
+				}else{
 				
 					alert("FILTRO GENERAL"); 
 				
