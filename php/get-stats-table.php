@@ -146,7 +146,7 @@ $group_by_str = " GROUP BY " . $colstr . " ";
 
 $distinct = "";
 
-if ($groupindex == 2) {
+if ($groupby_val == 2) {
 	
 	$distinct = " DISTINCT";
 	
