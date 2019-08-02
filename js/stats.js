@@ -104,6 +104,7 @@ function ol_stats() {
 			$("#update-view").prop("disabled",false);
 			
 			var index = $('option:selected', this).attr("data-col-index");
+			var val = $(this).val();
 			
 			$(".dataset-cell-modal").remove();
 			
@@ -119,6 +120,12 @@ function ol_stats() {
 					
 				}
 			
+			}
+			
+			if ((val == 2) || (val == 3)) {
+				
+				$(".dataset-operation-row .dataset-cell").append($("<div></div>").attr("class","dataset-cell-modal"));
+				
 			}
 			
 		});
@@ -178,6 +185,12 @@ function ol_stats() {
 		var colstrType = $("#coltypestr").val();
 		var colgroup = $("#colgroup").val();
 		var groupindex = $("#group-combo-view").val();
+		
+		if ((groupindex == 2) || (groupindex == 3)) {
+			
+			bypassOp = true;
+			
+		}
 		
 		var filters = [];
 		
