@@ -239,17 +239,29 @@ function ol_stats() {
 			
 			if (groupbycol == 1) {
 				
-				if (groupbycol_index == indexCell) {
-					
-					if (operation == -1) {
+				if (indexCell < 3) {
+				
+					if (groupbycol_index == indexCell) {
 						
-						no_op = true;
+						if (operation == -1) {
+							
+							no_op = true;
+							
+						}
+						
+					}else{
+						
+						operation = "MAX";
 						
 					}
-					
+				
 				}else{
 					
-					operation = "MAX";
+					if (operation == -1) {
+							
+						no_op = true;
+							
+					}
 					
 				}
 				
