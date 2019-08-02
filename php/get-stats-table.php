@@ -131,13 +131,21 @@ $colstr_select = substr($colstr_select,0,strlen($colstr_select)-1);
 
 $group_by_str = " GROUP BY " . $colstr . " ";
 
+$distinct = "";
+
+if ($groupindex == 1) {
+	
+	$distinct = " DISTINCT";
+	
+}
+
 if ($filter_str == "") {
 
-	$new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub $colstr_order";
+	$new_query_string = "SELECT$distinct $colstr_select FROM ($rquery_string) AS sub $colstr_order";
 
 }else{
 	
-	$new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub WHERE $filter_str $colstr_order";
+	$new_query_string = "SELECT$distinct $colstr_select FROM ($rquery_string) AS sub WHERE $filter_str $colstr_order";
 	//$new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub $group_by_str HAVING $filter_str $colstr_order";
 	
 }
