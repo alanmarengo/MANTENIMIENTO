@@ -98,6 +98,16 @@ function ol_stats() {
 			
 		});
 		
+		$("group-combo").each(function(i,v) {	
+			
+			$(v).on("changed.bs.select",function(e, clickedIndex, newValue, oldValue) {
+			
+				alert($(this).val());
+			
+			});
+			
+		});
+		
 	}
 	
 	this.view.getTableHeader = function(page) {		
