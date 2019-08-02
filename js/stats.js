@@ -103,7 +103,7 @@ function ol_stats() {
 			
 			//$(v).on("changed.bs.select",function(e, clickedIndex, newValue, oldValue) {
 			
-				alert($(this).attr("data-col-index"));
+				alert($('option:selected', this).attr("data-col-index"));
 			
 			//});
 			
