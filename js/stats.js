@@ -290,6 +290,7 @@ function ol_stats() {
 		}else{
 			
 			alert("Faltan seleccionar funciones para poder actualizar la vista");
+			$("#update-view").prop("disabled",false);
 			
 		}
 		
