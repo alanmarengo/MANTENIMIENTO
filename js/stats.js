@@ -117,7 +117,7 @@ function ol_stats() {
 					
 				}
 			
-			}alert{
+			}else{
 				
 				alert("defined");
 				
