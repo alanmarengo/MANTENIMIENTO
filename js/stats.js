@@ -98,13 +98,9 @@ function ol_stats() {
 			
 		});
 		
-		$("#group-combo").each(function(i,v) {	
+		$("#group-combo").on("changed.bs.select",function(e, clickedIndex, newValue, oldValue) {
 			
-			$(v).on("changed.bs.select",function(e, clickedIndex, newValue, oldValue) {
-			
-				alert($(this).val());
-			
-			});
+			alert($(this).val());
 			
 		});
 		
