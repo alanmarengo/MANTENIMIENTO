@@ -138,7 +138,7 @@ if ($groupindex == 2) {
 	$distinct = " DISTINCT";
 	
 }
-
+echo "iN: " .$groupindex);
 if ($filter_str == "") {
 
 	$new_query_string = "SELECT$distinct $colstr_select FROM ($rquery_string) AS sub $colstr_order";
