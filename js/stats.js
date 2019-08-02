@@ -196,6 +196,7 @@ function ol_stats() {
 		var colgroup = $("#colgroup").val();
 		var groupindex = $("#group-combo-view").val();
 		var groupbycol = $("#group-combo-view").attr("data-group-column");
+		var groupbycolindex = $("#group-combo-view").attr("data-group-column-index");
 		
 		if ((groupindex == 2) || (groupindex == 3)) {
 			
@@ -229,27 +230,41 @@ function ol_stats() {
 		
 		var no_op = false;
 		
-		$(".dataset-operation-row .dataset-cell").each(function(i,v) {
+		var indexCell = 0;
+		
+		$(".dataset-operation-row .dataset-cell").each(function(i,v) {				
 			
 			var operation = $(this).find(".selectpicker").val();
 			
-			if (operation == -1) {
+			if (groupbycol == 1) {
 				
-				if (groupbycol == 1) {
+				if (groupbycolindex == indexCell) {
 					
-					alert("FILTRANDO X COLUMNA");
+					if (operation == -1) {
+						
+						no_op = true;
+						
+					}
 					
 				}else{
-				
-					alert("FILTRO GENERAL"); 
-				
+					
+					operation = "MAX";
+					
 				}
 				
-				no_op = true;
-				
+			}else{
+			
+				if (operation == -1) {
+					
+					no_op = true;
+					
+				}
+			
 			}
 			
 			operations.push(operation);
+			
+			indexCell++;
 			
 		});
 		
