@@ -243,6 +243,7 @@ function ol_stats() {
 			
 			var operation = $(this).find(".selectpicker").val();
 			
+			alert(groupbycol_index + " :: " + indexCell);
 			if (groupbycol == 1) {
 				
 				if (indexCell < 3) {
