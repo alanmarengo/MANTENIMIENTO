@@ -243,10 +243,11 @@ function ol_stats() {
 			
 			var operation = $(this).find(".selectpicker").val();
 			
+					alert(groupby_val + " :: " + indexCell);
 			if (groupbycol == 1) {
 				
 				if (indexCell < 3) {
-					alert(groupby_val + " :: " + indexCell);
+					
 					if (groupbycol_index == indexCell) {
 						
 						if (operation == -1) {
