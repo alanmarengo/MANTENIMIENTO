@@ -128,15 +128,15 @@ function ol_stats() {
 				
 			}
 			
-			$(this).attr("data-group-column","1");
-			$(this).attr("data-group-column-index",index);
-			$(this).attr("data-group-column-val",val);				
+			$("#group-combo-view").attr("data-group-column","1");
+			$("#group-combo-view").attr("data-group-column-index",index);
+			$("#group-combo-view").attr("data-group-column-val",val);				
 		
 		}else{
 			
-			$(this).attr("data-group-column","0");
-			$(this).attr("data-group-column-index","-1");
-			$(this).attr("data-group-column-val","-1");		
+			$("#group-combo-view").attr("data-group-column","0");
+			$("#group-combo-view").attr("data-group-column-index","-1");
+			$("#group-combo-view").attr("data-group-column-val","-1");		
 			
 		}
 		
@@ -200,7 +200,7 @@ function ol_stats() {
 		var colstr = $("#colstr").val();
 		var colstrType = $("#coltypestr").val();
 		var colgroup = $("#colgroup").val();
-		var groupbycol = $("#group-combo-view").attr("data-group-column");
+		var groupbycol = $("#group-combo-view").attr("data-group-by-column");
 		var groupby_val = $("#group-combo-view").val();
 		var groupbycol_index = $("#group-combo-view").attr("data-group-column-index");
 		var groupbycol_name = $("#group-combo-view").attr("data-group-column-index");
