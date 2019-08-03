@@ -115,7 +115,7 @@ function ol_stats() {
 		var val = $("#group-combo-view").val();
 		
 		$(".dataset-cell-modal").remove();
-		
+		alert(index);
 		if (index != undefined) {
 			
 			for (var i=0; i<3; i++) {
