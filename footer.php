@@ -1,6 +1,8 @@
 <div class="row footer">
 	<div class="col-md-3">
-		<img src="./images/logo-footer.png" style="width:80%; max-width: 150px; height: auto;" />
+		<a target="_blank" href="http://www.ieasa.com.ar/">
+			<img src="./images/logo-footer.png" style="width:80%; max-width: 150px; height: auto;" />
+		</a>	
 	</div>
 	<div class="col-md-3" style="font-size: .9em; padding: 10px;">
 		(+54 11) 5276-4050 INT: 127<br />
@@ -55,8 +57,6 @@
 			<div class="carousel-control-next" href="#footer-slider" role="button" data-slide="next">
 				<i class="fa fa-chevron-right"></i>
 			</div>
-
-
 		</div>
 	</div>
 	<div class="col-md-3 social-media" style="padding: 10px; display: none;">
