@@ -44,7 +44,6 @@
 
         <div class="row">
             <div id="x0" class="col-md-3">
-                <div class="filters-header">Refina sus resultados</div>
                 <div id="uxFilters"></div>
             </div>
             <div class="col-md-9">

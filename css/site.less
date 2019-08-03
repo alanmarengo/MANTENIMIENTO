@@ -379,14 +379,19 @@ body {
         transition: opacity .2s, visibility .2s;
     }
 
- 
-
+    @modulo-border: 10px solid #fff;
 
     .modulo-wrap {
         position: relative;
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
+        border-left: @modulo-border;
+        border-top: @modulo-border;
+    }
+
+    .border-bottom {
+        border-bottom: @modulo-border!important;
     }
 
     .modulo-opacity {
@@ -518,12 +523,12 @@ body {
             font-size: 1.6em;
         }
         .sensor-dato {
-            font-size: 5em;
+            font-size: 4em;
             font-weight: bolder;
-            min-height: 120px;
+            //min-height: 120px;
         }
         .sensor-unidad {
-            font-size: .6em;
+            font-size: .4em;
             font-weight: bolder;
         }
     }
@@ -637,7 +642,7 @@ body {
     }
 
     #uxFilters {
-        padding: 0px 0px 10px 10px; 
+        padding: 10px 0px 10px 10px; 
         color: @filter_color;
 
         .card {
@@ -810,7 +815,10 @@ body {
     color: #fff;
 
     .enlaces {
-        font-size: .9em; padding: 10px; background: RGBA(0,0,0,.2);
+        font-size: .9em; 
+        padding: 10px; 
+        //background: RGBA(0,0,0,.2);
+        border: 1px solid #666;
 
         #footer-slider {
             position: relative;
@@ -895,7 +903,7 @@ body {
 
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 992px) {
     .side-right {
         padding: 10px 40px 10px 30px!important;
         
@@ -905,7 +913,7 @@ body {
     }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 768px) {
     @carousel_height: 250px;
 
     #navIcons {
