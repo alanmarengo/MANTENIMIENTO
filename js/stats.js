@@ -47,8 +47,7 @@ function ol_stats() {
 			
 			}
 			
-			this.getTable(currentPage);			
-			this.resetSelects();
+			this.getTable(currentPage);
 			
 		}.bind(this));	
 		
@@ -99,9 +98,62 @@ function ol_stats() {
 			
 		});
 		
+		
+		$("#group-combo-view").on("changed.bs.select",function(e, clickedIndex, newValue, oldValue) {
+			
+			$("#update-view").prop("disabled",false);
+			
+			this.updateAgroupColModals
+			
+		}.bind(this));
+		
 	}
 	
-	this.view.getTableHeader = function(page,dt_id,dt_variables,dt_cruce) {
+	this.view.updateAgroupColModals = function() {
+		
+		var index = $('option:selected', $("#group-combo-view")).attr("data-col-index");
+		var val = $("#group-combo-view").val();
+		
+		$(".dataset-cell-modal").remove();
+		
+		if (index != undefined) {
+			
+			for (var i=0; i<3; i++) {
+				
+				if (i!=index) {
+					
+					$(".dataset-cell[data-col-index="+i+"]").append($("<div></div>").attr("class","dataset-cell-modal"));
+					
+				}
+				
+			}
+			
+			$(this).attr("data-group-column","1");
+			$(this).attr("data-group-column-index",index);
+			$(this).attr("data-group-column-val",val);				
+		
+		}else{
+			
+			$(this).attr("data-group-column","0");
+			$(this).attr("data-group-column-index","-1");
+			$(this).attr("data-group-column-val","-1");		
+			
+		}
+		
+		if ((val == 2) || (val == 3)) {
+			
+			$(".dataset-operation-row .dataset-cell").append($("<div></div>").attr("class","dataset-cell-modal"));
+			
+		}
+		
+	}
+	
+	this.view.getTableHeader = function(page) {		
+		
+		var dt_id = $("#frm-dt #dt_id").val();
+		var dt_variables = $("#frm-dt #dt_v").val();
+		var dt_cruce = $("#frm-dt #dt_c").val();
+		var colstr = $("#colstr").val();
 		
 		var req = $.ajax({
 			
@@ -119,14 +171,45 @@ function ol_stats() {
 		});
 		
 		document.getElementById("dataset-header").innerHTML = req.responseText;	
+			
+		var colgroup = $("#colgroup").val();
+			colgroup = colgroup.split(",");
+			
+		var combo = document.getElementById("group-combo-view");
 		
+		for (var i=0; i<colgroup.length; i++) {
+			
+			var option = document.createElement("option");
+				option.value = colgroup[i];
+				option.innerHTML = colgroup[i];
+				option.setAttribute("data-col-index",i);
+				
+			combo.appendChild(option);
+			
+		}
+			
 		this.resetSelects();
 		
 	}
 	
-	this.view.getTable = function(page,dt_id,dt_variables,dt_cruce) {
+	this.view.getTable = function(page,bypassOp) {
 		
-		var colstr = document.getElementById("colstr").value;
+		var dt_id = $("#frm-dt #dt_id").val();
+		var dt_variables = $("#frm-dt #dt_v").val();
+		var dt_cruce = $("#frm-dt #dt_c").val();
+		var colstr = $("#colstr").val();
+		var colstrType = $("#coltypestr").val();
+		var colgroup = $("#colgroup").val();
+		var groupbycol = $("#group-combo-view").attr("data-group-column");
+		var groupby_val = $("#group-combo-view").val();
+		var groupbycol_index = $("#group-combo-view").attr("data-group-column-index");
+		var groupbycol_name = $("#group-combo-view").attr("data-group-column-index");
+		
+		if ((groupby_val == 2) || (groupby_val == 3)) {
+			
+			bypassOp = true;
+			
+		}
 		
 		var filters = [];
 		
@@ -150,47 +233,123 @@ function ol_stats() {
 			
 		});
 		
-		var req = $.ajax({
+		var operations = [];
+		
+		var no_op = false;
+		
+		var indexCell = 0;
+		
+		$(".dataset-operation-row .dataset-cell").each(function(i,v) {				
 			
-			async:false,
-			data:{
+			var operation = $(this).find(".selectpicker").val();
+			
+			if (groupbycol == 1) {
+				
+				if (indexCell < 3) {
+				
+					if (groupbycol_index == indexCell) {
+						
+						if (operation == -1) {
+							
+							no_op = true;
+							
+						}
+						
+					}else{
+						
+						operation = "MAX";
+						
+					}
+				
+				}else{
+					
+					if (operation == -1) {
+							
+						no_op = true;
+							
+					}
+					
+				}
+				
+			}else{
+			
+				if (operation == -1) {
+					
+					no_op = true;
+					
+				}
+			
+			}
+			
+			operations.push(operation);
+			
+			indexCell++;
+			
+		});
+		
+		var data = {
 				page:page,
 				dt_id:dt_id,
 				dt_variables:dt_variables,
 				dt_cruce:dt_cruce,
 				colstr:colstr,
-				filters:filters
-			},
-			type:"GET",
-			url:"./php/get-stats-table.php",
-			success:function(d){}
+				colstrType:colstrType,
+				filters:filters,
+				operations:operations,
+				colgroup:colgroup,
+				groupbycol_index:groupbycol_index,
+				groupbycol_name:groupbycol_name,
+				groupby_val:groupby_val
+			}
+		
+		if ((!no_op) || (bypassOp)) {
+		
+			var req = $.ajax({
+				
+				async:false,
+				data:data,
+				type:"POST",
+				url:"./php/get-stats-table.php",
+				success:function(d){}
+				
+			});
 			
-		});
-		
-		document.getElementById("dataset-content").innerHTML = req.responseText;
-		
-		this.resetSelects();
+			document.getElementById("dataset-content").innerHTML = req.responseText;
+			
+			//this.resetSelects();
 
-		$(".page-item").each(function(i,v) {
-			
-			$(v).on("click",function() {
+			$(".page-item").each(function(i,v) {
 				
-				var pageitem = v.getAttribute("data-page");
-				
-				this.getTable(pageitem);
+				$(v).on("click",function() {
+					
+					var pageitem = v.getAttribute("data-page");
+					
+					this.getTable(pageitem,false);
+					
+				}.bind(this));
 				
 			}.bind(this));
 			
-		}.bind(this));
+			var rowWidth = $(".dataset-row").first().width();
+			var rowChilds = $(".dataset-row").first().children().length;
+			
+			var cellWidth = rowWidth / rowChilds;
+			
+			$(".dataset-cell").css("width",cellWidth+"px");
+			$(".dataset-filter-row .dropdown-toggle").css("width",50+"px");
+			$(".dataset-operation-row .dropdown-toggle").css("width",cellWidth+"px");
+			$(".col-filter").on("keydown",function() {
+				
+				$("#update-view").prop("disabled",false);
+				
+			});
 		
-		var rowWidth = $(".dataset-row").first().width();
-		var rowChilds = $(".dataset-row").first().children().length;
-		
-		var cellWidth = rowWidth / rowChilds;
-		
-		$(".dataset-cell").css("width",cellWidth+"px");
-		$(".dataset-filter-row .dropdown-toggle").css("width",50+"px");
-		$(".dataset-operation-row .dropdown-toggle").css("width",cellWidth+"px");
+		}else{
+			
+			alert("Faltan seleccionar funciones para poder actualizar la vista");
+			$("#update-view").prop("disabled",false);
+			
+		}
 		
 	}
 	
