@@ -128,13 +128,13 @@ function ol_stats() {
 				
 			}
 			
-			$("#group-combo-view").attr("data-group-column","1");
+			$("#group-combo-view").attr("data-group-by-column","1");
 			$("#group-combo-view").attr("data-group-column-index",index);
 			$("#group-combo-view").attr("data-group-column-val",val);				
 		
 		}else{
 			
-			$("#group-combo-view").attr("data-group-column","0");
+			$("#group-combo-view").attr("data-group-by-column","0");
 			$("#group-combo-view").attr("data-group-column-index","-1");
 			$("#group-combo-view").attr("data-group-column-val","-1");		
 			
