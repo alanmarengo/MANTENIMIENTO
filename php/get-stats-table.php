@@ -15,6 +15,8 @@ $groupname = $_POST["groupbycol_name"];
 $groupby_val = $_POST["groupby_val"];
 $colstr_original = $colstr;
 
+var_dump($_POST);
+
 $colstrType = -1;
 
 if (isset($_POST["colstrType"])) {
@@ -163,7 +165,7 @@ if ($filter_str == "") {
 	
 }
 
-echo $new_query_string;
+//echo $new_query_string;
 
 ?>
 	
