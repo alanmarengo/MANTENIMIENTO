@@ -181,7 +181,6 @@ if ($filter_str == "") {
 	$new_query_string = "SELECT$distinct $colstr_select FROM ($rquery_string) AS sub $group $colstr_order";
 	
 	if (($groupbycol == 1) && ($groupindex == 0)) {
-		echo "HERE NO FILTER";
 	
 		$gm_query_string = "SELECT geo_table_cruce AS geotabla, gid_cruce::BIGINT AS gid,$colstr_select FROM ($rquery_string) AS sub $group,geo_table_cruce,gid_cruce $colstr_order";
 	
@@ -198,7 +197,7 @@ if ($filter_str == "") {
 	$new_query_string = "SELECT$distinct $colstr_select FROM ($rquery_string) AS sub WHERE $filter_str $group $colstr_order";
 	
 	if (($groupbycol == 1) && ($groupindex == 0)) {
-		echo "HERE";
+		
 		$gm_query_string = "SELECT geo_table_cruce AS geotabla, gid_cruce::BIGINT AS gid,$colstr_select FROM ($rquery_string) AS sub WHERE $filter_str $group,geo_table_cruce,gid_cruce $colstr_order";
 	
 	}
@@ -211,7 +210,10 @@ if ($filter_str == "") {
 	
 }
 
-echo $gm_query_string;
+$query_map_string = "INSERT INTO mod_estadistica.dt_mapeo(dt_id, dt_mapeo_query, dt_mapeo_column_value)
+VALUES ($dt_id, '$gm_query_string', '$groupby_val')";
+
+echo $query_map_string;
 
 ?>
 	
