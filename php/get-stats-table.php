@@ -211,7 +211,7 @@ if ($filter_str == "") {
 	
 }
 
-echo $gm_string;
+echo $gm_query_string;
 
 ?>
 	
