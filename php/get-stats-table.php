@@ -173,7 +173,8 @@ if ($filter_str == "") {
 	
 }
 
-//echo $new_query_string;
+echo "<br><br><br>";
+echo $new_query_string;
 
 ?>
 	
