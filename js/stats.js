@@ -293,6 +293,7 @@ function ol_stats() {
 				filters:filters,
 				operations:operations,
 				colgroup:colgroup,
+				groupbycol:groupbycol,
 				groupbycol_index:groupbycol_index,
 				groupbycol_name:groupbycol_name,
 				groupby_val:groupby_val
