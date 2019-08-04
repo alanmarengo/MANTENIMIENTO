@@ -15,8 +15,6 @@ $groupname = $_POST["groupbycol_name"];
 $groupby_val = $_POST["groupby_val"];
 $colstr_original = $colstr;
 
-var_dump($_POST);
-
 $colstrType = -1;
 
 if (isset($_POST["colstrType"])) {
@@ -189,8 +187,13 @@ if ($filter_str == "") {
 	
 }
 
-echo "<br><br><br>";
-echo $new_query_string;
+if (($groupbycol == 1) && ($groupbycol_index == 0)) {
+
+	$gm_string = explode("ORDER",explode("SELECT",$new_query_string));
+	
+	var_dump($gm_string);
+	
+}
 
 ?>
 	
