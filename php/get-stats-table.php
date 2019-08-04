@@ -216,14 +216,14 @@ if (($groupindex == 0) || ($groupindex == 1)) {
 	
 	$query_map_string = "INSERT INTO mod_estadistica.dt_mapeo(dt_id, dt_mapeo_query, dt_mapeo_column_value)
 	VALUES ($dt_id, '$gm_query_string', '$groupby_val')";
-	echo $query_map_string;
+	
 	if (pg_query($conn,$query_map_string)) {
 		
-		//echo "QUERY INSERTADA";
+		echo "QUERY INSERTADA";
 		
 	}else{
 		
-		//echo "ERROR " . pg_last_error($conn);
+		echo "ERROR " . pg_last_error($conn);
 		
 	}
 
