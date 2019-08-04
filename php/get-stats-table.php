@@ -187,6 +187,8 @@ if ($filter_str == "") {
 	
 }
 
+echo $groupbycol . " :: " . $groupbycol_index;
+
 if (($groupbycol == 1) && ($groupbycol_index == 0)) {
 
 	$gm_string = explode("ORDER",explode("SELECT",$new_query_string));
