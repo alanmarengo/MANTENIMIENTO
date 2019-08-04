@@ -190,7 +190,7 @@ if ($filter_str == "") {
 echo $groupbycol . " :: " . $groupindex;
 
 if (($groupbycol == 1) && ($groupindex == 0)) {
-
+	echo $new_query_string;
 	$gm_string = explode("ORDER",explode("SELECT",$new_query_string));
 	
 	var_dump($gm_string);
