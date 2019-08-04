@@ -249,11 +249,7 @@ function ol_stats() {
 					
 					if (groupbycol_index == indexCell) {
 						
-						if (operation == -1) {
-							
-							no_op = true;
-							
-						}
+						operation = "NONE";
 						
 					}else{
 						
