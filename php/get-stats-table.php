@@ -166,7 +166,7 @@ if ($no_op) {
 
 $colstr_select = substr($colstr_select,0,strlen($colstr_select)-1);
 
-$group_by_str = " GROUP BY " . $groupby_val . " ";
+$group_by_str = " GROUP BY " . $groupby_val;
 
 $distinct = "";
 
@@ -179,24 +179,38 @@ if ($groupby_val == 2) {
 if ($filter_str == "") {
 
 	$new_query_string = "SELECT$distinct $colstr_select FROM ($rquery_string) AS sub $group $colstr_order";
-
+	
+	if (($groupbycol == 1) && ($groupindex == 0)) {
+	
+		$gm_query_string = "SELECT geo_table_cruce AS geotabla, gid_cruce::BIGINT AS gid,$colstr_select FROM ($rquery_string) AS sub $group,geo_table_cruce,gid_cruce $colstr_order";
+	
+	}
+	
+	if (($groupbycol == 1) && ($groupindex == 1)) {
+	
+		$gm_query_string = "SELECT geo_table_base AS geotabla, gid,$colstr_select FROM ($rquery_string) AS sub $group,geo_table_base,gid $colstr_order";
+	
+	}
+	
 }else{
 	
 	$new_query_string = "SELECT$distinct $colstr_select FROM ($rquery_string) AS sub WHERE $filter_str $group $colstr_order";
-	//$new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub $group_by_str HAVING $filter_str $colstr_order";
+	
+	if (($groupbycol == 1) && ($groupindex == 0)) {
+	
+		$gm_query_string = "SELECT geo_table_cruce AS geotabla, gid_cruce::BIGINT AS gid,$colstr_select FROM ($rquery_string) AS sub WHERE $filter_str $group,geo_table_cruce,gid_cruce $colstr_order";
+	
+	}
+	
+	if (($groupbycol == 1) && ($groupindex == 1)) {
+	
+		$gm_query_string = "SELECT geo_table_base AS geotabla, gid,$colstr_select FROM ($rquery_string) AS sub WHERE $filter_str $group,geo_table_base,gid $colstr_order";
+	
+	}
 	
 }
 
-echo $groupbycol . " :: " . $groupindex;
-
-if (($groupbycol == 1) && ($groupindex == 0)) {
-	
-	$gm_string = explode("SELECT",$new_query_string);
-	$gm_string = explode("ORDER",$gm_string);
-	
-	var_dump($gm_string);
-	
-}
+echo $gm_string;
 
 ?>
 	
