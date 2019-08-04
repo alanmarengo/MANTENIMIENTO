@@ -33,6 +33,12 @@ $dt_cruce = $_GET["dt_c"];
 </head>
 <body>
 
+	<form id="frm-dt">
+		<input type="hidden" name="dt_id" id="dt_id" value="<?php echo $dt_id; ?>">
+		<input type="hidden" name="dt_v" id="dt_v" value="<?php echo $dt_variables; ?>">
+		<input type="hidden" name="dt_c" id="dt_c" value="<?php echo $dt_cruce; ?>">
+	</form>
+	
 	<div id="page">
 	
 		<?php include("./html.navbar-main.php"); ?>

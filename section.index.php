@@ -11,7 +11,7 @@
             <a href="./mision.php" class="carousel-item active">
                 <img class="d-block w-100" src="./images/index/slide5.jpg" alt="...">
                 <div class="carousel-caption">
-                    <p>Observatorio IEASA</p>
+                    <p>OBSERVATORIO IEASA</p>
                 </div>                
                 <div class="slide-hover">
                     Accedé a la información generada bajo las más actuales metodologías para conocer y comprender los procesos ambientales, sociales y económicos que se generan a partir de la ejecución de una obra de infraestructura energética y el compromiso de sostenibilidad en su gestión.
@@ -199,7 +199,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row modulo-row">
+            <div class="row modulo-row border-bottom">
                 <div class="col-md-4 modulo-wrap modulo-9">
                     <div id="uxSensor"></div>
                 </div>

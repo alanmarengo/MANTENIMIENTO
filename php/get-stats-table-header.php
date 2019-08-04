@@ -30,16 +30,25 @@ $rquery_string = $data["query"];
 	$query_string_a = array();
 	$col = array();
 	$coltypes = array();
+	$colgroup = array();
 	$bannedCols = array("geo_table_base","gid","geo_table_cruce","gid_cruce","cod_temp");
 	
 	$query = pg_query($conn,$rquery_string);
 	
 	while($r = pg_fetch_assoc($query)) {
+		
 		$i=0;
+		$j=0;
+		
 		foreach($r as $colname => $val) {
 			
 			if (!in_array($colname,$bannedCols)) {
 				
+				if ($j<3) {					
+					
+					array_push($colgroup,$colname);
+					
+				}
 				
 				$query_test = pg_query($conn,"SELECT \"$colname\",pg_typeof(\"$colname\") as coltype FROM ($rquery_string) AS sub LIMIT 1");
 				$query_test_data = pg_fetch_assoc($query_test);
@@ -53,7 +62,7 @@ $rquery_string = $data["query"];
 					
 				}else{
 					
-					$type = "number";
+					$type = $coltype;
 					
 				}
 				
@@ -73,6 +82,8 @@ $rquery_string = $data["query"];
 				</div>
 				
 				<?php
+				
+				$j++;
 			
 			}
 			
@@ -147,23 +158,44 @@ $rquery_string = $data["query"];
 	
 	for ($i=0; $i<sizeof($col); $i++) {
 		
-	?>
+		if ($coltypes[$i] == "text") {
+		
+	?>	
+	
 		<div class="dataset-cell"
 					data-col-index="<?php echo $i; ?>" 
 					data-col-name="<?php echo $col[$i]; ?>"
 					data-col-type="<?php echo $coltypes[$i]; ?>">>
 			<select class="selectpicker operation-combo" tabindex="-98">
 				<option value="-1">OPERACIONES</option>
-				<option value="1">SUMA</option>
-				<option value="2">PROMEDIO</option>
-				<option value="3">MIN</option>
-				<option value="4">MAX</option>
-				<option value="5">CUENTA</option>
+				<option value="MIN">MIN</option>
+				<option value="MAX">MAX</option>
+			</select>
+		</div>
+	
+	<?php		
+	
+		}else{
+		
+	?>
+	
+		<div class="dataset-cell"
+					data-col-index="<?php echo $i; ?>" 
+					data-col-name="<?php echo $col[$i]; ?>"
+					data-col-type="<?php echo $coltypes[$i]; ?>">>
+			<select class="selectpicker operation-combo" tabindex="-98">
+				<option value="-1">OPERACIONES</option>
+				<option value="SUM">SUMA</option>
+				<option value="AVG">PROMEDIO</option>
+				<option value="MIN">MIN</option>
+				<option value="MAX">MAX</option>
+				<option value="COUNT">CUENTA</option>
 			</select>
 		</div>
 			
-	
-	<?php		
+	<?php
+			
+		}
 	
 	}
 
@@ -173,5 +205,6 @@ $rquery_string = $data["query"];
 	
 	<input type="hidden" name="colstr" id="colstr" value="<?php echo implode(",",$col); ?>">
 	<input type="hidden" name="coltypestr" id="coltypestr" value="<?php echo implode(",",$coltypes); ?>">
+	<input type="hidden" name="colgroup" id="colgroup" value="<?php echo implode(",",$colgroup); ?>">
 
 </div>

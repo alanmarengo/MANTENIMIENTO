@@ -6,12 +6,53 @@ $page = $_POST["page"];
 $dt_id = $_POST["dt_id"];
 $dt_variables = $_POST["dt_variables"];
 $dt_cruce = $_POST["dt_cruce"];
+$operations = $_POST["operations"];
 $colstr = $_POST["colstr"];
+$colgroup = $_POST["colgroup"];
+$groupbycol = $_POST["groupbycol"];
+$groupindex = $_POST["groupbycol_index"];
+$groupname = $_POST["groupbycol_name"];
+$groupby_val = $_POST["groupby_val"];
 $colstr_original = $colstr;
+
+$colstrType = -1;
+
+if (isset($_POST["colstrType"])) {
+	$colstrType = $_POST["colstrType"];
+}
 $filters = -1;
 
 if (isset($_POST["filters"])) {
 	$filters = $_POST["filters"];
+}
+	
+$no_op = false;
+	
+for ($i=0; $i<sizeof($operations); $i++) {
+	
+	if ($operations[$i] == -1) {
+		
+		$no_op = true;
+		break;
+		
+	}
+	
+}
+
+$group = "";
+
+if (($groupby_val == 2) || ($groupby_val == 3)) {
+	
+	$no_op = true;
+	
+}else{
+	
+	if (($groupby_val != 1) && ($groupby_val != -1)) {
+		
+		$group = " GROUP BY \"$groupby_val\"";
+		
+	}
+	
 }
 
 $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
@@ -31,10 +72,16 @@ if ($filters != -1) {
 			if ($filters[$i]["coltype"] == "text") {
 	
 				$slashes = "\"";
+				$filter_str .= "\"".$filters[$i]["colname"]."\" ILIKE '%" . $filters[$i]["filterval"] . "%' AND ";
+				
+			}else{
+				
+				$slashes = "";
+				$filter_str .= "\"".$filters[$i]["colname"]."\" " . $filters[$i]["filtertype"] . " " . $slashes . $filters[$i]["filterval"] . $slashes . " AND ";
 				
 			}
 			
-			$filter_str .= $filters[$i]["colname"] . " " . $filters[$i]["filtertype"] . " " . $slashes . $filters[$i]["filterval"] . $slashes . " AND ";
+			
 			
 		}		
 	
@@ -44,16 +91,8 @@ if ($filters != -1) {
 	
 }
 
-if ($filter_str == "") {
+$query_string = "SELECT * FROM mod_estadistica.get_dt_from($dt_id,'$dt_variables','$dt_cruce') AS query";
 
-	$query_string = "SELECT * FROM mod_estadistica.get_dt_from($dt_id,'$dt_variables','$dt_cruce') AS query";
-
-}else{
-	
-	$query_string = "SELECT * FROM mod_estadistica.get_dt_from($dt_id,'$dt_variables','$dt_cruce') WHERE $filter_str AS query";
-	
-}
-echo $query_string;
 $query = pg_query($conn,$query_string);
 
 $data = pg_fetch_assoc($query);
@@ -63,10 +102,68 @@ $rquery_string = $data["query"];
 $colstr_select = "\"" . implode("\"::TEXT,\"",explode(",",$colstr)) . "\"::TEXT";
 $colstr = "\"" . implode("\",\"",explode(",",$colstr)) . "\"";
 
-$colstr_order = str_replace(","," ASC,",$colstr);
-$colstr_order = substr($colstr_order,0,strlen($colstr)-1) ."\" ASC";;
+$colstr_order = str_replace(","," ASC,",$colstr) . " ASC";
+//$colstr_order = substr($colstr_order,0,strlen($colstr)-1);
+$colstr_order = " ORDER BY " . $colstr_order;
 
-$new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub ORDER BY " . $colstr_order;
+if ($no_op) {
+	
+	if ($colstrType == -1) {
+	
+		$colstr_select = "\"" . implode("\"::TEXT,\"",explode(",",$colstr)) . "\"::TEXT";
+	
+	}else{
+		
+		$col = explode(",",$colstr);
+		$colType = explode(",",$colstrType);
+		$colstr_select = "";
+		
+		for ($i=0; $i<sizeof($col); $i++) {
+			
+			$colstr_select .= $col[$i] . "::" . $colType[$i] . " AS $col[$i],";
+			
+		}
+		
+	}
+	
+}else{
+	
+	$col = explode(",",$colstr);
+	$colType = explode(",",$colstrType);
+	$colstr_select = "";
+	
+	for ($i=0; $i<sizeof($col); $i++) {
+		
+		$colstr_select .= $operations[$i] . "(" . $col[$i] . ")::" . $colType[$i] . " AS " . $col[$i] . ",";
+		
+	}
+	
+}
+
+$colstr_select = substr($colstr_select,0,strlen($colstr_select)-1);
+
+$group_by_str = " GROUP BY " . $groupby_val . " ";
+
+$distinct = "";
+
+if ($groupby_val == 2) {
+	
+	$distinct = " DISTINCT";
+	
+}
+
+if ($filter_str == "") {
+
+	$new_query_string = "SELECT$distinct $colstr_select FROM ($rquery_string) AS sub $group $colstr_order";
+
+}else{
+	
+	$new_query_string = "SELECT$distinct $colstr_select FROM ($rquery_string) AS sub WHERE $filter_str $group $colstr_order";
+	//$new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub $group_by_str HAVING $filter_str $colstr_order";
+	
+}
+
+echo $new_query_string;
 
 ?>
 	
@@ -76,7 +173,7 @@ $new_query_string = "SELECT $colstr_select FROM ($rquery_string) AS sub ORDER BY
 
 	$col = explode(",",$colstr_original);
 	
-	$query = pg_query($conn,$rquery_string);	
+	$query = pg_query($conn,$new_query_string);	
 	
 	while($r = pg_fetch_assoc($query)) {
 		
