@@ -136,7 +136,15 @@ if ($no_op) {
 	
 	for ($i=0; $i<sizeof($col); $i++) {
 		
-		$colstr_select .= $operations[$i] . "(" . $col[$i] . ")::" . $colType[$i] . " AS " . $col[$i] . ",";
+		if ($operations[$i] == "NONE") {
+			
+			$colstr_select .= $col[$i] . "::" . $colType[$i] . " AS " . $col[$i] . ",";
+			
+		}else{
+		
+			$colstr_select .= $operations[$i] . "(" . $col[$i] . ")::" . $colType[$i] . " AS " . $col[$i] . ",";
+		
+		}
 		
 	}
 	
