@@ -213,7 +213,7 @@ if ($filter_str == "") {
 $query_map_string = "INSERT INTO mod_estadistica.dt_mapeo(dt_id, dt_mapeo_query, dt_mapeo_column_value)
 VALUES ($dt_id, '$gm_query_string', '$groupby_val')";
 
-echo $query_map_string;
+pg_query($conn,$query_map_string);
 
 ?>
 	
