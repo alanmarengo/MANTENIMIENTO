@@ -212,7 +212,7 @@ if ($filter_str == "") {
 
 if (($groupindex == 0) || ($groupindex == 1)) {
 	
-	$gm_query_string = str_replace("'","\'",$gm_query_string);
+	$gm_query_string = str_replace("'","''",$gm_query_string);
 	
 	$query_map_string = "INSERT INTO mod_estadistica.dt_mapeo(dt_id, dt_mapeo_query, dt_mapeo_column_value)
 	VALUES ($dt_id, '$gm_query_string', '$groupby_val')";
