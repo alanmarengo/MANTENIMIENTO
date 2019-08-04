@@ -141,8 +141,24 @@ if ($no_op) {
 			$colstr_select .= $col[$i] . "::" . $colType[$i] . " AS " . $col[$i] . ",";
 			
 		}else{
-		
-			$colstr_select .= $operations[$i] . "(" . $col[$i] . ")::" . $colType[$i] . " AS " . $col[$i] . ",";
+			
+			if ($i<3) {				
+			
+				if ($groupbycol == 1) {
+				
+					$colstr_select .= $operations[$i] . "(" . $col[$i] . ")::" . $colType[$i] . " AS " . $col[$i] . ",";
+			
+				}else{
+					
+					$colstr_select .="MAX('')::TEXT AS " . $col[$i] . ",";
+					
+				}
+				
+			}else{
+				
+				$colstr_select .= $operations[$i] . "(" . $col[$i] . ")::" . $colType[$i] . " AS " . $col[$i] . ",";
+				
+			}
 		
 		}
 		
