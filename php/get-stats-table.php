@@ -187,7 +187,7 @@ if ($filter_str == "") {
 	
 }
 
-echo $groupbycol . " :: " . $groupindex;
+echo $_POST["groupbycol"] . " :: " . $groupbycol . " :: " . $groupindex;
 
 if (($groupbycol == 1) && ($groupbycol_index == 0)) {
 
