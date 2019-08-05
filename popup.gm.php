@@ -53,7 +53,7 @@
 			</div>
 			<div class="row jump-row jump-posrel" style="top:30px;">
 				<div class="mr-20">	
-					<a href="#" class="button black-button" onclick="$('#popup-modal-gm').show(); $('#popup-stats-gm').show();">PROCESAR</a>
+					<a href="#" class="button black-button" onclick="stats.view.processGM();">PROCESAR</a>
 				</div>
 			</div>
 		</div>

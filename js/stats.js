@@ -237,6 +237,24 @@ function ol_stats() {
 		
 	}
 	
+	this.view.processGM = function() {
+		
+		var groupbycol = $("#group-combo-view").attr("data-group-by-column");
+		var groupby_val = $("#group-combo-view").val();
+		var groupbycol_index = $("#group-combo-view").attr("data-group-column-index");
+		var groupbycol_name = $("#group-combo-view").attr("data-group-column-index");
+		
+		var debug = "";
+		
+		debug += "AGRUPAR POR COLUMNA: " + groupby_col + "\n";
+		debug += "VALOR COMBO: " + groupby_val + "\n";
+		debug += "INDEX COLUMNA: " + groupbycol_index + "\n";
+		debug += "NOMBRE COLUMNA: " + groupbycol_name + "\n";
+		
+		alert(debug);
+		
+	}
+	
 	this.view.getTable = function(page,bypassOp) {
 		
 		var dt_id = $("#frm-dt #dt_id").val();
