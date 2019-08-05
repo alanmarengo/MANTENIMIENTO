@@ -522,12 +522,12 @@ function ol_stats() {
 				height:350,
 				width:600
 			},
-			/*title: {
+			title: {
 				text: 'Monthly Average Rainfall'
 			},
 			subtitle: {
 				text: 'Source: WorldClimate.com'
-			},*/
+			},
 			xAxis: {
 				categories: [
 					colagroup
@@ -537,7 +537,7 @@ function ol_stats() {
 			yAxis: {
 				min: 0,
 				title: {
-					text: ""
+					text: "a"
 				}
 			},
 			tooltip: {
