@@ -501,8 +501,22 @@ function ol_stats() {
 	
 	this.view.graficar = function(query_id) {
 		
-		document.getElementById("gm-stats-mediawrapper").innerHTML = "";		
+		document.getElementById("gm-stats-mediawrapper").innerHTML = "";
 		document.getElementById("gm-stats-mediawrapper").innerHTML = "<h3>GRAFICAR TEST</h3>";
+		
+		var req = $.ajax({
+				
+			async:false,
+			data:{
+				query_id:query_id
+			},
+			type:"POST",
+			url:"./php/get-graficar.php",
+			success:function(d){}
+			
+		});
+		
+		alert(req.responseText);
 		
 	}
 	
