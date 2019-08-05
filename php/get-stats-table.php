@@ -16,6 +16,8 @@ $groupby_val = $_POST["groupby_val"];
 $gm_var = $_POST["gm_var"];
 $colstr_original = $colstr;
 
+echo $gm_var;
+
 $colstrType = -1;
 
 if (isset($_POST["colstrType"])) {
