@@ -23,9 +23,6 @@ echo 'max '.$max;
 echo 'min '.$min;
 echo 'salto '.$salto;
 
- echo pg_last_error($conn);
-
-pg_close($conn);
 
 $sld_file 	= file_get_contents("./intervalo_polygon.sld");	$layer_name = 'intervalos_polygons';
 
@@ -52,5 +49,9 @@ $acumulado  = $acumulado +$salto;
 $sld_file	= str_replace("[5_H]"	, $acumulado	,$sld_file);
 
 echo $sld_file;
+
+//echo pg_last_error($conn);
+
+pg_close($conn);
 
 ?>
