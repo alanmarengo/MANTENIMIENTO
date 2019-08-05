@@ -294,7 +294,7 @@ function ol_stats() {
 		var groupby_val = $("#group-combo-view").val();
 		var groupbycol_index = $("#group-combo-view").attr("data-group-column-index");
 		var groupbycol_name = $("#group-combo-view").attr("data-group-column-index");
-		var gm_var = $("#gm-combo").text();
+		var gm_var = $("#gm-combo").val();
 		
 		if ((groupby_val == 2) || (groupby_val == 3)) {
 			

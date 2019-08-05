@@ -16,7 +16,7 @@ $output = "<option value=\"-1\">Elija una Variable</option>";
 
 while ($r = pg_fetch_assoc($query)) {
 	
-	$output .= "<option value=\"" . $r["dt_variable_id"] . "\">" . $r["dt_variable_nombre"] ."</option>";
+	$output .= "<option value=\"" . $r["dt_variable_nombre"] . "\">" . $r["dt_variable_nombre"] ."</option>";
 	
 }
 
