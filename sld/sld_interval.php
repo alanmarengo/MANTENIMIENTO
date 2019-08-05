@@ -19,11 +19,9 @@ $min = $row[1];
 $salto = $row[3];
 $acumulado = 0.0;
 
-echo $max;
-echo $min;
-echo $salto;
-
-echo $SQL;
+echo 'max '.$max;
+echo 'min '.$min;
+echo 'salto '.$salto;
 
 pg_close($conn);
 
