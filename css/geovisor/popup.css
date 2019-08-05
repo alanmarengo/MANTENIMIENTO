@@ -505,6 +505,12 @@
 	
 }
 
+.popup-stats h3 {
+	
+	color:#5b325e;
+	
+}
+
 .popup-stats a {
 	
 	color:rgb(33, 37, 41);
@@ -535,5 +541,18 @@
 	width:94% !Important; 
 	position:relative; 
 	left:3%;
+	
+}
+
+.gm-highlight {
+	
+	color:#5b325e;
+	font-weight:700;
+	
+}
+
+.gm-text {
+	
+	color:#aaaaaa;
 	
 }

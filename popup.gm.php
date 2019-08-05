@@ -23,4 +23,25 @@
 	
 	</div>
 
+	<div class="row jump-row">
+		
+		<hr>
+		
+		<div class="col col-md-4 col-lg-4">
+			<span class="gm-highlight">Dataset:</span>
+			<span class="gm-text">Nombre del Dataset</span>
+		</div>
+		
+		<div class="col col-md-4 col-lg-4">
+			<span class="gm-highlight">Agrupamiento:</span>
+			<span class="gm-text">Nombre del Agrupamiento</span>
+		</div>
+		
+		<div class="col col-md-4 col-lg-4">
+			<span class="gm-highlight">Período:</span>
+			<span class="gm-text">Desde 00/00/00 Hasta 00/00/00</span>
+		</div>
+	
+	</div>
+
 </div>
