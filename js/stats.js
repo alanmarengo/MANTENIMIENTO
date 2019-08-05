@@ -507,7 +507,10 @@ function ol_stats() {
 		var colagroup = $("#group-combo-view").attr("data-group-column-val");
 		var coldataset = $("#gm-combo").val();
 		var values = $("#graficar-values").val();
-		alert(values);
+			values = values.split(",");
+			
+			console.log(values);
+			
 		Highcharts.chart('gm-stats-mediawrapper', {
 			chart: {
 				type: 'column',
