@@ -250,14 +250,11 @@ function ol_stats() {
 			
 		}else{
 		
-			var debug = "";
+			var gm_action = $("#popup-stats-gm").attr("data-action");
+			alert(gm_action);
+			//currentPage = $(".page-active").attr("data-page");
 			
-			debug += "AGRUPAR POR COLUMNA: " + groupbycol + "\n";
-			debug += "VALOR COMBO: " + groupby_val + "\n";
-			debug += "INDEX COLUMNA: " + groupbycol_index + "\n";
-			debug += "NOMBRE COLUMNA: " + groupbycol_name + "\n";
-			
-			alert(debug);
+			//this.getTable(currentPage,false);
 		
 		}
 		
