@@ -251,7 +251,10 @@ function ol_stats() {
 		}else{
 		
 			var gm_action = $("#popup-stats-gm").attr("data-action");
-			alert(gm_action);
+			var gm_var  = $("#gm-combo").val();
+			
+			alert(gm_action + " : : " + gm_var);
+			
 			//currentPage = $(".page-active").attr("data-page");
 			
 			//this.getTable(currentPage,false);
