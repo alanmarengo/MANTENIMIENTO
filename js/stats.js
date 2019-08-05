@@ -483,7 +483,7 @@ function ol_stats() {
 		})
 		
 		var map = new ol.Map({
-			layers:[googlelayer],
+			layers:[googlelayer,layer],
 			target: 'gm-stats-mediawrapper',
 			extent: [-13281237.21183002,-7669922.0600572005,-738226.6183457375,-1828910.1066171727],
 			controls: [],
