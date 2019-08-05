@@ -499,5 +499,8 @@
 	height:90%;
 	z-index:910000;
 	display:none;
+	padding:20px;
+	left:50%;
+	margin-left:-40%;
 	
 }
