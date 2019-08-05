@@ -504,3 +504,16 @@
 	margin-top:-23%;
 	
 }
+
+.popup-stats a {
+	
+	color:rgb(33, 37, 41);
+	
+}
+
+.popup-stats a:hover {
+	
+	color:rgb(33, 37, 41);
+	opacity:0.8;
+	
+}
