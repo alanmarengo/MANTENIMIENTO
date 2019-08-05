@@ -49,6 +49,9 @@
 		<div class="col col-md-4 col-lg-4">
 			<select class="selectpicker" id="gm-combo">
 			</select>
+			<div class="mr-20">	
+				<a href="#" class="button black-button" onclick="$('#popup-modal-gm').show(); $('#popup-stats-gm').show();">PROCESAR</a>
+			</div>
 		</div>
 		
 		<div class="col col-md-8 col-lg-8">
