@@ -9,7 +9,7 @@
 	
 	</div>
 
-	<div class="row jump-row jus-between" style="padding:40px;">
+	<div class="row jump-row jus-between" style="padding:40px 100px;">
 
 		<h3>Mapear Variable</h3>
 		<div class="icons">
