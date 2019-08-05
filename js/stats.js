@@ -528,12 +528,11 @@ function ol_stats() {
 			subtitle: {
 				text: 'Powered by Atic'
 			},
-			xAxis: {
-				categories: [
-					"a"
-				],
-				title:"test",
-				crosshair: true
+			yAxis: {
+				min: 0,
+				title: {
+					text: coldataset
+				}
 			},
 			tooltip: {
 				headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
