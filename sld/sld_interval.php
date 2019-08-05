@@ -23,6 +23,8 @@ echo $max;
 echo $min;
 echo $salto;
 
+echo $SQL;
+
 pg_close($conn);
 
 $sld_file 	= file_get_contents("./intervalo_polygon.sld");	$layer_name = 'intervalos_polygons';
