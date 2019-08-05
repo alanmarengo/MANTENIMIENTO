@@ -9,7 +9,7 @@
 	
 	</div>
 
-	<div class="row jump-row jus-between" style="width:90% !Important; margin-left:5%;">
+	<div class="row jump-row jus-between" id="popup-stats-gm-header">
 		
 		<h3>Mapear Variable</h3>
 		<div class="icons">
