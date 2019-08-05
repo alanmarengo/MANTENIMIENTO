@@ -130,9 +130,7 @@ function ol_stats() {
 						
 						var className = $(v).parent().attr("class");
 						
-						alert(className);
-						
-						if ($(v).hasClass("dataset-operation-row")) {
+						if (className == "dataset-row dataset-row-header dataset-operation-row") {
 							
 							$(v).append($("<div></div>").attr("class","dataset-cell-modal"));
 							
