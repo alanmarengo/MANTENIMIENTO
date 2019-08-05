@@ -545,7 +545,7 @@ function ol_stats() {
 				}
 			},
 			series: [{
-				data: values.explode(",")
+				data: values.split(",")
 			}]
 		});
 		
