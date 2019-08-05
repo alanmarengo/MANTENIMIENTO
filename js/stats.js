@@ -128,7 +128,7 @@ function ol_stats() {
 					
 					$(".dataset-cell[data-col-index="+i+"]").each(function(i,v) {
 						
-						var className = $(v).attr("class");
+						var className = $(v).parent().attr("class");
 						
 						alert(className);
 						
