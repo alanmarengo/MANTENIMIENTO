@@ -262,13 +262,9 @@ function ol_stats() {
 					
 					mapear = true;
 					
-				}else{
-				
-					if (graficar == "g") {
+				}else{				
 						
-						graficar = true;
-						
-					}
+					graficar = true;
 				
 				}
 			
