@@ -459,19 +459,41 @@ function ol_stats() {
 	
 	this.view.mapear = function(query_id) {
 		
-		var req = $.ajax({
-				
-			async:false,
-			data:{
-				query_id:query_id
-			},
-			type:"POST",
-			url:"./php/get-mapear.php",
-			success:function(d){}
-			
-		});	
-
-		alert(req.responseText);
+		var layer = new ol.layer.Tile({
+				visible:true,
+				source: new ol.source.TileWMS({
+					url: layer_wms,
+					params: {
+						'LAYERS': 'intervalos_polygons',
+						'id':query_id,
+						'VERSION': '1.1.1',
+						'FORMAT': 'image/png',
+						'TILED': false
+					}
+				})
+			});
+		
+		var googlelayer = new ol.layer.Tile({
+			name:'google_base',
+			visible:true,
+			source: new ol.source.TileImage({ 
+				url: 'http://mt{0-3}.googleapis.com/vt?&x={x}&y={y}&z={z}&hl=es&gl=AR',
+				crossOrigin: 'anonymous'
+			})
+		})
+		
+		var map = new ol.Map({
+			layers:[googlelayer],
+			target: 'gm-stats-mediawrapper',
+			extent: [-13281237.21183002,-7669922.0600572005,-738226.6183457375,-1828910.1066171727],
+			controls: [],
+			view: new ol.View({
+				center: [-7176058.888636417,-4680928.505993671],
+				zoom:3.8,
+				minZoom: 3.8,
+				maxZoom: 21
+			})
+		});
 		
 	}
 	
