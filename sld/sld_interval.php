@@ -19,6 +19,10 @@ $min = $row[1];
 $salto = $row[3];
 $acumulado = 0.0;
 
+echo $max;
+echo $min;
+echo $salto;
+
 pg_close($conn);
 
 $sld_file 	= file_get_contents("./intervalo_polygon.sld");	$layer_name = 'intervalos_polygons';
