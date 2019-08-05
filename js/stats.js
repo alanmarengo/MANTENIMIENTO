@@ -244,14 +244,22 @@ function ol_stats() {
 		var groupbycol_index = $("#group-combo-view").attr("data-group-column-index");
 		var groupbycol_name = $("#group-combo-view").attr("data-group-column-index");
 		
-		var debug = "";
+		if ((groupbycol_index != 0) && (groupbycol_index != 1)) {
+			
+			alert("Debe agrupar el dataset por una variable de cruce espacial para poder mapear o graficar");
+			
+		}else{
 		
-		debug += "AGRUPAR POR COLUMNA: " + groupbycol + "\n";
-		debug += "VALOR COMBO: " + groupby_val + "\n";
-		debug += "INDEX COLUMNA: " + groupbycol_index + "\n";
-		debug += "NOMBRE COLUMNA: " + groupbycol_name + "\n";
+			var debug = "";
+			
+			debug += "AGRUPAR POR COLUMNA: " + groupbycol + "\n";
+			debug += "VALOR COMBO: " + groupby_val + "\n";
+			debug += "INDEX COLUMNA: " + groupbycol_index + "\n";
+			debug += "NOMBRE COLUMNA: " + groupbycol_name + "\n";
+			
+			alert(debug);
 		
-		alert(debug);
+		}
 		
 	}
 	
