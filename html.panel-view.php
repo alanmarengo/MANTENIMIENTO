@@ -47,10 +47,10 @@
 	
 	</div>
 	
-	<div class="row jump-row">
+	<div class="row jump-row jus-right jump-posrel" style="top:30px;">
 	
-		<a href="#" class="button">MAPEAR</a>
-		<a href="#" class="button">GRAFICAR</a>		
+		<a href="#" class="button black-button">MAPEAR</a>
+		<a href="#" class="button black-button">GRAFICAR</a>		
 	
 	</div>
 	
