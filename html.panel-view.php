@@ -50,10 +50,10 @@
 	<div class="row jump-row jus-right jump-posrel" style="top:30px;">
 	
 		<div class="mr-20">	
-			<a href="#" class="button black-button">MAPEAR</a>
+			<a href="#" class="button black-button" onclick="$('popup-modal-gm').show(); $('popup-stats-gm').show();">MAPEAR</a>
 		</div>
 		<div class="mr-20">	
-			<a href="#" class="button black-button">GRAFICAR</a>
+			<a href="#" class="button black-button" onclick="$('popup-modal-gm').show(); $('popup-stats-gm').show();">GRAFICAR</a>
 		</div>		
 	
 	</div>
