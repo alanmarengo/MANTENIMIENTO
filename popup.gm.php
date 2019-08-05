@@ -9,7 +9,7 @@
 	
 	</div>
 
-	<div class="row jump-row jus-between" id="popup-stats-gm-header">
+	<div class="row jump-row jus-between popup-stats-gm-row" id="popup-stats-gm-header">
 		
 		<h3>Mapear Variable</h3>
 		<div class="icons">
@@ -23,7 +23,7 @@
 	
 	</div>
 
-	<div class="row jump-row">
+	<div class="row jump-row popup-stats-gm-row">
 		
 		<hr>
 		
