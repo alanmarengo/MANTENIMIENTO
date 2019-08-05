@@ -210,8 +210,6 @@ if ($filter_str == "") {
 	
 }
 
-echo $new_query_string;
-
 $gm = -1;
 $gm_id = -1;
 
