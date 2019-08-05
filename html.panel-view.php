@@ -47,4 +47,11 @@
 	
 	</div>
 	
+	<div class="row jump-row">
+	
+		<a href="#" class="button">MAPEAR</a>
+		<a href="#" class="button">GRAFICAR</a>		
+	
+	</div>
+	
 </div>
