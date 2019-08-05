@@ -511,21 +511,9 @@
 	
 }
 
-.popup-stats a {
+.popup-stats a:not(.dropdown-item) {
 	
 	color:rgb(33, 37, 41);
-	
-}
-
-.popup-stats-gm-row .dropdown-item a {
-	
-	color:#FFFFFF;
-	
-}
-
-.popup-stats-gm-row .dropdown-item a span {
-	
-	color:#FFFFFF;
 	
 }
 
