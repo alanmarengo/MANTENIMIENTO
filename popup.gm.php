@@ -9,20 +9,16 @@
 	
 	</div>
 
-	<div class="row jump-row" style="padding:40px 100px;">
+	<div class="row jump-row jus-between" style="width:90% !Important; margin-left:5%;">
 		
-		<div class="jus-between">
-		
-			<h3>Mapear Variable</h3>
-			<div class="icons">
-				<a href="#" onclick="$('#popup-modal-gm').hide(); $('#popup-stats-gm').hide();">
-					<i class="fa fa-print"></i>
-				</a>
-				<a href="#" onclick="$('#popup-modal-gm').hide(); $('#popup-stats-gm').hide();">
-					<i class="fa fa-download"></i>
-				</a>
-			</div>
-		
+		<h3>Mapear Variable</h3>
+		<div class="icons">
+			<a href="#" onclick="$('#popup-modal-gm').hide(); $('#popup-stats-gm').hide();">
+				<i class="fa fa-print"></i>
+			</a>
+			<a href="#" onclick="$('#popup-modal-gm').hide(); $('#popup-stats-gm').hide();">
+				<i class="fa fa-download"></i>
+			</a>
 		</div>
 	
 	</div>
