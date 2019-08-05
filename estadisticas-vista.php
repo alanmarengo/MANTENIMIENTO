@@ -64,7 +64,7 @@ $dt_cruce = $_GET["dt_c"];
 	</div>
 	
 	<?php include("./widget-links.php"); ?>
-	<?php include("./popup-gm.php"); ?>
+	<?php include("./popup.gm.php"); ?>
 
 </body>
 </html>
