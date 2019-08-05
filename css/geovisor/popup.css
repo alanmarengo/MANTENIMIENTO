@@ -511,9 +511,15 @@
 	
 }
 
-.popup-stats a:not(.dropdown-item a) {
+.popup-stats a {
 	
 	color:rgb(33, 37, 41);
+	
+}
+
+.popup-stats .dropdown-item a {
+	
+	color:#FFFFFF;
 	
 }
 
