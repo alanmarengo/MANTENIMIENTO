@@ -523,14 +523,14 @@ function ol_stats() {
 				width:600
 			},
 			title: {
-				text: 'Monthly Average Rainfall'
+				text: 'Gráfico de Agrupamiento Espacial'
 			},
 			subtitle: {
-				text: 'Source: WorldClimate.com'
+				text: 'Powered by Atic'
 			},
 			xAxis: {
 				categories: [
-					colagroup
+					coldataset
 				],
 				crosshair: true
 			},
