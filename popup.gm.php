@@ -47,10 +47,14 @@
 	<div class="row jump-row popup-stats-gm-row" style="top:30px;">
 		
 		<div class="col col-md-4 col-lg-4">
-			<select class="selectpicker" id="gm-combo"></select>
-			<br><br>
-			<div class="mr-20">	
-				<a href="#" class="button black-button" onclick="$('#popup-modal-gm').show(); $('#popup-stats-gm').show();">PROCESAR</a>
+			
+			<div class="row jump-row">
+				<select class="selectpicker" id="gm-combo"></select>
+			</div>
+			<div class="row jump-row">
+				<div class="mr-20">	
+					<a href="#" class="button black-button" onclick="$('#popup-modal-gm').show(); $('#popup-stats-gm').show();">PROCESAR</a>
+				</div>
 			</div>
 		</div>
 		
