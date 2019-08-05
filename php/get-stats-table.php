@@ -13,6 +13,7 @@ $groupbycol = $_POST["groupbycol"];
 $groupindex = $_POST["groupbycol_index"];
 $groupname = $_POST["groupbycol_name"];
 $groupby_val = $_POST["groupby_val"];
+$gm_var = $_POST["gm_var"];
 $colstr_original = $colstr;
 
 $colstrType = -1;
@@ -215,24 +216,28 @@ $gm_id = -1;
 
 if (($groupindex == 0) || ($groupindex == 1)) {
 	
-	$gm_query_string = str_replace("'","''",$gm_query_string);
+	if ($gm_var != -1) {
 	
-	$query_map_string = "INSERT INTO mod_estadistica.dt_mapeo(dt_id, dt_mapeo_query, dt_mapeo_column_value)
-	VALUES ($dt_id, '$gm_query_string', '$groupby_val') RETURNING dt_mapeo_id";
+		$gm_query_string = str_replace("'","''",$gm_query_string);
+		
+		$query_map_string = "INSERT INTO mod_estadistica.dt_mapeo(dt_id, dt_mapeo_query, dt_mapeo_column_value)
+		VALUES ($dt_id, '$gm_query_string', '$gm_var') RETURNING dt_mapeo_id";
+		
+		$query = pg_query($conn,$query_map_string);
+		
+		$data = pg_fetch_assoc($query);
+		
+		if ($query) {
+			
+			$gm = 1;
+			$gm_id = $data["dt_mapeo_id"];
+			
+		}else{
+			
+			echo "ERROR " . pg_last_error($conn);
+			
+		}
 	
-	$query = pg_query($conn,$query_map_string);
-	
-	$data = pg_fetch_assoc($query);
-	
-	if ($query) {
-		
-		$gm = 1;
-		$gm_id = $data["dt_mapeo_id"];
-		
-	}else{
-		
-		echo "ERROR " . pg_last_error($conn);
-		
 	}
 
 }

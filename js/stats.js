@@ -294,6 +294,7 @@ function ol_stats() {
 		var groupby_val = $("#group-combo-view").val();
 		var groupbycol_index = $("#group-combo-view").attr("data-group-column-index");
 		var groupbycol_name = $("#group-combo-view").attr("data-group-column-index");
+		var gm_var = $("#gm-combo").val();
 		
 		if ((groupby_val == 2) || (groupby_val == 3)) {
 			
@@ -386,7 +387,8 @@ function ol_stats() {
 			groupbycol:groupbycol,
 			groupbycol_index:groupbycol_index,
 			groupbycol_name:groupbycol_name,
-			groupby_val:groupby_val
+			groupby_val:groupby_val,
+			gm_var:gm_var
 		}
 		
 		if ((!no_op) || (bypassOp)) {
