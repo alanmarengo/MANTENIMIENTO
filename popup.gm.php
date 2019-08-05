@@ -1,5 +1,5 @@
 <div class="popup-modal" id="popup-modal-gm"></div>
-<div class="popup-stats" id="popup-stats-gm" data-action="0">
+<div class="popup-stats" id="popup-stats-gm" data-action="-1">
 
 	<div class="row jump-row jus-right">
 

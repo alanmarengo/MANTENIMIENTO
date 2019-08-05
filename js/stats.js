@@ -47,7 +47,7 @@ function ol_stats() {
 			
 			}
 			
-			this.getTable(currentPage);
+			this.getTable(currentPage,false,false,false);
 			
 		}.bind(this));	
 		
@@ -253,17 +253,36 @@ function ol_stats() {
 			var gm_action = $("#popup-stats-gm").attr("data-action");
 			var gm_var  = $("#gm-combo").val();
 			
-			alert(gm_action + " : : " + gm_var);
+			if ((gm_action != -1) && (gm_var != -1)) {
 			
-			//currentPage = $(".page-active").attr("data-page");
+				var mapear = false;
+				var graficar = false;
 			
-			//this.getTable(currentPage,false);
+				if (gm_var == "m") {
+					
+					mapear = true;
+					
+				}else{
+					
+					graficar = true;
+					
+				}
+			
+				currentPage = $(".page-active").attr("data-page");
+			
+				this.getTable(currentPage,false,mapear,graficar);
+			
+			}else{
+				
+				alert("Se produjo un error asegurese de haber elegido una variable para procesar");
+				
+			}
 		
 		}
 		
 	}
 	
-	this.view.getTable = function(page,bypassOp) {
+	this.view.getTable = function(page,bypassOp,mapear,graficar) {
 		
 		var dt_id = $("#frm-dt #dt_id").val();
 		var dt_variables = $("#frm-dt #dt_v").val();
@@ -392,7 +411,7 @@ function ol_stats() {
 					
 					var pageitem = v.getAttribute("data-page");
 					
-					this.getTable(pageitem,false);
+					this.getTable(pageitem,false,false,false);
 					
 				}.bind(this));
 				
@@ -413,6 +432,18 @@ function ol_stats() {
 			});
 			
 			this.updateAgroupColModals();
+			
+			if (mapear) {
+				
+				alert("mapear");
+				
+			}
+			
+			if (graficar) {
+				
+				alert("graficar");
+				
+			}
 		
 		}else{
 			
