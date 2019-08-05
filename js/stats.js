@@ -530,8 +530,9 @@ function ol_stats() {
 			},
 			xAxis: {
 				categories: [
-					coldataset
+					"a"
 				],
+				title:"test",
 				crosshair: true
 			},
 			tooltip: {
