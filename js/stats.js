@@ -433,18 +433,17 @@ function ol_stats() {
 			
 			this.updateAgroupColModals();
 			
-			alert("MAPEAR: " + mapear + " :: " + "GRAFICAR: " + graficar);
-			
 			if (mapear) {
 				
 				var dt_mapeo_id = $("#dataset").attr("data-gm-id");
+				this.mapear(dt_mapeo_id);
 				
 			}
 			
 			if (graficar) {
 				
 				var dt_mapeo_id = $("#dataset").attr("data-gm-id");
-				alert(dt_mapeo_id);
+				this.graficar(dt_mapeo_id);
 			}
 		
 		}else{
@@ -453,6 +452,24 @@ function ol_stats() {
 			$("#update-view").prop("disabled",false);
 			
 		}
+		
+	}
+	
+	this.view.mapear = function(query_id) {
+		
+		var req = $.ajax({
+				
+			async:false,
+			data:{
+				query_id:query_id
+			},
+			type:"POST",
+			url:"./php/get-mapear.php",
+			success:function(d){}
+			
+		});	
+
+		alert(req.responseText);
 		
 	}
 	
