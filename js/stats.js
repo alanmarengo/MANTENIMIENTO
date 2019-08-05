@@ -504,19 +504,13 @@ function ol_stats() {
 		document.getElementById("gm-stats-mediawrapper").innerHTML = "";
 		document.getElementById("gm-stats-mediawrapper").innerHTML = "<h3>GRAFICAR TEST</h3>";
 		
-		var req = $.ajax({
-				
-			async:false,
-			data:{
-				query_id:query_id
-			},
-			type:"POST",
-			url:"./php/get-graficar.php",
-			success:function(d){}
-			
-		});
+		var colagroup = $("#group-combo-view").attr("data-group-column-val");
+		var coldataset = $("#gm-combo").val();
+		var values = $("#graficar-values").val();
 		
-		alert(req.responseText);
+		alert(colagroup);
+		alert(coldataset);
+		alert(values);
 		
 	}
 	
