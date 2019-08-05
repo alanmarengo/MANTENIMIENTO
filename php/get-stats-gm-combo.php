@@ -8,7 +8,7 @@ $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . 
 	
 $conn = pg_connect($string_conn);
 
-$query_string = "SELECT * FROM mod_estadistica.get_dt_from($dt_id,'$dt_variables','$dt_cruce') AS query";
+$query_string = "SELECT * FROM mod_estadistica.vw_variables WHERE dt_variable_id IN ($dt_variables)";
 
 $query = pg_query($conn,$query_string);
 
