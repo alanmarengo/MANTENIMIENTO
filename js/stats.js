@@ -128,6 +128,10 @@ function ol_stats() {
 					
 					$(".dataset-cell[data-col-index="+i+"]").each(function(i,v) {
 						
+						var className = $(v).attr("class");
+						
+						alert(className);
+						
 						if ($(v).hasClass("dataset-operation-row")) {
 							
 							$(v).append($("<div></div>").attr("class","dataset-cell-modal"));
