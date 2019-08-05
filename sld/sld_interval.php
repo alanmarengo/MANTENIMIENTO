@@ -8,7 +8,7 @@ $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . 
 	
 $conn = pg_connect($string_conn);
 
-$SQL = "SELECT max(_valor_)as maxx, min(_valor_) as minn,((max(_valor_)-min(_valor_))/5)AS salto FROM mod_estadistica.get_mapeo_value($id);";
+$SQL = "SELECT max(_valor_)as maxx, min(_valor_) as minn,((max(_valor_)-min(_valor_))/5)AS salto FROM mod_estadistica.get_mapeo_value($id)";
 
 $recordset = pg_query($conn,$SQL);
 
@@ -17,14 +17,15 @@ $row = pg_fetch_row($recordset);
 $max = $row[0];
 $min = $row[1];
 $salto = $row[2];
+
 $acumulado = 0.0;
 
-echo 'max '.$row[0];
-echo 'min '.$row[1];
-echo 'salto '.$row[2];
+echo $row[0];
+echo $row[1];
 
+$sld_file 	= file_get_contents("./intervalo_polygon.sld");	
 
-$sld_file 	= file_get_contents("./intervalo_polygon.sld");	$layer_name = 'intervalos_polygons';
+$layer_name = 'intervalos_polygons';
 
 $sld_file	= str_replace("[layer_name]"	, $layer_name	,$sld_file		);
 
