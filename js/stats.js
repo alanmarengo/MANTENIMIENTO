@@ -514,8 +514,8 @@ function ol_stats() {
 		Highcharts.chart('gm-stats-mediawrapper', {
 			chart: {
 				type: 'column',
-				height:400,
-				width:500
+				height:350,
+				width:600
 			},
 			/*title: {
 				text: 'Monthly Average Rainfall'
@@ -551,7 +551,7 @@ function ol_stats() {
 			},
 			series: [{
 				name:"Valores del Dataset",
-				data: values
+				data: [50,80]
 			}]
 		});
 		
