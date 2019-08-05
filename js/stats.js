@@ -160,7 +160,7 @@ function ol_stats() {
 			
 		}
 		
-		$("#group-combo-view").val(-1);
+		//$("#group-combo-view").val(-1);
 		
 	}
 	
