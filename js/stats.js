@@ -175,6 +175,24 @@ function ol_stats() {
 		
 	}
 	
+	this.view.getGMCombo = function(dt_variables) {		
+		
+		var req = $.ajax({
+			
+			async:false,
+			data:{
+				dt_variables:dt_variables
+			},
+			type:"POST",
+			url:"./php/get-stats-gm-combo.php",
+			success:function(d){}
+			
+		});
+		
+		document.getElementById("gm-combo").innerHTML = req.responseText;	
+		
+	}
+	
 	this.view.getTableHeader = function(page) {		
 		
 		var dt_id = $("#frm-dt #dt_id").val();

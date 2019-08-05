@@ -5,6 +5,7 @@
 		stats = new ol_stats();
 		stats.view.start();
 		stats.view.resetSelects();
+		stats.view.getGMCombo('<?php echo dt_v; ?>');
 		stats.view.getTableHeader(1);
 		stats.view.getTable(1,true);
 		

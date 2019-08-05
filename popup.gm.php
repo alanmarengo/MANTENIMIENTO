@@ -46,11 +46,8 @@
 
 	<div class="row jump-row popup-stats-gm-row">
 		
-		<hr>
-		
 		<div class="col col-md-4 col-lg-4">
-			<select class="selectpicker">
-				<option value="-1">Elija una Variable</option>
+			<select class="selectpicker" id="gm-combo">
 			</select>
 		</div>
 		
