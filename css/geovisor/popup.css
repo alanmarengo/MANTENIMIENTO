@@ -492,8 +492,6 @@
 .popup-stats {
 	
 	position:fixed;
-	top:0;
-	left:0;
 	background-color:#FFFFFF;
 	width:80%;
 	height:90%;
@@ -501,6 +499,8 @@
 	display:none;
 	padding:20px;
 	left:50%;
+	top:50%;
 	margin-left:-40%;
+	margin-top:-45%;
 	
 }
