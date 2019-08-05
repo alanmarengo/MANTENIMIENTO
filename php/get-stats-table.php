@@ -210,16 +210,23 @@ if ($filter_str == "") {
 	
 }
 
+$gm = -1;
+$gm_id = -1;
+
 if (($groupindex == 0) || ($groupindex == 1)) {
 	
 	$gm_query_string = str_replace("'","''",$gm_query_string);
 	
 	$query_map_string = "INSERT INTO mod_estadistica.dt_mapeo(dt_id, dt_mapeo_query, dt_mapeo_column_value)
-	VALUES ($dt_id, '$gm_query_string', '$groupby_val')";
+	VALUES ($dt_id, '$gm_query_string', '$groupby_val') RETURNING dt_mapeo_id";
 	
-	if (pg_query($conn,$query_map_string)) {
+	$query = pg_query($conn,$query_map_string);
+	
+	$data = pg_fetch_assoc($query);
+	
+	if ($query) {
 		
-		echo "QUERY INSERTADA";
+		echo "QUERY INSERTADA - " . $data["dt_mapeo_id"];
 		
 	}else{
 		
@@ -231,7 +238,7 @@ if (($groupindex == 0) || ($groupindex == 1)) {
 
 ?>
 	
-<div class="dataset">
+<div class="dataset" data-gm="<?php echo $gm; ?>" data-gm-id="<?php echo $gm_id; ?>">
 
 	<?php
 
