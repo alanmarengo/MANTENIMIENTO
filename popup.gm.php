@@ -1,5 +1,5 @@
 <div class="popup-modal" id="popup-modal-gm"></div>
-<div class="popup-stats" id="popup-stats-gm">
+<div class="popup-stats" id="popup-stats-gm" data-action="0">
 
 	<div class="row jump-row jus-right">
 
@@ -11,7 +11,7 @@
 
 	<div class="row jump-row jus-between popup-stats-gm-row" id="popup-stats-gm-header">
 		
-		<h3>Mapear Variable</h3>
+		<h3 id="gm-title">Mapear Variable</h3>
 		<div class="icons">
 			<a href="#" onclick="$('#popup-modal-gm').hide(); $('#popup-stats-gm').hide();">
 				<i class="fa fa-print"></i>
