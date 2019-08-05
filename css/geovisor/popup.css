@@ -517,19 +517,19 @@
 	
 }
 
-.popup-stats .dropdown-item a {
+.popup-stats-gm-row .dropdown-item a {
 	
 	color:#FFFFFF;
 	
 }
 
-.popup-stats .dropdown-item a span {
+.popup-stats-gm-row .dropdown-item a span {
 	
 	color:#FFFFFF;
 	
 }
 
-.popup-stats a:hover {
+.popup-stats-gm-row a:hover {
 	
 	color:rgb(33, 37, 41);
 	opacity:0.8;
