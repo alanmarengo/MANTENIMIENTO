@@ -367,6 +367,8 @@ function ol_stats() {
 				$("#update-view").prop("disabled",false);
 				
 			});
+			
+			this.updateAgroupColModals();
 		
 		}else{
 			
