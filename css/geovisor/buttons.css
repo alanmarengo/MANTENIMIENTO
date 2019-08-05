@@ -34,7 +34,7 @@
 .black-button {
 	
 	background-color: #212529;
-    color: #FFFFFF;
+    color: #FFFFFF !Important;
     font-family: "Montserrat", sans-serif !Important;
     font-size: 13px;
     padding: 10px 20px;
