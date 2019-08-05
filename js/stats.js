@@ -126,6 +126,8 @@ function ol_stats() {
 					
 				}else{
 					
+					alert($(".dataset-cell[data-col-index="+i+"]").parent().attr("class"));
+					
 					if ($(".dataset-cell[data-col-index="+i+"]").parent().attr("class") == "dataset-operation-row") {
 						
 						$(".dataset-cell[data-col-index="+i+"]").append($("<div></div>").attr("class","dataset-cell-modal"));
