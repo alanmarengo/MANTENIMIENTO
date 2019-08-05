@@ -160,12 +160,18 @@ function ol_stats() {
 			
 		}
 		
-		$(".dataset-operation-row .dataset-cell[data-col-index=0]").find(".selectpicker").first().val(-1);
+		$(".dataset-operation-row .dataset-cell[data-col-index=0]").find(".selectpicker").first().val("-1");
 		$(".dataset-operation-row .dataset-cell[data-col-index=0]").find(".selectpicker").first().selectpicker("refresh");
-		$(".dataset-operation-row .dataset-cell[data-col-index=1]").find(".selectpicker").first().val(-1);
+		$(".dataset-operation-row .dataset-cell[data-col-index=0]").find(".selectpicker").next(".dropdown-toggle").find(".filter-option-inner-inner").prev("i").attr("class","fa fa-question-circle").css("color","red");					
+		$(".dataset-operation-row .dataset-cell[data-col-index=0]").find(".selectpicker").next(".dropdown-toggle").find(".filter-option-inner-inner").css({"color":"red"});
+		$(".dataset-operation-row .dataset-cell[data-col-index=1]").find(".selectpicker").first().val("-1");
 		$(".dataset-operation-row .dataset-cell[data-col-index=1]").find(".selectpicker").first().selectpicker("refresh");
-		$(".dataset-operation-row .dataset-cell[data-col-index=2]").find(".selectpicker").first().val(-1);
+		$(".dataset-operation-row .dataset-cell[data-col-index=1]").find(".selectpicker").next(".dropdown-toggle").find(".filter-option-inner-inner").prev("i").attr("class","fa fa-question-circle").css("color","red");					
+		$(".dataset-operation-row .dataset-cell[data-col-index=1]").find(".selectpicker").next(".dropdown-toggle").find(".filter-option-inner-inner").css({"color":"red"});
+		$(".dataset-operation-row .dataset-cell[data-col-index=2]").find(".selectpicker").first().val("-1");
 		$(".dataset-operation-row .dataset-cell[data-col-index=2]").find(".selectpicker").first().selectpicker("refresh");
+		$(".dataset-operation-row .dataset-cell[data-col-index=2]").find(".selectpicker").next(".dropdown-toggle").find(".filter-option-inner-inner").prev("i").attr("class","fa fa-question-circle").css("color","red");					
+		$(".dataset-operation-row .dataset-cell[data-col-index=2]").find(".selectpicker").next(".dropdown-toggle").find(".filter-option-inner-inner").css({"color":"red"});
 		
 	}
 	
