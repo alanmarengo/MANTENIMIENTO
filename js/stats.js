@@ -457,6 +457,48 @@ function ol_stats() {
 		
 	}
 	
+	/**************** DIOS , Un request via POST para WMS *******************************/
+	function WmsPostHandle(image, src) 
+	{
+		var img = image.getImage();
+		if (typeof window.btoa === 'function') 
+		{
+			 var xhr = new XMLHttpRequest();
+			 xhr.open('POST', src, true);
+			 xhr.responseType = 'arraybuffer';
+			 xhr.onload = function(e) 
+			 {
+				if (this.status === 200) 
+				{
+				  console.log("this.response",this.response);
+				  var uInt8Array = new Uint8Array(this.response);
+				  var i = uInt8Array.length;
+				  var binaryString = new Array(i);
+				  
+				  while (i--) 
+				  {
+					binaryString[i] = String.fromCharCode(uInt8Array[i]);
+				  };
+				  
+				  var data = binaryString.join('');
+				  var type = xhr.getResponseHeader('content-type');
+				  if (type.indexOf('image') === 0) 
+				  {
+					img.src = 'data:' + type + ';base64,' + window.btoa(data);
+				  };
+				};
+			};
+			xhr.send();
+		} 
+		else 
+		{
+			img.src = src;
+		};
+	};
+	
+	/************************************************************************************/
+	
+	
 	this.view.mapear = function(query_id) {
 		
 		document.getElementById("gm-stats-mediawrapper").innerHTML = "";
@@ -477,7 +519,8 @@ function ol_stats() {
 						'FORMAT': 'image/png',
 						'TILED': false,
 						'sld_body':sld_result
-					}
+					},
+					tileLoadFunction: function(image, src) {WmsPostHandle(image, src);}
 				})
 			});
 		
