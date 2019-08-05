@@ -289,6 +289,6 @@ if (($groupindex == 0) || ($groupindex == 1)) {
 	
 	?>
 	
-	<input id="graficar-values" type="hidden" values="<?php echo implode(",",$gm_var_values); ?>">
+	<input id="graficar-values" type="hidden" value="<?php echo implode(",",$gm_var_values); ?>">
 	
 </div>
