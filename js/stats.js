@@ -257,7 +257,7 @@ function ol_stats() {
 			
 				var mapear = false;
 				var graficar = false;
-				alert("PRE SEND MAPEAR: " + mapear + " :: " + "GRAFICAR: " + graficar);
+				alert("PRE SEND GMVAR: " + gm_var + " :: MAPEAR: " + mapear + " :: " + "GRAFICAR: " + graficar);
 				if (gm_var == "m") {
 					
 					mapear = true;
