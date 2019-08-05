@@ -551,7 +551,7 @@ function ol_stats() {
 			},
 			series: [{
 				name:"Valores del Dataset",
-				data: values.split(",")
+				data: values
 			}]
 		});
 		
