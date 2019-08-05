@@ -44,7 +44,7 @@
 	
 	</div>
 
-	<div class="row jump-row popup-stats-gm-row">
+	<div class="row jump-row popup-stats-gm-row" style="top:30px;">
 		
 		<div class="col col-md-4 col-lg-4">
 			<select class="selectpicker" id="gm-combo">
