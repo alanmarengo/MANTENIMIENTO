@@ -21,6 +21,7 @@ $dt_cruce = $_GET["dt_c"];
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 		
+	<?php include("./scripts.highcharts.php"); ?>	
 	<?php include("./scripts.default-stats-view.php"); ?>	
 	<?php include("./scripts.stats.view.php"); ?>	
 	<?php include("./scripts.onresize.php"); ?>	
