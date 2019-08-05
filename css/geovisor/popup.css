@@ -523,6 +523,12 @@
 	
 }
 
+.popup-stats .dropdown-item a span {
+	
+	color:#FFFFFF;
+	
+}
+
 .popup-stats a:hover {
 	
 	color:rgb(33, 37, 41);
