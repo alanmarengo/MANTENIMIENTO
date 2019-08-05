@@ -461,6 +461,11 @@ function ol_stats() {
 		
 		document.getElementById("gm-stats-mediawrapper").innerHTML = "";
 		
+		
+		/**** Generar el SLD ****/
+		s = new sldlib();
+		sld_result = s.sld_get_intervalos(query_id);
+		
 		var layer = new ol.layer.Tile({
 				visible:true,
 				source: new ol.source.TileWMS({
@@ -470,7 +475,8 @@ function ol_stats() {
 						'id':query_id,
 						'VERSION': '1.1.1',
 						'FORMAT': 'image/png',
-						'TILED': false
+						'TILED': false,
+						'sld_body':sld_result
 					}
 				})
 			});
