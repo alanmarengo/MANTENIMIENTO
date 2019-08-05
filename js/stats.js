@@ -126,13 +126,15 @@ function ol_stats() {
 					
 				}else{
 					
-					alert($(".dataset-cell[data-col-index="+i+"]").parent().attr("class"));
+					$(".dataset-cell[data-col-index="+i+"]").each(function(i,v) {
 					
-					if ($(".dataset-cell[data-col-index="+i+"]").parent().attr("class") == "dataset-operation-row") {
-						
-						$(".dataset-cell[data-col-index="+i+"]").append($("<div></div>").attr("class","dataset-cell-modal"));
-						
-					}
+						if ($(v).parent().attr("class") == "dataset-operation-row") {
+							
+							$(v).append($("<div></div>").attr("class","dataset-cell-modal"));
+							
+						}
+					
+					});
 					
 				}
 				
