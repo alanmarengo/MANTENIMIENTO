@@ -518,8 +518,22 @@
 	
 }
 
+.popup-stats .icons a {
+	
+	margin-right:10px;
+	
+}
+
 .popup-stats .icons i {
 	
-	color:#cccccc;
+	color:#aaaaaa;
+	
+}
+
+#popup-stats-gm-header {
+	
+	width:90% !Important; 
+	position:relative; 
+	left:5%;
 	
 }
