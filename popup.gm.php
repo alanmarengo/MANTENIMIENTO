@@ -47,8 +47,8 @@
 	<div class="row jump-row popup-stats-gm-row" style="top:30px;">
 		
 		<div class="col col-md-4 col-lg-4">
-			<select class="selectpicker" id="gm-combo">
-			</select>
+			<select class="selectpicker" id="gm-combo"></select>
+			<br><br>
 			<div class="mr-20">	
 				<a href="#" class="button black-button" onclick="$('#popup-modal-gm').show(); $('#popup-stats-gm').show();">PROCESAR</a>
 			</div>
