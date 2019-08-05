@@ -15,8 +15,7 @@ $groupname = $_POST["groupbycol_name"];
 $groupby_val = $_POST["groupby_val"];
 $gm_var = $_POST["gm_var"];
 $colstr_original = $colstr;
-
-echo $gm_var;
+$gm_var_values = array();
 
 $colstrType = -1;
 
@@ -264,6 +263,12 @@ if (($groupindex == 0) || ($groupindex == 1)) {
 		
 		for($i=0; $i<sizeof($col); $i++) {
 			
+			if ($col[$i] == $gm_var) {
+				
+				array_push($gm_var_values,$r[$col[$i]]);
+				
+			}
+			
 			?>
 			
 			<div class="dataset-cell dataset-cell-header" data-col-index="<?php echo $i; ?>">
@@ -283,5 +288,7 @@ if (($groupindex == 0) || ($groupindex == 1)) {
 	}
 	
 	?>
-
+	
+	<input id="graficar-values" type="hidden" values="<?php echo implode(",",$gm_var_values); ?>">
+	
 </div>
