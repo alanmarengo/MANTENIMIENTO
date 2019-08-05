@@ -161,9 +161,11 @@ function ol_stats() {
 		}
 		
 		$(".dataset-operation-row .dataset-cell[data-col-index=0] .selectpicker").val(-1);
+		$(".dataset-operation-row .dataset-cell[data-col-index=0] .selectpicker").selectpicker("refresh");
 		$(".dataset-operation-row .dataset-cell[data-col-index=1] .selectpicker").val(-1);
+		$(".dataset-operation-row .dataset-cell[data-col-index=1] .selectpicker").selectpicker("refresh");
 		$(".dataset-operation-row .dataset-cell[data-col-index=2] .selectpicker").val(-1);
-		$(".dataset-operation-row .selectpicker").selectpicker("refresh");
+		$(".dataset-operation-row .dataset-cell[data-col-index=2] .selectpicker").selectpicker("refresh");
 		
 	}
 	
