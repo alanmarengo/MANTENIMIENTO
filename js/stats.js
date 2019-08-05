@@ -534,12 +534,6 @@ function ol_stats() {
 				],
 				crosshair: true
 			},
-			yAxis: {
-				min: 0,
-				title: {
-					text: "a"
-				}
-			},
 			tooltip: {
 				headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
 				pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
@@ -555,7 +549,7 @@ function ol_stats() {
 				}
 			},
 			series: [{
-				name:coldataset,
+				name:colagroup,
 				data: values
 			}]
 		});
