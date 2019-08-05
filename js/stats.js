@@ -246,7 +246,7 @@ function ol_stats() {
 		
 		var debug = "";
 		
-		debug += "AGRUPAR POR COLUMNA: " + groupby_col + "\n";
+		debug += "AGRUPAR POR COLUMNA: " + groupbycol + "\n";
 		debug += "VALOR COMBO: " + groupby_val + "\n";
 		debug += "INDEX COLUMNA: " + groupbycol_index + "\n";
 		debug += "NOMBRE COLUMNA: " + groupbycol_name + "\n";
