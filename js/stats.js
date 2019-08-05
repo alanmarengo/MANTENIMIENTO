@@ -452,7 +452,7 @@ function ol_stats() {
 		$("#inp_dt_cruce").val(dt_cruce);
 		
 		var flink = "./estadisticas-vista.php?dt_id="+dt_id+"&dt_v="+dt_variables+"&dt_c="+dt_cruce;
-		alert(flink);
+		
 		var flinka = document.createElement("a");
 			flinka.setAttribute("href",flink);
 			

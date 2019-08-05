@@ -44,4 +44,20 @@
 	
 	</div>
 
+	<div class="row jump-row popup-stats-gm-row">
+		
+		<hr>
+		
+		<div class="col col-md-4 col-lg-4">
+			<select class="selectpicker">
+				<option value="-1">Elija una Variable</option>
+			</select>
+		</div>
+		
+		<div class="col col-md-8 col-lg-8">
+			<div id="gm-stats-mediawrapper"></div>
+		</div>
+	
+	</div>
+
 </div>
