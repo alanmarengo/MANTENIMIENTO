@@ -245,7 +245,7 @@ if (($groupindex == 0) || ($groupindex == 1)) {
 
 	$col = explode(",",$colstr_original);
 	
-	$query = pg_query($conn,$new_query_string);	
+	$query = pg_query($conn,$new_query_string);
 	
 	while($r = pg_fetch_assoc($query)) {
 		

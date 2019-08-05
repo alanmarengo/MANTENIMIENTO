@@ -124,6 +124,14 @@ function ol_stats() {
 					
 					$(".dataset-cell[data-col-index="+i+"]").append($("<div></div>").attr("class","dataset-cell-modal"));
 					
+				}else{
+					
+					if ($(".dataset-cell[data-col-index="+i+"]").parent().hasClass(".dataset-operation-row")) {
+						
+						$(".dataset-cell[data-col-index="+i+"]").append($("<div></div>").attr("class","dataset-cell-modal"));
+						
+					}
+					
 				}
 				
 			}
@@ -284,20 +292,20 @@ function ol_stats() {
 		});
 		
 		var data = {
-				page:page,
-				dt_id:dt_id,
-				dt_variables:dt_variables,
-				dt_cruce:dt_cruce,
-				colstr:colstr,
-				colstrType:colstrType,
-				filters:filters,
-				operations:operations,
-				colgroup:colgroup,
-				groupbycol:groupbycol,
-				groupbycol_index:groupbycol_index,
-				groupbycol_name:groupbycol_name,
-				groupby_val:groupby_val
-			}
+			page:page,
+			dt_id:dt_id,
+			dt_variables:dt_variables,
+			dt_cruce:dt_cruce,
+			colstr:colstr,
+			colstrType:colstrType,
+			filters:filters,
+			operations:operations,
+			colgroup:colgroup,
+			groupbycol:groupbycol,
+			groupbycol_index:groupbycol_index,
+			groupbycol_name:groupbycol_name,
+			groupby_val:groupby_val
+		}
 		
 		if ((!no_op) || (bypassOp)) {
 		
