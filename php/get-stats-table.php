@@ -226,7 +226,8 @@ if (($groupindex == 0) || ($groupindex == 1)) {
 	
 	if ($query) {
 		
-		echo "QUERY INSERTADA - " . $data["dt_mapeo_id"];
+		$gm = 1;
+		$gm_id = $data["dt_mapeo_id"];
 		
 	}else{
 		
@@ -238,7 +239,7 @@ if (($groupindex == 0) || ($groupindex == 1)) {
 
 ?>
 	
-<div class="dataset" data-gm="<?php echo $gm; ?>" data-gm-id="<?php echo $gm_id; ?>">
+<div id="dataset" class="dataset" data-gm="<?php echo $gm; ?>" data-gm-id="<?php echo $gm_id; ?>">
 
 	<?php
 
