@@ -20,6 +20,8 @@ $dt_cruce = $_GET["dt_c"];
 	<title>Estadísticas</title>
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<script src="./js/sldlib.js" type="text/javascript"></script>	
 		
 	<?php include("./scripts.highcharts.php"); ?>	
 	<?php include("./scripts.default-stats-view.php"); ?>	
