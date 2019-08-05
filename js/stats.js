@@ -263,9 +263,13 @@ function ol_stats() {
 					mapear = true;
 					
 				}else{
-					
-					graficar = true;
-					
+				
+					if (graficar == "g") {
+						
+						graficar = true;
+						
+					}
+				
 				}
 			
 				currentPage = $(".page-active").attr("data-page");
@@ -435,14 +439,14 @@ function ol_stats() {
 			
 			if (mapear) {
 				
-				alert("mapear");
+				var dt_mapeo_id = $("#dataset").attr("data-gm-id");
 				
 			}
 			
 			if (graficar) {
 				
-				alert("graficar");
-				
+				var dt_mapeo_id = $("#dataset").attr("data-gm-id");
+				alert(dt_mapeo_id);
 			}
 		
 		}else{
