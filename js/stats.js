@@ -459,6 +459,50 @@ function ol_stats() {
 	
 	this.view.mapear = function(query_id) {
 		
+		document.getElementById("gm-stats-mediawrapper").innerHTML = "";
+		
+		var layer = new ol.layer.Tile({
+				visible:true,
+				source: new ol.source.TileWMS({
+					url: "http://observatorio.atic.com.ar/cgi-bin/mapserver?map=wms_atic",
+					params: {
+						'LAYERS': 'intervalos_polygons',
+						'id':query_id,
+						'VERSION': '1.1.1',
+						'FORMAT': 'image/png',
+						'TILED': false
+					}
+				})
+			});
+		
+		var googlelayer = new ol.layer.Tile({
+			name:'google_base',
+			visible:true,
+			source: new ol.source.TileImage({ 
+				url: 'http://mt{0-3}.googleapis.com/vt?&x={x}&y={y}&z={z}&hl=es&gl=AR',
+				crossOrigin: 'anonymous'
+			})
+		})
+		
+		var map = new ol.Map({
+			layers:[googlelayer,layer],
+			target: 'gm-stats-mediawrapper',
+			extent: [-13281237.21183002,-7669922.0600572005,-738226.6183457375,-1828910.1066171727],
+			controls: [],
+			view: new ol.View({
+				center: [-7176058.888636417,-4680928.505993671],
+				zoom:3.8,
+				minZoom: 3.8,
+				maxZoom: 21
+			})
+		});
+		
+	}
+	
+	this.view.graficar = function(query_id) {
+		alert(query_id);
+		document.getElementById("gm-stats-mediawrapper").innerHTML = "";
+		
 		var layer = new ol.layer.Tile({
 				visible:true,
 				source: new ol.source.TileWMS({
