@@ -437,6 +437,8 @@ function ol_stats() {
 			
 			this.updateAgroupColModals();
 			
+			alert("MAPEAR: " + mapear + " :: " + "GRAFICAR: " + graficar);
+			
 			if (mapear) {
 				
 				var dt_mapeo_id = $("#dataset").attr("data-gm-id");
