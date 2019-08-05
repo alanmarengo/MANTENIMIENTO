@@ -160,7 +160,10 @@ function ol_stats() {
 			
 		}
 		
-		//$("#group-combo-view").val(-1);
+		$(".dataset-operation-row .dataset-cell[data-col-index=0] .selectpicker").val(-1);
+		$(".dataset-operation-row .dataset-cell[data-col-index=1] .selectpicker").val(-1);
+		$(".dataset-operation-row .dataset-cell[data-col-index=2] .selectpicker").val(-1);
+		$(".dataset-operation-row .selectpicker").selectpicker("refresh");
 		
 	}
 	
