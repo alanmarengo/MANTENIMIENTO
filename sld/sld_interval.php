@@ -16,12 +16,12 @@ $row = pg_fetch_row($recordset);
 
 $max = $row[0];
 $min = $row[1];
-$salto = $row[3];
+$salto = $row[2];
 $acumulado = 0.0;
 
-echo 'max '.$max;
-echo 'min '.$min;
-echo 'salto '.$salto;
+echo 'max '.$row[0];
+echo 'min '.$row[1];
+echo 'salto '.$row[2];
 
 
 $sld_file 	= file_get_contents("./intervalo_polygon.sld");	$layer_name = 'intervalos_polygons';
