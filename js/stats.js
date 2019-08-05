@@ -508,8 +508,13 @@ function ol_stats() {
 		var coldataset = $("#gm-combo").val();
 		var values = $("#graficar-values").val();
 			values = values.split(",");
+		
+		for (var i=0; i<values.length; i++) {
 			
-			console.log(values);
+			values[i] = parseFloat(values[i]);
+			
+		}
+			
 			
 		Highcharts.chart('gm-stats-mediawrapper', {
 			chart: {
@@ -532,7 +537,7 @@ function ol_stats() {
 			yAxis: {
 				min: 0,
 				title: {
-					text: coldataset
+					text: ""
 				}
 			},
 			tooltip: {
@@ -550,8 +555,8 @@ function ol_stats() {
 				}
 			},
 			series: [{
-				name:"Valores del Dataset",
-				data: [50,80]
+				name:coldataset,
+				data: values
 			}]
 		});
 		
