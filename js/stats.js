@@ -160,6 +160,8 @@ function ol_stats() {
 			
 		}
 		
+		$("#group-combo-view").val(-1);
+		
 	}
 	
 	this.view.getTableHeader = function(page) {		
