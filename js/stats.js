@@ -503,12 +503,13 @@ function ol_stats() {
 		
 		document.getElementById("gm-stats-mediawrapper").innerHTML = "";
 		
+		sld_result = '';
 		
 		/**** Generar el SLD ****/
 		s = new sldlib();
 		sld_result = s.sld_get_intervalos(query_id);
 		
-		alert(sld_result);
+		//alert(sld_result);
 		
 		var layer = new ol.layer.Tile({
 				visible:true,
