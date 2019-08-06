@@ -19,7 +19,7 @@ $max = $row[0];
 $min = $row[1];
 $salto = $row[2];
 
-$acumulado = 0.0;
+$acumulado = $min;
 
 pg_close($conn);
 
