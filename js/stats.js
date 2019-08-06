@@ -499,7 +499,7 @@ function ol_stats() {
 	/************************************************************************************/
 	
 	this.view.premapear = function() {
-		
+		alert("premap");
 		$("#popup-modal-gm").hide(); 
 		$("#popup-stats-gm").hide();
 		$("#gm-stats-mediawrapper").hide();
@@ -508,7 +508,7 @@ function ol_stats() {
 	}
 	
 	this.view.pregraficar = function() {
-		
+		alert("pregraf");
 		$("#popup-modal-gm").hide(); 
 		$("#popup-stats-gm").hide();
 		$("#gm-stats-mediawrapper").hide();
