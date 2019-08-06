@@ -502,6 +502,7 @@ function ol_stats() {
 		
 		$("#popup-modal-gm").show(); 
 		$("#popup-stats-gm").show();
+		$("#popup-stats-gm").attr("data-action","m");
 		$("#gm-stats-mediawrapper").html("");
 		$("#popup-stats-gm-header .icons").show();
 		
@@ -511,6 +512,7 @@ function ol_stats() {
 		
 		$("#popup-modal-gm").show(); 
 		$("#popup-stats-gm").show();
+		$("#popup-stats-gm").attr("data-action","g");
 		$("#gm-stats-mediawrapper").html("");
 		$("#popup-stats-gm-header .icons").hide();
 		
