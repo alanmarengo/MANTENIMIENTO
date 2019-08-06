@@ -508,6 +508,8 @@ function ol_stats() {
 		s = new sldlib();
 		sld_result = s.sld_get_intervalos(query_id);
 		
+		alert(sld_result);
+		
 		var layer = new ol.layer.Tile({
 				visible:true,
 				source: new ol.source.TileWMS({
