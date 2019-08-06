@@ -50,10 +50,10 @@
 	<div class="row jump-row jus-right jump-posrel" style="top:30px;">
 	
 		<div class="mr-20">	
-			<a href="#" class="button black-button" onclick="$('#popup-modal-gm').show(); $('#popup-stats-gm').show(); $('#gm-title').html('Mapear Variable');  $('#popup-stats-gm').attr('data-action','m');">MAPEAR</a>
+			<a href="#" class="button black-button" onclick="stats.view.premapear()">MAPEAR</a>
 		</div>
 		<div class="mr-20">	
-			<a href="#" class="button black-button" onclick="$('#popup-modal-gm').show(); $('#popup-stats-gm').show(); $('#gm-title').html('Graficar Variable'); $('#popup-stats-gm').attr('data-action','g');">GRAFICAR</a>
+			<a href="#" class="button black-button" onclick="stats.view.pregraficar()">GRAFICAR</a>
 		</div>		
 	
 	</div>

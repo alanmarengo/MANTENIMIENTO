@@ -13,10 +13,10 @@
 		
 		<h3 id="gm-title">Mapear Variable</h3>
 		<div class="icons">
-			<a href="#" onclick="stats.view.premapear()">
+			<a href="#">
 				<i class="fa fa-print"></i>
 			</a>
-			<a href="#" onclick="stats.view.pregraficar()">
+			<a href="#">
 				<i class="fa fa-download"></i>
 			</a>
 		</div>
