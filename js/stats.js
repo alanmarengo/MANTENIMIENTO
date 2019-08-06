@@ -507,7 +507,7 @@ function ol_stats() {
 		
 		/**** Generar el SLD ****/
 		s = new sldlib();
-		capa = s.sld_get_intervalos(query_id);
+		capa = s.sld_get_intervalos(query_id); /* Retorna la capa que corresponde por tipo de geometria */
 		
 		var layer = new ol.layer.Tile({
 				visible:true,
@@ -520,8 +520,7 @@ function ol_stats() {
 						//'VERSION': '1.1.1',
 						'FORMAT': 'image/png',
 						'TILED': false,
-						'SLD':'http://'+window.location.hostname+'/sld/'+query_id+'.sld'
-					}
+						'SLD':'http://'+window.location.hostname+'/sld/'+query_id+'.sld' /* EL SLD CREADO ES SIEMPRE EL ID_MAPEO.SLD */
 				})
 			});
 		
