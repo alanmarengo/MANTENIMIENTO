@@ -55,7 +55,7 @@ $sld_file	= str_replace("[5_H]"	, $acumulado	,$sld_file);
 if(!file_put_contents("./$id.sld", $sld_file))
 {
 	echo "NO se pudo generar el SLD";
-};
+}; 
 
 echo "/$id.sld";
 
