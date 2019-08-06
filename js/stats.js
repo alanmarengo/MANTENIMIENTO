@@ -532,7 +532,7 @@ function ol_stats() {
 						//'VERSION': '1.1.1',
 						'FORMAT': 'image/png',
 						'TILED': false,
-						'SLD':'./sld/'+sld_result
+						'SLD':window.location.hostname+'/sld/'+sld_result
 					},
 					tileOptions: {maxGetUrlLength: 200000}
 				})
