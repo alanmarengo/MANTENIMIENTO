@@ -522,7 +522,8 @@ function ol_stats() {
 						'FORMAT': 'image/png',
 						'TILED': false,
 						'sld_body':decodeURI(sld_result)
-					}
+					},
+					{singleTile: false}
 				})
 			});
 		
