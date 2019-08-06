@@ -50,6 +50,10 @@ $sld_file	= str_replace("[5_D]"	, $acumulado+0.0000001 ,$sld_file);
 $acumulado  = $acumulado +$salto;
 $sld_file	= str_replace("[5_H]"	, $acumulado	,$sld_file);
 
-echo $sld_file;
+//echo $sld_file;
+
+file_put_contents("/$id.sld"., $sld_file);
+
+echo "./$id.sld";
 
 ?>

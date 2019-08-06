@@ -509,7 +509,7 @@ function ol_stats() {
 		s = new sldlib();
 		sld_result = s.sld_get_intervalos(query_id);
 		
-		//alert(sld_result);
+		alert(sld_result);
 		
 		/*
 		var layer = new OpenLayers.Layer.WMS
@@ -532,7 +532,7 @@ function ol_stats() {
 						//'VERSION': '1.1.1',
 						'FORMAT': 'image/png',
 						'TILED': false,
-						'sld_body':sld_result
+						'SLD':'./sld/'+sld_result
 					},
 					tileOptions: {maxGetUrlLength: 200000}
 				})
