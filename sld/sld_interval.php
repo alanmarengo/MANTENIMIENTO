@@ -88,6 +88,8 @@ if(!file_put_contents("./$id.sld", $sld_file))
 	echo "NO se pudo generar el SLD";
 }; 
 
-echo "$id.sld";
+//echo "$id.sld";
+
+echo $layer_name;
 
 ?>
