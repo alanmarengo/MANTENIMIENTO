@@ -521,6 +521,7 @@ function ol_stats() {
 						'FORMAT': 'image/png',
 						'TILED': false,
 						'SLD':'http://'+window.location.hostname+'/sld/'+query_id+'.sld' /* EL SLD CREADO ES SIEMPRE EL ID_MAPEO.SLD */
+					}
 				})
 			});
 		
