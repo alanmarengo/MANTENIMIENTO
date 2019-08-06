@@ -34,7 +34,7 @@ $sld_file	= str_replace("[1_D]"	, $acumulado ,$sld_file);
 $acumulado  = $acumulado +$salto;
 $sld_file	= str_replace("[1_H]"	, $acumulado	,$sld_file);
 
-$sld_file	= str_replace("[2_D]"	, $acumulado+0.00000001 ,$sld_file);
+$sld_file	= str_replace("[2_D]"	, $acumulado+0.0000001 ,$sld_file);
 $acumulado  = $acumulado +$salto;
 $sld_file	= str_replace("[2_H]"	, $acumulado	,$sld_file);
 
