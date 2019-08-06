@@ -576,10 +576,10 @@ function ol_stats() {
 				width:600
 			},
 			title: {
-				text: 'Gráfico de Agrupamiento Espacial'
+				text: colagroup
 			},
 			subtitle: {
-				text: 'Powered by Atic'
+				text: "por " + coldataset
 			},
 			xAxis: {
 				categories:labels,
