@@ -519,8 +519,8 @@ function ol_stats() {
 						'id':query_id,
 						//'VERSION': '1.1.1',
 						'FORMAT': 'image/png',
-						'TILED': false//,
-						//'SLD':'http://'+window.location.hostname+'/sld/'+sld_result
+						'TILED': false,
+						'SLD':'http://'+window.location.hostname+'/sld/'+sld_result
 					}
 				})
 			});
