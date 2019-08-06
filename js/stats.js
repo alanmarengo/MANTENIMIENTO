@@ -511,6 +511,7 @@ function ol_stats() {
 		
 		//alert(sld_result);
 		
+		/*
 		var layer = new OpenLayers.Layer.WMS
 					(
 					 "OpenLayers WMS",
@@ -518,7 +519,8 @@ function ol_stats() {
 					 {layers: 'intervalos_polygons', sld_body: sld_result},
 					 {tileOptions: {maxGetUrlLength: 200000}, transitionEffect: 'resize'}
 					);
-		/*
+		*/
+		
 		var layer = new ol.layer.Tile({
 				visible:true,
 				singleTile: true,
@@ -530,11 +532,12 @@ function ol_stats() {
 						//'VERSION': '1.1.1',
 						'FORMAT': 'image/png',
 						'TILED': false,
-						'sld_body':''//sld_result
-					}
+						'sld_body':sld_result
+					},
+					{tileOptions: {maxGetUrlLength: 200000}, transitionEffect: 'resize'}
 				})
 			});
-		*/
+		
 		
 		var googlelayer = new ol.layer.Tile({
 			name:'google_base',
