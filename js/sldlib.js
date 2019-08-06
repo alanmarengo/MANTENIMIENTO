@@ -119,7 +119,7 @@ function sldlib()
 		 
 		 url = "./sld/sld_interval.php?"+header;
 			
-		 this.xhttp.open("GET", url, false);//esperar
+		 this.xhttp.open("POST", url, false);//esperar
 		 this.xhttp.send();
           
           return this.sld_body;          

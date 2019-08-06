@@ -34,24 +34,22 @@ $sld_file	= str_replace("[1_D]"	, $acumulado ,$sld_file);
 $acumulado  = $acumulado +$salto;
 $sld_file	= str_replace("[1_H]"	, $acumulado	,$sld_file);
 
-$sld_file	= str_replace("[2_D]"	, $acumulado+1 ,$sld_file);
+$sld_file	= str_replace("[2_D]"	, $acumulado+0.00000001 ,$sld_file);
 $acumulado  = $acumulado +$salto;
 $sld_file	= str_replace("[2_H]"	, $acumulado	,$sld_file);
 
-$sld_file	= str_replace("[3_D]"	, $acumulado+1 ,$sld_file);
+$sld_file	= str_replace("[3_D]"	, $acumulado+0.0000001 ,$sld_file);
 $acumulado  = $acumulado +$salto;
 $sld_file	= str_replace("[3_H]"	, $acumulado	,$sld_file);
 
-$sld_file	= str_replace("[4_D]"	, $acumulado+1 ,$sld_file);
+$sld_file	= str_replace("[4_D]"	, $acumulado+0.0000001 ,$sld_file);
 $acumulado  = $acumulado +$salto;
 $sld_file	= str_replace("[4_H]"	, $acumulado	,$sld_file);
 
-$sld_file	= str_replace("[5_D]"	, $acumulado+1 ,$sld_file);
+$sld_file	= str_replace("[5_D]"	, $acumulado+0.0000001 ,$sld_file);
 $acumulado  = $acumulado +$salto;
 $sld_file	= str_replace("[5_H]"	, $acumulado	,$sld_file);
 
 echo $sld_file;
-
-
 
 ?>

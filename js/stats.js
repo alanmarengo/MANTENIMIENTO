@@ -503,24 +503,27 @@ function ol_stats() {
 		
 		document.getElementById("gm-stats-mediawrapper").innerHTML = "";
 		
+		sld_result = '';
 		
 		/**** Generar el SLD ****/
 		s = new sldlib();
 		sld_result = s.sld_get_intervalos(query_id);
 		
+		//alert(sld_result);
+		
 		var layer = new ol.layer.Tile({
 				visible:true,
+				singleTile: true,
 				source: new ol.source.TileWMS({
 					url: "http://observatorio.atic.com.ar/cgi-bin/mapserver?map=wms_atic",
 					params: {
 						'LAYERS': 'intervalos_polygons',
 						'id':query_id,
-						'VERSION': '1.1.1',
+						//'VERSION': '1.1.1',
 						'FORMAT': 'image/png',
 						'TILED': false,
-						'sld_body':sld_result
-					},
-					tileLoadFunction: function(image, src) {WmsPostHandle(image, src);}
+						'sld_body':''//sld_result
+					}
 				})
 			});
 		
