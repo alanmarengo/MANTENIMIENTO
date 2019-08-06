@@ -499,19 +499,19 @@ function ol_stats() {
 	/************************************************************************************/
 	
 	this.view.premapear = function() {
-		alert("premap");
-		$("#popup-modal-gm").hide(); 
-		$("#popup-stats-gm").hide();
-		$("#gm-stats-mediawrapper").hide();
+		
+		$("#popup-modal-gm").show(); 
+		$("#popup-stats-gm").show();
+		$("#gm-stats-mediawrapper").html("");
 		$("#popup-stats-gm-header .icons").show();
 		
 	}
 	
 	this.view.pregraficar = function() {
-		alert("pregraf");
-		$("#popup-modal-gm").hide(); 
-		$("#popup-stats-gm").hide();
-		$("#gm-stats-mediawrapper").hide();
+		
+		$("#popup-modal-gm").show(); 
+		$("#popup-stats-gm").show();
+		$("#gm-stats-mediawrapper").html("");
 		$("#popup-stats-gm-header .icons").hide();
 		
 	}
