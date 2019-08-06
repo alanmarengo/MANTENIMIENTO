@@ -515,6 +515,7 @@ function ol_stats() {
 				visible:true,
 				source: new ol.source.TileWMS({
 					url: "http://observatorio.atic.com.ar/cgi-bin/mapserver?map=wms_atic",
+					singleTile: true,
 					params: {
 						'LAYERS': 'intervalos_polygons',
 						'id':query_id,
