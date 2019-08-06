@@ -519,8 +519,7 @@ function ol_stats() {
 						'FORMAT': 'image/png',
 						'TILED': false,
 						'sld_body':sld_result
-					},
-					tileLoadFunction: function(image, src) {WmsPostHandle(image, src);}
+					}
 				})
 			});
 		
