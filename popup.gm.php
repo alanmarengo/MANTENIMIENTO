@@ -13,10 +13,10 @@
 		
 		<h3 id="gm-title">Mapear Variable</h3>
 		<div class="icons">
-			<a href="#" onclick="$('#popup-modal-gm').hide(); $('#popup-stats-gm').hide();">
+			<a href="#" onclick="stats.view.premapear()"> onclick="$('#popup-modal-gm').hide(); $('#popup-stats-gm').hide();">
 				<i class="fa fa-print"></i>
 			</a>
-			<a href="#" onclick="$('#popup-modal-gm').hide(); $('#popup-stats-gm').hide();">
+			<a href="#" onclick="stats.view.pregraficar()"> onclick="$('#popup-modal-gm').hide(); $('#popup-stats-gm').hide();">
 				<i class="fa fa-download"></i>
 			</a>
 		</div>

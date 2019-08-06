@@ -498,6 +498,23 @@ function ol_stats() {
 	
 	/************************************************************************************/
 	
+	this.view.premapear = function() {
+		
+		$("#popup-modal-gm").hide(); 
+		$("#popup-stats-gm").hide();
+		$("#gm-stats-mediawrapper").hide();
+		$("#popup-stats-gm-header .icons").show();
+		
+	}
+	
+	this.view.pregraficar = function() {
+		
+		$("#popup-modal-gm").hide(); 
+		$("#popup-stats-gm").hide();
+		$("#gm-stats-mediawrapper").hide();
+		$("#popup-stats-gm-header .icons").hide();
+		
+	}
 	
 	this.view.mapear = function(query_id) {
 		
@@ -551,9 +568,6 @@ function ol_stats() {
 	}
 	
 	this.view.graficar = function(query_id) {
-		
-		document.getElementById("gm-stats-mediawrapper").innerHTML = "";
-		document.getElementById("gm-stats-mediawrapper").innerHTML = "<h3>GRAFICAR TEST</h3>";
 		
 		var colagroup = $("#group-combo-view").attr("data-group-column-val");
 		var coldataset = $("#gm-combo").val();
