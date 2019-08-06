@@ -507,7 +507,7 @@ function ol_stats() {
 		
 		/**** Generar el SLD ****/
 		s = new sldlib();
-		sld_result = s.sld_get_intervalos(query_id);
+		capa = s.sld_get_intervalos(query_id);
 		
 		var layer = new ol.layer.Tile({
 				visible:true,
@@ -515,12 +515,12 @@ function ol_stats() {
 				source: new ol.source.TileWMS({
 					url: "http://observatorio.atic.com.ar/cgi-bin/mapserver?map=wms_atic",
 					params: {
-						'LAYERS': 'intervalos_polygons',
+						'LAYERS': capa,//'intervalos_polygons',
 						'id':query_id,
 						//'VERSION': '1.1.1',
 						'FORMAT': 'image/png',
 						'TILED': false,
-						'SLD':'http://'+window.location.hostname+'/sld/'+sld_result
+						'SLD':'http://'+window.location.hostname+'/sld/'+query_id+'.sld'
 					}
 				})
 			});

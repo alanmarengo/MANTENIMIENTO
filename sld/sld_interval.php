@@ -8,6 +8,8 @@ $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . 
 	
 $conn = pg_connect($string_conn);
 
+/***************************************** Datos para intervalo *******************************************************/
+
 $SQL = "SELECT max(_valor_)as maxx, min(_valor_) as minn,((max(_valor_)-min(_valor_))/5)AS salto FROM mod_estadistica.get_mapeo_value($id)";
 
 $recordset = pg_query($conn,$SQL);
@@ -21,12 +23,41 @@ $salto = $row[2];
 
 $acumulado = $min;
 
+
+/***************************************** Datos para tipo sld *******************************************************/
+
+
+$SQL = "SELECT GeometryType(the_geom) as geotype FROM mod_estadistica.get_mapeo($id) limit 1;";
+
+$recordset = pg_query($conn,$SQL);
+
+$row = pg_fetch_row($recordset);
+
+$tipo_geom = $row[0];
+
 pg_close($conn);
 
+switch ($tipo_geom) 
+{
+    case 'MULTIPOLYGON':
+			$sld_base = './intervalo_polygon.sld';$layer_name = 'intervalos_polygons'; break;
+    case 'POLYGON':
+			$sld_base = './intervalo_polygon.sld';$layer_name = 'intervalos_polygons';break;
+    case 'LINESTRING':
+			$sld_base = './intervalo_line.sld';$layer_name = 'intervalos_line';break;
+	case 'MULTILINESTRING':
+			$sld_base = './intervalo_line.sld';$layer_name = 'intervalos_line';break;
+	case 'POINT':
+			$sld_base = './intervalo_point.sld';$layer_name = 'intervalos_line';break;
+	case 'MULTIPOINT':
+			$sld_base = './intervalo_point.sld';$layer_name = 'intervalos_point';break;
+	case 'GEOMETRY':
+			$sld_base = './intervalo_point.sld';$layer_name = 'intervalos_point';break;
+};
 
-$sld_file 	= file_get_contents("./intervalo_polygon.sld");	
+//$sld_file 	= file_get_contents("./intervalo_polygon.sld");
 
-$layer_name = 'intervalos_polygons';
+$sld_file 	= file_get_contents($sld_base);	
 
 $sld_file	= str_replace("[layer_name]"	, $layer_name	,$sld_file		);
 
