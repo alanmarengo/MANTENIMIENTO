@@ -513,6 +513,7 @@ function ol_stats() {
 		
 		var layer = new ol.layer.Tile({
 				visible:true,
+				{singleTile: true},
 				source: new ol.source.TileWMS({
 					url: "http://observatorio.atic.com.ar/cgi-bin/mapserver?map=wms_atic",
 					params: {
@@ -522,8 +523,7 @@ function ol_stats() {
 						'FORMAT': 'image/png',
 						'TILED': false,
 						'sld_body':decodeURI(sld_result)
-					},
-					{singleTile: false}
+					}
 				})
 			});
 		
