@@ -14,15 +14,16 @@ $recordset = pg_query($conn,$SQL);
 
 $row = pg_fetch_row($recordset);
 
-$max = $row[0];
-$min = $row[1];
-$salto = $row[2];
 
-$acumulado = 0.0;
+//$max = $row[0];
+//$min = $row[1];
+//$salto = $row[2];
+
+//$acumulado = 0.0;
 
 echo $row[0];
 echo $row[1];
-
+/*
 $sld_file 	= file_get_contents("./intervalo_polygon.sld");	
 
 $layer_name = 'intervalos_polygons';
@@ -50,8 +51,9 @@ $acumulado  = $acumulado +$salto;
 $sld_file	= str_replace("[5_H]"	, $acumulado	,$sld_file);
 
 echo $sld_file;
+* */
 
-//echo pg_last_error($conn);
+echo pg_last_error($conn);
 
 pg_close($conn);
 
