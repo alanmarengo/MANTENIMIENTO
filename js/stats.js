@@ -252,7 +252,7 @@ function ol_stats() {
 		
 			var gm_action = $("#popup-stats-gm").attr("data-action");
 			var gm_var  = $("#gm-combo").val();
-			
+			alert(gm_action + " :: " + gm_var);
 			if ((gm_action != -1) && (gm_var != -1)) {
 			
 				var mapear = false;
