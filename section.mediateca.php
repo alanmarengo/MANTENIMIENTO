@@ -17,7 +17,6 @@
             </div>
 
             <div class="col-md-8 text-right">
-                Ordenar por:
                 <select id="uxOrden" class="selectpicker">
                     <option value="0">A - Z</option>
                     <option value="1">Z - A</option>

@@ -269,6 +269,7 @@ body {
     @carousel_height: 540px;
     @modulo_height: 300px;
     @sombra-texto: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,1);
+    @modulo-border: 5px solid #fff;
 
     .video-container {
         width: 800px; 
@@ -378,8 +379,6 @@ body {
         justify-content: center;
         transition: opacity .2s, visibility .2s;
     }
-
-    @modulo-border: 10px solid #fff;
 
     .modulo-wrap {
         position: relative;
@@ -584,6 +583,14 @@ body {
     }
 }
 
+.datepicker-days {
+    padding: 10px;
+    background-color: #fff;
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);    
+}
+
 #page_mediateca {
     @filter_color: #666;
     @font_size: 12px;
@@ -591,7 +598,6 @@ body {
     background-color: #fff;
     font-size: @font_size;
 
-    
     .btn {
         font-size: @font_size;
     }
@@ -624,7 +630,7 @@ body {
     }
     
     #uxFiltersChecked {
-        padding: 10px 0px; 
+        padding: 10px 15px 6px 15px; 
 
         .btn {
             margin-bottom: 4px;
@@ -650,6 +656,7 @@ body {
         }
 
         .card-header {
+            height: 34px;
             margin-left: 0px;
             margin-right: 0px;
             padding: 0px;
@@ -688,9 +695,10 @@ body {
     }
 
     .doc {
-        padding: 20px;
-        margin-right: 20px;
-        border-bottom: 1px solid #ccc;
+        padding: 15px;
+        margin-right: 10px;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
 
         .doc-icon {
             height: 40px;

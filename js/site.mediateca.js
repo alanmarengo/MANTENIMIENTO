@@ -163,8 +163,13 @@ $(document).ready(function() {
                         <a class="media-preview-link btn btn-warning btn-xs" data-solapa="1" data-estudio="${model.ficha.estudio_id}">Imagenes asociadas</a>
                     </div>
                 </div>
-            `
+            `;
             $('#uxPreview_' + row).html(html);
+
+            $('body, html').animate({
+                scrollTop: $('#uxPreview_' + row).offset().top - 100
+            }, 500);
+
         });
     });
 
@@ -493,7 +498,7 @@ $(document).ready(function() {
             $.each(group.items, function(iindex, item) {
                 if (item.checked) {
                     $('#uxFiltersChecked').append(`
-                        <a class="filters-checked btn btn-warning btn-xs" data-group="${gindex}" data-item="${iindex}">${item.label} <i class="fa fa-times"></i></a>
+                        <a class="filters-checked btn btn-warning btn-xs" data-group="${gindex}" data-item="${iindex}">${item.label} <i class="fa fa-times" style="padding-left: 6px;"></i></a>
                     `)
                 }
             });
@@ -723,13 +728,13 @@ $(document).ready(function() {
                 items: []
             },
             {
-                title: 'Rec. Audiovisuales',
+                title: 'Recursos Audiovisuales',
                 collapsed: true,
                 visible: false,
                 items: []
             },
             {
-                title: 'Recursos técnicos',
+                title: 'Recursos Técnicos',
                 collapsed: true,
                 visible: false,
                 items: []
