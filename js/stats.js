@@ -521,7 +521,7 @@ function ol_stats() {
 						//'VERSION': '1.1.1',
 						'FORMAT': 'image/png',
 						'TILED': false,
-						'sld_body':sld_result
+						'sld_body':decodeURI(sld_result)
 					}
 				})
 			});
