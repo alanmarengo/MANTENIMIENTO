@@ -509,18 +509,6 @@ function ol_stats() {
 		s = new sldlib();
 		sld_result = s.sld_get_intervalos(query_id);
 		
-		alert(sld_result);
-		
-		/*
-		var layer = new OpenLayers.Layer.WMS
-					(
-					 "OpenLayers WMS",
-					 "http://observatorio.atic.com.ar/cgi-bin/mapserver?map=wms_atic",
-					 {layers: 'intervalos_polygons', sld_body: sld_result},
-					 {tileOptions: {maxGetUrlLength: 200000}, transitionEffect: 'resize'}
-					);
-		*/
-		
 		var layer = new ol.layer.Tile({
 				visible:true,
 				singleTile: true,
@@ -531,10 +519,9 @@ function ol_stats() {
 						'id':query_id,
 						//'VERSION': '1.1.1',
 						'FORMAT': 'image/png',
-						'TILED': false,
-						'SLD':'http://'+window.location.hostname+'/sld/'+sld_result
-					},
-					tileOptions: {maxGetUrlLength: 200000}
+						'TILED': false//,
+						//'SLD':'http://'+window.location.hostname+'/sld/'+sld_result
+					}
 				})
 			});
 		
