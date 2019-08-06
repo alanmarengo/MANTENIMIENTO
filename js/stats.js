@@ -534,7 +534,7 @@ function ol_stats() {
 						'TILED': false,
 						'sld_body':sld_result
 					},
-					{tileOptions: {maxGetUrlLength: 200000}, transitionEffect: 'resize'}
+					tileOptions: {maxGetUrlLength: 200000}
 				})
 			});
 		
