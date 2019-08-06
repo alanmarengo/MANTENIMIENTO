@@ -518,7 +518,7 @@ function ol_stats() {
 					params: {
 						'LAYERS': 'intervalos_polygons',
 						'id':query_id,
-						'VERSION': '1.1.1',
+						//'VERSION': '1.1.1',
 						'FORMAT': 'image/png',
 						'TILED': false,
 						'sld_body':sld_result
