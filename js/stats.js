@@ -557,6 +557,8 @@ function ol_stats() {
 		
 		var colagroup = $("#group-combo-view").attr("data-group-column-val");
 		var coldataset = $("#gm-combo").val();
+		var labels = $("#graficar-labels").val();
+			labels = labels.split(",");
 		var values = $("#graficar-values").val();
 			values = values.split(",");
 		
@@ -579,6 +581,10 @@ function ol_stats() {
 			subtitle: {
 				text: 'Powered by Atic'
 			},
+			xAxis: {
+				categories:labels,
+				crosshair: true
+			},
 			yAxis: {
 				min: 0,
 				title: {
@@ -588,7 +594,7 @@ function ol_stats() {
 			tooltip: {
 				headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
 				pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-					'<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+					'<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',q
 				footerFormat: '</table>',
 				shared: true,
 				useHTML: true
