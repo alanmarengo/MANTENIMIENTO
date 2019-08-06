@@ -16,6 +16,7 @@ $groupby_val = $_POST["groupby_val"];
 $gm_var = $_POST["gm_var"];
 $colstr_original = $colstr;
 $gm_var_values = array();
+$gm_labels = array();
 
 $colstrType = -1;
 
@@ -265,6 +266,7 @@ if (($groupindex == 0) || ($groupindex == 1)) {
 			
 			if ($col[$i] == $gm_var) {
 				
+				array_push($gm_labels,$r[$groupby_val]);
 				array_push($gm_var_values,$r[$col[$i]]);
 				
 			}
@@ -290,5 +292,6 @@ if (($groupindex == 0) || ($groupindex == 1)) {
 	?>
 	
 	<input id="graficar-values" type="hidden" value="<?php echo implode(",",$gm_var_values); ?>">
+	<input id="graficar-labels" type="hidden" value="<?php echo implode(",",$gm_labels); ?>">
 	
 </div>
