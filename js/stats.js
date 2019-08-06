@@ -567,13 +567,27 @@ function ol_stats() {
 			values[i] = parseFloat(values[i]);
 			
 		}
-			
+		
+		Highcharts.setOptions({
+			lang: {
+				contextButtonTitle:"Menu Contextual",
+				viewFullscreen:"Pantalla Completa",
+				printChart:"Imprimir Gráfico",
+				downloadPNG:"Descargar PNG",
+				downloadJPEG:"Descargar JPG",
+				downloadPDF:"Descargar PDF",
+				downloadSV:"Descargar SVG"
+			}
+		});
 			
 		Highcharts.chart('gm-stats-mediawrapper', {
 			chart: {
 				type: 'column',
 				height:350,
 				width:600
+			},
+			credits:{
+				enabled:false
 			},
 			title: {
 				text: colagroup
