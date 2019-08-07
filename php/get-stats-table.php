@@ -291,7 +291,9 @@ if (($groupindex == 0) || ($groupindex == 1)) {
 	
 	?>
 	
-	<input id="graficar-values" type="hidden" value="<?php echo implode(",",$gm_var_values); ?>">
-	<input id="graficar-labels" type="hidden" value="<?php echo implode(",",$gm_labels); ?>">
-	
 </div>
+	
+<input id="graficar-values" type="hidden" value="<?php echo implode(",",$gm_var_values); ?>">
+<input id="graficar-labels" type="hidden" value="<?php echo implode(",",$gm_labels); ?>">
+
+<?php include("./php/get-stats-paging.php"); ?>
