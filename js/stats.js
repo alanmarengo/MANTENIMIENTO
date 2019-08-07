@@ -771,6 +771,58 @@ function ol_stats() {
 			
 			break;
 			
+			case 4:
+			
+			this.chart = Highcharts.chart('gm-stats-mediawrapper', {
+				chart: {
+					type: 'area'
+				},
+				title: {
+					text: colagroup
+				},
+				subtitle: {
+					text: "por " + coldataset
+				},
+				xAxis: {
+					categories: labels,
+					tickmarkPlacement: 'on',
+					title: {
+						enabled: false
+					}
+				},
+				yAxis: {
+					title: {
+						text: coldataset
+					},
+					labels: {
+						formatter: function () {
+							return this.value / 1000;
+						}
+					}
+				},
+				tooltip: {
+					split: true,
+					valueSuffix: ' millions'
+				},
+				plotOptions: {
+					area: {
+						stacking: 'normal',
+						lineColor: '#666666',
+						lineWidth: 1,
+						marker: {
+							lineWidth: 1,
+							lineColor: '#666666'
+						}
+					}
+				},
+				series:[{
+					name:colagroup,
+					data: values
+				}]
+			});
+			
+			break;
+			
 		}
 			
 		
