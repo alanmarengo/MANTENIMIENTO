@@ -13,7 +13,7 @@
 		
 		<h3 id="gm-title">Mapear Variable</h3>
 		<div class="icons">
-			<a href="#">
+			<a href="#" onclick="stats.view.mapearImprimir();">
 				<i class="fa fa-print"></i>
 			</a>
 			<a href="#" id="gm-mapear-download">

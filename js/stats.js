@@ -575,6 +575,27 @@ function ol_stats() {
 		
 	}
 	
+	this.view.mapearImprimir = function() {
+		
+		html2canvas(document.querySelector("#gm-stats-mediawrapper")).then(canvas => {
+			
+			var a = document.createElement('a');
+			// toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
+			a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+			a.download = 'captura.jpg';
+			
+			document.body.appendChild(a);
+			
+			a.click();
+			
+			$(a).remove();
+			
+			//$("#print-legend-wrapper").hide();
+			
+		});
+		
+	}
+	
 	this.view.graficarTipo = function(graphType) {
 		
 		this.graphType = graphType;
