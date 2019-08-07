@@ -70,7 +70,7 @@ $rquery_string = $data["query"];
 				array_push($coltypes,$type);
 				array_push($col,$colname);
 				
-				$query_string_col_desc = "SELECT * FROM mod_estadistica.vw_dt_variables WHERE dt_variable_titulo = '" . $colname . ="'";
+				$query_string_col_desc = "SELECT * FROM mod_estadistica.vw_dt_variables WHERE dt_variable_titulo = '" . $colname . "'";
 				$query_col_desc = pg_query($conn,$query_string_col_desc);
 				$query_col_desc_data = pg_fetch_assoc($query_col_desc);
 				
