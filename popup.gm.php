@@ -100,11 +100,11 @@
 						</div>
 					</div>
 				</div>
-				<div id="var-desc" style="display:none;">
-					<div class="row jump-row">
-						<div id="var-desc-inner">
-						
-						</div>
+			</div>
+			<div id="var-desc" style="display:none;">
+				<div class="row jump-row">
+					<div id="var-desc-inner">
+					
 					</div>
 				</div>
 			</div>
