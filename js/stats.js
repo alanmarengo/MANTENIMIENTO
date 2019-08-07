@@ -644,6 +644,12 @@ function ol_stats() {
 		};
 	};
 	
+	this.view.setLabels = function(dt_titulo) {
+		
+		$("#labelgm-dataset-name").html(dt_titulo);
+		
+	}
+	
 	/************************************************************************************/
 	
 	this.view.premapear = function() {
@@ -1294,6 +1300,7 @@ function ol_stats() {
 		}).join(',');
 
 		var dt_cruce = $("#combo_cruce").val();
+		var dt_titulo = $("#dt_titulo").val();
 
 		/*var debug = "DT_ID: " + dt_id + "\n";
 			debug += "DT_VARS: " + dt_variables + "\n";
@@ -1303,7 +1310,7 @@ function ol_stats() {
 		$("#inp_dt_variables").val(dt_variables);
 		$("#inp_dt_cruce").val(dt_cruce);
 		
-		var flink = "./estadisticas-vista.php?dt_id="+dt_id+"&dt_v="+dt_variables+"&dt_c="+dt_cruce;
+		var flink = "./estadisticas-vista.php?dt_id="+dt_id+"&dt_v="+dt_variables+"&dt_c="+dt_cruce+"&dt_t="+dt_titulo;
 		
 		var flinka = document.createElement("a");
 			flinka.setAttribute("href",flink);

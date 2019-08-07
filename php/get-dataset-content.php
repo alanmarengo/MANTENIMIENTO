@@ -27,6 +27,7 @@ $data_records = pg_fetch_assoc($query_dataset_records);
 	<p><?php echo $r["dt_titulo"]; ?></p>
 	<p>Numero de Registros: <?php echo $data_records["registros"]; ?></p>
 	<p>Variables: <?php echo $r["var_cant"]; ?></p>
+	<input type="hidden" id="inp_dt_titulo" value="<?php echo $r["dt_titulo"]; ?>">
 
 </div>
 
