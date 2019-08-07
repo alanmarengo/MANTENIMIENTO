@@ -70,6 +70,10 @@ $rquery_string = $data["query"];
 				array_push($coltypes,$type);
 				array_push($col,$colname);
 				
+				$query_string_col_desc = "SELECT * FROM mod_estadistica.vw_dt_variables WHERE dt_variable_titulo = '" . $colname . ="'";
+				$query_col_desc = pg_query($conn,$query_string_col_desc);
+				$query_col_desc_data = pg_fetch_assoc($query_col_desc);
+				
 				?>
 				
 				<div class="dataset-cell dataset-cell-header" 
@@ -78,7 +82,7 @@ $rquery_string = $data["query"];
 					data-col-type="<?php echo $coltype; ?>"
 					>
 					<span><?php echo $colname; ?></span>
-					<i class="fa fa-info-circle"></i>
+					<i class="fa fa-info-circle" title="<?php echo $query_col_desc_data["dt_variable_defincion"]; ?>"></i>
 				</div>
 				
 				<?php
