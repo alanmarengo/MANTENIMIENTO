@@ -277,18 +277,16 @@ body {
 	
 }
 
-#dataset-view input[type=button] {
+3#dataset-view input[type=button] {
 	
-	border:1px solid #ccc;
-	background-color:#ffffff;
-	font-size:12px;
-	color:#353535;
-	cursor:pointer;
-	padding:10px;
-	border-radius:3px;
-	position:relative;
-	top:2px;
-	left:20px;
+	position: relative;
+	top: 4px;
+	left: 20px;
+	height: 38px;
+	width: 150px;
+	border: none;
+	cursor: pointer;
+	line-height: 10px;
 	
 }
 
