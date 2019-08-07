@@ -573,7 +573,7 @@ function ol_stats() {
 	
 	this.view.graficarTipo = function(graphType) {
 		
-		this.view.graphType = graphType;
+		this.graphType = graphType;
 		document.getElementById("gm-graficar-process").click();
 		
 	}
@@ -587,9 +587,9 @@ function ol_stats() {
 		var values = $("#graficar-values").val();
 			values = values.split(",");
 			
-		if (this.view.graphType) {
+		if (this.graphType) {
 			
-			var graphType = this.view.graphType;
+			var graphType = this.graphType;
 			
 		}else{
 			
