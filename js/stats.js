@@ -567,7 +567,7 @@ function ol_stats() {
 		}
 		
 		if ((!no_op) || (bypassOp)) {
-		
+			alert(JSON.stringify(data));
 			var req = $.ajax({
 				
 				async:false,
