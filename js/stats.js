@@ -841,10 +841,7 @@ function ol_stats() {
 				credits: {
 					enabled: false
 				},
-				series:[{
-					name:colagroup,
-					data: values
-				}]
+				series:jseries
 			});
 			
 			break;
