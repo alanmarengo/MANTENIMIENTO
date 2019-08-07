@@ -9,6 +9,10 @@
 				<option value="2">Agrupar Todo</option>
 				<option value="3">No Agrupar</option>
 			</select>
+		
+		</div>
+		
+		<div class="view-update-wrapper">
 			
 			<input class="black-button" type="button" value="Actualizar Vista" id="update-view" disabled="disabled">
 		
