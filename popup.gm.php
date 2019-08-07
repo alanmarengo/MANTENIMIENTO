@@ -71,29 +71,29 @@
 						</div>
 					</div>
 					<div class="row jump-row">
-						<div class="col col-md-4">
+						<div class="col col-md-4 mt-20">
 							<a href="#">
 								<img src="./images/graph-samples/04.jpg" height="80">
 							</a>
 						</div>
-						<div class="col col-md-4">
+						<div class="col col-md-4 mt-20">
 							<a href="#">
 								<img src="./images/graph-samples/05.jpg" height="80">
 							</a>
 						</div>
-						<div class="col col-md-4">
+						<div class="col col-md-4 mt-20">
 							<a href="#">
 								<img src="./images/graph-samples/06.jpg" height="80">
 							</a>
 						</div>
 					</div>
 					<div class="row jump-row">
-						<div class="col col-md-4">
+						<div class="col col-md-4 mt-20">
 							<a href="#">
 								<img src="./images/graph-samples/07.jpg" height="80">
 							</a>
 						</div>
-						<div class="col col-md-4">
+						<div class="col col-md-4 mt-20">
 							<a href="#">
 								<img src="./images/graph-samples/08.jpg" height="80">
 							</a>
