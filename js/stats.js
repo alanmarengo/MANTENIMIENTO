@@ -615,7 +615,7 @@ function ol_stats() {
 			}
 		});
 		
-		switch graphType {
+		switch(graphType) {
 			
 			case 1:
 			
