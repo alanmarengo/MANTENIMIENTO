@@ -770,7 +770,7 @@ function ol_stats() {
 					}
 				},
 				tooltip: {
-					pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.percentage:.1f}%</b> ({point.y:,.0f} millions)<br/>',
+					pointFormat: '<span style="color:{series.color}">{series.name}</span>: ({point.y:,.0f} millions)<br/>',
 					split: true
 				},
 				plotOptions: {
@@ -825,7 +825,7 @@ function ol_stats() {
 				},
 				tooltip: {
 					split: true,
-					valueSuffix: ' millions'
+					valueSuffix: ''
 				},
 				plotOptions: {
 					area: {
@@ -944,10 +944,7 @@ function ol_stats() {
 				credits: {
 					enabled: false
 				},
-				series:[{
-					name:colagroup,
-					data: values
-				}]
+				series:jseries
 			});
 			
 			break;
