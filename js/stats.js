@@ -457,6 +457,136 @@ function ol_stats() {
 		
 	}
 	
+	this.view.getTableCsv = function(page,bypassOp,mapear,graficar) {
+		
+		var dt_id = $("#frm-dt #dt_id").val();
+		var dt_variables = $("#frm-dt #dt_v").val();
+		var dt_cruce = $("#frm-dt #dt_c").val();
+		var colstr = $("#colstr").val();
+		var colstrType = $("#coltypestr").val();
+		var colgroup = $("#colgroup").val();
+		var groupbycol = $("#group-combo-view").attr("data-group-by-column");
+		var groupby_val = $("#group-combo-view").val();
+		var groupbycol_index = $("#group-combo-view").attr("data-group-column-index");
+		var groupbycol_name = $("#group-combo-view").attr("data-group-column-index");
+		var gm_var = $("#gm-combo").val();
+		
+		if ((groupby_val == 2) || (groupby_val == 3)) {
+			
+			bypassOp = true;
+			
+		}
+		
+		var filters = [];
+		
+		$(".dataset-filter-row .dataset-cell").each(function(i,v) {
+			
+			var colname = $(this).attr("data-col-name");
+			var coltype = $(this).attr("data-col-type");
+			var filtertype = $(this).find(".selectpicker").val();
+			var filterval = $(this).find(".col-filter").val();
+			
+			var column = {
+				
+				colname:colname,
+				coltype:coltype,
+				filtertype:filtertype,
+				filterval:filterval
+				
+			}
+			
+			filters.push(column);
+			
+		});
+		
+		var operations = [];
+		
+		var no_op = false;
+		
+		var indexCell = 0;
+		
+		$(".dataset-operation-row .dataset-cell").each(function(i,v) {				
+			
+			var operation = $(this).find(".selectpicker").val();
+			
+			if (groupbycol == 1) {
+				
+				if (indexCell < 3) {
+					
+					if (groupbycol_index == indexCell) {
+						
+						operation = "NONE";
+						
+					}else{
+						
+						operation = "MAX";
+						
+					}
+				
+				}else{
+					
+					if (operation == -1) {
+							
+						no_op = true;
+							
+					}
+					
+				}
+				
+			}else{
+			
+				if (operation == -1) {
+					
+					no_op = true;
+					
+				}
+			
+			}
+			
+			operations.push(operation);
+			
+			indexCell++;
+			
+		});
+		
+		var data = {
+			page:page,
+			dt_id:dt_id,
+			dt_variables:dt_variables,
+			dt_cruce:dt_cruce,
+			colstr:colstr,
+			colstrType:colstrType,
+			filters:filters,
+			operations:operations,
+			colgroup:colgroup,
+			groupbycol:groupbycol,
+			groupbycol_index:groupbycol_index,
+			groupbycol_name:groupbycol_name,
+			groupby_val:groupby_val,
+			gm_var:gm_var
+		}
+		
+		if ((!no_op) || (bypassOp)) {
+		
+			var req = $.ajax({
+				
+				async:false,
+				data:data,
+				type:"POST",
+				url:"./php/get-stats-table-csv.php",
+				success:function(d){}
+				
+			});
+		
+		}else{
+			
+			alert("Faltan seleccionar funciones para poder actualizar la vista");
+			$("#update-view").prop("disabled",false);
+			
+		}
+		
+	}
+	
 	/**************** DIOS , Un request via POST para WMS *******************************/
 	function WmsPostHandle(image, src) 
 	{
