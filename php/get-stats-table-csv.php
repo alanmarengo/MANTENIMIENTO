@@ -250,8 +250,6 @@ if (($groupindex == 0) || ($groupindex == 1)) {
 
 $col = explode(",",$colstr_original);
 
-echo $new_query_string;
-
 $query = pg_query($conn,$new_query_string);
 
 $csv = parseSQLToCSV($query);
