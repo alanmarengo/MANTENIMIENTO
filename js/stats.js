@@ -60,6 +60,8 @@ function ol_stats() {
 		$('select.operation-combo').val(-1);
 		$('.selectpicker').selectpicker('refresh')
 		
+		var green = "#8bd120";
+		
 		$("select.operation-combo").each(function(i,v) {			
 			
 			if ($(v).next(".dropdown-toggle").find(".filter-option-inner-inner").prev().length == 0) {
@@ -77,8 +79,8 @@ function ol_stats() {
 					
 				}else{
 						
-					$(this).next(".dropdown-toggle").find(".filter-option-inner-inner").prev("i").attr("class","fa fa-check-circle").css("color","green");
-					$(this).next(".dropdown-toggle").find(".filter-option-inner-inner").css({"color":"green"});
+					$(this).next(".dropdown-toggle").find(".filter-option-inner-inner").prev("i").attr("class","fa fa-check-circle").css("color",green);
+					$(this).next(".dropdown-toggle").find(".filter-option-inner-inner").css({"color":green});
 					
 				}
 		
