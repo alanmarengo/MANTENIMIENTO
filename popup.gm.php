@@ -54,17 +54,17 @@
 			<div class="row jump-row" id="graph-types" style="display:block;">
 				<div id=graph-list">
 					<div class="row jump-row">
-						<div class="col col-md-4">
+						<div class="col col-md-4 mt-20">
 							<a href="#">
 								<img src="./images/graph-samples/01.jpg" height="80">
 							</a>
 						</div>
-						<div class="col col-md-4">
+						<div class="col col-md-4 mt-20">
 							<a href="#">
 								<img src="./images/graph-samples/02.jpg" height="80">
 							</a>
 						</div>
-						<div class="col col-md-4">
+						<div class="col col-md-4 mt-20">
 							<a href="#">
 								<img src="./images/graph-samples/03.jpg" height="80">
 							</a>
