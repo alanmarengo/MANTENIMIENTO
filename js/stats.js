@@ -1367,7 +1367,7 @@ function ol_stats() {
 			debug += "DT_VARS: " + dt_variables + "\n";
 			debug += "DT_CRUCE: " + dt_cruce + "\n";*/
 		
-		if (cruce != -1) {
+		if (dt_cruce != -1) {
 		
 			$("#inp_dt_id").val(dt_id);
 			$("#inp_dt_variables").val(dt_variables);
