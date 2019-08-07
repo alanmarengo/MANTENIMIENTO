@@ -823,6 +823,42 @@ function ol_stats() {
 			
 			break;
 			
+			case 5:
+			
+			this.chart = Highcharts.chart('gm-stats-mediawrapper', {
+				chart: {
+					type: 'line'
+				},
+				title: {
+					text: colagroup
+				},
+				subtitle: {
+					text: "por " + coldataset
+				},
+				xAxis: {
+					categories: labels
+				},
+				yAxis: {
+					title: {
+						text: coldataset
+					}
+				},
+				plotOptions: {
+					line: {
+						dataLabels: {
+							enabled: true
+						},
+						enableMouseTracking: false
+					}
+				},
+				series:[{
+					name:colagroup,
+					data: values
+				}]
+			});
+			
+			break;
+			
 		}
 			
 		
