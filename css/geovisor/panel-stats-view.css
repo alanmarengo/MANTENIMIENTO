@@ -61,7 +61,7 @@ body {
 #dataset-view .date-filters ul li, #dataset-view .pagination ul li {
 	
 	display:inline-block;
-	border:1px solid #ccc;
+	/*border:1px solid #ccc;*/
 	padding:5px;
 	
 }
