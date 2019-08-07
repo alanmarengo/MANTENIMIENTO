@@ -252,7 +252,7 @@ function ol_stats() {
 		
 			var gm_action = $("#popup-stats-gm").attr("data-action");
 			var gm_var  = $("#gm-combo").val();
-			alert(gm_action + " :: " + gm_var);
+			
 			if ((gm_action != -1) && (gm_var != -1)) {
 			
 				var mapear = false;
@@ -716,6 +716,53 @@ function ol_stats() {
 					}
 				},
 
+				series: [{
+					name:colagroup,
+					data: values
+				}]
+			});
+			
+			break;
+			
+			case 3:
+			
+			this.chart = Highcharts.chart('gm-stats-mediawrapper', {
+				chart: {
+					type: 'area'
+				},
+				title: {
+					text: colagroup
+				},
+				subtitle: {
+					text: "por " + coldataset
+				},
+				xAxis: {
+					categories: labels,
+					tickmarkPlacement: 'on',
+					title: {
+						enabled: false
+					}
+				},
+				yAxis: {
+					title: {
+						text: coldataset
+					}
+				},
+				tooltip: {
+					pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.percentage:.1f}%</b> ({point.y:,.0f} millions)<br/>',
+					split: true
+				},
+				plotOptions: {
+					area: {
+						stacking: 'percent',
+						lineColor: '#ffffff',
+						lineWidth: 1,
+						marker: {
+							lineWidth: 1,
+							lineColor: '#ffffff'
+						}
+					}
+				},
 				series: [{
 					name:colagroup,
 					data: values
