@@ -579,8 +579,9 @@ function ol_stats() {
 			});
 			
 			var blob = new Blob([req.responseText], { type: 'text/csv;charset=utf-8;' });
+			var filename = "webexport.csv";
 			if (navigator.msSaveBlob) { // IE 10+
-				navigator.msSaveBlob(blob, "webexport.csv");
+				navigator.msSaveBlob(blob, filename);
 			} else {
 				var link = document.createElement("a");
 				if (link.download !== undefined) { // feature detection
