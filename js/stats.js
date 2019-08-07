@@ -1022,7 +1022,7 @@ function ol_stats() {
 					}
 				},
 				tooltip: {
-					valueSuffix: ' millions'
+					valueSuffix: ''
 				},
 				plotOptions: {
 					bar: {
