@@ -652,7 +652,19 @@ function ol_stats() {
 	
 	/************************************************************************************/
 	
-	this.view.premapear = function() {
+	this.view.premapear = function() {		
+		
+		var groupbycol = $("#group-combo-view").attr("data-group-by-column");
+		var groupby_val = $("#group-combo-view").val();
+		var groupbycol_index = $("#group-combo-view").attr("data-group-column-index");
+		var groupbycol_name = $("#group-combo-view").attr("data-group-column-index");
+		
+		var debug = "GROUP BY COL: " + groupbycol + "\n";
+			debug = "GROUP VAL: " + groupby_val + "\n";
+			debug = "GROUP BY INDEX: " + groupbycol_index + "\n";
+			debug = "GROUP BY NAME: " + groupbycol_name + "\n";
+		
+		alert(debug);
 		
 		$("#graph-types").hide(); 
 		$("#popup-modal-gm").show(); 
