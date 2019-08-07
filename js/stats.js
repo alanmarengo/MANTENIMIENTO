@@ -660,9 +660,9 @@ function ol_stats() {
 		var groupbycol_name = $("#group-combo-view").attr("data-group-column-index");
 		
 		var debug = "GROUP BY COL: " + groupbycol + "\n";
-			debug = "GROUP VAL: " + groupby_val + "\n";
-			debug = "GROUP BY INDEX: " + groupbycol_index + "\n";
-			debug = "GROUP BY NAME: " + groupbycol_name + "\n";
+			debug += "GROUP VAL: " + groupby_val + "\n";
+			debug += "GROUP BY INDEX: " + groupbycol_index + "\n";
+			debug += "GROUP BY NAME: " + groupbycol_name + "\n";
 		
 		alert(debug);
 		
