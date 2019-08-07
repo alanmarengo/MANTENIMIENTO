@@ -676,8 +676,7 @@ function ol_stats() {
 					text: colagroup
 				},
 				subtitle: {
-					text: document.ontouchstart === undefined ?
-						"por " + coldataset
+					text: "por " + coldataset
 				},
 				xAxis: {
 					type: labels
