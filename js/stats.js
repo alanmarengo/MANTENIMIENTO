@@ -175,6 +175,16 @@ function ol_stats() {
 		$(".dataset-operation-row .dataset-cell[data-col-index=2]").find(".selectpicker").next(".dropdown-toggle").find(".filter-option-inner-inner").prev("i").attr("class","fa fa-question-circle").css("color","red");					
 		$(".dataset-operation-row .dataset-cell[data-col-index=2]").find(".selectpicker").next(".dropdown-toggle").find(".filter-option-inner-inner").css({"color":"red"});
 		
+		if (val == 3) {
+			
+			$(".dataset-operation-row").hide();
+			
+		}else{
+			
+			$(".dataset-operation-row").show();
+			
+		}
+		
 	}
 	
 	this.view.getGMCombo = function(dt_variables) {		
