@@ -51,6 +51,57 @@
 			<div class="row jump-row">
 				<select class="selectpicker" id="gm-combo"></select>
 			</div>
+			<div class="row jump-row" id="graph-types">
+				<p>Ejemplos de Gráfico disponibles</p>
+				<div id=graph-list">
+					<div class="row jump-row">
+						<div class="col col-md-4">
+							<a href="#">
+								<img src="./images/graph-samples/01.jpg">
+							</a>
+						</div>
+						<div class="col col-md-4">
+							<a href="#">
+								<img src="./images/graph-samples/02.jpg">
+							</a>
+						</div>
+						<div class="col col-md-4">
+							<a href="#">
+								<img src="./images/graph-samples/03.jpg">
+							</a>
+						</div>
+					</div>
+					<div class="row jump-row">
+						<div class="col col-md-4">
+							<a href="#">
+								<img src="./images/graph-samples/04.jpg">
+							</a>
+						</div>
+						<div class="col col-md-4">
+							<a href="#">
+								<img src="./images/graph-samples/05.jpg">
+							</a>
+						</div>
+						<div class="col col-md-4">
+							<a href="#">
+								<img src="./images/graph-samples/06.jpg">
+							</a>
+						</div>
+					</div>
+					<div class="row jump-row">
+						<div class="col col-md-4">
+							<a href="#">
+								<img src="./images/graph-samples/07.jpg">
+							</a>
+						</div>
+						<div class="col col-md-4">
+							<a href="#">
+								<img src="./images/graph-samples/08.jpg">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="row jump-row jump-posrel" style="top:30px;">
 				<div class="mr-20">	
 					<a href="#" class="button black-button" onclick="stats.view.processGM();">PROCESAR</a>

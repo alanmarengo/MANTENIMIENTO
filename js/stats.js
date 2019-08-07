@@ -500,6 +500,7 @@ function ol_stats() {
 	
 	this.view.premapear = function() {
 		
+		$("#graph-types").hide(); 
 		$("#popup-modal-gm").show(); 
 		$("#popup-stats-gm").show();
 		$("#popup-stats-gm").attr("data-action","m");
@@ -510,6 +511,7 @@ function ol_stats() {
 	
 	this.view.pregraficar = function() {
 		
+		$("#graph-types").show();
 		$("#popup-modal-gm").show(); 
 		$("#popup-stats-gm").show();
 		$("#popup-stats-gm").attr("data-action","g");
