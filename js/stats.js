@@ -658,6 +658,9 @@ function ol_stats() {
 						borderWidth: 0
 					}
 				},
+				credits: {
+					enabled: false
+				},
 				series: [{
 					name:colagroup,
 					data: values
@@ -717,6 +720,9 @@ function ol_stats() {
 						threshold: null
 					}
 				},
+				credits: {
+					enabled: false
+				},
 
 				series: [{
 					name:colagroup,
@@ -766,6 +772,9 @@ function ol_stats() {
 							lineColor: '#ffffff'
 						}
 					}
+				},
+				credits: {
+					enabled: false
 				},
 				series: [{
 					name:colagroup,
@@ -821,6 +830,9 @@ function ol_stats() {
 						}
 					}
 				},
+				credits: {
+					enabled: false
+				},
 				series:[{
 					name:colagroup,
 					data: values
@@ -858,6 +870,9 @@ function ol_stats() {
 						},
 						enableMouseTracking: false
 					}
+				},
+				credits: {
+					enabled: false
 				},
 				series:[{
 					name:colagroup,
@@ -921,6 +936,9 @@ function ol_stats() {
 						}
 					}
 				},
+				credits: {
+					enabled: false
+				},
 				series:[{
 					name:colagroup,
 					data: values
@@ -961,6 +979,71 @@ function ol_stats() {
 							}
 						}
 					}
+				},
+				credits: {
+					enabled: false
+				},
+				series:[{
+					name:colagroup,
+					data: values
+				}]
+			});
+			
+			break;
+			
+			case 8:
+			
+			this.chart = Highcharts.chart('gm-stats-mediawrapper', {
+				chart: {
+					type: 'bar',
+					height:350,
+					width:600
+				},
+				title: {
+					text: colagroup
+				},
+				subtitle: {
+					text: "por " + coldataset
+				},
+				xAxis: {
+					categories: labels,
+					title: {
+						text: null
+					}
+				},
+				yAxis: {
+					min: 0,
+					title: {
+						text: coldataset,
+						align: 'high'
+					},
+					labels: {
+						overflow: 'justify'
+					}
+				},
+				tooltip: {
+					valueSuffix: ' millions'
+				},
+				plotOptions: {
+					bar: {
+						dataLabels: {
+							enabled: true
+						}
+					}
+				},
+				legend: {
+					layout: 'vertical',
+					align: 'right',
+					verticalAlign: 'top',
+					x: -40,
+					y: 80,
+					floating: true,
+					borderWidth: 1,
+					backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+					shadow: true
+				},
+				credits: {
+					enabled: false
 				},
 				series:[{
 					name:colagroup,
