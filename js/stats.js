@@ -967,7 +967,7 @@ function ol_stats() {
 					text: "por " + coldataset
 				},
 				tooltip: {
-					pointFormat: '{series.name}: <b>{point.value:.1f}</b>'
+					pointFormat: '{point.name}: <b>{point.percentage:.1f}%</b>'
 				},
 				plotOptions: {
 					pie: {
@@ -975,7 +975,7 @@ function ol_stats() {
 						cursor: 'pointer',
 						dataLabels: {
 							enabled: true,
-							format: '<b>{point.name}</b>: {point.value:.1f}',
+							format: '<b>{point.name}</b>: {point.percentage:.1f} %',
 							style: {
 								color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
 							}
