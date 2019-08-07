@@ -594,7 +594,7 @@ function ol_stats() {
 			jseries.push({
 				
 				name:labels[i],
-				data:[values[i]]
+				data:[parseFloat(values[i])]
 				
 			});
 			
