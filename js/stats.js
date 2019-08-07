@@ -580,7 +580,7 @@ function ol_stats() {
 			
 			var blob = new Blob([req.responseText], { type: 'text/csv;charset=utf-8;' });
 			if (navigator.msSaveBlob) { // IE 10+
-				navigator.msSaveBlob(blob, filename);
+				navigator.msSaveBlob(blob, "webexport.csv");
 			} else {
 				var link = document.createElement("a");
 				if (link.download !== undefined) { // feature detection
