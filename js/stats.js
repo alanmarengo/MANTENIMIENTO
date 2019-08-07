@@ -659,30 +659,46 @@ function ol_stats() {
 		var groupbycol_index = $("#group-combo-view").attr("data-group-column-index");
 		var groupbycol_name = $("#group-combo-view").attr("data-group-column-index");
 		
-		var debug = "GROUP BY COL: " + groupbycol + "\n";
-			debug += "GROUP VAL: " + groupby_val + "\n";
-			debug += "GROUP BY INDEX: " + groupbycol_index + "\n";
-			debug += "GROUP BY NAME: " + groupbycol_name + "\n";
+		if ((groupbycol_index == 0) || (groupbycol_index == 1)) {
 		
-		alert(debug);
+			$("#graph-types").hide(); 
+			$("#popup-modal-gm").show(); 
+			$("#popup-stats-gm").show();
+			$("#popup-stats-gm").attr("data-action","m");
+			$("#gm-stats-mediawrapper").html("");
+			$("#popup-stats-gm-header .icons").show();
+			$("#labelgm-dataset-agroup").html(groupby_val);
 		
-		$("#graph-types").hide(); 
-		$("#popup-modal-gm").show(); 
-		$("#popup-stats-gm").show();
-		$("#popup-stats-gm").attr("data-action","m");
-		$("#gm-stats-mediawrapper").html("");
-		$("#popup-stats-gm-header .icons").show();
+		}else{
+			
+			alert("Debe agrupar por cruce espacial o variable espacial del dataset para poder mapear o graficar");
+			
+		}
 		
 	}
 	
-	this.view.pregraficar = function() {
+	this.view.pregraficar = function() {		
 		
-		$("#graph-types").show();
-		$("#popup-modal-gm").show(); 
-		$("#popup-stats-gm").show();
-		$("#popup-stats-gm").attr("data-action","g");
-		$("#gm-stats-mediawrapper").html("");
-		$("#popup-stats-gm-header .icons").hide();
+		var groupbycol = $("#group-combo-view").attr("data-group-by-column");
+		var groupby_val = $("#group-combo-view").val();
+		var groupbycol_index = $("#group-combo-view").attr("data-group-column-index");
+		var groupbycol_name = $("#group-combo-view").attr("data-group-column-index");
+		
+		if ((groupbycol_index == 0) || (groupbycol_index == 1)) {
+			
+			$("#graph-types").show();
+			$("#popup-modal-gm").show(); 
+			$("#popup-stats-gm").show();
+			$("#popup-stats-gm").attr("data-action","g");
+			$("#gm-stats-mediawrapper").html("");
+			$("#popup-stats-gm-header .icons").hide();
+			$("#labelgm-dataset-agroup").html(groupby_val);
+		
+		}else{
+			
+			alert("Debe agrupar por cruce espacial o variable espacial del dataset para poder mapear o graficar");
+			
+		}
 		
 	}
 	
