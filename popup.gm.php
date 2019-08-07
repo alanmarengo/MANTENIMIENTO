@@ -16,7 +16,7 @@
 			<a href="#">
 				<i class="fa fa-print"></i>
 			</a>
-			<a href="#">
+			<a href="#" id="gm-mapear-download">
 				<i class="fa fa-download"></i>
 			</a>
 		</div>

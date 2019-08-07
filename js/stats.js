@@ -569,6 +569,10 @@ function ol_stats() {
 			})
 		});
 		
+		var link = "http://observatorio.atic.com.ar/cgi-bin/mapserver?map=wms_atic&service=WFS&version=1.0.0&request=GetFeature&typeName=" +capa + "&id=" + query_id + "&outputFormat=shape-zip";
+		
+		document.getElementById("gm-mapear-download").setAttribute("href",link);
+		
 	}
 	
 	this.view.graficarTipo = function(graphType) {
