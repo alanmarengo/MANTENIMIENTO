@@ -28,17 +28,17 @@
 		<hr>
 		
 		<div class="col col-md-4 col-lg-4">
-			<span class="gm-highlight">Dataset:</span>
+			<span class="gm-highlight">Dataset: </span>
 			<span class="gm-text" id="labelgm-dataset-name">Nombre del Dataset</span>
 		</div>
 		
 		<div class="col col-md-4 col-lg-4">
-			<span class="gm-highlight">Agrupamiento:</span>
+			<span class="gm-highlight">Agrupamiento: </span>
 			<span class="gm-text" id="labelgm-dataset-agroup">Nombre del Agrupamiento</span>
 		</div>
 		
 		<div class="col col-md-4 col-lg-4">
-			<span class="gm-highlight">Período:</span>
+			<span class="gm-highlight">Período: </span>
 			<span class="gm-text" id="labelgm-dataset-period">Desde 00/00/00 Hasta 00/00/00</span>
 		</div>
 	
