@@ -307,9 +307,21 @@ function ol_stats() {
 		
 	}
 	
-	this.view.getVarDesc = function(var_id) {
+	this.view.getVarDesc = function(var_name) {
 		
-		alert(var_id);
+		var req = $.ajax({
+			
+			async:false,
+			data:{
+				var_name:var_name
+			},
+			type:"POST",
+			url:"./php/get-var-desc.php",
+			success:function(d){}
+			
+		});
+		
+		document.getElementById("var-desc-inner").innerHTML = req.responseText;	
 		
 	}
 	
