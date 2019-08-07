@@ -2,8 +2,8 @@
 
 include("../pgconfig.php");
 
-header("Content-Type: text/csv");
-header("Content-Disposition: attachment; filename=file.csv");
+//header("Content-Type: text/csv");
+//header("Content-Disposition: attachment; filename=file.csv");
 
 $page = $_POST["page"];
 $dt_id = $_POST["dt_id"];
@@ -247,18 +247,16 @@ if (($groupindex == 0) || ($groupindex == 1)) {
 
 }
 
+$col = explode(",",$colstr_original);
+
+echo $new_query_string;
+
+//$query = pg_query($conn,$new_query_string);
+
+//$csv = parseSQLToCSV($query);
+
+//echo $csv;
+
+pg_close($conn);
+
 ?>
-
-	<?php
-
-	$col = explode(",",$colstr_original);
-	
-	$query = pg_query($conn,$new_query_string);
-
-	$csv = parseSQLToCSV($query);
-
-	echo $csv;
-
-	pg_close($conn);
-
-	?>
