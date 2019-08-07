@@ -52,7 +52,6 @@
 				<select class="selectpicker" id="gm-combo"></select>
 			</div>
 			<div class="row jump-row" id="graph-types" style="position:relative; top:-20px;">
-				<p>Ejemplos de Gráfico disponibles</p>
 				<div id=graph-list">
 					<div class="row jump-row">
 						<div class="col col-md-4">
