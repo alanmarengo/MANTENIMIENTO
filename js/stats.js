@@ -588,6 +588,10 @@ function ol_stats() {
 			values = values.split(",");
 		
 		var jseries = [];
+		var nseries = [{
+			name:colagroup,
+			data: values
+		}];
 		
 		for (var i=0; i<labels.length; i++) {
 			
@@ -674,10 +678,7 @@ function ol_stats() {
 				credits: {
 					enabled: false
 				},
-				series: [{
-					name:colagroup,
-					data: values
-				}]
+				series: nseries
 			});
 			
 			break;
@@ -737,7 +738,7 @@ function ol_stats() {
 					enabled: false
 				},
 
-				series: jseries
+				series: nseries
 			});
 			
 			break;
@@ -786,10 +787,7 @@ function ol_stats() {
 				credits: {
 					enabled: false
 				},
-				series: [{
-					name:colagroup,
-					data: values
-				}]
+				series: jseries
 			});
 			
 			break;
