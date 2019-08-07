@@ -683,7 +683,7 @@ function ol_stats() {
 			break;
 			
 			case 2:
-			
+			console.log(jseries);
 			this.chart = Highcharts.chart('gm-stats-mediawrapper', {
 				chart: {
 					zoomType: 'x',
