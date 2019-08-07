@@ -670,7 +670,9 @@ function ol_stats() {
 			
 			this.chart = Highcharts.chart('gm-stats-mediawrapper', {
 				chart: {
-					zoomType: 'x'
+					zoomType: 'x',
+					height:350,
+					width:600
 				},
 				title: {
 					text: colagroup
@@ -728,7 +730,9 @@ function ol_stats() {
 			
 			this.chart = Highcharts.chart('gm-stats-mediawrapper', {
 				chart: {
-					type: 'area'
+					type: 'area',
+					height:350,
+					width:600
 				},
 				title: {
 					text: colagroup
@@ -775,7 +779,9 @@ function ol_stats() {
 			
 			this.chart = Highcharts.chart('gm-stats-mediawrapper', {
 				chart: {
-					type: 'area'
+					type: 'area',
+					height:350,
+					width:600
 				},
 				title: {
 					text: colagroup
@@ -827,7 +833,9 @@ function ol_stats() {
 			
 			this.chart = Highcharts.chart('gm-stats-mediawrapper', {
 				chart: {
-					type: 'line'
+					type: 'line',
+					height:350,
+					width:600
 				},
 				title: {
 					text: colagroup
