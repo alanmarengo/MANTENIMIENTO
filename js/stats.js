@@ -56,6 +56,16 @@ function ol_stats() {
 		$("#group-combo-view").val(3);
 		$("#group-combo-view").trigger("change");
 		
+		$("#gm-combo").each(function(i,v) {	
+			
+			$(v).on("changed.bs.select",function(e, clickedIndex, newValue, oldValue) {
+					
+				this.getVarDesc(v.value);
+				
+			}.bind(this));
+			
+		}.bind(this));
+		
 	}
 	
 	this.view.resetSelects = function() {
@@ -294,6 +304,12 @@ function ol_stats() {
 			}
 		
 		}
+		
+	}
+	
+	this.view.getVarDesc = function(var_id) {
+		
+		alert(var_id);
 		
 	}
 	
@@ -685,6 +701,7 @@ function ol_stats() {
 		
 		if ((groupbycol_index == 0) || (groupbycol_index == 1)) {
 		
+			$("#var-desc").show(); 
 			$("#graph-types").hide(); 
 			$("#popup-modal-gm").show(); 
 			$("#popup-stats-gm").show();
@@ -721,6 +738,7 @@ function ol_stats() {
 		
 		if ((groupbycol_index == 0) || (groupbycol_index == 1)) {
 			
+			$("#var-desc").hide(); 
 			$("#graph-types").show();
 			$("#popup-modal-gm").show(); 
 			$("#popup-stats-gm").show();
