@@ -929,6 +929,47 @@ function ol_stats() {
 			
 			break;
 			
+			case 7:
+			
+			this.chart = Highcharts.chart('gm-stats-mediawrapper', {
+				chart: {
+					plotBackgroundColor: null,
+					plotBorderWidth: null,
+					plotShadow: false,
+					type: 'pie',
+					height:350,
+					width:600
+				},
+				title: {
+					text: colagroup
+				},
+				subtitle: {
+					text: "por " + coldataset
+				},
+				tooltip: {
+					pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+				},
+				plotOptions: {
+					pie: {
+						allowPointSelect: true,
+						cursor: 'pointer',
+						dataLabels: {
+							enabled: true,
+							format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+							style: {
+								color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+							}
+						}
+					}
+				},
+				series:[{
+					name:colagroup,
+					data: values
+				}]
+			});
+			
+			break;
+			
 		}
 			
 		
