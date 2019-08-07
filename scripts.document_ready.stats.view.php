@@ -8,7 +8,7 @@
 		stats.view.getGMCombo('<?php echo $dt_variables; ?>');
 		stats.view.getTableHeader(1);
 		stats.view.getTable(1,true);
-		stats.view.setLabels("<?php echo $_GET["dt_t"); ?>");
+		stats.view.setLabels("<?php echo $dt_titulo; ?>");
 		
 		flotant = new Jump.flotant();
 		flotant.prepareToggle(".navmenu:not(#nav-panel)");

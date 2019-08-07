@@ -3,10 +3,12 @@
 if (!isset($_GET["dt_id"])) { die("Invalid Token;"); }
 if (!isset($_GET["dt_v"])) { die("Invalid Token;"); }
 if (!isset($_GET["dt_c"])) { die("Invalid Token;"); }
+if (!isset($_GET["dt_t"])) { die("Invalid Token;"); }
 
 $dt_id = $_GET["dt_id"];
 $dt_variables = $_GET["dt_v"];
 $dt_cruce = $_GET["dt_c"];
+$dt_titulo = $_GET["dt_t"];
 
 ?>
 

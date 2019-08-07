@@ -1300,7 +1300,7 @@ function ol_stats() {
 		}).join(',');
 
 		var dt_cruce = $("#combo_cruce").val();
-		var dt_titulo = $("#dt_titulo").val();
+		var dt_titulo = $("#inp_dt_titulo").val();
 
 		/*var debug = "DT_ID: " + dt_id + "\n";
 			debug += "DT_VARS: " + dt_variables + "\n";
