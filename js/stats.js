@@ -53,6 +53,9 @@ function ol_stats() {
 		
 		this.resetSelects();
 		
+		$("#group-combo-view").val(3);
+		$("#group-combo-view").trigger("change");
+		
 	}
 	
 	this.view.resetSelects = function() {
