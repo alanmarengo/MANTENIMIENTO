@@ -1,6 +1,7 @@
 <?php
 
 include("../pgconfig.php");
+include("../tools.php");
 
 header("Content-Type: text/csv");
 header("Content-Disposition: attachment; filename=file.csv");
@@ -251,11 +252,11 @@ $col = explode(",",$colstr_original);
 
 echo $new_query_string;
 
-//$query = pg_query($conn,$new_query_string);
+$query = pg_query($conn,$new_query_string);
 
-//$csv = parseSQLToCSV($query);
+$csv = parseSQLToCSV($query);
 
-//echo $csv;
+echo $csv;
 
 pg_close($conn);
 
