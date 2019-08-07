@@ -662,7 +662,7 @@ function ol_stats() {
 		var dateh = $("#dateh-search").val();
 		var datelabel = "Sin Especificar";
 		
-		if ((dated != "") && (dateh == !")) {
+		if ((dated != "") && (dateh != "")) {
 			
 			datelabel = "Desde " + dated + " Hasta " + dateh;
 			
@@ -696,7 +696,7 @@ function ol_stats() {
 		var groupbycol_name = $("#group-combo-view").attr("data-group-column-index");
 		var datelabel = "Sin Especificar";
 		
-		if ((dated != "") && (dateh == !")) {
+		if ((dated != "") && (dateh != "")) {
 			
 			datelabel = "Desde " + dated + " Hasta " + dateh;
 			
