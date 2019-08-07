@@ -586,7 +586,20 @@ function ol_stats() {
 			labels = labels.split(",");
 		var values = $("#graficar-values").val();
 			values = values.split(",");
+		
+		var jseries = [];
+		
+		for (var i=0; i<labels.length; i++) {
 			
+			jseries.push({
+				
+				name:labels[i],
+				data:[values[i]]
+				
+			});
+			
+		}
+		
 		if (this.graphType) {
 			
 			var graphType = this.graphType;
@@ -724,10 +737,7 @@ function ol_stats() {
 					enabled: false
 				},
 
-				series: [{
-					name:colagroup,
-					data: values
-				}]
+				series: jseries
 			});
 			
 			break;
