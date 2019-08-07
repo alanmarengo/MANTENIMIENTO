@@ -12,7 +12,7 @@
 				
 			<ul>
 				<li class="ml-10">
-					<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); jwindow.open('popup-share'); geomap.map.share();">
+					<a class="button" href="javascript:void(0);" onclick="stats.view.getTableCsv();">
 						<img src="./images/download-blue.png">
 					</a>
 				</li>
