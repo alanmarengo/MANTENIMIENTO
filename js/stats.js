@@ -660,8 +660,13 @@ function ol_stats() {
 		var groupbycol_name = $("#group-combo-view").attr("data-group-column-index");
 		var dated = $("#dated-search").val();
 		var dateh = $("#dateh-search").val();
+		var datelabel = "Sin Especificar";
 		
-		alert(dated + " :: " + dateh);
+		if ((dated != "") && (dateh == !")) {
+			
+			datelabel = "Desde " + dated + " Hasta " + dateh;
+			
+		}
 		
 		if ((groupbycol_index == 0) || (groupbycol_index == 1)) {
 		
@@ -672,6 +677,7 @@ function ol_stats() {
 			$("#gm-stats-mediawrapper").html("");
 			$("#popup-stats-gm-header .icons").show();
 			$("#labelgm-dataset-agroup").html(groupby_val);
+			$("#labelgm-dataset-period").html(datelabel);
 			
 		
 		}else{
@@ -688,6 +694,13 @@ function ol_stats() {
 		var groupby_val = $("#group-combo-view").val();
 		var groupbycol_index = $("#group-combo-view").attr("data-group-column-index");
 		var groupbycol_name = $("#group-combo-view").attr("data-group-column-index");
+		var datelabel = "Sin Especificar";
+		
+		if ((dated != "") && (dateh == !")) {
+			
+			datelabel = "Desde " + dated + " Hasta " + dateh;
+			
+		}
 		
 		if ((groupbycol_index == 0) || (groupbycol_index == 1)) {
 			
@@ -698,6 +711,7 @@ function ol_stats() {
 			$("#gm-stats-mediawrapper").html("");
 			$("#popup-stats-gm-header .icons").hide();
 			$("#labelgm-dataset-agroup").html(groupby_val);
+			$("#labelgm-dataset-period").html(datelabel);
 		
 		}else{
 			
