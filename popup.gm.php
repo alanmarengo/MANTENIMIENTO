@@ -48,10 +48,10 @@
 		
 		<div class="col col-md-4 col-lg-4">
 			
-			<div class="row jump-row">
+			<div class="row jump-row" style="height:30px;">
 				<select class="selectpicker" id="gm-combo"></select>
 			</div>
-			<div class="row jump-row" id="graph-types">
+			<div class="row jump-row" id="graph-types" style="position:relative; top:-20px;">
 				<p>Ejemplos de Gráfico disponibles</p>
 				<div id=graph-list">
 					<div class="row jump-row">
