@@ -571,6 +571,17 @@ function ol_stats() {
 		
 	}
 	
+	this.view.graficar_tipo = function(type) {
+		
+		if (this.view.chart) {
+			
+			this.view.chart.type = type;
+			
+			
+		}
+		
+	}
+	
 	this.view.graficar = function(query_id) {
 		
 		var colagroup = $("#group-combo-view").attr("data-group-column-val");
@@ -598,9 +609,9 @@ function ol_stats() {
 			}
 		});
 			
-		Highcharts.chart('gm-stats-mediawrapper', {
+		this.chart = Highcharts.chart('gm-stats-mediawrapper', {
 			chart: {
-				type: 'column',
+				type: 'line',
 				height:350,
 				width:600
 			},
