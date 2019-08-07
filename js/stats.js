@@ -1366,20 +1366,28 @@ function ol_stats() {
 		/*var debug = "DT_ID: " + dt_id + "\n";
 			debug += "DT_VARS: " + dt_variables + "\n";
 			debug += "DT_CRUCE: " + dt_cruce + "\n";*/
-
-		$("#inp_dt_id").val(dt_id);
-		$("#inp_dt_variables").val(dt_variables);
-		$("#inp_dt_cruce").val(dt_cruce);
 		
-		var flink = "./estadisticas-vista.php?dt_id="+dt_id+"&dt_v="+dt_variables+"&dt_c="+dt_cruce+"&dt_t="+dt_titulo;
+		if (cruce != -1) {
 		
-		var flinka = document.createElement("a");
-			flinka.setAttribute("href",flink);
+			$("#inp_dt_id").val(dt_id);
+			$("#inp_dt_variables").val(dt_variables);
+			$("#inp_dt_cruce").val(dt_cruce);
 			
-		document.body.appendChild(flinka);
-		flinka.click();
+			var flink = "./estadisticas-vista.php?dt_id="+dt_id+"&dt_v="+dt_variables+"&dt_c="+dt_cruce+"&dt_t="+dt_titulo;
+			
+			var flinka = document.createElement("a");
+				flinka.setAttribute("href",flink);
+				
+			document.body.appendChild(flinka);
+			flinka.click();
+			
+			$(flinka).remove();
 		
-		$(flinka).remove();
+		}else{
+			
+			alert("Debe elegir un cruce espacial para continuar");
+			
+		}
 
 	}
 		
