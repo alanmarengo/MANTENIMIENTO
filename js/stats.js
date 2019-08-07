@@ -694,6 +694,8 @@ function ol_stats() {
 		var groupby_val = $("#group-combo-view").val();
 		var groupbycol_index = $("#group-combo-view").attr("data-group-column-index");
 		var groupbycol_name = $("#group-combo-view").attr("data-group-column-index");
+		var dated = $("#dated-search").val();
+		var dateh = $("#dateh-search").val();
 		var datelabel = "Sin Especificar";
 		
 		if ((dated != "") && (dateh != "")) {
