@@ -571,14 +571,10 @@ function ol_stats() {
 		
 	}
 	
-	this.view.graficar_tipo = function(type) {
+	this.view.graficarTipo = function(graphType) {
 		
-		if (this.view.chart) {
-			
-			this.view.chart.type = type;
-			
-			
-		}
+		this.view.graphType = graphType;
+		document.getElementById("gm-graficar-process").click();
 		
 	}
 	
@@ -590,6 +586,16 @@ function ol_stats() {
 			labels = labels.split(",");
 		var values = $("#graficar-values").val();
 			values = values.split(",");
+			
+		if (this.view.graphType) {
+			
+			var graphType = this.view.graphType;
+			
+		}else{
+			
+			var graphType = 1;
+			
+		}
 		
 		for (var i=0; i<values.length; i++) {
 			
@@ -608,51 +614,120 @@ function ol_stats() {
 				downloadSV:"Descargar SVG"
 			}
 		});
+		
+		switch graphType {
 			
-		this.chart = Highcharts.chart('gm-stats-mediawrapper', {
-			chart: {
-				type: 'line',
-				height:350,
-				width:600
-			},
-			credits:{
-				enabled:false
-			},
-			title: {
-				text: colagroup
-			},
-			subtitle: {
-				text: "por " + coldataset
-			},
-			xAxis: {
-				categories:labels,
-				crosshair: true
-			},
-			yAxis: {
-				min: 0,
+			case 1:
+			
+			this.chart = Highcharts.chart('gm-stats-mediawrapper', {
+				chart: {
+					type: 'column',
+					height:350,
+					width:600
+				},
+				credits:{
+					enabled:false
+				},
 				title: {
-					text: coldataset
-				}
-			},
-			tooltip: {
-				headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-				pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-					'<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
-				footerFormat: '</table>',
-				shared: true,
-				useHTML: true
-			},
-			plotOptions: {
-				column: {
-					pointPadding: 0.2,
-					borderWidth: 0
-				}
-			},
-			series: [{
-				name:colagroup,
-				data: values
-			}]
-		});
+					text: colagroup
+				},
+				subtitle: {
+					text: "por " + coldataset
+				},
+				xAxis: {
+					categories:labels,
+					crosshair: true
+				},
+				yAxis: {
+					min: 0,
+					title: {
+						text: coldataset
+					}
+				},
+				tooltip: {
+					headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+					pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+						'<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+					footerFormat: '</table>',
+					shared: true,
+					useHTML: true
+				},
+				plotOptions: {
+					column: {
+						pointPadding: 0.2,
+						borderWidth: 0
+					}
+				},
+				series: [{
+					name:colagroup,
+					data: values
+				}]
+			});
+			
+			break;
+			
+			case 2:
+			
+			this.chart = Highcharts.chart('gm-stats-mediawrapper', {
+				chart: {
+					zoomType: 'x'
+				},
+				title: {
+					text: colagroup
+				},
+				subtitle: {
+					text: document.ontouchstart === undefined ?
+						"por " + coldataset
+				},
+				xAxis: {
+					type: labels
+				},
+				yAxis: {
+					title: {
+						text: coldataset
+					}
+				},
+				legend: {
+					enabled: false
+				},
+				plotOptions: {
+					area: {
+						fillColor: {
+							linearGradient: {
+								x1: 0,
+								y1: 0,
+								x2: 0,
+								y2: 1
+							},
+							stops: [
+								[0, Highcharts.getOptions().colors[0]],
+								[1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+							]
+						},
+						marker: {
+							radius: 2
+						},
+						lineWidth: 1,
+						states: {
+							hover: {
+								lineWidth: 1
+							}
+						},
+						threshold: null
+					}
+				},
+
+				series: [{
+					name:colagroup,
+					data: values
+				}]
+			});
+			
+			break;
+			
+		}
+			
+		
 		
 	}
 	

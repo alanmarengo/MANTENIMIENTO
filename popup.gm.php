@@ -55,12 +55,12 @@
 				<div id=graph-list">
 					<div class="row jump-row">
 						<div class="col col-md-4 mt-20">
-							<a href="#">
+							<a href="#" onclick="stats.view.graficarTipo(1);">
 								<img src="./images/graph-samples/01.jpg" height="80">
 							</a>
 						</div>
 						<div class="col col-md-4 mt-20">
-							<a href="#">
+							<a href="#" onclick="stats.view.graficarTipo(2);">
 								<img src="./images/graph-samples/02.jpg" height="80">
 							</a>
 						</div>
@@ -103,7 +103,7 @@
 			</div>
 			<div class="row jump-row jump-posrel" style="top:30px;">
 				<div class="mr-20">	
-					<a href="#" class="button black-button" onclick="stats.view.processGM();">PROCESAR</a>
+					<a href="#" id="gm-graficar-process" class="button black-button" onclick="stats.view.processGM();">PROCESAR</a>
 				</div>
 			</div>
 		</div>
