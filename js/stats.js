@@ -505,7 +505,7 @@ function ol_stats() {
 		
 		}else{
 			
-			alert("Faltan seleccionar funciones para poder actualizar la vista");
+			jalert("Faltan seleccionar funciones para poder actualizar la vista","danger");
 			$("#update-view").prop("disabled",false);
 			
 		}
@@ -653,7 +653,7 @@ function ol_stats() {
 		
 		}else{
 			
-			alert("Faltan seleccionar funciones para poder descargar la vista");
+			jalert("Faltan seleccionar funciones para poder descargar la vista","danger");
 			$("#update-view").prop("disabled",false);
 			
 		}
@@ -739,7 +739,7 @@ function ol_stats() {
 		
 		}else{
 			
-			alert("Debe agrupar por cruce espacial o variable espacial del dataset para poder mapear o graficar");
+			jalert("Debe agrupar por cruce espacial o variable espacial del dataset para poder mapear o graficar","danger");
 			
 		}
 		
@@ -776,7 +776,7 @@ function ol_stats() {
 		
 		}else{
 			
-			alert("Debe agrupar por cruce espacial o variable espacial del dataset para poder mapear o graficar");
+			jalert("Debe agrupar por cruce espacial o variable espacial del dataset para poder mapear o graficar","danger");
 			
 		}
 		
@@ -1372,7 +1372,7 @@ function ol_stats() {
 				if (checks>10) {
 										
 					$(v).prop("checked",false);
-					alert("El limite de variables a elegir es de 10, por favor deseleccione una variable para poder marcar esta opción");
+					jalert("El limite de variables a elegir es de 10, por favor deseleccione una variable para poder marcar esta opción","danger");
 					
 				}
 				
@@ -1432,7 +1432,7 @@ function ol_stats() {
 		
 		}else{
 			
-			alert("Debe elegir un cruce espacial para continuar");
+			jalert("Debe elegir un cruce espacial para continuar","danger");
 			
 		}
 
