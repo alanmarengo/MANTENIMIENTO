@@ -268,6 +268,7 @@ function ol_stats() {
 		}
 			
 		this.resetSelects();
+
 		
 	}
 	

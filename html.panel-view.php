@@ -15,7 +15,8 @@
 		<div class="view-update-wrapper">
 			
 			<input class="black-button" type="button" value="ACTUALIZAR VISTA" id="update-view" disabled="disabled">
-		
+			<i class="fa fa-sync-alt"></i>
+			
 		</div>
 		
 		<div class="date-filters">
