@@ -329,3 +329,19 @@ body {
 	background-color:#dff3ff;
 	
 }
+
+#stats-proceed {
+	
+	color: #31cbfd;
+	border: solid 1px #31cbfd;
+	padding: 10px;
+	
+}
+
+#stats-proceed:hover {
+	
+	opacity:0.8;
+	color:#212529;
+	border:1px solid #212529;
+	
+}
