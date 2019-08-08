@@ -260,3 +260,16 @@
 	opacity:0.8;
 	
 }
+
+#panel-dataset-list .pretty label {
+
+    position: relative;
+    left: 11px;
+
+}
+
+.pretty .state label::before, .pretty .state label::after {
+	
+	left:-13px;
+	
+}
