@@ -33,6 +33,10 @@ $data_records = pg_fetch_assoc($query_dataset_records);
 
 <div class="row jump-row panel-dataset-detail-content jump-scroll" id="dataset-detail-body">
 
-	<p class="mt-30"><?php echo $r["dt_desc"]; ?></p>
+	<div class="mt-30 dataset-detail-body-inner">
+
+		<p><?php echo $r["dt_desc"]; ?></p>
+	
+	</div>
 
 </div>
