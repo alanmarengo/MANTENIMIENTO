@@ -1399,6 +1399,8 @@ function ol_stats() {
 		
 		document.getElementById("dataset-detail-wrapper").innerHTML = req.responseText;
 		
+		scroll.refresh();
+		
 	}
 	
 	this.dataset.proceed = function() {
