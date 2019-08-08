@@ -61,6 +61,15 @@ function ol_stats() {
 			$(v).on("changed.bs.select",function(e, clickedIndex, newValue, oldValue) {
 					
 				this.getVarDesc(v.value);
+				if (v.value == -1) {
+					
+					$("#var-desc").hide();
+					
+				}else{
+					
+					$("#var-desc").show();
+					
+				}
 				
 			}.bind(this));
 			

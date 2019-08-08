@@ -365,6 +365,12 @@ body {
 	
 }
 
+#var-desc {
+	
+	display:none;
+	
+}
+
 #graph-list {
 	
 	width: 100%;
