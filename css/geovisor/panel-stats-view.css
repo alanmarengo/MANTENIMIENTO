@@ -365,6 +365,13 @@ body {
 	
 }
 
+#graph-list {
+	
+	width: 100%;
+	padding: 0px 20px 20px 20px;
+	
+}
+
 #gm-combo-container .bootstrap-select {
 	
 	width: 90%;
