@@ -13,7 +13,7 @@
 			<div class="date-filters">
 			
 				<ul>
-					<li>
+					<li style="padding-left:15px;">
 						PERÍODO: &nbsp;
 					</li>
 					<li>						
