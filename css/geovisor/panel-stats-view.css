@@ -368,7 +368,14 @@ body {
 #graph-list {
 	
 	width: 100%;
-	padding: 0px 20px 20px 20px;
+	
+}
+
+#graph-list .col {
+	
+	justify-content:center;
+	align-items:center;
+	height:100px;
 	
 }
 
