@@ -218,9 +218,16 @@
 
 }
 
+.popup-panel-tree-item-label {
+
+    font-size: 12px;
+    font-weight: bolder;
+
+}
+
 .popup-text {
 	
-	color:#333333;
+	color:#343a40;
 	
 }
 
