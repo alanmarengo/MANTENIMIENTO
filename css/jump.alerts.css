@@ -37,9 +37,28 @@
 	
 }
 
+.jump-alert-header {
+	
+	color:#aaaaaa;
+	font-size:14px;
+	
+}
+
+.jump-alert-danger. jump-alert-header {
+	
+	color:red;
+	
+}
+
+.jump-alert-success. jump-alert-header {
+	
+	color:green;
+	
+}
+
 .jump-alert-close {
 	
-	color: #aaaaaa;
+	color: #aaaaaa !important;
 	
 }
 

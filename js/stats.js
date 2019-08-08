@@ -280,7 +280,7 @@ function ol_stats() {
 		
 		if ((groupbycol_index != 0) && (groupbycol_index != 1)) {
 			
-			jalert("Debe agrupar el dataset por una variable de cruce espacial para poder mapear o graficar","danger");
+			jalert("Ups","Debe agrupar el dataset por una variable de cruce espacial para poder mapear o graficar","danger");
 			
 		}else{
 		
@@ -308,7 +308,7 @@ function ol_stats() {
 			
 			}else{
 				
-				jalert("Se produjo un error asegurese de haber elegido una variable para procesar","danger");
+				jalert("Ups","Se produjo un error asegurese de haber elegido una variable para procesar","danger");
 				
 			}
 		
@@ -505,7 +505,7 @@ function ol_stats() {
 		
 		}else{
 			
-			jalert("Faltan seleccionar funciones para poder actualizar la vista","danger");
+			jalert("Ups","Faltan seleccionar funciones para poder actualizar la vista","danger");
 			$("#update-view").prop("disabled",false);
 			
 		}
@@ -653,7 +653,7 @@ function ol_stats() {
 		
 		}else{
 			
-			jalert("Faltan seleccionar funciones para poder descargar la vista","danger");
+			jalert("Ups","Faltan seleccionar funciones para poder descargar la vista","danger");
 			$("#update-view").prop("disabled",false);
 			
 		}
@@ -739,7 +739,7 @@ function ol_stats() {
 		
 		}else{
 			
-			jalert("Debe agrupar por cruce espacial o variable espacial del dataset para poder mapear o graficar","danger");
+			jalert("Ups","Debe agrupar por cruce espacial o variable espacial del dataset para poder mapear o graficar","danger");
 			
 		}
 		
@@ -776,7 +776,7 @@ function ol_stats() {
 		
 		}else{
 			
-			jalert("Debe agrupar por cruce espacial o variable espacial del dataset para poder mapear o graficar","danger");
+			jalert("Ups","Debe agrupar por cruce espacial o variable espacial del dataset para poder mapear o graficar","danger");
 			
 		}
 		
@@ -1372,7 +1372,7 @@ function ol_stats() {
 				if (checks>10) {
 										
 					$(v).prop("checked",false);
-					jalert("El limite de variables a elegir es de 10, por favor deseleccione una variable para poder marcar esta opción","danger");
+					jalert("Ups","El limite de variables a elegir es de 10, por favor deseleccione una variable para poder marcar esta opción","danger");
 					
 				}
 				
@@ -1432,7 +1432,7 @@ function ol_stats() {
 		
 		}else{
 			
-			jalert("Debe elegir un cruce espacial para continuar","danger");
+			jalert("Ups","Debe elegir un cruce espacial para continuar","danger");
 			
 		}
 

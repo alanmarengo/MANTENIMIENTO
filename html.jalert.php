@@ -6,6 +6,7 @@
 				<i class="fa fa-times"></i>
 			</a>
 		</div>
+		<div class="jump-alert-header"></div>
 		<div class="jump-alert-body"></div>
 	</div>
 </div>
