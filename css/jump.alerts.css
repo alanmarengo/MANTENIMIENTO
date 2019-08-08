@@ -24,3 +24,24 @@
 	align-items:center;
 	
 }
+
+.jump-alert {
+	
+	padding:20px;
+	background-color:#ffffff;
+	border:1px solid #aaaaaa;
+	color:#aaaaaa;
+	
+}
+
+.jump-alert-danger {
+	
+	border-color:red;
+	
+}
+
+.jump-alert-success {
+	
+	border-color:green;
+	
+}
