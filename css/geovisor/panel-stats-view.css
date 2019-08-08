@@ -202,7 +202,6 @@ body {
 	
 	width:130px;
 	height:100%;	
-	font-size:12px;
 	border-top:1px solid #ccc;
 	border-left:1px solid #ccc;
 	padding:10px;
@@ -213,6 +212,7 @@ body {
 	flex-grow:1;
 	position:relative;
 	text-transform:uppercase;
+	font-weight: bolder;
 	
 }
 
@@ -264,6 +264,8 @@ body {
 	
 	width:86%;
 	border:none;
+	font-size: 12px;
+	font-weight: bolder;
 	
 }
 
