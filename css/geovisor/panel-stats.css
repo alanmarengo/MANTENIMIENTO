@@ -6,6 +6,15 @@
 	
 }
 
+#nav-panel-dataset .dropdown-toggle {
+
+    background: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bolder;
+
+}
+
 #nav-panel {
 	
 	z-index:180000 !Important;
