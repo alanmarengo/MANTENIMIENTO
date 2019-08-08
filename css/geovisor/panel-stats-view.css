@@ -358,20 +358,20 @@ body {
 	border: 1px solid #212529;
 	padding: 10px;
 	font-size: 12px;
-	margin-top: 30px;
+	margin-top: 60px;
 	background-color: #f8f9fa;
 	
 }
 
 #gm-combo-container .bootstrap-select {
 	
-	width: 100%;
+	width: 90%;
 	
 }
 
 #gm-combo-container .dropdown-toggle {
 	
-	width: 100%;
+	width: 90%;
 	border: 1px solid #212520 !important;
 	padding: 10px;
 	font-size: 12px;
