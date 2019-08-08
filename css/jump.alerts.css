@@ -6,7 +6,7 @@
 	background-color: RGBA(0,0,0,0.5);
 	width: 100%;
 	height: 100%;
-	z-index: 900000;
+	z-index: 900020;
 	display: none;
 	
 }
@@ -18,7 +18,7 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	z-index: 900001;
+	z-index: 900021;
 	display: none;
 	justify-content:center;
 	align-items:center;
