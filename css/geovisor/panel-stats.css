@@ -210,14 +210,15 @@
 .dataset-detail-icons {
 	
 	display:flex;
-	flex-direction:column;
+	flex-direction:row;
 	align-items: flex-end;
+	justify-content: flex-end;
 	
 }
 
 .dataset-detail-icon {
 	
-	margin-bottom:5px;
+	margin-left:5px;
 	width:32px;
 	height:32px;
 	border-radius: 100%;

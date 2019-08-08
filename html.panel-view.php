@@ -22,13 +22,13 @@
 		
 			<ul>
 				<li>						
-					<input id="dated-search" class="datepicker" name="dated-search" type="date" data-jump-placeholder="Desde" value="Desde..." placeholder="Desde">
+					<input id="dated-search" class="datepicker" name="dated-search" type="date" data-jump-placeholder="Desde" placeholder="Desde">
 					<a href="#">
 						<i class="fas fa-calendar"></i>
 					</a>							
 				</li>
 				<li>						
-					<input id="dateh-search" class="datepicker" name="dateh-search" type="date" data-jump-placeholder="Hasta" value="Hasta..." placeholder="Hasta">
+					<input id="dateh-search" class="datepicker" name="dateh-search" type="date" data-jump-placeholder="Hasta" placeholder="Hasta">
 					<a href="#" >
 						<i class="fas fa-calendar"></i>
 					</a>							
