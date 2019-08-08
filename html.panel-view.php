@@ -54,7 +54,7 @@
 	<div class="row jump-row jus-between jump-posrel" style="top:30px;">
 		
 		<div>
-			<a href="javascript:void(0);" onclick="stats.dataset.proceed();" id="stats-proceed" class="mt-50">&lt; ANTERIOR</a>
+			<a href="./estadisticas.php" id="stats-proceed" class="mt-50">&lt; ANTERIOR</a>
 		</div>
 		
 		<div>
