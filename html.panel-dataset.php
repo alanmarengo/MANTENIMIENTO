@@ -37,7 +37,7 @@
 	
 	<div class="row jump-row jus-right">
 	
-		<a href="javascript:void(0);" onclick="stats.dataset.proceed();" id="stats-proceed" class="mt-50">SIGUIENTE ></a>
+		<a href="javascript:void(0);" onclick="stats.dataset.proceed();" id="stats-proceed" class="mt-50">VER TABLA ></a>
 	
 	</div>
 	
