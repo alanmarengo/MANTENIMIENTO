@@ -68,7 +68,8 @@
 
 .jump-window-header .button {
 	
-	font-size:14px;
+	font-size:12px;
+	font-weight:bolder;
 	height:36px;
 	display:block;
 	padding:0 20px;
