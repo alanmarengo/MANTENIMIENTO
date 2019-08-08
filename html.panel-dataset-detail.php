@@ -13,21 +13,21 @@
 	
 	</div>
 	
-	<div class="row jump-row dataset-detail-icons mt-30">
+	<div class="row jump-row dataset-detail-icons">
 	
-		<div class="dataset-detail-icon" style="background-color:#ffa91b;">
+		<div class="dataset-detail-icon mt-30" style="background-color:#ffa91b;">
 			<a href="#">
 				<img src="./images/icono_mediateca.png" width="32">
 			</a>
 		</div>
 	
-		<div class="dataset-detail-icon" style="background-color:#8e2f4f;">
+		<div class="dataset-detail-icon mt-30" style="background-color:#8e2f4f;">
 			<a href="#">
 				<img src="./images/icono_geovisor.png" width="32">
 			</a>
 		</div>
 	
-		<div class="dataset-detail-icon" style="background-color:#585dc5;">
+		<div class="dataset-detail-icon mt-30" style="background-color:#585dc5;">
 			<a href="#">
 				<img src="./images/icono_indicadores.png" width="32">
 			</a>
