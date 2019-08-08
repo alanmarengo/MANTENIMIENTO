@@ -90,6 +90,12 @@
 	
 }
 
+#dt_form .pretty label {
+	
+	font-size:11px;
+	
+}
+
 #panel-dataset-list {
 	
 	width:100%;
@@ -137,6 +143,7 @@
 	
 	padding:5px 15px;
 	font-size:13px;
+	background-color:#ededed;
 	
 }
 
