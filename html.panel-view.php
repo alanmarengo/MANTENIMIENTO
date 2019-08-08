@@ -5,16 +5,16 @@
 		<div class="dataset-agroup">
 		
 			<select class="selectpicker group-combo-view" id="group-combo-view" data-group-by-column="0" data-group-column-index="-1" data-group-column-val="-1">
-				<option value="1">Agrupar por Todos</option>
-				<option value="2">Agrupar Todo</option>
-				<option value="3">No Agrupar</option>
+				<option value="1">AGRUPAR POR TODOS</option>
+				<option value="2">AGRUPAR TODO</option>
+				<option value="3">NO AGRUPAR</option>
 			</select>
 		
 		</div>
 		
 		<div class="view-update-wrapper">
 			
-			<input class="black-button" type="button" value="Actualizar Vista" id="update-view" disabled="disabled">
+			<input class="black-button" type="button" value="ACTUALIZAR VISTA" id="update-view" disabled="disabled">
 		
 		</div>
 		
@@ -23,7 +23,7 @@
 			<ul>
 				<li>						
 					<input id="dated-search" class="datepicker" name="dated-search" type="date" data-jump-placeholder="Desde" placeholder="Desde">
-					<a href="#" >
+					<a href="#">
 						<i class="fas fa-calendar"></i>
 					</a>							
 				</li>
@@ -51,14 +51,20 @@
 	
 	</div>
 	
-	<div class="row jump-row jus-right jump-posrel" style="top:30px;">
-	
-		<div class="mr-20">	
-			<a href="#" class="button black-button" onclick="stats.view.premapear()">MAPEAR</a>
+	<div class="row jump-row jus-between jump-posrel" style="top:30px;">
+		
+		<div>
+			<a href="./estadisticas.php" id="stats-proceed" class="mt-50">&lt; ANTERIOR</a>
 		</div>
-		<div class="mr-20">	
-			<a href="#" class="button black-button" onclick="stats.view.pregraficar()">GRAFICAR</a>
-		</div>		
+		
+		<div>
+			<div class="mr-20 inline">	
+				<a href="#" class="button black-button" onclick="stats.view.premapear()">MAPEAR</a>
+			</div>
+			<div class="mr-20 inline">	
+				<a href="#" class="button black-button" onclick="stats.view.pregraficar()">GRAFICAR</a>
+			</div>	
+		</div>
 	
 	</div>
 	

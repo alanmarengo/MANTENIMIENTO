@@ -1,7 +1,7 @@
 <div class="popup-modal" id="popup-modal-gm"></div>
 <div class="popup-stats" id="popup-stats-gm" data-action="-1">
 
-	<div class="row jump-row jus-right">
+	<div class="row jump-row jus-left">
 
 		<a href="#" onclick="$('#popup-modal-gm').hide(); $('#popup-stats-gm').hide();">
 			<i class="fa fa-times"></i>
@@ -117,6 +117,9 @@
 		
 		<div class="col col-md-8 col-lg-8">
 			<div id="gm-stats-mediawrapper"></div>
+			<div>
+				<a href="#" class="black-button">VER EN GEOVISOR</a>
+			</div>
 		</div>
 	
 	</div>

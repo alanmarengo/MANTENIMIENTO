@@ -142,13 +142,17 @@
 
 #stats-proceed {
 	
-	color:#31cbfd;
+	color: #31cbfd;
+	border: solid 1px #31cbfd;
+	padding: 10px;
 	
 }
 
 #stats-proceed:hover {
 	
 	opacity:0.8;
+	color:#212529;
+	border:1px solid #212529;
 	
 }
 
@@ -206,14 +210,15 @@
 .dataset-detail-icons {
 	
 	display:flex;
-	flex-direction:column;
+	flex-direction:row;
 	align-items: flex-end;
+	justify-content: flex-end;
 	
 }
 
 .dataset-detail-icon {
 	
-	margin-bottom:5px;
+	margin-left:5px;
 	width:32px;
 	height:32px;
 	border-radius: 100%;

@@ -176,6 +176,12 @@ body {
 	
 }
 
+.dataset-cell-header input {
+	
+	text-transform:uppercase;
+	
+}
+
 .dataset-row .dropdown-toggle .filter-option-inner {
 	
 	position: relative;
@@ -198,6 +204,7 @@ body {
 	margin-left:-4px;
 	flex-grow:1;
 	position:relative;
+	text-transform:uppercase;
 	
 }
 
@@ -245,6 +252,13 @@ body {
 	
 }
 
+.dataset-cell .dataset-header-input {
+	
+	width:93%;
+	border:none;
+	
+}
+
 .dataset .filter-option-inner i, .dataset .filter-option-inner .filter-option-inner-inner {
 	
 	display:inline-block;
@@ -283,7 +297,7 @@ body {
 	/*top: 4px;*/
 	/*left: 20px;*/
 	height: 38px;
-	width: 150px;
+	width: 180px;
 	border: none;
 	cursor: pointer;
 	line-height: 10px;
@@ -320,5 +334,21 @@ body {
 .dataset-filter-row .dataset-cell, .dataset-operation-row .dataset-cell {
 	
 	background-color:#dff3ff;
+	
+}
+
+#stats-proceed {
+	
+	color: #31cbfd;
+	border: solid 1px #31cbfd;
+	padding: 10px;
+	
+}
+
+#stats-proceed:hover {
+	
+	opacity:0.8;
+	color:#212529;
+	border:1px solid #212529;
 	
 }

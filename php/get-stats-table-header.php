@@ -70,7 +70,7 @@ $rquery_string = $data["query"];
 				array_push($coltypes,$type);
 				array_push($col,$colname);
 				
-				$query_string_col_desc = "SELECT * FROM mod_estadistica.vw_dt_variables WHERE dt_variable_titulo = '" . $colname . "'";
+				$query_string_col_desc = "SELECT * FROM mod_estadistica.vw_variables WHERE dt_variable_nombre = '" . $colname . "'";
 				$query_col_desc = pg_query($conn,$query_string_col_desc);
 				$query_col_desc_data = pg_fetch_assoc($query_col_desc);
 				
@@ -81,7 +81,8 @@ $rquery_string = $data["query"];
 					data-col-name="<?php echo $colname; ?>"
 					data-col-type="<?php echo $coltype; ?>"
 					>
-					<span><?php echo $colname; ?></span>
+					<input type="text" readonly="readonly" class="dataset-header-input" value="<?php echo $colname; ?>" title="<?php echo $colname; ?>" alt="<?php echo $colname; ?>">
+					<!--<span></span>-->
 					<i class="fa fa-info-circle" title="<?php echo $query_col_desc_data["dt_variable_defincion"]; ?>"></i>
 				</div>
 				
