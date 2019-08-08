@@ -5,6 +5,13 @@
 	
 }
 
+.jus-left {
+	
+	justify-content:left;
+	justify-content:flex-start;
+	
+}
+
 .jus-between {
 	
 	justify-content:space-between;
