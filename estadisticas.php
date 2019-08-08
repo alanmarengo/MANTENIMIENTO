@@ -52,6 +52,7 @@
 	</div>
 	
 	<?php include("./widget-links.php"); ?>
+	<?php include("./html.jalert.php"); ?>
 
 </body>
 </html>
