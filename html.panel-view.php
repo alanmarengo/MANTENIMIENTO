@@ -58,10 +58,10 @@
 		</div>
 		
 		<div>
-			<div class="mr-20">	
+			<div class="mr-20 inline">	
 				<a href="#" class="button black-button" onclick="stats.view.premapear()">MAPEAR</a>
 			</div>
-			<div class="mr-20">	
+			<div class="mr-20 inline">	
 				<a href="#" class="button black-button" onclick="stats.view.pregraficar()">GRAFICAR</a>
 			</div>	
 		</div>
