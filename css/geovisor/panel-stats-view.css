@@ -16,6 +16,7 @@ body {
 	
 	display:flex;
 	flex-direction:column;
+	margin-top:30px;
 	
 }
 
@@ -48,7 +49,14 @@ body {
 #dataset-view .date-filters {
 	
 	float:right;
-	margin-top: -5px;
+	margin-left: 20px;
+	border-left: 1px solid #dadada;
+	
+}
+
+#dataset-view .date-filters ul {
+	
+	margin:0;
 	
 }
 
