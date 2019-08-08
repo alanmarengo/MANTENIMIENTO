@@ -85,8 +85,8 @@
 
 .panel-dataset-list-hint p {
 	
-	font-size: 16px;
-	font-weight: bolder;
+	font-size: 14px;
+	/*font-weight: bolder;*/
 	
 }
 
@@ -142,7 +142,7 @@
 
 .panel-dataset-group-list-header span {
 	
-	font-size:13px;
+	font-size:12px;
 	
 }
 
