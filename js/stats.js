@@ -723,6 +723,7 @@ function ol_stats() {
 			$("#popup-stats-gm").show();
 			$("#popup-stats-gm").attr("data-action","m");
 			$("#gm-stats-mediawrapper").html("");
+			$("#gm-title").html("Mapear Variable");
 			$("#popup-stats-gm-header .icons").show();
 			$("#labelgm-dataset-agroup").html(groupby_val);
 			$("#labelgm-dataset-period").html(datelabel);
@@ -761,6 +762,7 @@ function ol_stats() {
 			$("#popup-stats-gm").show();
 			$("#popup-stats-gm").attr("data-action","g");
 			$("#gm-stats-mediawrapper").html("");
+			$("#gm-title").html("Graficar Variable");
 			$("#popup-stats-gm-header .icons").hide();
 			$("#labelgm-dataset-agroup").html(groupby_val);
 			$("#labelgm-dataset-period").html(datelabel);
