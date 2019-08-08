@@ -380,7 +380,8 @@
 
 #btn-layer-preview-addlayer {
 	
-	background-color:#333;
+	background-color:#343a40;
+	font-weight:bolder;
 	width:100%;
 	display:block;
 	padding:10px;
