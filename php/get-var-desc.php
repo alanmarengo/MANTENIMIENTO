@@ -15,5 +15,5 @@ $query = pg_query($conn,$query_string);
 $data = pg_fetch_assoc($query);
 
 echo $data["dt_variable_defincion"];
-echo $query_string;
+
 ?>
