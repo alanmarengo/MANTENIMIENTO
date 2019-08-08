@@ -325,6 +325,8 @@ body {
 	border: none;
 	cursor: pointer;
 	line-height: 10px;
+	font-size: 12px;
+	font-weight: bolder;
 	
 }
 
