@@ -144,8 +144,14 @@
 #stats-proceed {
 	
 	color: #31cbfd;
-	border: solid 1px #31cbfd;
-	padding: 10px;
+	border: solid 2px #31cbfd;
+	padding: 5px;
+	font-size: 14px;
+	width: 150px;
+	display: block;
+	text-align: center;
+	font-weight: bolder;
+	border-radius: 3px;
 	
 }
 
