@@ -222,8 +222,12 @@
 
     font-size: 12px;
     font-weight: bolder;
+	width: 90%;
+	display: inline-flex;
 
 }
+
+
 
 #frm-adv-search .dropdown-toggle {
 	
