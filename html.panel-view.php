@@ -13,6 +13,9 @@
 			<div class="date-filters">
 			
 				<ul>
+					<li>
+						PERÍODO: &nbsp;
+					</li>
 					<li>						
 						<input id="dated-search" class="datepicker" name="dated-search" type="date" data-jump-placeholder="Desde" placeholder="Desde">
 						<a href="#">
