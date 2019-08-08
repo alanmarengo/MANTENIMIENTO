@@ -8,7 +8,26 @@
 				<option value="1">AGRUPAR POR TODOS</option>
 				<option value="2">AGRUPAR TODO</option>
 				<option value="3">NO AGRUPAR</option>
-			</select>
+			</select>			
+		
+			<div class="date-filters">
+			
+				<ul>
+					<li>						
+						<input id="dated-search" class="datepicker" name="dated-search" type="date" data-jump-placeholder="Desde" placeholder="Desde">
+						<a href="#">
+							<i class="fas fa-calendar"></i>
+						</a>							
+					</li>
+					<li>						
+						<input id="dateh-search" class="datepicker" name="dateh-search" type="date" data-jump-placeholder="Hasta" placeholder="Hasta">
+						<a href="#" >
+							<i class="fas fa-calendar"></i>
+						</a>							
+					</li>
+				</ul>
+			
+			</div>
 		
 		</div>
 		
@@ -17,25 +36,6 @@
 			<input class="black-button" type="button" value="ACTUALIZAR VISTA" id="update-view" disabled="disabled">
 			<i class="fa fa-sync-alt"></i>
 			
-		</div>
-		
-		<div class="date-filters">
-		
-			<ul>
-				<li>						
-					<input id="dated-search" class="datepicker" name="dated-search" type="date" data-jump-placeholder="Desde" placeholder="Desde">
-					<a href="#">
-						<i class="fas fa-calendar"></i>
-					</a>							
-				</li>
-				<li>						
-					<input id="dateh-search" class="datepicker" name="dateh-search" type="date" data-jump-placeholder="Hasta" placeholder="Hasta">
-					<a href="#" >
-						<i class="fas fa-calendar"></i>
-					</a>							
-				</li>
-			</ul>
-		
 		</div>
 	
 	</div>
