@@ -51,20 +51,14 @@
 	
 	</div>
 	
-	<div class="row jump-row jus-between jump-posrel" style="top:30px;">
+	<div class="row jump-row jus-right jump-posrel" style="top:30px;">
 		
-		<div>
-			<a href="javascript:void(0);" onclick="stats.dataset.proceed();" id="stats-proceed" class="mt-50">ANTERIOR &gt;</a>
+		<div class="mr-20">	
+			<a href="#" class="button black-button" onclick="stats.view.premapear()">MAPEAR</a>
 		</div>
-		
-		<div>
-			<div class="mr-20">	
-				<a href="#" class="button black-button" onclick="stats.view.premapear()">MAPEAR</a>
-			</div>
-			<div class="mr-20">	
-				<a href="#" class="button black-button" onclick="stats.view.pregraficar()">GRAFICAR</a>
-			</div>	
-		</div>
+		<div class="mr-20">	
+			<a href="#" class="button black-button" onclick="stats.view.pregraficar()">GRAFICAR</a>
+		</div>		
 	
 	</div>
 	
