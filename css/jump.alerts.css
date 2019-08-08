@@ -56,9 +56,21 @@
 	
 }
 
+.jump-alert-close {
+	
+	text-align:right;
+	
+}
+
 .jump-alert-close a, .jump-alert-close a i {
 	
 	color: #aaaaaa !important;
+	
+}
+
+.jump-alert-close a:hover {
+	
+	opacity:0.8;
 	
 }
 
