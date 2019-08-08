@@ -46,7 +46,7 @@
 
 	<div class="row jump-row popup-stats-gm-row" style="top:30px;">
 		
-		<div class="col col-md-4 col-lg-4" style="display:block; width:100%;">
+		<div class="col col-md-4 col-lg-4" style="display:block; width:100%;" id="gm-combo-container">
 			
 			<div class="row jump-row" style="height:30px;">
 				<select class="selectpicker" id="gm-combo"></select>
