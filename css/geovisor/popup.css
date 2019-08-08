@@ -228,6 +228,9 @@
 #frm-adv-search .dropdown-toggle {
 	
 	background:none;
+	text-transform:uppercase;
+	font-size:12px;
+	font-weight:bolder;
 	
 }
 
