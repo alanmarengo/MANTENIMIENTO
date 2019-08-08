@@ -725,7 +725,6 @@ function ol_stats() {
 		
 		if ((groupbycol_index == 0) || (groupbycol_index == 1)) {
 		
-			$("#var-desc").show(); 
 			$("#btn-ver-geovisor").show(); 
 			$("#graph-types").hide(); 
 			$("#popup-modal-gm").show(); 
@@ -764,7 +763,6 @@ function ol_stats() {
 		
 		if ((groupbycol_index == 0) || (groupbycol_index == 1)) {
 			
-			$("#var-desc").hide(); 
 			$("#btn-ver-geovisor").hide(); 
 			$("#graph-types").show();
 			$("#popup-modal-gm").show(); 
