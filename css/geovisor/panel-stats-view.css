@@ -291,13 +291,29 @@ body {
 	
 }
 
+.view-update-wrapper {
+	
+	position:relative;
+	
+}
+
+.view-update-wrapper i {
+	
+	color: white;
+    position: absolute;
+    left: 30px;
+    top: 13px;
+    font-size: 14px;
+	
+}
+
 #dataset-view input[type=button] {
 	
 	position: relative;
 	/*top: 4px;*/
 	/*left: 20px;*/
 	height: 38px;
-	width: 180px;
+	width: 230px;
 	border: none;
 	cursor: pointer;
 	line-height: 10px;
