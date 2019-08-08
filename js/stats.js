@@ -1417,9 +1417,9 @@ function ol_stats() {
 		
 		if (dt_cruce != -1) {
 		
-			if (dt_variables != "") {
+			if (dt_id != undefined) {
 		
-				if (dt_id != undefined) {
+				if (dt_variables != "") {
 		
 					$("#inp_dt_id").val(dt_id);
 					$("#inp_dt_variables").val(dt_variables);
@@ -1436,14 +1436,14 @@ function ol_stats() {
 					$(flinka).remove();
 				
 				}else{
-					
-					jalert("Ups","Debe elegir un tema y un dataset para continuar","danger");
-					
+				
+					jalert("Ups","Debe elegir al menos una variable del dataset para continuar","danger");
+						
 				}
 		
 			}else{
-				
-				jalert("Ups","Debe elegir al menos una variable del dataset para continuar","danger");
+					
+				jalert("Ups","Debe elegir un tema y un dataset para continuar","danger");
 				
 			}
 		
