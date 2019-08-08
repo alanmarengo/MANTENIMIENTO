@@ -14,6 +14,7 @@ $query = pg_query($conn,$query_string);
 
 $data = pg_fetch_assoc($query);
 
-echo $data["dt_variable_defincion"];
+echo "<p><strong>VARIABLE: " . $data["dt_variable_nombre"] . "</strong></p>";
+echo "<p>" . $data["dt_variable_defincion"] . "</p>";
 
 ?>
