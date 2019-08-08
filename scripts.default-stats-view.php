@@ -31,6 +31,7 @@
 
 <!-- JUMP CSS -->
 
+<link rel="stylesheet" type="text/css" href="./css/jump.alerts.css">
 <link rel="stylesheet" type="text/css" href="./css/jump.align.css">
 <link rel="stylesheet" type="text/css" href="./css/jump.button.css">
 <link rel="stylesheet" type="text/css" href="./css/jump.spacers.css">
@@ -98,6 +99,7 @@
 <!-- JUMP JS -->
 
 <script src="./js/jump.js"></script>
+<script src="./js/jump.alerts.js"></script>
 <script src="./js/jump.flotant.js"></script>
 <script src="./js/jump.nav.js"></script>
 <script src="./js/jump.hovimage.js"></script>

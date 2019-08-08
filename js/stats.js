@@ -280,7 +280,7 @@ function ol_stats() {
 		
 		if ((groupbycol_index != 0) && (groupbycol_index != 1)) {
 			
-			alert("Debe agrupar el dataset por una variable de cruce espacial para poder mapear o graficar");
+			jalert("Debe agrupar el dataset por una variable de cruce espacial para poder mapear o graficar","danger");
 			
 		}else{
 		
