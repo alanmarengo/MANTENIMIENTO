@@ -48,7 +48,7 @@ $dt_titulo = $_GET["dt_t"];
 		<?php include("./html.navbar-main.php"); ?>
 		<?php include("./html.navbar-tools-stats-view.php"); ?>
 		
-		<div class="page-container">
+		<div class="page-container" style="width:98%;">
 		
 			<?php //include("./section.index.php"); ?>
 			
