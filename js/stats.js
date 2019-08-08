@@ -470,7 +470,7 @@ function ol_stats() {
 			$(".dataset-cell").css("width",cellWidth+"px");
 			$(".dataset-filter-row .dropdown-toggle").css("width","70%");
 			$(".dataset-filter-row .dropdown-toggle").css("margin-top","1px");
-			$(".dataset-operation-row .dropdown-toggle").css("width",cellWidth+"px");
+			$(".dataset-operation-row .dropdown-toggle").css("width","100%");
 			$(".col-filter").on("keydown",function() {
 				
 				$("#update-view").prop("disabled",false);
