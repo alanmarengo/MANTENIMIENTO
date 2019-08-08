@@ -296,10 +296,4 @@ if (($groupindex == 0) || ($groupindex == 1)) {
 <input id="graficar-values" type="hidden" value="<?php echo implode(",",$gm_var_values); ?>">
 <input id="graficar-labels" type="hidden" value="<?php echo implode(",",$gm_labels); ?>">
 
-<div class="row jump-row jus-right">
-	
-	<a href="javascript:void(0);" onclick="stats.dataset.proceed();" id="stats-proceed" class="mt-50">ANTERIOR &gt;</a>
-
-</div>
-
 <?php include("./php/get-stats-paging.php"); ?>
