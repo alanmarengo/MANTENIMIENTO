@@ -244,8 +244,8 @@ if (($groupindex == 0) || ($groupindex == 1)) {
 
 }
 
+echo $new_query_string;
 ?>
-	
 <div id="dataset" class="dataset" data-gm="<?php echo $gm; ?>" data-gm-id="<?php echo $gm_id; ?>">
 
 	<?php
