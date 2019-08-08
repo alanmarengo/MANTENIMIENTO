@@ -598,3 +598,16 @@
 	height:350px;
 	
 }
+
+#layer-preview-inner #layer-preview-title {
+	
+	font-size:13px;
+	font-weight:bolder;
+	
+}
+
+#layer-preview-inner .content {
+	
+	font-size:12px;
+	
+}
