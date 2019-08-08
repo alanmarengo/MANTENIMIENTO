@@ -358,9 +358,10 @@ body {
 	border: 1px solid #212529;
 	padding: 10px;
 	font-size: 12px;
-	margin-top: 60px;
+	top: 60px;
 	background-color: #f8f9fa;	
 	width: 81%;
+	position:relative;
 	
 }
 
