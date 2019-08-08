@@ -108,14 +108,15 @@
 			</div>
 		</div>
 		
-		<div id="gm-stats-mediawrapper"></div>
+		<div class="col col-md-8 col-lg-8" id="btn-ver-geovisor">			
 		
-		<div class="col col-md-8 col-lg-8" id="btn-ver-geovisor">
+			<div id="gm-stats-mediawrapper"></div>
 			<div class="mt-30 jus-right row jump-row">
 				<div style="width:200px; top:30px; position:relative;">
 					<a href="#" class="black-button">VER EN GEOVISOR</a>
 				</div>
 			</div>
+			
 		</div>
 	
 	</div>
