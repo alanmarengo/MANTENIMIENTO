@@ -4,7 +4,7 @@ function jalert(msg,bs_class) {
 	$(".jump-alert-container").attr("class","jump-alert-container jump-alert-"+bs_class);
 	
 	$(".jump-alert-modal").show();
-	$(".jump-alert-container").show();	
+	$(".jump-alert-container").css("display","flex");	
 	
 }
 

@@ -27,10 +27,13 @@
 
 .jump-alert {
 	
-	padding:20px;
-	background-color:#ffffff;
-	border:1px solid #aaaaaa;
-	color:#aaaaaa;
+	padding: 20px;
+	background-color: #ffffff;
+	border: 1px solid #aaaaaa;
+	color: #aaaaaa;
+	width: 300px;
+	height: auto;
+	font-size: 12px;
 	
 }
 
