@@ -46,7 +46,7 @@
 
 	<div class="row jump-row popup-stats-gm-row" style="top:30px;">
 		
-		<div class="col col-md-4 col-lg-4" style="display:block;">
+		<div class="col col-md-4 col-lg-4" style="display:block; width:100%;">
 			
 			<div class="row jump-row" style="height:30px;">
 				<select class="selectpicker" id="gm-combo"></select>
@@ -117,8 +117,10 @@
 		
 		<div class="col col-md-8 col-lg-8">
 			<div id="gm-stats-mediawrapper"></div>
-			<div class="mt-30">
-				<a href="#" class="black-button">VER EN GEOVISOR</a>
+			<div class="mt-30 jus-right row jump-row">
+				<div style="width:150px;">
+					<a href="#" class="black-button">VER EN GEOVISOR</a>
+				</div>
 			</div>
 		</div>
 	

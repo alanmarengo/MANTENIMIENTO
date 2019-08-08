@@ -352,3 +352,24 @@ body {
 	border:1px solid #212529;
 	
 }
+
+#var-desc, #graph-types {
+	
+	border: 1px solid #212529;
+	padding: 10px;
+	font-size: 12px;
+	margin-top: 30px;
+	background-color: #f8f9fa;
+	
+}
+
+#gm-combo-container .dropdown-toggle {
+	
+	width: 100%;
+	border: 1px solid #212520 !important;
+	padding: 10px;
+	font-size: 12px;
+	margin-top: 30px;
+	background-color: #f8f9fa;
+	
+}
