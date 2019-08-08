@@ -63,10 +63,10 @@
 		
 		<div>
 			<div class="mr-20 inline">	
-				<a href="#" class="button black-button" onclick="stats.view.premapear()">MAPEAR</a>
+				<a href="#" class="button white-button" onclick="stats.view.premapear()">MAPEAR</a>
 			</div>
 			<div class="mr-20 inline">	
-				<a href="#" class="button black-button" onclick="stats.view.pregraficar()">GRAFICAR</a>
+				<a href="#" class="button white-button" onclick="stats.view.pregraficar()">GRAFICAR</a>
 			</div>	
 		</div>
 	
