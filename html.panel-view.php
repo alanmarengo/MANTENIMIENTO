@@ -58,7 +58,7 @@
 	<div class="row jump-row jus-between jump-posrel" style="top:30px;">
 		
 		<div>
-			<a href="./estadisticas.php" id="stats-proceed" class="mt-50">&lt; VOLVER</a>
+			<a href="./estadisticas.php" id="stats-proceed">&lt; VOLVER</a>
 		</div>
 		
 		<div>
