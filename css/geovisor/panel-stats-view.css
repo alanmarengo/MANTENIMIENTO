@@ -363,6 +363,12 @@ body {
 	
 }
 
+#gm-combo-container .bootstrap-select {
+	
+	width: 100%;
+	
+}
+
 #gm-combo-container .dropdown-toggle {
 	
 	width: 100%;
