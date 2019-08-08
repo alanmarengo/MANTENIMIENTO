@@ -245,6 +245,13 @@ body {
 	
 }
 
+.dataset-cell .dataset-header-input {
+	
+	width:100%;
+	border:none;
+	
+}
+
 .dataset .filter-option-inner i, .dataset .filter-option-inner .filter-option-inner-inner {
 	
 	display:inline-block;

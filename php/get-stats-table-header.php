@@ -81,7 +81,8 @@ $rquery_string = $data["query"];
 					data-col-name="<?php echo $colname; ?>"
 					data-col-type="<?php echo $coltype; ?>"
 					>
-					<span><?php echo $colname; ?></span>
+					<input type="text" readonly="readonly" class="dataset-header-input" value="<?php echo $colname; ?>" title="<?php echo $colname; ?>" alt="<?php echo $colname; ?>">
+					<!--<span></span>-->
 					<i class="fa fa-info-circle" title="<?php echo $query_col_desc_data["dt_variable_defincion"]; ?>"></i>
 				</div>
 				
