@@ -13,7 +13,7 @@
 	
 	</div>
 	
-	<div class="row jump-row dataset-detail-icons">
+	<div class="row jump-row dataset-detail-icons mt-30">
 	
 		<div class="dataset-detail-icon" style="background-color:#ffa91b;">
 			<a href="#">
