@@ -65,11 +65,13 @@
   margin: 0;
   text-indent: 1.5em;
   min-width: calc(1em + 2px);
-  font-size: 0.7em;
+  font-size: 12px;
   position: relative;
   top: -1px;
   left: 1px;
   color:#4c4c4e;
+  text-transform: uppercase;
+	font-weight: bolder;
 }
 
 .pretty .state label:before,
