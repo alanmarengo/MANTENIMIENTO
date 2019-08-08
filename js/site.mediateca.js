@@ -529,6 +529,7 @@ $(document).ready(function() {
 
     function docsRender() {
         let html = '';
+
         $.each(model.data.docs, function(index, doc) {
             html += `
                 <div class="doc row" data-id="${doc.id}" data-origen="${doc.origen_id}">
@@ -551,6 +552,11 @@ $(document).ready(function() {
                 </div>
             `;
         });
+
+        if (html == '') {
+            html = '<h2 class="sin-resultados">No se encontraron resultados con los filtros seleccionados.</h2>'
+        }
+
         $('#uxData').html(html);
     }
 
@@ -601,6 +607,10 @@ $(document).ready(function() {
         html += `</div>`;
         html += `</div>`;
 
+        if (row == 0 && col == 0) {
+            html = '<h2 class="sin-resultados">No se encontraron resultados con los filtros seleccionados.</h2>'
+        }
+
         $('#uxData').html(html);
     }
 
@@ -627,6 +637,11 @@ $(document).ready(function() {
                 </div>
             `;
         });
+
+        if (html == '') {
+            html = '<h2 class="sin-resultados">No se encontraron resultados con los filtros seleccionados.</h2>'
+        }
+
         $('#uxData').html(html);
 
         /*
