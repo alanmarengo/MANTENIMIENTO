@@ -9,11 +9,11 @@ $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . 
 $conn = pg_connect($string_conn);
 
 $query_string = "SELECT * FROM mod_estadistica.vw_variables WHERE dt_variable_nombre = '" . $var_name . "'";
-echo $query_string;
+
 $query = pg_query($conn,$query_string);
 
 $data = pg_fetch_assoc($query);
 
 echo $data["dt_variable_defincion"];
-
+echo $query_string;
 ?>
