@@ -7,7 +7,7 @@
 	
 	</div>
 	
-	<div id="dataset-detail-wrapper" class="jump-scroll">
+	<div id="dataset-detail-wrapper">
 	
 		<p>Seleccione un dataset para comenzar</p>
 	
