@@ -176,6 +176,12 @@ body {
 	
 }
 
+.dataset-cell-header input {
+	
+	text-transform:uppercase;
+	
+}
+
 .dataset-row .dropdown-toggle .filter-option-inner {
 	
 	position: relative;
