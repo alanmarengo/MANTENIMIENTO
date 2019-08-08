@@ -308,7 +308,7 @@ function ol_stats() {
 			
 			}else{
 				
-				alert("Se produjo un error asegurese de haber elegido una variable para procesar");
+				jalert("Se produjo un error asegurese de haber elegido una variable para procesar","danger");
 				
 			}
 		
