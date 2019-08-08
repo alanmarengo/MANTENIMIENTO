@@ -51,6 +51,13 @@
 			<div class="row jump-row" style="height:30px;">
 				<select class="selectpicker" id="gm-combo"></select>
 			</div>
+			<div id="var-desc" style="display:none;">
+				<div class="row jump-row">
+					<div id="var-desc-inner">
+					
+					</div>
+				</div>
+			</div>
 			<div class="row jump-row" id="graph-types" style="display:none;">
 				<div id="graph-list">
 					<div class="row jump-row">
@@ -91,13 +98,6 @@
 								<img src="./images/graph-samples/08.jpg" height="80">
 							</a>
 						</div>
-					</div>
-				</div>
-			</div>
-			<div id="var-desc" style="display:none;">
-				<div class="row jump-row">
-					<div id="var-desc-inner">
-					
 					</div>
 				</div>
 			</div>
