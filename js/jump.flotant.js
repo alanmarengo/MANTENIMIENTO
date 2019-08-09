@@ -174,7 +174,8 @@ Jump.flotant = function() {
 				var text = $(addSectionTitle).text();
 					text = text.split("(");
 					text = text[0].trim();
-					text.replace(">","");
+					text = text.split(">");
+					text = text[0];
 				
 				$(target).find("ul").first().children("li").first().prepend(
 					$("<li id='jump-back-"+tmphash+"' class='jump-sublevel-labeloption'></li>").append(
