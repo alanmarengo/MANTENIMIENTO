@@ -126,7 +126,7 @@ $rquery_string = $data["query"];
 				if ($coltypes[$i] == "text") {					
 					
 				?>
-					<option value="=">IGUAL A</option>
+					<option value="=">IGUAL A </option>
 					
 				<?php
 					
@@ -134,9 +134,9 @@ $rquery_string = $data["query"];
 					
 				?>
 				
-					<option value="=">IGUAL A</option>
-					<option value=">">MAYOR DE</option>
-					<option value="<">MENOR DE</option>
+					<option value="=">IGUAL A </option>
+					<option value=">">MAYOR QUE </option>
+					<option value="<">MENOR QUE </option>
 					
 				<?php
 					
