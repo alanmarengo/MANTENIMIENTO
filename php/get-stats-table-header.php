@@ -119,7 +119,7 @@ $rquery_string = $data["query"];
 					data-col-name="<?php echo $col[$i]; ?>"
 					data-col-type="<?php echo $coltypes[$i]; ?>">
 			<select class="selectpicker filter-combo">		
-				<option value="-1">Todo</option>
+				<option value="-1">TODOS</option>
 				
 				<?php
 				
