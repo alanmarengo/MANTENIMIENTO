@@ -8,7 +8,7 @@
 		</li>
 		<li>
 			<a href="javascript:void(0)" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="flotant.toggle('#nav-herramientas-ieasa',true,false,this);">
-				Herramientas del Observatorio IEASA</span>
+				Herramientas del Observatorio IEASA <span class="nav-item-count">></span></span>
 			</a>
 		</li>
 		<li>
