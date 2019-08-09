@@ -84,7 +84,7 @@
   border: 1px solid transparent;
   z-index: 0;
   position: absolute;
-  left: 0;
+  left: -12px;
   top: calc((0% - (100% - 1em)) - 8%);
   background-color: transparent;
 }
