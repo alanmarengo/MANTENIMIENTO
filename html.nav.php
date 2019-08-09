@@ -30,3 +30,4 @@
 		</li>
 	</ul>
 </div>
+<?php var_dump($_SERVER); ?>
