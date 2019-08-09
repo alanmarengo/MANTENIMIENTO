@@ -218,9 +218,9 @@ function DrawProyectos() {
 		?>
 		
 		<div class="popup-panel-tree-item">
-			<div class="pretty p-icon p-rotate">
-				<input type="checkbox" class="basic-filter-checkbox default-empty-checkbox" data-spid="<?php echo $r["sub_proyecto_id"]; ?>"/>
-				<div class="state p-primary">
+			<div class="pretty p-icon p-curve">
+				<input type="checkbox" class="basic-filter-checkbox default-empty-checkbox" value="<?php echo $r["sub_proyecto_id"]; ?>"/>
+				<div class="state">
 					<i class="icon mdi mdi-check"></i>
 					<label><?php echo $r["sub_proyecto_desc"]; ?></label>
 				</div>
