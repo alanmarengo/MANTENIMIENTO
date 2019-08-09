@@ -65,7 +65,11 @@ a:hover {
 }
 
 .jump-sublevel-labeloption a {
-	color: #353535;
+
+    color: #353535;
+    font-size: 13px;
+    font-weight: bolder;
+
 }
 
 .jump-sublevel-labeloption a:hover {
