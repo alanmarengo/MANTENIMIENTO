@@ -630,10 +630,8 @@ $(document).ready(function() {
         $.each(model.data.techs, function(index, doc) {
             html += `
                 <div class="doc row" data-id="${doc.id}" data-origen="${doc.origen_id}">
-                    <div class="col-3">
-                        <div class="doc-preview">
-                            <img src="${doc.link_preview}" />
-                        </div>
+                    <div class="col-3" style="padding-right: 0px;">
+                        <img class="doc-preview" src="${doc.link_preview}" />
                     </div>
                     <div class="col-9">
                         <div class="doc-title">
