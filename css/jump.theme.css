@@ -59,16 +59,22 @@ a:hover {
 }
 
 .jump-sublevel-labeloption, .start-option {
-    background-color: #fff;
+    background-color: #eaeaed;
 	padding-left: 12px;
-	font-weight: 600;
 }
 
 .start-option a {
 	
 	color:#343a40;
 	font-size: 13px;
-	font-weight: bolder;
+	font-weight: 600;
+	cursor:pointer;
+	
+}
+
+.start-option a:hover {
+	
+	color:#343a40;
 	
 }
 
@@ -76,7 +82,7 @@ a:hover {
 
     color: #353535;
     font-size: 13px;
-    font-weight: bolder;
+    font-weight: 600;
 
 }
 
