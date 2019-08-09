@@ -393,6 +393,7 @@
 .popup-panel-tree-item .pretty .state i {
 	
 	left:-10px !Important;
+	cursor:pointer;
 	
 }
 
