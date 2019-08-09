@@ -6,7 +6,7 @@
 <html lang="es">
 <head>
 
-	<title>Inicio</title>
+	<title>Geovisor</title>
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 		
