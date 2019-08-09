@@ -58,7 +58,7 @@ a:hover {
     font-size: 12px;
 }
 
-.jump-sublevel-labeloption {
+.jump-sublevel-labeloption, .start-option {
     background-color: #fff;
 	padding-left: 12px;
 	font-weight: 600;
