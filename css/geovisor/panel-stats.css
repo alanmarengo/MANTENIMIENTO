@@ -86,7 +86,8 @@
 .panel-dataset-list-hint p {
 	
 	font-size: 14px;
-	/*font-weight: bolder;*/
+	font-weight: bolder;
+	color: #666;
 	
 }
 
