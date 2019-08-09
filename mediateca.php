@@ -1,3 +1,5 @@
+<?php include("./fn.php"); ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -22,10 +24,7 @@
 		
 			<?php include("./section.mediateca.php"); ?>
 			
-			<?php include("./html.nav.php"); ?>
-			<?php include("./html.nav.geovisores.php"); ?>
-			<?php include("./html.nav.vinculaciones_insterinstitucionales.php"); ?>
-			<?php include("./html.nav.recursos_hidricos.php"); ?>
+			<?php include("./html.navs.php"); ?>
 			
 			<?php include("./footer.php"); ?>
 			

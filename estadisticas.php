@@ -1,6 +1,7 @@
 <?php include("pgconfig.php"); ?>
 <?php include("geovisor.fn.php"); ?>
 <?php include("stats.fn.php"); ?>
+<?php include("./fn.php"); ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -33,10 +34,8 @@
 		
 			<?php //include("./section.index.php"); ?>
 			
-			<?php include("./html.nav.php"); ?>
-			<?php include("./html.nav.geovisores.php"); ?>
-			<?php include("./html.nav.vinculaciones_insterinstitucionales.php"); ?>
-			<?php include("./html.nav.recursos_hidricos.php"); ?>
+			<?php include("./html.navs.php"); ?>
+			
 			<?php include("./html.nav.popup.php"); ?>
 			
 			<div class="row jump-row">

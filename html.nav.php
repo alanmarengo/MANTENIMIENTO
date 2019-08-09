@@ -1,7 +1,7 @@
 <div id="nav-main" data-visible="0" class="navmenu nav-main jump-flotant-nav jump-flotant-heightfill jump-flotant-heightfill-top jump-scroll nav-level-1 col col-nav col-xs-12 col-sm-12 col-md-3 col-lg-3">
 	<ul>
 		<li class="start-option">
-			<a href="./index.php" class="jump-link-death"><span>Inicio</span></a>
+			<a href="<?php echo startLink($_SERVER["script_filename"]); ?>" class="jump-link-death"><span>Inicio</span></a>
 		</li>
 		<li>
 			<a href="#">Acerca del Observatorio de proyectos IEASA</a>
@@ -30,4 +30,3 @@
 		</li>
 	</ul>
 </div>
-<?php var_dump($_SERVER); ?>

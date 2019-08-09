@@ -1,3 +1,5 @@
+<?php include("./fn.php"); ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -22,9 +24,7 @@
 		
 			<?php include("./section.index.php"); ?>
 			
-			<?php include("./html.nav.php"); ?>
-			<?php include("./html.nav.herramientas-ieasa.php"); ?>
-			<?php include("./html.nav.aprovsc.php"); ?>
+			<?php include("./html.navs.php"); ?>
 			
 			<?php include("./footer.php"); ?>
 			
