@@ -4,10 +4,12 @@
 			<a href="./index.php"><span>Inicio</span></a>
 		</li>
 		<li>
-			<a href="#">Acerca de la plataforma de proyectos de IEASA</a>
+			<a href="#">Acerca del Observatorio de proyectos IEASA</a>
 		</li>
 		<li>
-			<a href="./page.php">Observatorio Ambiental de los AHRSC</a>
+			<a href="javascript:void(0)" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="flotant.toggle('#nav-herramientas-ieasa',true,false,this);">
+				Herramientas del Observatorio IEASA</span>
+			</a>
 		</li>
 		<li>
 			<a href="javascript:void(0)" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="flotant.toggle('#nav-geovisores',true,false,this);">
