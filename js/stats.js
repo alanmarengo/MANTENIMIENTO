@@ -739,7 +739,7 @@ function ol_stats() {
 			
 			var top = $("#gm-stats-mediawrapper").offset().top;
 			var height = Jump.Document.height;
-			var newheight = top - (height + 50);
+			var newheight = height - top - 50;
 			
 			$("#gm-stats-mediawrapper").height(newheight);
 			
