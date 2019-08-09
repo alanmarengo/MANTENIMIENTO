@@ -114,6 +114,8 @@ Jump.flotant = function() {
 		var visible = $(target).attr("data-visible");
 		var navWidth = $(target).width();
 		
+		$(target):show();
+		
 		if (visible == 1) {
 			
 			if (onAnimateEnd) {
