@@ -20,10 +20,32 @@
 			</a>
 		</li>
 		<li>
-			<a href="#">Geoservicios</a>
+			<a href="./mediateca.php">Geoservicios</a>
+		</li>
+		<li>
+			<a href="javascript:void(0)" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="flotant.toggle('#nav-vinculaciones-insterinstitucionales',true,false,this);">
+				 <span class="nav-item-count">(5)</span>
+			</a>
 		</li>
 		<li>
 			<a href="#">Datos Abiertos</a>
+		</li>
+		<li>
+			<a href="#">Indicadores</a>
+		</li>
+		<li>
+			<a href="#">Territorio</a>
+		</li>
+		<li>
+			<a href="javascript:void(0)" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="flotant.toggle('#nav-recursos-hidricos',true,false,this);">
+				Recursos Hídricos <span class="nav-item-count">(5)</span>
+			</a>
+		</li>
+		<li>
+			<a href="http://www.ieasa.com.ar" target="_blank">IEASA</a>
+		</li>
+		<li>
+			<a href="http://hidrosantacruz.com.ar" target="_blank">Hidro Santa Cruz</a>
 		</li>
 		<li>
 			<a href="./contacto.php">Contacto</a>
