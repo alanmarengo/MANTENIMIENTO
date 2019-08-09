@@ -390,6 +390,12 @@
 	
 }
 
+.popup-panel-tree-item i {
+	
+	left:-10px;
+	
+}
+
 #layer-preview-block {
 	
 	display:flex;
