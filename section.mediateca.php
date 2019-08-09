@@ -1,8 +1,25 @@
 <div class="row" id="page_mediateca">
-    <div class="col-md-12 page-title">
-        Recursos en Mediateca
+    <div class="col-md-12 page-title page-title-sticky">
+        <div class="row">
+            <div class="col-md-8">
+                Recursos en Mediateca
+            </div>
+            <div class="col-md-4 text-right">
+                <select id="uxOrden" class="selectpicker">
+                    <option>ORDENAR POR</option>
+                    <option value="0">A - Z</option>
+                    <option value="1">Z - A</option>
+                    <option value="2">MÁS VISTOS</option>
+                    <option value="3">MENOS VISTOS</option>
+                    <option value="4">RECIENTES</option>
+                    <option value="5">ANTIGUOS</option>
+                </select>
+            </div>
+        </div>
     </div>
-    <div class="col-md-12 page-search">
+
+
+    <div class="col-md-12 page-search" style="display: none;">
         <div class="row">
             <div class="col-md-4">
                 <div class="input-group mb-3">
@@ -15,21 +32,11 @@
                 </div>
                 <div id="uxUrl"></div>
             </div>
-
-            <div class="col-md-8 text-right">
-                <select id="uxOrden" class="selectpicker">
-                    <option value="0">A - Z</option>
-                    <option value="1">Z - A</option>
-                    <option value="2">Más vistos</option>
-                    <option value="3">Menos vistos</option>
-                    <option value="4">Recientes</option>
-                    <option value="5">Antiguos</option>
-                </select>
-            </div>
         </div>
     </div>
+
     <div class="col-md-12 page-tabs">
-        <ul class="nav nav-tabs">
+        <ul class="nav nav-tabs" style="padding-top: 10px;">
             <li class="nav-item">
                 <a class="nav-link active" data-tab="0" href="#">DOCUMENTOS <span id="uxQtyDocs"></span></a>
             </li>

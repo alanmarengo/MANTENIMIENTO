@@ -7,6 +7,8 @@ body {
 }
 
 h2.sin-resultados {
+    font-size: 18px;
+    font-size: bolder;
     padding: 30px 30px 30px 12px;
 }
 
@@ -17,6 +19,13 @@ h2.sin-resultados {
     font-size: 18px;
     font-weight: 400;
     padding: 9px 26px;
+}
+
+.page-title-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 68px;
+    z-index: 999;
 }
 
 .navbar {
@@ -584,7 +593,8 @@ h2.sin-resultados {
     }
 }
 
-.datepicker-days {
+.datepicker-days, .datepicker-months, .datepicker-years {
+    font-size: 12px;
     padding: 10px;
     background-color: #fff;
     -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
@@ -630,6 +640,10 @@ h2.sin-resultados {
         }
     }
     
+    .filter-title {
+        font-size: 14px;
+    }
+
     #uxFiltersChecked {
         padding: 10px 15px 6px 15px; 
 
@@ -708,9 +722,11 @@ h2.sin-resultados {
 
         .doc-preview {
             width: 90%;
-            height: auto;
-            max-height: 200px;
-            //box-shadow: 2px 2px 2px grey;
+            max-height: 150px;
+        }
+
+        .doc-preview img {
+            object-fit: contain;
         }
 
         .doc-authors {

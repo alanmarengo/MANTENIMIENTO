@@ -413,7 +413,7 @@ $(document).ready(function() {
                         </div>
                         <div class="col-md-8 text-right">
                             <input id="uxDesde" value="${model.filters.dateStart}" type="text" class="date" style='border: none; width: 100px;'>
-                            <i class="fa fa-calendar"></i>
+                            <span id="uxDesdeIcon" style="cursor: pointer;"><i class="fa fa-calendar"></i></span>
                         </div>
                     </div>
                 </div>
@@ -429,12 +429,13 @@ $(document).ready(function() {
                         </div>
                         <div class="col-md-8 text-right">
                             <input id="uxHasta" value="${model.filters.dateEnd}" type="text" class="date" style='border: none; width: 100px;'>
-                            <i class="fa fa-calendar"></i>
+                            <span id="uxHastaIcon" style="cursor: pointer;"><i class="fa fa-calendar"></i></span>
                         </div>
                     </div>
                 </div>
             </div>
         `
+
         html += `</div>`;
         $('#uxFilters').html(html);
 
@@ -448,6 +449,16 @@ $(document).ready(function() {
             autoclose: true,
             clearBtn: true,
             toggleActive: true
+        });
+
+        $('#uxDesdeIcon').on('click', function() {
+            $('#uxDesde').focus();
+            $('#uxDesde').datepicker('show');
+        });
+
+        $('#uxHastaIcon').on('click', function() {
+            $('#uxHasta').focus();
+            $('#uxHasta').datepicker('show');
         });
 
         $('#uxDesde').on('changeDate', function(e) {
@@ -554,7 +565,7 @@ $(document).ready(function() {
         });
 
         if (html == '') {
-            html = '<h2 class="sin-resultados">No se encontraron resultados con los filtros seleccionados.</h2>'
+            html = '<h2 class="sin-resultados">No se encontraron resultados con los filtros seleccionados</h2>'
         }
 
         $('#uxData').html(html);
@@ -608,7 +619,7 @@ $(document).ready(function() {
         html += `</div>`;
 
         if (row == 0 && col == 0) {
-            html = '<h2 class="sin-resultados">No se encontraron resultados con los filtros seleccionados.</h2>'
+            html = '<h2 class="sin-resultados">No se encontraron resultados con los filtros seleccionados</h2>'
         }
 
         $('#uxData').html(html);
@@ -620,7 +631,9 @@ $(document).ready(function() {
             html += `
                 <div class="doc row" data-id="${doc.id}" data-origen="${doc.origen_id}">
                     <div class="col-3">
-                        <img class="doc-preview" src="${doc.link_preview}" />
+                        <div class="doc-preview">
+                            <img src="${doc.link_preview}" />
+                        </div>
                     </div>
                     <div class="col-9">
                         <div class="doc-title">
@@ -639,7 +652,7 @@ $(document).ready(function() {
         });
 
         if (html == '') {
-            html = '<h2 class="sin-resultados">No se encontraron resultados con los filtros seleccionados.</h2>'
+            html = '<h2 class="sin-resultados">No se encontraron resultados con los filtros seleccionados</h2>'
         }
 
         $('#uxData').html(html);
@@ -698,10 +711,10 @@ $(document).ready(function() {
         $.each(model.filters.groups, function(gindex, group) {
             let html = `
                 <div class="row">
-                    <div class="col-md-10">
+                    <div class="col-md-10 filter-title">
                         ${group.title} (${qtyItemsNotChecked(group)})
                     </div>
-                    <div class="col-md-2 text-right" style="padding-right: 6px;">
+                    <div class="col-md-2 text-right filter-title" style="padding-right: 4px;">
                         ${group.collapsed ? '<i class="fa fa-plus-circle"></i>' : '<i class="fa fa-minus-circle"></i>'}
                     </div>
                 </div>
