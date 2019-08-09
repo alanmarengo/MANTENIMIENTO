@@ -88,7 +88,7 @@ Jump.window = function() {
 		}
 		
 		$(e).show();
-		$(e).css("z-index","100000");
+		$(e).css("z-index","600000");
 		$(e).children(".jump-window-inner").show();
 		
 	}
