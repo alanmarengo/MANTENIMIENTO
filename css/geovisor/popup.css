@@ -192,7 +192,8 @@
 	top:2px !Important;
 	float:right;
 	font-size:13px !Important;
-	display:flex;
+	display: inline-flex;
+	vertical-align: top;
 	margin-right:5px;
 	/*margin-top:5px;*/
 }
@@ -224,6 +225,7 @@
     font-weight: bolder;
 	width: 90%;
 	display: inline-flex;
+	vertical-align:top;
 
 }
 
