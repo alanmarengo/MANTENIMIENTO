@@ -54,6 +54,10 @@
 	
 	display:none;
 	flex-direction:column;
+	position:absolute;
+	left:0px;
+	top:0px;
+	background-color:#FFFFFF;
 	
 }
 
