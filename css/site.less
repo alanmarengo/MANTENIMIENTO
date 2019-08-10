@@ -12,6 +12,10 @@ h2.sin-resultados {
     padding: 30px 30px 30px 12px;
 }
 
+.bootstrap-select .dropdown-menu li a span.text {
+    text-transform: none!important;
+}
+
 .page-title {
     height: 44px;
     background-color: #4c4c4e;
@@ -110,6 +114,25 @@ h2.sin-resultados {
 
 .navbar .dropdown-toggle {
     color: #FFFFFF !important;
+}
+
+.dropdown-menu {
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);   
+
+    .inner .show {
+        background-color: #fff;
+        border: 1px solid #999;
+    
+        a.dropdown-item {
+            color: #666;
+        }
+    
+        a.dropdown-item.selected {
+            color: #fff;
+        }
+    }
 }
 
 #mainbar-icons {
@@ -644,6 +667,10 @@ h2.sin-resultados {
         font-size: 14px;
     }
 
+    #uxFilters {
+        min-height: 500px;
+    }
+
     #uxFiltersChecked {
         padding: 10px 15px 6px 15px; 
 
@@ -722,11 +749,16 @@ h2.sin-resultados {
 
         .doc-preview {
             width: 90%;
-            max-height: 150px;
-        }
+            height: 150px;
 
-        .doc-preview img {
-            object-fit: contain;
+            img {
+                max-width: 100%!important;
+                max-height: 100%!important;
+                margin: auto!important;
+                display: flex;
+                object-fit: contain;
+                object-position: center;
+            }
         }
 
         .doc-authors {
@@ -797,6 +829,20 @@ h2.sin-resultados {
     .modal-body {
         padding: 20px 40px!important;
         background-color: #fff;
+
+        .ficha-preview {
+            width: 90%;
+            height: 200px;
+
+            img {
+                max-width: 100%!important;
+                max-height: 100%!important;
+                margin: auto!important;
+                display: flex;
+                object-fit: contain;
+                object-position: center;
+            }
+        }
 
         .ficha-title {
             font-size: 2em;

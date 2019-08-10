@@ -247,8 +247,7 @@ $(document).ready(function() {
                     model.data.docs.push({
                         id: value.Id,
                         origen_id: value.origen_id,
-                        //link_preview: value.LinkImagen,
-                        link_preview: './sga/' + value.Id + '.jpg', //value.LinkImagen,
+                        link_preview: './sga/' + value.Id + '.jpg', // ./mediateca_preview.php?r=[id]
                         title: value.Titulo,
                         authors: value.Autores,
                         description: value.Descripcion,
@@ -270,8 +269,7 @@ $(document).ready(function() {
                     model.data.techs.push({
                         id: value.Id,
                         origen_id: value.origen_id,
-                        //link_preview: value.LinkImagen,
-                        link_preview: './sga/' + value.Id + '.jpg', //value.LinkImagen,
+                        link_preview: './sga/' + value.Id + '.jpg', // ./mediateca_preview.php?r=[id]
                         title: value.Titulo,
                         authors: value.Autores,
                         description: value.Descripcion,
@@ -305,6 +303,7 @@ $(document).ready(function() {
         $.getJSON(url, function(data) {
             model.ficha = {
                 id: data.id,
+                link_preview: './sga/' + data.id + '.jpg', // ./mediateca_preview.php?r=[id]
                 origen_id: data.origen_id,
                 title: data.titulo,
                 temporal: data.temporal,
@@ -406,7 +405,7 @@ $(document).ready(function() {
 
         html += `
             <div class="card">
-                <div class="card-header" id="group-desde-header" style="padding: 5px 4px 5px 16px;">
+                <div class="card-header" id="group-desde-header" style="padding: 7px 4px 3px 16px;">
                     <div class="row">
                         <div class="col-md-4">
                             Desde:
@@ -422,7 +421,7 @@ $(document).ready(function() {
 
         html += `
             <div class="card">
-                <div class="card-header" id="group-hasta-header" style="padding: 5px 4px 5px 16px;">
+                <div class="card-header" id="group-hasta-header" style="padding: 7px 4px 3px 16px;">
                     <div class="row">
                         <div class="col-md-4">
                             Hasta:
@@ -527,13 +526,22 @@ $(document).ready(function() {
 
         let html = '';
         html += `
-            <div class="ficha-title">${model.ficha.title}</div>
-            <div class="ficha-temporal">${model.ficha.temporal}</div>
-            <div class="ficha-estudio">${model.ficha.estudio}</div>
-            <div class="ficha-authors">${model.ficha.authors}</div>
-            <div class="ficha-description">${model.ficha.description}</div>
-            ${htmlLinkVisor}
-            ${htmlLinkDescarga}
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="ficha-preview">
+                        <img src="${model.ficha.link_preview}" />
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="ficha-title">${model.ficha.title}</div>
+                    <div class="ficha-temporal">${model.ficha.temporal}</div>
+                    <div class="ficha-estudio">${model.ficha.estudio}</div>
+                    <div class="ficha-authors">${model.ficha.authors}</div>
+                    <div class="ficha-description">${model.ficha.description}</div>
+                    ${htmlLinkVisor}
+                    ${htmlLinkDescarga}
+                </div>
+            </div>
         `;
         $('#uxFicha .modal-body').html(html);
     }
@@ -545,7 +553,9 @@ $(document).ready(function() {
             html += `
                 <div class="doc row" data-id="${doc.id}" data-origen="${doc.origen_id}">
                     <div class="col-3" style="padding-right: 0px;">
-                        <img class="doc-preview" src="${doc.link_preview}" />
+                        <div class="doc-preview">
+                            <img src="${doc.link_preview}" />
+                        </div>
                     </div>
                     <div class="col-9" style="margin-left: 0px;">
                         <div class="doc-title">
@@ -630,10 +640,12 @@ $(document).ready(function() {
         $.each(model.data.techs, function(index, doc) {
             html += `
                 <div class="doc row" data-id="${doc.id}" data-origen="${doc.origen_id}">
-                    <div class="col-3" style="padding-right: 0px;">
-                        <img class="doc-preview" src="${doc.link_preview}" />
+                <div class="col-3" style="padding-right: 0px;">
+                    <div class="doc-preview">
+                        <img src="${doc.link_preview}" />
                     </div>
-                    <div class="col-9">
+                </div>
+                <div class="col-9">
                         <div class="doc-title">
                             <img class="doc-icon" src="./images/icon-pdf-file.png" />
                             ${doc.title}
