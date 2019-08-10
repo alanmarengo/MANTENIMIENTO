@@ -550,13 +550,13 @@
 
 .popup-stats a:not(.dropdown-item) {
 	
-	color:rgb(33, 37, 41);
+	color:#343a40;
 	
 }
 
 .popup-stats-gm-row a:hover {
 	
-	color:rgb(33, 37, 41);
+	color:#343a40;
 	opacity:0.8;
 	
 }

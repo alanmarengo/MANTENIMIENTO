@@ -64,6 +64,14 @@
 	
 }
 
+#panel-busqueda-geovisor .panel-close {
+	
+	font-size:1rem;
+	font-weight:400;
+	color:#343a40;
+	
+}
+
 #panel-busqueda-geovisor .panel-header{
 	
 	font-size:14px;
