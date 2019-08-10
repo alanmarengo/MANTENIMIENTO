@@ -49,3 +49,26 @@
 	border:none;
 	
 }
+
+#panel-busqueda-geovisor {
+	
+	display:none;
+	flex-direction:column;
+	
+}
+
+#panel-busqueda-geovisor .panel-header{
+	
+	font-size:14px;
+	font-weight:bolder;
+	color:#666666;
+	
+}
+
+#panel-busqueda-geovisor .panel-body{
+	
+	font-size:12px;
+	font-weight:400;
+	color:#666666;
+	
+}

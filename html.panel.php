@@ -1,5 +1,12 @@
 <div id="nav-panel" data-visible="1" class="navmenu jump-flotant-nav jump-flotant-heightfill jump-flotant-heightfill-top jump-scroll nav-level-1 col col-nav col-xs-12 col-sm-12 col-md-4 col-lg-4">
 	
+	<div id="panel-busqueda-geovisor">
+		
+		<div class="panel-header"><div>
+		<div class="panel-body"></div>
+		
+	</div>
+	
 	<div id="nav-panel-inner" data-visible="1">	
 			
 		<div id="nav-panel-arrow">

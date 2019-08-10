@@ -202,8 +202,34 @@ function ol_map() {
 			
 		}
 		
-	}
+		document.getElementById("panel-seach-input-layers").on("keyup",function(e) {
+			
+			if (e.value = "") {
+				
+				$("#panel-busqueda-geovisor").hide();
+				
+			}else{
+				
+				if (e.which == 13) {
+					
+					this.searchInLayers(e.value);
+					
+				}
+				
+			}
+			
+		});
 		
+	}
+	
+	this.searchInLayers = function(pattern) {
+				
+		$("#panel-busqueda-geovisor").css("display","flex");
+		$("#panel-busqueda-geovisor .panel-header").html("Resultados de Búsqueda");
+		$("#panel-busqueda-geovisor .panel-body").html(pattern);
+		
+	}
+	
 	this.map.setBaseLayer = function(layerObj) {
 		
 		for (var i=0; i<this.baselayers.collection.length; i++) {
