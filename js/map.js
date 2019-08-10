@@ -216,7 +216,8 @@ function ol_map() {
 				
 				if (e.which == 13) {
 					
-					this.searchInLayers(e.value);
+					this.searchInLayers(e.value);				
+					$("#panel-busqueda-geovisor").css("display","flex");
 					
 				}
 				
