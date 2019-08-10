@@ -200,7 +200,11 @@ function ol_map() {
 			
 			document.getElementById("map").appendChild(div);
 			
-		}
+		}		
+		
+	}
+	
+	this.map.startSearch = function() {
 		
 		document.getElementById("panel-seach-input-layers").on("keyup",function(e) {
 			
@@ -222,7 +226,7 @@ function ol_map() {
 		
 	}
 	
-	this.searchInLayers = function(pattern) {
+	this.map.searchInLayers = function(pattern) {
 				
 		$("#panel-busqueda-geovisor").css("display","flex");
 		$("#panel-busqueda-geovisor .panel-header").html("Resultados de Búsqueda");
