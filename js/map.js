@@ -206,7 +206,7 @@ function ol_map() {
 	
 	this.map.startSearch = function() {
 		
-		document.getElementById("panel-seach-input-layers").on("keyup",function(e) {
+		$("#panel-seach-input-layers").bind("keyup",function(e) {
 			
 			if (e.value = "") {
 				
