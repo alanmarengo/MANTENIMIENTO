@@ -12,10 +12,6 @@ h2.sin-resultados {
     padding: 30px 30px 30px 12px;
 }
 
-.bootstrap-select .dropdown-menu li a span.text {
-    text-transform: none!important;
-}
-
 .page-title {
     height: 44px;
     background-color: #4c4c4e;
@@ -116,21 +112,31 @@ h2.sin-resultados {
     color: #FFFFFF !important;
 }
 
-.dropdown-menu {
-    -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);   
+.bootstrap-select {
+    .btn {
+        border: 1px solid #ccc!important;
+    }
 
-    .inner .show {
-        background-color: #fff;
-        border: 1px solid #999;
-    
-        a.dropdown-item {
-            color: #666;
+    .dropdown-menu {
+        -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+        box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);   
+        
+        li a span.text {
+            text-transform: none!important;
         }
-    
-        a.dropdown-item.selected {
-            color: #fff;
+        
+        .inner .show {
+            background-color: #fff;
+            border: 1px solid #999;
+        
+            a.dropdown-item {
+                color: #666;
+            }
+        
+            a.dropdown-item.selected {
+                color: #fff;
+            }
         }
     }
 }
