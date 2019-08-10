@@ -206,7 +206,7 @@ function ol_map() {
 	
 	this.map.startSearch = function() {
 		
-		/*document.getElementById("panel-seach-input-layers").on("keyup",function(e) {
+		document.getElementById("panel-seach-input-layers").on("keyup",function(e) {
 			
 			if (e.value = "") {
 				
@@ -222,7 +222,7 @@ function ol_map() {
 				
 			}
 			
-		});*/
+		});
 		
 	}
 	
