@@ -5,7 +5,7 @@
 		<div id="panel-busqueda-geovisor">
 			
 			<div class="row jump-row jus-right">
-				<a href="#" onclick="$('#panel-busqueda-geovisor').hide();" class="popup-close">
+				<a href="#" onclick="$('#panel-busqueda-geovisor').hide();" class="panel-close">
 					<i class="fa fa-times"></i>
 				</a>
 			</div>
