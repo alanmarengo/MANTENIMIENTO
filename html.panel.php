@@ -4,9 +4,11 @@
 			
 		<div id="panel-busqueda-geovisor">
 			
-			<a href="#" onclick="$('#panel-busqueda-geovisor').hide();" class="popup-close">
-				<i class="fa fa-times"></i>
-			</a>
+			<div class="row jump-row jus-right">
+				<a href="#" onclick="$('#panel-busqueda-geovisor').hide();" class="popup-close">
+					<i class="fa fa-times"></i>
+				</a>
+			</div>
 			<div class="panel-header"></div>
 			<div class="panel-body"></div>
 			
