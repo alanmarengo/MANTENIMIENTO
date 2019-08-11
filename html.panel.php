@@ -65,7 +65,7 @@
 				</a>
 			</div>
 			<div class="panel-header"></div>
-			<div class="panel-body"></div>
+			<div class="panel-body jump-flotant-height-transform"></div>
 			
 		</div>
 	
