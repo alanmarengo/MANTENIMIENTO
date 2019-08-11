@@ -217,8 +217,8 @@ function ol_map() {
 			}else{
 				
 				if (e.which == 13) {
-					alert(pattern);
-					this.searchInLayers(pattern);				
+					
+					this.searchInLayers($("#panel-seach-input-layers").val());				
 					$("#panel-busqueda-geovisor").css("display","flex");
 					
 				}
