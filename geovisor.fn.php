@@ -215,6 +215,8 @@ function DrawLayersSearch($pattern) {
 	
 	$output = "<ul>";
 	
+	$results = false;
+	
 	while ($r = pg_fetch_assoc($query)) {
 		
 		$low_desc = strtolower($r["layer_desc"]);
@@ -226,6 +228,14 @@ function DrawLayersSearch($pattern) {
 		$output .= "<a href=\"javascript:void(0);\" onclick=\"geomap.panel.AddLayer(" . $r["clase_id"] . "," . $r["layer_id"] . "); $('#panel-busqueda-geovisor').hide();\">" . $desc . "</a>";
 		$output .= "</li>";
 
+		$results = true;
+
+	}
+	
+	if (!$results) {
+	
+		$output .= "<li>No se encontraron resultados para su búsqueda</li>";
+	
 	}
 	
 	$output .= "</ul>";
