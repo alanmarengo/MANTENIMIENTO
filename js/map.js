@@ -209,7 +209,7 @@ function ol_map() {
 		$("#panel-seach-input-layers").bind("keyup",function(e) {
 			
 			var pattern = $("#panel-seach-input-layers").val();
-			
+			alert(pattern);
 			if (pattern = "") {
 				
 				$("#panel-busqueda-geovisor").hide();
