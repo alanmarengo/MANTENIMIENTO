@@ -218,7 +218,7 @@ function DrawLayersSearch($pattern) {
 	while ($r = pg_fetch_assoc($query)) {
 
 		$output .= "<li>";
-		$output .= "<a href=\"javascript:void(0);\" onclick=\"geomap.panel.AddLayer(" . $r["clase_id"] "," . $r["layer_id"] . ")\">" . $r["layer_desc"] . "</a>";
+		$output .= "<a href=\"javascript:void(0);\" onclick=\"geomap.panel.AddLayer(" . $r["clase_id"] . "," . $r["layer_id"] . ")\">" . $r["layer_desc"] . "</a>";
 		$output .= "</li>";
 
 	}
