@@ -109,3 +109,9 @@
     padding: 0;
 
 }
+
+#panel-busqueda-geovisor ul li a:hover {
+
+    opacity:0.8;
+
+}
