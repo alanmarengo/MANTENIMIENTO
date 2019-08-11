@@ -206,6 +206,8 @@ function ol_map() {
 	
 	this.map.startSearch = function() {
 		
+		$("#panel-seach-input-layers").val("");
+		
 		$("#panel-seach-input-layers").bind("keyup",function(e) {
 			
 			var pattern = $("#panel-seach-input-layers").val();
@@ -230,8 +232,6 @@ function ol_map() {
 	}
 	
 	this.map.searchInLayers = function(pattern) {
-		
-		alert(pattern);
 		
 		$("#panel-busqueda-geovisor").css("display","flex");
 		$("#panel-busqueda-geovisor .panel-header").html("Resultados de Búsqueda");
