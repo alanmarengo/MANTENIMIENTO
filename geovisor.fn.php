@@ -217,7 +217,7 @@ function DrawLayersSearch($pattern) {
 	
 	while ($r = pg_fetch_assoc($query)) {
 		
-		$low_desc = strtolower($r["desc"]);
+		$low_desc = strtolower($r["layer_desc"]);
 		$low_pattern = strtolower($pattern);
 		
 		$desc = str_replace($low_pattern,"<span style='color:#fea91a;'>".$low_desc."</span>",$low_desc);
