@@ -217,8 +217,10 @@ function DrawLayersSearch($pattern) {
 	
 	while ($r = pg_fetch_assoc($query)) {
 
+		$desc = str_replace(strtolower($r["layer_desc"]),"<span style='color:#fea91a;'>".strtolower($r["layer_desc"])."</span>");
+	
 		$output .= "<li>";
-		$output .= "<a href=\"javascript:void(0);\" onclick=\"geomap.panel.AddLayer(" . $r["clase_id"] . "," . $r["layer_id"] . "); $('#panel-busqueda-geovisor').hide();\">" . $r["layer_desc"] . "</a>";
+		$output .= "<a href=\"javascript:void(0);\" onclick=\"geomap.panel.AddLayer(" . $r["clase_id"] . "," . $r["layer_id"] . "); $('#panel-busqueda-geovisor').hide();\">" . $desc . "</a>";
 		$output .= "</li>";
 
 	}
