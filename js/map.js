@@ -208,7 +208,9 @@ function ol_map() {
 		
 		$("#panel-seach-input-layers").bind("keyup",function(e) {
 			
-			if (e.value = "") {
+			var pattern = $("#panel-seach-input-layers").val();
+			
+			if (pattern = "") {
 				
 				$("#panel-busqueda-geovisor").hide();
 				
@@ -216,7 +218,7 @@ function ol_map() {
 				
 				if (e.which == 13) {
 					
-					this.searchInLayers(e.value);				
+					this.searchInLayers(pattern);				
 					$("#panel-busqueda-geovisor").css("display","flex");
 					
 				}
