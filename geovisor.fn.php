@@ -225,6 +225,8 @@ function DrawLayersSearch($pattern) {
 	
 	$output .= "</ul>";
 	
+	pg_close($conn);
+	
 }
 
 function DrawProyectos() {			
