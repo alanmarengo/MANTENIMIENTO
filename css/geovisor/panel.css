@@ -99,7 +99,13 @@
 	color:#666666;
 	display:flex;
 	padding:10px 0px;
-	flex-grow:1;
+	flex-grow:1;	
 	
-	
+}
+
+#panel-busqueda-geovisor ul li a {
+
+    background: none;
+    padding: 0;
+
 }

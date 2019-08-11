@@ -210,9 +210,7 @@ function ol_map() {
 		
 		$("#panel-seach-input-layers").bind("keyup",function(e) {
 			
-			var pattern = $("#panel-seach-input-layers").val();
-			
-			if (pattern = "") {
+			if ($("#panel-seach-input-layers").val().trim() = "") {
 				
 				$("#panel-busqueda-geovisor").hide();
 				
