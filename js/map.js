@@ -235,7 +235,20 @@ function ol_map() {
 		
 		$("#panel-busqueda-geovisor").css("display","flex");
 		$("#panel-busqueda-geovisor .panel-header").html("Resultados de Búsqueda");
-		$("#panel-busqueda-geovisor .panel-body").html(pattern);
+		
+		var req = $.ajax({
+			
+			async:false,
+			url:"./php/get-layers-search.php",
+			type:"post",
+			data:{
+				pattern:pattern
+			},
+			success:function(d){}
+			
+		});		
+		
+		$("#panel-busqueda-geovisor .panel-body").html(req.responseText);
 		
 		scroll.refresh();
 		

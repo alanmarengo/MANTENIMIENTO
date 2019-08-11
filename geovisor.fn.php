@@ -203,6 +203,30 @@ function DrawLayers($clase_id) {
 	
 }
 
+function DrawLayersSearch($pattern) {			
+
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+	
+	$conn = pg_connect($string_conn);
+	
+	$query_string = "SELECT DISTINCT * FROM mod_geovisores.vw_layers WHERE layer_desc ILIKE '%" . $pattern . "%' ORDER BY layer_desc ASC";
+	
+	$query = pg_query($conn,$query_string);
+	
+	$output = "<ul>";
+	
+	while ($r = pg_fetch_assoc($query)) {
+
+		$output .= "<li>";
+		$output .= "<a href=\"javascript:void(0);\" onclick=\"geomap.panel.AddLayer(" . $r["clase_id"] "," . $r["layer_id"] . ")\">" . $r["layer_desc"] . "</a>";
+		$output .= "</li>";
+
+	}
+	
+	$output .= "</ul>";
+	
+}
+
 function DrawProyectos() {			
 
 	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
