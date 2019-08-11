@@ -221,7 +221,7 @@ function DrawLayersSearch($pattern) {
 		$low_pattern = strtolower($pattern);
 		
 		$desc = str_replace($low_pattern,"<span style='color:#fea91a;'>".$low_desc."</span>",$low_desc);
-		echo $low_pattern . " :: " . "<span style='color:#fea91a;'>".$low_desc."</span>" . " :: " . $low_desc;
+		echo $low_pattern . " :: " . "<span style='color:#fea91a;'>".$low_desc."</span>" . " :: " . $low_desc . "<br>";
 		$output .= "<li>";
 		$output .= "<a href=\"javascript:void(0);\" onclick=\"geomap.panel.AddLayer(" . $r["clase_id"] . "," . $r["layer_id"] . "); $('#panel-busqueda-geovisor').hide();\">" . $desc . "</a>";
 		$output .= "</li>";
