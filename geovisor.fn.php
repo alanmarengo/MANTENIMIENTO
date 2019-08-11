@@ -210,7 +210,7 @@ function DrawLayersSearch($pattern) {
 	$conn = pg_connect($string_conn);
 	
 	$query_string = "SELECT DISTINCT * FROM mod_geovisores.vw_layers WHERE layer_desc ILIKE '%" . $pattern . "%' ORDER BY layer_desc ASC";
-	
+	echo $query_string;
 	$query = pg_query($conn,$query_string);
 	
 	$output = "<ul>";
