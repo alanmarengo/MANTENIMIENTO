@@ -64,6 +64,12 @@
 	
 }
 
+#panel-busqueda-geovisor .jump-row {
+	
+	height:auto !Important;
+	
+}
+
 #panel-busqueda-geovisor .panel-close {
 	
 	font-size:1rem;
