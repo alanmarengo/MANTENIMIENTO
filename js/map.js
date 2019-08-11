@@ -237,6 +237,8 @@ function ol_map() {
 		$("#panel-busqueda-geovisor .panel-header").html("Resultados de Búsqueda");
 		$("#panel-busqueda-geovisor .panel-body").html(pattern);
 		
+		scroll.refresh();
+		
 	}
 	
 	this.map.setBaseLayer = function(layerObj) {
