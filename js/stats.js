@@ -34,13 +34,9 @@ function ol_stats() {
 	
 	this.panel.startSearch = function() {
 		
-		$("#panel-seach-input-layers").css("background","red");
-		
-		$("#panel-seach-input-layers").bind("keyup",function(e) {
+		$("#panel-seach-input-layers-bottom").bind("keyup",function(e) {
 			
-			console.log(e);
-			
-			/*if ($("#panel-seach-input-layers").val().trim() == "") {
+			if ($("#panel-seach-input-layers-bottom").val().trim() == "") {
 				
 				$("#panel-busqueda-geovisor").hide();
 				
@@ -48,12 +44,12 @@ function ol_stats() {
 				
 				if (e.which == 13) {
 					
-					this.searchInDatasets($("#panel-seach-input-layers").val());				
+					this.searchInDatasets($("#panel-seach-input-layers-bottom").val());				
 					$("#panel-busqueda-geovisor").css("display","flex");
 					
 				}
 				
-			}*/
+			}
 			
 		}.bind(this));
 		
