@@ -34,11 +34,11 @@ function ol_stats() {
 	
 	this.panel.startSearch = function() {
 		
-		$("#panel-seach-input-layers-bottom").val("");
+		$("#panel-seach-input-layers").val("");
 		
-		$("#panel-seach-input-layers-bottom").bind("keyup",function(e) {
+		$("#panel-seach-input-layers").bind("keyup",function(e) {
 			
-			if ($("#panel-seach-input-layers-bottom").val().trim() == "") {
+			if ($("#panel-seach-input-layers").val().trim() == "") {
 				
 				$("#panel-busqueda-geovisor").hide();
 				
@@ -46,7 +46,7 @@ function ol_stats() {
 				
 				if (e.which == 13) {
 					
-					this.searchInDatasets($("#panel-seach-input-layers-bottom").val());				
+					this.searchInDatasets($("#panel-seach-input-layers").val());
 					$("#panel-busqueda-geovisor").css("display","flex");
 					
 				}
@@ -220,7 +220,7 @@ function ol_stats() {
 					});
 						
 					if ($(v).parent().hasClass("dataset-operation-row")) {
-						alert($(".dataset-cell[data-col-index="+i+"]").find(".filter-option-inner-inner").length);
+						
 						$(".dataset-cell[data-col-index="+i+"]").find(".filter-option-inner-inner").first().html("AGRUPAR POR");
 						
 					}

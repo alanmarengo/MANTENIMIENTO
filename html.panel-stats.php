@@ -34,18 +34,6 @@
 			</div>
 		
 		</div>
-		
-		<div class="jump-row">
-		
-			<div class="mtb-20 ml-auto mr-auto w-100-p" style="height: 34px; line-height: 34px; background-color:#29363c;">
-				<a href="#" class="plr-10 jump-link-death" style="width: 34px; height: 34px; line-height: 34px;">
-					<img src="./images/panel.icon.f2.png">
-				</a>
-				<input id="panel-seach-input-layers-bottom" class="panel-input pl-10" name="main-search" type="text" data-jump-placeholder="Buscar en las Capas" placeholder="Buscar en las Capas">
-				<span class="layers-visible-count jump-posrel l--30"></span>
-			</div>
-		
-		</div>
 			
 		<div id="panel-busqueda-geovisor">
 			
