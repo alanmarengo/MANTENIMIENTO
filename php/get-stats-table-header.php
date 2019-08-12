@@ -167,7 +167,7 @@ $rquery_string = $data["query"];
 		
 	?>	
 	
-		<div class="dataset-cell dataset-cell-header"
+		<div class="dataset-cell"
 					data-col-index="<?php echo $i; ?>" 
 					data-col-name="<?php echo $col[$i]; ?>"
 					data-col-type="<?php echo $coltypes[$i]; ?>">>
@@ -184,7 +184,7 @@ $rquery_string = $data["query"];
 		
 	?>
 	
-		<div class="dataset-cell dataset-cell-header"
+		<div class="dataset-cell"
 					data-col-index="<?php echo $i; ?>" 
 					data-col-name="<?php echo $col[$i]; ?>"
 					data-col-type="<?php echo $coltypes[$i]; ?>">>
