@@ -781,33 +781,41 @@ function ol_stats() {
 		var dateh = $("#dateh-search").val();
 		var datelabel = "Sin Especificar";
 		
-		if ((dated != "") && (dateh != "")) {
-			
-			datelabel = "Desde " + dated + " Hasta " + dateh;
-			
-		}
+		if (groupbycol_index != -1) {
 		
-		if ((groupbycol_index == 0) || (groupbycol_index == 1)) {
-		
-			$("#btn-ver-geovisor").show(); 
-			$("#graph-types").hide(); 
-			$("#popup-modal-gm").show(); 
-			$("#popup-stats-gm").show();
-			$("#popup-stats-gm").attr("data-action","m");
-			$("#gm-stats-mediawrapper").html("");
-			$("#gm-title").html("Mapear Variable");
-			$("#popup-stats-gm-header .icons").show();
-			$("#labelgm-dataset-agroup").html(groupby_val);
-			$("#labelgm-dataset-period").html(datelabel);
+			if ((dated != "") && (dateh != "")) {
+				
+				datelabel = "Desde " + dated + " Hasta " + dateh;
+				
+			}
 			
-			var top = $("#gm-stats-mediawrapper").offset().top;
-			var height = Jump.Document.height;
-			var newheight = height - top - 110;
+			if ((groupbycol_index == 0) || (groupbycol_index == 1)) {
 			
-			$("#gm-stats-mediawrapper").height(newheight);
+				$("#btn-ver-geovisor").show(); 
+				$("#graph-types").hide(); 
+				$("#popup-modal-gm").show(); 
+				$("#popup-stats-gm").show();
+				$("#popup-stats-gm").attr("data-action","m");
+				$("#gm-stats-mediawrapper").html("");
+				$("#gm-title").html("Mapear Variable");
+				$("#popup-stats-gm-header .icons").show();
+				$("#labelgm-dataset-agroup").html(groupby_val);
+				$("#labelgm-dataset-period").html(datelabel);
+				
+				var top = $("#gm-stats-mediawrapper").offset().top;
+				var height = Jump.Document.height;
+				var newheight = height - top - 110;
+				
+				$("#gm-stats-mediawrapper").height(newheight);
+				
+				console.log(top + " :: " + Jump.Document.height);
+				
 			
-			console.log(top + " :: " + Jump.Document.height);
-			
+			}else{
+				
+				jalert(false,"Debe agrupar por cruce espacial o variable espacial del dataset para poder mapear o graficar","danger");
+				
+			}
 		
 		}else{
 			
