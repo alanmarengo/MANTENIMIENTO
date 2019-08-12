@@ -33,7 +33,7 @@ function ol_stats() {
 	
 	
 	this.panel.startSearch = function() {
-		
+		alert("INI PANEL");
 		$("#panel-seach-input-layers").val("");
 		
 		$("#panel-seach-input-layers").bind("keyup",function(e) {
