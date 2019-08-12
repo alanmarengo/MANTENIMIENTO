@@ -33,12 +33,14 @@ function ol_stats() {
 	
 	
 	this.panel.startSearch = function() {
-		alert("INI PANEL");
+		
 		$("#panel-seach-input-layers").val("");
 		
 		$("#panel-seach-input-layers").bind("keyup",function(e) {
 			
-			if ($("#panel-seach-input-layers").val().trim() == "") {
+			console.log(e);
+			
+			/*if ($("#panel-seach-input-layers").val().trim() == "") {
 				
 				$("#panel-busqueda-geovisor").hide();
 				
@@ -51,7 +53,7 @@ function ol_stats() {
 					
 				}
 				
-			}
+			}*/
 			
 		}.bind(this));
 		
