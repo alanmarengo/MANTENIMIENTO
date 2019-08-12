@@ -268,7 +268,7 @@ function DrawDatasetSearch($pattern) {
 		$desc = str_replace($low_pattern,"<span class=\"panel-highlighted-list-item\">".$low_pattern."</span>",$low_desc);
 		
 		$output .= "<li>";
-		$output .= "<a href=\"javascript:void(0);\" onclick=\"$('.panel-abr[data-cid=".$r["dt_id"]."]').trigger('click'); $('#panel-busqueda-geovisor').hide();\">" . $desc . "</a>";
+		$output .= "<a href=\"javascript:void(0);\" onclick=\"$('.panel-abr[data-cid=".$r["clase_id"]."]').trigger('click'); $('#panel-busqueda-geovisor').hide();\">" . $desc . "</a>";
 		$output .= "</li>";
 
 		$results = true;
