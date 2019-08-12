@@ -186,6 +186,7 @@ function ol_stats() {
 		
 		var index = $('option:selected', $("#group-combo-view")).attr("data-col-index");
 		var val = $("#group-combo-view").val();
+		var selected = "";
 		
 		$(".dataset-cell-modal").remove();
 		
@@ -219,7 +220,7 @@ function ol_stats() {
 						
 						if ($(v).parent().hasClass("dataset-operation-row")) {
 							
-							var selected = $(v).find(".filter-option-inner-inner");
+							selected = $(v).find(".filter-option-inner-inner");
 							
 						}
 						
@@ -270,7 +271,11 @@ function ol_stats() {
 			
 		}
 		
-		$(selected).html("AGRUPAR POR");		
+		if (selected) {
+		
+			$(selected).html("AGRUPAR POR");		
+		
+		}
 		
 	}
 	
