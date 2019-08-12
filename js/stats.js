@@ -31,6 +31,55 @@ function ol_stats() {
 	
 	}
 	
+	
+	this.panel.startSearch = function() {
+		
+		$("#panel-seach-input-layers").val("");
+		
+		$("#panel-seach-input-layers").bind("keyup",function(e) {
+			
+			if ($("#panel-seach-input-layers").val().trim() == "") {
+				
+				$("#panel-busqueda-geovisor").hide();
+				
+			}else{
+				
+				if (e.which == 13) {
+					
+					this.searchInDatasets($("#panel-seach-input-layers").val());				
+					$("#panel-busqueda-geovisor").css("display","flex");
+					
+				}
+				
+			}
+			
+		}.bind(this));
+		
+	}
+	
+	this.panel.searchInDatasets = function(pattern) {
+		
+		$("#panel-busqueda-geovisor").css("display","flex");
+		$("#panel-busqueda-geovisor .panel-header").html("Resultados de Búsqueda");
+		
+		var req = $.ajax({
+			
+			async:false,
+			url:"./php/get-dataset-search.php",
+			type:"post",
+			data:{
+				pattern:pattern
+			},
+			success:function(d){}
+			
+		});		
+		
+		$("#panel-busqueda-geovisor .panel-body").html(req.responseText);
+		
+		scroll.refresh();
+		
+	}
+	
 	this.view.start = function() {
 	
 		$("#update-view").attr("disabled","disabled");

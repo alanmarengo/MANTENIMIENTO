@@ -4,6 +4,7 @@
 		
 		stats = new ol_stats();
 		stats.panel.start();
+		stats.panel.startSearch();
 		
 		flotant = new Jump.flotant();
 		flotant.prepareToggle(".navmenu:not(#nav-panel)");
