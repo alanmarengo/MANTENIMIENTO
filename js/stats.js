@@ -146,26 +146,30 @@ function ol_stats() {
 				
 				if (i!=index) {
 					
-					$(".dataset-cell[data-col-index="+i+"]").append($("<div></div>").attr("class","dataset-cell-modal"));
+					$(".dataset-cell[data-col-index="+i+"]").each(function(i,v) {
 						
-					if ($(".dataset-cell[data-col-index="+i+"]").parent().hasClass("dataset-operation-row")) {
+						$(v).append($("<div></div>").attr("class","dataset-cell-modal"));
 						
-						$(".dataset-cell[data-col-index="+i+"]").find(".filter-option-inner-inner").first().html("OPERACIONES");
+						if ($(v).parent().hasClass("dataset-operation-row")) {
 						
-					}
+							$(".dataset-cell[data-col-index="+i+"]").find(".filter-option-inner-inner").first().html("OPERACIONES");
+							
+						}
+						
+					});
 					
 				}else{
 					
 					$(".dataset-cell[data-col-index="+i+"]").each(function(i,v) {
 						
-						$(".dataset-cell[data-col-index="+i+"]").append($("<div></div>").attr("class","dataset-cell-modal dataset-cell-modal-agroup"));
+						$(v).append($("<div></div>").attr("class","dataset-cell-modal dataset-cell-modal-agroup"));
 						
-						if ($(".dataset-cell[data-col-index="+i+"]").parent().hasClass("dataset-operation-row")) {
-							
+						if ($(v).parent().hasClass("dataset-operation-row")) {
+						
 							$(".dataset-cell[data-col-index="+i+"]").find(".filter-option-inner-inner").first().html("AGRUPAR POR");
 							
 						}
-					
+						
 					});
 					
 				}
