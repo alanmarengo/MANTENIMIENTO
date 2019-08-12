@@ -36,10 +36,8 @@ function ol_stats() {
 		
 		$("#panel-seach-input-layers").val("");
 		
-		console.log($("#panel-seach-input-layers"));
-		
 		$("#panel-seach-input-layers").bind("keyup",function(e) {
-			alert(e.which);
+			
 			if ($("#panel-seach-input-layers").val().trim() == "") {
 				
 				$("#panel-busqueda-geovisor").hide();
@@ -60,7 +58,7 @@ function ol_stats() {
 	}
 	
 	this.panel.searchInDatasets = function(pattern) {
-		
+		alert(pattern);
 		$("#panel-busqueda-geovisor").css("display","flex");
 		$("#panel-busqueda-geovisor .panel-header").html("Resultados de Búsqueda");
 		
