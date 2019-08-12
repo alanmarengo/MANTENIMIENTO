@@ -26,7 +26,7 @@
 	
 	<div class="row jump-row jus-between">
 	
-		<select class="selectpicker mt-40" id="combo_cruce">
+		<select class="selectpicker mt-56" id="combo_cruce">
 
 			<option value="-1" selected>Cruce Espacial</option>
 			<?php ComboCruce(); ?>
