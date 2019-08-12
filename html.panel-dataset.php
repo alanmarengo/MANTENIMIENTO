@@ -24,18 +24,14 @@
 	
 	</div>
 	
-	<div class="row jump-row">
+	<div class="row jump-row jus-between">
 	
 		<select class="selectpicker mt-40" id="combo_cruce">
 
 			<option value="-1" selected>Cruce Espacial</option>
 			<?php ComboCruce(); ?>
 
-		</select>
-	
-	</div>
-	
-	<div class="row jump-row jus-right">
+		</select>		
 	
 		<a href="javascript:void(0);" onclick="stats.dataset.proceed();" id="stats-proceed" class="mt-50">VER TABLA ></a>
 	
