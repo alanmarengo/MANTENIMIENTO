@@ -273,7 +273,9 @@ function ol_stats() {
 		
 		if (selected) {
 		
-			$(selected).html("AGRUPAR POR");		
+			$(selected).html("AGRUPAR POR");
+			$(selected).prev("i").css("color","#343a40");
+			$(selected).css("color","#343a40");
 		
 		}
 		
