@@ -206,11 +206,11 @@ function ol_map() {
 	
 	this.map.startSearch = function() {
 		
-		$("#panel-seach-input-layers").val("");
+		$("#panel-seach-input-layers-bottom").val("");
 		
-		$("#panel-seach-input-layers").bind("keyup",function(e) {
+		$("#panel-seach-input-layers-bottom").bind("keyup",function(e) {
 			
-			if ($("#panel-seach-input-layers").val().trim() == "") {
+			if ($("#panel-seach-input-layers-bottom").val().trim() == "") {
 				
 				$("#panel-busqueda-geovisor").hide();
 				
@@ -218,7 +218,7 @@ function ol_map() {
 				
 				if (e.which == 13) {
 					
-					this.searchInLayers($("#panel-seach-input-layers").val());				
+					this.searchInLayers($("#panel-seach-input-layers-bottom").val());				
 					$("#panel-busqueda-geovisor").css("display","flex");
 					
 				}
