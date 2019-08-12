@@ -218,7 +218,7 @@ function ol_stats() {
 						}
 						
 						if ($(v).parent().hasClass("dataset-operation-row")) {
-							alert($(v).find(".filter-option-inner-inner").length);
+							$(v).find(".filter-option-inner-inner").hide();
 							$(v).find(".filter-option-inner-inner").html("AGRUPAR POR");
 							
 						}
