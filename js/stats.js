@@ -147,14 +147,24 @@ function ol_stats() {
 				if (i!=index) {
 					
 					$(".dataset-cell[data-col-index="+i+"]").append($("<div></div>").attr("class","dataset-cell-modal"));
+						
+					if ($(v).parent().hasClass("dataset-operation-row")) {
+						
+						$(v).find(".filter-option-inner-inner").first().html("OPERACIONES");
+						
+					}
 					
 				}else{
 					
 					$(".dataset-cell[data-col-index="+i+"]").each(function(i,v) {
 						
-						var className = $(v).parent().attr("class");
-							
 						$(v).append($("<div></div>").attr("class","dataset-cell-modal dataset-cell-modal-agroup"));
+						
+						if ($(v).parent().hasClass("dataset-operation-row")) {
+							
+							$(v).find(".filter-option-inner-inner").first().html("AGRUPAR POR");
+							
+						}
 					
 					});
 					
