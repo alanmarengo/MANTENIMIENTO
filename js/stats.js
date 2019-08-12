@@ -217,13 +217,13 @@ function ol_stats() {
 						
 						}
 						
+						if ($(v).parent().hasClass("dataset-operation-row")) {
+							
+							$(".dataset-cell[data-col-index="+i+"]").find(".filter-option-inner-inner").first().html("AGRUPAR POR");
+							
+						}
+						
 					});
-						
-					if ($(v).parent().hasClass("dataset-operation-row")) {
-						
-						$(".dataset-cell[data-col-index="+i+"]").find(".filter-option-inner-inner").first().html("AGRUPAR POR");
-						
-					}
 					
 				}
 				
