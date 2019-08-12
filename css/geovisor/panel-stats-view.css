@@ -225,7 +225,7 @@ body {
 
 .dataset-cell-modal {
 	
-	background: rgba(50,50,50,0.1) !Important;
+	background: rgba(50,50,50,0.1);
 	width: 100%;
 	height: 100%;
 	display: block;
@@ -236,7 +236,7 @@ body {
 
 .dataset-cell-modal-agroup {
 	
-	background: rgba(0,0,0,0.3);
+	background: rgba(0,0,0,0.3) !Important;
 	width: 100%;
 	height: 100%;
 	display: block;
