@@ -34,6 +34,8 @@ function ol_stats() {
 	
 	this.panel.startSearch = function() {
 		
+		$("#panel-seach-input-layers-bottom").val("");
+		
 		$("#panel-seach-input-layers-bottom").bind("keyup",function(e) {
 			
 			if ($("#panel-seach-input-layers-bottom").val().trim() == "") {
