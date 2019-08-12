@@ -462,3 +462,9 @@ body {
 	background-color: #f8f9fa;
 	
 }
+
+.bootstrap-select .btn {
+	
+	border:none !Important;
+	
+}
