@@ -58,7 +58,7 @@ function ol_stats() {
 	}
 	
 	this.panel.searchInDatasets = function(pattern) {
-		alert(pattern);
+		
 		$("#panel-busqueda-geovisor").css("display","flex");
 		$("#panel-busqueda-geovisor .panel-header").html("Resultados de Búsqueda");
 		
