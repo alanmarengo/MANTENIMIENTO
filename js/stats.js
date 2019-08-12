@@ -218,8 +218,8 @@ function ol_stats() {
 						}
 						
 						if ($(v).parent().hasClass("dataset-operation-row")) {
-							$(v).find(".filter-option-inner-inner").hide();
-							$(v).find(".filter-option-inner-inner").html("AGRUPAR POR");
+							
+							var selected = $(v).find(".filter-option-inner-inner");
 							
 						}
 						
@@ -269,6 +269,8 @@ function ol_stats() {
 			$(".dataset-operation-row").show();
 			
 		}
+		
+		$(selected).html("AGRUPAR POR");		
 		
 	}
 	
