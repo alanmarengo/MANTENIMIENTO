@@ -148,9 +148,9 @@ function ol_stats() {
 					
 					$(".dataset-cell[data-col-index="+i+"]").append($("<div></div>").attr("class","dataset-cell-modal"));
 						
-					if ($(v).parent().hasClass("dataset-operation-row")) {
+					if ($(".dataset-cell[data-col-index="+i+"]").parent().hasClass("dataset-operation-row")) {
 						
-						$(v).find(".filter-option-inner-inner").first().html("OPERACIONES");
+						$(".dataset-cell[data-col-index="+i+"]").find(".filter-option-inner-inner").first().html("OPERACIONES");
 						
 					}
 					
@@ -158,11 +158,11 @@ function ol_stats() {
 					
 					$(".dataset-cell[data-col-index="+i+"]").each(function(i,v) {
 						
-						$(v).append($("<div></div>").attr("class","dataset-cell-modal dataset-cell-modal-agroup"));
+						$(".dataset-cell[data-col-index="+i+"]").append($("<div></div>").attr("class","dataset-cell-modal dataset-cell-modal-agroup"));
 						
-						if ($(v).parent().hasClass("dataset-operation-row")) {
+						if ($(".dataset-cell[data-col-index="+i+"]").parent().hasClass("dataset-operation-row")) {
 							
-							$(v).find(".filter-option-inner-inner").first().html("AGRUPAR POR");
+							$(".dataset-cell[data-col-index="+i+"]").find(".filter-option-inner-inner").first().html("AGRUPAR POR");
 							
 						}
 					
