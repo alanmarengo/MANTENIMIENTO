@@ -219,7 +219,7 @@ function ol_stats() {
 						
 						if ($(v).parent().hasClass("dataset-operation-row")) {
 							
-							$(v).find(".filter-option-inner-inner").first().html("AGRUPAR POR");
+							$(v).find(".filter-option-inner-inner").html("AGRUPAR POR");
 							
 						}
 						
