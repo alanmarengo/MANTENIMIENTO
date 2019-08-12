@@ -31,7 +31,7 @@ function ol_stats() {
 	
 	}
 	
-	this.view.start = function() {	
+	this.view.start = function() {
 	
 		$("#update-view").attr("disabled","disabled");
 		
@@ -153,12 +153,8 @@ function ol_stats() {
 					$(".dataset-cell[data-col-index="+i+"]").each(function(i,v) {
 						
 						var className = $(v).parent().attr("class");
-						
-						if (className == "dataset-row dataset-row-header dataset-operation-row") {
 							
-							$(v).append($("<div></div>").attr("class","dataset-cell-modal"));
-							
-						}
+						$(v).append($("<div></div>").attr("class","dataset-cell-modal dataset-cell-modal-agroup"));
 					
 					});
 					
