@@ -273,7 +273,7 @@ if (($groupindex == 0) || ($groupindex == 1)) {
 			
 			?>
 			
-			<div class="dataset-cell dataset-cell-header" data-col-index="<?php echo $i; ?>">
+			<div class="dataset-cell" data-col-index="<?php echo $i; ?>">
 				<span><?php echo $r[$col[$i]]; ?></span>
 			</div>
 			
