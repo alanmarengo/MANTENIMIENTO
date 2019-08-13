@@ -212,11 +212,7 @@ function ol_stats() {
 					
 					$(".dataset-cell[data-col-index="+i+"]").each(function(i,v) {
 						
-						if ($(v).parent().hasClass("dataset-row-header") == false) {
-						
-							$(v).append($("<div></div>").attr("class","dataset-cell-modal dataset-cell-modal-agroup"));
-						
-						}
+						$(v).append($("<div></div>").attr("class","dataset-cell-modal dataset-cell-modal-agroup"));
 						
 						if ($(v).parent().hasClass("dataset-operation-row")) {
 							
