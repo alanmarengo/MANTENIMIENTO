@@ -21,6 +21,12 @@ $(document).ready(function() {
 
     init();
 
+    // POP IMAGE
+    $('body').on('click', '.pop', function() {
+        $('.imagepreview').attr('src', $(this).attr('src'));
+        $('#imagemodal').modal('show');
+    });
+
     // TEXT SEARCH
     $('#uxSearchText').on('focusout', function() {
         refreshSearchText();
@@ -529,7 +535,7 @@ $(document).ready(function() {
             <div class="row">
                 <div class="col-md-4">
                     <div class="ficha-preview">
-                        <img src="${model.ficha.link_preview}" />
+                        <img src="${model.ficha.link_preview}" class="pop" />
                     </div>
                 </div>
                 <div class="col-md-8">
