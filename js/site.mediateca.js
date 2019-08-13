@@ -130,7 +130,7 @@ $(document).ready(function() {
                 let linkimg = value.recurso_path_url;
                 imagenes += `
                     <div style="width: 18%; display: inline-block;">
-                        <div class="media-extra" data-target="#uxPreview_${row}" style="
+                        <div class="media-extra" data-link="${linkimg}" data-target="#uxPreview_${row}" style="
                                 cursor: pointer;
                                 width: 100%;
                                 height:60px;
@@ -182,8 +182,10 @@ $(document).ready(function() {
 
     $('body').on('click', '.media-extra', function(e) {
         let target = $(this).data('target');
-        let link = $(this).css('background-image');
-        $(target).find('.preview-image').css('background-image', link);
+        let linkcss = $(this).css('background-image');
+        let link = $(this).data('link');
+        $(target).find('.preview-image').css('background-image', linkcss);
+        $(target).find('.preview-image').attr('src', link);
     });
 
 
