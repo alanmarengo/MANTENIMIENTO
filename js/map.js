@@ -200,10 +200,58 @@ function ol_map() {
 			
 			document.getElementById("map").appendChild(div);
 			
-		}
+		}		
 		
 	}
+	
+	this.map.startSearch = function() {
 		
+		$("#panel-seach-input-layers-bottom").val("");
+		
+		$("#panel-seach-input-layers-bottom").bind("keyup",function(e) {
+			
+			if ($("#panel-seach-input-layers-bottom").val().trim() == "") {
+				
+				$("#panel-busqueda-geovisor").hide();
+				
+			}else{
+				
+				if (e.which == 13) {
+					
+					this.searchInLayers($("#panel-seach-input-layers-bottom").val());				
+					$("#panel-busqueda-geovisor").css("display","flex");
+					
+				}
+				
+			}
+			
+		}.bind(this));
+		
+	}
+	
+	this.map.searchInLayers = function(pattern) {
+		
+		$("#panel-busqueda-geovisor").css("display","flex");
+		$("#panel-busqueda-geovisor .panel-header").html("Resultados de Búsqueda");
+		
+		var req = $.ajax({
+			
+			async:false,
+			url:"./php/get-layers-search.php",
+			type:"post",
+			data:{
+				pattern:pattern
+			},
+			success:function(d){}
+			
+		});		
+		
+		$("#panel-busqueda-geovisor .panel-body").html(req.responseText);
+		
+		scroll.refresh();
+		
+	}
+	
 	this.map.setBaseLayer = function(layerObj) {
 		
 		for (var i=0; i<this.baselayers.collection.length; i++) {

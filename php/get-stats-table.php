@@ -258,7 +258,7 @@ if (($groupindex == 0) || ($groupindex == 1)) {
 		
 	?>
 
-	<div class="dataset-row dataset-row-header dataset-columns-row">
+	<div class="dataset-row dataset-columns-row">
 	
 	<?php
 		

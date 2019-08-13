@@ -95,6 +95,7 @@
 		<?php } ?>
 		
 		geomap.map.updateLayerCount();
+		geomap.map.startSearch();
 		
 		window.addEventListener("resize",onresize);
 		onresize();

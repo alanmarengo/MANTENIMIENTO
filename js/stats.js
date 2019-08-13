@@ -31,7 +31,56 @@ function ol_stats() {
 	
 	}
 	
-	this.view.start = function() {	
+	
+	this.panel.startSearch = function() {
+		
+		$("#panel-seach-input-layers").val("");
+		
+		$("#panel-seach-input-layers").bind("keyup",function(e) {
+			
+			if ($("#panel-seach-input-layers").val().trim() == "") {
+				
+				$("#panel-busqueda-geovisor").hide();
+				
+			}else{
+				
+				if (e.which == 13) {
+					
+					this.searchInDatasets($("#panel-seach-input-layers").val());
+					$("#panel-busqueda-geovisor").css("display","flex");
+					
+				}
+				
+			}
+			
+		}.bind(this));
+		
+	}
+	
+	this.panel.searchInDatasets = function(pattern) {
+		
+		$("#panel-busqueda-geovisor").css("display","flex");
+		$("#panel-busqueda-geovisor .panel-header").html("Resultados de Búsqueda");
+		
+		var req = $.ajax({
+			
+			async:false,
+			url:"./php/get-dataset-search.php",
+			type:"post",
+			data:{
+				pattern:pattern
+			},
+			success:function(d){}
+			
+		});		
+		
+		$("#panel-busqueda-geovisor .panel-body").html(req.responseText);
+		
+		scroll.refresh();
+		
+	}
+	
+	this.view.start = function() {
 	
 		$("#update-view").attr("disabled","disabled");
 		
@@ -137,6 +186,7 @@ function ol_stats() {
 		
 		var index = $('option:selected', $("#group-combo-view")).attr("data-col-index");
 		var val = $("#group-combo-view").val();
+		var selected = "";
 		
 		$(".dataset-cell-modal").remove();
 		
@@ -146,20 +196,30 @@ function ol_stats() {
 				
 				if (i!=index) {
 					
-					$(".dataset-cell[data-col-index="+i+"]").append($("<div></div>").attr("class","dataset-cell-modal"));
+					$(".dataset-cell[data-col-index="+i+"]").each(function(i,v) {
+						
+						$(v).append($("<div></div>").attr("class","dataset-cell-modal"));
+						
+						/*if ($(v).parent().hasClass("dataset-operation-row")) {
+						
+							$(".dataset-cell[data-col-index="+i+"]").find(".filter-option-inner-inner").first().html("OPERACIONES");
+							
+						}*/
+						
+					});
 					
 				}else{
 					
 					$(".dataset-cell[data-col-index="+i+"]").each(function(i,v) {
 						
-						var className = $(v).parent().attr("class");
+						$(v).append($("<div></div>").attr("class","dataset-cell-modal dataset-cell-modal-agroup"));
 						
-						if (className == "dataset-row dataset-row-header dataset-operation-row") {
+						if ($(v).parent().hasClass("dataset-operation-row")) {
 							
-							$(v).append($("<div></div>").attr("class","dataset-cell-modal"));
+							selected = $(v).find(".filter-option-inner-inner");
 							
 						}
-					
+						
 					});
 					
 				}
@@ -205,6 +265,14 @@ function ol_stats() {
 			
 			$(".dataset-operation-row").show();
 			
+		}
+		
+		if (selected) {
+		
+			$(selected).html("AGRUPAR POR");
+			$(selected).prev("i").css("color","#343a40");
+			$(selected).css("color","#343a40");
+		
 		}
 		
 	}
@@ -718,33 +786,41 @@ function ol_stats() {
 		var dateh = $("#dateh-search").val();
 		var datelabel = "Sin Especificar";
 		
-		if ((dated != "") && (dateh != "")) {
-			
-			datelabel = "Desde " + dated + " Hasta " + dateh;
-			
-		}
+		if (groupbycol_index != -1) {
 		
-		if ((groupbycol_index == 0) || (groupbycol_index == 1)) {
-		
-			$("#btn-ver-geovisor").show(); 
-			$("#graph-types").hide(); 
-			$("#popup-modal-gm").show(); 
-			$("#popup-stats-gm").show();
-			$("#popup-stats-gm").attr("data-action","m");
-			$("#gm-stats-mediawrapper").html("");
-			$("#gm-title").html("Mapear Variable");
-			$("#popup-stats-gm-header .icons").show();
-			$("#labelgm-dataset-agroup").html(groupby_val);
-			$("#labelgm-dataset-period").html(datelabel);
+			if ((dated != "") && (dateh != "")) {
+				
+				datelabel = "Desde " + dated + " Hasta " + dateh;
+				
+			}
 			
-			var top = $("#gm-stats-mediawrapper").offset().top;
-			var height = Jump.Document.height;
-			var newheight = height - top - 110;
+			if ((groupbycol_index == 0) || (groupbycol_index == 1)) {
 			
-			$("#gm-stats-mediawrapper").height(newheight);
+				$("#btn-ver-geovisor").show(); 
+				$("#graph-types").hide(); 
+				$("#popup-modal-gm").show(); 
+				$("#popup-stats-gm").show();
+				$("#popup-stats-gm").attr("data-action","m");
+				$("#gm-stats-mediawrapper").html("");
+				$("#gm-title").html("Mapear Variable");
+				$("#popup-stats-gm-header .icons").show();
+				$("#labelgm-dataset-agroup").html(groupby_val);
+				$("#labelgm-dataset-period").html(datelabel);
+				
+				var top = $("#gm-stats-mediawrapper").offset().top;
+				var height = Jump.Document.height;
+				var newheight = height - top - 110;
+				
+				$("#gm-stats-mediawrapper").height(newheight);
+				
+				console.log(top + " :: " + Jump.Document.height);
+				
 			
-			console.log(top + " :: " + Jump.Document.height);
-			
+			}else{
+				
+				jalert(false,"Debe agrupar por cruce espacial o variable espacial del dataset para poder mapear o graficar","danger");
+				
+			}
 		
 		}else{
 			

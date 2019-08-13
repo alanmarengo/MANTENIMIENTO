@@ -203,6 +203,92 @@ function DrawLayers($clase_id) {
 	
 }
 
+function DrawLayersSearch($pattern) {			
+
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+	
+	$conn = pg_connect($string_conn);
+	
+	$query_string = "SELECT DISTINCT * FROM mod_geovisores.vw_layers WHERE layer_desc ILIKE '%" . $pattern . "%' ORDER BY layer_desc ASC";
+	
+	$query = pg_query($conn,$query_string);
+	
+	$output = "<ul>";
+	
+	$results = false;
+	
+	while ($r = pg_fetch_assoc($query)) {
+		
+		$low_desc = strtolower($r["layer_desc"]);
+		$low_pattern = strtolower($pattern);
+		
+		$desc = str_replace($low_pattern,"<span class=\"panel-highlighted-list-item\">".$low_pattern."</span>",$low_desc);
+		
+		$output .= "<li>";
+		$output .= "<a href=\"javascript:void(0);\" onclick=\"geomap.panel.AddLayer(" . $r["clase_id"] . "," . $r["layer_id"] . "); $('#panel-busqueda-geovisor').hide();\">" . $desc . "</a>";
+		$output .= "</li>";
+
+		$results = true;
+
+	}
+	
+	if (!$results) {
+	
+		$output .= "<li>No se encontraron resultados para su búsqueda</li>";
+	
+	}
+	
+	$output .= "</ul>";
+	
+	pg_close($conn);
+	
+	return $output;
+	
+}
+
+function DrawDatasetSearch($pattern) {			
+
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+	
+	$conn = pg_connect($string_conn);
+	
+	$query_string = "SELECT DISTINCT * FROM mod_estadistica.vw_dt WHERE dt_titulo ILIKE '%" . $pattern . "%' ORDER BY dt_titulo ASC";
+	
+	$query = pg_query($conn,$query_string);
+	
+	$output = "<ul>";
+	
+	$results = false;
+	
+	while ($r = pg_fetch_assoc($query)) {
+		
+		$low_desc = strtolower($r["dt_titulo"]);
+		$low_pattern = strtolower($pattern);
+		
+		$desc = str_replace($low_pattern,"<span class=\"panel-highlighted-list-item\">".$low_pattern."</span>",$low_desc);
+		
+		$output .= "<li>";
+		$output .= "<a href=\"javascript:void(0);\" onclick=\"$('.panel-abr[data-cid=".$r["clase_id"]."]').trigger('click'); $('#panel-busqueda-geovisor').hide();\">" . $desc . "</a>";
+		$output .= "</li>";
+
+		$results = true;
+
+	}
+	
+	if (!$results) {
+	
+		$output .= "<li>No se encontraron resultados para su búsqueda</li>";
+	
+	}
+	
+	$output .= "</ul>";
+	
+	pg_close($conn);
+	
+	return $output;
+	
+}
+
 function DrawProyectos() {			
 
 	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;

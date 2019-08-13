@@ -8,7 +8,7 @@
 				<a href="#" class="plr-10 jump-link-death" style="width: 34px; height: 34px; line-height: 34px;">
 					<img src="./images/panel.icon.f2.png">
 				</a>
-				<input id="panel-seach-input-layers" class="panel-input pl-10" name="main-search" readonly="readonly" type="text" value="BUSCAR" data-jump-placeholder="BUSCAR" placeholder="BUSCAR" 
+				<input id="panel-seach-input-layers" class="panel-input pl-10" name="main-search" type="text" value="BUSCAR" data-jump-placeholder="BUSCAR" placeholder="BUSCAR" 
 					onfocus="">
 				<span class="layers-visible-count jump-posrel l--30"></span>
 			</div>
@@ -33,6 +33,18 @@
 
 			</div>
 		
+		</div>
+			
+		<div id="panel-busqueda-geovisor">
+			
+			<div class="row jump-row jus-right">
+				<a href="#" onclick="$('#panel-busqueda-geovisor').hide();" class="panel-close">
+					<i class="fa fa-times"></i>
+				</a>
+			</div>
+			<div class="panel-header"></div>
+			<div class="panel-body jump-flotant-height-transform jump-scroll"></div>
+			
 		</div>
 	
 	</div>
