@@ -146,7 +146,8 @@ $(document).ready(function() {
             let html = `
                 <div class="row">
                     <div class="col-sm-6">
-                        <div class="preview-image" 
+                        <div class="preview-image pop"
+                        src="${model.ficha.linkimagen}" 
                         style="
                             width: 100%;
                             height:260px;
