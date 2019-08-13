@@ -238,35 +238,43 @@
         <div class="col-md-2 side-right">
             <div class="row">
                 <a href="./mediateca.php" class="col-md-12 link-wrap link-1">
-                    <div class="link-text">
-                        MEDIATECA
-                    </div>
-                    <div class="link-hover" style="display: none;">
+                    <div class="link-icon">
                         <img src="./images/icono_mediateca.png" />
+                    </div>
+                    <div class="link-text-hover" style="display: none;">
+                    </div>
+                    <div class="link-text" style="display: none;">
+                        MEDIATECA
                     </div>
                 </a>
                 <a href="./herramientas.php" class="col-md-12 link-wrap link-2">
-                    <div class="link-text">
-                        GEOVISOR
+                    <div class="link-icon">
+                        <img src="./images/icono_geovisores.png" />
                     </div>
-                    <div class="link-hover" style="display: none;">
-                        <img src="./images/icono_geovisor.png" />
+                    <div class="link-text-hover" style="display: none;">
+                    </div>
+                    <div class="link-text" style="display: none;">
+                        GEOVISORES
                     </div>
                 </a>
                 <a href="./page.php" class="col-md-12 link-wrap link-3">
-                    <div class="link-text">
-                        INDICADORES
-                    </div>
-                    <div class="link-hover" style="display: none;">
+                    <div class="link-icon">
                         <img src="./images/icono_indicadores.png" />
+                    </div>
+                    <div class="link-text-hover" style="display: none;">
+                    </div>
+                    <div class="link-text" style="display: none;">
+                        INDICADORES
                     </div>
                 </a>
                 <a href="./estadisticas.php" class="col-md-12 link-wrap link-4" style="margin-bottom: 0px!important;">
-                    <div class="link-text">
-                        ESTADÍSTICAS
-                    </div>
-                    <div class="link-hover" style="display: none;">
+                    <div class="link-icon">
                         <img src="./images/icono_estadisticas.png" />
+                    </div>
+                    <div class="link-text-hover" style="display: none;">
+                    </div>
+                    <div class="link-text" style="display: none;">
+                        ESTADÍSTICAS
                     </div>
                 </a>
             </div>
@@ -360,12 +368,16 @@
 
         $('.link-wrap').hover( 
             function () {
-                $(this).find('.link-text').hide();
-                $(this).find('.link-hover').show();
+                //$(this).css('opacity', '.2');
+                //$(this).find('.link-text-hover').show();
+                $(this).find('.link-icon').hide();
+                $(this).find('.link-text').show();
             },
             function () {
-                $(this).find('.link-hover').hide();
-                $(this).find('.link-text').show();
+                //$(this).css('opacity', '1');
+                $(this).find('.link-text').hide();
+                $(this).find('.link-icon').show();
+                //$(this).find('.link-text-hover').hide();
             }
         )
 
