@@ -200,11 +200,11 @@ function ol_stats() {
 						
 						$(v).append($("<div></div>").attr("class","dataset-cell-modal"));
 						
-						if ($(v).parent().hasClass("dataset-operation-row")) {
+						/*if ($(v).parent().hasClass("dataset-operation-row")) {
 						
 							$(".dataset-cell[data-col-index="+i+"]").find(".filter-option-inner-inner").first().html("OPERACIONES");
 							
-						}
+						}*/
 						
 					});
 					
