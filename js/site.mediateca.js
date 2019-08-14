@@ -92,6 +92,8 @@ $(document).ready(function() {
 
     // CLICK EN LINKS DE FICHA
     $('body').on('click', '.estudios-link, .media-preview-link', function(e) {
+        e.stopPropagation();
+
         model.stopLoad = true;
         setSolapa($(this).data('solapa'));
         setEstudio($(this).data('estudio'));
@@ -120,6 +122,9 @@ $(document).ready(function() {
         let origen_id = $(this).data('origen');
         let row = $(this).data('row');
         $('.media-preview').removeClass('show');
+
+        $('.media-border-active').toggleClass('media-border-active media-border');
+        $(this).find('.media-border').toggleClass('media-border media-border-active');
 
         fichaLoad(id, origen_id, function() {
             let imagenes = ``;
@@ -174,7 +179,7 @@ $(document).ready(function() {
             $('#uxPreview_' + row).html(html);
 
             $('body, html').animate({
-                scrollTop: $('#uxPreview_' + row).offset().top - 100
+                scrollTop: $('#uxPreview_' + row).offset().top - 300
             }, 500);
 
         });
@@ -573,7 +578,7 @@ $(document).ready(function() {
                         </div>
                         <div class="doc-authors">${doc.authors}</div>
                         <div class="doc-description">${doc.description}</div>
-                        <div class="doc-links">
+                        <div class="doc-links" style="z-index:999;">
                             <a data-solapa="1" data-estudio="${doc.estudio}" class="btn btn-dark estudios-link">RECURSOS AUDIOVISUALES</a>
                             <a data-solapa="2" data-estudio="${doc.estudio}" class="btn btn-dark estudios-link">RECURSOS TÉCNICOS</a>
                             <a data-solapa="0" data-estudio="${doc.estudio}" class="btn btn-dark estudios-link">RECURSOS ASOCIADOS</a>
@@ -599,17 +604,12 @@ $(document).ready(function() {
         let col = 0;
         $.each(model.data.medias, function(index, item) {
             let i = `
-                <div class="media col-sm-2" data-toggle="collapse" href="#uxPreview_${row}" data-id="${item.id}" data-origen="${item.origen_id}" data-row="${row}" style="display: block;">
-                    <div style="
-                        height:100px;
-                        background-image: url(${item.link});
-                        background-repeat: no-repeat;
-                        background-position: center center;
-                        background-size: cover;    
-                        cursor: pointer;                    
-                    ">
+                <div class="media col-sm-2" data-toggle="collapse" href="#uxPreview_${row}" data-id="${item.id}" data-origen="${item.origen_id}" data-row="${row}">
+                    <div class="media-border">
+                        <div class="media-img" style="background-image: url(${item.link});">
+                        </div>
                     </div>
-                    <div style="font-size: .8em; padding: 4px 0px 4px; min-height: 70px;">
+                    <div class="media-info">
                         ${item.title.substr(0, 40)}<br />
                         ${item.autor.substr(0, 40)}<br />
                         ${item.tema.substr(0, 40)}<br />

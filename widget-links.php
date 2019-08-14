@@ -5,7 +5,7 @@
 </div>
 <div class="widget-link" style="background-color:#8e2f4f; right:0px; top:200px;">
 	<a href="./geovisor.php">
-		<img src="./images/icono_geovisor.png" />
+		<img src="./images/icono_geovisores.png" />
 	</a>
 </div>
 <div class="widget-link" style="background-color:#585dc5; right:0px; top:260px;">
