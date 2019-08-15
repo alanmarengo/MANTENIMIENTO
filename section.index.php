@@ -241,8 +241,6 @@
                     <div class="link-icon">
                         <img src="./images/icono_mediateca.png" />
                     </div>
-                    <div class="link-text-hover" style="display: none;">
-                    </div>
                     <div class="link-text" style="display: none;">
                         MEDIATECA
                     </div>
@@ -250,8 +248,6 @@
                 <a href="./herramientas.php" class="col-md-12 link-wrap link-2">
                     <div class="link-icon">
                         <img src="./images/icono_geovisores.png" />
-                    </div>
-                    <div class="link-text-hover" style="display: none;">
                     </div>
                     <div class="link-text" style="display: none;">
                         GEOVISORES
@@ -261,8 +257,6 @@
                     <div class="link-icon">
                         <img src="./images/icono_indicadores.png" />
                     </div>
-                    <div class="link-text-hover" style="display: none;">
-                    </div>
                     <div class="link-text" style="display: none;">
                         INDICADORES
                     </div>
@@ -270,8 +264,6 @@
                 <a href="./estadisticas.php" class="col-md-12 link-wrap link-4" style="margin-bottom: 0px!important;">
                     <div class="link-icon">
                         <img src="./images/icono_estadisticas.png" />
-                    </div>
-                    <div class="link-text-hover" style="display: none;">
                     </div>
                     <div class="link-text" style="display: none;">
                         ESTADÍSTICAS
@@ -368,16 +360,20 @@
 
         $('.link-wrap').hover( 
             function () {
-                //$(this).css('opacity', '.2');
-                //$(this).find('.link-text-hover').show();
+                //$(this).find('.link-fondo').hide();
+                //$(this).find('.link-fondo-hover').show();
+                //$(this).find('.link-hover-1').show();
+                //$(this).find('.link-hover-2').show();
                 $(this).find('.link-icon').hide();
                 $(this).find('.link-text').show();
             },
             function () {
-                //$(this).css('opacity', '1');
                 $(this).find('.link-text').hide();
                 $(this).find('.link-icon').show();
-                //$(this).find('.link-text-hover').hide();
+                //$(this).find('.link-hover-2').hide();
+                //$(this).find('.link-hover-1').hide();
+                //$(this).find('.link-fondo-hover').hide();
+                //$(this).find('.link-fondo').show();
             }
         )
 

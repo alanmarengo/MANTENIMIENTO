@@ -68,7 +68,6 @@ $(document).ready(function() {
         collapseAllGroups();
         group.collapsed = collapsed;
         filtersRender();
-        //groupsTitleRender();
     });
 
     // ORDEN
@@ -608,12 +607,12 @@ $(document).ready(function() {
                     <div class="media-border">
                         <div class="media-img" style="background-image: url(${item.link});">
                         </div>
-                    </div>
-                    <div class="media-info">
-                        ${item.title.substr(0, 40)}<br />
-                        ${item.autor.substr(0, 40)}<br />
-                        ${item.tema.substr(0, 40)}<br />
-                        ${item.fecha.substr(0, 40)}
+                        <div class="media-info">
+                            ${item.title.substr(0, 40)}<br />
+                            ${item.autor.substr(0, 40)}<br />
+                            ${item.tema.substr(0, 40)}<br />
+                            ${item.fecha.substr(0, 40)}
+                        </div>
                     </div>
                 </div>
             `;
