@@ -237,7 +237,14 @@
         </div>
         <div class="col-md-2 side-right">
             <div class="row">
-                <a href="./mediateca.php" class="col-md-12 link-wrap link-1">
+                <a 
+                    href="./mediateca.php" 
+                    class="col-md-12 link-wrap link-1"
+                    data-img="./images/icono_mediateca.png"
+                    data-imghover="./images/icono_mediateca_hover.png"
+                    data-css="link-1"
+                    data-csshover="link-1-hover"
+                >
                     <div class="link-icon">
                         <img src="./images/icono_mediateca.png" />
                     </div>
@@ -245,7 +252,14 @@
                         MEDIATECA
                     </div>
                 </a>
-                <a href="./herramientas.php" class="col-md-12 link-wrap link-2">
+                <a 
+                    href="./herramientas.php" 
+                    class="col-md-12 link-wrap link-2"
+                    data-img="./images/icono_geovisores.png"
+                    data-imghover="./images/icono_geovisores_hover.png"
+                    data-css="link-2"
+                    data-csshover="link-2-hover"
+                >
                     <div class="link-icon">
                         <img src="./images/icono_geovisores.png" />
                     </div>
@@ -253,7 +267,14 @@
                         GEOVISORES
                     </div>
                 </a>
-                <a href="./page.php" class="col-md-12 link-wrap link-3">
+                <a 
+                    href="./herramientas.php" 
+                    class="col-md-12 link-wrap link-3"
+                    data-img="./images/icono_indicadores.png"
+                    data-imghover="./images/icono_indicadores_hover.png"
+                    data-css="link-3"
+                    data-csshover="link-3-hover"
+                >
                     <div class="link-icon">
                         <img src="./images/icono_indicadores.png" />
                     </div>
@@ -261,12 +282,19 @@
                         INDICADORES
                     </div>
                 </a>
-                <a href="./estadisticas.php" class="col-md-12 link-wrap link-4" style="margin-bottom: 0px!important;">
+                <a 
+                    href="./herramientas.php" 
+                    class="col-md-12 link-wrap link-4"
+                    data-img="./images/icono_estadisticas.png"
+                    data-imghover="./images/icono_estadisticas_hover.png"
+                    data-css="link-4"
+                    data-csshover="link-4-hover"
+                >
                     <div class="link-icon">
                         <img src="./images/icono_estadisticas.png" />
                     </div>
                     <div class="link-text" style="display: none;">
-                        ESTADÍSTICAS
+                        ESTADISTICAS
                     </div>
                 </a>
             </div>
@@ -360,20 +388,18 @@
 
         $('.link-wrap').hover( 
             function () {
-                //$(this).find('.link-fondo').hide();
-                //$(this).find('.link-fondo-hover').show();
-                //$(this).find('.link-hover-1').show();
-                //$(this).find('.link-hover-2').show();
-                $(this).find('.link-icon').hide();
+                let icon = $(this).find('.link-icon img');
+                icon.attr('src', $(this).data('imghover'));
+                $(this).removeClass($(this).data('css'));
+                $(this).addClass($(this).data('csshover'));
                 $(this).find('.link-text').show();
             },
             function () {
+                let icon = $(this).find('.link-icon img');
+                icon.attr('src', $(this).data('img'));
+                $(this).removeClass($(this).data('csshover'));
+                $(this).addClass($(this).data('css'));
                 $(this).find('.link-text').hide();
-                $(this).find('.link-icon').show();
-                //$(this).find('.link-hover-2').hide();
-                //$(this).find('.link-hover-1').hide();
-                //$(this).find('.link-fondo-hover').hide();
-                //$(this).find('.link-fondo').show();
             }
         )
 
@@ -383,8 +409,8 @@
         });
 
         function refreshUI() {
-            let w = $('.link-wrap').width();
-            $('.link-wrap').height(w + 30);
+            let w = $('.link-wrap').first().outerWidth();
+            $('.link-wrap').height(w);
         }
 
     });
