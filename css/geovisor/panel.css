@@ -16,13 +16,13 @@
 
 #nav-panel-inner {
 	
-	height:100%;
-	display:flex;
-	flex-direction:column;
-	background-color:#59666c;
-	width:calc(100% - 80px);
-	position:relative;
-	left:0px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	background-color: #FFF;
+	width: calc(100% - 80px);
+	position: relative;
+	left: 0px;
 	
 }
 
