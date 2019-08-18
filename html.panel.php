@@ -40,7 +40,7 @@
 		
 		<div class="jump-row">
 		
-			<div class="mtb-20 ml-auto mr-auto w-100-p" style="height: 34px; line-height: 34px; background-color:#31cbfd; margin-left: 20px; margin-right: 20px; width: 100%;">
+			<div class="mtb-20 ml-auto mr-auto w-100-p" style="height: 34px; line-height: 34px; background-color:#31cbfd; margin-left: 20px !Important; margin-right: 20px !Important; width: 100%;">
 				<a href="#" class="plr-10 jump-link-death" style="width: 34px; height: 34px; line-height: 34px;">
 					<img src="./images/panel.icon.f2.png">
 				</a>
