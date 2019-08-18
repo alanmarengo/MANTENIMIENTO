@@ -30,8 +30,8 @@
 .layer-header a, .layer-container-header a {
 	
 	left: 10px;
-	color: white;
-	font-weight: 400;
+	color: #888;
+	font-weight: 300;
 	display: inline-flex;
 	
 }
