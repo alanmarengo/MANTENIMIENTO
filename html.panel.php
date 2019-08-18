@@ -46,7 +46,7 @@
 				</a>
 				<input id="panel-seach-input-layers-bottom" class="panel-input pl-10" name="main-search" type="text" data-jump-placeholder="BUSCAR EN CAPAS ACTIVAS" placeholder="BUSCAR EN CAPAS ACTIVAS" 
 					onfocus="geomap.map.ol_object_mini.updateSize(); geomap.map.ol_object_mini.render(); jwindow.open('#popup-geovisor');">
-				<span class="layers-visible-count jump-posrel l--30"></span>
+				<span class="layers-visible-count jump-posrel"></span>
 			</div>
 		
 		</div>

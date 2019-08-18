@@ -1165,7 +1165,7 @@ function ol_map() {
 				//$(".panel-abr").css("border-color","transparent");
 				//$(".panel-abr").css("background-color","transparent");
 				$(".panel-abr").css("background-color","#F5F5F5");
-				$(".panel-abr").css("color","#666666");
+				$(".panel-abr").css("color","#888888");
 				
 				$(this).attr("data-active","1");
 				//$(this).css("border-color",this.getAttribute("data-color"));
