@@ -12,6 +12,11 @@
 				
 			<ul>
 				<li>
+					<a class="button" href="javascript:void(0);" onclick="geomap.map.ol_object_mini.updateSize(); geomap.map.ol_object_mini.render(); jwindow.open('popup-geovisor');">
+						<img src="./images/toolbar.icon.addlayer.png">
+					</a>							
+				</li>
+				<li>
 					<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); geomap.map.buffer();">
 						<img src="./images/toolbar.icon.buffer.png">
 					</a>							

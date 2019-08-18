@@ -12,7 +12,7 @@
 		
 		</div>
 	
-		<div class="jump-row">
+		<!--<div class="jump-row">
 		
 			<div class="mtb-20 ml-auto mr-auto w-100-p" style="height: 34px; line-height: 34px; background-color:#29363c;">
 				<a href="#" class="plr-10 jump-link-death" style="width: 34px; height: 34px; line-height: 34px;">
@@ -22,6 +22,20 @@
 					onfocus="geomap.map.ol_object_mini.updateSize(); geomap.map.ol_object_mini.render(); jwindow.open('popup-geovisor');">							
 			</div>
 		
+		</div>-->
+		
+		
+			
+		<div id="panel-busqueda-geovisor">
+			
+			<div class="row jump-row jus-right">
+				<a href="#" onclick="$('#panel-busqueda-geovisor').hide();" class="panel-close">
+					<i class="fa fa-times"></i>
+				</a>
+			</div>
+			<div class="panel-header"></div>
+			<div class="panel-body jump-flotant-height-transform jump-scroll"></div>
+			
 		</div>
 		
 		<div class="jump-row">
@@ -55,18 +69,6 @@
 				<span class="layers-visible-count jump-posrel l--30"></span>
 			</div>
 		
-		</div>
-			
-		<div id="panel-busqueda-geovisor">
-			
-			<div class="row jump-row jus-right">
-				<a href="#" onclick="$('#panel-busqueda-geovisor').hide();" class="panel-close">
-					<i class="fa fa-times"></i>
-				</a>
-			</div>
-			<div class="panel-header"></div>
-			<div class="panel-body jump-flotant-height-transform jump-scroll"></div>
-			
 		</div>
 	
 	</div>
