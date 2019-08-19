@@ -14,7 +14,7 @@ function DrawAbrStats() {
 		
 		?>
 		
-		<div class="abr panel-abr" data-color="<?php echo $r["color_hex"]; ?>" data-bgcolor="<?php echo $r["color_head"]; ?>" data-active="0" data-cid="<?php echo $r["clase_id"]; ?>">
+		<div class="abr panel-abr" data-color="#31cbfd" data-bgcolor="#FFFFFF" data-active="0" data-cid="<?php echo $r["clase_id"]; ?>">
 			<span><?php echo $r["cod_clase_alf"]; ?></span>
 		</div>
 		
@@ -38,8 +38,8 @@ function DrawContainersStats() {
 		
 		?>
 		
-		<div class="layer-container" data-color="<?php echo $r["color_hex"]; ?>" data-cid="<?php echo $r["clase_id"]; ?>" style="border-color:<?php echo $r["color_hex"]; ?>;">
-			<div class="layer-container-header" style="background-color:<?php echo $r["color_head"]; ?>;">				
+		<div class="layer-container" data-color="#31cbfd" data-cid="<?php echo $r["clase_id"]; ?>" style="border-color:#FFFFFF">
+			<div class="layer-container-header" style="background-color:#31cbfd;">				
 				<span><?php echo $r["cod_nom"]; ?></span>		
 			</div>
 			<div class="layer-container-body scrollbar-content">
