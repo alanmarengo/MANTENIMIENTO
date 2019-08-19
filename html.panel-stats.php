@@ -4,7 +4,7 @@
 		
 		<div class="jump-row">
 		
-			<div class="mtb-20 ml-auto mr-auto w-100-p" style="height: 34px; line-height: 34px; background-color:#29363c; width:100%; margin:20px !Important;">
+			<div class="mtb-20 ml-auto mr-auto w-100-p search-wrapper">
 				<a href="#" class="plr-10 jump-link-death" style="width: 34px; height: 34px; line-height: 34px;">
 					<img src="./images/panel.icon.f2.png">
 				</a>
