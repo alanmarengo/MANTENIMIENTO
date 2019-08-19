@@ -42,7 +42,7 @@
 	
 }
 
-.layer-header span, .layer-container-header span:not(.abr-layer-count) {
+.layer-container-header span:not(.abr-layer-count) {
 	
 	position:relative;
 	top:2.5px;
