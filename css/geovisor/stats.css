@@ -245,10 +245,16 @@
 	
 }
 
+.layer-group .layer-header .pretty i {
+
+    color: #888;
+
+}
+
 .abr {
 	
 	width:100%;
-	height:36px;
+	height:34px;
 	border:2px solid transparent;
 	text-align:center;
 	line-height:32px;
@@ -257,6 +263,7 @@
 	cursor:pointer;
 	font-family:"Montserrat",sans-serif;
 	font-size:16px;
+	display:none;
 	color:#FFFFFF;
 	
 }
