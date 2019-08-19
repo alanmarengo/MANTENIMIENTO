@@ -31,7 +31,7 @@
 	
 	left: 10px;
 	color: #888888;
-	font-weight: 400;
+	font-weight: 300;
 	display: inline-flex;
 	
 }
@@ -50,6 +50,7 @@
 	font-family:"Montserrat",sans-serif;
 	font-size: 13px;
 	font-weight: bolder;
+	color:white;
 	
 }
 
