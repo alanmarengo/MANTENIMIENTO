@@ -22,7 +22,7 @@
 
 .layer-header, .layer-container-header {
 	
-	height:34px;
+	min-height:34px;
 	color:#FFFFFF;
 	
 }
