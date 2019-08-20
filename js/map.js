@@ -250,7 +250,7 @@ function ol_map() {
 	}
 	
 	this.map.searchInLayers = function(pattern) {
-		
+		alert(pattern);
 		$("#panel-busqueda-geovisor").css("display","flex");
 		$("#panel-busqueda-geovisor .panel-header").html("Resultados de Búsqueda");
 		
