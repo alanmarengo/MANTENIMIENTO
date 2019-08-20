@@ -416,11 +416,18 @@
 	
 }
 
+#dynbox-popup-basic-search {
+	
+	background-color:#f6f6f6;
+	
+}
+
 #dynbox-popup-layers .popup-panel-tree-item {
 	
-	margin:10px 0;
-	margin-left:10px;
-	border-bottom:1px solid #f5f5f5;
+	margin: 7px 0;
+	margin-left: 10px;
+	border-bottom: 1px solid #f5f5f5;
+	padding-bottom: 7px;
 	
 }
 
