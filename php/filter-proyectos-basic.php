@@ -59,6 +59,8 @@ if (isset($proyectos)>0) {
 					
 				<?php
 				
+				$first = false;
+				
 			}else{
 				
 				?>				
