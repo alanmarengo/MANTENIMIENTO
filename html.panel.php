@@ -26,7 +26,7 @@
 		
 		
 			
-		<!--<div id="panel-busqueda-geovisor">
+		<div id="panel-busqueda-geovisor">
 			
 			<div class="row jump-row jus-right">
 				<a href="#" onclick="$('#panel-busqueda-geovisor').hide();" class="panel-close">
@@ -36,7 +36,7 @@
 			<div class="panel-header"></div>
 			<div class="panel-body jump-flotant-height-transform jump-scroll"></div>
 			
-		</div>-->
+		</div>
 		
 		<div class="jump-row">
 		
