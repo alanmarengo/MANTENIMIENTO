@@ -1301,8 +1301,6 @@ function ol_map() {
 				
 				$(this).find(".popup-panel-tree-item-label").removeClass("popup-text-active");
 				
-				$(this).find(".popup-panel-tree-item-icon-toggler").removeClass("fa-angle-down").addClass("fa-angle-up");
-				
 				$(this).next(".popup-panel-tree-item-subpanel").slideToggle("slow",function() {					
 					
 					scroll.refresh();
@@ -1316,8 +1314,6 @@ function ol_map() {
 				$(this).find(".popup-panel-tree-item-icon").addClass("far").addClass("popup-icon-active").removeClass("fas");
 				
 				$(this).find(".popup-panel-tree-item-label").addClass("popup-text-active");
-				
-				$(this).find(".popup-panel-tree-item-icon-toggler").removeClass("fa-angle-up").addClass("fa-angle-down");
 				
 				$(this).next(".popup-panel-tree-item-subpanel").slideToggle("slow",function() {					
 					
