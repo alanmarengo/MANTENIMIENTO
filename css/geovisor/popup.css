@@ -431,6 +431,12 @@
 	
 }
 
+.popup-panel-tree-item-subpanel .popup-panel-tree-item:last-child {
+	
+	border-bottom: none !important;
+	
+}
+
 .popup-panel-tree-item .pretty .state i {
 	
 	left:-10px !Important;
