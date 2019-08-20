@@ -33,20 +33,56 @@ if (isset($proyectos)>0) {
 
 		$query = pg_query($conn,$query_string);
 
+		$clase = "";
+		$first = true;
+		
 		while($r = pg_fetch_assoc($query)) {
-
-		?>
-
-		<div class="popup-panel-tree-item" data-state="0">
-			<div class="popup-panel-tree-item-header">
-				<i class="fas fa-folder popup-panel-tree-item-icon popup-icon"></i>
-				<a href="#" class="popup-panel-tree-item-label popup-text">
-					<span><?php echo $r["clase_desc"] . " - " . $r["subclase_desc"]; ?></span>
-				</a>
-				<a href="#" class="simple-tree-pm-button">
-					<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
-				</a>
-			</div>
+		
+		if ($clase != $r["clase_desc"]) {
+			
+			$clase = $r["clase_desc"];
+			
+			if ($first) {
+				
+				?>				
+		
+				<div class="popup-panel-tree-item" data-state="0">
+					<div class="popup-panel-tree-item-header">
+						<i class="fas fa-folder popup-panel-tree-item-icon popup-icon"></i>
+						<a href="#" class="popup-panel-tree-item-label popup-text">
+							<span><?php echo $r["clase_desc"] . " - " . $r["subclase_desc"]; ?></span>
+						</a>
+						<a href="#" class="simple-tree-pm-button">
+							<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
+						</a>
+					</div>
+					
+				<?php
+				
+			}else{
+				
+				?>				
+				
+				</div>
+				
+				<div class="popup-panel-tree-item" data-state="0">
+					<div class="popup-panel-tree-item-header">
+						<i class="fas fa-folder popup-panel-tree-item-icon popup-icon"></i>
+						<a href="#" class="popup-panel-tree-item-label popup-text">
+							<span><?php echo $r["clase_desc"] . " - " . $r["subclase_desc"]; ?></span>
+						</a>
+						<a href="#" class="simple-tree-pm-button">
+							<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
+						</a>
+					</div>
+					
+				<?php
+				
+			}
+			
+		}
+		
+		?>			
 			
 			<div class="popup-panel-tree-item-subpanel">
 				<ul>
@@ -72,12 +108,18 @@ if (isset($proyectos)>0) {
 					
 					?>
 				</ul>
+				
 			</div>
-		</div>
 
 		<?php		
 
 		} // END OF WHILE
+		
+		?>
+		
+		</div>
+		
+		<?php
 		
 	}else{
 		
