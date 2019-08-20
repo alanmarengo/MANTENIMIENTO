@@ -57,6 +57,8 @@ if (isset($proyectos)>0) {
 						</a>
 					</div>
 					
+					<div class="popup-panel-tree-item-subpanel">
+					
 				<?php
 				
 				$first = false;
@@ -65,6 +67,7 @@ if (isset($proyectos)>0) {
 				
 				?>				
 				
+				</div>
 				</div>
 				
 				<div class="popup-panel-tree-item" data-state="0">
@@ -78,13 +81,15 @@ if (isset($proyectos)>0) {
 						</a>
 					</div>
 					
+					<div class="popup-panel-tree-item-subpanel">
+					
 				<?php
 				
 			}
 			
 		}
 		
-		?>	
+		?>			
 		
 			<div class="popup-panel-tree-item" data-state="0">
 				
@@ -134,6 +139,7 @@ if (isset($proyectos)>0) {
 		
 		?>
 		
+		</div>
 		</div>
 		
 		<?php
