@@ -198,6 +198,28 @@
 	/*margin-top:5px;*/
 }
 
+#popup-body .simple-tree-pm-button {
+	
+	position:relative;
+	display:block;
+	top:2px !Important;
+	float:right;
+	font-size:13px !Important;
+	display: inline-flex;
+	vertical-align: top;
+	background-color:#828282;
+	width:16px;
+	height:16px;
+	display:flex;
+	justify-content:flex-center;
+	align-items:center;
+}
+
+#popup-body .simple-tree-pm-button i {
+	
+	color:#FFFFFF !Important;
+}
+
 .popup-panel-tree-item-header {
 
 	cursor:pointer;
