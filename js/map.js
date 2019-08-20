@@ -1239,15 +1239,15 @@ function ol_map() {
 			
 			$(v).on("click",function() {
 			
-				if ($(v).children("i").hasClass("fa-plus-circle")) {
+				if ($(v).children("i").hasClass("fa-angle-up")) {
 					
-					$(v).children("i").removeClass("fa-plus-circle");
-					$(v).children("i").addClass("fa-minus-circle");
+					$(v).children("i").removeClass("fa-angle-up");
+					$(v).children("i").addClass("fa-angle-down");
 					
 				}else{
 					
-					$(v).children("i").removeClass("fa-minus-circle");
-					$(v).children("i").addClass("fa-plus-circle");
+					$(v).children("i").removeClass("fa-angle-down");
+					$(v).children("i").addClass("fa-angle-up");
 					
 				}
 				

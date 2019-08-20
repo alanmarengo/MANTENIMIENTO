@@ -122,7 +122,7 @@ $clase = "";
 							<span><?php echo $r["clase_desc"]; ?></span>
 						</a>
 						<a href="#" class="simple-tree-pm-button">
-							<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
+							<i class="fa fa-angle-down popup-panel-tree-item-icon-toggler popup-icon"></i>
 						</a>
 					</div>
 					
