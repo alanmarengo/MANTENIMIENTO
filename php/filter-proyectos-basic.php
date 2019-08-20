@@ -84,49 +84,44 @@ if (isset($proyectos)>0) {
 		
 		?>	
 		
+			<div class="popup-panel-tree-item" data-state="0">
+				
+				<div class="popup-panel-tree-item-header">
+					<i class="fas fa-folder popup-panel-tree-item-icon popup-icon"></i>
+					<a href="#" class="popup-panel-tree-item-label popup-text">
+						<span><?php echo $r["subclase_desc"]; ?></span>
+					</a>
+					<a href="#" class="simple-tree-pm-button">
+						<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
+					</a>
+				</div>
 					
-			<div class="popup-panel-tree-item-subpanel">
-			
-				<div class="popup-panel-tree-item" data-state="0">
+				<div class="popup-panel-tree-item-subpanel">
+					<ul>
 					
-					<div class="popup-panel-tree-item-header">
-						<i class="fas fa-folder popup-panel-tree-item-icon popup-icon"></i>
-						<a href="#" class="popup-panel-tree-item-label popup-text">
-							<span><?php echo $r["subclase_desc"]; ?></span>
-						</a>
-						<a href="#" class="simple-tree-pm-button">
-							<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
-						</a>
-					</div>
+						<?php
 						
-					<div class="popup-panel-tree-item-subpanel">
-						<ul>
+						$layer_query_string = "SELECT DISTINCT * FROM mod_geovisores.vw_layers WHERE clase_id = " . $r["clase_id"] . " AND subclase_id = " . $r["subclase_id"] . " AND layer_id IN (" . $layer_ids . ") ORDER BY layer_desc ASC";
+						$layer_query = pg_query($conn,$layer_query_string);
 						
-							<?php
-							
-							$layer_query_string = "SELECT DISTINCT * FROM mod_geovisores.vw_layers WHERE clase_id = " . $r["clase_id"] . " AND subclase_id = " . $r["subclase_id"] . " AND layer_id IN (" . $layer_ids . ") ORDER BY layer_desc ASC";
-							$layer_query = pg_query($conn,$layer_query_string);
-							
-							while($l = pg_fetch_assoc($layer_query)) {
-								
-								?>
-								
-								<li>
-									<a href="#" onclick="geomap.panel.PreviewLayer(<?php echo $l["layer_id"]; ?>)">
-											<?php echo $l["layer_desc"]; ?>
-									</a>	
-								</li>				
-								
-								<?php
-								
-							}
+						while($l = pg_fetch_assoc($layer_query)) {
 							
 							?>
 							
-						</ul>
+							<li>
+								<a href="#" onclick="geomap.panel.PreviewLayer(<?php echo $l["layer_id"]; ?>)">
+										<?php echo $l["layer_desc"]; ?>
+								</a>	
+							</li>				
+							
+							<?php
+							
+						}
 						
-					</div>
-				
+						?>
+						
+					</ul>
+					
 				</div>
 				
 			</div>
