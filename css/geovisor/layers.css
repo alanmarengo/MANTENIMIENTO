@@ -112,7 +112,7 @@
 .layer-opacity,.layer-colorpicker {
 
     padding: 0 10px 10px 10px;
-    background: RGBA(0,0,0,0.2);
+    background: #d6d6d6;
     margin: 20px 10px 0 0;
 	display:none;
 
@@ -120,7 +120,7 @@
 
 .layer-opacity label {
 	
-	color:#FFFFFF;
+	color:#646464;
 	
 }
 
