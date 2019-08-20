@@ -99,7 +99,7 @@ if (isset($proyectos)>0) {
 						<span><?php echo $r["subclase_desc"]; ?></span>
 					</a>
 					<a href="#" class="simple-tree-pm-button">
-						<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
+						<i class="fa fa-layer-group popup-panel-tree-item-icon-toggler popup-icon"></i>
 					</a>
 				</div>
 					
