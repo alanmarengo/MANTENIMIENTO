@@ -50,7 +50,7 @@ if (isset($proyectos)>0) {
 					<div class="popup-panel-tree-item-header">
 						<i class="fas fa-folder popup-panel-tree-item-icon popup-icon"></i>
 						<a href="#" class="popup-panel-tree-item-label popup-text">
-							<span><?php echo $r["clase_desc"] . " - " . $r["subclase_desc"]; ?></span>
+							<span><?php echo $r["clase_desc"]; ?></span>
 						</a>
 						<a href="#" class="simple-tree-pm-button">
 							<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
