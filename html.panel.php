@@ -1,4 +1,16 @@
 <div id="nav-panel" data-visible="1" class="navmenu jump-flotant-nav jump-flotant-heightfill jump-flotant-heightfill-top jump-scroll nav-level-1 col col-nav col-xs-12 col-sm-12 col-md-4 col-lg-4">
+				
+	<div id="panel-busqueda-geovisor">
+		
+		<div class="row jump-row jus-right">
+			<a href="#" onclick="$('#panel-busqueda-geovisor').hide();" class="panel-close">
+				<i class="fa fa-times"></i>
+			</a>
+		</div>
+		<div class="panel-header"></div>
+		<div class="panel-body jump-flotant-height-transform jump-scroll"></div>
+		
+	</div>
 	
 	<div id="nav-panel-inner" data-visible="1">	
 		
@@ -23,20 +35,6 @@
 			</div>
 		
 		</div>-->
-		
-		
-			
-		<div id="panel-busqueda-geovisor">
-			
-			<div class="row jump-row jus-right">
-				<a href="#" onclick="$('#panel-busqueda-geovisor').hide();" class="panel-close">
-					<i class="fa fa-times"></i>
-				</a>
-			</div>
-			<div class="panel-header"></div>
-			<div class="panel-body jump-flotant-height-transform jump-scroll"></div>
-			
-		</div>
 		
 		<div class="jump-row">
 		
