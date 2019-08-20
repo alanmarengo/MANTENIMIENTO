@@ -1301,7 +1301,7 @@ function ol_map() {
 				
 				$(this).find(".popup-panel-tree-item-label").removeClass("popup-text-active");
 				
-				$(this).find(".popup-panel-tree-item-icon-toggler").removeClass("fa-minus-circle").addClass("fa-plus-circle");
+				$(this).find(".popup-panel-tree-item-icon-toggler").removeClass("fa-angle-down").addClass("fa-angle-up");
 				
 				$(this).next(".popup-panel-tree-item-subpanel").slideToggle("slow",function() {					
 					
@@ -1317,7 +1317,7 @@ function ol_map() {
 				
 				$(this).find(".popup-panel-tree-item-label").addClass("popup-text-active");
 				
-				$(this).find(".popup-panel-tree-item-icon-toggler").removeClass("fa-plus-circle").addClass("fa-minus-circle");
+				$(this).find(".popup-panel-tree-item-icon-toggler").removeClass("fa-angle-up").addClass("fa-angle-down");
 				
 				$(this).next(".popup-panel-tree-item-subpanel").slideToggle("slow",function() {					
 					
