@@ -78,65 +78,127 @@ $query = pg_query($conn,$query_string);
 
 $results = false;
 
+$clase = "";
+$first = true;
+		
 while($r = pg_fetch_assoc($query)) {
 
-?>
-
-<div class="popup-panel-tree-item" data-state="0">
-	<div class="popup-panel-tree-item-header">
-		<i class="fas fa-folder popup-panel-tree-item-icon popup-icon"></i>
-		<a href="#" class="popup-panel-tree-item-label popup-text">
-			<span><?php echo $r["clase_desc"] . " - " . $r["subclase_desc"]; ?></span>
-		</a>
-		<a href="#" class="simple-tree-pm-button">
-			<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
-		</a>
-	</div>
-	
-	<div class="popup-panel-tree-item-subpanel">
-		<ul>
+if ($clase != $r["clase_desc"]) {
+			
+			$clase = $r["clase_desc"];
+			
+			if ($first) {
+				
+				?>				
 		
-			<?php
-			
-			if ((!empty($r["clase_id"])) && (!empty($r["subclase_id"]))) {		
-			
-				$layer_query_string = "SELECT DISTINCT * FROM mod_geovisores.vw_layers WHERE clase_id = " . $r["clase_id"] . " AND subclase_id = " . $r["subclase_id"] . " AND layer_id IN (" . $layer_ids . ") ORDER BY layer_desc ASC";
-				$layer_query = pg_query($conn,$layer_query_string);
-			
-				while($l = pg_fetch_assoc($layer_query)) {
+				<div class="popup-panel-tree-item" data-state="0">
+					<div class="popup-panel-tree-item-header">
+						<i class="fas fa-folder popup-panel-tree-item-icon popup-icon"></i>
+						<a href="#" class="popup-panel-tree-item-label popup-text">
+							<span><?php echo $r["clase_desc"]; ?></span>
+						</a>
+						<a href="#" class="simple-tree-pm-button">
+							<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
+						</a>
+					</div>
 					
-					?>
+					<div class="popup-panel-tree-item-subpanel">
 					
-					<li>
-						<a href="#" onclick="geomap.panel.PreviewLayer(<?php echo $l["layer_id"]; ?>)">
-							<?php echo $l["layer_desc"]; ?>							
-						</a>					
-					</li>
-					<?php
+				<?php
+				
+				$first = false;
+				
+			}else{
+				
+				?>				
+				
+				</div>
+				</div>
+				
+				<div class="popup-panel-tree-item" data-state="0">
+					<div class="popup-panel-tree-item-header">
+						<i class="fas fa-folder popup-panel-tree-item-icon popup-icon"></i>
+						<a href="#" class="popup-panel-tree-item-label popup-text">
+							<span><?php echo $r["clase_desc"]; ?></span>
+						</a>
+						<a href="#" class="simple-tree-pm-button">
+							<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
+						</a>
+					</div>
 					
-				}
-			
+					<div class="popup-panel-tree-item-subpanel">
+					
+				<?php
+				
 			}
 			
-			?>
-		</ul>
-	</div>
-</div>
+		}
+		
+		?>			
+		
+			<div class="popup-panel-tree-item" data-state="0">
+				
+				<div class="popup-panel-tree-item-header">
+					<i class="fas fa-folder popup-panel-tree-item-icon popup-icon"></i>
+					<a href="#" class="popup-panel-tree-item-label popup-text">
+						<span><?php echo $r["subclase_desc"]; ?></span>
+					</a>
+					<a href="#" class="simple-tree-pm-button">
+						<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
+					</a>
+				</div>
+					
+				<div class="popup-panel-tree-item-subpanel">
+					<ul>
+					
+						<?php
+						
+						$layer_query_string = "SELECT DISTINCT * FROM mod_geovisores.vw_layers WHERE clase_id = " . $r["clase_id"] . " AND subclase_id = " . $r["subclase_id"] . " AND layer_id IN (" . $layer_ids . ") ORDER BY layer_desc ASC";
+						$layer_query = pg_query($conn,$layer_query_string);
+						
+						while($l = pg_fetch_assoc($layer_query)) {
+							
+							?>
+							
+							<li>
+								<a href="#" onclick="geomap.panel.PreviewLayer(<?php echo $l["layer_id"]; ?>)">
+										<?php echo $l["layer_desc"]; ?>
+								</a>	
+							</li>				
+							
+							<?php
+							
+						}
+						
+						?>
+						
+					</ul>
+					
+				</div>
+				
+			</div>
 
-<?php
+		<?php		
 
-$results = true;
+		} // END OF WHILE
+		
+		?>
+		
+		</div>
+		</div>
+		
+		<?php
+		
+	}else{
+		
+		?>
+		
+		<p>No se encontraron capas asociadas a estos proyectos</p>
+		
+		<?php
+		
+	}
 
-}
-
-if (!$results) {
-	
-?>
-
-<p>No se encontraron capas asociadas a estos proyectos</p>
-
-<?php
-	
 }
 
 ?>
