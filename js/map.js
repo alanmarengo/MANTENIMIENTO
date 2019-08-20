@@ -214,7 +214,7 @@ function ol_map() {
 				
 				"background-color":"#31cbfd"
 				
-			},"slow");
+			},"fast");
 			
 		});
 		
@@ -224,7 +224,7 @@ function ol_map() {
 				
 				"background-color":"#4a4849"
 				
-			},"slow");
+			},"fast");
 			
 		});
 		
@@ -250,7 +250,7 @@ function ol_map() {
 	}
 	
 	this.map.searchInLayers = function(pattern) {
-		alert(pattern);
+		
 		$("#panel-busqueda-geovisor").css("display","flex");
 		$("#panel-busqueda-geovisor .panel-header").html("Resultados de Búsqueda");
 		
