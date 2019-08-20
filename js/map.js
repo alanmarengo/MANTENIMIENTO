@@ -208,6 +208,26 @@ function ol_map() {
 		
 		$("#panel-seach-input-layers-bottom").val("");
 		
+		$("#panel-seach-input-layers-bottom").bind("focus",function() {
+			
+			$(this).parent().animate({
+				
+				"background-color":"#31cbfd"
+				
+			},"slow");
+			
+		});
+		
+		$("#panel-seach-input-layers-bottom").bind("blur",function() {
+			
+			$(this).parent().animate({
+				
+				"background-color":"#4a4849"
+				
+			},"slow");
+			
+		});
+		
 		$("#panel-seach-input-layers-bottom").bind("keyup",function(e) {
 			
 			if ($("#panel-seach-input-layers-bottom").val().trim() == "") {
