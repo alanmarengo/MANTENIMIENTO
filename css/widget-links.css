@@ -5,6 +5,14 @@
     border-radius: 20px 0px 0px 20px;
     margin-bottom: 10px;
     z-index: 1200000;
+	font-size:12px;
+	padding-left:20px;
+}
+
+.widget-link:hover {
+	
+	color:#FFFFFF !important;
+	
 }
 
 .widget-link-unhovered {
@@ -21,7 +29,6 @@
     -o-transition: width 0.1s ease-in-out;
     transition: width 0.1s ease-in-out;
     width: 120px;
-	font-size:12px;
 }
 
 .widget-link a {
