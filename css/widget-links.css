@@ -20,7 +20,8 @@
     -moz-transition: width 0.1s ease-in-out;
     -o-transition: width 0.1s ease-in-out;
     transition: width 0.1s ease-in-out;
-    width: 40px;
+    width: 120px;
+	font-size:12px;
 }
 
 .widget-link a {
