@@ -26,10 +26,32 @@ if ($recurso_preview==NULL)
 
 pg_close($conn);
 
+/*******************************************************
+ * En caso del servidor de producción de EIASA
+ * los datos se impolementaron en un file server.
+ * EL mismo se monton en el directorio /mnt/sga,
+ * por lo tanto en el sitio observatorio.ieasa.com.ar
+ * el path se altera anteponiedo /mn/ al path del
+ * archivo.
+ ******************************************************/
+
+$dominio = $_SERVER['HTTP_HOST'];
+
+$file_server = '';
+
+if($dominio=='observatorio.ieasa.com.ar')
+{
+	$file_server = '/mnt/';
+}
+else
+{
+	$file_server = '';
+};
+
 if($recursos_extension=='PDF')
 {
 	$imagick = new Imagick();
-	$imagick->readImage($recursor_path.'[0]');//primer hoja
+	$imagick->readImage($file_server.$recursor_path.'[0]');//primer hoja
 	$imagick->setImageFormat("jpg");
 	$imagick = $imagick->flattenImages();
 
