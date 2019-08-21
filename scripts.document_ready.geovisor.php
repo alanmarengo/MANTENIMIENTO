@@ -18,6 +18,7 @@
 		hovimage.refresh();
 		
 		jwindow = new Jump.window();
+		jwindow.initialize();
 		jwindow.setAllWindowsDraggable();
 		jwindow.initMinimizing();
 		
