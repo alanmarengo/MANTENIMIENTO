@@ -109,7 +109,7 @@
 		var s_h = $("#popup-basic-filters").height();
 		
 		var n_h = (pb_h-s_h);
-		alert(n_h);
+		alert(pb_h + " :: " + s_h + " :: " + n_h);
 		$("#dynbox-popup-layers").css("height",n_h+"px");
 		
 	});
