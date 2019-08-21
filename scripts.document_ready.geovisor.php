@@ -108,7 +108,7 @@
 		var pb_h = $("#popup_body").height();
 		var s_h = $("#popup-basic-filters").height();
 		
-		$("#dynbox-popup-layers").css("height",pb_h-s_h+px);
+		$("#dynbox-popup-layers").css("height",pb_h-s_h+"px");
 		
 	});
 
