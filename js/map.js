@@ -1412,7 +1412,7 @@ function ol_map() {
 			
 		});
 		
-		$("#layer-preview-inner").html(req.responseText);
+		$("#layer-preview-block").html(req.responseText);
 		
 		if (!document.getElementById("layer-checkbox-"+layer_id).layer_preview) {
 			
