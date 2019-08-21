@@ -49,7 +49,7 @@ data-minimizable="1" data-minimized-title="Selección de Capas">
 					<div id="popup-preview-inner">
 						<div id="mini-map" class="ptb-10"></div>
 						<div id="layer-preview-block" class="ptb-10">					
-							<p class="title" id="layer-preview-title">Datos de Capa</p>
+							<p class="title" id="layer-preview-title">Datos de Capa</p><br>
 							<p class="content">Seleccione una capa para ver su descripci&oacute;n</p>
 						</div>
 						<div id="layer-preview-inner">

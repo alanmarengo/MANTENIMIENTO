@@ -653,14 +653,14 @@
 	
 }
 
-#layer-preview-inner #layer-preview-title {
+#layer-preview-block #layer-preview-title {
 	
 	font-size:13px;
 	font-weight:bolder;
 	
 }
 
-#layer-preview-inner .content {
+#layer-preview-block .content {
 	
 	font-size:12px;
 	
