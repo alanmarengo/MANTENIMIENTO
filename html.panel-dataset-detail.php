@@ -23,7 +23,7 @@
 	
 		<div class="dataset-detail-icon mt-30" style="background-color:#8e2f4f;">
 			<a href="#">
-				<img src="./images/icono_geovisor.png" width="32">
+				<img src="./images/icono_geovisores.png" width="32">
 			</a>
 		</div>
 	

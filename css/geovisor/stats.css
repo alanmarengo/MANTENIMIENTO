@@ -238,6 +238,7 @@
 	width:40px;
 	display:inline-flex;
 	flex-direction: column;
+	background-color:#ffffff;
 	
 }
 
@@ -245,6 +246,7 @@
 	
 	display:inline-flex;
 	flex-grow:1;
+	background-color:#ffffff;
 	
 }
 
@@ -267,6 +269,8 @@
 	font-family:"Montserrat",sans-serif;
 	font-size:16px;
 	color:#888888;
+	margin-bottom: 1px;
+	background-color:#F5F5F5;
 	
 }
 

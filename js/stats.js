@@ -40,6 +40,26 @@ function ol_stats() {
 		
 		$("#panel-seach-input-layers").val("");
 		
+		$("#panel-seach-input-layers").bind("focus",function() {
+			
+			$(this).parent().animate({
+				
+				"background-color":"#31cbfd"
+				
+			},"fast");
+			
+		});
+		
+		$("#panel-seach-input-layers").bind("blur",function() {
+			
+			$(this).parent().animate({
+				
+				"background-color":"#4a4849"
+				
+			},"fast");
+			
+		});
+		
 		$("#panel-seach-input-layers").bind("keyup",function(e) {
 			
 			if ($("#panel-seach-input-layers").val().trim() == "") {
