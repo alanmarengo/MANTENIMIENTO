@@ -1,3 +1,14 @@
+<script>
+<?php
+    $remote_addr = $_SERVER["REMOTE_ADDR"];
+    $api_url = $remote_addr=='127.0.0.1' || $remote_addr=='::1' ? 
+        'http://observatorio.atic.com.ar' : // LOCAL
+        '.'; // SERVER
+
+    echo "var GlobaApiUrl = '$api_url';";
+?>
+</script>
+
 <div class="row" id="page_mediateca">
     <div class="col-md-12 page-title page-title-sticky">
         Recursos en Mediateca

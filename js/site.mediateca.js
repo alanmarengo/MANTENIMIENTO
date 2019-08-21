@@ -1,6 +1,7 @@
 $(document).ready(function() {
     var model = {
-        apiUrlBase: 'http://observatorio.atic.com.ar',
+        apiUrlBase: GlobaApiUrl,
+        //apiUrlBase: 'http://observatorio.net',
         tab: 0,
         stopLoad: false,
         filters: {
@@ -216,11 +217,12 @@ $(document).ready(function() {
             $.each(data, function(index, value) {
                 let gindex = 0;
 
-                if (value.filtro_nombre == 'Proyecto') gindex = 0;
-                else if (value.filtro_nombre == 'Área de gestion') gindex = 1;
-                else if (value.filtro_nombre == 'Recursos tecnicos') gindex = 3;
-                else if (value.filtro_nombre == 'tema') gindex = 4;
-                else if (value.filtro_nombre == 'subtema') gindex = 5;
+                if (value.filtro_id == 0) gindex = 0; //'Proyecto'
+                else if (value.filtro_id == 1) gindex = 1; //'Área de gestion'
+                else if (value.filtro_id == 5) gindex = 2; //'Recursos Audiovisuales'
+                else if (value.filtro_id == 2) gindex = 3; //'Recursos tecnicos'
+                else if (value.filtro_id == 3) gindex = 4; //'tema'
+                else if (value.filtro_id == 4) gindex = 5; //'subtema'
 
                 model.filters.groups[gindex].items.push({
                     id: value.valor_id,
@@ -229,12 +231,6 @@ $(document).ready(function() {
                     parentId: value.parent_valor_id
                 });
             });
-
-            // LLENADO TEMPORAL, DEBE VENIR DE LA DB
-            model.filters.groups[2].items.push({ id: 01, label: 'Fotos', checked: false, parentId: null });
-            model.filters.groups[2].items.push({ id: 01, label: 'Videos', checked: false, parentId: null });
-            model.filters.groups[2].items.push({ id: 01, label: 'Animacion', checked: false, parentId: null });
-            model.filters.groups[2].items.push({ id: 01, label: 'Sonido', checked: false, parentId: null });
 
             filtersRender();
         });
@@ -260,7 +256,8 @@ $(document).ready(function() {
                     model.data.docs.push({
                         id: value.Id,
                         origen_id: value.origen_id,
-                        link_preview: './sga/' + value.Id + '.jpg', // ./mediateca_preview.php?r=[id]
+                        //link_preview: './sga/' + value.Id + '.jpg', // ./mediateca_preview.php?r=[id]
+                        link_preview: model.apiUrlBase + '/mediateca_preview.php?r=' + value.Id,
                         title: value.Titulo,
                         authors: value.Autores,
                         description: value.Descripcion,
@@ -282,23 +279,13 @@ $(document).ready(function() {
                     model.data.techs.push({
                         id: value.Id,
                         origen_id: value.origen_id,
-                        link_preview: './sga/' + value.Id + '.jpg', // ./mediateca_preview.php?r=[id]
+                        //link_preview: './sga/' + value.Id + '.jpg', // ./mediateca_preview.php?r=[id]
+                        link_preview: model.apiUrlBase + '/mediateca_preview.php?r=' + value.Id,
                         title: value.Titulo,
                         authors: value.Autores,
                         description: value.Descripcion,
                         estudio: value.estudios_id
                     });
-                    /*
-                        model.data.techs.push({
-                            id: value.Id,
-                            origen_id: value.origen_id,
-                            link_preview: value.LinkImagen,
-                            metatag: value.MetaTag,
-                            title: value.Titulo,
-                            description: value.Descripcion,
-                            estudio: value.estudios_id,
-                        });
-                    */
                 }
             });
 
@@ -316,7 +303,8 @@ $(document).ready(function() {
         $.getJSON(url, function(data) {
             model.ficha = {
                 id: data.id,
-                link_preview: './sga/' + data.id + '.jpg', // ./mediateca_preview.php?r=[id]
+                //link_preview: './sga/' + data.id + '.jpg', // ./mediateca_preview.php?r=[id]
+                link_preview: model.apiUrlBase + '/mediateca_preview.php?r=' + data.id,
                 origen_id: data.origen_id,
                 title: data.titulo,
                 temporal: data.temporal,
