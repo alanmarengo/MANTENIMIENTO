@@ -132,19 +132,14 @@ function DrawLayers($clase_id) {
 			
 				<div class="layer-icons">
 				
-					<div class="layer-icon jump-toggleimage" onclick="geomap.map.zoomToLayerExtent(<?php echo $r["layer_id"]; ?>);">
+					<div class="layer-icon" onclick="geomap.map.zoomToLayerExtent(<?php echo $r["layer_id"]; ?>);">
 						<a href="javascript:void(0);">
 							<img src="./images/geovisor/icons/layer-bar-zoom.png">
 						</a>
 					</div>
 				
-					<div class="layer-icon jump-toggleimage" onclick="$(this).children('a').trigger('click');">
-						<a href="<?php echo $r["layer_metadata_url"]; ?>" target="_blank" 
-							data-state="0" 
-							data-ini-src="./images/geovisor/icons/layer-bar-info.png"
-							data-end-src="./images/geovisor/icons/layer-bar-info-blue.png"
-							data-clean="1"
-						>
+					<div class="layer-icon" onclick="$(this).children('a').trigger('click');">
+						<a href="<?php echo $r["layer_metadata_url"]; ?>" target="_blank">
 							<img src="./images/geovisor/icons/layer-bar-info.png">
 						</a>
 					</div>
@@ -171,12 +166,7 @@ function DrawLayers($clase_id) {
 						</a>
 					</div>
 				
-					<div class="layer-icon jump-toggleimage" onclick="$(this).children('a').trigger('click');"
-							data-state="0" 
-							data-ini-src="./images/geovisor/icons/layer-bar-download.png"
-							data-end-src="./images/geovisor/icons/layer-bar-download-blue.png"
-							data-clean="1"
-						>
+					<div class="layer-icon" onclick="$(this).children('a').trigger('click');">
 						<a href="http://observatorio.atic.com.ar/cgi-bin/mapserver?map=wms_atic&service=WFS&version=1.0.0&request=GetFeature&typeName=<?php echo $r["layer_wms_layer"]; ?>&outputFormat=shape-zip" target="_blank">
 							<img src="./images/geovisor/icons/layer-bar-download.png">
 						</a>
