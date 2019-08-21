@@ -4,8 +4,8 @@ Jump.toggleimage = function() {
 		
 		$(".jump-toggleimage").each(function(i,v) {
 			
-			$(v).on("click",function() {
-				
+			$(v).bind("click",function() {
+				alert("tgim");
 				var state = $(v).attr("data-state");
 				var ini = $(v).attr("data-ini-src");
 				var end = $(v).attr("data-end-src");
