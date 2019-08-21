@@ -98,19 +98,13 @@
 		geomap.map.updateLayerCount();
 		geomap.map.startSearch();
 		
+		geomap.map.fixPopup(false);
+		
 		window.addEventListener("resize",onresize);
 		onresize();
 		
 		// SELECCIONAR PROYECTOS AL INICIAR GEOVISOR
 		$("#popup-basic-filters input[type=checkbox]").trigger("click");
-		
-		// ARREGLAR FIX POPUP
-		var pb_h = $("#popup-body").height();
-		var s_h = $("#popup-basic-filters").height();
-		
-		var n_h = (pb_h-s_h);
-		
-		$("#dynbox-popup-layers").css("height",n_h+"px");
 		
 	});
 
