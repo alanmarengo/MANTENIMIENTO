@@ -21,7 +21,7 @@ Jump.toggleimage = function() {
 					});
 					
 				}
-				
+				alert(clean);
 				if (state==0) {
 					
 					$(v).find("img").attr("src",end);
