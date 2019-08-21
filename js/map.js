@@ -1088,6 +1088,32 @@ function ol_map() {
 		
 	}
 	
+	this.map.fixPopup = function(adv) {
+		
+		if (adv) {
+		
+			// ARREGLAR FIX POPUP
+			var pb_h = $("#popup-body").height();
+			var s_h = $("#geovisor-popup-search").height();
+			
+			var n_h = (pb_h-s_h);
+			
+			$("#dynbox-popup-layers").css("height",n_h+"px");
+			
+		}else{		
+		
+			// ARREGLAR FIX POPUP
+			var pb_h = $("#popup-body").height();
+			var s_h = $("#popup-basic-filters").height();
+			
+			var n_h = (pb_h-s_h);
+			
+			$("#dynbox-popup-layers").css("height",n_h+"px");
+			
+		}
+		
+	}
+	
 	// PANEL SCRIPTS 
 	
 	this.panel.map = this.map;
@@ -1122,6 +1148,9 @@ function ol_map() {
 			$("#popup-basic-filters").slideDown();
 			$("#popup-header .button").removeClass("button-active");
 			$(this).addClass("button-active");
+			
+			geomap.map.fixPopup(false);
+			
 		});
 		
 		$("#btn-bus-advanced").on("click",function() {
@@ -1131,6 +1160,8 @@ function ol_map() {
 			$("#popup-basic-filters").slideUp();
 			$("#popup-header .button").removeClass("button-active");
 			$(this).addClass("button-active");
+			
+			geomap.map.fixPopup(true);
 			
 		});
 		
