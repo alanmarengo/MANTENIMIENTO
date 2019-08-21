@@ -23,12 +23,12 @@ Jump.toggleimage = function() {
 				}
 				
 				if (state==0) {
-					alert(end);
+					
 					$(v).find("img").attr("src",end);
 					$(v).attr("data-state","1");
 					
 				}else{
-					alert(ini);
+					
 					$(v).find("img").attr("src",ini);
 					$(v).attr("data-state","0");
 					
