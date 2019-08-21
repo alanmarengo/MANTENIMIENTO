@@ -5,7 +5,7 @@ Jump.toggleimage = function() {
 		$(".jump-toggleimage").each(function(i,v) {
 			
 			$(v).bind("click",function() {
-				alert("tgim");
+				
 				var state = $(v).attr("data-state");
 				var ini = $(v).attr("data-ini-src");
 				var end = $(v).attr("data-end-src");
@@ -23,12 +23,12 @@ Jump.toggleimage = function() {
 				}
 				
 				if (state==0) {
-					
+					alert(end);
 					$(v).find("img").attr("src",end);
 					$(v).attr("data-state","1");
 					
 				}else{
-					
+					alert(ini);
 					$(v).find("img").attr("src",ini);
 					$(v).attr("data-state","0");
 					
