@@ -222,7 +222,7 @@ function ol_map() {
 			
 			$(this).parent().animate({
 				
-				"background-color":"#4a4849"
+				"background-color":"#4c4b4b"
 				
 			},"fast");
 			
