@@ -15,13 +15,16 @@ Jump.toggleimage = function() {
 					
 					$(v).parent().children(".jump-toggleimage").each(function(j,x) {
 						
+						var ini = $(x).attr("data-ini-src");
+						var end = $(x).attr("data-end-src");
+				
 						$(x).find("img").attr("src",ini);
 						$(x).attr("data-state","0");
 						
 					});
 					
 				}
-				alert(clean);
+				
 				if (state==0) {
 					
 					$(v).find("img").attr("src",end);
