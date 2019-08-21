@@ -15,8 +15,8 @@ Jump.toggleimage = function() {
 					
 					$(v).parent().children(".jump-toggleimage").each(function(j,x) {
 						
-						$(v).find("img").attr("src",ini);
-						$(v).attr("data-state","0");
+						$(x).find("img").attr("src",ini);
+						$(x).attr("data-state","0");
 						
 					});
 					
