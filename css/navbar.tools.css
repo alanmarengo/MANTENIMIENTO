@@ -141,7 +141,7 @@
 .icon-divisor {
 
     margin: 0px !important;
-    padding: 0px !important;
+    padding: 0px 3px 0px 3px !important;
     width: auto !important;
     position: relative;
 
