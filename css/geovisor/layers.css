@@ -42,6 +42,12 @@
 	
 }
 
+.layer-label-active {
+	
+	color:#31cbfd;
+	
+}
+
 .layer-header span, .layer-container-header span:not(.abr-layer-count) {
 	
 	position:relative;
