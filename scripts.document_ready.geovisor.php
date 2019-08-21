@@ -105,11 +105,11 @@
 		$("#popup-basic-filters input[type=checkbox]").trigger("click");
 		
 		// ARREGLAR FIX POPUP
-		var pb_h = $("#popup_body").height();
+		var pb_h = $("#popup-body").height();
 		var s_h = $("#popup-basic-filters").height();
 		
 		var n_h = (pb_h-s_h);
-		alert(pb_h + " :: " + s_h + " :: " + n_h);
+		
 		$("#dynbox-popup-layers").css("height",n_h+"px");
 		
 	});
