@@ -100,6 +100,9 @@
 		window.addEventListener("resize",onresize);
 		onresize();
 		
+		// SELECCIONAR PROYECTOS AL INICIAR GEOVISOR
+		$("#popup-basic-filters input[type=checkbox]").trigger("click");
+		
 	});
 
 </script>
