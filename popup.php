@@ -52,13 +52,6 @@ data-minimizable="1" data-minimized-title="Selección de Capas">
 							<p class="title" id="layer-preview-title">Datos de Capa</p><br>
 							<p class="content">Seleccione una capa para ver su descripci&oacute;n</p>
 						</div>
-						<div id="layer-preview-inner">
-							
-							<p class="mt-10 text-center">
-								<a href="#" class="button" id="btn-layer-preview-addlayer">AGREGAR AL MAPA</a>
-							</p>
-						
-						</div>
 					</div>
 				</div>
 			
