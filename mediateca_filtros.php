@@ -28,7 +28,7 @@ header('Content-Type: application/json');
  * }
  * */
 
-$conn = pg_connect("host=localhost port=5432 dbname=ahrsc user=postgres password=plahe100%");
+$conn = pg_connect("host=127.0.0 port=5432 dbname=ahrsc user=postgres password=plahe100%");
 
 $SQL = "SELECT * FROM mod_catalogo.vw_filtros_values ORDER BY filtro_id ASC";
 
