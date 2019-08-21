@@ -16,15 +16,24 @@
 						<img src="./images/toolbar.icon.addlayer.png">
 					</a>							
 				</li>
+				<li class="icon-divisor">
+					<span></span>												
+				</li>
 				<li>
 					<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); geomap.map.buffer();">
 						<img src="./images/toolbar.icon.buffer.png">
 					</a>							
 				</li>
+				<li class="icon-divisor">
+					<span></span>												
+				</li>
 				<li>
 					<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); geomap.map.ptopografico();">
 						<img src="./images/toolbar.icon.ptopografico.png">
 					</a>        
+				</li>
+				<li class="icon-divisor">
+					<span></span>												
 				</li>
 				<li class="dropdown">
 					<a class="button" href="javascript:void(0);" id="navbarDropdown-medicion" role="button" data-toggle="dropdown" aria-expanded="false" onclick="jwindow.close('.geovisor-flotant');">
@@ -44,10 +53,16 @@
 						
 					</div> 
 				</li>
+				<li class="icon-divisor">
+					<span></span>												
+				</li>
 				<li>
 					<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); jwindow.open('popup-coordinates'); geomap.map.activateCoordinates();">
 						<img src="./images/toolbar.icon.coordenadas.png">
 					</a>
+				</li>
+				<li class="icon-divisor">
+					<span></span>												
 				</li>
 				<li class="dropdown">
 					<a class="button" href="javascript:void(0);" id="navbarDropdown-draw" role="button" data-toggle="dropdown" aria-expanded="false">
@@ -85,10 +100,16 @@
 						
 					</div> 
 				</li>
+				<li class="icon-divisor">
+					<span></span>												
+				</li>
 				<li>
 					<a class="button" href="javascript:void(0);" onclick="geomap.map.print();">
 						<img src="./images/toolbar.icon.print.png">
 					</a>
+				</li>
+				<li class="icon-divisor">
+					<span></span>												
 				</li>
 				<li class="ml-10">
 					<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); jwindow.open('popup-share'); geomap.map.share();">

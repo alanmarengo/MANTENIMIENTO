@@ -137,3 +137,19 @@
 	font-weight:400;
 	
 }
+
+.icon-divisor {
+
+    margin: 0px !important;
+    padding: 0px !important;
+    width: auto !important;
+    position: relative;
+
+}
+
+.icon-divisor span {
+
+    height: 25px;
+    border-left: solid 1px #666;
+
+}
