@@ -54,7 +54,7 @@ function ol_stats() {
 			
 			$(this).parent().animate({
 				
-				"background-color":"#4a4849"
+				"background-color":"#4c4b4b"
 				
 			},"fast");
 			
