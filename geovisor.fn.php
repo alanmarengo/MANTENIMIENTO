@@ -141,8 +141,8 @@ function DrawLayers($clase_id) {
 					<div class="layer-icon jump-toggleimage" onclick="$(this).children('a').trigger('click');">
 						<a href="<?php echo $r["layer_metadata_url"]; ?>" target="_blank" 
 							data-state="0" 
-							data-ini="./images/geovisor/icons/layer-bar-info.png"
-							data-end="./images/geovisor/icons/layer-bar-info-blue.png"
+							data-ini-src="./images/geovisor/icons/layer-bar-info.png"
+							data-end-src="./images/geovisor/icons/layer-bar-info-blue.png"
 							data-clean="1"
 						>
 							<img src="./images/geovisor/icons/layer-bar-info.png">
@@ -151,8 +151,8 @@ function DrawLayers($clase_id) {
 				
 					<div class="layer-icon jump-toggleimage" onclick="$('.layer-tool-wrapper').not('#layer-colorpicker-<?php echo $r["layer_id"]; ?>').hide(); $('#layer-colorpicker-<?php echo $r["layer_id"]; ?>').slideToggle('slow');"
 							data-state="0" 
-							data-ini="./images/geovisor/icons/layer-bar-relleno.png"
-							data-end="./images/geovisor/icons/layer-bar-relleno-blue.png"
+							data-ini-src="./images/geovisor/icons/layer-bar-relleno.png"
+							data-end-src="./images/geovisor/icons/layer-bar-relleno-blue.png"
 							data-clean="1"
 						>
 						<a href="javascript:void(0);">
@@ -162,8 +162,8 @@ function DrawLayers($clase_id) {
 				
 					<div class="layer-icon jump-toggleimage" onclick="$('.layer-tool-wrapper').not('#layer-opacity-<?php echo $r["layer_id"]; ?>').hide(); $('#layer-opacity-<?php echo $r["layer_id"]; ?>').slideToggle('slow');"
 							data-state="0" 
-							data-ini="./images/geovisor/icons/layer-bar-gota.png"
-							data-end="./images/geovisor/icons/layer-bar-gota-blue.png"
+							data-ini-src="./images/geovisor/icons/layer-bar-gota.png"
+							data-end-src="./images/geovisor/icons/layer-bar-gota-blue.png"
 							data-clean="1"
 						>
 						<a href="javascript:void(0);">
@@ -173,8 +173,8 @@ function DrawLayers($clase_id) {
 				
 					<div class="layer-icon jump-toggleimage" onclick="$(this).children('a').trigger('click');"
 							data-state="0" 
-							data-ini="./images/geovisor/icons/layer-bar-download.png"
-							data-end="./images/geovisor/icons/layer-bar-download-blue.png"
+							data-ini-src="./images/geovisor/icons/layer-bar-download.png"
+							data-end-src="./images/geovisor/icons/layer-bar-download-blue.png"
 							data-clean="1"
 						>
 						<a href="http://observatorio.atic.com.ar/cgi-bin/mapserver?map=wms_atic&service=WFS&version=1.0.0&request=GetFeature&typeName=<?php echo $r["layer_wms_layer"]; ?>&outputFormat=shape-zip" target="_blank">
