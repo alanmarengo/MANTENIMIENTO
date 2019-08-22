@@ -19,9 +19,11 @@ $recursor_path = $row[0];
 $recursos_extension = $row[1];
 $recurso_preview = $row[2];
 
+$error_preview_img = './images/3.jpg';
+
 if ($recurso_preview==NULL)
 {
-	$recurso_preview='./images/3.jpg';
+	$recurso_preview=$error_preview_img;
 };
 
 pg_close($conn);
@@ -51,11 +53,19 @@ else
 if($recursos_extension=='PDF')
 {
 	$imagick = new Imagick();
-	$imagick->readImage($file_server.$recursor_path.'[0]');//primer hoja
-	$imagick->setImageFormat("jpg");
-	$imagick = $imagick->flattenImages();
-
-	echo $imagick->getImagesBlob();
+	
+	if($imagick->readImage($file_server.$recursor_path.'[0]'))
+	{
+		$imagick->setImageFormat("jpg");
+		$imagick = $imagick->flattenImages();
+		echo $imagick->getImagesBlob();
+	}
+	else
+	{
+		$imagick->readImage($error_preview_img);
+		$imagick->setImageFormat("jpg");
+		echo $imagick->getImagesBlob();
+	};
 }
 else
 {
