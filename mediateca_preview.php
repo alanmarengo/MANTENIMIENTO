@@ -54,7 +54,7 @@ if($recursos_extension=='PDF')
 {
 	$imagick = new Imagick();
 	
-	if($imagick->readImage($file_server.$recursor_path.'[0]'))
+	if($imagick->readImage($file_server.$recursor_path.'[0]')==TRUE)
 	{
 		$imagick->setImageFormat("jpg");
 		$imagick = $imagick->flattenImages();
