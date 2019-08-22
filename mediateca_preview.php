@@ -54,8 +54,9 @@ if($recursos_extension=='PDF')
 {
 	$imagick = new Imagick();
 	
-	if($imagick->readImage($file_server.$recursor_path.'[0]')==TRUE)
+	if(file_exists($file_server.$recursor_path))
 	{
+		$imagick->readImage($file_server.$recursor_path.'[0]');
 		$imagick->setImageFormat("jpg");
 		$imagick = $imagick->flattenImages();
 		echo $imagick->getImagesBlob();
