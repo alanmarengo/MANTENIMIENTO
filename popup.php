@@ -30,6 +30,9 @@ data-minimizable="1" data-minimized-title="Selección de Capas">
 					<div class="jump-window-group" id="popup-basic-filters">
 						<div class="jump-window-group-header">
 							<span>SELECCIONE LA OBRA O PROYECTO</span>
+							<a href="javascript:void(0);" class="jump-window-group-header-collapser" onclick="$(this).parent().next().slideToggle('slow'); $(this).children('i').toggleClass('fa-plus-circle');">
+								<i class="fa fa-minus-circle"></i>
+							</a>
 						</div>
 						<div class="jump-window-group-body p-5-20">
 							<span><?php echo DrawProyectos(); ?></span>

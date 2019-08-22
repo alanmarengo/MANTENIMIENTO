@@ -118,6 +118,15 @@
 	
 }
 
+.jump-window-group-header-collapser {
+	
+	color: #666;
+	float: right;
+	font-size: 14px;
+	margin-right: -10px;
+
+}
+
 .jump-window-icon-bar {
 	
 	margin-left:auto;
