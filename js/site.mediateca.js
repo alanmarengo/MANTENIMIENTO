@@ -1,7 +1,6 @@
 $(document).ready(function() {
     var model = {
         apiUrlBase: GlobaApiUrl,
-        //apiUrlBase: 'http://observatorio.net',
         tab: 0,
         stopLoad: false,
         filters: {
@@ -162,18 +161,20 @@ $(document).ready(function() {
                             background-size: cover;    
                         "></div>
                     </div>
-                    <div class="col-sm-6 preview-datos">
-                        <div class="preview-title">${model.ficha.title}</div>
-                        <div class="preview-estudio">${model.ficha.estudio}</div>
-                        <div class="preview-autores">Autores: ${model.ficha.authors}</div>
-                        <div class="preview-fecha">Fecha: ${model.ficha.fecha}</div>
-                        <div class="preview-tema-subtema">Tema/Subtema: ${model.ficha.tema_subtema}</div>
-                        <div class="preview-proyecto">Proyecto: ${model.ficha.proyecto}</div>
-                        <div class="preview-imagenes" style="overflow: hide;">
-                            ${imagenes}
+                    <div class="col-sm-6" style="max-height: 260px; overflow-y: scroll;">
+                        <div class="preview-datos">
+                            <div class="preview-title">${model.ficha.title}</div>
+                            <div class="preview-estudio">${model.ficha.estudio}</div>
+                            <div class="preview-autores">Autores: ${model.ficha.authors}</div>
+                            <div class="preview-fecha">Fecha: ${model.ficha.fecha}</div>
+                            <div class="preview-tema-subtema">Tema/Subtema: ${model.ficha.tema_subtema}</div>
+                            <div class="preview-proyecto">Proyecto: ${model.ficha.proyecto}</div>
+                            <div class="preview-imagenes" style="overflow: hide;">
+                                ${imagenes}
+                            </div>
+                            <a class="media-preview-link btn btn-warning btn-xs" data-solapa="1" data-estudio="${model.ficha.estudio_id}">Imagenes asociadas</a>
+                            </div>
                         </div>
-                        <a class="media-preview-link btn btn-warning btn-xs" data-solapa="1" data-estudio="${model.ficha.estudio_id}">Imagenes asociadas</a>
-                    </div>
                 </div>
             `;
             $('#uxPreview_' + row).html(html);
