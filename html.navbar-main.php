@@ -31,9 +31,22 @@
 		
 		<div class="col col-xs-12 col-sm-12 col-md-4 col-lg-4 flexbox col-nav">
 				
+			<?php
+			
+				$search_ph = "Buscar en todo el sitio";
+				
+				if (strpos($_SERVER["SCRIPT_FILENAME"],"mediateca")) {
+					
+					$search_ph = "Buscar en mediateca";
+					
+				}
+				
+			
+			?>
+				
 			<ul class="ml-10 mr-15" style="margin-right: 40px !important;">
 				<li class="input-li">						
-					<input id="main-search" name="main-search" type="text" data-jump-placeholder="Buscar en todo el sitio" placeholder="Buscar en todo el sitio">
+					<input id="main-search" name="main-search" type="text" data-jump-placeholder="<?php echo $search_ph; ?>" placeholder="<?php echo $search_ph; ?>">
 					<a href="#" >
 						<i class="fa fa-search"></i>
 					</a>							
