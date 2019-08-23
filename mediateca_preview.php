@@ -50,6 +50,72 @@ else
 	$file_server = '';
 };
 
+
+switch ($recursos_extension) 
+{
+    case 'PDF':
+				$imagick = new Imagick();
+	
+				if(file_exists($file_server.$recursor_path))
+				{
+					$imagick->readImage($file_server.$recursor_path.'[0]');
+					$imagick->setImageFormat("jpg");
+					$imagick = $imagick->flattenImages();
+					echo $imagick->getImagesBlob();
+				}
+				else
+				{
+					$imagick->readImage($error_preview_img);
+					$imagick->setImageFormat("jpg");
+					echo $imagick->getImagesBlob();
+				};
+				
+				break;
+    case 'JPG':
+				$imagick = new Imagick();
+	
+				if(file_exists($file_server.$recursor_path))
+				{
+					$imagick->readImage($file_server.$recursor_path);
+					$imagick->setImageCompressionQuality(10);
+					$imagick->setImageFormat("jpg");
+					echo $imagick->getImagesBlob();
+				}
+				else
+				{
+					$imagick->readImage($error_preview_img);
+					$imagick->setImageFormat("jpg");
+					echo $imagick->getImagesBlob();
+				};
+				
+				break;
+    case 'PGN':
+				$imagick = new Imagick();
+	
+				if(file_exists($file_server.$recursor_path))
+				{
+					$imagick->readImage($file_server.$recursor_path);
+					$imagick->setImageCompressionQuality(10);
+					$imagick->setImageFormat("jpg");
+					echo $imagick->getImagesBlob();
+				}
+				else
+				{
+					$imagick->readImage($error_preview_img);
+					$imagick->setImageFormat("jpg");
+					echo $imagick->getImagesBlob();
+				};
+				
+				break;
+	 default:
+				$imagick = new Imagick();
+				$imagick->readImage($recurso_preview);
+				$imagick->setImageFormat("jpg");
+				echo $imagick->getImagesBlob();
+
+};
+
+/*
 if($recursos_extension=='PDF')
 {
 	$imagick = new Imagick();
@@ -76,5 +142,6 @@ else
 
 	echo $imagick->getImagesBlob();
 };
+*/
 
 ?> 
