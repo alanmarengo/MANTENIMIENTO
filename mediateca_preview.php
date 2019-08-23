@@ -59,6 +59,8 @@ switch ($recursos_extension)
 				if(file_exists($file_server.$recursor_path))
 				{
 					$imagick->readImage($file_server.$recursor_path.'[0]');
+					$imagick->scaleImage(300, 300, true);
+					$imagick->setImageCompressionQuality(90);
 					$imagick->setImageFormat("jpg");
 					$imagick = $imagick->flattenImages();
 					echo $imagick->getImagesBlob();
