@@ -115,6 +115,9 @@ switch ($recursos_extension)
 
 };
 
+$imagick->clear();
+$imagick->destroy();
+
 /*
 if($recursos_extension=='PDF')
 {
