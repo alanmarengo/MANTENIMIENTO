@@ -268,7 +268,8 @@ $(document).ready(function() {
                     model.data.medias.push({
                         id: value.Id,
                         origen_id: value.origen_id,
-                        link_preview: value.LinkImagen,
+                        //link_preview: './sga/' + value.Id + '.jpg', // ./mediateca_preview.php?r=[id]
+                        link_preview: model.apiUrlBase + '/mediateca_preview.php?r=' + value.Id,
                         link: value.LinkImagen,
                         title: value.Titulo,
                         estudio: value.estudios_id,
@@ -594,7 +595,7 @@ $(document).ready(function() {
             let i = `
                 <div class="media col-sm-2" data-toggle="collapse" href="#uxPreview_${row}" data-id="${item.id}" data-origen="${item.origen_id}" data-row="${row}">
                     <div class="media-border">
-                        <div class="media-img" style="background-image: url(${item.link});">
+                        <div class="media-img" style="background-image: url(${item.link_preview});">
                         </div>
                         <div class="media-info">
                             ${item.title.substr(0, 40)}<br />

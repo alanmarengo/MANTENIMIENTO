@@ -77,6 +77,7 @@ switch ($recursos_extension)
 				if(file_exists($file_server.$recursor_path))
 				{
 					$imagick->readImage($file_server.$recursor_path);
+					$imagick->scaleImage(300, 300, true);
 					$imagick->setImageCompressionQuality(90);
 					$imagick->setImageFormat("jpg");
 					echo $imagick->getImagesBlob();
@@ -95,6 +96,7 @@ switch ($recursos_extension)
 				if(file_exists($file_server.$recursor_path))
 				{
 					$imagick->readImage($file_server.$recursor_path);
+					$imagick->scaleImage(300, 300, true);
 					$imagick->setImageCompressionQuality(90);
 					$imagick->setImageFormat("jpg");
 					echo $imagick->getImagesBlob();
@@ -117,6 +119,7 @@ switch ($recursos_extension)
 
 $imagick->clear();
 $imagick->destroy();
+
 
 /*
 if($recursos_extension=='PDF')
@@ -145,6 +148,6 @@ else
 
 	echo $imagick->getImagesBlob();
 };
-*/
 
+*/
 ?> 

@@ -6,6 +6,8 @@
         '.'; // SERVER
 
     echo "var GlobaApiUrl = '$api_url';";
+    
+    //echo "var GlobaApiUrl = '.';";
 ?>
 </script>
 
