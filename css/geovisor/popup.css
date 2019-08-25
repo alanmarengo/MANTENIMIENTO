@@ -36,6 +36,11 @@
 #popup-basic-filters {
 	
 	max-height:130px;
+	
+}
+
+#popup-basic-filters .bfinner {
+	
 	overflow-y:auto;
 	
 }
