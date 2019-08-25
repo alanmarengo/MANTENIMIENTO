@@ -1104,7 +1104,7 @@ function ol_map() {
 		
 			// ARREGLAR FIX POPUP
 			var pb_h = $("#popup-body").height();
-			var s_h = 130;
+			var s_h = $("#geovisor-popup-search").height();
 			
 			var n_h = (pb_h-s_h-300);
 			
