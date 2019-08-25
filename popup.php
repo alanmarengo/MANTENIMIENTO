@@ -27,14 +27,14 @@ data-minimizable="1" data-minimized-title="Selección de Capas">
 			<div class="jump-row row p0 m0">
 			
 				<div class="col col-xs-12 col-sm-12 col-md-5 col-lg-5 p0 m0 flex-column" id="dynbox-popup-basic-search">
-					<div class="jump-window-group jump-scroll" id="popup-basic-filters">
+					<div class="jump-window-group" id="popup-basic-filters">
 						<div class="jump-window-group-header">
 							<span>SELECCIONE LA OBRA O PROYECTO</span>
 							<a href="javascript:void(0);" class="jump-window-group-header-collapser" onclick="$(this).parent().next().slideToggle('slow'); $(this).children('i').toggleClass('fa-plus-circle');">
 								<i class="fa fa-minus-circle"></i>
 							</a>
 						</div>
-						<div class="jump-row p-5-20">
+						<div class="w100p h100p jump-scroll p-5-20">
 							<span><?php echo DrawProyectos(); ?></span>
 						</div>	
 					</div>
