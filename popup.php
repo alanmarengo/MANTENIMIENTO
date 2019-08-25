@@ -34,7 +34,7 @@ data-minimizable="1" data-minimized-title="Selección de Capas">
 								<i class="fa fa-minus-circle"></i>
 							</a>
 						</div>
-						<div class="w100p h100p jump-scroll p-5-20 bfinner">
+						<div class="w100p jump-scroll p-5-20 bfinner">
 							<span><?php echo DrawProyectos(); ?></span>
 						</div>	
 					</div>
