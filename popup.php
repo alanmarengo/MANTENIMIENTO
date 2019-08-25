@@ -42,7 +42,7 @@ data-minimizable="1" data-minimized-title="Selección de Capas">
 						<div class="jump-window-group-header">
 							<span>SELECCIONE LA CAPA</span>
 						</div>
-						<div class="jump-window-group-body flex-grow jump-flotant-height-transform">
+						<div class="w100p flex-grow jump-flotant-height-transform">
 							<div id="filtered-layer-list">
 							</div>
 						</div>	
