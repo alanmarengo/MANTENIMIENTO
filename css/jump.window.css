@@ -30,8 +30,8 @@
 	
 	padding:0 20px;
 	cursor:move;
-	height:48px;
-	display:flex;
+	height:42px;
+	display:block;
 	align-items:center;
 	background-color:#4c4b4b;
 	color:#FFFFFF;
@@ -77,14 +77,18 @@
 
 .jump-window-header .button {
 	
-	font-size:12px;
-	font-weight:bolder;
-	height:36px;
-	display:block;
-	padding:0 20px;
-	border-radius:3px;
-	display:flex;
-	align-items:center;
+	font-size: 12px;
+    font-weight: bolder;
+    height: 30px;
+    padding: 0 20px;
+    border-radius: 3px;
+    display: inline-block !important;
+    align-items: center;
+    line-height: 30px;
+    width: auto;
+    vertical-align: top;
+
+}
 	
 }
 
