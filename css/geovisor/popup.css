@@ -36,6 +36,7 @@
 #popup-basic-filters {
 	
 	max-height:130px;
+	overflow-y:auto;
 	
 }
 

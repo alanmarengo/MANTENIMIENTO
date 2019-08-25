@@ -1150,6 +1150,7 @@ function ol_map() {
 			$(this).addClass("button-active");
 			
 			geomap.map.fixPopup(false);
+			scroll.refresh();
 			
 		});
 		
@@ -1162,6 +1163,7 @@ function ol_map() {
 			$(this).addClass("button-active");
 			
 			geomap.map.fixPopup(true);
+			scroll.refresh();
 			
 		});
 		
