@@ -1106,7 +1106,7 @@ function ol_map() {
 			var pb_h = $("#popup-body").height();
 			var s_h = $("#geovisor-popup-search").height();
 			
-			var n_h = (pb_h-s_h-500);
+			var n_h = (pb_h-s_h-600);
 			
 			$("#dynbox-popup-layers").css("height",n_h+"px");
 			
