@@ -1,5 +1,4 @@
 <?php include("./fn.php"); ?>
-<?php include("./login.php"); ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -23,15 +22,37 @@
 		
 		<div class="page-container" style="background-color: #EAEAED;">
 		
-			<?php include("./section.index.php"); ?>
+			<?php
+						
+			session_start();
+			$_SESSION = array();
+			session_destroy();
+				
+			?>
+				
+		<h2 class="m-v-50">
+			<p>Su sesión ha sido cerrada con éxito!</p>
+		</h2>
+				
+		<h3 class="text-success"> Redireccionando por favor espere... </h3>
 			
-			<?php include("./html.navs.php"); ?>
+		<script type="text/javascript">
 			
-			<?php include("./footer.php"); ?>
+			setTimeout(function() {
+								
+				location.href = "<?php echo $_SERVER["HTTP_REFERER"]; ?>"
+								
+			},5000);
+						
+		</script>
 			
 		</div>
 		
 	</div>
+			
+	<?php include("./html.navs.php"); ?>
+			
+	<?php include("./footer.php"); ?>
 	
 	<?php //include("./widget-links.php"); ?>
 
