@@ -133,7 +133,13 @@
 
 .jump-window-icon-bar {
 	
-	margin-left:auto;
+	width: 100px;
+	display: inline-block;
+	vertical-align: top;
+	float: right;
+	height: 30px;
+	line-height: 30px;
+	margin-right: -70px;
 	
 }
 
