@@ -67,8 +67,8 @@
 					</div>            
 				</li>
 				<li>
-					<a href="#">
-						<i class="fa fa-user"></i>
+					<a href="./CMD-logout.php">
+						<i class="fa fa-sign-out-alt"></i>
 					</a>
 				</li>
 			
