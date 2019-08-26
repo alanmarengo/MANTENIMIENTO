@@ -1,6 +1,7 @@
 <?php include("pgconfig.php"); ?>
 <?php include("geovisor.fn.php"); ?>
 <?php include("./fn.php"); ?>
+<?php include("./login.php"); ?>
 
 <!DOCTYPE html>
 <html lang="es">

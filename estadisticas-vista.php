@@ -15,6 +15,7 @@ $dt_titulo = $_GET["dt_t"];
 <?php include("pgconfig.php"); ?>
 <?php include("stats.fn.php"); ?>
 <?php include("./fn.php"); ?>
+<?php include("./login.php"); ?>
 
 <!DOCTYPE html>
 <html lang="es">

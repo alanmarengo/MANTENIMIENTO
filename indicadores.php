@@ -2,6 +2,7 @@
 <?php include("geovisor.fn.php"); ?>
 <?php include("indicadores.fn.php"); ?>
 <?php include("./fn.php"); ?>
+<?php include("./login.php"); ?>
 
 <!DOCTYPE html>
 <html lang="es">
