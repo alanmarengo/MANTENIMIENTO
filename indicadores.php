@@ -25,7 +25,7 @@
 	<div id="page">
 	
 		<?php include("./html.navbar-main.php"); ?>
-		<?php include("./html.navbar-tools-stats.php"); ?>
+		<?php include("./html.navbar-tools-indicadores.php"); ?>
 		
 		<div class="page-container">
 		
