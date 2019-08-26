@@ -14,13 +14,13 @@
 	<?php include("./scripts.document_ready.php"); ?>
 	
 </head>
-<body>
+<body style="overflow:hidden;">
 
 	<div id="page">
 	
 		<?php include("./html.navbar-main.php"); ?>
 		
-		<div class="page-container" style="background-color: #EAEAED;">
+		<div class="page-container" style="background-color: #EAEAED; height:100%; padding:100px;">
 		
 			<?php
 						
@@ -30,11 +30,11 @@
 				
 			?>
 				
-		<h2 class="m-v-50">
+		<h2 class="m-v-50" style="font-size:12px;">
 			<p>Su sesión ha sido cerrada con éxito!</p>
 		</h2>
 				
-		<h3 class="text-success"> Redireccionando por favor espere... </h3>
+		<h3 class="text-success" style="font-size:14px;"> Redireccionando por favor espere... </h3>
 			
 		<script type="text/javascript">
 			
