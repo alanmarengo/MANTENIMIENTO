@@ -43,7 +43,7 @@ function DrawContainersInd() {
 				<span><?php echo $r["cod_nom"]; ?></span>		
 			</div>
 			<div class="layer-container-body scrollbar-content">
-				<?php DrawDatasets($r["clase_id"]); ?>
+				<?php DrawIndicadores($r["clase_id"]); ?>
 			</div>
 		</div>
 		

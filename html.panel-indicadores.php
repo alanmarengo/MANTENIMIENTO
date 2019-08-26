@@ -21,13 +21,13 @@
 
 				<div id="abr-container">
 				
-					<?php DrawAbrIndicadores(); ?>
+					<?php DrawAbrInd(); ?>
 				
 				</div>
 				
 				<div id="layers-container">
 				
-					<?php DrawContainersIndicadores(); ?>
+					<?php DrawContainersInd(); ?>
 				
 				</div>
 
