@@ -38,8 +38,6 @@
 			<div class="row jump-row">
 			
 				<?php include("./html.panel-indicadores.php"); ?>
-				<?php include("./html.panel-dataset.php"); ?>
-				<?php include("./html.panel-dataset-detail.php"); ?>
 			
 			</div>
 			
