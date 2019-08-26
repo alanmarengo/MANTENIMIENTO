@@ -1,13 +1,12 @@
 <?php include("pgconfig.php"); ?>
-<?php include("geovisor.fn.php"); ?>
-<?php include("stats.fn.php"); ?>
+<?php include("indicadores.fn.php"); ?>
 <?php include("./fn.php"); ?>
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
 
-	<title>Estadísticas</title>
+	<title>Indicadores</title>
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 		
@@ -38,7 +37,7 @@
 			
 			<div class="row jump-row">
 			
-				<?php include("./html.panel-stats.php"); ?>
+				<?php include("./html.panel-indicadores.php"); ?>
 				<?php include("./html.panel-dataset.php"); ?>
 				<?php include("./html.panel-dataset-detail.php"); ?>
 			
