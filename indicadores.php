@@ -1,4 +1,5 @@
 <?php include("pgconfig.php"); ?>
+<?php include("geovisor.fn.php"); ?>
 <?php include("indicadores.fn.php"); ?>
 <?php include("./fn.php"); ?>
 
