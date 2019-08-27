@@ -59,7 +59,7 @@ function DrawIndicadores($clase_id) {
 	
 	$conn = pg_connect($string_conn);
 	
-	$query_string = "SELECT DISTINCT * FROM mod_indicadores.ind_panel WHERE ind_id = " . $clase_id . " ORDER BY dt_titulo ASC";
+	$query_string = "SELECT DISTINCT * FROM mod_indicadores.ind_panel WHERE clase_id = " . $clase_id . " ORDER BY ind_titulo ASC";
 	
 	$query = pg_query($conn,$query_string);
 	
@@ -76,7 +76,7 @@ function DrawIndicadores($clase_id) {
 				<div class="layer-header">
 					
 					<a href="#" class="layer-label" onclick="stats.dataset.loadVars(<?php echo $r["ind_id"]; ?>); stats.dataset.loadContent(<?php echo $r["ind_id"]; ?>);">
-						<span><?php echo $r["ind_desc"]; ?></span>
+						<span><?php echo $r["ind_titulo"]; ?></span>
 					</a>
 					
 				</div>
