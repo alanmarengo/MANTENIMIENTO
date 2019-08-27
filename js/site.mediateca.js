@@ -28,15 +28,15 @@ $(document).ready(function() {
     });
 
     // TEXT SEARCH
-    $('#uxSearchText').on('focusout', function() {
-        refreshSearchText();
-    });
+    //$('#uxSearchText').on('focusout', function() {
+    //    refreshSearchText();
+    //});
 
-    $('#uxSearchText').on('keypress', function(e) {
-        if (e.which == 13) {
-            refreshSearchText();
-        }
-    });
+    //$('#uxSearchText').on('keypress', function(e) {
+    //    if (e.which == 13) {
+    //        refreshSearchText();
+    //    }
+    //});
 
     // REMOVE FILTER
     $('body').on('click', '.filters-checked', function() {
@@ -199,18 +199,22 @@ $(document).ready(function() {
     //-----------------------------------------------------
     function init() {
         var urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.has('s'))
-            $('#uxSearchText').val(urlParams.get('s'))
+        if (urlParams.has('s')) {
+            let s = urlParams.get('s');
+            model.filters.searchText = s;
+            $('#main-search').val(s);
+            $('#main-search').focus();
+        }
 
         filtersLoad();
         dataLoad();
     }
 
-    function refreshSearchText() {
-        model.filters.searchText = $('#uxSearchText').val();
-        setEstudio(null);
-        dataLoad();
-    }
+    //function refreshSearchText() {
+    //    model.filters.searchText = $('#uxSearchText').val();
+    //    setEstudio(null);
+    //    dataLoad();
+    //}
 
     function filtersLoad() {
         model.filters.groups = initFiltersGroups();
