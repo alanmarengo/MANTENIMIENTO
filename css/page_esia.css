@@ -165,7 +165,12 @@
   height: auto;
 }
 #page_esia .temas-interes .icono {
-  padding: 20px;
+  padding: 30px;
   width: 20%;
   text-align: center;
+  font-weight: normal;
+  color: #000;
+}
+#page_esia .temas-interes .icono img {
+  margin-bottom: 10px;
 }

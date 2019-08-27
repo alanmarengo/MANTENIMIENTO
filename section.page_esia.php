@@ -115,18 +115,50 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             <h3>TEMAS DE INTERÉS EN LA AUDIENCIA PÚBLICA</h3>
 
             <div class="row">
-
-            <a href="#" class="icono">
-                <img src="./images/iconos_audiencia/transparencia.png">
-                <div>SIA transparencia y divulgación</div>
-            </a>
-            <a href="#" class="icono">
-                <img src="./images/iconos_audiencia/especies_biologicas_interes.png">
-                <div>Especies  biológicas de interés</div>
-            </a>
-
+                <a href="#" class="icono">
+                    <img src="./images/iconos_audiencia/transparencia.png">
+                    <div>SIA transparencia y divulgación</div>
+                </a>
+                <a href="#" class="icono">
+                    <img src="./images/iconos_audiencia/especies_biologicas_interes.png">
+                    <div>Especies  biológicas de interés</div>
+                </a>
+                <a href="#" class="icono">
+                    <img src="./images/iconos_audiencia/patrimonio_cultural_natural.png">
+                    <div>Patrimonio Cultural y Natural</div>
+                </a>
+                <a href="#" class="icono">
+                    <img src="./images/iconos_audiencia/desacople_hidraulico_glaciares.png">
+                    <div>Desacople hidráulico y glaciares</div>
+                </a>
+                <a href="#" class="icono">
+                    <img src="./images/iconos_audiencia/modelaciones_hidroambientales.png">
+                    <div>Modelaciones hidroambientales</div>
+                </a>
             </div>
 
+            <div class="row">
+                <a href="#" class="icono">
+                    <img src="./images/iconos_audiencia/red_nivologica.png">
+                    <div>Montaje Red HM/HA / Nivológica</div>
+                </a>
+                <a href="#" class="icono">
+                    <img src="./images/iconos_audiencia/gestión_participativa.png">
+                    <div>Gestión participativa – Trabajo con stakeholders</div>
+                </a>
+                <a href="#" class="icono">
+                    <img src="./images/iconos_audiencia/comunidades_originarias.png">
+                    <div>Comunidades Indígenas</div>
+                </a>
+                <a href="#" class="icono">
+                    <img src="./images/iconos_audiencia/humedales.png">
+                    <div>Estuario – Humedales</div>
+                </a>
+                <a href="#" class="icono">
+                    <img src="./images/iconos_audiencia/geologia.png">
+                    <div>Geología y procesos erosivos – estabilidad de pendientes</div>
+                </a>
+            </div>
 
         </div>
     </div>
