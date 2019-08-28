@@ -318,3 +318,15 @@
 	font-size: 12px;
 	
 }
+
+#template-wrapper {
+	
+	background-color:#FFFFFF;
+	
+}
+
+#template-wrapper .col {
+	
+	border:1px solid #CCCCCC;
+	
+}
