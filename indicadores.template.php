@@ -13,24 +13,24 @@ $query_string = "SELECT template_id FROM mod_indicadores.ind_panel WHERE ind_id 
 $query = pg_query($conn,$query_string);
 
 $data = pg_fetch_assoc($query);
-var_dump($query);
+
 $template_id = $data["template_id"];
 
-$query_string = "SELECT * FROM mod_indicadores.template WHERE template_id = " . $template_id;
-echo $query_string . "<br>";
-$query = pg_query($conn,$query_string);
+$query_string_2 = "SELECT * FROM mod_indicadores.template WHERE template_id = " . $template_id;
 
-$data = pg_fetch_assoc($query);
-var_dump($data);
-$file = file_get_contents($data["template_path"]);
+$query_2 = pg_query($conn,$query_string_2);
 
+$data_2 = pg_fetch_assoc($query_2);
+
+$file = file_get_contents($data_2["template_path"]);
+echo $data_2["template_path"];
 if ($file !== false && !empty($file)) {
 
 	echo $file . "<br> ARCHIVO CARGADO <br>";
 
 }else{
 	
-	echo "CADENA VACIA " . $data["template_path"];
+	echo "CADENA VACIA " . $data_2["template_path"];
 	
 }
 
