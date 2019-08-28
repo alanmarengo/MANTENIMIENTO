@@ -22,7 +22,7 @@
 	
 	
 </head>
-<body style="overflow:hidden;">
+<body>
 
 	<div id="page">
 	
