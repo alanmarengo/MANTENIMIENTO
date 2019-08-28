@@ -22,8 +22,16 @@ $query = pg_query($conn,$query_string);
 
 $data = pg_fetch_assoc($query);
 
-$file = file_get_contents($data["template_path"],FILE_USE_INCLUDE_PATH);
+$file = file_get_contents($data["template_path"]);
 
-echo $file;
+if ($file !== false && !empty($file)) {
+
+	echo $file . "<br> ARCHIVO CARGADO <br>";
+
+}else{
+	
+	echo "CADENA VACIA " . $data["template_path"];
+	
+}
 
 ?>
