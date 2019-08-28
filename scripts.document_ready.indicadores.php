@@ -3,6 +3,7 @@
 	$(document).ready(function() {
 		
 		indicadores = new ol_indicadores();
+		indicadores.panel.start();
 		
 		flotant = new Jump.flotant();
 		flotant.prepareToggle(".navmenu:not(#nav-panel)");
