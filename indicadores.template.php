@@ -10,6 +10,8 @@ $conn = pg_connect($string_conn);
 
 $query_string = "SELECT template_id FROM mod_indicadores.ind_panel WHERE ind_id = " . $ind_id;
 
+echo $query_string;
+
 $query = pg_query($conn,$query_string);
 
 $data = pg_fetch_assoc($query);
