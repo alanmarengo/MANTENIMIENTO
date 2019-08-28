@@ -21,7 +21,7 @@ $query_string = "SELECT * FROM mod_indicadores.template WHERE template_id = " . 
 $query = pg_query($conn,$query_string);
 
 $data = pg_fetch_assoc($query);
-
+var_dump($data);
 $file = file_get_contents($data["template_path"]);
 
 if ($file !== false && !empty($file)) {
