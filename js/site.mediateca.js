@@ -27,17 +27,6 @@ $(document).ready(function() {
         $('#imagemodal').modal('show');
     });
 
-    // TEXT SEARCH
-    //$('#uxSearchText').on('focusout', function() {
-    //    refreshSearchText();
-    //});
-
-    //$('#uxSearchText').on('keypress', function(e) {
-    //    if (e.which == 13) {
-    //        refreshSearchText();
-    //    }
-    //});
-
     // REMOVE FILTER
     $('body').on('click', '.filters-checked', function() {
         let group = $(this).data('group');
@@ -277,8 +266,8 @@ $(document).ready(function() {
                         link: value.LinkImagen,
                         title: value.Titulo,
                         estudio: value.estudios_id,
+                        tema: value.tema,
                         autor: 'autor',
-                        tema: 'tema',
                         fecha: 'fecha'
                     });
                 } else if (value.Solapa == 2) {
@@ -603,9 +592,7 @@ $(document).ready(function() {
                         </div>
                         <div class="media-info">
                             ${item.title.substr(0, 40)}<br />
-                            ${item.autor.substr(0, 40)}<br />
                             ${item.tema.substr(0, 40)}<br />
-                            ${item.fecha.substr(0, 40)}
                         </div>
                     </div>
                 </div>
