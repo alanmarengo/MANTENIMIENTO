@@ -40,7 +40,13 @@
 			<div class="row jump-row">
 			
 				<?php include("./html.panel-indicadores.php"); ?>
-			
+				
+				<div id="template-wrapper">
+				
+					
+				
+				</div>
+				
 			</div>
 			
 		</div>

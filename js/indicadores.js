@@ -34,7 +34,21 @@ function ol_indicadores() {
 
 	this.loadIndicador = function(ind_id) {
 		
-		alert(ind_id);
+		var req = $.ajax({
+			
+			async:false,
+			url:"./php/get-template-indicador.php",
+			type:"post",
+			data:{
+				ind_id:ind_id
+			},
+			success:function(d){}
+			
+		});		
+		
+		$("#template-wrapper").html(req.responseText);
+		
+		scroll.refresh();
 		
 	}
 		
