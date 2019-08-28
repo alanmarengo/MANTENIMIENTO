@@ -1,6 +1,6 @@
 <?php
 
-include("../pgconfig.php");
+include("./pgconfig.php");
 
 $ind_id = $_POST["ind_id"];
 
@@ -14,11 +14,7 @@ $query = pg_query($conn,$query_string);
 
 $data = pg_fetch_assoc($query);
 
-var_dump($conn);
-
-var_dump($data);
-
-/*$template_id = $data["template_id"];
+$template_id = $data["template_id"];
 
 $query_string_2 = "SELECT * FROM mod_indicadores.template WHERE template_id = " . $template_id;
 
@@ -27,7 +23,7 @@ $query_2 = pg_query($conn,$query_string_2);
 $data_2 = pg_fetch_assoc($query_2);
 
 $file = file_get_contents($data_2["template_path"]);
-echo $data_2["template_path"];
+
 if ($file !== false && !empty($file)) {
 
 	echo $file . "<br> ARCHIVO CARGADO <br>";
@@ -36,6 +32,6 @@ if ($file !== false && !empty($file)) {
 	
 	echo "CADENA VACIA " . $data_2["template_path"];
 	
-}*/
+}
 
 ?>
