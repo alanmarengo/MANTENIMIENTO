@@ -17,7 +17,7 @@ $data = pg_fetch_assoc($query);
 $template_id = $data["template_id"];
 
 $query_string = "SELECT * FROM mod_indicadores.template WHERE template_id = " . $template_id . "<br>";
-
+echo $query_string;
 $query = pg_query($conn,$query_string);
 
 $data = pg_fetch_assoc($query);
