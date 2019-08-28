@@ -22,6 +22,8 @@ $query = pg_query($conn,$query_string);
 
 $data = pg_fetch_assoc($query);
 
-include($data["template_path"]);
+$file = file_get_contents($data["template_path"],FILE_USE_INCLUDE_PATH);
+
+echo $file;
 
 ?>
