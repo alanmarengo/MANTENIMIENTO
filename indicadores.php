@@ -13,9 +13,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 	<?php include("./scripts.default-stats.php"); ?>	
-	<?php include("./scripts.stats.php"); ?>	
+	<?php include("./scripts.indicadores.php"); ?>	
 	<?php include("./scripts.onresize.php"); ?>	
-	<?php include("./scripts.document_ready.stats.php"); ?>
+	<?php include("./scripts.document_ready.indicadores.php"); ?>
 	
 	<?php// include("./scripts.default.php"); ?>
 	

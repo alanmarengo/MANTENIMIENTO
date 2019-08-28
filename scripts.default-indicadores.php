@@ -21,7 +21,7 @@
 
 <!-- SITE CSS -->
 
-<link rel="stylesheet" type="text/css" href="./css/bodyfix.stats.css">
+<link rel="stylesheet" type="text/css" href="./css/bodyfix.css">
 <link rel="stylesheet" type="text/css" href="./css/nav.css">
 <link rel="stylesheet" type="text/css" href="./css/navbar.main.css">
 <link rel="stylesheet" type="text/css" href="./css/navbar.tools.css">
@@ -49,11 +49,10 @@
 <!-- GEOVISOR -->
 
 <link rel="stylesheet" href="./css/geovisor/align.css"/>
-<link rel="stylesheet" href="./css/geovisor/buttons.css"/>
 <link rel="stylesheet" href="./css/geovisor/forms.css"/>
-<link rel="stylesheet" href="./css/geovisor/stats.css"/>
+<link rel="stylesheet" href="./css/geovisor/indicadores.css"/>
 <link rel="stylesheet" href="./css/geovisor/map.css"/>
-<link rel="stylesheet" href="./css/geovisor/panel-stats-view.css"/>
+<link rel="stylesheet" href="./css/geovisor/panel-stats.css"/>
 <link rel="stylesheet" href="./css/geovisor/popup.css"/>
 <link rel="stylesheet" href="./css/geovisor/input.css"/>
 <link rel="stylesheet" href="./css/geovisor/spacers.css"/>
@@ -85,7 +84,6 @@
 <script src="./js/scrollbars.js" type="text/javascript"></script>
 <script src="./js/moment.js"></script>
 <script src="./js/site.js" type="text/javascript"></script>
-<script src="./js/indicadores.js" type="text/javascript"></script>
 <script src="./js/widget-links.js" type="text/javascript"></script>
 
 <!-- COLORPICKER JS -->
