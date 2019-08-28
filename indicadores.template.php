@@ -22,6 +22,6 @@ $query = pg_query($conn,$query_string);
 
 $data = pg_fetch_assoc($query);
 
-echo $data["template_path"];
+include($data["template_path"]);
 
 ?>

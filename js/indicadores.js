@@ -37,7 +37,7 @@ function ol_indicadores() {
 		var req = $.ajax({
 			
 			async:false,
-			url:"./php/get-template-indicador.php",
+			url:"./indicadores.template.php",
 			type:"post",
 			data:{
 				ind_id:ind_id
