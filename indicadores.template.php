@@ -26,12 +26,12 @@ $file = file_get_contents($data_2["template_path"]);
 
 if ($file !== false && !empty($file)) {
 
-	echo $file . "<br> ARCHIVO CARGADO <br>";
+	echo $file;
 
-}else{
+}/*else{
 	
 	echo "CADENA VACIA " . $data_2["template_path"];
 	
-}
+}*/
 
 ?>
