@@ -10,13 +10,15 @@ $conn = pg_connect($string_conn);
 
 $query_string = "SELECT template_id FROM mod_indicadores.ind_panel WHERE ind_id = " . $ind_id;
 
-echo $query_string;
-
 $query = pg_query($conn,$query_string);
 
 $data = pg_fetch_assoc($query);
 
-$template_id = $data["template_id"];
+var_dump($conn);
+
+var_dump($data);
+
+/*$template_id = $data["template_id"];
 
 $query_string_2 = "SELECT * FROM mod_indicadores.template WHERE template_id = " . $template_id;
 
@@ -34,6 +36,6 @@ if ($file !== false && !empty($file)) {
 	
 	echo "CADENA VACIA " . $data_2["template_path"];
 	
-}
+}*/
 
 ?>
