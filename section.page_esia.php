@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="./css/page_esia.css" />
+<link rel="stylesheet" type="text/css" href="./css/page_template.css" />
 
 <div id="page_esia" class="page page_template">
     <div class="row">
@@ -177,7 +177,7 @@ $(document).ready(function() {
     $('.section-sticky a').on('click', function() {
         let selector = $(this).data('target');
         $('html, body').animate({
-            scrollTop: $(selector).offset().top - 150
+            scrollTop: $(selector).offset().top - 180
         }, 500)
     });
 

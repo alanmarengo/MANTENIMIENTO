@@ -2,10 +2,11 @@
   font-size: 12px;
 }
 .page_template .top-buttons {
+  text-transform: uppercase;
   background-color: #f3f3f3;
-  padding: 2em;
+  padding: 3em 2em;
   padding-left: 2.5em;
-  font-size: 11px;
+  font-size: 12px;
   position: -webkit-sticky;
   position: sticky;
   top: 68px;
@@ -177,4 +178,11 @@
 }
 #page_esia .temas-interes .icono img {
   margin-bottom: 10px;
+}
+#page_ahrsc .imagen {
+  height: 300px;
+  width: 100%;
+  background-image: url('images/ahrsc_fondo.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
