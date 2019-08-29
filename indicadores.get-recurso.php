@@ -18,7 +18,7 @@ $layer_id = array();
 $layer_name = array();
 $layer_server = array();
 
-echo "PRESHOW";
+echo $query_string;
 
 while($r = pg_fetch_assoc($query)) {
 	
