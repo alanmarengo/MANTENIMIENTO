@@ -1,0 +1,13 @@
+#template-wrapper {
+	
+	background-color:#FFFFFF;
+	padding:35px 50px;
+	
+}
+
+#template-wrapper .col {
+	
+	padding:10px;
+	border:1px solid #CCCCCC;
+	
+}
