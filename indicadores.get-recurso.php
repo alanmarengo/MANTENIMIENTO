@@ -9,12 +9,64 @@ $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . 
 	
 $conn = pg_connect($string_conn);
 
-$query_string = "SELECT dt_mapeo_query FROM mod_estadistica.dt_mapeo WHERE dt_mapeo_id = $query_id";
+$query_string = "SELECT * FROM mod_indicadores.vw_recursos WHERE ind_id = $ind_id AND posicion = $pos";
 
 $query = pg_query($conn,$query_string);
 
-$data = pg_fetch_assoc($query);
+$layer_id = array();
 
-echo "INDICADOR: " . $ind_id . " :: " . " POSICIÓN: " . $pos;
+while($r = pg_fetch_assoc($query)) {
+	
+	switch($r["resource_type"]) {
+		
+		case "capa":
+		$type = "capa";
+		array_push($layer_id,$r["resource_id"]);
+		break;
+		
+	}
+	
+}
 
 ?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+	<title>Geovisor</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">		
+		
+	<?php include("./scripts.default.php"); ?>	
+	<?php include("./scripts.openlayers.php"); ?>	
+	<?php include("./scripts.highcharts.php"); ?>	
+	<?php include("./scripts.map.php"); ?>	
+
+	<script type="text/javascript">
+	
+		$(document).ready(function() {
+	
+		<?php
+		
+		if ($type == "capa") {
+			
+		?>
+		
+		alert('<?php echo implode(",",$layer_id); ?>');
+		
+		<?php
+			
+		}
+		
+		?>
+		
+		});
+	
+	</script>
+	
+	</head>
+	<body style="overflow:hidden;">
+		<?php echo implode(",",$layer_id); ?>
+	</body>
+</html>
