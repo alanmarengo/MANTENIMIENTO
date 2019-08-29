@@ -115,11 +115,11 @@ while($r = pg_fetch_assoc($query)) {
 	
 	</div>
 
-	<?php echo $query_string; ?>
+	<?php //echo $query_string; ?>
 	
-	<?php var_dump($layer_id); ?>
-	<?php var_dump($layer_name); ?>
-	<?php var_dump($layer_server); ?>
+	<?php// var_dump($layer_id); ?>
+	<?php //var_dump($layer_name); ?>
+	<?php //var_dump($layer_server); ?>
 	
 </body>
 </html>
