@@ -114,5 +114,9 @@ while($r = pg_fetch_assoc($query)) {
 	
 	</div>
 
+	<?php echo $query_string; ?>
+	
+	<?php var_dump($layer_id); ?>
+	
 </body>
 </html>
