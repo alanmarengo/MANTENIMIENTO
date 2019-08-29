@@ -18,7 +18,7 @@ $layer_id = array();
 $layer_name = array();
 $layer_server = array();
 
-echo pg_fetch_assoc($query);
+echo pg_num_rows($query);
 
 while($r = pg_fetch_assoc($query)) {
 	
