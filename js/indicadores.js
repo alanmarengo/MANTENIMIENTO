@@ -51,7 +51,6 @@ function ol_indicadores() {
 		$("#template-wrapper .resource-col").each(function(i,v) {
 			
 			var pos = $(v).attr("data-pos");
-			alert(pos);
 			this.loadIndicadorResource(ind_id,pos);
 			
 		}.bind(this));
@@ -62,7 +61,20 @@ function ol_indicadores() {
 	
 	this.loadIndicadorResource = function(ind_id,pos) {
 		
-		alert(ind_id + " :: " + pos);
+		var req = $.ajax({
+			
+			async:false,
+			url:"./indicadores.get-recurso.php",
+			type:"post",
+			data:{
+				ind_id:ind_id,
+				pos:pos
+			},
+			success:function(d){}
+			
+		});
+		
+		$("#template-wrapper .resource-col[data-pos="+pos+"]").html(req.responseText);
 		
 	}
 		
