@@ -1,6 +1,6 @@
 <?php
 
-include("../pgconfig.php");
+include("./pgconfig.php");
 
 $ind_id = $_POST["ind_id"];
 $pos = $_POST["pos"];
@@ -17,8 +17,6 @@ $query = pg_query($conn,$query_string);
 $layer_id = array();
 $layer_name = array();
 $layer_server = array();
-
-echo pg_num_rows($query);
 
 while($r = pg_fetch_assoc($query)) {
 	
