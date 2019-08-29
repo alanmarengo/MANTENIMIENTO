@@ -20,6 +20,8 @@ $layer_server = array();
 
 while($r = pg_fetch_assoc($query)) {
 	
+	echo "<br>" . $r["resource_type"] . "<br>";
+	
 	switch($r["resource_type"]) {
 		
 		case "capa":
@@ -27,7 +29,6 @@ while($r = pg_fetch_assoc($query)) {
 		array_push($layer_id,$r["resource_id"]);
 		array_push($layer_name,$r["layer_name"]);
 		array_push($layer_server,$r["layer_server"]);
-		echo "ES UNA CAPA";
 		break;
 		
 	}
@@ -119,6 +120,8 @@ while($r = pg_fetch_assoc($query)) {
 	<?php echo $query_string; ?>
 	
 	<?php var_dump($layer_id); ?>
+	<?php var_dump($layer_name); ?>
+	<?php var_dump($layer_server); ?>
 	
 </body>
 </html>
