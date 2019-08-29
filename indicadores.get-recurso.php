@@ -14,6 +14,7 @@ $query_string = "SELECT * FROM mod_indicadores.vw_recursos WHERE ind_id = $ind_i
 $query = pg_query($conn,$query_string);
 
 $layer_id = array();
+$layer_name = array();
 
 while($r = pg_fetch_assoc($query)) {
 	
@@ -22,51 +23,23 @@ while($r = pg_fetch_assoc($query)) {
 		case "capa":
 		$type = "capa";
 		array_push($layer_id,$r["resource_id"]);
+		array_push($layer_name,$r["layer_name"]);
 		break;
 		
 	}
 	
 }
 
+switch($type) {
+	
+	case "capa":
+	$output = "{";
+	$output .= "\"type\":\"layer\",";
+	$output .= "\"layer_id\":[".implode(",",$layer_id) . "]";
+	$output .= "\"layer_name\":[".implode(",",$layer_name) . "]";
+	$output .= "}";
+	break;
+	
+}
+
 ?>
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-
-	<title>Geovisor</title>
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1">		
-		
-	<?php include("./scripts.default.php"); ?>	
-	<?php include("./scripts.openlayers.php"); ?>	
-	<?php include("./scripts.highcharts.php"); ?>	
-	<?php include("./scripts.map.php"); ?>	
-
-	<script type="text/javascript">
-	
-		$(document).ready(function() {
-	
-		<?php
-		
-		if ($type == "capa") {
-			
-		?>
-		
-		alert('<?php echo implode(",",$layer_id); ?>');
-		
-		<?php
-			
-		}
-		
-		?>
-		
-		});
-	
-	</script>
-	
-	</head>
-	<body style="overflow:hidden;">
-		<?php echo implode(",",$layer_id); ?>
-	</body>
-</html>

@@ -74,6 +74,16 @@ function ol_indicadores() {
 			
 		});
 		
+		var js = JSON.parse(req.responseText);
+		
+		switch(js.type) {
+			
+			case "layer":
+			alert(js.layer_name);
+			break;
+			
+		}
+		
 		$("#template-wrapper .resource-col[data-pos="+pos+"]").html(req.responseText);
 		
 	}
