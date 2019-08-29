@@ -48,7 +48,20 @@ function ol_indicadores() {
 		
 		$("#template-wrapper").html(req.responseText);
 		
+		$("#template-wrapper .resource-col").each(function(i,v) {
+			
+			var pos = $(v).attr("data-pos");
+			this.loadIndicadorResource(ind_id,pos);
+			
+		}.bind(this));
+		
 		scroll.refresh();
+		
+	}
+	
+	this.loadIndicadorResource = function(ind_id,pos) {
+		
+		alert(ind_id + " :: " + pos);
 		
 	}
 		
