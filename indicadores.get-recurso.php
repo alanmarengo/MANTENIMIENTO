@@ -56,7 +56,7 @@ while($r = pg_fetch_assoc($query)) {
 	
 		var map_layers = [];
 	
-		var base = new ol.layer.Tile({
+		var map_layers[0] = new ol.layer.Tile({
 			name: 'openstreets',
 			title: 'OSM',
 			type: 'base',
@@ -67,15 +67,13 @@ while($r = pg_fetch_assoc($query)) {
 			})
 		});
 		
-		map_layers.push(base);
-		
 		<?php
 		
 		for ($i=0; $i<sizeof($layer_id); $i++) {
 			
 		?>
 		
-		map_layers.push(new ol.layer.Tile({
+		map_layers[<?php echo ($i+1); ?>] = new ol.layer.Tile({
 				visible:true,
 				source: new ol.source.TileWMS({
 					url: '<?php echo $layer_server[$i]; ?>'
@@ -87,7 +85,6 @@ while($r = pg_fetch_assoc($query)) {
 					}
 				})
 			});
-		);
 		
 		<?php
 			
