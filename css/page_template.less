@@ -7,6 +7,7 @@
         padding: 3em 2em;
         padding-left: 2.5em; 
         font-size: 12px;
+        border-bottom: 1px solid #fff;
 
         position: -webkit-sticky;
         position: sticky;
@@ -31,6 +32,72 @@
         }
     }
     
+    .section-footer {
+        padding: 30px 20px 0px 20px;
+        text-align: center;
+        width: 100%;
+
+        .section-footer-title {
+            font-weight: bolder;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .section-footer-buttons {
+            margin-bottom: 10px;
+            display: inline-block;
+
+            a {
+                float: left;
+                margin-left: 20px;
+            }
+
+            .section-footer-button {
+                border-radius: 4px;
+                color: #fff;
+                background-color: #333;
+                padding: 8px 16px;
+
+                i {
+                    margin-right: 6px;
+                }
+            }
+
+            .section-footer-button2 {
+                display: block;
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+
+                background-repeat: no-repeat;
+                background-position: top left;
+                background-size: cover;
+            }
+
+            .button2-mediateca {
+                background-image: url('../images/icono-mediateca-relleno.png');
+                background-color: #ffa91b;
+            }
+
+            .button2-geovisores {
+                background-image: url('../images/icono-geovisores-relleno.png');
+                background-color: #8e2f4f;
+            }
+
+            .button2-estadisticas {
+                background-image: url('../images/icono-estadisticas-relleno.png');
+                background-color: #310133;
+            }
+
+            .button2-indicadores {
+                background-image: url('../images/icono-indicadores-relleno.png');
+                background-color: #585dc5;
+            }
+        }
+    }
+
+
+
     .section-a {
         padding: 2em 6em 2em 6em;
         background-color: #fff; 
@@ -40,6 +107,7 @@
             font-size: 16px;
             font-weight: bolder;
             margin-bottom: 2em;
+            text-transform: uppercase;
         }
 
         a {
@@ -57,6 +125,7 @@
             font-size: 16px;
             font-weight: bolder;
             margin-bottom: 2em;
+            text-transform: uppercase;
         }
 
         a {
@@ -199,14 +268,22 @@
     }
 }
 
+.parrafos {
+    p {
+        padding-bottom: 0px;
+    }
+
+    h5 {
+        font-size: 12px!important;
+    }
+}
+
 #page_ahrsc {
     .imagen {
         height: 300px; 
         width: 100%;
-        background-image:url('./images/ahrsc_fondo.jpg');
+        background-image:url('../images/ahrsc_fondo.jpg');
         background-repeat:no-repeat;
         background-size:cover;
     }
-
-
 }

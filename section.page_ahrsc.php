@@ -35,6 +35,212 @@
                 </div>
             </div>
         </div>
+
+        <div class="col-md-12 section-b condor">
+            <a id="condor"></a>
+            <h3 style="color: #8e2f4f;">CÓNDOR CLIFF</h3>
+
+            <div class="row" style="padding-left: 2em; padding-right: 2em;">
+                <div class="col-md-6 parrafos">
+                    <p>
+                        <h5>PRENSA</h5>
+                        La presa es una de las estructuras que tiene por objetivo generar el cierre hidráulico del río Santa Cruz, permitiendo embalsar el agua disponible. Es del tipo CFRD (Concrete Face Rockfill dam), alcanza una altura máxima de 41 m, y desarrolla una longitud de 2445 m. Sobre su coronamiento posee un camino a cota de 118,5 mIGN
+                    </p>
+                    <p>
+                        <h5>VERTEDERO</h5>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    </p>
+                    <p>
+                        <h5>OBRA DE TOMA</h5>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    </p>
+                    <p>
+                        <h5>CASA DE MAQUINAS</h5>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    </p>
+                </div>
+                <div class="col-md-6 parrafos">
+                    <p>
+                        <h5>DESCARGADOR DE FONDO</h5>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    </p>
+                    <p>
+                        <h5>ESCALA DE PECES</h5>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    </p>
+                    <p>
+                        <h5>CAMINOS DE ACCESOS</h5>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    </p>
+                </div>
+
+                <div style="border: solid 1px #666; margin: 10px 15px 0px 15px; width: 100%;">
+                    <div style="padding: 10px; background-color: #fff; color: #333; text-align: center;">
+                        VARIACIÓN DE TEMPERATURA POR MES<br />
+                        <small>Observado en Santa Cruz, 2018</small>
+                    </div>
+                    <div>
+                        <img src="./images/mapa_ahrsc.png" style="width: 100%; height: auto;">
+                    </div>
+                </div>
+
+                <div class="section-footer">
+                    <div class="section-footer-title">
+                        VER FICHA Y RECURSOS ASOCIADOS DE CONDOR CLIFF:
+                    </div>
+                    <div class="section-footer-buttons">
+                        <a href="#" class="section-footer-button">
+                            <i class="fa fa-file-alt"></i>
+                            VER FICHA
+                        </a>
+                        <a href="#" class="section-footer-button2 button2-mediateca"></a>
+                        <a href="#" class="section-footer-button2 button2-geovisores"></a>
+                        <a href="#" class="section-footer-button2 button2-estadisticas"></a>
+                        <a href="#" class="section-footer-button2 button2-indicadores"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 section-a barrancosa">
+            <a id="barrancosa"></a>
+            <h3 style="color: #666;">LA BARRANCOSA</h3>
+
+            <div class="row" style="padding-left: 2em; padding-right: 2em;">
+                <div class="col-md-6 parrafos">
+                    <p>
+                        <h5>PRENSA</h5>
+                        La presa es una de las estructuras que tiene por objetivo generar el cierre hidráulico del río Santa Cruz, permitiendo embalsar el agua disponible. Es del tipo CFRD (Concrete Face Rockfill dam), alcanza una altura máxima de 41 m, y desarrolla una longitud de 2445 m. Sobre su coronamiento posee un camino a cota de 118,5 mIGN
+                    </p>
+                    <p>
+                        <h5>VERTEDERO</h5>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    </p>
+                    <p>
+                        <h5>OBRA DE TOMA</h5>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    </p>
+                    <p>
+                        <h5>CASA DE MAQUINAS</h5>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    </p>
+                </div>
+                <div class="col-md-6 parrafos">
+                    <p>
+                        <h5>DESCARGADOR DE FONDO</h5>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    </p>
+                    <p>
+                        <h5>ESCALA DE PECES</h5>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    </p>
+                    <p>
+                        <h5>CAMINOS DE ACCESOS</h5>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    </p>
+                </div>
+
+                <div class="section-footer">
+                    <div class="section-footer-title">
+                        VER FICHA Y RECURSOS ASOCIADOS DE LA BARRANCOSA:
+                    </div>
+                    <div class="section-footer-buttons">
+                        <a href="#" class="section-footer-button">
+                            <i class="fa fa-file-alt"></i>
+                            VER FICHA
+                        </a>
+                        <a href="#" class="section-footer-button2 button2-mediateca"></a>
+                        <a href="#" class="section-footer-button2 button2-geovisores"></a>
+                        <a href="#" class="section-footer-button2 button2-estadisticas"></a>
+                        <a href="#" class="section-footer-button2 button2-indicadores"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 section-b linea">
+            <a id="linea"></a>
+            <h3 style="color: #666;">Línea eléctrica de alta tensión</h3>
+
+            <div class="row" style="padding-left: 2em; padding-right: 2em;">
+                <div class="col-md-6 parrafos">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.                    
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+                <div class="col-md-6 parrafos">
+                    <p>
+                        <h5>LOREM IPSUM</h5>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    </p>
+                    <p>
+                        <h5>LOREM IPSUM</h5>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    </p>
+                    <p>
+                        <h5>LOREM IPSUM</h5>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    </p>
+                    <p>
+                        <h5>LOREM IPSUM</h5>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    </p>
+                </div>
+
+                <div class="section-footer">
+                    <div class="section-footer-title">
+                        VER FICHA Y RECURSOS ASOCIADOS de alta tensión:
+                    </div>
+                    <div class="section-footer-buttons">
+                        <a href="#" class="section-footer-button">
+                            <i class="fa fa-file-alt"></i>
+                            VER FICHA
+                        </a>
+                        <a href="#" class="section-footer-button2 button2-mediateca"></a>
+                        <a href="#" class="section-footer-button2 button2-geovisores"></a>
+                        <a href="#" class="section-footer-button2 button2-estadisticas"></a>
+                        <a href="#" class="section-footer-button2 button2-indicadores"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 section-a antena">
+            <a id="antena"></a>
+            <h3 style="color: #666;">Antenas/Receptores SHF (MW)</h3>
+
+            <div class="row" style="padding-left: 2em; padding-right: 2em;">
+                <div class="col-md-6 parrafos">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+                <div class="col-md-6 parrafos">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+
+                <div class="section-footer">
+                    <div class="section-footer-title">
+                        VER FICHA Y RECURSOS ASOCIADOS de Antenas/Receptores SHF (MW):
+                    </div>
+                    <div class="section-footer-buttons">
+                        <a href="#" class="section-footer-button">
+                            <i class="fa fa-file-alt"></i>
+                            VER FICHA
+                        </a>
+                        <a href="#" class="section-footer-button2 button2-mediateca"></a>
+                        <a href="#" class="section-footer-button2 button2-geovisores"></a>
+                        <a href="#" class="section-footer-button2 button2-estadisticas"></a>
+                        <a href="#" class="section-footer-button2 button2-indicadores"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -43,7 +249,7 @@ $(document).ready(function() {
     $('.section-sticky a').on('click', function() {
         let selector = $(this).data('target');
         $('html, body').animate({
-            scrollTop: $(selector).offset().top - 200
+            scrollTop: $(selector).offset().top - 180
         }, 500)
     });
 
