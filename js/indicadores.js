@@ -74,8 +74,6 @@ function ol_indicadores() {
 			
 		});
 		
-		var js = JSON.parse(req.responseText);
-		
 		$("#template-wrapper .resource-col[data-pos="+pos+"]").html(req.responseText);
 		
 	}
