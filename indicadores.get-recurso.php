@@ -20,7 +20,7 @@ $layer_server = array();
 
 while($r = pg_fetch_assoc($query)) {
 	
-	echo "<br>" . $r["resource_type"] . "<br>";
+	echo "<br>e" . $r["resource_type"] . "<br>";
 	
 	switch($r["resource_type"]) {
 		
