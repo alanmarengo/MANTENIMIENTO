@@ -42,4 +42,6 @@ switch($type) {
 	
 }
 
+echo $output;
+
 ?>
