@@ -113,7 +113,7 @@ while($r = pg_fetch_assoc($query)) {
 </head>
 <body>
 
-	<div id="resource-loader">
+	<div id="resource-loader" style="width:100%; max-height:400px;">
 	
 	</div>
 
