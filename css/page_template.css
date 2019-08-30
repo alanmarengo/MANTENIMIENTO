@@ -247,36 +247,3 @@
 .parrafos h5 {
   font-size: 12px!important;
 }
-#page_ahrsc .imagen {
-  height: 300px;
-  width: 100%;
-  background-image: url('../images/ahrsc_fondo.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-#page_ahrsc .iframe-container {
-  position: relative;
-  overflow: hidden;
-  padding-top: 56.25%;
-}
-#page_ahrsc .iframe-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%!important;
-  height: 100%!important;
-  border: 0;
-}
-#page_ahrsc .iframe-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-}
-#page_ahrsc .iframe-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
