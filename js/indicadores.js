@@ -74,10 +74,58 @@ function ol_indicadores() {
 			
 		});
 		
-		$("#template-wrapper .resource-col[data-pos="+pos+"]").html(req.responseText);
+		var js = JSON.parse(req.responseText);
 		
-		indMap.updateSize();
-		indMap.render();
+		switch(js.type) {
+			
+			case "layer":
+			
+			var map_layers = [];
+		
+			map_layers[0] = new ol.layer.Tile({
+				name: 'openstreets',
+				title: 'OSM',
+				type: 'base',
+				visible: true,
+				source: new ol.source.XYZ({
+					url: '//{a-c}.tile.openstreetmaps.org/{z}/{x}/{y}.png',
+					crossOrigin: 'anonymous'
+				})
+			});
+			
+			for (var i=0; $i<js.layers.length; $i++) {
+			
+				map_layers[i+1] = new ol.layer.Tile({
+					visible:true,
+					source: new ol.source.TileWMS({
+						url: js.layers_server[i];
+						params: {
+							'LAYERS': '<?php echo $layer_name[$i]; ?>',
+							'VERSION': '1.1.1',
+							'FORMAT': 'image/png',
+							'TILED': false
+						}
+					})
+				});
+				
+			}
+			
+			var indMap = new ol.Map({
+				layers:map_layers,
+				target: "#template-wrapper .resource-col[data-pos="+pos+"]",
+				extent: [-13281237.21183002,-7669922.0600572005,-738226.6183457375,-1828910.1066171727],
+				controls: [],
+				view: new ol.View({
+					center: [-7176058.888636417,-4680928.505993671],
+					zoom:3.8,
+					minZoom: 3.8,
+					maxZoom: 21
+				})
+			});
+			
+			break;
+			
+		}
 		
 	}
 		

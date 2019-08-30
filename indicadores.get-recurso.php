@@ -33,96 +33,18 @@ while($r = pg_fetch_assoc($query)) {
 	
 }
 
+$out = "";
+
+switch($type) {
+	
+	case "capa":
+	$out .= "{";
+	$out .= "\"type\":\"layer\",";
+	$out .= "\"layers\":[\"".implode("\",\"",$layer_name)."],";
+	$out .= "\"layers_server\":[\"".implode("\",\"",$layer_server)."],";
+	$out .= "}";
+	break;
+	
+}
+
 ?>
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-
-	<title>Geovisor</title>
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-		
-	<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
-	
-	<!-- CSS -->
-
-	<link rel="stylesheet" href="./js/openlayers/ol.css"/>
-
-	<!-- JS -->
-
-	<script src="./js/openlayers/ol.js" type="text/javascript"></script>
-	
-	<script type="text/javascript">
-	
-		$(document).ready(function() {
-	
-			var map_layers = [];
-		
-			map_layers[0] = new ol.layer.Tile({
-				name: 'openstreets',
-				title: 'OSM',
-				type: 'base',
-				visible: true,
-				source: new ol.source.XYZ({
-					url: '//{a-c}.tile.openstreetmaps.org/{z}/{x}/{y}.png',
-					crossOrigin: 'anonymous'
-				})
-			});
-			
-			<?php
-			
-			for ($i=0; $i<sizeof($layer_id); $i++) {
-				
-			?>
-			
-			map_layers[<?php echo ($i+1); ?>] = new ol.layer.Tile({
-					visible:true,
-					source: new ol.source.TileWMS({
-						url: '<?php echo $layer_server[$i]; ?>'
-						params: {
-							'LAYERS': '<?php echo $layer_name[$i]; ?>',
-							'VERSION': '1.1.1',
-							'FORMAT': 'image/png',
-							'TILED': false
-						}
-					})
-				});
-			
-			<?php
-				
-			}
-			
-			?>
-			
-			var indMap = new ol.Map({
-				layers:map_layers,
-				target: 'resource-loader',
-				extent: [-13281237.21183002,-7669922.0600572005,-738226.6183457375,-1828910.1066171727],
-				controls: [],
-				view: new ol.View({
-					center: [-7176058.888636417,-4680928.505993671],
-					zoom:3.8,
-					minZoom: 3.8,
-					maxZoom: 21
-				})
-			});
-			
-		});
-	</script>
-	
-</head>
-<body>
-
-	<div id="resource-loader" style="width:100%; max-height:400px;">
-	
-	</div>
-
-	<?php //echo $query_string; ?>
-	
-	<?php// var_dump($layer_id); ?>
-	<?php //var_dump($layer_name); ?>
-	<?php //var_dump($layer_server); ?>
-	
-</body>
-</html>
