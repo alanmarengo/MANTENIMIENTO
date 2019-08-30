@@ -29,7 +29,7 @@ while ($r = pg_fetch_assoc($query)) {
 	}
 	
 	$series .= "\"name\":\"" . $r["sector"] . "\",";
-	$series .= "\"y\":\"" . $r["valor"] . "\"";
+	$series .= "\"y\":" . $r["valor"] . "";
 	$series .= "},";
 	
 	$first = false;
