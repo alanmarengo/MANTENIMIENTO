@@ -43,11 +43,15 @@ while($r = pg_fetch_assoc($query)) {
 		while($s = pg_fetch_assoc($query_tabla)) {
 			
 			if ($firstCur) {
+				
+				if (!strpos($colname,"geom")) {
 			
-				foreach($s as $colname => $val) {
-					
-					array_push($columns,$colname);
-					
+					foreach($s as $colname => $val) {
+						
+						array_push($columns,$colname);
+						
+					}
+				
 				}
 
 			}
@@ -55,8 +59,12 @@ while($r = pg_fetch_assoc($query)) {
 			$data .= "[";
 			
 			foreach($s as $colname => $val) {
-						
-				$data .= "\"" . $s[$colname] . "\",";
+				
+				if (!strpos($colname,"geom")) {
+				
+					$data .= "\"" . $s[$colname] . "\",";
+				
+				}
 				
 			}
 			
