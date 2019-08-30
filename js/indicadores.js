@@ -159,7 +159,7 @@ function ol_indicadores() {
 			
 			table.appendChild(headRow);
 			
-			$("#indicador-col-pos-"+pos).clear();
+			$("#indicador-col-pos-"+pos).empty();
 			document.getElementById("indicador-col-pos-"+pos).appendChild(table);
 			
 			break;
