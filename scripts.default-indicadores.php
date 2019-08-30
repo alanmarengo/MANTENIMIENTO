@@ -53,6 +53,7 @@
 <link rel="stylesheet" href="./css/geovisor/stats.css"/>
 <link rel="stylesheet" href="./css/geovisor/map.css"/>
 <link rel="stylesheet" href="./css/geovisor/panel-stats.css"/>
+<link rel="stylesheet" href="./css/geovisor/panel-stats-view.css"/>
 <link rel="stylesheet" href="./css/geovisor/indicadores.css"/>
 <link rel="stylesheet" href="./css/geovisor/popup.css"/>
 <link rel="stylesheet" href="./css/geovisor/input.css"/>
