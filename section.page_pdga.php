@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="./css/page_template.css" />
 
-<div id="page_esia" class="page page_template">
+<div id="page_pdga" class="page page_template">
     <div class="row">
         <div class="col-md-12 page-title">
             Plan director de gestión ambiental - PDGA.
@@ -40,8 +40,35 @@ La ejecución del PGA involucra actores de diversos ámbitos, con distintos nive
             <a id="estructura"></a>
             <h3>ESTRUCTURA DEL PDGA</h3>
 
-            <div class="row" style="padding-left: 2em; padding-right: 2em;">
-                <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-2">
+                    <a href="#">
+                        <div class="circulo">OBSERVATORIO AMBIENTAL</div>
+                    </a>
+                </div>
+                <div class="col-md-2">
+                    <a href="#">
+                        <div class="circulo">PGA de construcción </div>
+                    </a>
+                </div>
+                <div class="col-md-2">
+                    <a href="#">
+                        <div class="circulo">PGA de operación</div>
+                    </a>
+                </div>
+                <div class="col-md-2">
+                    <a href="#">
+                        <div class="circulo">SIA</div>
+                    </a>
+                </div>
+                <div class="col-md-2">
+                    <a href="#">
+                        <div class="circulo">Componentes ambientales</div>
+                    </a>
+                </div>
+                <div class="col-md-1">
                 </div>
             </div>
         </div>
@@ -93,10 +120,9 @@ Especialidades involucradas,  asesores internacionales.
                     </p>
                 </div>
 
-
                 <div class="section-footer">
                     <div class="section-footer-buttons">
-                    <a href="#" class="section-footer-button">
+                        <a href="#" class="section-footer-button">
                             MEDIATECA
                         </a>
                         <a href="#" class="section-footer-button">
@@ -104,8 +130,6 @@ Especialidades involucradas,  asesores internacionales.
                         </a>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>

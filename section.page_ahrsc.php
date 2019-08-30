@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="./css/page_template.css" />
 
-<div id="page_esia" class="page page_template">
+<div id="page_ahrsc" class="page page_template">
     <div class="row">
         <div class="col-md-12 page-title">
             Observatorio  de los Aprovechamientos Hidroeléctricos del Río Sant Cruz - AHRSC

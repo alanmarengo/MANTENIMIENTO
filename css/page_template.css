@@ -27,6 +27,12 @@
   background-color: #8d3050;
   color: #fff;
 }
+.page_template .parrafos p {
+  padding-bottom: 0px;
+}
+.page_template .parrafos h5 {
+  font-size: 12px!important;
+}
 .page_template .section-footer {
   padding: 30px 20px 0px 20px;
   text-align: center;
@@ -49,7 +55,7 @@
   border-radius: 4px;
   color: #fff;
   background-color: #333;
-  padding: 8px 16px;
+  padding: 8px 32px;
 }
 .page_template .section-footer .section-footer-buttons .section-footer-button i {
   margin-right: 6px;
@@ -241,9 +247,17 @@
 #page_esia .temas-interes .icono:hover {
   color: #8e2f4f;
 }
-.parrafos p {
-  padding-bottom: 0px;
-}
-.parrafos h5 {
-  font-size: 12px!important;
+#page_pdga .circulo {
+  color: #666!important;
+  border: solid 4px #ccc;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  padding: 50px 20px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
