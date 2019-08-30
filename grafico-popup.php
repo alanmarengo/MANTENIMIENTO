@@ -29,7 +29,7 @@
 			
 			var js = JSON.parse(req.responseText);
 		
-			Highcharts.chart('container', {
+			Highcharts.chart('grafico', {
 				chart: {
 					plotBackgroundColor: null,
 					plotBorderWidth: null,
