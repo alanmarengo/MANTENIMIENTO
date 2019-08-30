@@ -44,7 +44,7 @@ while($r = pg_fetch_assoc($query)) {
 			
 			if ($firstCur) {
 				
-				if (strpos($colname,"geom") == "-1") {
+				if (strpos($colname,"geom") === false) {
 			
 					foreach($s as $colname => $val) {
 						
@@ -60,7 +60,7 @@ while($r = pg_fetch_assoc($query)) {
 			
 			foreach($s as $colname => $val) {
 				
-				if (strpos($colname,"geom") == "-1") {
+				if (strpos($colname,"geom") === false) {
 				
 					$data .= "\"" . $s[$colname] . "\",";
 				
