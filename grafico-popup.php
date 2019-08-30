@@ -67,7 +67,7 @@
 	
 </head>
 
-<body>
+<body style="width:100%; height:100%; overflow:hidden;">
 
 	<div id="grafico" style="width:100%; height:100;"></div>
 
