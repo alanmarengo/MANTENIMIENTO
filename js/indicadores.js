@@ -79,7 +79,7 @@ function ol_indicadores() {
 		switch(js.type) {
 			
 			case "layer":
-			alert("is layer");
+			
 			var map_layers = [];
 		
 			map_layers[0] = new ol.layer.Tile({
