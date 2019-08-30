@@ -39,7 +39,8 @@
 					type: 'pie'
 				},
 				title: {
-					text: js.titulo
+					//text: js.titulo
+					text: 'gtitle'
 				},
 				tooltip: {
 					pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
