@@ -126,6 +126,12 @@ function ol_indicadores() {
 			
 			break;
 			
+			case "tabla":
+			
+			console.log(js);
+			
+			break;
+			
 		}
 		
 	}
