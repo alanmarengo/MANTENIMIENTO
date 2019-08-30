@@ -233,10 +233,10 @@
                             <i class="fa fa-file-alt"></i>
                             VER FICHA
                         </a>
-                        <a href="#" class="section-footer-button2 button2-mediateca"></a>
-                        <a href="#" class="section-footer-button2 button2-geovisores"></a>
-                        <a href="#" class="section-footer-button2 button2-estadisticas"></a>
-                        <a href="#" class="section-footer-button2 button2-indicadores"></a>
+                        <a href="#" class="section-footer-button2 button2-mediateca tooltip2" title="MEDIATECA"></a>
+                        <a href="#" class="section-footer-button2 button2-geovisores" title="GEOVISORES"></a>
+                        <a href="#" class="section-footer-button2 button2-estadisticas" title="ESTADISTICAS"></a>
+                        <a href="#" class="section-footer-button2 button2-indicadores" title="INDICADORES"></a>
                     </div>
                 </div>
             </div>
