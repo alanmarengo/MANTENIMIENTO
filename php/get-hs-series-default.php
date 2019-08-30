@@ -32,4 +32,6 @@ $json .= "\"etiqueta\":\"" . $etiqueta . "\",";
 $json .= "\"series\":[" . $series . "]";
 $json .= "}";
 
+echo $json;
+
 ?>
