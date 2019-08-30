@@ -12,15 +12,27 @@ $query = pg_query($conn,$query_string);
 
 $series = "";
 
+$first = true;
+
 while ($r = pg_fetch_assoc($query)) {
 	
 	$titulo = $r["titulo"];
 	$etiqueta = $r["etiqueta"];
 	
 	$series .= "{";
+	
+	if ($first) {
+	
+		$series .= "\"sliced\":true,";
+		$series .= "\"selected\":true,";
+	
+	}
+	
 	$series .= "\"name\":\"" . $r["sector"] . "\",";
 	$series .= "\"y\":\"" . $r["valor"] . "\"";
 	$series .= "},";
+	
+	$first = false;
 	
 }
 
