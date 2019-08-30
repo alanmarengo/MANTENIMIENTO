@@ -130,7 +130,8 @@ function ol_indicadores() {
 			
 			var table = document.createElement("table");
 			var headRow = document.createElement("tr");
-			alert(js.columns.length);
+			alert("tabla");
+			console.log(js);
 			for (var i=0; i<js.columns.length; i++) {
 				
 				var td = document.createElement("td");
