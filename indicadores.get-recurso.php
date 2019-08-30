@@ -65,6 +65,8 @@ while($r = pg_fetch_assoc($query)) {
 			$data = substr($data,0,strlen($data)-1);
 			$data .= "],";
 			
+			$firstCur = false;
+			
 		}
 		
 		$columns = substr($columns,0,strlen($columns)-1);
