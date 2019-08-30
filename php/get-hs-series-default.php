@@ -18,8 +18,8 @@ while ($r = pg_fetch_assoc($query)) {
 	$etiqueta = $r["etiqueta"];
 	
 	$series .= "{";
-	$series .= "\"name\":\"" . $r["sector"] . "\","
-	$series .= "\"y\":\"" . $r["valor"] . "\""
+	$series .= "\"name\":\"" . $r["sector"] . "\",";
+	$series .= "\"y\":\"" . $r["valor"] . "\"";
 	$series .= "},";
 	
 }
