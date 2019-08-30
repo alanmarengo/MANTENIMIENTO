@@ -98,7 +98,7 @@ function ol_indicadores() {
 				map_layers[i+1] = new ol.layer.Tile({
 					visible:true,
 					source: new ol.source.TileWMS({
-						url: js.layers_server[i];
+						url: js.layers_server[i],
 						params: {
 							'LAYERS': '<?php echo $layer_name[$i]; ?>',
 							'VERSION': '1.1.1',
