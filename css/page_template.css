@@ -54,6 +54,10 @@
 .page_template .section-footer .section-footer-buttons .section-footer-button i {
   margin-right: 6px;
 }
+.page_template .section-footer .section-footer-buttons .section-footer-button:hover {
+  background-color: #31cbfd;
+  color: #fff;
+}
 .page_template .section-footer .section-footer-buttons .section-footer-button2 {
   display: block;
   border-radius: 50%;
@@ -234,6 +238,9 @@
 #page_esia .temas-interes .icono img {
   margin-bottom: 10px;
 }
+#page_esia .temas-interes .icono:hover {
+  color: #8e2f4f;
+}
 .parrafos p {
   padding-bottom: 0px;
 }
@@ -246,4 +253,30 @@
   background-image: url('../images/ahrsc_fondo.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+}
+#page_ahrsc .iframe-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+}
+#page_ahrsc .iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%!important;
+  height: 100%!important;
+  border: 0;
+}
+#page_ahrsc .iframe-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+#page_ahrsc .iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

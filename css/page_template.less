@@ -63,6 +63,11 @@
                 }
             }
 
+            .section-footer-button:hover {
+                background-color: #31cbfd; 
+                color: #fff;
+            }
+
             .section-footer-button2 {
                 display: block;
                 border-radius: 50%;
@@ -265,6 +270,10 @@
                 margin-bottom: 10px;
             }
         }
+
+        .icono:hover {
+            color: #8e2f4f;
+        }
     }
 }
 
@@ -285,5 +294,39 @@
         background-image:url('../images/ahrsc_fondo.jpg');
         background-repeat:no-repeat;
         background-size:cover;
+    }
+
+
+    .iframe-container {
+        position: relative;
+        overflow: hidden;
+        padding-top: 56.25%;
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%!important;
+            height: 100%!important;
+            border: 0;
+        }
+    }
+
+
+
+
+    .iframe-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;        
+        
+        iframe {
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     }
 }

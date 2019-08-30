@@ -21,6 +21,7 @@
 
         <div class="col-md-12 section-a" style="padding-left: 8em; padding-right: 8em;">
             <a id="descripcion"></a>
+            <h3 style="color: #8e2f4f;">DESCRIPCIóN</h3>
 
             <div class="row">
                 <div class="col-md-6">
@@ -79,8 +80,9 @@
                         VARIACIÓN DE TEMPERATURA POR MES<br />
                         <small>Observado en Santa Cruz, 2018</small>
                     </div>
-                    <div>
-                        <img src="./images/mapa_ahrsc.png" style="width: 100%; height: auto;">
+
+                    <div class="embed-responsive embed-responsive-21by9">
+                        <iframe src="./mapa-popup.php" frameborder="0"></iframe>
                     </div>
                 </div>
 
@@ -233,7 +235,7 @@
                             <i class="fa fa-file-alt"></i>
                             VER FICHA
                         </a>
-                        <a href="#" class="section-footer-button2 button2-mediateca tooltip2" title="MEDIATECA"></a>
+                        <a href="#" class="section-footer-button2 button2-mediateca" title="MEDIATECA"></a>
                         <a href="#" class="section-footer-button2 button2-geovisores" title="GEOVISORES"></a>
                         <a href="#" class="section-footer-button2 button2-estadisticas" title="ESTADISTICAS"></a>
                         <a href="#" class="section-footer-button2 button2-indicadores" title="INDICADORES"></a>
@@ -256,6 +258,13 @@ $(document).ready(function() {
     let target = $.urlParam('target');
     if (target)
         $('#link-' + target).trigger('click');
+
+    $('.section-footer-button2').hover( 
+        function () {
+        },
+        function () {
+        }
+    )
 
 });
 </script>
