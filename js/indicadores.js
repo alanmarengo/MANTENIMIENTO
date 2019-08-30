@@ -79,7 +79,7 @@ function ol_indicadores() {
 		switch(js.type) {
 			
 			case "layer":
-			
+			alert("is layer");
 			var map_layers = [];
 		
 			map_layers[0] = new ol.layer.Tile({
@@ -112,7 +112,7 @@ function ol_indicadores() {
 			
 			var indMap = new ol.Map({
 				layers:map_layers,
-				target: "#template-wrapper .resource-col[data-pos="+pos+"]",
+				target: "pos-"+pos,
 				extent: [-13281237.21183002,-7669922.0600572005,-738226.6183457375,-1828910.1066171727],
 				controls: [],
 				view: new ol.View({
