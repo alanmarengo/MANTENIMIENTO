@@ -49,7 +49,9 @@ while($r = pg_fetch_assoc($query)) {
 					$columns .= "\"$colname\",";
 					
 				}
-			
+				
+				$columns = substr($columns,0,strlen($columns)-1);
+
 			}
 			
 			$data .= "[";
@@ -65,7 +67,7 @@ while($r = pg_fetch_assoc($query)) {
 			
 		}
 		
-		$columns = substr($colname,0,strlen($colname)-1);
+		$columns = substr($columns,0,strlen($columns)-1);
 		$data = substr($data,0,strlen($data)-1);		
 		
 		break;
