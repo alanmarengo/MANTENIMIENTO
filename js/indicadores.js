@@ -126,12 +126,11 @@ function ol_indicadores() {
 			
 			break;
 			
-			case "tabla":
+			case "table":
 			
 			var table = document.createElement("table");
 			var headRow = document.createElement("tr");
-			alert("tabla");
-			console.log(js);
+			
 			for (var i=0; i<js.columns.length; i++) {
 				
 				var td = document.createElement("td");
