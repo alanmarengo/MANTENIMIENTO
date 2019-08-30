@@ -60,6 +60,7 @@ while($r = pg_fetch_assoc($query)) {
 				
 			}
 			
+			$data = substr($data,0,strlen($data)-1);
 			$data .= "],";
 			
 		}
