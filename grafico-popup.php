@@ -101,9 +101,9 @@
 	
 </head>
 
-<body style="overflow:hidden;">
+<body>
 
-	<div id="grafico" style="width:100%; height:100%;"></div>
+	<div id="grafico" style="width:600px; height:600px;"></div>
 
 </body>
 
