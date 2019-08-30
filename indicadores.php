@@ -15,6 +15,7 @@
 	<?php include("./scripts.default-indicadores.php"); ?>	
 	<?php include("./scripts.indicadores.php"); ?>	
 	<?php include("./scripts.openlayers.php"); ?>	
+	<?php include("./scripts.highcharts.php"); ?>	
 	<?php include("./scripts.onresize.php"); ?>	
 	<?php include("./scripts.document_ready.indicadores.php"); ?>
 	

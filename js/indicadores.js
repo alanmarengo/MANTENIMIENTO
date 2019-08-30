@@ -93,7 +93,7 @@ function ol_indicadores() {
 				})
 			});
 			
-			for (var i=0; $i<js.layers.length; $i++) {
+			for (var i=0; i<js.layers.length; i++) {
 			
 				map_layers[i+1] = new ol.layer.Tile({
 					visible:true,
