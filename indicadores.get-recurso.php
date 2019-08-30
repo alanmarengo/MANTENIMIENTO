@@ -40,8 +40,8 @@ switch($type) {
 	case "capa":
 	$out .= "{";
 	$out .= "\"type\":\"layer\",";
-	$out .= "\"layers\":[\"".implode("\",\"",$layer_name)."],";
-	$out .= "\"layers_server\":[\"".implode("\",\"",$layer_server)."]";
+	$out .= "\"layers\":[\"".implode("\",\"",$layer_name)."\"],";
+	$out .= "\"layers_server\":[\"".implode("\",\"",$layer_server)."\"]";
 	$out .= "}";
 	break;
 	
