@@ -96,11 +96,12 @@ function ol_indicadores() {
 			for (var i=0; i<js.layers.length; i++) {
 			
 				map_layers[i+1] = new ol.layer.Tile({
+					name:js.layers[i]
 					visible:true,
 					source: new ol.source.TileWMS({
 						url: js.layers_server[i],
 						params: {
-							'LAYERS': '<?php echo $layer_name[$i]; ?>',
+							'LAYERS': js.layers[i],
 							'VERSION': '1.1.1',
 							'FORMAT': 'image/png',
 							'TILED': false
