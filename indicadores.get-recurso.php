@@ -37,7 +37,7 @@ while($r = pg_fetch_assoc($query)) {
 		$query_string = "SELECT * FROM " . $r["tabla_fuente"];
 		$query_tabla = pg_query($conn,$query_string);
 		$firstCur = true;
-		$columns = "";
+		$columns = array();
 		$data = "";
 		
 		while($s = pg_fetch_assoc($query_tabla)) {
@@ -46,11 +46,9 @@ while($r = pg_fetch_assoc($query)) {
 			
 				foreach($s as $colname => $val) {
 					
-					$columns .= "\"$colname\",";
+					array_push($columns,$colname);
 					
 				}
-				
-				$columns = substr($columns,0,strlen($columns)-1);
 
 			}
 			
@@ -92,7 +90,7 @@ switch($type) {
 	
 	case "tabla":
 	$out .= "{";
-	$out .= "\"columns\":[". $columns . "],";
+	$out .= "\"columns\":[". implode("\",\"",$columns)."\"],";
 	$out .= "\"data\":[". $data . "]";
 	$out .= "}";
 	break;
