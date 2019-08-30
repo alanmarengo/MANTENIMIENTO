@@ -29,6 +29,8 @@
 			
 			var js = JSON.parse(req.responseText);
 		
+			console.log(js);
+		
 			Highcharts.chart('grafico', {
 				chart: {
 					plotBackgroundColor: null,
