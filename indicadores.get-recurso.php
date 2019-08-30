@@ -89,7 +89,7 @@ switch($type) {
 	
 	case "tabla":
 	$out .= "{";
-	$out .= "\"columns\":[". implode("\",\"",$columns)."\"],";
+	$out .= "\"columns\":[\"". implode("\",\"",$columns)."\"],";
 	$out .= "\"data\":[". $data . "]";
 	$out .= "}";
 	break;
