@@ -60,7 +60,7 @@
 					data: js.series
 				}*/
 				series: {
-					name: js.etiqueta,
+					name: 'Brands',
 					colorByPoint: true,
 					data: [{
 						name: 'Chrome',
