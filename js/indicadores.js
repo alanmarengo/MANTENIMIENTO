@@ -128,7 +128,39 @@ function ol_indicadores() {
 			
 			case "tabla":
 			
-			console.log(js);
+			var table = document.createElement("table");
+			var headRow = document.createElement("tr");
+			
+			for (var i=0; i<js.columns.length; i++) {
+				
+				var td = document.createElement("td");
+					td.innerHTML = js.columns[i];
+			
+					headRow.appendChild(td);
+				
+			}
+			
+			for (var i=0; i<js.data.length; i++) {
+				
+				var tr = document.createElement("tr");
+				
+				for (var j=0; j<js.data[i].length; j++) {
+					
+					var td = document.createElement("td");
+						td.innerHTML = js.data[i][j];
+						
+					tr.appendChild(td);
+					
+				}
+				
+				table.appendChild(tr);
+				
+			}
+			
+			table.appendChild(headRow);
+			
+			$("#indicador-col-pos-"+pos).clear();
+			$("#indicador-col-pos-"+pos).append(table);
 			
 			break;
 			
