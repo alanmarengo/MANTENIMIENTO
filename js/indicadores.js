@@ -140,6 +140,8 @@ function ol_indicadores() {
 				
 			}
 			
+			table.appendChild(headRow);
+			
 			for (var i=0; i<js.data.length; i++) {
 				
 				var tr = document.createElement("tr");
@@ -156,8 +158,6 @@ function ol_indicadores() {
 				table.appendChild(tr);
 				
 			}
-			
-			table.appendChild(headRow);
 			
 			$("#indicador-col-pos-"+pos).clear();
 			$("#indicador-col-pos-"+pos).append(table);
