@@ -27,6 +27,9 @@
   background-color: #8d3050;
   color: #fff;
 }
+.page_template .parrafos {
+  text-align: justify!important;
+}
 .page_template .parrafos p {
   padding-bottom: 0px;
 }

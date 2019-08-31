@@ -23,13 +23,13 @@
             <h3 style="color: #8e2f4f;">DESCRIPCIóN</h3>
 
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 text-justify">
                     EL Plan Director de Gestión Ambiental - PDGA es el instrumento de gestión que permite organizar las medidas y las recomendaciones que surgen del Estudio de Impacto Ambiental - EsIA, para la mitigación de los impactos sobre el medio físico, biótico y socioeconómicos y materializar los objetivos propuestos en materia ambiental.                     <br />        
                     <br />        
                     <br />        
                     El PDGA de los AHRSC (formulado en el capítulo 6 del EsIA 2017 EBISA) reúne el contenido del Plan de Gestión Ambiental - PGA comprometido por la UTE Contratista en el EsIA del 2015 y establece nuevos compromisos asumidos por el Comitente (Estado Nacional) para contribuir a la sostenibilidad de los AH sobre el rio Santa Cruz, pasando así a denominarse Plan Director.
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 text-justify">
                 Su planificación desde la priorización de estudios de acuerdo al cronograma de obra (identificando temas críticos, abordaje en etapa y zonas de prioridad) permite una gestión adaptativa del Plan, una mejor administración de recursos y el cumplimiento de metas concretas.
 La ejecución del PGA involucra actores de diversos ámbitos, con distintos niveles de compromiso. Los compromisos ya asumidos en el EsIA, han sido levantados y ratificados por distintos actores de importancia en las Audiencias públicas, resoluciones ministeriales, en dictámenes particulares y constituyen obligaciones para el Comitente y la UTE. 
                 </div>

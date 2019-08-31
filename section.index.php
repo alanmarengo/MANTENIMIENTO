@@ -157,7 +157,7 @@
                                 <p class="modulo-hover-text">
                                     Facilita el seguimiento de las acciones que brindan sostenibilidad al proyecto en sus distintas etapas. Planifica y ejecuta monitoreos sistemáticos para  el estudio de la evolución del ambiente.
                                     <br />
-                                    <a href="./page.php" class="modulo-hover-icon">
+                                    <a href="./page_pdga.php" class="modulo-hover-icon">
                                         <i class="fa fa-plus-circle fa-2x"></i>
                                     </a>
                                 </p>
@@ -192,7 +192,7 @@
                         <p class="modulo-hover-text">
                             Ingresá a la información del proyecto de las presas Cóndor Cliff (CC) y La Barrancosa (LB), que proveerán electricidad al Sistema Argentino de Interconexión (SADI).
                             <br />
-                            <a href="./geovisor.php?geovisor=1" class="modulo-hover-icon">
+                            <a href="./page_ahrsc.php" class="modulo-hover-icon">
                                 <i class="fa fa-plus-circle fa-2x"></i>
                             </a>
                         </p>

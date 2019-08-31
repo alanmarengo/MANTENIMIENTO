@@ -24,14 +24,14 @@
             <h3 style="color: #8e2f4f;">DESCRIPCIóN</h3>
 
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 text-justify">
                     El Proyecto de los “Aprovechamientos Hidroeléctricos del Río Santa Cruz” se ubica en la provincia homónima, entre el Lago Argentino y un punto ubicado a 135 km aguas arriba de la localidad de Comandante Luis Piedrabuena. Está integrado por dos cierres; la presa Cóndor Cliff y La Barrancosa.
                     <br />        
                     <br />        
                     <br />        
                     La presa Cóndor Cliff, de materiales sueltos con pantalla impermeable de hormigón o CFRD, por sus siglas en inglés, se desarrolla en una longitud de 1.613 m y alcanza una altura de 68 m. La casa de máquinas ubicada sobre la margen izquierda, cuenta con 5 turbinas del tipo Francis de 190 MW cada una. Con esta configuración, es posible turbinar un caudal máximo de 1.750 m3/s lo que implica una generación media anual de 3.268 GWh, operando en régimen de punta o sea generando
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 text-justify">
                     A 65 km aguas abajo del cierre anteriormente mencionado, se ubica la presa La Barrancosa. Esta presa también es del tipo CFRD y se desarrolla en una longitud de 2.445 m alcanzando una altura de 41 m. En este caso, la casa de máquinas se ubica sobre la margen derecha y aloja 3 turbinas del tipo Kaplan de 120 MW cada una. Considerando que el caudal turbinable es de 1.260 m3/s, la generación anual estimada es de 1.903 GWh/año y el régimen de operación de base, con un caudal permanente igual al saliente del Lago Argentino.
                 </div>
             </div>
@@ -43,34 +43,39 @@
 
             <div class="row" style="padding-left: 2em; padding-right: 2em;">
                 <div class="col-md-6 parrafos">
+                    <h5>PRENSA</h5>
                     <p>
-                        <h5>PRENSA</h5>
                         La presa es una de las estructuras que tiene por objetivo generar el cierre hidráulico del río Santa Cruz, permitiendo embalsar el agua disponible. Es del tipo CFRD (Concrete Face Rockfill dam), alcanza una altura máxima de 41 m, y desarrolla una longitud de 2445 m. Sobre su coronamiento posee un camino a cota de 118,5 mIGN
                     </p>
+                    
+                    <h5>VERTEDERO</h5>
                     <p>
-                        <h5>VERTEDERO</h5>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                     </p>
+
+                    <h5>OBRA DE TOMA</h5>
                     <p>
-                        <h5>OBRA DE TOMA</h5>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                     </p>
+
+                    <h5>CASA DE MAQUINAS</h5>
                     <p>
-                        <h5>CASA DE MAQUINAS</h5>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                     </p>
                 </div>
                 <div class="col-md-6 parrafos">
+                    <h5>DESCARGADOR DE FONDO</h5>
                     <p>
-                        <h5>DESCARGADOR DE FONDO</h5>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                     </p>
+
+                    <h5>ESCALA DE PECES</h5>
                     <p>
-                        <h5>ESCALA DE PECES</h5>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                     </p>
+
+                    <h5>CAMINOS DE ACCESOS</h5>
                     <p>
-                        <h5>CAMINOS DE ACCESOS</h5>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                     </p>
                 </div>
@@ -110,34 +115,39 @@
 
             <div class="row" style="padding-left: 2em; padding-right: 2em;">
                 <div class="col-md-6 parrafos">
+                    <h5>PRENSA</h5>
                     <p>
-                        <h5>PRENSA</h5>
                         La presa es una de las estructuras que tiene por objetivo generar el cierre hidráulico del río Santa Cruz, permitiendo embalsar el agua disponible. Es del tipo CFRD (Concrete Face Rockfill dam), alcanza una altura máxima de 41 m, y desarrolla una longitud de 2445 m. Sobre su coronamiento posee un camino a cota de 118,5 mIGN
                     </p>
+
+                    <h5>VERTEDERO</h5>
                     <p>
-                        <h5>VERTEDERO</h5>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                     </p>
+
+                    <h5>OBRA DE TOMA</h5>
                     <p>
-                        <h5>OBRA DE TOMA</h5>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                     </p>
+
+                    <h5>CASA DE MAQUINAS</h5>
                     <p>
-                        <h5>CASA DE MAQUINAS</h5>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                     </p>
                 </div>
                 <div class="col-md-6 parrafos">
+                    <h5>DESCARGADOR DE FONDO</h5>
                     <p>
-                        <h5>DESCARGADOR DE FONDO</h5>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                     </p>
+
+                    <h5>ESCALA DE PECES</h5>
                     <p>
-                        <h5>ESCALA DE PECES</h5>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                     </p>
+
+                    <h5>CAMINOS DE ACCESOS</h5>
                     <p>
-                        <h5>CAMINOS DE ACCESOS</h5>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                     </p>
                 </div>
@@ -174,20 +184,23 @@
                     </p>
                 </div>
                 <div class="col-md-6 parrafos">
+                    <h5>LOREM IPSUM</h5>
                     <p>
-                        <h5>LOREM IPSUM</h5>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                     </p>
+                    
+                    <h5>LOREM IPSUM</h5>
                     <p>
-                        <h5>LOREM IPSUM</h5>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                     </p>
+                    
+                    <h5>LOREM IPSUM</h5>
                     <p>
-                        <h5>LOREM IPSUM</h5>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                     </p>
+
+                    <h5>LOREM IPSUM</h5>
                     <p>
-                        <h5>LOREM IPSUM</h5>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                     </p>
                 </div>
