@@ -100,10 +100,10 @@
                             <i class="fa fa-file-alt"></i>
                             VER FICHA
                         </a>
-                        <a href="#" class="section-footer-button2 button2-mediateca"></a>
-                        <a href="#" class="section-footer-button2 button2-geovisores"></a>
-                        <a href="#" class="section-footer-button2 button2-estadisticas"></a>
-                        <a href="#" class="section-footer-button2 button2-indicadores"></a>
+                        <a href="#" class="section-footer-button2 button2-mediateca" title="MEDIATECA" data-key="mediateca"></a>
+                        <a href="#" class="section-footer-button2 button2-geovisores" title="GEOVISORES" data-key="geovisores"></a>
+                        <a href="#" class="section-footer-button2 button2-estadisticas" title="ESTADISTICAS" data-key="estadisticas"></a>
+                        <a href="#" class="section-footer-button2 button2-indicadores" title="INDICADORES" data-key="indicadores"></a>
                     </div>
                 </div>
             </div>
@@ -161,10 +161,10 @@
                             <i class="fa fa-file-alt"></i>
                             VER FICHA
                         </a>
-                        <a href="#" class="section-footer-button2 button2-mediateca"></a>
-                        <a href="#" class="section-footer-button2 button2-geovisores"></a>
-                        <a href="#" class="section-footer-button2 button2-estadisticas"></a>
-                        <a href="#" class="section-footer-button2 button2-indicadores"></a>
+                        <a href="#" class="section-footer-button2 button2-mediateca" title="MEDIATECA" data-key="mediateca"></a>
+                        <a href="#" class="section-footer-button2 button2-geovisores" title="GEOVISORES" data-key="geovisores"></a>
+                        <a href="#" class="section-footer-button2 button2-estadisticas" title="ESTADISTICAS" data-key="estadisticas"></a>
+                        <a href="#" class="section-footer-button2 button2-indicadores" title="INDICADORES" data-key="indicadores"></a>
                     </div>
                 </div>
             </div>
@@ -214,10 +214,10 @@
                             <i class="fa fa-file-alt"></i>
                             VER FICHA
                         </a>
-                        <a href="#" class="section-footer-button2 button2-mediateca"></a>
-                        <a href="#" class="section-footer-button2 button2-geovisores"></a>
-                        <a href="#" class="section-footer-button2 button2-estadisticas"></a>
-                        <a href="#" class="section-footer-button2 button2-indicadores"></a>
+                        <a href="#" class="section-footer-button2 button2-mediateca" title="MEDIATECA" data-key="mediateca"></a>
+                        <a href="#" class="section-footer-button2 button2-geovisores" title="GEOVISORES" data-key="geovisores"></a>
+                        <a href="#" class="section-footer-button2 button2-estadisticas" title="ESTADISTICAS" data-key="estadisticas"></a>
+                        <a href="#" class="section-footer-button2 button2-indicadores" title="INDICADORES" data-key="indicadores"></a>
                     </div>
                 </div>
             </div>
@@ -248,10 +248,10 @@
                             <i class="fa fa-file-alt"></i>
                             VER FICHA
                         </a>
-                        <a href="#" class="section-footer-button2 button2-mediateca" title="MEDIATECA"></a>
-                        <a href="#" class="section-footer-button2 button2-geovisores" title="GEOVISORES"></a>
-                        <a href="#" class="section-footer-button2 button2-estadisticas" title="ESTADISTICAS"></a>
-                        <a href="#" class="section-footer-button2 button2-indicadores" title="INDICADORES"></a>
+                        <a href="#" class="section-footer-button2 button2-mediateca" title="MEDIATECA" data-key="mediateca"></a>
+                        <a href="#" class="section-footer-button2 button2-geovisores" title="GEOVISORES" data-key="geovisores"></a>
+                        <a href="#" class="section-footer-button2 button2-estadisticas" title="ESTADISTICAS" data-key="estadisticas"></a>
+                        <a href="#" class="section-footer-button2 button2-indicadores" title="INDICADORES" data-key="indicadores"></a>
                     </div>
                 </div>
             </div>
@@ -274,8 +274,12 @@ $(document).ready(function() {
 
     $('.section-footer-button2').hover( 
         function () {
+            let key=$(this).data('key');
+            $(this).css('background-image', 'url("./images/icono-' + key + '-relleno-hover.png")')
         },
         function () {
+            let key=$(this).data('key');
+            $(this).css('background-image', 'url("./images/icono-' + key + '-relleno.png")')
         }
     )
 

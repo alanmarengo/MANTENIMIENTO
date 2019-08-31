@@ -103,6 +103,9 @@ La ejecución del PGA involucra actores de diversos ámbitos, con distintos nive
                     </p>
                 </div>
                 <div class="col-md-6 parrafos">
+                    <div class="embed-responsive embed-responsive-4by3">
+                        <iframe src="./grafico-popup.php" frameborder="0"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
@@ -147,13 +150,5 @@ $(document).ready(function() {
     let target = $.urlParam('target');
     if (target)
         $('#link-' + target).trigger('click');
-
-    $('.section-footer-button2').hover( 
-        function () {
-        },
-        function () {
-        }
-    )
-
 });
 </script>
