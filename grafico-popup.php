@@ -36,7 +36,8 @@
 					plotBackgroundColor: null,
 					plotBorderWidth: null,
 					plotShadow: false,
-					type: 'pie'
+					type: 'pie',
+					defaultSeriesType: 'areaspline'
 				},
 				title: {
 					text: js.titulo
@@ -59,7 +60,7 @@
 					colorByPoint: true,
 					data: js.series
 				}]
-			});
+			}).reflow();
 		
 		});
 	
@@ -69,7 +70,7 @@
 
 <body style="width:100%; height:100%; overflow:hidden;">
 
-	<div id="grafico" style="width:100%; height:100;"></div>
+	<div id="grafico" style="width:100%; height:100%;"></div>
 
 </body>
 
