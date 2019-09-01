@@ -36,7 +36,8 @@
 					plotBackgroundColor: null,
 					plotBorderWidth: null,
 					plotShadow: false,
-					type: 'pie'
+					type: 'pie',
+					defaultSeriesType: 'areaspline'
 				},
 				title: {
 					text: js.titulo
@@ -59,7 +60,7 @@
 					colorByPoint: true,
 					data: js.series
 				}]
-			});
+			}).reflow();
 		
 		});
 	
