@@ -148,7 +148,7 @@ Especialidades involucradas,  asesores internacionales.
                         <div class="col-md-12" style="padding: 5px 40px;">
                             <div class="row" style="border-bottom: solid 1px #ccc; font-size: 14px;">
                                 <div class="col-md-11" style="padding: 0px 0px 10px 0px; font-weight: bolder; color: #8f2e4f;">CALIDAD DEL AIRE</div>
-                                <div class="col-md-1" style="font-size: 14px; color: #666;">
+                                <div class="col-md-1" style="font-size: 14px; color: #999;">
                                     <i class="fa fa-download"></i>
                                 </div>
                             </div>
