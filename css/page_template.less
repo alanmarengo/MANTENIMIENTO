@@ -12,7 +12,7 @@
         position: -webkit-sticky;
         position: sticky;
         top: 68px;
-        z-index: 99999;
+        z-index: 999;
 
         a {
             padding: 8px; 
@@ -93,26 +93,21 @@
 
             .button2-mediateca {
                 background-image: url('../images/icono-mediateca-relleno.png');
-                background-color: #ffa91b;
             }
 
             .button2-geovisores {
                 background-image: url('../images/icono-geovisores-relleno.png');
-                background-color: #8e2f4f;
             }
 
             .button2-estadisticas {
                 background-image: url('../images/icono-estadisticas-relleno.png');
-                background-color: #310133;
             }
 
             .button2-indicadores {
                 background-image: url('../images/icono-indicadores-relleno.png');
-                background-color: #585dc5;
             }
         }
     }
-
 
 
     .section-a {
@@ -304,5 +299,70 @@
         justify-content: center;
         align-items: center;
         text-align: center;
+    }
+
+    .pop-ficha {
+        .pop-titulo {
+            padding-top: 12px;
+            color: #8e2f4f;
+            font-weight: bolder;
+        }
+
+        .pop-content {
+            padding: 10px 0px 40px 0px; text-align: justify;
+        }
+
+        .pop-button {
+            border-radius: 4px;
+            color: #fff;
+            background-color: #333;
+            padding: 8px 32px;
+
+            i {
+                margin-right: 6px;
+            }
+        }
+
+        .pop-button:hover {
+            background-color: #31cbfd; 
+            color: #fff;
+        }
+
+        .pop-buttons {
+            padding: 20px 0px 0px 30px;
+            display: inline-block;
+
+            a {
+                float: left;
+                margin-bottom: 10px;
+            }
+
+            .pop-button2 {
+                display: block;
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+
+                background-repeat: no-repeat;
+                background-position: top left;
+                background-size: cover;
+            }
+
+            .button2-mediateca {
+                background-image: url('../images/icono-mediateca-relleno.png');
+            }
+
+            .button2-geovisores {
+                background-image: url('../images/icono-geovisores-relleno.png');
+            }
+
+            .button2-estadisticas {
+                background-image: url('../images/icono-estadisticas-relleno.png');
+            }
+
+            .button2-indicadores {
+                background-image: url('../images/icono-indicadores-relleno.png');
+            }
+        }
     }
 }

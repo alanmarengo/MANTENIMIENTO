@@ -11,7 +11,7 @@
   position: -webkit-sticky;
   position: sticky;
   top: 68px;
-  z-index: 99999;
+  z-index: 999;
 }
 .page_template .top-buttons a {
   padding: 8px;
@@ -78,19 +78,15 @@
 }
 .page_template .section-footer .section-footer-buttons .button2-mediateca {
   background-image: url('../images/icono-mediateca-relleno.png');
-  background-color: #ffa91b;
 }
 .page_template .section-footer .section-footer-buttons .button2-geovisores {
   background-image: url('../images/icono-geovisores-relleno.png');
-  background-color: #8e2f4f;
 }
 .page_template .section-footer .section-footer-buttons .button2-estadisticas {
   background-image: url('../images/icono-estadisticas-relleno.png');
-  background-color: #310133;
 }
 .page_template .section-footer .section-footer-buttons .button2-indicadores {
   background-image: url('../images/icono-indicadores-relleno.png');
-  background-color: #585dc5;
 }
 .page_template .section-a {
   padding: 2em 6em 2em 6em;
@@ -263,4 +259,55 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+#page_pdga .pop-ficha .pop-titulo {
+  padding-top: 12px;
+  color: #8e2f4f;
+  font-weight: bolder;
+}
+#page_pdga .pop-ficha .pop-content {
+  padding: 10px 0px 40px 0px;
+  text-align: justify;
+}
+#page_pdga .pop-ficha .pop-button {
+  border-radius: 4px;
+  color: #fff;
+  background-color: #333;
+  padding: 8px 32px;
+}
+#page_pdga .pop-ficha .pop-button i {
+  margin-right: 6px;
+}
+#page_pdga .pop-ficha .pop-button:hover {
+  background-color: #31cbfd;
+  color: #fff;
+}
+#page_pdga .pop-ficha .pop-buttons {
+  padding: 20px 0px 0px 30px;
+  display: inline-block;
+}
+#page_pdga .pop-ficha .pop-buttons a {
+  float: left;
+  margin-bottom: 10px;
+}
+#page_pdga .pop-ficha .pop-buttons .pop-button2 {
+  display: block;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: cover;
+}
+#page_pdga .pop-ficha .pop-buttons .button2-mediateca {
+  background-image: url('../images/icono-mediateca-relleno.png');
+}
+#page_pdga .pop-ficha .pop-buttons .button2-geovisores {
+  background-image: url('../images/icono-geovisores-relleno.png');
+}
+#page_pdga .pop-ficha .pop-buttons .button2-estadisticas {
+  background-image: url('../images/icono-estadisticas-relleno.png');
+}
+#page_pdga .pop-ficha .pop-buttons .button2-indicadores {
+  background-image: url('../images/icono-indicadores-relleno.png');
 }
