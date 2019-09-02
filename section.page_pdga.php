@@ -2,16 +2,18 @@
 
 <div id="page_pdga" class="page page_template">
     <div class="row">
-        <div class="col-md-12 page-title">
-            Plan director de gestión ambiental - PDGA.
-        </div>
+        <div class="section-sticky">
+            <div class="col-md-12 page-title">
+                Plan director de gestión ambiental - PDGA.
+            </div>
 
-        <div class="col-md-12 top-buttons section-sticky">
-            <a href="#" data-target="#descripcion">Descripción</a>
-            <a href="#" data-target="#estructura">Estructura del PDGA</a>
-            <a href="#" data-target="#temas">Temas claves</a>
-            <a href="#" data-target="#responsabilidades">Responsabilidades y seguimientos</a>
-            <a href="#" data-target="#articulacion">ARTICULACIÓN INSTITUCIONAL</a>
+            <div class="col-md-12 top-buttons">
+                <a href="#" data-target="#descripcion">Descripción</a>
+                <a href="#" data-target="#estructura">Estructura del PDGA</a>
+                <a href="#" data-target="#temas">Temas claves</a>
+                <a href="#" data-target="#responsabilidades">Responsabilidades y seguimientos</a>
+                <a href="#" data-target="#articulacion">ARTICULACIÓN INSTITUCIONAL</a>
+            </div>
         </div>
 
         <div class="col-md-12">
@@ -125,10 +127,10 @@ Especialidades involucradas,  asesores internacionales.
 
                 <div class="section-footer">
                     <div class="section-footer-buttons">
-                        <a href="#" class="section-footer-button">
+                        <a href="./mediateca.php" class="section-footer-button">
                             MEDIATECA
                         </a>
-                        <a href="#" class="section-footer-button">
+                        <a href="./geovisor.php" class="section-footer-button">
                             GEOVISOR
                         </a>
                     </div>
@@ -187,7 +189,7 @@ $(document).ready(function() {
     $('.section-sticky a').on('click', function() {
         let selector = $(this).data('target');
         $('html, body').animate({
-            scrollTop: $(selector).offset().top - 180
+            scrollTop: $(selector).offset().top - 220
         }, 500)
     });
 

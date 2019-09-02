@@ -2,14 +2,16 @@
 
 <div id="page_esia" class="page page_template">
     <div class="row">
-        <div class="col-md-12 page-title">
-            Evaluacion de impacto ambiental-EsIA
-        </div>
+    <div class="section-sticky">
+            <div class="col-md-12 page-title">
+                Evaluacion de impacto ambiental-EsIA
+            </div>
 
-        <div class="col-md-12 top-buttons section-sticky">
-            <a href="#" data-target="#historia">HISTORIA</a>
-            <a href="#" data-target="#linea-tiempo">LINEA DE TIEMPO</a>
-            <a href="#" data-target="#audiencia-publica">AUDIENCIA PUBLICA</a>
+            <div class="col-md-12 top-buttons">
+                <a href="#" data-target="#historia">HISTORIA</a>
+                <a href="#" data-target="#linea-tiempo">LINEA DE TIEMPO</a>
+                <a href="#" data-target="#audiencia-publica">AUDIENCIA PUBLICA</a>
+            </div>
         </div>
 
         <div class="col-md-12 section-a historia">
@@ -31,7 +33,7 @@
                 lago Argentino y la no afectación de la cuenca glaciaria que le da origen.
             </p>
 
-            <a href="./informe_completo.php">Leer el informe completo</a>
+            <a target="_blank" href="./sga/1.pdf">Leer el informe completo</a>
         </div>
 
         <div class="col-md-12 section-b linea-tiempo">
@@ -42,7 +44,7 @@
                 <div class="fila-1">
                     <div class="w10 anio"></div>
                     <div class="w10">30 días para análisis del proyecto</div>
-                    <div class="w10">Desición de revisar proyecto.</div>
+                    <div class="w10">Decisión y Aprobación</div>
                     <div class="w30">
                         <div class="w25">A. Lara confirma desacople</div>
                         <div class="w25">Desarrollo nuevo PE y renegociación de contrato UTE</div>
@@ -177,7 +179,7 @@ $(document).ready(function() {
     $('.section-sticky a').on('click', function() {
         let selector = $(this).data('target');
         $('html, body').animate({
-            scrollTop: $(selector).offset().top - 180
+            scrollTop: $(selector).offset().top - 220
         }, 500)
     });
 

@@ -1,6 +1,13 @@
 .page_template {
   font-size: 12px;
 }
+.page_template .section-sticky {
+  width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 68px;
+  z-index: 999;
+}
 .page_template .top-buttons {
   text-transform: uppercase;
   background-color: #f3f3f3;
@@ -8,10 +15,6 @@
   padding-left: 2.5em;
   font-size: 12px;
   border-bottom: 1px solid #fff;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 68px;
-  z-index: 999;
 }
 .page_template .top-buttons a {
   padding: 8px;

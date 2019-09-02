@@ -2,17 +2,19 @@
 
 <div id="page_ahrsc" class="page page_template">
     <div class="row">
-        <div class="col-md-12 page-title">
-            Observatorio  de los Aprovechamientos Hidroeléctricos del Río Sant Cruz - AHRSC
-        </div>
+        <div class="section-sticky">
+            <div class="col-md-12 page-title">
+                Observatorio  de los Aprovechamientos Hidroeléctricos del Río Sant Cruz - AHRSC
+            </div>
 
-        <div class="col-md-12 top-buttons section-sticky">
-            <a href="#" data-target="#descripcion">Descripción</a>
-            <a href="#" data-target="#optimizacion">Optimización</a>
-            <a href="#" data-target="#condor">Condor Cliff</a>
-            <a href="#" data-target="#barrancosa">La Barrancosa</a>
-            <a href="#" data-target="#linea">Línea Eléctrica de Alta Tensión</a>
-            <a href="#" data-target="#antena">Antenas/Receptores SHF (MW)</a>
+            <div class="col-md-12 top-buttons">
+                <a href="#" data-target="#descripcion">Descripción</a>
+                <a href="#" data-target="#optimizacion">Optimización</a>
+                <a href="#" data-target="#condor">Condor Cliff</a>
+                <a href="#" data-target="#barrancosa">La Barrancosa</a>
+                <a href="#" data-target="#linea">Línea Eléctrica de Alta Tensión</a>
+                <a href="#" data-target="#antena">Antenas/Receptores SHF (MW)</a>
+            </div>
         </div>
 
         <div class="col-md-12">
@@ -264,7 +266,7 @@ $(document).ready(function() {
     $('.section-sticky a').on('click', function() {
         let selector = $(this).data('target');
         $('html, body').animate({
-            scrollTop: $(selector).offset().top - 180
+            scrollTop: $(selector).offset().top - 220
         }, 500)
     });
 
