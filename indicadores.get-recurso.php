@@ -80,6 +80,7 @@ while($r = pg_fetch_assoc($query)) {
 		break;
 		
 		case "grafico":	
+		$type = "grafico";
 		
 		$query_string = "SELECT * FROM mod_graficos.grafico WHERE grafico_id = " . $r["grafico_id"];
 		$query_grafico = pg_query($conn,$query_string);
@@ -115,7 +116,7 @@ while($r = pg_fetch_assoc($query)) {
 		$data_out .= "\"desc\":\"" . $g_desc . "\",";
 		$data_out .= "\"data\":[" . $data_string . "]";
 		
-		echo $data_out;
+		echo $data_out . "<br>$query_grafico_data_string";
 		
 		break;
 		
