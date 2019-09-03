@@ -109,7 +109,7 @@ switch($type) {
 	
 	case "grafico":
 	$out .= "{";
-	$out .= "\"type\":\"table\",";
+	$out .= "\"type\":\"grafico\",";
 	$out .= "\"columns\":[\"". implode("\",\"",$columns)."\"],";
 	$out .= "\"data\":[". $data . "]";
 	$out .= "}";
