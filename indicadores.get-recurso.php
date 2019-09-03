@@ -79,8 +79,44 @@ while($r = pg_fetch_assoc($query)) {
 		
 		break;
 		
-		case "grafico":
-		$type = "grafico";
+		case "grafico":	
+		
+		$query_string = "SELECT * FROM mod_graficos.grafico WHERE grafico_id = " . $r["grafico_id"];
+		$query_grafico = pg_query($conn,$query_string);
+		$data = pg_fetch_assoc($query_grafico);
+		
+		$g_tipo = $data["grafico_tipo"];
+		$g_titulo = $data["grafico_titulo"];
+		$g_desc = $data["grafico_desc"];
+		$g_data_schema = $data["data_schema"];
+		$g_data_tabla = $data["data_tabla"];
+		
+		$query_grafico_data_string = "SELECT * FROM \"" . $g_data_schema . "\".\"" . $g_data_tabla . "\"";
+		$query_grafico_data = pg_query($conn,$query_grafico_data_string);
+		
+		$sector = "";
+		$valor = "";
+		
+		$data_string = "";
+		
+		while ($r = pg_fetch_assoc($query_grafico_data)) {
+			
+			$data_string .= "{";
+			$data_string .= "\"name\":\"" . $r["sector"] . "\",";
+			$data_string .= "\"value\":" . $r["valor"];			
+			$data_string .= "},";
+			
+		}
+		
+		$data_string = substr($data_string,0,strlen($data_string)-1);
+		
+		$data_out = "{";
+		$data_out .= "\"titulo\":\"" . $g_titulo . "\",";
+		$data_out .= "\"desc\":\"" . $g_desc . "\",";
+		$data_out .= "\"data\":[" . $data_string . "]";
+		
+		echo $data_out;
+		
 		break;
 		
 	}
@@ -110,7 +146,7 @@ switch($type) {
 	case "grafico":
 	$out .= "{";
 	$out .= "\"type\":\"grafico\",";
-	$out .= "\"columns\":[\"". implode("\",\"",$columns)."\"],";
+	$out .= "\"series\":[\"". implode("\",\"",$columns)."\"],";
 	$out .= "\"data\":[". $data . "]";
 	$out .= "}";
 	break;
