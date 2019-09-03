@@ -89,8 +89,8 @@ while($r = pg_fetch_assoc($query)) {
 		$g_tipo = $data["grafico_tipo"];
 		$g_titulo = $data["grafico_titulo"];
 		$g_desc = $data["grafico_desc"];
-		$g_data_schema = $data["data_schema"];
-		$g_data_tabla = $data["data_tabla"];
+		$g_data_schema = $data["grafico_data_schema"];
+		$g_data_tabla = $data["grafico_data_tabla"];
 		
 		$query_grafico_data_string = "SELECT * FROM \"" . $g_data_schema . "\".\"" . $g_data_tabla . "\"";
 		$query_grafico_data = pg_query($conn,$query_grafico_data_string);
