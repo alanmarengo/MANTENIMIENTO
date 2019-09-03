@@ -166,6 +166,13 @@ function ol_indicadores() {
 			
 			break;
 			
+			case "grafico":
+			
+			$("#indicador-col-pos-"+pos).empty();
+			$("#indicador-col-pos-"+pos).html("<h2>GRAFICO</h2>");
+			
+			break;
+			
 		}
 		
 	}
