@@ -41,17 +41,17 @@ while($r = pg_fetch_assoc($query)) {
 		$data = "";
 		
 		while($s = pg_fetch_assoc($query_tabla)) {
-			
+
 			if ($firstCur) {
-				
-				if (strpos($colname,"geom") === false) {
-			
-					foreach($s as $colname => $val) {
-						
+
+				foreach($s as $colname => $val) {
+
+					if (strpos($colname,"geom") === false) {
+
 						array_push($columns,$colname);
-						
+
 					}
-				
+
 				}
 
 			}
