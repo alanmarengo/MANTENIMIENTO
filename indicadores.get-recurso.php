@@ -79,6 +79,10 @@ while($r = pg_fetch_assoc($query)) {
 		
 		break;
 		
+		case "grafico":
+		$type = "grafico";
+		break;
+		
 	}
 	
 }
@@ -96,6 +100,14 @@ switch($type) {
 	break;
 	
 	case "tabla":
+	$out .= "{";
+	$out .= "\"type\":\"table\",";
+	$out .= "\"columns\":[\"". implode("\",\"",$columns)."\"],";
+	$out .= "\"data\":[". $data . "]";
+	$out .= "}";
+	break;
+	
+	case "grafico":
 	$out .= "{";
 	$out .= "\"type\":\"table\",";
 	$out .= "\"columns\":[\"". implode("\",\"",$columns)."\"],";
