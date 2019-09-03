@@ -11,3 +11,23 @@
 	border:1px solid #CCCCCC;
 	
 }
+
+.indicadores-table {
+	
+	
+	
+}
+
+.indicadores-table tr th {
+	
+	font-size: 12px;
+    font-weight: bolder;
+
+}
+
+.indicadores-table tr td {
+	
+	font-size: 12px;
+    font-weight: 400;
+
+}

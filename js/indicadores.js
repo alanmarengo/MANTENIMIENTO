@@ -129,11 +129,13 @@ function ol_indicadores() {
 			case "table":
 			
 			var table = document.createElement("table");
+				table.className = "indicadores-table";
+				
 			var headRow = document.createElement("tr");
 			
 			for (var i=0; i<js.columns.length; i++) {
 				
-				var td = document.createElement("td");
+				var td = document.createElement("th");
 					td.innerHTML = js.columns[i];
 			
 					headRow.appendChild(td);
