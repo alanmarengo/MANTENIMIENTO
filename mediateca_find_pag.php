@@ -45,7 +45,7 @@ function IsSetVar($var)
 
 if (!IsSetVar($pagina))
 {
-	$pagina = 1;
+	$pagina = 0;
 };
 
 if(!IsSetVar($salto))
@@ -68,7 +68,7 @@ $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . 
 	
 $conn = pg_connect($string_conn);
 
-if($mode=-1)
+if($mode==-1)
 {
 	if (!IsSetVar($estudio_id))
 	{
@@ -88,8 +88,8 @@ if($mode=-1)
         . "recurso_fecha AS Fecha,"
         . "subclase_desc AS Tema"
         . " FROM mod_mediateca.mediateca_find('$qt','$desde','$hasta','$proyecto','$clase','$subclase','$tipo_doc') "
+	. " WHERE tipo_formato_solapa=$solapa" 
         . " GROUP BY recurso_fecha,subclase_desc,tipo_formato_solapa,origen_id,origen_id_especifico,recurso_titulo,recurso_desc,recurso_path_url,recurso_categoria_desc,CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END"
-        . " WHERE tipo_formato_solapa=$solapa" 
 	. " ORDER BY tipo_formato_solapa,recurso_titulo ASC"
         . ")T";
 	}
@@ -154,6 +154,7 @@ else
  * Data para paginador
  */
 
+//echo $SQL;
 
 $data_query	= "SELECT COUNT(*) registros FROM ($SQL) A;";
 
@@ -171,7 +172,7 @@ $offset_pag 	= (($salto-1)*$pagina);
 
 $paginador_text = " LIMIT $salto OFFSET $offset_pag";
 
-$SQL = $SQL." WHERE T.\"Solapa\"=$solapa";
+//$SQL = $SQL." WHERE T.\"Solapa\"=$solapa";
 $SQL = $SQL.$paginador_text;
 
 echo "{"; // JSON - Inicio
