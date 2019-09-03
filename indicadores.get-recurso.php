@@ -116,7 +116,7 @@ while($r = pg_fetch_assoc($query)) {
 		$data_out .= "\"desc\":\"" . $g_desc . "\",";
 		$data_out .= "\"data\":[" . $data_string . "]";
 		
-		echo $data_out . "<br>$query_grafico_data_string";
+		echo $data_out . "<br>$query_string<br>$query_grafico_data_string";
 		
 		break;
 		
