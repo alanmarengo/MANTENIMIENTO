@@ -117,8 +117,6 @@ while($r = pg_fetch_assoc($query)) {
 		$data_out .= "\"data\":[" . $data_string . "]";
 		$data_out .= "}";
 		
-		echo $data_out;
-		
 		break;
 		
 	}
@@ -149,7 +147,7 @@ switch($type) {
 	$out .= "{";
 	$out .= "\"type\":\"grafico\",";
 	$out .= "\"series\":[\"". implode("\",\"",$columns)."\"],";
-	$out .= "\"data\":[". $data . "]";
+	$out .= "\"data\":[". $data_out . "]";
 	$out .= "}";
 	break;
 	
