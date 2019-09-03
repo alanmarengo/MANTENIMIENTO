@@ -115,6 +115,7 @@ while($r = pg_fetch_assoc($query)) {
 		$data_out .= "\"titulo\":\"" . $g_titulo . "\",";
 		$data_out .= "\"desc\":\"" . $g_desc . "\",";
 		$data_out .= "\"data\":[" . $data_string . "]";
+		$data_out .= "}";
 		
 		echo $data_out;
 		
