@@ -82,7 +82,7 @@ while($r = pg_fetch_assoc($query)) {
 		case "grafico":	
 		$type = "grafico";
 		
-		$query_string = "SELECT * FROM mod_graficos.grafico WHERE grafico_id = " . $r["grafico_id"];
+		$query_string = "SELECT * FROM mod_graficos.grafico WHERE grafico_id = " . $r["resource_id"];
 		$query_grafico = pg_query($conn,$query_string);
 		$data = pg_fetch_assoc($query_grafico);
 		
@@ -100,11 +100,11 @@ while($r = pg_fetch_assoc($query)) {
 		
 		$data_string = "";
 		
-		while ($r = pg_fetch_assoc($query_grafico_data)) {
+		while ($s = pg_fetch_assoc($query_grafico_data)) {
 			
 			$data_string .= "{";
-			$data_string .= "\"name\":\"" . $r["sector"] . "\",";
-			$data_string .= "\"value\":" . $r["valor"];			
+			$data_string .= "\"name\":\"" . $s["sector"] . "\",";
+			$data_string .= "\"value\":" . $s["valor"];			
 			$data_string .= "},";
 			
 		}
