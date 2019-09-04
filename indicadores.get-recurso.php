@@ -113,6 +113,8 @@ while($r = pg_fetch_assoc($query)) {
 		
 		$data_out = "{";
 		$data_out .= "\"type\":\"grafico\",";
+		$data_out .= "\"grafico_id\":" . $query_grafico_data["grafico_id"] . ",";
+		$data_out .= "\"grafico_tipo_id\":" . $query_grafico_data["grafico_tipo_id"] . ",";
 		$data_out .= "\"titulo\":\"" . $g_titulo . "\",";
 		$data_out .= "\"desc\":\"" . $g_desc . "\",";
 		$data_out .= "\"data\":[" . $data_string . "]";
