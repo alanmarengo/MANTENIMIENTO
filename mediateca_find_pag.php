@@ -68,8 +68,19 @@ $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . 
 	
 $conn = pg_connect($string_conn);
 
+$sol = 1;
+
+function getSQL($solap) {
+	$sol = $solap
+}
+
 if($mode==-1)
 {
+	getSQL(2)
+	if($sol == 2)
+		echo "// SARAZA"
+
+
 	if (!IsSetVar($estudio_id))
 	{
 
