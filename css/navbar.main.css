@@ -7,7 +7,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1500 !Important;
+    z-index:500001 !Important;
 }
 
 #navbar-main .jump-row {
