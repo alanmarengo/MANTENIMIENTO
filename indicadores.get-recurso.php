@@ -104,12 +104,12 @@ while($r = pg_fetch_assoc($query)) {
 			
 			$data_string .= "{";
 			$data_string .= "\"name\":\"" . $s["sector"] . "\",";
-			$data_string .= "\"y\":" . $s["valor"];			
+			$data_string .= "\"value\":" . $s["valor"];			
 			$data_string .= "},";
 			
 		}
 		
-		$data_string = substr($data_string,0,strlen($data_string)-1);
+		$data_string = substr($data_string,0,strlen($data_string)-1);		
 		
 		$data_out = "{";
 		$data_out .= "\"type\":\"grafico\",";
@@ -139,15 +139,15 @@ switch($type) {
 	break;
 	
 	case "tabla":
-	$out .= $data_out;
+	$out .= "{";
+	$out .= "\"type\":\"table\",";
+	$out .= "\"columns\":[\"". implode("\",\"",$columns)."\"],";
+	$out .= "\"data\":[". $data . "]";
+	$out .= "}";
 	break;
 	
 	case "grafico":
-	$out .= "{";
-	$out .= "\"type\":\"grafico\",";
-	$out .= "\"series\":[\"". implode("\",\"",$columns)."\"],";
-	$out .= "\"data\":[". $data_out . "]";
-	$out .= "}";
+	$out = $data_out;
 	break;
 	
 	case "noresource":
