@@ -202,13 +202,17 @@ $paginador_text = " LIMIT $salto OFFSET $offset_pag";
 //$SQL = $SQL." WHERE T.\"Solapa\"=$solapa";
 //$SQL = $SQL.$paginador_text;
 
+$total_0 = getTotalRegistros(0);
+$total_1 = getTotalRegistros(1);
+$total_2 = getTotalRegistros(2);
+
 echo "{"; // JSON - Inicio
 echo "	\"paginas\":$total_paginas,";
 echo "	\"solapa\": $solapa,";
 echo "	\"pagina\": $pagina,";
-echo "	\"registros_total_0\": getTotalRegistros(0),";
-echo "	\"registros_total_1\": getTotalRegistros(1),";
-echo "	\"registros_total_2\": getTotalRegistros(2),";
+echo "	\"registros_total_0\": $total_0,";
+echo "	\"registros_total_1\": $total_1,";
+echo "	\"registros_total_2\": $total_2,";
 echo "	\"rec_per_page\": $salto,";
 echo "	\"recordset\":";
 
