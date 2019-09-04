@@ -104,7 +104,7 @@ while($r = pg_fetch_assoc($query)) {
 			
 			$data_string .= "{";
 			$data_string .= "\"name\":\"" . $s["sector"] . "\",";
-			$data_string .= "\"value\":" . $s["valor"];			
+			$data_string .= "\"y\":" . $s["valor"];			
 			$data_string .= "},";
 			
 		}
