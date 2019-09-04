@@ -24,8 +24,11 @@ function draw_grafico_11(container,config) { // PIE WITH DRILLDOWN
 			pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
 		},
 
-		series:config.data
-		
+		series:{
+            name: config.titulo,
+            colorByPoint: true,
+			data:config.data
+		}
 	});
 
 }
