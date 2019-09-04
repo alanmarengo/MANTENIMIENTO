@@ -79,6 +79,9 @@ if($mode==-1)
 	getSQL(2)
 	if($sol == 2)
 		echo "// SARAZA"
+	else {
+		echo "// SARAZA NO FUNCIONO"
+	}
 
 
 	if (!IsSetVar($estudio_id))
