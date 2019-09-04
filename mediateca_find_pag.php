@@ -55,7 +55,7 @@ if(!IsSetVar($salto))
 
 if(!IsSetVar($solapa))
 {
-	$solapa = 1;
+	$solapa = 0;
 };
 
 if(!IsSetVar($mode))
