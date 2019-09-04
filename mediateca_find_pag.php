@@ -171,10 +171,13 @@ function getSQL($solapa) {
  * Data para paginador
  */
 
- function getTotalRegistros($solapa) {
+ function getTotalRegistros($_solapa) 
+ {
 	global $conn;
 
-	$data_query	= "SELECT COUNT(*) registros FROM (getSQL($solapa)) A;";
+	$subquery = getSQL($_solapa); 
+
+	$data_query	= "SELECT COUNT(*) registros FROM ($subquery) A;";
 	$recordset	= pg_query($conn,$data_query);
 	$row		= pg_fetch_row($recordset);
 	
@@ -183,7 +186,7 @@ function getSQL($solapa) {
 
 //echo $SQL;
 
-$data_query	= "SELECT COUNT(*) registros FROM (getSQL($solapa)) A;";
+$data_query	= "SELECT COUNT(*) registros FROM (".getSQL($solapa).") A;";
 
 //echo $data_query;
 
