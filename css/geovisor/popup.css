@@ -688,3 +688,9 @@
 	font-size:12px;
 	
 }
+
+#popup-geovisor #popup-inner #popup-header .button:hover {
+	
+	background-color:#31cbfd;
+	
+}
