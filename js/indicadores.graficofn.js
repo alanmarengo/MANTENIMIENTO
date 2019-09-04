@@ -1,5 +1,5 @@
 function draw_grafico_11(container,config) { // PIE WITH DRILLDOWN
-
+	alert(container);
 	Highcharts.chart(container, {
 		chart: {
 			type: 'pie'
