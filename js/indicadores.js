@@ -171,6 +171,8 @@ function ol_indicadores() {
 			$("#indicador-col-pos-"+pos).empty();
 			$("#indicador-col-pos-"+pos).html(js.type);
 			
+			eval("draw-grafico-"+pos+"()");
+			
 			break;
 			
 		}

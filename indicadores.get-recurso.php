@@ -112,6 +112,7 @@ while($r = pg_fetch_assoc($query)) {
 		$data_string = substr($data_string,0,strlen($data_string)-1);
 		
 		$data_out = "{";
+		$data_out .= "\"type\":\"grafico\",";
 		$data_out .= "\"titulo\":\"" . $g_titulo . "\",";
 		$data_out .= "\"desc\":\"" . $g_desc . "\",";
 		$data_out .= "\"data\":[" . $data_string . "]";
@@ -136,11 +137,7 @@ switch($type) {
 	break;
 	
 	case "tabla":
-	$out .= "{";
-	$out .= "\"type\":\"table\",";
-	$out .= "\"columns\":[\"". implode("\",\"",$columns)."\"],";
-	$out .= "\"data\":[". $data . "]";
-	$out .= "}";
+	$out .= $data_out;
 	break;
 	
 	case "grafico":
