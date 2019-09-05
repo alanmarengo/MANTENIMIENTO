@@ -118,7 +118,7 @@ while($r = pg_fetch_assoc($query)) {
 		}
 		
 		$data_string = "";
-		
+		var_dump($sectorArr);
 		for ($i=0; $i<sizeof($sectorArr); $i++) {
 			
 			$data_string .= "{";
