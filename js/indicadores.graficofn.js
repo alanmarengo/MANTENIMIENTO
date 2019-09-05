@@ -64,7 +64,7 @@ function draw_grafico_2(container,config) {
         text: config.title
     },
     xAxis: {
-        categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+        categories: config.etiquetas
     },
     yAxis: {
         min: 0,

@@ -96,6 +96,7 @@ while($r = pg_fetch_assoc($query)) {
 		$query_grafico_data = pg_query($conn,$query_grafico_data_string);
 		
 		$sector = "-1";
+		$labels = array();
 		$sectorArr = array();
 		$seriesArr = array();
 		$curInd = -1;
@@ -106,6 +107,7 @@ while($r = pg_fetch_assoc($query)) {
 				
 				$curInd++;
 				
+				$labels[$curInd] = $s["etiqueta"];
 				$sectorArr[$curInd] = $s["sector"];
 				$seriesArr[$curInd] = array();
 				
@@ -146,6 +148,7 @@ while($r = pg_fetch_assoc($query)) {
 		$data_out .= "\"grafico_tipo_id\":" . $data["grafico_tipo_id"] . ",";
 		$data_out .= "\"titulo\":\"" . $g_titulo . "\",";
 		$data_out .= "\"desc\":\"" . $g_desc . "\",";
+		$data_out .= "\"etiquetas\":[\"" . implode("\",\"",$labels) . "\"],";
 		$data_out .= "\"data\":[" . $data_string . "]";
 		$data_out .= "}";
 		
