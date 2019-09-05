@@ -170,6 +170,95 @@ function draw_grafico_3(container,config) { // BUBBLE CHART
 
 }
 
+
+function draw_grafico_4(container,config) { // BUBBLE CHART
+	
+	var series = [];
+	var arrInd = -1;
+	var label = "";
+	var data = [];
+	
+	for (var i=0; i<config.etiquetas.length; i++) {
+		
+		if (label != config.etiquetas[i]) {
+			
+			arrInd++;
+			
+			series.push({
+				
+				name:config.etiquetas[i]
+				
+			});
+			
+			data[arrInd] = [];			
+			
+			label = config.etiquetas[i];
+			
+		}
+			
+		data[arrInd].push({
+			
+			name:config.data[i].name,
+			value:config.data[i].y
+			
+		});
+		
+	}
+	
+	for (var i=0; i<series.length; i++) {
+		
+		series[i].data = data[i];
+		
+	}
+	
+	
+	Highcharts.chart(container, {
+		chart: {
+			type: 'packedbubble',
+			height: '100%'
+		},
+		title: {
+			text: config.title
+		},
+		tooltip: {
+			useHTML: true,
+			pointFormat: '<b>{point.name}:</b> {point.value}m CO<sub>2</sub>'
+		},
+		plotOptions: {
+			packedbubble: {
+				minSize: '20%',
+				maxSize: '100%',
+				zMin: 0,
+				zMax: 1000,
+				layoutAlgorithm: {
+					gravitationalConstant: 0.05,
+					splitSeries: true,
+					seriesInteraction: false,
+					dragBetweenSeries: true,
+					parentNodeLimit: true
+				},
+				dataLabels: {
+					enabled: true,
+					format: '{point.name}',
+					filter: {
+						property: 'y',
+						operator: '>',
+						value: 250
+					},
+					style: {
+						color: 'black',
+						textOutline: 'none',
+						fontWeight: 'normal'
+					}
+				}
+			}
+		},
+		series:series
+	});
+
+
+}
+
 function draw_grafico_11(container,config) { // PIE WITH DRILLDOWN
 	
 	Highcharts.chart(container, {
