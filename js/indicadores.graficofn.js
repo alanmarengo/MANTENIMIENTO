@@ -119,15 +119,28 @@ function draw_grafico_3(container,config) { //  STACKED BAR
 function draw_grafico_11(container,config) { // PIE WITH DRILLDOWN
 	
 	var series = [];
+	var arrInd = -1;
+	var label = "";
 	
 	for (var i=0; i<config.etiquetas.length; i++) {
+		
+		if (label != config.etiquetas[i]) {
+			
+			label = config.etiquetas[i];
+			
+		}
 		
 		series[i] = {};
 		
 		series[i].name = config.etiquetas[i];
 		series[i].data = [];
 		
-		
+		series[i].data.push({
+			
+			name:config.data[i].name,
+			value:config.data[i].y
+			
+		});
 		
 	}
 	
