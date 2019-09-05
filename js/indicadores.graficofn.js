@@ -56,7 +56,7 @@ function draw_grafico_1(container,config) {
 
 function draw_grafico_2(container,config) {
 	
-	Highcharts.chart('container', {
+	Highcharts.chart(container, {
     chart: {
         type: 'bar'
     },
