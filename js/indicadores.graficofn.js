@@ -23,7 +23,7 @@ function draw_grafico_1(container,config) {
 		},
 		yAxis: {
 			title: {
-				text: 'Nuclear weapon states'
+				text: config.titulo
 			},
 			labels: {
 				formatter: function () {
@@ -32,7 +32,7 @@ function draw_grafico_1(container,config) {
 			}
 		},
 		tooltip: {
-			pointFormat: '{series.name} had stockpiled <b>{point.y:,.0f}</b><br/>warheads in {point.x}'
+			pointFormat: '{series.name} series por puntos <b>{point.y:,.0f}</b><br/>estadisticas en {point.x}'
 		},
 		plotOptions: {
 			area: {
