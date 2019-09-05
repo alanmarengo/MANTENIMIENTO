@@ -86,7 +86,7 @@ function draw_grafico_2(container,config) {
 } 
 
 
-function draw_grafico_4(container,config) { // BUBBLE CHART
+function draw_grafico_3(container,config) { // BUBBLE CHART
 	
 	var series = [];
 	var arrInd = -1;
