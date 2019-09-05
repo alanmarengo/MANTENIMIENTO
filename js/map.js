@@ -1508,7 +1508,7 @@ function ol_map() {
 			var layer_wms = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-wms");
 			
 			document.getElementById("layer-checkbox-"+layer_id).layer = new ol.layer.Tile({
-			//	name:layer_name,
+				name:layer_name,
 				visible:true,
 				source: new ol.source.TileWMS({
 					url: layer_wms,
@@ -1516,9 +1516,9 @@ function ol_map() {
 						'LAYERS': layer_name,
 						'VERSION': '1.1.1',
 						'FORMAT': 'image/png',
-						'TILED': false/*,
+						'TILED': false,
 						'clase_id':clase_id,
-						'layer_id':layer_id*/
+						'layer_id':layer_id
 					}/*,
 					crossOrigin: 'anonymous'*/
 				})
