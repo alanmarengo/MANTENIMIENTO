@@ -1524,7 +1524,7 @@ function ol_map() {
 				})
 			});
 			
-			document.getElementById("layer-checkbox-"+layer_id).layer.setVisible(false);
+			//document.getElementById("layer-checkbox-"+layer_id).layer.setVisible(false);
 			
 			this.map.ol_object.addLayer(document.getElementById("layer-checkbox-"+layer_id).layer);
 			
