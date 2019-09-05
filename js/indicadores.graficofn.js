@@ -1,4 +1,4 @@
-function draw_grafico_1(container,config) { // BASIC AREA
+function draw_grafico_1(container,config) {
 	
 	Highcharts.chart(container, {
 		chart: {
@@ -52,11 +52,11 @@ function draw_grafico_1(container,config) { // BASIC AREA
 		series:config.data
 	});
 	
-}
+} //  BASIC AREA
 
-function draw_grafico_2(container,config) { //  STACKED BAR
+function draw_grafico_2(container,config) {
 	
-	Highcharts.chart(container, {
+	Highcharts.chart('container', {
 		chart: {
 			type: 'bar'
 		},
@@ -64,12 +64,12 @@ function draw_grafico_2(container,config) { //  STACKED BAR
 			text: config.title
 		},
 		xAxis: {
-			categories: config.etiquetas
+			categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
 		},
 		yAxis: {
 			min: 0,
 			title: {
-				text: config.title
+				text: 'Total fruit consumption'
 			}
 		},
 		legend: {
@@ -83,38 +83,8 @@ function draw_grafico_2(container,config) { //  STACKED BAR
 		series: config.data
 	});
 	
-}
+} 
 
-function draw_grafico_3(container,config) { //  STACKED BAR
-	
-	Highcharts.chart(container, {
-		chart: {
-			type: 'bar'
-		},
-		title: {
-			text: config.title
-		},
-		xAxis: {
-			categories: config.etiquetas
-		},
-		yAxis: {
-			min: 0,
-			title: {
-				text: config.title
-			}
-		},
-		legend: {
-			reversed: true
-		},
-		plotOptions: {
-			series: {
-				stacking: 'normal'
-			}
-		},
-		series: config.data
-	});
-	
-}
 
 function draw_grafico_4(container,config) { // BUBBLE CHART
 	
@@ -197,5 +167,40 @@ function draw_grafico_4(container,config) { // BUBBLE CHART
 		series: series
 	});
 
+
+}
+
+function draw_grafico_11(container,config) { // PIE WITH DRILLDOWN
+	
+	Highcharts.chart(container, {
+		chart: {
+			type: 'pie'
+		},
+		title: {
+			text: config.titulo
+		},
+		subtitle: {
+			text: config.desc
+		},
+		plotOptions: {
+			series: {
+				dataLabels: {
+					enabled: true,
+					format: '{point.name}: {point.y:.1f}%'
+				}
+			}
+		},
+
+		tooltip: {
+			headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+			pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+		},
+
+		series:[{
+            name: config.titulo,
+            colorByPoint: true,
+			data:config.data
+		}]
+	});
 
 }
