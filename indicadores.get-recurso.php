@@ -123,7 +123,17 @@ while($r = pg_fetch_assoc($query)) {
 			
 			$data_string .= "{";
 			$data_string .= "\"name\":\"" . $sectorArr[$i] . "\",";
-			$data_string .= "\"y\":[" . implode(",",$seriesArr[$i]) . "]";
+		
+			if(sizeof($seriesArr[$i]) > 1) {
+				
+				$data_string .= "\"y\":[" . implode(",",$seriesArr[$i]) . "]";
+				
+			}else{
+				
+				$data_string .= "\"y\":" . implode(",",$seriesArr[$i]);
+				
+			}
+			
 			$data_string .= "},";
 		
 		}
