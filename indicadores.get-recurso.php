@@ -95,8 +95,7 @@ while($r = pg_fetch_assoc($query)) {
 		$query_grafico_data_string = "SELECT * FROM \"" . $g_data_schema . "\".\"" . $g_data_tabla . "\"";
 		$query_grafico_data = pg_query($conn,$query_grafico_data_string);
 		
-		$sector = "";
-		$valor = "";
+		$sector = "-1";
 		$sectorArr = array();
 		$seriesArr = array();
 		$curInd = -1;
@@ -106,9 +105,11 @@ while($r = pg_fetch_assoc($query)) {
 			if ($sector != $r["sector"]) {
 				
 				$curInd++;
-				$sector = $r["sector"];
+				
 				$sectorArr[$curInd] = $r["sector"];
 				$seriesArr[$curInd] = array();
+				
+				$sector = $r["sector"];
 				
 			}
 			
