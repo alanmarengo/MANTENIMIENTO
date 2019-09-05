@@ -80,16 +80,7 @@ function draw_grafico_2(container,config) {
             stacking: 'normal'
         }
     },
-    series: [{
-		"name": "INUNDACIONES VOL",
-		"data": [10, 20, 35]
-	}, {
-		"name": "TERREMOTOS ESCALA",
-		"data": [4, 6, 2]
-	}, {
-		"name": "SEQUIA TEMPERATURA",
-		"data": [35, 38, 37]
-	}]
+    series: config.data
 });
 	
 } //  BASIC AREA
