@@ -1,6 +1,6 @@
-function draw_grafico_1(container,json) {
+function draw_grafico_1(container,config) {
 	
-	Highcharts.chart('container', {
+	Highcharts.chart(container, {
 		chart: {
 			type: 'area'
 		},
