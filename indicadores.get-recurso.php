@@ -102,23 +102,23 @@ while($r = pg_fetch_assoc($query)) {
 		
 		while ($s = pg_fetch_assoc($query_grafico_data)) {
 			
-			if ($sector != $r["sector"]) {
+			if ($sector != $s["sector"]) {
 				
 				$curInd++;
 				
-				$sectorArr[$curInd] = $r["sector"];
+				$sectorArr[$curInd] = $s["sector"];
 				$seriesArr[$curInd] = array();
 				
-				$sector = $r["sector"];
+				$sector = $s["sector"];
 				
 			}
 			
-			array_push($seriesArr[$curInd],$r["valor"]);
+			array_push($seriesArr[$curInd],$s["valor"]);
 			
 		}
 		
 		$data_string = "";
-		var_dump($sectorArr);
+		
 		for ($i=0; $i<sizeof($sectorArr); $i++) {
 			
 			$data_string .= "{";
