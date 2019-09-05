@@ -1518,8 +1518,7 @@ function ol_map() {
 						'FORMAT': 'image/png',
 						'TILED': false,
 						'clase_id':clase_id,
-						'layer_id':layer_id,
-						'sld_body':''
+						'layer_id':layer_id
 					},
 					crossOrigin: 'anonymous'
 				})
@@ -1584,7 +1583,7 @@ function ol_map() {
 				}
 			});
 			
-			$("#layer-legend-"+layer_id).html("<img src=\"" + layer_wms + "&version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer="+layer_name+"&format=image/png&STYLE=default\" width=\"120\">");
+			$("#layer-legend-"+layer_id).html("<img src=\"" + layer_wms + "&version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer="+layer_name+"&format=image/png&\" width=\"120\">");
 			
 			if ($("#nav-panel").attr("data-visible") == 0) {
 				
