@@ -9,8 +9,8 @@
 
             <div class="col-md-12 top-buttons">
                 <a href="#" data-target="#historia">HISTORIA</a>
-                <a href="#" data-target="#linea-tiempo">LINEA DE TIEMPO</a>
-                <a href="#" data-target="#audiencia-publica">AUDIENCIA PUBLICA</a>
+                <a href="#" data-target="#linea-tiempo">LíNEA DE TIEMPO</a>
+                <a href="#" data-target="#audiencia-publica">AUDIENCIA PúBLICA</a>
             </div>
         </div>
 
@@ -33,7 +33,7 @@
                 lago Argentino y la no afectación de la cuenca glaciaria que le da origen.
             </p>
 
-            <a target="_blank" href="./sga/1.pdf">Leer el informe completo</a>
+            <a target="_blank" href="http://www.ieasa.com.ar/?page_id=3707">Leer el informe completo</a>
         </div>
 
         <div class="col-md-12 section-b linea-tiempo">
@@ -67,9 +67,9 @@
                     <div class="w30 bloque-1">2 Agosto</div>
                     <div class="w10 bloque-2">21 Diciembre</div>
                 </div>
-                <div class="fila-3">.
+                <div class="fila-3">
                 </div>
-                <div class="fila-4">.
+                <div class="fila-4">
                     <div class="w10 anio">2017</div>
                     <div class="w20 bloque-2">28 Abril</div>
                     <div class="w15 bloque-3">14 Junio</div>
