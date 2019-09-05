@@ -106,7 +106,7 @@ while($r = pg_fetch_assoc($query)) {
 			if ($sector != $r["sector"]) {
 				
 				$curInd++;
-				$sector == $r["sector"];
+				$sector = $r["sector"];
 				$sectorArr[$curInd] = $r["sector"];
 				$seriesArr[$curInd] = array();
 				
