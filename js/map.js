@@ -1516,9 +1516,9 @@ function ol_map() {
 						'LAYERS': layer_name,
 						'VERSION': '1.1.1',
 						'FORMAT': 'image/png',
-						'TILED': false,
+						'TILED': false/*,
 						'clase_id':clase_id,
-						'layer_id':layer_id
+						'layer_id':layer_id*/
 					},
 					crossOrigin: 'anonymous'
 				})
