@@ -97,16 +97,34 @@ while($r = pg_fetch_assoc($query)) {
 		
 		$sector = "";
 		$valor = "";
-		
-		$data_string = "";
+		$sectorArr = array();
+		$seriesArr = array();
+		$curInd = -1;
 		
 		while ($s = pg_fetch_assoc($query_grafico_data)) {
 			
-			$data_string .= "{";
-			$data_string .= "\"name\":\"" . $s["sector"] . "\",";
-			$data_string .= "\"y\":" . $s["valor"];			
-			$data_string .= "},";
+			if ($sector != $r["sector"]) {
+				
+				$curInd++;
+				$sector == $r["sector"];
+				$sectorArr[$curInd] = $r["sector"];
+				$seriesArr[$curInd] = array();
+				
+			}
 			
+			array_push($seriesArr[$curInd],$r["valor"]);
+			
+		}
+		
+		$data_string = "";
+		
+		for ($i=0; $i<sizeof($sectorArr); $i++) {
+			
+			$data_string .= "{";
+			$data_string .= "\"name\":\"" . $sectorArr[$i] . "\",";
+			$data_string .= "\"y\":[" . implode(",",$seriesArr[$i]) . "]";
+			$data_string .= "},";
+		
 		}
 		
 		$data_string = substr($data_string,0,strlen($data_string)-1);		
