@@ -126,7 +126,7 @@ while($r = pg_fetch_assoc($query)) {
 		
 			if(sizeof($seriesArr[$i]) > 1) {
 				
-				$data_string .= "\"y\":[" . implode(",",$seriesArr[$i]) . "]";
+				$data_string .= "\"data\":[" . implode(",",$seriesArr[$i]) . "]";
 				
 			}else{
 				
