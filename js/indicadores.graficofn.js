@@ -54,6 +54,46 @@ function draw_grafico_1(container,config) {
 	
 } //  BASIC AREA
 
+function draw_grafico_2(container,config) {
+	
+	Highcharts.chart('container', {
+    chart: {
+        type: 'bar'
+    },
+    title: {
+        text: config.title
+    },
+    xAxis: {
+        categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: config.title
+        }
+    },
+    legend: {
+        reversed: true
+    },
+    plotOptions: {
+        series: {
+            stacking: 'normal'
+        }
+    },
+    series: [{
+		"name": "INUNDACIONES VOL",
+		"data": [10, 20, 35]
+	}, {
+		"name": "TERREMOTOS ESCALA",
+		"data": [4, 6, 2]
+	}, {
+		"name": "SEQUIA TEMPERATURA",
+		"data": [35, 38, 37]
+	}]
+});
+	
+} //  BASIC AREA
+
 function draw_grafico_11(container,config) { // PIE WITH DRILLDOWN
 	
 	Highcharts.chart(container, {
