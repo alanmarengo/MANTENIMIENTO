@@ -413,7 +413,7 @@ function draw_grafico_6(container,config) { // FIXED PLACEMENT
 				
 				name:config.data[i].name,
 				data:[config.data[i].y],
-				color:color[i],
+				color:colors[i],
 				pointPadding: 0.3,
 				pointPlacement: -0.2
 					
