@@ -274,42 +274,37 @@ function draw_grafico_5(container,config) { // BUBBLE CHART
 			labels.push(config.etiquetas[i]);
 			
 			label = config.etiquetas[i];
+		
+		}
+		
+	}
+	
+	for (var i=0; i<config.etiquetas.length; i++) {
+					
+		var found = false;
+				
+		for (var j=0; j<series.length; j++) {
+				
+			if (series[j].name == config.data[i].name) {
+					
+				series[j].data.push(config.data[i].y);
+				found = true;
+						
+			}
+		
+		}
 			
+		if (!found) {
+				
 			series.push({
 				
 				name:config.data[i].name,
 				data:[config.data[i].y]
-				
+					
 			});
-			
-		}else{		
-			
-			for (var j=0; j<series.length; j++) {
-					
-				var found = false;
-					
-				if (series[j].name == config.data[i].name) {
-					
-					series[j].data.push(config.data[i].y);
-					found = true;
-					
-				}
-					
-			}
-			
-			if (!found) {
 				
-				series.push({
-				
-					name:config.data[i].name,
-					data:[config.data[i].y]
-					
-				});
-				
-			}
-		
 		}
-		
+					
 	}
 	
 	console.log(series);
