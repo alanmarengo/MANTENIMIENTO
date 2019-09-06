@@ -350,6 +350,32 @@ function draw_grafico_6(container,config) { // FIXED PLACEMENT
 	
 	var series = [];
 	var labels = [];
+	var colors = [
+					'rgba(165,170,217,1)',
+					'rgba(126,86,134,.9)',
+					'rgba(248,161,63,1)',
+					'rgba(186,60,61,.9)',
+					'rgba(165,170,217,1)',
+					'rgba(126,86,134,.9)',
+					'rgba(248,161,63,1)',
+					'rgba(186,60,61,.9)',
+					'rgba(165,170,217,1)',
+					'rgba(126,86,134,.9)',
+					'rgba(248,161,63,1)',
+					'rgba(186,60,61,.9)',
+					'rgba(165,170,217,1)',
+					'rgba(126,86,134,.9)',
+					'rgba(248,161,63,1)',
+					'rgba(186,60,61,.9)',
+					'rgba(165,170,217,1)',
+					'rgba(126,86,134,.9)',
+					'rgba(248,161,63,1)',
+					'rgba(186,60,61,.9)',
+					'rgba(165,170,217,1)',
+					'rgba(126,86,134,.9)',
+					'rgba(248,161,63,1)',
+					'rgba(186,60,61,.9)'
+				];
 	var arrInd = -1;
 	var label = "";
 	var data = [];
@@ -387,6 +413,7 @@ function draw_grafico_6(container,config) { // FIXED PLACEMENT
 				
 				name:config.data[i].name,
 				data:[config.data[i].y],
+				color:color[i],
 				pointPadding: 0.3,
 				pointPlacement: -0.2
 					
