@@ -300,7 +300,7 @@ function draw_grafico_5(container,config) { // BUBBLE CHART
 	}
 	
 	
-	Highcharts.chart('container', {
+	Highcharts.chart(container, {
 		chart: {
 			type: 'column'
 		},
