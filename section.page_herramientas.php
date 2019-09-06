@@ -19,32 +19,32 @@
 
             <div class="row" style="padding-left: 20px;">
                 <div class="col-md-4 page-box">
-                    <div href="./geovisor.php" class="box">
+                    <a href="./geovisor.php" class="box">
                         <div class="page-box-image" style="background-image: url(./images/herramientas/3.png);"></div>
                         <p class="page-box-title">GEOVISOR INTEGRAL</p>
                         <p class="page-box-description">Visualizá, gestioná y accedé en línea a la totalidad de la información de este Observatorio y conectate e integrá información de otros organismos externos, tanto para consulta como para generar nueva información.</p>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-md-4 page-box">
-                    <div href="" class="box">
+                    <a href="" class="box">
                         <div class="page-box-image" style="background-image: url(./images/herramientas/4.png);"></div>
                         <p class="page-box-title">GEOVISOR DE OBRA AHRSC</p>
                         <p class="page-box-description">Visualizá y consultá las características técnicas de los proyectos de AHRSC, a través de la documentación ejecutiva y de los modelos tridimensionales con tecnología BIM que contiene toda la información técnica y física en una base de datos inteligente y dinámica.</p>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-md-4 page-box">
-                    <div href="http://hidrosantacruz.com.ar" class="box">
+                    <a href="http://hidrosantacruz.com.ar" class="box">
                         <div class="page-box-image" style="background-image: url(./images/herramientas/5.png);"></div>
                         <p class="page-box-title">SIT</p>
                         <p class="page-box-description">Accedé al geovisor del Sistema de Información Territorial de Santa Cruz (SIT) con información espacial pública de la provincia orientadas a la gestión y toma de decisiones.</p>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-md-4 page-box">
-                    <div href="" class="box">
+                    <a href="" class="box">
                         <div class="page-box-image" style="background-image: url(./images/herramientas/6.png);"></div>
                         <p class="page-box-title">GEOVISOR AHRSC</p>
                         <p class="page-box-description">Conocé los AHRSC,  sus características técnicas y toda la información ambiental de línea de base y monitoreos actuales. Indagá y generá tu propia información y vinculate a otros organismos externos para integrar nueva información.</p>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>

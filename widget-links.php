@@ -5,13 +5,13 @@
 	</a>
 </div>
 <div class="widget-link" style="background-color:#8e2f4f; right:0px; top:200px;">
-	<a href="./geovisor.php">
+	<a href="./page_herramientas.php">
 		<!--<img src="./images/icono_geovisores.png" />-->
 		<span>GEOVISORES</span>
 	</a>
 </div>
 <div class="widget-link" style="background-color:#585dc5; right:0px; top:260px;">
-	<a href="#">
+	<a href="./indicadores">
 		<!--<img src="./images/icono_indicadores.png" />-->
 		<span>INDICADORES</span>
 	</a>
