@@ -235,8 +235,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-2 side-right">
-            <div class="row">
+        <div class="col-md-2 side-right" style="position: relative;">
+            <div class="row pinned" style="position: absolute;">
                 <a 
                     href="./mediateca.php" 
                     class="col-md-12 link-wrap link-1"
@@ -316,6 +316,7 @@
     </div>
 </div>
     
+<script src="./js/hc-sticky.js" type="text/javascript"></script>
 <script type='text/javascript'>
     $(document).ready(function () {
         var model = {
@@ -324,6 +325,10 @@
             sensorIndex : 0
         };
 
+        $('.pinned').hcSticky({
+            stickTo: '.side-right'
+        });
+        
         $.getJSON(model.apiUrlBase + '/json_sensores.php', function(data) {
             model.sensores = data;
             sensorRefresh();
@@ -385,7 +390,6 @@
             }
         )
 
-
         $('.link-wrap').hover( 
             function () {
                 let icon = $(this).find('.link-icon img');
@@ -412,6 +416,10 @@
             let w = $('.link-wrap').first().outerWidth();
             $('.link-wrap').height(w);
         }
+
+        setTimeout(() => {
+            refreshUI();
+        }, 500);
 
     });
 </script>
