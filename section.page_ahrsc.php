@@ -98,7 +98,7 @@
                         VER FICHA Y RECURSOS ASOCIADOS DE CONDOR CLIFF:
                     </div>
                     <div class="section-footer-buttons">
-                        <a href="#" class="section-footer-button">
+                        <a target="_blank" href="./media/FICHA_CONDOR_CLIFF.pdf" class="section-footer-button">
                             <i class="fa fa-file-alt"></i>
                             VER FICHA
                         </a>
@@ -159,7 +159,7 @@
                         VER FICHA Y RECURSOS ASOCIADOS DE LA BARRANCOSA:
                     </div>
                     <div class="section-footer-buttons">
-                        <a href="#" class="section-footer-button">
+                        <a target="_blank" href="./media/FICHA_LA_BARRANCOSA.pdf" class="section-footer-button">
                             <i class="fa fa-file-alt"></i>
                             VER FICHA
                         </a>
@@ -266,7 +266,7 @@ $(document).ready(function() {
     $('.section-sticky a').on('click', function() {
         let selector = $(this).data('target');
         $('html, body').animate({
-            scrollTop: $(selector).offset().top - 220
+            scrollTop: $(selector).offset().top - 200
         }, 500)
     });
 

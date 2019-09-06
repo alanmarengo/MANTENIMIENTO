@@ -20,7 +20,7 @@
 			</a>
 		</li>
 		<li>
-			<a href="#">Geoservicios</a>
+			<a href="./page_herramientas.php?target=geoservicios">Geoservicios</a>
 		</li>
 		<li>
 			<a href="#">Datos Abiertos</a>

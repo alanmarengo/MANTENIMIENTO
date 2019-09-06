@@ -8,8 +8,8 @@
             </div>
 
             <div class="col-md-12 top-buttons">
-                <a href="#" data-target="#geovisores">geovisores</a>
-                <a href="#" data-target="#geoservicios">geoservicios</a>
+                <a id="link-geovisores" href="#" data-target="#geovisores">geovisores</a>
+                <a id="link-geoservicios" href="#" data-target="#geoservicios">geoservicios</a>
             </div>
         </div>
 

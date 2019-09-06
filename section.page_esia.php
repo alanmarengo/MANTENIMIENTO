@@ -2,9 +2,9 @@
 
 <div id="page_esia" class="page page_template">
     <div class="row">
-    <div class="section-sticky">
+        <div class="section-sticky">
             <div class="col-md-12 page-title">
-                Evaluacion de impacto ambiental-EsIA
+                Evaluación de impacto ambiental-EsIA
             </div>
 
             <div class="col-md-12 top-buttons">
@@ -179,7 +179,7 @@ $(document).ready(function() {
     $('.section-sticky a').on('click', function() {
         let selector = $(this).data('target');
         $('html, body').animate({
-            scrollTop: $(selector).offset().top - 220
+            scrollTop: $(selector).offset().top - 200
         }, 500)
     });
 

@@ -253,7 +253,7 @@
                     </div>
                 </a>
                 <a 
-                    href="./herramientas.php" 
+                    href="./page_herramientas.php" 
                     class="col-md-12 link-wrap link-2"
                     data-img="./images/icono_geovisores.png"
                     data-imghover="./images/icono_geovisores_hover.png"
@@ -268,7 +268,7 @@
                     </div>
                 </a>
                 <a 
-                    href="./herramientas.php" 
+                    href="./indicadores.php" 
                     class="col-md-12 link-wrap link-3"
                     data-img="./images/icono_indicadores.png"
                     data-imghover="./images/icono_indicadores_hover.png"
@@ -283,7 +283,7 @@
                     </div>
                 </a>
                 <a 
-                    href="./herramientas.php" 
+                    href="./estadisticas.php" 
                     class="col-md-12 link-wrap link-4"
                     data-img="./images/icono_estadisticas.png"
                     data-imghover="./images/icono_estadisticas_hover.png"

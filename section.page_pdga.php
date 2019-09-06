@@ -189,7 +189,7 @@ $(document).ready(function() {
     $('.section-sticky a').on('click', function() {
         let selector = $(this).data('target');
         $('html, body').animate({
-            scrollTop: $(selector).offset().top - 220
+            scrollTop: $(selector).offset().top - 200
         }, 500)
     });
 
