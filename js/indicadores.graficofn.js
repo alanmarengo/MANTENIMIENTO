@@ -326,7 +326,7 @@ function draw_grafico_5(container,config) { // BUBBLE CHART
 		yAxis: {
 			min: 0,
 			title: {
-				text: 'Rainfall (mm)'
+				text: config.titulo
 			}
 		},
 		tooltip: {
