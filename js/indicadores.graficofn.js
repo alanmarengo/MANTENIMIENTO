@@ -432,6 +432,9 @@ function draw_grafico_6(container,config) { // FIXED PLACEMENT
 		},
 		series: series
 	});
+	
+	console.log(series);
+	
 }
 
 function draw_grafico_11(container,config) { // PIE WITH DRILLDOWN
