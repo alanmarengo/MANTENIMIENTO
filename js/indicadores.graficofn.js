@@ -299,6 +299,7 @@ function draw_grafico_5(container,config) { // BUBBLE CHART
 		
 	}
 	
+	console.log(series);
 	
 	Highcharts.chart(container, {
 		chart: {
