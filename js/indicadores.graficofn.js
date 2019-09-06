@@ -271,7 +271,7 @@ function draw_grafico_5(container,config) { // BUBBLE CHART
 		
 		if (label != config.etiquetas[i]) {
 			
-			labels.push(name:config.etiquetas[i]);
+			labels.push(config.etiquetas[i]);
 			
 			label = config.etiquetas[i];
 			
