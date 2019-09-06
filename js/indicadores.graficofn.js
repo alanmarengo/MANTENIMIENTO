@@ -314,13 +314,13 @@ function draw_grafico_5(container,config) { // BUBBLE CHART
 			type: 'column'
 		},
 		title: {
-			text: 'Monthly Average Rainfall'
+			text: config.titulo
 		},
 		subtitle: {
-			text: 'Source: WorldClimate.com'
+			text: config.desc
 		},
 		xAxis: {
-			categories: config.etiquetas,
+			categories: labels,
 			crosshair: true
 		},
 		yAxis: {
@@ -343,7 +343,7 @@ function draw_grafico_5(container,config) { // BUBBLE CHART
 				borderWidth: 0
 			}
 		},
-		series:config.data
+		series:series
 	});
 }
 
