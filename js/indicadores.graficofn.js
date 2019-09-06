@@ -437,6 +437,86 @@ function draw_grafico_6(container,config) { // FIXED PLACEMENT
 	
 }
 
+function draw_grafico_7(container,config) { // FIXED PLACEMENT
+	
+	var series = [];
+	var labels = [];
+	var arrInd = -1;
+	var label = "";
+	var data = [];
+	
+	for (var i=0; i<config.etiquetas.length; i++) {
+		
+		if (label != config.etiquetas[i]) {
+			
+			labels.push(config.etiquetas[i]);
+			
+			label = config.etiquetas[i];
+		
+		}
+		
+	}
+	
+	for (var i=0; i<config.etiquetas.length; i++) {
+					
+		var found = false;
+				
+		for (var j=0; j<series.length; j++) {
+				
+			if (series[j].name == config.data[i].name) {
+					
+				series[j].data.push(config.data[i].y);
+				found = true;
+						
+			}
+		
+		}
+			
+		if (!found) {
+				
+			series.push({
+				
+				name:config.data[i].name,
+				data:[config.data[i].y],
+				pointPadding: 0.3,
+				pointPlacement: -0.2
+					
+			});
+				
+		}
+					
+	}
+	
+	Highcharts.chart(container, {
+		chart: {
+			type: 'column'
+		},
+		title: {
+			text: config.titulo
+		},
+		xAxis: {
+			categories: config.etiquetas
+		},
+		yAxis: {
+			min: 0,
+			title: {
+				text: config.desc
+			}
+		},
+		tooltip: {
+			pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+			shared: true
+		},
+		plotOptions: {
+			column: {
+				stacking: 'percent'
+			}
+		},
+		series: config.data
+	});
+	
+}
+
 function draw_grafico_11(container,config) { // PIE WITH DRILLDOWN
 	
 	Highcharts.chart(container, {
