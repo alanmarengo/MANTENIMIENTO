@@ -262,6 +262,7 @@ function draw_grafico_4(container,config) { // BUBBLE CHART
 function draw_grafico_5(container,config) { // BUBBLE CHART
 	
 	var series = [];
+	var labels = [];
 	var arrInd = -1;
 	var label = "";
 	var data = [];
@@ -270,32 +271,44 @@ function draw_grafico_5(container,config) { // BUBBLE CHART
 		
 		if (label != config.etiquetas[i]) {
 			
-			arrInd++;
-			
-			series.push({
-				
-				name:config.etiquetas[i]
-				
-			});
-			
-			data[arrInd] = [];			
+			labels.push(name:config.etiquetas[i]);
 			
 			label = config.etiquetas[i];
 			
+			series.push({
+				
+				name:config.data[i].name,
+				data:[config.data[i].y]
+				
+			});
+			
+		}else{		
+			
+			for (var j=0; j<series.length; j++) {
+					
+				var found = false;
+					
+				if (series[j].name == config.data[i].name) {
+					
+					series[j].data.push(config.data[i].y);
+					found = true;
+					
+				}
+					
+			}
+			
+			if (!found) {
+				
+				series.push({
+				
+					name:config.data[i].name,
+					data:[config.data[i].y]
+					
+				});
+				
+			}
+		
 		}
-			
-		data[arrInd].push({
-			
-			name:config.data[i].name,
-			value:config.data[i].y
-			
-		});
-		
-	}
-	
-	for (var i=0; i<series.length; i++) {
-		
-		series[i].data = data[i];
 		
 	}
 	
