@@ -259,7 +259,7 @@ function draw_grafico_4(container,config) { // BUBBLE CHART
 }
 
 
-function draw_grafico_5(container,config) { // BUBBLE CHART
+function draw_grafico_5(container,config) { // BASIC COLUMNS
 	
 	var series = [];
 	var labels = [];
@@ -307,8 +307,6 @@ function draw_grafico_5(container,config) { // BUBBLE CHART
 					
 	}
 	
-	console.log(series);
-	
 	Highcharts.chart(container, {
 		chart: {
 			type: 'column'
@@ -344,6 +342,95 @@ function draw_grafico_5(container,config) { // BUBBLE CHART
 			}
 		},
 		series:series
+	});
+}
+
+
+function draw_grafico_6(container,config) { // FIXED PLACEMENT
+	
+	var series = [];
+	var labels = [];
+	var arrInd = -1;
+	var label = "";
+	var data = [];
+	
+	for (var i=0; i<config.etiquetas.length; i++) {
+		
+		if (label != config.etiquetas[i]) {
+			
+			labels.push(config.etiquetas[i]);
+			
+			label = config.etiquetas[i];
+		
+		}
+		
+	}
+	
+	for (var i=0; i<config.etiquetas.length; i++) {
+					
+		var found = false;
+				
+		for (var j=0; j<series.length; j++) {
+				
+			if (series[j].name == config.data[i].name) {
+					
+				series[j].data.push(config.data[i].y);
+				found = true;
+						
+			}
+		
+		}
+			
+		if (!found) {
+				
+			series.push({
+				
+				name:config.data[i].name,
+				data:[config.data[i].y],
+				pointPadding: 0.3,
+				pointPlacement: -0.2
+					
+			});
+				
+		}
+					
+	}
+	
+	Highcharts.chart(container, {
+		chart: {
+			type: 'column'
+		},
+		title: {
+			text: config.titulo
+		},
+		xAxis: {
+			categories: labels
+		},
+		yAxis: [{
+			min: 0,
+			title: {
+				text: config.titulo
+			}
+		}, {
+			title: {
+				text: config.desc
+			},
+			opposite: true
+		}],
+		legend: {
+			shadow: false
+		},
+		tooltip: {
+			shared: true
+		},
+		plotOptions: {
+			column: {
+				grouping: false,
+				shadow: false,
+				borderWidth: 0
+			}
+		},
+		series: series
 	});
 }
 
