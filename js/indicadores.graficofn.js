@@ -433,8 +433,6 @@ function draw_grafico_6(container,config) { // FIXED PLACEMENT
 		series: series
 	});
 	
-	console.log(series);
-	
 }
 
 function draw_grafico_7(container,config) { // FIXED PLACEMENT
@@ -666,7 +664,11 @@ function draw_grafico_9(container,config) { // BASIC LINE
 			}
 		},
 
-		series: series/*,
+		series: series		
+	
+		console.log(series);
+		
+		/*,
 
 		responsive: {
 			rules: [{
