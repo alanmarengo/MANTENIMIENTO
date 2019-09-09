@@ -175,6 +175,12 @@ function ol_indicadores() {
 			
 			break;
 			
+			case slider:
+			
+			console.log(js);
+			
+			break;
+			
 		}
 		
 	}
