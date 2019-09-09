@@ -666,12 +666,13 @@ function draw_grafico_9(container,config) { // BASIC LINE
 
 		series: config.data
 		
-		/*,
+		,
 
 		responsive: {
 			rules: [{
 				condition: {
-					maxWidth: 500
+					maxWidth: 500,
+					minHeight:300
 				},
 				chartOptions: {
 					legend: {
@@ -681,7 +682,7 @@ function draw_grafico_9(container,config) { // BASIC LINE
 					}
 				}
 			}]
-		}*/
+		}
 
 	});
 		
