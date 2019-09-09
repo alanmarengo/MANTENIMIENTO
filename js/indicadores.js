@@ -208,6 +208,10 @@ function ol_indicadores() {
 			document.getElementById("indicador-col-pos-"+pos).innerHTML = "";
 			document.getElementById("indicador-col-pos-"+pos).appendChild(carouselSlide);
 			
+			$(carouselSlide).carousel({
+				interval: 2000
+			})
+			
 			break;
 			
 		}
