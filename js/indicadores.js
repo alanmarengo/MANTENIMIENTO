@@ -175,7 +175,7 @@ function ol_indicadores() {
 			
 			break;
 			
-			case slider:
+			case "slider":
 			
 			console.log(js);
 			
