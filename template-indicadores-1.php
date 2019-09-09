@@ -85,7 +85,7 @@
 		
 		</div>
 
-		<div class="resource-col col col-md-4 col-lg-4 col-xs-12 col-sm-12" id="indicador-col-pos-12" data-pos="12">
+		<div class="resource-col col col-md-4 col-lg-4 col-xs-12 col-sm-12" id="indicador-col-pos-12" data-pos="12" style="height:500px;">
 		
 		
 		
