@@ -685,8 +685,66 @@ function draw_grafico_9(container,config) { // BASIC LINE
 		}*/
 
 	});
-		
-	console.log(config.data);
+	
+}
+
+function draw_grafico_10(container,config) { // SEMI CIRCLE DONUT
+	
+	document.getElementById(container).style.minHeight = "300px";
+	
+	Highcharts.chart(container, {
+		chart: {
+			plotBackgroundColor: null,
+			plotBorderWidth: 0,
+			plotShadow: false
+		},
+		title: {
+			text: config.titulo,
+			align: 'center',
+			verticalAlign: 'middle',
+			y: 60
+		},
+		tooltip: {
+			pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+		},
+		plotOptions: {
+			pie: {
+				dataLabels: {
+					enabled: true,
+					distance: -50,
+					style: {
+						fontWeight: 'bold',
+						color: 'white'
+					}
+				},
+				startAngle: -90,
+				endAngle: 90,
+				center: ['50%', '75%'],
+				size: '110%'
+			}
+		},
+		series: [{
+			type: 'pie',
+			name: config.desc,
+			innerSize: '50%',
+			data: [
+				['Chrome', 58.9],
+				['Firefox', 13.29],
+				['Internet Explorer', 13],
+				['Edge', 3.78],
+				['Safari', 3.42],
+				{
+					name: 'Other',
+					y: 7.61,
+					dataLabels: {
+						enabled: false
+					}
+				}
+			]
+		}]
+	});
+	
+	console.log(config);
 	
 }
 
