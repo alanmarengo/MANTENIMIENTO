@@ -76,5 +76,27 @@
 		</div>
 
 	</div>
+
+	<div class="row" >
+
+		<div class="resource-col col col-md-4 col-lg-4 col-xs-12 col-sm-12" id="indicador-col-pos-11" data-pos="7">
+		
+		
+		
+		</div>
+
+		<div class="resource-col col col-md-4 col-lg-4 col-xs-12 col-sm-12" id="indicador-col-pos-12" data-pos="8">
+		
+		
+		
+		</div>
+
+		<div class="resource-col col col-md-4 col-lg-4 col-xs-12 col-sm-12" id="indicador-col-pos-13" data-pos="9">
+		
+		
+		
+		</div>
+
+	</div>
 	
 </div>

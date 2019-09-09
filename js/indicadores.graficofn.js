@@ -517,6 +517,176 @@ function draw_grafico_7(container,config) { // FIXED PLACEMENT
 	
 }
 
+function draw_grafico_8(container,config) { // FIXED PLACEMENT
+	
+	var series = [];
+	var labels = [];
+	var arrInd = -1;
+	var label = "";
+	var data = [];
+	
+	for (var i=0; i<config.etiquetas.length; i++) {
+		
+		if (label != config.etiquetas[i]) {
+			
+			labels.push(config.etiquetas[i]);
+			
+			label = config.etiquetas[i];
+		
+		}
+		
+	}
+	
+	for (var i=0; i<config.etiquetas.length; i++) {
+					
+		var found = false;
+				
+		for (var j=0; j<series.length; j++) {
+				
+			if (series[j].name == config.data[i].name) {
+					
+				series[j].data.push(config.data[i].y);
+				found = true;
+						
+			}
+		
+		}
+			
+		if (!found) {
+				
+			series.push({
+				
+				name:config.data[i].name,
+				data:[config.data[i].y],
+				pointPadding: 0.3,
+				pointPlacement: -0.2
+					
+			});
+				
+		}
+					
+	}
+	
+	Highcharts.chart(container, {
+        series: [{
+            type: 'treemap',
+            layoutAlgorithm: 'squarified',
+            allowDrillToNode: true,
+            animationLimit: 1000,
+            dataLabels: {
+                enabled: false
+            },
+            levelIsConstant: false,
+            levels: [{
+                level: 1,
+                dataLabels: {
+                    enabled: true
+                },
+                borderWidth: 3
+            }],
+            data: points
+        }],
+        subtitle: {
+            text: 'Click points to drill down. Source: <a href="http://apps.who.int/gho/data/node.main.12?lang=en">WHO</a>.'
+        },
+        title: {
+            text: 'Global Mortality Rate 2012, per 100 000 population'
+        }
+    });
+	
+}
+
+function draw_grafico_9(container,config) { // BASIC LINE
+	
+	var series = [];
+	var arrInd = -1;
+	var label = "";
+	var data = [];
+	
+	for (var i=0; i<config.etiquetas.length; i++) {
+		
+		if (label != config.etiquetas[i]) {
+			
+			arrInd++;
+			
+			series.push({
+				
+				name:config.etiquetas[i]
+				
+			});
+			
+			data[arrInd] = [];			
+			
+			label = config.etiquetas[i];
+			
+		}
+			
+		data[arrInd].push({
+			
+			name:config.data[i].name,
+			value:config.data[i].y
+			
+		});
+		
+	}
+	
+	for (var i=0; i<series.length; i++) {
+		
+		series[i].data = data[i];
+		
+	}
+	
+	Highcharts.chart('container', {
+
+		title: {
+			text: config.titulo
+		},
+
+		subtitle: {
+			text: config.desc
+		},
+
+		yAxis: {
+			title: {
+				text: config.titulo
+			}
+		},
+		legend: {
+			layout: 'vertical',
+			align: 'right',
+			verticalAlign: 'middle'
+		},
+
+		plotOptions: {
+			series: {
+				label: {
+					connectorAllowed: false
+				},
+				pointStart: 2010
+			}
+		},
+
+		series: series,
+
+		responsive: {
+			rules: [{
+				condition: {
+					maxWidth: 500
+				},
+				chartOptions: {
+					legend: {
+						layout: 'horizontal',
+						align: 'center',
+						verticalAlign: 'bottom'
+					}
+				}
+			}]
+		}
+
+	});
+	
+}
+
 function draw_grafico_11(container,config) { // PIE WITH DRILLDOWN
 	
 	Highcharts.chart(container, {
