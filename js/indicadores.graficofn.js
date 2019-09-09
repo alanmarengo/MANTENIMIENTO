@@ -696,7 +696,7 @@ function draw_grafico_10(container,config) { // SEMI CIRCLE DONUT
 	
 	for (var i=0; i<config.data.length; i++) {
 		
-		series.push([config.data[i].name,config.data[y].y]);
+		series.push([config.data[i].name,config.data[i].y]);
 		
 	}
 	
