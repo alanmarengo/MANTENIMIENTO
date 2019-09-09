@@ -519,7 +519,7 @@ function draw_grafico_7(container,config) { // FIXED PLACEMENT
 
 function draw_grafico_8(container,config) { // FIXED PLACEMENT
 	
-	var series = [];
+	/*var series = [];
 	var labels = [];
 	var arrInd = -1;
 	var label = "";
@@ -592,7 +592,7 @@ function draw_grafico_8(container,config) { // FIXED PLACEMENT
         title: {
             text: 'Global Mortality Rate 2012, per 100 000 population'
         }
-    });
+    });*/
 	
 }
 
