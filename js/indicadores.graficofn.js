@@ -664,9 +664,9 @@ function draw_grafico_9(container,config) { // BASIC LINE
 			}
 		},
 
-		series: series		
-	
-		console.log(series);
+		series: config.data
+		
+		console.log(config.data);
 		
 		/*,
 
