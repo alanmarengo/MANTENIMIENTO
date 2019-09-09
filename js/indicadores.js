@@ -52,7 +52,7 @@ function ol_indicadores() {
 			
 			var pos = $(v).attr("data-pos");
 			this.loadIndicadorResource(ind_id,pos);
-			
+			alert(pos);
 		}.bind(this));
 		
 		scroll.refresh();
