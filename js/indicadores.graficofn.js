@@ -666,8 +666,6 @@ function draw_grafico_9(container,config) { // BASIC LINE
 
 		series: config.data
 		
-		console.log(config.data);
-		
 		/*,
 
 		responsive: {
@@ -686,6 +684,8 @@ function draw_grafico_9(container,config) { // BASIC LINE
 		}*/
 
 	});
+		
+	console.log(config.data);
 	
 }
 
