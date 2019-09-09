@@ -666,7 +666,7 @@ function draw_grafico_9(container,config) { // BASIC LINE
 			}
 		},
 
-		series: series,
+		series: series/*,
 
 		responsive: {
 			rules: [{
@@ -681,7 +681,7 @@ function draw_grafico_9(container,config) { // BASIC LINE
 					}
 				}
 			}]
-		}
+		}*/
 
 	});
 	
