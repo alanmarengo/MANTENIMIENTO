@@ -692,6 +692,14 @@ function draw_grafico_10(container,config) { // SEMI CIRCLE DONUT
 	
 	document.getElementById(container).style.minHeight = "300px";
 	
+	var series = [];
+	
+	for (var i=0; i<config.data.length; i++) {
+		
+		series.push([config.data[i].name,config.data[y].y]);
+		
+	}
+	
 	Highcharts.chart(container, {
 		chart: {
 			plotBackgroundColor: null,
@@ -727,24 +735,9 @@ function draw_grafico_10(container,config) { // SEMI CIRCLE DONUT
 			type: 'pie',
 			name: config.desc,
 			innerSize: '50%',
-			data: [
-				['Chrome', 58.9],
-				['Firefox', 13.29],
-				['Internet Explorer', 13],
-				['Edge', 3.78],
-				['Safari', 3.42],
-				{
-					name: 'Other',
-					y: 7.61,
-					dataLabels: {
-						enabled: false
-					}
-				}
-			]
+			data: series
 		}]
 	});
-	
-	console.log(config);
 	
 }
 
