@@ -159,7 +159,7 @@ while($r = pg_fetch_assoc($query)) {
 		case "recurso":	
 		$type = "recurso";
 		
-		array_push($sliderItem,$r["slider_item"]);
+		array_push($sliderItem,$r["slide_path"]);
 		
 		break;
 		
