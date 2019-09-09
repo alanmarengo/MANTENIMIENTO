@@ -634,6 +634,8 @@ function draw_grafico_9(container,config) { // BASIC LINE
 		
 	}
 	
+	container.style.minHeight = "300px";
+	
 	Highcharts.chart(container, {
 
 		title: {
@@ -664,9 +666,7 @@ function draw_grafico_9(container,config) { // BASIC LINE
 			}
 		},
 
-		series: config.data
-		
-		,
+		series: config.data/*,
 
 		responsive: {
 			rules: [{
@@ -682,7 +682,7 @@ function draw_grafico_9(container,config) { // BASIC LINE
 					}
 				}
 			}]
-		}
+		}*/
 
 	});
 		
