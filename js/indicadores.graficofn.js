@@ -636,7 +636,7 @@ function draw_grafico_9(container,config) { // BASIC LINE
 		
 	}
 	
-	Highcharts.chart('container', {
+	Highcharts.chart(container, {
 
 		title: {
 			text: config.titulo
