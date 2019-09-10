@@ -222,8 +222,9 @@ function ol_indicadores() {
 			fichaIcon.onclick = function() {
 				
 				jwindow.open("popup-fmetodologica");
+				this.loadFichaMetodologica(ind_id,pos);
 				
-			}
+			}.bind(this);
 			
 		var fichaImg = document.createElement("img");
 			fichaImg.src = "./images/ficha-icono.png";
@@ -231,6 +232,12 @@ function ol_indicadores() {
 		fichaIcon.appendChild(fichaImg);
 		
 		document.getElementById("indicador-col-pos-"+pos).appendChild(fichaIcon);
+		
+	}
+	
+	this.loadFichaMetodologica = function(ind_id,pos) {
+		
+		alert(ind_id + " :: " + pos);
 		
 	}
 		
