@@ -237,7 +237,23 @@ function ol_indicadores() {
 	
 	this.loadFichaMetodologica = function(ind_id,pos) {
 		
-		alert(ind_id + " :: " + pos);
+		var req = $.ajax({
+			
+			async:false,
+			url:"./indicadores.get-labels.php",
+			type:"post",
+			data:{
+				ind_id:ind_id,
+				pos:pos
+			},
+			success:function(d){}
+			
+		});
+		
+		var js = JSON.parse(req.responseText);
+		
+		document.getElementById("ficha-metodologica-titulo").innerHTML = js.titulo;
+		document.getElementById("ficha-metodologica-desc").innerHTML = js.desc;
 		
 	}
 		

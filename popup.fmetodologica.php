@@ -26,7 +26,7 @@
 			
 			<div id="info-fmetodologica" class="pt-10">
 			
-				<p>
+				<p id="ficha-metodologica-desc">
 				
 					Seleccione un Indicador para ver su descripción.
 				
