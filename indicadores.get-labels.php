@@ -16,8 +16,6 @@ $query = pg_query($conn,$query_string);
 
 $data = pg_fetch_assoc($query);
 
-var_dump($data);
-
 if ((empty(trim($data["desc"]))) || (is_null(trim($data["desc"])))) {
 	
 	$desc = "Este indicador no posee una descripción asociada";
