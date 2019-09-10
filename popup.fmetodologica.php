@@ -22,9 +22,19 @@
 			<hr>
 		</div>
 		
-		<div class="jump-window-body p20" id="info-fmetodologica">
+		<div class="jump-window-body p20">
 			
+			<div id="info-fmetodologica">
 			
+				
+			
+			</div>
+			
+			<div>
+			
+				<img src="./images/ficha-button.png">
+			
+			</div>
 			
 		</div>
 	
