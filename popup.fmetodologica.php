@@ -24,7 +24,7 @@
 		
 		<div class="jump-window-body p20">
 			
-			<div id="info-fmetodologica">
+			<div id="info-fmetodologica" class="pt-10">
 			
 				<p>
 				
