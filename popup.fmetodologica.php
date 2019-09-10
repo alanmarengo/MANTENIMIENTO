@@ -4,7 +4,7 @@
 	<div class="jump-window-inner p20">
 
 		<div class="jump-window-header">
-			<span>Ficha Metodologica</span>
+			<span><img src="./images/ficha-2.png"></span><span id="ficha-metodologica-titulo">Ficha Metodologica</span>
 			<div class="jump-window-icon-bar">
 				<a href="#" class="jump-window-minimize" onclick="jwindow.minimize('popup-medicion');">
 					<i class="fas fa-minus"></i>

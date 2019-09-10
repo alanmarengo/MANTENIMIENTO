@@ -74,3 +74,16 @@
 	bottom:10px;
 	
 }
+
+#popup-fmetodologica .jump-window-header {
+	
+	background-color:#FFFFFF;
+	color:#595ec6;
+	
+}
+
+#popup-fmetodologica .jump-window-header .jump-window-minimize {
+	
+	display:none;
+	
+}
