@@ -1,6 +1,7 @@
 function draw_grafico_1(container,config) {
 	
 	Highcharts.chart(container, {
+		credits:disabled,
 		chart: {
 			type: 'area'
 		},
@@ -57,6 +58,7 @@ function draw_grafico_1(container,config) {
 function draw_grafico_2(container,config) {
 	
 	Highcharts.chart(container, {
+		credits:disabled,
 		chart: {
 			type: 'bar'
 		},
@@ -127,6 +129,7 @@ function draw_grafico_3(container,config) { // BUBBLE CHART
 	}
 	
 	Highcharts.chart(container, {
+		credits:disabled,
 		chart: {
 			type: 'packedbubble',
 			height: '100%'
@@ -213,6 +216,7 @@ function draw_grafico_4(container,config) { // BUBBLE CHART
 	
 	
 	Highcharts.chart(container, {
+		credits:disabled,
 		chart: {
 			type: 'packedbubble',
 			height: '100%'
@@ -308,6 +312,7 @@ function draw_grafico_5(container,config) { // BASIC COLUMNS
 	}
 	
 	Highcharts.chart(container, {
+		credits:disabled,
 		chart: {
 			type: 'column'
 		},
@@ -397,6 +402,7 @@ function draw_grafico_6(container,config) { // FIXED PLACEMENT
 	}
 	
 	Highcharts.chart(container, {
+		credits:disabled,
 		chart: {
 			type: 'column'
 		},
@@ -486,6 +492,7 @@ function draw_grafico_7(container,config) { // FIXED PLACEMENT
 	}
 	
 	Highcharts.chart(container, {
+		credits:disabled,
 		chart: {
 			type: 'column'
 		},
@@ -701,6 +708,7 @@ function draw_grafico_10(container,config) { // SEMI CIRCLE DONUT
 	}
 	
 	Highcharts.chart(container, {
+		credits:disabled,
 		chart: {
 			plotBackgroundColor: null,
 			plotBorderWidth: 0,
@@ -744,6 +752,7 @@ function draw_grafico_10(container,config) { // SEMI CIRCLE DONUT
 function draw_grafico_11(container,config) { // PIE WITH DRILLDOWN
 	
 	Highcharts.chart(container, {
+		credits:disabled,
 		chart: {
 			type: 'pie'
 		},
