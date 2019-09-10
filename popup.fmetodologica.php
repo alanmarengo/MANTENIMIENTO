@@ -6,6 +6,14 @@
 		<div class="jump-window-header">
 			<span id="ficha-metodologica-titulo-prev"><img src="./images/ficha-icono-2.png"></span><span id="ficha-metodologica-titulo">Ficha Metodologica</span>
 			<div class="jump-window-icon-bar">
+				<a href="#" class="jump-window-icon" onclick="jwindow.close('popup-fmetodologica');">
+					<i class="fas fa-heart"></i>
+				</a>
+				<a href="#" class="jump-window-icon" onclick="jwindow.close('popup-fmetodologica');">
+					<i class="fas fa-download"></i>
+				</a>
+			</div>
+			<div class="jump-window-icon-bar">
 				<a href="#" class="jump-window-close" onclick="jwindow.close('popup-fmetodologica');">
 					<i class="fas fa-times"></i>
 				</a>
