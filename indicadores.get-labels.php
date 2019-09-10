@@ -28,7 +28,7 @@ if ((empty(trim($data["desc"]))) || (is_null(trim($data["desc"])))) {
 
 $out = "{";
 $out .= "\"titulo\":\"" . $data["titulo"] . "\",";
-$out .= "\"desc\":\"" . $data["desc"] . "\"";
+$out .= "\"desc\":\"" . $desc . "\"";
 $out .= "}";
 
 echo $out;
