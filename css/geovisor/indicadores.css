@@ -87,3 +87,18 @@
 	color:#4f4d4e;
 	
 }
+
+#ficha-metodologica-titulo-prev {
+	
+	position: relative;
+	top: 10px;
+	
+}
+
+#ficha-metodologica-titulo {
+	
+	position: relative;
+	top: 12px;
+	left: 12px;
+	
+}
