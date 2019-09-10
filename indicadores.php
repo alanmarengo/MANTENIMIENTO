@@ -24,7 +24,7 @@
 	
 	
 </head>
-<body>
+<body style="overflow:hidden;">
 
 	<div id="page">
 	
@@ -43,7 +43,7 @@
 			
 				<?php include("./html.panel-indicadores.php"); ?>
 				
-				<div id="template-wrapper" class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
+				<div id="template-wrapper" class="jump-flotant-heightfill jump-scroll col-md-9 col-lg-9 col-sm-12 col-xs-12">
 				
 					
 				
