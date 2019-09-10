@@ -2,8 +2,15 @@ $(document).ready(function() {
     var model = {
         apiUrlBase: GlobaApiUrl,
         tab: 0,
+        paginas: 0,
+        qty0: 0,
+        qty1: 0,
+        qty2: 0,
         stopLoad: false,
         filters: {
+            pagina: 0,
+            salto: 20,
+
             orden: 0,
             searchText: '',
             dateStart: '',
@@ -27,6 +34,14 @@ $(document).ready(function() {
         $('#imagemodal').modal('show');
     });
 
+    // CHANGE PAGE
+    $('body').on('click', '.page-number', function() {
+        let pagina = $(this).data('page');
+        model.pagina = pagina;
+        dataLoad();
+        dataRender();
+    });
+
     // REMOVE FILTER
     $('body').on('click', '.filters-checked', function() {
         let group = $(this).data('group');
@@ -34,6 +49,7 @@ $(document).ready(function() {
         model.filters.groups[group].items[item].checked = false;
         setEstudio(null);
         filtersRender();
+        model.pagina = 0;
         dataLoad();
     });
 
@@ -45,6 +61,7 @@ $(document).ready(function() {
 
         setEstudio(null);
         filtersRender();
+        model.pagina = 0;
         dataLoad();
     });
 
@@ -75,7 +92,8 @@ $(document).ready(function() {
         model.filters.groups[model.tab + 1].visible = true;
 
         filtersRender();
-        dataRender();
+        model.pagina = 0;
+        dataLoad();
     });
 
     // CLICK EN LINKS DE FICHA
@@ -87,8 +105,10 @@ $(document).ready(function() {
         setEstudio($(this).data('estudio'));
         model.stopLoad = false;
 
-        if (model.tab == 0)
+        if (model.tab == 0) {
             model.ra = 1;
+            model.pagina = 0;
+        }
 
         filtersRender();
         dataLoad();
@@ -199,11 +219,11 @@ $(document).ready(function() {
         dataLoad();
     }
 
-    //function refreshSearchText() {
-    //    model.filters.searchText = $('#uxSearchText').val();
-    //    setEstudio(null);
-    //    dataLoad();
-    //}
+    function getQty() {
+        if (model.tab == 0) return model.qty0;
+        else if (model.tab == 1) return model.qty1;
+        else return model.qty2;
+    }
 
     function filtersLoad() {
         model.filters.groups = initFiltersGroups();
@@ -238,14 +258,23 @@ $(document).ready(function() {
         if (model.stopLoad)
             return;
 
-        var url = model.apiUrlBase + '/mediateca_find.php?' + makeUrlFilter();
+        var url = model.apiUrlBase + '/mediateca_find_pag.php?' + makeUrlFilter();
+        //console.log(url);
 
         $.getJSON(url, function(data) {
+            model.solapa = data.solapa;
+            model.paginas = data.paginas;
+            model.pagina = data.pagina;
+            model.salto = data.rec_per_page;
+            model.qty0 = data.registros_total_0;
+            model.qty1 = data.registros_total_1;
+            model.qty2 = data.registros_total_2;
+
             model.ra = 0;
             model.data.docs = [];
             model.data.medias = [];
             model.data.techs = [];
-            $.each(data, function(index, value) {
+            $.each(data.recordset, function(index, value) {
                 if (value.Solapa == 0) {
                     model.data.docs.push({
                         id: value.Id,
@@ -345,16 +374,72 @@ $(document).ready(function() {
     }
 
     function dataRender() {
-        if (model.tab == 0)
+        if (model.tab == 0) {
             docsRender();
-        else if (model.tab == 1)
+        } else if (model.tab == 1)
             mediasRender();
         else if (model.tab == 2)
             techsRender();
 
-        $('#uxQtyDocs').html(`(${model.data.docs.length})`);
-        $('#uxQtyMedias').html(`(${model.data.medias.length})`);
-        $('#uxQtyTechs').html(`(${model.data.techs.length})`);
+        $('#uxQtyDocs').html(`(${model.qty0})`);
+        $('#uxQtyMedias').html(`(${model.qty1})`);
+        $('#uxQtyTechs').html(`(${model.qty2})`);
+
+        pagerRender('#uxPager1');
+        pagerRender('#uxPager2');
+    }
+
+    function clearPage() {
+        model.pagina == 0;
+    }
+
+    function pagerRender(qs) {
+        let html = '';
+
+        if (getQty() <= model.filters.salto) {
+            $(qs).html(html);
+            return;
+        }
+
+        let min = 0;
+        let max = 6;
+
+        html = `
+            <div class="row pager">
+                <div class="col-md-12 pager-numbers">
+        `;
+
+        html += `
+            <a href="#" class="page-number" data-page="0">
+                <i class="fa fa-angle-double-left"></i>            
+            </a>
+        `;
+
+        for (let x = min; x < max; x++) {
+            html += htmlPagerNumber(x);
+        }
+
+        html += `...`;
+        html += htmlPagerNumber(model.paginas - 1);
+
+        html += `
+            <a href="#" class="page-number" data-page="${model.paginas - 1}">
+                <i class="fa fa-angle-double-right"></i>            
+            </a>
+        `;
+
+        html += `
+                </div>
+            </div>
+        `;
+
+        $(qs).html(html);
+    }
+
+    function htmlPagerNumber(pagina) {
+        return `
+            <a href="#" class="page-number${pagina == model.pagina ? '-active' : ''}" data-page="${pagina}">${pagina + 1}</a>
+        `;
     }
 
     function filtersRender() {
@@ -376,7 +461,7 @@ $(document).ready(function() {
 
                         <div id="group-${gindex}-body" class="collapse ${group.collapsed ? '' : 'show'}"
                             data-parent="#uxFilters">
-                            <div data-simplebar class="card-body group-container-items" style="max-height: 14em; overflow-y: auto;">
+                            <div data-simplebar class="card-body group-container-items" style="max-height: 180px; overflow-y: auto;">
                                 <ul class="list-group">
                 `;
 
@@ -735,7 +820,11 @@ $(document).ready(function() {
             tema: idItemsChecked(model.filters.groups[4]),
             subtema: idItemsChecked(model.filters.groups[5]),
             estudio_id: model.filters.estudio,
-            ra: model.ra
+            ra: model.ra,
+
+            solapa: model.tab,
+            pagina: model.pagina,
+            salto: model.salto
         };
 
         return jQuery.param(params);
