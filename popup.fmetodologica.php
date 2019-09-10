@@ -12,10 +12,10 @@
 			</div>
 			<div class="jump-window-icon-bar">
 				<a href="#" class="jump-window-icon" onclick="jwindow.close('popup-fmetodologica');">
-					<i class="fas fa-heart"></i>
+					<img src="./images/ficha-heart.png">
 				</a>
 				<a href="#" class="jump-window-icon" onclick="jwindow.close('popup-fmetodologica');">
-					<i class="fas fa-download"></i>
+					<img src="./images/ficha-download.png">
 				</a>
 			</div>
 			<br>
