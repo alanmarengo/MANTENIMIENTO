@@ -1,4 +1,4 @@
-<div class="jump-window jump-flotant-heightfill-top col col-xs-12 col-sm-12-col-md-4 col-lg-4 geovisor-flotant" id="popup-fmetodologica"
+<div class="jump-window col col-xs-12 col-sm-12-col-md-4 col-lg-4 geovisor-flotant" id="popup-fmetodologica"
  data-minimizable="0">
 	
 	<div class="jump-window-inner p20">
