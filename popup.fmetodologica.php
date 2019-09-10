@@ -6,10 +6,7 @@
 		<div class="jump-window-header">
 			<span><img src="./images/ficha-icono-2.png"></span><span id="ficha-metodologica-titulo">Ficha Metodologica</span>
 			<div class="jump-window-icon-bar">
-				<a href="#" class="jump-window-minimize" onclick="jwindow.minimize('popup-medicion');">
-					<i class="fas fa-minus"></i>
-				</a>
-				<a href="#" class="jump-window-close" onclick="geomap.map.medicion.layerVector.getSource().clear(); jwindow.close('popup-medicion');">
+				<a href="#" class="jump-window-close" onclick="jwindow.close('popup-fmetodologica');">
 					<i class="fas fa-times"></i>
 				</a>
 			</div>
