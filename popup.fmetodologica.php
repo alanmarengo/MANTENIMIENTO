@@ -26,15 +26,19 @@
 			
 			<div id="info-fmetodologica">
 			
+				<p>
 				
+					Seleccione un Indicador para ver su descripción.
+				
+				</p>
 			
 			</div>
 			
-			<div>
+			<a href="#" class="jump-window-icon">
 			
 				<img src="./images/ficha-button.png">
 			
-			</div>
+			</a>
 			
 		</div>
 	

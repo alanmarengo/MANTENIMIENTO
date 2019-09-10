@@ -110,6 +110,12 @@
 	
 }
 
+#popup-fmetodologica .jump-window-icon:hover {
+	
+	opacity:0.7;
+	
+}
+
 #popup-fmetodologica {
 	
 	position:absolute;
