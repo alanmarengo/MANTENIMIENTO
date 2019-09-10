@@ -220,6 +220,10 @@ function ol_indicadores() {
 				
 			var fichaImg = document.createElement("img");
 				fichaImg.src = "./images/ficha-icono.png";
+				
+			fichaIcon.appendChild(fichaImg);
+			
+			document.getElementById("indicador-col-pos-"+pos).appendChild(fichaIcon);
 			
 		}
 		
