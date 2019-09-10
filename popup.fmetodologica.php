@@ -10,6 +10,8 @@
 					<i class="fas fa-times"></i>
 				</a>
 			</div>
+			<br>
+			<hr>
 		</div>
 		
 		<div class="jump-window-body p20" id="info-fmetodologica">

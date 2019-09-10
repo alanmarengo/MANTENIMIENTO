@@ -82,9 +82,19 @@
 	
 }
 
+#popup-fmetodologica .jump-window-header hr {
+	
+	background-color:#FFFFFF;
+	color:#595ec6;
+	
+}
+
 #popup-fmetodologica .jump-window-header .jump-window-close {
 	
 	color:#4f4d4e;
+	position: relative;
+	left: 35px;
+	top: -12px;
 	
 }
 
