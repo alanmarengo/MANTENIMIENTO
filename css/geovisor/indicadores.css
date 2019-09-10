@@ -104,6 +104,9 @@
 #popup-fmetodologica .jump-window-icon {
 	
 	color:#666666;
+	position: relative;
+	top: 5px;
+	padding: 1px;
 	
 }
 
