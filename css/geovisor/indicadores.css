@@ -12,6 +12,12 @@
 	
 }
 
+.resource-col {
+	
+	position:relative;
+	
+}
+
 .indicadores-table {
 	
 	min-width:100%;
@@ -59,4 +65,12 @@
 	
 	border-right:1px solid #ccc;
 
+}
+
+.indicador-icono-ficha {
+	
+	position:absolute;
+	right:0px;
+	bottom:0px;
+	
 }
