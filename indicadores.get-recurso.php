@@ -18,6 +18,8 @@ $layer_id = array();
 $layer_name = array();
 $layer_server = array();
 
+$sliderItem = array();
+
 $type = "noresource";
 
 while($r = pg_fetch_assoc($query)) {
@@ -154,6 +156,13 @@ while($r = pg_fetch_assoc($query)) {
 		
 		break;
 		
+		case "recurso":	
+		$type = "recurso";
+		
+		array_push($sliderItem,$r["slide_path"]);
+		
+		break;
+		
 	}
 	
 }
@@ -180,6 +189,13 @@ switch($type) {
 	
 	case "grafico":
 	$out = $data_out;
+	break;
+	
+	case "recurso":
+	$out .= "{";
+	$out .= "\"type\":\"slider\",";
+	$out .= "\"images\":[\"".implode("\",\"",$sliderItem)."\"]";
+	$out .= "}";
 	break;
 	
 	case "noresource":

@@ -175,6 +175,45 @@ function ol_indicadores() {
 			
 			break;
 			
+			case "slider":
+			
+			var carouselSlide = document.createElement("div");
+				carouselSlide.id = "carousel-"+pos;
+				carouselSlide.className = "carousel slide";
+				carouselSlide.setAttribute("data-ride","carousel");
+				
+			var carouselInner = document.createElement("div");
+				carouselInner.className = "carousel-inner";
+				
+				carouselSlide.appendChild(carouselInner);
+			
+			var startClass = "carousel-item active";
+			
+			for (var i=0; i<js.images.length; i++) {
+				
+				var carouselItem = document.createElement("div");
+					carouselItem.className = startClass;
+					
+				var carouselImg = document.createElement("img");
+					carouselImg.className = "d-block w-100";
+					carouselImg.setAttribute("src",js.images[i]);
+					
+					carouselItem.appendChild(carouselImg);
+					carouselInner.appendChild(carouselItem);
+					
+				startClass = "carousel-item";
+				
+			}
+			
+			document.getElementById("indicador-col-pos-"+pos).innerHTML = "";
+			document.getElementById("indicador-col-pos-"+pos).appendChild(carouselSlide);
+			
+			$(carouselSlide).carousel({
+				interval: 2000
+			})
+			
+			break;
+			
 		}
 		
 	}
