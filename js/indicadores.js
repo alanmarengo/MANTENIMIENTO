@@ -214,18 +214,18 @@ function ol_indicadores() {
 			
 			break;
 			
-			var fichaIcon = document.createElement("a");
-				fichaIcon.className = "indicador-icono-ficha";
-				fichaIcon.href = "javascript:void(0);";
-				
-			var fichaImg = document.createElement("img");
-				fichaImg.src = "./images/ficha-icono.png";
-				
-			fichaIcon.appendChild(fichaImg);
-			
-			document.getElementById("indicador-col-pos-"+pos).appendChild(fichaIcon);
-			
 		}
+			
+		var fichaIcon = document.createElement("a");
+			fichaIcon.className = "indicador-icono-ficha";
+			fichaIcon.href = "javascript:void(0);";
+			
+		var fichaImg = document.createElement("img");
+			fichaImg.src = "./images/ficha-icono.png";
+			
+		fichaIcon.appendChild(fichaImg);
+		
+		document.getElementById("indicador-col-pos-"+pos).appendChild(fichaIcon);
 		
 	}
 		
