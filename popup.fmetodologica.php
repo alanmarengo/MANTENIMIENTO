@@ -46,7 +46,7 @@
 					
 				</div>
 				
-				<div class="col col-md-10 col-sm-10 col-xs-10 col-lg-10">
+				<div class="col col-md-2 col-sm-2 col-xs-2 col-lg-2">
 					
 					<p><a href="#"><img src="./images/icono-mediateca-br.png"></a></p>
 					<p><a href="#"><img src="./images/icono-geovisores-br.png"></a></p>
