@@ -32,6 +32,7 @@ function wms_preview($capa_id)
  $wms_request = "";
 
  global $string_conn;
+ global $error_preview_img;
  
  $conn = pg_connect($string_conn);
 
