@@ -1,14 +1,14 @@
 <script type="text/javascript">
 	
 	$(document).ready(function() {
-		/*
+		
 		$("[title]").tooltipster({
 			animation: 'fade',
 			delay: 200,
 			theme: 'tooltipster-shadow',
 			trigger: 'hover'
 		});
-		*/
+		
 		
 		flotant = new Jump.flotant();
 		flotant.prepareToggle(".navmenu:not(#nav-panel)");
