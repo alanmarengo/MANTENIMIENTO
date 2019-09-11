@@ -215,6 +215,45 @@ function ol_indicadores() {
 			break;
 			
 		}
+			
+		var fichaIcon = document.createElement("a");
+			fichaIcon.className = "indicador-icono-ficha";
+			fichaIcon.href = "javascript:void(0);";
+			fichaIcon.onclick = function() {
+				
+				jwindow.open("popup-fmetodologica");
+				this.loadFichaMetodologica(ind_id,pos);
+				
+			}.bind(this);
+			
+		var fichaImg = document.createElement("img");
+			fichaImg.src = "./images/ficha-icono.png";
+			
+		fichaIcon.appendChild(fichaImg);
+		
+		document.getElementById("indicador-col-pos-"+pos).appendChild(fichaIcon);
+		
+	}
+	
+	this.loadFichaMetodologica = function(ind_id,pos) {
+		
+		var req = $.ajax({
+			
+			async:false,
+			url:"./indicadores.get-labels.php",
+			type:"post",
+			data:{
+				ind_id:ind_id,
+				pos:pos
+			},
+			success:function(d){}
+			
+		});
+		
+		var js = JSON.parse(req.responseText);
+		
+		document.getElementById("ficha-metodologica-titulo").innerHTML = js.titulo;
+		document.getElementById("ficha-metodologica-desc").innerHTML = js.desc;
 		
 	}
 		

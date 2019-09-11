@@ -9,7 +9,10 @@
 		flotant.prepareToggle(".navmenu:not(#nav-panel)");
 		flotant.fitTopElement("#navbar-tools","#navbar-main");
 		flotant.fitTopElement(".page-container",".jump-navbar");
-		flotant.fit();
+		flotant.fit();		
+		
+		jwindow = new Jump.window();
+		jwindow.initialize();
 		
 		scroll = new Jump.scroll();
 		scroll.refresh();

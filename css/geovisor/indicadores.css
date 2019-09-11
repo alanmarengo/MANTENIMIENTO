@@ -12,6 +12,12 @@
 	
 }
 
+.resource-col {
+	
+	position:relative;
+	
+}
+
 .indicadores-table {
 	
 	min-width:100%;
@@ -59,4 +65,93 @@
 	
 	border-right:1px solid #ccc;
 
+}
+
+.indicador-icono-ficha {
+	
+	position:absolute;
+	right:10px;
+	bottom:10px;
+	
+}
+
+#popup-fmetodologica .jump-window-header {
+	
+	background-color:#FFFFFF;
+	color:#595ec6;
+	cursor:default;
+	
+}
+
+#popup-fmetodologica .jump-window-header hr {
+	
+	position:relative;
+	top:10px;
+	width:95%;
+	background-color:#FFFFFF;
+	color:#595ec6;
+	
+}
+
+#popup-fmetodologica .jump-window-header .jump-window-close {
+	
+	color:#4f4d4e;
+	position: relative;
+	left: 35px;
+	top: -12px;
+	
+}
+
+#popup-fmetodologica .jump-window-icon {
+	
+	color:#666666;
+	position: relative;
+	top: 5px;
+	padding: 1px;
+	
+}
+
+#popup-fmetodologica .jump-window-icon:hover {
+	
+	opacity:0.7;
+	
+}
+
+#popup-fmetodologica {
+	
+	position:absolute;
+	top:50%;
+	left:50%;
+	height:300px;
+	width:600px;
+	margin-left:-300px;
+	margin-top:-150px;
+	
+}
+
+#ficha-metodologica-titulo-prev {
+	
+	position: relative;
+	top: 10px;
+	
+}
+
+#ficha-metodologica-titulo {
+	
+	position: relative;
+	top: 12px;
+	left: 12px;
+	
+}
+
+.indicadores-icon-bar p {
+	
+	margin-bottom:2px;
+	
+}
+
+.indicadores-icon-bar p a:hover {
+	
+	opacity:0.7;
+	
 }
