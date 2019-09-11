@@ -48,9 +48,13 @@
 				
 				<div class="col col-md-2 col-sm-2 col-xs-2 col-lg-2">
 					
-					<p><a href="#"><img src="./images/icono-mediateca-br.png"></a></p>
-					<p><a href="#"><img src="./images/icono-geovisores-br.png"></a></p>
-					<p><a href="#"><img src="./images/icono-estadisticas-br.png"></a></p>
+					<div class="indicadores-icon-bar">
+					
+						<p><a href="#"><img src="./images/icono-mediateca-br.png"></a></p>
+						<p><a href="#"><img src="./images/icono-geovisores-br.png"></a></p>
+						<p><a href="#"><img src="./images/icono-estadisticas-br.png"></a></p>
+					
+					</div>
 					
 				</div>
 			
