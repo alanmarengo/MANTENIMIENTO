@@ -26,9 +26,20 @@ if ((empty(trim($data["desc"]))) || (is_null(trim($data["desc"])))) {
 	
 }
 
+if ((empty(trim($data["ficha_metodo_path"]))) || (is_null(trim($data["ficha_metodo_path"])))) {
+	
+	$path = "javascript:alert('Este indicador no posee una ficha asociada');";
+	
+}else{
+	
+	$path = $data["ficha_metodo_path"];
+	
+}
+
 $out = "{";
 $out .= "\"titulo\":\"" . $data["titulo"] . "\",";
-$out .= "\"desc\":\"" . $desc . "\"";
+$out .= "\"desc\":\"" . $desc . "\",";
+$out .= "\"ficha_metodo_path\":\"" . $path . "\"";
 $out .= "}";
 
 echo $out;

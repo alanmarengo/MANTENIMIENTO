@@ -45,7 +45,7 @@ function GenPreview($recursos_extension,$file_server,$recursor_path,$cache_path,
 						$imagick = $imagick->flattenImages();
 						
 						file_put_contents($cache_path.$recurso_id.'.jpg',  $imagick->getImagesBlob());
-						echo 'Generando '.$cache_path.$recurso_id.'.jpg';
+						echo 'Generando '.$cache_path.$recurso_id.'.jpg<br>';
 						
 					}
 					else
@@ -54,7 +54,7 @@ function GenPreview($recursos_extension,$file_server,$recursor_path,$cache_path,
 						$imagick->setImageFormat("jpg");
 						
 						file_put_contents($cache_path.$recurso_id.'.jpg',  $imagick->getImagesBlob());
-						echo 'Generando '.$cache_path.$recurso_id.'.jpg';
+						echo 'Generando '.$cache_path.$recurso_id.'.jpg<br>';
 					};
 					
 					break;
@@ -69,7 +69,7 @@ function GenPreview($recursos_extension,$file_server,$recursor_path,$cache_path,
 						$imagick->setImageFormat("jpg");
 						
 						file_put_contents($cache_path.$recurso_id.'.jpg',  $imagick->getImagesBlob());
-						echo 'Generando '.$cache_path.$recurso_id.'.jpg';
+						echo 'Generando '.$cache_path.$recurso_id.'.jpg<br>';
 					}
 					else
 					{
@@ -77,7 +77,7 @@ function GenPreview($recursos_extension,$file_server,$recursor_path,$cache_path,
 						$imagick->setImageFormat("jpg");
 						
 						file_put_contents($cache_path.$recurso_id.'.jpg',  $imagick->getImagesBlob());
-						echo 'Generando '.$cache_path.$recurso_id.'.jpg';
+						echo 'Generando '.$cache_path.$recurso_id.'.jpg<br>';
 					};
 					
 					break;
@@ -92,7 +92,7 @@ function GenPreview($recursos_extension,$file_server,$recursor_path,$cache_path,
 						$imagick->setImageFormat("jpg");
 						
 						file_put_contents($cache_path.$recurso_id.'.jpg',  $imagick->getImagesBlob());
-						echo 'Generando '.$cache_path.$recurso_id.'.jpg';
+						echo 'Generando '.$cache_path.$recurso_id.'.jpg<br>';
 					}
 					else
 					{
@@ -100,7 +100,7 @@ function GenPreview($recursos_extension,$file_server,$recursor_path,$cache_path,
 						$imagick->setImageFormat("jpg");
 						
 						file_put_contents($cache_path.$recurso_id.'.jpg',  $imagick->getImagesBlob());
-						echo 'Generando '.$cache_path.$recurso_id.'.jpg';
+						echo 'Generando '.$cache_path.$recurso_id.'.jpg<br>';
 					};
 					
 					break;

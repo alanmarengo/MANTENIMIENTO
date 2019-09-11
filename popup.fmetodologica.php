@@ -14,7 +14,7 @@
 				<a href="#" class="jump-window-icon" onclick="jwindow.close('popup-fmetodologica');">
 					<img src="./images/ficha-heart.png">
 				</a>
-				<a href="#" class="jump-window-icon" onclick="jwindow.close('popup-fmetodologica');">
+				<a href="#" class="jump-window-icon" id="ficha-metodologica-download" onclick="jwindow.close('popup-fmetodologica');" download>
 					<img src="./images/ficha-download.png">
 				</a>
 			</div>
@@ -38,7 +38,7 @@
 					
 					</div>
 					
-					<a href="#" class="jump-window-icon">
+					<a href="#" class="jump-window-icon" id="ficha-metodologica-view">
 					
 						<img src="./images/ficha-button.png">
 					
