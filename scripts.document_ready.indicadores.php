@@ -41,6 +41,8 @@
 		window.addEventListener("resize",onresize);
 		onresize();
 		
+		$(".tooltip").tooltip();
+		
 	});
 			
 </script>

@@ -50,10 +50,9 @@
 					
 					<div class="indicadores-icon-bar">
 					
-						<p><a href="#"><img src="./images/icono-mediateca-br.png"></a></p>
-						<p><a href="#"><img src="./images/icono-geovisores-br.png"></a></p>
-						<p><a href="#"><img src="./images/icono-estadisticas-br.png"></a></p>
-					
+						<p><a href="#" class="tooltip" title="VER RECURSO ASOCIADO EN MEDIATECA"><img src="./images/icono-mediateca-br.png"></a></p>
+						<p><a href="#" class="tooltip" title="VER RECURSO ASOCIADO EN GEOVISORES"><img src="./images/icono-geovisores-br.png"></a></p>
+						<p><a href="#" class="tooltip" title="VER RECURSO ASOCIADO MODULO ESTADISTICOS"><img src="./images/icono-estadisticas-br.png"></a></p>					
 					</div>
 					
 				</div>
