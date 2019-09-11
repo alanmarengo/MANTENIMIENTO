@@ -30,6 +30,7 @@ else
 
 function GenPreview($recursos_extension,$file_server,$recursor_path,$cache_path,$recurso_id)
 {
+	global $error_preview_img;
 	
 	switch ($recursos_extension) 
 	{
@@ -57,6 +58,9 @@ function GenPreview($recursos_extension,$file_server,$recursor_path,$cache_path,
 						echo 'Generando '.$cache_path.$recurso_id.'.jpg<br>';
 					};
 					
+					$imagick->clear();
+					$imagick->destroy();
+					
 					break;
 		case 'JPG':
 					$imagick = new Imagick();
@@ -79,6 +83,9 @@ function GenPreview($recursos_extension,$file_server,$recursor_path,$cache_path,
 						file_put_contents($cache_path.$recurso_id.'.jpg',  $imagick->getImagesBlob());
 						echo 'Generando '.$cache_path.$recurso_id.'.jpg<br>';
 					};
+					
+					$imagick->clear();
+					$imagick->destroy();
 					
 					break;
 		case 'PGN':
@@ -103,21 +110,30 @@ function GenPreview($recursos_extension,$file_server,$recursor_path,$cache_path,
 						echo 'Generando '.$cache_path.$recurso_id.'.jpg<br>';
 					};
 					
+					$imagick->clear();
+					$imagick->destroy();
+					
 					break;
 		 default:
 					//DEBERIAN TENER PREVIEW, recurso_preview queda en desuso
 					//Las preview especificas tambien se tiene que subir a cache
-					/*
+					
 					$imagick = new Imagick();
-					$imagick->readImage($recurso_preview);
+					$imagick->readImage($error_preview_img);
 					$imagick->setImageFormat("jpg");
-					echo $imagick->getImagesBlob();
-					* */
+						
+					file_put_contents($cache_path.$recurso_id.'.jpg',  $imagick->getImagesBlob());
+					echo 'Generando Defult '.$cache_path.$recurso_id.'.jpg<br>';
+					
+					$imagick->clear();
+					$imagick->destroy();
+					
+					
 
 	};
+	
+	
 
-	$imagick->clear();
-	$imagick->destroy();
 
 };
 
