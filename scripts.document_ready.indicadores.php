@@ -1,6 +1,13 @@
 <script type="text/javascript">
 	
-	$(document).ready(function() {
+	$(document).ready(function() {		
+		
+		$("[title]").tooltipster({
+			animation: 'fade',
+			delay: 200,
+			theme: 'tooltipster-dark',
+			trigger: 'hover'
+		});
 		
 		indicadores = new ol_indicadores();
 		indicadores.panel.start();
@@ -40,8 +47,6 @@
 
 		window.addEventListener("resize",onresize);
 		onresize();
-		
-		$(".tooltip").tooltip();
 		
 	});
 			
