@@ -172,7 +172,7 @@ Especialidades involucradas,  asesores internacionales.
                                 <div class="col-md-1 pop-buttons">
                                     <a href="#" class="pop-button2 button2-mediateca" title="MEDIATECA" data-key="mediateca"></a>
                                     <a href="#" class="pop-button2 button2-geovisores" title="GEOVISORES" data-key="geovisores"></a>
-                                    <a href="#" class="pop-button2 button2-estadisticas" title="ESTADISTICAS" data-key="estadisticas"></a>
+                                    <a href="#" class="pop-button2 button2-estadisticas" title="ESTADÍSTICAS" data-key="estadisticas"></a>
                                     <a href="#" class="pop-button2 button2-indicadores" title="INDICADORES" data-key="indicadores"></a>
                                 </div>
                             </div>
