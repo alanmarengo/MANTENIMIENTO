@@ -254,8 +254,8 @@ function ol_indicadores() {
 		
 		document.getElementById("ficha-metodologica-titulo").innerHTML = js.titulo;
 		document.getElementById("ficha-metodologica-desc").innerHTML = js.desc;
-		document.getElementById("ficha-metodologica-view").innerHTML = js.ficha_metodo_path;
-		document.getElementById("ficha-metodologica-download").innerHTML = js.ficha_metodo_path;
+		document.getElementById("ficha-metodologica-view").href = js.ficha_metodo_path;
+		document.getElementById("ficha-metodologica-download").href = js.ficha_metodo_path;
 		
 	}
 		
