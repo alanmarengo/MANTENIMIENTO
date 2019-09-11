@@ -24,21 +24,37 @@
 		
 		<div class="jump-window-body p20">
 			
-			<div id="info-fmetodologica" class="pt-10">
+			<div class="row">
+				
+				<div class="col col-md-10 col-sm-10 col-xs-10 col-lg-10">
 			
-				<p id="ficha-metodologica-desc">
+					<div id="info-fmetodologica" class="pt-10">
+					
+						<p id="ficha-metodologica-desc">
+						
+							Seleccione un Indicador para ver su descripción.
+						
+						</p>
+					
+					</div>
+					
+					<a href="#" class="jump-window-icon">
+					
+						<img src="./images/ficha-button.png">
+					
+					</a>
+					
+				</div>
 				
-					Seleccione un Indicador para ver su descripción.
-				
-				</p>
+				<div class="col col-md-10 col-sm-10 col-xs-10 col-lg-10">
+					
+					<p><a href="#"><img src="./images/icono-mediateca-br.png"></a></p>
+					<p><a href="#"><img src="./images/icono-geovisores-br.png"></a></p>
+					<p><a href="#"><img src="./images/icono-estadisticas-br.png"></a></p>
+					
+				</div>
 			
 			</div>
-			
-			<a href="#" class="jump-window-icon">
-			
-				<img src="./images/ficha-button.png">
-			
-			</a>
 			
 		</div>
 	
