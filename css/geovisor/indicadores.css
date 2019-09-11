@@ -150,6 +150,12 @@
 	
 }
 
+.indicadores-icon-bar p a {
+	
+	position:relative;
+	
+}
+
 .indicadores-icon-bar p a:hover {
 	
 	opacity:0.7;

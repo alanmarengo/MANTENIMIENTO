@@ -401,8 +401,9 @@ $(document).ready(function() {
             return;
         }
 
+        let rango = 8;
         let min = 0;
-        let max = 6;
+        let max = rango - 1;
 
         html = `
             <div class="row pager">
@@ -415,12 +416,21 @@ $(document).ready(function() {
             </a>
         `;
 
+        min = model.pagina - (rango / 2);
+        if (min < 0) min = 0;
+
+        max = model.pagina + (rango / 2) + 1;
+        if (max > model.paginas) max = model.paginas;
+
+        if (min > 0)
+            html += `...`;
+
         for (let x = min; x < max; x++) {
             html += htmlPagerNumber(x);
         }
 
-        html += `...`;
-        html += htmlPagerNumber(model.paginas - 1);
+        if (max < model.paginas - 1)
+            html += `...`;
 
         html += `
             <a href="#" class="page-number" data-page="${model.paginas - 1}">
