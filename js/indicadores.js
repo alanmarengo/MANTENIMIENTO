@@ -344,7 +344,7 @@ function ol_indicadores() {
 				
 				if (e.which == 13) {
 					
-					this.searchInLayers($("#panel-seach-input-layers-bottom").val());				
+					this.searchInLayers($("panel-seach-input-layers").val());				
 					$("#nav-panel").css("display","flex");
 					
 				}
@@ -356,7 +356,7 @@ function ol_indicadores() {
 	}
 	
 	this.searchInLayers = function(pattern) {
-		alert(pattern);
+		
 		$("#panel-busqueda-geovisor").css("display","flex");
 		$("#panel-busqueda-geovisor .panel-header").html("Resultados de Búsqueda");
 		
