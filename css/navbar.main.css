@@ -142,3 +142,9 @@
 #main-search:focus {
     outline: none;
 }
+
+#navbar-tools .button:hover {
+	
+	background-color:#282828;
+	
+}
