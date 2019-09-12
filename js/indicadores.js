@@ -3,6 +3,8 @@ function ol_indicadores() {
 	this.panel = {};
 	this.panel.div = document.getElementById("nav-panel");
 	
+	this.current_ind = 0;
+	
 	this.panel.start = function() {
 		
 		$(".panel-abr").on("click",function() {
@@ -32,7 +34,7 @@ function ol_indicadores() {
 	
 	}
 
-	this.loadIndicador = function(ind_id) {
+	this.loadIndicador = function(ind_id,titulo) {
 		
 		var req = $.ajax({
 			
@@ -42,11 +44,15 @@ function ol_indicadores() {
 			data:{
 				ind_id:ind_id
 			},
-			success:function(d){}
+			success:function(d){}			
 			
 		});		
 		
-		$("#template-wrapper").html(req.responseText);
+		this.current_ind = ind_id;
+		
+		$("#navbar-tools h3").html("Indicadores / " + titulo);
+		
+		$("#template-wrapper").html("<h3 style='display:none;' id='titulo-indicador-"+ind_id+"'>"+req.responseText);
 		
 		$("#template-wrapper .resource-col").each(function(i,v) {
 			
@@ -267,6 +273,8 @@ function ol_indicadores() {
 		$("#template-wrapper").css("height",newHeight+"px");
 		window.scrollTo(0,0);
 		
+		$("#titulo-indicador-"+this.current_ind).show();
+		
 		html2canvas(document.querySelector("#template-wrapper")).then(canvas => {
 						
 			var a = document.createElement('a');
@@ -283,6 +291,8 @@ function ol_indicadores() {
 			//$("#print-legend-wrapper").hide();
 			
 			$("#template-wrapper").css("height",oldHeight+"px");
+		
+		//	$("#titulo-indicador-"+this.current_ind).hide();
 			
 		});
 		

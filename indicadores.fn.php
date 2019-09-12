@@ -75,7 +75,7 @@ function DrawIndicadores($clase_id) {
 			
 				<div class="layer-header">
 					
-					<a href="#" class="layer-label" onclick="indicadores.loadIndicador(<?php echo $r["ind_id"]; ?>);">
+					<a href="#" class="layer-label" onclick="indicadores.loadIndicador(<?php echo $r["ind_id"]; ?>,'<?php echo $r["ind_titulo"]; ?>');">
 						<span><?php echo $r["ind_titulo"]; ?></span>
 					</a>
 					
