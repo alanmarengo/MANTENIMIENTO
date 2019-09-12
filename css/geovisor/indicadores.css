@@ -87,16 +87,14 @@ body {
 .indicador-icono-ficha {
 	
 	position:absolute;
-	right: 35px;	
-	bottom: 35px;
+	right: 25px;	
+	bottom: 25px;
 	
 }
 
 .indicador-icono-ficha:hover {
 	
-	position:absolute;
-	right: 55px;	
-	bottom: 35px;
+	opacity:0.7;
 	
 }
 
