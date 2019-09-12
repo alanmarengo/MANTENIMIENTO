@@ -170,6 +170,24 @@ function ol_indicadores() {
 			$("#indicador-col-pos-"+pos).empty();
 			document.getElementById("indicador-col-pos-"+pos).appendChild(table);
 			
+			var fichaIcon = document.createElement("a");
+				fichaIcon.className = "indicador-icono-ficha";
+				fichaIcon.href = "javascript:void(0);";
+				fichaIcono.style.right = "60px";
+				fichaIcon.onclick = function() {
+					
+					jwindow.open("popup-fmetodologica");
+					this.loadFichaMetodologica(ind_id,pos);
+					
+				}.bind(this);
+				
+			var fichaImg = document.createElement("img");
+				fichaImg.src = "./images/ficha-icono-descarga.png";
+				
+			fichaIcon.appendChild(fichaImg);
+			
+			document.getElementById("indicador-col-pos-"+pos).appendChild(fichaIcon);
+			
 			break;
 			
 			case "grafico":
