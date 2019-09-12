@@ -67,10 +67,10 @@
 					</div>            
 				</li>
 				<li class="dropdown">
-					<a href="#" id="navbarDropdown-help" role="button" data-toggle="dropdown" aria-expanded="false">
-						<i class="fa fa-question-circle"></i>
+					<a href="#" id="navbarDropdown-login" role="button" data-toggle="dropdown" aria-expanded="false">
+						<i class="fa fa-user"></i>
 					</a>
-					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-help" id="dropdown-help">
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-login" id="dropdown-login">
 						<ul>
 							<li>
 								<a class="dropdown-item" href="#">Mi Panel</a>
