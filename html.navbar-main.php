@@ -68,7 +68,7 @@
 				</li>
 				<li>
 					<a href="./CMD-logout.php">
-						<i class="fa fa-sign-out-alt"></i>
+						<i class="fa fa-user"></i>
 					</a>
 				</li>
 			
