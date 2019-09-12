@@ -73,10 +73,16 @@
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-help" id="dropdown-help">
 						<ul>
 							<li>
-								<a class="dropdown-item" href="#">Manual de Usuario</a>
+								<a class="dropdown-item" href="#">Mi Panel</a>
 							</li>
 							<li>
-								<a class="dropdown-item" href="#">Video Explicativo</a>
+								<a class="dropdown-item" href="#">Mi Colección</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="#">Cambiar Contraseña</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="#">Cerrar Sesión</a>
 							</li>
 						</ul>
 					</div>            
