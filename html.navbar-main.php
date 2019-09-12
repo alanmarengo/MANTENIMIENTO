@@ -66,10 +66,26 @@
 						</ul>
 					</div>            
 				</li>
-				<li>
-					<a href="./CMD-logout.php">
+				<li class="dropdown">
+					<a href="#" id="navbarDropdown-login" role="button" data-toggle="dropdown" aria-expanded="false">
 						<i class="fa fa-user"></i>
 					</a>
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-login" id="dropdown-login">
+						<ul>
+							<li>
+								<a class="dropdown-item" href="#">Mi Panel</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="#">Mi Colección</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="#">Cambiar Contraseña</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="#">Cerrar Sesión</a>
+							</li>
+						</ul>
+					</div>  
 				</li>
 			
 			</ul>
