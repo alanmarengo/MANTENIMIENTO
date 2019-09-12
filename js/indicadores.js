@@ -52,7 +52,7 @@ function ol_indicadores() {
 		
 		$("#navbar-tools h3").html("Indicadores / " + titulo);
 		
-		$("#template-wrapper").html("<h3 style='display:none;' id='titulo-indicador-"+ind_id+"'>"+req.responseText);
+		$("#template-wrapper").html("<h3 style='display:none;' id='titulo-indicador-"+ind_id+"'>"+titulo+"</h3>"+req.responseText);
 		
 		$("#template-wrapper .resource-col").each(function(i,v) {
 			
