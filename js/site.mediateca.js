@@ -324,18 +324,14 @@ $(document).ready(function() {
         $.getJSON(url, function(data) {
             model.ficha = {
                 id: data.id,
-                link_preview: model.apiUrlBase + '/mediateca_preview.php?r=' + data.Id + '&origen_id=' + data.origen_id,
+                link_preview: model.apiUrlBase + '/mediateca_preview.php?r=' + data.id + '&origen_id=' + data.origen_id,
                 origen_id: data.origen_id,
                 title: data.titulo,
                 temporal: data.temporal,
                 authors: data.autores,
                 description: data.descripcion,
                 estudio: data.estudio,
-
-                //TODO: CAMBIAR CUANDO LO ARREGLE MARTIN, DEBE VENIR EL DATO EN EL JSON
                 linkimagen: data.linkdescarga,
-                //linkimagen: `./sga/${data.id}.jpg`,
-
                 linkvisor: data.linkvisor,
                 linkdescarga: data.linkdescarga,
                 fecha: data.fecha,
@@ -393,7 +389,8 @@ $(document).ready(function() {
         let html = '';
 
         if (getQty() <= model.filters.salto) {
-            $(qs).html(html);
+            $(qs).html('');
+            $(qs).hide();
             return;
         }
 
@@ -440,6 +437,7 @@ $(document).ready(function() {
         `;
 
         $(qs).html(html);
+        $(qs).show();
     }
 
     function htmlPagerNumber(pagina) {

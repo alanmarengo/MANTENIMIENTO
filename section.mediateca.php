@@ -69,9 +69,9 @@
             </div>
             <div class="col-md-9">
                 <div id="uxFiltersChecked"></div>
-                <div id="uxPager1"></div>
+                <div id="uxPager1" style="padding-bottom: 12px; display: none;"></div>
                 <div id="uxData"></div>
-                <div id="uxPager2"></div>
+                <div id="uxPager2" style="padding: 12px; display: none;"></div>
             </div>
         </div>
     </div>
