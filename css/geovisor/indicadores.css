@@ -14,6 +14,7 @@ body {
 #template-wrapper .resource-col {
 	
 	padding:20px;
+	background-color:white;
 	
 }
 
@@ -23,6 +24,7 @@ body {
 	width:100%;
 	height:100%;
 	border-radius:3px;
+	padding:30px;
 	
 }
 
@@ -85,16 +87,16 @@ body {
 .indicador-icono-ficha {
 	
 	position:absolute;
-	right: 25px;	
-	bottom: 25px;
+	right: 35px;	
+	bottom: 35px;
 	
 }
 
 .indicador-icono-ficha:hover {
 	
 	position:absolute;
-	right: 45px;	
-	bottom: 25px;
+	right: 55px;	
+	bottom: 35px;
 	
 }
 
