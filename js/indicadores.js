@@ -265,15 +265,15 @@ function ol_indicadores() {
 		
 	}
 	
-	this.print = function() {
+	this.print = function() {		
+		
+		$("#titulo-indicador-"+this.current_ind).show();
 		
 		var oldHeight = $("#template-wrapper").height();
 		var newHeight = $("#template-wrapper").children().first().height();
 		
 		$("#template-wrapper").css("height",newHeight+"px");
 		window.scrollTo(0,0);
-		
-		$("#titulo-indicador-"+this.current_ind).show();
 		
 		html2canvas(document.querySelector("#template-wrapper")).then(canvas => {
 						
@@ -292,7 +292,7 @@ function ol_indicadores() {
 			
 			$("#template-wrapper").css("height",oldHeight+"px");
 		
-		//	$("#titulo-indicador-"+this.current_ind).hide();
+			$("#titulo-indicador-"+this.current_ind).hide();
 			
 		});
 		
