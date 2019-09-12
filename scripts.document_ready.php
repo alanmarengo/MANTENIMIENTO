@@ -5,7 +5,7 @@
 		$("[title]").tooltipster({
 			animation: 'fade',
 			delay: 200,
-			theme: 'tooltipster-shadow',
+			theme: 'tooltipster-default',
 			trigger: 'hover'
 		});
 		

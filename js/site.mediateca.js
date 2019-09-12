@@ -279,8 +279,7 @@ $(document).ready(function() {
                     model.data.docs.push({
                         id: value.Id,
                         origen_id: value.origen_id,
-                        //link_preview: './sga/' + value.Id + '.jpg', // ./mediateca_preview.php?r=[id]
-                        link_preview: model.apiUrlBase + '/mediateca_preview.php?r=' + value.Id,
+                        link_preview: model.apiUrlBase + '/mediateca_preview.php?r=' + value.Id + '&origen_id=' + value.origen_id,
                         title: value.Titulo,
                         authors: value.Autores,
                         description: value.Descripcion,
@@ -290,8 +289,7 @@ $(document).ready(function() {
                     model.data.medias.push({
                         id: value.Id,
                         origen_id: value.origen_id,
-                        //link_preview: './sga/' + value.Id + '.jpg', // ./mediateca_preview.php?r=[id]
-                        link_preview: model.apiUrlBase + '/mediateca_preview.php?r=' + value.Id,
+                        link_preview: model.apiUrlBase + '/mediateca_preview.php?r=' + value.Id + '&origen_id=' + value.origen_id,
                         link: value.LinkImagen,
                         title: value.Titulo,
                         estudio: value.estudios_id,
@@ -303,8 +301,7 @@ $(document).ready(function() {
                     model.data.techs.push({
                         id: value.Id,
                         origen_id: value.origen_id,
-                        //link_preview: './sga/' + value.Id + '.jpg', // ./mediateca_preview.php?r=[id]
-                        link_preview: model.apiUrlBase + '/mediateca_preview.php?r=' + value.Id,
+                        link_preview: model.apiUrlBase + '/mediateca_preview.php?r=' + value.Id + '&origen_id=' + value.origen_id,
                         title: value.Titulo,
                         authors: value.Autores,
                         description: value.Descripcion,
@@ -327,8 +324,7 @@ $(document).ready(function() {
         $.getJSON(url, function(data) {
             model.ficha = {
                 id: data.id,
-                //link_preview: './sga/' + data.id + '.jpg', // ./mediateca_preview.php?r=[id]
-                link_preview: model.apiUrlBase + '/mediateca_preview.php?r=' + data.id,
+                link_preview: model.apiUrlBase + '/mediateca_preview.php?r=' + data.Id + '&origen_id=' + data.origen_id,
                 origen_id: data.origen_id,
                 title: data.titulo,
                 temporal: data.temporal,
