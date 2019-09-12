@@ -12,6 +12,7 @@
 		
 		indicadores = new ol_indicadores();
 		indicadores.panel.start();
+		indicadores.startSearch();
 		
 		flotant = new Jump.flotant();
 		flotant.prepareToggle(".navmenu:not(#nav-panel)");

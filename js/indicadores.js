@@ -309,6 +309,76 @@ function ol_indicadores() {
 		
 	}
 	
+	
+	this.startSearch = function() {
+		
+		$("#panel-seach-input-layers-bottom").val("");
+		
+		$("#panel-seach-input-layers-bottom").bind("focus",function() {
+			
+			$(this).parent().animate({
+				
+				"background-color":"#31cbfd"
+				
+			},"fast");
+			
+		});
+		
+		$("#panel-seach-input-layers-bottom").bind("blur",function() {
+			
+			$(this).parent().animate({
+				
+				"background-color":"#4c4b4b"
+				
+			},"fast");
+			
+		});
+		
+		$("#panel-seach-input-layers-bottom").bind("keyup",function(e) {
+			
+			if ($("#panel-seach-input-layers-bottom").val().trim() == "") {
+				
+				$("#panel-busqueda-geovisor").hide();
+				
+			}else{
+				
+				if (e.which == 13) {
+					
+					this.searchInLayers($("#panel-seach-input-layers-bottom").val());				
+					$("#panel-busqueda-geovisor").css("display","flex");
+					
+				}
+				
+			}
+			
+		}.bind(this));
+		
+	}
+	
+	this.searchInLayers = function(pattern) {
+		
+		$("#panel-busqueda-geovisor").css("display","flex");
+		$("#panel-busqueda-geovisor .panel-header").html("Resultados de Búsqueda");
+		
+		var req = $.ajax({
+			
+			async:false,
+			url:"./php/get-layers-search.php",
+			type:"post",
+			data:{
+				pattern:pattern
+			},
+			success:function(d){}
+			
+		});		
+		
+		$("#panel-busqueda-geovisor .panel-body").html(req.responseText);
+		
+		scroll.refresh();
+		
+	}
+	
+	
 	this.print = function() {
 		
 		$("#template-wrapper").children().show();
