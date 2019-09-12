@@ -16,15 +16,24 @@
 						<img src="./images/download-blue.png">
 					</a>
 				</li>
+				<li class="icon-divisor">
+					<span></span>												
+				</li>
 				<li class="ml-10">
 					<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); jwindow.open('popup-share'); geomap.map.share();">
 						<img src="./images/toolbar.icon.share.png">
 					</a>
 				</li>
+				<li class="icon-divisor">
+					<span></span>												
+				</li>
 				<li>
 					<a class="button" href="javascript:void(0);" onclick="geomap.map.print();">
 						<img src="./images/toolbar.icon.print.png">
 					</a>
+				</li>
+				<li class="icon-divisor">
+					<span></span>												
 				</li>
 				<li class="ml-10">
 					<a class="button" href="javascript:void(0);" onclick="">
