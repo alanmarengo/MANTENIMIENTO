@@ -3,8 +3,8 @@
 include("../pgconfig.php");
 include("../tools.php");
 
-header("Content-Type: text/csv");
-header("Content-Disposition: attachment; filename=file.csv");
+//header("Content-Type: text/csv");
+//header("Content-Disposition: attachment; filename=file.csv");
 
 //$ind_id = $_POST["ind_id"];
 //$pos = $_POST["pos"];
@@ -18,8 +18,10 @@ $query = pg_query($conn,$query_string);
 
 $data = pg_fetch_assoc($query);
 
+var_dump($data);
+
 $new_query_string = "SELECT * FROM " . $data["tabla_fuente"];
-echo $new_query_string;
+echo $new_query_string;/*
 $query = pg_query($conn,$new_query_string);
 
 $csv = parseSQLToCSV($query);
@@ -27,5 +29,5 @@ $csv = parseSQLToCSV($query);
 echo $csv;
 
 pg_close($conn);
-
+*/
 ?>
