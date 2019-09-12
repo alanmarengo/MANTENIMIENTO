@@ -6,7 +6,8 @@
 			animation: 'fade',
 			delay: 200,
 			theme: 'tooltipster-dark',
-			trigger: 'hover'
+			trigger: 'hover',
+			side:left
 		});
 		
 		indicadores = new ol_indicadores();

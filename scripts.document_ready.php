@@ -9,7 +9,6 @@
 			trigger: 'hover'
 		});
 		
-		
 		flotant = new Jump.flotant();
 		flotant.prepareToggle(".navmenu:not(#nav-panel)");
 		flotant.fitTopElement("#navbar-tools","#navbar-main");
