@@ -261,7 +261,10 @@ function ol_indicadores() {
 	
 	this.print = function() {
 		
-		$("#template-wrapper").css("height",$("#template-wrapper").height()+"px");
+		var oldHeight = $("#template-wrapper").height();
+		var newHeight = $("#template-wrapper").children().first().height();
+		
+		$("#template-wrapper").css("height",newHeight+"px");
 		window.scrollTo(0,0);
 		
 		html2canvas(document.querySelector("#template-wrapper")).then(canvas => {
@@ -278,6 +281,8 @@ function ol_indicadores() {
 			$(a).remove();
 			
 			//$("#print-legend-wrapper").hide();
+			
+			$("#template-wrapper").css("height",oldHeight+"px");
 			
 		});
 		
