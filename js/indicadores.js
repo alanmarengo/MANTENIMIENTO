@@ -312,9 +312,9 @@ function ol_indicadores() {
 	
 	this.startSearch = function() {
 		
-		$("#panel-seach-input-layers-bottom").val("");
+		$("#panel-seach-input-layers").val("");
 		
-		$("#panel-seach-input-layers-bottom").bind("focus",function() {
+		$("#panel-seach-input-layers").bind("focus",function() {
 			
 			$(this).parent().animate({
 				
@@ -324,7 +324,7 @@ function ol_indicadores() {
 			
 		});
 		
-		$("#panel-seach-input-layers-bottom").bind("blur",function() {
+		$("#panel-seach-input-layers").bind("blur",function() {
 			
 			$(this).parent().animate({
 				
@@ -334,18 +334,18 @@ function ol_indicadores() {
 			
 		});
 		
-		$("#panel-seach-input-layers-bottom").bind("keyup",function(e) {
+		$("#panel-seach-input-layers").bind("keyup",function(e) {
 			
-			if ($("#panel-seach-input-layers-bottom").val().trim() == "") {
+			if ($("#panel-seach-input-layers").val().trim() == "") {
 				
-				$("#panel-busqueda-geovisor").hide();
+				$("#nav-panel").hide();
 				
 			}else{
 				
 				if (e.which == 13) {
 					
 					this.searchInLayers($("#panel-seach-input-layers-bottom").val());				
-					$("#panel-busqueda-geovisor").css("display","flex");
+					$("#nav-panel").css("display","flex");
 					
 				}
 				
