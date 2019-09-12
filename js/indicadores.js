@@ -89,12 +89,10 @@ function ol_indicadores() {
 			var map_layers = [];
 		
 			map_layers[0] = new ol.layer.Tile({
-				name: 'openstreets',
-				title: 'OSM',
-				type: 'base',
-				visible: true,
-				source: new ol.source.XYZ({
-					url: '//{a-c}.tile.openstreetmaps.org/{z}/{x}/{y}.png',
+				name:'google_base',
+				visible:true,
+				source: new ol.source.TileImage({ 
+					url: 'http://mt{0-3}.googleapis.com/vt?&x={x}&y={y}&z={z}&hl=es&gl=AR',
 					crossOrigin: 'anonymous'
 				})
 			});
