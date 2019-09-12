@@ -56,7 +56,7 @@ function ol_indicadores() {
 		
 		$("#template-wrapper .resource-col").each(function(i,v) {
 			
-			var pos = $(v).attr("data-pos");
+			var pos = $(v).children(".resource-inner").attr("data-pos");
 			this.loadIndicadorResource(ind_id,pos);
 			
 		}.bind(this));
@@ -270,7 +270,7 @@ function ol_indicadores() {
 		$("#template-wrapper").children().show();
 		
 		var oldHeight = $("#template-wrapper").height();
-		var newHeight = $("#template-wrapper").children().first().height();
+		var newHeight = $("#template-wrapper").children(".template-indicador-container").height();
 		
 		$("#template-wrapper").css("height",newHeight+"px");
 		window.scrollTo(0,0);		

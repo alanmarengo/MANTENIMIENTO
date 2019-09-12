@@ -1,14 +1,28 @@
+body {
+	
+	background-color:#f9f9f9;
+	
+}
+
 #template-wrapper {
 	
-	background-color:#FFFFFF;
+	background-color:#f9f9f9;
 	padding:35px 50px;
 	
 }
 
-#template-wrapper .col {
+#template-wrapper .resource-col {
 	
-	padding:10px;
+	padding:20px;
+	
+}
+
+#template-wrapper .resource-col .resource-inner {
+	
 	border:1px solid #CCCCCC;
+	width:100%;
+	height:100%;
+	border-radius:3px;
 	
 }
 
@@ -70,8 +84,8 @@
 .indicador-icono-ficha {
 	
 	position:absolute;
-	right:10px;
-	bottom:10px;
+	right: 25px;	
+	bottom: 25px;
 	
 }
 

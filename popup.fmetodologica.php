@@ -11,9 +11,6 @@
 				</a>
 			</div>
 			<div class="jump-window-icon-bar">
-				<a href="#" class="jump-window-icon" onclick="jwindow.close('popup-fmetodologica');">
-					<img src="./images/ficha-heart.png">
-				</a>
 				<a href="#" class="jump-window-icon" id="ficha-metodologica-download" onclick="jwindow.close('popup-fmetodologica');" download>
 					<img src="./images/ficha-download.png">
 				</a>
