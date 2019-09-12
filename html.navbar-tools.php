@@ -12,7 +12,10 @@
 				
 			<ul>
 				<li>
-					<a class="button" href="javascript:void(0);" onclick="geomap.map.ol_object_mini.updateSize(); geomap.map.ol_object_mini.render(); jwindow.open('popup-geovisor');">
+					<a class="button jump-hovimage" 
+					data-ini-src="./images/toolbar.icon.share.png"
+					data-end-src="./images/toolbar.icon.share.white.png"
+					href="javascript:void(0);" onclick="geomap.map.ol_object_mini.updateSize(); geomap.map.ol_object_mini.render(); jwindow.open('popup-geovisor');">
 						<img src="./images/toolbar.icon.addlayer.png">
 					</a>							
 				</li>
@@ -20,7 +23,9 @@
 					<span></span>												
 				</li>
 				<li>
-					<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); geomap.map.buffer();">
+					<a class="button jump-hovimage" 
+					data-ini-src="./images/toolbar.icon.buffer.png"
+					data-end-src="./images/toolbar.icon.buffer.white.png" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); geomap.map.buffer();">
 						<img src="./images/toolbar.icon.buffer.png">
 					</a>							
 				</li>
@@ -28,7 +33,9 @@
 					<span></span>												
 				</li>
 				<li>
-					<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); geomap.map.ptopografico();">
+					<a class="button jump-hovimage" 
+					data-ini-src="./images/toolbar.icon.ptopografico.png"
+					data-end-src="./images/toolbar.icon.ptopografico.white.png" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); geomap.map.ptopografico();">
 						<img src="./images/toolbar.icon.ptopografico.png">
 					</a>        
 				</li>
@@ -36,7 +43,9 @@
 					<span></span>												
 				</li>
 				<li class="dropdown">
-					<a class="button" href="javascript:void(0);" id="navbarDropdown-medicion" role="button" data-toggle="dropdown" aria-expanded="false" onclick="jwindow.close('.geovisor-flotant');">
+					<a class="button jump-hovimage" 
+					data-ini-src="./images/toolbar.icon.medicion.png"
+					data-end-src="./images/toolbar.icon.medicion.white.png" href="javascript:void(0);" id="navbarDropdown-medicion" role="button" data-toggle="dropdown" aria-expanded="false" onclick="jwindow.close('.geovisor-flotant');">
 						<img src="./images/toolbar.icon.medicion.png">
 					</a>
 					<div class="dropdown-menu dropdown-menu-right" id="dropdown-medicion" aria-labelledby="navbarDropdown-medicion" style="min-width:30px !Important; width:30px;">						
@@ -57,7 +66,9 @@
 					<span></span>												
 				</li>
 				<li>
-					<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); jwindow.open('popup-coordinates'); geomap.map.activateCoordinates();">
+					<a class="button jump-hovimage" 
+					data-ini-src="./images/toolbar.icon.coordenadas.png"
+					data-end-src="./images/toolbar.icon.coordenadas.white.png" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); jwindow.open('popup-coordinates'); geomap.map.activateCoordinates();">
 						<img src="./images/toolbar.icon.coordenadas.png">
 					</a>
 				</li>
@@ -65,7 +76,9 @@
 					<span></span>												
 				</li>
 				<li class="dropdown">
-					<a class="button" href="javascript:void(0);" id="navbarDropdown-draw" role="button" data-toggle="dropdown" aria-expanded="false">
+					<a class="button jump-hovimage" 
+					data-ini-src="./images/toolbar.icon.dibujo.png"
+					data-end-src="./images/toolbar.icon.dibujo.white.png" href="javascript:void(0);" id="navbarDropdown-draw" role="button" data-toggle="dropdown" aria-expanded="false">
 						<img src="./images/toolbar.icon.dibujo.png">
 					</a>
 					<div class="dropdown-menu dropdown-menu-right" id="dropdown-draw" aria-labelledby="navbarDropdown-draw" style="min-width:30px !Important; width:30px;">						
