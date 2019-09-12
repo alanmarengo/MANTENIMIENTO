@@ -267,7 +267,7 @@ function ol_indicadores() {
 	
 	this.print = function() {
 		
-		$("#template-wrapper").children().show();
+		//$("#template-wrapper").children().show();
 		
 		var oldHeight = $("#template-wrapper").height();
 		var newHeight = $("#template-wrapper").children().first().height();
