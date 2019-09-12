@@ -7,7 +7,7 @@
 			delay: 200,
 			theme: 'tooltipster-dark',
 			trigger: 'hover',
-			side:left
+			side:"left"
 		});
 		
 		indicadores = new ol_indicadores();
