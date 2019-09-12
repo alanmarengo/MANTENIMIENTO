@@ -34,7 +34,7 @@ function ol_indicadores() {
 	
 	}
 
-	this.loadIndicador = function(ind_id,titulo) {
+	this.loadIndicador = function(ind_id,titulo,clase_id) {
 		
 		var req = $.ajax({
 			
@@ -62,6 +62,12 @@ function ol_indicadores() {
 		}.bind(this));
 		
 		scroll.refresh();
+		
+		if (clase_id) {
+			
+			$(".abr[data-cid="+clase_id+"]").trigger("click");
+			
+		}
 		
 	}
 	

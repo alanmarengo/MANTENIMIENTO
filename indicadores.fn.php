@@ -133,7 +133,7 @@ function DrawIndicadoresSearch($pattern) {
 		$desc = str_replace($low_pattern,"<span class=\"panel-highlighted-list-item\">".$low_pattern."</span>",$low_desc);
 		
 		$output .= "<li>";
-		$output .= "<a href=\"javascript:void(0);\" onclick=\"indicadores.loadIndicador(" . $r["ind_id"] . ",'" . $r["ind_titulo"] . "'); $('#panel-busqueda-geovisor').hide();\">" . $desc . "</a>";
+		$output .= "<a href=\"javascript:void(0);\" onclick=\"indicadores.loadIndicador(" . $r["ind_id"] . ",'" . $r["ind_titulo"] . "',".$r["clase_id"]."); $('#panel-busqueda-geovisor').hide();\">" . $desc . "</a>";
 		$output .= "</li>";
 
 		$results = true;
