@@ -56,7 +56,7 @@ function ol_indicadores() {
 		
 		$("#template-wrapper .resource-col").each(function(i,v) {
 			
-			var pos = $(v).attr("data-pos");
+			var pos = $(v).children(".resource-inner").attr("data-pos");
 			this.loadIndicadorResource(ind_id,pos);
 			
 		}.bind(this));
