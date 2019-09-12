@@ -13,8 +13,8 @@
 			<ul>
 				<li>
 					<a class="button jump-hovimage" 
-					data-ini-src="./images/toolbar.icon.share.png"
-					data-end-src="./images/toolbar.icon.share.white.png"
+					data-ini-src="./images/toolbar.icon.addlayer.png"
+					data-end-src="./images/toolbar.icon.addlayer.white.png"
 					href="javascript:void(0);" onclick="geomap.map.ol_object_mini.updateSize(); geomap.map.ol_object_mini.render(); jwindow.open('popup-geovisor');">
 						<img src="./images/toolbar.icon.addlayer.png">
 					</a>							
