@@ -258,5 +258,26 @@ function ol_indicadores() {
 		document.getElementById("ficha-metodologica-download").href = js.ficha_metodo_path;
 		
 	}
+	
+	this.print = function() {
+		
+		html2canvas(document.querySelector("#template-wrapper")).then(canvas => {
+			
+			var a = document.createElement('a');
+			// toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
+			a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+			a.download = 'captura.jpg';
+			
+			document.body.appendChild(a);
+			
+			a.click();
+			
+			$(a).remove();
+			
+			//$("#print-legend-wrapper").hide();
+			
+		});
+		
+	}
 		
 }
