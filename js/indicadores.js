@@ -270,7 +270,7 @@ function ol_indicadores() {
 		$("#template-wrapper").children().show();
 		
 		var oldHeight = $("#template-wrapper").height();
-		var newHeight = $("#template-wrapper").children(".template-indicador-container").height()+70;
+		var newHeight = $("#template-wrapper").children(".template-indicador-container").height();
 		
 		$("#template-wrapper").css("height",newHeight+"px");
 		window.scrollTo(0,0);		
