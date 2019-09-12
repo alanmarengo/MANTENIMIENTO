@@ -13,7 +13,7 @@ $ind_id = 1;
 $pos = 4;
 
 $query_string = "SELECT tabla_fuente FROM mod_indicadores.vw_recursos WHERE ind_id = $ind_id AND posicion = $pos LIMIT 1";
-
+echo $query_string;
 $query = pg_query($conn,$query_string);
 
 $data = pg_fetch_assoc($query);
