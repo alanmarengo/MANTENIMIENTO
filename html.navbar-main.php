@@ -63,6 +63,12 @@
 							<li>
 								<a class="dropdown-item" href="#">Video Explicativo</a>
 							</li>
+							<li>
+								<a class="dropdown-item" href="#">Manual de Usuario</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="#">Video Explicativo</a>
+							</li>
 						</ul>
 					</div>            
 				</li>
