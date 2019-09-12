@@ -265,7 +265,7 @@ function ol_indicadores() {
 		
 	}
 	
-	this.print = function() {		
+	this.print = function() {
 		
 		$("#template-wrapper").children().show();
 		
@@ -273,7 +273,7 @@ function ol_indicadores() {
 		var newHeight = $("#template-wrapper").children().first().height();
 		
 		$("#template-wrapper").css("height",newHeight+"px");
-		window.scrollTo(0,0);
+		window.scrollTo(0,0);		
 		
 		html2canvas(document.querySelector("#template-wrapper")).then(canvas => {
 						
