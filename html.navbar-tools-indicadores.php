@@ -17,7 +17,7 @@
 					</a>
 				</li>
 				<li>
-					<a class="button" href="javascript:void(0);" onclick="geomap.map.print();">
+					<a class="button" href="javascript:void(0);" onclick="indicadores.print();">
 						<img src="./images/toolbar.icon.print.png">
 					</a>
 				</li>

@@ -3,6 +3,8 @@ function ol_indicadores() {
 	this.panel = {};
 	this.panel.div = document.getElementById("nav-panel");
 	
+	this.current_ind = 0;
+	
 	this.panel.start = function() {
 		
 		$(".panel-abr").on("click",function() {
@@ -32,7 +34,7 @@ function ol_indicadores() {
 	
 	}
 
-	this.loadIndicador = function(ind_id) {
+	this.loadIndicador = function(ind_id,titulo) {
 		
 		var req = $.ajax({
 			
@@ -42,11 +44,15 @@ function ol_indicadores() {
 			data:{
 				ind_id:ind_id
 			},
-			success:function(d){}
+			success:function(d){}			
 			
 		});		
 		
-		$("#template-wrapper").html(req.responseText);
+		this.current_ind = ind_id;
+		
+		$("#navbar-tools h3").html("Indicadores / " + titulo);
+		
+		$("#template-wrapper").html("<h3 style='display:none;' id='titulo-indicador-"+ind_id+"'>"+titulo+"</h3>"+req.responseText);
 		
 		$("#template-wrapper .resource-col").each(function(i,v) {
 			
@@ -256,6 +262,39 @@ function ol_indicadores() {
 		document.getElementById("ficha-metodologica-desc").innerHTML = js.desc;
 		document.getElementById("ficha-metodologica-view").href = js.ficha_metodo_path;
 		document.getElementById("ficha-metodologica-download").href = js.ficha_metodo_path;
+		
+	}
+	
+	this.print = function() {
+		
+		$("#template-wrapper").children().show();
+		
+		var oldHeight = $("#template-wrapper").height();
+		var newHeight = $("#template-wrapper").children().first().height();
+		
+		$("#template-wrapper").css("height",newHeight+"px");
+		window.scrollTo(0,0);		
+		
+		html2canvas(document.querySelector("#template-wrapper")).then(canvas => {
+						
+			var a = document.createElement('a');
+			// toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
+			a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+			a.download = 'captura.jpg';
+			
+			document.body.appendChild(a);
+			
+			a.click();
+			
+			$(a).remove();
+			
+			//$("#print-legend-wrapper").hide();
+			
+			$("#template-wrapper").css("height",oldHeight+"px");
+		
+			$("#titulo-indicador-"+this.current_ind).hide();
+			
+		});
 		
 	}
 		

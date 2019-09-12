@@ -7,7 +7,7 @@
 			<a href="./geovisor.php">GeoObI (Geovisor Observatorio IEASA)</a>
 		</li>
 		<li>
-			<a href="#">Indicadores</a>
+			<a href="./indicadores.php">Indicadores</a>
 		</li>
 		<li>
 			<a href="./estadisticas.php">Datos y estadísticas</a>

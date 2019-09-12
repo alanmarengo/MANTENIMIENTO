@@ -88,7 +88,7 @@ function GenPreview($recursos_extension,$file_server,$recursor_path,$cache_path,
 					$imagick->destroy();
 					
 					break;
-		case 'PGN':
+		case 'PNG':
 					$imagick = new Imagick();
 		
 					if(file_exists($file_server.$recursor_path))
