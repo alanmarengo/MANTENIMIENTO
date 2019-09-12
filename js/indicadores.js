@@ -356,14 +356,14 @@ function ol_indicadores() {
 	}
 	
 	this.searchInLayers = function(pattern) {
-		
+		alert(pattern);
 		$("#panel-busqueda-geovisor").css("display","flex");
 		$("#panel-busqueda-geovisor .panel-header").html("Resultados de Búsqueda");
 		
 		var req = $.ajax({
 			
 			async:false,
-			url:"./php/get-layers-search.php",
+			url:"./php/get-indicadores-search.php",
 			type:"post",
 			data:{
 				pattern:pattern
