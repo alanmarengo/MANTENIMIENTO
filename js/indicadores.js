@@ -174,7 +174,7 @@ function ol_indicadores() {
 				fichaIcon.className = "indicador-icono-ficha";
 				fichaIcon.href = "javascript:void(0);";
 				fichaIcono.style.right = "60px";
-				fichaIcon.onclick = function() {
+				fichaIcono.onclick = function() {
 					
 					jwindow.open("popup-fmetodologica");
 					this.loadFichaMetodologica(ind_id,pos);
