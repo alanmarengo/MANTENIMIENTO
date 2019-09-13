@@ -64,8 +64,8 @@
 
 
         <div class="row">
-            <div id="x0" class="col-md-3">
-                <div id="uxFilters"></div>
+            <div class="x0 col-md-3" style="position: relative;">
+                <div id="uxFilters-box" class="pinned" style="position: absolute;"></div>
             </div>
             <div class="col-md-9">
                 <div id="uxFiltersChecked"></div>
@@ -101,5 +101,6 @@
 
 
 
+<script src="./js/hc-sticky.js" type="text/javascript"></script>
 <script src="./js/site.mediateca.js" type='text/javascript'>
 </script>

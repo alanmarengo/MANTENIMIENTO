@@ -29,6 +29,11 @@ $(document).ready(function() {
 
     init();
 
+    $('.pinned').hcSticky({
+        stickTo: '.x0',
+        top: 100
+    });
+
     // POP IMAGE
     $('body').on('click', '.pop', function() {
         $('.imagepreview').attr('src', $(this).attr('src'));
@@ -387,9 +392,10 @@ $(document).ready(function() {
         $('#uxQtyTechs').html(`(${model.qty2})`);
 
         checkedsRender();
-
         pagerRender('#uxPager1');
         pagerRender('#uxPager2');
+
+        $('.pinned').hcSticky('refresh');
     }
 
     function clearPage() {
@@ -459,7 +465,7 @@ $(document).ready(function() {
 
     function filtersRender() {
         let html = '';
-        html += `<div class="accordion" id="uxFilters">`;
+        html += `<div class="accordion" id="uxFilters" class="pinned">`;
         $.each(model.filters.groups, function(gindex, group) {
             if (group.visible) {
                 html += `
@@ -532,7 +538,7 @@ $(document).ready(function() {
         `
 
         html += `</div>`;
-        $('#uxFilters').html(html);
+        $('#uxFilters-box').html(html);
 
         groupsTitleRender();
 
@@ -601,8 +607,15 @@ $(document).ready(function() {
         $('#uxFiltersChecked').html('');
 
         if (model.estudio_nombre != '') {
+            let nombre = '';
+            if (model.estudio_nombre.length > 25) {
+                nombre = model.estudio_nombre.substr(0, 25) + '...';
+            } else {
+                nombre = model.estudio_nombre;
+            }
+
             $('#uxFiltersChecked').append(`
-                <a class="filters-checked btn btn-success btn-xs" style="color: #fff;" data-estudio="1">${model.estudio_nombre} <i class="fa fa-times" style="padding: 0px 6px;"></i></a>
+                <a class="filters-checked btn btn-warning btn-xs" data-estudio="1">Estudio: ${nombre} <i class="fa fa-times" style="padding: 0px 6px;"></i></a>
             `)
         }
 
@@ -661,8 +674,12 @@ $(document).ready(function() {
                     </div>
                     <div class="col-9" style="margin-left: 0px;">
                         <div class="doc-title">
-                            <img class="doc-icon" src="./images/pdf.png" style="width: 40px; height: auto;" />
-                            ${doc.title}
+                            <div class="doc-title-icon">
+                                <img src="./images/pdf.png" />
+                            </div>
+                            <div class="doc-title-text">
+                                ${doc.title}
+                            </div>
                         </div>
                         <div class="doc-authors">${doc.authors}</div>
                         <div class="doc-description">${doc.description}</div>
@@ -751,12 +768,16 @@ $(document).ready(function() {
                     </div>
                 </div>
                 <div class="col-9">
-                        <div class="doc-title">
-                            <img class="doc-icon" src="./images/pdf.png" style="width: 40px; height: auto;" />
+                    <div class="doc-title">
+                        <div class="doc-title-icon">
+                            <img src="./images/pdf.png" />
+                        </div>
+                        <div class="doc-title-text">
                             ${doc.title}
                         </div>
-                        <div class="doc-authors">${doc.authors}</div>
-                        <div class="doc-description">${doc.description}</div>
+                    </div>
+                    <div class="doc-authors">${doc.authors}</div>
+                    <div class="doc-description">${doc.description}</div>
                         ${links}
                     </div>
                 </div>

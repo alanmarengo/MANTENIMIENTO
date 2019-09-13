@@ -326,7 +326,8 @@
         };
 
         $('.pinned').hcSticky({
-            stickTo: '.side-right'
+            stickTo: '.side-right',
+            top: 80
         });
         
         $.getJSON(model.apiUrlBase + '/json_sensores.php', function(data) {

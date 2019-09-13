@@ -807,9 +807,27 @@ h2.sin-resultados {
         border-top: 1px solid #eee;
         border-bottom: 1px solid #eee;
 
-        .doc-icon {
-            height: 40px;
-            width: auto;
+        .doc-title {
+            font-size: 1.2em;
+            font-weight: bolder;
+            display: flex;
+            align-items: top;
+
+            .doc-title-icon {
+                display: inline-block;
+
+                img {
+                    width: 40px;
+                    height: auto;
+                }
+            }
+    
+            .doc-title-text {
+                width: 80%;
+                display: inline-block;
+                margin-left: 10px;
+
+            }
         }
 
         .doc-preview {
@@ -829,15 +847,6 @@ h2.sin-resultados {
         .doc-authors {
             font-weight: bolder;
             padding: 10px 0px;
-        }
-
-        .doc-title {
-            font-size: 1.2em;
-            font-weight: bolder;
-
-            img {
-                vertical-align: baseline;
-            }
         }
 
         .doc-links {
