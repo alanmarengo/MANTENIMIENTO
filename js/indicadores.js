@@ -237,11 +237,6 @@ function ol_indicadores() {
 			
 			case "slider":			
 				
-			$(".carousel").css("height","100%");
-			$(".carousel-inner").css("height","100%");
-			$(".carousel-item").css("height","100%");
-			$(".carousel-item img").attr("height","100%");
-				
 			var carouselSlide = document.createElement("div");
 				carouselSlide.id = "carousel-"+pos;
 				carouselSlide.className = "carousel slide";
@@ -277,6 +272,11 @@ function ol_indicadores() {
 				interval: 3000,
 				full_height:true
 			})
+				
+			$(".carousel").css("height","100%");
+			$(".carousel-inner").css("height","100%");
+			$(".carousel-item").css("height","100%");
+			$(".carousel-item img").attr("height","100%");
 			
 			break;
 			
