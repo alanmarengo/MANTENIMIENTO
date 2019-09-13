@@ -34,7 +34,7 @@
 				<li class="ml-10">
 					<a class="button jump-hovimage" 
 					data-ini-src="./images/stats-fav.png"
-					data-end-src="./images/stats-fav.blue" href="javascript:void(0);">
+					data-end-src="./images/stats-fav.blue.png" href="javascript:void(0);">
 						<img src="./images/stats-fav.png">
 					</a>
 				</li>
