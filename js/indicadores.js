@@ -277,6 +277,7 @@ function ol_indicadores() {
 			$(".carousel-inner").css("height","100%");
 			$(".carousel-item").css("height","100%");
 			$(".carousel-item img").attr("height","100%");
+			$(".carousel-item img").removeClass("w-100");
 			
 			break;
 			
