@@ -59,7 +59,7 @@
 			
 		?>
 		
-		loadIndicador(<?php echo $_GET["ind_id"]; ?>,'<?php echo $_GET["ind_id"]; ?>','<?php echo $_GET["cid"]; ?>');
+		indicadores.loadIndicador(<?php echo $_GET["ind_id"]; ?>,'<?php echo $_GET["ind_id"]; ?>','<?php echo $_GET["cid"]; ?>');
 		document.getElementById("indicador-label-<?php echo $_GET["ind_id"]; ?>").click();
 		
 		<?php
