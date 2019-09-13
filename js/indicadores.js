@@ -263,7 +263,7 @@ function ol_indicadores() {
 					carouselItem.className = startClass;
 					
 				var carouselImg = document.createElement("img");
-					carouselImg.className = "d-block";
+					carouselImg.className = "d-block ml-auto mr-auto";
 					carouselImg.setAttribute("src",js.images[i]);
 					
 					carouselIndicators.appendChild(carouselIndicatorItem);
