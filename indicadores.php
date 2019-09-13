@@ -56,6 +56,7 @@
 	</div>
 	
 	
+	<?php include("./popup.share.php"); ?>	
 	<?php include("./popup.fmetodologica.php"); ?>	
 	<?php include("./widget-links.php"); ?>
 	<?php include("./html.jalert.php"); ?>
