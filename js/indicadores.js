@@ -235,7 +235,10 @@ function ol_indicadores() {
 			
 			break;
 			
-			case "slider":			
+			case "slider":
+				
+			var carouselIndicators = document.createElement("ol");
+				carouselIndicators.className = "carousel-indicators";
 				
 			var carouselSlide = document.createElement("div");
 				carouselSlide.id = "carousel-"+pos;
@@ -245,19 +248,25 @@ function ol_indicadores() {
 			var carouselInner = document.createElement("div");
 				carouselInner.className = "carousel-inner";
 				
+				carouselSlide.appendChild(carouselIndicators);
 				carouselSlide.appendChild(carouselInner);
 			
 			var startClass = "carousel-item active";
 			
 			for (var i=0; i<js.images.length; i++) {
 				
+				var carouselIndicatorItem = document.createElement("li");
+					carouselIndicatorItem.setAttribute("data-target","#slider-"+pos);
+					carouselIndicatorItem.setAttribute("data-slide-to",i);
+				
 				var carouselItem = document.createElement("div");
 					carouselItem.className = startClass;
 					
 				var carouselImg = document.createElement("img");
-					carouselImg.className = "d-block w-100";
+					carouselImg.className = "d-block";
 					carouselImg.setAttribute("src",js.images[i]);
 					
+					carouselIndicators.appendChild(carouselIndicatorItem);
 					carouselItem.appendChild(carouselImg);
 					carouselInner.appendChild(carouselItem);
 					
@@ -277,7 +286,6 @@ function ol_indicadores() {
 			$(".carousel-inner").css("height","100%");
 			$(".carousel-item").css("height","100%");
 			$(".carousel-item img").attr("height","100%");
-			$(".carousel-item img").removeClass("w-100");
 			
 			break;
 			
