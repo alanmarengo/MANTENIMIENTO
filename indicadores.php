@@ -24,7 +24,7 @@
 	
 	
 </head>
-<body style="overflow-x:hidden;">
+<body style="overflow:hidden;">
 
 	<div id="page">
 	
