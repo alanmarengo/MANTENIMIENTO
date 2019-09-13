@@ -175,7 +175,7 @@
 
 	<div class="row" >
 
-		<div style="height:300px;"></div>
+		<div style="height:100px;"></div>
 
 	</div>
 	
