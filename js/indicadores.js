@@ -297,6 +297,7 @@ function ol_indicadores() {
 			fichaIcon.onclick = function() {
 				
 				jwindow.open("popup-fmetodologica");
+				$(".jump-alert-modal").show();
 				this.loadFichaMetodologica(ind_id,pos);
 				
 			}.bind(this);

@@ -6,7 +6,7 @@
 		<div class="jump-window-header">
 			<span id="ficha-metodologica-titulo-prev"><img src="./images/ficha-icono-2.png"></span><span id="ficha-metodologica-titulo">Ficha Metodologica</span>
 			<div class="jump-window-icon-bar">
-				<a href="#" class="jump-window-close" onclick="jwindow.close('popup-fmetodologica');">
+				<a href="#" class="jump-window-close" onclick="jwindow.close('popup-fmetodologica'); $('.jump-alert-modal').hide();">
 					<i class="fas fa-times"></i>
 				</a>
 			</div>

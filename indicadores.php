@@ -55,6 +55,7 @@
 		
 	</div>
 	
+	<div class="jump-alert-modal"></div>
 	
 	<?php include("./popup.share.php"); ?>	
 	<?php include("./popup.fmetodologica.php"); ?>	
