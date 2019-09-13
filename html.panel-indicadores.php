@@ -27,7 +27,7 @@
 		
 		<div class="jump-row">
 		
-			<div id="layers-wrapper">
+			<div id="layers-wrapper" class="jump-flotant-heightfill jump-scroll">
 
 				<div id="abr-container">
 				
@@ -35,7 +35,7 @@
 				
 				</div>
 				
-				<div id="layers-container" class="jump-scroll">
+				<div id="layers-container">
 				
 					<?php DrawContainersInd(); ?>
 				
