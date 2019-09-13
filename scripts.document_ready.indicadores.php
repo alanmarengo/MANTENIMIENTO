@@ -19,6 +19,7 @@
 		flotant.fitTopElement("#navbar-tools","#navbar-main");
 		flotant.fitTopElement(".page-container",".jump-navbar");
 		flotant.fit();		
+		flotant.fitHeightElement("#layers-wrapper",".bar-paneler");
 		
 		jwindow = new Jump.window();
 		jwindow.initialize();

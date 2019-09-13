@@ -1,4 +1,4 @@
-<div id="navbar-tools" class="jump-navbar">
+<div id="navbar-tools" class="jump-navbar bar-paneler">
 
 	<div class="row jump-row default-row">
 		

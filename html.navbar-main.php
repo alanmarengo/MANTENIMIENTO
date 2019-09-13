@@ -1,4 +1,4 @@
-<div class="navbar flebox jump-navbar" id="navbar-main">
+<div class="navbar flebox jump-navbar bar-paneler" id="navbar-main">
 	
 <!---
 	<div class="row jump-row menu-row" style="background-color: #ccc; font-size: 11px; padding: 1px!important;align-items: center;">
