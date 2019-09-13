@@ -59,7 +59,7 @@
 				
 				</div>
 				
-				<div id="layers-container" class="jump-scroll">
+				<div id="layers-container">
 				
 					<?php DrawContainers(); ?>
 				

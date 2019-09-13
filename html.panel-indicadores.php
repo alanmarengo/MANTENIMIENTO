@@ -35,7 +35,7 @@
 				
 				</div>
 				
-				<div id="layers-container">
+				<div id="layers-container" class="jump-scroll">
 				
 					<?php DrawContainersInd(); ?>
 				
