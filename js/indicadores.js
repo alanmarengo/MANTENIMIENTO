@@ -34,7 +34,7 @@ function ol_indicadores() {
 	
 	}
 
-	this.loadIndicador = function(ind_id,titulo) {
+	this.loadIndicador = function(ind_id,titulo,clase_id) {
 		
 		var req = $.ajax({
 			
@@ -63,6 +63,12 @@ function ol_indicadores() {
 		
 		scroll.refresh();
 		
+		if (clase_id) {
+			
+			$(".abr[data-cid="+clase_id+"]").trigger("click");
+			
+		}
+		
 	}
 	
 	this.loadIndicadorResource = function(ind_id,pos) {
@@ -89,12 +95,10 @@ function ol_indicadores() {
 			var map_layers = [];
 		
 			map_layers[0] = new ol.layer.Tile({
-				name: 'openstreets',
-				title: 'OSM',
-				type: 'base',
-				visible: true,
-				source: new ol.source.XYZ({
-					url: '//{a-c}.tile.openstreetmaps.org/{z}/{x}/{y}.png',
+				name:'google_base',
+				visible:true,
+				source: new ol.source.TileImage({ 
+					url: 'http://mt{0-3}.googleapis.com/vt?&x={x}&y={y}&z={z}&hl=es&gl=AR',
 					crossOrigin: 'anonymous'
 				})
 			});
@@ -169,6 +173,52 @@ function ol_indicadores() {
 			
 			$("#indicador-col-pos-"+pos).empty();
 			document.getElementById("indicador-col-pos-"+pos).appendChild(table);
+			
+			var fichaIcon = document.createElement("a");
+				fichaIcon.className = "indicador-icono-ficha";
+				fichaIcon.href = "javascript:void(0);";
+				fichaIcon.style.right = "50px";
+				fichaIcon.onclick = function() {
+					
+					var req = $.ajax({
+				
+						async:false,
+						data:{
+							ind_id:ind_id,
+							pos:pos
+						},
+						type:"POST",
+						url:"./php/get-stats-table-csv-indicador.php",
+						success:function(d){}
+						
+					});
+					
+					var blob = new Blob([req.responseText], { type: 'text/csv;charset=utf-8;' });
+					var filename = "webexport.csv";
+					if (navigator.msSaveBlob) { // IE 10+
+						navigator.msSaveBlob(blob, filename);
+					} else {
+						var link = document.createElement("a");
+						if (link.download !== undefined) { // feature detection
+							// Browsers that support HTML5 download attribute
+							var url = URL.createObjectURL(blob);
+							link.setAttribute("href", url);
+							link.setAttribute("download", filename);
+							link.style.visibility = 'hidden';
+							document.body.appendChild(link);
+							link.click();
+							document.body.removeChild(link);
+						}
+					}					
+					
+				}.bind(this);
+				
+			var fichaImg = document.createElement("img");
+				fichaImg.src = "./images/ficha-icono-descarga.png";
+				
+			fichaIcon.appendChild(fichaImg);
+			
+			document.getElementById("indicador-col-pos-"+pos).appendChild(fichaIcon);
 			
 			break;
 			
@@ -264,6 +314,76 @@ function ol_indicadores() {
 		document.getElementById("ficha-metodologica-download").href = js.ficha_metodo_path;
 		
 	}
+	
+	
+	this.startSearch = function() {
+		
+		$("#panel-seach-input-layers").val("");
+		
+		$("#panel-seach-input-layers").bind("focus",function() {
+			
+			$(this).parent().animate({
+				
+				"background-color":"#31cbfd"
+				
+			},"fast");
+			
+		});
+		
+		$("#panel-seach-input-layers").bind("blur",function() {
+			
+			$(this).parent().animate({
+				
+				"background-color":"#4c4b4b"
+				
+			},"fast");
+			
+		});
+		
+		$("#panel-seach-input-layers").bind("keyup",function(e) {
+			
+			if ($("#panel-seach-input-layers").val().trim() == "") {
+				
+				$("#nav-panel").hide();
+				
+			}else{
+				
+				if (e.which == 13) {
+					
+					this.searchInLayers($("panel-seach-input-layers").val());				
+					$("#nav-panel").css("display","flex");
+					
+				}
+				
+			}
+			
+		}.bind(this));
+		
+	}
+	
+	this.searchInLayers = function(pattern) {
+		
+		$("#panel-busqueda-geovisor").css("display","flex");
+		$("#panel-busqueda-geovisor .panel-header").html("Resultados de Búsqueda");
+		
+		var req = $.ajax({
+			
+			async:false,
+			url:"./php/get-indicadores-search.php",
+			type:"post",
+			data:{
+				pattern:pattern
+			},
+			success:function(d){}
+			
+		});		
+		
+		$("#panel-busqueda-geovisor .panel-body").html(req.responseText);
+		
+		scroll.refresh();
+		
+	}
+	
 	
 	this.print = function() {
 		

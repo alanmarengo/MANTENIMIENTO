@@ -44,8 +44,8 @@
 }
 
 #navbar-main ul li a {
-    height: 44px;
-    width: 44px;
+    height: 36px;
+	width: 36px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -59,6 +59,7 @@
 
 #navbar-main ul li a:hover {
     color: #fff;
+    background: #282828;
 }
 
 #navbar-main ul li a i {
@@ -140,4 +141,10 @@
 
 #main-search:focus {
     outline: none;
+}
+
+#navbar-tools .button-tools:hover {
+	
+	background-color:#282828;
+	
 }

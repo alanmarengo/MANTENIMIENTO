@@ -109,6 +109,51 @@ function DrawIndicadores($clase_id) {
 	
 }
 
+
+
+function DrawIndicadoresSearch($pattern) {			
+
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+	
+	$conn = pg_connect($string_conn);
+	
+	$query_string = "SELECT DISTINCT * FROM mod_indicadores.ind_panel WHERE ind_titulo ILIKE '%" . $pattern . "%' ORDER BY ind_titulo ASC";
+	
+	$query = pg_query($conn,$query_string);
+	
+	$output = "<ul>";
+	
+	$results = false;
+	
+	while ($r = pg_fetch_assoc($query)) {
+		
+		$low_desc = strtolower($r["ind_titulo"]);
+		$low_pattern = strtolower($pattern);
+		
+		$desc = str_replace($low_pattern,"<span class=\"panel-highlighted-list-item\">".$low_pattern."</span>",$low_desc);
+		
+		$output .= "<li>";
+		$output .= "<a href=\"javascript:void(0);\" onclick=\"indicadores.loadIndicador(" . $r["ind_id"] . ",'" . $r["ind_titulo"] . "',".$r["clase_id"]."); $('#panel-busqueda-geovisor').hide();\">" . $desc . "</a>";
+		$output .= "</li>";
+
+		$results = true;
+
+	}
+	
+	if (!$results) {
+	
+		$output .= "<li>No se encontraron resultados para su búsqueda</li>";
+	
+	}
+	
+	$output .= "</ul>";
+	
+	pg_close($conn);
+	
+	return $output;
+	
+}
+
 function ComboCruce() {		
 
 	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;

@@ -12,22 +12,39 @@
 				
 			<ul>
 				<li class="ml-10">
-					<a class="button" href="javascript:void(0);" onclick="stats.view.getTableCsv();">
+					<a class="button jump-hovimage" 
+					data-ini-src="./images/download-blue.png"
+					data-end-src="./images/download-blue.white.png" href="javascript:void(0);" onclick="stats.view.getTableCsv();">
 						<img src="./images/download-blue.png">
 					</a>
 				</li>
+				<li class="icon-divisor">
+					<span></span>												
+				</li>
 				<li class="ml-10">
-					<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); jwindow.open('popup-share'); geomap.map.share();">
+					<a class="button jump-hovimage" 
+					data-ini-src="./images/toolbar.icon.share.png"
+					data-end-src="./images/toolbar.icon.share.blue.png" href="javascript:void(0);">
 						<img src="./images/toolbar.icon.share.png">
 					</a>
 				</li>
+				<li class="icon-divisor">
+					<span></span>												
+				</li>
 				<li>
-					<a class="button" href="javascript:void(0);" onclick="geomap.map.print();">
+					<a class="button jump-hovimage" 
+					data-ini-src="./images/toolbar.icon.print.png"
+					data-end-src="./images/toolbar.icon.print.blue.png" href="javascript:void(0);">
 						<img src="./images/toolbar.icon.print.png">
 					</a>
 				</li>
+				<li class="icon-divisor">
+					<span></span>												
+				</li>
 				<li class="ml-10">
-					<a class="button" href="javascript:void(0);" onclick="">
+					<a class="button jump-hovimage" 
+					data-ini-src="./images/stats-fav.png"
+					data-end-src="./images/stats-fav.blue.png" href="javascript:void(0);">
 						<img src="./images/stats-fav.png">
 					</a>
 				</li>

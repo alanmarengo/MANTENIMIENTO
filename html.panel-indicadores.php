@@ -1,6 +1,16 @@
 <div id="nav-panel" data-visible="1" class="jump-flotant-heightfill jump-scroll nav-level-1 col col-nav col-xs-12 col-sm-12  col-md-3 col-lg-3">
 	
-	<div id="nav-panel-inner" data-visible="1">	
+	<div id="nav-panel-inner" data-visible="1" style="width:95%;">	
+		
+		<div id="nav-panel-arrow">
+		
+			<a href="#" onclick="flotant.toggle('#nav-panel-inner')" class="jump-toggleimage" data-state="1" data-ini-src="./images/panel.icon.arrow.0.png" data-end-src="./images/panel.icon.arrow.1.png">
+			
+				<img src="./images/panel.icon.arrow.1.png">
+			
+			</a>
+		
+		</div>
 		
 		<div class="jump-row">
 		
@@ -8,7 +18,7 @@
 				<a href="#" class="plr-10 jump-link-death" style="width: 34px; height: 34px; line-height: 34px;">
 					<img src="./images/panel.icon.f2.png">
 				</a>
-				<input id="panel-seach-input-layers" class="panel-input pl-10" name="main-search" type="text" value="BUSCAR" data-jump-placeholder="BUSCAR" placeholder="BUSCAR" 
+				<input id="panel-seach-input-layers" class="panel-input pl-10" name="main-search" type="text" data-jump-placeholder="BUSCAR" placeholder="BUSCAR" 
 					onfocus="">
 				<span class="layers-visible-count jump-posrel l--30"></span>
 			</div>
