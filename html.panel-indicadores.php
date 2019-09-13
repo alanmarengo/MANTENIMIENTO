@@ -25,7 +25,7 @@
 		
 		</div>
 		
-		<div class="jump-row">
+		<div class="jump-row" style="flex-grow:1;">
 		
 			<div id="layers-wrapper">
 
