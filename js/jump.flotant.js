@@ -42,14 +42,6 @@ Jump.flotant = function() {
 			
 			var height = $(v).height();
 			
-			var reduce = $(v).attr("data-reduce");
-			
-			if (reduce) {
-				
-				height = height - reduce;
-				
-			}
-			
 			$(v).css("height",height+"px");
 			
 		});
