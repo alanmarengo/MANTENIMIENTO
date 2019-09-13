@@ -6,6 +6,7 @@ $(document).ready(function() {
         qty0: 0,
         qty1: 0,
         qty2: 0,
+        estudio_nombre: '',
         stopLoad: false,
         filters: {
             pagina: 0,
@@ -44,10 +45,18 @@ $(document).ready(function() {
 
     // REMOVE FILTER
     $('body').on('click', '.filters-checked', function() {
+        let estudio = $(this).data('estudio');
         let group = $(this).data('group');
         let item = $(this).data('item');
-        model.filters.groups[group].items[item].checked = false;
-        setEstudio(null);
+
+        if (estudio == 1) {
+            setEstudio(null);
+            model.estudio_nombre = '';
+        } else {
+            model.filters.groups[group].items[item].checked = false;
+        }
+
+        //setEstudio(null);
         filtersRender();
         model.pagina = 0;
         dataLoad();
@@ -58,8 +67,7 @@ $(document).ready(function() {
         let group = $(this).data('group');
         let item = $(this).data('item');
         model.filters.groups[group].items[item].checked = true;
-
-        setEstudio(null);
+        //setEstudio(null);
         filtersRender();
         model.pagina = 0;
         dataLoad();
@@ -104,10 +112,10 @@ $(document).ready(function() {
         setSolapa($(this).data('solapa'));
         setEstudio($(this).data('estudio'));
         model.stopLoad = false;
+        model.pagina = 0;
 
         if (model.tab == 0) {
             model.ra = 1;
-            model.pagina = 0;
         }
 
         filtersRender();
@@ -269,6 +277,7 @@ $(document).ready(function() {
             model.qty0 = data.registros_total_0;
             model.qty1 = data.registros_total_1;
             model.qty2 = data.registros_total_2;
+            model.estudio_nombre = data.estudio_nombre;
 
             model.ra = 0;
             model.data.docs = [];
@@ -352,8 +361,8 @@ $(document).ready(function() {
     }
 
     function setEstudio(estudio) {
-        if (estudio)
-            filtersReset();
+        //if (estudio)
+        //    filtersReset();
 
         model.filters.estudio = estudio;
     }
@@ -376,6 +385,8 @@ $(document).ready(function() {
         $('#uxQtyDocs').html(`(${model.qty0})`);
         $('#uxQtyMedias').html(`(${model.qty1})`);
         $('#uxQtyTechs').html(`(${model.qty2})`);
+
+        checkedsRender();
 
         pagerRender('#uxPager1');
         pagerRender('#uxPager2');
@@ -524,7 +535,6 @@ $(document).ready(function() {
         $('#uxFilters').html(html);
 
         groupsTitleRender();
-        checkedsRender();
 
         // BIND EVENTS DATE PICKER
         $('.date').datepicker({
@@ -589,11 +599,18 @@ $(document).ready(function() {
 
     function checkedsRender() {
         $('#uxFiltersChecked').html('');
+
+        if (model.estudio_nombre != '') {
+            $('#uxFiltersChecked').append(`
+                <a class="filters-checked btn btn-success btn-xs" style="color: #fff;" data-estudio="1">${model.estudio_nombre} <i class="fa fa-times" style="padding: 0px 6px;"></i></a>
+            `)
+        }
+
         $.each(model.filters.groups, function(gindex, group) {
             $.each(group.items, function(iindex, item) {
                 if (item.checked) {
                     $('#uxFiltersChecked').append(`
-                        <a class="filters-checked btn btn-warning btn-xs" data-group="${gindex}" data-item="${iindex}">${item.label} <i class="fa fa-times" style="padding-left: 6px;"></i></a>
+                        <a class="filters-checked btn btn-warning btn-xs" data-group="${gindex}" data-item="${iindex}">${item.label} <i class="fa fa-times" style="padding-right: 6px;"></i></a>
                     `)
                 }
             });
@@ -644,7 +661,7 @@ $(document).ready(function() {
                     </div>
                     <div class="col-9" style="margin-left: 0px;">
                         <div class="doc-title">
-                            <img class="doc-icon" src="./images/icon-pdf-file.png" />
+                            <img class="doc-icon" src="./images/pdf.png" style="width: 40px; height: auto;" />
                             ${doc.title}
                         </div>
                         <div class="doc-authors">${doc.authors}</div>
@@ -725,7 +742,7 @@ $(document).ready(function() {
                 </div>
                 <div class="col-9">
                         <div class="doc-title">
-                            <img class="doc-icon" src="./images/icon-pdf-file.png" />
+                            <img class="doc-icon" src="./images/pdf.png" style="width: 40px; height: auto;" />
                             ${doc.title}
                         </div>
                         <div class="doc-authors">${doc.authors}</div>
@@ -830,7 +847,6 @@ $(document).ready(function() {
             pagina: model.pagina,
             salto: model.salto
         };
-
         return jQuery.param(params);
     }
 
