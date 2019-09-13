@@ -26,6 +26,9 @@
 		scroll = new Jump.scroll();
 		scroll.refresh();
 		
+		toggleimage = new Jump.toggleimage();
+		toggleimage.refresh();
+		
 		hovimage = new Jump.hovimage();
 		hovimage.refresh();
 		
