@@ -20,7 +20,7 @@
 				</li>
 				<li class="icon-divisor">
 					<span></span>												
-				</ul>
+				</li>
 				<li class="ml-10">
 					<a class="button jump-hovimage" 
 					data-ini-src="./images/toolbar.icon.share.png"
