@@ -237,7 +237,10 @@ function ol_indicadores() {
 			
 			case "slider":			
 				
-			$(".carousel-item img").css("height","100%");
+			$(".carousel").css("height","100%");
+			$(".carousel-inner").css("height","100%");
+			$(".carousel-item").css("height","100%");
+			$(".carousel-item img").attr("height","100%");
 				
 			var carouselSlide = document.createElement("div");
 				carouselSlide.id = "carousel-"+pos;
@@ -271,7 +274,7 @@ function ol_indicadores() {
 			document.getElementById("indicador-col-pos-"+pos).appendChild(carouselSlide);
 			
 			$(carouselSlide).carousel({
-				interval: 6000000,
+				interval: 3000,
 				full_height:true
 			})
 			
