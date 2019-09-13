@@ -237,7 +237,7 @@ function ol_indicadores() {
 			
 			case "slider":			
 				
-			$(".item img").css("height","100%");
+			$(".carousel-item img").css("height","100%");
 				
 			var carouselSlide = document.createElement("div");
 				carouselSlide.id = "carousel-"+pos;
