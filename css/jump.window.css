@@ -31,6 +31,7 @@
 	padding:6px 20px;
 	cursor:move;
 	height:42px;
+	line-height: 32px;
 	display:block;
 	align-items:center;
 	background-color:#4c4b4b;

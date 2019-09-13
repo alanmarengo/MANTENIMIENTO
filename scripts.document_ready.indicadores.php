@@ -53,7 +53,20 @@
 		window.addEventListener("resize",onresize);
 		onresize();
 		
+		<?php
 		
+		if (isset($_GET["ind_id"])) {
+			
+		?>
+		
+		indicadores.loadIndicador(<?php echo $_GET["ind_id"]; ?>,'<?php echo $_GET["ind_id"]; ?>','<?php echo $_GET["cid"]; ?>');
+		document.getElementById("indicador-label-<?php echo $_GET["ind_id"]; ?>").click();
+		
+		<?php
+			
+		}
+		
+		?>
 		
 	});
 			

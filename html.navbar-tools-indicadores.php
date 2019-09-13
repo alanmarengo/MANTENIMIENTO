@@ -15,7 +15,7 @@
 				<li class="ml-10">
 					<a class="button jump-hovimage" 
 					data-ini-src="./images/toolbar.icon.share.png"
-					data-end-src="./images/toolbar.icon.share.blue.png" href="javascript:void(0);">
+					data-end-src="./images/toolbar.icon.share.blue.png" href="javascript:void(0);" onclick="indicadores.share();">
 						<img src="./images/toolbar.icon.share.png">
 					</a>
 				</li>

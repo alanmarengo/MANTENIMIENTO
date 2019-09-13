@@ -4,6 +4,8 @@ function ol_indicadores() {
 	this.panel.div = document.getElementById("nav-panel");
 	
 	this.current_ind = 0;
+	this.current_ind_title = "";
+	this.current_cid = 0;
 	
 	this.panel.start = function() {
 		
@@ -49,6 +51,8 @@ function ol_indicadores() {
 		});		
 		
 		this.current_ind = ind_id;
+		this.current_title = titulo;
+		this.current_cid = clase_id;
 		
 		$("#navbar-tools h3").html("Indicadores / " + titulo);
 		
@@ -381,6 +385,16 @@ function ol_indicadores() {
 		$("#panel-busqueda-geovisor .panel-body").html(req.responseText);
 		
 		scroll.refresh();
+		
+	}
+	
+	
+	this.share = function() {
+		
+		$("#input-share").val("http://observatorio.atic.com.ar/indicadores.php?ind_id="+this.current_ind+"&t="+this.current_title+"&cid="+this.current_cid);
+		
+		$(".popup").not("#popup-busqueda").hide();
+		jwindow.open("popup-share");
 		
 	}
 	
