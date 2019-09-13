@@ -256,7 +256,7 @@ function ol_indicadores() {
 			for (var i=0; i<js.images.length; i++) {
 				
 				var carouselIndicatorItem = document.createElement("li");
-					carouselIndicatorItem.setAttribute("data-target","#slider-"+pos);
+					carouselIndicatorItem.setAttribute("data-target","#carousel-"+pos);
 					carouselIndicatorItem.setAttribute("data-slide-to",i);
 				
 				var carouselItem = document.createElement("div");
