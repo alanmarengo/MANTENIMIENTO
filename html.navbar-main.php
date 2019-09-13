@@ -68,7 +68,7 @@
 				</li>
 				<li class="dropdown">
 					<a href="#" id="navbarDropdown-help" role="button" data-toggle="dropdown" aria-expanded="false">
-						<i class="fa fa-question-circle"></i>
+						<i class="fa fa-user"></i>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-help" id="dropdown-help">
 						<ul>
