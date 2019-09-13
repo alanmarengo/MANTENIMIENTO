@@ -733,6 +733,16 @@ $(document).ready(function() {
     function techsRender() {
         let html = '';
         $.each(model.data.techs, function(index, doc) {
+            let links = '';
+            if (doc.estudio > 0) {
+                links = `
+                    <div class="doc-links">
+                        <a data-solapa="0" data-estudio="${doc.estudio}" class="btn btn-dark estudios-link">DOCUMENTOS ASOCIADOS</a>
+                        <a data-solapa="0" data-estudio="${doc.estudio}" class="btn btn-dark estudios-link">RECURSOS ASOCIADOS</a>
+                    </div>
+                `;
+            }
+
             html += `
                 <div class="doc row" data-id="${doc.id}" data-origen="${doc.origen_id}">
                 <div class="col-3" style="padding-right: 0px;">
@@ -747,10 +757,7 @@ $(document).ready(function() {
                         </div>
                         <div class="doc-authors">${doc.authors}</div>
                         <div class="doc-description">${doc.description}</div>
-                        <div class="doc-links">
-                            <a data-solapa="0" data-estudio="${doc.estudio}" class="btn btn-dark estudios-link">DOCUMENTOS ASOCIADOS</a>
-                            <a data-solapa="0" data-estudio="${doc.estudio}" class="btn btn-dark estudios-link">RECURSOS ASOCIADOS</a>
-                        </div>
+                        ${links}
                     </div>
                 </div>
             `;
