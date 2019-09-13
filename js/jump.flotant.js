@@ -60,22 +60,6 @@ Jump.flotant = function() {
 			
 		});
 			
-		$(e).height((Jump.Document.height - ruleTotalHeight)+"px");
-		
-	}
-	
-	this.fitHeightElement = function(e,fitAgainstRule) {
-		
-		var ruleElements = $(fitAgainstRule);
-		var ruleTotalHeight = 0;
-		
-		$(ruleElements).each(function(i,v) {
-			
-			ruleElementHeight = $(v).height();
-			ruleTotalHeight += ruleElementHeight;
-			
-		});
-			
 		$(e).css("top",ruleTotalHeight+"px");
 		
 	}
