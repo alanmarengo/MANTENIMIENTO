@@ -12,7 +12,9 @@
 				
 			<ul>
 				<li class="ml-10">
-					<a class="button" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); jwindow.open('popup-share'); geomap.map.share();">
+					<a class="button jump-hovimage" 
+					data-ini-src="./images/toolbar.icon.share.png"
+					data-end-src="./images/toolbar.icon.share.blue.png" href="javascript:void(0);" onclick="jwindow.close('.geovisor-flotant'); jwindow.open('popup-share'); geomap.map.share();">
 						<img src="./images/toolbar.icon.share.png">
 					</a>
 				</li>
@@ -20,7 +22,9 @@
 					<span></span>												
 				</li>
 				<li>
-					<a class="button" href="javascript:void(0);" onclick="geomap.map.print();">
+					<a class="button jump-hovimage" 
+					data-ini-src="./images/toolbar.icon.print.png"
+					data-end-src="./images/toolbar.icon.print.blue.png" href="javascript:void(0);" onclick="geomap.map.print();">
 						<img src="./images/toolbar.icon.print.png">
 					</a>
 				</li>
