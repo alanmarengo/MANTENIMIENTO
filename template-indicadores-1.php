@@ -163,7 +163,7 @@
 
 		<div class="resource-col col col-md-12 col-lg-12 col-xs-12 col-sm-12">		
 		
-			<div class="resource-inner" id="indicador-col-pos-14" data-pos="14">
+			<div class="resource-inner" id="indicador-col-pos-14" data-pos="14" style="height:400px;">
 			
 				
 			
