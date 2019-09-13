@@ -12,7 +12,7 @@
 		
 		</div>
 		
-		<div class="jump-row bar-paneler">
+		<div class="jump-row">
 		
 			<div class="mtb-20 ml-auto mr-auto w-100-p search-wrapper">
 				<a href="#" class="plr-10 jump-link-death" style="width: 34px; height: 34px; line-height: 34px;">
@@ -27,7 +27,7 @@
 		
 		<div class="jump-row">
 		
-			<div id="layers-wrapper" class="jump-flotant-heightfill jump-scroll">
+			<div id="layers-wrapper">
 
 				<div id="abr-container">
 				
@@ -35,7 +35,7 @@
 				
 				</div>
 				
-				<div id="layers-container">
+				<div id="layers-container" class="jump-scroll">
 				
 					<?php DrawContainersInd(); ?>
 				

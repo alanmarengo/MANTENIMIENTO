@@ -1,4 +1,4 @@
-<div class="navbar flebox jump-navbar bar-paneler" id="navbar-main">
+<div class="navbar flebox jump-navbar" id="navbar-main">
 	
 <!---
 	<div class="row jump-row menu-row" style="background-color: #ccc; font-size: 11px; padding: 1px!important;align-items: center;">
@@ -68,7 +68,7 @@
 				</li>
 				<li class="dropdown">
 					<a href="#" id="navbarDropdown-help" role="button" data-toggle="dropdown" aria-expanded="false">
-						<i class="fa fa-user"></i>
+						<i class="fa fa-question-circle"></i>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-help" id="dropdown-help">
 						<ul>
