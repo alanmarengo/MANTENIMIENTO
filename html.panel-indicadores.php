@@ -25,7 +25,7 @@
 		
 		</div>
 		
-		<div class="jump-row" style="flex-grow:1;">
+		<div class="jump-row jump-flotant-height-transform" style="flex-grow:1;">
 		
 			<div id="layers-wrapper">
 
