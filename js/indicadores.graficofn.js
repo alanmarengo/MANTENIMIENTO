@@ -791,6 +791,6 @@ function draw_grafico_12(container,config) { // PIE WITH DRILLDOWN
 	container = document.getElementById(container);
 	
 	container.innerHTML = "<h3>"+config.data[0].valor + " " + config.etiquetas[0] + "</h3>";
-	container.innerHTML += "<h4>"+config.titulo+"</h4">;
+	container.innerHTML += "<h4>"+config.titulo+"</h4>";
 
 }
