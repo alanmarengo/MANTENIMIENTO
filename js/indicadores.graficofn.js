@@ -788,8 +788,8 @@ function draw_grafico_11(container,config) { // PIE WITH DRILLDOWN
 
 function draw_grafico_12(container,config) { // PIE WITH DRILLDOWN
 	
-	container.innerHTML = "GRAFICO NUMERICO";
+	container = document.getElementById(container);
 	
-	console.log(container);
+	container.innerHTML = "GRAFICO";
 
 }
