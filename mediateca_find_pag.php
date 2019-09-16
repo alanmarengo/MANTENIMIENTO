@@ -24,11 +24,26 @@ $proyecto   =  $_REQUEST['proyecto'];
 $clase      =  $_REQUEST['tema'];
 $subclase   =  $_REQUEST['subtema'];
 $tipo_doc   =  $_REQUEST['documento'];
-$orden      =  $_REQUEST['0'];
+$orden      =  $_REQUEST['o'];
 $estudio_id =  $_REQUEST['estudio_id'];
 $ra 	    =  $_REQUEST['ra'];
 $solapa	    =  $_REQUEST['solapa'];
 $mode	    =  $_REQUEST['mode'];
+
+/************************* ORDER BY **********************************/
+
+switch ($_REQUEST['o'])
+		{
+			case 0: 	$ORDER = " ORDER BY tipo_formato_solapa,recurso_titulo ASC"; break;
+			case 1: 	$ORDER = " ORDER BY tipo_formato_solapa,recurso_titulo DESC"; break;
+			case 2: 	$ORDER = " ORDER BY tipo_formato_solapa, mod_mediateca.get_total_vistas_recurso(origen_id_especifico,origen_id) DESC"; break;
+			case 3: 	$ORDER = " ORDER BY tipo_formato_solapa, mod_mediateca.get_total_vistas_recurso(origen_id_especifico,origen_id) ASC"; break;
+			case 4: 	$ORDER = " ORDER BY tipo_formato_solapa,recurso_fecha DESC"; break;
+			case 5: 	$ORDER = " ORDER BY tipo_formato_solapa,recurso_fecha ASC"; break;
+			default: 	$ORDER = " ORDER BY tipo_formato_solapa,recurso_titulo ASC"; break;
+		};
+
+
 
 /********************Parametros paginador ***************************/
 
@@ -79,6 +94,7 @@ function getSQL($solapa) {
 	global $subclase;
 	global $tipo_doc;
 	global $ra;
+	global $ORDER;
 
 	$SQL = "";
 
@@ -104,8 +120,8 @@ function getSQL($solapa) {
 			. " FROM mod_mediateca.mediateca_find('$qt','$desde','$hasta','$proyecto','$clase','$subclase','$tipo_doc') "
 		. " WHERE tipo_formato_solapa=$solapa" 
 			. " GROUP BY recurso_fecha,COALESCE(subclase_desc,''),tipo_formato_solapa,origen_id,origen_id_especifico,recurso_titulo,recurso_desc,recurso_path_url,recurso_categoria_desc,CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END"
-		. " ORDER BY tipo_formato_solapa,recurso_titulo ASC"
-			. ")T";
+		. $ORDER
+			. ")T"; 
 		}
 		else
 		{
@@ -128,7 +144,7 @@ function getSQL($solapa) {
 				. " FROM mod_catalogo.vw_catalogo_data C WHERE "
 				. " C.estudios_id IN(SELECT sub_estudio_id FROM mod_catalogo.estudio_subestudio WHERE estudios_id=$estudio_id) "
 				. " AND C.estudios_id=$estudio_id  AND  tipo_formato_solapa=$solapa " /* Tambíen incluye el mismo estudio */ 
-				. " ORDER BY tipo_formato_solapa,recurso_titulo ASC "
+				. $ORDER
 				. ")T";
 			   }
 			   else
@@ -147,7 +163,8 @@ function getSQL($solapa) {
 				. "estudios_id,"
 				. "recurso_fecha AS Fecha,"
 				. "COALESCE(subclase_desc,'') AS Tema "
-				. " FROM mod_catalogo.vw_catalogo_data C WHERE estudios_id=$estudio_id AND tipo_formato_solapa=$solapa ORDER BY tipo_formato_solapa,recurso_titulo ASC"
+				. " FROM mod_catalogo.vw_catalogo_data C WHERE estudios_id=$estudio_id AND tipo_formato_solapa=$solapa "
+				. $ORDER
 				. ")T";
 			   };
 		};
@@ -204,8 +221,6 @@ function getSQL($solapa) {
 	
 	return $estudio_nombre;  		
  };
-
-//echo $SQL;
 
 $data_query	= "SELECT COUNT(*) registros FROM (".getSQL($solapa).") A;";
 
