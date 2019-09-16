@@ -77,6 +77,13 @@ function ol_indicadores() {
 	
 	this.loadIndicadorResource = function(ind_id,pos) {
 		
+		var ind_inner = document.createElement("div");
+			ind_inner.id = "indicador-inner-"+pos;
+			
+		var container = document.getElementById("indicador-col-pos-"+pos);
+		
+		container.appendChild(ind_inner);
+		
 		var req = $.ajax({
 			
 			async:false,
@@ -127,7 +134,7 @@ function ol_indicadores() {
 			
 			var indMap = new ol.Map({
 				layers:map_layers,
-				target: "indicador-col-pos-"+pos,
+				target: "indicador-inner-"+pos,
 				extent: [-13281237.21183002,-7669922.0600572005,-738226.6183457375,-1828910.1066171727],
 				controls: [],
 				view: new ol.View({
@@ -175,8 +182,8 @@ function ol_indicadores() {
 				
 			}
 			
-			$("#indicador-col-pos-"+pos).empty();
-			document.getElementById("indicador-col-pos-"+pos).appendChild(table);
+			$("#indicador-inner-"+pos).empty();
+			document.getElementById("indicador-inner-"+pos).appendChild(table);
 			
 			var fichaIcon = document.createElement("a");
 				fichaIcon.className = "indicador-icono-ficha";
@@ -228,10 +235,10 @@ function ol_indicadores() {
 			
 			case "grafico":
 			
-			$("#indicador-col-pos-"+pos).empty();
-			$("#indicador-col-pos-"+pos).html(js.type);
+			$("#indicador-inner-"+pos).empty();
+			$("#indicador-inner-"+pos).html(js.type);
 			
-			eval("draw_grafico_"+js.grafico_tipo_id+"('indicador-col-pos-"+pos+"',js)");
+			eval("draw_grafico_"+js.grafico_tipo_id+"('indicador-inner-"+pos+"',js)");
 			
 			break;
 			
@@ -274,8 +281,8 @@ function ol_indicadores() {
 				
 			}
 			
-			document.getElementById("indicador-col-pos-"+pos).innerHTML = "";
-			document.getElementById("indicador-col-pos-"+pos).appendChild(carouselSlide);
+			document.getElementById("indicador-inner-"+pos).innerHTML = "";
+			document.getElementById("indicador-inner-"+pos).appendChild(carouselSlide);
 			
 			$(carouselSlide).carousel({
 				interval: 3000,
