@@ -285,7 +285,7 @@ function ol_indicadores() {
 			document.getElementById("indicador-inner-"+pos).appendChild(carouselSlide);
 			
 			$(carouselSlide).carousel({
-				interval: 3000,
+				interval: 66663000,
 				full_height:true
 			})
 				
