@@ -281,7 +281,7 @@ function ol_indicadores() {
 				
 			}
 			
-			var alto = document.getElementById("indicador-col-pos-"+pos).height();
+			var alto = $("#indicador-col-pos-"+pos).height();
 			
 			document.getElementById("indicador-inner-"+pos).innerHTML = "";
 			document.getElementById("indicador-inner-"+pos).style.height = alto - 40 + "px";
