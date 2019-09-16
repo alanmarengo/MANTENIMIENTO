@@ -309,7 +309,7 @@ function ol_indicadores() {
 		
 		document.getElementById("indicador-col-pos-"+pos).appendChild(fichaIcon);		
 	
-		$("#indicador-col-pos-"+pos).children().first().prepend("<p>"+js.ind_titulo+"</p>");
+		$("#indicador-col-pos-"+pos).before("<p>"+js.ind_titulo+"</p>");
 
 	}
 	
