@@ -307,8 +307,10 @@ function ol_indicadores() {
 			
 		fichaIcon.appendChild(fichaImg);
 		
-		document.getElementById("indicador-col-pos-"+pos).appendChild(fichaIcon);
-		
+		document.getElementById("indicador-col-pos-"+pos).appendChild(fichaIcon);		
+	
+		$("#indicador-col-pos-"+pos).children().first().prepend("<p>"+js.ind_titulo+"</p>");
+
 	}
 	
 	this.loadFichaMetodologica = function(ind_id,pos) {

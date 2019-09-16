@@ -53,8 +53,6 @@ function draw_grafico_1(container,config) {
 		series:config.data
 	});
 	
-	$("#"+container).children().first().prepend("<p>"+config.ind_titulo+"</p>");
-	
 } //  BASIC AREA
 
 function draw_grafico_2(container,config) {
@@ -86,8 +84,6 @@ function draw_grafico_2(container,config) {
 		},
 		series: config.data
 	});
-	
-	$("#"+container).children().first().prepend("<p>"+config.ind_titulo+"</p>");
 	
 } 
 
@@ -173,8 +169,6 @@ function draw_grafico_3(container,config) { // BUBBLE CHART
 		},
 		series: series
 	});
-	
-	$("#"+container).children().first().prepend("<p>"+config.ind_titulo+"</p>");
 
 
 }
@@ -265,8 +259,6 @@ function draw_grafico_4(container,config) { // BUBBLE CHART
 		},
 		series:series
 	});
-	
-	$("#"+container).children().first().prepend("<p>"+config.ind_titulo+"</p>");
 
 }
 
@@ -356,9 +348,6 @@ function draw_grafico_5(container,config) { // BASIC COLUMNS
 		},
 		series:series
 	});
-	
-	$("#"+container).children().first().prepend("<p>"+config.ind_titulo+"</p>");
-	
 }
 
 
@@ -450,8 +439,6 @@ function draw_grafico_6(container,config) { // FIXED PLACEMENT
 		series: series
 	});
 	
-	$("#"+container).children().first().prepend("<p>"+config.ind_titulo+"</p>");
-	
 }
 
 function draw_grafico_7(container,config) { // FIXED PLACEMENT
@@ -532,8 +519,6 @@ function draw_grafico_7(container,config) { // FIXED PLACEMENT
 		},
 		series: config.data
 	});
-	
-	$("#"+container).children().first().prepend("<p>"+config.ind_titulo+"</p>");
 	
 }
 
@@ -709,8 +694,6 @@ function draw_grafico_9(container,config) { // BASIC LINE
 
 	});
 	
-	$("#"+container).children().first().prepend("<p>"+config.ind_titulo+"</p>");
-	
 }
 
 function draw_grafico_10(container,config) { // SEMI CIRCLE DONUT
@@ -765,8 +748,6 @@ function draw_grafico_10(container,config) { // SEMI CIRCLE DONUT
 		}]
 	});
 	
-	$("#"+container).children().first().prepend("<p>"+config.ind_titulo+"</p>");
-	
 }
 
 function draw_grafico_11(container,config) { // PIE WITH DRILLDOWN
@@ -802,15 +783,13 @@ function draw_grafico_11(container,config) { // PIE WITH DRILLDOWN
 			data:config.data
 		}]
 	});
-	
-	$("#"+container).children().first().prepend("<p>"+config.ind_titulo+"</p>");
 
 }
 
 function draw_grafico_12(container,config) { // PIE WITH DRILLDOWN
-
-	document.getElementById(container).innerHTML = "<h3>SENSOR</h3>";
 	
-	$("#"+container).children().first().prepend("<p>"+config.ind_titulo+"</p>");
+	container = document.getElementById(container);
+	
+	container.innerHTML = "GRAFICO";
 
 }
