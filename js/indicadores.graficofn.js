@@ -139,7 +139,7 @@ function draw_grafico_3(container,config) { // BUBBLE CHART
 		},
 		tooltip: {
 			useHTML: true,
-			pointFormat: '<b>{point.name}:</b> {point.value}m CO<sub>2</sub>'
+			pointFormat: '<b>{point.name}:</b> {point.value}'+config.unidad+'</sub>'
 		},
 		plotOptions: {
 			packedbubble: {
@@ -774,7 +774,7 @@ function draw_grafico_11(container,config) { // PIE WITH DRILLDOWN
 
 		tooltip: {
 			headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
-			pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}'+config.unidad+'+</b> of total<br/>'
+			pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}'+config.unidad+'+</b><br/>'
 		},
 
 		series:[{
