@@ -139,7 +139,7 @@ function draw_grafico_3(container,config) { // BUBBLE CHART
 		},
 		tooltip: {
 			useHTML: true,
-			pointFormat: '<b>{point.name}:</b> {point.value}'+config.unidad+'</sub>'
+			pointFormat: '<b>{point.name}:</b> {point.value} '+config.unidad+'</sub>'
 		},
 		plotOptions: {
 			packedbubble: {
@@ -226,7 +226,7 @@ function draw_grafico_4(container,config) { // BUBBLE CHART
 		},
 		tooltip: {
 			useHTML: true,
-			pointFormat: '<b>{point.name}:</b> {point.value}m CO<sub>2</sub>'
+			pointFormat: '<b>{point.name}:</b> {point.value} ' + config.unidad
 		},
 		plotOptions: {
 			packedbubble: {
@@ -790,7 +790,7 @@ function draw_grafico_12(container,config) { // PIE WITH DRILLDOWN
 	
 	container = document.getElementById(container);
 	
-	container.innerHTML = "<h3>"+config.data[0].y + " " + config.unidad + "</h3>";
-	container.innerHTML += "<h4>"+config.titulo+"</h4>";
+	container.innerHTML = "<h3 style='font-size:10vh;'>"+config.data[0].y + " " + config.unidad + "</h3>";
+	container.innerHTML += "<h4 style='font-size:7vh;'>"+config.titulo+"</h4>";
 
 }
