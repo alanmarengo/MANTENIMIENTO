@@ -774,7 +774,7 @@ function draw_grafico_11(container,config) { // PIE WITH DRILLDOWN
 
 		tooltip: {
 			headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
-			pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}'+config.unidad'+</b> of total<br/>'
+			pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}'+config.unidad+'+</b> of total<br/>'
 		},
 
 		series:[{
