@@ -25,7 +25,9 @@
 	
 </head>
 <body style="overflow:hidden;">
-
+			
+	<?php include("./html.panel-indicadores.php"); ?>
+	
 	<div id="page">
 	
 		<?php include("./html.navbar-main.php"); ?>
@@ -40,8 +42,6 @@
 			<?php include("./html.nav.popup.php"); ?>
 			
 			<div class="row jump-row">
-			
-				<?php include("./html.panel-indicadores.php"); ?>
 				
 				<div id="template-wrapper" class="jump-flotant-heightfill jump-scroll col-md-12 col-lg-12 col-sm-12 col-xs-12">
 				
