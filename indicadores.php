@@ -33,7 +33,7 @@
 		<?php include("./html.navbar-main.php"); ?>
 		<?php include("./html.navbar-tools-indicadores.php"); ?>
 		
-		<div class="page-container" style="width:98%">
+		<div class="page-container">
 		
 			<?php //include("./section.index.php"); ?>
 			
@@ -59,7 +59,7 @@
 	
 	<?php include("./popup.share.php"); ?>	
 	<?php include("./popup.fmetodologica.php"); ?>	
-	<?php include("./widget-links.php"); ?>
+	<?php // include("./widget-links.php"); ?>
 	<?php include("./html.jalert.php"); ?>
 
 </body>
