@@ -105,8 +105,11 @@ while($r = pg_fetch_assoc($query)) {
 		$sectorArr = array();
 		$seriesArr = array();
 		$curInd = -1;
+		$unidad = "";
 		
 		while ($s = pg_fetch_assoc($query_grafico_data)) {
+			
+			$unidad = $s["unidad"];
 			
 			if ($sector != $s["sector"]) {
 				
@@ -155,6 +158,7 @@ while($r = pg_fetch_assoc($query)) {
 		$data_out .= "\"grafico_tipo_id\":" . $data["grafico_tipo_id"] . ",";
 		$data_out .= "\"titulo\":\"" . $g_titulo . "\",";
 		$data_out .= "\"desc\":\"" . $g_desc . "\",";
+		$data_out .= "\"unidad\":\"" . $unidad . "\",";
 		$data_out .= "\"etiquetas\":[\"" . implode("\",\"",$labels) . "\"],";
 		$data_out .= "\"data\":[" . $data_string . "]";
 		$data_out .= "}";
