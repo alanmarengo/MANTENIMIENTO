@@ -103,6 +103,10 @@ function ol_indicadores() {
 			
 			case "layer":
 			
+			var height = $("#indicador-col-pos-"+pos).height();
+			
+			$("#indicador-inner-"+pos).css("height",height+"px");
+			
 			var map_layers = [];
 		
 			map_layers[0] = new ol.layer.Tile({
