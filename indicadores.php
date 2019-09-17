@@ -33,7 +33,7 @@
 		<?php include("./html.navbar-main.php"); ?>
 		<?php include("./html.navbar-tools-indicadores.php"); ?>
 		
-		<div class="page-container" style="width:97%">
+		<div class="page-container" style="width:97.5%">
 		
 			<?php //include("./section.index.php"); ?>
 			
