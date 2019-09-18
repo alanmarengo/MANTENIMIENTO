@@ -2,10 +2,17 @@
 
 header('Content-Type: application/json');
 
+
+include("./pgconfig.php");
+
 $origen_id         =  $_REQUEST['origen_id'];
 $id                =  $_REQUEST['id'];
 
-$conn = pg_connect("host=localhost port=5432 dbname=ahrsc user=postgres password=plahe100%");
+//$conn = pg_connect("host=localhost port=5432 dbname=ahrsc user=postgres password=plahe100%");
+
+$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+	
+$conn = pg_connect($string_conn);
 
 $SQL = "SELECT * FROM mod_mediateca.get_ficha_recurso($origen_id, $id) T limit 1";
 
@@ -50,6 +57,15 @@ while($row)
 };
 
 echo "]";*/
+
+
+/********************* LOG REQUEST **************************/
+
+$req_ip = $_SERVER['REMOTE_ADDR'];
+
+$SQL_REQUEST = "INSERT INTO mod_login.recursos_request(recursos_request_fecha, recursos_request_ip, recurso_id, user_id, recurso_origen_id)VALUES(now(),'$req_ip', $id, NULL,$origen_id);";
+
+$recordset = pg_query($conn,$SQL_REQUEST);
 
 pg_close($conn);
 

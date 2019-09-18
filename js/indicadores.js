@@ -77,6 +77,13 @@ function ol_indicadores() {
 	
 	this.loadIndicadorResource = function(ind_id,pos) {
 		
+		var ind_inner = document.createElement("div");
+			ind_inner.id = "indicador-inner-"+pos;
+			
+		var container = document.getElementById("indicador-col-pos-"+pos);
+		
+		container.appendChild(ind_inner);
+		
 		var req = $.ajax({
 			
 			async:false,
@@ -95,6 +102,10 @@ function ol_indicadores() {
 		switch(js.type) {
 			
 			case "layer":
+			
+			var height = $("#indicador-col-pos-"+pos).height();
+			
+			$("#indicador-inner-"+pos).css("height",height+"px");
 			
 			var map_layers = [];
 		
@@ -127,7 +138,7 @@ function ol_indicadores() {
 			
 			var indMap = new ol.Map({
 				layers:map_layers,
-				target: "indicador-col-pos-"+pos,
+				target: "indicador-inner-"+pos,
 				extent: [-13281237.21183002,-7669922.0600572005,-738226.6183457375,-1828910.1066171727],
 				controls: [],
 				view: new ol.View({
@@ -175,8 +186,8 @@ function ol_indicadores() {
 				
 			}
 			
-			$("#indicador-col-pos-"+pos).empty();
-			document.getElementById("indicador-col-pos-"+pos).appendChild(table);
+			$("#indicador-inner-"+pos).empty();
+			document.getElementById("indicador-inner-"+pos).appendChild(table);
 			
 			var fichaIcon = document.createElement("a");
 				fichaIcon.className = "indicador-icono-ficha";
@@ -228,15 +239,18 @@ function ol_indicadores() {
 			
 			case "grafico":
 			
-			$("#indicador-col-pos-"+pos).empty();
-			$("#indicador-col-pos-"+pos).html(js.type);
+			$("#indicador-inner-"+pos).empty();
+			$("#indicador-inner-"+pos).html(js.type);
 			
-			eval("draw_grafico_"+js.grafico_tipo_id+"('indicador-col-pos-"+pos+"',js)");
+			eval("draw_grafico_"+js.grafico_tipo_id+"('indicador-inner-"+pos+"',js)");
 			
 			break;
 			
 			case "slider":
-			
+				
+			var carouselIndicators = document.createElement("ol");
+				carouselIndicators.className = "carousel-indicators";
+				
 			var carouselSlide = document.createElement("div");
 				carouselSlide.id = "carousel-"+pos;
 				carouselSlide.className = "carousel slide";
@@ -245,19 +259,25 @@ function ol_indicadores() {
 			var carouselInner = document.createElement("div");
 				carouselInner.className = "carousel-inner";
 				
+				carouselSlide.appendChild(carouselIndicators);
 				carouselSlide.appendChild(carouselInner);
 			
 			var startClass = "carousel-item active";
 			
 			for (var i=0; i<js.images.length; i++) {
 				
+				var carouselIndicatorItem = document.createElement("li");
+					carouselIndicatorItem.setAttribute("data-target","#carousel-"+pos);
+					carouselIndicatorItem.setAttribute("data-slide-to",i);
+				
 				var carouselItem = document.createElement("div");
 					carouselItem.className = startClass;
 					
 				var carouselImg = document.createElement("img");
-					carouselImg.className = "d-block w-100";
+					carouselImg.className = "d-block ml-auto mr-auto";
 					carouselImg.setAttribute("src",js.images[i]);
 					
+					carouselIndicators.appendChild(carouselIndicatorItem);
 					carouselItem.appendChild(carouselImg);
 					carouselInner.appendChild(carouselItem);
 					
@@ -265,12 +285,21 @@ function ol_indicadores() {
 				
 			}
 			
-			document.getElementById("indicador-col-pos-"+pos).innerHTML = "";
-			document.getElementById("indicador-col-pos-"+pos).appendChild(carouselSlide);
+			var alto = $("#indicador-col-pos-"+pos).height();
+			
+			document.getElementById("indicador-inner-"+pos).innerHTML = "";
+			document.getElementById("indicador-inner-"+pos).style.height = alto - 40 + "px";
+			document.getElementById("indicador-inner-"+pos).appendChild(carouselSlide);
 			
 			$(carouselSlide).carousel({
-				interval: 2000
+				interval: 3000,
+				full_height:true
 			})
+				
+			$(".carousel").css("height","100%");
+			$(".carousel-inner").css("height","100%");
+			$(".carousel-item").css("height","100%");
+			$(".carousel-item img").attr("height","100%");
 			
 			break;
 			
@@ -282,6 +311,7 @@ function ol_indicadores() {
 			fichaIcon.onclick = function() {
 				
 				jwindow.open("popup-fmetodologica");
+				$(".jump-alert-modal").show();
 				this.loadFichaMetodologica(ind_id,pos);
 				
 			}.bind(this);
@@ -291,7 +321,9 @@ function ol_indicadores() {
 			
 		fichaIcon.appendChild(fichaImg);
 		
-		document.getElementById("indicador-col-pos-"+pos).appendChild(fichaIcon);
+		document.getElementById("indicador-col-pos-"+pos).appendChild(fichaIcon);		
+	
+		$("#indicador-col-pos-"+pos).children().first().before("<p>"+js.ind_titulo+"</p>");
 		
 	}
 	

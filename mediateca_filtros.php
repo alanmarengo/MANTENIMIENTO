@@ -2,6 +2,8 @@
 
 header('Content-Type: application/json');
 
+include("./pgconfig.php");
+
 /*
  * {
  *  [
@@ -28,9 +30,13 @@ header('Content-Type: application/json');
  * }
  * */
 
-$conn = pg_connect("host=localhost port=5432 dbname=ahrsc user=postgres password=plahe100%");
+//$conn = pg_connect("host=localhost port=5432 dbname=ahrsc user=postgres password=plahe100%");
 
-$SQL = "SELECT * FROM mod_catalogo.vw_filtros_values ORDER BY filtro_id ASC";
+$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+	
+$conn = pg_connect($string_conn);
+
+$SQL = "SELECT * FROM mod_catalogo.vw_filtros_values ORDER BY filtro_id,valor_desc ASC";
 
 $recordset = pg_query($conn,$SQL);
 

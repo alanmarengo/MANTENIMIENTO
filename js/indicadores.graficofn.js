@@ -28,7 +28,7 @@ function draw_grafico_1(container,config) {
 			},
 			labels: {
 				formatter: function () {
-					return this.value / 1000 + 'k';
+					return this.value / 1000 + config.unidad;
 				}
 			}
 		},
@@ -139,7 +139,7 @@ function draw_grafico_3(container,config) { // BUBBLE CHART
 		},
 		tooltip: {
 			useHTML: true,
-			pointFormat: '<b>{point.name}:</b> {point.value}m CO<sub>2</sub>'
+			pointFormat: '<b>{point.name}:</b> {point.value} '+config.unidad+'</sub>'
 		},
 		plotOptions: {
 			packedbubble: {
@@ -226,7 +226,7 @@ function draw_grafico_4(container,config) { // BUBBLE CHART
 		},
 		tooltip: {
 			useHTML: true,
-			pointFormat: '<b>{point.name}:</b> {point.value}m CO<sub>2</sub>'
+			pointFormat: '<b>{point.name}:</b> {point.value} ' + config.unidad
 		},
 		plotOptions: {
 			packedbubble: {
@@ -335,7 +335,7 @@ function draw_grafico_5(container,config) { // BASIC COLUMNS
 		tooltip: {
 			headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
 			pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-				'<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+				'<td style="padding:0"><b>{point.y:.1f} '+config.unidad+'</b></td></tr>',
 			footerFormat: '</table>',
 			shared: true,
 			useHTML: true
@@ -509,7 +509,7 @@ function draw_grafico_7(container,config) { // FIXED PLACEMENT
 			}
 		},
 		tooltip: {
-			pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+			pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}'+config.unidad+')<br/>',
 			shared: true
 		},
 		plotOptions: {
@@ -722,7 +722,7 @@ function draw_grafico_10(container,config) { // SEMI CIRCLE DONUT
 			y: 60
 		},
 		tooltip: {
-			pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+			pointFormat: '{series.name}: <b>{point.percentage:.1f}'+config.unidad+'</b>'
 		},
 		plotOptions: {
 			pie: {
@@ -767,14 +767,14 @@ function draw_grafico_11(container,config) { // PIE WITH DRILLDOWN
 			series: {
 				dataLabels: {
 					enabled: true,
-					format: '{point.name}: {point.y:.1f}%'
+					format: '{point.name}: {point.y:.1f}'+config.unidad
 				}
 			}
 		},
 
 		tooltip: {
 			headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
-			pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+			pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}'+config.unidad+'+</b><br/>'
 		},
 
 		series:[{
@@ -783,5 +783,14 @@ function draw_grafico_11(container,config) { // PIE WITH DRILLDOWN
 			data:config.data
 		}]
 	});
+
+}
+
+function draw_grafico_12(container,config) { // PIE WITH DRILLDOWN
+	
+	container = document.getElementById(container);
+	
+	container.innerHTML = "<h3 style='font-size:20vh; margin:0;'>"+config.data[0].y + " " + config.unidad + "</h3>";
+	container.innerHTML += "<h4 style='font-size:5vh; margin:0;'>"+config.titulo+"</h4>";
 
 }

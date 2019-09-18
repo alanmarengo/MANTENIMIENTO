@@ -1,10 +1,10 @@
-<div id="nav-panel" data-visible="1" class="jump-flotant-heightfill nav-level-1 col col-nav col-xs-12 col-sm-12  col-md-3 col-lg-3" style="position:absolute;">
+<div id="nav-panel" data-visible="1" class="jump-flotant-heightfill jump-flotant-heightfill-top nav-level-1 col col-nav col-xs-10 col-sm-10 col-md-3 col-lg-3 p0 jump-posabs">
 	
-	<div id="nav-panel-inner" data-visible="1" style="width:95%;">	
+	<div id="nav-panel-inner" data-visible="1" style="width:100%;">
 		
 		<div id="nav-panel-arrow">
 		
-			<a href="#" onclick="flotant.toggle('#nav-panel-inner')" class="jump-toggleimage" data-state="1" data-ini-src="./images/panel.icon.arrow.0.png" data-end-src="./images/panel.icon.arrow.1.png">
+			<a href="#" id="nav-panel-arrow-a" onclick="flotant.toggle('#nav-panel')" class="jump-toggleimage" data-state="1" data-ini-src="./images/panel.icon.arrow.0.png" data-end-src="./images/panel.icon.arrow.1.png">
 			
 				<img src="./images/panel.icon.arrow.1.png">
 			
@@ -12,7 +12,7 @@
 		
 		</div>
 		
-		<div class="jump-row">
+		<div class="jump-row" style="flex-grow:0;">
 		
 			<div class="mtb-20 ml-auto mr-auto w-100-p search-wrapper">
 				<a href="#" class="plr-10 jump-link-death" style="width: 34px; height: 34px; line-height: 34px;">

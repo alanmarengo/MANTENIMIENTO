@@ -24,6 +24,9 @@ $type = "noresource";
 
 while($r = pg_fetch_assoc($query)) {
 	
+	$titulo_ind = $r["titulo"];
+	$desc_ind = $r["desc"];
+	
 	switch($r["resource_type"]) {
 		
 		case "capa":
@@ -102,8 +105,11 @@ while($r = pg_fetch_assoc($query)) {
 		$sectorArr = array();
 		$seriesArr = array();
 		$curInd = -1;
+		$unidad = "";
 		
 		while ($s = pg_fetch_assoc($query_grafico_data)) {
+			
+			$unidad = $s["unidad"];
 			
 			if ($sector != $s["sector"]) {
 				
@@ -146,10 +152,13 @@ while($r = pg_fetch_assoc($query)) {
 		
 		$data_out = "{";
 		$data_out .= "\"type\":\"grafico\",";
+		$data_out .= "\"ind_titulo\":\"" . $titulo_ind . "\",";
+		$data_out .= "\"ind_desc\":\"" . $desc_ind . "\",";
 		$data_out .= "\"grafico_id\":" . $data["grafico_id"] . ",";
 		$data_out .= "\"grafico_tipo_id\":" . $data["grafico_tipo_id"] . ",";
 		$data_out .= "\"titulo\":\"" . $g_titulo . "\",";
 		$data_out .= "\"desc\":\"" . $g_desc . "\",";
+		$data_out .= "\"unidad\":\"" . $unidad . "\",";
 		$data_out .= "\"etiquetas\":[\"" . implode("\",\"",$labels) . "\"],";
 		$data_out .= "\"data\":[" . $data_string . "]";
 		$data_out .= "}";
@@ -174,6 +183,8 @@ switch($type) {
 	case "capa":
 	$out .= "{";
 	$out .= "\"type\":\"layer\",";
+	$out .= "\"ind_titulo\":\"" . $titulo_ind . "\",";
+	$out .= "\"ind_desc\":\"" . $desc_ind . "\",";
 	$out .= "\"layers\":[\"".implode("\",\"",$layer_name)."\"],";
 	$out .= "\"layers_server\":[\"".implode("\",\"",$layer_server)."\"]";
 	$out .= "}";
@@ -182,6 +193,8 @@ switch($type) {
 	case "tabla":
 	$out .= "{";
 	$out .= "\"type\":\"table\",";
+	$out .= "\"ind_titulo\":\"" . $titulo_ind . "\",";
+	$out .= "\"ind_desc\":\"" . $desc_ind . "\",";
 	$out .= "\"columns\":[\"". implode("\",\"",$columns)."\"],";
 	$out .= "\"data\":[". $data . "]";
 	$out .= "}";
@@ -194,6 +207,8 @@ switch($type) {
 	case "recurso":
 	$out .= "{";
 	$out .= "\"type\":\"slider\",";
+	$out .= "\"ind_titulo\":\"" . $titulo_ind . "\",";
+	$out .= "\"ind_desc\":\"" . $desc_ind . "\",";
 	$out .= "\"images\":[\"".implode("\",\"",$sliderItem)."\"]";
 	$out .= "}";
 	break;
