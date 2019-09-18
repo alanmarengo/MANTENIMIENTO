@@ -19,8 +19,10 @@
 
             <div class="row" style="padding-left: 20px;">
                 <div class="col-md-4 page-box">
-                    <a href="./geovisor.php" class="box">
+                    <a href="./geovisor.php" class="box" style="position: relative;">
                         <div class="page-box-image" style="background-image: url(./images/herramientas/3.png);"></div>
+                        <div class="text-over">GEOBI</div>
+                        
                         <p class="page-box-title">GEOBI</p>
                         <p class="page-box-description">Visualizá, gestioná y accedé en línea a la totalidad de la
                             información de este Observatorio y conectate e integrá información de otros organismos
@@ -28,7 +30,7 @@
                     </a>
                 </div>
                 <div class="col-md-4 page-box">
-                    <a href="http://hidrosantacruz.com.ar" class="box">
+                    <a href="./geovisor.php?geovisor=1" class="box">
                         <div class="page-box-image" style="background-image: url(./images/herramientas/5.png);"></div>
                         <p class="page-box-title">SIG Santa Cruz</p>
                         <p class="page-box-description">Accedé al geovisor del Sistema de Información Territorial de
@@ -37,7 +39,7 @@
                     </a>
                 </div>
                 <div class="col-md-4 page-box">
-                    <a href="" class="box">
+                    <a href="#" class="box">
                         <div class="page-box-image" style="background-image: url(./images/herramientas/6.png);"></div>
                         <p class="page-box-title">GEOVISOR AHRSC</p>
                         <p class="page-box-description">Conocé los AHRSC, sus características técnicas y toda la
@@ -162,12 +164,7 @@ $(document).ready(function() {
 
     clipboard.on('success', function(e) {
         //alert('Copiado!')
-
-/*         $('#my-other-tooltip')
-            .tooltipster({})
-            .tooltipster('content', 'My new content')
-            .tooltipster('open');
- */    });
+    });
 
     $('.section-sticky a').on('click', function() {
         let selector = $(this).data('target');
