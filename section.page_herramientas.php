@@ -91,7 +91,7 @@
                                     <div class="input-group">
                                         <input type="text" class="form-control" readonly style="font-size: 12px;" value="http://observatorio.ieasa.com.ar:8080/geoserver/ows?">
                                         <span class="input-group-btn">
-                                            <button class="clipboard-copy btn btn-default" style="color: #333;" data-clipboard-text="http://observatorio.ieasa.com.ar:8080/geoserver/ows?">
+                                            <button class="clipboard-copy btn btn-default" style="color: #333;" title="Copiar" data-clipboard-text="http://observatorio.ieasa.com.ar:8080/geoserver/ows?">
                                                 <i class="fa fa-clone"></i>
                                             </button>
                                         </span>
@@ -113,7 +113,7 @@
                                     <div class="input-group">
                                         <input type="text" class="form-control" readonly style="font-size: 12px;" value="http://observatorio.ieasa.com.ar:8080/geoserver/ows?">
                                         <span class="input-group-btn">
-                                            <button class="clipboard-copy btn btn-default" style="color: #333;" data-clipboard-text="http://observatorio.ieasa.com.ar:8080/geoserver/ows?">
+                                            <button class="clipboard-copy btn btn-default" style="color: #333;" title="Copiar" data-clipboard-text="http://observatorio.ieasa.com.ar:8080/geoserver/ows?">
                                                 <i class="fa fa-clone"></i>
                                             </button>
                                         </span>
@@ -136,7 +136,7 @@
                                     <div class="input-group">
                                         <input type="text" class="form-control" readonly style="font-size: 12px;" value="http://observatorio.ieasa.com.ar:8080/geonetwork/srv/spa/csw?">
                                         <span class="input-group-btn">
-                                            <button class="clipboard-copy btn btn-default" style="color: #333;" data-clipboard-text="http://observatorio.ieasa.com.ar:8080/geonetwork/srv/spa/csw?">
+                                            <button class="clipboard-copy btn btn-default" style="color: #333;" title="Copiar" data-clipboard-text="http://observatorio.ieasa.com.ar:8080/geonetwork/srv/spa/csw?">
                                                 <i class="fa fa-clone"></i>
                                             </button>
                                         </span>
