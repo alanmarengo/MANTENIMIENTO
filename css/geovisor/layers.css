@@ -154,25 +154,6 @@
 	
 }
 
-.layer-basico-container {
-	
-	background-color:transparent;
-	
-}
-
-#layer-title, #layer-desc {
-	
-	color:white;
-	
-}
-
-#layer-desc {
-
-	margin-top:20px;
-	text-align:justify;
-	
-}
-
 .colorpicker-bullet-content {
 	
 	width:24px;
@@ -193,6 +174,48 @@
 	position: relative;
 	top: 8px;
 	left: 2px;
+	
+}
+
+.buffer-bullet-content {
+	
+	width:24px;
+	height:14px;
+	overflow:hidden;
+	position:relative;
+	left: 117px;
+	top: -14px;
+	
+}
+
+.buffer-bullet {
+	
+	width:14px;
+	height:14px;
+    background: RGBA(0,0,0,0.2);
+	transform: rotate(45deg);
+	position: relative;
+	top: 8px;
+	left: 2px;
+	
+}
+
+.layer-basico-container {
+	
+	background-color:transparent;
+	
+}
+
+#layer-title, #layer-desc {
+	
+	color:white;
+	
+}
+
+#layer-desc {
+
+	margin-top:20px;
+	text-align:justify;
 	
 }
 
