@@ -726,6 +726,12 @@ function ol_map() {
 		
 	}
 	
+	this.map.readBuffer = function(layer_id,distance) {
+		
+		alert(layer_id + " :: " + distance);
+		
+	}
+	
 	this.map.downloadFeatures = function() {
 		
 		var writer = new ol.format.GeoJSON();
