@@ -167,6 +167,17 @@ function DrawLayers($clase_id) {
 						</a>
 					</div>
 				
+					<div class="layer-icon jump-toggleimage" onclick="$('.layer-tool-wrapper').not('#layer-buffer-<?php echo $r["layer_id"]; ?>').hide(); $('#layer-buffer-<?php echo $r["layer_id"]; ?>').slideToggle('slow');"
+							data-state="0" 
+							data-ini-src="./images/geovisor/icons/layer-bar-buffer.png"
+							data-end-src="./images/geovisor/icons/layer-bar-buffer-blue.png"
+							data-clean="1"
+						>
+						<a href="javascript:void(0);">
+							<img src="./images/geovisor/icons/layer-bar-buffer.png">
+						</a>
+					</div>
+				
 					<div class="layer-icon" onclick="$(this).children('a').trigger('click');">
 						<a href="<?php echo $r["layer_wms_server"]; ?>&service=WFS&version=1.0.0&request=GetFeature&typeName=<?php echo $r["layer_wms_layer"]; ?>&outputFormat=shape-zip" target="_blank">
 							<img src="./images/geovisor/icons/layer-bar-download.png">
@@ -203,6 +214,21 @@ function DrawLayers($clase_id) {
 				</div>
 				
 				<div class="layer-legend" id="layer-legend-<?php echo $r["layer_id"]; ?>"></div>
+			
+			</div>
+			
+				<div class="layer-buffer layer-tool-wrapper" id="layer-buffer-<?php echo $r["layer_id"]; ?>">
+					
+					<p>
+						<label for="buffer-value-<?php echo $r["layer_id"]; ?>">Buffer:</label>
+						<input type="text" id="buffer-value-<?php echo $r["layer_id"]; ?>" class="buffer-value" readonly="readonly" style="border:0;">
+					</p>
+					
+					<p>
+						<input type="text" class="input" placeholder="Distancia en Metros...">
+					</p>
+					
+				</div>
 			
 			</div>
 		
