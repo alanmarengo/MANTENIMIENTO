@@ -131,6 +131,15 @@
 	
 }
 
+.layer-buffer input[type=text] {
+	
+	padding: 5px;
+	border: none;
+	margin-right: 10px;
+	width: 200px;
+	
+}
+
 .opacity-bullet-content {
 	
 	width:24px;
