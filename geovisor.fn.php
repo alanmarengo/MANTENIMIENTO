@@ -211,9 +211,7 @@ function DrawLayers($clase_id) {
 					
 					<div class="slider-range" id="slider-range-<?php echo $r["layer_id"]; ?>"></div>
 					
-				</div>
-				
-				<div class="layer-legend" id="layer-legend-<?php echo $r["layer_id"]; ?>"></div>				
+				</div>				
 			
 				<div class="layer-buffer layer-tool-wrapper" id="layer-buffer-<?php echo $r["layer_id"]; ?>">
 				
@@ -231,6 +229,8 @@ function DrawLayers($clase_id) {
 					</p>
 					
 				</div>
+				
+				<div class="layer-legend" id="layer-legend-<?php echo $r["layer_id"]; ?>"></div>
 			
 			</div>
 		
