@@ -739,7 +739,7 @@ function ol_map() {
 			
 				this.layersBuffer[layer_id].getSource().updateParams({
 							
-					'distance':distance
+					'distancia':distance
 					
 				})
 				
@@ -755,7 +755,7 @@ function ol_map() {
 							'VERSION': '1.1.1',
 							'FORMAT': 'image/png',
 							'TILED': false,
-							'distance':distance,
+							'distancia':distance,
 							'layer_id':layer_id
 						}/*,
 						crossOrigin: 'anonymous'*/
