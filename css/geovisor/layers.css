@@ -186,6 +186,12 @@
 	
 }
 
+.layer-buffer .pretty .state i {
+
+    color: #666666;
+
+}
+
 .buffer-bullet-content {
 	
 	width:24px;
