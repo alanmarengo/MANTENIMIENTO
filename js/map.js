@@ -727,8 +727,8 @@ function ol_map() {
 	}
 	
 	this.map.readBuffer = function(layer_id,distance) {
-		alert(parseInt(distance));
-		if (isNaN(parseInt(distance))) {
+		
+		if ((isNaN(parseInt(distance))) || (distance.trim() == "")) {
 			
 			alert("La distancia ingresada es incorrecta o está vacía");
 			
