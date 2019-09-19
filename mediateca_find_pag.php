@@ -78,6 +78,7 @@ if(!IsSetVar($mode))
 	$mode = -1;
 };
 
+$SUBQUERY = "";
 
 $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 	
@@ -95,6 +96,7 @@ function getSQL($solapa) {
 	global $tipo_doc;
 	global $ra;
 	global $ORDER;
+	global $SUBQUERY;
 
 	$SQL = "";
 
@@ -102,70 +104,68 @@ function getSQL($solapa) {
 	{
 		if (!IsSetVar($estudio_id))
 		{
+			
+		$SUBQUERY  = "SELECT "
+					. "tipo_formato_solapa AS \"Solapa\","
+					. "origen_id,"
+					. "origen_id_especifico AS \"Id\","
+					. "recurso_titulo AS \"Titulo\","
+					. "recurso_desc AS \"Descripcion\","
+					. "recurso_path_url AS \"LinkImagen\","
+					. "recurso_categoria_desc AS \"MetaTag\","
+					. "CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END AS \"Autores\","
+					. "MAX(estudios_id) AS estudios_id,"
+					. "recurso_fecha AS Fecha,"
+					. "COALESCE(subclase_desc,'') AS Tema"
+					. " FROM mod_mediateca.mediateca_find('$qt','$desde','$hasta','$proyecto','$clase','$subclase','$tipo_doc') "
+					. " WHERE tipo_formato_solapa=$solapa" 
+					. " GROUP BY recurso_fecha,COALESCE(subclase_desc,''),tipo_formato_solapa,origen_id,origen_id_especifico,recurso_titulo,recurso_desc,recurso_path_url,recurso_categoria_desc,CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END"
+					. $ORDER;
 	
-		$SQL = "SELECT row_to_json(T)::text AS r FROM"
-			. "("
-			. "SELECT "
-			. "tipo_formato_solapa AS \"Solapa\","
-			. "origen_id,"
-			. "origen_id_especifico AS \"Id\","
-			. "recurso_titulo AS \"Titulo\","
-			. "recurso_desc AS \"Descripcion\","
-			. "recurso_path_url AS \"LinkImagen\","
-			. "recurso_categoria_desc AS \"MetaTag\","
-			. "CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END AS \"Autores\","
-			. "MAX(estudios_id) AS estudios_id,"
-			. "recurso_fecha AS Fecha,"
-			. "COALESCE(subclase_desc,'') AS Tema"
-			. " FROM mod_mediateca.mediateca_find('$qt','$desde','$hasta','$proyecto','$clase','$subclase','$tipo_doc') "
-		. " WHERE tipo_formato_solapa=$solapa" 
-			. " GROUP BY recurso_fecha,COALESCE(subclase_desc,''),tipo_formato_solapa,origen_id,origen_id_especifico,recurso_titulo,recurso_desc,recurso_path_url,recurso_categoria_desc,CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END"
-		. $ORDER
-			. ")T"; 
+		$SQL = "SELECT row_to_json(T)::text AS r FROM ($SUBQUERY)T";
+		
 		}
 		else
 		{
 			   if ((!IsSetVar($ra))&&($ra==1))
 			   {
-				$SQL = "SELECT row_to_json(T)::text AS r FROM"
-				. "("
-				. "SELECT "
-				. "tipo_formato_solapa AS \"Solapa\","
-				. "origen_id,"
-				. "origen_id_especifico AS \"Id\","
-				. "recurso_titulo AS \"Titulo\","
-				. "recurso_desc AS \"Descripcion\","
-				. "recurso_path_url AS \"LinkImagen\","
-				. "recurso_categoria_desc AS \"MetaTag\","
-				. "CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END AS \"Autores\","
-				. "estudios_id,"
-				. "recurso_fecha AS Fecha,"
-				. "COALESCE(subclase_desc,'') AS Tema "
-				. " FROM mod_catalogo.vw_catalogo_data C WHERE "
-				. " C.estudios_id IN(SELECT sub_estudio_id FROM mod_catalogo.estudio_subestudio WHERE estudios_id=$estudio_id) "
-				. " AND C.estudios_id=$estudio_id  AND  tipo_formato_solapa=$solapa " /* Tambíen incluye el mismo estudio */ 
-				. $ORDER
-				. ")T";
+				$SUBQUERY  = "SELECT "
+							. "tipo_formato_solapa AS \"Solapa\","
+							. "origen_id,"
+							. "origen_id_especifico AS \"Id\","
+							. "recurso_titulo AS \"Titulo\","
+							. "recurso_desc AS \"Descripcion\","
+							. "recurso_path_url AS \"LinkImagen\","
+							. "recurso_categoria_desc AS \"MetaTag\","
+							. "CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END AS \"Autores\","
+							. "estudios_id,"
+							. "recurso_fecha AS Fecha,"
+							. "COALESCE(subclase_desc,'') AS Tema "
+							. " FROM mod_catalogo.vw_catalogo_data C WHERE "
+							. " C.estudios_id IN(SELECT sub_estudio_id FROM mod_catalogo.estudio_subestudio WHERE estudios_id=$estudio_id) "
+							. " AND C.estudios_id=$estudio_id  AND  tipo_formato_solapa=$solapa " /* Tambíen incluye el mismo estudio */ 
+							. $ORDER;
+				
+				$SQL = "SELECT row_to_json(T)::text AS r FROM ($SUBQUERY)T";
 			   }
 			   else
 			   {
-			   $SQL = "SELECT row_to_json(T)::text AS r FROM"
-				. "("
-				. "SELECT "
-				. "tipo_formato_solapa AS \"Solapa\","
-				. "origen_id,"
-				. "origen_id_especifico AS \"Id\","
-				. "recurso_titulo AS \"Titulo\","
-				. "recurso_desc AS \"Descripcion\","
-				. "recurso_path_url AS \"LinkImagen\","
-				. "recurso_categoria_desc AS \"MetaTag\","
-				. "CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END AS \"Autores\","
-				. "estudios_id,"
-				. "recurso_fecha AS Fecha,"
-				. "COALESCE(subclase_desc,'') AS Tema "
-				. " FROM mod_catalogo.vw_catalogo_data C WHERE estudios_id=$estudio_id AND tipo_formato_solapa=$solapa "
-				. $ORDER
-				. ")T";
+				$SUBQUERY  = "SELECT "
+							. "tipo_formato_solapa AS \"Solapa\","
+							. "origen_id,"
+							. "origen_id_especifico AS \"Id\","
+							. "recurso_titulo AS \"Titulo\","
+							. "recurso_desc AS \"Descripcion\","
+							. "recurso_path_url AS \"LinkImagen\","
+							. "recurso_categoria_desc AS \"MetaTag\","
+							. "CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END AS \"Autores\","
+							. "estudios_id,"
+							. "recurso_fecha AS Fecha,"
+							. "COALESCE(subclase_desc,'') AS Tema "
+							. " FROM mod_catalogo.vw_catalogo_data C WHERE estudios_id=$estudio_id AND tipo_formato_solapa=$solapa "
+							. $ORDER;
+				
+			   $SQL = "SELECT row_to_json(T)::text AS r FROM ($SUBQUERY)T";
 			   };
 		};
 	}
@@ -282,7 +282,57 @@ while($row)
   $row = pg_fetch_row($recordset);//NEXT
 };
 
+echo "],";
+
+/******************************************* FILTROS RECALCULADOS ********************************************/
+
+$SUBQUERY = str_replace("''", "null", $SUBQUERY);
+
+$SQL = "SELECT * FROM mod_mediateca.get_filtros_totales('$SUBQUERY') ORDER BY filtro_id,valor_desc ASC";
+
+//echo $SQL;
+
+$recordset = pg_query($conn,$SQL);
+
+function draw_tupla($row)
+{
+       echo '{';
+       echo '"filtro_nombre":"'.$row[0].'",';
+       echo '"filtro_id":"'.$row[1].'",';
+       echo '"valor_id":"'.$row[2].'",';
+       echo '"valor_desc":"'.$row[3].'",';
+       echo '"parent_filtro_id":"'.$row[4].'",';
+       echo '"total":"'.$row[6].'",';
+       echo '"parent_valor_id":"'.$row[5].'"';
+       echo '}';
+       
+       return true;
+};
+
+$fflag = false;
+
+echo "\"filtros\":[";
+
+$row = pg_fetch_row($recordset);
+
+while($row) 
+{
+  if ($fflag)
+  {
+      echo ',';
+  }
+  else
+  {
+      $fflag = true;
+  };
+  
+  draw_tupla($row);
+  
+  $row = pg_fetch_row($recordset);//NEXT
+};
+
 echo "]";
+/******************************************* FIN FILTROS RECALCULADOS ********************************************/
 
 echo "}";// Fin JSON
 
