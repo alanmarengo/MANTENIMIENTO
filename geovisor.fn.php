@@ -213,9 +213,7 @@ function DrawLayers($clase_id) {
 					
 				</div>
 				
-				<div class="layer-legend" id="layer-legend-<?php echo $r["layer_id"]; ?>"></div>
-			
-			</div>
+				<div class="layer-legend" id="layer-legend-<?php echo $r["layer_id"]; ?>"></div>				
 			
 				<div class="layer-buffer layer-tool-wrapper" id="layer-buffer-<?php echo $r["layer_id"]; ?>">
 					
