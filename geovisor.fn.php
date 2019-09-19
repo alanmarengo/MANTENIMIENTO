@@ -223,7 +223,7 @@ function DrawLayers($clase_id) {
 						<label for="buffer-value-<?php echo $r["layer_id"]; ?>">Buffer:</label>
 					</p>
 					
-					<p>
+					<div>
 						<input type="text" class="input" placeholder="Distancia en Metros...">
 						<div class="pretty p-default p-curve p-toggle">
 							<input type="checkbox" class="layer-checkbox layer-checkbox-buffer default-empty-checkbox" id="layer-checkbox-buffer-<?php echo $r["layer_id"]; ?>" data-lid="<?php echo $r["layer_id"]; ?>" data-cid="<?php echo $r["clase_id"]; ?>" data-added="0" data-layer="<?php echo $r["layer_wms_layer"]; ?>" data-wms="<?php echo $r["layer_wms_server"]; ?>" data-layer-type="<?php echo $r["tipo_layer_id"]; ?>"/>
@@ -237,7 +237,7 @@ function DrawLayers($clase_id) {
 						<a href="<?php echo $r["layer_wms_server"]; ?>&service=WFS&version=1.0.0&request=GetFeature&typeName=<?php echo $r["layer_wms_layer"]; ?>&outputFormat=shape-zip" target="_blank">
 							<img src="./images/geovisor/icons/layer-bar-download.png">
 						</a>
-					</p>
+					</div>
 					
 				</div>
 				
