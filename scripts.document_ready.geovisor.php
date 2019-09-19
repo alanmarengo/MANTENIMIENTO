@@ -65,7 +65,7 @@
 			var s_visibles = [<?php echo $_GET["v"]; ?>];
 			
 			for (var i=0; i<s_layers.length; i++) { 
-				geomap.panel.AddLayer(s_clase[i],s_layers[i]);
+				geomap.panel.AddLayer(s_clase[i],s_layers[i],false);
 				if (s_visibles[i]) { 
 					document.getElementById("layer-checkbox-"+s_layers[i]).click(); 
 				}

@@ -337,7 +337,7 @@ function ol_map() {
 				
 				$(".layer-checkbox[data-lid="+js.data[i].layer_id+"]").each(function(i,v) {
 					
-					panel.AddLayer(v.getAttribute("data-cid"),v.getAttribute("data-lid"));
+					panel.AddLayer(v.getAttribute("data-cid"),v.getAttribute("data-lid"),false);
 					
 					if (visible == "t") {
 						
@@ -1496,11 +1496,23 @@ function ol_map() {
 		
 	}
 	
-	this.panel.AddLayer = function(clase_id,layer_id) {
+	this.panel.AddLayer = function(clase_id,layer_id,startActive) {
 		
 		$(".abr[data-cid="+clase_id+"]").show();
 		$(".abr[data-cid="+clase_id+"]").trigger("click");
 		$(".layer-group[data-layer="+layer_id+"]").show();
+		
+		if (startActive) {
+			
+			$(".layer-group[data-layer="+layer_id+"] .layer-label").addClass("layer-label-active");
+			$(".layer-group[data-layer="+layer_id+"] .layer-body").show();
+			
+		}else{
+			
+			$(".layer-group[data-layer="+layer_id+"] .layer-label").removeClass("layer-label-active");
+			$(".layer-group[data-layer="+layer_id+"] .layer-body").hide();
+			
+		}
 		
 		if (!document.getElementById("layer-checkbox-"+layer_id).layer) {
 					

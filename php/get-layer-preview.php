@@ -19,5 +19,5 @@ $data = pg_fetch_assoc($query);
 <p class="title" id="layer-preview-title"><?php echo $data["preview_titulo"]; ?></p>
 <p class="content"><?php echo $data["preview_desc"]; ?></p>
 <p class="mt-10" style="position:absolute; bottom:0px; width:100%;">
-	<a href="#" class="button" id="btn-layer-preview-addlayer" onclick="geomap.panel.AddLayer(<?php echo $data["clase_id"]; ?>,<?php echo $layer_id; ?>)">AGREGAR AL MAPA</a>
+	<a href="#" class="button" id="btn-layer-preview-addlayer" onclick="geomap.panel.AddLayer(<?php echo $data["clase_id"]; ?>,<?php echo $layer_id; ?>,true)">AGREGAR AL MAPA</a>
 </p>
