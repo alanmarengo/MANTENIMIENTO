@@ -8,6 +8,7 @@ function ol_map() {
 	this.map.infoEnabled = true;
 	this.popup = {};
 	this.map.baselayers = {};
+	this.map.layersBuffer = {};
 	
 	this.map.geovisor = -1;
 	
@@ -726,11 +727,44 @@ function ol_map() {
 		
 	}
 	
-	this.map.readBuffer = function(layer_id,distance) {
+	this.map.readBuffer = function(layer_id,distance,visible) {
 		
 		if ((isNaN(parseInt(distance))) || (distance.trim() == "")) {
 			
 			alert("La distancia ingresada es incorrecta o está vacía");
+			
+		}else{
+			
+			if (this.layersBuffer[layer_id]) {
+			
+				this.layersBuffer[layer_id].getSource().updateParams({
+							
+					'distance':distance
+					
+				})
+				
+			}else{
+			
+				this.layersBuffer[layer_id] = new ol.layer.Tile({
+					name:'getbuffer',
+					visible:false,
+					source: new ol.source.TileWMS({
+						url: "http://observatorio.ieasa.com.ar:8080/geoserver/ows?",
+						params: {
+							'LAYERS': layer_name,
+							'VERSION': '1.1.1',
+							'FORMAT': 'image/png',
+							'TILED': false,
+							'distance':distance,
+							'layer_id':layer_id
+						}/*,
+						crossOrigin: 'anonymous'*/
+					})
+				});
+			
+			}
+			
+			this.layersBuffer[layer_id].setVisible(visible);
 			
 		}
 		

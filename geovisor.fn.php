@@ -226,7 +226,7 @@ function DrawLayers($clase_id) {
 					<div>
 						<input type="text" class="input getbufferdist" placeholder="Distancia en Metros...">
 						<div class="pretty p-default p-curve p-toggle">
-							<input type="checkbox" class="layer-checkbox-buffer default-empty-checkbox" id="layer-checkbox-buffer-<?php echo $r["layer_id"]; ?>" data-lid="<?php echo $r["layer_id"]; ?>" data-cid="<?php echo $r["clase_id"]; ?>" data-added="0" data-layer="<?php echo $r["layer_wms_layer"]; ?>" data-wms="<?php echo $r["layer_wms_server"]; ?>" data-layer-type="<?php echo $r["tipo_layer_id"]; ?>" onclick="geomap.map.readBuffer(<?php echo $r["layer_id"]; ?>,$(this).parent().prev().val())"/>
+							<input type="checkbox" class="layer-checkbox-buffer default-empty-checkbox" id="layer-checkbox-buffer-<?php echo $r["layer_id"]; ?>" data-lid="<?php echo $r["layer_id"]; ?>" data-cid="<?php echo $r["clase_id"]; ?>" data-added="0" data-layer="<?php echo $r["layer_wms_layer"]; ?>" data-wms="<?php echo $r["layer_wms_server"]; ?>" data-layer-type="<?php echo $r["tipo_layer_id"]; ?>" onclick="geomap.map.readBuffer(<?php echo $r["layer_id"]; ?>,$(this).parent().prev().val(),this.checked)"/>
 							<div class="state p-success p-on">
 								<i class="fa fa-eye"></i>
 							</div>
