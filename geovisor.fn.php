@@ -219,7 +219,7 @@ function DrawLayers($clase_id) {
 						<div class="buffer-bullet"></div>
 					</div>
 					
-					<p>
+					<p class="mb-0">
 						<label for="buffer-value-<?php echo $r["layer_id"]; ?>">Buffer:</label>
 					</p>
 					
