@@ -221,11 +221,13 @@ function DrawLayers($clase_id) {
 					
 					<p>
 						<label for="buffer-value-<?php echo $r["layer_id"]; ?>">Buffer:</label>
-						<input type="text" id="buffer-value-<?php echo $r["layer_id"]; ?>" class="buffer-value" readonly="readonly" style="border:0;">
 					</p>
 					
 					<p>
 						<input type="text" class="input" placeholder="Distancia en Metros...">
+						<a href="<?php echo $r["layer_wms_server"]; ?>&service=WFS&version=1.0.0&request=GetFeature&typeName=<?php echo $r["layer_wms_layer"]; ?>&outputFormat=shape-zip" target="_blank">
+							<img src="./images/geovisor/icons/layer-bar-download.png">
+						</a>
 					</p>
 					
 				</div>
