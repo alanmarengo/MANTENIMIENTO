@@ -228,43 +228,86 @@ $(document).ready(function() {
             $('#main-search').focus();
         }
 
-        filtersLoad();
+        model.filters.groups = initFiltersGroups();
         dataLoad();
     }
 
     function getQty() {
+        // DEVUELVE EL VALOR DEL MODELO DE ACUERDO A LA SOLAPA ACTIVA
         if (model.tab == 0) return model.qty0;
         else if (model.tab == 1) return model.qty1;
         else return model.qty2;
     }
 
-    function filtersLoad() {
-        model.filters.groups = initFiltersGroups();
-        $.getJSON(model.apiUrlBase + '/mediateca_filtros.php', function(data) {
-            $.each(data, function(index, value) {
-                let gindex = 0;
+    /*     function filtersLoad() {
+            model.filters.groups = initFiltersGroups();
+            $.getJSON(model.apiUrlBase + '/mediateca_filtros.php', function(data) {
+                $.each(data, function(index, value) {
+                    let gindex = 0;
 
-                if (value.filtro_id == 0) gindex = 0; //'Proyecto'
-                else if (value.filtro_id == 1) gindex = 1; //'Área de gestion'
-                else if (value.filtro_id == 5) gindex = 2; //'Recursos Audiovisuales'
-                else if (value.filtro_id == 2) gindex = 3; //'Recursos tecnicos'
-                else if (value.filtro_id == 3) gindex = 4; //'tema'
-                else if (value.filtro_id == 4) gindex = 5; //'subtema'
+                    if (value.filtro_id == 0) gindex = 0; //'Proyecto'
+                    else if (value.filtro_id == 1) gindex = 1; //'Área de gestion'
+                    else if (value.filtro_id == 5) gindex = 2; //'Recursos Audiovisuales'
+                    else if (value.filtro_id == 2) gindex = 3; //'Recursos tecnicos'
+                    else if (value.filtro_id == 3) gindex = 4; //'tema'
+                    else if (value.filtro_id == 4) gindex = 5; //'subtema'
 
+                    model.filters.groups[gindex].items.push({
+                        id: value.valor_id,
+                        label: value.valor_desc,
+                        checked: false,
+                        parentId: value.parent_valor_id,
+                        total: value.total
+                    });
+                });
+
+                filtersRender();
+            });
+        }
+     */
+    function filtersMerge(data) {
+        $.each(data, function(index, value) {
+            let gindex = 0;
+            if (value.filtro_id == 0) gindex = 0; //'Proyecto'
+            else if (value.filtro_id == 1) gindex = 1; //'Área de gestion'
+            else if (value.filtro_id == 5) gindex = 2; //'Recursos Audiovisuales'
+            else if (value.filtro_id == 2) gindex = 3; //'Recursos tecnicos'
+            else if (value.filtro_id == 3) gindex = 4; //'tema'
+            else if (value.filtro_id == 4) gindex = 5; //'subtema'
+
+            let key = `[${gindex}][${value.valor_id}][${value.valor_desc}]`;
+            let item = getFilterItemIndex(gindex, key);
+
+            if (item == null) {
+                // ITEM NO EXISTE, LO AGREGA
                 model.filters.groups[gindex].items.push({
+                    key: key,
                     id: value.valor_id,
                     label: value.valor_desc,
                     checked: false,
-                    parentId: value.parent_valor_id
+                    parentId: value.parent_valor_id,
+                    total: value.total
                 });
-            });
-
-            filtersRender();
+            } else {
+                // ITEM SI EXISTE, SOLO ACTUALIZA TOTALES
+                item.total = value.total;
+            }
         });
+
+        filtersRender();
     }
 
-    function isParentChecked(parentId) {
+    //##########################
+    function getFilterItemIndex(group, key) {
+        let qty = model.filters.groups[group].items.length;
+        for (var i = 0; i < qty; i++) {
+            let value = model.filters.groups[group].items[i];
+            if (value.key == key) {
+                return model.filters.groups[group].items[i];
+            }
+        }
 
+        return null;
     }
 
     function dataLoad() {
@@ -275,6 +318,8 @@ $(document).ready(function() {
         //console.log(url);
 
         $.getJSON(url, function(data) {
+            filtersMerge(data.filtros);
+
             model.solapa = data.solapa;
             model.paginas = data.paginas;
             model.pagina = data.pagina;
@@ -487,11 +532,11 @@ $(document).ready(function() {
                 `;
 
                 $.each(group.items, function(iindex, item) {
-                    if (!item.checked) {
+                    if (!item.checked && item.total > 0) {
                         html += `
                         <button type="button" class="filters-group-item list-group-item list-group-item-action" 
                             data-group="${gindex}" 
-                            data-item="${iindex}">${item.label}</button>
+                            data-item="${iindex}">${item.label} (${item.total})</button>
                         `;
                     }
                 });
@@ -818,10 +863,10 @@ $(document).ready(function() {
         });
     }
 
-    function qtyItemsNotChecked(group) {
+    function qtyItemsVisibles(group) {
         let qty = 0;
         $.each(group.items, function(iindex, item) {
-            qty = qty + (!item.checked ? 1 : 0);
+            qty = qty + ((!item.checked && item.total > 0) ? 1 : 0);
         });
         return qty;
     }
@@ -845,7 +890,7 @@ $(document).ready(function() {
             let html = `
                 <div class="row">
                     <div class="col-md-10 filter-title">
-                        ${group.title} (${qtyItemsNotChecked(group)})
+                        ${group.title} (${qtyItemsVisibles(group)})
                     </div>
                     <div class="col-md-2 text-right filter-title" style="padding-right: 4px;">
                         ${group.collapsed ? '<i class="fa fa-plus-circle"></i>' : '<i class="fa fa-minus-circle"></i>'}

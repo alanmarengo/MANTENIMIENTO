@@ -5,7 +5,7 @@
 <html lang="es">
 <head>
 
-	<title>Inicio</title>
+	<title>Mediateca</title>
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
