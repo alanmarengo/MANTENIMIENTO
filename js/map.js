@@ -751,7 +751,7 @@ function ol_map() {
 					source: new ol.source.TileWMS({
 						url: "http://observatorio.ieasa.com.ar:8080/geoserver/ows?",
 						params: {
-							'LAYERS': layer_name,
+							'LAYERS': 'getbuffer',
 							'VERSION': '1.1.1',
 							'FORMAT': 'image/png',
 							'TILED': false,
