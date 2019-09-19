@@ -125,7 +125,7 @@
 
 }
 
-.layer-opacity label {
+.layer-opacity label, .layer-buffer label {
 	
 	color:#646464;
 	
