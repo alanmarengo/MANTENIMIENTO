@@ -668,7 +668,7 @@ $(document).ready(function() {
             $.each(group.items, function(iindex, item) {
                 if (item.checked) {
                     $('#uxFiltersChecked').append(`
-                        <a class="filters-checked btn btn-warning btn-xs" data-group="${gindex}" data-item="${iindex}">${item.label} <i class="fa fa-times" style="padding-right: 6px;"></i></a>
+                        <a class="filters-checked btn btn-warning btn-xs" data-group="${gindex}" data-item="${iindex}">${item.label} (${item.total}) <i class="fa fa-times" style="padding-right: 6px;"></i></a>
                     `)
                 }
             });
