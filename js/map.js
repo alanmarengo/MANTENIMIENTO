@@ -761,6 +761,8 @@ function ol_map() {
 						crossOrigin: 'anonymous'*/
 					})
 				});
+				
+				this.ol_object.addLayer(this.layersBuffer[layer_id]);
 			
 			}
 			
