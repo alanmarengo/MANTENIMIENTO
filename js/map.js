@@ -1501,7 +1501,6 @@ function ol_map() {
 		$(".abr[data-cid="+clase_id+"]").show();
 		$(".abr[data-cid="+clase_id+"]").trigger("click");
 		$(".layer-group[data-layer="+layer_id+"]").show();
-		$(".layer-group[data-layer="+layer_id+"] .layer-label").addClass("layer-label-active");
 		
 		if (!document.getElementById("layer-checkbox-"+layer_id).layer) {
 					
