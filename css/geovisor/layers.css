@@ -115,7 +115,7 @@
 	
 }
 
-.layer-opacity,.layer-colorpicker {
+.layer-opacity,.layer-colorpicker, .layer-buffer {
 
     padding: 0 10px 10px 10px;
     background: #d6d6d6;
@@ -125,9 +125,18 @@
 
 }
 
-.layer-opacity label {
+.layer-opacity label, .layer-buffer label {
 	
 	color:#646464;
+	
+}
+
+.layer-buffer input[type=text] {
+	
+	padding: 5px;
+	border: none;
+	margin-right: 10px;
+	width: 200px;
 	
 }
 
@@ -143,6 +152,64 @@
 }
 
 .opacity-bullet {
+	
+	width:14px;
+	height:14px;
+    background: RGBA(0,0,0,0.2);
+	transform: rotate(45deg);
+	position: relative;
+	top: 8px;
+	left: 2px;
+	
+}
+
+.colorpicker-bullet-content {
+	
+	width:24px;
+	height:14px;
+	overflow:hidden;
+	position:relative;
+	left: 117px;
+	top: -14px;
+	
+}
+
+.colorpicker-bullet {
+	
+	width:14px;
+	height:14px;
+    background: RGBA(0,0,0,0.2);
+	transform: rotate(45deg);
+	position: relative;
+	top: 8px;
+	left: 2px;
+	
+}
+
+.getbufferdist {
+	
+	color:#666666;
+	
+}
+
+.layer-buffer .pretty .state i {
+
+    color: #666666;
+
+}
+
+.buffer-bullet-content {
+	
+	width:24px;
+	height:14px;
+	overflow:hidden;
+	position:relative;
+	left: 230px;
+	top: -14px;
+	
+}
+
+.buffer-bullet {
 	
 	width:14px;
 	height:14px;
@@ -170,29 +237,6 @@
 
 	margin-top:20px;
 	text-align:justify;
-	
-}
-
-.colorpicker-bullet-content {
-	
-	width:24px;
-	height:14px;
-	overflow:hidden;
-	position:relative;
-	left: 117px;
-	top: -14px;
-	
-}
-
-.colorpicker-bullet {
-	
-	width:14px;
-	height:14px;
-    background: RGBA(0,0,0,0.2);
-	transform: rotate(45deg);
-	position: relative;
-	top: 8px;
-	left: 2px;
 	
 }
 

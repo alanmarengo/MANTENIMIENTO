@@ -167,6 +167,17 @@ function DrawLayers($clase_id) {
 						</a>
 					</div>
 				
+					<div class="layer-icon jump-toggleimage" onclick="$('.layer-tool-wrapper').not('#layer-buffer-<?php echo $r["layer_id"]; ?>').hide(); $('#layer-buffer-<?php echo $r["layer_id"]; ?>').slideToggle('slow');"
+							data-state="0" 
+							data-ini-src="./images/geovisor/icons/layer-bar-buffer.png"
+							data-end-src="./images/geovisor/icons/layer-bar-buffer-blue.png"
+							data-clean="1"
+						>
+						<a href="javascript:void(0);">
+							<img src="./images/geovisor/icons/layer-bar-buffer.png">
+						</a>
+					</div>
+				
 					<div class="layer-icon" onclick="$(this).children('a').trigger('click');">
 						<a href="<?php echo $r["layer_wms_server"]; ?>&service=WFS&version=1.0.0&request=GetFeature&typeName=<?php echo $r["layer_wms_layer"]; ?>&outputFormat=shape-zip" target="_blank">
 							<img src="./images/geovisor/icons/layer-bar-download.png">
@@ -199,6 +210,34 @@ function DrawLayers($clase_id) {
 					</p>
 					
 					<div class="slider-range" id="slider-range-<?php echo $r["layer_id"]; ?>"></div>
+					
+				</div>				
+			
+				<div class="layer-buffer layer-tool-wrapper" id="layer-buffer-<?php echo $r["layer_id"]; ?>">
+				
+					<div class="buffer-bullet-content">
+						<div class="buffer-bullet"></div>
+					</div>
+					
+					<p class="mb-0">
+						<label for="buffer-value-<?php echo $r["layer_id"]; ?>">Buffer:</label>
+					</p>
+					
+					<div>
+						<input type="text" class="input getbufferdist" placeholder="Distancia en Metros...">
+						<div class="pretty p-default p-curve p-toggle">
+							<input type="checkbox" class="layer-checkbox-buffer default-empty-checkbox" id="layer-checkbox-buffer-<?php echo $r["layer_id"]; ?>" data-lid="<?php echo $r["layer_id"]; ?>" data-cid="<?php echo $r["clase_id"]; ?>" data-added="0" data-layer="<?php echo $r["layer_wms_layer"]; ?>" data-wms="<?php echo $r["layer_wms_server"]; ?>" data-layer-type="<?php echo $r["tipo_layer_id"]; ?>" onclick="geomap.map.readBuffer(<?php echo $r["layer_id"]; ?>,$(this).parent().prev().val(),this.checked)"/>
+							<div class="state p-success p-on">
+								<i class="fa fa-eye"></i>
+							</div>
+							<div class="state p-danger p-off">
+								<i class="fa fa-eye-slash"></i>
+							</div>
+						</div>
+						<a href="<?php echo $r["layer_wms_server"]; ?>&service=WFS&version=1.0.0&request=GetFeature&typeName=<?php echo $r["layer_wms_layer"]; ?>&outputFormat=shape-zip" target="_blank">
+							<img src="./images/geovisor/icons/layer-bar-download.png">
+						</a>
+					</div>
 					
 				</div>
 				
