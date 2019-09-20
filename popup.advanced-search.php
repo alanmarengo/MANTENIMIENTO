@@ -122,7 +122,7 @@
 				
 					<div class="form-group form-group-button">
 				
-						<a class="jump-button-fullsize" href="#" id="btn-adv-search">
+						<a class="black-button" href="#" id="btn-adv-search">
 							<span>BUSCAR</span>
 						</a>
 					

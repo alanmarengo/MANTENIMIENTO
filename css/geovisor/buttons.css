@@ -53,6 +53,32 @@
 	
 }
 
+.black-button-2 {
+	
+	background-color: #343a40;
+    color: #FFFFFF !Important;
+    font-family: "Montserrat", sans-serif !Important;
+	font-size: 12px;
+	font-weight: bolder;
+	height: 30px;
+	padding: 0 20px;
+	border-radius: 3px;
+	display: inline-block !important;
+	align-items: center;
+	line-height: 30px;
+	width: auto;
+	vertical-align: top;
+	
+}
+
+.black-button-2:hover {
+
+	text-decoration:none !Important;
+	color:#FFFFFF !Important;	
+	background-color:#31cbfd;
+	
+}
+
 .white-button {
 	
 	background-color:#ffffff;
