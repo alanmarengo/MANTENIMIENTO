@@ -227,12 +227,12 @@ function DrawLayers($clase_id) {
 					</p>
 					
 					<div>
-						<div class="multi-button">
+						<div class="texticon-button">
 							<input type="text" class="input getbufferdist" placeholder="Distancia en Metros...">
 							<a href="#">AGREGAR</a>
 						</div>						
 						<a href="<?php echo $r["layer_wms_server"]; ?>&service=WFS&version=1.0.0&request=GetFeature&typeName=<?php echo $r["layer_wms_layer"]; ?>&outputFormat=shape-zip" target="_blank" title="Descargar buffer">
-							DESCARGAR <img src="./images/geovisor/icons/layer-bar-download.png">
+							DESCARGAR <img src="./images/geovisor/icons/drawing-bar-download.png">
 						</a>
 					</div>
 					

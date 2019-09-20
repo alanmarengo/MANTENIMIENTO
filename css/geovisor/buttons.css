@@ -144,7 +144,20 @@
 	border-top-right-radius: 3px;
 	border-bottom-right-radius: 3px;
     position: relative;
-    left: -10px;
+    left: -13px;
 	background-color:#acacac;
 
+}
+
+.texticon-button {	
+	
+    display: inline-block;
+    vertical-align: top;
+	
+}
+
+.texticon-button-blue {
+	
+	background-color: #31cbfd;
+	
 }
