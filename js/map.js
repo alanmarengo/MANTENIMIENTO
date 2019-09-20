@@ -746,12 +746,12 @@ function ol_map() {
 			}else{
 			
 				this.layersBuffer[layer_id] = new ol.layer.Tile({
-					name:'getbuffer',
+					name:'get_buffer',
 					visible:false,
 					source: new ol.source.TileWMS({
 						url: "http://observatorio.ieasa.com.ar:8080/geoserver/ows?",
 						params: {
-							'LAYERS': 'getbuffer',
+							'LAYERS': 'get_buffer',
 							'VERSION': '1.1.1',
 							'FORMAT': 'image/png',
 							'TILED': false,
