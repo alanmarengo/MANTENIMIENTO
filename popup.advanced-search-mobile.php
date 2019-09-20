@@ -152,7 +152,7 @@
 			
 				<div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				
-					<div class="form-group form-group-button">
+					<div class="form-group form-group-button m0 p0">
 				
 						<a class="black-button-2" href="#" id="btn-adv-search-mobile">
 							<span>BUSCAR</span>
