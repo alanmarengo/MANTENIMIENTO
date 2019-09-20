@@ -727,6 +727,27 @@ function ol_map() {
 		
 	}
 	
+	this.map.addBuffer = function(layer_id,dlurl,addLink) {
+		
+		var distance = $("#buffer-input-"+layer_id).val();
+		var dlurl = dlurl += "viewparams:layer_id:"+layer_id+";distancia:"+distance;
+		
+		if ((isNaN(parseInt(distance))) || (distance.trim() == "")) {
+			
+			alert("La distancia ingresada es incorrecta o está vacía");
+			
+		}else{
+		
+			$("#dlbuffer-link-"+layer_id).attr("href",dlurl);
+			
+			addLink.innerHTML = "ACTUALIZAR";
+			
+			this.readBuffer(layer_id,distance,true);
+		
+		}
+		
+	}
+	
 	this.map.readBuffer = function(layer_id,distance,visible) {
 		
 		if ((isNaN(parseInt(distance))) || (distance.trim() == "")) {

@@ -229,12 +229,12 @@ function DrawLayers($clase_id) {
 					<div>
 					
 						<div class="multi-button">
-							<input type="text" class="input getbufferdist" placeholder="Distancia en Metros...">
-							<a href="#">AGREGAR</a>
+							<input type="text" class="input getbufferdist" id="buffer-input-<?php echo $r["layer_id"]; ?>" placeholder="Distancia en Metros...">
+							<a href="#" onclick="geomap.map.addBuffer(<?php echo $r["layer_id"]; ?>,'<?php echo $r["layer_wms_server"]; ?>&service=WFS&version=1.0.0&request=GetFeature&typeName=get_buffer&outputFormat=shape-zip&',this);">AGREGAR</a>
 						</div>	
 						
 						<div class="texticon-button texticon-button-blue">
-							<a href="<?php echo $r["layer_wms_server"]; ?>&service=WFS&version=1.0.0&request=GetFeature&typeName=<?php echo $r["layer_wms_layer"]; ?>&outputFormat=shape-zip" target="_blank" title="Descargar buffer">
+							<a id="dlbuffer-link-<?php echo $r["layer_id"]; ?>" href="#" target="_blank" title="Descargar buffer">
 								DESCARGAR 
 							</a>
 							<img src="./images/geovisor/icons/drawing-bar-download.png">
