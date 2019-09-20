@@ -21,7 +21,7 @@
                 <div class="col-md-4 page-box">
                     <a href="./geovisor.php" class="box" style="position: relative;">
                         <div class="page-box-image" style="background-image: url(./images/herramientas/3.png);"></div>
-                        <div class="text-over">GeoBi</div>
+                        <div class="text-over">GeObi</div>
                         
                         <p class="page-box-title">Geovisor de Observatorio de IEASA</p>
                         <p class="page-box-description">Visualizá, gestioná y accedé en línea a la totalidad de la
