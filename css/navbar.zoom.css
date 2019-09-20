@@ -124,6 +124,21 @@
 	
 }
 
+#dropdown-buffer {
+	
+	margin-top:10px;
+	margin-right:-3px;
+	
+}
+
+#dropdown-buffer .dropdown-item {
+	
+	width:30px;
+	height:30px ;
+	line-height:30px;
+	
+}
+
 #dropdown-draw .dropdown-item li {
 	
 	font-size:10px;
