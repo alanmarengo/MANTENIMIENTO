@@ -95,10 +95,21 @@
 		
 		<?php } ?>
 		
+		<?php if ((isset($_GET["source"])) && (isset($_GET["id"]))) { ?>
+		
+		var layer_id = <?php echo $_GET["id"]; ?>;
+		var clase_id = $(".layer-group[data-layer="+layer_id+"]").first().attr("data-cid");
+		
+		geomap.panel.AddLayer(clase_id,layer_id);
+		
+		<?php } ?>
+		
 		geomap.map.updateLayerCount();
 		geomap.map.startSearch();
 		
 		geomap.map.fixPopup(false);
+		
+		geomap.popup.startInterface();
 		
 		window.addEventListener("resize",onresize);
 		onresize();

@@ -47,12 +47,12 @@
 			<ul class="ml-10 mr-15" style="margin-right: 40px !important;">
 				<li class="input-li">						
 					<input id="main-search" name="main-search" type="text" data-jump-placeholder="<?php echo $search_ph; ?>" placeholder="<?php echo $search_ph; ?>">
-					<a href="#" >
+					<a href="#" title="Buscar">
 						<i class="fa fa-search"></i>
 					</a>							
 				</li>
 				<li class="dropdown">
-					<a href="#" id="navbarDropdown-help" role="button" data-toggle="dropdown" aria-expanded="false">
+					<a href="#" id="navbarDropdown-help" role="button" data-toggle="dropdown" aria-expanded="false" title="Ayuda">
 						<i class="fa fa-question-circle"></i>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-help" id="dropdown-help">
@@ -67,7 +67,7 @@
 					</div>            
 				</li>
 				<li class="dropdown">
-					<a href="#" id="navbarDropdown-help" role="button" data-toggle="dropdown" aria-expanded="false">
+					<a href="#" id="navbarDropdown-help" role="button" data-toggle="dropdown" aria-expanded="false" title="Menu de usuario">
 						<i class="fa fa-user"></i>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-help" id="dropdown-help">

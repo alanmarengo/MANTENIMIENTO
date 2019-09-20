@@ -152,9 +152,9 @@
 			
 				<div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				
-					<div class="form-group form-group-button">
+					<div class="form-group form-group-button" style="margin:0; padding:0;">
 				
-						<a class="jump-button-fullsize" href="#" id="btn-adv-search-mobile">
+						<a class="black-button-2" href="#" id="btn-adv-search-mobile">
 							<span>BUSCAR</span>
 						</a>
 					

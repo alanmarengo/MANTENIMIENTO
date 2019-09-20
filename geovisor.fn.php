@@ -63,11 +63,11 @@ function DrawContainers() {
 		<div class="layer-container" data-color="#31cbfd" data-cid="<?php echo $r["clase_id"]; ?>" style="border-color:#ffffff;">
 			<div class="layer-container-header" style="background-color:#31cbfd;">
 				<div class="pretty p-default p-curve p-toggle">
-					<input type="checkbox" class="layer-checkbox default-empty-checkbox" id="layer-checkbox-<?php echo $r["layer_id"]; ?>" data-layer="<?php echo $r["layer_wms_layer"]; ?>" data-wms="<?php echo $r["layer_wms_server"]; ?>"/>
-					<div class="state p-success p-on">
+					<input type="checkbox" class="layer-checkbox default-empty-checkbox" id="layer-checkbox-class-<?php echo $r["clase_id"]; ?>" data-layer="<?php echo $r["layer_wms_layer"]; ?>" data-wms="<?php echo $r["layer_wms_server"]; ?>"/>
+					<div class="state p-success p-on" title="Mostrar capa">
 						<i class="fa fa-eye"></i>
 					</div>
-					<div class="state p-danger p-off">
+					<div class="state p-danger p-off" title="Ocultar capa">
 						<i class="fa fa-eye-slash"></i>
 					</div>
 				</div>
@@ -107,15 +107,15 @@ function DrawLayers($clase_id) {
 				
 				<div class="pretty p-default p-curve p-toggle">
 					<input type="checkbox" class="layer-checkbox default-empty-checkbox" id="layer-checkbox-<?php echo $r["layer_id"]; ?>" data-lid="<?php echo $r["layer_id"]; ?>" data-cid="<?php echo $r["clase_id"]; ?>" data-added="0" data-layer="<?php echo $r["layer_wms_layer"]; ?>" data-wms="<?php echo $r["layer_wms_server"]; ?>" data-layer-type="<?php echo $r["tipo_layer_id"]; ?>"/>
-					<div class="state p-success p-on">
+					<div class="state p-success p-on" title="Mostrar capa">
 						<i class="fa fa-eye"></i>
 					</div>
-					<div class="state p-danger p-off">
+					<div class="state p-danger p-off" title="Ocultar capa">
 						<i class="fa fa-eye-slash"></i>
 					</div>
 				</div>
 				
-				<a href="#" class="layer-label" onclick="$(this).parent().next().slideToggle('slow'); $(this).toggleClass('layer-label-active')">
+				<a href="#" class="layer-label" onclick="$(this).parent().next().slideToggle('slow'); $(this).toggleClass('layer-label-active')" title="<?php echo $r["layer_desc"]; ?>">
 					<span><?php echo $r["layer_desc"]; ?></span>
 				</a>
 				
@@ -123,7 +123,7 @@ function DrawLayers($clase_id) {
 					<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
 				</a>-->
 				
-				<a href="#" class="simple-tree-pm-button" onclick="geomap.panel.removeLayer(<?php echo $r["layer_id"]; ?>,<?php echo $r["clase_id"]; ?>); geomap.map.updateLayerCount();">
+				<a href="#" class="simple-tree-pm-button" onclick="geomap.panel.removeLayer(<?php echo $r["layer_id"]; ?>,<?php echo $r["clase_id"]; ?>); geomap.map.updateLayerCount();" title="Eliminar capa">
 					<i class="fa fa-trash popup-panel-tree-item-icon-toggler popup-icon"></i>
 				</a>
 				
@@ -133,13 +133,13 @@ function DrawLayers($clase_id) {
 			
 				<div class="layer-icons">
 				
-					<div class="layer-icon" onclick="geomap.map.zoomToLayerExtent(<?php echo $r["layer_id"]; ?>);">
+					<div class="layer-icon" onclick="geomap.map.zoomToLayerExtent(<?php echo $r["layer_id"]; ?>);" title="Ir a extent de capa">
 						<a href="javascript:void(0);">
 							<img src="./images/geovisor/icons/layer-bar-zoom.png">
 						</a>
 					</div>
 				
-					<div class="layer-icon" onclick="$(this).children('a').trigger('click');">
+					<div class="layer-icon" onclick="$(this).children('a').trigger('click');" title="Información de capa">
 						<a href="<?php echo $r["layer_metadata_url"]; ?>" target="_blank">
 							<img src="./images/geovisor/icons/layer-bar-info.png">
 						</a>
@@ -150,6 +150,7 @@ function DrawLayers($clase_id) {
 							data-ini-src="./images/geovisor/icons/layer-bar-relleno.png"
 							data-end-src="./images/geovisor/icons/layer-bar-relleno-blue.png"
 							data-clean="1"
+							title="Cambiar color"
 						>
 						<a href="javascript:void(0);">
 							<img src="./images/geovisor/icons/layer-bar-relleno.png">
@@ -161,24 +162,27 @@ function DrawLayers($clase_id) {
 							data-ini-src="./images/geovisor/icons/layer-bar-gota.png"
 							data-end-src="./images/geovisor/icons/layer-bar-gota-blue.png"
 							data-clean="1"
+							title="Transparencia"
 						>
 						<a href="javascript:void(0);">
 							<img src="./images/geovisor/icons/layer-bar-gota.png">
 						</a>
 					</div>
 				
-					<div class="layer-icon jump-toggleimage" onclick="$('.layer-tool-wrapper').not('#layer-buffer-<?php echo $r["layer_id"]; ?>').hide(); $('#layer-buffer-<?php echo $r["layer_id"]; ?>').slideToggle('slow');"
+					<div class="layer-icon layer-icon-buffer jump-toggleimage" id="layer-icon-buffer-<?php echo $r["layer_id"]; ?>" onclick="$('.layer-tool-wrapper').not('#layer-buffer-<?php echo $r["layer_id"]; ?>').hide(); $('#layer-buffer-<?php echo $r["layer_id"]; ?>').slideToggle('slow');"
 							data-state="0" 
 							data-ini-src="./images/geovisor/icons/layer-bar-buffer.png"
 							data-end-src="./images/geovisor/icons/layer-bar-buffer-blue.png"
 							data-clean="1"
+							data-lid="<?php echo $r["layer_id"]; ?>"
+							title="Buffer de capa"
 						>
 						<a href="javascript:void(0);">
 							<img src="./images/geovisor/icons/layer-bar-buffer.png">
 						</a>
 					</div>
 				
-					<div class="layer-icon" onclick="$(this).children('a').trigger('click');">
+					<div class="layer-icon" onclick="$(this).children('a').trigger('click');" title="Descargar capa">
 						<a href="<?php echo $r["layer_wms_server"]; ?>&service=WFS&version=1.0.0&request=GetFeature&typeName=<?php echo $r["layer_wms_layer"]; ?>&outputFormat=shape-zip" target="_blank">
 							<img src="./images/geovisor/icons/layer-bar-download.png">
 						</a>
@@ -220,23 +224,23 @@ function DrawLayers($clase_id) {
 					</div>
 					
 					<p class="mb-0">
-						<label for="buffer-value-<?php echo $r["layer_id"]; ?>">Buffer:</label>
+						<label for="buffer-value-<?php echo $r["layer_id"]; ?>">Distancia en mts:</label>
 					</p>
 					
 					<div>
-						<input type="text" class="input getbufferdist" placeholder="Distancia en Metros...">
-						<div class="pretty p-default p-curve p-toggle">
-							<input type="checkbox" class="layer-checkbox-buffer default-empty-checkbox" id="layer-checkbox-buffer-<?php echo $r["layer_id"]; ?>" data-lid="<?php echo $r["layer_id"]; ?>" data-cid="<?php echo $r["clase_id"]; ?>" data-added="0" data-layer="<?php echo $r["layer_wms_layer"]; ?>" data-wms="<?php echo $r["layer_wms_server"]; ?>" data-layer-type="<?php echo $r["tipo_layer_id"]; ?>" onclick="geomap.map.readBuffer(<?php echo $r["layer_id"]; ?>,$(this).parent().prev().val(),this.checked)"/>
-							<div class="state p-success p-on">
-								<i class="fa fa-eye"></i>
-							</div>
-							<div class="state p-danger p-off">
-								<i class="fa fa-eye-slash"></i>
-							</div>
+					
+						<div class="multi-button">
+							<input type="text" class="input getbufferdist" id="buffer-input-<?php echo $r["layer_id"]; ?>" placeholder="Distancia en Metros...">
+							<a href="#" onclick="geomap.map.addBuffer(<?php echo $r["layer_id"]; ?>,'<?php echo $r["layer_wms_server"]; ?>&service=WFS&version=1.0.0&request=GetFeature&typeName=get_buffer&outputFormat=shape-zip&',this);">AGREGAR</a>
+						</div>	
+						
+						<div class="texticon-button texticon-button-blue">
+							<a id="dlbuffer-link-<?php echo $r["layer_id"]; ?>" href="#" target="_blank" title="Descargar buffer">
+								DESCARGAR 
+							</a>
+							<img src="./images/geovisor/icons/drawing-bar-download.png">
 						</div>
-						<a href="<?php echo $r["layer_wms_server"]; ?>&service=WFS&version=1.0.0&request=GetFeature&typeName=<?php echo $r["layer_wms_layer"]; ?>&outputFormat=shape-zip" target="_blank">
-							<img src="./images/geovisor/icons/layer-bar-download.png">
-						</a>
+						
 					</div>
 					
 				</div>

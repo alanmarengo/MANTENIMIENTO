@@ -1,5 +1,5 @@
 <div class="jump-window jump-align-right jump-flotant-heightfill jump-flotant-heightfill-top col col-xs-12 col-sm-12-col-md-8 col-lg-8" id="popup-geovisor"
-data-minimizable="1" data-minimized-title="Selección de Capas">
+data-minimizable="1" data-minimized-title="BUSCAR CAPAS">
 
 	<div class="jump-window-inner h-100-p" id="popup-inner">
 

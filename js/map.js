@@ -727,6 +727,27 @@ function ol_map() {
 		
 	}
 	
+	this.map.addBuffer = function(layer_id,dlurl,addLink) {
+		
+		var distance = $("#buffer-input-"+layer_id).val();
+		var dlurl = dlurl += "viewparams=layer_id:"+layer_id+";distancia:"+distance;
+		
+		if ((isNaN(parseInt(distance))) || (distance.trim() == "")) {
+			
+			alert("La distancia ingresada es incorrecta o está vacía");
+			
+		}else{
+		
+			$("#dlbuffer-link-"+layer_id).attr("href",dlurl);
+			
+			addLink.innerHTML = "ACTUALIZAR";
+			
+			this.readBuffer(layer_id,distance,true);
+		
+		}
+		
+	}
+	
 	this.map.readBuffer = function(layer_id,distance,visible) {
 		
 		if ((isNaN(parseInt(distance))) || (distance.trim() == "")) {
@@ -739,24 +760,25 @@ function ol_map() {
 			
 				this.layersBuffer[layer_id].getSource().updateParams({
 							
-					'distancia':distance
+					'viewparams':'layer_id:'+layer_id+";distancia:"+distance
 					
 				})
 				
 			}else{
 			
 				this.layersBuffer[layer_id] = new ol.layer.Tile({
-					name:'getbuffer',
+					name:'get_buffer',
 					visible:false,
 					source: new ol.source.TileWMS({
 						url: "http://observatorio.ieasa.com.ar:8080/geoserver/ows?",
 						params: {
-							'LAYERS': 'getbuffer',
+							'LAYERS': 'get_buffer',
 							'VERSION': '1.1.1',
 							'FORMAT': 'image/png',
 							'TILED': false,
-							'distancia':distance,
-							'layer_id':layer_id
+							'viewparams':'layer_id:'+layer_id+";distancia:"+distance
+							/*'distancia':distance,
+							'layer_id':layer_id*/
 						}/*,
 						crossOrigin: 'anonymous'*/
 					})
@@ -1340,6 +1362,26 @@ function ol_map() {
 		$("form select").prop("selectedIndex", 0);
 		$("form select").selectpicker("refresh");
 		
+		$(".layer-icon-buffer").each(function(i,v) {
+			
+			$(v).bind("click",function() {
+				
+				if ($(v).attr("data-state") == 1) {
+					
+					var layer_id = $(v).attr("data-lid");
+					
+					if (this.map.layersBuffer[layer_id]) {
+						this.map.layersBuffer[layer_id].destroy();
+						this.map.layersBuffer[layer_id] = false;
+					}
+					
+					
+				}
+				
+			}.bind(this));
+			
+		}.bind(this));
+		
 	}
 	
 	this.panel.UpdatePopupListBasic = function() {
@@ -1641,7 +1683,7 @@ function ol_map() {
 				}
 			});
 			
-			$("#layer-legend-"+layer_id).html("<img src=\"" + layer_wms + "&version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer="+layer_name+"&format=image/png&\" width=\"120\">");
+			$("#layer-legend-"+layer_id).html("<img src=\"" + layer_wms + "&version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer="+layer_name+"&format=image/png&\">");
 			
 			if ($("#nav-panel").attr("data-visible") == 0) {
 				
