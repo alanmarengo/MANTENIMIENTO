@@ -152,7 +152,11 @@
 .texticon-button {	
 	
     display: inline-block;
-    vertical-align: top;
+	vertical-align: top;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 3px;
+	padding: 0 20px;
 	
 }
 
