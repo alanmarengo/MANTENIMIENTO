@@ -1783,11 +1783,11 @@ function ol_map() {
 				
 				if (v.checked) {
 					
-					$("#layers-wrapper").find(".layer-checkbox:visible:not(:checked)").trigger("click");
+					$("#layers-wrapper .layer-checkbox:visible:not(:checked)").trigger("click");
 					
 				}else{
 					
-					$("#layers-wrapper").find(".layer-checkbox:visible:checked").trigger("click");				
+					$("#layers-wrapper .layer-checkbox:visible:checked").trigger("click");				
 					
 				}
 				
