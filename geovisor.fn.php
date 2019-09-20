@@ -181,8 +181,8 @@ function DrawLayers($clase_id) {
 						</a>
 					</div>
 				
-					<div class="layer-icon" onclick="$(this).children('a').trigger('click');">
-						<a href="<?php echo $r["layer_wms_server"]; ?>&service=WFS&version=1.0.0&request=GetFeature&typeName=<?php echo $r["layer_wms_layer"]; ?>&outputFormat=shape-zip" target="_blank" title="Descargar capa">
+					<div class="layer-icon" onclick="$(this).children('a').trigger('click');" title="Descargar capa">
+						<a href="<?php echo $r["layer_wms_server"]; ?>&service=WFS&version=1.0.0&request=GetFeature&typeName=<?php echo $r["layer_wms_layer"]; ?>&outputFormat=shape-zip" target="_blank">
 							<img src="./images/geovisor/icons/layer-bar-download.png">
 						</a>
 					</div>
