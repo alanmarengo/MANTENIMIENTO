@@ -109,6 +109,8 @@
 		
 		geomap.map.fixPopup(false);
 		
+		geomap.popup.startInterface();
+		
 		window.addEventListener("resize",onresize);
 		onresize();
 		
