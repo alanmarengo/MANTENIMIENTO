@@ -150,6 +150,12 @@
 
 }
 
+.multi-button a:hover {
+
+   color:#FFFFFF;
+
+}
+
 .texticon-button {	
 	
     display: inline-block;
@@ -161,8 +167,20 @@
 	
 }
 
+.texticon-button a:hover{	
+	
+    color:#FFFFFF;
+	
+}
+
 .texticon-button-blue {
 	
 	background-color: #31cbfd;
+	
+}
+
+.texticon-button:hover {
+	
+	background-color:#343a40;
 	
 }
