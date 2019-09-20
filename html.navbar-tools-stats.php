@@ -14,7 +14,7 @@
 				<li class="ml-10">
 					<a class="button jump-hovimage" 
 					data-ini-src="./images/toolbar.icon.share.png"
-					data-end-src="./images/toolbar.icon.share.blue.png" href="javascript:void(0);">
+					data-end-src="./images/toolbar.icon.share.blue.png" href="javascript:void(0);" title="Compartir">
 						<img src="./images/toolbar.icon.share.png">
 					</a>
 				</li>
@@ -24,7 +24,7 @@
 				<li>
 					<a class="button jump-hovimage" 
 					data-ini-src="./images/toolbar.icon.print.png"
-					data-end-src="./images/toolbar.icon.print.blue.png" href="javascript:void(0);">
+					data-end-src="./images/toolbar.icon.print.blue.png" href="javascript:void(0);" title="Imprimir">
 						<img src="./images/toolbar.icon.print.png">
 					</a>
 				</li>
@@ -34,7 +34,7 @@
 				<li class="ml-10">
 					<a class="button jump-hovimage" 
 					data-ini-src="./images/stats-fav.png"
-					data-end-src="./images/stats-fav.blue.png" href="javascript:void(0);">
+					data-end-src="./images/stats-fav.blue.png" href="javascript:void(0);" title="Favoritos">
 						<img src="./images/stats-fav.png">
 					</a>
 				</li>
