@@ -227,7 +227,7 @@ function DrawLayers($clase_id) {
 					</p>
 					
 					<div>
-						<div class="texticon-button">
+						<div class="texticon-button texticon-button-blue">
 							<input type="text" class="input getbufferdist" placeholder="Distancia en Metros...">
 							<a href="#">AGREGAR</a>
 						</div>						
