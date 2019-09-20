@@ -169,11 +169,12 @@ function DrawLayers($clase_id) {
 						</a>
 					</div>
 				
-					<div class="layer-icon jump-toggleimage" onclick="$('.layer-tool-wrapper').not('#layer-buffer-<?php echo $r["layer_id"]; ?>').hide(); $('#layer-buffer-<?php echo $r["layer_id"]; ?>').slideToggle('slow');"
+					<div class="layer-icon layer-icon-buffer jump-toggleimage" id="layer-icon-buffer-<?php echo $r["layer_id"]; ?>" onclick="$('.layer-tool-wrapper').not('#layer-buffer-<?php echo $r["layer_id"]; ?>').hide(); $('#layer-buffer-<?php echo $r["layer_id"]; ?>').slideToggle('slow');"
 							data-state="0" 
 							data-ini-src="./images/geovisor/icons/layer-bar-buffer.png"
 							data-end-src="./images/geovisor/icons/layer-bar-buffer-blue.png"
 							data-clean="1"
+							data-lid="<?php echo $r["layer_id"]; ?>"
 							title="Buffer de capa"
 						>
 						<a href="javascript:void(0);">
