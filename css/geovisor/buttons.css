@@ -179,8 +179,8 @@
 	
 }
 
-.multi-button:hover, .texticon-button:hover {
+.texticon-button:hover {
 	
-	opacity:0.7;
+	background-color:#343a40;
 	
 }
