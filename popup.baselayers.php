@@ -1,4 +1,4 @@
-<div class="jump-window col col-xs-12 col-sm-12-col-md-3 col-lg-3 geovisor-flotant" id="popup-baselayers" data-minimizable="1" data-minimized-title="Capas Base">
+<div class="jump-window col col-xs-12 col-sm-12-col-md-3 col-lg-3 geovisor-flotant" id="popup-baselayers" data-minimizable="1" data-minimized-title="CAPA BASE">
 	
 	<div class="jump-window-inner p20">
 
