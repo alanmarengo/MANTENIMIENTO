@@ -58,7 +58,7 @@ function GenPreview($recursos_extension,$file_server,$recursor_path,$cache_path,
 						$imagick = $imagick->flattenImages();
 						
 						file_put_contents($cache_path.$recurso_id.'.jpg',  $imagick->getImagesBlob(),LOCK_EX);
-						echo 'Generando '.$cache_path.$recurso_id.'.jpg<br>';
+						//echo 'Generando '.$cache_path.$recurso_id.'.jpg<br>';
 						
 					}
 					else
@@ -67,7 +67,7 @@ function GenPreview($recursos_extension,$file_server,$recursor_path,$cache_path,
 						$imagick->setImageFormat("jpg");
 						
 						file_put_contents($cache_path.$recurso_id.'.jpg',  $imagick->getImagesBlob(),LOCK_EX);
-						echo 'Generando '.$cache_path.$recurso_id.'.jpg<br>';
+						//echo 'Generando '.$cache_path.$recurso_id.'.jpg<br>';
 					};
 					
 					$imagick->clear();
@@ -85,7 +85,7 @@ function GenPreview($recursos_extension,$file_server,$recursor_path,$cache_path,
 						$imagick->setImageFormat("jpg");
 						
 						file_put_contents($cache_path.$recurso_id.'.jpg',  $imagick->getImagesBlob(),LOCK_EX);
-						echo 'Generando '.$cache_path.$recurso_id.'.jpg<br>';
+						//echo 'Generando '.$cache_path.$recurso_id.'.jpg<br>';
 					}
 					else
 					{
@@ -93,7 +93,7 @@ function GenPreview($recursos_extension,$file_server,$recursor_path,$cache_path,
 						$imagick->setImageFormat("jpg");
 						
 						file_put_contents($cache_path.$recurso_id.'.jpg',  $imagick->getImagesBlob(),LOCK_EX);
-						echo 'Generando '.$cache_path.$recurso_id.'.jpg<br>';
+						//echo 'Generando '.$cache_path.$recurso_id.'.jpg<br>';
 					};
 					
 					$imagick->clear();
@@ -111,7 +111,7 @@ function GenPreview($recursos_extension,$file_server,$recursor_path,$cache_path,
 						$imagick->setImageFormat("jpg");
 						
 						file_put_contents($cache_path.$recurso_id.'.jpg',  $imagick->getImagesBlob(),LOCK_EX);
-						echo 'Generando '.$cache_path.$recurso_id.'.jpg<br>';
+						//echo 'Generando '.$cache_path.$recurso_id.'.jpg<br>';
 					}
 					else
 					{
@@ -119,7 +119,7 @@ function GenPreview($recursos_extension,$file_server,$recursor_path,$cache_path,
 						$imagick->setImageFormat("jpg");
 						
 						file_put_contents($cache_path.$recurso_id.'.jpg',  $imagick->getImagesBlob(),LOCK_EX);
-						echo 'Generando '.$cache_path.$recurso_id.'.jpg<br>';
+						//echo 'Generando '.$cache_path.$recurso_id.'.jpg<br>';
 					};
 					
 					$imagick->clear();
@@ -135,7 +135,7 @@ function GenPreview($recursos_extension,$file_server,$recursor_path,$cache_path,
 					$imagick->setImageFormat("jpg");
 						
 					file_put_contents($cache_path.$recurso_id.'.jpg',  $imagick->getImagesBlob(),LOCK_EX);
-					echo 'Generando Defult '.$cache_path.$recurso_id.'.jpg<br>';
+					//echo 'Generando Defult '.$cache_path.$recurso_id.'.jpg<br>';
 					
 					$imagick->clear();
 					$imagick->destroy();
