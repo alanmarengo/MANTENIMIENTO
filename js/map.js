@@ -1370,8 +1370,11 @@ function ol_map() {
 					
 					var layer_id = $(v).attr("data-lid");
 					
-					this.map.layersBuffer[layer_id].destroy();
-					this.map.layersBuffer[layer_id] = false;
+					if (this.map.layersBuffer[layer_id]) {
+						this.map.layersBuffer[layer_id].destroy();
+						this.map.layersBuffer[layer_id] = false;
+					}
+					
 					
 				}
 				
