@@ -95,6 +95,15 @@
 		
 		<?php } ?>
 		
+		<?php if (isset($_GET["source"])) { ?>
+		
+		var layer_id = <?php echo $_GET["id"]; ?>
+		var clase_id = $(".layer-group[data-layer="+layer_id+"]").first().attr("data-cid");
+		
+		alert(layer_id + " :: " + clase_id);
+		
+		<?php } ?>
+		
 		geomap.map.updateLayerCount();
 		geomap.map.startSearch();
 		
