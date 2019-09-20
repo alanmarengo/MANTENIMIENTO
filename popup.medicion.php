@@ -1,5 +1,5 @@
 <div class="jump-window jump-align-right jump-flotant-heightfill-top col col-xs-12 col-sm-12-col-md-4 col-lg-4 geovisor-flotant" id="popup-medicion"
- data-minimizable="1" data-minimized-title="Medición">
+ data-minimizable="1" data-minimized-title="MEDICIÓN">
 	
 	<div class="jump-window-inner p20">
 

@@ -1,5 +1,5 @@
 <div class="jump-window jump-align-right jump-flotant-heightfill-top col col-xs-12 col-sm-12-col-md-6 col-lg-6 geovisor-flotant" id="popup-share"
- data-minimizable="1" data-minimized-title="Compartir Vista">
+ data-minimizable="1" data-minimized-title="COMPARTIR VISTA">
 	
 	<div class="jump-window-inner p20">
 
