@@ -288,11 +288,31 @@ echo "],";
 
 $SUBQUERY = str_replace("''", "null", $SUBQUERY);
 
-$SQL = "SELECT * FROM mod_mediateca.get_filtros_totales('$SUBQUERY') ORDER BY filtro_id,valor_desc ASC";
+//$SQL = "SELECT * FROM mod_mediateca.get_filtros_totales('$SUBQUERY') ORDER BY filtro_id,valor_desc ASC";
+
+$SUBQUERY  = pg_escape_string($SUBQUERY);
+
+$SQL = 	"SELECT F.*,COALESCE(T.total,0) AS total "
+		." FROM "
+		." mod_catalogo.vw_filtros_values F "
+		."LEFT JOIN "
+		."("
+		."SELECT * FROM mod_mediateca.get_filtros_total_consulta_filtro('$SUBQUERY',0) WHERE valor_id IS NOT NULL UNION ALL "
+		."SELECT * FROM mod_mediateca.get_filtros_total_consulta_filtro('$SUBQUERY',1) WHERE valor_id IS NOT NULL UNION ALL "
+		."SELECT * FROM mod_mediateca.get_filtros_total_consulta_filtro('$SUBQUERY',2) WHERE valor_id IS NOT NULL UNION ALL "
+		."SELECT * FROM mod_mediateca.get_filtros_total_consulta_filtro('$SUBQUERY',3) WHERE valor_id IS NOT NULL UNION ALL "
+		."SELECT * FROM mod_mediateca.get_filtros_total_consulta_filtro('$SUBQUERY',4) WHERE valor_id IS NOT NULL"
+		.")T "
+		."ON F.filtro_id=T.filtro_id AND F.valor_id = T.valor_id";
+	
+  
 
 //echo $SQL;
 
 $recordset = pg_query($conn,$SQL);
+
+//$recordset = pg_query_params($conn,"SELECT * FROM mod_mediateca.get_filtros_totales($1) ORDER BY filtro_id,valor_desc ASC",Array($SUBQUERY));
+//echo pg_last_error($conn);
 
 function draw_tupla($row)
 {
