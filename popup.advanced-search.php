@@ -120,7 +120,7 @@
 			
 				<div class="col col-lg-3 col-md-3 col-sm-12 col-xs-12" data-class="col col-lg-3 col-md-3 col-sm-12 col-xs-12">
 				
-					<div class="form-group form-group-button m0 p0">
+					<div class="form-group form-group-button" style="margin:0; padding:0;">
 				
 						<a class="black-button-2" href="#" id="btn-adv-search">
 							<span>BUSCAR</span>
