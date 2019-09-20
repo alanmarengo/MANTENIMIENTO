@@ -223,22 +223,16 @@ function DrawLayers($clase_id) {
 					</div>
 					
 					<p class="mb-0">
-						<label for="buffer-value-<?php echo $r["layer_id"]; ?>">Buffer:</label>
+						<label for="buffer-value-<?php echo $r["layer_id"]; ?>">Distancia en mts:</label>
 					</p>
 					
 					<div>
-						<input type="text" class="input getbufferdist" placeholder="Distancia en Metros...">
-						<div class="pretty p-default p-curve p-toggle">
-							<input type="checkbox" class="layer-checkbox-buffer default-empty-checkbox" id="layer-checkbox-buffer-<?php echo $r["layer_id"]; ?>" data-lid="<?php echo $r["layer_id"]; ?>" data-cid="<?php echo $r["clase_id"]; ?>" data-added="0" data-layer="<?php echo $r["layer_wms_layer"]; ?>" data-wms="<?php echo $r["layer_wms_server"]; ?>" data-layer-type="<?php echo $r["tipo_layer_id"]; ?>" onclick="geomap.map.readBuffer(<?php echo $r["layer_id"]; ?>,$(this).parent().prev().val(),this.checked)"/>
-							<div class="state p-success p-on" title="Mostrar buffer">
-								<i class="fa fa-eye"></i>
-							</div>
-							<div class="state p-danger p-off" title="Ocultar buffer">
-								<i class="fa fa-eye-slash"></i>
-							</div>
-						</div>
+						<div class="multi-button">
+							<input type="text" class="input getbufferdist" placeholder="Distancia en Metros...">
+							<a href="#">AGREGAR</a>
+						</div>						
 						<a href="<?php echo $r["layer_wms_server"]; ?>&service=WFS&version=1.0.0&request=GetFeature&typeName=<?php echo $r["layer_wms_layer"]; ?>&outputFormat=shape-zip" target="_blank" title="Descargar buffer">
-							<img src="./images/geovisor/icons/layer-bar-download.png">
+							DESCARGAR <img src="./images/geovisor/icons/layer-bar-download.png">
 						</a>
 					</div>
 					
