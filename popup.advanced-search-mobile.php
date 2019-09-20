@@ -154,7 +154,7 @@
 				
 					<div class="form-group form-group-button">
 				
-						<a class="black-button" href="#" id="btn-adv-search-mobile">
+						<a class="black-button-2" href="#" id="btn-adv-search-mobile">
 							<span>BUSCAR</span>
 						</a>
 					
