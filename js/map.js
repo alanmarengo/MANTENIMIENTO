@@ -739,7 +739,7 @@ function ol_map() {
 			
 				this.layersBuffer[layer_id].getSource().updateParams({
 							
-					'distancia':distance
+					'viewparams':'layer_id:'+layer_id+";distancia:"+distance
 					
 				})
 				
@@ -755,8 +755,9 @@ function ol_map() {
 							'VERSION': '1.1.1',
 							'FORMAT': 'image/png',
 							'TILED': false,
-							'distancia':distance,
-							'layer_id':layer_id
+							'viewparams':'layer_id:'+layer_id+";distancia:"+distance
+							/*'distancia':distance,
+							'layer_id':layer_id*/
 						}/*,
 						crossOrigin: 'anonymous'*/
 					})
