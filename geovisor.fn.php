@@ -63,7 +63,7 @@ function DrawContainers() {
 		<div class="layer-container" data-color="#31cbfd" data-cid="<?php echo $r["clase_id"]; ?>" style="border-color:#ffffff;">
 			<div class="layer-container-header" style="background-color:#31cbfd;">
 				<div class="pretty p-default p-curve p-toggle">
-					<input type="checkbox" class="layer-checkbox default-empty-checkbox" id="layer-checkbox-<?php echo $r["layer_id"]; ?>" data-layer="<?php echo $r["layer_wms_layer"]; ?>" data-wms="<?php echo $r["layer_wms_server"]; ?>"/>
+					<input type="checkbox" class="layer-checkbox default-empty-checkbox" id="layer-checkbox-class-<?php echo $r["clase_id"]; ?>" data-layer="<?php echo $r["layer_wms_layer"]; ?>" data-wms="<?php echo $r["layer_wms_server"]; ?>"/>
 					<div class="state p-success p-on" title="Mostrar capa">
 						<i class="fa fa-eye"></i>
 					</div>
