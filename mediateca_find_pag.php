@@ -116,10 +116,11 @@ function getSQL($solapa) {
 					. "CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END AS \"Autores\","
 					. "MAX(estudios_id) AS estudios_id,"
 					. "recurso_fecha AS Fecha,"
-					. "COALESCE(subclase_desc,'') AS Tema"
+					. "COALESCE(subclase_desc,'') AS Tema,"
+					. "mod_catalogo.get_ico(origen_id,origen_id_especifico) AS ico"
 					. " FROM mod_mediateca.mediateca_find('$qt','$desde','$hasta','$proyecto','$clase','$subclase','$tipo_doc') "
 					. " WHERE tipo_formato_solapa=$solapa" 
-					. " GROUP BY recurso_fecha,COALESCE(subclase_desc,''),tipo_formato_solapa,origen_id,origen_id_especifico,recurso_titulo,recurso_desc,recurso_path_url,recurso_categoria_desc,CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END"
+					. " GROUP BY mod_catalogo.get_ico(origen_id,origen_id_especifico),recurso_fecha,COALESCE(subclase_desc,''),tipo_formato_solapa,origen_id,origen_id_especifico,recurso_titulo,recurso_desc,recurso_path_url,recurso_categoria_desc,CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END"
 					. $ORDER;
 	
 		$SQL = "SELECT row_to_json(T)::text AS r FROM ($SUBQUERY)T";
@@ -140,7 +141,8 @@ function getSQL($solapa) {
 							. "CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END AS \"Autores\","
 							. "estudios_id,"
 							. "recurso_fecha AS Fecha,"
-							. "COALESCE(subclase_desc,'') AS Tema "
+							. "COALESCE(subclase_desc,'') AS Tema, "
+							. "mod_catalogo.get_ico(origen_id,origen_id_especifico) AS ico"
 							. " FROM mod_catalogo.vw_catalogo_data C WHERE "
 							. " C.estudios_id IN(SELECT sub_estudio_id FROM mod_catalogo.estudio_subestudio WHERE estudios_id=$estudio_id) "
 							. " AND C.estudios_id=$estudio_id  AND  tipo_formato_solapa=$solapa " /* Tambíen incluye el mismo estudio */ 
@@ -161,7 +163,8 @@ function getSQL($solapa) {
 							. "CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END AS \"Autores\","
 							. "estudios_id,"
 							. "recurso_fecha AS Fecha,"
-							. "COALESCE(subclase_desc,'') AS Tema "
+							. "COALESCE(subclase_desc,'') AS Tema, "
+							. "mod_catalogo.get_ico(origen_id,origen_id_especifico) AS ico"
 							. " FROM mod_catalogo.vw_catalogo_data C WHERE estudios_id=$estudio_id AND tipo_formato_solapa=$solapa "
 							. $ORDER;
 				
