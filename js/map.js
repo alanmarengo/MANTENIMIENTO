@@ -156,8 +156,8 @@ function ol_map() {
 								
 								async:false,
 								type:"GET",
-								//url:url,
-								url:"urldeprueba.php",
+								url:url,
+								//url:"urldeprueba.php",
 								success:function(d){}
 								
 							})
