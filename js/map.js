@@ -383,7 +383,9 @@ function ol_map() {
 			var node = $(v).children("td").first();
 			var val = $(node).text().split(".");
 			
-			newnodes += "<img src=\"../img/t.gif\" x=\"" + val[1] + "\" y=\"" + val[0] + "\" z=\"1\" />";			
+			var newnode = "<img src=\"../img/t.gif\" x=\"" + val[1] + "\" y=\"" + val[0] + "\" z=\"1\" />";
+			alert(newnode);
+			newnodes += newnode;
 			
 		});
 		
