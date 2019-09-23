@@ -384,7 +384,7 @@ function ol_map() {
 			var val = $(node).text().split(".");
 			
 			var newnode = "<img src=\"../img/t.gif\" x=\"" + val[1] + "\" y=\"" + val[0] + "\" z=\"1\" />";
-			alert(newnode);
+			console.log(val);
 			newnodes += newnode;
 			
 		});
@@ -394,8 +394,6 @@ function ol_map() {
 	}
 	
 	this.map.parseGFI = function(response,containerID,wrapperID) {
-				
-		alert(response);
 		
 		document.getElementById("popup-results").innerHTML += response;
 		
