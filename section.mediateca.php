@@ -60,9 +60,6 @@
             </div>
         </div>
 
-
-
-
         <div class="row">
             <div class="x0 col-md-3" style="position: relative;">
                 <div id="uxFilters-box" class="pinned" style="position: absolute;"></div>
@@ -88,18 +85,18 @@
 <?php include("./widget-links.php"); ?>
 
 
-<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="z-index: 9999;">
+<div class="modal fade" id="previewmodal" style="margin-top: 100px;" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="z-index: 9999;">
     <div class="modal-dialog modal-lg2">
-        <div class="modal-content">
+        <div class="modal-content" style="background-color: transparent; border: none;">
             <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
-                <img src="" class="imagepreview" style="width: 100%;">
+                <button id="uxPreviewClose" type="button" class="close" data-dismiss="modal" style="color: #fff; font-size: 50px;"><span aria-hidden="true">&times;</span></button>
+                <div style="text-align: center;">
+                    <div id="preview">
+                </div>
             </div>
         </div>
     </div>
 </div>
-
-
 
 <script src="./js/hc-sticky.js" type="text/javascript"></script>
 <script src="./js/site.mediateca.js" type='text/javascript'>
