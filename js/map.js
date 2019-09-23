@@ -156,10 +156,16 @@ function ol_map() {
 								
 								async:false,
 								type:"GET",
-								url:url,
+								//url:url,
+								url:"urldeprueba.php",
 								success:function(d){}
 								
 							})
+							
+							var html = req.responseText.split("body>");
+								html = html.substring(0,html.length-2);
+								
+							alert(html);
 							
 							map.parseGFI(req.responseText,"popup-info","info-wrapper");
 						
