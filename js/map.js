@@ -174,7 +174,7 @@ function ol_map() {
 							
 							}
 							
-							map.parseGFI(req.responseText,"popup-info","info-wrapper");
+							//map.parseGFI(req.responseText,"popup-info","info-wrapper");
 						
 							scroll.refresh();
 						
