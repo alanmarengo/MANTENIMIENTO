@@ -169,7 +169,7 @@ function ol_map() {
 								html = html[1].substring(0,html[1].length-2);
 								html = html.trim();
 								
-								map.preparseGFI(req.responseText,"popup-info","info-wrapper"); // PARA ACOMODAR RESPUESTA A ESTRUCTURA DE IEASA
+								map.preparseGFI(html,"popup-info","info-wrapper"); // PARA ACOMODAR RESPUESTA A ESTRUCTURA DE IEASA
 								
 							
 							}
