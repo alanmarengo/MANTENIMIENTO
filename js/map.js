@@ -383,12 +383,16 @@ function ol_map() {
 		
 		$("#popup-results-preparse table[class=featureInfo] tbody").children("tr").each(function(i,v) {
 			
-			var node = $(v).children("td").first();
-			var val = $(node).text().split(".");
+			if ($(v).children("th").length == 0) {
 			
-			var newnode = "<img src=\"../img/t.gif\" x=\"" + val[1] + "\" y=\"" + val[0] + "\" z=\"1\" />";
-			console.log(val);
-			newnodes += newnode;
+				var node = $(v).children("td").first();
+				var val = $(node).text().split(".");
+				
+				var newnode = "<img src=\"../img/t.gif\" x=\"" + val[1] + "\" y=\"" + val[0] + "\" z=\"1\" />";
+				
+				newnodes += newnode;
+			
+			}
 			
 		});
 		
