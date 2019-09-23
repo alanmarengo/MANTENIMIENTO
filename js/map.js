@@ -167,8 +167,10 @@ function ol_map() {
 							if (html.length > 0) {
 							
 								html = html[1].substring(0,html[1].length-2);
+								html = html.trim();
 								
-								alert(html);
+								map.preparseGFI(req.responseText,"popup-info","info-wrapper"); // PARA ACOMODAR RESPUESTA A ESTRUCTURA DE IEASA
+								
 							
 							}
 							
@@ -370,6 +372,12 @@ function ol_map() {
 		this.ol_object.updateSize();
 		this.ol_object.render();
 		
+	}
+	
+	this.map.preparseGFI = function(response,containerID,wrapperID) {
+	
+		alert(response);
+	
 	}
 	
 	this.map.parseGFI = function(response,containerID,wrapperID) {
