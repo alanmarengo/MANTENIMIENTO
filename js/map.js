@@ -376,9 +376,12 @@ function ol_map() {
 	
 	this.map.preparseGFI = function(response,containerID,wrapperID) {
 		
+		$("#popup-results-preparse").empty();
+		$("#popup-results-preparse").html(response);
+		
 		var newnodes = "";
 		
-		$("#popup-results table[class=featureInfo] tbody").children("tr").each(function(i,v) {
+		$("#popup-results-preparse table[class=featureInfo] tbody").children("tr").each(function(i,v) {
 			
 			var node = $(v).children("td").first();
 			var val = $(node).text().split(".");

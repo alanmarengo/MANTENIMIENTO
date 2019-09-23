@@ -62,6 +62,7 @@
 	<?php include("./html.navbar-geovisor-zoom.php"); ?>
 
 	<div id="popup-results"></div>
+	<div id="popup-results-preparse"></div>
 	
 	<?php include("./widget-links.php"); ?>
 
