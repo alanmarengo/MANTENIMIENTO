@@ -91,7 +91,7 @@
             <div class="modal-body">
                 <button id="uxPreviewClose" type="button" class="close" data-dismiss="modal" style="color: #fff; font-size: 50px;"><span aria-hidden="true">&times;</span></button>
                 <div style="text-align: center;">
-                    <div id="preview">
+                    <div id="preview"></div>
                 </div>
             </div>
         </div>
