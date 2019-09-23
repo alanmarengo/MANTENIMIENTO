@@ -378,7 +378,7 @@ function ol_map() {
 	
 		$("#popup-results").empty();
 		$("#popup-results").html(response);
-		alert($("#popup-results").children().size());
+		alert($("#popup-results").children().length);
 		$("#popup-results table[class=featureInfo] tbody").children("tr").each(function(i,v) {
 			
 			var node = $(v).children("td").first();
