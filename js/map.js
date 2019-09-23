@@ -163,9 +163,14 @@ function ol_map() {
 							})
 							
 							var html = req.responseText.split("body>");
-								html = html.substring(0,html.length-2);
+							
+							if (html.length > 0) {
+							
+								html = html[1].substring(0,html[1].length-2);
 								
-							alert(html);
+								alert(html);
+							
+							}
 							
 							map.parseGFI(req.responseText,"popup-info","info-wrapper");
 						
