@@ -401,7 +401,7 @@ function ol_map() {
 	}
 	
 	this.map.parseGFI = function(response,containerID,wrapperID) {
-		
+		alert(response);
 		document.getElementById("popup-results").innerHTML += response;
 		
 		var results = [];
