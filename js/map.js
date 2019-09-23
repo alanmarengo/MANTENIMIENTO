@@ -375,17 +375,19 @@ function ol_map() {
 	}
 	
 	this.map.preparseGFI = function(response,containerID,wrapperID) {
-	
-		$("#popup-results").empty();
-		$("#popup-results").html(response);
+		
+		var newnodes = "";
 		
 		$("#popup-results table[class=featureInfo] tbody").children("tr").each(function(i,v) {
 			
 			var node = $(v).children("td").first();
 			var val = $(node).text().split(".");
-			console.log(val);
+			
+			newnodes += "<img src="../img/t.gif" x=\"" + val[1] + "\" y=\"" + val[0] + "\" z="1" />";			
 			
 		});
+		
+		this.parseGFI(newnodes,containerID,wrapperID);
 	
 	}
 	
