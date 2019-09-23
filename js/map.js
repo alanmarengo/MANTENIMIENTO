@@ -377,7 +377,7 @@ function ol_map() {
 	this.map.preparseGFI = function(response,containerID,wrapperID) {
 	
 		$("#popup-results").html(response);
-		
+		alert(response);
 		$("#popup-results table[class=featureInfo]").children("tr").each(function(i,v) {
 			
 			var node = $(v).children("td").first();
