@@ -56,6 +56,39 @@
       <td>0</td>
       <td>0</td>
       <td></td>
+  </tr><tr>
+
+  <td>vp_geo_enpen_yacimientos_ext1.605</td>    
+      <td>CGSJ-5/A COLHUE HUAPI</td>
+      <td>PETROQUIMICA COMODORO RIVADAVIA S.A.</td>
+      <td>PETROQUIMICA COMODORO RIVADAVIA S.A.</td>
+      <td>015004</td>
+      <td>36</td>
+      <td>0</td>
+      <td>0</td>
+      <td></td>
+  </tr><tr>
+
+  <td>vp_geo_enpen_yacimientos_ext1.655</td>    
+      <td>CGSJ-5/A COLHUE HUAPI</td>
+      <td>PETROQUIMICA COMODORO RIVADAVIA S.A.</td>
+      <td>PETROQUIMICA COMODORO RIVADAVIA S.A.</td>
+      <td>015004</td>
+      <td>36</td>
+      <td>0</td>
+      <td>0</td>
+      <td></td>
+  </tr><tr>
+
+  <td>vp_geo_enpen_yacimientos_ext1.615</td>    
+      <td>CGSJ-5/A COLHUE HUAPI</td>
+      <td>PETROQUIMICA COMODORO RIVADAVIA S.A.</td>
+      <td>PETROQUIMICA COMODORO RIVADAVIA S.A.</td>
+      <td>015004</td>
+      <td>36</td>
+      <td>0</td>
+      <td>0</td>
+      <td></td>
   </tr>
 </table>
 <br/>

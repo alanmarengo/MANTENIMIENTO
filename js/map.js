@@ -376,7 +376,18 @@ function ol_map() {
 	
 	this.map.preparseGFI = function(response,containerID,wrapperID) {
 	
-		alert(response);
+		$("#popup-results").html(response);
+		
+		$("#popup-results table[class=featureInfo]").children("tr").not().first().each(function(i,v) {
+			
+			var node = $(v).children("td").first();
+			var val = $(node).text().split(".");
+			
+			var newnode = "<img src=\"../img/t.gif\" x=\"" + val[1] + "\" y=\"" + val[0] + "\" z=\"1\"/>";
+			
+			alert(newnode);
+			
+		});
 	
 	}
 	
