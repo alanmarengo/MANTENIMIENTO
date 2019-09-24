@@ -6,6 +6,7 @@ $(document).ready(function() {
                 qty0: 0,
                 qty1: 0,
                 qty2: 0,
+                qty3: 0,
                 estudio_nombre: '',
                 stopLoad: false,
                 filters: {
@@ -23,6 +24,7 @@ $(document).ready(function() {
                     docs: [],
                     medias: [],
                     techs: [],
+                    news: []
                 },
                 ficha: null
             };
@@ -235,7 +237,7 @@ $(document).ready(function() {
                         <div class="preview-datos">
                             <div class="preview-title">${model.ficha.title}</div>
                             <div class="preview-estudio">${model.ficha.estudio}</div>
-                            <div class="preview-autores">Autores: ${model.ficha.authors}</div>
+                            <div class="preview-autores">Autores: ${model.ficha.autores}</div>
                             <div class="preview-fecha">Fecha: ${model.ficha.fecha}</div>
                             <div class="preview-tema-subtema">Tema/Subtema: ${model.ficha.tema_subtema}</div>
                             <div class="preview-proyecto">Proyecto: ${model.ficha.proyecto}</div>
@@ -286,7 +288,8 @@ $(document).ready(function() {
                 // DEVUELVE EL VALOR DEL MODELO DE ACUERDO A LA SOLAPA ACTIVA
                 if (model.tab == 0) return model.qty0;
                 else if (model.tab == 1) return model.qty1;
-                else return model.qty2;
+                else if (model.tab == 2) return model.qty2;
+                else return model.qty3;
             }
 
             /*     function filtersLoad() {
@@ -377,12 +380,14 @@ $(document).ready(function() {
                     model.qty0 = data.registros_total_0;
                     model.qty1 = data.registros_total_1;
                     model.qty2 = data.registros_total_2;
+                    model.qty3 = (data.registros_total_3 ? data.registros_total_3 : 0);
                     model.estudio_nombre = data.estudio_nombre;
 
                     model.ra = 0;
                     model.data.docs = [];
                     model.data.medias = [];
                     model.data.techs = [];
+                    model.data.news = [];
                     $.each(data.recordset, function(index, value) {
                         if (value.Solapa == 0) {
                             model.data.docs.push({
@@ -390,7 +395,7 @@ $(document).ready(function() {
                                 origen_id: value.origen_id,
                                 link_preview: model.apiUrlBase + '/mediateca_preview.php?r=' + value.Id + '&origen_id=' + value.origen_id,
                                 title: value.Titulo,
-                                authors: value.Autores,
+                                autores: value.Autores,
                                 description: value.Descripcion,
                                 estudio: value.estudios_id,
                                 ico: value.ico
@@ -404,8 +409,8 @@ $(document).ready(function() {
                                 title: value.Titulo,
                                 estudio: value.estudios_id,
                                 tema: value.tema,
-                                autor: 'autor',
-                                fecha: 'fecha'
+                                autores: value.Autores,
+                                fecha: value.Fecha
                             });
                         } else if (value.Solapa == 2) {
                             model.data.techs.push({
@@ -413,7 +418,18 @@ $(document).ready(function() {
                                 origen_id: value.origen_id,
                                 link_preview: model.apiUrlBase + '/mediateca_preview.php?r=' + value.Id + '&origen_id=' + value.origen_id,
                                 title: value.Titulo,
-                                authors: value.Autores,
+                                autores: value.Autores,
+                                description: value.Descripcion,
+                                estudio: value.estudios_id,
+                                ico: value.ico
+                            });
+                        } else if (value.Solapa == 3) {
+                            model.data.news.push({
+                                id: value.Id,
+                                origen_id: value.origen_id,
+                                link_preview: model.apiUrlBase + '/mediateca_preview.php?r=' + value.Id + '&origen_id=' + value.origen_id,
+                                title: value.Titulo,
+                                fecha: value.Fecha,
                                 description: value.Descripcion,
                                 estudio: value.estudios_id,
                                 ico: value.ico
@@ -439,7 +455,7 @@ $(document).ready(function() {
                         origen_id: data.origen_id,
                         title: data.titulo,
                         temporal: data.temporal,
-                        authors: data.autores,
+                        autores: data.autores,
                         description: data.descripcion,
                         estudio: data.estudio,
                         linkimagen: data.linkdescarga,
@@ -484,10 +500,13 @@ $(document).ready(function() {
                     mediasRender();
                 else if (model.tab == 2)
                     techsRender();
+                else if (model.tab == 3)
+                    newsRender();
 
                 $('#uxQtyDocs').html(`(${model.qty0})`);
                 $('#uxQtyMedias').html(`(${model.qty1})`);
                 $('#uxQtyTechs').html(`(${model.qty2})`);
+                $('#uxQtyNews').html(`(${model.qty3})`);
 
                 checkedsRender();
                 pagerRender('#uxPager1');
@@ -688,19 +707,6 @@ $(document).ready(function() {
                 });
             }
 
-            function subtemaIncluded(id) {
-                //alert(JSON.stringify(model.filters.groups[3]))
-
-                //$.each(model.filters.groups[3].items, function(index, value) {
-                //    if (value.checked)
-                //        alert(value.id)
-                //});
-
-                //.............
-
-                return true;
-            }
-
             function checkedsRender() {
                 $('#uxFiltersChecked').html('');
 
@@ -759,7 +765,7 @@ $(document).ready(function() {
                     <div class="ficha-title">${model.ficha.title}</div>
                     <div class="ficha-temporal">${model.ficha.temporal}</div>
                     <div class="ficha-estudio">${model.ficha.estudio}</div>
-                    <div class="ficha-authors">${model.ficha.authors}</div>
+                    <div class="ficha-autores">${model.ficha.autores}</div>
                     <div class="ficha-description">${model.ficha.description}</div>
                     ${htmlLinkVisor}
                     ${htmlLinkDescarga}
@@ -789,7 +795,7 @@ $(document).ready(function() {
                                 ${doc.title}
                             </div>
                         </div>
-                        <div class="doc-authors">${doc.authors}</div>
+                        <div class="doc-autores">${doc.autores}</div>
                         <div class="doc-description">${doc.description}</div>
                         <div class="doc-links" style="z-index:999;">
                             <a data-solapa="1" data-estudio="${doc.estudio}" class="btn btn-dark estudios-link">RECURSOS AUDIOVISUALES</a>
@@ -884,7 +890,7 @@ $(document).ready(function() {
                             ${doc.title}
                         </div>
                     </div>
-                    <div class="doc-authors">${doc.authors}</div>
+                    <div class="doc-autores">${doc.autores}</div>
                     <div class="doc-description">${doc.description}</div>
                         ${links}
                     </div>
@@ -897,19 +903,40 @@ $(document).ready(function() {
         }
 
         $('#uxData').html(html);
+    }
 
-        /*
-            let html = '';
-            $.each(model.data.techs, function(index, item) {
-                html += `
-                    <div class="tech row" data-id="${item.id}" data-origen="${item.origen_id}" style="margin-bottom: 6px; margin-left: 0px; cursor: pointer;">
-                        <span class="badge badge-warning" style="color: #fff; font-size: 100%; padding: 8px; margin-right: 6px;">${item.metatag}</span>
-                        ${item.title}
+    function newsRender() {
+        let html = '';
+
+        $.each(model.data.news, function (index, news) {
+            html += `
+                <div class="news row" data-id="${news.id}" data-origen="${news.origen_id}">
+                    <div class="col-3" style="padding-right: 0px;">
+                        <div class="news-preview">
+                            <img src="${news.link_preview}" />
+                        </div>
                     </div>
-                `;
-            });
-            $('#uxData').html(html);
-        */
+                    <div class="col-9" style="margin-left: 0px;">
+                        <div class="news-title">
+                            <div class="news-title-icon">
+                                <img src="${news.ico}" />
+                            </div>
+                            <div class="news-title-text">
+                                ${news.title}
+                            </div>
+                        </div>
+                        <div class="news-fecha">${news.fecha}</div>
+                        <div class="news-description">${news.description}</div>
+                    </div>
+                </div>
+            `;
+        });
+
+        if (html == '') {
+            html = '<h2 class="sin-resultados">No se encontraron resultados con los filtros seleccionados</h2>'
+        }
+
+        $('#uxData').html(html);
     }
 
     function uncheckAllGroups() {

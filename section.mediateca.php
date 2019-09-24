@@ -34,7 +34,7 @@
 
     <div class="col-md-12 page-tabs">
         <div class="row" style="background-color: #ddd;">
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <ul class="nav nav-tabs" style="padding-top: 10px;">
                     <li class="nav-item">
                         <a class="nav-link active" data-tab="0" href="#">DOCUMENTOS <span id="uxQtyDocs"></span></a>
@@ -45,9 +45,12 @@
                     <li class="nav-item">
                         <a class="nav-link" data-tab="2" href="#">RECURSOS TÉCNICOS <span id="uxQtyTechs"></span></a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-tab="3" href="#">NOTICIAS <span id="uxQtyNews"></span></a>
+                    </li>
                 </ul>
             </div>
-            <div class="col-md-4 text-right" style="padding: 16px 50px 10px 20px; background-color: #ddd;">
+            <div class="col-md-2 text-right" style="padding: 16px 50px 10px 20px; background-color: #ddd;">
                 <select id="uxOrden" class="selectpicker" data-width="150">
                     <option>Ordenar por</option>
                     <option value="0">A - Z</option>
