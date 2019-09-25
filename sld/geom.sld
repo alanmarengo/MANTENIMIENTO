@@ -7,12 +7,12 @@
       <se:FeatureTypeStyle>
         <Rule>
 			<se:Name>[layer_name]</se:Name>
-		   <ogc:Filter>
+		   <!--<ogc:Filter>
 			  <ogc:PropertyIsEqualTo>
 				 <ogc:PropertyName>gtype</ogc:PropertyName>
 				 <ogc:Literal>Point</ogc:Literal>
 			  </ogc:PropertyIsEqualTo>
-		   </ogc:Filter>
+		   </ogc:Filter> -->
 		   <PointSymbolizer>
 			  <se:Graphic>
               <se:Mark>
@@ -31,12 +31,12 @@
 		</Rule>
 		<Rule>
 			<se:Name>[layer_name]</se:Name>
-		   <ogc:Filter>
+		   <!--<ogc:Filter>
 			  <ogc:PropertyIsEqualTo>
 				 <ogc:PropertyName>gtype</ogc:PropertyName>
 				 <ogc:Literal>Line</ogc:Literal>
 			  </ogc:PropertyIsEqualTo>
-		   </ogc:Filter>
+		   </ogc:Filter> -->
 		   <LineSymbolizer>
 			  <se:Stroke>
               <se:SvgParameter name="stroke">[main_color]</se:SvgParameter>
@@ -48,12 +48,12 @@
 		</Rule>
 		<Rule>
 			<se:Name>[layer_name]</se:Name>
-		   <ogc:Filter>
+		   <!--<ogc:Filter>
 			  <ogc:PropertyIsEqualTo>
 				 <ogc:PropertyName>gtype</ogc:PropertyName>
 				 <ogc:Literal>Polygon</ogc:Literal>
 			  </ogc:PropertyIsEqualTo>
-		   </ogc:Filter>
+		   </ogc:Filter>-->
 		   <PolygonSymbolizer>
 				<se:Fill>
 					<se:SvgParameter name="fill">[main_color]</se:SvgParameter>
