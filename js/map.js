@@ -843,18 +843,29 @@ function ol_map() {
 		var vectorSource = new ol.source.Vector({
 			features: (new ol.format.GeoJSON()).readFeatures(geojsonStr)
 		});
+		
 		var format = new ol.format.KML();
 		var kml = format.writeFeatures(vectorSource.getFeatures(), {featureProjection: 'EPSG:3857'});
+				
+		//var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(geojsonStr));
+		//var blob = new Blob(kml, {type : 'text/html'});
+		//var url = URL.createObjectURL(blob);
 		
-		console.log(kml);
+		var req = $.ajax({
+			async:false,
+			url:"php/create-kml.php",
+			type:"post",
+			data:{kml:kml},
+			success:function(d){}
+		});
 		
-		var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(geojsonStr));
+		var js = JSON.parse(req.responseText);
 		
 		var dlAnchorElem = document.createElement("a");
 		
 		dlAnchorElem.setAttribute("id","jsondltemp");		
-		dlAnchorElem.setAttribute("href",     dataStr     );
-		dlAnchorElem.setAttribute("download", "layers.json");
+		dlAnchorElem.setAttribute("href",     js.fileurl     );
+		dlAnchorElem.setAttribute("download", "content.kml");
 		
 		document.body.appendChild(dlAnchorElem);	
 		
