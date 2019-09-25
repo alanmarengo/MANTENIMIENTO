@@ -846,18 +846,15 @@ function ol_map() {
 		
 		var format = new ol.format.KML();
 		var kml = format.writeFeatures(vectorSource.getFeatures(), {featureProjection: 'EPSG:3857'});
-		
-		alert(kml);
-		
-		console.log(kml);
-		
-		var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(geojsonStr));
+				
+		//var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(geojsonStr));
+		var dataStr = encodeURIComponent(kml);
 		
 		var dlAnchorElem = document.createElement("a");
 		
 		dlAnchorElem.setAttribute("id","jsondltemp");		
-		dlAnchorElem.setAttribute("href",     dataStr     );
-		dlAnchorElem.setAttribute("download", "layers.json");
+		dlAnchorElem.setAttribute("href",     kml     );
+		dlAnchorElem.setAttribute("download", "content.kml");
 		
 		document.body.appendChild(dlAnchorElem);	
 		
