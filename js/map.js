@@ -838,10 +838,13 @@ function ol_map() {
 		var features = this.drawing.source.getFeatures();
 		
 		var writer = new ol.format.GeoJSON();
-		var geoJsonFormat = writer.readFeatures(features);	
+		var geojsonStr = writer.writeFeatures(features);	
 		
+		var vectorSource = new ol.source.Vector({
+			features: (new ol.format.GeoJSON()).readFeatures(geojsonStr)
+		});
 		var format = new ol.format.KML();
-		var kml = format.writeFeatures(geoJsonFormat, {featureProjection: 'EPSG:3857'});
+		var kml = format.writeFeatures(vectorSource.getFeatures(), {featureProjection: 'EPSG:3857'});
 		
 		console.log(kml);
 		
