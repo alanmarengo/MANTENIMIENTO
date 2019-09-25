@@ -838,6 +838,11 @@ function ol_map() {
 		var writer = new ol.format.GeoJSON();
 		var geojsonStr = writer.writeFeatures(this.drawing.source.getFeatures());	
 		
+		var format = new ol.format.KML();
+		var kml = format.writeFeatures(this.drawing.source.getFeatures(), {featureProjection: 'EPSG:3857'});
+		
+		alert(kml);
+		
 		var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(geojsonStr));
 		
 		var dlAnchorElem = document.createElement("a");
