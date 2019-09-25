@@ -835,12 +835,16 @@ function ol_map() {
 	
 	this.map.downloadFeatures = function() {
 		
-		var writer = new ol.format.GeoJSON();
-		var geojsonStr = writer.writeFeatures(this.drawing.source.getFeatures());	
+		var features = this.drawing.source.getFeatures();
 		
-		var kml = tokml(geojsonStr);
+		//var writer = new ol.format.GeoJSON();	
+		//var geojsonStr = writer.writeFeatures(features);	
 		
-		console.log(kml);
+		 var kmlFormat = new OpenLayers.Format.KML();
+		 var newWindow = window.open('', 
+		  'KML Export ' + (new Date()).getTime(), "width=300,height=300");
+		   newWindow.document.write('<textarea id="kml" style="width: 100%; height: 100%">' + 
+		   kmlFormat.write(features) + '</textarea>');
 		
 		/*var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(geojsonStr));
 		
