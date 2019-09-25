@@ -848,13 +848,23 @@ function ol_map() {
 		var kml = format.writeFeatures(vectorSource.getFeatures(), {featureProjection: 'EPSG:3857'});
 				
 		//var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(geojsonStr));
-		var blob = new Blob(kml, {type : 'text/html'});
-		var url = URL.createObjectURL(blob);
+		//var blob = new Blob(kml, {type : 'text/html'});
+		//var url = URL.createObjectURL(blob);
+		
+		var req = $.ajax({
+			async:false,
+			url:"php/create-kml.php",
+			type:"post",
+			data:{kml:kml},
+			success:function(d){}
+		});
+		
+		var js = JSON.parse(req.responseText);
 		
 		var dlAnchorElem = document.createElement("a");
 		
 		dlAnchorElem.setAttribute("id","jsondltemp");		
-		dlAnchorElem.setAttribute("href",     url     );
+		dlAnchorElem.setAttribute("href",     js.fileurl     );
 		dlAnchorElem.setAttribute("download", "content.kml");
 		
 		document.body.appendChild(dlAnchorElem);	
