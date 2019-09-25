@@ -12,13 +12,16 @@ $size			= $_REQUEST['size'			];
 $border_color 	= $_REQUEST['border_color'	];
 $border_size 	= $_REQUEST['border_size'	];
 
-
+/*
 switch ($type_geom) 
 {
     case _POINT_	:$sld_file 	= file_get_contents("./point.sld");		break;
     case _LINE_		:$sld_file 	= file_get_contents("./line.sld");		break;
     case _POLYGON_	:$sld_file 	= file_get_contents("./polygon.sld");	break;
 };
+*/
+
+$sld_file 	= file_get_contents("./geom.sld");
 
 $sld_file	= str_replace("[layer_name]"	, $layer_name	,$sld_file		);
 $sld_file	= str_replace("[main_color]"	, '#'.$main_color	,$sld_file	);
