@@ -840,11 +840,11 @@ function ol_map() {
 		//var writer = new ol.format.GeoJSON();	
 		//var geojsonStr = writer.writeFeatures(features);	
 		
-		 var kmlFormat = new OpenLayers.Format.KML();
+		 var kmlFormat = new ol.format.KML();
 		 var newWindow = window.open('', 
 		  'KML Export ' + (new Date()).getTime(), "width=300,height=300");
 		   newWindow.document.write('<textarea id="kml" style="width: 100%; height: 100%">' + 
-		   kmlFormat.write(features) + '</textarea>');
+		   kmlFormat.writeFeatures(features) + '</textarea>');
 		
 		/*var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(geojsonStr));
 		
