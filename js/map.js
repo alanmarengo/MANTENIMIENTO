@@ -835,8 +835,10 @@ function ol_map() {
 	
 	this.map.downloadFeatures = function() {
 		
+		var features = this.drawing.source.getFeatures();
+		
 		var writer = new ol.format.GeoJSON();
-		var geojsonStr = writer.writeFeatures(this.drawing.source.getFeatures());	
+		var geojsonStr = writer.writeFeatures(features);	
 		
 		var format = new ol.format.KML();
 		var kml = format.writeFeatures(features, {featureProjection: 'EPSG:3857'});
