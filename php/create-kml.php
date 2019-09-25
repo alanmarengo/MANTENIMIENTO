@@ -9,6 +9,6 @@ $file = fopen($filename,"a");
 fwrite($file,$kml);
 fclose($file);
 
-echo "{\"fileurl\":\"" . $filenameReturn . "\""}";
+echo "{\"fileurl\":\"" . $filenameReturn . "\"}";
 
 ?>
