@@ -247,6 +247,7 @@ $paginador_text = " LIMIT $salto OFFSET $offset_pag";
 $total_0 = getTotalRegistros(0);
 $total_1 = getTotalRegistros(1);
 $total_2 = getTotalRegistros(2);
+$total_3 = getTotalRegistros(3);
 $estudio_nombre = getEstudioNombre($estudio_id);
 
 echo "{"; // JSON - Inicio
@@ -257,6 +258,7 @@ echo "	\"estudio_nombre\": \"$estudio_nombre\",";
 echo "	\"registros_total_0\": $total_0,";
 echo "	\"registros_total_1\": $total_1,";
 echo "	\"registros_total_2\": $total_2,";
+echo "	\"registros_total_3\": $total_3,";
 echo "	\"rec_per_page\": $salto,";
 echo "	\"recordset\":";
 
