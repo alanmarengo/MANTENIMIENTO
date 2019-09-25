@@ -835,18 +835,15 @@ function ol_map() {
 	
 	this.map.downloadFeatures = function() {
 		
-		var features = this.drawing.source.getFeatures();
+		var writer = new ol.format.GeoJSON();
+		var geojsonStr = writer.writeFeatures(this.drawing.source.getFeatures());	
 		
-		//var writer = new ol.format.GeoJSON();	
-		//var geojsonStr = writer.writeFeatures(features);	
+		var format = new ol.format.KML();
+		var kml = format.writeFeatures(geojsonStr, {featureProjection: 'EPSG:3857'});
 		
-		 var kmlFormat = new ol.format.KML();
-		 var newWindow = window.open('', 
-		  'KML Export ' + (new Date()).getTime(), "width=300,height=300");
-		   newWindow.document.write('<textarea id="kml" style="width: 100%; height: 100%">' + 
-		   kmlFormat.writeFeatures(features) + '</textarea>');
+		console.log(kml);
 		
-		/*var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(geojsonStr));
+		var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(geojsonStr));
 		
 		var dlAnchorElem = document.createElement("a");
 		
@@ -866,7 +863,7 @@ function ol_map() {
 		if (this.draw) { this.ol_object.removeInteraction(this.draw); }
 		if (this.medi_draw) { this.ol_object.removeInteraction(this.medi_draw); }
 		if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
-		if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }*/
+		if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }
 	
 	}
 	
