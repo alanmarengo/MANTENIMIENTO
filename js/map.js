@@ -843,7 +843,7 @@ function ol_map() {
 		
 		alert(kml);
 		
-		var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(geojsonStr));
+		/*var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(geojsonStr));
 		
 		var dlAnchorElem = document.createElement("a");
 		
@@ -863,7 +863,7 @@ function ol_map() {
 		if (this.draw) { this.ol_object.removeInteraction(this.draw); }
 		if (this.medi_draw) { this.ol_object.removeInteraction(this.medi_draw); }
 		if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
-		if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }
+		if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }*/
 	
 	}
 	
