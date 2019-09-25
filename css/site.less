@@ -860,12 +860,92 @@ h2.sin-resultados {
             }
         }
 
-        .doc-authors {
+        .doc-autores {
+            margin-top: 6px;
+        }
+
+        .doc-description {
+            margin-top: 4px;
+        }
+
+        .doc-links {
+            padding-top: 20px;
+
+            .btn-dark {
+                color: #fff;
+            }
+            
+            .btn:hover {
+                border-color: #fea91a;
+                background-color: #fea91a;
+            }
+        }
+    }
+
+    .doc:hover {
+        background-color: #F9F7F7;
+        cursor: pointer;
+    }
+
+
+
+    .news {
+        padding: 15px;
+        margin-right: 10px;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+
+        .news-title {
+            font-size: 1.2em;
+            font-weight: bolder;
+            display: flex;
+            align-items: top;
+
+            .news-title-icon {
+                display: inline-block;
+
+                img {
+                    width: 40px;
+                    height: auto;
+                }
+            }
+    
+            .news-title-text {
+                width: 80%;
+                display: inline-block;
+                margin-left: 10px;
+
+            }
+        }
+
+        .news-fecha {
+            margin-top: 6px;
+        }
+
+        .news-description {
+            margin-top: 4px;
+        }
+
+        .news-preview {
+            width: 90%;
+            height: 150px;
+
+            img {
+                max-width: 100%!important;
+                max-height: 100%!important;
+                margin: auto!important;
+                display: flex;
+                object-fit: contain;
+                object-position: center;
+            }
+        }
+
+        .news-authors {
             font-weight: bolder;
             padding: 10px 0px;
         }
 
-        .doc-links {
+        .news-links {
             padding-top: 20px;
 
             .btn-dark {
@@ -883,10 +963,15 @@ h2.sin-resultados {
         }
     }
 
-    .doc:hover {
+    .news:hover {
         background-color: #F9F7F7;
         cursor: pointer;
     }
+
+
+
+
+
 
     .media {
         display: block;
