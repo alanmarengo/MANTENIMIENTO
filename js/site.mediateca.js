@@ -380,7 +380,7 @@ $(document).ready(function() {
                     model.qty0 = data.registros_total_0;
                     model.qty1 = data.registros_total_1;
                     model.qty2 = data.registros_total_2;
-                    model.qty3 = (data.registros_total_3 ? data.registros_total_3 : 0);
+                    model.qty3 = data.registros_total_3;
                     model.estudio_nombre = data.estudio_nombre;
 
                     model.ra = 0;
@@ -429,7 +429,7 @@ $(document).ready(function() {
                                 origen_id: value.origen_id,
                                 link_preview: model.apiUrlBase + '/mediateca_preview.php?r=' + value.Id + '&origen_id=' + value.origen_id,
                                 title: value.Titulo,
-                                fecha: value.Fecha,
+                                fecha: value.fecha,
                                 description: value.Descripcion,
                                 estudio: value.estudios_id,
                                 ico: value.ico
