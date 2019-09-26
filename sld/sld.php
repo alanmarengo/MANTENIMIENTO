@@ -1,6 +1,6 @@
 <?php
 
-include("./pgconfig.php");
+include("../pgconfig.php");
 
 const _POINT_   =0;
 const _LINE_    =1;
@@ -17,19 +17,16 @@ $border_size 	= $_REQUEST['border_size'	];
 $layer_id 		= $_REQUEST['layer_id'		];
 
 $string_conn 	= "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+
 $conn 			= pg_connect($string_conn);
+
 $SQL 			= "SELECT UPPER(TL.tipo_layer_desc) AS tg FROM mod_geovisores.layer L INNER JOIN  mod_geovisores.tipo_layer TL ON L.tipo_layer_id=TL.tipo_layer_id WHERE layer_id=$layer_id limit 1";
+
 $recordset 		= pg_query($conn,$SQL);
+
 $row 			= pg_fetch_row($recordset);
+
 $geometria 		= $row[0];
-
-
-
-echo 'geo type: '.$row[0];
-echo 'layer_id: '.$layer_id;
-echo 'query: '.$SQL;
-echo 'error : '.pg_last_error($conn);
-
 
 switch ($geometria) 
 {
