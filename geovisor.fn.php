@@ -183,7 +183,7 @@ function DrawLayers($clase_id) {
 					</div>
 				
 					<div class="layer-icon" onclick="$(this).children('a').trigger('click');" title="Descargar capa">
-						<a href="<?php echo $r["layer_wms_server"]; ?>&service=WFS&version=1.0.0&request=GetFeature&typeName=<?php echo $r["layer_wms_layer"]; ?>&outputFormat=shape-zip" target="_blank">
+						<a href="<?php echo $r["layer_wms_server"]; ?>&service=WFS&version=1.0.0&request=GetFeature&typeName=<?php echo $r["layer_wms_layer"]; ?>&outputFormat=shape-zip">
 							<img src="./images/geovisor/icons/layer-bar-download.png">
 						</a>
 					</div>
