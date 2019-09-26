@@ -102,6 +102,18 @@
 		
 		geomap.panel.AddLayer(clase_id,layer_id);
 		
+		var layer = document.getElementById("layer-checkbox-"+layer_id).layer;
+		var js = geomap.map.getLayerExtent(layer_id);
+		
+		var extent = ol.proj.transformExtent(
+			[js.minx,js.miny,js.maxx,js.maxy],
+			"EPSG:3857", "EPSG:3857"
+		);
+		
+		geomap.map.ol_object_mini.getView().fit(extent,{duration:1000});
+		geomap.map.ol_object_mini.updateSize();
+		geomap.map.ol_object_mini.render();
+		
 		jwindow.close("popup-geovisor");
 		
 		<?php } ?>
