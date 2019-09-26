@@ -162,7 +162,8 @@ function ol_map() {
 								
 							})
 							
-							var html = req.responseText.split("body>");
+							var html = req.responseText;
+								html = html.split("body>");
 							
 							if (html.length > 0) {
 							
