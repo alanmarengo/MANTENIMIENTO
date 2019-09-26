@@ -1,4 +1,4 @@
-<div id="nav-panel" data-visible="1" class="navmenu jump-flotant-nav jump-flotant-heightfill jump-flotant-heightfill-top jump-scroll nav-level-1 col col-nav col-xs-12 col-sm-12 col-md-4 col-lg-4">
+<div id="nav-panel" data-visible="1" class="navmenu jump-flotant-nav jump-flotant-heightfill jump-flotant-heightfill-top jump-scroll nav-level-1 col col-nav col-xs-10 col-sm-10 col-md-4 col-lg-4">
 				
 	<div id="panel-busqueda-geovisor">
 		
@@ -12,11 +12,11 @@
 		
 	</div>
 	
-	<div id="nav-panel-inner" data-visible="1">	
+	<div id="nav-panel-inner" data-visible="1" style="width:100%;">	
 		
 		<div id="nav-panel-arrow">
 		
-			<a href="#" onclick="flotant.toggle('#nav-panel-inner')" class="jump-toggleimage" data-state="1" data-ini-src="./images/panel.icon.arrow.0.png" data-end-src="./images/panel.icon.arrow.1.png">
+			<a href="#" onclick="flotant.toggle('#nav-panel')" class="jump-toggleimage" data-state="1" data-ini-src="./images/panel.icon.arrow.0.png" data-end-src="./images/panel.icon.arrow.1.png">
 			
 				<img src="./images/panel.icon.arrow.1.png">
 			
