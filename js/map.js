@@ -1719,6 +1719,8 @@ function ol_map() {
 				maxPaletteSize: 10,
 				preferredFormat: "hex",
 				localStorageKey: "spectrum.example",
+				chooseText: "Seleccionar",
+				cancelText: "Cancelar"
 				move: function (color) {
 				},
 				show: function () {
@@ -1728,6 +1730,37 @@ function ol_map() {
 
 				},
 				hide: function (color) {
+				},
+				change: function(color) {
+					
+					var layer = document.getElementById("layer-checkbox-"+layer_id).layer;
+					var layer_name = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-layer");
+					var type = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-layer-type");
+					var layer_types = ['',0,1,2,2,1,0,0];
+					
+					s = new sldlib();
+					alert(color);
+				 	s.set_geometria(layer_types[type]);
+				 	s.set_fill_color("#"+color);
+				 	s.set_border_color('#CCCCCC');
+				 	s.set_border_size(1);
+				 	s.set_size(8.3444);
+				 	s.set_simbolo('circle');
+				 	s.set_titulo(layer_name);
+					
+				 	sld_result = s.sld_get(layer_id);
+					
+					layer.getSource().updateParams({
+						
+						'sld_body':sld_result
+						
+					})
+					
+					//layer.changed();
+					layer.getSource().tileCache.expireCache({});
+					layer.getSource().tileCache.clear();
+					layer.getSource().refresh();
+					
 				},
 
 				palette: [
