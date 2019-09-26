@@ -102,6 +102,8 @@
 		
 		geomap.panel.AddLayer(clase_id,layer_id);
 		
+		jwindow.close("popup-geovisor");
+		
 		<?php } ?>
 		
 		geomap.map.updateLayerCount();
