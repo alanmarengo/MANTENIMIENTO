@@ -25,7 +25,7 @@ $geometria 		= $row[0];
 
 pg_close($conn);
 
-echo 'geo type: '.$geometria;
+echo 'geo type: '.$row[0];
 echo 'layer_id: '.$layer_id;
 echo 'query: '.$SQL;
 echo 'error : '.pg_last_error($conn);
