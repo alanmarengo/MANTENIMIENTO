@@ -142,17 +142,19 @@ function DrawLayers($clase_id) {
 					<?php
 					
 					$metadata_url = trim($r["layer_metadata_url"]);
+					$target = " target=\"_blank\"";
 					
 					if ($metadata_url == "") {
 						
 						$metadata_url = "javascript:alert('Esta capa no posee metadatos asociados');";
+						$target = "";
 						
 					}
 					
 					?>
 				
 					<div class="layer-icon" onclick="$(this).children('a').trigger('click');" title="Información de capa">
-						<a href="<?php echo $metadata_url; ?>" target="_blank">
+						<a href="<?php echo $metadata_url; ?>"<?php echo $target; ?>>
 							<img src="./images/geovisor/icons/layer-bar-info.png">
 						</a>
 					</div>
