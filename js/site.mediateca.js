@@ -21,6 +21,8 @@ $(document).ready(function() {
                     dateStart: '',
                     dateEnd: '',
                     estudio: null,
+                    modo: null,
+                    id: null,
                     groups: initFiltersGroups()
                 },
                 data: {
@@ -281,6 +283,16 @@ $(document).ready(function() {
                     model.filters.searchText = s;
                     $('#main-search').val(s);
                     $('#main-search').focus();
+                }
+
+                if (urlParams.has('modo')) {
+                    let modo = urlParams.get('modo');
+                    model.filters.modo = modo;
+                    setSolapa(modo);
+                }
+
+                if (urlParams.has('id')) {
+                    model.filters.id = urlParams.get('id');
                 }
 
                 model.filters.groups = initFiltersGroups();
@@ -1008,6 +1020,8 @@ $(document).ready(function() {
             subtema: idItemsChecked(model.filters.groups[5]),
             estudio_id: model.filters.estudio,
             ra: model.ra,
+            modo: model.filters.modo,
+            id: model.filters.id,
 
             solapa: model.tab,
             pagina: model.pagina,
