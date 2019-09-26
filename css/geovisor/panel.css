@@ -3,6 +3,7 @@
 	z-index:180000 !Important;
 	display:flex;
 	flex-direction:column;
+	overflow:visible !important;
 	
 }
 

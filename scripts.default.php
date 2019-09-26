@@ -62,6 +62,7 @@
 <!-- COLORPICKER CSS -->
 
 <link rel="stylesheet" href="./js/colorpicker/css/colorpicker.css"/>
+<link rel="stylesheet" href="./css/spectrum.css"/>
 
 <!-- TOOLTIPSTER CSS -->
 
@@ -95,6 +96,7 @@
 <!-- COLORPICKER JS -->
 
 <script src="./js/colorpicker/js/colorpicker.js" type="text/javascript"></script>
+<script src="./js/spectrum.js" type="text/javascript"></script>
 
 <!-- TOOLTIPSTER JS -->
 
