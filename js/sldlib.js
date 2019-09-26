@@ -80,10 +80,10 @@ function sldlib()
          this.sld_body = '';
         
          header += 'layer_name='	+this.titulo;
-         header += '&main_color='	+this.fill_color.replace("#", "");
+         header += '&main_color='	+this.fill_color; //.replace("#", "");
          header += '&size='			+this.size;
          header += '&type_geom='	+this.tipo_geometria;
-         header += '&border_color='	+this.boder_color.replace("#", "");
+         header += '&border_color='	+this.boder_color; //.replace("#", "");
          header += '&border_size='	+this.boder_size;
          header += '&layer_id='		+_layer_id;
            
