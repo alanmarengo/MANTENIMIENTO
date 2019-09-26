@@ -38,7 +38,9 @@
 	
 </head>
 <body style="overflow:hidden;">
-
+			
+	<?php include("./html.panel.php"); ?>
+	
 	<div id="page">
 	
 		<?php include("./html.navbar-main.php"); ?>
@@ -56,8 +58,6 @@
 			<?php include("./html.navs.php"); ?>
 			
 			<?php include("./html.nav.popup.php"); ?>
-			
-			<?php include("./html.panel.php"); ?>
 			
 		</div>
 		
