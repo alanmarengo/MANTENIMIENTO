@@ -1740,7 +1740,7 @@ function ol_map() {
 					var cl = String(color);
 						cl = cl.substring(1,cl.length).trim();
 
-					alert(color);
+					alert(cl);
 					
 					s = new sldlib();
 					
