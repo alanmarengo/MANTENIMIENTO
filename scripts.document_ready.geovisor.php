@@ -22,6 +22,12 @@
 		jwindow.setAllWindowsDraggable();
 		jwindow.initMinimizing();
 		
+		<?php if ((isset($_GET["source"])) && (isset($_GET["id"]))) { ?>
+		
+		jwindow.close("popup-geovisor");
+		
+		<?php } ?>
+		
 		//resize = new Jump.resizer(document.getElementById("popup-geovisor"));
 		
 		nav = new Jump.nav();
