@@ -138,9 +138,21 @@ function DrawLayers($clase_id) {
 							<img src="./images/geovisor/icons/layer-bar-zoom.png">
 						</a>
 					</div>
+					
+					<?php
+					
+					$metadata_url = trim($r["layer_metadata_url"]);
+					
+					if ($metadata_url == "") {
+						
+						$metadata_url = "javascript:alert('Esta capa no posee metadatos asociados');";
+						
+					}
+					
+					?>
 				
 					<div class="layer-icon" onclick="$(this).children('a').trigger('click');" title="Información de capa">
-						<a href="<?php echo $r["layer_metadata_url"]; ?>" target="_blank">
+						<a href="<?php echo $metadata_url; ?>" target="_blank">
 							<img src="./images/geovisor/icons/layer-bar-info.png">
 						</a>
 					</div>
