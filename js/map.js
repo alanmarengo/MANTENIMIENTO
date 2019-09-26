@@ -1739,9 +1739,9 @@ function ol_map() {
 					var layer_types = ['',0,1,2,2,1,0,0];
 					
 					s = new sldlib();
-					alert(color);
+					
 				 	s.set_geometria(layer_types[type]);
-				 	s.set_fill_color("#"+color);
+				 	s.set_fill_color(color);
 				 	s.set_border_color('#CCCCCC');
 				 	s.set_border_size(1);
 				 	s.set_size(8.3444);
