@@ -1680,8 +1680,8 @@ function ol_map() {
 						'TILED': false,
 						'clase_id':clase_id,
 						'layer_id':layer_id
-					},
-					crossOrigin: 'anonymous'
+					}/*,
+					crossOrigin: 'anonymous'*/
 				})
 			});
 			
