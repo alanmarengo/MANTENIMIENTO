@@ -1705,6 +1705,9 @@ function ol_map() {
 			});
 			
 			document.getElementById("layer-checkbox-"+layer_id).layer.colorpicker = true;
+			$("#layer-colorpicker-inner-"+layer_id).wheelColorPicker({
+				format:"hex"
+			});/*
 			$("#layer-colorpicker-inner-"+layer_id).ColorPicker({
 				flat: true, 
 				width:"100%",
@@ -1741,7 +1744,7 @@ function ol_map() {
 					layer.getSource().refresh();
 					
 				}
-			});
+			});*/
 			
 			$("#layer-legend-"+layer_id).html("<img src=\"" + layer_wms + "&version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer="+layer_name+"&format=image/png&\">");
 			
