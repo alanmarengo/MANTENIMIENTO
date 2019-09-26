@@ -72,7 +72,7 @@ function sldlib()
 				};
 		};
         
-        this.sld_get = function()
+        this.sld_get = function(_layer_id)
         {
          var header = '';
          var url	= '';
@@ -85,6 +85,7 @@ function sldlib()
          header += '&type_geom='	+this.tipo_geometria;
          header += '&border_color='	+this.boder_color.replace("#", "");
          header += '&border_size='	+this.boder_size;
+         header += '&layer_id='		+_layer_id;
            
          header = encodeURI(header);
          
