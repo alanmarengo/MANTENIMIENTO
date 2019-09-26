@@ -1737,6 +1737,9 @@ function ol_map() {
 					var layer_name = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-layer");
 					var type = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-layer-type");
 					var layer_types = ['',0,1,2,2,1,0,0];
+					var color = color.substring(1,color.length);
+
+					alert(color);
 					
 					s = new sldlib();
 					
