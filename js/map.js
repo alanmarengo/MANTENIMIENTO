@@ -1737,11 +1737,13 @@ function ol_map() {
 					var layer_name = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-layer");
 					var type = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-layer-type");
 					var layer_types = ['',0,1,2,2,1,0,0];
+					var cl = String(color);
+						cl = cl.substring(1,cl.length).trim();
 					
 					s = new sldlib();
 					
 				 	s.set_geometria(layer_types[type]);
-				 	s.set_fill_color(color);
+				 	s.set_fill_color(cl);
 				 	s.set_border_color('#CCCCCC');
 				 	s.set_border_size(1);
 				 	s.set_size(8.3444);
