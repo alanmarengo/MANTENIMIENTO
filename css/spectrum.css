@@ -403,8 +403,8 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
 }
 
 .sp-palette {
-    *width: 220px;
-    max-width: 220px;
+    *width: 100;
+    max-width: 100%;
 }
 .sp-palette .sp-thumb-el {
     width:16px;
