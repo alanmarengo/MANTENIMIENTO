@@ -1720,7 +1720,7 @@ function ol_map() {
 				preferredFormat: "hex",
 				localStorageKey: "spectrum.example",
 				chooseText: "Seleccionar",
-				cancelText: "Cancelar"
+				cancelText: "Cancelar",
 				move: function (color) {
 				},
 				show: function () {
