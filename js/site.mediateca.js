@@ -385,6 +385,10 @@ $(document).ready(function() {
                 var url = model.apiUrlBase + '/mediateca_find_pag.php?' + makeUrlFilter();
                 //console.log(url);
 
+                // SE RETEAN LUEGO DEL PRIMER USO, 1 SOLO USO
+                model.filters.modo = null;
+                model.filters.id = null;
+
                 $.getJSON(url, function(data) {
                     filtersMerge(data.filtros);
 
