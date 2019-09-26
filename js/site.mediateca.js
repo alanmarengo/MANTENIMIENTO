@@ -177,7 +177,7 @@ $(document).ready(function() {
             });
 
             // CLICK EN DOC PARA POPUP FICHA
-            $('body').on('click', '.doc, .tech', function(e) {
+            $('body').on('click', '.doc, .tech, .news', function(e) {
                 let id = $(this).data('id');
                 let origen_id = $(this).data('origen');
                 fichaLoad(id, origen_id, function() {
