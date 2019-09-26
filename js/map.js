@@ -1744,7 +1744,7 @@ function ol_map() {
 					
 				 	s.set_geometria(layer_types[type]);
 				 	s.set_fill_color(cl);
-				 	s.set_border_color('#CCCCCC');
+				 	s.set_border_color('CCCCCC');
 				 	s.set_border_size(1);
 				 	s.set_size(8.3444);
 				 	s.set_simbolo('circle');
