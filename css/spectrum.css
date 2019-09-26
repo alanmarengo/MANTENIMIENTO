@@ -305,6 +305,7 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
     padding: 10px;
     padding-bottom: 300px;
     margin-bottom: -290px;
+	width:100%;
 }
 .sp-picker-container {
     width: 172px;
