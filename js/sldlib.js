@@ -94,7 +94,7 @@ function sldlib()
 				this.handle_response();
 		 }.bind(this);
 		 
-		 url = "./sld/sld.php?"+header;
+		 url = "./sld/sld.php?"+header;  alert(url);
 			
 		 this.xhttp.open("GET", url, false);//esperar
 		 this.xhttp.send();
