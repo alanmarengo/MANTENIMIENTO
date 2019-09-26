@@ -151,7 +151,7 @@ function ol_map() {
 								'INFO_FORMAT': 'text/html',
 									'FEATURE_COUNT': '300'
 							});	
-						
+							console.log(url);
 							var req = $.ajax({
 								
 								async:false,
@@ -1680,8 +1680,8 @@ function ol_map() {
 						'TILED': false,
 						'clase_id':clase_id,
 						'layer_id':layer_id
-					}/*,
-					crossOrigin: 'anonymous'*/
+					},
+					crossOrigin: 'anonymous'
 				})
 			});
 			
