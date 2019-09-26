@@ -25,6 +25,11 @@ $geometria 		= $row[0];
 
 pg_close($conn);
 
+echo 'geo type: '.$geometria;
+echo 'layer_id: '.$layer_id;
+echo 'query: '.$SQL;
+
+
 switch ($geometria) 
 {
     case 'POINT'			:$sld_file 	= file_get_contents("./point.sld");		break;
