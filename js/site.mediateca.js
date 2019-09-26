@@ -1,4 +1,7 @@
 $(document).ready(function() {
+
+            moment.locale('es');
+
             var model = {
                 apiUrlBase: GlobaApiUrl,
                 tab: 0,
@@ -925,7 +928,7 @@ $(document).ready(function() {
                                 ${news.title}
                             </div>
                         </div>
-                        <div class="news-fecha">${news.fecha}</div>
+                        <div class="news-fecha">${moment(news.fecha).format('DD [de] MMMM [de] YYYY')}</div>
                         <div class="news-description">${news.description}</div>
                     </div>
                 </div>

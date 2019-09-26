@@ -46,6 +46,7 @@
 	
 	<link rel="stylesheet" href="../css/site.css"/>
     <script src="../js/moment.js"></script>
+    <script src="../js/moment-es.js"></script>
     <script src="../js/site.js" type="text/javascript"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css">

@@ -85,6 +85,7 @@
 <script src="./js/perfect-scrollbar.js" type="text/javascript"></script>
 <script src="./js/scrollbars.js" type="text/javascript"></script>
 <script src="./js/moment.js"></script>
+<script src="./js/moment-es.js"></script>
 <script src="./js/site.js" type="text/javascript"></script>
 <script src="./js/widget-links.js" type="text/javascript"></script>
 
