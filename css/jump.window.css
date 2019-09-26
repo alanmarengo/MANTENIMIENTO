@@ -71,7 +71,8 @@
 	background-color: #333;
 	display: block;
 	border-radius: 3px;
-	text-align: center;
+	text-align: left;
+	padding-left: 20px;
 	color:#FFF;
 	width:250px;
 	font-size:12px;
