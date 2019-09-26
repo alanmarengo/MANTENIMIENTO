@@ -23,7 +23,7 @@ $recordset 		= pg_query($conn,$SQL);
 $row 			= pg_fetch_row($recordset);
 $geometria 		= $row[0];
 
-pg_close($conn);
+
 
 echo 'geo type: '.$row[0];
 echo 'layer_id: '.$layer_id;
@@ -59,6 +59,8 @@ $sld_file	= str_replace("[size]"			, $size			,$sld_file		);
 $sld_file	= str_replace("[border_color]"	, '#'.$border_color	,$sld_file	);
 $sld_file	= str_replace("[border_size]"	, $border_size	,$sld_file		);
 $sld_file	= str_replace("[symbol]"		, $simbol		,$sld_file		);
+
+pg_close($conn);
 
 echo $sld_file;
 
