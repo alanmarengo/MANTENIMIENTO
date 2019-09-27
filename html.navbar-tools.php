@@ -30,10 +30,10 @@
 					</a>
 					<div class="dropdown-menu dropdown-menu-right" id="dropdown-buffer" aria-labelledby="navbarDropdown-buffer" style="min-width:30px !Important; width:30px;">						
 					
-						<a href="#" onclick="geomap.map.medicion('LineString')" class="dropdown-item" onclick="geomap.map.buffer('circle');">			
+						<a href="#" class="dropdown-item" onclick="geomap.map.buffer('circle');">			
 							<img src="./images/geovisor/icons/buffer-circle.png">						
 						</a>
-						<a href="#" onclick="geomap.map.medicion('Polygon')" class="dropdown-item" onclick="geomap.map.buffer('polygon');">	
+						<a href="#" class="dropdown-item" onclick="geomap.map.buffer('polygon');">	
 							<img src="./images/geovisor/icons/buffer-polygon.png">
 						</a>
 						

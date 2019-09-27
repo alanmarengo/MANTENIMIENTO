@@ -667,7 +667,7 @@ function ol_map() {
 		
 	}
 	
-	this.map.buffer = function() {
+	this.map.buffer = function(type) {
 		
 		if (this.deleteSelect) { this.ol_object.removeInteraction(this.deleteSelect); }
 		if (this.select) { this.ol_object.removeInteraction(this.select); }
@@ -706,10 +706,22 @@ function ol_map() {
 				
 		}
 			
-		this.bufferdraw = new ol.interaction.Draw({
-			source: this.buffer.source,
-			type:"Circle"			
-		});
+		if (type == "circle") {
+			
+			this.bufferdraw = new ol.interaction.Draw({
+				source: this.buffer.source,
+				type:"Circle"			
+			});
+		
+		}else{
+			
+			this.bufferdraw = new ol.interaction.Draw({
+				source: this.buffer.source,
+				type:"Polygon"			
+			});
+
+			
+		}
 			
 		$("#buffer-hint").show();
 		$("#info-buffer").empty();
