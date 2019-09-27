@@ -8,9 +8,18 @@ $results = $_POST["results"];
 $layer_names = array();
 $gids = array();
 
+$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+	
+$conn = pg_connect($string_conn);
+
 for ($i=0; $i<sizeof($results); $i++) {
 	
 	$sep = explode(";",$results[$i]);
+	
+	$qs_name = "SELECT layer_wms_desc FROM mod_geovisores.vw_layers WHERE layer_wms_layer = '" . $sep[0] . "' LIMIT 1";
+	$qs_query = pg_query($conn,$qs_name);
+	$qs_name_data = pg_fetch_assoc($qs_query);
+	$layer_desc = $qs_name_data["layer_wms_desc"];
 	
 	array_push($layer_names,$sep[0]);
 	
@@ -27,10 +36,6 @@ for ($i=0; $i<sizeof($results); $i++) {
 $layer_names = array_unique($layer_names);
 
 $layer_names = array_values($layer_names);
-
-$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
-	
-$conn = pg_connect($string_conn);
 
 $html = "";
 
