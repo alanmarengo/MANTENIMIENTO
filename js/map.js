@@ -416,7 +416,7 @@ function ol_map() {
 		$("#popup-results").children().each(function(i,v) {
 			
 			var gid = $(v).attr("x");
-			var layer_name = $(v).attr("y");
+			var layer_name = "ahrsc:"+$(v).attr("y");
 			
 			results.push(layer_name + ";" + gid);
 			
