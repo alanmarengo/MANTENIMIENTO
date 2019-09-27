@@ -20,7 +20,7 @@ for ($i=0; $i<sizeof($results); $i++) {
 	$qs_name = "SELECT layer_desc FROM mod_geovisores.vw_layers WHERE layer_wms_layer = '" . $sep[0] . "' LIMIT 1";
 	$qs_query = pg_query($conn,$qs_name);
 	$qs_name_data = pg_fetch_assoc($qs_query);
-	$layer_d = $qs_name_data["layer_wms_desc"];
+	$layer_d = $qs_name_data["layer_desc"];
 	
 	array_push($layer_desc,$layer_d);
 	array_push($layer_names,$sep[0]);
@@ -56,7 +56,7 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 	
 	$query2 = pg_query($conn,$query_string2);
 		
-	$html .= "<h3 style=\"font-size:18px; margin-bottom:20px;\">CAPA: " . $qs_name . " :: " . $layer_desc[$i] . "</h3>";
+	$html .= "<h3 style=\"font-size:18px; margin-bottom:20px;\">CAPA: " . $layer_desc[$i] . "</h3>";
 
 	while($r = pg_fetch_assoc($query2)) {
 		
