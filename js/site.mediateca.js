@@ -285,10 +285,12 @@ $(document).ready(function() {
                     $('#main-search').focus();
                 }
 
+                if (urlParams.has('solapa')) {
+                    setSolapa(urlParams.get('solapa'));
+                }
+
                 if (urlParams.has('modo')) {
-                    let modo = urlParams.get('modo');
-                    model.filters.modo = modo;
-                    setSolapa(modo);
+                    model.filters.modo = urlParams.get('modo');
                 }
 
                 if (urlParams.has('id')) {
