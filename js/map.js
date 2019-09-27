@@ -151,7 +151,7 @@ function ol_map() {
 								'INFO_FORMAT': 'text/html',
 									'FEATURE_COUNT': '300'
 							});	
-							console.log(url);
+							
 							var req = $.ajax({
 								
 								async:false,
@@ -162,16 +162,20 @@ function ol_map() {
 								
 							})
 							
-							var html = req.responseText;
-								html = html.split("body>");
+							if (req.responseText != "") {
 							
-							if (html.length > 0) {
-							
-								html = html[1].substring(0,html[1].length-2);
-								html = html.trim();
+								var html = req.responseText;
+									html = html.split("body>");
 								
-								map.preparseGFI(html,"popup-info","info-wrapper"); // PARA ACOMODAR RESPUESTA A ESTRUCTURA DE IEASA
+								if (html.length > 0) {
 								
+									html = html[1].substring(0,html[1].length-2);
+									html = html.trim();
+									
+									map.preparseGFI(html,"popup-info","info-wrapper"); // PARA ACOMODAR RESPUESTA A ESTRUCTURA DE IEASA
+									
+								
+								}
 							
 							}
 							
@@ -402,7 +406,7 @@ function ol_map() {
 	}
 	
 	this.map.parseGFI = function(response,containerID,wrapperID) {
-		alert(response);
+		
 		document.getElementById("popup-results").innerHTML += response;
 		
 		var results = [];
