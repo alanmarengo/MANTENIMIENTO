@@ -37,7 +37,7 @@ $html = "";
 for ($i=0; $i<sizeof($layer_names); $i++) {
 	
 	$query_string = "SELECT DISTINCT layer_schema,layer_table FROM mod_geovisores.vw_layers WHERE layer_wms_layer = '" . $layer_names[$i] . "' LIMIT 1";
-
+	
 	$query = pg_query($conn,$query_string);
 
 	$data = pg_fetch_assoc($query);
@@ -49,7 +49,7 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 	
 	$query2 = pg_query($conn,$query_string2);
 		
-	$html .= "<h3 style=\"font-size:18px; margin-bottom:20px;\">CAPA: " . $layer_names[$i] . "</h3>";
+	$html .= "<h3 style=\"font-size:18px; margin-bottom:20px;\" data-qs=\"".$query_string."\">CAPA: " . $layer_names[$i] . "</h3>";
 
 	while($r = pg_fetch_assoc($query2)) {
 		
