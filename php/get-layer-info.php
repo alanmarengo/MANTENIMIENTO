@@ -21,7 +21,7 @@ for ($i=0; $i<sizeof($results); $i++) {
 	$qs_name_data = pg_fetch_assoc($qs_query);
 	$layer_desc = $qs_name_data["layer_wms_desc"];
 	
-	array_push($layer_names,$sep[0]);
+	array_push($layer_names,$layer_desc);
 	
 	if (!$gids[$sep[0]]) {
 		
