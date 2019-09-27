@@ -45,11 +45,11 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 	$schema = $data["layer_schema"];
 	$table= $data["layer_table"];
 	
-	$query_string2 = "SELECT * FROM \"$schema\".\"$table\" WHERE gid IN (" . implode(",",$gids[$layer_names[$i]]) . ")";
+	$query_string2 = "SELECT * FROM \"$schema\".\"$table\" WHERE id IN (" . implode(",",$gids[$layer_names[$i]]) . ")";
 	
 	$query2 = pg_query($conn,$query_string2);
 		
-	$html .= "<h3 style=\"font-size:18px; margin-bottom:20px;\" data-qs=\"".$query_string."\">CAPA: " . $layer_names[$i] . "</h3>";
+	$html .= "<h3 style=\"font-size:18px; margin-bottom:20px;\">CAPA: " . $layer_names[$i] . "</h3>";
 
 	while($r = pg_fetch_assoc($query2)) {
 		
