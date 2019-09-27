@@ -286,7 +286,8 @@ $(document).ready(function() {
                 }
 
                 if (urlParams.has('solapa')) {
-                    setSolapa(urlParams.get('solapa'));
+                    let n = parseInt(urlParams.get('solapa'));
+                    setSolapa(n);
                 }
 
                 if (urlParams.has('modo')) {
@@ -390,11 +391,10 @@ $(document).ready(function() {
                 // SE RETEAN LUEGO DEL PRIMER USO, 1 SOLO USO
                 model.filters.modo = null;
                 model.filters.id = null;
-
                 $.getJSON(url, function(data) {
                     filtersMerge(data.filtros);
 
-                    model.solapa = data.solapa;
+                    model.tab = data.solapa;
                     model.paginas = data.paginas;
                     model.pagina = data.pagina;
                     model.salto = data.rec_per_page;
@@ -457,7 +457,6 @@ $(document).ready(function() {
                             });
                         }
                     });
-
                     dataRender();
                 });
             }
