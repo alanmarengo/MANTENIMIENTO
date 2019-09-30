@@ -183,7 +183,7 @@ function DrawLayers($clase_id) {
 						</a>
 					</div>
 				
-					<div class="layer-icon layer-icon-buffer jump-toggleimage" id="layer-icon-buffer-<?php echo $r["layer_id"]; ?>" onclick="$('.layer-tool-wrapper').not('#layer-buffer-<?php echo $r["layer_id"]; ?>').hide(); $('#layer-buffer-<?php echo $r["layer_id"]; ?>').slideToggle('slow');"
+					<div class="layer-icon layer-icon-buffer jump-toggleimage" id="layer-icon-buffer-<?php echo $r["layer_id"]; ?>" onclick="$('.layer-tool-wrapper').not('#layer-buffer-<?php echo $r["layer_id"]; ?>').hide(); $('#layer-buffer-<?php echo $r["layer_id"]; ?>').slideToggle('slow'); geomap.panel.checkBuffer(<?php echo $r["layer_id"]; ?>,<?php echo $r["clase_id"]; ?>,this);"
 							data-state="0" 
 							data-ini-src="./images/geovisor/icons/layer-bar-buffer.png"
 							data-end-src="./images/geovisor/icons/layer-bar-buffer-blue.png"

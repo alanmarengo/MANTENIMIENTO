@@ -1893,6 +1893,18 @@ function ol_map() {
 		
 	}
 	
+	this.panel.checkBuffer = function(layer_id,clase_id,node) {
+		
+		var state = node.getAttribute("data-state");
+		
+		if (state == 1) {
+			
+			this.removeLayer(layer_id,clase_id);
+			
+		}
+		
+	}
+	
 	this.panel.updateLayerCountPanelLabel = function(clase_id) {
 		
 		var cant = $(".layer-container[data-cid="+clase_id+"]:visible").find(".layer-group:visible").length;
