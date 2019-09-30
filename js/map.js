@@ -1905,7 +1905,7 @@ function ol_map() {
 			
 			var layer = this.map.layersBuffer[layer_id];
 			
-			this.map.ol_object.removeLayer(layer_id);
+			this.map.ol_object.removeLayer(layer);
 			
 			this.map.layersBuffer[layer_id] = false;
 			
