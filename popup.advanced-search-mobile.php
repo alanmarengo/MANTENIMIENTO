@@ -55,7 +55,7 @@
 				
 					<div class="form-group">
 
-						<?php echo DrawComboSimple("sub_proyecto_id","sub_proyecto_desc","mod_catalogo","sub_proyecto",true,"Proyecto",-1,"adv-search-proyecto-combo","adv-search-proyecto-combo"); ?>
+						<?php echo DrawComboSimple("sub_proyecto_id","sub_proyecto_desc","mod_catalogo","sub_proyecto",true,"Proyecto","","adv-search-proyecto-combo","adv-search-proyecto-combo"); ?>
 					
 					</div>
 				
