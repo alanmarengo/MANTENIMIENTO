@@ -64,7 +64,7 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 		
 		foreach ($r as $item => $value){
 			
-			if(( strpos( $item, "geom" ) === false) && (strpos( $item, "id" ) === false)) {
+			if(( strpos( $item, "geom" ) === false) && (strpos( $item, "id" ) === false) && (strpos( $item, "cod_" ) === false)) {
 			
 				$html .= "<tr>";
 				$html .= "<td>" . $item . "</td>";
