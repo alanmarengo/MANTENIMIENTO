@@ -2,6 +2,8 @@
 
 header('Content-Type: application/json');
 
+include("./pgconfig.php");
+
 /*
  * {
  *  [
@@ -28,9 +30,13 @@ header('Content-Type: application/json');
  * }
  * */
 
-$conn = pg_connect("host=localhost port=5432 dbname=ahrsc user=postgres password=plahe100%");
+$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 
-$SQL = "SELECT estacion, dato_nombre, dato, maximo, minimo, to_char(media::float, 'FM999999990.00') as media, ultima_act,unidad FROM mod_sensores.vw_sensores_data_index WHERE dato IS NOT NULL ORDER BY estacion ASC";
+$conn = pg_connect($string_conn);
+
+//$conn = pg_connect("host=localhost port=5432 dbname=ahrsc user=postgres password=plahe100%");
+
+$SQL = "SELECT estacion, dato_nombre, dato, maximo, minimo, to_char(media::float, 'FM999999990.00') as media, ultima_act,unidad,tipo_sensor FROM mod_sensores.vw_sensores_data_index WHERE dato IS NOT NULL ORDER BY estacion ASC";
 
 $recordset = pg_query($conn,$SQL);
 
@@ -44,7 +50,8 @@ function draw_tupla($row)
        echo '"minimo":"'.$row[4].'",';
        echo '"media":"'.$row[5].'",';
        echo '"ultima_act":"'.$row[6].'",';
-       echo '"unidad":"'.$row[7].'"';
+       echo '"unidad":"'.$row[7].'",';
+       echo '"tipo":"'.$row[8].'"';
        echo '}';
        
        return true;
