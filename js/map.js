@@ -1883,11 +1883,15 @@ function ol_map() {
 			
 		}
 		
-		var layer = this.map.layersBuffer[layer_id];
+		if (this.map.layersBuffer[layer_id]) {
 		
-		this.map.ol_object.removeLayer(layer);
+			var layer = this.map.layersBuffer[layer_id];
+			
+			this.map.ol_object.removeLayer(layer);
+			
+			this.map.layersBuffer[layer_id] = false;
 		
-		this.map.layersBuffer[layer_id] = false;
+		}
 		
 		this.updateLayerCountPanelLabel(clase_id);
 		
@@ -1899,7 +1903,11 @@ function ol_map() {
 		
 		if (state == 1) {
 			
-			this.removeLayer(layer_id,clase_id);
+			var layer = this.map.layersBuffer[layer_id];
+			
+			this.map.ol_object.removeLayer(layer_id);
+			
+			this.map.layersBuffer[layer_id] = false;
 			
 		}
 		
