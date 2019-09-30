@@ -440,7 +440,7 @@ function ol_map() {
 			
 			document.getElementById(wrapperID).innerHTML += req.responseText;
 					
-			$("#"+containerID).show();
+			jwindow.open(containerID);
 			
 			scroll.refresh();
 	
@@ -1890,6 +1890,9 @@ function ol_map() {
 			this.map.ol_object.removeLayer(layer);
 			
 			this.map.layersBuffer[layer_id] = false;
+			
+			$("#buffer-input-"+layer_id).val("");
+			$("#buffer-input-"+layer_id).next().html("AGREGAR");
 		
 		}
 		
@@ -1908,6 +1911,9 @@ function ol_map() {
 			this.map.ol_object.removeLayer(layer);
 			
 			this.map.layersBuffer[layer_id] = false;
+			
+			$("#buffer-input-"+layer_id).val("");
+			$("#buffer-input-"+layer_id).next().html("AGREGAR");
 			
 		}
 		
