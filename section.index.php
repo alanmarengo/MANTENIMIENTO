@@ -6,51 +6,71 @@
             <li data-target="#main-slider" data-slide-to="2"></li>
             <li data-target="#main-slider" data-slide-to="3"></li>
             <li data-target="#main-slider" data-slide-to="4"></li>
+            <li data-target="#main-slider" data-slide-to="5"></li>
         </ol>
         <div class="carousel-inner">
-            <a href="./mision.php" class="carousel-item active">
-                <img class="d-block w-100" src="./images/index/slide5.jpg" alt="...">
+            <a href="./page_pdga.php" class="carousel-item active">
+                <img class="d-block w-100" src="./images/index/s1.jpg" alt="...">
                 <div class="carousel-caption">
-                    <p>OBSERVATORIO IEASA</p>
+                    <p>Energía renovable</p>
                 </div>                
                 <div class="slide-hover">
-                    Accedé a la información generada bajo las más actuales metodologías para conocer y comprender los procesos ambientales, sociales y económicos que se generan a partir de la ejecución de una obra de infraestructura energética y el compromiso de sostenibilidad en su gestión.
+                    Cóndor Cliff y La Barrancosa aportarán energía renovable para todo el país, aumentando en un 12% la potencia hidráulica instalada.
                 </div>
             </a>
-            <a href="./geovisor.php" class="carousel-item">
-                <img class="d-block w-100" src="./images/index/slide1.jpg" alt="...">
+            
+            <!-- Link: PGA-Estructura del PGA-Glaciares -->
+            <a href="#" class="carousel-item">
+                <img class="d-block w-100" src="./images/index/s2.jpg" alt="...">
                 <div class="carousel-caption">
-                    <p>GEOVISOR DE INFORMACION INTEGRADA<br /></p>
+                    <p>Protección de glaciares</p>
                 </div>                
                 <div class="slide-hover">
-                    Permite recorrer el territorio e indagar toda la información de las obras e instalaciones en operación de IEASA y su documentación relacionada. 
+                    El desacople hidráulico entre Cóndor Cliff y el Lago Argentino protege a los glaciares de las fluctuaciones del embalse.
                 </div>
             </a>
-            <a href="./page.php" class="carousel-item">
-                <img class="d-block w-100" src="./images/index/slide2.jpg" alt="...">
+            
+            <!-- Link: PGA-Estructura del PGA-Aves -->
+            <a href="#" class="carousel-item">
+                <img class="d-block w-100" src="./images/index/s3.jpg" alt="...">
                 <div class="carousel-caption">
-                    <p>SABIAS DE LA EXISTENCIA DE LA LAMPREA<br /> EN EL RIO SANTA CRUZ?</p>
+                    <p>Macá tobiano</p>
                 </div>                
                 <div class="slide-hover">
-                    Trabajamos para profundizar el conocimiento biológico y ecológico de una primitiva y poco conocida especie nativa
+                    La operación de La Barrancosa no afectará al estuario del río Santa Cruz, preservando de esta manera la zona de invernada del macá tobiano.
                 </div>
             </a>
-            <a href="./page.php" class="carousel-item">
-                <img class="d-block w-100" src="./images/index/slide3.jpg" alt="...">
+
+            <!-- Link: PGA-Estructura del PGA-Ictiofauna -->
+            <a href="#" class="carousel-item">
+                <img class="d-block w-100" src="./images/index/s4.jpg" alt="...">
                 <div class="carousel-caption">
-                    <p>CAMPO DE HIELO PATAGONIA SUR (HPS)</p>
+                    <p>Peces del Santa Cruz</p>
                 </div>                
                 <div class="slide-hover">
-                    Apoyamos el quehacer del IANIGLIA para ampliar los estudios y el conocimiento de los glaciares en el HPS en la alta cuenca del río Santa Cruz
+                    Los estudios sobre lamprea y otras especies aportan información para conservar a las poblaciones de peces y a la pesca como una actividad de relevancia.
                 </div>
             </a>
-            <a href="./page.php" class="carousel-item">
-                <img class="d-block w-100" src="./images/index/slide4.jpg" alt="...">
+            
+            <!-- Link: PGA-ARTICULACIÓN INSTITUCIONAL -->
+            <a href="#" class="carousel-item">
+                <img class="d-block w-100" src="./images/index/s5.jpg" alt="...">
                 <div class="carousel-caption">
-                    <p>NUESTRO COMPROMISO CON EL MACA TOBIANO</p>
+                    <p>Participación pública</p>
                 </div>                
                 <div class="slide-hover">
-                    Colaboramos con el Proyecto Macá Tobiano para proteger a esta especie emblemática y endémica de Santa Cruz
+                    El acceso a la información y el trabajo articulado con las instituciones locales permiten involucrar a todos los sectores sociales interesados en el proyecto.
+                </div>
+            </a>
+
+            <!-- Link: PGA-Estructura del PGA-Aspectos socioeconómicos -->
+            <a href="#" class="carousel-item">
+                <img class="d-block w-100" src="./images/index/s6.jpg" alt="...">
+                <div class="carousel-caption">
+                    <p>Desarrollo regional</p>
+                </div>                
+                <div class="slide-hover">
+                    La ejecución de las obras, la mayor disponibilidad de energía y los recursos técnicos que se incorporan en la provincia fortalecen las perspectivas de desarrollo.
                 </div>
             </a>
         </div>
