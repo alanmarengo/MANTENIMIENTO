@@ -1883,6 +1883,8 @@ function ol_map() {
 			
 		}
 		
+		this.layersBuffer[layer_id].destroy();
+		
 		this.updateLayerCountPanelLabel(clase_id);
 		
 	}
