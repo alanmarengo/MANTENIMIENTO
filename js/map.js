@@ -1883,7 +1883,11 @@ function ol_map() {
 			
 		}
 		
-		this.map.layersBuffer[layer_id].destroy();
+		var layer = this.map.layersBuffer[layer_id];
+		
+		this.map.removeLayer(layer);
+		
+		this.map.layersBuffer[layer_id] = false;
 		
 		this.updateLayerCountPanelLabel(clase_id);
 		
