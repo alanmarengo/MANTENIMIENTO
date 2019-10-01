@@ -740,7 +740,7 @@ function ol_map() {
 			
 			}else{
 				
-				var circle = ol.geom.Polygon(e.feature.getGeometry());
+				var circle = e.feature.getGeometry();
 				
 			}
 			
