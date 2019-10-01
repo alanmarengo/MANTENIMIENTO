@@ -712,6 +712,8 @@ function ol_map() {
 				source: this.buffer.source,
 				type:"Circle"			
 			});
+			
+			this.buffer.type = "circle";
 		
 		}else{
 			
@@ -719,7 +721,8 @@ function ol_map() {
 				source: this.buffer.source,
 				type:"Polygon"			
 			});
-
+			
+			this.buffer.type = "polygon";
 			
 		}
 			
@@ -731,7 +734,15 @@ function ol_map() {
 			
 			var format = new ol.format.WKT();			
 			
-			var circle = ol.geom.Polygon.fromCircle(e.feature.getGeometry());
+			if (this.buffer.type == "circle") {
+				
+				var circle = ol.geom.Polygon.fromCircle(e.feature.getGeometry());
+			
+			}else{
+				
+				var circle = ol.geom.Polygon(e.feature.getGeometry());
+				
+			}
 			
 			var wkt = format.writeGeometry(circle.transform('EPSG:3857', 'EPSG:4326'));		
 			
