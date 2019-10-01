@@ -366,7 +366,7 @@
             let html = `
                 <div class='sensor-estacion'>${sensor.estacion}</div>
                 <div class='sensor-tipo'>${sensor.tipo}</div>
-                <div class='sensor-fecha'>Ultimo reg.: ${moment(sensor.ultima_act).format('DD [de] MMM [de] YYYY HH:mm:ss')}</div>
+                <div class='sensor-fecha'>&Uacute;ltimo reg.: ${moment(sensor.ultima_act).format('DD [de] MMM [de] YYYY HH:mm:ss')}</div>
                 <div class='sensor-nombre'>${sensor.dato_nombre}</div>
                 <div class='sensor-dato'>${sensor.dato} <span class='sensor-unidad'>${sensor.unidad}</span></div>
                 <div class='sensor-min'>Min: <b>${sensor.minimo} *</b></div>
