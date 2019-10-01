@@ -114,13 +114,13 @@ function getSQL($solapa) {
 					. "recurso_path_url AS \"LinkImagen\","
 					. "recurso_categoria_desc AS \"MetaTag\","
 					. "CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END AS \"Autores\","
-					. "MAX(estudios_id) AS estudios_id,"
+					. "mod_catalogo.get_estudio(origen_id,origen_id_especifico) AS estudios_id,"
 					. "recurso_fecha AS Fecha,"
 					. "COALESCE(subclase_desc,'') AS Tema,"
 					. "mod_catalogo.get_ico(origen_id,origen_id_especifico) AS ico"
 					. " FROM mod_mediateca.mediateca_find('$qt','$desde','$hasta','$proyecto','$clase','$subclase','$tipo_doc') "
-					. " WHERE tipo_formato_solapa=$solapa" 
-					. " GROUP BY mod_catalogo.get_ico(origen_id,origen_id_especifico),recurso_fecha,COALESCE(subclase_desc,''),tipo_formato_solapa,origen_id,origen_id_especifico,recurso_titulo,recurso_desc,recurso_path_url,recurso_categoria_desc,CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END"
+					. " WHERE tipo_formato_solapa=$solapa " 
+					//. " GROUP BY mod_catalogo.get_ico(origen_id,origen_id_especifico),recurso_fecha,COALESCE(subclase_desc,''),tipo_formato_solapa,origen_id,origen_id_especifico,recurso_titulo,recurso_desc,recurso_path_url,recurso_categoria_desc,CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END"
 					. $ORDER;
 	
 		$SQL = "SELECT row_to_json(T)::text AS r FROM ($SUBQUERY)T";
