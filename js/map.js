@@ -537,7 +537,7 @@ function ol_map() {
 	
 	this.map.print = function() {					
 			
-		//$("#print-legend-wrapper").empty();
+		$("#print-legend-wrapper").empty();
 		$("#print-legend-wrapper").show();
 			
 		$(".layer-checkbox[data-added=1]:checked").each(function(i,v) {
