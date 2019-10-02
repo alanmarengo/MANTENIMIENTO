@@ -64,10 +64,10 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 		
 		foreach ($r as $item => $value){
 			
-			if(( strpos( $item, "geom" ) === false) && (strpos( $item, "id" ) === false) && (strpos( $item, "cod_" ) === false)) {
+			if(( strpos( $item, "geom" ) === false) && (strpos( $item, "id" ) === false) && (strpos( $item, "cod_" ) === false)&& (strpos( $item, "origen" ) === false)) {
 			
 				$html .= "<tr>";
-				$html .= "<td>" . $item . "</td>";
+				$html .= "<td>" . str_replace("_"," ",$item) . "</td>";
 				$html .= "<td>" . $value . "</td>";	
 				$html .= "</tr>";
 			
