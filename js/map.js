@@ -356,7 +356,7 @@ function ol_map() {
 				
 				$(".layer-checkbox[data-lid="+js.data[i].layer_id+"]").each(function(i,v) {
 					
-					panel.AddLayer(v.getAttribute("data-cid"),v.getAttribute("data-lid"),true);
+					panel.AddLayer(v.getAttribute("data-cid"),v.getAttribute("data-lid"),false);
 					
 					if (visible == "t") {
 						
@@ -580,7 +580,7 @@ function ol_map() {
 			
 			$(a).remove();
 			
-			//$("#print-legend-wrapper").hide();
+			$("#print-legend-wrapper").hide();
 			
 		});
 
