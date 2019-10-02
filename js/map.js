@@ -1681,6 +1681,7 @@ function ol_map() {
 	this.panel.SetLayerActive = function(layer_id) {
 		
 		$(".layer-group[data-layer="+layer_id+"] .layer-label").addClass("layer-label-active");
+		$(".layer-group[data-layer="+layer_id+"] .layer-body").show();
 		
 	}
 	
@@ -1693,12 +1694,12 @@ function ol_map() {
 		if (startActive) {
 			
 			//$(".layer-group[data-layer="+layer_id+"] .layer-label").addClass("layer-label-active");
-			$(".layer-group[data-layer="+layer_id+"] .layer-body").show();
+			//$(".layer-group[data-layer="+layer_id+"] .layer-body").show();
 			
 		}else{
 			
 			//$(".layer-group[data-layer="+layer_id+"] .layer-label").removeClass("layer-label-active");
-			$(".layer-group[data-layer="+layer_id+"] .layer-body").hide();
+			//$(".layer-group[data-layer="+layer_id+"] .layer-body").hide();
 			
 		}
 		
