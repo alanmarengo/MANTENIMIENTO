@@ -1,1 +1,1 @@
-SITEURL = "http://observatorio.atic.com.ar/";
+SITEURL = "http://observatorio.ieasa.com.ar/";
