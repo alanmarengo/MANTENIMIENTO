@@ -1623,6 +1623,9 @@ function ol_map() {
 		
 		$("#layer-preview-block").html(req.responseText);
 		
+		$("#btn-layer-preview-addlayer").show();
+		$("#btn-layer-preview-gomap").show();
+		
 		if (!document.getElementById("layer-checkbox-"+layer_id).layer_preview) {
 			
 			var layer_name = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-layer");

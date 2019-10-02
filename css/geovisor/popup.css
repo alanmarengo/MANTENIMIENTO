@@ -492,6 +492,31 @@
 	padding:10px;
 	border-radius:3px;
 	text-align:center;
+	position: absolute;
+	z-index: 999;
+	width: 200px;
+	right: 30px;
+	top: 40px;
+	display:none;
+	
+}
+
+#btn-layer-preview-gomap {
+	
+	background-color:#343a40;
+	font-weight:bolder;
+	font-size:13px;
+	width:100%;
+	display:block;
+	padding:10px;
+	border-radius:3px;
+	text-align:center;
+	position: absolute;
+	z-index: 999;
+	width: 200px;
+	right: 240px;
+	top: 40px;
+	display:none;
 	
 }
 
