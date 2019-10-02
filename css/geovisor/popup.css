@@ -520,6 +520,13 @@
 	
 }
 
+#btn-layer-preview-gomap:hover {
+	
+	color:#FFF;
+	opacity:0.8;
+	
+}
+
 #btn-layer-preview-addlayer:hover {
 	
 	color:#FFF;
