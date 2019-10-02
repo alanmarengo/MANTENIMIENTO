@@ -50,7 +50,7 @@ data-minimizable="1" data-minimized-title="BUSCAR CAPAS">
 				</div>
 				<div class="col col-xs-12 col-sm-12 col-md-7 col-lg-7 p20 flex-column" id="dynbox-popup-content">
 					<div id="popup-preview-inner">
-						<a href="#" class="button" id="btn-layer-preview-addlayer" onclick="geomap.panel.AddLayer(<?php echo $data["clase_id"]; ?>,<?php echo $layer_id; ?>,true)">AGREGAR AL MAPA</a>
+						<a href="#" class="button" id="btn-layer-preview-addlayer">AGREGAR AL MAPA</a>
 						<a href="#" class="button" id="btn-layer-preview-gomap" onclick="jwindow.close('popup-geovisor')">IR AL MAPA</a>
 						<div id="mini-map" class="ptb-10"></div>
 						<div id="layer-preview-block" class="ptb-10">					

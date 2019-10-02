@@ -1623,6 +1623,9 @@ function ol_map() {
 		
 		$("#layer-preview-block").html(req.responseText);
 		
+		var clase_id = $(".layer-group[data-layer="+layer_id+"]").attr("data-cid");		
+		$("#btn-layer-preview-addlayer").attr("onclick","geomap.panel.AddLayer(" + clase_id + "," + layer_id + ",true)");
+		
 		$("#btn-layer-preview-addlayer").show();
 		$("#btn-layer-preview-gomap").show();
 		
