@@ -356,7 +356,7 @@ function ol_map() {
 				
 				$(".layer-checkbox[data-lid="+js.data[i].layer_id+"]").each(function(i,v) {
 					
-					panel.AddLayer(v.getAttribute("data-cid"),v.getAttribute("data-lid"),false);
+					panel.AddLayer(v.getAttribute("data-cid"),v.getAttribute("data-lid"),true);
 					
 					if (visible == "t") {
 						
@@ -506,7 +506,7 @@ function ol_map() {
 		$(".layer-checkbox[data-added=1]").each(function(i,v) {
 			
 			if (v.layer) {
-				
+								
 				var visible = 0;
 				
 				if (v.layer.getVisible()) { visible = 1; }
@@ -1678,6 +1678,12 @@ function ol_map() {
 		
 	}
 	
+	this.panel.SetLayerActive = function(layer_id) {
+		
+		$(".layer-group[data-layer="+layer_id+"] .layer-label").addClass("layer-label-active");
+		
+	}
+	
 	this.panel.AddLayer = function(clase_id,layer_id,startActive) {
 		
 		$(".abr[data-cid="+clase_id+"]").show();
@@ -1686,12 +1692,12 @@ function ol_map() {
 		
 		if (startActive) {
 			
-			$(".layer-group[data-layer="+layer_id+"] .layer-label").addClass("layer-label-active");
+			//$(".layer-group[data-layer="+layer_id+"] .layer-label").addClass("layer-label-active");
 			$(".layer-group[data-layer="+layer_id+"] .layer-body").show();
 			
 		}else{
 			
-			$(".layer-group[data-layer="+layer_id+"] .layer-label").removeClass("layer-label-active");
+			//$(".layer-group[data-layer="+layer_id+"] .layer-label").removeClass("layer-label-active");
 			$(".layer-group[data-layer="+layer_id+"] .layer-body").hide();
 			
 		}

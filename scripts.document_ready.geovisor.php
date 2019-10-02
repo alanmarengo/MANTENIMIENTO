@@ -71,7 +71,7 @@
 			var s_visibles = [<?php echo $_GET["v"]; ?>];
 			
 			for (var i=0; i<s_layers.length; i++) { 
-				geomap.panel.AddLayer(s_clase[i],s_layers[i],false);
+				geomap.panel.AddLayer(s_clase[i],s_layers[i],true);
 				if (s_visibles[i]) { 
 					document.getElementById("layer-checkbox-"+s_layers[i]).click(); 
 				}
@@ -106,7 +106,8 @@
 		var layer_id = <?php echo $_GET["id"]; ?>;
 		var clase_id = $(".layer-group[data-layer="+layer_id+"]").first().attr("data-cid");
 		
-		geomap.panel.AddLayer(clase_id,layer_id);
+		geomap.panel.AddLayer(clase_id,layer_id,true);
+		geomap.panel.SetLayerActive(layer_id);
 		
 		var layer = document.getElementById("layer-checkbox-"+layer_id).layer;
 		var js = geomap.map.getLayerExtent(layer_id);
