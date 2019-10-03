@@ -21,6 +21,19 @@
 		</a>
 	
 	</div>
+		
+	<div class="jump-row">
+	
+		<div class="mtb-20 ml-auto mr-auto w-100-p search-wrapper">
+			<a href="#" class="plr-10 jump-link-death" style="width: 34px; height: 34px; line-height: 34px;">
+				<img src="./images/panel.icon.f2.png">
+			</a>
+			<input id="panel-seach-input-layers-bottom" class="panel-input pl-10" name="main-search" type="text" data-jump-placeholder="BUSCAR EN CAPAS ACTIVAS" placeholder="BUSCAR EN CAPAS ACTIVAS" 
+				onfocus="geomap.map.ol_object_mini.updateSize(); geomap.map.ol_object_mini.render(); jwindow.open('#popup-geovisor');">
+			<span class="layers-visible-count jump-posrel"></span>
+		</div>
+	
+	</div>
 	
 	<div id="nav-panel-inner" data-visible="1" style="width:100%;" class="jump-scroll">	
 		
@@ -37,19 +50,6 @@
 			</div>
 		
 		</div>-->
-		
-		<div class="jump-row">
-		
-			<div class="mtb-20 ml-auto mr-auto w-100-p search-wrapper">
-				<a href="#" class="plr-10 jump-link-death" style="width: 34px; height: 34px; line-height: 34px;">
-					<img src="./images/panel.icon.f2.png">
-				</a>
-				<input id="panel-seach-input-layers-bottom" class="panel-input pl-10" name="main-search" type="text" data-jump-placeholder="BUSCAR EN CAPAS ACTIVAS" placeholder="BUSCAR EN CAPAS ACTIVAS" 
-					onfocus="geomap.map.ol_object_mini.updateSize(); geomap.map.ol_object_mini.render(); jwindow.open('#popup-geovisor');">
-				<span class="layers-visible-count jump-posrel"></span>
-			</div>
-		
-		</div>
 		
 		<div class="jump-row">
 		
