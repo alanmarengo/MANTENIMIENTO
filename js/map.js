@@ -393,7 +393,10 @@ function ol_map() {
 				var node = $(v).children("td").first();
 				var val = $(node).text().split(".");
 				
-				var newnode = "<img src=\"../img/t.gif\" x=\"" + val[1] + "\" y=\"" + val[0] + "\" z=\"1\" />";
+				var gid = $(v).children("td:nth-child(2)");
+					gid = $(gid).text();
+				
+				var newnode = "<img src=\"../img/t.gif\" x=\"" + gid + "\" y=\"" + val[0] + "\" z=\"1\" />";
 				
 				newnodes += newnode;
 			
