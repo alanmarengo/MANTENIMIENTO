@@ -12,17 +12,19 @@
 		
 	</div>
 	
+	<div id="nav-panel-arrow">
+		
+		<a href="#" onclick="flotant.toggle('#nav-panel')" class="jump-toggleimage" data-state="1" data-ini-src="./images/panel.icon.arrow.0.png" data-end-src="./images/panel.icon.arrow.1.png">
+		
+			<img src="./images/panel.icon.arrow.1.png">
+		
+		</a>
+	
+	</div>
+	
 	<div id="nav-panel-inner" data-visible="1" style="width:100%;" class="jump-scroll">	
 		
-		<div id="nav-panel-arrow">
 		
-			<a href="#" onclick="flotant.toggle('#nav-panel')" class="jump-toggleimage" data-state="1" data-ini-src="./images/panel.icon.arrow.0.png" data-end-src="./images/panel.icon.arrow.1.png">
-			
-				<img src="./images/panel.icon.arrow.1.png">
-			
-			</a>
-		
-		</div>
 	
 		<!--<div class="jump-row">
 		
