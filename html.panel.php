@@ -71,4 +71,29 @@
 	
 	</div>
 	
+	<div class="layer-group" data-state="0" data-layer="<?php echo $r["layer_id"]; ?>" data-cid="<?php echo $r["clase_id"]; ?>" data-layer-type="<?php echo $r["tipo_layer_id"]; ?>">
+		
+		<div class="layer-header">
+			<!--<a href="javascript:void(0);">
+				<i class="fa fa-eye"></i>
+			</a>-->
+			
+			<div class="pretty p-default p-curve p-toggle">
+				<input type="checkbox" class="layer-checkbox default-empty-checkbox" id="layer-checkbox-<?php echo $r["layer_id"]; ?>" data-lid="<?php echo $r["layer_id"]; ?>" data-cid="<?php echo $r["clase_id"]; ?>" data-added="0" data-layer="<?php echo $r["layer_wms_layer"]; ?>" data-wms="<?php echo $r["layer_wms_server"]; ?>" data-layer-type="<?php echo $r["tipo_layer_id"]; ?>"/>
+				<div class="state p-success p-on" title="Mostrar capa">
+					<i class="fa fa-eye"></i>
+				</div>
+				<div class="state p-danger p-off" title="Ocultar capa">
+					<i class="fa fa-eye-slash"></i>
+				</div>
+			</div>
+				
+			<a href="#" class="layer-label" onclick="$(this).parent().next().slideToggle('slow'); $(this).toggleClass('layer-label-active')" title="<?php echo $r["layer_desc"]; ?>">
+				<span>CAPAS ACTIVAS</span>
+			</a>
+	
+		</div>
+	
+	</div>
+	
 </div>

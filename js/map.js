@@ -1279,6 +1279,10 @@ function ol_map() {
 	
 	this.panel.start = function() {
 		
+		var height = $("#nav-panel").height();
+		
+		$("#nav-panel-inner").height(height-34);
+		
 		$("#layer-bullet").on("click",function() {
 			
 			var navWidth = $("#nav-panel").width();
