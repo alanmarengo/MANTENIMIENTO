@@ -84,25 +84,19 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 
 	$html .= "<p>";
 	$html .= "<a ";
-	$html .= "class=\"popup-header-button popup-header-button-toggleable popup-header-button-active-fixed\"";
+	$html .= "class=\"popup-header-button popup-header-button-toggleable popup-header-button-active-fixed\" style=\"display:inline-block; background:none!important;\"";
 	$html .= "href=\"./csv.php?q=".encrypt(str_replace("geom,","",$query_string2))."\" target=\"_blank\"";
 	$html .= ">";
 	$html .= "<img src=\"./images/export.png\">";
 	$html .= "</a>";
-	$html .= "</p>";
-
-	$html .= "<p>";
 	$html .= "<a ";
-	$html .= "class=\"popup-header-button popup-header-button-toggleable popup-header-button-active-fixed\" ";
+	$html .= "class=\"popup-header-button popup-header-button-toggleable popup-header-button-active-fixed\"  style=\"display:inline-block; background:none!important;\"";
 	$html .= "href=\"#\" ";
 	$html .= ">";
 	$html .= "<img src=\"./images/3d.png\">";
 	$html .= "</a>";
-	$html .= "</p>";
-
-	$html .= "<p>";
 	$html .= "<a ";
-	$html .= "class=\"popup-header-button popup-header-button-toggleable popup-header-button-active-fixed\" ";
+	$html .= "class=\"popup-header-button popup-header-button-toggleable popup-header-button-active-fixed\"  style=\"display:inline-block; background:none!important;\"";
 	$html .= "href=\"#\" ";
 	$html .= ">";
 	$html .= "<img src=\"./images/file.png\">";
