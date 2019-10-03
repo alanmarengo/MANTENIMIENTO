@@ -84,7 +84,7 @@
 				<span>CAPAS ACTIVAS</span>
 			</a>
 			
-			<a href="#" class="active-layer-button">
+			<a href="#" class="active-layer-button" onclick="jwindow.open('popup-capasactivas');">
 				<img src="./images/external-link.png">
 			</a>
 	
