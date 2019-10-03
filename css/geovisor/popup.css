@@ -734,5 +734,12 @@
 	height:34px;
 	display:block !Important;
 	background-color:#8e2f4f;
+	line-height: 26px;
+	
+}
+
+#layer-group-capas-activas .active-layer-button {
+	
+	float:right;
 	
 }
