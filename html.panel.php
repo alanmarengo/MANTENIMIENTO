@@ -1,4 +1,4 @@
-<div id="nav-panel" data-visible="1" class="navmenu jump-flotant-nav jump-flotant-heightfill jump-flotant-heightfill-top jump-scroll nav-level-1 col col-nav col-xs-12 col-sm-12 col-md-3 col-lg-3">
+<div id="nav-panel" data-visible="1" class="navmenu jump-flotant-nav jump-flotant-heightfill jump-flotant-heightfill-top nav-level-1 col col-nav col-xs-12 col-sm-12 col-md-3 col-lg-3">
 				
 	<div id="panel-busqueda-geovisor">
 		
@@ -12,7 +12,7 @@
 		
 	</div>
 	
-	<div id="nav-panel-inner" data-visible="1" style="width:100%;">	
+	<div id="nav-panel-inner" data-visible="1" style="width:100%;" class="jump-scroll">	
 		
 		<div id="nav-panel-arrow">
 		
