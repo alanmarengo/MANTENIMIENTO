@@ -810,7 +810,7 @@ function ol_map() {
 		
 			$("#dlbuffer-link-"+layer_id).attr("href",dlurl);
 			
-			addLink.innerHTML = "ACTUALIZAR";
+			//addLink.innerHTML = "ACTUALIZAR";
 			
 			this.readBuffer(layer_id,distance,true);
 		
