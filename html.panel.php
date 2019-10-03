@@ -71,7 +71,7 @@
 	
 	</div>
 	
-	<div class="layer-group" data-state="0" data-layer="<?php echo $r["layer_id"]; ?>" data-cid="<?php echo $r["clase_id"]; ?>" data-layer-type="<?php echo $r["tipo_layer_id"]; ?>">
+	<div id="layer-group-capas-activas" class="layer-group" data-state="0" data-layer="<?php echo $r["layer_id"]; ?>" data-cid="<?php echo $r["clase_id"]; ?>" data-layer-type="<?php echo $r["tipo_layer_id"]; ?>">
 		
 		<div class="layer-header">
 			<!--<a href="javascript:void(0);">
