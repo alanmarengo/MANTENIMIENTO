@@ -22,7 +22,7 @@
 	
 	</div>
 		
-	<div class="jump-row">
+	<div class="jump-row" style="background-color:#ececec;">
 	
 		<div class="mtb-20 ml-auto mr-auto w-100-p search-wrapper">
 			<a href="#" class="plr-10 jump-link-death" style="width: 34px; height: 34px; line-height: 34px;">
