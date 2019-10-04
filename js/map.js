@@ -1903,9 +1903,15 @@ function ol_map() {
 		var container = document.getElementById("info-capasactivas");
 		
 		var node = document.createElement("div");
-			node.className = "active-layer-node";
+			node.className = "active-layer-node";			
 		
-		$(".abr[data-cid="+clase_id+"]").clone().appendTo(node);
+		var new_id = "active-layer-clone-" + clase_id + "-" + layer_id;
+		
+		if ($("#info-capasactivas").find("#"+new_id).length == 0) {
+		
+			$(".abr[data-cid="+clase_id+"]").clone().attr("id",new_id).width(32).appendTo(node);
+		
+		}
 			
 		container.appendChild(node);
 		
