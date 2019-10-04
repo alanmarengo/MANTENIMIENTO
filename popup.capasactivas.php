@@ -12,7 +12,7 @@
 			</div>
 		</div>
 		
-		<div class="jump-window-body p20">
+		<div class="jump-window-body p0">
 			
 			<div id="info-capasactivas" class="jump-scroll">
 		
