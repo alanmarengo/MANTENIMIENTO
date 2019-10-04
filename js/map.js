@@ -1911,9 +1911,21 @@ function ol_map() {
 		
 			$(".abr[data-cid="+clase_id+"]").first().clone().attr("id",new_id).addClass("abr-cloned").width(32).css("background-color","rgb(245, 245, 245)").css("color","rgb(136, 136, 136)").appendTo(node);
 			
-			$("#layer-checkbox-"+layer_id).parent().clone().appendTo(node);
+			$("#layer-checkbox-"+layer_id).parent().clone().on("click",function(){
+				
+				$("#layer-checkbox-"+layer_id).trigger("click");
+				
+			}).appendTo(node);
 			
 			$("#layer-checkbox-"+layer_id).parent().next().clone().appendTo(node);
+			
+			$("#layer-checkbox-"+layer_id).parent().next().next().clone().bind("click",function() {
+				
+				$("#remove-layer-icon-"+layer_id).trigger("click");
+				
+			}).appendTo(node);
+			
+			
 		
 		}
 		

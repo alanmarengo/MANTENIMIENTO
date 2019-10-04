@@ -123,7 +123,7 @@ function DrawLayers($clase_id) {
 					<i class="fa fa-plus-circle popup-panel-tree-item-icon-toggler popup-icon"></i>
 				</a>-->
 				
-				<a href="#" class="simple-tree-pm-button" onclick="geomap.panel.removeLayer(<?php echo $r["layer_id"]; ?>,<?php echo $r["clase_id"]; ?>); geomap.map.updateLayerCount();" title="Eliminar capa">
+				<a href="#" class="simple-tree-pm-button" id="remove-layer-icon-<?php echo $r["layer_id"]; ?>" onclick="geomap.panel.removeLayer(<?php echo $r["layer_id"]; ?>,<?php echo $r["clase_id"]; ?>); geomap.map.updateLayerCount();" title="Eliminar capa">
 					<i class="fa fa-trash popup-panel-tree-item-icon-toggler popup-icon"></i>
 				</a>
 				
