@@ -1890,7 +1890,7 @@ function ol_map() {
 			}
 		});
 		
-		this.map.AddLayerActive(clase_id,layer_id);
+		this.AddLayerActive(clase_id,layer_id);
 		this.map.updateLayerCount();
 		this.updateLayerCountPanelLabel(clase_id);
 			
