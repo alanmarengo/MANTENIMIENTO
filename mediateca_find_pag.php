@@ -128,7 +128,7 @@ function getSQL($solapa) {
 		}
 		else
 		{
-			   if ((!IsSetVar($ra))&&($ra==1))
+			   if ((IsSetVar($ra))&&($ra==1)) //if ((!IsSetVar($ra))&&($ra==1))
 			   {
 				$SUBQUERY  = "SELECT "
 							. "tipo_formato_solapa AS \"Solapa\","
