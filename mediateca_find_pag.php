@@ -144,8 +144,8 @@ function getSQL($solapa) {
 							. "COALESCE(subclase_desc,'') AS Tema, "
 							. "mod_catalogo.get_ico(origen_id,origen_id_especifico) AS ico"
 							. " FROM mod_catalogo.vw_catalogo_data C WHERE "
-							. " C.estudios_id IN(SELECT sub_estudio_id FROM mod_catalogo.estudio_subestudio WHERE estudios_id=$estudio_id) "
-							. " AND C.estudios_id=$estudio_id  AND  tipo_formato_solapa=$solapa " /* Tambíen incluye el mismo estudio */ 
+							. " (C.estudios_id IN(SELECT sub_estudio_id FROM mod_catalogo.estudio_subestudio WHERE estudios_id=$estudio_id) "
+							. " OR C.estudios_id=$estudio_id)  AND  tipo_formato_solapa=$solapa " /* Tambíen incluye el mismo estudio */ 
 							. $ORDER;
 				
 				$SQL = "SELECT row_to_json(T)::text AS r FROM ($SUBQUERY)T";
