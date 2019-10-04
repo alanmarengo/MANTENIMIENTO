@@ -27,7 +27,7 @@
 	
 }
 
-.layer-header a, .layer-container-header a, .active-layer-node .layer-label {
+.layer-header a, .layer-container-header a {
 	
 	left: 10px;
 	color: #888;
@@ -385,5 +385,24 @@
 	
 	color: white;
 	font-size: 12px;
+	
+}
+
+.active-layer-node {
+
+    height: 36px;
+    line-height: 28px;
+
+}
+
+.active-layer-node .layer-label {
+	
+	left: 10px;
+	color: #888;
+	font-weight: 300;
+	display: inline-flex;
+	position:relative;
+	top:3px;
+	font-weight:400;
 	
 }
