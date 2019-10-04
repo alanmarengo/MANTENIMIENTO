@@ -1,4 +1,4 @@
-<div class="jump-window jump-align-right col col-xs-12 col-sm-12-col-md-3 col-lg-3 geovisor-flotant" id="popup-capasactivas" data-minimizable="1" data-minimized-title="CAPAS ACTIVAS">
+<div class="jump-window jump-flotant-heightfill-top jump-align-right col col-xs-12 col-sm-12-col-md-3 col-lg-3 geovisor-flotant" id="popup-capasactivas" data-minimizable="1" data-minimized-title="CAPAS ACTIVAS">
 	
 	<div class="jump-window-inner p20">
 
