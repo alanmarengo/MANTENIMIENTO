@@ -1909,7 +1909,7 @@ function ol_map() {
 		
 		if ($("#info-capasactivas").find("#"+new_id).length == 0) {
 		
-			$(".abr[data-cid="+clase_id+"]").first().clone().attr("id",new_id).addClass("abr-cloned").width(32).css("background-color","rgb(245, 245, 245)").appendTo(node);
+			$(".abr[data-cid="+clase_id+"]").first().clone().attr("id",new_id).addClass("abr-cloned").width(32).css("background-color","rgb(245, 245, 245)").css("color","rgb(136, 136, 136)").appendTo(node);
 			
 			$("#layer-checkbox-"+layer_id).parent().clone().appendTo(node);
 			
