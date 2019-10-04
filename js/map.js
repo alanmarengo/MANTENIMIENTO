@@ -1909,9 +1909,11 @@ function ol_map() {
 		
 		if ($("#info-capasactivas").find("#"+new_id).length == 0) {
 		
-			$(".abr[data-cid="+clase_id+"]").first().clone().attr("id",new_id).width(32).appendTo(node);
+			$(".abr[data-cid="+clase_id+"]").first().clone().attr("id",new_id).addClass("abr-cloned").width(32).appendTo(node);
 			
 			$("#layer-checkbox-"+layer_id).parent().clone().appendTo(node);
+			
+			$("#layer-checkbox-"+layer_id).parent().next().clone().appendTo(node);
 		
 		}
 		

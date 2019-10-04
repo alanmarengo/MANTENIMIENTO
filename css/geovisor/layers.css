@@ -342,6 +342,13 @@
 	
 }
 
+.abr-cloned {
+	
+	display:inline-block;
+	vertical-align:top;
+	
+}
+
 #layer-bullet {
 
     position: absolute;
