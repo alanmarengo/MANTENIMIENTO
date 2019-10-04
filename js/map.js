@@ -1905,11 +1905,9 @@ function ol_map() {
 		var node = document.createElement("div");
 			node.className = "active-layer-node";
 		
-		var abr = $(".abr[data-cid="+clase_id+"]").clone();
+		$(".abr[data-cid="+clase_id+"]").clone().appendTo(node);
 			
-			node.appendChild(abr);
-			
-			container.appendChild(node);
+		container.appendChild(node);
 		
 	}
 	
