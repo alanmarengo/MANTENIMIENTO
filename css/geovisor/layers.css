@@ -346,6 +346,8 @@
 	
 	display:inline-block !important;
 	vertical-align:top;
+	cursor:none !important;
+	background-color:rgb(245, 245, 245);
 	
 }
 
