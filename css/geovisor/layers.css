@@ -346,7 +346,7 @@
 	
 	display:inline-block !important;
 	vertical-align:top;
-	cursor:normal !important;
+	cursor:default !important;
 	background-color:rgb(245, 245, 245);
 	
 }
