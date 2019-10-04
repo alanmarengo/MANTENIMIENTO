@@ -1900,8 +1900,17 @@ function ol_map() {
 	
 	this.panel.AddLayerActive = function(clase_id,layer_id) {
 		
+		var container = document.getElementById("info-capasactivas");
+		
 		var node = document.createElement("div");
 			node.className = "active-layer-node";
+		
+		var abr = $(".abr[data-cid="+clase_id+"]");
+			abr = abr.cloneNode(true);
+			
+			node.appendChild(abr);
+			
+			container.appendChild(node);
 		
 	}
 	
