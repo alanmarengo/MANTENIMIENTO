@@ -1890,10 +1890,18 @@ function ol_map() {
 			}
 		});
 		
+		this.map.AddLayerActive(clase_id,layer_id);
 		this.map.updateLayerCount();
 		this.updateLayerCountPanelLabel(clase_id);
 			
 		//$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+		
+	}
+	
+	this.panel.AddLayerActive = function(clase_id,layer_id) {
+		
+		var node = document.createElement("div");
+			node.className = "active-layer-node";
 		
 	}
 	
