@@ -66,6 +66,7 @@
 	<?php include("./popup.php"); ?>
 	<?php include("./popup.baselayers.php"); ?>
 	<?php include("./popup.buffer.php"); ?>
+	<?php include("./popup.capasactivas.php"); ?>
 	<?php include("./popup.coordinates.php"); ?>
 	<?php include("./popup.info.php"); ?>
 	<?php include("./popup.medicion.php"); ?>

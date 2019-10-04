@@ -1,4 +1,4 @@
-<div id="nav-panel" data-visible="1" class="navmenu jump-flotant-nav jump-flotant-heightfill jump-flotant-heightfill-top jump-scroll nav-level-1 col col-nav col-xs-12 col-sm-12 col-md-3 col-lg-3">
+<div id="nav-panel" data-visible="1" class="navmenu jump-flotant-nav jump-flotant-heightfill jump-flotant-heightfill-top nav-level-1 col col-nav col-xs-12 col-sm-12 col-md-3 col-lg-3">
 				
 	<div id="panel-busqueda-geovisor">
 		
@@ -12,17 +12,32 @@
 		
 	</div>
 	
-	<div id="nav-panel-inner" data-visible="1" style="width:100%;">	
+	<div id="nav-panel-arrow">
 		
-		<div id="nav-panel-arrow">
+		<a href="#" onclick="flotant.toggle('#nav-panel')" class="jump-toggleimage" data-state="1" data-ini-src="./images/panel.icon.arrow.0.png" data-end-src="./images/panel.icon.arrow.1.png">
 		
-			<a href="#" onclick="flotant.toggle('#nav-panel')" class="jump-toggleimage" data-state="1" data-ini-src="./images/panel.icon.arrow.0.png" data-end-src="./images/panel.icon.arrow.1.png">
-			
-				<img src="./images/panel.icon.arrow.1.png">
-			
+			<img src="./images/panel.icon.arrow.1.png">
+		
+		</a>
+	
+	</div>
+		
+	<div class="jump-row" style="background-color:#ececec;">
+	
+		<div class="mtb-20 ml-auto mr-auto w-100-p search-wrapper">
+			<a href="#" class="plr-10 jump-link-death" style="width: 34px; height: 34px; line-height: 34px;">
+				<img src="./images/panel.icon.f2.png">
 			</a>
-		
+			<input id="panel-seach-input-layers-bottom" class="panel-input pl-10" name="main-search" type="text" data-jump-placeholder="BUSCAR EN CAPAS ACTIVAS" placeholder="BUSCAR EN CAPAS ACTIVAS" 
+				onfocus="geomap.map.ol_object_mini.updateSize(); geomap.map.ol_object_mini.render(); jwindow.open('#popup-geovisor');">
+			<span class="layers-visible-count jump-posrel"></span>
 		</div>
+	
+	</div>
+	
+	<div id="nav-panel-inner" data-visible="1" style="width:100%;" class="jump-scroll">	
+		
+		
 	
 		<!--<div class="jump-row">
 		
@@ -35,19 +50,6 @@
 			</div>
 		
 		</div>-->
-		
-		<div class="jump-row">
-		
-			<div class="mtb-20 ml-auto mr-auto w-100-p search-wrapper">
-				<a href="#" class="plr-10 jump-link-death" style="width: 34px; height: 34px; line-height: 34px;">
-					<img src="./images/panel.icon.f2.png">
-				</a>
-				<input id="panel-seach-input-layers-bottom" class="panel-input pl-10" name="main-search" type="text" data-jump-placeholder="BUSCAR EN CAPAS ACTIVAS" placeholder="BUSCAR EN CAPAS ACTIVAS" 
-					onfocus="geomap.map.ol_object_mini.updateSize(); geomap.map.ol_object_mini.render(); jwindow.open('#popup-geovisor');">
-				<span class="layers-visible-count jump-posrel"></span>
-			</div>
-		
-		</div>
 		
 		<div class="jump-row">
 		
@@ -67,6 +69,25 @@
 
 			</div>
 		
+		</div>
+	
+	</div>
+	
+	<div id="layer-group-capas-activas" class="layer-group" data-state="0" data-layer="<?php echo $r["layer_id"]; ?>" data-cid="<?php echo $r["clase_id"]; ?>" data-layer-type="<?php echo $r["tipo_layer_id"]; ?>">
+		
+		<div class="layer-header">
+			<!--<a href="javascript:void(0);">
+				<i class="fa fa-eye"></i>
+			</a>-->
+				
+			<a href="#" class="layer-label" onclick="$(this).parent().next().slideToggle('slow'); $(this).toggleClass('layer-label-active')" title="<?php echo $r["layer_desc"]; ?>">
+				<span>CAPAS ACTIVAS</span>
+			</a>
+			
+			<a href="#" class="active-layer-button" onclick="jwindow.open('popup-capasactivas');">
+				<img src="./images/external-link.png">
+			</a>
+	
 		</div>
 	
 	</div>

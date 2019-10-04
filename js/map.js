@@ -393,7 +393,10 @@ function ol_map() {
 				var node = $(v).children("td").first();
 				var val = $(node).text().split(".");
 				
-				var newnode = "<img src=\"../img/t.gif\" x=\"" + val[1] + "\" y=\"" + val[0] + "\" z=\"1\" />";
+				var gid = $(v).children("td:nth-child(2)");
+					gid = $(gid).text();
+				
+				var newnode = "<img src=\"../img/t.gif\" x=\"" + gid + "\" y=\"" + val[0] + "\" z=\"1\" />";
 				
 				newnodes += newnode;
 			
@@ -807,7 +810,7 @@ function ol_map() {
 		
 			$("#dlbuffer-link-"+layer_id).attr("href",dlurl);
 			
-			addLink.innerHTML = "ACTUALIZAR";
+			//addLink.innerHTML = "ACTUALIZAR";
 			
 			this.readBuffer(layer_id,distance,true);
 		
@@ -1275,6 +1278,10 @@ function ol_map() {
 	this.panel.map = this.map;
 	
 	this.panel.start = function() {
+		
+		var height = $("#nav-panel").height();
+		
+		$("#nav-panel-inner").height(height-34);
 		
 		$("#layer-bullet").on("click",function() {
 			
@@ -1883,10 +1890,18 @@ function ol_map() {
 			}
 		});
 		
+		this.AddLayerActive(clase_id,layer_id);
 		this.map.updateLayerCount();
 		this.updateLayerCountPanelLabel(clase_id);
 			
 		//$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+		
+	}
+	
+	this.panel.AddLayerActive = function(clase_id,layer_id) {
+		
+		var node = document.createElement("div");
+			node.className = "active-layer-node";
 		
 	}
 	
