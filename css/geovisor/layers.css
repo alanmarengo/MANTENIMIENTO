@@ -27,7 +27,7 @@
 	
 }
 
-.layer-header a, .layer-container-header a {
+.layer-header a, .layer-container-header a, .active-layer-node .layer-label {
 	
 	left: 10px;
 	color: #888;
