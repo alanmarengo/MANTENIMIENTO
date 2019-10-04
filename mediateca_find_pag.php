@@ -29,6 +29,7 @@ $estudio_id =  $_REQUEST['estudio_id'];
 $ra 	    =  $_REQUEST['ra'];
 $solapa	    =  $_REQUEST['solapa'];
 $mode	    =  $_REQUEST['mode'];
+$mode_id	=  $_REQUEST['mode_id'];
 
 /************************* ORDER BY **********************************/
 
@@ -176,9 +177,52 @@ function getSQL($solapa) {
 	{
 		switch ($mode)
 		{
-			case 0: 	$SQL = ""; die("Modo desconocido."); break;
-			case 1: 	$SQL = ""; die("Modo desconocido."); break;
-			case 2: 	$SQL = ""; die("Modo desconocido."); break;
+			case 1: 
+					/******************************* MODO RECURSOS ASOCIADOS AL ESTUDIO POR SUBESTUDIO *********************************************/
+					$SUBQUERY  = "SELECT "
+							. "tipo_formato_solapa AS \"Solapa\","
+							. "origen_id,"
+							. "origen_id_especifico AS \"Id\","
+							. "recurso_titulo AS \"Titulo\","
+							. "recurso_desc AS \"Descripcion\","
+							. "recurso_path_url AS \"LinkImagen\","
+							. "recurso_categoria_desc AS \"MetaTag\","
+							. "CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END AS \"Autores\","
+							. "estudios_id,"
+							. "recurso_fecha AS Fecha,"
+							. "COALESCE(subclase_desc,'') AS Tema, "
+							. "mod_catalogo.get_ico(origen_id,origen_id_especifico) AS ico"
+							. " FROM mod_mediateca.mediateca_find('$qt','$desde','$hasta','$proyecto','$clase','$subclase','$tipo_doc') C WHERE "
+							. " (C.estudios_id IN(SELECT sub_estudio_id FROM mod_catalogo.estudio_subestudio WHERE estudios_id=$mode_id) "
+							. " OR C.estudios_id=$mode_id)  AND  tipo_formato_solapa=$solapa " /* Tambíen incluye el mismo estudio */ 
+							. $ORDER;
+				
+							$SQL = "SELECT row_to_json(T)::text AS r FROM ($SUBQUERY)T";
+					break;
+			case 0: 	
+					/******************************* MODO RECURSOS DEL ESTUDIO *********************************************/
+					$SUBQUERY  = "SELECT "
+							. "tipo_formato_solapa AS \"Solapa\","
+							. "origen_id,"
+							. "origen_id_especifico AS \"Id\","
+							. "recurso_titulo AS \"Titulo\","
+							. "recurso_desc AS \"Descripcion\","
+							. "recurso_path_url AS \"LinkImagen\","
+							. "recurso_categoria_desc AS \"MetaTag\","
+							. "CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END AS \"Autores\","
+							. "estudios_id,"
+							. "recurso_fecha AS Fecha,"
+							. "COALESCE(subclase_desc,'') AS Tema, "
+							. "mod_catalogo.get_ico(origen_id,origen_id_especifico) AS ico"
+							. " FROM mod_mediateca.mediateca_find('$qt','$desde','$hasta','$proyecto','$clase','$subclase','$tipo_doc') C WHERE estudios_id=$mode_id AND tipo_formato_solapa=$solapa "
+							. $ORDER;
+				
+							$SQL = "SELECT row_to_json(T)::text AS r FROM ($SUBQUERY)T";
+					break;
+			case 3: 	$SQL = ""; die("Modo desconocido."); break;
+			case 10: 	
+					/******************************* MODO RECURSOS DE CAPA *********************************************/
+					break;
 			default: 	$SQL = ""; die("Modo desconocido."); break;
 		};
 	};
