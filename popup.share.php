@@ -17,7 +17,7 @@
 		
 		<div class="jump-window-body p20">
 			
-			<p>Enlace a configuración de geovisor</p>
+			<p>Enlace para compartir la vista actual:</p>
 			<p><input type="text" id="input-share" class="jump-input jump-input-form" readonly="readonly"></p>
 			
 		</div>
