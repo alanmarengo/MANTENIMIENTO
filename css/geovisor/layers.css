@@ -406,5 +406,12 @@
 	position:relative;
 	top:3px;
 	font-weight:400;
+	width:70%;
+	
+}
+
+.active-layer-node .remove-layer-icon-ca {
+	
+	margin:7px 15px 7px 7px;
 	
 }

@@ -1919,7 +1919,7 @@ function ol_map() {
 			
 			$("#layer-checkbox-"+layer_id).parent().next().clone().appendTo(node);
 			
-			$("#layer-checkbox-"+layer_id).parent().next().next().clone().bind("click",function() {
+			$("#layer-checkbox-"+layer_id).parent().next().next().clone().removeAttr("id").addClass("remove-layer-icon-ca").bind("click",function() {
 				
 				$("#remove-layer-icon-"+layer_id).trigger("click");
 				
