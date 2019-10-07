@@ -10,19 +10,17 @@ $(document).ready(function() {
                 qty1: 0,
                 qty2: 0,
                 qty3: 0,
-                estudio_nombre: '',
                 stopLoad: false,
                 filters: {
                     pagina: 0,
                     salto: 20,
-
                     orden: 0,
                     searchText: '',
                     dateStart: '',
                     dateEnd: '',
-                    estudio: null,
-                    modo: null,
-                    id: null,
+                    mode: -1,
+                    mode_id: 0,
+                    mode_label: '',
                     groups: initFiltersGroups()
                 },
                 data: {
@@ -104,13 +102,14 @@ $(document).ready(function() {
                 let item = $(this).data('item');
 
                 if (estudio == 1) {
-                    setEstudio(null);
-                    model.estudio_nombre = '';
+                    model.filtros.mode = -1;
+                    model.filtros.mode_id = 0;
+                    model.filtros.mode_label = '';
+                    filtersReset();
                 } else {
                     model.filters.groups[group].items[item].checked = false;
                 }
 
-                //setEstudio(null);
                 filtersRender();
                 model.pagina = 0;
                 dataLoad();
@@ -121,7 +120,6 @@ $(document).ready(function() {
                 let group = $(this).data('group');
                 let item = $(this).data('item');
                 model.filters.groups[group].items[item].checked = true;
-                //setEstudio(null);
                 filtersRender();
                 model.pagina = 0;
                 dataLoad();
@@ -161,16 +159,16 @@ $(document).ready(function() {
             // CLICK EN LINKS DE FICHA
             $('body').on('click', '.estudios-link, .media-preview-link', function(e) {
                 e.stopPropagation();
+                let solapa = $(this).data('solapa');
+                let mode = $(this).data('mode');
+                let mode_id = $(this).data('mode_id');
 
+                setSolapa(solapa);
                 model.stopLoad = true;
-                setSolapa($(this).data('solapa'));
-                setEstudio($(this).data('estudio'));
+                model.filters.mode = mode;
+                model.filters.mode_id = mode_id;
                 model.stopLoad = false;
                 model.pagina = 0;
-
-                if (model.tab == 0) {
-                    model.ra = 1;
-                }
 
                 filtersRender();
                 dataLoad();
@@ -290,12 +288,12 @@ $(document).ready(function() {
                     setSolapa(n);
                 }
 
-                if (urlParams.has('modo')) {
-                    model.filters.modo = urlParams.get('modo');
+                if (urlParams.has('mode')) {
+                    model.filters.mode = urlParams.get('mode');
                 }
 
-                if (urlParams.has('id')) {
-                    model.filters.id = urlParams.get('id');
+                if (urlParams.has('mode_id')) {
+                    model.filters.mode_id = urlParams.get('mode_id');
                 }
 
                 model.filters.groups = initFiltersGroups();
@@ -388,9 +386,6 @@ $(document).ready(function() {
                 var url = model.apiUrlBase + '/mediateca_find_pag.php?' + makeUrlFilter();
                 //console.log(url);
 
-                // SE RETEAN LUEGO DEL PRIMER USO, 1 SOLO USO
-                model.filters.modo = null;
-                model.filters.id = null;
                 $.getJSON(url, function(data) {
                     filtersMerge(data.filtros);
 
@@ -402,9 +397,7 @@ $(document).ready(function() {
                     model.qty1 = data.registros_total_1;
                     model.qty2 = data.registros_total_2;
                     model.qty3 = data.registros_total_3;
-                    model.estudio_nombre = data.estudio_nombre;
-
-                    model.ra = 0;
+                    model.filters.mode_label = data.mode_label;
                     model.data.docs = [];
                     model.data.medias = [];
                     model.data.techs = [];
@@ -497,13 +490,6 @@ $(document).ready(function() {
                 $(`a[data-tab="${model.tab}"]`).removeClass('active');
                 model.tab = solapa;
                 $(`a[data-tab="${model.tab}"]`).addClass('active');
-            }
-
-            function setEstudio(estudio) {
-                //if (estudio)
-                //    filtersReset();
-
-                model.filters.estudio = estudio;
             }
 
             function filtersReset() {
@@ -730,20 +716,21 @@ $(document).ready(function() {
             function checkedsRender() {
                 $('#uxFiltersChecked').html('');
 
-                if (model.estudio_nombre != '') {
+                if (model.filters.mode_label) {
                     let nombre = '';
-                    let title = model.estudio_nombre;
-                    if (model.estudio_nombre.length > 25) {
-                        nombre = model.estudio_nombre.substr(0, 25) + '...';
+                    let title = model.filters.mode_label;
+
+                    if (title.length > 25) {
+                        nombre = title.substr(0, 25) + '...';
                     } else {
-                        nombre = model.estudio_nombre;
+                        nombre = title;
                     }
 
                     $('#uxFiltersChecked').append(`
-                <a class="filters-checked btn btn-warning btn-xs" ${nombre != model.estudio_nombre ? `title="${model.estudio_nombre}"` : ``} data-estudio="1">Estudio: ${nombre} <i class="fa fa-times" style="padding: 0px 6px;"></i></a>
+                <a class="filters-checked btn btn-warning btn-xs" ${nombre != model.filters.mode_label ? `title="${model.filters.mode_label}"` : ``} data-estudio="1">Estudio: ${nombre} <i class="fa fa-times" style="padding: 0px 6px;"></i></a>
             `)
 
-            if (nombre = model.estudio_nombre) {
+            if (nombre = model.filters.mode_label) {
                 $("[title]").tooltipster({
                     animation: 'fade',
                     delay: 200,
@@ -818,9 +805,9 @@ $(document).ready(function() {
                         <div class="doc-autores">${doc.autores}</div>
                         <div class="doc-description">${doc.description}</div>
                         <div class="doc-links" style="z-index:999;">
-                            <a data-solapa="1" data-estudio="${doc.estudio}" class="btn btn-dark estudios-link">RECURSOS AUDIOVISUALES</a>
-                            <a data-solapa="2" data-estudio="${doc.estudio}" class="btn btn-dark estudios-link">RECURSOS TÉCNICOS</a>
-                            <a data-solapa="0" data-estudio="${doc.estudio}" class="btn btn-dark estudios-link">RECURSOS ASOCIADOS</a>
+                            <a data-solapa="1" data-mode="0" data-mode_id="${doc.estudio}" class="btn btn-dark estudios-link">RECURSOS AUDIOVISUALES</a>
+                            <a data-solapa="2" data-mode="0" data-mode_id="${doc.estudio}" class="btn btn-dark estudios-link">RECURSOS TÉCNICOS</a>
+                            <a data-solapa="0" data-mode="1" data-mode_id="${doc.estudio}" class="btn btn-dark estudios-link">RECURSOS ASOCIADOS</a>
                         </div>
                     </div>
                 </div>
@@ -888,8 +875,8 @@ $(document).ready(function() {
             if (doc.estudio > 0) {
                 links = `
                     <div class="doc-links">
-                        <a data-solapa="0" data-estudio="${doc.estudio}" class="btn btn-dark estudios-link">DOCUMENTOS ASOCIADOS</a>
-                        <a data-solapa="0" data-estudio="${doc.estudio}" class="btn btn-dark estudios-link">RECURSOS ASOCIADOS</a>
+                        <a data-solapa="0" data-mode="0" data-mode_id="${doc.estudio}" class="btn btn-dark estudios-link">DOCUMENTOS ASOCIADOS</a>
+                        <a data-solapa="0" data-mode="1" data-mode_id="${doc.estudio}" class="btn btn-dark estudios-link">RECURSOS ASOCIADOS</a>
                     </div>
                 `;
             }
@@ -1023,11 +1010,8 @@ $(document).ready(function() {
             documento: idItemsChecked(model.filters.groups[model.tab + 1]),
             tema: idItemsChecked(model.filters.groups[4]),
             subtema: idItemsChecked(model.filters.groups[5]),
-            estudio_id: model.filters.estudio,
-            ra: model.ra,
-            modo: model.filters.modo,
-            id: model.filters.id,
-
+            mode: model.filters.mode,
+            mode_id: model.filters.mode_id,
             solapa: model.tab,
             pagina: model.pagina,
             salto: model.salto
