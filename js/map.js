@@ -1917,7 +1917,13 @@ function ol_map() {
 				
 			}).appendTo(node);
 			
-			$("#layer-checkbox-"+layer_id).parent().next().clone().appendTo(node);
+			$("#layer-checkbox-"+layer_id).parent().next().clone().appendTo(node);			
+			
+			$("#layer-icon-zoomext-"+layer_id).clone().removeAttr("id").addClass("zoomext-layer-icon-ca").bind("click",function() {
+				
+				$("#layer-icon-zoomext-"+layer_id).trigger("click");
+				
+			}).appendTo(node);
 			
 			$("#layer-checkbox-"+layer_id).parent().next().next().clone().removeAttr("id").addClass("remove-layer-icon-ca").bind("click",function() {
 				
