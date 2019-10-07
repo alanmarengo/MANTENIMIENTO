@@ -87,6 +87,7 @@ $conn = pg_connect($string_conn);
 
 function getSQL($solapa) {
 	global $mode;
+	global $mode_id;
 	global $estudio_id;
 	global $qt;
 	global $desde;
