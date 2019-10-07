@@ -261,6 +261,12 @@
 	
 }
 
+.layer-group .layer-header .layer-label {
+
+    width: 80%;
+
+}
+
 .layer-icon {
 	
 	height:24px;
@@ -412,7 +418,10 @@
 
 .active-layer-node .active-layer-node-icons {
 	
-	margin:7px 15px 7px 7px;
+	margin: 3px 3px 3px 8%;
+	width: auto;
+	display: inline-block;
+	vertical-align: top;
 	
 }
 
