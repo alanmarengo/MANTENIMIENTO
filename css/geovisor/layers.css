@@ -410,17 +410,22 @@
 	
 }
 
-.active-layer-node .remove-layer-icon-ca {
+.active-layer-node .active-layer-node-icons {
 	
 	margin:7px 15px 7px 7px;
 	
 }
 
+.active-layer-node .remove-layer-icon-ca {
+	
+	margin:7px;
+	
+}
+
 .active-layer-node .zoomext-layer-icon-ca {
 	
-	margin:7px 15px 7px 7px;
+	margin:7px;
 	width:auto;
 	padding:0;
-	float:right;
 	background:none;
 }

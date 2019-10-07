@@ -1903,7 +1903,10 @@ function ol_map() {
 		var container = document.getElementById("info-capasactivas");
 		
 		var node = document.createElement("div");
-			node.className = "active-layer-node";			
+			node.className = "active-layer-node";		
+			
+		var nodeicons = document.createElement("div");
+			nodeicons.className = "active-layer-node-icons";
 		
 		var new_id = "active-layer-clone-" + clase_id + "-" + layer_id;
 		
@@ -1923,13 +1926,15 @@ function ol_map() {
 				
 				$("#remove-layer-icon-"+layer_id).trigger("click");
 				
-			}).appendTo(node);		
+			}).appendTo(nodeicons);		
 			
 			$("#layer-icon-zoomext-"+layer_id).clone().removeAttr("id").addClass("zoomext-layer-icon-ca").bind("click",function() {
 				
 				$("#layer-icon-zoomext-"+layer_id).trigger("click");
 				
-			}).appendTo(node);
+			}).appendTo(nodeicons);
+			
+			node.appendChild(nodeicons);
 			
 			
 		
