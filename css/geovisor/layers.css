@@ -406,7 +406,7 @@
 	position:relative;
 	top:3px;
 	font-weight:400;
-	width:70%;
+	width:63%;
 	
 }
 
@@ -414,4 +414,12 @@
 	
 	margin:7px 15px 7px 7px;
 	
+}
+
+.active-layer-node .zoomext-layer-icon-ca {
+	
+	margin:7px 15px 7px 7px;
+	width:auto;
+	padding:0;
+	float:right;
 }
