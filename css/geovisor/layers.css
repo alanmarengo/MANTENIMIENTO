@@ -441,7 +441,7 @@
 
 .active-layer-node .updown-layer-icon-ca {
 	
-	background-image:url("../images/geovisor/icons/layer-bar-gota.png");
+	background-image:url("../../images/geovisor/icons/dropdown.png");
 	background-repeat:no-repeat;
 	background-position:center center;
 	margin:3px 5px 7px 7px;
