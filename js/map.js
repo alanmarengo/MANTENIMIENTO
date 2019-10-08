@@ -1968,13 +1968,12 @@ function ol_map() {
 			
 			node.appendChild(nodeicons);
 			
-			
-		
-		}
-		
-		
+					
+		}		
 			
 		container.appendChild(node);
+		
+		this.RefreshActiveZIndex();
 		
 	}
 	

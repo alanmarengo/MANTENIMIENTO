@@ -400,7 +400,8 @@
 
     height: 36px;
     line-height: 28px;
-
+	position:relative;
+	
 }
 
 .active-layer-node .layer-label {
@@ -422,6 +423,8 @@
 	width: auto;
 	display: inline-block;
 	vertical-align: top;
+	position: absolute;
+	right: 0px;
 	
 }
 
