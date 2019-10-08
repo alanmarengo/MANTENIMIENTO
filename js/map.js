@@ -1920,7 +1920,7 @@ function ol_map() {
 			nodeup.onclick = function() {
 				
 				$(this.node).prev(".active-layer-node").before(node);				
-				this.RefreshActiveZIndex();
+				this.panel.RefreshActiveZIndex();
 				
 			}
 			
@@ -1931,7 +1931,7 @@ function ol_map() {
 			nodedown.onclick = function() {
 				
 				$(this.node).next(".active-layer-node").after(node);				
-				this.RefreshActiveZIndex();
+				this.panel.RefreshActiveZIndex();
 				
 			}
 			
