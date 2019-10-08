@@ -30,6 +30,7 @@ $ra 	    =  $_REQUEST['ra'];
 $solapa	    =  $_REQUEST['solapa'];
 $mode	    =  $_REQUEST['mode'];
 $mode_id	=  $_REQUEST['mode_id'];
+$mode_label =  $_REQUEST['mode_label'];
 
 /************************* ORDER BY **********************************/
 
@@ -81,6 +82,7 @@ if(!IsSetVar($mode))
 
 $estudio_nombre = "";
 
+
 $SUBQUERY = "";
 
 $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
@@ -90,6 +92,7 @@ $conn = pg_connect($string_conn);
 function getSQL($solapa) {
 	global $mode;
 	global $mode_id;
+	global $mode_label;
 	global $estudio_nombre;
 	global $estudio_id;
 	global $qt;
@@ -203,7 +206,7 @@ function getSQL($solapa) {
 				
 							$SQL = "SELECT row_to_json(T)::text AS r FROM ($SUBQUERY)T";
 							
-							$estudio_nombre = getEstudioNombre($mode_id);
+							$mode_label = getEstudioNombre($mode_id);
 					break;
 			case 0: 	
 					/******************************* MODO RECURSOS DEL ESTUDIO *********************************************/
@@ -225,7 +228,7 @@ function getSQL($solapa) {
 				
 							$SQL = "SELECT row_to_json(T)::text AS r FROM ($SUBQUERY)T";
 							
-							$estudio_nombre = getEstudioNombre($mode_id);
+							$mode_label = getEstudioNombre($mode_id);
 					break;
 			case 3: 	$SQL = ""; die("Modo desconocido."); break;
 			case 10: 	
@@ -309,7 +312,7 @@ echo "	\"paginas\":$total_paginas,";
 echo "	\"solapa\": $solapa,";
 echo "	\"pagina\": $pagina,";
 echo "	\"estudio_nombre\": \"$estudio_nombre\",";
-echo "	\"mode_label\": \"$estudio_nombre\",";
+echo "	\"mode_label\": \"$mode_label\",";
 echo "	\"registros_total_0\": $total_0,";
 echo "	\"registros_total_1\": $total_1,";
 echo "	\"registros_total_2\": $total_2,";
