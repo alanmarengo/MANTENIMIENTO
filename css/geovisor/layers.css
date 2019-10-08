@@ -427,7 +427,7 @@
 
 .active-layer-node .remove-layer-icon-ca {
 	
-	margin:7px;
+	margin:-4px 5px 7px 7px;
 	display:inline-block;
 	vertical-align:top;
 	
@@ -435,7 +435,7 @@
 
 .active-layer-node .zoomext-layer-icon-ca {
 	
-	margin:3px 5px 7px 7px;
+	margin:0px 5px 7px 7px;
 	width:auto;
 	padding:0;
 	background:none;
@@ -462,5 +462,12 @@
 	padding:0;
 	width:16px;
 	height:16px;
+	cursor:pointer;
+	
+}
+
+.up-layer-icon-ca:hover, .down-layer-icon-ca:hover, .zoomext-layer-icon-ca:hover, .remove-layer-icon-ca:hover {
+	
+	opacity:0.7;
 	
 }
