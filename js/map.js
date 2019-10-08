@@ -1904,9 +1904,35 @@ function ol_map() {
 		
 		var node = document.createElement("div");
 			node.className = "active-layer-node";		
+			node.setAttribute("data-lid",layer_id);
+			node.setAttribute("data-cid",clase_id);
 			
 		var nodeicons = document.createElement("div");
 			nodeicons.className = "active-layer-node-icons";
+			
+		var nodeupdown = document.createElement("div");
+			nodeupdown.className = "updown-layer-icon-ca";
+			
+		var nodeup = document.createElement("div");
+			nodeup.className = "up-layer-icon-ca";
+			nodeup.onclick = function() {
+				
+				$(node).prev(".active-layer-node").before(node);				
+				this.RefreshActiveZIndex();
+				
+			}.bind(this);
+			
+		var nodedown = document.createElement("div");
+			nodedown.className = "down-layer-icon-ca";
+			
+			nodeupdown.appendChild(nodeup);
+			nodeupdown.appendChild(nodedown);
+			nodeupdown.onclick = function() {
+				
+				$(node).next(".active-layer-node").after(node);				
+				this.RefreshActiveZIndex();
+				
+			}.bind(this);
 		
 		var new_id = "active-layer-clone-" + clase_id + "-" + layer_id;
 		
@@ -1921,6 +1947,8 @@ function ol_map() {
 			}).appendTo(node);
 			
 			$("#layer-checkbox-"+layer_id).parent().next().clone().appendTo(node);	
+			
+			nodeicons.appendChild(nodeupdown);
 			
 			$("#layer-checkbox-"+layer_id).parent().next().next().clone().removeAttr("id").addClass("remove-layer-icon-ca").bind("click",function() {
 				
@@ -1943,6 +1971,20 @@ function ol_map() {
 		
 			
 		container.appendChild(node);
+		
+	}
+	
+	this.panel.RefreshActiveZIndex = function() {
+		
+		var nodes = document.getElementsByClassName("active-layer-node");
+				
+		for (var i=0, j=nodes.length; i<nodes.length; i++,j--) {
+			
+			var layer_id = nodes[i].getAttribute("data-lid");
+			
+			document.getElementById("layer-checkbox-"+layer_id).layer.setZIndex(j);
+						
+		}	
 		
 	}
 	
