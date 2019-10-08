@@ -1915,24 +1915,28 @@ function ol_map() {
 			
 		var nodeup = document.createElement("div");
 			nodeup.className = "up-layer-icon-ca";
+			nodeup.node = node;
+			nodeup.panel = this;
 			nodeup.onclick = function() {
 				
-				$(node).prev(".active-layer-node").before(node);				
+				$(this.node).prev(".active-layer-node").before(node);				
 				this.RefreshActiveZIndex();
 				
-			}.bind(this);
+			}
 			
 		var nodedown = document.createElement("div");
 			nodedown.className = "down-layer-icon-ca";
+			nodedown.node = node;
+			nodedown.panel = this;
+			nodedown.onclick = function() {
+				
+				$(this.node).next(".active-layer-node").after(node);				
+				this.RefreshActiveZIndex();
+				
+			}
 			
 			nodeupdown.appendChild(nodeup);
 			nodeupdown.appendChild(nodedown);
-			nodeupdown.onclick = function() {
-				
-				$(node).next(".active-layer-node").after(node);				
-				this.RefreshActiveZIndex();
-				
-			}.bind(this);
 		
 		var new_id = "active-layer-clone-" + clase_id + "-" + layer_id;
 		
