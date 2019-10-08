@@ -428,6 +428,8 @@
 .active-layer-node .remove-layer-icon-ca {
 	
 	margin:7px;
+	display:inline-block;
+	vertical-align:top;
 	
 }
 
@@ -437,6 +439,8 @@
 	width:auto;
 	padding:0;
 	background:none;
+	display:inline-block;
+	vertical-align:top;
 }
 
 .active-layer-node .updown-layer-icon-ca {
@@ -448,6 +452,8 @@
 	width:16px;
 	height:16px;
 	padding:0;
+	display:inline-block;
+	vertical-align:top;
 }
 
 .up-layer-icon-ca, .down-layer-icon-ca {
