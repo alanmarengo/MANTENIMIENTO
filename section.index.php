@@ -83,10 +83,11 @@
         </div>
     </div>
 
+
     <div class="row">
         <div class="col-md-10">
             <div class="row modulo-row">
-                <div class="col-md-6 modulo-wrap modulo-1">
+                <a href="./page.php" class="col-md-6 modulo-wrap modulo-1">
                     <div class="modulo-opacity"></div>
                     <div class="modulo-text">
                         IEASA EN EL TERRITORIO
@@ -95,13 +96,13 @@
                         <p class="modulo-hover-text">
                             Mapa de proyectos, obras en construcción y operación de IEASA.
                             <br />
-                            <a href="./page.php" class="modulo-hover-icon">
+                            <span class="modulo-hover-icon">
                                 <i class="fa fa-plus-circle fa-2x"></i>
-                            </a>
+                            </span>
                         </p>
                     </div>
-                </div>
-                <div class="col-md-6 modulo-wrap modulo-2">
+                </a>
+                <a href="#" class="col-md-6 modulo-wrap modulo-2">
                     <div class="modulo-opacity"></div>
                     <div class="modulo-text">
                         OBSERVATORIO AHRSC
@@ -110,14 +111,17 @@
                         <p class="modulo-hover-text">
                             Ámbito de estudio y evaluación de la información estratégica de los AHRSC desde el punto de vista ambiental y del proyecto. Proporciona distintos instrumentos que facilitan el acceso y la divulgación pública del conocimiento para la implementación de una gestión sostenible.
                             <br />
-                            <a href="#" class="modulo-hover-icon">
+                            <span class="modulo-hover-icon">
                                 <i class="fa fa-plus-circle fa-2x"></i>
-                            </a>
+                            </span>
                         </p>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="row modulo-row">
+
+                <div id="noticias-slider" class="carousel slide" data-ride="false" data-interval="false"></div>
+
                 <div class="video-hover col-md-6 modulo-wrap modulo-7">
                     <div class="modulo-opacity"></div>
                     <div class="modulo-text">
@@ -131,7 +135,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="row">
-                        <div class="col-md-12 modulo-wrap modulo-4">
+                        <a href="./page.php" class="col-md-12 modulo-wrap modulo-4">
                             <div class="modulo-opacity"></div>
                             <div class="modulo-text">
                                 HIGIENE Y SEGURIDAD LABORAL
@@ -140,13 +144,13 @@
                                 <p class="modulo-hover-text">
                                     Acciones de prevención de riesgos del trabajo.
                                     <br />
-                                    <a href="./page.php" class="modulo-hover-icon">
+                                    <span class="modulo-hover-icon">
                                         <i class="fa fa-plus-circle fa-2x"></i>
-                                    </a>
+</span>
                                 </p>
                             </div>
-                        </div>
-                        <div class="col-md-12 modulo-wrap modulo-5">
+                        </a>
+                        <a href="./geovisor.php" class="col-md-12 modulo-wrap modulo-5">
                             <div class="modulo-opacity"></div>
                             <div class="modulo-text">
                                 PLAN DE GESTIÓN DE CALIDAD
@@ -155,19 +159,19 @@
                                 <p class="modulo-hover-text">
                                     Accedé al Plan de Gestión de Calidad  de las obras.
                                     <br />
-                                    <a href="./geovisor.php" class="modulo-hover-icon">
+                                    <span class="modulo-hover-icon">
                                         <i class="fa fa-plus-circle fa-2x"></i>
-                                    </a>
+                                    </span>
                                 </p>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
             <div class="row modulo-row">
                 <div class="col-md-6">
                     <div class="row">
-                        <div class="col-md-12 modulo-wrap modulo-10">
+                        <a href="./page_pdga.php" class="col-md-12 modulo-wrap modulo-10">
                             <div class="modulo-opacity"></div>
                             <div class="modulo-text">
                                 PLAN DE GESTIÓN AMBIENTAL<br />
@@ -177,33 +181,15 @@
                                 <p class="modulo-hover-text">
                                     Facilita el seguimiento de las acciones que brindan sostenibilidad al proyecto en sus distintas etapas. Planifica y ejecuta monitoreos sistemáticos para  el estudio de la evolución del ambiente.
                                     <br />
-                                    <a href="./page_pdga.php" class="modulo-hover-icon">
+                                    <span class="modulo-hover-icon">
                                         <i class="fa fa-plus-circle fa-2x"></i>
-                                    </a>
+                                    </span>
                                 </p>
                             </div>
-                        </div>
-                        
-<!--
-                        <div class="col-md-12 modulo-wrap modulo-3">
-                            <div class="modulo-opacity"></div>
-                            <div class="modulo-text">
-                                INDICADORES AMBIENTALES AHRSC
-                            </div>
-                            <div class="modulo-hover">
-                                <p class="modulo-hover-text">
-                                    Permite realizar el seguimiento de parámetros y variables de los programas del Plan de Gestión Ambiental (PGA) de los Aprovechamientos del Río Santa Cruz para comprender los fenómenos ambientales y territoriales.
-                                    <br />
-                                    <a href="./page.php" class="modulo-hover-icon">
-                                        <i class="fa fa-plus-circle fa-2x"></i>
-                                    </a>
-                                </p>
-                            </div>
-                        </div>
--->
+                        </a>
                     </div>
                 </div>
-                <div class="col-md-6 modulo-wrap modulo-8">
+                <a href="./page_ahrsc.php" class="col-md-6 modulo-wrap modulo-8">
                     <div class="modulo-opacity"></div>
                     <div class="modulo-text">
                         APROVECHAMIENTOS HIDROELÉCTRICOS DEL RÍO SANTA CRUZ
@@ -212,19 +198,19 @@
                         <p class="modulo-hover-text">
                             Ingresá a la información del proyecto de las presas Cóndor Cliff (CC) y La Barrancosa (LB), que proveerán electricidad al Sistema Argentino de Interconexión (SADI).
                             <br />
-                            <a href="./page_ahrsc.php" class="modulo-hover-icon">
+                            <span class="modulo-hover-icon">
                                 <i class="fa fa-plus-circle fa-2x"></i>
-                            </a>
+                            </span>
                         </p>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="row modulo-row border-bottom">
                 <div class="col-md-4 modulo-wrap modulo-9">
                     <div id="uxSensor"></div>
                 </div>
-                <div class="col-md-4 modulo-wrap modulo-6">
-                <div class="modulo-opacity"></div>
+                <a href="./page.php" class="col-md-4 modulo-wrap modulo-6">
+                    <div class="modulo-opacity"></div>
                     <div class="modulo-text">
                         COMUNICACIÓN Y GESTIÓN PARTICIPATIVA
                     </div>
@@ -232,13 +218,13 @@
                         <p class="modulo-hover-text">
                             Acciones de comunicación, relación con actores sociales y participación comunitaria.
                             <br />
-                            <a href="./page.php" class="modulo-hover-icon">
+                            <span class="modulo-hover-icon">
                                 <i class="fa fa-plus-circle fa-2x"></i>
-                            </a>
+                            </span>
                         </p>
                     </div>
-                </div>
-                <div class="col-md-4 modulo-wrap modulo-11">
+                </a>
+                <a target="_blank" href="http://hidrosantacruz.com.ar" class="col-md-4 modulo-wrap modulo-11">
                     <div class="modulo-opacity"></div>
                     <div class="modulo-text">
                         SIG SANTA CRUZ
@@ -247,12 +233,12 @@
                         <p class="modulo-hover-text">
                             Información espacial de la provincia de Santa Cruz, orientada a la gestión, análisis y ajuste de políticas en campos específicos de interés para la administración pública (...)
                             <br />
-                            <a target="_blank" href="http://hidrosantacruz.com.ar" class="modulo-hover-icon">
+                            <span class="modulo-hover-icon">
                                 <i class="fa fa-plus-circle fa-2x"></i>
-                            </a>
+                            </span>
                         </p>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
         <div class="col-md-2 side-right" style="position: relative;">
@@ -340,16 +326,83 @@
 <script type='text/javascript'>
     $(document).ready(function () {
         var model = {
-            apiUrlBase: 'http://observatorio.atic.com.ar',
+            apiUrlBase: 'http://observatorio.ieasa.com.ar',
             sensores: [],
-            sensorIndex : 0
+            sensorIndex : 0,
+            noticias: []
         };
 
         $('.pinned').hcSticky({
             stickTo: '.side-right',
             top: 80
         });
-        
+
+        $.getJSON(model.apiUrlBase + '/mediateca_noticias_index.php', function(data) {
+            model.noticias = data;
+            let slides_qty = Math.trunc((data.length + 1) / 3);
+
+            let html = '';
+            
+            // html += '<ol class="carousel-indicators">';
+            // for(let index = 0; index < slides_qty; index++) {
+            //     html += `<li data-target="#noticias-slider" data-slide-to="${index}" ${index == 0 ? 'class="active"' : ''}></li>`;
+            // };
+            // html += '</ol>'
+
+            html += '<div class="carousel-inner">';
+            for(let index = 0; index < slides_qty; index++) {
+                let base = index * 3;
+                html += `<div class="carousel-item ${index == 0 ? 'active' : ''}">`;
+
+                for(let i = 0; i < 3; i++) {
+                    if (base + i < model.noticias.length) {
+                        let n = model.noticias[base + i];
+                        html += `
+                            <div class="noticia-item" style="background-image: url(${n.path_img}?${Math.floor((Math.random() * 10000) + 1)});">
+                                <div class="noticia-caption">
+                                    <p>
+                                        ${n.titulo}
+                                        <br />
+                                        <span style="font-size: 16px; font-weight: normal;">
+                                            ${moment(n.fecha).format('DD [de] MMMM [de] YYYY')}
+                                        </span>
+                                    </p>
+                                </div>                
+                            </div>
+                        `;
+                    }
+                }
+
+                if (index + 1 == slides_qty) {
+                        html += `
+                            <a target="_blank" href="./mediateca.php?solapa=3" class="noticia-item">
+                                <div class="noticia-caption2">
+                                    <p>
+                                        Ver m&aacute;s<br />
+                                        Noticias
+                                    </p>
+                                </div>                
+                            </a>
+                        `;
+                }
+
+
+                html += `</div>`;
+            };
+            html += '</div>'
+
+            html += `
+                <div class="carousel-control-prev" href="#noticias-slider" role="button" data-slide="prev">
+                    <i class="fa fa-chevron-left"></i>
+                </div>
+                <div class="carousel-control-next" href="#noticias-slider" role="button" data-slide="next">
+                    <i class="fa fa-chevron-right"></i>
+                </div>
+            `;
+
+            $('#noticias-slider').html(html);
+        });
+
         $.getJSON(model.apiUrlBase + '/json_sensores.php', function(data) {
             model.sensores = data;
             sensorRefresh();

@@ -102,9 +102,9 @@ $(document).ready(function() {
                 let item = $(this).data('item');
 
                 if (estudio == 1) {
-                    model.filtros.mode = -1;
-                    model.filtros.mode_id = 0;
-                    model.filtros.mode_label = '';
+                    model.filters.mode = -1;
+                    model.filters.mode_id = 0;
+                    model.filters.mode_label = '';
                     filtersReset();
                 } else {
                     model.filters.groups[group].items[item].checked = false;
