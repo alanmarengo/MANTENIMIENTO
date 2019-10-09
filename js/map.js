@@ -1893,8 +1893,6 @@ function ol_map() {
 		
 		var dataLidLabel = "data-lid";
 		
-		if (isBuffer) { dataLidLabel = "data-lid-buffer"; }
-		
 		var container = document.getElementById("info-capasactivas-inner");
 		
 		var node = document.createElement("div");
@@ -1937,28 +1935,28 @@ function ol_map() {
 		
 		if ($("#info-capasactivas").find("#"+new_id).length == 0) {
 		
-				$(".abr[data-cid="+clase_id+"]").first().clone().attr("id",new_id).addClass("abr-cloned").width(32).css("background-color","rgb(245, 245, 245)").css("color","rgb(136, 136, 136)").appendTo(node);
+			$(".abr[data-cid="+clase_id+"]").first().clone().attr("id",new_id).addClass("abr-cloned").width(32).css("background-color","rgb(245, 245, 245)").css("color","rgb(136, 136, 136)").appendTo(node);
 				
-				if (isBuffer) {
+			if (isBuffer) {
 				
-				$("#layer-checkbox-"+layer_id).parent().clone().on("click",function() {
+				$("#layer-checkbox-"+layer_id).parent().attr("id","layer-buffer-"+layer_id).clone().on("click",function() {
+					
+					this.layer = bufferLayer;
 					
 					if (bufferLayer.getVisible()) {
 						
 						bufferLayer.setVisible(false);
-						
+							
 					}else{
-						
+							
 						bufferLayer.setVisible(true);
-						
+							
 					}
 					
 				}).appendTo(node);
 			
 			}else{
-				
-				$(".abr[data-cid="+clase_id+"]").first().clone().attr("id",new_id).addClass("abr-cloned").width(32).css("background-color","rgb(245, 245, 245)").css("color","rgb(136, 136, 136)").appendTo(node);
-				
+								
 				$("#layer-checkbox-"+layer_id).parent().clone().on("click",function() {
 					
 					$("#layer-checkbox-"+layer_id).trigger("click");
@@ -2006,7 +2004,15 @@ function ol_map() {
 			
 			var layer_id = nodes[i].getAttribute("data-lid");
 			
-			document.getElementById("layer-checkbox-"+layer_id).layer.setZIndex(j);
+			if (document.getElementById("layer-checkbox-"+layer_id)) {
+			
+				document.getElementById("layer-checkbox-"+layer_id).layer.setZIndex(j);
+			
+			}else{
+				
+				document.getElementById("layer-buffer-"+layer_id).layer.setZIndex(j);
+				
+			}
 						
 		}	
 		
