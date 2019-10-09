@@ -16,7 +16,7 @@
 			
 			<div id="info-capasactivas" class="jump-scroll" style="max-height:450px;">
 		
-				
+				<div id="info-capasactivas-inner"></div>
 			
 			</div>
 			

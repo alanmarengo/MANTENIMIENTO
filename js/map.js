@@ -1900,13 +1900,43 @@ function ol_map() {
 	
 	this.panel.AddLayerActive = function(clase_id,layer_id) {
 		
-		var container = document.getElementById("info-capasactivas");
+		var container = document.getElementById("info-capasactivas-inner");
 		
 		var node = document.createElement("div");
 			node.className = "active-layer-node";		
+			node.setAttribute("data-lid",layer_id);
+			node.setAttribute("data-cid",clase_id);
 			
 		var nodeicons = document.createElement("div");
 			nodeicons.className = "active-layer-node-icons";
+			
+		var nodeupdown = document.createElement("div");
+			nodeupdown.className = "updown-layer-icon-ca";
+			
+		var nodeup = document.createElement("div");
+			nodeup.className = "up-layer-icon-ca";
+			nodeup.node = node;
+			nodeup.panel = this;
+			nodeup.onclick = function() {
+				
+				$(this.node).prev(".active-layer-node").before(node);				
+				this.panel.RefreshActiveZIndex();
+				
+			}
+			
+		var nodedown = document.createElement("div");
+			nodedown.className = "down-layer-icon-ca";
+			nodedown.node = node;
+			nodedown.panel = this;
+			nodedown.onclick = function() {
+				
+				$(this.node).next(".active-layer-node").after(node);				
+				this.panel.RefreshActiveZIndex();
+				
+			}
+			
+			nodeupdown.appendChild(nodeup);
+			nodeupdown.appendChild(nodedown);
 		
 		var new_id = "active-layer-clone-" + clase_id + "-" + layer_id;
 		
@@ -1922,6 +1952,8 @@ function ol_map() {
 			
 			$("#layer-checkbox-"+layer_id).parent().next().clone().appendTo(node);	
 			
+			nodeicons.appendChild(nodeupdown);
+			
 			$("#layer-checkbox-"+layer_id).parent().next().next().clone().removeAttr("id").addClass("remove-layer-icon-ca").bind("click",function() {
 				
 				$("#remove-layer-icon-"+layer_id).trigger("click");
@@ -1936,13 +1968,26 @@ function ol_map() {
 			
 			node.appendChild(nodeicons);
 			
-			
-		
-		}
-		
-		
+					
+		}		
 			
 		container.appendChild(node);
+		
+		this.RefreshActiveZIndex();
+		
+	}
+	
+	this.panel.RefreshActiveZIndex = function() {
+		
+		var nodes = document.getElementsByClassName("active-layer-node");
+				
+		for (var i=0, j=nodes.length; i<nodes.length; i++,j--) {
+			
+			var layer_id = nodes[i].getAttribute("data-lid");
+			
+			document.getElementById("layer-checkbox-"+layer_id).layer.setZIndex(j);
+						
+		}	
 		
 	}
 	
@@ -1975,6 +2020,8 @@ function ol_map() {
 			$("#buffer-input-"+layer_id).next().html("AGREGAR");
 		
 		}
+		
+		$(".active-layer-node[data-lid="+layer_id"]").remove();
 		
 		this.updateLayerCountPanelLabel(clase_id);
 		
