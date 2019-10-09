@@ -98,16 +98,9 @@
                 <a href="./page.php" class="col-md-6 modulo-wrap modulo-1">
                     <div class="modulo-opacity"></div>
                     <div class="modulo-text">
-                        IEASA EN EL TERRITORIO
+                        Aprovechamientos Hidroeléctricos del Río Santa Cruz
                     </div>
                     <div class="modulo-hover">
-                        <p class="modulo-hover-text">
-                            Mapa de proyectos, obras en construcción y operación de IEASA.
-                            <br />
-                            <span class="modulo-hover-icon">
-                                <i class="fa fa-plus-circle fa-2x"></i>
-                            </span>
-                        </p>
                     </div>
                 </a>
 
