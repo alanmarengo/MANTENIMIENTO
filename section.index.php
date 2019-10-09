@@ -326,7 +326,7 @@
 <script type='text/javascript'>
     $(document).ready(function () {
         var model = {
-            apiUrlBase: 'http://observatorio.atic.com.ar',
+            apiUrlBase: 'http://observatorio.ieasa.com.ar',
             sensores: [],
             sensorIndex : 0,
             noticias: []
