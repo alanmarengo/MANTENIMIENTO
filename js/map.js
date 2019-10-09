@@ -827,7 +827,7 @@ function ol_map() {
 			
 		}else{
 			
-			this.layersBuffer[this.layersBufferIndex] = new ol.layer.Tile({
+			var layer = new ol.layer.Tile({
 					name:'get_buffer',
 					visible:false,
 					source: new ol.source.TileWMS({
@@ -843,13 +843,17 @@ function ol_map() {
 						}/*,
 						crossOrigin: 'anonymous'*/
 					})
-				});
-				
+				});			
+			
+			this.layersBuffer[this.layersBufferIndex] = layer;
+			
 			this.ol_object.addLayer(this.layersBuffer[this.layersBufferIndex]);
 			
 			this.layersBuffer[this.layersBufferIndex].setVisible(visible);
 			this.layersBufferIndex++;
-			this.panel.AddLayerActive(-1,layer_id,true,this.layersBuffer[this.layersBufferIndex],distance);
+			this.panel.AddLayerActive(-1,layer_id,true,layer,distance);
+			
+			this.layersBufferIndex++;
 			
 		}
 		
