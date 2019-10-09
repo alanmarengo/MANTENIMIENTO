@@ -499,17 +499,18 @@ $(document).ready(function() {
         }
     )
 
-    refreshUI();
-    $(window).resize(function() {
-        refreshUI();
-    });
+    //refreshUI();
+    //$(window).resize(function() {
+    //    refreshUI();
+    //});
 
     function refreshUI() {
+        // Ajusta los circulos de la derecha para que siempre se vean redondos y no ovalados
         let w = $('.link-wrap').first().outerWidth();
-        $('.link-wrap').height(w);
+        $('.link-wrap').height(w - 12);
     }
 
-    setTimeout(() => {
+    setInterval(() => {
         refreshUI();
     }, 500);
 
