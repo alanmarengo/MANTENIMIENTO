@@ -845,9 +845,7 @@ function ol_map() {
 					})
 				});
 				
-				this.ol_object.addLayer(this.layersBuffer[layer_id]);
-			
-			}
+			this.ol_object.addLayer(this.layersBuffer[this.layersBufferIndex]);
 			
 			this.layersBuffer[this.layersBufferIndex].setVisible(visible);
 			this.layersBufferIndex++;
