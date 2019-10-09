@@ -3,7 +3,7 @@ $(document).ready(function() {
             moment.locale('es');
 
             var model = {
-                apiUrlBase: GlobaApiUrl,
+                apiUrlBase: GlobalApiUrl,
                 tab: 0,
                 paginas: 0,
                 qty0: 0,

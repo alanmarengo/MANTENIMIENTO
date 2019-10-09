@@ -116,3 +116,18 @@
 <script src="./js/jump.scroll.js"></script>
 <script src="./js/jump.toggleimage.js"></script>
 <script src="./js/jump.window.js"></script>
+
+<script type="text/javascript">
+
+<?php
+    // DEFINICION DE URL PARA API
+    $remote_addr = $_SERVER["REMOTE_ADDR"];
+    $api_url = $remote_addr=='127.0.0.1' || $remote_addr=='::1' ? 
+        'http://observatorio.atic.com.ar' : // LOCAL
+        '.'; // SERVER
+
+    echo "var GlobalApiUrl = '$api_url';";
+?>
+
+
+</script>
