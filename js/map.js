@@ -1950,7 +1950,7 @@ function ol_map() {
 				
 			}).appendTo(node);
 			
-			$("#layer-checkbox-"+layer_id).parent().next().clone().attr("onclick","").appendTo(node);	
+			$("#layer-checkbox-"+layer_id).parent().next().clone().attr("onclick","").css("cursor","text").appendTo(node);	
 			
 			nodeicons.appendChild(nodeupdown);
 			
