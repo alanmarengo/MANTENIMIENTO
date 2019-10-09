@@ -1937,21 +1937,37 @@ function ol_map() {
 		
 		if ($("#info-capasactivas").find("#"+new_id).length == 0) {
 		
-			$(".abr[data-cid="+clase_id+"]").first().clone().attr("id",new_id).addClass("abr-cloned").width(32).css("background-color","rgb(245, 245, 245)").css("color","rgb(136, 136, 136)").appendTo(node);
+				$(".abr[data-cid="+clase_id+"]").first().clone().attr("id",new_id).addClass("abr-cloned").width(32).css("background-color","rgb(245, 245, 245)").css("color","rgb(136, 136, 136)").appendTo(node);
+				
+				if (isBuffer) {
+				
+				$("#layer-checkbox-"+layer_id).parent().clone().on("click",function() {
+					
+					if (bufferLayer.getVisible()) {
+						
+						bufferLayer.setVisible(false);
+						
+					}else{
+						
+						bufferLayer.setVisible(true);
+						
+					}
+					
+				}).appendTo(node);
 			
-			$("#layer-checkbox-"+layer_id).parent().clone().on("click",function() {
+			}else{
 				
-				if (bufferLayer.getVisible()) {
-					
-					bufferLayer.setVisible(false);
-					
-				}else{
-					
-					bufferLayer.setVisible(true);
-					
-				}
+				$(".abr[data-cid="+clase_id+"]").first().clone().attr("id",new_id).addClass("abr-cloned").width(32).css("background-color","rgb(245, 245, 245)").css("color","rgb(136, 136, 136)").appendTo(node);
 				
-			}).appendTo(node);
+				if (isBuffer) {
+				
+				$("#layer-checkbox-"+layer_id).parent().clone().on("click",function() {
+					
+					$("#layer-checkbox-"+layer_id).trigger("click");
+					
+				}).appendTo(node);
+				
+			}
 			
 			var text = $("#layer-checkbox-"+layer_id).parent().next().text();
 			
