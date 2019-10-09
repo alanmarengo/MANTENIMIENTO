@@ -248,12 +248,12 @@ function DrawLayers($clase_id) {
 							<a href="#" onclick="geomap.map.addBuffer(<?php echo $r["layer_id"]; ?>,'<?php echo $r["layer_wms_server"]; ?>&service=WFS&version=1.0.0&request=GetFeature&typeName=get_buffer&outputFormat=shape-zip&',this);">AGREGAR</a>
 						</div>	
 						
-						<div class="texticon-button texticon-button-blue mt-10">
-							<a id="dlbuffer-link-<?php echo $r["layer_id"]; ?>" href="#" target="_blank" title="Descargar buffer">
+						<!--<div class="texticon-button texticon-button-blue mt-10">
+							<a id="dlbuffer-link-<?php //echo $r["layer_id"]; ?>" href="#" target="_blank" title="Descargar buffer">
 								DESCARGAR 
 							</a>
 							<img src="./images/geovisor/icons/drawing-bar-download.png">
-						</div>
+						</div>-->
 						
 					</div>
 					
