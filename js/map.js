@@ -849,7 +849,7 @@ function ol_map() {
 			
 			this.layersBuffer[this.layersBufferIndex].setVisible(visible);
 			this.layersBufferIndex++;
-			this.AddLayerActive(-1,layer_id,true,this.layersBuffer[this.layersBufferIndex],distance);
+			this.panel.AddLayerActive(-1,layer_id,true,this.layersBuffer[this.layersBufferIndex],distance);
 			
 		}
 		
