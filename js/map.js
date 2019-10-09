@@ -8,7 +8,8 @@ function ol_map() {
 	this.map.infoEnabled = true;
 	this.popup = {};
 	this.map.baselayers = {};
-	this.map.layersBuffer = {};
+	this.map.layersBuffer = [];
+	this.map.layersBufferIndex = 0;
 	
 	this.map.geovisor = -1;
 	
@@ -826,17 +827,7 @@ function ol_map() {
 			
 		}else{
 			
-			if (this.layersBuffer[layer_id]) {
-			
-				this.layersBuffer[layer_id].getSource().updateParams({
-							
-					'viewparams':'layer_id:'+layer_id+";distancia:"+distance
-					
-				})
-				
-			}else{
-			
-				this.layersBuffer[layer_id] = new ol.layer.Tile({
+			this.layersBuffer[this.layersBufferIndex] = new ol.layer.Tile({
 					name:'get_buffer',
 					visible:false,
 					source: new ol.source.TileWMS({
@@ -858,7 +849,9 @@ function ol_map() {
 			
 			}
 			
-			this.layersBuffer[layer_id].setVisible(visible);
+			this.layersBuffer[this.layersBufferIndex].setVisible(visible);
+			this.layersBufferIndex++;
+			this.AddLayerActive(-1,layer_id,true,this.layersBuffer[this.layersBufferIndex],distance);
 			
 		}
 		
@@ -1890,7 +1883,7 @@ function ol_map() {
 			}
 		});
 		
-		this.AddLayerActive(clase_id,layer_id);
+		this.AddLayerActive(clase_id,layer_id,false,-1,-1);
 		this.map.updateLayerCount();
 		this.updateLayerCountPanelLabel(clase_id);
 			
@@ -1898,13 +1891,17 @@ function ol_map() {
 		
 	}
 	
-	this.panel.AddLayerActive = function(clase_id,layer_id) {
+	this.panel.AddLayerActive = function(clase_id,layer_id,isBuffer,bufferLayer,distance) {
+		
+		var dataLidLabel = "data-lid";
+		
+		if (isBuffer) { dataLidLabel = "data-lid-buffer"; }
 		
 		var container = document.getElementById("info-capasactivas-inner");
 		
 		var node = document.createElement("div");
-			node.className = "active-layer-node";		
-			node.setAttribute("data-lid",layer_id);
+			node.className = "active-layer-node";	
+			node.setAttribute(dataLidLabel,layer_id);
 			node.setAttribute("data-cid",clase_id);
 			
 		var nodeicons = document.createElement("div");
@@ -1946,11 +1943,23 @@ function ol_map() {
 			
 			$("#layer-checkbox-"+layer_id).parent().clone().on("click",function(){
 				
-				$("#layer-checkbox-"+layer_id).trigger("click");
+				if (bufferLayer.getVisible()) {
+					
+					bufferLayer.setVisible(false);
+					
+				}else{
+					
+					bufferLayer.setVisible(true);
+					
+				}
 				
 			}).appendTo(node);
 			
-			$("#layer-checkbox-"+layer_id).parent().next().clone().attr("onclick","").css("cursor","text").appendTo(node);	
+			var text = $("#layer-checkbox-"+layer_id).parent().next().text();
+			
+			if (isBuffer) { text = "Buffer: " + text + ", Distancia: " + distance }
+			
+			$("#layer-checkbox-"+layer_id).parent().next().clone().attr("onclick","").text(text).css("cursor","text").appendTo(node);	
 			
 			nodeicons.appendChild(nodeupdown);
 			
