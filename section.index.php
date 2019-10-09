@@ -120,7 +120,7 @@
             </div>
             <div class="row modulo-row">
 
-                <div id="noticias-slider" class="carousel slide" data-ride="carousel" data-interval="5000"></div>
+                <div id="noticias-slider" class="carousel slide" data-ride="false" data-interval="false"></div>
 
                 <div class="video-hover col-md-6 modulo-wrap modulo-7">
                     <div class="modulo-opacity"></div>
@@ -364,7 +364,7 @@
                                         ${n.titulo}
                                         <br />
                                         <span style="font-size: 16px; font-weight: normal;">
-                                       ${moment(n.fecha).format('DD [de] MMMM [de] YYYY')}
+                                            ${moment(n.fecha).format('DD [de] MMMM [de] YYYY')}
                                         </span>
                                     </p>
                                 </div>                
@@ -372,6 +372,20 @@
                         `;
                     }
                 }
+
+                if (index + 1 == slides_qty) {
+                        html += `
+                            <a target="_blank" href="./mediateca.php?solapa=3" class="noticia-item">
+                                <div class="noticia-caption2">
+                                    <p>
+                                        Ver m&aacute;s<br />
+                                        Noticias
+                                    </p>
+                                </div>                
+                            </a>
+                        `;
+                }
+
 
                 html += `</div>`;
             };
