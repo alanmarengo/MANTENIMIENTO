@@ -1932,14 +1932,14 @@ function ol_map() {
 			nodeupdown.appendChild(nodedown);
 		
 		var new_id = "active-layer-clone-" + clase_id + "-" + layer_id;
-		
+		console.log(isBuffer);
 		if ($("#info-capasactivas").find("#"+new_id).length == 0) {
 		
 			$(".abr[data-cid="+clase_id+"]").first().clone().attr("id",new_id).addClass("abr-cloned").width(32).css("background-color","rgb(245, 245, 245)").css("color","rgb(136, 136, 136)").appendTo(node);
 				
 			if (isBuffer) {
 				
-				$("#layer-checkbox-"+layer_id).parent().attr("id","layer-buffer-"+layer_id).clone().on("click",function() {
+				$("#layer-checkbox-"+layer_id).parent().clone().attr("id","layer-buffer-"+layer_id).on("click",function() {
 					
 					this.layer = bufferLayer;
 					
