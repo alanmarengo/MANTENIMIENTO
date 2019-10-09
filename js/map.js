@@ -1971,6 +1971,12 @@ function ol_map() {
 			
 			var text = $("#layer-checkbox-"+layer_id).parent().next().text();
 			
+			if (text.length > 33) {
+				
+				text = text.substring(0,33) + "...";
+				
+			}
+			
 			if (isBuffer) { text = "Buffer: " + text + ", Distancia: " + distance }
 			
 			$("#layer-checkbox-"+layer_id).parent().next().clone().attr("onclick","").text(text).css("cursor","text").appendTo(node);	
