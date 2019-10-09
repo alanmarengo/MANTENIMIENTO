@@ -2021,7 +2021,7 @@ function ol_map() {
 		
 		}
 		
-		$(".active-layer-node[data-lid="+layer_id"]").remove();
+		$(".active-layer-node[data-lid="+layer_id+"]").remove();
 		
 		this.updateLayerCountPanelLabel(clase_id);
 		
