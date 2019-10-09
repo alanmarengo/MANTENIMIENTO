@@ -87,8 +87,6 @@
     <div class="row">
         <div class="col-md-10">
             <div class="row modulo-row">
-                <div id="noticias-slider" class="carousel slide" data-ride="carousel" data-interval="5000"></div>
-            
                 <a href="./page.php" class="col-md-6 modulo-wrap modulo-1">
                     <div class="modulo-opacity"></div>
                     <div class="modulo-text">
@@ -121,6 +119,9 @@
                 </a>
             </div>
             <div class="row modulo-row">
+
+                <div id="noticias-slider" class="carousel slide" data-ride="carousel" data-interval="5000"></div>
+
                 <div class="video-hover col-md-6 modulo-wrap modulo-7">
                     <div class="modulo-opacity"></div>
                     <div class="modulo-text">
@@ -357,7 +358,16 @@
                     if (base + i < model.noticias.length) {
                         let n = model.noticias[base + i];
                         html += `
-                            <div class="noticia-item ${i < 3 - 1 ? 'noticia-item-borde' : ''}" style="background-image: url(${n.path_img}?${Math.floor((Math.random() * 10000) + 1)});">
+                            <div class="noticia-item" style="background-image: url(${n.path_img}?${Math.floor((Math.random() * 10000) + 1)});">
+                                <div class="noticia-caption">
+                                    <p>
+                                        ${n.titulo}
+                                        <br />
+                                        <span style="font-size: 16px; font-weight: normal;">
+                                       ${moment(n.fecha).format('DD [de] MMMM [de] YYYY')}
+                                        </span>
+                                    </p>
+                                </div>                
                             </div>
                         `;
                     }
