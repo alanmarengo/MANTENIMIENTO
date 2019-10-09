@@ -311,7 +311,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content video-container">
                 <video width="800" height="450" controls poster="image">
-                    <source src="http://observatorio.ieasa.com.ar/video_3d/LB_3.mp4" type="video/mp4" />
+                    <source src="http://observatorio.atic.com.ar/video_3d/LB_3.mp4" type="video/mp4" />
                     Tu navegador no soporta reproducir este video.
                 </video>
                 <div id="uxVideoClose">
