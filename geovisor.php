@@ -17,7 +17,7 @@
 	
 		#popup-geovisor {
 			
-			display:none !Important;
+			display:none;
 			
 		}
 	
