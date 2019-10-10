@@ -105,6 +105,7 @@
 <!-- HTML 2 CANVAS -->
 
 <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+<script src="./js/dom-to-image.js"></script>
 
 <!-- JUMP JS -->
 

@@ -590,15 +590,18 @@ function ol_map() {
 			
 		});*/
 		
-		this.ol_object.once('rendercomplete', function() {
-			toPng(map.getTargetElement(), exportOptions)
-			  .then(function(dataURL) {
-				var link = document.getElementById('image-download');
-				link.href = dataURL;
-				link.click();
-			  });
-		  });
-		this.ol_object.renderSync();
+		var node = document.getElementById('map');
+
+		domtoimage.toPng(node)
+			.then(function (dataUrl) {
+				var img = new Image();
+				img.crossOrigin = "Anonymous";
+				img.src = dataUrl;
+				document.body.appendChild(img);
+			})
+			.catch(function (error) {
+				console.error('oops, something went wrong!', error);
+			});
 		
 	}
 	
