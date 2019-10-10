@@ -95,14 +95,20 @@
             <div class="row modulo-row">
                 
                 <!-- #1 -->
-                <a href="./page.php" class="col-md-6 modulo-wrap modulo-1">
-                    <div class="modulo-opacity"></div>
+                <div class="col-md-6 modulo-wrap-caja1">
+
+                    <video id="uxVideo2" controls class="videosize" poster="./images/index/caja1.jpg">
+                        <source src="http://observatorio.atic.com.ar/video_3d/LB_3.mp4" type="video/mp4" />
+                    </video>
+                
+                
+                    <!--  <div class="modulo-opacity"></div>
                     <div class="modulo-text">
                         Aprovechamientos Hidroeléctricos del Río Santa Cruz
                     </div>
                     <div class="modulo-hover">
-                    </div>
-                </a>
+                    </div> -->
+                </div>
 
                 <!-- #2 -->
                 <a href="./page_pdga.php" class="col-md-6 modulo-wrap modulo-2">
@@ -449,18 +455,11 @@ $(document).ready(function() {
             model.sensorIndex = 0;
     }
 
-    $('.video-hover').on('click', function() {
-        $('#uxVideo').modal('show');
-        $('#uxVideo video')[0].play();
-    });
-
-    $('#uxVideo').on('hidden.bs.modal', function() {
-        $('#uxVideo video')[0].pause();
-    })
-
-    $('#uxVideoClose').on('click', function() {
-        $('#uxVideo video')[0].pause();
-        $('#uxVideo').modal('hide');
+    $('video').hover(
+        function() { this.play(); },
+        function() { this.pause(); }
+    ).on('click', function() {
+        window.location.href = "./page_ahrsc.php";
     });
 
     $('.carousel-item').hover(

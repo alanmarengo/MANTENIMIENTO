@@ -427,7 +427,7 @@ h2.sin-resultados {
 
     }
 
-    .video-container {
+    .video-container_back {
         width: 800px; 
         height: 450px; 
         position: relative;
@@ -546,6 +546,12 @@ h2.sin-resultados {
         border-top: @modulo-border;
     }
 
+    .modulo-wrap-caja1 {
+        position: relative;
+        border-left: @modulo-border;
+        border-top: @modulo-border;
+    }
+
     .border-bottom {
         border-bottom: @modulo-border!important;
     }
@@ -617,6 +623,15 @@ h2.sin-resultados {
         left: 50%;
         transform: translate(-50%, -50%);  
         text-shadow: @sombra-texto;      
+    }
+
+    .videosize {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%; 
+        height: 100%;
+        object-fit: cover;
     }
 
     .modulo-1 {
