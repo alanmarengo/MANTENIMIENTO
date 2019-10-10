@@ -108,11 +108,11 @@ function ol_map() {
 			})
 		});
 		
-		this.ol_object.map_object = this;
+		this.ol_object.infoEnabled = true;
 		
 		this.ol_object.addEventListener("click",function(evt) {
-			console.log(this.map_object.infoEnabled);
-			if (this.map_object.infoEnabled) {
+			
+			if (this.infoEnabled) {
 			
 				$("#info-wrapper").empty();
 				
@@ -627,7 +627,7 @@ function ol_map() {
 		this.ol_object.addControl(this.mouse_position_3857);
 		this.ol_object.addControl(this.mouse_position_4326);		
 		
-		this.infoEnabled = false;
+		this.ol_object.infoEnabled = false;
 		
 		this.ol_object.on("click",this.saveCoordinate);
 		
@@ -681,9 +681,9 @@ function ol_map() {
 		$("#btn-popup-capturar").show();
 		$("#coord-capture-wrapper").show();
 		
-		this.map_object.deactivateCoordinates();
+		this.deactivateCoordinates();
 		
-		this.infoEnabled = true;
+		this.ol_object.infoEnabled = true;
 		
 		this.un("click",this.map_object.saveCoordinate);
 		
@@ -704,7 +704,7 @@ function ol_map() {
 		if ((this.medicion) && (this.medicion.source)) { this.medicion.source.clear(); }
 		if ((this.ptopografico) && (this.ptopografico.source)) { this.ptopografico.source.clear(); }
 		
-		this.infoEnabled = false;
+		this.ol_object.infoEnabled = false;
 		
 		if (!this.buffer.source) {
 			
@@ -796,7 +796,7 @@ function ol_map() {
 			
 			this.parseGFI(req.responseText,"popup-buffer","info-buffer");
 			
-			this.infoEnabled = true;			
+			this.ol_object.infoEnabled = true;			
 			
 			this.buffer.source.clear();
 			
@@ -982,7 +982,7 @@ function ol_map() {
 		if ((this.medicion) && (this.medicion.source)) { this.medicion.source.clear(); }
 		if ((this.ptopografico) && (this.ptopografico.source)) { this.ptopografico.source.clear(); }
 		
-		this.infoEnabled = false;
+		this.ol_object.infoEnabled = false;
 		
 		if (!this.drawing.source) {
 			
@@ -1103,7 +1103,7 @@ function ol_map() {
 		//if ((this.medicion) && (this.medicion.source)) { this.medicion.source.clear(); }
 		if ((this.ptopografico) && (this.ptopografico.source)) { this.ptopografico.source.clear(); }
 		
-		this.infoEnabled = false;
+		this.ol_object.infoEnabled = false;
 		
 		if (!this.medicion.source) {
 		
@@ -1161,7 +1161,7 @@ function ol_map() {
 			
 			jwindow.open("popup-medicion");
 			
-			this.infoEnabled = true;
+			this.ol_object.infoEnabled = true;
 			
 		}.bind(this));
 		
@@ -1194,7 +1194,7 @@ function ol_map() {
 		if ((this.medicion) && (this.medicion.source)) { this.medicion.source.clear(); }
 		//if ((this.ptopografico) && (this.ptopografico.source)) { this.ptopografico.source.clear(); }
 		
-		this.infoEnabled = false;
+		this.ol_object.infoEnabled = false;
 		
 		if (!this.ptopografico.source) {
 		
@@ -1242,7 +1242,7 @@ function ol_map() {
 			
 			this.ptopografico.layerVector.getSource().clear();	
 			
-			this.infoEnabled = true;
+			this.ol_object.infoEnabled = true;
 			
 		}.bind(this));
 		
