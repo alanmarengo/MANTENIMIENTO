@@ -684,7 +684,7 @@ function ol_map() {
 		
 		this.map_object.deactivateCoordinates();
 		
-		this.ol_object.infoEnabled = true;
+		this.map_object.ol_object.infoEnabled = true;
 		
 		this.un("click",this.map_object.saveCoordinate);
 		
