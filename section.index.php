@@ -130,7 +130,7 @@
             <div class="row modulo-row">
 
             <!-- #3 -->
-            <div id="noticias-slider" class="carousel slide col-md-12" data-ride="false" data-interval="false" style="padding-left: 0px;></div>
+            <div id="noticias-slider" class="carousel slide col-md-12" data-ride="false" data-interval="false" style="padding-left: 0px;"></div>
 
             </div>
 
