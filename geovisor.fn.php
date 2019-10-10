@@ -90,7 +90,7 @@ function DrawLayers($clase_id) {
 	
 	$conn = pg_connect($string_conn);
 	
-	$query_string = "SELECT DISTINCT clase_id,layer_id,tipo_layer_id,layer_desc,layer_wms_layer,layer_wms_server FROM mod_geovisores.vw_layers WHERE clase_id = " . $clase_id . " ORDER BY layer_desc ASC";
+	$query_string = "SELECT DISTINCT clase_id,layer_id,tipo_layer_id,layer_desc,layer_wms_layer,layer_wms_server,layer_metadata_url FROM mod_geovisores.vw_layers WHERE clase_id = " . $clase_id . " ORDER BY layer_desc ASC";
 	
 	$query = pg_query($conn,$query_string);
 	
