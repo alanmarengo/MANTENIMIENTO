@@ -606,6 +606,13 @@ function ol_map() {
 		
 	}
 	
+	this.map.deactivateCoordinates = function() {
+		
+		this.ol_object.removeControl(this.mouse_position_3857);
+		this.ol_object.removeControl(this.mouse_position_4326);
+		
+	}
+	
 	this.map.activateCoordinates = function() {
 		
 		document.getElementById('coord-3857').innerHTML = "";
@@ -636,13 +643,6 @@ function ol_map() {
 		$("#coord-hint").show();
 		$("#btn-popup-capturar").hide();
 		$("#coord-capture-wrapper").hide();
-		
-	}
-	
-	this.map.deactivateCoordinates = function() {
-		
-		this.ol_object.removeControl(this.mouse_position_3857);
-		this.ol_object.removeControl(this.mouse_position_4326);
 		
 	}
 	
