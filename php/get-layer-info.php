@@ -58,7 +58,7 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 	
 	$query_count = pg_num_rows($query2);
 	
-	$html .= "<h3 style=\"font-size:18px; margin-bottom:20px;\"><a href=\"#\" onclick=\"$(this).parent().next().slideToggle('slow');\">" . $layer_desc[$i] . "(".$query_count.")</a></h3>";
+	$html .= "<h3 style=\"font-size:18px; margin-bottom:20px;\"><a href=\"#\" onclick=\"$(this).parent().next().slideToggle('slow');\">" . $layer_desc[$i] . "</a></h3>";
 
 	while($r = pg_fetch_assoc($query2)) {
 		
