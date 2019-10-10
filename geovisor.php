@@ -23,7 +23,19 @@
 	
 	</style>
 	
-	<?php } ?>
+	<?php }else{ ?>	
+	
+	<style>
+
+	#popup-geovisor {
+		
+		display:flex !Important;
+		
+	}
+	
+	</style>
+	
+	<?php }?>
 		
 	<?php include("./scripts.default.php"); ?>	
 	<?php include("./scripts.onresize.geovisor.php"); ?>	
