@@ -11,7 +11,7 @@
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-	<?php if ((isset($_GET["source"])) && (isset($_GET["id"]))) { ?>
+	<?php if (((isset($_GET["source"])) && (isset($_GET["id"]))) || (isset($_GET["geovisor"]))) { ?>
 	
 	<style>
 	
