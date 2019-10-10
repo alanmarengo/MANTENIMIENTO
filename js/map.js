@@ -109,6 +109,7 @@ function ol_map() {
 		});
 		
 		this.ol_object.infoEnabled = true;
+		this.ol_object.map_object = this;
 		
 		this.ol_object.addEventListener("click",function(evt) {
 			
