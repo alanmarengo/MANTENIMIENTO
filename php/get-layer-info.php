@@ -55,12 +55,14 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 	$query_string2 = "SELECT * FROM \"$schema\".\"$table\" WHERE id IN (" . implode(",",$gids[$layer_names[$i]]) . ")";
 	
 	$query2 = pg_query($conn,$query_string2);
-		
-	$html .= "<h3 style=\"font-size:18px; margin-bottom:20px;\">" . $layer_desc[$i] . "</h3>";
+	
+	$query_count = pg_num_rows($query2);
+	
+	$html .= "<h3 style=\"font-size:18px; margin-bottom:20px;\"><a href=\"#\" onclick=\"$(this).parent().slideToggle('slow');\"" . $layer_desc[$i] . "(".$query_count.")</a></h3>";
 
 	while($r = pg_fetch_assoc($query2)) {
 		
-		$html .= "<table class=\"popup-table gfi-info-table\" cellpadding=\"5\">";
+		$html .= "<div style=\"display:none;\"><table class=\"popup-table gfi-info-table\" cellpadding=\"5\">";
 		
 		foreach ($r as $item => $value){
 			
@@ -105,6 +107,7 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 		
 	$html .= "<br><hr><br>";
 
+	$html .= "</div>";
 	$html .= "</div>";
 
 }
