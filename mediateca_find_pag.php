@@ -77,7 +77,10 @@ if(!IsSetVar($solapa))
 
 if(!IsSetVar($mode))
 {
-	$mode = -1;
+	if($mode!=0)
+	{
+		$mode = -1;
+	};
 };
 
 $estudio_nombre = "";
