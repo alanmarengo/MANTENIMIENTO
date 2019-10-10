@@ -1936,16 +1936,16 @@ function ol_map() {
 			nodeupdown.appendChild(nodedown);
 		
 		var new_id = "active-layer-clone-" + clase_id + "-" + layer_id;
-		console.log(isBuffer);
+		
 		if ($("#info-capasactivas").find("#"+new_id).length == 0) {
 		
 			$(".abr[data-cid="+clase_id+"]").first().clone().attr("id",new_id).addClass("abr-cloned").width(32).css("background-color","rgb(245, 245, 245)").css("color","rgb(136, 136, 136)").appendTo(node);
 				
 			if (isBuffer) {
 				
-				$("#layer-checkbox-"+layer_id).parent().clone().attr("id","layer-buffer-"+layer_id).on("click",function() {
-					
-					this.layer = bufferLayer;
+				sublayer_id = layer_id + "-" + Date.now();
+				
+				$("#layer-checkbox-"+layer_id).parent().clone().attr("id","layer-buffer-"+sublayer_id).on("click",function() {
 					
 					if (bufferLayer.getVisible()) {
 						
@@ -1985,9 +1985,18 @@ function ol_map() {
 			
 			$("#layer-checkbox-"+layer_id).parent().next().next().clone().removeAttr("id").addClass("remove-layer-icon-ca").bind("click",function() {
 				
-				$("#remove-layer-icon-"+layer_id).trigger("click");
+				if (isBuffer) {
 				
-			}).appendTo(nodeicons);		
+					this.map.ol_object.removeLayer(layerBuffer);
+					$("#layer-buffer-"+sublayer_id).parent().remove();
+				
+				}else{
+					
+					$("#remove-layer-icon-"+layer_id).trigger("click");
+					
+				}
+				
+			}).appendTo(nodeicons).bind(this);		
 			
 			$("#layer-icon-zoomext-"+layer_id).clone().removeAttr("id").addClass("zoomext-layer-icon-ca").bind("click",function() {
 				
