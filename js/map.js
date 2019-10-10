@@ -108,10 +108,10 @@ function ol_map() {
 			})
 		});
 		
-		this.ol_object.map_object = this.map;
+		this.ol_object.map_object = this;
 		
 		this.ol_object.addEventListener("click",function(evt) {
-			
+			console.log(this.map_object.infoEnabled);
 			if (this.map_object.infoEnabled) {
 			
 				$("#info-wrapper").empty();
