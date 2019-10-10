@@ -625,7 +625,9 @@ function ol_map() {
 		});
 		
 		this.ol_object.addControl(this.mouse_position_3857);
-		this.ol_object.addControl(this.mouse_position_4326);
+		this.ol_object.addControl(this.mouse_position_4326);		
+		
+		this.infoEnabled = false;
 		
 		this.ol_object.on("click",this.saveCoordinate);
 		
@@ -680,6 +682,9 @@ function ol_map() {
 		$("#coord-capture-wrapper").show();
 		
 		this.map_object.deactivateCoordinates();
+		
+		this.infoEnabled = true;
+		
 		this.un("click",this.map_object.saveCoordinate);
 		
 	}
