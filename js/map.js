@@ -573,12 +573,12 @@ function ol_map() {
 		
         this.ol_object.renderSync();*/
 
-		html2canvas(document.querySelector("#map")).then(canvas => {
+		/*html2canvas(document.querySelector("#map")).then(canvas => {
 			
 			var a = document.createElement('a');
 			// toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
-			a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
-			a.download = 'captura.jpg';
+			a.href = canvas.toDataURL();
+			a.download = 'captura.png';
 			
 			document.body.appendChild(a);
 			
@@ -588,9 +588,17 @@ function ol_map() {
 			
 			$("#print-legend-wrapper").hide();
 			
-		});
-
-
+		});*/
+		
+		this.ol_object.once('rendercomplete', function() {
+			toPng(map.getTargetElement(), exportOptions)
+			  .then(function(dataURL) {
+				var link = document.getElementById('image-download');
+				link.href = dataURL;
+				link.click();
+			  });
+		  });
+		this.ol_object.renderSync();
 		
 	}
 	
