@@ -1,7 +1,5 @@
 <script type="text/javascript">
 	
-	import {toPng} from 'html-to-image';
-	
 	$(document).ready(function() {
 		
 		flotant = new Jump.flotant();
