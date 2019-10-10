@@ -97,7 +97,7 @@
                 <!-- #1 -->
                 <div class="col-md-6 modulo-wrap-caja1">
 
-                    <video id="uxVideo2" controls class="videosize" poster="./images/index/caja1.jpg">
+                    <video id="uxVideo2" class="videosize" poster="./images/index/caja1.jpg">
                         <source src="http://observatorio.atic.com.ar/video_3d/LB_3.mp4" type="video/mp4" />
                     </video>
                 
@@ -130,7 +130,7 @@
             <div class="row modulo-row">
 
             <!-- #3 -->
-            <div id="noticias-slider" class="carousel slide col-md-12" data-ride="false" data-interval="false"></div>
+            <div id="noticias-slider" class="carousel slide col-md-12" data-ride="false" data-interval="false" style="padding-left: 0px;></div>
 
             </div>
 
