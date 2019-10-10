@@ -153,7 +153,7 @@ function DrawLayers($clase_id) {
 					
 					?>
 				
-					<div class="layer-icon" onclick="$(this).children('a').trigger('click');" title="Información de capa">
+					<div class="layer-icon" onclick="$(this).children('a').trigger('click');" title="Información de capa" data-metaurl="<?php echo $r["layer_metadata_url"]; ?>">
 						<a href="<?php echo $metadata_url; ?>"<?php echo $target; ?>>
 							<img src="./images/geovisor/icons/layer-bar-info.png">
 						</a>
