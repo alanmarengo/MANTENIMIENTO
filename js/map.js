@@ -682,7 +682,7 @@ function ol_map() {
 		$("#btn-popup-capturar").show();
 		$("#coord-capture-wrapper").show();
 		
-		this.deactivateCoordinates();
+		this.map_object.deactivateCoordinates();
 		
 		this.ol_object.infoEnabled = true;
 		
