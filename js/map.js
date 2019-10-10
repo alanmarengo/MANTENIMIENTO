@@ -349,6 +349,8 @@ function ol_map() {
 		
 		var panel = this.panel;
 		
+		jwindow.close("popup-geovisor");
+		
 		for (var i=0; i<js.data.length; i++) {
 			
 			if (js.data[i].iniciar_panel == "t") {
