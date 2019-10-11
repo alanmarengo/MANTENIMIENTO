@@ -100,7 +100,7 @@ function ol_map() {
 			})
 		})*/
 		
-		this.baselayers.collection = [this.baselayers.openstreets,this.baselayers.opentopo,this.baselayers.bing_roads,this.baselayers.bing_aerials,this.baselayers.google];
+		this.baselayers.collection = [this.baselayers.openstreets,this.baselayers.opentopo,this.baselayers.bing_roads,this.baselayers.bing_aerials,this.baselayers.google,this.baselayers.argenmap];
 		
 		///////document.getElementById("baselayer-default-radio").click();
 		
