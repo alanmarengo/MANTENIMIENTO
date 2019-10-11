@@ -74,6 +74,15 @@ function ol_map() {
 				url: 'http://mt{0-3}.googleapis.com/vt?&x={x}&y={y}&z={z}&hl=es&gl=AR',
 				crossOrigin: 'anonymous'
 			})
+		})	
+	
+		this.baselayers.argenmap = new ol.layer.Tile({
+			name:'capabaseargenmap',
+			visible:true,
+			source: new ol.source.TileImage({ 
+				url: 'https://wms.ign.gob.ar/geoserver/ows',
+				crossOrigin: 'anonymous'
+			})
 		})
 		
 		this.baselayers.collection = [this.baselayers.openstreets,this.baselayers.opentopo,this.baselayers.bing_roads,this.baselayers.bing_aerials,this.baselayers.google];

@@ -64,6 +64,15 @@
 				
 				<br>
 			
+				<div class="pretty p-default p-round" style="font-size:20px;">
+					<input type="radio" checked="checked" name="radio-baselayers" id="baselayer-default-radio" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.argenmap);">
+					<div class="state">
+						<label>Argenmap</label>
+					</div>
+				</div>
+				
+				<br>
+			
 			</div>
 			
 		</div>
