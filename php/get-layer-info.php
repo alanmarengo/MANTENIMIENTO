@@ -43,14 +43,13 @@ $html = "";
 
 for ($i=0; $i<sizeof($layer_names); $i++) {
 	
-	$query_string = "SELECT DISTINCT layer_id,layer_desc,layer_schema,layer_table FROM mod_geovisores.vw_layers WHERE layer_wms_layer = '" . $layer_names[$i] . "' LIMIT 1";
+	$query_string = "SELECT DISTINCT layer_id,layer_schema,layer_table FROM mod_geovisores.vw_layers WHERE layer_wms_layer = '" . $layer_names[$i] . "' LIMIT 1";
 	
 	$query = pg_query($conn,$query_string);
 
 	$data = pg_fetch_assoc($query);
 
 	$layer_id = $data["layer_id"];
-	$layer_desc = $data["layer_desc"];
 	$schema = $data["layer_schema"];
 	$table= $data["layer_table"];
 	
@@ -81,7 +80,7 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 	$html .= "</a>";
 	$html .= "<a ";
 	$html .= "class=\"popup-header-button popup-header-button-toggleable popup-header-button-active-fixed\"  style=\"display:inline-block; background:none!important;\"";
-	$html .= "href=\"./mediateca.php?mode=10&mode_id=".$layer_id."&mode_label=".$layer_desc."\" ";
+	$html .= "href=\"./mediateca.php?mode=10&mode_id=".$layer_id."&mode_label=".$layer_desc[$i]."\" ";
 	$html .= ">";
 	$html .= "<img src=\"./images/file.png\">";
 	$html .= "</a>";
