@@ -128,10 +128,8 @@
             </div>
 
             <div class="row modulo-row">
-
-            <!-- #3 -->
-            <div id="noticias-slider" class="carousel slide col-md-12" data-ride="false" data-interval="false" style="padding-left: 0px;"></div>
-
+                <!-- #3 -->
+                <div id="noticias-slider" class="carousel slide col-md-12" data-ride="false" data-interval="false" style="padding-left: 0px; padding-right: 0px;"></div>
             </div>
 
             <div class="row modulo-row">
@@ -172,7 +170,7 @@
             <div class="row modulo-row">
 
                 <!-- #6 -->
-                <a href="./page_endesarrollo.php" class="col-md-6 modulo-wrap modulo-6">
+                <a href="./page_endesarrollo.php" class="col-md-6 modulo-wrap modulo-6" style="width: 50%;">
                     <div class="modulo-opacity"></div>
                     <div class="modulo-text">
                         Gestión ambiental de obra
@@ -186,20 +184,6 @@
                         </p>
                     </div>
                 </a>
-
-                <!--
-                <div class="video-hover col-md-6 modulo-wrap modulo-7">
-                    <div class="modulo-opacity"></div>
-                    <div class="modulo-text">
-                        EXPLORA LAS OBRAS DE LOS AHRSC EN 2D Y 3D
-                    </div>
-                    <div class="modulo-hover">
-                        <p class="modulo-hover-text">
-                            <i class="fa fa-play-circle fa-4x"></i>
-                        </p>
-                    </div>
-                </div>
-                -->
 
                 <div class="col-md-6">
                     <div class="row">
@@ -237,6 +221,7 @@
                                 </p>
                             </div>
                         </a>
+
                     </div>
                 </div>
             </div>
@@ -350,7 +335,8 @@ $(document).ready(function() {
         apiUrlBase: GlobalApiUrl,
         sensores: [],
         sensorIndex: 0,
-        noticias: []
+        noticias: [],
+        noticiasxslide: 4
     };
 
     $('.pinned').hcSticky({
@@ -360,8 +346,9 @@ $(document).ready(function() {
 
     $.getJSON(model.apiUrlBase + '/mediateca_noticias_index.php', function(data) {
         model.noticias = data;
-        let slides_qty = Math.trunc((data.length + 1) / 3);
+        model.noticias.splice(0, 2);
 
+        let slides_qty = (Math.trunc((data.length) / model.noticiasxslide)) + 1;
         let html = '';
 
         // html += '<ol class="carousel-indicators">';
@@ -372,32 +359,31 @@ $(document).ready(function() {
 
         html += '<div class="carousel-inner">';
         for (let index = 0; index < slides_qty; index++) {
-            let base = index * 3;
+            let base = index * model.noticiasxslide;
             html += `<div class="carousel-item ${index == 0 ? 'active' : ''}">`;
 
-            for (let i = 0; i < 3; i++) {
+            for (let i = 0; i < model.noticiasxslide; i++) {
                 if (base + i < model.noticias.length) {
                     let n = model.noticias[base + i];
                     html += `
-                            <div class="noticia-item" style="background-image: url(${n.path_img}?${Math.floor((Math.random() * 10000) + 1)});">
-                                <div class="noticia-caption">
-                                    <p>
+                            <a target="_blank" href="${n.path_pdf}" class="noticia-item" style="width: ${100 / model.noticiasxslide}% ; background-image: url(${n.path_img}?${Math.floor((Math.random() * 10000) + 1)});">
+                                <div class="noticia-caption" style="width: ${100 / model.noticiasxslide}% ;">
+                                    <p style="margin-bottom: 20px;">
                                         ${n.titulo}
-                                        <br />
-                                        <span style="font-size: 16px; font-weight: normal;">
-                                            ${moment(n.fecha).format('DD [de] MMMM [de] YYYY')}
-                                        </span>
+                                    </p>
+                                    <p style="font-size: 14px; font-weight: normal; text-align: right; margin-bottom: 4px;">
+                                        ${moment(n.fecha).format('DD [de] MMMM [de] YYYY')}
                                     </p>
                                 </div>                
-                            </div>
+                            </a>
                         `;
                 }
             }
 
             if (index + 1 == slides_qty) {
                 html += `
-                            <a target="_blank" href="./mediateca.php?solapa=3" class="noticia-item">
-                                <div class="noticia-caption2">
+                            <a target="_blank" href="./mediateca.php?solapa=3" class="noticia-item" style="background-color: #fff;">
+                                <div class="noticia-caption2" style="width: ${100 / model.noticiasxslide}% ;">
                                     <p>
                                         Ver m&aacute;s<br />
                                         Noticias
@@ -406,7 +392,6 @@ $(document).ready(function() {
                             </a>
                         `;
             }
-
 
             html += `</div>`;
         };
@@ -472,6 +457,9 @@ $(document).ready(function() {
             $(this).find('.carousel-caption').show();
         }
     )
+
+
+
     $('.modulo-wrap').hover(
         function() {
             $(this).find('.modulo-text').hide();
@@ -480,6 +468,7 @@ $(document).ready(function() {
             $(this).find('.modulo-text').show();
         }
     )
+
 
     $('.link-wrap').hover(
         function() {
@@ -504,6 +493,8 @@ $(document).ready(function() {
     //});
 
     function refreshUI() {
+        $('#page_index').width($(window).width() > 1400 ? 1400 : $(window).width());
+
         // Ajusta los circulos de la derecha para que siempre se vean redondos y no ovalados
         let w = $('.link-wrap').first().outerWidth();
         $('.link-wrap').height(w - 12);

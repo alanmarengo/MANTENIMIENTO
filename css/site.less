@@ -354,25 +354,25 @@ h2.sin-resultados {
 
 #page_index {
     margin: auto;
-    max-width: 1400px;
 
     @carousel_height: 540px;
     @modulo_height: 300px;
     @sombra-texto: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,1);
     @sombra-texto2: -1px -1px 1px rgba(255,255,255,1), 1px 1px 1px rgba(255,255,255,1);
     @modulo-border: 5px solid #fff;
+    @modulo-border10: 15px solid #fff;
 
     #noticias-slider {
-        border-top: @modulo-border;
+        border-top: @modulo-border10;
         width: 100%;
         height: @modulo_height;
 
         .carousel-item {
             height: @modulo_height;
+            background-color: #fff;
         }
 
         .noticia-item {
-            width: 33.33%;
             height: @modulo_height;
             float: left;
             border-left: @modulo-border;
@@ -384,14 +384,13 @@ h2.sin-resultados {
         }
 
         .noticia-caption {
-            font-size: 1.5em;
+            font-size: 1.3em;
             font-weight: bolder;
             color: #fff;
             opacity: .9;
             padding: 10px;
             position: absolute;
             bottom: 0px;
-            width: 33.33%;
             text-shadow: @sombra-texto;
             line-height: 26px;
         }
@@ -622,7 +621,7 @@ h2.sin-resultados {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);  
-        text-shadow: @sombra-texto;      
+        text-shadow: @sombra-texto; 
     }
 
     .videosize {
@@ -648,10 +647,12 @@ h2.sin-resultados {
     .modulo-4 {
         background-image: url(../images/index/caja4.jpg);
         min-height: @modulo_height;
+        border-top: @modulo-border10;
     }
     .modulo-5 {
         background-image: url(../images/index/caja5.jpg);
         min-height: @modulo_height;
+        border-top: @modulo-border10;
     }
     .modulo-6 {
         background-image: url(../images/index/caja6.jpg);
@@ -663,7 +664,6 @@ h2.sin-resultados {
     }
     .modulo-8 {
         background-image: url(../images/index/caja8.jpg);
-        //background-color: #585dc5;
         min-height: @modulo_height / 2;
     }
     .modulo-9 {
@@ -680,7 +680,7 @@ h2.sin-resultados {
     }
 
     #uxSensor {
-        padding: 1em 2em 1em 2em;
+        padding: 1em;
         margin: auto;
         color: #555;
 
@@ -698,12 +698,12 @@ h2.sin-resultados {
             font-size: 1.6em;
         }
         .sensor-dato {
-            margin-left: 40px;
-            font-size: 4em;
+            margin-left: 20px;
+            font-size: 3.5em;
             font-weight: bolder;
         }
         .sensor-min, .sensor-med, .sensor-max {
-            margin-left: 40px;
+            margin-left: 20px;
         }
         .sensor-unidad {
             font-size: .4em;
