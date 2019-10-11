@@ -60,27 +60,7 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 	
 	$html .= "<h3 style=\"font-size:18px; margin-bottom:20px;\"><a href=\"#\" onclick=\"$(this).parent().next().slideToggle('slow');\">" . $layer_desc[$i] . "</a></h3>";
 
-	while($r = pg_fetch_assoc($query2)) {
-		
-		$html .= "<div style=\"display:none;\"><table class=\"popup-table gfi-info-table\" cellpadding=\"5\">";
-		
-		foreach ($r as $item => $value){
-			
-			if(( strpos( $item, "geom" ) === false) && (strpos( $item, "id" ) === false) && (strpos( $item, "cod_" ) === false)&& (strpos( $item, "origen" ) === false)) {
-			
-				$html .= "<tr>";
-				$html .= "<td>" . str_replace("_"," ",$item) . "</td>";
-				$html .= "<td>" . $value . "</td>";
-				$html .= "</tr>";
-			
-			}
-		
-		}
-	
-		$html .= "</table>";
-		$html .= "<br><hr><br>";
-		
-	}
+	$html .= "<div style=\"display:none;\">";	
 
 	$html .= "<div style=\"text-align:center\" class=\"mt-20\">";
 
@@ -108,6 +88,29 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 	$html .= "<br><hr><br>";
 
 	$html .= "</div>";
+	
+	while($r = pg_fetch_assoc($query2)) {
+		
+		$html .= "<table class=\"popup-table gfi-info-table\" cellpadding=\"5\">";
+		
+		foreach ($r as $item => $value){
+			
+			if(( strpos( $item, "geom" ) === false) && (strpos( $item, "id" ) === false) && (strpos( $item, "cod_" ) === false)&& (strpos( $item, "origen" ) === false)) {
+			
+				$html .= "<tr>";
+				$html .= "<td>" . str_replace("_"," ",$item) . "</td>";
+				$html .= "<td>" . $value . "</td>";
+				$html .= "</tr>";
+			
+			}
+		
+		}
+	
+		$html .= "</table>";
+		$html .= "<br><hr><br>";
+		
+	}
+	
 	$html .= "</div>";
 
 }
