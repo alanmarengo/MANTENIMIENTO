@@ -108,11 +108,12 @@ function ol_map() {
 			})
 		});
 		
+		this.ol_object.infoEnabled = true;
 		this.ol_object.map_object = this;
 		
 		this.ol_object.addEventListener("click",function(evt) {
 			
-			if (this.map_object.infoEnabled) {
+			if (this.infoEnabled) {
 			
 				$("#info-wrapper").empty();
 				
@@ -573,12 +574,12 @@ function ol_map() {
 		
         this.ol_object.renderSync();*/
 
-		html2canvas(document.querySelector("#map")).then(canvas => {
+		/*html2canvas(document.querySelector("#map")).then(canvas => {
 			
 			var a = document.createElement('a');
 			// toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
-			a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
-			a.download = 'captura.jpg';
+			a.href = canvas.toDataURL();
+			a.download = 'captura.png';
 			
 			document.body.appendChild(a);
 			
@@ -588,9 +589,27 @@ function ol_map() {
 			
 			$("#print-legend-wrapper").hide();
 			
-		});
+		});*/
+		
+		var node = document.getElementById('map');
 
-
+		domtoimage.toPng(node)
+			.then(function (dataUrl) {
+				var img = new Image();
+				img.crossOrigin = "Anonymous";
+				img.src = dataUrl;
+				document.body.appendChild(img);
+			})
+			.catch(function (error) {
+				console.error('oops, something went wrong!', error);
+			});
+		
+	}
+	
+	this.map.deactivateCoordinates = function() {
+		
+		this.ol_object.removeControl(this.mouse_position_3857);
+		this.ol_object.removeControl(this.mouse_position_4326);
 		
 	}
 	
@@ -614,7 +633,9 @@ function ol_map() {
 		});
 		
 		this.ol_object.addControl(this.mouse_position_3857);
-		this.ol_object.addControl(this.mouse_position_4326);
+		this.ol_object.addControl(this.mouse_position_4326);		
+		
+		this.ol_object.infoEnabled = false;
 		
 		this.ol_object.on("click",this.saveCoordinate);
 		
@@ -622,13 +643,6 @@ function ol_map() {
 		$("#coord-hint").show();
 		$("#btn-popup-capturar").hide();
 		$("#coord-capture-wrapper").hide();
-		
-	}
-	
-	this.map.deactivateCoordinates = function() {
-		
-		this.ol_object.removeControl(this.mouse_position_3857);
-		this.ol_object.removeControl(this.mouse_position_4326);
 		
 	}
 	
@@ -669,6 +683,9 @@ function ol_map() {
 		$("#coord-capture-wrapper").show();
 		
 		this.map_object.deactivateCoordinates();
+		
+		this.map_object.ol_object.infoEnabled = true;
+		
 		this.un("click",this.map_object.saveCoordinate);
 		
 	}
@@ -688,7 +705,7 @@ function ol_map() {
 		if ((this.medicion) && (this.medicion.source)) { this.medicion.source.clear(); }
 		if ((this.ptopografico) && (this.ptopografico.source)) { this.ptopografico.source.clear(); }
 		
-		this.infoEnabled = false;
+		this.ol_object.infoEnabled = false;
 		
 		if (!this.buffer.source) {
 			
@@ -780,7 +797,7 @@ function ol_map() {
 			
 			this.parseGFI(req.responseText,"popup-buffer","info-buffer");
 			
-			this.infoEnabled = true;			
+			this.ol_object.infoEnabled = true;			
 			
 			this.buffer.source.clear();
 			
@@ -966,7 +983,7 @@ function ol_map() {
 		if ((this.medicion) && (this.medicion.source)) { this.medicion.source.clear(); }
 		if ((this.ptopografico) && (this.ptopografico.source)) { this.ptopografico.source.clear(); }
 		
-		this.infoEnabled = false;
+		this.ol_object.infoEnabled = false;
 		
 		if (!this.drawing.source) {
 			
@@ -1087,7 +1104,7 @@ function ol_map() {
 		//if ((this.medicion) && (this.medicion.source)) { this.medicion.source.clear(); }
 		if ((this.ptopografico) && (this.ptopografico.source)) { this.ptopografico.source.clear(); }
 		
-		this.infoEnabled = false;
+		this.ol_object.infoEnabled = false;
 		
 		if (!this.medicion.source) {
 		
@@ -1145,7 +1162,7 @@ function ol_map() {
 			
 			jwindow.open("popup-medicion");
 			
-			this.infoEnabled = true;
+			this.ol_object.infoEnabled = true;
 			
 		}.bind(this));
 		
@@ -1178,7 +1195,7 @@ function ol_map() {
 		if ((this.medicion) && (this.medicion.source)) { this.medicion.source.clear(); }
 		//if ((this.ptopografico) && (this.ptopografico.source)) { this.ptopografico.source.clear(); }
 		
-		this.infoEnabled = false;
+		this.ol_object.infoEnabled = false;
 		
 		if (!this.ptopografico.source) {
 		
@@ -1226,7 +1243,7 @@ function ol_map() {
 			
 			this.ptopografico.layerVector.getSource().clear();	
 			
-			this.infoEnabled = true;
+			this.ol_object.infoEnabled = true;
 			
 		}.bind(this));
 		

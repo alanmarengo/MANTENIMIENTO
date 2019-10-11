@@ -608,12 +608,6 @@
 	
 }
 
-#popup-geovisor {
-	
-	display:flex !Important;
-	
-}
-
 .popup-modal {
 	
 	position:fixed;
@@ -749,4 +743,11 @@
 	
 	color:#FFFFFF;
 	
+}
+
+#info-wrapper h3 a {
+
+    color: #888;
+	font-size:16px;
+
 }

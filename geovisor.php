@@ -11,7 +11,7 @@
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-	<?php if ((isset($_GET["source"])) && (isset($_GET["id"]))) { ?>
+	<?php if (((isset($_GET["source"])) && (isset($_GET["id"]))) || (isset($_GET["geovisor"]))) { ?>
 	
 	<style>
 	
@@ -23,7 +23,19 @@
 	
 	</style>
 	
-	<?php } ?>
+	<?php }else{ ?>	
+	
+	<style>
+
+	#popup-geovisor {
+		
+		display:flex !Important;
+		
+	}
+	
+	</style>
+	
+	<?php }?>
 		
 	<?php include("./scripts.default.php"); ?>	
 	<?php include("./scripts.onresize.geovisor.php"); ?>	
