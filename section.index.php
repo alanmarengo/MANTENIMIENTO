@@ -365,7 +365,7 @@ $(document).ready(function() {
                 if (base + i < model.noticias.length) {
                     let n = model.noticias[base + i];
                     html += `
-                            <a target="_blank" href="${n.path_pdf}" class="noticia-item" style="width: ${100 / model.noticiasxslide}% ; background-image: url(${n.path_img}?${Math.floor((Math.random() * 10000) + 1)});">
+                            <a target="_blank" href="./mediateca.php?solapa=3" class="noticia-item" style="width: ${100 / model.noticiasxslide}% ; background-image: url(${n.path_img}?${Math.floor((Math.random() * 10000) + 1)});">
                                 <div class="noticia-caption" style="width: ${100 / model.noticiasxslide}% ;">
                                     <p style="margin-bottom: 20px;">
                                         ${n.titulo}
