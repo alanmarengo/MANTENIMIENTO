@@ -112,6 +112,7 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 	}
 	
 	$html .= "</div>";
+	$html .= "</div>";
 
 }
 
