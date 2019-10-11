@@ -82,7 +82,7 @@ function ol_map() {
 			source: new ol.source.TileWMS({
 				url: "https://wms.ign.gob.ar/geoserver/ows",
 				params: {
-					'LAYERS': layer_name,
+					'LAYERS': 'capabaseargenmap',
 					'VERSION': '1.1.1',
 					'FORMAT': 'image/png',
 					'TILED': false
