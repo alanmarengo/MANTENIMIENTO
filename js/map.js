@@ -78,7 +78,7 @@ function ol_map() {
 	
 		this.baselayers.argenmap = new ol.layer.Tile({
 			name:"capabaseargenmap",
-			visible:true,
+			visible:false,
 			source: new ol.source.TileWMS({
 				url: "https://wms.ign.gob.ar/geoserver/ows",
 				params: {
