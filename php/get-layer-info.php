@@ -68,15 +68,15 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 			$html .= "</div>";
 			$html .= "<div class=\"layer-icon\">";
 				$html .= "<a href=\"#\"><img src=\"./images/geovisor/icons/popup-layer-download-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-download-inactive.png\"
-				data-active=\"./images/geovisor/icons/popup-layer-download-active.png\"></a></a>";
+				data-active=\"./images/geovisor/icons/popup-layer-download-active.png\"></a>";
 			$html .= "</div>";
 			$html .= "<div class=\"layer-icon\">";
 				$html .= "<a href=\"#\"><img src=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\"
-				data-active=\"./images/geovisor/icons/popup-layer-recurso-active.png\"></a></a>";></a>";
+				data-active=\"./images/geovisor/icons/popup-layer-recurso-active.png\"></a>";
 			$html .= "</div>";
 			$html .= "<div class=\"layer-icon\">";
 				$html .= "<a href=\"#\" onclick=\"geomap.map.togglePopupLayers(this)\"><img src=\"./images/geovisor/icons/popup-layer-opened\" data-inactive=\"./images/geovisor/icons/popup-layer-opened.png\"
-				data-active=\"./images/geovisor/icons/popup-layer-closed.png\"></a></a>";></a>";></a>";
+				data-active=\"./images/geovisor/icons/popup-layer-closed.png\"></a>";
 			$html .= "</div>";
 		$html .= "</div>";
 	$html .= "</div>";
