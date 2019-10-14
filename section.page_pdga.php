@@ -187,6 +187,9 @@ Especialidades involucradas,  asesores internacionales.
 <script type='text/javascript'>
 $(document).ready(function() {
     $('.section-sticky a').on('click', function() {
+        $('.section-sticky a').removeClass('selected');
+        $(this).addClass('selected');
+
         let selector = $(this).data('target');
         $('html, body').animate({
             scrollTop: $(selector).offset().top - 200
