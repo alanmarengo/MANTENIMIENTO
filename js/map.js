@@ -1311,7 +1311,7 @@ function ol_map() {
 		
 	}
 	
-	this.map.togglePopupLayers(node) = function() {
+	this.map.togglePopupLayers = function(node) {
 		
 		alert(1);
 		
