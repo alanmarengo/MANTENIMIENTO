@@ -4,13 +4,10 @@
 	<div class="jump-window-inner p20">
 
 		<div class="jump-window-header">
-			<span>Datos de Capa</span>
-			<div class="jump-window-icon-bar">
-				<a href="#" class="jump-window-minimize" onclick="jwindow.minimize('popup-info');">
-					<i class="fas fa-minus"></i>
-				</a>				
-				<a href="#" class="jump-window-close" onclick="jwindow.close('popup-info');">
-					<i class="fas fa-times"></i>
+			<span>Info de Capa</span>
+			<div class="jump-window-icon-bar" style="margin-right:-90px;">
+				<a href="#" class="jump-window-minimize" onclick="jwindow.close('popup-info');">
+					<img src="./images/internal-link.png">
 				</a>
 			</div>
 		</div>

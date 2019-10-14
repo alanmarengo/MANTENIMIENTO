@@ -4,13 +4,13 @@
 			<a href="./mediateca.php">Mediateca</a>
 		</li>
 		<li>
-			<a href="./geovisor.php">GeoObI (Geovisor Observatorio IEASA)</a>
+			<a href="./geovisor.php">Geovisores</a>
 		</li>
 		<li>
 			<a href="./indicadores.php">Indicadores</a>
 		</li>
 		<li>
-			<a href="./estadisticas.php">Datos y estadísticas</a>
+			<a href="./estadisticas.php">Estadísticas</a>
 		</li>
 	</ul>
 </div>
