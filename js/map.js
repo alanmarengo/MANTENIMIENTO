@@ -1311,6 +1311,12 @@ function ol_map() {
 		
 	}
 	
+	this.map.togglePopupLayers(node) = function() {
+		
+		alert(1);
+		
+	}
+	
 	// PANEL SCRIPTS 
 	
 	this.panel.map = this.map;

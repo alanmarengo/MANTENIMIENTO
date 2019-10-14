@@ -59,9 +59,29 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 	
 	$query_count = pg_num_rows($query2);
 	
-	$html .= "<h3 style=\"font-size:18px; margin-bottom:20px;\"><a href=\"#\" onclick=\"$(this).parent().next().slideToggle('slow');\">" . $layer_desc[$i] . "</a></h3>";
+	$html .= "<div class\"popup-layer-node\">";
+		$html .= "<a href=\"#\" class=\"layer-label\" onclick=\"$(this).parent().next().slideToggle('slow');\">" . $layer_desc[$i] . "</a>";
+		$html .= "<div class=\"active-layer-node-icons\">";
+			$html .= "<div class=\"layer-icon\">";
+				$html .= "<a href=\"#\"><img src=\"./images/geovisor/icons/popup-layer-info-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-info-inactive.png\"
+				data-active=\"./images/geovisor/icons/popup-layer-info-active.png\"></a>";
+			$html .= "</div>";
+			$html .= "<div class=\"layer-icon\">";
+				$html .= "<a href=\"#\"><img src=\"./images/geovisor/icons/popup-layer-download-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-download-inactive.png\"
+				data-active=\"./images/geovisor/icons/popup-layer-download-active.png\"></a></a>";
+			$html .= "</div>";
+			$html .= "<div class=\"layer-icon\">";
+				$html .= "<a href=\"#\"><img src=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\"
+				data-active=\"./images/geovisor/icons/popup-layer-recurso-active.png\"></a></a>";></a>";
+			$html .= "</div>";
+			$html .= "<div class=\"layer-icon\">";
+				$html .= "<a href=\"#\" onclick=\"geomap.map.togglePopupLayers(this)\"><img src=\"./images/geovisor/icons/popup-layer-opened\" data-inactive=\"./images/geovisor/icons/popup-layer-opened.png\"
+				data-active=\"./images/geovisor/icons/popup-layer-closed.png\"></a></a>";></a>";></a>";
+			$html .= "</div>";
+		$html .= "</div>";
+	$html .= "</div>";
 
-	$html .= "<div style=\"display:none;\">";	
+	$html .= "<div style=\"display:none;\" class=\"popup-layer-content\">";	
 
 	$html .= "<div style=\"text-align:center\" class=\"mt-20\">";
 
