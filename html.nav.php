@@ -18,7 +18,7 @@
 			<a href="./page_pdga.php">Plan de Gestión Ambiental - PGA</a>
 		</li>
 		<li>
-			<a href="./page_endesarrollo.php">Antecedentes y Marco Legal</a>
+			<a href="./page_esia.php">Antecedentes y Marco Legal</a>
 		</li>
 		<li>
 			<a href="./page_endesarrollo.php">Participación Pública y Gestión Social</a>
@@ -38,7 +38,7 @@
 			<a href="./page_endesarrollo.php">Plan Gestión de Calidad</a>
 		</li>
 		<li>
-			<a href="./page_herramientas.php">Servicios Geográficos</a>
+			<a href="./page_herramientas.php?target=geoservicios">Servicios Geográficos</a>
 		</li>
 		<li>
 			<a href="http://observatorio.ieasa.com.ar:8080/geonetwork">Datos Abiertos</a>
