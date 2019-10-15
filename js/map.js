@@ -1330,6 +1330,8 @@ function ol_map() {
 				});
 				
 			});
+			
+			$(node).closest(".popup-layer-node").attr("data-state","1");
 		
 		}else{
 			
@@ -1350,6 +1352,8 @@ function ol_map() {
 		}
 		
 		$(node).closest(".popup-layer-node").next(".popup-layer-content").slideToggle("fast");
+			
+		$(node).closest(".popup-layer-node").attr("data-state","0");
 		
 	}
 	
