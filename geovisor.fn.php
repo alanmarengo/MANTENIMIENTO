@@ -486,4 +486,17 @@ function DrawComboSimpleFN($id,$desc,$schema,$table,$opini,$opini_label,$opini_v
 	
 }
 
-?>
+
+function strip($string,$max) {
+	
+	if (strlen($string) < $max) {
+		
+		return $string;
+		
+	}else{
+		
+		return $string . "...";
+		
+	}
+	
+}

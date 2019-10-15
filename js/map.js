@@ -1313,7 +1313,30 @@ function ol_map() {
 	
 	this.map.togglePopupLayers = function(node) {
 		
-		alert(1);
+		$(".popup-layer-node").removeClass("popup-layer-node-active");
+		$(".popup-layer-node").each(function(i,v) {
+			
+			$(v).find(".layer-icon").each(function(j,x) {
+				
+				var srcInactive = $(x).children("a").children("img").attr("data-inactive");
+				
+				$(x).children("a").children("img").attr("src",srcInactive);
+				
+			});
+			
+		});
+		
+		$(node).closest(".popup-layer-node").addClass("popup-layer-node-active");$(".popup-layer-node").each(function(i,v) {
+			
+			$(v).find(".layer-icon").each(function(j,x) {
+				
+				var srcInactive = $(x).children("a").children("img").attr("data-inactive");
+				
+				$(x).children("a").children("img").attr("src",srcInactive);
+				
+			});
+			
+		});
 		
 	}
 	
