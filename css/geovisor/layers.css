@@ -404,7 +404,7 @@
 	
 }
 
-.active-layer-node .layer-label, .popup-layer-node.layer-label {
+.active-layer-node .layer-label, .popup-layer-node .layer-label {
 	
 	left: 10px;
 	color: #888;
