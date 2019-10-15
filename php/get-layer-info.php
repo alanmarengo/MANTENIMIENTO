@@ -60,7 +60,7 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 	$query_count = pg_num_rows($query2);
 	
 	$html .= "<div class=\"popup-layer-node\">";
-		$html .= "<a href=\"#\" class=\"layer-label\" onclick=\"$(this).parent().next().slideToggle('slow');\">" . $layer_desc[$i] . "</a>";
+		$html .= "<a href=\"#\" class=\"layer-label\" style=\"cursor:text\">" . $layer_desc[$i] . "</a>";
 		$html .= "<div class=\"popup-layer-node-icons\">";
 			$html .= "<div class=\"layer-icon\">";
 				$html .= "<a href=\"#\"><img src=\"./images/geovisor/icons/popup-layer-info-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-info-inactive.png\"
