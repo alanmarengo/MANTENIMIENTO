@@ -288,6 +288,21 @@
 	
 }
 
+.popup-layer-node-icons .layer-icon {
+	
+	height:24px;
+    /*background: RGBA(0,0,0,0.2);
+	width:46px;*/
+	border-radius:3px;
+	margin-left:7px;
+	display:inline-block;
+	vertical-align:top;
+	text-align:center;
+	cursor:pointer;
+	line-height:22px;
+	
+}
+
 .layer-icon:first-child {
 	
 	margin-left:0px;
@@ -417,7 +432,7 @@
 	
 }
 
-.active-layer-node .active-layer-node-icons,.popup-layer-node .active-layer-node-icons {
+.active-layer-node .active-layer-node-icons,.popup-layer-node .popup-layer-node-icons {
 	
 	margin: 3px 3px 3px 8%;
 	width: auto;
