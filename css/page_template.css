@@ -8,6 +8,11 @@
   top: 68px;
   z-index: 999;
 }
+.page_template .section-sticky a.selected {
+  font-weight: bold;
+  background-color: #8d3050;
+  color: #fff;
+}
 .page_template .top-buttons {
   text-transform: uppercase;
   background-color: #f3f3f3;
@@ -124,7 +129,7 @@
 #page_endesarrollo .leyenda {
   padding: 100px 100px;
   min-height: 450px;
-  font-size: 40px;
+  font-size: 1.5em;
   text-align: center;
 }
 #page_esia .linea-tiempo .cuadro-tiempo {

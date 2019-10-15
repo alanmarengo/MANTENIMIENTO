@@ -271,43 +271,37 @@
 
         <div class="col-md-2 side-right" style="position: relative;">
             <div class="row pinned" style="position: absolute;">
-                <a href="./mediateca.php" class="col-md-12 link-wrap link-1" data-img="./images/icono_mediateca.png"
-                    data-imghover="./images/icono_mediateca_hover.png" data-css="link-1" data-csshover="link-1-hover">
-                    <div class="link-icon">
-                        <img src="./images/icono_mediateca.png" />
-                    </div>
-                    <div class="link-text" style="display: none;">
-                        MEDIATECA
-                    </div>
+                <a 
+                    href="./mediateca.php" 
+                    class="col-md-12 link-icon" 
+                    data-img="./images/index/ico1a.png"
+                    data-imghover="./images/index/ico1b.png" 
+                >
+                    <img src="./images/index/ico1a.png" />
                 </a>
-                <a href="./page_herramientas.php" class="col-md-12 link-wrap link-2"
-                    data-img="./images/icono_geovisores.png" data-imghover="./images/icono_geovisores_hover.png"
-                    data-css="link-2" data-csshover="link-2-hover">
-                    <div class="link-icon">
-                        <img src="./images/icono_geovisores.png" />
-                    </div>
-                    <div class="link-text" style="display: none;">
-                        GEOVISORES
-                    </div>
+                <a 
+                    href="./page_herramientas.php" 
+                    class="col-md-12 link-icon" 
+                    data-img="./images/index/ico2a.png"
+                    data-imghover="./images/index/ico2b.png" 
+                >
+                    <img src="./images/index/ico2a.png" />
                 </a>
-                <a href="./indicadores.php" class="col-md-12 link-wrap link-3" data-img="./images/icono_indicadores.png"
-                    data-imghover="./images/icono_indicadores_hover.png" data-css="link-3" data-csshover="link-3-hover">
-                    <div class="link-icon">
-                        <img src="./images/icono_indicadores.png" />
-                    </div>
-                    <div class="link-text" style="display: none;">
-                        INDICADORES
-                    </div>
+                <a 
+                    href="./indicadores.php" 
+                    class="col-md-12 link-icon" 
+                    data-img="./images/index/ico3a.png"
+                    data-imghover="./images/index/ico3b.png" 
+                >
+                    <img src="./images/index/ico3a.png" />
                 </a>
-                <a href="./estadisticas.php" class="col-md-12 link-wrap link-4"
-                    data-img="./images/icono_estadisticas.png" data-imghover="./images/icono_estadisticas_hover.png"
-                    data-css="link-4" data-csshover="link-4-hover">
-                    <div class="link-icon">
-                        <img src="./images/icono_estadisticas.png" />
-                    </div>
-                    <div class="link-text" style="display: none;">
-                        ESTADISTICAS
-                    </div>
+                <a 
+                    href="./estadisticas.php" 
+                    class="col-md-12 link-icon" 
+                    data-img="./images/index/ico4a.png"
+                    data-imghover="./images/index/ico4b.png" 
+                >
+                    <img src="./images/index/ico4a.png" />
                 </a>
             </div>
         </div>
@@ -457,8 +451,6 @@ $(document).ready(function() {
         }
     )
 
-
-
     $('.modulo-wrap').hover(
         function() {
             $(this).find('.modulo-text').hide();
@@ -468,40 +460,29 @@ $(document).ready(function() {
         }
     )
 
-
-    $('.link-wrap').hover(
+    $('.link-icon').hover(
         function() {
-            let icon = $(this).find('.link-icon img');
+            let icon = $(this).find('img');
             icon.attr('src', $(this).data('imghover'));
-            $(this).removeClass($(this).data('css'));
-            $(this).addClass($(this).data('csshover'));
-            $(this).find('.link-text').show();
         },
         function() {
-            let icon = $(this).find('.link-icon img');
+            let icon = $(this).find('img');
             icon.attr('src', $(this).data('img'));
-            $(this).removeClass($(this).data('csshover'));
-            $(this).addClass($(this).data('css'));
-            $(this).find('.link-text').hide();
         }
     )
 
-    //refreshUI();
-    //$(window).resize(function() {
-    //    refreshUI();
-    //});
+    refreshUI();
+    $(window).resize(function() {
+        refreshUI();
+    });
 
     function refreshUI() {
         $('#page_index').width($(window).width() > 1400 ? 1400 : $(window).width());
-
-        // Ajusta los circulos de la derecha para que siempre se vean redondos y no ovalados
-        let w = $('.link-wrap').first().outerWidth();
-        $('.link-wrap').height(w - 12);
     }
 
-    setInterval(() => {
+   /*  setInterval(() => {
         refreshUI();
-    }, 500);
+    }, 500); */
 
 });
 </script>
