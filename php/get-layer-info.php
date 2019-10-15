@@ -75,7 +75,7 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 				data-active=\"./images/geovisor/icons/popup-layer-recurso-active.png\"></a>";
 			$html .= "</div>";
 			$html .= "<div class=\"layer-icon\">";
-				$html .= "<a href=\"#\" onclick=\"geomap.map.togglePopupLayers(this)\"><img src=\"./images/geovisor/icons/popup-layer-opened\" data-inactive=\"./images/geovisor/icons/popup-layer-opened.png\"
+				$html .= "<a href=\"#\" onclick=\"geomap.map.togglePopupLayers(this)\"><img src=\"./images/geovisor/icons/popup-layer-closed.png\" data-inactive=\"./images/geovisor/icons/popup-layer-opened.png\"
 				data-active=\"./images/geovisor/icons/popup-layer-closed.png\"></a>";
 			$html .= "</div>";
 		$html .= "</div>";
