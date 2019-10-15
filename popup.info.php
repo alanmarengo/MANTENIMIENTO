@@ -12,7 +12,7 @@
 			</div>
 		</div>
 		
-		<div class="jump-window-body jump-window-full-body jump-flotant-height-transform jump-scroll p20">
+		<div class="jump-window-body jump-window-full-body jump-flotant-height-transform jump-scroll">
 					
 			<div id="info-wrapper"></div>
 			
