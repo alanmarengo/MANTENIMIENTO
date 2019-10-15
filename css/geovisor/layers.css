@@ -288,6 +288,12 @@
 	
 }
 
+.popup-layer-node-active {
+	
+	background-color:#31cbfd;
+	
+}
+
 .popup-layer-node-icons .layer-icon {
 	
 	height:24px;

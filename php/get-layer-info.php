@@ -59,7 +59,7 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 	
 	$query_count = pg_num_rows($query2);
 	
-	$html .= "<div class=\"popup-layer-node\">";
+	$html .= "<div class=\"popup-layer-node\" data-state=\"0\">";
 		$html .= "<a href=\"#\" class=\"layer-label\" style=\"cursor:text\" title=\"" . $layer_desc[$i] . "\">" . strip($layer_desc[$i],38) . "</a>";
 		$html .= "<div class=\"popup-layer-node-icons\">";
 			$html .= "<div class=\"layer-icon\">";

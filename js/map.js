@@ -1313,30 +1313,41 @@ function ol_map() {
 	
 	this.map.togglePopupLayers = function(node) {
 		
-		$(".popup-layer-node").removeClass("popup-layer-node-active");
-		$(".popup-layer-node").each(function(i,v) {
-			
-			$(v).find(".layer-icon").each(function(j,x) {
-				
-				var srcInactive = $(x).children("a").children("img").attr("data-inactive");
-				
-				$(x).children("a").children("img").attr("src",srcInactive);
-				
-			});
-			
-		});
+		var nodeState = $(node).closest(".popup-layer-node").attr("data-state");
 		
-		$(node).closest(".popup-layer-node").addClass("popup-layer-node-active");$(".popup-layer-node").each(function(i,v) {
+		if (nodeState == 0) {
 			
-			$(v).find(".layer-icon").each(function(j,x) {
+			$(node).closest(".popup-layer-node").addClass("popup-layer-node-active");
+			
+			$(node).closest(".popup-layer-node").each(function(i,v) {
 				
-				var srcInactive = $(x).children("a").children("img").attr("data-inactive");
+				$(v).find(".layer-icon").each(function(j,x) {
+					
+					var srcSource = $(x).children("a").children("img").attr("data-active");
+					
+					$(x).children("a").children("img").attr("src",srcSource);
+					
+				});
 				
-				$(x).children("a").children("img").attr("src",srcInactive);
+			});
+		
+		}else{
+			
+			$(node).closest(".popup-layer-node").removeClass("popup-layer-node-active");
+			
+			$(node).closest(".popup-layer-node").each(function(i,v) {
+				
+				$(v).find(".layer-icon").each(function(j,x) {
+					
+					var srcSource = $(x).children("a").children("img").attr("data-inactive");
+					
+					$(x).children("a").children("img").attr("src",srcSource);
+					
+				});
 				
 			});
 			
-		});
+		}
 		
 	}
 	
