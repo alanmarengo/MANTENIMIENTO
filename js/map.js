@@ -1349,6 +1349,8 @@ function ol_map() {
 			
 		}
 		
+		$(node).closest(".popup-layer-node").next(".popup-layer-content").slideToggle("fast");
+		
 	}
 	
 	// PANEL SCRIPTS 

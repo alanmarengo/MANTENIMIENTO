@@ -294,6 +294,12 @@
 	
 }
 
+.popup-layer-node-active .layer-label {
+
+    color: white;
+
+}
+
 .popup-layer-node-icons .layer-icon {
 	
 	height:24px;
