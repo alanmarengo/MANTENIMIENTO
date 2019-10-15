@@ -296,7 +296,7 @@
 
 .popup-layer-node-active .layer-label {
 
-    color: white;
+    color: white !Important;
 
 }
 

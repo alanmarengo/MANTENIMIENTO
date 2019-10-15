@@ -67,11 +67,11 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 				data-active=\"./images/geovisor/icons/popup-layer-info-active.png\"></a>";
 			$html .= "</div>";
 			$html .= "<div class=\"layer-icon\">";
-				$html .= "<a href=\"#\"><img src=\"./images/geovisor/icons/popup-layer-download-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-download-inactive.png\"
+				$html .= "<a href=\"./csv.php?q=".encrypt(str_replace("geom,","",$query_string2))."\"><img src=\"./images/geovisor/icons/popup-layer-download-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-download-inactive.png\"
 				data-active=\"./images/geovisor/icons/popup-layer-download-active.png\"></a>";
 			$html .= "</div>";
 			$html .= "<div class=\"layer-icon\">";
-				$html .= "<a href=\"#\"><img src=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\"
+				$html .= "<a href=\"./mediateca.php?mode=10&mode_id=".$layer_id."&mode_label=".$layer_desc[$i]."\"><img src=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\"
 				data-active=\"./images/geovisor/icons/popup-layer-recurso-active.png\"></a>";
 			$html .= "</div>";
 			$html .= "<div class=\"layer-icon\">";
@@ -82,33 +82,6 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 	$html .= "</div>";
 
 	$html .= "<div style=\"display:none;\" class=\"popup-layer-content\">";	
-
-	$html .= "<div style=\"text-align:center\" class=\"mt-20\">";
-
-	$html .= "<p>";
-	$html .= "<a ";
-	$html .= "class=\"popup-header-button popup-header-button-toggleable popup-header-button-active-fixed\" style=\"display:inline-block; background:none!important;\"";
-	$html .= "href=\"./csv.php?q=".encrypt(str_replace("geom,","",$query_string2))."\" target=\"_blank\"";
-	$html .= ">";
-	$html .= "<img src=\"./images/export.png\">";
-	$html .= "</a>";
-	$html .= "<a ";
-	$html .= "class=\"popup-header-button popup-header-button-toggleable popup-header-button-active-fixed\"  style=\"display:inline-block; background:none!important;\"";
-	$html .= "href=\"#\" ";
-	$html .= ">";
-	$html .= "<img src=\"./images/3d.png\">";
-	$html .= "</a>";
-	$html .= "<a ";
-	$html .= "class=\"popup-header-button popup-header-button-toggleable popup-header-button-active-fixed\"  style=\"display:inline-block; background:none!important;\"";
-	$html .= "href=\"./mediateca.php?mode=10&mode_id=".$layer_id."&mode_label=".$layer_desc[$i]."\" ";
-	$html .= ">";
-	$html .= "<img src=\"./images/file.png\">";
-	$html .= "</a>";
-	$html .= "</p>";
-		
-	$html .= "<br><hr><br>";
-
-	$html .= "</div>";
 	
 	while($r = pg_fetch_assoc($query2)) {
 		
