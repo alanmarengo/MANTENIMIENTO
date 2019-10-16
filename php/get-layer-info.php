@@ -59,7 +59,7 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 	
 	$query_count = pg_num_rows($query2);
 	
-	$metadata_url = trim($r["layer_metadata_url"]);
+	$metadata_url = $data["metadata_url"];
 	$target = " target=\"_blank\"";
 					
 	if ($metadata_url == "") {
