@@ -437,11 +437,13 @@
 	left: 10px;
 	color: #888;
 	font-weight: 300;
-	display: inline-flex;
+	display: inline-block;
 	position:relative;
 	top:3px;
 	font-weight:400;
-	width:68%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 	
 }
 
