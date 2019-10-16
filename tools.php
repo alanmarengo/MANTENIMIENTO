@@ -114,7 +114,7 @@ function strip($string,$max) {
 		
 	}else{
 		
-		return $string . "...";
+		return substr($string,0,$max) . "...";
 		
 	}
 	
