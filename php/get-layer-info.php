@@ -59,11 +59,21 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 	
 	$query_count = pg_num_rows($query2);
 	
+	$metadata_url = trim($r["layer_metadata_url"]);
+	$target = " target=\"_blank\"";
+					
+	if ($metadata_url == "") {
+						
+		$metadata_url = "javascript:alert('Esta capa no posee metadatos asociados');";
+		$target = "";
+						
+	}
+					
 	$html .= "<div class=\"popup-layer-node\" data-state=\"0\">";
 		$html .= "<a href=\"#\" class=\"layer-label\" style=\"cursor:text\" title=\"" . $layer_desc[$i] . "\">" . $layer_desc[$i] . "</a>";
 		$html .= "<div class=\"popup-layer-node-icons\">";
 			$html .= "<div class=\"layer-icon\">";
-				$html .= "<a href=\"" . $r["layer_metadata_url"] . "\"><img src=\"./images/geovisor/icons/popup-layer-info-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-info-inactive.png\"
+				$html .= "<a href=\"" . $metadata_url . "\"><img src=\"./images/geovisor/icons/popup-layer-info-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-info-inactive.png\"
 				data-active=\"./images/geovisor/icons/popup-layer-info-active.png\"></a>";
 			$html .= "</div>";
 			$html .= "<div class=\"layer-icon\">";

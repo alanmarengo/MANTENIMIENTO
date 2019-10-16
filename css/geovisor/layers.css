@@ -449,13 +449,13 @@
 
 .active-layer-node .layer-label {
 	
-	width:68%;
+	width:76%;
 	
 }
 
 .popup-layer-node .layer-label {
 	
-	width:68%;
+	width:73%;
 	
 }
 
@@ -465,7 +465,7 @@
 	display: inline-block;
 	vertical-align: top;
 	position: absolute;
-	right: 0px;
+	right: -10px;
 	
 }
 
@@ -474,7 +474,7 @@
 }
 
 .popup-layer-node .popup-layer-node-icons {
-	width: 120px;
+	width: 110px;
 }
 
 .active-layer-node .remove-layer-icon-ca,.popup-layer-node .remove-layer-icon-ca {
