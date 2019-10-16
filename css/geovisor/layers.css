@@ -447,13 +447,20 @@
 
 .active-layer-node .active-layer-node-icons,.popup-layer-node .popup-layer-node-icons {
 	
-	margin: 5px 3px 3px 8%;
-	width: auto;
+	margin: 5px 3px 3px 0;
 	display: inline-block;
 	vertical-align: top;
 	position: absolute;
 	right: 0px;
 	
+}
+
+.active-layer-node .active-layer-node-icons {
+	width: 80px;
+}
+
+.popup-layer-node .popup-layer-node-icons {
+	width: 120px;
 }
 
 .active-layer-node .remove-layer-icon-ca,.popup-layer-node .remove-layer-icon-ca {
