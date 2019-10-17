@@ -2074,8 +2074,10 @@ function ol_map() {
 			
 			nodeicons.appendChild(nodeupdown);
 			
-			$("#layer-checkbox-"+layer_id).parent().next().next().clone().removeAttr("id").addClass("remove-layer-icon-ca").bind("click",function() {
+			$("#layer-checkbox-"+layer_id).parent().next().next().clone().removeAttr("id").removeAttr("onclick").addClass("remove-layer-icon-ca").bind("click",function() {
 				
+				
+				alert(1);
 				if (isBuffer) {
 				
 					this.map.ol_object.removeLayer(layerBuffer);
