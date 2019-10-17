@@ -22,7 +22,7 @@
 			<div id="brand" class="inline-b ml-15">
 				
 				<a href="./index.php">
-					<img src="./images/logo_observatorio_ieasa.png" height="56">
+					<img src="./images/logo_observatorio_ieasa.png" height="75">
 				</a>
 				
 			</div>
