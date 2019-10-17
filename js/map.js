@@ -2036,9 +2036,7 @@ function ol_map() {
 				
 			if (isBuffer) {
 				
-				this.bufferIndex++;
-				
-				sublayer_id = layer_id + "-" + this.bufferIndex;
+				sublayer_id = layer_id + "-" + Date.now();
 				
 				$("#layer-checkbox-"+layer_id).parent().clone().attr("id","layer-buffer-"+sublayer_id).on("click",function() {
 					
