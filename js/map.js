@@ -1283,12 +1283,6 @@ function ol_map() {
 			
 		}.bind(this));
 		
-		$("#perfil_topografico_chart .highcharts-menu").children(".highcharts-menu-item").first().bind("click",function() {
-			
-			$("#perfil_topografico_chart").Highcharts().reflow();
-			
-		});
-		
 	}
 	
 	this.map.fixPopup = function(adv) {
