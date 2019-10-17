@@ -1984,6 +1984,8 @@ function ol_map() {
 	
 	this.panel.AddLayerActive = function(clase_id,layer_id,isBuffer,bufferLayer,distance) {
 		
+		$("#nolayer-active").remove();
+		
 		var dataLidLabel = "data-lid";
 		
 		var container = document.getElementById("info-capasactivas-inner");
@@ -2087,7 +2089,7 @@ function ol_map() {
 				
 				if ($("#info-capasactivas-inner").children(".active-layer-node").length == 0) {
 					
-					$("#info-capasactivas-inner").html("<p class=\"p20\">No hay capas activas, para agregar capas al mapa utilice el botón correspondiente ubicado en la barra de herramientas.</p>");
+					$("#info-capasactivas-inner").html("<p id=\"nolayer-active\" class=\"p20\">No hay capas activas, para agregar capas al mapa utilice el botón correspondiente ubicado en la barra de herramientas.</p>");
 					
 				}
 				

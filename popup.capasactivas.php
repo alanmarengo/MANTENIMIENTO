@@ -2,7 +2,7 @@
 	
 	<div class="jump-window-inner p20">
 
-		<div class="jump-window-header" style="background-color:##8e2f4f;">
+		<div class="jump-window-header" style="background-color:#8e2f4f;">
 			<span>Capas Activas</span>
 			
 			<div class="jump-window-icon-bar" style="margin-right:-90px;">
