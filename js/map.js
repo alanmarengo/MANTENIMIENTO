@@ -2085,6 +2085,12 @@ function ol_map() {
 					
 				}
 				
+				if ($("#info-capasactivas-inner").children(".active-layer-node").length == 0) {
+					
+					$("#info-capasactivas-inner").html("<p class=\"p20\">No hay capas activas, para agregar capas al mapa utilice el botón correspondiente ubicado en la barra de herramientas.</p>");
+					
+				}
+				
 			}).appendTo(nodeicons).bind(this);		
 			
 			$("#layer-icon-zoomext-"+layer_id).clone().removeAttr("id").addClass("zoomext-layer-icon-ca").bind("click",function() {

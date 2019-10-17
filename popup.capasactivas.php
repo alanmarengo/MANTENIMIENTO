@@ -18,7 +18,7 @@
 		
 				<div id="info-capasactivas-inner">
 				
-					<p>No hay capas activas, para agregar capas al mapa utilice el botón correspondiente ubicado en la barra de herramientas.</p>
+					<p class="p20">No hay capas activas, para agregar capas al mapa utilice el botón correspondiente ubicado en la barra de herramientas.</p>
 				
 				</div>
 			
