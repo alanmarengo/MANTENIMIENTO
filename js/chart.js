@@ -28,8 +28,8 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 				zoomType: 'x',
 				margin:0,
 				backgroundColor:'rgba(255, 255, 255, 0.0)',
-				height:height,
-				width:width
+				height:'100%',
+				width:'100%'
 			},
 			title: {
 				text: 'Perfil Topográfico',
