@@ -17,7 +17,7 @@
 		
 		<div class="jump-window-body p20" style="max-height:450px;">
 			
-			<div id="perfil_topografico_chart" style="height:100%;">
+			<div id="perfil_topografico_chart" style="height:100%; width:100%;">
 			
 			</div>
 			
