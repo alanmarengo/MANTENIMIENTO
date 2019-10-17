@@ -2076,11 +2076,10 @@ function ol_map() {
 			
 			$("#layer-checkbox-"+layer_id).parent().next().next().clone().removeAttr("id").removeAttr("onclick").addClass("remove-layer-icon-ca").bind("click",function() {
 				
-				alert(1);
 				if (isBuffer) {
 				
-					geomap.map.ol_object.removeLayer(layerBuffer);
-					$(this).parent().parent().remove();
+					this.map.ol_object.removeLayer(layerBuffer);
+					$("#layer-buffer-"+sublayer_id).parent().remove();
 				
 				}else{
 					
@@ -2094,7 +2093,7 @@ function ol_map() {
 					
 				}
 				
-			}).appendTo(nodeicons);		
+			}).appendTo(nodeicons).bind(this);		
 			
 			$("#layer-icon-zoomext-"+layer_id).clone().removeAttr("id").addClass("zoomext-layer-icon-ca").bind("click",function() {
 				
