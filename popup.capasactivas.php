@@ -2,7 +2,7 @@
 	
 	<div class="jump-window-inner p20">
 
-		<div class="jump-window-header">
+		<div class="jump-window-header" style="background-color:##8e2f4f;">
 			<span>Capas Activas</span>
 			
 			<div class="jump-window-icon-bar" style="margin-right:-90px;">
@@ -16,7 +16,11 @@
 			
 			<div id="info-capasactivas" class="jump-scroll" style="max-height:450px;">
 		
-				<div id="info-capasactivas-inner"></div>
+				<div id="info-capasactivas-inner">
+				
+					<p>No hay capas activas, para agregar capas al mapa utilice el botón correspondiente ubicado en la barra de herramientas.</p>
+				
+				</div>
 			
 			</div>
 			
