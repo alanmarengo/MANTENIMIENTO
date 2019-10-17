@@ -73,7 +73,7 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 		$html .= "<a href=\"#\" class=\"layer-label\" style=\"cursor:text\" title=\"" . $layer_desc[$i] . "\">" . $layer_desc[$i] . "</a>";
 		$html .= "<div class=\"popup-layer-node-icons\">";
 			$html .= "<div class=\"layer-icon\">";
-				$html .= "<a href=\"" . $metadata_url . "\"><img src=\"./images/geovisor/icons/popup-layer-info-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-info-inactive.png\"
+				$html .= "<a href=\"" . $metadata_url . "\"" . $target . "><img src=\"./images/geovisor/icons/popup-layer-info-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-info-inactive.png\"
 				data-active=\"./images/geovisor/icons/popup-layer-info-active.png\"></a>";
 			$html .= "</div>";
 			$html .= "<div class=\"layer-icon\">";
