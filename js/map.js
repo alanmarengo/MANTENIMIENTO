@@ -1982,6 +1982,8 @@ function ol_map() {
 		
 	}
 	
+	this.panel.bufferIndex = 0;
+	
 	this.panel.AddLayerActive = function(clase_id,layer_id,isBuffer,bufferLayer,distance) {
 		
 		$("#nolayer-active").remove();
@@ -2034,7 +2036,9 @@ function ol_map() {
 				
 			if (isBuffer) {
 				
-				sublayer_id = layer_id + "-" + Date.now();
+				this.bufferIndex++;
+				
+				sublayer_id = layer_id + "-" + this.bufferIndex;
 				
 				$("#layer-checkbox-"+layer_id).parent().clone().attr("id","layer-buffer-"+sublayer_id).on("click",function() {
 					
@@ -2074,7 +2078,7 @@ function ol_map() {
 			
 			nodeicons.appendChild(nodeupdown);
 			
-			$("#layer-checkbox-"+layer_id).parent().next().next().clone().removeAttr("id").removeAttr("onclick").addClass("remove-layer-icon-ca").bind("click",function() {
+			$("#layer-checkbox-"+layer_id).parent().next().next().clone().removeAttr("id").addClass("remove-layer-icon-ca").bind("click",function() {
 				
 				if (isBuffer) {
 				
