@@ -15,9 +15,11 @@
 			</div>
 		</div>
 		
-		<div class="jump-window-body p20" id="perfil_topografico_chart">
+		<div class="jump-window-body p20">
 			
+			<div id="perfil_topografico_chart">
 			
+			</div>
 			
 		</div>
 	
