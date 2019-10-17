@@ -10,6 +10,9 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 		
 		jwindow.open("popup-ptopografico");
 		
+		var width = $("#perfil_topografico_chart").width();
+		var height = $("#perfil_topografico_chart").height();
+		
 		$("#perfil_topografico_chart").highcharts({
 			lang:{
 				viewFullscreen:"Pantalla Completa",
@@ -24,7 +27,9 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 			chart: {
 				zoomType: 'x',
 				margin:0,
-				backgroundColor:'rgba(255, 255, 255, 0.0)'
+				backgroundColor:'rgba(255, 255, 255, 0.0)',
+				height:height,
+				width:width
 			},
 			title: {
 				text: 'Perfil Topográfico',
