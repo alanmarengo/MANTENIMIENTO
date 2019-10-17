@@ -2040,7 +2040,7 @@ function ol_map() {
 				
 				sublayer_id = "layer-buffer-" + layer_id + "-" + this.bufferIndex;
 				
-				$("#layer-checkbox-"+layer_id).parent().clone().attr("id","layer-buffer-"+sublayer_id).on("click",function() {
+				$("#layer-checkbox-"+layer_id).parent().clone().attr("id",sublayer_id).on("click",function() {
 					
 					if (bufferLayer.getVisible()) {
 						
@@ -2052,7 +2052,7 @@ function ol_map() {
 							
 					}
 					
-				}).appendTo(node).bind(this);
+				}).appendTo(node);
 			
 			}else{
 								
