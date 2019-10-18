@@ -2040,9 +2040,7 @@ function ol_map() {
 				
 				sublayer_id = "layer-buffer-" + layer_id + "-" + this.bufferIndex;
 				
-				alert(sublayer_id);
-				
-				$("#layer-checkbox-"+layer_id).parent().clone().on("click",function() {
+				$("#layer-checkbox-"+layer_id).parent().clone().attr("id",sublayer_id).on("click",function() {
 					
 					if (bufferLayer.getVisible()) {
 						
@@ -2084,7 +2082,7 @@ function ol_map() {
 				
 				if (isBuffer) {
 				
-					this.map.ol_object.removeLayer(layerBuffer);
+					geomap.map.ol_object.removeLayer(layerBuffer);
 					$("#layer-buffer-"+sublayer_id).parent().remove();
 				
 				}else{
@@ -2099,7 +2097,7 @@ function ol_map() {
 					
 				}
 				
-			}).appendTo(nodeicons).bind(this);		
+			}).appendTo(nodeicons);		
 			
 			$("#layer-icon-zoomext-"+layer_id).clone().removeAttr("id").addClass("zoomext-layer-icon-ca").bind("click",function() {
 				
