@@ -20,7 +20,7 @@ function draw_tupla($row)
        echo '"fecha":"'.$row[2].'",';
        echo '"path_pdf":"'.$row[3].'",';
        echo '"desc":"'.$row[4].'",';
-       echo '"fecha_inicial":"'.$row[5].'"';
+       echo '"fecha_inicial":"'.$row[6].'"';
        echo '}';
        
        return true;
