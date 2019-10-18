@@ -274,34 +274,34 @@
                 <a 
                     href="./mediateca.php" 
                     class="col-md-12 link-icon" 
-                    data-img="./images/index/ico1a.png"
-                    data-imghover="./images/index/ico1b.png" 
+                    data-img="./images/index/icon1a.png"
+                    data-imghover="./images/index/icon1b.png" 
                 >
-                    <img src="./images/index/ico1a.png" />
+                    <img src="./images/index/icon1a.png" />
                 </a>
                 <a 
                     href="./page_herramientas.php" 
                     class="col-md-12 link-icon" 
-                    data-img="./images/index/ico2a.png"
-                    data-imghover="./images/index/ico2b.png" 
+                    data-img="./images/index/icon2a.png"
+                    data-imghover="./images/index/icon2b.png" 
                 >
-                    <img src="./images/index/ico2a.png" />
+                    <img src="./images/index/icon2a.png" />
                 </a>
                 <a 
                     href="./indicadores.php" 
                     class="col-md-12 link-icon" 
-                    data-img="./images/index/ico3a.png"
-                    data-imghover="./images/index/ico3b.png" 
+                    data-img="./images/index/icon3a.png"
+                    data-imghover="./images/index/icon3b.png" 
                 >
-                    <img src="./images/index/ico3a.png" />
+                    <img src="./images/index/icon3a.png" />
                 </a>
                 <a 
                     href="./estadisticas.php" 
                     class="col-md-12 link-icon" 
-                    data-img="./images/index/ico4a.png"
-                    data-imghover="./images/index/ico4b.png" 
+                    data-img="./images/index/icon4a.png"
+                    data-imghover="./images/index/icon4b.png" 
                 >
-                    <img src="./images/index/ico4a.png" />
+                    <img src="./images/index/icon4a.png" />
                 </a>
             </div>
         </div>
