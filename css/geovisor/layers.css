@@ -88,6 +88,12 @@
 	
 }
 
+.active-layer-node .pretty {
+	
+	top:-5px !Important;
+	
+}
+
 .layer-header .simple-tree-pm-button {
 	
 	left:-10px;

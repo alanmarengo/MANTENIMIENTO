@@ -1,4 +1,4 @@
-<div id="nav-panel" data-visible="1" class="jump-flotant-heightfill jump-flotant-heightfill-top nav-level-1 col col-nav col-xs-10 col-sm-10 col-md-3 col-lg-3 p0 jump-posabs">
+<div id="nav-panel" data-visible="1" class="jump-flotant-heightfill jump-flotant-heightfill-top nav-level-1 col col-nav col-xs-10 col-sm-10 col-md-4 col-lg-3 p0 jump-posabs">
 	
 	<div id="nav-panel-inner" data-visible="1" style="width:100%;">
 		
