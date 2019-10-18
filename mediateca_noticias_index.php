@@ -8,7 +8,7 @@ $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . 
 
 $conn = pg_connect($string_conn);
 
-$SQL = "SELECT ('./cache/'||recurso_id::TEXT||'.jpg')::text AS path_img, recurso_titulo as titulo,recurso_fecha as fecha,recurso_path_url as path_pdf,recurso_desc as desc,recurso_id from  mod_mediateca.recurso r where formato_id in(102) order by recurso_fecha desc limit 11";
+$SQL = "SELECT ('./cache/'||recurso_id::TEXT||'.jpg')::text AS path_img, recurso_titulo as titulo,recurso_fecha as fecha,recurso_path_url as path_pdf,recurso_desc as desc,recurso_id,(recurso_fecha-30) AS fecha_menos_30  from  mod_mediateca.recurso r where formato_id in(102) order by recurso_fecha desc limit 11";
 
 $recordset = pg_query($conn,$SQL);
 
@@ -19,7 +19,8 @@ function draw_tupla($row)
        echo '"titulo":"'.$row[1].'",';
        echo '"fecha":"'.$row[2].'",';
        echo '"path_pdf":"'.$row[3].'",';
-       echo '"desc":"'.$row[4].'"';
+       echo '"desc":"'.$row[4].'",';
+       echo '"fecha_inicial":"'.$row[6].'"';
        echo '}';
        
        return true;

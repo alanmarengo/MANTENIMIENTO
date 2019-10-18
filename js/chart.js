@@ -10,11 +10,26 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 		
 		jwindow.open("popup-ptopografico");
 		
+		//var width = $("#perfil_topografico_chart").width();
+		//var height = $("#perfil_topografico_chart").height();
+		
 		$("#perfil_topografico_chart").highcharts({
+			lang:{
+				viewFullscreen:"Pantalla Completa",
+				printChart:"Imprimir",
+				downloadCSV:"Descargar en CSV",
+				downloadJPEG:"Descargar en JPG",
+				downloadPDF:"Descargar en PDF",
+				downloadPNG:"Descargar en PNG",
+				downloadSVG:"Descargar en SVG",
+				downloadXLS:"Descargar en XLS"
+			},
 			chart: {
 				zoomType: 'x',
 				margin:0,
-				backgroundColor:'rgba(255, 255, 255, 0.0)'
+				backgroundColor:'rgba(255, 255, 255, 0.0)',
+				height:'50%'/*,
+				width:width*/
 			},
 			title: {
 				text: 'Perfil Topográfico',

@@ -1313,7 +1313,47 @@ function ol_map() {
 	
 	this.map.togglePopupLayers = function(node) {
 		
-		alert(1);
+		var nodeState = $(node).closest(".popup-layer-node").attr("data-state");
+		
+		if (nodeState == 0) {
+			
+			$(node).closest(".popup-layer-node").addClass("popup-layer-node-active");
+			
+			$(node).closest(".popup-layer-node").each(function(i,v) {
+				
+				$(v).find(".layer-icon").each(function(j,x) {
+					
+					var srcSource = $(x).children("a").children("img").attr("data-active");
+					
+					$(x).children("a").children("img").attr("src",srcSource);
+					
+				});
+				
+			});
+			
+			$(node).closest(".popup-layer-node").attr("data-state","1");
+		
+		}else{
+			
+			$(node).closest(".popup-layer-node").removeClass("popup-layer-node-active");
+			
+			$(node).closest(".popup-layer-node").each(function(i,v) {
+				
+				$(v).find(".layer-icon").each(function(j,x) {
+					
+					var srcSource = $(x).children("a").children("img").attr("data-inactive");
+					
+					$(x).children("a").children("img").attr("src",srcSource);
+					
+				});
+				
+			});
+			
+			$(node).closest(".popup-layer-node").attr("data-state","0");
+			
+		}
+		
+		$(node).closest(".popup-layer-node").next(".popup-layer-content").slideToggle("fast");
 		
 	}
 	
@@ -1942,7 +1982,11 @@ function ol_map() {
 		
 	}
 	
+	this.panel.bufferIndex = 0;
+	
 	this.panel.AddLayerActive = function(clase_id,layer_id,isBuffer,bufferLayer,distance) {
+		
+		$("#nolayer-active").remove();
 		
 		var dataLidLabel = "data-lid";
 		
@@ -1992,9 +2036,11 @@ function ol_map() {
 				
 			if (isBuffer) {
 				
-				sublayer_id = layer_id + "-" + Date.now();
+				this.bufferIndex++;
 				
-				$("#layer-checkbox-"+layer_id).parent().clone().attr("id","layer-buffer-"+sublayer_id).on("click",function() {
+				sublayer_id = "layer-buffer-" + layer_id + "-" + this.bufferIndex;
+				
+				$("#layer-checkbox-"+layer_id).parent().clone().attr("id",sublayer_id).on("click",function() {
 					
 					if (bufferLayer.getVisible()) {
 						
@@ -2020,11 +2066,11 @@ function ol_map() {
 			
 			var text = $("#layer-checkbox-"+layer_id).parent().next().text();
 			
-			if (text.length > 33) {
+			/*if (text.length > 33) {
 				
 				text = text.substring(0,33) + "...";
 				
-			}
+			}*/
 			
 			if (isBuffer) { text = "Buffer: " + text + ", Distancia: " + distance }
 			
@@ -2032,12 +2078,12 @@ function ol_map() {
 			
 			nodeicons.appendChild(nodeupdown);
 			
-			$("#layer-checkbox-"+layer_id).parent().next().next().clone().removeAttr("id").addClass("remove-layer-icon-ca").bind("click",function() {
+			$("#layer-checkbox-"+layer_id).parent().next().next().clone().removeAttr("id").removeAttr("onclick").addClass("remove-layer-icon-ca").bind("click",function() {
 				
 				if (isBuffer) {
-				
-					this.map.ol_object.removeLayer(layerBuffer);
-					$("#layer-buffer-"+sublayer_id).parent().remove();
+					
+					geomap.map.ol_object.removeLayer(layerBuffer);
+					$("#"+sublayer_id).parent().remove();
 				
 				}else{
 					
@@ -2045,7 +2091,13 @@ function ol_map() {
 					
 				}
 				
-			}).appendTo(nodeicons).bind(this);		
+				if ($("#info-capasactivas-inner").children(".active-layer-node").length == 0) {
+					
+					$("#info-capasactivas-inner").html("<p id=\"nolayer-active\" class=\"p20\">No hay capas activas, para agregar capas al mapa utilice el botón correspondiente ubicado en la barra de herramientas.</p>");
+					
+				}
+				
+			}).appendTo(nodeicons);		
 			
 			$("#layer-icon-zoomext-"+layer_id).clone().removeAttr("id").addClass("zoomext-layer-icon-ca").bind("click",function() {
 				
@@ -2117,6 +2169,12 @@ function ol_map() {
 		}
 		
 		$(".active-layer-node[data-lid="+layer_id+"]").remove();
+		
+		if ($("#info-capasactivas-inner").children(".active-layer-node").length == 0) {
+					
+			$("#info-capasactivas-inner").html("<p id=\"nolayer-active\" class=\"p20\">No hay capas activas, para agregar capas al mapa utilice el botón correspondiente ubicado en la barra de herramientas.</p>");
+			
+		}
 		
 		this.updateLayerCountPanelLabel(clase_id);
 		

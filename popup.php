@@ -51,7 +51,6 @@ data-minimizable="1" data-minimized-title="BUSCAR CAPAS">
 				<div class="col col-xs-12 col-sm-12 col-md-7 col-lg-7 p20 flex-column" id="dynbox-popup-content">
 					<div id="popup-preview-inner">
 						<a href="#" class="button" id="btn-layer-preview-addlayer">AGREGAR AL MAPA</a>
-						<a href="#" class="button" id="btn-layer-preview-gomap" onclick="jwindow.close('popup-geovisor')">IR AL MAPA</a>
 						<div id="mini-map" class="ptb-10"></div>
 						<div id="layer-preview-block" class="ptb-10">					
 							<p class="title" id="layer-preview-title">Datos de Capa</p><br>

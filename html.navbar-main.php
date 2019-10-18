@@ -7,7 +7,7 @@
 -->
 	<div class="row jump-row default-row">
 
-		<div class="col col-xs-12 col-sm-12 col-md-6 col-lg-6 flexbox col-brand">
+		<div class="col col-xs-12 col-sm-12 col-md-8 col-lg-8 flexbox col-brand">
 			
 			<div id="hamburguer" class="inline-b ml-15">
 				<span></span>
@@ -22,7 +22,7 @@
 			<div id="brand" class="inline-b ml-15">
 				
 				<a href="./index.php">
-					<img src="./images/logo_observatorio_ieasa.png" height="56">
+					<img src="./images/logo_observatorio_ieasa.png" height="75">
 				</a>
 				
 			</div>

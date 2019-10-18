@@ -15,19 +15,19 @@
 			<a href="#">Proyecto - AHRSC</a>
 		</li>
 		<li>
-			<a href="#">Plan de Gestión Ambiental - PGA</a>
+			<a href="./page_pdga.php">Plan de Gestión Ambiental - PGA</a>
 		</li>
 		<li>
-			<a href="#">Antecedentes y Marco Legal</a>
+			<a href="./page_esia.php">Antecedentes y Marco Legal</a>
 		</li>
 		<li>
-			<a href="#">Participación Pública y Gestión Social</a>
+			<a href="./page_endesarrollo.php">Participación Pública y Gestión Social</a>
 		</li>
 		<li>
-			<a href="#">Gestión Ambiental de Obra</a>
+			<a href="./page_endesarrollo.php">Gestión Ambiental de Obra</a>
 		</li>
 		<li>
-			<a href="#">Patrimonio Natural y Cultural</a>
+			<a href="./page_endesarrollo.php">Patrimonio Natural y Cultural</a>
 		</li>
 		<li>
 			<a href="javascript:void(0)" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="flotant.toggle('#nav-int-cuenca',true,false,this);">
@@ -35,16 +35,16 @@
 			</a>
 		</li>
 		<li>
-			<a href="#">Plan Gestión de Calidad</a>
+			<a href="./page_endesarrollo.php">Plan Gestión de Calidad</a>
 		</li>
 		<li>
-			<a href="#">Servicios Geográficos</a>
+			<a href="./page_herramientas.php?target=geoservicios">Servicios Geográficos</a>
 		</li>
 		<li>
-			<a href="#">Datos Abiertos</a>
+			<a href="http://observatorio.ieasa.com.ar:8080/geonetwork">Datos Abiertos</a>
 		</li>
 		<li>
-			<a href="#">Contacto</a>
+			<a href="./contacto.php">Contacto</a>
 		</li>
 	</ul>
 </div>

@@ -106,4 +106,18 @@ function decrypt($string) {
 	
 }
 
+function strip($string,$max) {
+	
+	if (strlen($string) < $max) {
+		
+		return $string;
+		
+	}else{
+		
+		return substr($string,0,$max) . "...";
+		
+	}
+	
+}
+
 ?>

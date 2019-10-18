@@ -43,7 +43,7 @@ $html = "";
 
 for ($i=0; $i<sizeof($layer_names); $i++) {
 	
-	$query_string = "SELECT DISTINCT layer_id,layer_schema,layer_table FROM mod_geovisores.vw_layers WHERE layer_wms_layer = '" . $layer_names[$i] . "' LIMIT 1";
+	$query_string = "SELECT DISTINCT layer_id,layer_metadata_url,layer_schema,layer_table FROM mod_geovisores.vw_layers WHERE layer_wms_layer = '" . $layer_names[$i] . "' LIMIT 1";
 	
 	$query = pg_query($conn,$query_string);
 
@@ -59,56 +59,39 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 	
 	$query_count = pg_num_rows($query2);
 	
-	$html .= "<div class\"popup-layer-node\">";
-		$html .= "<a href=\"#\" class=\"layer-label\" onclick=\"$(this).parent().next().slideToggle('slow');\">" . $layer_desc[$i] . "</a>";
-		$html .= "<div class=\"active-layer-node-icons\">";
+	$metadata_url = $data["metadata_url"];
+	$target = " target=\"_blank\"";
+					
+	if ($metadata_url == "") {
+						
+		$metadata_url = "javascript:alert('Esta capa no posee metadatos asociados');";
+		$target = "";
+						
+	}
+					
+	$html .= "<div class=\"popup-layer-node\" data-state=\"0\">";
+		$html .= "<a href=\"#\" class=\"layer-label\" style=\"cursor:text\" title=\"" . $layer_desc[$i] . "\">" . $layer_desc[$i] . "</a>";
+		$html .= "<div class=\"popup-layer-node-icons\">";
 			$html .= "<div class=\"layer-icon\">";
-				$html .= "<a href=\"#\"><img src=\"./images/geovisor/icons/popup-layer-info-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-info-inactive.png\"
+				$html .= "<a href=\"" . $metadata_url . "\"" . $target . "><img src=\"./images/geovisor/icons/popup-layer-info-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-info-inactive.png\"
 				data-active=\"./images/geovisor/icons/popup-layer-info-active.png\"></a>";
 			$html .= "</div>";
 			$html .= "<div class=\"layer-icon\">";
-				$html .= "<a href=\"#\"><img src=\"./images/geovisor/icons/popup-layer-download-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-download-inactive.png\"
+				$html .= "<a href=\"./csv.php?q=".encrypt(str_replace("geom,","",$query_string2))."\"><img src=\"./images/geovisor/icons/popup-layer-download-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-download-inactive.png\"
 				data-active=\"./images/geovisor/icons/popup-layer-download-active.png\"></a>";
 			$html .= "</div>";
 			$html .= "<div class=\"layer-icon\">";
-				$html .= "<a href=\"#\"><img src=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\"
+				$html .= "<a href=\"./mediateca.php?mode=10&mode_id=".$layer_id."&mode_label=".$layer_desc[$i]."\" target=\"_blank\"><img src=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\"
 				data-active=\"./images/geovisor/icons/popup-layer-recurso-active.png\"></a>";
 			$html .= "</div>";
 			$html .= "<div class=\"layer-icon\">";
-				$html .= "<a href=\"#\" onclick=\"geomap.map.togglePopupLayers(this)\"><img src=\"./images/geovisor/icons/popup-layer-opened\" data-inactive=\"./images/geovisor/icons/popup-layer-opened.png\"
-				data-active=\"./images/geovisor/icons/popup-layer-closed.png\"></a>";
+				$html .= "<a href=\"#\" onclick=\"geomap.map.togglePopupLayers(this)\"><img src=\"./images/geovisor/icons/popup-layer-closed.png\" data-inactive=\"./images/geovisor/icons/popup-layer-closed.png\"
+				data-active=\"./images/geovisor/icons/popup-layer-opened.png\"></a>";
 			$html .= "</div>";
 		$html .= "</div>";
 	$html .= "</div>";
 
 	$html .= "<div style=\"display:none;\" class=\"popup-layer-content\">";	
-
-	$html .= "<div style=\"text-align:center\" class=\"mt-20\">";
-
-	$html .= "<p>";
-	$html .= "<a ";
-	$html .= "class=\"popup-header-button popup-header-button-toggleable popup-header-button-active-fixed\" style=\"display:inline-block; background:none!important;\"";
-	$html .= "href=\"./csv.php?q=".encrypt(str_replace("geom,","",$query_string2))."\" target=\"_blank\"";
-	$html .= ">";
-	$html .= "<img src=\"./images/export.png\">";
-	$html .= "</a>";
-	$html .= "<a ";
-	$html .= "class=\"popup-header-button popup-header-button-toggleable popup-header-button-active-fixed\"  style=\"display:inline-block; background:none!important;\"";
-	$html .= "href=\"#\" ";
-	$html .= ">";
-	$html .= "<img src=\"./images/3d.png\">";
-	$html .= "</a>";
-	$html .= "<a ";
-	$html .= "class=\"popup-header-button popup-header-button-toggleable popup-header-button-active-fixed\"  style=\"display:inline-block; background:none!important;\"";
-	$html .= "href=\"./mediateca.php?mode=10&mode_id=".$layer_id."&mode_label=".$layer_desc[$i]."\" ";
-	$html .= ">";
-	$html .= "<img src=\"./images/file.png\">";
-	$html .= "</a>";
-	$html .= "</p>";
-		
-	$html .= "<br><hr><br>";
-
-	$html .= "</div>";
 	
 	while($r = pg_fetch_assoc($query2)) {
 		
