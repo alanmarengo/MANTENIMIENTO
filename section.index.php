@@ -391,10 +391,10 @@ $(document).ready(function() {
         html += '</div>'
 
         html += `
-                <div class="carousel-control-prev" href="#noticias-slider" role="button" data-slide="prev">
+                <div class="carousel-control-prev2" href="#noticias-slider" role="button" data-slide="prev">
                     <i class="fa fa-chevron-left"></i>
                 </div>
-                <div class="carousel-control-next" href="#noticias-slider" role="button" data-slide="next">
+                <div class="carousel-control-next2" href="#noticias-slider" role="button" data-slide="next">
                     <i class="fa fa-chevron-right"></i>
                 </div>
             `;
