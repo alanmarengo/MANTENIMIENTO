@@ -2081,9 +2081,9 @@ function ol_map() {
 			$("#layer-checkbox-"+layer_id).parent().next().next().clone().removeAttr("id").removeAttr("onclick").addClass("remove-layer-icon-ca").bind("click",function() {
 				
 				if (isBuffer) {
-				
+					
 					geomap.map.ol_object.removeLayer(layerBuffer);
-					$("#layer-buffer-"+sublayer_id).parent().remove();
+					$("#"+sublayer_id).parent().remove();
 				
 				}else{
 					
