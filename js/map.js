@@ -2042,7 +2042,7 @@ function ol_map() {
 				
 				alert(sublayer_id);
 				
-				$("#layer-checkbox-"+layer_id).parent().clone().attr("id","caparandom").on("click",function() {
+				$("#layer-checkbox-"+layer_id).parent().clone().on("click",function() {
 					
 					if (bufferLayer.getVisible()) {
 						
