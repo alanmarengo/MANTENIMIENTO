@@ -2038,11 +2038,11 @@ function ol_map() {
 				
 				this.bufferIndex++;
 				
-				alert(this.bufferIndex);
-				
 				sublayer_id = "layer-buffer-" + layer_id + "-" + this.bufferIndex;
 				
-				$("#layer-checkbox-"+layer_id).parent().clone().attr("id",sublayer_id).on("click",function() {
+				alert(sublayer_id);
+				
+				$("#layer-checkbox-"+layer_id).parent().clone().attr("id","caparandom").on("click",function() {
 					
 					if (bufferLayer.getVisible()) {
 						
