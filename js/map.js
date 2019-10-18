@@ -2170,6 +2170,12 @@ function ol_map() {
 		
 		$(".active-layer-node[data-lid="+layer_id+"]").remove();
 		
+		if ($("#info-capasactivas-inner").children(".active-layer-node").length == 0) {
+					
+			$("#info-capasactivas-inner").html("<p id=\"nolayer-active\" class=\"p20\">No hay capas activas, para agregar capas al mapa utilice el botón correspondiente ubicado en la barra de herramientas.</p>");
+			
+		}
+		
 		this.updateLayerCountPanelLabel(clase_id);
 		
 	}
