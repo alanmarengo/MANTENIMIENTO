@@ -66,27 +66,12 @@
 						</ul>
 					</div>            
 				</li>
-				<li class="dropdown">
-					<a href="#" id="navbarDropdown-help" role="button" data-toggle="dropdown" aria-expanded="false" title="Menu de usuario">
-						<i class="fa fa-user"></i>
-					</a>
-					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-help" id="dropdown-help">
-						<ul>
-							<li>
-								<a class="dropdown-item" href="#">Mi Panel</a>
-							</li>
-							<li>
-								<a class="dropdown-item" href="#">Mi Colección</a>
-							</li>
-							<li>
-								<a class="dropdown-item" href="#">Cambiar Contraseña</a>
-							</li>
-							<li>
-								<a class="dropdown-item" href="#">Cerrar Sesión</a>
-							</li>
-						</ul>
-					</div>            
-				</li>
+				<?php 
+				
+				include("./login.menu.php");
+				
+				?>
+				
 			
 			</ul>
 					
