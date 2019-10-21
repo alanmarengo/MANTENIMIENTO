@@ -152,11 +152,12 @@
 
 
 .form-group-login {
-    border: none;
+    border: none !Important;
+	outline:none;
     background: #343a40;
     height: 32px;
     width: 90%;
-    margin: 10px 5% auto;
+    margin: 10px 5% auto !Important;
     line-height: 32px;
 }
 
