@@ -942,7 +942,9 @@ function ol_stats() {
 			})
 		});
 		
-		var link = "http://observatorio.atic.com.ar/cgi-bin/mapserver?map=wms_atic&service=WFS&version=1.0.0&request=GetFeature&typeName=" +capa + "&id=" + query_id + "&outputFormat=shape-zip";
+		//var link = "http://observatorio.atic.com.ar/cgi-bin/mapserver?map=wms_atic&service=WFS&version=1.0.0&request=GetFeature&typeName=" +capa + "&id=" + query_id + "&outputFormat=shape-zip";
+		
+		var link = "http://observatorio.ieasa.com.ar:8080/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=" +capa + "&id=" + query_id + "&outputFormat=shape-zip&viewparams=id:"+query_id;
 		
 		document.getElementById("gm-mapear-download").setAttribute("href",link);
 		
