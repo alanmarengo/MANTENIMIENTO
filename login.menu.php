@@ -36,13 +36,13 @@ if (sizeof($_SESSION) > 0) {
 			<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-help" id="dropdown-help">
 				<ul>
 					<li>
-						<div class="form-group">
+						<div class="form-group form-group-login">
 							<i class="fa fa-user"></i>
 							<input type="text" placeholder="Usuario" name="user-name" data-placeholder="Usuario">
 						</div>
 					</li>
 					<li>
-						<div class="form-group">
+						<div class="form-group form-group-login">
 							<i class="fa fa-key"></i>
 							<input type="password" placeholder="Contraseña" name="user-password" data-placeholder="Contraseña">
 						</div>
