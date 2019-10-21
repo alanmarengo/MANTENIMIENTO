@@ -47,7 +47,7 @@
 			<ul class="ml-10 mr-15" style="margin-right: 40px !important;">
 				<li class="input-li">						
 					<input id="main-search" name="main-search" type="text" data-jump-placeholder="<?php echo $search_ph; ?>" placeholder="<?php echo $search_ph; ?>">
-					<a href="#" title="Buscar">
+					<a href="#" title="Buscar" onclick="geomap.map.searchGlobal();">
 						<i class="fa fa-search"></i>
 					</a>							
 				</li>

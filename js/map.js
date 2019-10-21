@@ -294,6 +294,19 @@ function ol_map() {
 		
 	}
 	
+	this.map.searchGlobal = function() {
+		
+		var pattern = $("#main-search").val();
+		var url = "./mediateca.php?s="+pattern;
+		var flink = document.createElement("a");
+			flink.href = url;
+			flink.target = "_blank";
+			document.body.appendChild(flink);
+			flink.click();
+			$(flink).remove();
+		
+	}
+	
 	this.map.searchInLayers = function(pattern) {
 		
 		$("#panel-busqueda-geovisor").css("display","flex");
