@@ -144,6 +144,14 @@
 					</a>
 				</li>
 				
+				<li class="ml-10">
+					<a class="button jump-hovimage" 
+					data-ini-src="./images/stats-fav.png"
+					data-end-src="./images/stats-fav.blue.png" href="javascript:void(0);" title="Favoritos">
+						<img src="./images/stats-fav.png">
+					</a>
+				</li>
+				
 			</ul>
 		
 		</div>
