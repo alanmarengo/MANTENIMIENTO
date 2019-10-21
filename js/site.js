@@ -9,8 +9,9 @@ $(document).ready(function() {
 
     $('#main-search').on('keypress', function(e) {
         if (e.which == 13) {
-            let url = "./mediateca.php?s=" + $(this).val();
-            window.location.replace(url);
+            //let url = "./mediateca.php?s=" + $(this).val();
+            //window.location.replace(url);
+			geomap.map.searchGlobal();
         }
     });
 });
