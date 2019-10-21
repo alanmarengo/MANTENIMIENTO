@@ -906,7 +906,7 @@ function ol_stats() {
 				visible:true,
 				singleTile: true,
 				source: new ol.source.TileWMS({
-					url: "http://observatorio.ieasa.com.ar/cgi-bin/mapserver?map=wms_atic",
+					url: "http://observatorio.ieasa.com.ar:8080/geoserver/ows?",
 					params: {
 						'LAYERS': capa,//'intervalos_polygons',
 						'id':query_id,
