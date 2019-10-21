@@ -1528,6 +1528,8 @@ function ol_stats() {
 		
 		document.getElementById("combo_cruce").innerHTML = req.responseText;
 		
+		$("#combo_cruce").selectpicker("refresh");
+		
 		scroll.refresh();
 		
 	}
