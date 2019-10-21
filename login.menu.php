@@ -20,7 +20,7 @@ if (sizeof($_SESSION) > 0) {
 					<a class="dropdown-item" href="#">Cambiar Contraseña</a>
 				</li>
 				<li>
-					<a class="dropdown-item" href="#">Cerrar Sesión</a>
+					<a class="dropdown-item" href="./CMD-logout.php">Cerrar Sesión</a>
 				</li>
 			</ul>
 		</div>            
