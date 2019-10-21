@@ -148,3 +148,33 @@
 	background-color:#282828;
 	
 }
+
+
+
+.form-group-login {
+    border: none;
+    background: #343a40;
+    height: 32px;
+    width: 90%;
+    margin: 10px 5% auto;
+    line-height: 32px;
+}
+
+.form-group-login i {
+    vertical-align: top;
+    display: inline-block;
+    color: white;
+    margin-top: 2px;
+}
+
+.form-group-login input {
+    width: 75%;
+    margin-left: 5px;
+    border: none;
+    height: 18px;
+    background: none;
+    color: white;
+    outline: none;
+    display: inline-block;
+    vertical-align: top;
+}
