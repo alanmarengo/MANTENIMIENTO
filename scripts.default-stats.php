@@ -28,6 +28,7 @@
 <link rel="stylesheet" type="text/css" href="./css/navbar.zoom.css">
 <link rel="stylesheet" type="text/css" href="./css/hamburguer.css">
 <link rel="stylesheet" type="text/css" href="./css/flexbox.css">
+<link rel="stylesheet" type="text/css" href="./css/chrome_compat_fixes.css">
 
 <!-- JUMP CSS -->
 
