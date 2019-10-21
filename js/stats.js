@@ -26,7 +26,8 @@ function ol_stats() {
 					
 				$(".layer-container").not(".layer-container[data-cid="+this.getAttribute("data-cid")+"]").hide();
 				$(".layer-container[data-cid="+this.getAttribute("data-cid")+"]").show();
-				//$("#abr-container").first(".panel-abr").prepend(this);			
+				//$("#abr-container").first(".panel-abr").prepend(this);	
+				
 				scroll.refresh();
 					
 			}
@@ -1506,6 +1507,26 @@ function ol_stats() {
 		});
 		
 		document.getElementById("dataset-detail-wrapper").innerHTML = req.responseText;
+		
+		scroll.refresh();
+		
+	}
+	
+	this.dataset.loadComboCruce = function(dt_id) {		
+		
+		this.dt_id = dt_id;
+		
+		var req = $.ajax({
+			
+			async:false,
+			url:"./php/get-combo-cruce.php",
+			type:"POST",
+			data:{dt_id:dt_id},
+			success:function(d){}
+			
+		});
+		
+		document.getElementById("combo_cruce").innerHTML = req.responseText;
 		
 		scroll.refresh();
 		

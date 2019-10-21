@@ -29,8 +29,7 @@
 		<select class="selectpicker mt-56" id="combo_cruce">
 
 			<option value="-1" selected>Cruce Espacial</option>
-			<?php ComboCruce(); ?>
-
+			
 		</select>		
 	
 		<a href="javascript:void(0);" onclick="stats.dataset.proceed();" id="stats-proceed" class="mt-50">VER TABLA ></a>

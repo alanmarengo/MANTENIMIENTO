@@ -75,7 +75,7 @@ function DrawDatasets($clase_id) {
 			
 				<div class="layer-header">
 					
-					<a href="#" class="layer-label" onclick="stats.dataset.loadVars(<?php echo $r["dt_id"]; ?>); stats.dataset.loadContent(<?php echo $r["dt_id"]; ?>);">
+					<a href="#" class="layer-label" onclick="stats.dataset.loadVars(<?php echo $r["dt_id"]; ?>); stats.dataset.loadContent(<?php echo $r["dt_id"]; ?>); stats.dataset.loadComboCruce(<?php echo $r["dt_id"]; ?>);">
 						<span><?php echo $r["dt_titulo"]; ?></span>
 					</a>
 					
@@ -109,25 +109,25 @@ function DrawDatasets($clase_id) {
 	
 }
 
-function ComboCruce() {		
+function ComboCruce($dataset_id) {		
 
 	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 	
 	$conn = pg_connect($string_conn);
 	
-	$query_string = "SELECT * FROM mod_estadistica.dt_cruce ORDER BY dt_cruce_etiqueta ASC";
+	$query_string = "SELECT * FROM mod_estadistica.dt_cruce WHERE dt_id = $dataset_id ORDER BY dt_cruce_etiqueta ASC";
 	
 	$query = pg_query($conn,$query_string);
 	
+	$html = "<option value=\"-1\" selected>Cruce Espacial</option>";
+	
 	while ($r = pg_fetch_assoc($query)) {
 		
-		?>
-		
-		<option value="<?php echo $r["dt_cruce_table"]; ?>"><?php echo $r["dt_cruce_etiqueta"]; ?></option>
-		
-		<?php
+		$html .= "<option value=\"" . $r["dt_cruce_table"] . "\">" . $r["dt_cruce_etiqueta"] . "</option>";
 		
 	}
+	
+	return $html;
 	
 }
 
