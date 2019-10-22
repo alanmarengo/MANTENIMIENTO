@@ -17,22 +17,14 @@
 <body>
 
 	<div id="page">
-	
-		<?php include("./html.navbar-main.php"); ?>
 		
 		<div class="page-container">
 		
 			<?php include("./section.page_geovisor_combo.php"); ?>
 			
-			<?php include("./html.navs.php"); ?>
-			
-			<?php include("./footer.php"); ?>
-			
 		</div>
 		
-	</div>
-	
-	<?php include("./widget-links.php"); ?>	
+	</div>	
 
 </body>
 </html>
