@@ -59,7 +59,7 @@ switch ($tipo_geom)
 
 $sld_file 	= file_get_contents($sld_base);	
 
-$sld_file	= str_replace("[layer_name]"	, 'ahrsc'.$layer_name	,$sld_file		);
+$sld_file	= str_replace("[layer_name]"	, 'ahrsc:'.$layer_name	,$sld_file		);
 
 $sld_file	= str_replace("[1_D]"	, $acumulado ,$sld_file);
 $acumulado  = $acumulado +$salto;
