@@ -392,6 +392,7 @@ function ol_map() {
 			if (js.data[i].iniciar_panel == "t") {
 				
 				var visible = js.data[i].iniciar_visible;
+				var layer_id = js.data[i].layer_id;
 				
 				$(".layer-checkbox[data-lid="+js.data[i].layer_id+"]").each(function(i,v) {
 					
@@ -402,6 +403,12 @@ function ol_map() {
 					if (visible == "f") {
 						
 						v.click();
+						
+						document.getElementById("layer-checkbox-"+layer_id).layer.setVisible(false);
+						
+					}else{
+						
+						document.getElementById("layer-checkbox-"+layer_id).layer.setVisible(true);
 						
 					}
 					
