@@ -26,7 +26,7 @@
                     <small>ESCALA DE PECES</small>
                 </div>
 
-                <div class="embed-responsive embed-responsive-21by9 p0" id="map">
+                <div id="map">
 				
                 </div>
             </div>
