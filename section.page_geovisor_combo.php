@@ -27,7 +27,7 @@
                 </div>
 
                 <div class="embed-responsive embed-responsive-21by9">
-                    <iframe src="./mapa-popup.php" frameborder="0"></iframe>
+                   <div id="map"></div>
                 </div>
             </div>
 			
@@ -38,6 +38,11 @@
 
 <script type='text/javascript'>
 $(document).ready(function() {
+	
+	geomap = new ol_map();
+		
+	geomap.map.create();
+	geomap.map.createLayers();
 	
 	function loadComboObra(proyectos) {
 		
@@ -75,6 +80,31 @@ $(document).ready(function() {
 		
 		$("#uxCapa").selectpicker("refresh");
 		
+		drawLayer();
+		
+	}
+	
+	function drawLayer() {
+		
+		var layer_id = $("#uxCapa").val();
+	
+		var layer = new ol.layer.Tile({
+			name:layer_name,
+			visible:true,
+			source: new ol.source.TileWMS({
+				url: layer_wms,
+				params: {
+					'LAYERS': layer_name,
+					'VERSION': '1.1.1',
+					'FORMAT': 'image/png',
+					'TILED': false,
+					'clase_id':clase_id,
+					'layer_id':layer_id
+				}/*,
+				crossOrigin: 'anonymous'*/
+			})
+		});
+	
 	}
 	
     $('.section-sticky a').on('click', function() {
@@ -238,7 +268,8 @@ $(document).ready(function() {
 	
 	document.getElementById("uxVisor").addEventListener("change",function() {
 		
-		loadComboComponente(proyectos);		
+		loadComboComponente(proyectos);	
+		drawLayer();
 		
 	});
 
