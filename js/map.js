@@ -514,6 +514,24 @@ function ol_map() {
 		
 	}
 	
+	this.map.getLayerData = function(layer_id) {
+		
+		var reqExtent = $.ajax({
+			
+			async:false,
+			url:"./php/get-layer-data.php",
+			type:"post",
+			data:{layer_id:layer_id},
+			success:function(d){}
+				
+		});
+		
+		var js = JSON.parse(reqExtent.responseText);
+		
+		return js;
+		
+	}
+	
 	this.map.getLayerExtent = function(layer_id) {
 		
 		var reqExtent = $.ajax({

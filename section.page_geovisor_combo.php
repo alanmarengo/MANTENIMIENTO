@@ -87,14 +87,21 @@ $(document).ready(function() {
 	function drawLayer() {
 		
 		var layer_id = $("#uxCapa").val();
-	
+		
+		var extent = geomap.map.getLayerExtent(layer_id);
+		
+		var layerData = geomap.map.getLayerData(layer_id);
+		
+		console.log(extent);
+		console.log(layerData);
+		
 		var layer = new ol.layer.Tile({
-			name:layer_name,
+			name:layerData.layer_wms_layer,
 			visible:true,
 			source: new ol.source.TileWMS({
-				url: layer_wms,
+				url: layerData.layer_wms_server,
 				params: {
-					'LAYERS': layer_name,
+					'LAYERS': layerData.layer_wms_layer,
 					'VERSION': '1.1.1',
 					'FORMAT': 'image/png',
 					'TILED': false,
@@ -104,6 +111,8 @@ $(document).ready(function() {
 				crossOrigin: 'anonymous'*/
 			})
 		});
+		
+		geomap.map.ol_object.addLayer(layer);
 	
 	}
 	
