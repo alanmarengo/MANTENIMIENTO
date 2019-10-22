@@ -418,14 +418,12 @@ $(document).ready(function() {
         let html = `
                 <div class='sensor-estacion'>${sensor.estacion}</div>
                 <div class='sensor-tipo'>${sensor.tipo}</div>
-                <div class='sensor-fecha'>Fecha inicial: ${moment(sensor.fecha_inicio).format('DD [de] MMM [de] YYYY HH:mm:ss')}</div>
-                <div class='sensor-fecha'>&Uacute;ltimo reg.: ${moment(sensor.fecha).format('DD [de] MMM [de] YYYY HH:mm:ss')}</div>
                 <div class='sensor-nombre'>${sensor.dato_nombre}</div>
                 <div class='sensor-dato'>${sensor.dato} <span class='sensor-unidad'>${sensor.unidad}</span></div>
                 <div class='sensor-min'>Min: <b>${sensor.minimo} *</b></div>
                 <div class='sensor-med'>Med: <b>${sensor.media} *</b></div>
                 <div class='sensor-max'>Max: <b>${sensor.maximo} *</b></div>
-                <div class='sensor-leyenda'>*Son valores medidos en los &uacute;ltimos 30 d&iacute;as</b></div>
+                <div class='sensor-leyenda'>*Valores medidos entre ${moment(sensor.fecha_inicial).format('DD/MM/YYYY')} y el ${moment(sensor.ultima_act).format('DD/MM/YYYY')}</div>
             `
         $('#uxSensor').html(html);
 
