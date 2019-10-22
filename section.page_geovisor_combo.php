@@ -215,7 +215,7 @@ $(document).ready(function() {
 		{
 			
 			index:2,
-			label"LEAT",
+			label:"LEAT",
 			layers:[
 				{
 					layer_id:815,
