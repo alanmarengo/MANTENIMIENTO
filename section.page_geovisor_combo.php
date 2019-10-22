@@ -103,7 +103,7 @@ $(document).ready(function() {
 		{
 			
 			index:0,
-			label:"Condor Clift"
+			label:"Condor Clift",
 			layers:[
 				{
 					layer_id:816,
