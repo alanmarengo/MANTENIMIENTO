@@ -181,7 +181,7 @@
 
 .form-group-link {
 	
-	border:none;
+	border:none !important;
 	
 }
 
