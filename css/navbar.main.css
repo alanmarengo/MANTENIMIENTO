@@ -149,8 +149,6 @@
 	
 }
 
-
-
 .form-group-login {
     border: none !Important;
 	outline:none;
@@ -159,6 +157,7 @@
     width: 90%;
     margin: 10px 5% auto !Important;
     line-height: 32px;
+	border-radius:3px;
 }
 
 .form-group-login i {
@@ -178,4 +177,22 @@
     outline: none;
     display: inline-block;
     vertical-align: top;
+}
+
+#frm .form-group-button {
+
+    width: 80%;
+    text-align: center;
+    margin: 10px auto 0px auto;
+    height: 26px;
+    line-height: 26px;
+    border-radius: 3px;
+    background-color: #31cbfd;
+
+}
+
+#frm .form-group-button a {
+
+    color: white !important;
+
 }

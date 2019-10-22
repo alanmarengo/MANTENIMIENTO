@@ -32,8 +32,8 @@ if ((isset($_SESSION)) && (sizeof($_SESSION) > 0)) {
 		<a href="#" id="navbarDropdown-help" role="button" data-toggle="dropdown" aria-expanded="false" title="Menu de usuario">
 			<i class="fa fa-user"></i>
 		</a>
-		<form method="post" action="./CMD-login.php" id="frm">
-			<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-help" id="dropdown-help">
+		<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-help" id="dropdown-help">
+			<form method="post" action="./CMD-login.php" id="frm">
 				<ul>
 					<li>
 						<div class="form-group form-group-login">
@@ -53,8 +53,8 @@ if ((isset($_SESSION)) && (sizeof($_SESSION) > 0)) {
 						</div>
 					</li>
 				</ul>
-			</div>
-		</form>
+			</form>
+		</div>
 	</li>
 
 <?php
