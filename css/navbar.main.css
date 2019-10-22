@@ -179,6 +179,12 @@
     vertical-align: top;
 }
 
+.form-group-link {
+	
+	border:none;
+	
+}
+
 .form-group-link a:hover {
 	
 	background:none !important;
