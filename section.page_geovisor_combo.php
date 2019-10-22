@@ -50,7 +50,25 @@ $(document).ready(function() {
 				.val(proyectos[i].index)
 				.text(proyectos[i].label)
 			);
+		
+		}
+		
+	}
+	
+	function loadComboComponente(proyectos) {
+		
+		var obraIndex = $("#uxVisor").val();
+		
+		$("#uxCapa").children("option").remove();
+		
+		for (var i=0; i<proyectos[obraIndex].layers.length; i++) {
 			
+			$("#uxCapa").append(
+				$("<option></option>")
+				.val(proyectos[obraIndex].layers[i].layer_id)
+				.text(proyectos[obraIndex].layers[i].componente)
+			);
+		
 		}
 		
 	}
@@ -214,7 +232,11 @@ $(document).ready(function() {
 	loadComboObra(proyectos);
 	loadComboComponente(proyectos);
 	
-	
+	document.getElementById("uxVisor").addEventListener("change",function() {
+		
+		loadComboComponente(proyectos);		
+		
+	});
 
 });
 </script>
