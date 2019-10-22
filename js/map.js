@@ -398,7 +398,9 @@ function ol_map() {
 					
 					panel.AddLayer(v.getAttribute("data-cid"),v.getAttribute("data-lid"),true);
 					
-					$(".active-layer-node[data-lid="+js.data[i].layer_id+"] .pretty .layer-checkbox").trigger("click");
+					//$(".active-layer-node[data-lid="+js.data[i].layer_id+"] .pretty .layer-checkbox").trigger("click");
+					
+					console.log(visible);
 					
 					if (visible == "t") {
 						
