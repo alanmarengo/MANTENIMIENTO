@@ -404,11 +404,11 @@ function ol_map() {
 						
 						v.click();
 						
-						document.getElementById("layer-checkbox-"+layer_id).layer.setVisible(false);
+					//	document.getElementById("layer-checkbox-"+layer_id).layer.setVisible(false);
 						
 					}else{
 						
-						document.getElementById("layer-checkbox-"+layer_id).layer.setVisible(true);
+					//	document.getElementById("layer-checkbox-"+layer_id).layer.setVisible(true);
 						
 					}
 					
