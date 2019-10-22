@@ -50,7 +50,7 @@ if ((isset($_SESSION)) && (sizeof($_SESSION) > 0)) {
 						</div>
 					</li>
 					<li>
-						<div class="form-group">
+						<div class="form-group form-group-button">
 							<a href="#" class="login-black-button" onclick="document.getElementById('frm').submit();">INGRESAR</a>
 						</div>
 					</li>
