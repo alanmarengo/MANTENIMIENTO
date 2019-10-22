@@ -9,6 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<?php include("./scripts.default.php"); ?>
+	<?php include("./scripts.openlayers.php"); ?>	
 	<?php include("./scripts.map.php"); ?>
 	<?php include("./scripts.onresize.php"); ?>		
 	
