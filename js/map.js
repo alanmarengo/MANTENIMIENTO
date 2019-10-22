@@ -400,7 +400,7 @@ function ol_map() {
 					
 					$(".active-layer-node[data-lid="+js.data[i].layer_id+"] .pretty .layer-checkbox").trigger("click");
 					
-					if (visible == "f") {
+					if (visible == "t") {
 						
 						v.click();
 						
