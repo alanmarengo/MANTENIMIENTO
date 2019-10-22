@@ -247,7 +247,7 @@ $(document).ready(function() {
                             <div class="preview-imagenes" style="overflow: hide;">
                                 ${imagenes}
                             </div>
-                            <a class="media-preview-link btn btn-warning btn-xs" data-solapa="1" data-estudio="${model.ficha.estudio_id}">Imagenes asociadas</a>
+                            <a class="media-preview-link btn btn-warning btn-xs" data-solapa="1" data-mode="0" data-mode_id="${model.ficha.estudio_id}">Imagenes asociadas</a>
                             </div>
                         </div>
                 </div>
