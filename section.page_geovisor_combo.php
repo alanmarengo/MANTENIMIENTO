@@ -53,12 +53,14 @@ $(document).ready(function() {
 		
 		}
 		
+		$("#uxVisor").selectpicker("refresh");
+		
 	}
 	
 	function loadComboComponente(proyectos) {
 		
 		var obraIndex = $("#uxVisor").val();
-		alert(obraIndex);
+		
 		$("#uxCapa").children("option").remove();
 		
 		for (var i=0; i<proyectos[obraIndex].layers.length; i++) {
@@ -70,6 +72,8 @@ $(document).ready(function() {
 			);
 		
 		}
+		
+		$("#uxCapa").selectpicker("refresh");
 		
 	}
 	
