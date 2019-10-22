@@ -40,9 +40,32 @@
 }
 .page_template .parrafos p {
   padding-bottom: 0px;
+  font-size: 12px;
+}
+.page_template .parrafos .bullet {
+  float: left;
+  padding-top: 4px;
+}
+.page_template .parrafos .bullet-parrafo {
+  padding-left: 30px;
 }
 .page_template .parrafos h5 {
-  font-size: 12px!important;
+  font-weight: bold;
+  font-size: 13px!important;
+  color: #005d96;
+  text-transform: uppercase;
+  padding-top: 20px;
+}
+.page_template .parrafos .resumen {
+  font-size: 13px!important;
+  font-weight: bold;
+  color: #666;
+  padding-bottom: 30px;
+}
+.page_template .parrafos .pie-imagen {
+  width: 100%;
+  text-align: center;
+  padding: 4px;
 }
 .page_template .section-footer {
   padding: 30px 20px 0px 20px;
@@ -96,16 +119,24 @@
 .page_template .section-footer .section-footer-buttons .button2-indicadores {
   background-image: url('../images/icono-indicadores-relleno.png');
 }
-.page_template .section-a {
-  padding: 2em 6em 2em 6em;
-  background-color: #fff;
-}
-.page_template .section-a h3 {
+.page_template h3 {
   text-align: center;
   font-size: 16px;
   font-weight: bolder;
   margin-bottom: 2em;
   text-transform: uppercase;
+  color: #8e2f4f;
+}
+.page_template h4 {
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 2em;
+  text-transform: uppercase;
+  color: #333;
+}
+.page_template .section-a {
+  padding: 2em 6em 2em 6em;
+  background-color: #fff;
 }
 .page_template .section-a a {
   color: #39a4c9;
@@ -114,13 +145,6 @@
 .page_template .section-b {
   padding: 2em 6em 2em 6em;
   background-color: #f4f4f4;
-}
-.page_template .section-b h3 {
-  text-align: center;
-  font-size: 16px;
-  font-weight: bolder;
-  margin-bottom: 2em;
-  text-transform: uppercase;
 }
 .page_template .section-b a {
   color: #39a4c9;
