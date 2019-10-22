@@ -461,7 +461,7 @@ A 65 km aguas abajo del cierre anteriormente mencionado, se ubica la presa La Ba
 
         <div class="col-md-12 section-a antena">
             <a id="antena"></a>
-            <h3 style="color: #666;">Antenas/Receptores SHF (MW)</h3>
+            <h3>Antenas/Receptores SHF (MW)</h3>
 
             <div class="row" style="padding-left: 2em; padding-right: 2em;">
                 <div class="col-md-6 parrafos">
