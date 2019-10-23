@@ -91,8 +91,8 @@ $(document).ready(function() {
 	
 	function loadLabels() {
 		
-		var proyectText = $("#uxVisor").text();
-		var layerText = $("#uxCapa").text();
+		var proyectText = $("#uxVisor option:selected").text();
+		var layerText = $("#uxCapa option:selected").text();
 		
 		$("#label-proyecto").html(proyectText);
 		$("#label-capa").html(layerText);
@@ -130,7 +130,18 @@ $(document).ready(function() {
 		});
 		
 		geomap.map.ol_object.addLayer(geomap.map.uniqueLayer);
-	
+		
+		var js = this.map.getLayerExtent(layer_id);
+		
+		var extent = ol.proj.transformExtent(
+			[js.minx,js.miny,js.maxx,js.maxy],
+			"EPSG:3857", "EPSG:3857"
+		);
+		
+		geomap.map.ol_object_mini.getView().fit(extent,{duration:1000});
+		geomap.map.ol_object_mini.updateSize();
+		geomap.map.ol_object_mini.render();
+		
 	}
 	
     $('.section-sticky a').on('click', function() {
