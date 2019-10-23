@@ -23,18 +23,16 @@ $(document).ready(function() {
     });
 
     $('#main-search-btn').on('click', function(e) {
-        if (e.which == 13) {
-            //let url = "./mediateca.php?s=" + $(this).val();
-            //window.location.replace(url);
-			var pattern = $("#main-search").val();
-			var url = "./mediateca.php?s="+pattern;
-			var flink = document.createElement("a");
-				flink.href = url;
-				flink.target = "_blank";
-				document.body.appendChild(flink);
-				flink.click();
-				$(flink).remove();
-        }
+		//let url = "./mediateca.php?s=" + $(this).val();
+		//window.location.replace(url);
+		var pattern = $("#main-search").val();
+		var url = "./mediateca.php?s="+pattern;
+		var flink = document.createElement("a");
+			flink.href = url;
+			flink.target = "_blank";
+			document.body.appendChild(flink);
+			flink.click();
+			$(flink).remove();
     });
 	
 	
