@@ -11,7 +11,7 @@ $(document).ready(function() {
         if (e.which == 13) {
             //let url = "./mediateca.php?s=" + $(this).val();
             //window.location.replace(url);
-			var pattern = $("#main-search").val();
+			var pattern = $("#main-search").val();			
 			var url = "./mediateca.php?s="+pattern;
 			var flink = document.createElement("a");
 				flink.href = url;
