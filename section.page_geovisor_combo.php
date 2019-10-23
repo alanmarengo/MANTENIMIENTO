@@ -22,8 +22,8 @@
 
             <div style="border: solid 1px #666; margin: 10px 15px 0px 15px; width: 100%;">
                 <div style="font-size: 10px; padding: 10px; background-color: #fff; color: #333; text-align: center;">
-                    <b>VISOR LA BARRANCOSA</b><br />
-                    <small>ESCALA DE PECES</small>
+                    <b id="label-proyecto" style="text-transform:uppercase;"></b><br />
+                    <small id="label-capa" style="text-transform:uppercase;"></small>
                 </div>
 
                 <div id="map">
@@ -60,6 +60,9 @@ $(document).ready(function() {
 		
 		$("#uxVisor").selectpicker("refresh");
 		
+		drawLayer();
+		loadLabels();
+		
 	}
 	
 	function loadComboComponente(proyectos) {
@@ -81,13 +84,21 @@ $(document).ready(function() {
 		$("#uxCapa").selectpicker("refresh");
 		
 		drawLayer();
+		loadLabels();
+		
+	}
+	
+	function loadLabels() {
+		
+		var proyectText = $("#uxVisor").text();
+		var layerText = $("#uxCapa").text();
+		
+		$("#label-proyecto").html(proyectText);
+		$("#label-capa").html(layerText);
 		
 	}
 	
 	function drawLayer() {
-		
-		const layers = [geomap.map.ol_object.getLayers().getArray()];
-		layers.forEach((layer) => geomap.map.ol_object.removeLayer(layer));
 		
 		var layer_id = $("#uxCapa").val();
 		
@@ -95,7 +106,13 @@ $(document).ready(function() {
 		
 		var layerData = geomap.map.getLayerData(layer_id);
 		
-		var layer = new ol.layer.Tile({
+		if (geomap.map.uniqueLayer) {
+			
+			geomap.map.ol_object.removeLayer(geomap.map.uniqueLayer);
+			
+		}
+		
+		geomap.map.uniqueLayer = new ol.layer.Tile({
 			name:layerData.layer_wms_layer,
 			visible:true,
 			source: new ol.source.TileWMS({
@@ -111,7 +128,7 @@ $(document).ready(function() {
 			})
 		});
 		
-		geomap.map.ol_object.addLayer(layer);
+		geomap.map.ol_object.addLayer(geomap.map.uniqueLayer);
 	
 	}
 	
@@ -280,6 +297,9 @@ $(document).ready(function() {
 		drawLayer();
 		
 	});
+	
+	drawLayer();
+	loadLabels();
 
 });
 </script>
