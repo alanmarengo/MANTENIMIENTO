@@ -11,9 +11,7 @@
 	<?php include("./scripts.default.php"); ?>
 	<?php include("./scripts.openlayers.php"); ?>	
 	<?php include("./scripts.map.php"); ?>
-	<?php include("./scripts.onresize.php"); ?>		
-	
-	<?php include("./scripts.document_ready.php"); ?>
+	<?php include("./scripts.onresize.php"); ?>
 	
 </head>
 <body>
