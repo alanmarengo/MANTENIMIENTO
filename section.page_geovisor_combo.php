@@ -105,7 +105,6 @@ $(document).ready(function() {
 					'VERSION': '1.1.1',
 					'FORMAT': 'image/png',
 					'TILED': false,
-					'clase_id':clase_id,
 					'layer_id':layer_id
 				}/*,
 				crossOrigin: 'anonymous'*/
