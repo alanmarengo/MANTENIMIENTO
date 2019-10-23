@@ -55,8 +55,6 @@ function loadComboObra(proyectos) {
 		$("#uxVisor").selectpicker("refresh");
 		
 		loadComboComponente(proyectos);		
-		loadLabels();		
-		drawLayer();
 		
 	}
 	
@@ -77,9 +75,6 @@ function loadComboObra(proyectos) {
 		}
 		
 		$("#uxCapa").selectpicker("refresh");
-		
-		drawLayer();
-		loadLabels();
 		
 	}
 	
@@ -304,6 +299,15 @@ $(document).ready(function() {
 	document.getElementById("uxVisor").addEventListener("change",function() {
 		
 		loadComboComponente(proyectos);	
+		loadLabels();
+		drawLayer();
+		
+	});	
+	
+	document.getElementById("uxCapa").addEventListener("change",function() {
+		
+		drawLayer(proyectos);	
+		loadLabels();
 		
 	});	
 	
