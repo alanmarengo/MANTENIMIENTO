@@ -423,7 +423,7 @@ $(document).ready(function() {
                 <div class='sensor-min'>Min: <b>${sensor.minimo} *</b></div>
                 <div class='sensor-med'>Med: <b>${sensor.media} *</b></div>
                 <div class='sensor-max'>Max: <b>${sensor.maximo} *</b></div>
-                <div class='sensor-leyenda'>*Valores medidos entre ${moment(sensor.fecha_inicial).format('DD/MM/YYYY')} y el ${moment(sensor.ultima_act).format('DD/MM/YYYY')}</div>
+                <div class='sensor-leyenda'>*Valores medidos entre el ${moment(sensor.fecha_inicial).format('DD/MM/YYYY')} y el ${moment(sensor.ultima_act).format('DD/MM/YYYY')}</div>
             `
         $('#uxSensor').html(html);
 
