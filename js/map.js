@@ -645,6 +645,13 @@ function ol_map() {
 	
 	this.map.deactivateCoordinates = function() {
 		
+		this.ol_object.removeControl(this.mouse_position_3857);
+		this.ol_object.removeControl(this.mouse_position_4326);
+		
+	}
+	
+	this.map.activateCoordinates = function() {
+		
 		if (this.deleteSelect) { this.ol_object.removeInteraction(this.deleteSelect); }
 		if (this.select) { this.ol_object.removeInteraction(this.select); }
 		if (this.modify) { this.ol_object.removeInteraction(this.modify); }
@@ -652,13 +659,6 @@ function ol_map() {
 		if (this.medi_draw) { this.ol_object.removeInteraction(this.medi_draw); }
 		if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
 		if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }
-		
-		this.ol_object.removeControl(this.mouse_position_3857);
-		this.ol_object.removeControl(this.mouse_position_4326);
-		
-	}
-	
-	this.map.activateCoordinates = function() {
 		
 		document.getElementById('coord-3857').innerHTML = "";
 		document.getElementById('coord-4326').innerHTML = "";
