@@ -11,7 +11,14 @@ $(document).ready(function() {
         if (e.which == 13) {
             //let url = "./mediateca.php?s=" + $(this).val();
             //window.location.replace(url);
-			geomap.map.searchGlobal();
+			var pattern = $("#main-search").val();
+			var url = "./mediateca.php?s="+pattern;
+			var flink = document.createElement("a");
+				flink.href = url;
+				flink.target = "_blank";
+				document.body.appendChild(flink);
+				flink.click();
+				$(flink).remove();
         }
     });
 });
