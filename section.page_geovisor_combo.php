@@ -120,7 +120,7 @@ function loadComboObra(proyectos) {
 		
 		geomap.map.ol_object.addLayer(geomap.map.uniqueLayer);
 		
-		var js = this.map.getLayerExtent(layer_id);
+		var js = geomap.map.getLayerExtent(layer_id);
 		
 		var extent = ol.proj.transformExtent(
 			[js.minx,js.miny,js.maxx,js.maxy],
