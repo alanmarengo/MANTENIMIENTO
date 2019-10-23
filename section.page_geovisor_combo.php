@@ -87,7 +87,7 @@ $(document).ready(function() {
 	function drawLayer() {
 		
 		const layers = [geomap.map.ol_object.getLayers().getArray()];
-		layers.forEach((layer) => map.removeLayer(layer));
+		layers.forEach((layer) => geomap.map.ol_object.removeLayer(layer));
 		
 		var layer_id = $("#uxCapa").val();
 		
