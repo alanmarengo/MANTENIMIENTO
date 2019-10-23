@@ -282,6 +282,11 @@ $(document).ready(function() {
                     $('#main-search').val(s);
                     $('#main-search').focus();
                 }
+                if (urlParams.has('o')) {
+                    let o = urlParams.get('o');
+                    model.filters.orden = o;
+                    $('#uxOrden').selectpicker('val', o);
+                }
 
                 if (urlParams.has('solapa')) {
                     let n = parseInt(urlParams.get('solapa'));
