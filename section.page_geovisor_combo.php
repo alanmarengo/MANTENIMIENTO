@@ -305,9 +305,9 @@ $(document).ready(function() {
 	});	
 	
 	document.getElementById("uxCapa").addEventListener("change",function() {
-		alert("uxcapa");
-		drawLayer();
+		
 		loadLabels();
+		drawLayer();
 		
 	});	
 	
