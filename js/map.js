@@ -392,23 +392,16 @@ function ol_map() {
 			if (js.data[i].iniciar_panel == "t") {
 				
 				var visible = js.data[i].iniciar_visible;
-				var layer_id = js.data[i].layer_id;
 				
 				$(".layer-checkbox[data-lid="+js.data[i].layer_id+"]").each(function(i,v) {
 					
 					panel.AddLayer(v.getAttribute("data-cid"),v.getAttribute("data-lid"),true);
 					
-					//$(".active-layer-node[data-lid="+js.data[i].layer_id+"] .pretty .layer-checkbox").trigger("click");
-					
-					console.log(visible);
+					$(".active-layer-node[data-lid="+js.data[i].layer_id+"] .pretty .layer-checkbox").trigger("click");
 					
 					if (visible == "t") {
 						
 						v.click();
-						
-					}else{
-						
-						document.getElementById("layer-checkbox-"+layer_id).layer.setVisible(false);
 						
 					}
 					
@@ -454,49 +447,6 @@ function ol_map() {
 		
 		this.parseGFI(newnodes,containerID,wrapperID);
 	
-	}
-	
-	this.map.parseGFIbuffer = function(response,containerID,wrapperID) {
-		
-		document.getElementById("popup-results-buffer").innerHTML += response;
-		
-		var results = [];
-		
-		var entered = false;
-		
-		$("#popup-results-buffer").children().each(function(i,v) {
-			
-			var gid = $(v).attr("x");
-			var layer_name = "ahrsc:"+$(v).attr("y");
-			
-			results.push(layer_name + ";" + gid);
-			
-			entered = true;
-			
-		});
-		
-		if (entered) {
-		
-			var req = $.ajax({
-				
-				async:false,
-				type:"POST",
-				data:{
-					results:results
-				},
-				url:"./php/get-layer-info.php",
-				success:function(d) {}
-				
-			});
-			
-			document.getElementById(wrapperID).innerHTML += req.responseText;
-					
-			jwindow.open(containerID);
-			
-			scroll.refresh();
-	
-		}
-		
 	}
 	
 	this.map.parseGFI = function(response,containerID,wrapperID) {
@@ -554,24 +504,6 @@ function ol_map() {
 		this.ol_object.getView().fit(extent,{duration:1000});
 		this.ol_object.updateSize();
 		this.ol_object.render();
-		
-	}
-	
-	this.map.getLayerData = function(layer_id) {
-		
-		var reqExtent = $.ajax({
-			
-			async:false,
-			url:"./php/get-layer-data.php",
-			type:"post",
-			data:{layer_id:layer_id},
-			success:function(d){}
-				
-		});
-		
-		var js = JSON.parse(reqExtent.responseText);
-		
-		return js;
 		
 	}
 	
@@ -712,6 +644,14 @@ function ol_map() {
 	}
 	
 	this.map.deactivateCoordinates = function() {
+		
+		if (this.deleteSelect) { this.ol_object.removeInteraction(this.deleteSelect); }
+		if (this.select) { this.ol_object.removeInteraction(this.select); }
+		if (this.modify) { this.ol_object.removeInteraction(this.modify); }
+		if (this.draw) { this.ol_object.removeInteraction(this.draw); }
+		if (this.medi_draw) { this.ol_object.removeInteraction(this.medi_draw); }
+		if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
+		if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }
 		
 		this.ol_object.removeControl(this.mouse_position_3857);
 		this.ol_object.removeControl(this.mouse_position_4326);
@@ -900,7 +840,7 @@ function ol_map() {
 			
 			$("#buffer-hint").hide();
 			
-			this.parseGFIbuffer(req.responseText,"popup-buffer","info-buffer");
+			this.parseGFI(req.responseText,"popup-buffer","info-buffer");
 			
 			this.ol_object.infoEnabled = true;			
 			
