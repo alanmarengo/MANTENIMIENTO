@@ -86,14 +86,14 @@ $(document).ready(function() {
 	
 	function drawLayer() {
 		
+		const layers = [geomap.map.ol_object.getLayers().getArray()];
+		layers.forEach((layer) => map.removeLayer(layer));
+		
 		var layer_id = $("#uxCapa").val();
 		
 		var extent = geomap.map.getLayerExtent(layer_id);
 		
 		var layerData = geomap.map.getLayerData(layer_id);
-		
-		console.log(extent);
-		console.log(layerData);
 		
 		var layer = new ol.layer.Tile({
 			name:layerData.layer_wms_layer,
