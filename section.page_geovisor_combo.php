@@ -60,10 +60,8 @@ $(document).ready(function() {
 		
 		$("#uxVisor").selectpicker("refresh");
 		
-		loadComboComponente(proyectos);
-		
-		loadLabels();
-		
+		loadComboComponente(proyectos);		
+		loadLabels();		
 		drawLayer();
 		
 	}
@@ -71,7 +69,7 @@ $(document).ready(function() {
 	function loadComboComponente(proyectos) {
 		
 		var obraIndex = $("#uxVisor").val();
-		
+		alert(obraIndex);
 		$("#uxCapa").children("option").remove();
 		
 		for (var i=0; i<proyectos[obraIndex].layers.length; i++) {
@@ -291,17 +289,15 @@ $(document).ready(function() {
 		
 	];
 	
-	loadComboObra(proyectos);
-	
 	document.getElementById("uxVisor").addEventListener("change",function() {
 		
 		loadComboComponente(proyectos);	
-		drawLayer();
 		
-	});
+	});	
 	
-	drawLayer();
+	loadComboObra(proyectos);
 	loadLabels();
+	drawLayer();
 
 });
 </script>
