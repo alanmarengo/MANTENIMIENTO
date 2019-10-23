@@ -37,14 +37,8 @@
 </div>
 
 <script type='text/javascript'>
-$(document).ready(function() {
-	
-	geomap = new ol_map();
-		
-	geomap.map.create();
-	geomap.map.createLayers();
-	
-	function loadComboObra(proyectos) {
+
+function loadComboObra(proyectos) {
 		
 		$("#uxVisor").children("option").remove();
 		
@@ -143,6 +137,13 @@ $(document).ready(function() {
 		geomap.map.ol_object_mini.render();
 		
 	}
+
+$(document).ready(function() {
+	
+	geomap = new ol_map();
+		
+	geomap.map.create();
+	geomap.map.createLayers();
 	
     $('.section-sticky a').on('click', function() {
         $('.section-sticky a').removeClass('selected');
