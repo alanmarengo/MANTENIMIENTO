@@ -18,8 +18,8 @@ $json .= "{";
 $json .= "\"layer_id\":" . $data["layer_id"] . ",";
 $json .= "\"layer_desc\":\"" . $data["layer_desc"] . "\",";
 $json .= "\"layer_wms_server\":\"" . $data["layer_wms_server"] . "\",";
-$json .= "\"layer_wms_layer\":\"" . $data["layer_wms_layer"] . "\"";
-$json .= "\"layer_schema\":\"" . $data["layer_schema"] . "\"";
+$json .= "\"layer_wms_layer\":\"" . $data["layer_wms_layer"] . "\",";
+$json .= "\"layer_schema\":\"" . $data["layer_schema"] . "\",";
 $json .= "\"layer_table\":\"" . $data["layer_table"] . "\"";
 $json .= "}";
 
