@@ -456,6 +456,49 @@ function ol_map() {
 	
 	}
 	
+	this.map.parseGFIbuffer = function(response,containerID,wrapperID) {
+		
+		document.getElementById("popup-results-buffer").innerHTML += response;
+		
+		var results = [];
+		
+		var entered = false;
+		
+		$("#popup-results-buffer").children().each(function(i,v) {
+			
+			var gid = $(v).attr("x");
+			var layer_name = "ahrsc:"+$(v).attr("y");
+			
+			results.push(layer_name + ";" + gid);
+			
+			entered = true;
+			
+		});
+		
+		if (entered) {
+		
+			var req = $.ajax({
+				
+				async:false,
+				type:"POST",
+				data:{
+					results:results
+				},
+				url:"./php/get-layer-info.php",
+				success:function(d) {}
+				
+			});
+			
+			document.getElementById(wrapperID).innerHTML += req.responseText;
+					
+			jwindow.open(containerID);
+			
+			scroll.refresh();
+	
+		}
+		
+	}
+	
 	this.map.parseGFI = function(response,containerID,wrapperID) {
 		
 		document.getElementById("popup-results").innerHTML += response;
@@ -857,7 +900,7 @@ function ol_map() {
 			
 			$("#buffer-hint").hide();
 			
-			this.parseGFI(req.responseText,"popup-buffer","info-buffer");
+			this.parseGFIbuffer(req.responseText,"popup-buffer","info-buffer");
 			
 			this.ol_object.infoEnabled = true;			
 			
