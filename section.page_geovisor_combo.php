@@ -92,8 +92,6 @@ function loadComboObra(proyectos) {
 		
 		var layer_id = $("#uxCapa").val();
 		
-		var extent = geomap.map.getLayerExtent(layer_id);
-		
 		var layerData = geomap.map.getLayerData(layer_id);
 		
 		if (geomap.map.uniqueLayer) {
@@ -127,9 +125,9 @@ function loadComboObra(proyectos) {
 			"EPSG:3857", "EPSG:3857"
 		);
 		
-		geomap.map.ol_object_mini.getView().fit(extent,{duration:1000});
-		geomap.map.ol_object_mini.updateSize();
-		geomap.map.ol_object_mini.render();
+		geomap.map.ol_object.getView().fit(extent,{duration:1000});
+		geomap.map.ol_object.updateSize();
+		geomap.map.ol_object.render();
 		
 	}
 
