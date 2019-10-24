@@ -100,6 +100,14 @@ if ($filters != -1) {
 		
 	}
 	
+}else{
+	
+	if ((!empty($fdesde)) && (!empty($fhasta))) {
+		
+		$filter_str = " mod_estadistica.filtro_temp(cod_temp,'$fdesde','$fhasta')";
+		
+	}
+	
 }
 
 $query_string = "SELECT * FROM mod_estadistica.get_dt_from($dt_id,'$dt_variables','$dt_cruce') AS query";

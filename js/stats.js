@@ -205,6 +205,12 @@ function ol_stats() {
 			
 		}.bind(this));
 		
+		$(".datepicker").on("change",function() {
+			
+			$("#update-view").prop("disabled",false);
+			
+		});
+		
 	}
 	
 	this.view.updateAgroupColModals = function() {
