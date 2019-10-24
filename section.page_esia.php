@@ -4,7 +4,7 @@
     <div class="row">
         <div class="section-sticky">
             <div class="col-md-12 page-title">
-                Evaluación de impacto ambiental-EsIA
+                Antecedentes y Marco Legal
             </div>
 
             <div class="col-md-12 top-buttons">
