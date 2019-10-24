@@ -45,7 +45,7 @@
 	
 	<div id="dataset-wrapper">
 		
-		<div class="dataset-inner">
+		<div id="dataset-inner">
 		
 			<div id="dataset-header">
 			
