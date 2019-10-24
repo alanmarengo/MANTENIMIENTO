@@ -631,9 +631,8 @@
 	display:none;
 	padding:20px;
 	left:50%;
-	top:51%;
+	top:20px;
 	margin-left:-45%;
-	margin-top:-26%;
 	
 }
 
@@ -701,7 +700,7 @@
 
     z-index: 999999;
     position: absolute;
-    bottom: 50px;
+    bottom: 20px;
     right: -30px;
 
 }

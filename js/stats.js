@@ -896,7 +896,7 @@ function ol_stats() {
 		
 		document.getElementById("gm-stats-mediawrapper").innerHTML = "";
 		
-		sld_result = '';
+		sld_result = '';		
 		
 		/**** Generar el SLD ****/
 		s = new sldlib();
@@ -941,6 +941,27 @@ function ol_stats() {
 				maxZoom: 21
 			})
 		});
+		
+		var reqExtent = $.ajax({
+			
+			async:false,
+			url:"./php/get-layer-extent-mapeo.php",
+			type:"post",
+			data:{query_id:query_id},
+			success:function(d){}
+				
+		});
+		
+		var js = JSON.parse(reqExtent.responseText);
+		
+		var extent = ol.proj.transformExtent(
+			[js.minx,js.miny,js.maxx,js.maxy],
+			"EPSG:3857", "EPSG:3857"
+		);
+		
+		this.ol_object.getView().fit(extent,{duration:1000});
+		this.ol_object.updateSize();
+		this.ol_object.render();
 		
 		//var link = "http://observatorio.atic.com.ar/cgi-bin/mapserver?map=wms_atic&service=WFS&version=1.0.0&request=GetFeature&typeName=" +capa + "&id=" + query_id + "&outputFormat=shape-zip";
 		
