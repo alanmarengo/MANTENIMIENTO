@@ -49,6 +49,10 @@
 .page_template .parrafos .bullet-parrafo {
   padding-left: 30px;
 }
+.page_template .parrafos .bullet-parrafo2 {
+  padding-left: 30px;
+  margin-bottom: 4px;
+}
 .page_template .parrafos h5 {
   font-weight: bold;
   font-size: 13px!important;
@@ -149,6 +153,19 @@
 .page_template .section-b a {
   color: #39a4c9;
   font-weight: bolder;
+}
+.page_template .cols4 img {
+  padding: 0px 40px 20px 40px;
+}
+.page_template .cols4 h6 {
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.page_template .cols4 p {
+  text-align: justify;
+  padding: 0px 20px;
 }
 #page_endesarrollo .leyenda {
   padding: 100px 100px;
