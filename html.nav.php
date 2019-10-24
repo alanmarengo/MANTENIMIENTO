@@ -4,7 +4,7 @@
 			<a href="<?php echo startLink($_SERVER["SCRIPT_FILENAME"]); ?>" class="jump-link-death"><span>Inicio</span></a>
 		</li>
 		<li>
-			<a href="#">Acerca del Observatorio de AHRSC</a>
+			<a href="./page_acercade.php">Acerca del Observatorio de AHRSC</a>
 		</li>
 		<li>
 			<a href="javascript:void(0)" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="flotant.toggle('#nav-herramientas-ieasa',true,false,this);">
@@ -12,7 +12,7 @@
 			</a>
 		</li>
 		<li>
-			<a href="#">Proyecto - AHRSC</a>
+			<a href="./page_proyecto.php">Proyecto - AHRSC</a>
 		</li>
 		<li>
 			<a href="./page_pdga.php">Plan de Gestión Ambiental - PGA</a>
