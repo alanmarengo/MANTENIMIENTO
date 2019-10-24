@@ -570,7 +570,7 @@ function ol_stats() {
 			
 			var cellWidth = rowWidth / rowChilds;
 			
-			$("#dataset-inner").width(rowChilds*250);
+			$("#dataset-inner").css("width",(rowChilds*250)+"px");
 			
 			$(".dataset-cell").css("width","250px");
 			$(".dataset-filter-row .dropdown-toggle").css("width","85%");

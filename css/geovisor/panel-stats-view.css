@@ -23,6 +23,12 @@ body {
 	
 }
 
+#dataset-inner {
+	
+	margin-left:5px;
+	
+}
+
 #dataset-view .jump-row:nth-child(1) {
 	
 	justify-content:space-between;
