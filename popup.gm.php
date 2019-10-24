@@ -103,7 +103,7 @@
 				
 			</div>
 			
-			<div class="row jump-row">
+			<div class="row jump-row jump-posrel" style="top:90px;">
 				<div class="mr-20">	
 					<a href="#" id="gm-graficar-process" class="button black-button" onclick="stats.view.processGM();">PROCESAR</a>
 				</div>
