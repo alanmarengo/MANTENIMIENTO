@@ -37,14 +37,8 @@
 </div>
 
 <script type='text/javascript'>
-$(document).ready(function() {
-	
-	geomap = new ol_map();
-		
-	geomap.map.create();
-	geomap.map.createLayers();
-	
-	function loadComboObra(proyectos) {
+
+function loadComboObra(proyectos) {
 		
 		$("#uxVisor").children("option").remove();
 		
@@ -60,15 +54,14 @@ $(document).ready(function() {
 		
 		$("#uxVisor").selectpicker("refresh");
 		
-		drawLayer();
-		loadLabels();
+		loadComboComponente(proyectos);		
 		
 	}
 	
 	function loadComboComponente(proyectos) {
 		
 		var obraIndex = $("#uxVisor").val();
-		alert(obraIndex);
+		
 		$("#uxCapa").children("option").remove();
 		
 		for (var i=0; i<proyectos[obraIndex].layers.length; i++) {
@@ -83,15 +76,12 @@ $(document).ready(function() {
 		
 		$("#uxCapa").selectpicker("refresh");
 		
-		drawLayer();
-		loadLabels();
-		
 	}
 	
 	function loadLabels() {
 		
-		var proyectText = $("#uxVisor").text();
-		var layerText = $("#uxCapa").text();
+		var proyectText = $("#uxVisor option:selected").text();
+		var layerText = $("#uxCapa option:selected").text();
 		
 		$("#label-proyecto").html(proyectText);
 		$("#label-capa").html(layerText);
@@ -101,8 +91,6 @@ $(document).ready(function() {
 	function drawLayer() {
 		
 		var layer_id = $("#uxCapa").val();
-		
-		var extent = geomap.map.getLayerExtent(layer_id);
 		
 		var layerData = geomap.map.getLayerData(layer_id);
 		
@@ -129,8 +117,26 @@ $(document).ready(function() {
 		});
 		
 		geomap.map.ol_object.addLayer(geomap.map.uniqueLayer);
-	
+		
+		var js = geomap.map.getLayerExtent(layer_id);
+		
+		var extent = ol.proj.transformExtent(
+			[js.minx,js.miny,js.maxx,js.maxy],
+			"EPSG:3857", "EPSG:3857"
+		);
+		
+		geomap.map.ol_object.getView().fit(extent,{duration:1000});
+		geomap.map.ol_object.updateSize();
+		geomap.map.ol_object.render();
+		
 	}
+
+$(document).ready(function() {
+	
+	geomap = new ol_map();
+		
+	geomap.map.create();
+	geomap.map.createLayers();
 	
     $('.section-sticky a').on('click', function() {
         $('.section-sticky a').removeClass('selected');
@@ -161,126 +167,126 @@ $(document).ready(function() {
 	
 		{
 			
-			index:0,
-			label:"Condor Clift",
-			layers:[
+			"index":0,
+			"label":"Condor Clift",
+			"layers":[
 				{
-					layer_id:816,
-					componente:"AHRSC",
-					schema:"obra",
-					layer:"vp_geo_prcpr_presacc_otr1"
+					"layer_id":816,
+					"componente":"AHRSC",
+					"schema":"obra",
+					"layer":"vp_geo_prcpr_presacc_otr1"
 				},
 				{
-					layer_id:818,
-					componente:"Obras de toma para la casa de máquinas",
-					schema:"obra",
-					layer:"vp_geo_prcpr_obratomacc_otr1"
+					"layer_id":818,
+					"componente":"Obras de toma para la casa de máquinas",
+					"schema":"obra",
+					"layer":"vp_geo_prcpr_obratomacc_otr1"
 				},
 				{
-					layer_id:819,
-					componente:"Casa de máquinas",
-					schema:"obra",
-					layer:"vp_geo_prcpr_maquinascc_otr1"
+					"layer_id":819,
+					"componente":"Casa de máquinas",
+					"schema":"obra",
+					"layer":"vp_geo_prcpr_maquinascc_otr1"
 				},
 				{
-					layer_id:820,
-					componente:"Obras de desvío del río durante la construcción",
-					schema:"obra",
-					layer:"vp_geo_prcpr_desviocc_otr1"
+					"layer_id":820,
+					"componente":"Obras de desvío del río durante la construcción",
+					"schema":"obra",
+					"layer":"vp_geo_prcpr_desviocc_otr1"
 				},
 				{
-					layer_id:821,
-					componente:"Presas de materiales",
-					schema:"obra",
-					layer:"vp_geo_prcpr_ejecc_otr1"
+					"layer_id":821,
+					"componente":"Presas de materiales",
+					"schema":"obra",
+					"layer":"vp_geo_prcpr_ejecc_otr1"
 				},
 				{
-					layer_id:822,
-					componente:"Escala de Peces",
-					schema:"obra",
-					layer:"vp_geo_prcpr_escalacc_otr1"
+					"layer_id":822,
+					"componente":"Escala de Peces",
+					"schema":"obra",
+					"layer":"vp_geo_prcpr_escalacc_otr1"
 				},
 				{
-					layer_id:823,
-					componente:"Vertedero",
-					schema:"obra",
-					layer:"vp_geo_prcpr_vertecc_otr1"
+					"layer_id":823,
+					"componente":"Vertedero",
+					"schema":"obra",
+					"layer":"vp_geo_prcpr_vertecc_otr1"
 				},
 				{
-					layer_id:824,
-					componente:"Descargador de fondo",
-					schema:"obra",
-					layer:"vp_geo_prcpr_descargadorcc_otr1"
+					"layer_id":824,
+					"componente":"Descargador de fondo",
+					"schema":"obra",
+					"layer":"vp_geo_prcpr_descargadorcc_otr1"
 				}
 			]
 		
 		},
 		{
 		
-			index:1,
-			label:"La Barrancosa",
-			layers:[
+			"index":1,
+			"label":"La Barrancosa",
+			"layers":[
 				{
-					layer_id:817,
-					componente:"AHRSC",
-					schema:"obra",
-					layer:"vp_geo_prcpr_presalb_otr1"
+					"layer_id":817,
+					"componente":"AHRSC",
+					"schema":"obra",
+					"layer":"vp_geo_prcpr_presalb_otr1"
 				},
 				{
-					layer_id:825,
-					componente:"Obras de toma para la casa de máquinas",
-					schema:"obra",
-					layer:"vp_geo_prcpr_maquinaslb_otr1"
+					"layer_id":825,
+					"componente":"Obras de toma para la casa de máquinas",
+					"schema":"obra",
+					"layer":"vp_geo_prcpr_maquinaslb_otr1"
 				},
 				{
-					layer_id:825,
-					componente:"Casa de máquinas",
-					schema:"obra",
-					layer:"vp_geo_prcpr_maquinaslb_otr1"
+					"layer_id":825,
+					"componente":"Casa de máquinas",
+					"schema":"obra",
+					"layer":"vp_geo_prcpr_maquinaslb_otr1"
 				},
 				{
-					layer_id:826,
-					componente:"Obras de desvío del río durante la construcción",
-					schema:"obra",
-					layer:"vp_geo_prcpr_desviolb_otr1"
+					"layer_id":826,
+					"componente":"Obras de desvío del río durante la construcción",
+					"schema":"obra",
+					"layer":"vp_geo_prcpr_desviolb_otr1"
 				},
 				{
-					layer_id:827,
-					componente:"Presas de materiales",
-					schema:"obra",
-					layer:"vp_geo_prcpr_ejelb_otr1"
+					"layer_id":827,
+					"componente":"Presas de materiales",
+					"schema":"obra",
+					"layer":"vp_geo_prcpr_ejelb_otr1"
 				},
 				{
-					layer_id:828,
-					componente:"Escala de Peces",
-					schema:"obra",
-					layer:"vp_geo_prcpr_escalalb_otr1 "
+					"layer_id":828,
+					"componente":"Escala de Peces",
+					"schema":"obra",
+					"layer":"vp_geo_prcpr_escalalb_otr1 "
 				},
 				{
-					layer_id:829,
-					componente:"Vertedero",
-					schema:"obra",
-					layer:"vp_geo_prcpr_vertelb_otr1"
+					"layer_id":829,
+					"componente":"Vertedero",
+					"schema":"obra",
+					"layer":"vp_geo_prcpr_vertelb_otr1"
 				},
 				{
-					layer_id:829,
-					componente:"Descargador de fondo",
-					schema:"obra",
-					layer:"vp_geo_prcpr_vertelb_otr1"
+					"layer_id":829,
+					"componente":"Descargador de fondo",
+					"schema":"obra",
+					"layer":"vp_geo_prcpr_vertelb_otr1"
 				}
 			]
 		
 		},
 		{
 			
-			index:2,
-			label:"LEAT",
-			layers:[
+			"index":2,
+			"label":"LEAT",
+			"layers":[
 				{
-					layer_id:815,
-					componente:"LEAT",
-					schema:"bd_lin_electrica",
-					layer:"vp_geo_prcpr_leat_otr1"
+					"layer_id":815,
+					"componente":"LEAT",
+					"schema":"bd_lin_electrica",
+					"layer":"vp_geo_prcpr_leat_otr1"
 				}
 			]
 			
@@ -288,18 +294,24 @@ $(document).ready(function() {
 		
 	];
 	
-	loadComboObra(proyectos);
-	loadComboComponente(proyectos);
-	
 	document.getElementById("uxVisor").addEventListener("change",function() {
 		
 		loadComboComponente(proyectos);	
+		loadLabels();
 		drawLayer();
 		
-	});
+	});	
 	
-	drawLayer();
+	document.getElementById("uxCapa").addEventListener("change",function() {
+		
+		loadLabels();
+		drawLayer();
+		
+	});	
+	
+	loadComboObra(proyectos);
 	loadLabels();
+	drawLayer();
 
 });
 </script>

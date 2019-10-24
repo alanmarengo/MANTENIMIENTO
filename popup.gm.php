@@ -6,10 +6,6 @@
 		<a href="#" onclick="$('#popup-modal-gm').hide(); $('#popup-stats-gm').hide();">
 			<i class="fa fa-times"></i>
 		</a>
-	
-	</div>
-
-	<div class="row jump-row jus-between popup-stats-gm-row" id="popup-stats-gm-header">
 		
 		<h3 id="gm-title">Mapear Variable</h3>
 		<div class="icons">
@@ -63,39 +59,39 @@
 						<div class="row jump-row">
 							<div class="col col-md-3 ">
 								<a href="#" onclick="stats.view.graficarTipo(1);">
-									<img src="./images/graph-samples/01.jpg" height="80">
+									<img src="./images/graph-samples/01.jpg" width="100%">
 								</a>
 							</div>
 							<div class="col col-md-3 ">
 								<a href="#" onclick="stats.view.graficarTipo(2);">
-									<img src="./images/graph-samples/02.jpg" height="80">
+									<img src="./images/graph-samples/02.jpg" width="100%">
 								</a>
 							</div>
 							<div class="col col-md-3 ">
 								<a href="#" onclick="stats.view.graficarTipo(3);">
-									<img src="./images/graph-samples/03.jpg" height="80">
+									<img src="./images/graph-samples/03.jpg" width="100%">
 								</a>
 							</div>
 							<div class="col col-md-3 ">
 								<a href="#" onclick="stats.view.graficarTipo(4);">
-									<img src="./images/graph-samples/04.jpg" height="80">
+									<img src="./images/graph-samples/04.jpg" width="100%">
 								</a>
 							</div>
 						</div>
 						<div class="row jump-row">
 							<div class="col col-md-3 ">
 								<a href="#" onclick="stats.view.graficarTipo(5);">
-									<img src="./images/graph-samples/05.jpg" height="80">
+									<img src="./images/graph-samples/05.jpg" width="100%">
 								</a>
 							</div>
 							<div class="col col-md-3 ">
 								<a href="#" onclick="stats.view.graficarTipo(6);">
-									<img src="./images/graph-samples/06.jpg" height="80">
+									<img src="./images/graph-samples/06.jpg" width="100%">
 								</a>
 							</div>
 							<div class="col col-md-3 ">
 								<a href="#" onclick="stats.view.graficarTipo(8);">
-									<img src="./images/graph-samples/08.jpg" height="80">
+									<img src="./images/graph-samples/08.jpg" width="100%">
 								</a>
 							</div>
 						</div>
