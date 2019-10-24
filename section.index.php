@@ -9,7 +9,7 @@
             <li data-target="#main-slider" data-slide-to="5"></li>
         </ol>
         <div class="carousel-inner">
-            <a href="./page_pdga.php" class="carousel-item active">
+            <a href="./page_proyecto.php" class="carousel-item active">
                 <img class="d-block w-100" src="./images/index/s1.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>Energía renovable</p>
