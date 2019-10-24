@@ -112,12 +112,13 @@
 		
 		<div class="col col-md-8 col-lg-8 mt-20">			
 		
-			<div id="gm-stats-mediawrapper"></div>
-			<div class="mt-30 jus-right row jump-row" id="btn-ver-geovisor">
-				<div style="width:200px; top:30px; position:relative;">
-					<a href="#" class="black-button">VER EN GEOVISOR</a>
+			<div id="gm-stats-mediawrapper">
+				<div class="mt-30 jus-right row jump-row" id="btn-ver-geovisor">
+					<div style="width:200px; top:30px; position:relative;">
+						<a href="#" class="black-button">VER EN GEOVISOR</a>
+					</div>
 				</div>
-			</div>
+			</div>			
 			
 		</div>
 	
