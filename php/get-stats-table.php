@@ -94,7 +94,11 @@ if ($filters != -1) {
 	
 	$filter_str = substr($filter_str,0,strlen($filter_str)-5);
 	
-	
+	if ((!empty($fdesde)) && (!empty($fhasta))) {
+		
+		$filter_str .= " AND mod_estadistica.filtro_temp(cod_temp,'$fdesde','$fhasta')";
+		
+	}
 	
 }
 
