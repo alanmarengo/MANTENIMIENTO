@@ -48,9 +48,9 @@ A 65 km aguas abajo del cierre anteriormente mencionado, se ubica la presa La Ba
         <!---------------------------------------------->
         <div class="col-md-12 section-b">
             <a id="optimizacion"></a>
-            <!--<h3>VISOR DEL MODELO 2D</h3>-->
+            <h3 style="margin-bottom: 0px;">VISOR DEL MODELO 2D</h3>
 
-            <div class="embed-responsive embed-responsive-21by9">
+            <div class="embed-responsive" style="padding-top: 60%;">
                 <iframe src="./geovisor.combo.php" frameborder="0"></iframe>
             </div>
         </div>
