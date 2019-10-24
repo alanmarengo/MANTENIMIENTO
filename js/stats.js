@@ -570,7 +570,7 @@ function ol_stats() {
 			
 			var cellWidth = rowWidth / rowChilds;
 			
-			$("#dataset-wrapper").width(rowChilds*250);
+			$("#dataset-inner").width(rowChilds*250);
 			
 			$(".dataset-cell").css("width","250px");
 			$(".dataset-filter-row .dropdown-toggle").css("width","85%");
@@ -961,9 +961,9 @@ function ol_stats() {
 			"EPSG:3857", "EPSG:3857"
 		);
 		
-		this.ol_object.getView().fit(extent,{duration:1000});
-		this.ol_object.updateSize();
-		this.ol_object.render();
+		map.getView().fit(extent,{duration:1000});
+		map.updateSize();
+		map.render();
 		
 		//var link = "http://observatorio.atic.com.ar/cgi-bin/mapserver?map=wms_atic&service=WFS&version=1.0.0&request=GetFeature&typeName=" +capa + "&id=" + query_id + "&outputFormat=shape-zip";
 		

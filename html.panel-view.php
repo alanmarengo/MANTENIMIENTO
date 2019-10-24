@@ -44,12 +44,16 @@
 	</div>
 	
 	<div id="dataset-wrapper">
-	
-		<div id="dataset-header">
 		
-		</div>
+		<div class="dataset-inner">
 		
-		<div id="dataset-content">
+			<div id="dataset-header">
+			
+			</div>
+			
+			<div id="dataset-content">
+			
+			</div>
 		
 		</div>
 	
