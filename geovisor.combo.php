@@ -16,7 +16,7 @@
 </head>
 <body>
 
-	<div id="page">
+	<div id="page" style="background-color: #f4f4f4;">
 		
 		<div class="page-container">
 		
