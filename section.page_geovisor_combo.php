@@ -4,10 +4,7 @@
     <div class="row">
                 
         <!---------------------------------------------->
-        <div class="col-md-12 section-b">
-		
-            <a id="optimizacion"></a>
-            <h3>VISOR DEL MODELO 2D</h3>            
+        <div class="col-md-12 section-b">          
             
             <div class="row">
                 <div class="col-md-12" style="text-align: center; padding: 0px 10px 20px 0px;">
