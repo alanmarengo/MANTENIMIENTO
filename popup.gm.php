@@ -103,14 +103,14 @@
 				
 			</div>
 			
-			<div class="row jump-row jump-posrel" style="top:90px;">
+			<div class="row jump-row">
 				<div class="mr-20">	
 					<a href="#" id="gm-graficar-process" class="button black-button" onclick="stats.view.processGM();">PROCESAR</a>
 				</div>
 			</div>
 		</div>
 		
-		<div class="col col-md-8 col-lg-8">			
+		<div class="col col-md-8 col-lg-8 mt-20">			
 		
 			<div id="gm-stats-mediawrapper"></div>
 			<div class="mt-30 jus-right row jump-row" id="btn-ver-geovisor">
