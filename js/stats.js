@@ -447,8 +447,8 @@ function ol_stats() {
 		var groupbycol_index = $("#group-combo-view").attr("data-group-column-index");
 		var groupbycol_name = $("#group-combo-view").attr("data-group-column-index");
 		var gm_var = $("#gm-combo").val();
-		var fdesde = $("#dated-search").val();
-		var fhasta = $("#dateh-search").val();
+		var fdesde = $("#dated-search").datepicker({ dateFormat: 'dd/mm/yy' }).val();
+		var fhasta = $("#dateh-search").datepicker({ dateFormat: 'dd/mm/yy' }).val();
 		
 		if ((groupby_val == 2) || (groupby_val == 3)) {
 			
