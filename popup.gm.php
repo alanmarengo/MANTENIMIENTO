@@ -5,10 +5,10 @@
 
 		<div class="subheader">
 	
-			<a href="#" onclick="$('#popup-modal-gm').hide(); $('#popup-stats-gm').hide();">
+			<a href="#" onclick="$('#popup-modal-gm').hide(); $('#popup-stats-gm').hide();" class="ib-vt">
 				<i class="fa fa-times"></i>
 			</a>		
-			<h3 id="gm-title">Mapear Variable</h3>
+			<h3 id="gm-title" class="ib-vt ml-5 mt-5n">Mapear Variable</h3>
 		
 		</div>
 		<div class="icons">
