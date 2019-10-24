@@ -31,3 +31,10 @@
 	align-items:center;
 	
 }
+
+.ib-vt {
+	
+	display:inline-block;
+	vertical-align:top;
+	
+}

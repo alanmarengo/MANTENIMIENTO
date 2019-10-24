@@ -1,13 +1,16 @@
 <div class="popup-modal" id="popup-modal-gm"></div>
 <div class="popup-stats" id="popup-stats-gm" data-action="-1">
 
-	<div class="row jump-row jus-left">
+	<div class="row jump-row jus-between">
 
-		<a href="#" onclick="$('#popup-modal-gm').hide(); $('#popup-stats-gm').hide();">
-			<i class="fa fa-times"></i>
-		</a>
+		<div class="subheader">
+	
+			<a href="#" onclick="$('#popup-modal-gm').hide(); $('#popup-stats-gm').hide();" class="ib-vt">
+				<i class="fa fa-times"></i>
+			</a>		
+			<h3 id="gm-title" class="ib-vt ml-5 mt-5n">Mapear Variable</h3>
 		
-		<h3 id="gm-title">Mapear Variable</h3>
+		</div>
 		<div class="icons">
 			<a href="#" onclick="stats.view.mapearImprimir();">
 				<i class="fa fa-print"></i>
@@ -25,17 +28,17 @@
 		
 		<div class="col col-md-4 col-lg-4">
 			<span class="gm-highlight">Dataset: &nbsp;</span>
-			<span class="gm-text" id="labelgm-dataset-name">Nombre del Dataset</span>
+			<span class="gm-text mt-3" id="labelgm-dataset-name">Nombre del Dataset</span>
 		</div>
 		
 		<div class="col col-md-4 col-lg-4">
 			<span class="gm-highlight">Agrupamiento: &nbsp;</span>
-			<span class="gm-text" id="labelgm-dataset-agroup">Nombre del Agrupamiento</span>
+			<span class="gm-text mt-3" id="labelgm-dataset-agroup">Nombre del Agrupamiento</span>
 		</div>
 		
 		<div class="col col-md-4 col-lg-4">
 			<span class="gm-highlight">Período: &nbsp;</span>
-			<span class="gm-text" id="labelgm-dataset-period">Desde 00/00/00 Hasta 00/00/00</span>
+			<span class="gm-text mt-3" id="labelgm-dataset-period">Desde 00/00/00 Hasta 00/00/00</span>
 		</div>
 	
 	</div>
@@ -107,14 +110,16 @@
 			</div>
 		</div>
 		
-		<div class="col col-md-8 col-lg-8">			
+		<div class="col col-md-8 col-lg-8 mt-20">			
 		
-			<div id="gm-stats-mediawrapper"></div>
-			<div class="mt-30 jus-right row jump-row" id="btn-ver-geovisor">
-				<div style="width:200px; top:30px; position:relative;">
+			<div id="gm-stats-mediawrapper">
+			</div>	
+			
+			<div class="jus-right row jump-row" id="btn-ver-geovisor">
+				<div style="width:200px;">
 					<a href="#" class="black-button">VER EN GEOVISOR</a>
 				</div>
-			</div>
+			</div>		
 			
 		</div>
 	

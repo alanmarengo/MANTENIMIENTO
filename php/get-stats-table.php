@@ -17,6 +17,8 @@ $gm_var = $_POST["gm_var"];
 $colstr_original = $colstr;
 $gm_var_values = array();
 $gm_labels = array();
+$fdesde = $_POST["fdesde"];
+$fhasta = $_POST["fhasta"];
 
 $colstrType = -1;
 
@@ -91,6 +93,20 @@ if ($filters != -1) {
 	}
 	
 	$filter_str = substr($filter_str,0,strlen($filter_str)-5);
+	
+	if ((!empty($fdesde)) && (!empty($fhasta))) {
+		
+		$filter_str .= " AND mod_estadistica.filtro_temp(cod_temp,'$fdesde','$fhasta')";
+		
+	}
+	
+}else{
+	
+	if ((!empty($fdesde)) && (!empty($fhasta))) {
+		
+		$filter_str = " mod_estadistica.filtro_temp(cod_temp,'$fdesde','$fhasta')";
+		
+	}
 	
 }
 

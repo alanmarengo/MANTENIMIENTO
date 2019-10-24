@@ -34,7 +34,7 @@
                   <se:SvgParameter name="stroke-width">0.5</se:SvgParameter>
                 </se:Stroke>
               </se:Mark>
-              <se:Size>7</se:Size>
+              <se:Size>14</se:Size>
             </se:Graphic>
           </se:PointSymbolizer>
         </se:Rule>
@@ -67,7 +67,7 @@
                   <se:SvgParameter name="stroke-width">0.5</se:SvgParameter>
                 </se:Stroke>
               </se:Mark>
-              <se:Size>7</se:Size>
+              <se:Size>14</se:Size>
             </se:Graphic>
           </se:PointSymbolizer>
         </se:Rule>
@@ -100,7 +100,7 @@
                   <se:SvgParameter name="stroke-width">0.5</se:SvgParameter>
                 </se:Stroke>
               </se:Mark>
-              <se:Size>7</se:Size>
+              <se:Size>14</se:Size>
             </se:Graphic>
           </se:PointSymbolizer>
         </se:Rule>
@@ -133,7 +133,7 @@
                   <se:SvgParameter name="stroke-width">0.5</se:SvgParameter>
                 </se:Stroke>
               </se:Mark>
-              <se:Size>7</se:Size>
+              <se:Size>14</se:Size>
             </se:Graphic>
           </se:PointSymbolizer>
         </se:Rule>
@@ -166,7 +166,7 @@
                   <se:SvgParameter name="stroke-width">0.5</se:SvgParameter>
                 </se:Stroke>
               </se:Mark>
-              <se:Size>7</se:Size>
+              <se:Size>14</se:Size>
             </se:Graphic>
           </se:PointSymbolizer>
         </se:Rule>

@@ -8,6 +8,12 @@ function ol_stats() {
 	
 	this.panel.start = function() {
 		
+		$(".datepicker").datepicker({
+			
+			dateFormat: 'dd/mm/yy'
+			
+		});
+		
 		$(".panel-abr").on("click",function() {
 			
 			if (this.getAttribute("data-active") == 0) {
@@ -204,6 +210,12 @@ function ol_stats() {
 			this.updateAgroupColModals();
 			
 		}.bind(this));
+		
+		$(".datepicker").on("change",function() {
+			
+			$("#update-view").prop("disabled",false);
+			
+		});
 		
 	}
 	
@@ -441,6 +453,8 @@ function ol_stats() {
 		var groupbycol_index = $("#group-combo-view").attr("data-group-column-index");
 		var groupbycol_name = $("#group-combo-view").attr("data-group-column-index");
 		var gm_var = $("#gm-combo").val();
+		var fdesde = $("#dated-search").val();
+		var fhasta = $("#dateh-search").val();
 		
 		if ((groupby_val == 2) || (groupby_val == 3)) {
 			
@@ -534,7 +548,9 @@ function ol_stats() {
 			groupbycol_index:groupbycol_index,
 			groupbycol_name:groupbycol_name,
 			groupby_val:groupby_val,
-			gm_var:gm_var
+			gm_var:gm_var,
+			fdesde:fdesde,
+			fhasta:fhasta
 		}
 		
 		if ((!no_op) || (bypassOp)) {
@@ -570,7 +586,9 @@ function ol_stats() {
 			
 			var cellWidth = rowWidth / rowChilds;
 			
-			$(".dataset-cell").css("width",cellWidth+"px");
+			$("#dataset-inner").css("width",(rowChilds*250)+"px");
+			
+			$(".dataset-cell").css("width","250px");
 			$(".dataset-filter-row .dropdown-toggle").css("width","85%");
 			$(".dataset-filter-row .dropdown-toggle").css("margin-top","1px");
 			$(".dataset-filter-row .dropdown-toggle").css("text-transform","uppercase");
@@ -896,7 +914,7 @@ function ol_stats() {
 		
 		document.getElementById("gm-stats-mediawrapper").innerHTML = "";
 		
-		sld_result = '';
+		sld_result = '';		
 		
 		/**** Generar el SLD ****/
 		s = new sldlib();
@@ -941,6 +959,27 @@ function ol_stats() {
 				maxZoom: 21
 			})
 		});
+		
+		var reqExtent = $.ajax({
+			
+			async:false,
+			url:"./php/get-layer-extent-mapeo.php",
+			type:"post",
+			data:{query_id:query_id},
+			success:function(d){}
+				
+		});
+		
+		var js = JSON.parse(reqExtent.responseText);
+		
+		var extent = ol.proj.transformExtent(
+			[js.minx,js.miny,js.maxx,js.maxy],
+			"EPSG:3857", "EPSG:3857"
+		);
+		
+		map.getView().fit(extent,{duration:1000});
+		map.updateSize();
+		map.render();
 		
 		//var link = "http://observatorio.atic.com.ar/cgi-bin/mapserver?map=wms_atic&service=WFS&version=1.0.0&request=GetFeature&typeName=" +capa + "&id=" + query_id + "&outputFormat=shape-zip";
 		

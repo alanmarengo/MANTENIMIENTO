@@ -9,6 +9,7 @@ body {
 	background-color:#fff;
 	padding:20px;
 	display:block;
+	width: 100%;
 	
 }
 
@@ -17,6 +18,14 @@ body {
 	display:flex;
 	flex-direction:column;
 	margin-top:30px;
+	width:100%;
+	overflow-x: auto;
+	
+}
+
+#dataset-inner {
+	
+	margin-left:5px;
 	
 }
 

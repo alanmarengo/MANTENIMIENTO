@@ -631,9 +631,8 @@
 	display:none;
 	padding:20px;
 	left:50%;
-	top:51%;
+	top:20px;
 	margin-left:-45%;
-	margin-top:-23%;
 	
 }
 
@@ -668,13 +667,13 @@
 	
 }
 
-.popup-stats-gm-row {
+/*.popup-stats-gm-row {
 	
 	width:94% !Important; 
 	position:relative; 
 	left:3%;
 	
-}
+}*/
 
 .popup-stats hr {
 	
@@ -695,6 +694,15 @@
 	color:#aaaaaa;
 	font-size: 12px;
 	
+}
+
+#btn-ver-geovisor {
+
+    z-index: 999999;
+    position: absolute;
+    bottom: 20px;
+    right: -30px;
+
 }
 
 #gm-stats-mediawrapper {
