@@ -84,6 +84,14 @@ function ol_indicadores() {
 		
 		container.appendChild(ind_inner);
 		
+		var notitle = false;
+		
+		if (container.getAttribute("data-notitle") == 1) {
+			
+			notitle = true;
+			
+		}
+		
 		var req = $.ajax({
 			
 			async:false,
@@ -323,7 +331,11 @@ function ol_indicadores() {
 		
 		document.getElementById("indicador-col-pos-"+pos).appendChild(fichaIcon);		
 	
-		$("#indicador-col-pos-"+pos).children().first().before("<p>"+js.ind_titulo+"</p>");
+		if (!notitle) {
+			
+			$("#indicador-col-pos-"+pos).children().first().before("<p>"+js.ind_titulo+"</p>");
+			
+		}
 		
 	}
 	
