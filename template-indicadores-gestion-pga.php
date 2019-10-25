@@ -70,7 +70,7 @@
 	
 	<div class="row">
 	
-		<div style="height:60px;"></div> <!-- marginer -->
+		<div style="height:100px;"></div> <!-- marginer -->
 	
 	</div>
 	
