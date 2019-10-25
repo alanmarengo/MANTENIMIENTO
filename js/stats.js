@@ -420,7 +420,7 @@ function ol_stats() {
 		
 		}
 		
-		$("#btn-ver-geovisor").show();
+		$("#btn-ver-geovisor").css("display","flex");
 		
 	}
 	
