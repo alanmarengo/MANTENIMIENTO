@@ -48,7 +48,7 @@
 		<div class="col col-md-4 col-lg-4" style="display:block; width:100%;" id="gm-combo-container">
 			
 			<div class="row jump-row" style="height:30px;">
-				<select class="selectpicker" id="gm-combo"></select>
+				<select class="selectpicker" id="gm-combo" onchange="stats.view.processGM();"></select>
 			</div>
 			<div id="var-desc" style="display:none;">
 				<div class="row jump-row">
@@ -103,11 +103,11 @@
 				
 			</div>
 			
-			<div class="row jump-row jump-posrel" style="top:90px;">
+			<!--<div class="row jump-row jump-posrel" style="top:90px;">
 				<div class="mr-20">	
 					<a href="#" id="gm-graficar-process" class="button black-button" onclick="stats.view.processGM();">PROCESAR</a>
 				</div>
-			</div>
+			</div>-->
 		</div>
 		
 		<div class="col col-md-8 col-lg-8 mt-20">			
