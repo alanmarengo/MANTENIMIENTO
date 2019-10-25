@@ -1015,7 +1015,8 @@ function ol_stats() {
 	this.view.graficarTipo = function(graphType) {
 		
 		this.graphType = graphType;
-		document.getElementById("gm-graficar-process").click();
+		//document.getElementById("gm-graficar-process").click();
+		this.processGM();
 		
 	}
 	
