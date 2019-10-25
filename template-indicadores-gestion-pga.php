@@ -4,7 +4,27 @@
 
 		<div class="resource-col col col-md-3 col-lg-3 col-xs-12 col-sm-12">
 		
-			<div class="resource-inner" id="indicador-col-pos-1" data-pos="1">
+			<div class="resource-inner" id="indicador-col-pos-1" data-pos="1" data-notitle="1">
+			
+				
+			
+			</div>
+		
+		</div>
+
+		<div class="resource-col col col-md-3 col-lg-3 col-xs-12 col-sm-12">			
+		
+			<div class="resource-inner" id="indicador-col-pos-2" data-pos="2" data-notitle="1">
+			
+				
+			
+			</div>
+		
+		</div>
+
+		<div class="resource-col col col-md-3 col-lg-3 col-xs-12 col-sm-12">			
+		
+			<div class="resource-inner" id="indicador-col-pos-3" data-pos="3" data-notitle="1">
 			
 				
 			
@@ -14,30 +34,7 @@
 
 		<div class="resource-col col col-md-3 col-lg-3 col-xs-12 col-sm-12">		
 		
-		
-			<div class="resource-inner" id="indicador-col-pos-2" data-pos="2">
-			
-				
-			
-			</div>
-		
-		</div>
-
-		<div class="resource-col col col-md-3 col-lg-3 col-xs-12 col-sm-12">	
-		
-		
-			<div class="resource-inner" id="indicador-col-pos-3" data-pos="3">
-			
-				
-			
-			</div>
-		
-		</div>
-
-		<div class="resource-col col col-md-3 col-lg-3 col-xs-12 col-sm-12">	
-		
-		
-			<div class="resource-inner" id="indicador-col-pos-4" data-pos="4">
+			<div class="resource-inner" id="indicador-col-pos-4" data-pos="4" data-notitle="1">
 			
 				
 			
@@ -49,8 +46,7 @@
 
 	<div class="row" >
 
-		<div class="resource-col col col-md-7 col-lg-7 col-xs-12 col-sm-12">	
-		
+		<div class="resource-col col col-md-7 col-lg-7 col-xs-12 col-sm-12">		
 		
 			<div class="resource-inner" id="indicador-col-pos-5" data-pos="5">
 			
@@ -60,8 +56,7 @@
 		
 		</div>
 
-		<div class="resource-col col col-md-5 col-lg-5 col-xs-12 col-sm-12">	
-		
+		<div class="resource-col col col-md-5 col-lg-5 col-xs-12 col-sm-12">		
 		
 			<div class="resource-inner" id="indicador-col-pos-6" data-pos="6">
 			
@@ -71,6 +66,12 @@
 		
 		</div>
 
+	</div>
+	
+	<div class="row">
+	
+		<div style="height:60px;"></div> <!-- marginer -->
+	
 	</div>
 	
 </div>
