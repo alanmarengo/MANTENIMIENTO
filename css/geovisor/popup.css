@@ -667,6 +667,13 @@
 	
 }
 
+#btn-ver-geovisor {
+	
+	font-weight:bolder;
+	display:none;
+	
+}
+
 /*.popup-stats-gm-row {
 	
 	width:94% !Important; 

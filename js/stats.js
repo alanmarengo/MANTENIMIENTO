@@ -420,6 +420,8 @@ function ol_stats() {
 		
 		}
 		
+		$("#btn-ver-geovisor").show();
+		
 	}
 	
 	this.view.getVarDesc = function(var_name) {
