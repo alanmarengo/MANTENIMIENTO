@@ -39,7 +39,7 @@
                     </a>
                 </div>
                 <div class="col-md-4 page-box">
-                    <a href="#" class="box">
+                    <a href="./geovisor.php?geovisor=2" class="box">
                         <div class="page-box-image" style="background-image: url(./images/herramientas/6.png);"></div>
                         <p class="page-box-title">GEOVISOR AHRSC</p>
                         <p class="page-box-description">Conocé los AHRSC, sus características técnicas y toda la
