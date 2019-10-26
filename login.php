@@ -2,7 +2,7 @@
 
 session_start();
 
-/*$login = "<!DOCTYPE html>";
+$login = "<!DOCTYPE html>";
 $login .= "<html lang=\"es\">";
 $login .= "<head>";
 $login .= "<link href=\"https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700\" rel=\"stylesheet\">";
@@ -67,6 +67,6 @@ if (isset($_SESSION)) {
 		
 	die($login);
 
-}*/
+}
 
 ?>
