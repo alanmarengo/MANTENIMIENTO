@@ -4,7 +4,7 @@
 
 		<div>
 	
-			<a href="./estadisticas.php" id="stats-proceed" class="mt-50">&lt; VOLVER</a>
+			<a href="./estadisticas.php" id="stats-proceed" class="mt-10">&lt; VOLVER</a>
 		
 		</div>
 	
