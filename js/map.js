@@ -400,7 +400,7 @@ function ol_map() {
 					
 				panel.AddLayer(cid,lid,js.data[i].iniciar_panel,js.data[i].iniciar_visible);
 				
-				if (js.data[i].iniciar_visible == "t") {
+				if (js.data[i].iniciar_visible) {
 					
 					$(v).prop("checked",true);
 					
