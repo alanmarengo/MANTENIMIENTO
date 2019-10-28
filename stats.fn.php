@@ -6,7 +6,7 @@ function DrawAbrStats() {
 	
 	$conn = pg_connect($string_conn);
 	
-	$query_string = "SELECT clase_id,color_hex,color_head,cod_clase_alf FROM mod_catalogo.clase ORDER BY clase_id ASC";
+	$query_string = "SELECT * FROM mod_estadistica.vw_abr WHERE has_dt > 0";
 	
 	$query = pg_query($conn,$query_string);
 	
