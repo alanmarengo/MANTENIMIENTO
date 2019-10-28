@@ -165,7 +165,7 @@ $(document).ready(function() {
 		{
 			
 			"index":0,
-			"label":"Condor Clift",
+			"label":"Condor Cliff",
 			"layers":[
 				{
 					"layer_id":816,

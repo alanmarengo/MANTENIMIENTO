@@ -29,7 +29,7 @@ $lat100003 = $data["nlat"];
 
 $json = "{";
 
-$json .= "\"coord100001\":{\"lon\":\"$lon100001\",\"lat\":\"$lat100001\",\"label\":\"Condor Clift\"},";
+$json .= "\"coord100001\":{\"lon\":\"$lon100001\",\"lat\":\"$lat100001\",\"label\":\"Condor Cliff\"},";
 $json .= "\"coord100002\":{\"lon\":\"$lon100002\",\"lat\":\"$lat100002\",\"label\":\"Barrancosa\"},";
 $json .= "\"coord100003\":{\"lon\":\"$lon100003\",\"lat\":\"$lat100003\",\"label\":\"Lambert\"}";
 
