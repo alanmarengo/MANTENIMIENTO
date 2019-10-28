@@ -197,6 +197,7 @@ if ($groupby_val == 2) {
 
 if ($filter_str == "") {
 
+	$pure_new_query_string = "SELECT$distinct $colstr_select FROM ($rquery_string) AS sub $group $colstr_order";
 	$new_query_string = "SELECT$distinct $colstr_select FROM ($rquery_string) AS sub $group $colstr_order LIMIT 10 OFFSET " . (($page-1)*10);
 	
 	if (($groupbycol == 1) && ($groupindex == 0)) {
@@ -213,6 +214,7 @@ if ($filter_str == "") {
 	
 }else{
 	
+	$pure_new_query_string = "SELECT$distinct $colstr_select FROM ($rquery_string) AS sub WHERE $filter_str $group $colstr_order";
 	$new_query_string = "SELECT$distinct $colstr_select FROM ($rquery_string) AS sub WHERE $filter_str $group $colstr_order LIMIT 10 OFFSET " . (($page-1)*10);
 	
 	if (($groupbycol == 1) && ($groupindex == 0)) {
