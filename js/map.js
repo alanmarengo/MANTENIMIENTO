@@ -389,25 +389,24 @@ function ol_map() {
 		
 		for (var i=0; i<js.data.length; i++) {
 			
-			if (js.data[i].iniciar_panel == "t") {
+			//if (js.data[i].iniciar_panel == "t") {
 				
-				var visible = js.data[i].iniciar_visible;
+				if (js.data[i].iniciar_panel == "t") { js.data[i].iniciar_panel = true; } else { js.data[i].iniciar_panel = false; }
+				if (js.data[i].iniciar_visible == "t") { js.data[i].iniciar_visible = true; } else { js.data[i].iniciar_visible = false; }
 				
-				$(".layer-checkbox[data-lid="+js.data[i].layer_id+"]").each(function(i,v) {
-					
-					panel.AddLayer(v.getAttribute("data-cid"),v.getAttribute("data-lid"),true,visible);
-					
-					//$(".active-layer-node[data-lid="+js.data[i].layer_id+"] .pretty .layer-checkbox").trigger("click");
-					
-					if (visible == "t") {
-						
-					  $(v).prop("checked",true);
-						
-					}
-					
-				});
+				var cid = $(".layer-checkbox[data-lid="+js.data[i].layer_id+"]").attr("data-cid");
 				
-			}
+				var lid = $(".layer-checkbox[data-lid="+js.data[i].layer_id+"]").attr("data-lid");
+					
+				panel.AddLayer(cid,lid,js.data[i].iniciar_panel,js.data[i].iniciar_visible);
+				
+				if (js.data[i].iniciar_visible == "t") {
+					
+					$(v).prop("checked",true);
+					
+				}
+				
+			//}
 			
 		}
 		
