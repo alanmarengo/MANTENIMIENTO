@@ -14,8 +14,8 @@
 			
 				<?php
 	
-				$query_string = "SELECT $col_str FROM \"".$schema."\".\"".$table."\"";
-				$records = pg_num_rows(pg_query($conn,$query_string));
+				//$query_string = "SELECT $col_str FROM \"".$schema."\".\"".$table."\"";
+				$records = pg_num_rows(pg_query($conn,$gm_query_string));
 				$pageCount = ceil($records/10);
 				/*echo $query_string;
 				echo "<p>PAGECOUNT: " . $pageCount . "</p>";
