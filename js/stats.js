@@ -557,6 +557,8 @@ function ol_stats() {
 		
 		if ((!no_op) || (bypassOp)) {
 		
+			$("#paging").remove();
+		
 			var req = $.ajax({
 				
 				async:false,
