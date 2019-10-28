@@ -10,12 +10,12 @@
 	
 		<div class="pagination">
 	
-			<ul class="mp0">
+			<ul class="mp0" data-qs="<?php echo $new_query_string; ?>">
 			
 				<?php
 	
 				//$query_string = "SELECT $col_str FROM \"".$schema."\".\"".$table."\"";
-				$records = pg_num_rows(pg_query($conn,$gm_query_string));
+				$records = pg_num_rows(pg_query($conn,$new_query_string));
 				$pageCount = ceil($records/10);
 				/*echo $query_string;
 				echo "<p>PAGECOUNT: " . $pageCount . "</p>";
