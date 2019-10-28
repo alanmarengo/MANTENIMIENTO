@@ -59,7 +59,7 @@
 	
 	</div>
 	
-	<div class="row jump-row jus-between jump-posrel" style="top:30px;">
+	<!--<div class="row jump-row jus-between jump-posrel" style="top:30px;">
 		
 		<div>
 			<a href="./estadisticas.php" id="stats-proceed">&lt; VOLVER</a>
@@ -74,6 +74,6 @@
 			</div>	
 		</div>
 	
-	</div>
+	</div>-->
 	
 </div>

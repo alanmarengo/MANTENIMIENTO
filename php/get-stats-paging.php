@@ -4,7 +4,7 @@
 
 		<div>
 	
-			<a href="./estadisticas.php" id="stats-proceed" class="mt-50">&lt; ANTERIOR</a>
+			<a href="./estadisticas.php" id="stats-proceed" class="mt-50">&lt; VOLVER</a>
 		
 		</div>
 	
@@ -319,8 +319,8 @@
 	
 		<div>
 	
-			<a href="./estadisticas.php" class="black-button">MAPEAR</a>
-			<a href="./estadisticas.php" class="black-button">GRAFICAR</a>
+			<a href="./estadisticas.php" class="black-button" onclick="stats.view.premapear()">MAPEAR</a>
+			<a href="./estadisticas.php" class="black-button" onclick="stats.view.pregraficar()">GRAFICAR</a>
 		
 		</div>
 
