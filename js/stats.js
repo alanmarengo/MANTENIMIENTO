@@ -569,6 +569,8 @@ function ol_stats() {
 			
 			document.getElementById("dataset-content").innerHTML = req.responseText;
 			
+			$("#paging").after("#dataset-content");
+			
 			//this.resetSelects();
 
 			$(".page-item").each(function(i,v) {
