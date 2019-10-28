@@ -35,7 +35,7 @@ if ($type == "LineString") {
 	
 }else{
 	
-	echo "<p>Área: " . $area . " Km.</p>";
+	echo "<p>Área: " . $area . " m2.</p>";
 	echo "<p>Perímetro: " . $data . " Km.</p>";
 	
 }
