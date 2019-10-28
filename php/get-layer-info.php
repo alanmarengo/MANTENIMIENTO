@@ -69,7 +69,7 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 						
 	}
 					
-	$html .= "<div class=\"popup-layer-node\" data-state=\"0\">";
+	$html .= "<div class=\"popup-layer-node jus-between\" data-state=\"0\">";
 		$html .= "<a href=\"#\" class=\"layer-label\" style=\"cursor:text\" title=\"" . $layer_desc[$i] . "\">" . $layer_desc[$i] . "</a>";
 		$html .= "<div class=\"popup-layer-node-icons\">";
 			/*$html .= "<div class=\"layer-icon\">";
