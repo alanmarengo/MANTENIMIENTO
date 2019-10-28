@@ -402,7 +402,7 @@ function ol_map() {
 				
 				if (js.data[i].iniciar_visible) {
 					
-					$(v).prop("checked",true);
+					$(".layer-checkbox[data-lid="+js.data[i].layer_id+"]").prop("checked",true);
 					
 				}
 				
