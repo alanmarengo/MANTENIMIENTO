@@ -6,7 +6,8 @@ function ol_stats() {
 	this.view = {};
 	this.dataset = {};
 		
-	$.datepicker.regional['es'] = {
+	$(".datepicker").datepicker({
+		
 		closeText: 'Cerrar',
 		prevText: '< Ant',
 		nextText: 'Sig >',
@@ -22,11 +23,8 @@ function ol_stats() {
 		isRTL: false,
 		showMonthAfterYear: false,
 		yearSuffix: ''
-	};
-		 
-	$.datepicker.setDefaults($.datepicker.regional['es']);
 		
-	$(".datepicker").datepicker();
+	});
 	
 	this.panel.start = function() {
 		
