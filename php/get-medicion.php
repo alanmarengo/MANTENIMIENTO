@@ -15,7 +15,7 @@ if ($type == "LineString") {
 
 }else{
 	
-	$query_string = "SELECT ST_Perimeter(ST_GeomFromText('".$wkt."')) / 1000 AS km;";
+	$query_string = "SELECT ST_Perimeter(ST_GeomFromText('".$wkt."')) / 1000 AS km,ST_Area(ST_GeomFromText('".$wkt."')) / 1000 AS area;";
 	
 }
 
@@ -23,17 +23,20 @@ $query = pg_query($conn,$query_string);
 
 $data = pg_fetch_assoc($query);
 
+$area = $data["area"];
+
 $data = explode(".",$data["km"]);
 
 $data = $data[0] . "." . substr($data[1],0,2);
 
 if ($type == "LineString") {
 
-	echo "<p>Superficie de Línea: " . $data . " Km.</p>";
+	echo "<p>Distancia: " . $data . " Km.</p>";
 	
 }else{
 	
-	echo "<p>Area de Perímetro: " . $data . " Km.</p>";
+	echo "<p>Área: " . $area . " Km.</p>";
+	echo "<p>Perímetro: " . $data . " Km.</p>";
 	
 }
 
