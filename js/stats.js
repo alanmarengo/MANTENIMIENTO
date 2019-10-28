@@ -5,14 +5,14 @@ function ol_stats() {
 	
 	this.view = {};
 	this.dataset = {};
+		
+	$(".datepicker").datepicker({
+		
+		dateFormat: 'dd/mm/yy'
+		
+	});
 	
 	this.panel.start = function() {
-		
-		$(".datepicker").datepicker({
-			
-			dateFormat: 'dd/mm/yy'
-			
-		});
 		
 		$(".panel-abr").on("click",function() {
 			
