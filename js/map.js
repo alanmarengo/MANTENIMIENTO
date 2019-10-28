@@ -1990,7 +1990,12 @@ function ol_map() {
 				}
 			});*/
 			
-			$("#layer-legend-"+layer_id).html("<img src=\"" + layer_wms + "&version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer="+layer_name+"&format=image/png&\">");
+			$(".layer-group[data-layer="+layer_id+"]").bind("click",function() {
+				
+				$("#layer-legend-"+layer_id).html("<img src=\"" + layer_wms + "&version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer="+layer_name+"&format=image/png&\">");
+
+			});
+			
 			
 			if ($("#nav-panel").attr("data-visible") == 0) {
 				
