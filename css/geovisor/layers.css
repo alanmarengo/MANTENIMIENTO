@@ -480,7 +480,7 @@
 }
 
 .popup-layer-node .popup-layer-node-icons {
-	width: 110px;
+	width: auto;
 }
 
 .active-layer-node .remove-layer-icon-ca,.popup-layer-node .remove-layer-icon-ca {
