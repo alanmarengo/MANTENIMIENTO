@@ -395,13 +395,13 @@ function ol_map() {
 				
 				$(".layer-checkbox[data-lid="+js.data[i].layer_id+"]").each(function(i,v) {
 					
-					panel.AddLayer(v.getAttribute("data-cid"),v.getAttribute("data-lid"),true);
+					panel.AddLayer(v.getAttribute("data-cid"),v.getAttribute("data-lid"),true,visible);
 					
-					$(".active-layer-node[data-lid="+js.data[i].layer_id+"] .pretty .layer-checkbox").trigger("click");
+					//$(".active-layer-node[data-lid="+js.data[i].layer_id+"] .pretty .layer-checkbox").trigger("click");
 					
 					if (visible == "t") {
 						
-						v.click();
+					  $(v).prop("checked",true);
 						
 					}
 					
@@ -1815,7 +1815,7 @@ function ol_map() {
 		
 	}
 	
-	this.panel.AddLayer = function(clase_id,layer_id,startActive) {
+	this.panel.AddLayer = function(clase_id,layer_id,startActive,visible) {
 		
 		$(".abr[data-cid="+clase_id+"]").show();
 		$(".abr[data-cid="+clase_id+"]").trigger("click");
@@ -1840,7 +1840,7 @@ function ol_map() {
 			
 			document.getElementById("layer-checkbox-"+layer_id).layer = new ol.layer.Tile({
 				name:layer_name,
-				visible:true,
+				visible:visible,
 				source: new ol.source.TileWMS({
 					url: layer_wms,
 					params: {
