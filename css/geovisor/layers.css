@@ -481,6 +481,7 @@
 
 .popup-layer-node .popup-layer-node-icons {
 	width: auto;
+	margin-right:15px;
 }
 
 .active-layer-node .remove-layer-icon-ca,.popup-layer-node .remove-layer-icon-ca {

@@ -467,7 +467,58 @@ function ol_map() {
 			
 		});
 		
+		if (entered) {		
+		
+			jwindow.close("popup-buffer");
+			
+			$("#info-buffer").empty();
+			
+			var req = $.ajax({
+				
+				async:false,
+				type:"POST",
+				data:{
+					results:results
+				},
+				url:"./php/get-layer-info.php",
+				success:function(d) {}
+				
+			});
+			
+			document.getElementById(wrapperID).innerHTML += req.responseText;
+					
+			jwindow.open(containerID);
+			
+			scroll.refresh();
+	
+		}
+		
+	}
+	
+	this.map.parseGFIbuffer = function(response,containerID,wrapperID) {
+		
+		document.getElementById("popup-results").innerHTML += response;
+		
+		var results = [];
+		
+		var entered = false;
+		
+		$("#popup-results-buffer").children().each(function(i,v) {
+			
+			var gid = $(v).attr("x");
+			var layer_name = "ahrsc:"+$(v).attr("y");
+			
+			results.push(layer_name + ";" + gid);
+			
+			entered = true;
+			
+		});
+		
 		if (entered) {
+		
+			jwindow.close("popup-info");
+			
+			$("#info-wrapper").empty();
 		
 			var req = $.ajax({
 				
@@ -857,7 +908,7 @@ function ol_map() {
 			
 			$("#buffer-hint").hide();
 			
-			this.parseGFI(req.responseText,"popup-buffer","info-buffer");
+			this.parseGFIbuffer(req.responseText,"popup-buffer","info-buffer");
 			
 			this.ol_object.infoEnabled = true;			
 			
@@ -1832,7 +1883,7 @@ function ol_map() {
 			
 		}
 		
-		if (!document.getElementById("layer-checkbox-"+layer_id).layer) {
+		if ((document.getElementById("layer-checkbox-"+layer_id)) && (!document.getElementById("layer-checkbox-"+layer_id).layer)) {
 					
 			var layer_name = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-layer");
 			var layer_wms = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-wms");
