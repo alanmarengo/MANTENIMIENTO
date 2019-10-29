@@ -11,8 +11,6 @@ $conn = pg_connect($string_conn);
 
 $query_string = "SELECT * FROM mod_geovisores.gfi_buffer('" . $wkt . "','" . implode(",",$layers) . "');";
 
-echo $query_string . "<br>";
-
 $query = pg_query($conn,$query_string);
 
 while ($r = pg_fetch_assoc($query)) {
