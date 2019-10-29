@@ -47,7 +47,7 @@
 			<ul class="ml-10 mr-15" style="margin-right: 40px !important;">
 				<li class="input-li">						
 					<input id="main-search" name="main-search" type="text" data-mediateca="<?php echo strpos($_SERVER["script_filename"],"mediateca.php"); ?>" data-jump-placeholder="<?php echo $search_ph; ?>" placeholder="<?php echo $search_ph; ?>">
-					<a href="#" title="Buscar" id="main-search-btn" data-mediateca="<?php echo strpos($_SERVER["script_filename"],"mediateca.php"); ?>">
+					<a href="#" title="Buscar" id="main-search-btn" data-mediateca="<?php echo $_SERVER["script_filename"]; ?>">
 						<i class="fa fa-search"></i>
 					</a>							
 				</li>
