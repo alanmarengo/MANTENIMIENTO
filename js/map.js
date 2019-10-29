@@ -515,7 +515,7 @@ function ol_map() {
 		});
 		
 		if (entered) {
-		
+			console.log("results incoming");
 			jwindow.close("popup-info");
 			
 			$("#info-wrapper").empty();

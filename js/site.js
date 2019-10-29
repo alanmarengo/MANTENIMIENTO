@@ -9,13 +9,18 @@ $(document).ready(function() {
 
     $('#main-search').on('keypress', function(e) {
         if (e.which == 13) {
+			var isMediateca = this.getAttribute("data-mediateca");
             //let url = "./mediateca.php?s=" + $(this).val();
             //window.location.replace(url);
 			var pattern = $("#main-search").val();			
 			var url = "./mediateca.php?s="+pattern;
 			var flink = document.createElement("a");
 				flink.href = url;
-				flink.target = "_blank";
+				if (isMediateca == -1) {
+					flink.target = "_blank";
+				}else{
+					flink.target = "_self";
+				}
 				document.body.appendChild(flink);
 				flink.click();
 				$(flink).remove();
@@ -23,13 +28,18 @@ $(document).ready(function() {
     });
 
     $('#main-search-btn').on('click', function(e) {
+		var isMediateca = this.getAttribute("data-mediateca");
 		//let url = "./mediateca.php?s=" + $(this).val();
 		//window.location.replace(url);
 		var pattern = $("#main-search").val();
 		var url = "./mediateca.php?s="+pattern;
 		var flink = document.createElement("a");
 			flink.href = url;
-			flink.target = "_blank";
+			if (isMediateca == -1) {
+				flink.target = "_blank";
+			}else{
+				flink.target = "_self";
+			}
 			document.body.appendChild(flink);
 			flink.click();
 			$(flink).remove();
