@@ -16,7 +16,7 @@ $(document).ready(function() {
 			var url = "./mediateca.php?s="+pattern;
 			var flink = document.createElement("a");
 				flink.href = url;
-				if (isMediateca == -1) {
+				if (isMediateca == "") {
 					flink.target = "_blank";
 				}else{
 					flink.target = "_self";
@@ -35,7 +35,7 @@ $(document).ready(function() {
 		var url = "./mediateca.php?s="+pattern;
 		var flink = document.createElement("a");
 			flink.href = url;
-			if (isMediateca == -1) {
+			if (isMediateca == "") {
 				flink.target = "_blank";
 			}else{
 				flink.target = "_self";
