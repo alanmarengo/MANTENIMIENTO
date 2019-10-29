@@ -2,6 +2,10 @@ $(document).ready(function() {
 
             moment.locale('es');
 
+            HoldOn.open({
+                theme: "sk-rect"
+            });
+
             var model = {
                 apiUrlBase: GlobalApiUrl,
                 tab: 0,
@@ -456,6 +460,8 @@ $(document).ready(function() {
                         }
                     });
                     dataRender();
+
+                    HoldOn.close();
                 });
             }
 

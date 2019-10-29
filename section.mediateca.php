@@ -57,7 +57,7 @@
             <div class="col-md-9">
                 <div id="uxFiltersChecked"></div>
                 <div id="uxPager1" style="padding-bottom: 12px; display: none;"></div>
-                <div id="uxData"></div>
+                <div id="uxData" style="min-height: 500px;"></div>
                 <div id="uxPager2" style="padding: 12px; display: none;"></div>
             </div>
         </div>

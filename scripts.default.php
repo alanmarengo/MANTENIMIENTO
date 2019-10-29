@@ -15,6 +15,7 @@
 <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="./css/bootstrap-datepicker.min.css" />
 <link rel="stylesheet" type="text/css" href="./css/bootstrap-select.css" />
+<link rel="stylesheet" type="text/css" href="./css/holdon.min.css" />
 <link rel="stylesheet" type="text/css" href="./css/perfect-scrollbar.css" />
 <link rel="stylesheet" type="text/css" href="./css/site.css" />
 <link rel="stylesheet" type="text/css" href="./css/widget-links.css" />
@@ -86,6 +87,7 @@
 <script src="./js/bootstrap-datepicker.min.js"></script>
 <script src="./js/bootstrap-datepicker.es.min.js"></script>
 <script src="./js/bootstrap-select.js"></script>
+<script src="./js/holdon.min.js"></script>
 
 <script src="./js/perfect-scrollbar.js" type="text/javascript"></script>
 <script src="./js/scrollbars.js" type="text/javascript"></script>
