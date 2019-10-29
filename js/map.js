@@ -497,7 +497,7 @@ function ol_map() {
 	
 	this.map.parseGFIbuffer = function(response,containerID,wrapperID) {
 		
-		document.getElementById("popup-results-buffer").innerHTML += response;
+		document.getElementById("popup-results").innerHTML += response;
 		
 		var results = [];
 		
