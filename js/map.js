@@ -880,7 +880,7 @@ function ol_map() {
 				
 			}
 			
-			var wkt = format.writeGeometry(circle.transform('EPSG:3857', 'EPSG:4326'));		
+			//var wkt = format.writeGeometry(circle.transform('EPSG:3857', 'EPSG:4326'));		
 			
 			var wkt = format.writeGeometry(circle.transform('EPSG:4326', 'EPSG:3857'));	
 			
@@ -888,13 +888,19 @@ function ol_map() {
 			
 			this.buffer.source.clear();
 			
-			var layers = [];
-			
-			$(".layer-checkbox[data-added=1]:checked:visible").each(function(i,v) {
+			var layers = []; 
+
+			var mapLayers = geomap.map.ol_object.getLayers().getArray();
+
+			for (var i=0; i<mapLayers.length; i++) {
+			  
+			  if ((mapLayers[i].getVisible()) && (mapLayers[i].getSource().params_)) {
 				
-				layers.push(this.getAttribute("data-lid"));
+				layers.push(mapLayers[i].getSource().params_.layer_id);
 				
-			});
+			  }
+			  
+			}
 			
 			var req = $.ajax({
 				
