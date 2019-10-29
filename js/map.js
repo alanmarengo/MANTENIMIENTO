@@ -2230,7 +2230,11 @@ function ol_map() {
 			
 			}else{
 				
-				document.getElementById("layer-buffer-"+layer_id).layer.setZIndex(j);
+				if (document.getElementById("layer-buffer-"+layer_id)) {
+					
+					document.getElementById("layer-buffer-"+layer_id).layer.setZIndex(j);
+					
+				}
 				
 			}
 						
