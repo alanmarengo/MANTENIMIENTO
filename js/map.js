@@ -880,7 +880,7 @@ function ol_map() {
 				
 			}
 			
-			//var wkt = format.writeGeometry(circle.transform('EPSG:3857', 'EPSG:4326'));		
+			var wkt = format.writeGeometry(circle.transform('EPSG:3857', 'EPSG:4326'));		
 			
 			var wkt = format.writeGeometry(circle.transform('EPSG:4326', 'EPSG:3857'));	
 			
