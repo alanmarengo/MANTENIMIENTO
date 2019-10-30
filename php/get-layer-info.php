@@ -68,18 +68,21 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 		$target = "";
 						
 	}
-					
+	
+	$html .= "<p>" . $query_string . "</p>";
+	$html .= "<p>" . $query_string2 . "</p>";
+	
 	$html .= "<div class=\"popup-layer-node jus-between\" data-state=\"0\">";
 		$html .= "<a href=\"#\" class=\"layer-label\" style=\"cursor:text\" title=\"" . $layer_desc[$i] . "\">" . $layer_desc[$i] . "</a>";
 		$html .= "<div class=\"popup-layer-node-icons\">";
 			/*$html .= "<div class=\"layer-icon\">";
 				$html .= "<a href=\"" . $metadata_url . "\"" . $target . "><img src=\"./images/geovisor/icons/popup-layer-info-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-info-inactive.png\"
 				data-active=\"./images/geovisor/icons/popup-layer-info-active.png\"></a>";
-			$html .= "</div>";
+			$html .= "</div>";*/
 			$html .= "<div class=\"layer-icon\">";
 				$html .= "<a href=\"./csv.php?q=".encrypt(str_replace("geom,","",$query_string2))."\"><img src=\"./images/geovisor/icons/popup-layer-download-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-download-inactive.png\"
 				data-active=\"./images/geovisor/icons/popup-layer-download-active.png\"></a>";
-			$html .= "</div>";*/
+			$html .= "</div>";
 			$html .= "<div class=\"layer-icon\">";
 				$html .= "<a href=\"./mediateca.php?mode=10&mode_id=".$layer_id."&mode_label=".$layer_desc[$i]."\" target=\"_blank\"><img src=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\"
 				data-active=\"./images/geovisor/icons/popup-layer-recurso-active.png\"></a>";

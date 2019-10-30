@@ -15,7 +15,7 @@
 			</div>
 		</div>
 		
-		<div class="jump-window-body jump-window-full-body jump-flotant-height-transform jump-scroll p20">
+		<div class="jump-window-body jump-window-full-body jump-flotant-height-transform jump-scroll">
 			
 			<span class="ml-5 fs-10 tool-hint" id="buffer-hint">(Dibuje un c&iacute;rculo para buscar datos geoespaciales dentro de su &aacute;rea)</span>			
 			
