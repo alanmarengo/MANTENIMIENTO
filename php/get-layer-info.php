@@ -76,16 +76,16 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 				$html .= "<a href=\"" . $metadata_url . "\"" . $target . "><img src=\"./images/geovisor/icons/popup-layer-info-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-info-inactive.png\"
 				data-active=\"./images/geovisor/icons/popup-layer-info-active.png\"></a>";
 			$html .= "</div>";*/
-			$html .= "<div class=\"layer-icon\">";
-				$html .= "<a href=\"./csv.php?q=".encrypt(str_replace("geom,","",$query_string2))."\" title=\"Descargar datos en CSV\"><img src=\"./images/geovisor/icons/popup-layer-download-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-download-inactive.png\"
+			$html .= "<div class=\"layer-icon\" title=\"Descargar datos en CSV\">";
+				$html .= "<a href=\"./csv.php?q=".encrypt(str_replace("geom,","",$query_string2))."\"><img src=\"./images/geovisor/icons/popup-layer-download-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-download-inactive.png\"
 				data-active=\"./images/geovisor/icons/popup-layer-download-active.png\"></a>";
 			$html .= "</div>";
-			$html .= "<div class=\"layer-icon\">";
-				$html .= "<a href=\"./mediateca.php?mode=10&mode_id=".$layer_id."&mode_label=".$layer_desc[$i]."\" title=\"Ver Recursos Asociados\" target=\"_blank\"><img src=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\"
+			$html .= "<div class=\"layer-icon\" title=\"Ver Recursos Asociados\">";
+				$html .= "<a href=\"./mediateca.php?mode=10&mode_id=".$layer_id."&mode_label=".$layer_desc[$i]."\" target=\"_blank\"><img src=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\"
 				data-active=\"./images/geovisor/icons/popup-layer-recurso-active.png\"></a>";
 			$html .= "</div>";
-			$html .= "<div class=\"layer-icon\">";
-				$html .= "<a href=\"#\" onclick=\"geomap.map.togglePopupLayers(this)\" title=\"Ver/Ocultar\"><img src=\"./images/geovisor/icons/popup-layer-closed.png\" data-inactive=\"./images/geovisor/icons/popup-layer-closed.png\"
+			$html .= "<div class=\"layer-icon\" title=\"Ver/Ocultar\">";
+				$html .= "<a href=\"#\" onclick=\"geomap.map.togglePopupLayers(this)\"><img src=\"./images/geovisor/icons/popup-layer-closed.png\" data-inactive=\"./images/geovisor/icons/popup-layer-closed.png\"
 				data-active=\"./images/geovisor/icons/popup-layer-opened.png\"></a>";
 			$html .= "</div>";
 		$html .= "</div>";
