@@ -8,13 +8,13 @@
             </div>
 
             <div class="col-md-12 top-buttons">
-                <a href="#" data-target="#descripcion">Descripción</a>
-                <a href="#" data-target="#optimizacion">VISOR DEL MODELO 2D</a>
-                <a href="#" data-target="#evolucion">Evolución y optimización</a>
+                <!-- <a href="#" data-target="#descripcion">Descripción</a> -->
+                <!-- <a href="#" data-target="#optimizacion">VISOR DEL MODELO 2D</a> -->
+                <!-- <a href="#" data-target="#evolucion">Evolución y optimización</a> -->
                 <a href="#" data-target="#condor">Condor Cliff</a>
                 <a href="#" data-target="#barrancosa">La Barrancosa</a>
-                <a href="#" data-target="#leat">Leat</a>
-                <a href="#" data-target="#antena">Antenas</a>
+                <a href="#" data-target="#leat">Línea de Alta Tensión</a>
+                <!-- <a href="#" data-target="#antena">Antenas</a> -->
             </div>
         </div>
 

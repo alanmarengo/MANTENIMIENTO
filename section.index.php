@@ -135,7 +135,7 @@
             <div class="row modulo-row">
                 
                 <!-- #4 -->
-                <a href="./page_endesarrollo.php" class="col-md-6 modulo-wrap modulo-4">
+                <a href="./page_endesarrollo.php?q=Participación pública y gestión social" class="col-md-6 modulo-wrap modulo-4">
                     <div class="modulo-opacity"></div>
                     <div class="modulo-text">
                         Participación pública y gestión social
@@ -151,7 +151,7 @@
                 </a>
 
                 <!-- #5 -->
-                <a href="./page_endesarrollo.php" class="col-md-6 modulo-wrap modulo-5">
+                <a href="./page_endesarrollo.php?q=Manejo integrado de cuenca" class="col-md-6 modulo-wrap modulo-5">
                     <div class="modulo-opacity"></div>
                     <div class="modulo-text">
                         Manejo integrado de cuenca
@@ -170,7 +170,7 @@
             <div class="row modulo-row">
 
                 <!-- #6 -->
-                <a href="./page_endesarrollo.php" class="col-md-6 modulo-wrap modulo-6" style="width: 50%;">
+                <a href="./page_endesarrollo.php?q=Gestión ambiental de obra" class="col-md-6 modulo-wrap modulo-6" style="width: 50%;">
                     <div class="modulo-opacity"></div>
                     <div class="modulo-text">
                         Gestión ambiental de obra
@@ -189,7 +189,7 @@
                     <div class="row">
 
                         <!-- #7 -->
-                        <a href="./page_endesarrollo.php" class="col-md-12 modulo-wrap modulo-7">
+                        <a href="./page_endesarrollo.php?q=Patrimonio natural y cultural" class="col-md-12 modulo-wrap modulo-7">
                             <div class="modulo-opacity"></div>
                             <div class="modulo-text">
                                 Patrimonio natural y cultural
@@ -359,7 +359,7 @@ $(document).ready(function() {
                 if (base + i < model.noticias.length) {
                     let n = model.noticias[base + i];
                     html += `
-                            <a target="_blank" href="./mediateca.php?solapa=3&o=4" class="noticia-item" style="width: ${100 / model.noticiasxslide}% ; background-image: url(${n.path_img}?${Math.floor((Math.random() * 10000) + 1)});">
+                            <a target="_blank" href="${n.path_pdf}" class="noticia-item" style="width: ${100 / model.noticiasxslide}% ; background-image: url(${n.path_img}?${Math.floor((Math.random() * 10000) + 1)});">
                                 <div class="noticia-caption" style="width: ${100 / model.noticiasxslide}% ;">
                                     <p style="margin-bottom: 20px;">
                                         ${n.titulo}
@@ -432,11 +432,11 @@ $(document).ready(function() {
             model.sensorIndex = 0;
     }
 
-    $('video').hover(
+    $('#uxVideo2').hover(
         function() { this.play(); },
         function() { this.pause(); }
     ).on('click', function() {
-        window.location.href = "./page_ahrsc.php";
+        window.location.href = "./page_proyecto.php";
     });
 
     $('.carousel-item').hover(

@@ -1,25 +1,9 @@
 <div class="row" id="page_mediateca">
-    <div class="col-md-12 page-title page-title-sticky">
-        Recursos en Mediateca
-    </div>
-
-    <div class="col-md-12 page-search" style="display: none;">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="input-group mb-3">
-                    <input id="uxSearchText" name="uxSearchText" type="text" class="form-control">
-                    <div class="input-group-append">
-                        <span class="input-group-text" id="uxSearchButton">
-                            <i class="fa fa-search"></i>
-                        </span>
-                    </div>
-                </div>
-                <div id="uxUrl"></div>
-            </div>
+    <div class="page-title-sticky">
+        <div class="col-md-12 page-title">
+            Recursos en Mediateca
         </div>
-    </div>
 
-    <div class="col-md-12 page-tabs">
         <div class="row" style="background-color: #ddd;">
             <div class="col-md-10">
                 <ul class="nav nav-tabs" style="padding-top: 10px;">
@@ -50,6 +34,30 @@
             </div>
         </div>
 
+
+    </div>
+
+
+
+
+
+    <div class="col-md-12 page-search" style="display: none;">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="input-group mb-3">
+                    <input id="uxSearchText" name="uxSearchText" type="text" class="form-control">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="uxSearchButton">
+                            <i class="fa fa-search"></i>
+                        </span>
+                    </div>
+                </div>
+                <div id="uxUrl"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 page-tabs">
         <div class="row">
             <div class="x0 col-md-3" style="position: relative;">
                 <div id="uxFilters-box" class="pinned" style="position: absolute;"></div>

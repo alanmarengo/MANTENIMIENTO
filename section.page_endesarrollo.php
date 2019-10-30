@@ -3,6 +3,11 @@
 <div id="page_endesarrollo" class="page page_template">
     <div class="row">
         <div class="col-md-12">
+            <div class="leyenda-titulo">
+                <?php
+                    echo $_GET['q'];
+                ?>
+            </div>
             <p class="leyenda">
                 Estamos trabajando en el desarrollo de esta sección, que estará disponible próximamente.
             </p>

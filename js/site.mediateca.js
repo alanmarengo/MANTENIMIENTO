@@ -40,7 +40,7 @@ $(document).ready(function() {
 
             $('.pinned').hcSticky({
                 stickTo: '.x0',
-                top: 100
+                top: 160
             });
 
             // POP IMAGE
