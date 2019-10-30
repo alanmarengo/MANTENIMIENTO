@@ -553,6 +553,8 @@ function ol_map() {
 			});
 	
 		}
+			
+		this.ol_object.infoEnabled = true;
 		
 	}
 	
@@ -937,8 +939,6 @@ function ol_map() {
 			this.parseGFIbuffer(req.responseText,"popup-buffer","info-buffer");
 			
 			this.buffer.source.clear();
-			
-			//this.ol_object.infoEnabled = true;
 			
 		}.bind(this));
 		
