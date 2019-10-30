@@ -59,8 +59,8 @@ function ol_indicadores() {
 		$("#template-wrapper").html("<h3 style='display:none;' id='titulo-indicador-"+ind_id+"'>"+titulo+"</h3>"+req.responseText);
 		
 		$("#template-wrapper .resource-col").each(function(i,v) {
-			console.log(v);
-			var pos = $(v).children(".resource-inner").attr("data-pos");
+			
+			var pos = $(v).find(".resource-inner").attr("data-pos");
 			this.loadIndicadorResource(ind_id,pos);
 			
 		}.bind(this));
@@ -81,7 +81,7 @@ function ol_indicadores() {
 			ind_inner.id = "indicador-inner-"+pos;
 			
 		var container = document.getElementById("indicador-col-pos-"+pos);
-		alert("indicador-col-pos-"+pos);
+		
 		container.appendChild(ind_inner);
 		
 		var notitle = false;
