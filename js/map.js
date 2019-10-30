@@ -137,7 +137,7 @@ function ol_map() {
 		
 		this.ol_object.addEventListener("click",function(evt) {
 			
-			if (this.map_object.infoEnabled) { // DONT TOUCHHH
+			if (this.infoEnabled) {
 			
 				$("#info-wrapper").empty();
 				
