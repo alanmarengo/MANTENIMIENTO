@@ -375,7 +375,7 @@ $(document).ready(function() {
 
             if (index + 1 == slides_qty) {
                 html += `
-                            <a target="_blank" href="./mediateca.php?solapa=3" class="noticia-item" style="background-color: #fff;">
+                            <a target="_blank" href="./mediateca.php?solapa=3&o=4" class="noticia-item" style="background-color: #fff;">
                                 <div class="noticia-caption2" style="width: ${100 / model.noticiasxslide}% ;">
                                     <p>
                                         Ver m&aacute;s<br />
