@@ -506,7 +506,7 @@ function ol_map() {
 		$("#popup-results-buffer").children().each(function(i,v) {
 			
 			var gid = $(v).attr("x");
-			var layer_name = "ahrsc:"+$(v).attr("y");
+			var layer_name = $(v).attr("y");
 			
 			results.push(layer_name + ";" + gid);
 			
@@ -515,7 +515,7 @@ function ol_map() {
 		});
 		
 		if (entered) {
-			console.log("results incoming");
+			
 			jwindow.close("popup-info");
 			
 			$("#info-wrapper").empty();
