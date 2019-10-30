@@ -137,7 +137,7 @@ function ol_map() {
 		
 		this.ol_object.addEventListener("click",function(evt) {
 			
-			alert.log(this.infoEnabled);
+			alert(this.infoEnabled);
 			console.log(this.infoEnabled == true);
 			console.log(this.infoEnabled === true);
 			
