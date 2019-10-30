@@ -12,7 +12,7 @@
 		
 		</div>
 
-		<div class="resource-col col col-md-6 col-lg-6 col-xs-12 col-sm-12">
+		<div class="resourcegroup-col col col-md-6 col-lg-6 col-xs-12 col-sm-12"> <!-- .resource-col only with resource inner as child -->
 		
 			<div class="row jump-row">
 			
