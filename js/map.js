@@ -136,7 +136,7 @@ function ol_map() {
 		this.ol_object.map_object = this;
 		
 		this.ol_object.addEventListener("click",function(evt) {
-			
+			console.log("INFO ENABLED: " + this.infoEnabled);
 			if (this.infoEnabled) {
 			
 				$("#info-wrapper").empty();
@@ -936,9 +936,9 @@ function ol_map() {
 			
 			this.parseGFIbuffer(req.responseText,"popup-buffer","info-buffer");
 			
-			this.ol_object.infoEnabled = true;			
-			
 			this.buffer.source.clear();
+			
+			this.ol_object.infoEnabled = true;
 			
 		}.bind(this));
 		
