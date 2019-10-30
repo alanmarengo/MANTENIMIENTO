@@ -884,7 +884,7 @@ function ol_map() {
 			
 			this.ol_object.infoEnabled = false;
 			
-		});
+		}.bind(this));
 		
 		this.bufferdraw.on('drawend', function (e) {
 			
