@@ -537,6 +537,13 @@ function ol_map() {
 			jwindow.open(containerID);
 			
 			scroll.refresh();
+			
+			$("#info-wrapper [title]").tooltipster({
+				animation: 'fade',
+				delay: 200,
+				theme: 'tooltipster-default',
+				trigger: 'hover'
+			});
 	
 		}
 		
