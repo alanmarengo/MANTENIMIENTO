@@ -59,7 +59,7 @@ function ol_indicadores() {
 		$("#template-wrapper").html("<h3 style='display:none;' id='titulo-indicador-"+ind_id+"'>"+titulo+"</h3>"+req.responseText);
 		
 		$("#template-wrapper .resource-col").each(function(i,v) {
-			
+			console.log(v);
 			var pos = $(v).children(".resource-inner").attr("data-pos");
 			this.loadIndicadorResource(ind_id,pos);
 			
