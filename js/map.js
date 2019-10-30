@@ -137,11 +137,7 @@ function ol_map() {
 		
 		this.ol_object.addEventListener("click",function(evt) {
 			
-			alert(this.infoEnabled);
-			console.log(this.infoEnabled == true);
-			console.log(this.infoEnabled === true);
-			
-			if (this.infoEnabled === true) {
+			if (this.infoEnabled ) {
 			
 				$("#info-wrapper").empty();
 				
@@ -942,7 +938,7 @@ function ol_map() {
 			
 			this.buffer.source.clear();
 			
-			this.ol_object.infoEnabled = true;
+			//this.ol_object.infoEnabled = true;
 			
 		}.bind(this));
 		
