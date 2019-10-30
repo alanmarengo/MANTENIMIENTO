@@ -107,11 +107,9 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 				$html .= "<td>" . str_replace("_"," ",$item) . "</td>";
 				$html .= "<td>" . $value . "</td>";
 				$html .= "</tr>";
-			
-			}else{
 				
 				$hasData = true;
-				
+			
 			}
 		
 		}
