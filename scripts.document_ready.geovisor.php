@@ -2,6 +2,13 @@
 	
 	$(document).ready(function() {
 		
+		$("[title]").tooltipster({
+			animation: 'fade',
+			delay: 200,
+			theme: 'tooltipster-default',
+			trigger: 'hover'
+		});
+		
 		flotant = new Jump.flotant();
 		flotant.prepareToggle(".navmenu:not(#nav-panel)");
 		flotant.fitTopElement("#navbar-tools","#navbar-main");
