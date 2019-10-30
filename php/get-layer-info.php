@@ -114,7 +114,7 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 		}
 	
 		$html .= "</table>";
-		$html .= "<br><hr><br>";
+		$html .= "<hr>";
 		
 	}
 	
