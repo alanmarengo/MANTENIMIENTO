@@ -69,11 +69,8 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 						
 	}
 	
-	$html .= "<p>" . $query_string . "</p>";
-	$html .= "<p>" . $query_string2 . "</p>";
-	
 	$html .= "<div class=\"popup-layer-node jus-between\" data-state=\"0\">";
-		$html .= "<a href=\"#\" class=\"layer-label\" style=\"cursor:text\" title=\"" . $layer_desc[$i] . "\">" . $layer_desc[$i] . "</a>";
+		$html .= "<a href=\"#\" class=\"layer-label\" style=\"cursor:text\" alt=\"" . $layer_desc[$i] . "\">" . $layer_desc[$i] . "</a>";
 		$html .= "<div class=\"popup-layer-node-icons\">";
 			/*$html .= "<div class=\"layer-icon\">";
 				$html .= "<a href=\"" . $metadata_url . "\"" . $target . "><img src=\"./images/geovisor/icons/popup-layer-info-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-info-inactive.png\"
@@ -100,6 +97,8 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 		
 		$html .= "<table class=\"popup-table gfi-info-table\" cellpadding=\"5\">";
 		
+		$hasData = false;
+		
 		foreach ($r as $item => $value){
 			
 			if(( strpos( $item, "geom" ) === false) && (strpos( $item, "id" ) === false) && (strpos( $item, "cod_" ) === false)&& (strpos( $item, "origen" ) === false)) {
@@ -109,8 +108,18 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 				$html .= "<td>" . $value . "</td>";
 				$html .= "</tr>";
 			
+			}else{
+				
+				$hasData = true;
+				
 			}
 		
+		}
+		
+		if (!$hasData) {
+			
+			$html .= "<tr><td><p>Este registro no posee columnas habilitadas para mostrar.</p></td></tr>";
+			
 		}
 	
 		$html .= "</table>";
