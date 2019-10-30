@@ -880,6 +880,12 @@ function ol_map() {
 		$("#info-buffer").empty();
 		this.buffer.source.clear();
 		
+		this.bufferdraw.on("drawstart",function(e) {
+			
+			this.ol_object.infoEnabled = false;
+			
+		});
+		
 		this.bufferdraw.on('drawend', function (e) {
 			
 			var format = new ol.format.WKT();			
