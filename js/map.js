@@ -491,7 +491,7 @@ function ol_map() {
 			
 			scroll.refresh();
 			
-			$("#info-wrapper [title]").tooltipster({
+			$("[title]").tooltipster({
 				animation: 'fade',
 				delay: 200,
 				theme: 'tooltipster-default',
@@ -545,7 +545,7 @@ function ol_map() {
 			
 			scroll.refresh();
 			
-			$("#info-wrapper [title]").tooltipster({
+			$("[title]").tooltipster({
 				animation: 'fade',
 				delay: 200,
 				theme: 'tooltipster-default',
