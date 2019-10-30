@@ -689,6 +689,13 @@
 	
 }
 
+#info-wrapper hr {
+	
+	margin-top:0.5rem !Important;
+	margin-bottom:0.5rem !Important;
+	
+}
+
 .gm-highlight {
 	
 	color:#5b325e;
