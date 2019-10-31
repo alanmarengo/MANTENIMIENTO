@@ -1113,122 +1113,109 @@ function ol_map() {
 	
 	this.map.drawing = function(type) {
 		
-		if (this.deleteSelect) { this.ol_object.removeInteraction(this.deleteSelect); }
-		if (this.select) { this.ol_object.removeInteraction(this.select); }
-		if (this.modify) { this.ol_object.removeInteraction(this.modify); }
-		if (this.draw) { this.ol_object.removeInteraction(this.draw); }
-		if (this.medi_draw) { this.ol_object.removeInteraction(this.medi_draw); }
-		if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
-		if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }
+		if ($(node).hasClass("toggleable-tool-active")) {
+			
+			this.buffer.source.clear();
+			
+			if (this.bufferdraw) { 	this.ol_object.removeInteraction(this.bufferdraw); }
+			
+			$(node).removeClass("toggleable-tool-active");
+			
+			this.ol_object.infoEnabled = true;
+			
+			jwindow.close("popup-buffer");
+			
+		}else{
+			
+			$(".toggleable-tool-active").not(node).trigger("click");
+			$(node).addClass("toggleable-tool-active");
 		
-		if ((this.buffer) && (this.buffer.source)) { this.buffer.source.clear(); }
-		//if ((this.drawing) && (this.drawing.source)) { this.drawing.source.clear(); }
-		if ((this.medicion) && (this.medicion.source)) { this.medicion.source.clear(); }
-		if ((this.ptopografico) && (this.ptopografico.source)) { this.ptopografico.source.clear(); }
-		
-		this.ol_object.infoEnabled = false;
-		
-		if (!this.drawing.source) {
-			
-			this.drawing.source = new ol.source.Vector({
-				wrapX: false
-			});
-			
-			var source = this.drawing.source;
-			
-			this.drawing.layerVector = new ol.layer.Vector({
-				source: source
-			});
-			
-			this.ol_object.addLayer(this.drawing.layerVector);
-			
-		}
-			
-		if (!type) { type = "Point"; }
-		
-		if (this.draw) {
+			if (!this.drawing.source) {
 				
-			this.ol_object.removeInteraction(this.draw);
-				
-		}
-		
-		switch(type) {
-			
-			case "Select":
-			
-			if (this.select) {
-				
-				this.ol_object.removeInteraction(this.select);	
-			
-			}else{
-			
-				this.select = new ol.interaction.Select({
+				this.drawing.source = new ol.source.Vector({
 					wrapX: false
 				});
-			
-			}
-			
-			this.ol_object.addInteraction(this.select);	
-			this.ol_object.removeInteraction(this.draw);
-			this.ol_object.removeInteraction(this.modify);	
-			
-			break;
-			
-			case "Modify":
-			
-			if (this.modify) {
 				
-				this.ol_object.removeInteraction(this.modify);			
+				var source = this.drawing.source;
+				
+				this.drawing.layerVector = new ol.layer.Vector({
+					source: source
+				});
+				
+				this.ol_object.addLayer(this.drawing.layerVector);
+				
+			}
+				
+			if (!type) { type = "Point"; }
 			
-			}else{
-			
-				if (!this.select) {
+			switch(type) {
+				
+				case "Select":
+				
+				if (this.select) {
 					
+					this.ol_object.removeInteraction(this.select);	
+				
+				}else{
+				
 					this.select = new ol.interaction.Select({
 						wrapX: false
 					});
-					
+				
 				}
 				
-				var select = this.select;
-			
-				this.modify = new ol.interaction.Modify({
-					features: select.getFeatures()
+				this.ol_object.addInteraction(this.select);	
+				this.ol_object.removeInteraction(this.draw);
+				this.ol_object.removeInteraction(this.modify);	
+				
+				break;
+				
+				case "Modify":
+				
+				if (this.modify) {
+					
+					this.ol_object.removeInteraction(this.modify);			
+				
+				}else{
+				
+					if (!this.select) {
+						
+						this.select = new ol.interaction.Select({
+							wrapX: false
+						});
+						
+					}
+					
+					var select = this.select;
+				
+					this.modify = new ol.interaction.Modify({
+						features: select.getFeatures()
+					});
+					
+				}			
+				
+				this.ol_object.addInteraction(this.select);
+				this.ol_object.addInteraction(this.modify);	
+				this.ol_object.removeInteraction(this.draw);
+				
+				break;
+				
+				default:
+				
+				this.draw = new ol.interaction.Draw({
+					source: this.drawing.source,
+					type:type			
 				});
+					
+				this.ol_object.addInteraction(this.draw);	
+				this.ol_object.removeInteraction(this.select);
+				this.ol_object.removeInteraction(this.modify);	
 				
-			}			
-			
-			this.ol_object.addInteraction(this.select);
-			this.ol_object.addInteraction(this.modify);	
-			this.ol_object.removeInteraction(this.draw);
-			
-			break;
-			
-			default:
-			
-			this.draw = new ol.interaction.Draw({
-				source: this.drawing.source,
-				type:type			
-			});
+				break;
 				
-			this.ol_object.addInteraction(this.draw);	
-			this.ol_object.removeInteraction(this.select);
-			this.ol_object.removeInteraction(this.modify);	
-			
-			break;
+			}
 			
 		}
-		
-		//$(".nav-toolbar-link").not("#navbarDropdown-drawing").each(function(i,v) {
-		
-		$("#btn-draw-cancel").on("click",function() {
-						
-			this.ol_object.removeInteraction(this.draw);
-			this.ol_object.removeInteraction(this.select);
-			this.ol_object.removeInteraction(this.modify);
-			this.drawing.source.clear();
-				
-		}.bind(this));
 	
 	}
 	

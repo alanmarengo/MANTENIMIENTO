@@ -115,9 +115,6 @@
 						<a href="#" onclick="geomap.map.downloadFeatures()" class="dropdown-item" title="Descargar">		
 							<img src="./images/geovisor/icons/drawing-bar-download.png">						
 						</a>
-						<a href="#" onclick="" id="btn-draw-cancel" class="dropdown-item" title="Detener dibujo">		
-							<img src="./images/geovisor/icons/drawing-bar-none.png">						
-						</a>
 						
 					</div> 
 				</li>
