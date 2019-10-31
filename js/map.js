@@ -632,47 +632,49 @@ function ol_map() {
 	
 	this.map.setupDisableTools = function() {
 			
-		$("body").on("keyup",function() {
+		$("body").on("keyup",function(event) {
 			
-			alert(event.which);
+			if (event.which == 27) {				
 			
-		});
+				if (this.deleteSelect) { this.ol_object.removeInteraction(this.deleteSelect); }
+				if (this.select) { this.ol_object.removeInteraction(this.select); }
+				if (this.modify) { this.ol_object.removeInteraction(this.modify); }
+				if (this.draw) { this.ol_object.removeInteraction(this.draw); }
+				if (this.medi_draw) { this.ol_object.removeInteraction(this.medi_draw); }
+				if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
+				if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }
+				
+				if ((this.drawing) && (this.drawing.source)) {
+								
+					this.drawing.source.clear();
+					
+				}
+				
+				if ((this.buffer) && (this.buffer.source)) {
+								
+					this.buffer.source.clear();
+					
+				}
+				
+				if ((this.medicion) && (this.medicion.source)) {
+								
+					this.medicion.source.clear();
+					
+				}
+				
+				if ((this.ptopografico) && (this.ptopografico.source)) {
+								
+					this.ptopografico.source.clear();
+					
+				}
+				
+				this.ol_object.infoEnabled = true;
+				
+				$(".toggleable-tool-active").removeClass("toggleable-tool-active");
+				
+			}
 			
-		if (this.deleteSelect) { this.ol_object.removeInteraction(this.deleteSelect); }
-		if (this.select) { this.ol_object.removeInteraction(this.select); }
-		if (this.modify) { this.ol_object.removeInteraction(this.modify); }
-		if (this.draw) { this.ol_object.removeInteraction(this.draw); }
-		if (this.medi_draw) { this.ol_object.removeInteraction(this.medi_draw); }
-		if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
-		if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }
-		
-		if ((this.drawing) && (this.drawing.source)) {
-						
-			this.drawing.source.clear();
-			
-		}
-		
-		if ((this.buffer) && (this.buffer.source)) {
-						
-			this.buffer.source.clear();
-			
-		}
-		
-		if ((this.medicion) && (this.medicion.source)) {
-						
-			this.medicion.source.clear();
-			
-		}
-		
-		if ((this.ptopografico) && (this.ptopografico.source)) {
-						
-			this.ptopografico.source.clear();
-			
-		}
-		
-		this.ol_object.infoEnabled = true;
-		
-		$(".toggleable-tool-active").removeClass("toggleable-tool-active");
+		}.bind(this));
 		
 	}
 	
