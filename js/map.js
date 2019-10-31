@@ -919,11 +919,7 @@ function ol_map() {
 				
 				var wkt = format.writeGeometry(circle.transform('EPSG:4326', 'EPSG:3857'));	
 				
-				this.ol_object.removeInteraction(this.bufferdraw);
-				
-				this.buffer.source.clear();
-				
-				var layers = []; 
+				var layers = [];
 
 				var mapLayers = geomap.map.ol_object.getLayers().getArray();
 
