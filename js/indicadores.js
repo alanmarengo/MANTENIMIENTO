@@ -81,7 +81,7 @@ function ol_indicadores() {
 			ind_inner.id = "indicador-inner-"+pos;
 			
 		var container = document.getElementById("indicador-col-pos-"+pos);
-		alert("indicador-col-pos-"+pos);
+		
 		container.appendChild(ind_inner);
 		
 		var notitle = false;
