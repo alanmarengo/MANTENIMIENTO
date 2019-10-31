@@ -154,3 +154,9 @@
     border-left: solid 1px #666;
 
 }
+
+.toggleable-tool-active {
+	
+	background-color:#282828;
+	
+}

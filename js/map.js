@@ -817,136 +817,138 @@ function ol_map() {
 		
 	}
 	
-	this.map.buffer = function(type) {
+	this.map.buffer = function(type,node) {
 		
-		if (this.deleteSelect) { this.ol_object.removeInteraction(this.deleteSelect); }
-		if (this.select) { this.ol_object.removeInteraction(this.select); }
-		if (this.modify) { this.ol_object.removeInteraction(this.modify); }
-		if (this.draw) { this.ol_object.removeInteraction(this.draw); }
-		if (this.medi_draw) { this.ol_object.removeInteraction(this.medi_draw); }
-		if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
-		if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }
-		
-		//if ((this.buffer) && (this.buffer.source)) { this.buffer.source.clear(); }
-		if ((this.drawing) && (this.drawing.source)) { this.drawing.source.clear(); }
-		if ((this.medicion) && (this.medicion.source)) { this.medicion.source.clear(); }
-		if ((this.ptopografico) && (this.ptopografico.source)) { this.ptopografico.source.clear(); }
-		
-		this.ol_object.infoEnabled = false;
-		
-		if (!this.buffer.source) {
+		if ($(node).hasClass(".toggleable-node-active") {
 			
-			this.buffer.source = new ol.source.Vector({
-				wrapX: false
-			});
+			this.buffer.source.clear();
+			if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
 			
-			var source = this.buffer.source;
+		}else{		
 			
-			this.buffer.layerVector = new ol.layer.Vector({
-				source: source
-			});
+			$(".toggleable-tool-active").not(node).trigger("click");
+			$(node).addClass("toggleable-tool-active");
 			
-			this.ol_object.addLayer(this.buffer.layerVector);
+			/*if (this.deleteSelect) { this.ol_object.removeInteraction(this.deleteSelect); }
+			if (this.select) { this.ol_object.removeInteraction(this.select); }
+			if (this.modify) { this.ol_object.removeInteraction(this.modify); }
+			if (this.draw) { this.ol_object.removeInteraction(this.draw); }
+			if (this.medi_draw) { this.ol_object.removeInteraction(this.medi_draw); }
+			if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
+			if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }
 			
-		}
-		
-		if (this.bufferdraw) {
+			//if ((this.buffer) && (this.buffer.source)) { this.buffer.source.clear(); }
+			if ((this.drawing) && (this.drawing.source)) { this.drawing.source.clear(); }
+			if ((this.medicion) && (this.medicion.source)) { this.medicion.source.clear(); }
+			if ((this.ptopografico) && (this.ptopografico.source)) { this.ptopografico.source.clear(); }*/
+			
+			this.ol_object.infoEnabled = false;
+			
+			if (!this.buffer.source) {
 				
-			this.ol_object.removeInteraction(this.bufferdraw);
+				this.buffer.source = new ol.source.Vector({
+					wrapX: false
+				});
 				
-		}
-			
-		if (type == "circle") {
-			
-			this.bufferdraw = new ol.interaction.Draw({
-				source: this.buffer.source,
-				type:"Circle"			
-			});
-			
-			this.buffer.type = "circle";
-		
-		}else{
-			
-			this.bufferdraw = new ol.interaction.Draw({
-				source: this.buffer.source,
-				type:"Polygon"			
-			});
-			
-			this.buffer.type = "polygon";
-			
-		}
-			
-		$("#buffer-hint").show();
-		$("#info-buffer").empty();
-		this.buffer.source.clear();
-		
-		this.bufferdraw.on('drawend', function (e) {
-			
-			var format = new ol.format.WKT();			
-			
-			if (this.buffer.type == "circle") {
+				var source = this.buffer.source;
 				
-				var circle = ol.geom.Polygon.fromCircle(e.feature.getGeometry());
+				this.buffer.layerVector = new ol.layer.Vector({
+					source: source
+				});
+				
+				this.ol_object.addLayer(this.buffer.layerVector);
+				
+			}
+			
+			if (this.bufferdraw) {
+					
+				this.ol_object.removeInteraction(this.bufferdraw);
+					
+			}
+				
+			if (type == "circle") {
+				
+				this.bufferdraw = new ol.interaction.Draw({
+					source: this.buffer.source,
+					type:"Circle"			
+				});
+				
+				this.buffer.type = "circle";
 			
 			}else{
 				
-				var circle = e.feature.getGeometry();
+				this.bufferdraw = new ol.interaction.Draw({
+					source: this.buffer.source,
+					type:"Polygon"			
+				});
+				
+				this.buffer.type = "polygon";
 				
 			}
-			
-			var wkt = format.writeGeometry(circle.transform('EPSG:3857', 'EPSG:4326'));		
-			
-			var wkt = format.writeGeometry(circle.transform('EPSG:4326', 'EPSG:3857'));	
-			
-			this.ol_object.removeInteraction(this.bufferdraw);
-			
+				
+			$("#buffer-hint").show();
+			$("#info-buffer").empty();
 			this.buffer.source.clear();
 			
-			var layers = []; 
-
-			var mapLayers = geomap.map.ol_object.getLayers().getArray();
-
-			for (var i=0; i<mapLayers.length; i++) {
-			  
-			  if ((mapLayers[i].getVisible()) && (mapLayers[i].getSource().params_)) {
+			this.bufferdraw.on('drawend', function (e) {
 				
-				layers.push(mapLayers[i].getSource().params_.layer_id);
+				var format = new ol.format.WKT();			
 				
-			  }
-			  
-			}
-			
-			var req = $.ajax({
+				if (this.buffer.type == "circle") {
+					
+					var circle = ol.geom.Polygon.fromCircle(e.feature.getGeometry());
 				
-				async:false,
-				type:"post",
-				url:"./php/get-buffer.php",
-				data:{wkt:wkt,layers:layers},
-				success:function(d){}
+				}else{
+					
+					var circle = e.feature.getGeometry();
+					
+				}
 				
-			});
-			
-			$("#buffer-hint").hide();
-			
-			this.parseGFIbuffer(req.responseText,"popup-buffer","info-buffer");
-			
-			this.ol_object.infoEnabled = true;			
-			
-			this.buffer.source.clear();
-			
-		}.bind(this));
-		
-		this.ol_object.addInteraction(this.bufferdraw);
-		
-		$(".nav-toolbar-link").not("#navbarDropdown-buffer").each(function(i,v) {
-			
-			$(v).bind("click",function() {
-						
+				var wkt = format.writeGeometry(circle.transform('EPSG:3857', 'EPSG:4326'));		
+				
+				var wkt = format.writeGeometry(circle.transform('EPSG:4326', 'EPSG:3857'));	
+				
 				this.ol_object.removeInteraction(this.bufferdraw);
+				
+				this.buffer.source.clear();
+				
+				var layers = []; 
+
+				var mapLayers = geomap.map.ol_object.getLayers().getArray();
+
+				for (var i=0; i<mapLayers.length; i++) {
+				  
+				  if ((mapLayers[i].getVisible()) && (mapLayers[i].getSource().params_)) {
+					
+					layers.push(mapLayers[i].getSource().params_.layer_id);
+					
+				  }
+				  
+				}
+				
+				var req = $.ajax({
+					
+					async:false,
+					type:"post",
+					url:"./php/get-buffer.php",
+					data:{wkt:wkt,layers:layers},
+					success:function(d){}
+					
+				});
+				
+				$("#buffer-hint").hide();
+				
+				this.parseGFIbuffer(req.responseText,"popup-buffer","info-buffer");
+				
+				this.ol_object.infoEnabled = true;			
+				
+				this.buffer.source.clear();
 				
 			}.bind(this));
 			
-		}.bind(this));
+			this.ol_object.addInteraction(this.bufferdraw);
+		
+		}
 		
 	}
 	

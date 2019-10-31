@@ -1,4 +1,4 @@
-<div class="template-indicador-container" id="template-indicadores-gestion-pga">
+<div class="template-indicador-container" id="template-indicadores-pga">
 
 	<div class="row" >
 
