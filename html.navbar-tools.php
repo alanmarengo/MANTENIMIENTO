@@ -61,14 +61,11 @@
 					</a>
 					<div class="dropdown-menu dropdown-menu-right" title="Dibujo" id="dropdown-medicion" aria-labelledby="navbarDropdown-medicion" style="min-width:30px !Important; width:30px;">						
 					
-						<a href="#" onclick="geomap.map.medicion('LineString')" class="dropdown-item">			
+						<a href="#" onclick="geomap.map.medicion('LineString',this)" class="dropdown-item toggleable-tool">			
 							<img src="./images/geovisor/icons/drawing-bar-line.png">						
 						</a>
-						<a href="#" onclick="geomap.map.medicion('Polygon')" class="dropdown-item">
+						<a href="#" onclick="geomap.map.medicion('Polygon',this)" class="dropdown-item toggleable-tool">
 							<img src="./images/geovisor/icons/drawing-bar-polygon.png">						
-						</a>
-						<a href="#" onclick="" id="btn-draw-cancel-medicion" class="dropdown-item">
-							<img src="./images/geovisor/icons/drawing-bar-none.png">						
 						</a>
 						
 					</div> 

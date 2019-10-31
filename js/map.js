@@ -829,6 +829,8 @@ function ol_map() {
 			
 			this.ol_object.infoEnabled = true;
 			
+			jwindow.close("popup-buffer");
+			
 		}else{
 			
 			$(".toggleable-tool-active").not(node).trigger("click");
@@ -1232,94 +1234,90 @@ function ol_map() {
 	
 	}
 	
-	this.map.medicion = function(type) {
+	this.map.medicion = function(type,node) {
 		
-		if (this.deleteSelect) { this.ol_object.removeInteraction(this.deleteSelect); }
-		if (this.select) { this.ol_object.removeInteraction(this.select); }
-		if (this.modify) { this.ol_object.removeInteraction(this.modify); }
-		if (this.draw) { this.ol_object.removeInteraction(this.draw); }
-		if (this.medi_draw) { this.ol_object.removeInteraction(this.medi_draw); }
-		if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
-		if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }
-				
-		if ((this.buffer) && (this.buffer.source)) { this.buffer.source.clear(); }
-		if ((this.drawing) && (this.drawing.source)) { this.drawing.source.clear(); }
-		//if ((this.medicion) && (this.medicion.source)) { this.medicion.source.clear(); }
-		if ((this.ptopografico) && (this.ptopografico.source)) { this.ptopografico.source.clear(); }
-		
-		this.ol_object.infoEnabled = false;
-		
-		if (!this.medicion.source) {
-		
-			this.medicion.source = new ol.source.Vector({
-				wrapX: false
-			});
+		if ($(node).hasClass("toggleable-tool-active")) {
 			
-			this.medicion.sourcePoints = new ol.source.Vector({
-				wrapX: false
-			});
+			this.medicion.source.clear();
 			
-			this.medicion.layerVector = new ol.layer.Vector({
-				source: this.medicion.source
-			});
+			if (this.medi_draw) { this.ol_object.removeInteraction(this.medi_draw); }
 			
-			this.medicion.layerPointVector = new ol.layer.Vector({
-				source: this.medicion.sourcePoints
-			});
-			
-			this.ol_object.addLayer(this.medicion.layerVector);
-			this.ol_object.addLayer(this.medicion.layerPointVector);
-		
-		}
-		
-		this.medicion.source.clear();
-		
-		this.medi_draw = new ol.interaction.Draw({
-			source: this.medicion.source,
-			type:type	
-		});
-
-		this.medi_draw.on('drawend', function (e) {
-			
-			var format = new ol.format.WKT();
-			
-			var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:3857', 'EPSG:4326'));
-			
-			var wktext = wkt;
-			
-			var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:4326', 'EPSG:3857'));	
-			
-			this.ol_object.removeInteraction(this.medi_draw);
-			
-			var req = $.ajax({
-				
-				async:false,
-				type:"post",
-				url:"./php/get-medicion.php",
-				data:{wkt:wkt,type:type},
-				success:function(d){}
-				
-			});
-			
-			document.getElementById("info-medicion").innerHTML = req.responseText;
-			
-			jwindow.open("popup-medicion");
+			$(node).removeClass("toggleable-tool-active");
 			
 			this.ol_object.infoEnabled = true;
 			
-		}.bind(this));
-		
-		this.ol_object.addInteraction(this.medi_draw);
-		
-		$(".nav-toolbar-link").not("#navbarDropdown-medicion").each(function(i,v) {
+			jwindow.close("popup-medicion");
 			
-			$(v).bind("click",function() {
-						
+		}else{
+			
+			$(".toggleable-tool-active").not(node).trigger("click");
+			$(node).addClass("toggleable-tool-active");
+		
+			this.ol_object.infoEnabled = false;
+			
+			if (!this.medicion.source) {
+			
+				this.medicion.source = new ol.source.Vector({
+					wrapX: false
+				});
+				
+				this.medicion.sourcePoints = new ol.source.Vector({
+					wrapX: false
+				});
+				
+				this.medicion.layerVector = new ol.layer.Vector({
+					source: this.medicion.source
+				});
+				
+				this.medicion.layerPointVector = new ol.layer.Vector({
+					source: this.medicion.sourcePoints
+				});
+				
+				this.ol_object.addLayer(this.medicion.layerVector);
+				this.ol_object.addLayer(this.medicion.layerPointVector);
+			
+			}
+			
+			this.medicion.source.clear();
+			
+			this.medi_draw = new ol.interaction.Draw({
+				source: this.medicion.source,
+				type:type	
+			});
+
+			this.medi_draw.on('drawend', function (e) {
+				
+				var format = new ol.format.WKT();
+				
+				var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:3857', 'EPSG:4326'));
+				
+				var wktext = wkt;
+				
+				var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:4326', 'EPSG:3857'));	
+				
 				this.ol_object.removeInteraction(this.medi_draw);
+				
+				var req = $.ajax({
+					
+					async:false,
+					type:"post",
+					url:"./php/get-medicion.php",
+					data:{wkt:wkt,type:type},
+					success:function(d){}
+					
+				});
+				
+				document.getElementById("info-medicion").innerHTML = req.responseText;
+				
+				jwindow.open("popup-medicion");
+				
+				this.ol_object.infoEnabled = true;
 				
 			}.bind(this));
 			
-		}.bind(this));
+			this.ol_object.addInteraction(this.medi_draw);
+		
+		}
 		
 	}
 	
@@ -1335,23 +1333,12 @@ function ol_map() {
 			
 			this.ol_object.infoEnabled = true;
 			
+			jwindow.close("popup-ptopografico");
+			
 		}else{
 			
 			$(".toggleable-tool-active").not(node).trigger("click");
 			$(node).addClass("toggleable-tool-active");
-		
-			/*if (this.deleteSelect) { this.ol_object.removeInteraction(this.deleteSelect); }
-			if (this.select) { this.ol_object.removeInteraction(this.select); }
-			if (this.modify) { this.ol_object.removeInteraction(this.modify); }
-			if (this.draw) { this.ol_object.removeInteraction(this.draw); }
-			if (this.medi_draw) { this.ol_object.removeInteraction(this.medi_draw); }
-			if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
-			if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }	
-			
-			if ((this.buffer) && (this.buffer.source)) { this.buffer.source.clear(); }
-			if ((this.drawing) && (this.drawing.source)) { this.drawing.source.clear(); }
-			if ((this.medicion) && (this.medicion.source)) { this.medicion.source.clear(); }
-			//if ((this.ptopografico) && (this.ptopografico.source)) { this.ptopografico.source.clear(); }*/
 			
 			if (!this.ptopografico.source) {
 			
