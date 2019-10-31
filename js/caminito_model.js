@@ -3,7 +3,7 @@
             titulo: 'Aves',
             mode_id: 0,
             texto: `
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.Quisque sit amet tincidunt sem.Etiam non augue diam.Donec at tempor ligula, ac rutrum felis.Nam molestie urna nec lacinia consectetur.Nulla egestas enim in velit interdum, sed pharetra diam convallis.Pellentesque sit amet neque in nibh finibus auctor.Aliquam eget elit sed odio sollicitudin pretium.In pharetra tristique sapien eu venenatis.Aliquam dictum, neque vitae pellentesque ornare, dolor sem fermentum risus, quis interdum diam libero nec urna.Duis nec magna vulputate lorem condimentum cursus.Praesent a lacus metus.Mauris venenatis felis eu euismod commodo.Aenean egestas eros eu sapien convallis semper.Integer nec velit erat.In maximus pellentesque turpis eu dignissim.
+Los estudios sobre avifauna se enfocan en profundizar el conocimiento científico sobre distintas especies de aves, especialmente aquellas consideradas clave o que están en situación de vulnerabilidad(macá tobiano, cauquén colorado, gallineta chica, cóndor andino, etc.), estén o no potencialmente afectadas por las obras.Las investigaciones están destinadas a analizar tendencias poblacionales, determinar la distribución y biología de las especies estudiadas y sus hábitos reproductivos, alimenticios y migratorios, con el objetivo de hacer más eficientes los programas de preservación y realizar un seguimiento de la evolución y adaptación de las especies.Las investigaciones se realizan a través de convenios con distintos organismos de ciencia y técnica del país.
 		`
         },
         {
@@ -11,7 +11,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.Quisque sit amet tincidu
             titulo: 'Peces',
             mode_id: 0,
             texto: `
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.Quisque sit amet tincidunt sem.Etiam non augue diam.Donec at tempor ligula, ac rutrum felis.Nam molestie urna nec lacinia consectetur.Nulla egestas enim in velit interdum, sed pharetra diam convallis.Pellentesque sit amet neque in nibh finibus auctor.Aliquam eget elit sed odio sollicitudin pretium.In pharetra tristique sapien eu venenatis.Aliquam dictum, neque vitae pellentesque ornare, dolor sem fermentum risus, quis interdum diam libero nec urna.Duis nec magna vulputate lorem condimentum cursus.Praesent a lacus metus.Mauris venenatis felis eu euismod commodo.Aenean egestas eros eu sapien convallis semper.Integer nec velit erat.In maximus pellentesque turpis eu dignissim.
+Se realiza una caracterización estacional sistemática de largo plazo de las comunidades de peces del río Santa Cruz, tanto de especies nativas(lamprea, puyen, perca) como de interés socio - económica(trucha steelhead o salmón Chinook.Los estudios están enfocados a profundizar el conocimiento y caracterización de los sitios de desove, cría, alimentación, reproducción y migraciones; establecer tendencias de cambio de abundancia de las especies y evaluar cambios en las características bionómicas de las especies que se desarrollen en los embalses.La información será un insumo imprescindible para el diseño de los sistemas de transferencia de peces desde el río a los embalses.
 		`
         },
         {
@@ -19,15 +19,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.Quisque sit amet tincidu
             titulo: 'Humedales',
             mode_id: 0,
             texto: `
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.Quisque sit amet tincidunt sem.Etiam non augue diam.Donec at tempor ligula, ac rutrum felis.Nam molestie urna nec lacinia consectetur.Nulla egestas enim in velit interdum, sed pharetra diam convallis.Pellentesque sit amet neque in nibh finibus auctor.Aliquam eget elit sed odio sollicitudin pretium.In pharetra tristique sapien eu venenatis.Aliquam dictum, neque vitae pellentesque ornare, dolor sem fermentum risus, quis interdum diam libero nec urna.Duis nec magna vulputate lorem condimentum cursus.Praesent a lacus metus.Mauris venenatis felis eu euismod commodo.Aenean egestas eros eu sapien convallis semper.Integer nec velit erat.In maximus pellentesque turpis eu dignissim.
+Se identificaron pérdidas de humedales, cambios en la distribución, abundancia, estructura y funcionamiento de otros y posible aparición de nuevos tipos de humedales por cambios en el régimen hidrológico.Los estudios sobre humedales, hábitats y ecosistemas ribereños se ejecutan en un programa específico con el objetivo de implementar un seguimiento a largo plazo de los humedales remanentes y los nuevos ambientes generados a partir del llenado de los embalses.El programa incluye planes educativos y turísticos asociados a estos ambientes, medidas de control y gestión de los humedales en las áreas afectadas.
 		`
         },
         {
             id: 'vegetacion',
-            titulo: '',
+            titulo: 'Vegetación',
             mode_id: 0,
             texto: `
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.Quisque sit amet tincidunt sem.Etiam non augue diam.Donec at tempor ligula, ac rutrum felis.Nam molestie urna nec lacinia consectetur.Nulla egestas enim in velit interdum, sed pharetra diam convallis.Pellentesque sit amet neque in nibh finibus auctor.Aliquam eget elit sed odio sollicitudin pretium.In pharetra tristique sapien eu venenatis.Aliquam dictum, neque vitae pellentesque ornare, dolor sem fermentum risus, quis interdum diam libero nec urna.Duis nec magna vulputate lorem condimentum cursus.Praesent a lacus metus.Mauris venenatis felis eu euismod commodo.Aenean egestas eros eu sapien convallis semper.Integer nec velit erat.In maximus pellentesque turpis eu dignissim.
+Se identifican, organizan e implementan medidas preventivas y correctivas dirigidas a evitar, mitigar, revertir o compensar las consecuencias de la afectación a las comunidades vegetales, a través de los siguientes subprogramas: Monitoreo y estudio de las comunidades vegetales y Protección de las comunidades vegetales.
 		`
         },
         {
@@ -35,7 +35,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.Quisque sit amet tincidu
             titulo: 'Fauna silvestre',
             mode_id: 0,
             texto: `
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.Quisque sit amet tincidunt sem.Etiam non augue diam.Donec at tempor ligula, ac rutrum felis.Nam molestie urna nec lacinia consectetur.Nulla egestas enim in velit interdum, sed pharetra diam convallis.Pellentesque sit amet neque in nibh finibus auctor.Aliquam eget elit sed odio sollicitudin pretium.In pharetra tristique sapien eu venenatis.Aliquam dictum, neque vitae pellentesque ornare, dolor sem fermentum risus, quis interdum diam libero nec urna.Duis nec magna vulputate lorem condimentum cursus.Praesent a lacus metus.Mauris venenatis felis eu euismod commodo.Aenean egestas eros eu sapien convallis semper.Integer nec velit erat.In maximus pellentesque turpis eu dignissim.
+Los relevamientos y monitoreos vinculados a la fauna silvestre están enfocados en establecer el procedimiento para el control e implementación de las medidas necesarias asociadas a la protección de la fauna terrestre e ictícola(además de los programas específicos en esta materia) de las consecuencias directas e indirectas del proyecto, a través de diferentes medidas de prevención, mitigación o compensación.Se diseñaron diferentes programas, como el de Protección de la fauna silvestre en obra, Control de especies exóticas acuáticas y Control de especies exóticas terrestres.
 		`
         },
 
