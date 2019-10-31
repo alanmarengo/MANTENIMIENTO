@@ -860,6 +860,34 @@ function ol_map() {
 				
 			}
 			
+			var format = new ol.format.WKT();		
+			
+			if (this.bufferdraw) {
+					
+				this.ol_object.removeInteraction(this.bufferdraw);
+					
+			}
+				
+			if (type == "circle") {
+				
+				this.bufferdraw = new ol.interaction.Draw({
+					source: this.buffer.source,
+					type:"Circle"			
+				});
+				
+				this.buffer.type = "circle";
+			
+			}else{
+				
+				this.bufferdraw = new ol.interaction.Draw({
+					source: this.buffer.source,
+					type:"Polygon"			
+				});
+				
+				this.buffer.type = "polygon";
+				
+			}
+			
 			$("#buffer-hint").show();
 			$("#info-buffer").empty();
 			this.buffer.source.clear();
