@@ -1115,15 +1115,13 @@ function ol_map() {
 		
 		if ($(node).hasClass("toggleable-tool-active")) {
 			
-			this.buffer.source.clear();
+			this.drawing.source.clear();
 			
-			if (this.bufferdraw) { 	this.ol_object.removeInteraction(this.bufferdraw); }
+			if (this.draw) { 	this.ol_object.removeInteraction(this.draw); }
 			
 			$(node).removeClass("toggleable-tool-active");
 			
 			this.ol_object.infoEnabled = true;
-			
-			jwindow.close("popup-buffer");
 			
 		}else{
 			
