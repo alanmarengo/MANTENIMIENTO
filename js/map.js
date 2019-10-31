@@ -819,10 +819,13 @@ function ol_map() {
 	
 	this.map.buffer = function(type,node) {
 		
-		if ($(node).hasClass(".toggleable-node-active")) {
+		if ($(node).hasClass("toggleable-node-active")) {
 			
 			this.buffer.source.clear();
+			
 			if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
+			
+			$(node).removeClass("toggleable-node-active");
 			
 		}else{		
 			
@@ -952,7 +955,7 @@ function ol_map() {
 				
 				this.buffer.source.clear();
 
-			});
+			}.bind(this));
 		
 			this.ol_object.addInteraction(this.bufferdraw);
 		
