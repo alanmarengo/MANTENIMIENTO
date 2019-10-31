@@ -539,7 +539,7 @@ function ol_map() {
 				
 			});
 			
-			document.getElementById(wrapperID).innerHTML += req.responseText;
+			document.getElementById(wrapperID).innerHTML = req.responseText;
 					
 			jwindow.open(containerID);
 			
