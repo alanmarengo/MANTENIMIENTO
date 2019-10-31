@@ -9,7 +9,7 @@
 				<a href="#" class="jump-window-minimize" onclick="jwindow.minimize('popup-buffer');">
 					<i class="fas fa-minus"></i>
 				</a>				
-				<a href="#" class="jump-window-close" onclick="geomap.map.infoEnabled = true; jwindow.close('popup-buffer')">
+				<a href="#" class="jump-window-close" onclick="geomap.map.disableTools();">
 					<i class="fas fa-times"></i>
 				</a>	
 			</div>
