@@ -239,7 +239,10 @@ switch($origen_id)
 		break;
 	case 0: wms_preview($recurso_id); break;
 	case 1: break;
-	case 2: break;
+	case 2: header("Content-Type: image/png");
+			$data = file_get_contents('./images/icono-estadisticas-relleno.png');
+			echo $data; 
+			break;
 	case 3: 
 			header("Content-Type: image/png");
 			$data = file_get_contents('./images/icono-indicadores-relleno.png');
