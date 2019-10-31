@@ -91,28 +91,28 @@
 					</a>
 					<div class="dropdown-menu dropdown-menu-right" id="dropdown-draw" aria-labelledby="navbarDropdown-draw" style="min-width:30px !Important; width:30px;">						
 					
-						<a href="#" onclick="geomap.map.drawing('Point')" class="dropdown-item" title="Dibujar punto">			
+						<a href="#" onclick="geomap.map.drawing('Point',this)" class="dropdown-item" title="Dibujar punto">			
 							<img src="./images/geovisor/icons/drawing-bar-point.png">						
 						</a>
-						<a href="#" onclick="geomap.map.drawing('LineString')" class="dropdown-item" title="Dibujar línea">	
+						<a href="#" onclick="geomap.map.drawing('LineString',this)" class="dropdown-item" title="Dibujar línea">	
 							<img src="./images/geovisor/icons/drawing-bar-line.png">						
 						</a>
-						<a href="#" onclick="geomap.map.drawing('Polygon')" class="dropdown-item" title="Dibujar polígono">		
+						<a href="#" onclick="geomap.map.drawing('Polygon',this)" class="dropdown-item" title="Dibujar polígono">		
 							<img src="./images/geovisor/icons/drawing-bar-polygon.png">						
 						</a>
-						<a href="#" onclick="geomap.map.drawing('Circle')" class="dropdown-item" title="Dibujar círculo">		
+						<a href="#" onclick="geomap.map.drawing('Circle',this)" class="dropdown-item" title="Dibujar círculo">		
 							<img src="./images/geovisor/icons/drawing-bar-circle.png">						
 						</a>
-						<a href="#" onclick="geomap.map.drawing('Select')" class="dropdown-item" title="Seleccionar elementos">		
+						<a href="#" onclick="geomap.map.drawing('Select',this)" class="dropdown-item" title="Seleccionar elementos">		
 							<img src="./images/geovisor/icons/drawing-bar-select.png">						
 						</a>
-						<a href="#" onclick="geomap.map.drawing('Modify')" class="dropdown-item" title="Editar elementos">		
+						<a href="#" onclick="geomap.map.drawing('Modify',this)" class="dropdown-item" title="Editar elementos">		
 							<img src="./images/geovisor/icons/drawing-bar-edit.png">						
 						</a>
-						<a href="#" onclick="geomap.map.deleteFeature()" class="dropdown-item" title="Borrador">		
+						<a href="#" onclick="geomap.map.deleteFeature(this)" class="dropdown-item" title="Borrador">		
 							<img src="./images/geovisor/icons/drawing-bar-delete.png">						
 						</a>
-						<a href="#" onclick="geomap.map.downloadFeatures()" class="dropdown-item" title="Descargar">		
+						<a href="#" onclick="geomap.map.downloadFeatures(this)" class="dropdown-item" title="Descargar">		
 							<img src="./images/geovisor/icons/drawing-bar-download.png">						
 						</a>
 						
