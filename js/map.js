@@ -760,7 +760,7 @@ function ol_map() {
 		});
 		
 		this.ol_object.addControl(this.mouse_position_3857);
-		this.ol_object.addControl(this.mouse_position_4326);		
+		this.ol_object.addControl(this.mouse_position_4326);
 		
 		this.ol_object.infoEnabled = false;
 		
@@ -826,8 +826,8 @@ function ol_map() {
 			if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
 			
 			$(node).removeClass("toggleable-tool-active");
-				
-			this.ol_object.infoEnabled = true;	
+			
+			this.ol_object.infoEnabled = true;
 			
 		}else{
 			
@@ -872,7 +872,7 @@ function ol_map() {
 				this.ol_object.removeInteraction(this.bufferdraw);
 					
 			}
-				
+			
 			if (type == "circle") {
 				
 				this.bufferdraw = new ol.interaction.Draw({
@@ -895,6 +895,7 @@ function ol_map() {
 			
 			$("#buffer-hint").show();
 			$("#info-buffer").empty();
+			
 			this.buffer.source.clear();
 			
 			this.bufferdraw.on("drawstart",function(e) {
@@ -950,11 +951,11 @@ function ol_map() {
 				this.parseGFIbuffer(req.responseText,"popup-buffer","info-buffer");
 
 			}.bind(this));
-		
+			
 			this.ol_object.addInteraction(this.bufferdraw);
 				
 			this.ol_object.infoEnabled = false;
-		
+			
 		}
 		
 	}
@@ -1322,84 +1323,89 @@ function ol_map() {
 		
 	}
 	
-	this.map.ptopografico = function() {
+	this.map.ptopografico = function(node) {
 		
-		if (this.deleteSelect) { this.ol_object.removeInteraction(this.deleteSelect); }
-		if (this.select) { this.ol_object.removeInteraction(this.select); }
-		if (this.modify) { this.ol_object.removeInteraction(this.modify); }
-		if (this.draw) { this.ol_object.removeInteraction(this.draw); }
-		if (this.medi_draw) { this.ol_object.removeInteraction(this.medi_draw); }
-		if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
-		if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }	
-		
-		if ((this.buffer) && (this.buffer.source)) { this.buffer.source.clear(); }
-		if ((this.drawing) && (this.drawing.source)) { this.drawing.source.clear(); }
-		if ((this.medicion) && (this.medicion.source)) { this.medicion.source.clear(); }
-		//if ((this.ptopografico) && (this.ptopografico.source)) { this.ptopografico.source.clear(); }
-		
-		this.ol_object.infoEnabled = false;
-		
-		if (!this.ptopografico.source) {
-		
-			this.ptopografico.source = new ol.source.Vector({
-				wrapX: false
-			});
+		if ($(node).hasClass("toggleable-tool-active")) {
 			
-			this.ptopografico.sourcePoints = new ol.source.Vector({
-				wrapX: false
-			});
+			ptopografico.source.clear();
 			
-			this.ptopografico.layerVector = new ol.layer.Vector({
-				source: this.ptopografico.source
-			});
+			if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }
 			
-			this.ptopografico.layerPointVector = new ol.layer.Vector({
-				source: this.ptopografico.sourcePoints
-			});
-			
-			this.ol_object.addLayer(this.ptopografico.layerVector);
-			this.ol_object.addLayer(this.ptopografico.layerPointVector);
-		
-		}
-		
-		this.ptopo_draw = new ol.interaction.Draw({
-			source: this.ptopografico.source,
-			type:"LineString"			
-		});
-		
-		this.ptopo_draw.on('drawend', function (e) {
-			
-			jwindow.open("popup-preloader");
-			
-			var format = new ol.format.WKT();
-			
-			var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:3857', 'EPSG:4326'));		
-			
-			var wktext = wkt;
-			
-			var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:4326', 'EPSG:3857'));	
-			
-			DrawChart(wktext,this.ptopografico.layerVector,this.ptopografico.sourcePoints);
-			
-			this.ol_object.removeInteraction(this.ptopo_draw);
-			
-			this.ptopografico.layerVector.getSource().clear();	
+			$(node).removeClass("toggleable-tool-active");
 			
 			this.ol_object.infoEnabled = true;
 			
-		}.bind(this));
-		
-		this.ol_object.addInteraction(this.ptopo_draw);
-		
-		$(".nav-toolbar-link").not("#navbarDropdown-ptopografico").each(function(i,v) {
+		}else{
 			
-			$(v).bind("click",function() {
-						
+			$(".toggleable-tool-active").not(node).trigger("click");
+			$(node).addClass("toggleable-tool-active");
+		
+			/*if (this.deleteSelect) { this.ol_object.removeInteraction(this.deleteSelect); }
+			if (this.select) { this.ol_object.removeInteraction(this.select); }
+			if (this.modify) { this.ol_object.removeInteraction(this.modify); }
+			if (this.draw) { this.ol_object.removeInteraction(this.draw); }
+			if (this.medi_draw) { this.ol_object.removeInteraction(this.medi_draw); }
+			if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
+			if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }	
+			
+			if ((this.buffer) && (this.buffer.source)) { this.buffer.source.clear(); }
+			if ((this.drawing) && (this.drawing.source)) { this.drawing.source.clear(); }
+			if ((this.medicion) && (this.medicion.source)) { this.medicion.source.clear(); }
+			//if ((this.ptopografico) && (this.ptopografico.source)) { this.ptopografico.source.clear(); }*/
+			
+			if (!this.ptopografico.source) {
+			
+				this.ptopografico.source = new ol.source.Vector({
+					wrapX: false
+				});
+				
+				this.ptopografico.sourcePoints = new ol.source.Vector({
+					wrapX: false
+				});
+				
+				this.ptopografico.layerVector = new ol.layer.Vector({
+					source: this.ptopografico.source
+				});
+				
+				this.ptopografico.layerPointVector = new ol.layer.Vector({
+					source: this.ptopografico.sourcePoints
+				});
+				
+				this.ol_object.addLayer(this.ptopografico.layerVector);
+				this.ol_object.addLayer(this.ptopografico.layerPointVector);
+			
+			}
+			
+			this.ptopo_draw = new ol.interaction.Draw({
+				source: this.ptopografico.source,
+				type:"LineString"			
+			});
+			
+			this.ptopo_draw.on('drawend', function (e) {
+				
+				jwindow.open("popup-preloader");
+				
+				var format = new ol.format.WKT();
+				
+				var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:3857', 'EPSG:4326'));		
+				
+				var wktext = wkt;
+				
+				var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:4326', 'EPSG:3857'));	
+				
+				DrawChart(wktext,this.ptopografico.layerVector,this.ptopografico.sourcePoints);
+				
 				this.ol_object.removeInteraction(this.ptopo_draw);
+				
+				this.ptopografico.layerVector.getSource().clear();	
+				
+				this.ol_object.infoEnabled = true;
 				
 			}.bind(this));
 			
-		}.bind(this));
+			this.ol_object.addInteraction(this.ptopo_draw);
+		
+		}
 		
 	}
 	

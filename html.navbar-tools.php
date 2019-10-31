@@ -30,10 +30,11 @@
 					</a>
 					<div class="dropdown-menu dropdown-menu-right" id="dropdown-buffer" aria-labelledby="navbarDropdown-buffer" style="min-width:30px !Important; width:30px;">						
 					
-						<a href="#" class="dropdown-item toggleable-tool" onclick="geomap.map.buffer('circle',this);">			
-							<img src="./images/geovisor/icons/buffer-circle.png">						
+						<a href="#" class="dropdown-item toggleable-tool" onclick="geomap.map.buffer('circle',this);">
+							<img src="./images/geovisor/icons/buffer-circle.png">
 						</a>
-						<a href="#" class="dropdown-item toggleable-tool" onclick="geomap.map.buffer('polygon',this);">	
+						
+						<a href="#" class="dropdown-item toggleable-tool" onclick="geomap.map.buffer('polygon',this);">
 							<img src="./images/geovisor/icons/buffer-polygon.png">
 						</a>
 						
@@ -44,10 +45,10 @@
 				</li>
 				<li>
 					<a class="button button-tools jump-hovimage" 
-					data-ini-src="./images/toolbar.icon.ptopografico.png"
-					data-end-src="./images/toolbar.icon.ptopografico.white.png" href="javascript:void(0);" title="Perfil topográfico" onclick="jwindow.close('.geovisor-flotant'); geomap.map.ptopografico();">
+					data-ini-src="./images/toolbar.icon.ptopografico.png" 
+					data-end-src="./images/toolbar.icon.ptopografico.white.png" href="javascript:void(0);" title="Perfil topográfico" onclick="jwindow.close('.geovisor-flotant'); geomap.map.ptopografico(this);">
 						<img src="./images/toolbar.icon.ptopografico.png">
-					</a>        
+					</a>
 				</li>
 				<li class="icon-divisor">
 					<span></span>												
