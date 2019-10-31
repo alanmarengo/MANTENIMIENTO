@@ -137,6 +137,8 @@
 		
 		geomap.popup.startInterface();
 		
+		geomap.map.setupTools();
+		
 		window.addEventListener("resize",onresize);
 		onresize();
 		

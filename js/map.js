@@ -607,6 +607,25 @@ function ol_map() {
 		
 	}
 	
+	this.map.setupTools = function() {
+		
+		$(".toggleable-tool").each(function(i,v) {
+			
+			$(v).bind("click",function() {
+				
+				if ($(v).closest("#dropdown-draw").length == 0) {
+					
+					this.drawing.source.clear();
+					
+				}
+				
+				
+			}.bind(this));
+			
+		}.bind(this));
+		
+	}
+	
 	this.map.share = function() {
 		
 		var s_layers = [];
@@ -1115,7 +1134,7 @@ function ol_map() {
 		
 		if ($(node).hasClass("toggleable-tool-active")) {
 			
-			this.drawing.source.clear();
+			//this.drawing.source.clear();
 			
 			if (this.draw) { 	this.ol_object.removeInteraction(this.draw); }
 			
