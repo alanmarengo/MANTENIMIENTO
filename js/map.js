@@ -826,8 +826,10 @@ function ol_map() {
 			if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
 			
 			$(node).removeClass("toggleable-tool-active");
+				
+			this.ol_object.infoEnabled = true;	
 			
-		}else{		
+		}else{
 			
 			$(".toggleable-tool-active").not(node).trigger("click");
 			$(node).addClass("toggleable-tool-active");
@@ -946,14 +948,12 @@ function ol_map() {
 				$("#buffer-hint").hide();
 				
 				this.parseGFIbuffer(req.responseText,"popup-buffer","info-buffer");
-				
-				this.ol_object.infoEnabled = true;			
-				
-				this.buffer.source.clear();
 
 			}.bind(this));
 		
 			this.ol_object.addInteraction(this.bufferdraw);
+				
+			this.ol_object.infoEnabled = false;
 		
 		}
 		
