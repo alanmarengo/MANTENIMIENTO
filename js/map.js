@@ -637,7 +637,7 @@ function ol_map() {
 		if (this.modify) { this.ol_object.removeInteraction(this.modify); }
 		if (this.draw) { this.ol_object.removeInteraction(this.draw); }
 		if (this.medi_draw) { this.ol_object.removeInteraction(this.medi_draw); }
-		if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
+		if (this.bufferdraw) { this.ol_object.removeInteraction(this.bufferdraw); }
 		if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }
 		
 		if ((this.drawing) && (this.drawing.source)) {
