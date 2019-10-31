@@ -912,20 +912,6 @@ function ol_map() {
 			
 			$(".toggleable-tool-active").not(node).trigger("click");
 			$(node).addClass("toggleable-tool-active");
-			
-			/*if (this.deleteSelect) { this.ol_object.removeInteraction(this.deleteSelect); }
-			if (this.select) { this.ol_object.removeInteraction(this.select); }
-			if (this.modify) { this.ol_object.removeInteraction(this.modify); }
-			if (this.draw) { this.ol_object.removeInteraction(this.draw); }
-			if (this.medi_draw) { this.ol_object.removeInteraction(this.medi_draw); }
-			if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
-			if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }
-			
-			//if ((this.buffer) && (this.buffer.source)) { this.buffer.source.clear(); }
-			if ((this.drawing) && (this.drawing.source)) { this.drawing.source.clear(); }
-			if ((this.medicion) && (this.medicion.source)) { this.medicion.source.clear(); }
-			if ((this.ptopografico) && (this.ptopografico.source)) { this.ptopografico.source.clear(); }*/
-			
 			this.ol_object.infoEnabled = false;
 			
 			if (!this.buffer.source) {
@@ -1204,6 +1190,7 @@ function ol_map() {
 			
 			$(".toggleable-tool-active").not(node).trigger("click");
 			$(node).addClass("toggleable-tool-active");
+			this.ol_object.infoEnabled = false;
 		
 			if (!this.drawing.source) {
 				
@@ -1311,8 +1298,7 @@ function ol_map() {
 		}else{
 			
 			$(".toggleable-tool-active").not(node).trigger("click");
-			$(node).addClass("toggleable-tool-active");
-		
+			$(node).addClass("toggleable-tool-active");		
 			this.ol_object.infoEnabled = false;
 			
 			if (!this.medicion.source) {
@@ -1395,6 +1381,7 @@ function ol_map() {
 			
 			$(".toggleable-tool-active").not(node).trigger("click");
 			$(node).addClass("toggleable-tool-active");
+			this.ol_object.infoEnabled = false;
 			
 			if (!this.ptopografico.source) {
 			
