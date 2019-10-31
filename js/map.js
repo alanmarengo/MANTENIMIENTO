@@ -631,7 +631,13 @@ function ol_map() {
 	}
 	
 	this.map.setupDisableTools = function() {
-					
+			
+		$("body").on("keyup",function() {
+			
+			alert(event.which);
+			
+		});
+			
 		if (this.deleteSelect) { this.ol_object.removeInteraction(this.deleteSelect); }
 		if (this.select) { this.ol_object.removeInteraction(this.select); }
 		if (this.modify) { this.ol_object.removeInteraction(this.modify); }
