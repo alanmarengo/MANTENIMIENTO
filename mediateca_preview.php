@@ -240,7 +240,11 @@ switch($origen_id)
 	case 0: wms_preview($recurso_id); break;
 	case 1: break;
 	case 2: break;
-	case 3: break;
+	case 3: 
+			header("Content-Type: image/png");
+			$data = file_get_contents('./images/icono-indicadores-relleno.png');
+			echo $data; 
+			break;
 	case 4: break;
 	
 	default:
