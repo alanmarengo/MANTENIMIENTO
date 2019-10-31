@@ -955,8 +955,6 @@ function ol_map() {
 			}.bind(this));
 			
 			this.ol_object.addInteraction(this.bufferdraw);
-				
-			this.ol_object.infoEnabled = false;
 			
 		}
 		
@@ -1294,9 +1292,7 @@ function ol_map() {
 				var wktext = wkt;
 				
 				var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:4326', 'EPSG:3857'));	
-				
-				this.ol_object.removeInteraction(this.medi_draw);
-				
+								
 				var req = $.ajax({
 					
 					async:false,
@@ -1310,8 +1306,6 @@ function ol_map() {
 				document.getElementById("info-medicion").innerHTML = req.responseText;
 				
 				jwindow.open("popup-medicion");
-				
-				this.ol_object.infoEnabled = true;
 				
 			}.bind(this));
 			
@@ -1381,12 +1375,6 @@ function ol_map() {
 				var wkt = format.writeGeometry(e.feature.getGeometry().transform('EPSG:4326', 'EPSG:3857'));	
 				
 				DrawChart(wktext,this.ptopografico.layerVector,this.ptopografico.sourcePoints);
-				
-				this.ol_object.removeInteraction(this.ptopo_draw);
-				
-				this.ptopografico.layerVector.getSource().clear();	
-				
-				this.ol_object.infoEnabled = true;
 				
 			}.bind(this));
 			
