@@ -1327,7 +1327,7 @@ function ol_map() {
 		
 		if ($(node).hasClass("toggleable-tool-active")) {
 			
-			ptopografico.source.clear();
+			this.ptopografico.source.clear();
 			
 			if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }
 			
