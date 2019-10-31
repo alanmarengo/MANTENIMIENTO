@@ -328,6 +328,11 @@
   font-weight: bolder;
 }
 #page_pdga .pop-ficha .pop-content {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 18px;
+}
+#page_pdga .pop-ficha .pop-content {
   padding: 10px 0px 40px 0px;
   text-align: justify;
 }
