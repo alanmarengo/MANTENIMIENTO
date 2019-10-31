@@ -615,7 +615,11 @@ function ol_map() {
 				
 				if ($(v).closest("#dropdown-draw").length == 0) {
 					
-					this.drawing.source.clear();
+					if ((this.drawing) && (this.drawing.source)) {
+						
+						this.drawing.source.clear();
+						
+					}
 					
 				}
 				
