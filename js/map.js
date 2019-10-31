@@ -820,7 +820,7 @@ function ol_map() {
 	this.map.buffer = function(type,node) {
 		
 		if ($(node).hasClass("toggleable-tool-active")) {
-			
+			alert("has");
 			this.buffer.source.clear();
 			
 			if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
@@ -830,6 +830,7 @@ function ol_map() {
 			this.ol_object.infoEnabled = true;
 			
 		}else{
+			alert("nohas");
 			
 			$(".toggleable-tool-active").not(node).trigger("click");
 			$(node).addClass("toggleable-tool-active");
