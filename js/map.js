@@ -137,7 +137,7 @@ function ol_map() {
 		
 		this.ol_object.addEventListener("click",function(evt) {
 			
-			if (this.infoEnabled) {
+			if (this.infoEnabled ) {
 			
 				$("#info-wrapper").empty();
 				
@@ -860,35 +860,15 @@ function ol_map() {
 				
 			}
 			
-			if (this.bufferdraw) {
-					
-				this.ol_object.removeInteraction(this.bufferdraw);
-					
-			}
-				
-			if (type == "circle") {
-				
-				this.bufferdraw = new ol.interaction.Draw({
-					source: this.buffer.source,
-					type:"Circle"			
-				});
-				
-				this.buffer.type = "circle";
-			
-			}else{
-				
-				this.bufferdraw = new ol.interaction.Draw({
-					source: this.buffer.source,
-					type:"Polygon"			
-				});
-				
-				this.buffer.type = "polygon";
-				
-			}
-				
 			$("#buffer-hint").show();
 			$("#info-buffer").empty();
 			this.buffer.source.clear();
+			
+			this.bufferdraw.on("drawstart",function(e) {
+				
+				this.ol_object.infoEnabled = false;
+				
+			}.bind(this));
 			
 			this.bufferdraw.on('drawend', function (e) {
 				
@@ -943,9 +923,9 @@ function ol_map() {
 				this.ol_object.infoEnabled = true;			
 				
 				this.buffer.source.clear();
-				
-			}.bind(this));
-			
+
+			});
+		
 			this.ol_object.addInteraction(this.bufferdraw);
 		
 		}

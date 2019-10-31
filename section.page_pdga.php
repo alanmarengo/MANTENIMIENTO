@@ -84,8 +84,31 @@ La ejecución del PGA involucra actores de diversos ámbitos, con distintos nive
                     EL PDGA al mismo tiempo está conformado por programas y subprogramas (Nro de programas), que abordan un conjunto de temas claves de las distintas etapas del proyecto y con diferente alcance territorial.
                 </div>
 
-                <img id="uxCaminito" src="./images/pdga_temas.jpg" style="width: 100%; height: auto;" />
-
+                <img id="uxCaminito" src="./images/pdga_temas.jpg" usemap="#uxCaminitoMap" style="width: 100%; height: auto;" />
+                <map name='uxCaminitoMap'>
+                    <area shape='circle' id='aves' coords='226,57,50' href='' />
+                    <area shape='circle' id='peces' coords='129,63,50' href=''  />
+                    <area shape='circle' id='humedales' coords='60,135,50' href=''  />
+                    <area shape='circle' id='vegetacion' coords='59,239,50' href=''  />
+                    <area shape='circle' id='fauna' coords='130,311,50' href=''  />
+                    <area shape='circle' id='limnologia' coords='230,312,50' href=''  />
+                    <area shape='circle' id='aguas' coords='302,239,52' href=''  />
+                    <area shape='circle' id='sedimentos' coords='322,137,53' href=''  />
+                    <area shape='circle' id='hidrologia' coords='391,63,50' href=''  />
+                    <area shape='circle' id='glaciares' coords='494,61,50' href=''  />
+                    <area shape='circle' id='geologia' coords='563,134,50' href=''  />
+                    <area shape='circle' id='gases' coords='584,235,56' href=''  />
+                    <area shape='circle' id='suelos' coords='656,316,50' href=''  />
+                    <area shape='circle' id='gestion' coords='755,308,50' href=''  />
+                    <area shape='circle' id='patrimonio' coords='826,240,50' href=''  />
+                    <area shape='circle' id='recursos' coords='843,140,50' href=''  />
+                    <area shape='circle' id='salud' coords='913,65,55' href=''  />
+                    <area shape='circle' id='comunicacion' coords='1020,65,52' href=''  />
+                    <area shape='circle' id='relaciones' coords='1090,138,50' href=''  />
+                    <area shape='circle' id='pueblos' coords='1089,240,50' href=''  />
+                    <area shape='circle' id='aspectos' coords='1017,309,50' href=''  />
+                    <area shape='circle' id='articulacion' coords='921,312,50' href=''  />
+                </map>
             </div>
         </div>
         <div class="col-md-12 section-b responsabilidades">
@@ -144,23 +167,28 @@ Especialidades involucradas,  asesores internacionales.
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" style="position: absolute; right: 6px; top: 6px;"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
-
                     <div class="row">
                         <div class="col-md-12" style="padding: 5px 40px;">
                             <div class="row" style="border-bottom: solid 1px #ccc; font-size: 14px;">
-                                <div class="col-md-11" style="padding: 0px 0px 10px 0px; font-weight: bolder; color: #8f2e4f;">CALIDAD DEL AIRE</div>
-                                <div class="col-md-1" style="font-size: 14px; color: #999;">
-                                    <i class="fa fa-download"></i>
+                                <div style="position: absolute; cursos: pointer; right: 10px; top: -6px;">
+                                    <a href="#" class="close" data-dismiss="modal">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+
+                                <div id="uxPopTitulo" class="col-md-11" style="text-transform: uppercase; padding: 0px 0px 10px 0px; font-weight: bolder; color: #8f2e4f;">
+                                    uxPopTitulo
+                                </div>
+                                <div class="col-md-1">
+                                    <a href="#" class="close" style="font-size: 14px;">
+                                        <i class="fa fa-download"></i>
+                                    </a>
                                 </div>
                             </div>
                             <div class="row pop-ficha">
                                 <div class="col-md-11" style="padding: 0px; margin: 0px;">
-                                    <div class="pop-titulo">
-                                        Definición y alcance
-                                    </div>
-                                    <div class="pop-content">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dolor felis, feugiat in pharetra gravida, volutpat eu turpis. Curabitur maximus lectus vel velit porttitor, at tempor lorem congue. Pellentesque pretium eu sapien in imperdiet. Aenean ut enim elit. Maecenas nec aliquet eros, vulputate faucibus elit. Maecenas egestas eros nibh, non finibus turpis accumsan ac. Nullam lacinia, lorem eu dignissim auctor, nunc sem imperdiet tortor, non pharetra sem metus at libero. Integer id aliquet metus, ac luctus urna. Phasellus pretium elit eu leo facilisis, ut accumsan arcu pulvinar. Nunc et posuere nisl, ut mollis velit. Pellentesque vulputate nisl quis erat tempus posuere. Proin feugiat elementum porttitor. Donec faucibus, eros at posuere commodo, urna ligula vulputate nisi, vitae pulvinar enim tortor eget augue.
+                                    <div id="uxPopTexto" class="pop-content">
+                                        uxPopTexto
                                     </div>
                                     <div style="text-align: center;">
                                         <a href="#" class="pop-button">
@@ -184,8 +212,23 @@ Especialidades involucradas,  asesores internacionales.
     </div>
 </div>
 
+<script type="text/javascript" src="./js/caminito_model.js"></script>
+<script type="text/javascript" src="./js/imageMapResizer.min.js"></script>
 <script type='text/javascript'>
 $(document).ready(function() {
+    $('map').imageMapResize();
+
+    $("map area").click( function () {
+        var id = $(this).attr('id')
+        var item = caminito.find(x => x.id === id);
+        
+        $('#uxPopTitulo').html(item.titulo);
+        $('#uxPopTexto').html(item.texto);
+        $('#uxFicha').modal('show');
+
+        return false;
+    });
+
     $('.section-sticky a').on('click', function() {
         $('.section-sticky a').removeClass('selected');
         $(this).addClass('selected');
@@ -199,11 +242,6 @@ $(document).ready(function() {
     let target = $.urlParam('target');
     if (target)
         $('#link-' + target).trigger('click');
-
-    $('body').on('click', '#uxCaminito', function(e) {
-        //TODO: LOAD DE JSON ARRAY BASADO EN CAMINITO
-        $('#uxFicha').modal('show');
-    });
 
     $('.pop-button2').hover( 
         function () {
