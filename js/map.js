@@ -1111,7 +1111,7 @@ function ol_map() {
 		
 	}
 	
-	this.map.drawing = function(type) {
+	this.map.drawing = function(type,node) {
 		
 		if ($(node).hasClass("toggleable-tool-active")) {
 			
