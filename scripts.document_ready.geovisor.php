@@ -67,12 +67,16 @@
 	
 		<?php if (isset($_GET["geovisor"])) { ?>
 		
+			jwindow.close("popup-geovisor");
+			
 			geomap.map.loadGeovisor(<?php echo $_GET["geovisor"]; ?>);
-		
+			
 		<?php }else{ ?>
 		
 			<?php if (isset($_GET["l"])) { ?>
-				
+			
+			jwindow.close("popup-geovisor");
+			
 			var s_clase = [<?php echo $_GET["c"]; ?>];
 			var s_layers = [<?php echo $_GET["l"]; ?>];
 			var s_visibles = [<?php echo $_GET["v"]; ?>];
