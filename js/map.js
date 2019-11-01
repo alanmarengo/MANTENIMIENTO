@@ -1999,8 +1999,13 @@ function ol_map() {
 			
 		}
 					
-		var layer_name = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-layer");
-		var layer_wms = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-wms");
+		if (document.getElementById("layer-checkbox-"+layer_id)) {
+			var layer_name = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-layer");
+		}
+		
+		if (document.getElementById("layer-checkbox-"+layer_id)) {
+			var layer_wms = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-wms");
+		}
 		
 		if (visible) {
 		
