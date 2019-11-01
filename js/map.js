@@ -150,7 +150,7 @@ function ol_map() {
 			
 				var iconStyle = new ol.style.Style({
 					image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
-					anchor: [0.5, 26],
+					anchor: [0,0],
 					anchorXUnits: 'fraction',
 					anchorYUnits: 'pixels',
 					opacity: 0.75,
