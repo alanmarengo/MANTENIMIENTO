@@ -153,7 +153,7 @@ function ol_map() {
 					anchorXUnits: 'fraction',
 					anchorYUnits: 'pixels',
 					opacity: 0.75,
-					src: 'data/icon.png'
+					src: './images/icono-geovisores-br.png'
 					}))
 				});
 
@@ -162,11 +162,12 @@ function ol_map() {
 				if (!this.map_object.markersLayer) {
 					
 					this.map_object.markersLayerSource = new ol.source.Vector({
-					  features: [iconFeature]
+						features: [iconFeature]
 					});
 
 					this.map_object.markersLayer = new ol.layer.Vector({
-					  source: this.map_object.markersLayerSource
+						visible:true,
+						source: this.map_object.markersLayerSource
 					});
 					
 					this.map_object.ol_object.addLayer(this.map_object.markersLayer);
