@@ -155,14 +155,14 @@ function ol_map() {
 				});
 
 				iconFeature.setStyle(iconStyle);
-			
+				console.log(evt.coordinate);
 				if (!this.map_object.markersLayer) {
 
 					this.map_object.markersLayer = new ol.layer.Vector({
 						visible:true,
 						source: new ol.source.Vector({
 							features: [iconFeature]
-						});
+						})
 					});
 					
 					this.map_object.ol_object.addLayer(this.map_object.markersLayer);
