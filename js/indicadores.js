@@ -435,7 +435,7 @@ function ol_indicadores() {
 	
 	this.share = function() {
 		
-		$("#input-share").val("http://observatorio.atic.com.ar/indicadores.php?ind_id="+this.current_ind+"&t="+this.current_title+"&cid="+this.current_cid);
+		$("#input-share").val("http://observatorio.ieasa.com.ar/indicadores.php?ind_id="+this.current_ind+"&t="+this.current_title+"&cid="+this.current_cid);
 		
 		$(".popup").not("#popup-busqueda").hide();
 		jwindow.open("popup-share");
