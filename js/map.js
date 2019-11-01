@@ -150,12 +150,11 @@ function ol_map() {
 			
 				var iconStyle = new ol.style.Style({
 					image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
-					anchor: [0.5, 46],
+					anchor: [0.5, 26],
 					anchorXUnits: 'fraction',
 					anchorYUnits: 'pixels',
 					opacity: 0.75,
-					src: './images/icono-geovisores-br.png',
-					offset: [0, -50]
+					src: './images/icono-geovisores-br.png'
 					}))
 				});
 
