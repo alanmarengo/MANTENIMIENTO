@@ -1619,6 +1619,21 @@ function ol_map() {
 			
 		});
 		
+		$("#btn-bus-reset").on("click",function() {
+			
+			$("#frm-adv-search input[type=text]").val("");
+			$("#frm-adv-search select").val(0);
+			$("#frm-adv-search select").selectpicker("refresh");
+
+			$("#popup-basic-filters input[type=checkbox]:checked"):trigger("click");
+			
+			$("#filtered-layer-list").empty();
+			
+			geomap.map.fixPopup(true);
+			scroll.refresh();
+			
+		});
+		
 		$(".default-empty-checkbox").each(function(i,v) {
 			
 			v.checked = false;
