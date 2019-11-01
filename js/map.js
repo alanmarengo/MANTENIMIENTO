@@ -140,10 +140,7 @@ function ol_map() {
 			if (this.infoEnabled ) {
 			
 				var iconFeature = new ol.Feature({
-				  geometry: new ol.geom.Point(ol.proj.transform(evt.coordinate, 'EPSG:4326', 'EPSG:3857')),
-				  name: 'Null Island',
-				  population: 4000,
-				  rainfall: 500
+				  geometry: new ol.geom.Point(ol.proj.transform([evt.coordinate.lon,evt.coordinate.lat], 'EPSG:4326', 'EPSG:3857'))
 				});
 
 
