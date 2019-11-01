@@ -150,10 +150,10 @@ function ol_map() {
 			
 				var iconStyle = new ol.style.Style({
 					image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
-					anchor: [0.5, 16],
+					anchor: [0.5, 24],
 					anchorXUnits: 'fraction',
 					anchorYUnits: 'pixels',
-					opacity: 0.75,
+					opacity: 0.95,
 					src: './images/map-marker.png'
 					}))
 				});
