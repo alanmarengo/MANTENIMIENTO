@@ -319,8 +319,8 @@
 	
 		<div>
 	
-			<a href="./estadisticas.php" class="black-button" onclick="stats.view.premapear()">MAPEAR</a>
-			<a href="./estadisticas.php" class="black-button" onclick="stats.view.pregraficar()">GRAFICAR</a>
+			<a href="javascript:void(0);" class="black-button" onclick="stats.view.premapear()">MAPEAR</a>
+			<a href="javascript:void(0);" class="black-button" onclick="stats.view.pregraficar()">GRAFICAR</a>
 		
 		</div>
 
