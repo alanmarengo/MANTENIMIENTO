@@ -1625,7 +1625,7 @@ function ol_map() {
 			$("#frm-adv-search select").val(0);
 			$("#frm-adv-search select").selectpicker("refresh");
 
-			$("#popup-basic-filters input[type=checkbox]:checked"):trigger("click");
+			$("#popup-basic-filters input[type=checkbox]:checked").trigger("click");
 			
 			$("#filtered-layer-list").empty();
 			
