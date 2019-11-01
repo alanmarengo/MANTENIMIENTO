@@ -139,6 +139,45 @@ function ol_map() {
 			
 			if (this.infoEnabled ) {
 			
+				var iconFeature = new ol.Feature({
+				  geometry: new ol.geom.Point(ol.proj.transform(evt.coordinate, 'EPSG:4326', 'EPSG:3857')),
+				  name: 'Null Island',
+				  population: 4000,
+				  rainfall: 500
+				});
+
+
+				var iconStyle = new ol.style.Style({
+					image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
+					anchor: [0.5, 46],
+					anchorXUnits: 'fraction',
+					anchorYUnits: 'pixels',
+					opacity: 0.75,
+					src: 'data/icon.png'
+					}))
+				});
+
+				iconFeature.setStyle(iconStyle);
+			
+				if (!this.map_object.markersLayer) {
+					
+					this.map_object.markersLayerSource = new ol.source.Vector({
+					  features: [iconFeature]
+					});
+
+					this.map_object.markersLayer = new ol.layer.Vector({
+					  source: vectorSource
+					});
+					
+					this.map_object.addLayer(this.map_object.markersLayer);
+					
+				}else{
+					
+					this.map_object.markersLayerSource.clear();
+					this.map_object.markersLayerSource.addFeature(iconFeature);
+					
+				}
+			
 				$("#info-wrapper").empty();
 				
 				this.map_object.gfiAddedLayers = [];
