@@ -707,6 +707,13 @@ function ol_map() {
 		
 		$(".toggleable-tool-active").removeClass("toggleable-tool-active");
 		
+		if (this.map.markersLayer) {
+		
+			this.map.markersLayer.getSource().clear();
+			this.map.markersLayer.getSource().addFeature(iconFeature);
+		
+		}
+		
 	}
 	
 	this.map.setupDisableTools = function() {
