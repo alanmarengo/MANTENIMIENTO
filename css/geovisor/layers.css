@@ -445,9 +445,24 @@
 	
 }
 
-.active-layer-node .layer-label, .popup-layer-node .layer-label {
+.active-layer-node .layer-label {
 	
 	left: 10px;
+	color: #888;
+	font-weight: 300;
+	display: inline-block;
+	position:relative;
+	top:3px;
+	font-weight:400;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	
+}
+
+.popup-layer-node .layer-label {
+	
+	left: 0px;
 	color: #888;
 	font-weight: 300;
 	display: inline-block;
