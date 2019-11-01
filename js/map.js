@@ -2130,6 +2130,8 @@ function ol_map() {
 			
 			var nodeSonWidth = $(node).children("img").width();
 			
+			console.log(nodeSonWidth + " :: " + nodeWidth);
+			
 			if (nodeSonWidth >= nodeWidth) {
 				
 				$(nodeSon).attr("width","95%");
