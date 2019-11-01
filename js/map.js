@@ -1958,7 +1958,7 @@ function ol_map() {
 			if (document.getElementById("layer-checkbox-"+layer_id).checked) {
 				
 				if (!document.getElementById("layer-checkbox-"+layer_id).layer) {
-					alert("createlayer");
+					
 					this.CreateLayer(layer_id,layer_wms,layer_name,clase_id);
 					
 				}else{
@@ -1997,9 +1997,9 @@ function ol_map() {
 				crossOrigin: 'anonymous'*/
 			})
 		});
-	
+		
 		this.map.ol_object.addLayer(document.getElementById("layer-checkbox-"+layer_id).layer);
-	
+		console.log(document.getElementById("layer-checkbox-"+layer_id).layer);
 		$("#layer-checkbox-"+layer_id).attr("data-added","1");
 		
 		document.getElementById("layer-checkbox-"+layer_id).layer.colorpicker = true;
