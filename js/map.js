@@ -12,6 +12,12 @@ function ol_map() {
 	this.map.layersBufferIndex = 0;
 	
 	this.map.geovisor = -1;
+		
+	$(".datepicker").datepicker({
+		
+		language: 'es'
+		
+	});
 	
 	// MAP SCRIPTS 
 	

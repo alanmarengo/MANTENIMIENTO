@@ -22,7 +22,7 @@
 					<div class="form-group">
 				
 						<i class="fa fa-calendar"></i>
-						<input type="date" placeholder="Desde..." name="adv-search-fdesde">
+						<input type="text" class="datepicker" placeholder="Desde..." name="adv-search-fdesde">
 					
 					</div>
 				
@@ -33,7 +33,7 @@
 					<div class="form-group">
 				
 						<i class="fa fa-calendar"></i>
-						<input type="date" placeholder="Hasta..." name="adv-search-fhasta">
+						<input type="text" class="datepicker" placeholder="Hasta..." name="adv-search-fhasta">
 					
 					</div>
 				
@@ -47,7 +47,7 @@
 				
 					<div class="form-group">
 
-						<?php echo DrawComboSimple("sub_proyecto_id","sub_proyecto_desc","mod_catalogo","sub_proyecto",true,"Proyecto","","adv-search-proyecto-combo","adv-search-proyecto-combo"); ?>
+						<?php echo DrawComboSimple("sub_proyecto_id","sub_proyecto_desc","mod_catalogo","sub_proyecto",true,"Proyecto","-1","adv-search-proyecto-combo","adv-search-proyecto-combo"); ?>
 					
 					</div>
 				
@@ -91,7 +91,7 @@
 				
 					<div class="form-group">			
 				
-						<?php echo DrawComboSimple("responsable_desc","responsable_desc","mod_catalogo","vw_estudio_responsable",true,"Responsable","","adv-search-responsable-combo","adv-search-responsable-combo"); ?>
+						<?php echo DrawComboSimple("responsable_desc","responsable_desc","mod_catalogo","vw_estudio_responsable",true,"Responsable","-1","adv-search-responsable-combo","adv-search-responsable-combo"); ?>
 					
 					</div>
 				
