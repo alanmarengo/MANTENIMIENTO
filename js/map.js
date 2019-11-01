@@ -173,8 +173,8 @@ function ol_map() {
 					
 				}else{
 					
-					//this.map_object.markersLayer.getSource().clear();
-					//this.map_object.markersLayer.getSource().addFeature(iconFeature);
+					this.map_object.markersLayer.getSource().clear();
+					this.map_object.markersLayer.getSource().addFeature(iconFeature);
 					
 				}
 			
