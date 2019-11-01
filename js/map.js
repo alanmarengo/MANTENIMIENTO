@@ -140,7 +140,7 @@ function ol_map() {
 			if (this.infoEnabled ) {
 			
 				var pos = evt.getPosition();
-			
+				console.log(pos);
 				var iconFeature = new ol.Feature({
 				  geometry: new ol.geom.Point(pos)
 				});
