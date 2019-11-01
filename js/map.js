@@ -856,13 +856,7 @@ function ol_map() {
 	
 	this.map.activateCoordinates = function() {
 		
-		if (this.deleteSelect) { this.ol_object.removeInteraction(this.deleteSelect); }
-		if (this.select) { this.ol_object.removeInteraction(this.select); }
-		if (this.modify) { this.ol_object.removeInteraction(this.modify); }
-		if (this.draw) { this.ol_object.removeInteraction(this.draw); }
-		if (this.medi_draw) { this.ol_object.removeInteraction(this.medi_draw); }
-		if (this.buffer_draw) { this.ol_object.removeInteraction(this.buffer_draw); }
-		if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }
+		this.disableTools();
 		
 		document.getElementById('coord-3857').innerHTML = "";
 		document.getElementById('coord-4326').innerHTML = "";
