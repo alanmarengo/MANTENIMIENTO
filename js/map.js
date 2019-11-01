@@ -154,7 +154,7 @@ function ol_map() {
 					anchorXUnits: 'fraction',
 					anchorYUnits: 'pixels',
 					opacity: 0.75,
-					src: './images/mapmarker.png'
+					src: './images/map-marker.png'
 					}))
 				});
 
