@@ -712,7 +712,7 @@ function ol_map() {
 	this.map.setupDisableTools = function() {
 			
 		$("body").on("keyup",function(event) {
-			
+			alert(event.which);
 			if (event.which == 27) {				
 			
 				this.disableTools();
