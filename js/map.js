@@ -1505,6 +1505,26 @@ function ol_map() {
 		
 	}
 	
+	this.map.fixLegend = function(layer_id) {
+		
+		var node = $("#layer-legend-"+layer_id);
+
+		var nodeWidth = $(node).width();
+
+		var nodeSon = $(node).children("img");
+		
+		var nodeSonWidth = $(node).children("img").width();
+		
+		console.log(nodeSonWidth + " :: " + nodeWidth);
+		
+		if (nodeSonWidth >= nodeWidth) {
+			
+			$(nodeSon).attr("width","95%");
+			
+		}
+		
+	}
+	
 	// PANEL SCRIPTS 
 	
 	this.panel.map = this.map;
@@ -2120,23 +2140,7 @@ function ol_map() {
 		
 		$(".layer-group[data-layer="+layer_id+"] .layer-label").bind("click",function() {
 			
-			$("#layer-legend-"+layer_id).html("<img src=\"" + layer_wms + "&version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer="+layer_name+"&format=image/png&\">");
-
-			var node = $("#layer-legend-"+layer_id);
-
-			var nodeWidth = $(node).width();
-
-			var nodeSon = $(node).children("img");
-			
-			var nodeSonWidth = $(node).children("img").width();
-			
-			console.log(nodeSonWidth + " :: " + nodeWidth);
-			
-			if (nodeSonWidth >= nodeWidth) {
-				
-				$(nodeSon).attr("width","95%");
-				
-			}
+			$("#layer-legend-"+layer_id).html("<img onload=\"geomap.map.fixLegend("+layer_id+")\"; src=\"" + layer_wms + "&version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer="+layer_name+"&format=image/png&\">");
 			
 		});
 		
