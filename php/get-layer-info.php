@@ -70,6 +70,12 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 	}
 	
 	$html .= "<div class=\"popup-layer-node jus-between\" data-state=\"0\">";
+		$html .= "<div class=\"popup-layer-node-icons ml-15\">";
+			$html .= "<div class=\"layer-icon\" title=\"Ver/Ocultar\">";
+				$html .= "<a href=\"#\" onclick=\"geomap.map.togglePopupLayers(this)\"><img src=\"./images/geovisor/icons/popup-layer-closed.png\" data-inactive=\"./images/geovisor/icons/popup-layer-closed.png\"
+				data-active=\"./images/geovisor/icons/popup-layer-opened.png\"></a>";
+			$html .= "</div>";
+		$html .= "</div>";
 		$html .= "<a href=\"#\" class=\"layer-label\" style=\"cursor:text\" alt=\"" . $layer_desc[$i] . "\">" . $layer_desc[$i] . "</a>";
 		$html .= "<div class=\"popup-layer-node-icons\">";
 			/*$html .= "<div class=\"layer-icon\">";
@@ -83,10 +89,6 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 			$html .= "<div class=\"layer-icon\" title=\"Ver Recursos Asociados\">";
 				$html .= "<a href=\"./mediateca.php?mode=10&mode_id=".$layer_id."&mode_label=".$layer_desc[$i]."\" target=\"_blank\"><img src=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\"
 				data-active=\"./images/geovisor/icons/popup-layer-recurso-active.png\"></a>";
-			$html .= "</div>";
-			$html .= "<div class=\"layer-icon\" title=\"Ver/Ocultar\">";
-				$html .= "<a href=\"#\" onclick=\"geomap.map.togglePopupLayers(this)\"><img src=\"./images/geovisor/icons/popup-layer-closed.png\" data-inactive=\"./images/geovisor/icons/popup-layer-closed.png\"
-				data-active=\"./images/geovisor/icons/popup-layer-opened.png\"></a>";
 			$html .= "</div>";
 		$html .= "</div>";
 	$html .= "</div>";
