@@ -157,22 +157,20 @@ function ol_map() {
 				iconFeature.setStyle(iconStyle);
 			
 				if (!this.map_object.markersLayer) {
-					
-					this.map_object.markersLayerSource = new ol.source.Vector({
-						features: [iconFeature]
-					});
 
 					this.map_object.markersLayer = new ol.layer.Vector({
 						visible:true,
-						source: this.map_object.markersLayerSource
+						source: new ol.source.Vector({
+							features: [iconFeature]
+						});
 					});
 					
 					this.map_object.ol_object.addLayer(this.map_object.markersLayer);
 					
 				}else{
 					
-					this.map_object.markersLayerSource.clear();
-					this.map_object.markersLayerSource.addFeature(iconFeature);
+					this.map_object.markersLayer.getSource().clear();
+					this.map_object.markersLayer.getSource().addFeature(iconFeature);
 					
 				}
 			
