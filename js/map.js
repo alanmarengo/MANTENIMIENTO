@@ -154,7 +154,7 @@ function ol_map() {
 					anchorXUnits: 'fraction',
 					anchorYUnits: 'pixels',
 					opacity: 0.75,
-					src: './images/icono-geovisores-br.png'
+					src: './images/mapmarker.png'
 					}))
 				});
 
