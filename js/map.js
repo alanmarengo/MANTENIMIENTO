@@ -1955,7 +1955,7 @@ function ol_map() {
 		
 		$("#layer-checkbox-"+layer_id).bind("click",function() {
 			
-			if (this.checked) {
+			if (document.getElementById("layer-checkbox-"+layer_id).checked) {
 				
 				if (!document.getElementById("layer-checkbox-"+layer_id).layer) {
 					
