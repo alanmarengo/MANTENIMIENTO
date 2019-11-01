@@ -160,7 +160,7 @@ function ol_map() {
 
 				iconFeature.setStyle(iconStyle);
 				
-				//if (!this.map_object.markersLayer) {
+				if (!this.map_object.markersLayer) {
 
 					this.map_object.markersLayer = new ol.layer.Vector({
 						visible:true,
@@ -171,12 +171,12 @@ function ol_map() {
 					
 					this.map_object.ol_object.addLayer(this.map_object.markersLayer);
 					
-				//}else{
+				}else{
 					
 					//this.map_object.markersLayer.getSource().clear();
 					//this.map_object.markersLayer.getSource().addFeature(iconFeature);
 					
-				//}
+				}
 			
 				$("#info-wrapper").empty();
 				
