@@ -139,7 +139,7 @@ function ol_map() {
 			
 			if (this.infoEnabled ) {
 			
-				var pos = evt.getPosition();
+				var pos = evt.coordinate;
 				
 				console.log("POS: " + pos);
 				
