@@ -139,8 +139,10 @@ function ol_map() {
 			
 			if (this.infoEnabled ) {
 			
+				var pos = evt.getPosition();
+			
 				var iconFeature = new ol.Feature({
-				  geometry: new ol.geom.Point(ol.proj.transform([evt.coordinate.lon,evt.coordinate.lat], 'EPSG:4326', 'EPSG:3857'))
+				  geometry: new ol.geom.Point(pos)
 				});
 
 			
@@ -155,8 +157,7 @@ function ol_map() {
 				});
 
 				iconFeature.setStyle(iconStyle);
-				console.log(ol.proj.transform([evt.coordinate.lon,evt.coordinate.lat], 'EPSG:4326', 'EPSG:3857'));
-				console.log(evt.coordinate);
+				
 				if (!this.map_object.markersLayer) {
 
 					this.map_object.markersLayer = new ol.layer.Vector({
