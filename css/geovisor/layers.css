@@ -353,6 +353,12 @@
 	
 }
 
+#layers-container .layer-container-body {
+	
+	width:98%;
+	
+}
+
 .layer-group .layer-header .pretty i , .active-layer-node .pretty i {
 
     color: #888;
