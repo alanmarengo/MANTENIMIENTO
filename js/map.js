@@ -1947,133 +1947,7 @@ function ol_map() {
 		
 		if (visible) {
 		
-			document.getElementById("layer-checkbox-"+layer_id).layer = new ol.layer.Tile({
-				name:layer_name,
-				visible:visible,
-				source: new ol.source.TileWMS({
-					url: layer_wms,
-					params: {
-						'LAYERS': layer_name,
-						'VERSION': '1.1.1',
-						'FORMAT': 'image/png',
-						'TILED': false,
-						'clase_id':clase_id,
-						'layer_id':layer_id
-					}/*,
-					crossOrigin: 'anonymous'*/
-				})
-			});
-		
-			this.map.ol_object.addLayer(document.getElementById("layer-checkbox-"+layer_id).layer);
-		
-			$("#layer-checkbox-"+layer_id).attr("data-added","1");
-			
-			document.getElementById("layer-checkbox-"+layer_id).layer.colorpicker = true;
-			
-			var colorpickerInput = $("#layer-colorpicker-inner-"+layer_id);
-			
-			colorpickerInput.spectrum({
-				color: "#ECC",
-				flat: true,
-				showInput: true,
-				className: "full-spectrum",
-				showInitial: true,
-				showPalette: true,
-				showSelectionPalette: true,
-				maxPaletteSize: 10,
-				preferredFormat: "hex",
-				localStorageKey: "spectrum.example",
-				chooseText: "Seleccionar",
-				cancelText: "Cancelar",
-				move: function (color) {
-				},
-				show: function () {
-
-				},
-				beforeShow: function () {
-
-				},
-				hide: function (color) {
-				},
-				change: function(color) {
-					
-					var layer = document.getElementById("layer-checkbox-"+layer_id).layer;
-					var layer_name = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-layer");
-					var type = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-layer-type");
-					var layer_types = ['',0,1,2,2,1,0,0];
-					var cl = String(color);
-						cl = cl.substring(1,cl.length).trim();
-					
-					s = new sldlib();
-					
-					s.set_geometria(layer_types[type]);
-					s.set_fill_color(cl);
-					s.set_border_color('CCCCCC');
-					s.set_border_size(1);
-					s.set_size(8.3444);
-					s.set_simbolo('circle');
-					s.set_titulo(layer_name);
-					
-					sld_result = s.sld_get(layer_id);
-					
-					layer.getSource().updateParams({
-						
-						'sld_body':sld_result
-						
-					})
-					
-					//layer.changed();
-					layer.getSource().tileCache.expireCache({});
-					layer.getSource().tileCache.clear();
-					layer.getSource().refresh();
-					
-				},
-
-				palette: [
-					["rgb(0, 0, 0)", "rgb(67, 67, 67)", "rgb(102, 102, 102)","rgb(255, 255, 255)",
-					"rgb(152, 0, 0)", "rgb(255, 0, 0)", "rgb(255, 153, 0)", "rgb(255, 255, 0)", "rgb(0, 255, 0)",
-					"rgb(0, 255, 255)", "rgb(74, 134, 232)", "rgb(0, 0, 255)", "rgb(153, 0, 255)", "rgb(255, 0, 255)",
-					"rgb(230, 184, 175)", "rgb(244, 204, 204)", "rgb(252, 229, 205)", "rgb(255, 242, 204)", "rgb(217, 234, 211)",
-					"rgb(208, 224, 227)", "rgb(201, 218, 248)", "rgb(207, 226, 243)", "rgb(217, 210, 233)", "rgb(234, 209, 220)",
-					"rgb(221, 126, 107)", "rgb(234, 153, 153)", "rgb(249, 203, 156)", "rgb(255, 229, 153)", "rgb(182, 215, 168)",
-					"rgb(162, 196, 201)", "rgb(164, 194, 244)", "rgb(159, 197, 232)", "rgb(180, 167, 214)", "rgb(213, 166, 189)",
-					"rgb(204, 65, 37)", "rgb(224, 102, 102)", "rgb(246, 178, 107)", "rgb(255, 217, 102)", "rgb(147, 196, 125)",
-					"rgb(118, 165, 175)", "rgb(109, 158, 235)", "rgb(111, 168, 220)", "rgb(142, 124, 195)", "rgb(194, 123, 160)",
-					"rgb(166, 28, 0)", "rgb(204, 0, 0)", "rgb(230, 145, 56)", "rgb(241, 194, 50)", "rgb(106, 168, 79)",
-					"rgb(69, 129, 142)", "rgb(60, 120, 216)", "rgb(61, 133, 198)", "rgb(103, 78, 167)", "rgb(166, 77, 121)",
-					"rgb(91, 15, 0)", "rgb(102, 0, 0)", "rgb(120, 63, 4)", "rgb(127, 96, 0)", "rgb(39, 78, 19)",
-					"rgb(12, 52, 61)", "rgb(28, 69, 135)", "rgb(7, 55, 99)", "rgb(32, 18, 77)", "rgb(76, 17, 48)"]
-				]
-			});
-			
-			$(".layer-group[data-layer="+layer_id+"] .layer-label").bind("click",function() {
-				
-				$("#layer-legend-"+layer_id).html("<img src=\"" + layer_wms + "&version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer="+layer_name+"&format=image/png&\">");
-
-			});
-			
-			
-			if ($("#nav-panel").attr("data-visible") == 0) {
-				
-				$("#layer-bullet").trigger("click");
-				
-			}
-			
-			$("#layer-checkbox-"+layer_id).attr("data-added","1");
-			
-			$("#transp-value-"+layer_id).val(100+"%");
-			
-			$( "#slider-range-"+layer_id ).slider({			
-				values: [ 100 ],
-				slide: function( event, ui ) {
-					$("#transp-value-"+layer_id).val(ui.values[ 0 ]+"%");
-					document.getElementById("layer-checkbox-"+layer_id).layer.setOpacity(ui.values[0]/100);				
-				}
-			});
-			
-			this.AddLayerActive(clase_id,layer_id,false,-1,-1);
-			this.map.updateLayerCount();
-			this.updateLayerCountPanelLabel(clase_id);
+			this.CreateLayer(layer_id,layer_wms,layer_name,clase_id);
 			
 		}
 		
@@ -2083,189 +1957,195 @@ function ol_map() {
 			
 			if (this.checked) {
 				
-				if (!this.layer) {
+				if (!document.getElementById("layer-checkbox-"+layer_id).layer) {
 					
-					document.getElementById("layer-checkbox-"+layer_id).layer = new ol.layer.Tile({
-						name:layer_name,
-						visible:true,
-						source: new ol.source.TileWMS({
-							url: layer_wms,
-							params: {
-								'LAYERS': layer_name,
-								'VERSION': '1.1.1',
-								'FORMAT': 'image/png',
-								'TILED': false,
-								'clase_id':clase_id,
-								'layer_id':layer_id
-							}/*,
-							crossOrigin: 'anonymous'*/
-						})
-					});
-				
-					this.map.ol_object.addLayer(document.getElementById("layer-checkbox-"+layer_id).layer);
-				
-					$("#layer-checkbox-"+layer_id).attr("data-added","1");
-					
-					document.getElementById("layer-checkbox-"+layer_id).layer.colorpicker = true;
-			
-					var colorpickerInput = $("#layer-colorpicker-inner-"+layer_id);
-					
-					colorpickerInput.spectrum({
-						color: "#ECC",
-						flat: true,
-						showInput: true,
-						className: "full-spectrum",
-						showInitial: true,
-						showPalette: true,
-						showSelectionPalette: true,
-						maxPaletteSize: 10,
-						preferredFormat: "hex",
-						localStorageKey: "spectrum.example",
-						chooseText: "Seleccionar",
-						cancelText: "Cancelar",
-						move: function (color) {
-						},
-						show: function () {
-
-						},
-						beforeShow: function () {
-
-						},
-						hide: function (color) {
-						},
-						change: function(color) {
-							
-							var layer = document.getElementById("layer-checkbox-"+layer_id).layer;
-							var layer_name = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-layer");
-							var type = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-layer-type");
-							var layer_types = ['',0,1,2,2,1,0,0];
-							var cl = String(color);
-								cl = cl.substring(1,cl.length).trim();
-							
-							s = new sldlib();
-							
-							s.set_geometria(layer_types[type]);
-							s.set_fill_color(cl);
-							s.set_border_color('CCCCCC');
-							s.set_border_size(1);
-							s.set_size(8.3444);
-							s.set_simbolo('circle');
-							s.set_titulo(layer_name);
-							
-							sld_result = s.sld_get(layer_id);
-							
-							layer.getSource().updateParams({
-								
-								'sld_body':sld_result
-								
-							})
-							
-							//layer.changed();
-							layer.getSource().tileCache.expireCache({});
-							layer.getSource().tileCache.clear();
-							layer.getSource().refresh();
-							
-						},
-
-						palette: [
-							["rgb(0, 0, 0)", "rgb(67, 67, 67)", "rgb(102, 102, 102)","rgb(255, 255, 255)",
-							"rgb(152, 0, 0)", "rgb(255, 0, 0)", "rgb(255, 153, 0)", "rgb(255, 255, 0)", "rgb(0, 255, 0)",
-							"rgb(0, 255, 255)", "rgb(74, 134, 232)", "rgb(0, 0, 255)", "rgb(153, 0, 255)", "rgb(255, 0, 255)",
-							"rgb(230, 184, 175)", "rgb(244, 204, 204)", "rgb(252, 229, 205)", "rgb(255, 242, 204)", "rgb(217, 234, 211)",
-							"rgb(208, 224, 227)", "rgb(201, 218, 248)", "rgb(207, 226, 243)", "rgb(217, 210, 233)", "rgb(234, 209, 220)",
-							"rgb(221, 126, 107)", "rgb(234, 153, 153)", "rgb(249, 203, 156)", "rgb(255, 229, 153)", "rgb(182, 215, 168)",
-							"rgb(162, 196, 201)", "rgb(164, 194, 244)", "rgb(159, 197, 232)", "rgb(180, 167, 214)", "rgb(213, 166, 189)",
-							"rgb(204, 65, 37)", "rgb(224, 102, 102)", "rgb(246, 178, 107)", "rgb(255, 217, 102)", "rgb(147, 196, 125)",
-							"rgb(118, 165, 175)", "rgb(109, 158, 235)", "rgb(111, 168, 220)", "rgb(142, 124, 195)", "rgb(194, 123, 160)",
-							"rgb(166, 28, 0)", "rgb(204, 0, 0)", "rgb(230, 145, 56)", "rgb(241, 194, 50)", "rgb(106, 168, 79)",
-							"rgb(69, 129, 142)", "rgb(60, 120, 216)", "rgb(61, 133, 198)", "rgb(103, 78, 167)", "rgb(166, 77, 121)",
-							"rgb(91, 15, 0)", "rgb(102, 0, 0)", "rgb(120, 63, 4)", "rgb(127, 96, 0)", "rgb(39, 78, 19)",
-							"rgb(12, 52, 61)", "rgb(28, 69, 135)", "rgb(7, 55, 99)", "rgb(32, 18, 77)", "rgb(76, 17, 48)"]
-						]
-					});
-					
-					/*$("#layer-colorpicker-inner-"+layer_id).ColorPicker({
-						flat: true, 
-						width:"100%",
-						onSubmit: function (hsb, hex, rgb) {
-							
-							//var layer_types = ["","GEOMETRY","LINESTRING","POLYGON","MULTIPOLYGON","MULTILINESTRING","POINT","MULTIPOINT");
-							var layer = document.getElementById("layer-checkbox-"+layer_id).layer;
-							var color = hex;
-							var layer_name = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-layer");
-							var type = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-layer-type");
-							var layer_types = ['',0,1,2,2,1,0,0];
-							
-							s = new sldlib();
-							
-							s.set_geometria(layer_types[type]);
-							s.set_fill_color("#"+hex);
-							s.set_border_color('#CCCCCC');
-							s.set_border_size(1);
-							s.set_size(8.3444);
-							s.set_simbolo('circle');
-							s.set_titulo(layer_name);
-							
-							sld_result = s.sld_get();
-							
-							layer.getSource().updateParams({
-								
-								'sld_body':sld_result
-								
-							})
-							
-							//layer.changed();
-							layer.getSource().tileCache.expireCache({});
-							layer.getSource().tileCache.clear();
-							layer.getSource().refresh();
-							
-						}
-					});*/
-					
-					$(".layer-group[data-layer="+layer_id+"] .layer-label").bind("click",function() {
-						
-						$("#layer-legend-"+layer_id).html("<img src=\"" + layer_wms + "&version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer="+layer_name+"&format=image/png&\">");
-
-					});
-					
-					
-					if ($("#nav-panel").attr("data-visible") == 0) {
-						
-						$("#layer-bullet").trigger("click");
-						
-					}
-					
-					$("#layer-checkbox-"+layer_id).attr("data-added","1");
-					
-					$("#transp-value-"+layer_id).val(100+"%");
-					
-					$( "#slider-range-"+layer_id ).slider({			
-						values: [ 100 ],
-						slide: function( event, ui ) {
-							$("#transp-value-"+layer_id).val(ui.values[ 0 ]+"%");
-							document.getElementById("layer-checkbox-"+layer_id).layer.setOpacity(ui.values[0]/100);				
-						}
-					});
-					
-					this.AddLayerActive(clase_id,layer_id,false,-1,-1);
-					this.map.updateLayerCount();
-					this.updateLayerCountPanelLabel(clase_id);
+					this.CreateLayer(layer_id,layer_wms,layer_name,clase_id);
 					
 				}else{
 				
-					this.layer.setVisible(true);
+					document.getElementById("layer-checkbox-"+layer_id).layer.setVisible(true);
 				
 				}
 				
 			}else{
 				
-				this.layer.setVisible(false);
+				document.getElementById("layer-checkbox-"+layer_id).layer.setVisible(false);
 				
 			}
 			
-		});
+		}.bind(this));
 			
 		//$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+		
+	}
+	
+	this.panel.CreateLayer = function(layer_id,layer_wms,layer_name,clase_id) {
+					
+		document.getElementById("layer-checkbox-"+layer_id).layer = new ol.layer.Tile({
+			name:layer_name,
+			visible:true,
+			source: new ol.source.TileWMS({
+				url: layer_wms,
+				params: {
+					'LAYERS': layer_name,
+					'VERSION': '1.1.1',
+					'FORMAT': 'image/png',
+					'TILED': false,
+					'clase_id':clase_id,
+					'layer_id':layer_id
+				}/*,
+				crossOrigin: 'anonymous'*/
+			})
+		});
+	
+		this.map.ol_object.addLayer(document.getElementById("layer-checkbox-"+layer_id).layer);
+	
+		$("#layer-checkbox-"+layer_id).attr("data-added","1");
+		
+		document.getElementById("layer-checkbox-"+layer_id).layer.colorpicker = true;
+
+		var colorpickerInput = $("#layer-colorpicker-inner-"+layer_id);
+		
+		colorpickerInput.spectrum({
+			color: "#ECC",
+			flat: true,
+			showInput: true,
+			className: "full-spectrum",
+			showInitial: true,
+			showPalette: true,
+			showSelectionPalette: true,
+			maxPaletteSize: 10,
+			preferredFormat: "hex",
+			localStorageKey: "spectrum.example",
+			chooseText: "Seleccionar",
+			cancelText: "Cancelar",
+			move: function (color) {
+			},
+			show: function () {
+
+			},
+			beforeShow: function () {
+
+			},
+			hide: function (color) {
+			},
+			change: function(color) {
+				
+				var layer = document.getElementById("layer-checkbox-"+layer_id).layer;
+				var layer_name = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-layer");
+				var type = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-layer-type");
+				var layer_types = ['',0,1,2,2,1,0,0];
+				var cl = String(color);
+					cl = cl.substring(1,cl.length).trim();
+				
+				s = new sldlib();
+				
+				s.set_geometria(layer_types[type]);
+				s.set_fill_color(cl);
+				s.set_border_color('CCCCCC');
+				s.set_border_size(1);
+				s.set_size(8.3444);
+				s.set_simbolo('circle');
+				s.set_titulo(layer_name);
+				
+				sld_result = s.sld_get(layer_id);
+				
+				layer.getSource().updateParams({
+					
+					'sld_body':sld_result
+					
+				})
+				
+				//layer.changed();
+				layer.getSource().tileCache.expireCache({});
+				layer.getSource().tileCache.clear();
+				layer.getSource().refresh();
+				
+			},
+
+			palette: [
+				["rgb(0, 0, 0)", "rgb(67, 67, 67)", "rgb(102, 102, 102)","rgb(255, 255, 255)",
+				"rgb(152, 0, 0)", "rgb(255, 0, 0)", "rgb(255, 153, 0)", "rgb(255, 255, 0)", "rgb(0, 255, 0)",
+				"rgb(0, 255, 255)", "rgb(74, 134, 232)", "rgb(0, 0, 255)", "rgb(153, 0, 255)", "rgb(255, 0, 255)",
+				"rgb(230, 184, 175)", "rgb(244, 204, 204)", "rgb(252, 229, 205)", "rgb(255, 242, 204)", "rgb(217, 234, 211)",
+				"rgb(208, 224, 227)", "rgb(201, 218, 248)", "rgb(207, 226, 243)", "rgb(217, 210, 233)", "rgb(234, 209, 220)",
+				"rgb(221, 126, 107)", "rgb(234, 153, 153)", "rgb(249, 203, 156)", "rgb(255, 229, 153)", "rgb(182, 215, 168)",
+				"rgb(162, 196, 201)", "rgb(164, 194, 244)", "rgb(159, 197, 232)", "rgb(180, 167, 214)", "rgb(213, 166, 189)",
+				"rgb(204, 65, 37)", "rgb(224, 102, 102)", "rgb(246, 178, 107)", "rgb(255, 217, 102)", "rgb(147, 196, 125)",
+				"rgb(118, 165, 175)", "rgb(109, 158, 235)", "rgb(111, 168, 220)", "rgb(142, 124, 195)", "rgb(194, 123, 160)",
+				"rgb(166, 28, 0)", "rgb(204, 0, 0)", "rgb(230, 145, 56)", "rgb(241, 194, 50)", "rgb(106, 168, 79)",
+				"rgb(69, 129, 142)", "rgb(60, 120, 216)", "rgb(61, 133, 198)", "rgb(103, 78, 167)", "rgb(166, 77, 121)",
+				"rgb(91, 15, 0)", "rgb(102, 0, 0)", "rgb(120, 63, 4)", "rgb(127, 96, 0)", "rgb(39, 78, 19)",
+				"rgb(12, 52, 61)", "rgb(28, 69, 135)", "rgb(7, 55, 99)", "rgb(32, 18, 77)", "rgb(76, 17, 48)"]
+			]
+		});
+		
+		/*$("#layer-colorpicker-inner-"+layer_id).ColorPicker({
+			flat: true, 
+			width:"100%",
+			onSubmit: function (hsb, hex, rgb) {
+				
+				//var layer_types = ["","GEOMETRY","LINESTRING","POLYGON","MULTIPOLYGON","MULTILINESTRING","POINT","MULTIPOINT");
+				var layer = document.getElementById("layer-checkbox-"+layer_id).layer;
+				var color = hex;
+				var layer_name = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-layer");
+				var type = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-layer-type");
+				var layer_types = ['',0,1,2,2,1,0,0];
+				
+				s = new sldlib();
+				
+				s.set_geometria(layer_types[type]);
+				s.set_fill_color("#"+hex);
+				s.set_border_color('#CCCCCC');
+				s.set_border_size(1);
+				s.set_size(8.3444);
+				s.set_simbolo('circle');
+				s.set_titulo(layer_name);
+				
+				sld_result = s.sld_get();
+				
+				layer.getSource().updateParams({
+					
+					'sld_body':sld_result
+					
+				})
+				
+				//layer.changed();
+				layer.getSource().tileCache.expireCache({});
+				layer.getSource().tileCache.clear();
+				layer.getSource().refresh();
+				
+			}
+		});*/
+		
+		$(".layer-group[data-layer="+layer_id+"] .layer-label").bind("click",function() {
+			
+			$("#layer-legend-"+layer_id).html("<img src=\"" + layer_wms + "&version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer="+layer_name+"&format=image/png&\">");
+
+		});
+		
+		
+		if ($("#nav-panel").attr("data-visible") == 0) {
+			
+			$("#layer-bullet").trigger("click");
+			
+		}
+		
+		$("#layer-checkbox-"+layer_id).attr("data-added","1");
+		
+		$("#transp-value-"+layer_id).val(100+"%");
+		
+		$( "#slider-range-"+layer_id ).slider({			
+			values: [ 100 ],
+			slide: function( event, ui ) {
+				$("#transp-value-"+layer_id).val(ui.values[ 0 ]+"%");
+				document.getElementById("layer-checkbox-"+layer_id).layer.setOpacity(ui.values[0]/100);				
+			}
+		});
+		
+		this.AddLayerActive(clase_id,layer_id,false,-1,-1);
+		this.map.updateLayerCount();
+		this.updateLayerCountPanelLabel(clase_id);
 		
 	}
 	
