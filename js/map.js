@@ -1622,7 +1622,7 @@ function ol_map() {
 		$("#btn-bus-reset").on("click",function() {
 			
 			$("#frm-adv-search input[type=text]").val("");
-			$("#frm-adv-search select").val(0);
+			$("#frm-adv-search select").val(-1);
 			$("#frm-adv-search select").selectpicker("refresh");
 
 			$("#popup-basic-filters input[type=checkbox]:checked").trigger("click");
