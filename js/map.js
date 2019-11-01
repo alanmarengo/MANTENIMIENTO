@@ -143,7 +143,7 @@ function ol_map() {
 				  geometry: new ol.geom.Point(ol.proj.transform([evt.coordinate.lon,evt.coordinate.lat], 'EPSG:4326', 'EPSG:3857'))
 				});
 
-
+			
 				var iconStyle = new ol.style.Style({
 					image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
 					anchor: [0.5, 46],
@@ -155,6 +155,7 @@ function ol_map() {
 				});
 
 				iconFeature.setStyle(iconStyle);
+				console.log(ol.proj.transform([evt.coordinate.lon,evt.coordinate.lat], 'EPSG:4326', 'EPSG:3857'));
 				console.log(evt.coordinate);
 				if (!this.map_object.markersLayer) {
 
