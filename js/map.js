@@ -140,7 +140,9 @@ function ol_map() {
 			if (this.infoEnabled ) {
 			
 				var pos = evt.getPosition();
-				console.log(pos);
+				
+				console.log("POS: " + pos);
+				
 				var iconFeature = new ol.Feature({
 				  geometry: new ol.geom.Point(pos)
 				});
@@ -1552,8 +1554,6 @@ function ol_map() {
 		
 		var nodeSonWidth = $(node).children("img").width();
 		
-		console.log(nodeSonWidth + " :: " + nodeWidth);
-		
 		if (nodeSonWidth >= nodeWidth) {
 			
 			$(nodeSon).attr("width","95%");
@@ -2056,7 +2056,7 @@ function ol_map() {
 		});
 		
 		this.map.ol_object.addLayer(document.getElementById("layer-checkbox-"+layer_id).layer);
-		console.log(document.getElementById("layer-checkbox-"+layer_id).layer);
+		
 		$("#layer-checkbox-"+layer_id).attr("data-added","1");
 		
 		document.getElementById("layer-checkbox-"+layer_id).layer.colorpicker = true;
