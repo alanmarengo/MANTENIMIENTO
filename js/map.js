@@ -707,9 +707,9 @@ function ol_map() {
 		
 		$(".toggleable-tool-active").removeClass("toggleable-tool-active");
 		
-		if (this.map.markersLayer) {
+		if (this.markersLayer) {
 		
-			this.map.markersLayer.getSource().clear();
+			this.markersLayer.getSource().clear();
 		
 		}
 		
