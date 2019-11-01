@@ -465,13 +465,21 @@
 	
 }
 
-.active-layer-node .active-layer-node-icons,.popup-layer-node .popup-layer-node-icons {
+.active-layer-node .active-layer-node-icons {
 	
 	margin: 5px 3px 3px 0;
 	display: inline-block;
 	vertical-align: top;
 	position: absolute;
 	right: -10px;
+	
+}
+
+.popup-layer-node .popup-layer-node-icons {
+	
+	margin: 5px 3px 3px 0;
+	display: inline-block;
+	vertical-align: top;
 	
 }
 
