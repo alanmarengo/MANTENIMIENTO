@@ -496,7 +496,12 @@
 
 .popup-layer-node .popup-layer-node-icons {
 	width: auto;
-	margin-right:15px;
+	/*margin-right:15px;*/
+}
+
+.popup-layer-node-icons:last-child {
+    position: absolute;
+    right: 0px;
 }
 
 .active-layer-node .remove-layer-icon-ca,.popup-layer-node .remove-layer-icon-ca {
