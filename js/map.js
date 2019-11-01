@@ -166,7 +166,7 @@ function ol_map() {
 					});
 
 					this.map_object.markersLayer = new ol.layer.Vector({
-					  source: vectorSource
+					  source: this.map_object.markersLayerSource
 					});
 					
 					this.map_object.addLayer(this.map_object.markersLayer);
