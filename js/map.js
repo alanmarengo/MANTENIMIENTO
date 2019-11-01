@@ -2367,7 +2367,13 @@ function ol_map() {
 				
 			}
 						
-		}	
+		}
+		
+		if (this.map.markersLayer) {
+			
+			this.map.markersLayer.setZIndex(j+10000);
+			
+		}
 		
 	}
 	
