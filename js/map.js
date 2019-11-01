@@ -710,7 +710,6 @@ function ol_map() {
 		if (this.map.markersLayer) {
 		
 			this.map.markersLayer.getSource().clear();
-			this.map.markersLayer.getSource().addFeature(iconFeature);
 		
 		}
 		
