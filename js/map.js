@@ -169,7 +169,7 @@ function ol_map() {
 					  source: this.map_object.markersLayerSource
 					});
 					
-					this.map_object.addLayer(this.map_object.markersLayer);
+					this.map_object.ol_object.addLayer(this.map_object.markersLayer);
 					
 				}else{
 					
