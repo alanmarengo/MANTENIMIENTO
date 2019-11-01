@@ -2122,6 +2122,20 @@ function ol_map() {
 			
 			$("#layer-legend-"+layer_id).html("<img src=\"" + layer_wms + "&version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer="+layer_name+"&format=image/png&\">");
 
+			var node = $("#layer-legend-"+layer_id);
+
+			var nodeWidth = $(node).width();
+
+			var nodeSon = $(node).children("img");
+			
+			var nodeSonWidth = $(node).children("img").width();
+			
+			if (nodeSonWidth >= nodeWidth) {
+				
+				$(nodeSon).attr("width","95%");
+				
+			}
+			
 		});
 		
 		
