@@ -88,7 +88,7 @@
 				}
 			}
 							
-			<?php } ?>
+		<?php } ?>
 			
 			<?php if ((isset($_GET["ca"])) && (!empty($_GET["ca"]))) { ?> 
 				
