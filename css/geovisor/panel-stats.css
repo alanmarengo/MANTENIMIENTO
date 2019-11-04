@@ -19,6 +19,9 @@
 	z-index:180000 !Important;
 	display:flex;
 	flex-direction:column;
+	-webkit-box-shadow: 9px 0px 20px -8px rgba(0,0,0,0.75);
+	-moz-box-shadow: 9px 0px 20px -8px rgba(0,0,0,0.75);
+	box-shadow: 9px 0px 20px -8px rgba(0,0,0,0.75);
 	
 }
 
