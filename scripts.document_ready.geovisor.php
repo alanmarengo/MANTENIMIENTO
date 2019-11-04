@@ -117,7 +117,7 @@
 		var layer_id = <?php echo $_GET["id"]; ?>;
 		var clase_id = $(".layer-group[data-layer="+layer_id+"]").first().attr("data-cid");
 		
-		geomap.panel.AddLayer(clase_id,layer_id,true);
+		geomap.panel.AddLayer(clase_id,layer_id,true,true);
 		geomap.panel.SetLayerActive(layer_id);
 		
 		var layer = document.getElementById("layer-checkbox-"+layer_id).layer;
