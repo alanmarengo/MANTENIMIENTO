@@ -8,11 +8,11 @@
             </div>
 
             <div class="col-md-12 top-buttons">
-                <a href="#" data-target="#descripcion">Descripción</a>
-                <a href="#" data-target="#estructura">Estructura del PDGA</a>
-                <a href="#" data-target="#temas">Temas claves</a>
-                <a href="#" data-target="#responsabilidades">Responsabilidades y seguimientos</a>
-                <a href="#" data-target="#articulacion">ARTICULACIÓN INSTITUCIONAL</a>
+                <a id="link-descripcion" href="#" data-target="#descripcion">Descripción</a>
+                <a id="link-estructura" href="#" data-target="#estructura">Estructura del PDGA</a>
+                <a id="link-temas" href="#" data-target="#temas">Temas claves</a>
+                <a id="link-responsabilidades" href="#" data-target="#responsabilidades">Responsabilidades y seguimientos</a>
+                <a id="link-articulacion" href="#" data-target="#articulacion">ARTICULACIÓN INSTITUCIONAL</a>
             </div>
         </div>
 
@@ -216,16 +216,18 @@ $(document).ready(function() {
     $('map').imageMapResize();
 
     $("map area").click( function () {
-        var id = $(this).attr('id')
+        showFicha($(this).attr('id'));
+        return false;
+    });
+
+    function showFicha(id) {
         var item = caminito.find(x => x.id === id);
         
         $('#uxPopTitulo').html(item.titulo);
         $('#uxPopTexto').html(item.texto);
         $('#uxVerFicha').data('target', '#_' + item.id);
         $('#uxFicha').modal('show');
-
-        return false;
-    });
+    }
 
     // ARMADO DE LAS FICHAS
     caminito.forEach(item => {
@@ -261,11 +263,13 @@ $(document).ready(function() {
     if (target) {
         // LINKS MENU TOP
         $('#link-' + target).trigger('click');
+    }
 
-        // LINKS FICHAS
-        $('html, body').animate({
-            scrollTop: $('#_' + target).offset().top - 200
-        }, 500)
+    let pop = $.urlParam('pop');
+    if (pop) {
+        // APERTURA POP DE CAMINITO DESDE QS
+        $('#link-temas').trigger('click');
+        showFicha(pop);
     }
 
     $('.pop-button2').hover( 

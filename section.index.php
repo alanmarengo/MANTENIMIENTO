@@ -23,7 +23,7 @@
             </a>
 
             <!-- 2 -->
-            <a href="./page_pdga.php?target=glaciares" class="carousel-item">
+            <a href="./page_pdga.php?pop=glaciares" class="carousel-item">
                 <img class="d-block w-100" src="./images/index/s2.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>Protección de glaciares</p>
@@ -35,7 +35,7 @@
             </a>
 
             <!-- 3 -->
-            <a href="./page_pdga.php?target=aves" class="carousel-item">
+            <a href="./page_pdga.php?pop=aves" class="carousel-item">
                 <img class="d-block w-100" src="./images/index/s3.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>Macá tobiano</p>
@@ -47,7 +47,7 @@
             </a>
 
             <!-- 4 -->
-            <a href="./page_pdga.php?target=peces" class="carousel-item">
+            <a href="./page_pdga.php?pop=peces" class="carousel-item">
                 <img class="d-block w-100" src="./images/index/s4.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>Peces del Santa Cruz</p>
@@ -71,7 +71,7 @@
             </a>
 
             <!-- 6 -->
-            <a href="./page_pdga.php?target=aspectos" class="carousel-item">
+            <a href="./page_pdga.php?pop=aspectos" class="carousel-item">
                 <img class="d-block w-100" src="./images/index/s6.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>Desarrollo regional</p>
