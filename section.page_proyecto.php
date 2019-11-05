@@ -39,7 +39,7 @@ La presa Cóndor Cliff, de materiales sueltos con pantalla impermeable de hormig
 A 65 km aguas abajo del cierre anteriormente mencionado, se ubica la presa La Barrancosa. Esta presa también es del tipo CFRD y se desarrolla en una longitud de 2.445 m alcanzando una altura de 41 m. En este caso, la casa de máquinas se ubica sobre la margen derecha y aloja 3 turbinas del tipo Kaplan de 120 MW cada una. Considerando que el caudal turbinable es de 1.260 m3/s, la generación anual estimada es de 1.903 GWh/año. Contempla un regimen de operación de base, con un caudal permanente igual al saliente del Lago Argentino.
                 </div>
                 <div class="col-md-6 text-justify">
-                    <img src="./images/proyecto_descripcion.jpg" style="width: 100%; height: auto;" />
+                    <img src="./images/proyecto_descripcion.png" style="width: 100%; height: auto;" />
                 </div>
             </div>
         </div>

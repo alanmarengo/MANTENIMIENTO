@@ -362,12 +362,12 @@ $(document).ready(function() {
                     let n = model.noticias[base + i];
                     html += `
                             <a target="_blank" href="${n.path_pdf}" class="noticia-item" style="width: ${100 / model.noticiasxslide}% ; background-image: url(${n.path_img}?${Math.floor((Math.random() * 10000) + 1)});">
-                                <div class="noticia-caption" style="width: ${100 / model.noticiasxslide}% ;">
-                                    <p style="margin-bottom: 20px;">
+                                <span class="noticia-fecha">
+                                    ${moment(n.fecha).format('DD/MM/YYYY')}
+                                </span>
+                                <div class="noticia-caption" style="width: ${100 / model.noticiasxslide}%; text;align: center;">
+                                    <p style="margin-bottom: 20px; text-align: center;">
                                         ${n.titulo}
-                                    </p>
-                                    <p style="font-size: 14px; font-weight: normal; text-align: right; margin-bottom: 4px;">
-                                        ${moment(n.fecha).format('DD [de] MMMM [de] YYYY')}
                                     </p>
                                 </div>                
                             </a>
