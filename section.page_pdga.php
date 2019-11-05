@@ -258,8 +258,15 @@ $(document).ready(function() {
     });
 
     let target = $.urlParam('target');
-    if (target)
+    if (target) {
+        // LINKS MENU TOP
         $('#link-' + target).trigger('click');
+
+        // LINKS FICHAS
+        $('html, body').animate({
+            scrollTop: $('#_' + target).offset().top - 200
+        }, 500)
+    }
 
     $('.pop-button2').hover( 
         function () {

@@ -20,8 +20,7 @@
                 </div>
             </a>
 
-            <!-- Link: PGA-Estructura del PGA-Glaciares -->
-            <a href="#" class="carousel-item">
+            <a href="./page_pdga.php?target=glaciares" class="carousel-item">
                 <img class="d-block w-100" src="./images/index/s2.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>Protección de glaciares</p>
@@ -32,8 +31,7 @@
                 </div>
             </a>
 
-            <!-- Link: PGA-Estructura del PGA-Aves -->
-            <a href="#" class="carousel-item">
+            <a href="./page_pdga.php?target=aves" class="carousel-item">
                 <img class="d-block w-100" src="./images/index/s3.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>Macá tobiano</p>
@@ -44,8 +42,7 @@
                 </div>
             </a>
 
-            <!-- Link: PGA-Estructura del PGA-Ictiofauna -->
-            <a href="#" class="carousel-item">
+            <a href="./page_pdga.php?target=peces" class="carousel-item">
                 <img class="d-block w-100" src="./images/index/s4.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>Peces del Santa Cruz</p>
@@ -56,8 +53,7 @@
                 </div>
             </a>
 
-            <!-- Link: PGA-ARTICULACIÓN INSTITUCIONAL -->
-            <a href="#" class="carousel-item">
+            <a href="./page_pdga.php?target=articulacion" class="carousel-item">
                 <img class="d-block w-100" src="./images/index/s5.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>Participación pública</p>
@@ -68,8 +64,7 @@
                 </div>
             </a>
 
-            <!-- Link: PGA-Estructura del PGA-Aspectos socioeconómicos -->
-            <a href="#" class="carousel-item">
+            <a href="./page_pdga.php?target=apectos" class="carousel-item">
                 <img class="d-block w-100" src="./images/index/s6.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>Desarrollo regional</p>
