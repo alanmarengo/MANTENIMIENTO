@@ -8,12 +8,12 @@
             </div>
 
             <div class="col-md-12 top-buttons">
-                <a href="#" data-target="#descripcion">Descripción</a>
-                <a href="#" data-target="#optimizacion">Optimización</a>
-                <a href="#" data-target="#condor">Condor Cliff</a>
-                <a href="#" data-target="#barrancosa">La Barrancosa</a>
-                <a href="#" data-target="#linea">Línea Eléctrica de Alta Tensión</a>
-                <a href="#" data-target="#antena">Antenas/Receptores SHF (MW)</a>
+                <a id="link-descripcion" href="#" data-target="#descripcion">Descripción</a>
+                <a id="link-optimizacion" href="#" data-target="#optimizacion">Optimización</a>
+                <a id="link-condor" href="#" data-target="#condor">Condor Cliff</a>
+                <a id="link-barrancosa" href="#" data-target="#barrancosa">La Barrancosa</a>
+                <a id="link-linea" href="#" data-target="#linea">Línea Eléctrica de Alta Tensión</a>
+                <a id="link-antena" href="#" data-target="#antena">Antenas/Receptores SHF (MW)</a>
             </div>
         </div>
 

@@ -11,9 +11,9 @@
                 <!-- <a href="#" data-target="#descripcion">Descripción</a> -->
                 <!-- <a href="#" data-target="#optimizacion">VISOR DEL MODELO 2D</a> -->
                 <!-- <a href="#" data-target="#evolucion">Evolución y optimización</a> -->
-                <a href="#" data-target="#condor">Condor Cliff</a>
-                <a href="#" data-target="#barrancosa">La Barrancosa</a>
-                <a href="#" data-target="#leat">Línea de Alta Tensión</a>
+                <a id="link-condor" href="#" data-target="#condor">Condor Cliff</a>
+                <a id="link-barrancosa" href="#" data-target="#barrancosa">La Barrancosa</a>
+                <a id="link-leat" href="#" data-target="#leat">Línea de Alta Tensión</a>
                 <!-- <a href="#" data-target="#antena">Antenas</a> -->
             </div>
         </div>

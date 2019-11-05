@@ -8,9 +8,9 @@
             </div>
 
             <div class="col-md-12 top-buttons">
-                <a href="#" data-target="#historia">HISTORIA</a>
-                <a href="#" data-target="#linea-tiempo">LíNEA DE TIEMPO</a>
-                <a href="#" data-target="#audiencia-publica">AUDIENCIA PúBLICA</a>
+                <a id="link-historia" href="#" data-target="#historia">HISTORIA</a>
+                <a id="link-linea-tiempo" href="#" data-target="#linea-tiempo">LíNEA DE TIEMPO</a>
+                <a id="link-audiencia-publica" href="#" data-target="#audiencia-publica">AUDIENCIA PúBLICA</a>
             </div>
         </div>
 

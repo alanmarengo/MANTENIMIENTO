@@ -8,10 +8,10 @@
             </div>
 
             <div class="col-md-12 top-buttons">
-                <a href="#" data-target="#descripcion">Descripción</a>
-                <a href="#" data-target="#funcionalidades">FUNCIONALIDADES Y APLICACIONES</a>
-                <a href="#" data-target="#tratamiento">TRATAMIENTO DE LA INFORMACION</a>
-                <a href="#" data-target="#tecnologias">TECNOLOGIAS APLICADAS</a>
+                <a id="link-descripcion" href="#" data-target="#descripcion">Descripción</a>
+                <a id="link-funcionalidades" href="#" data-target="#funcionalidades">FUNCIONALIDADES Y APLICACIONES</a>
+                <a id="link-tratamiento" href="#" data-target="#tratamiento">TRATAMIENTO DE LA INFORMACION</a>
+                <a id="link-tecnologias" href="#" data-target="#tecnologias">TECNOLOGIAS APLICADAS</a>
             </div>
         </div>
 
