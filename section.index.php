@@ -9,6 +9,8 @@
             <li data-target="#main-slider" data-slide-to="5"></li>
         </ol>
         <div class="carousel-inner">
+
+            <!-- 1 -->
             <a href="./page_proyecto.php" class="carousel-item active">
                 <img class="d-block w-100" src="./images/index/s1.jpg" alt="...">
                 <div class="carousel-caption">
@@ -20,6 +22,7 @@
                 </div>
             </a>
 
+            <!-- 2 -->
             <a href="./page_pdga.php?target=glaciares" class="carousel-item">
                 <img class="d-block w-100" src="./images/index/s2.jpg" alt="...">
                 <div class="carousel-caption">
@@ -31,6 +34,7 @@
                 </div>
             </a>
 
+            <!-- 3 -->
             <a href="./page_pdga.php?target=aves" class="carousel-item">
                 <img class="d-block w-100" src="./images/index/s3.jpg" alt="...">
                 <div class="carousel-caption">
@@ -42,6 +46,7 @@
                 </div>
             </a>
 
+            <!-- 4 -->
             <a href="./page_pdga.php?target=peces" class="carousel-item">
                 <img class="d-block w-100" src="./images/index/s4.jpg" alt="...">
                 <div class="carousel-caption">
@@ -53,7 +58,8 @@
                 </div>
             </a>
 
-            <a href="./page_pdga.php?target=articulacion" class="carousel-item">
+            <!-- 5 -->
+            <a href="./page_endesarrollo.php?q=participación pública" class="carousel-item">
                 <img class="d-block w-100" src="./images/index/s5.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>Participación pública</p>
@@ -64,7 +70,8 @@
                 </div>
             </a>
 
-            <a href="./page_pdga.php?target=apectos" class="carousel-item">
+            <!-- 6 -->
+            <a href="./page_pdga.php?target=aspectos" class="carousel-item">
                 <img class="d-block w-100" src="./images/index/s6.jpg" alt="...">
                 <div class="carousel-caption">
                     <p>Desarrollo regional</p>
