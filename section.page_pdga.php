@@ -4,7 +4,7 @@
     <div class="row">
         <div class="section-sticky">
             <div class="col-md-12 page-title">
-                Plan director de gestión ambiental - PDGA.
+                Plan director de gestión ambiental - PDGA
             </div>
 
             <div class="col-md-12 top-buttons">
@@ -160,8 +160,10 @@ Especialidades involucradas,  asesores internacionales.
                 </div>
             </div>
         </div>
-    </div>
 
+        <div id="uxFichas">
+        </div>
+    </div>
 
     <div class="modal fade" id="uxFicha" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -176,13 +178,8 @@ Especialidades involucradas,  asesores internacionales.
                                     </a>
                                 </div>
 
-                                <div id="uxPopTitulo" class="col-md-11" style="text-transform: uppercase; padding: 0px 0px 10px 0px; font-weight: bolder; color: #8f2e4f;">
+                                <div id="uxPopTitulo" class="col-md-12" style="text-transform: uppercase; padding: 0px 0px 10px 0px; font-weight: bolder; color: #8f2e4f;">
                                     uxPopTitulo
-                                </div>
-                                <div class="col-md-1">
-                                    <a href="#" class="close" style="font-size: 14px;">
-                                        <i class="fa fa-download"></i>
-                                    </a>
                                 </div>
                             </div>
                             <div class="row pop-ficha">
@@ -191,7 +188,7 @@ Especialidades involucradas,  asesores internacionales.
                                         uxPopTexto
                                     </div>
                                     <div style="text-align: center;">
-                                        <a href="#" class="pop-button">
+                                        <a id="uxVerFicha" href="#" class="pop-button" data-dismiss="modal">
                                             <i class="fa fa-file-alt"></i>
                                             VER FICHA
                                         </a>
@@ -224,9 +221,30 @@ $(document).ready(function() {
         
         $('#uxPopTitulo').html(item.titulo);
         $('#uxPopTexto').html(item.texto);
+        $('#uxVerFicha').data('target', '#_' + item.id);
         $('#uxFicha').modal('show');
 
         return false;
+    });
+
+    // ARMADO DE LAS FICHAS
+    caminito.forEach(item => {
+        let html = `
+            <div class="col-md-12 ficha">
+                <a id="_${item.id}"></a>    
+                <h3>${item.titulo}</h3>
+                <p>${item.texto}</p>
+            </div>
+        `;
+
+        $('#uxFichas').append(html);
+    });
+
+    $('#uxVerFicha').on('click', function () {
+        let target = $(this).data('target');
+        $('html, body').animate({
+            scrollTop: $(target).offset().top - 200
+        }, 500)
     });
 
     $('.section-sticky a').on('click', function() {

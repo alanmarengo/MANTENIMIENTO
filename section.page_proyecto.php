@@ -4,7 +4,7 @@
     <div class="row">
         <div class="section-sticky">
             <div class="col-md-12 page-title">
-                Proyecto - AHRSC
+                Aprovechamientos Hidroeléctricos del Río Santa Cruz
             </div>
 
             <div class="col-md-12 top-buttons">
@@ -183,12 +183,7 @@ A 65 km aguas abajo del cierre anteriormente mencionado, se ubica la presa La Ba
                         Órgano de seguridad, destinada a realizar manejo de caudales excedentes. Se equipa con compuertas.
                     </div>
                     <p>
-                        La presa es del tipo CFRD (concrete face rockfill dam), es decir, una presa de materiales sueltos con pantalla de hormigón, construida con materiales naturales procedentes de yacimientos cercanos al lugar. Se desarrolla en una longitud de 1613 m. El coronamiento posee un ancho de 12 m a un nivel de 180,6 m.s.n.m. Sobre el mismo se dispone de una calzada pavimentada de 7,30 m, con su correspondiente vereda de 2,00 m. Hacia aguas arriba, se coloca un muro rompeolas que también cumple la función de baranda. El volumen de terraplén es de aproximadamente 10,6 millones de metros cúbicos.
-                        <br />
-                        La altura de la presa desde su coronamiento hasta el fondo del cauce es de 68 m. Se han adoptado taludes con pendientes de 1V:1,5H, conforme a experiencias obtenidas de la construcción de presas similares.
-                        <br />
-                        En particular, esta presa se funda sobre el aluvión del río. Por este motivo, se ejecutará un muro colado de hormigón armado de 0,80 m de espesor ejecutado por medio de paneles de 6,00 m de ancho con el objetivo de efectuar el cierre del escurrimiento subterráneo. Se prevé que este muro penetre en la roca una profundidad de 7 m.
-                        <br />
+                        El vertedero se ubica sobre la margen izquierda, en el extremo del cierre. La longitud es de 115 m, la cota de la cresta se encuentra a cota 167,50 msnm, y se compone de 4 vanos. La capacidad de descarga total es de 4.163 m3/s. Posee compuertas de sector que se accionan mediante mecanismos hidráulicos. A su vez, se dispone de recatas que permiten la colocación de ataguías para realizar tareas de mantenimiento. Sobre el vertedero se encuentra un puente de servicio.                    
                     </p>
 
                     <h5>Casa de máquinas.</h5>
@@ -280,14 +275,7 @@ A 65 km aguas abajo del cierre anteriormente mencionado, se ubica la presa La Ba
                         Estructura destinada a conducir los caudales necesarios para la generación eléctrica a través de la tubería forzada hacia la casa de máquinas 
                     </div>
                     <p>
-                        La casa de máquinas se localiza hacia la izquierda del vertedero. Es una estructura de hormigón, con cubierta metálica. Se compone de 3 módulos de 28 m cada uno, donde la toma se encuentra incorporada a la casa de máquinas. En este caso, se prevé la instalación de 3 turbinas tipo Kaplan de 120 MW cada una. 
-                        <br/>
-                        Se encuentra equipada con un juego de rejas inclinada que se moviliza mediante un pórtico grúa. El mismo también se utiliza para la colocación del juego de ataguías de mantenimiento. El cierre de emergencia se efectúa mediante una compuerta plana equipada con ruedas y accionada mediante un sistema hidráulico.
-                        <br/>
-                        La sala de generadores se encuentra a cota 84,25 msnm. El acceso se realiza desde el extremo derecho, donde ubica también la nave de montaje. Sobre las 3 unidades y la nave de montaje, se encuentra el puente grúa que se utiliza principalmente para el montaje y el posterior mantenimiento de las unidades. En el sector exterior, se encuentran los transformadores y el pórtico grúa que opera para la colocación y retiro del juego de ataguías cuando se quiere cerrar el tubo de aspiración.
-                        <br/>
-                        A cotas inferiores, se encuentran las galerías eléctricas y mecánicas. La funcionalidad y el equipamiento que se dispone es equivalente al mencionado para la casa de máquinas de CC.
-                        <br/>
+                        La obra de toma tiene la función de captar el agua y posteriormente, mediante las tuberías forzadas conducirla hacia la casa de máquinas. Se compone de 5 módulos de 25 m de ancho, uno por cada turbina. En cada módulo de esta estructura se instala una reja inclinada, que evita la intrusión de objetos sólidos hacia las máquinas. Inmediatamente aguas abajo, se presenta un vano que posibilita colocar ataguías para realizar tareas de mantenimiento. A continuación, se encuentra el cierre de emergencia, constituido por compuertas planas con ruedas que tienen capacidad para cortar el flujo. La misma se acciona mediante un pistón hidráulico. Luego, el caudal recorre una transición desde una sección rectangular hacia la sección circular de 9 m de diámetro, coincidente con las dimensiones de la tubería forzada, que posee una longitud de aproximadamente 100 m hasta su conexión con las turbinas ubicadas en la casa de máquinas.
                     </p>
 
                     <h5>Descargadores de fondo.</h5>
@@ -409,28 +397,9 @@ A 65 km aguas abajo del cierre anteriormente mencionado, se ubica la presa La Ba
             <h4>Línea eléctrica de alta tensión</h4>
 
             <div class="row" style="padding-left: 2em; padding-right: 2em;">
-                <div class="col-md-6 parrafos" style="padding-top: 20px;">
+                <div class="col-md-12 parrafos" style="padding-top: 20px;">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.                    
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                </div>
-                <div class="col-md-6 parrafos">
-                    <h5>LOREM IPSUM</h5>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                    </p>
-                    
-                    <h5>LOREM IPSUM</h5>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                    </p>
-                    
-                    <h5>LOREM IPSUM</h5>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Los aprovechamientos estarán conectados al Sistema Argentino de Interconexión (SADI) a través de una línea de extra alta tensión (LEAT) de 500 kV. Tanto la central CC como la LB poseen estaciones transformadoras de 500 kV, el voltaje en el cual se trasmite la electricidad a largas distancias. Adicionalmente, se instalarán los equipos necesarios en las estaciones Río Santa Cruz, Río Santa Cruz Norte y Puerto Madryn.  La LEAT tendrá su punto de partida en la playa de maniobras de CC y estará conectada con la instalación correspondiente en LB. La longitud de este tramo es de aproximadamente 71 km. A partir de este punto, recorre aproximadamente 102 km hasta conectarse a la estación transformadora 500/132 kV Río Santa Cruz, cercana a la localidad de Comandante Luis Piedra Buena
                     </p>
                 </div>
 

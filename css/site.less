@@ -818,10 +818,6 @@ img[usemap], map area{
         font-size: 14px;
     }
 
-    #uxFilters {
-        min-height: 500px;
-    }
-
     #uxFiltersChecked {
         padding: 10px 15px 6px 4px; 
 
@@ -841,8 +837,16 @@ img[usemap], map area{
     }
 
     #uxFilters {
-        padding: 10px 0px 10px 10px; 
+        //padding: 10px 0px 10px 10px; 
+        padding-right: 10px;
         color: @filter_color;
+        min-height: 480px;
+
+        // -webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+        // -moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+        // box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+
+
 
         .card {
             border: none;
@@ -875,6 +879,7 @@ img[usemap], map area{
             margin: 0px;
             padding: 4px 14px 8px 14px;
             color: @filter_color;
+            cursor: pointer;
         }
 
         .list-group-item {
@@ -1070,6 +1075,15 @@ img[usemap], map area{
         background-color: #eee;
         margin-bottom: 3px;
     }
+
+    .media-border:hover {
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        padding: 3px 3px 0px 3px;
+        background-color: #eee;
+        margin-bottom: 3px;
+    }
+
 
     .media-info {
         font-size: .8em; 

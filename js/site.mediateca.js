@@ -229,11 +229,13 @@ $(document).ready(function() {
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="preview-image preview-pop"
+                        title="Ver imagen"
                         src="${model.ficha.linkimagen}" 
                         data-media="${model.ficha.categoria_media}"
                         style="
                             width: 100%;
                             height:260px;
+                            cursor: pointer;
                             background-image: url(${model.ficha.linkimagen});
                             background-repeat: no-repeat;
                             background-position: center center;
@@ -262,6 +264,12 @@ $(document).ready(function() {
                         scrollTop: $('#uxPreview_' + row).offset().top - 300
                     }, 500);
 
+                    $("[title]").tooltipster({
+                        animation: 'fade',
+                        delay: 200,
+                        theme: 'tooltipster-default',
+                        trigger: 'hover'
+                    });
                 });
             });
 
@@ -274,8 +282,6 @@ $(document).ready(function() {
                 $(target).find('.preview-image').attr('src', link);
                 $(target).find('.preview-image').data('media', media);
             });
-
-
 
             //-----------------------------------------------------
             function init() {
@@ -530,6 +536,13 @@ $(document).ready(function() {
                 pagerRender('#uxPager2');
 
                 $('.pinned').hcSticky('refresh');
+
+                $("[title]").tooltipster({
+                    animation: 'fade',
+                    delay: 200,
+                    theme: 'tooltipster-default',
+                    trigger: 'hover'
+                });
             }
 
             function clearPage() {
@@ -741,14 +754,14 @@ $(document).ready(function() {
                 <a class="filters-checked btn btn-warning btn-xs" ${nombre != model.filters.mode_label ? `title="${model.filters.mode_label}"` : ``} data-estudio="1">Estudio: ${nombre} <i class="fa fa-times" style="padding: 0px 6px;"></i></a>
             `)
 
-            if (nombre = model.filters.mode_label) {
-                $("[title]").tooltipster({
-                    animation: 'fade',
-                    delay: 200,
-                    theme: 'tooltipster-default',
-                    trigger: 'hover'
-                });
-            }
+            // if (nombre = model.filters.mode_label) {
+            //     $("[title]").tooltipster({
+            //         animation: 'fade',
+            //         delay: 200,
+            //         theme: 'tooltipster-default',
+            //         trigger: 'hover'
+            //     });
+            // }
         }
 
         $.each(model.filters.groups, function (gindex, group) {

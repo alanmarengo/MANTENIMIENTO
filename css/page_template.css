@@ -378,3 +378,12 @@
 #page_pdga .pop-ficha .pop-buttons .button2-indicadores {
   background-image: url('../images/icono-indicadores-relleno.png');
 }
+#page_pdga #uxFichas {
+  padding: 20px 80px;
+}
+#page_pdga #uxFichas h3 {
+  margin-bottom: 10px;
+}
+#page_pdga #uxFichas .ficha {
+  margin-bottom: 40px;
+}
