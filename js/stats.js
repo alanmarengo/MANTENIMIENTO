@@ -920,6 +920,8 @@ function ol_stats() {
 		
 		document.getElementById("gm-stats-mediawrapper").innerHTML = "";
 		
+		document.getElementById("veg-btn").href = "./geovisor.php?qid="+query_id;
+		
 		sld_result = '';		
 		
 		/**** Generar el SLD ****/

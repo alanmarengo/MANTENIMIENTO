@@ -853,6 +853,58 @@ function ol_map() {
 		
 	}
 	
+	this.map.mapear = function(query_id) {
+		
+		sld_result = '';		
+		
+		/**** Generar el SLD ****/
+		s = new sldlib();
+		capa = s.sld_get_intervalos(query_id); /* Retorna la capa que corresponde por tipo de geometria */
+		
+		var layer = new ol.layer.Tile({
+				visible:true,
+				singleTile: true,
+				source: new ol.source.TileWMS({
+					url: "http://observatorio.ieasa.com.ar:8080/geoserver/ows?",
+					params: {
+						'LAYERS': capa,//'intervalos_polygons',
+						'id':query_id,
+						//'VERSION': '1.1.1',
+						'FORMAT': 'image/png',
+						'TILED': false,
+						'SLD':'http://'+window.location.hostname+'/sld/'+query_id+'.sld' /* EL SLD CREADO ES SIEMPRE EL ID_MAPEO.SLD */,
+						'viewparams':'id:'+query_id
+					}
+				})
+			});
+		
+		this.map.ol_object.addLayer(layer);
+		
+		var reqExtent = $.ajax({
+			
+			async:false,
+			url:"./php/get-layer-extent-mapeo.php",
+			type:"post",
+			data:{query_id:query_id},
+			success:function(d){}
+				
+		});
+		
+		var js = JSON.parse(reqExtent.responseText);
+		
+		var extent = ol.proj.transformExtent(
+			[js.minx,js.miny,js.maxx,js.maxy],
+			"EPSG:3857", "EPSG:3857"
+		);
+		
+		this.map.ol_object.getView().fit(extent,{duration:1000});
+		this.map.ol_object.updateSize();
+		this.map.ol_object.render();
+		
+		this.AddLayerActiveFromStats(query_id,layer);
+		
+	}
+	
 	this.map.deactivateCoordinates = function() {
 		
 		this.ol_object.removeControl(this.mouse_position_3857);
@@ -2233,6 +2285,7 @@ function ol_map() {
 	}
 	
 	this.panel.bufferIndex = 0;
+	this.panel.statsLayerIndex = 0;
 	
 	this.panel.AddLayerActive = function(clase_id,layer_id,isBuffer,bufferLayer,distance) {
 		
@@ -2363,6 +2416,143 @@ function ol_map() {
 		container.appendChild(node);
 		
 		this.RefreshActiveZIndex();
+		
+	}
+	
+	this.panel.AddLayerActiveFromStats = function(query_id,layer) {
+		
+		$("#nolayer-active").remove();
+		
+		var dataLidLabel = "data-lid";
+		
+		var container = document.getElementById("info-capasactivas-inner");
+		
+		var node = document.createElement("div");
+			node.className = "active-layer-node";	
+			node.setAttribute(dataLidLabel,layer_id);
+			node.setAttribute("data-cid",clase_id);
+			
+		var nodeicons = document.createElement("div");
+			nodeicons.className = "active-layer-node-icons";
+			
+		var nodeupdown = document.createElement("div");
+			nodeupdown.className = "updown-layer-icon-ca";
+			
+		var nodeup = document.createElement("div");
+			nodeup.className = "up-layer-icon-ca";
+			nodeup.node = node;
+			nodeup.panel = this;
+			nodeup.onclick = function() {
+				
+				$(this.node).prev(".active-layer-node").before(node);				
+				this.panel.RefreshActiveZIndex();
+				
+			}
+			
+		var nodedown = document.createElement("div");
+			nodedown.className = "down-layer-icon-ca";
+			nodedown.node = node;
+			nodedown.panel = this;
+			nodedown.onclick = function() {
+				
+				$(this.node).next(".active-layer-node").after(node);				
+				this.panel.RefreshActiveZIndex();
+				
+			}
+			
+			nodeupdown.appendChild(nodeup);
+			nodeupdown.appendChild(nodedown);
+			
+		var nodezoomext = document.createElement("div");
+			nodezoomext.className = "layer-icon zoomext-layer-icon-ca";
+		
+		var nodezoomexta = document.createElement("a");
+			nodezoomexta.href = "javascript:void(0);";
+			
+		var nodezoomextimg = document.createElement("img");
+			nodezoomextimg.src = "./images/geovisor/icons/layer-bar-zoom.png";
+			
+			nodezoomext.appendChild(nodezoomexta);
+			nodezoomext.appendChild(nodezoomextimg);
+			
+		var noderemove = document.createElement("a");
+			noderemove.className = "simple-tree-pm-button remove-layer-icon-ca";
+			
+		var noderemovei = document.createElement("i");
+			noderemovei.className = "fa fa-trash popup-panel-tree-item-icon-toggler popup-icon";
+			
+			noderemove.appendChild(noderemovei);
+			
+			nodeicons.appendChild(nodeupdown);
+			nodeicons.appendChild(nodezoomext);
+			nodeicons.appendChild(noderemove);
+		
+		var abr = document.createElement("div");
+			abr.className = "abr";
+			abr.style.width = "32px";
+			abr.style.backgroundColor = "rgb(245, 245, 245)";
+			abr.style.color = "rgb(136, 136, 136)";
+			abr.innerHTML = "<span>DT</span>";
+			abr.id = "active-layer-fromstats-"+this.statsLayerIndex;
+		
+			//$(".abr").first().clone().attr("id",new_id).addClass("abr-cloned").width(32).css("background-color","rgb(245, 245, 245)").css("color","rgb(136, 136, 136)").html("<span>DT</span>").appendTo(node);
+		
+		var pretty = document.createElement("div");
+			pretty.className = "pretty p-default p-curve p-toggle";
+			
+		var layerCheck = document.createElement("input");
+			layerCheck.className = "layer-checkbox";
+			layerCheck.layer = layer;
+			layerCheck.onclick = function() {
+				
+				if (layer.getVisible()) {
+					
+					layer.setVisible(false);
+						
+				}else{
+						
+					layer.setVisible(true);
+						
+				}
+				
+			}
+			
+		var layerCheckDivon = document.createElement("div");
+			layerCheckDivon.className = "state p-success p-on";
+			layerCheckDivon.title = "Mostrar Capa";
+			
+		var layerCheckDivonIcon = document.createElement("i");
+			layerCheckDivonIcon.className = "fa fa-eye";
+			
+			layerCheckDivon.appendChild(layerCheckDivonIcon);
+			
+		var layerCheckDivoff = document.createElement("div");
+			layerCheckDivoff.className = "state p-danger p-off";
+			layerCheckDivoff.title = "Ocultar Capa";
+			
+		var layerCheckDivoffIcon = document.createElement("i");
+			layerCheckDivoffIcon.className = "fa fa-eye-slash";
+			
+			layerCheckDivoff.appendChild(layerCheckDivoffIcon);
+			
+			pretty.appendChild(layerCheck);
+			pretty.appendChild(layerCheckDivon);
+			pretty.appendChild(layerCheckDivoff);
+			
+		var layerLabel = document.createElement("a");
+			layerLabel.className = "layer-label";
+			layerLabel.style.cursor = "text";
+			layerLabel.innerHTML = "Capa mapeada desde módulo estadístico";			
+			
+			node.appendChild(abr);
+			node.appendChild(pretty);
+			node.appendChild(nodeicons);
+			
+			this.statsLayerIndex++;
+			
+			container.appendChild(node);
+		
+			this.RefreshActiveZIndex();
 		
 	}
 	

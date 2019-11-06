@@ -88,7 +88,13 @@
 				}
 			}
 							
-		<?php } ?>
+			<?php } ?>
+		
+			<?php if (isset($_GET["qid"])) { ?>
+			
+			geomap.map.mapear(<?php echo $_GET["qid"]; ?>);
+							
+			<?php } ?>
 			
 			<?php if ((isset($_GET["ca"])) && (!empty($_GET["ca"]))) { ?> 
 				
