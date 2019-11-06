@@ -853,6 +853,58 @@ function ol_map() {
 		
 	}
 	
+	this.map.mapear = function(query_id) {
+		
+		sld_result = '';		
+		
+		/**** Generar el SLD ****/
+		s = new sldlib();
+		capa = s.sld_get_intervalos(query_id); /* Retorna la capa que corresponde por tipo de geometria */
+		
+		var layer = new ol.layer.Tile({
+				visible:true,
+				singleTile: true,
+				source: new ol.source.TileWMS({
+					url: "http://observatorio.ieasa.com.ar:8080/geoserver/ows?",
+					params: {
+						'LAYERS': capa,//'intervalos_polygons',
+						'id':query_id,
+						//'VERSION': '1.1.1',
+						'FORMAT': 'image/png',
+						'TILED': false,
+						'SLD':'http://'+window.location.hostname+'/sld/'+query_id+'.sld' /* EL SLD CREADO ES SIEMPRE EL ID_MAPEO.SLD */,
+						'viewparams':'id:'+query_id
+					}
+				})
+			});
+		
+		this.map.ol_object.addLayer(layer);
+		
+		var reqExtent = $.ajax({
+			
+			async:false,
+			url:"./php/get-layer-extent-mapeo.php",
+			type:"post",
+			data:{query_id:query_id},
+			success:function(d){}
+				
+		});
+		
+		var js = JSON.parse(reqExtent.responseText);
+		
+		var extent = ol.proj.transformExtent(
+			[js.minx,js.miny,js.maxx,js.maxy],
+			"EPSG:3857", "EPSG:3857"
+		);
+		
+		this.map.ol_object.getView().fit(extent,{duration:1000});
+		this.map.ol_object.updateSize();
+		this.map.ol_object.render();
+		
+		this.AddLayerActiveFromStats(query_id,layer);
+		
+	}
+	
 	this.map.deactivateCoordinates = function() {
 		
 		this.ol_object.removeControl(this.mouse_position_3857);
@@ -2233,6 +2285,7 @@ function ol_map() {
 	}
 	
 	this.panel.bufferIndex = 0;
+	this.panel.statsLayerIndex = 0;
 	
 	this.panel.AddLayerActive = function(clase_id,layer_id,isBuffer,bufferLayer,distance) {
 		
@@ -2355,6 +2408,126 @@ function ol_map() {
 				
 			}).appendTo(nodeicons);
 			
+			node.appendChild(nodeicons);
+			
+					
+		}		
+			
+		container.appendChild(node);
+		
+		this.RefreshActiveZIndex();
+		
+	}
+	
+	this.panel.AddLayerActiveFromStats = function(query_id,layer) {
+		
+		$("#nolayer-active").remove();
+		
+		var dataLidLabel = "data-lid";
+		
+		var container = document.getElementById("info-capasactivas-inner");
+		
+		var node = document.createElement("div");
+			node.className = "active-layer-node";	
+			node.setAttribute(dataLidLabel,layer_id);
+			node.setAttribute("data-cid",clase_id);
+			
+		var nodeicons = document.createElement("div");
+			nodeicons.className = "active-layer-node-icons";
+			
+		var nodeupdown = document.createElement("div");
+			nodeupdown.className = "updown-layer-icon-ca";
+			
+		var nodeup = document.createElement("div");
+			nodeup.className = "up-layer-icon-ca";
+			nodeup.node = node;
+			nodeup.panel = this;
+			nodeup.onclick = function() {
+				
+				$(this.node).prev(".active-layer-node").before(node);				
+				this.panel.RefreshActiveZIndex();
+				
+			}
+			
+		var nodedown = document.createElement("div");
+			nodedown.className = "down-layer-icon-ca";
+			nodedown.node = node;
+			nodedown.panel = this;
+			nodedown.onclick = function() {
+				
+				$(this.node).next(".active-layer-node").after(node);				
+				this.panel.RefreshActiveZIndex();
+				
+			}
+			
+			nodeupdown.appendChild(nodeup);
+			nodeupdown.appendChild(nodedown);
+		
+		var abr = document.createElement("div");
+			abr.className = "abr";
+			abr.style.width = "32px";
+			abr.style.backgroundColor = "rgb(245, 245, 245)";
+			abr.style.color = "rgb(136, 136, 136)";
+			abr.innerHTML = "<span>DT</span>";
+		
+			
+		
+			//$(".abr").first().clone().attr("id",new_id).addClass("abr-cloned").width(32).css("background-color","rgb(245, 245, 245)").css("color","rgb(136, 136, 136)").html("<span>DT</span>").appendTo(node);
+			
+			this.statsLayerIndex++;
+			
+			sublayer_id = "layer-stats-" + this.statsLayerIndex;
+			
+			var nodeSample = $(".layer-checkbox").first();
+			
+			$(".layer-checkbox").first().parent().clone().attr("id",sublayer_id).on("click",function() {
+				
+				if (layer.getVisible()) {
+					
+					layer.setVisible(false);
+						
+				}else{
+						
+					layer.setVisible(true);
+						
+				}
+				
+			}).appendTo(node);
+			
+			var text = "Capa de mapeo estadístico";
+			
+			$("#layer-checkbox-"+layer_id).parent().next().clone().attr("onclick","").text(text).css("cursor","text").appendTo(node);	
+			
+			nodeicons.appendChild(nodeupdown);
+			
+			$("#layer-checkbox-"+layer_id).parent().next().next().clone().removeAttr("id").removeAttr("onclick").addClass("remove-layer-icon-ca").bind("click",function() {
+				
+				if (isBuffer) {
+					
+					geomap.map.ol_object.removeLayer(layerBuffer);
+					$("#"+sublayer_id).parent().remove();
+				
+				}else{
+					
+					$("#remove-layer-icon-"+layer_id).trigger("click");
+					
+				}
+				
+				if ($("#info-capasactivas-inner").children(".active-layer-node").length == 0) {
+					
+					$("#info-capasactivas-inner").html("<p id=\"nolayer-active\" class=\"p20\">No hay capas activas, para agregar capas al mapa utilice el botón correspondiente ubicado en la barra de herramientas.</p>");
+					
+				}
+				
+			}).appendTo(nodeicons);		
+			
+			$("#layer-icon-zoomext-"+layer_id).clone().removeAttr("id").addClass("zoomext-layer-icon-ca").bind("click",function() {
+				
+				$("#layer-icon-zoomext-"+layer_id).trigger("click");
+				
+			}).appendTo(nodeicons);
+			
+			node.appendChild(abr);
 			node.appendChild(nodeicons);
 			
 					

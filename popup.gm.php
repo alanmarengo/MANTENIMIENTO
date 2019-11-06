@@ -117,7 +117,7 @@
 			
 			<div class="jus-right row jump-row" id="btn-ver-geovisor">
 				<div style="width:200px;">
-					<a href="#" class="black-button">VER EN GEOVISOR</a>
+					<a href="javascript:void(0);" class="black-button" id="veg-btn" target="_blank">VER EN GEOVISOR</a>
 				</div>
 			</div>		
 			
