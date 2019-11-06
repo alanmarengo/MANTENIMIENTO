@@ -22,7 +22,6 @@
         <!---------------------------------------------->
         <div class="col-md-12 section-a" style="padding-left: 8em; padding-right: 8em;">
             <a id="descripcion"></a>
-            <h3>DESCRIPCIóN</h3>
 
             <div class="row">
                 <div class="col-md-6 text-justify">
