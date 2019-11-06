@@ -149,9 +149,9 @@
                     <br />
                     <br />
                     <br />
-                    <a target="_blank" href="./media/componentes_cc.docx">Descripción de componentes</a>
+                    <a target="_blank" href="./fichas/componentes_cc.docx">Descripción de componentes</a>
                     <br />
-                    <a target="_blank" href="./media/ficha_tecnica_cc.pdf">Ficha técnica</a>
+                    <a target="_blank" href="./fichas/ficha_tecnica_cc.pdf">Ficha técnica</a>
                     <br />
                 </div>
             </div>
@@ -216,9 +216,9 @@
                     <br />
                     <br />
                     <br />
-                    <a target="_blank" href="./media/componentes_lb.docx">Descripción de componentes</a>
+                    <a target="_blank" href="./fichas/componentes_lb.docx">Descripción de componentes</a>
                     <br />
-                    <a target="_blank" href="./media/ficha_tecnica_lb.pdf">Ficha técnica</a>
+                    <a target="_blank" href="./fichas/ficha_tecnica_lb.pdf">Ficha técnica</a>
                     <br />
                 </div>
             </div>
