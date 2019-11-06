@@ -2462,6 +2462,30 @@ function ol_map() {
 			
 			nodeupdown.appendChild(nodeup);
 			nodeupdown.appendChild(nodedown);
+			
+		var nodezoomext = document.createElement("div");
+			nodezoomext.className = "layer-icon zoomext-layer-icon-ca";
+		
+		var nodezoomexta = document.createElement("a");
+			nodezoomexta.href = "javascript:void(0);";
+			
+		var nodezoomextimg = document.createElement("img");
+			nodezoomextimg.src = "./images/geovisor/icons/layer-bar-zoom.png";
+			
+			nodezoomext.appendChild(nodezoomexta);
+			nodezoomext.appendChild(nodezoomextimg);
+			
+		var noderemove = document.createElement("a");
+			noderemove.className = "simple-tree-pm-button remove-layer-icon-ca";
+			
+		var noderemovei = document.createElement("i");
+			noderemovei.className = "fa fa-trash popup-panel-tree-item-icon-toggler popup-icon";
+			
+			noderemove.appendChild(noderemovei);
+			
+			nodeicons.appendChild(nodeupdown);
+			nodeicons.appendChild(nodezoomext);
+			nodeicons.appendChild(noderemove);
 		
 		var abr = document.createElement("div");
 			abr.className = "abr";
@@ -2469,18 +2493,17 @@ function ol_map() {
 			abr.style.backgroundColor = "rgb(245, 245, 245)";
 			abr.style.color = "rgb(136, 136, 136)";
 			abr.innerHTML = "<span>DT</span>";
-		
-			
+			abr.id = "active-layer-fromstats-"+this.statsLayerIndex;
 		
 			//$(".abr").first().clone().attr("id",new_id).addClass("abr-cloned").width(32).css("background-color","rgb(245, 245, 245)").css("color","rgb(136, 136, 136)").html("<span>DT</span>").appendTo(node);
+		
+		var pretty = document.createElement("div");
+			pretty.className = "pretty p-default p-curve p-toggle";
 			
-			this.statsLayerIndex++;
-			
-			sublayer_id = "layer-stats-" + this.statsLayerIndex;
-			
-			var nodeSample = $(".layer-checkbox").first();
-			
-			$(".layer-checkbox").first().parent().clone().attr("id",sublayer_id).on("click",function() {
+		var layerCheck = document.createElement("input");
+			layerCheck.className = "layer-checkbox";
+			layerCheck.layer = layer;
+			layerCheck.onclick = function() {
 				
 				if (layer.getVisible()) {
 					
@@ -2492,50 +2515,44 @@ function ol_map() {
 						
 				}
 				
-			}).appendTo(node);
+			}
 			
-			var text = "Capa de mapeo estadístico";
+		var layerCheckDivon = document.createElement("div");
+			layerCheckDivon.className = "state p-success p-on";
+			layerCheckDivon.title = "Mostrar Capa";
 			
-			$("#layer-checkbox-"+layer_id).parent().next().clone().attr("onclick","").text(text).css("cursor","text").appendTo(node);	
+		var layerCheckDivonIcon = document.createElement("i");
+			layerCheckDivonIcon.className = "fa fa-eye";
 			
-			nodeicons.appendChild(nodeupdown);
+			layerCheckDivon.appendChild(layerCheckDivonIcon);
 			
-			$("#layer-checkbox-"+layer_id).parent().next().next().clone().removeAttr("id").removeAttr("onclick").addClass("remove-layer-icon-ca").bind("click",function() {
-				
-				if (isBuffer) {
-					
-					geomap.map.ol_object.removeLayer(layerBuffer);
-					$("#"+sublayer_id).parent().remove();
-				
-				}else{
-					
-					$("#remove-layer-icon-"+layer_id).trigger("click");
-					
-				}
-				
-				if ($("#info-capasactivas-inner").children(".active-layer-node").length == 0) {
-					
-					$("#info-capasactivas-inner").html("<p id=\"nolayer-active\" class=\"p20\">No hay capas activas, para agregar capas al mapa utilice el botón correspondiente ubicado en la barra de herramientas.</p>");
-					
-				}
-				
-			}).appendTo(nodeicons);		
+		var layerCheckDivoff = document.createElement("div");
+			layerCheckDivoff.className = "state p-danger p-off";
+			layerCheckDivoff.title = "Ocultar Capa";
 			
-			$("#layer-icon-zoomext-"+layer_id).clone().removeAttr("id").addClass("zoomext-layer-icon-ca").bind("click",function() {
-				
-				$("#layer-icon-zoomext-"+layer_id).trigger("click");
-				
-			}).appendTo(nodeicons);
+		var layerCheckDivoffIcon = document.createElement("i");
+			layerCheckDivoffIcon.className = "fa fa-eye-slash";
+			
+			layerCheckDivoff.appendChild(layerCheckDivoffIcon);
+			
+			pretty.appendChild(layerCheck);
+			pretty.appendChild(layerCheckDivon);
+			pretty.appendChild(layerCheckDivoff);
+			
+		var layerLabel = document.createElement("a");
+			layerLabel.className = "layer-label";
+			layerLabel.style.cursor = "text";
+			layerLabel.innerHTML = "Capa mapeada desde módulo estadístico";			
 			
 			node.appendChild(abr);
+			node.appendChild(pretty);
 			node.appendChild(nodeicons);
 			
-					
-		}		
+			this.statsLayerIndex++;
 			
-		container.appendChild(node);
+			container.appendChild(node);
 		
-		this.RefreshActiveZIndex();
+			this.RefreshActiveZIndex();
 		
 	}
 	
