@@ -1,7 +1,7 @@
 <div class="row" id="page_mediateca">
     <div class="page-title-sticky">
         <div class="col-md-12 page-title">
-            Recursos en Mediateca
+            Mediateca
         </div>
 
         <div class="row" style="background-color: #ddd;">
