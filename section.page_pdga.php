@@ -195,10 +195,10 @@ Especialidades involucradas,  asesores internacionales.
                                     </div>
                                 </div>
                                 <div class="col-md-1 pop-buttons">
-                                    <a href="#" class="pop-button2 button2-mediateca" title="MEDIATECA" data-key="mediateca"></a>
-                                    <a href="#" class="pop-button2 button2-geovisores" title="GEOVISORES" data-key="geovisores"></a>
-                                    <a href="#" class="pop-button2 button2-estadisticas" title="ESTADÍSTICAS" data-key="estadisticas"></a>
-                                    <a href="#" class="pop-button2 button2-indicadores" title="INDICADORES" data-key="indicadores"></a>
+                                    <a id="uxLinkMediateca" href="#" class="pop-button2 button2-mediateca" title="MEDIATECA" data-key="mediateca"></a>
+                                    <a id="uxLinkGeovisores" href="#" class="pop-button2 button2-geovisores" title="GEOVISORES" data-key="geovisores"></a>
+                                    <a id="uxLinkEstadisticas" href="#" class="pop-button2 button2-estadisticas" title="ESTADÍSTICAS" data-key="estadisticas"></a>
+                                    <a id="uxLinkIndicadores" href="#" class="pop-button2 button2-indicadores" title="INDICADORES" data-key="indicadores"></a>
                                 </div>
                             </div>
                         </div>
@@ -226,6 +226,8 @@ $(document).ready(function() {
         $('#uxPopTitulo').html(item.titulo);
         $('#uxPopTexto').html(item.texto);
         $('#uxVerFicha').data('target', '#_' + item.id);
+        $('#uxLinkGeovisores').attr('href', item.link_geovisor)
+        
         $('#uxFicha').modal('show');
     }
 
