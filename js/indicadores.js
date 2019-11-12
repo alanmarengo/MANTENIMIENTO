@@ -312,7 +312,7 @@ function ol_indicadores() {
 			break;
 			
 			case "noresource":
-			$("#indicador-inner-"+pos).parent().empty().css("visibility","hidden").html("<p>No se han asignado indicadores a esta sección aún</p>");
+			$("#indicador-inner-"+pos).parent().empty().html("<p>No se han asignado indicadores a esta sección aún</p>");
 			break;
 			
 		}
