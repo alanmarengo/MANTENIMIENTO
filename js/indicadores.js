@@ -312,29 +312,33 @@ function ol_indicadores() {
 			break;
 			
 			case "noresource":
-			$("#indicador-inner-"+pos).parent().empty().html("<p>No se han asignado indicadores a esta sección aún</p>");
+			$("#indicador-inner-"+pos).parent().empty().css("visibility","hidden");
 			break;
 			
 		}
-			
-		var fichaIcon = document.createElement("a");
-			fichaIcon.className = "indicador-icono-ficha";
-			fichaIcon.href = "javascript:void(0);";
-			fichaIcon.onclick = function() {
-				
-				jwindow.open("popup-fmetodologica");
-				$(".jump-alert-modal").show();
-				this.loadFichaMetodologica(ind_id,pos);
-				
-			}.bind(this);
-			
-		var fichaImg = document.createElement("img");
-			fichaImg.src = "./images/ficha-icono.png";
-			
-		fichaIcon.appendChild(fichaImg);
 		
-		document.getElementById("indicador-col-pos-"+pos).appendChild(fichaIcon);		
-	
+		if (js.type != "noresource") {
+		
+			var fichaIcon = document.createElement("a");
+				fichaIcon.className = "indicador-icono-ficha";
+				fichaIcon.href = "javascript:void(0);";
+				fichaIcon.onclick = function() {
+					
+					jwindow.open("popup-fmetodologica");
+					$(".jump-alert-modal").show();
+					this.loadFichaMetodologica(ind_id,pos);
+					
+				}.bind(this);
+				
+			var fichaImg = document.createElement("img");
+				fichaImg.src = "./images/ficha-icono.png";
+				
+			fichaIcon.appendChild(fichaImg);
+			
+			document.getElementById("indicador-col-pos-"+pos).appendChild(fichaIcon);	
+		
+		}	
+		
 		if (!notitle) {
 			
 			$("#indicador-col-pos-"+pos).children().first().before("<p>"+js.ind_titulo+"</p>");
