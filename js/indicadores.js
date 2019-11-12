@@ -311,6 +311,10 @@ function ol_indicadores() {
 			
 			break;
 			
+			case "noresource":
+			$("#indicador-inner-"+pos).empty().css("visibility","hidden").html("No se han asignado indicadores a esta sección aún");
+			break;
+			
 		}
 			
 		var fichaIcon = document.createElement("a");

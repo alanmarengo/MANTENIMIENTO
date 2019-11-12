@@ -2,13 +2,13 @@
 
 	<div class="row jump-row default-row">
 		
-		<div class="col col-xs-12 col-sm-12 col-md-4 col-lg-4 ml-10 flexbox col-title">
+		<div class="col col-xs-12 col-sm-12 col-md-8 col-lg-8 ml-10 flexbox col-title">
 				
 			<h3>Indicadores</h3>
 		
 		</div>
 		
-		<div class="col col-xs-12 col-sm-12 col-md-4 col-lg-4 mr-15 flexbox col-tools">
+		<div class="col col-xs-12 col-sm-12 col-md-3 col-lg-3 mr-15 flexbox col-tools">
 				
 			<ul>				
 				

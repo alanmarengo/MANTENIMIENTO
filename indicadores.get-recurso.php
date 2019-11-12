@@ -215,6 +215,7 @@ switch($type) {
 	
 	case "noresource":
 	$out .= "{";
+	$out .= "\"type\":\"noresource\"";
 	$out .= "\"noresource\":true";
 	$out .= "}";
 	break;
