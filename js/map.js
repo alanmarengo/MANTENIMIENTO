@@ -430,6 +430,8 @@ function ol_map() {
 		
 		var js = JSON.parse(req.responseText);
 		
+		$("#navbar-tools h3").html(js.geovisor_desc);
+		
 		var panel = this.panel;
 		
 		for (var i=0; i<js.data.length; i++) {
