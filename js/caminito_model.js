@@ -146,7 +146,7 @@
             texto: `La cantidad de personas que se concentrarán en la zona(aunque los obreros estarán en villas separadas de los pueblos) y la afluencia de materiales y servicios para la obra, con la consecuente recarga sobre vías de comunicación, servicios e infraestructura existente son motivo de monitoreo y programas específicos con el objetivo de mitigar impactos negativos y potenciar los positivos, como las oportunidades de trabajo para la población local, de desarrollo para las localidades cercanas y la posibilidad de apoyo al sector técnico - educativo y productivo de la provincia.Las acciones se realizan en un marco de articulación con autoridades e instituciones locales y provinciales.`
         },
         {
-            id: 'articulacion',
+            id: 'articulacion2',
             titulo: 'Articulación institucional ',
             mode_id: 0,
             link_geovisor: './geovisor.php?geovisor=17',

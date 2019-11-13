@@ -107,7 +107,7 @@ La ejecución del PGA involucra actores de diversos ámbitos, con distintos nive
                     <area shape='circle' id='relaciones' coords='1090,138,50' href=''  />
                     <area shape='circle' id='pueblos' coords='1089,240,50' href=''  />
                     <area shape='circle' id='aspectos' coords='1017,309,50' href=''  />
-                    <area shape='circle' id='articulacion' coords='921,312,50' href=''  />
+                    <area shape='circle' id='articulacion2' coords='921,312,50' href=''  />
                 </map>
             </div>
         </div>
