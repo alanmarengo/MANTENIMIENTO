@@ -73,6 +73,8 @@
 			
 		<?php }else{ ?>
 		
+			$("#navbar-tools h3").html("Geovisor General de IEASA");
+		
 			<?php if (isset($_GET["l"])) { ?>
 			
 			jwindow.close("popup-geovisor");

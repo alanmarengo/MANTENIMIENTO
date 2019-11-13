@@ -4,7 +4,7 @@
 		
 		<div class="col col-xs-12 col-sm-12 col-md-4 col-lg-4 ml-10 flexbox col-title">
 				
-			<h3>Geovisor General de IEASA</h3>
+			<h3></h3>
 		
 		</div>
 		
