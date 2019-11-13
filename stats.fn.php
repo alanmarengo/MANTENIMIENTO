@@ -75,7 +75,7 @@ function DrawDatasets($clase_id) {
 			
 				<div class="layer-header">
 					
-					<a href="#" class="layer-label" onclick="stats.dataset.loadVars(<?php echo $r["dt_id"]; ?>); stats.dataset.loadContent(<?php echo $r["dt_id"]; ?>); stats.dataset.loadComboCruce(<?php echo $r["dt_id"]; ?>);">
+					<a href="#" class="layer-label" onclick="stats.dataset.loadVars(<?php echo $r["dt_id"]; ?>); stats.dataset.loadContent(<?php echo $r["dt_id"]; ?>); stats.dataset.loadComboCruce(<?php echo $r["dt_id"]; ?>,this);" id="data-label-<?php echo $r["dt_id"]; ?>" data-dt="<?php echo $r["dt_id"]; ?>">
 						<span><?php echo $r["dt_titulo"]; ?></span>
 					</a>
 					

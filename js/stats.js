@@ -1569,7 +1569,11 @@ function ol_stats() {
 		
 	}
 	
-	this.dataset.loadComboCruce = function(dt_id) {		
+	this.dataset.loadComboCruce = function(dt_id,node) {		
+		
+		$(".layer-label").removeClass("layer-label-active");
+		
+		$(node).addClass("layer-label-active");
 		
 		this.dt_id = dt_id;
 		
@@ -1593,7 +1597,10 @@ function ol_stats() {
 	
 	this.share = function() {
 		
-		$("#input-share").val("http://observatorio.ieasa.com.ar/estadisticas.php?ind_id="+this.current_ind+"&t="+this.current_title+"&cid="+this.current_cid);
+		var cid = $(".abr[data-active=1]").attr("data-cid");
+		var dt = $(".layer-label-active").attr("data-dt");
+		
+		$("#input-share").val("http://observatorio.ieasa.com.ar/estadisticas.php?dt="+dt+"&cid="+this.current_cid);
 		
 		$(".popup").not("#popup-busqueda").hide();
 		jwindow.open("popup-share");
