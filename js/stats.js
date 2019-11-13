@@ -1018,6 +1018,12 @@ function ol_stats() {
 		
 	}
 	
+	this.view.preprint = function() {
+		
+		alert("Seleccione variables y pase a la siguiente pantalla");
+		
+	}
+	
 	this.view.graficarTipo = function(graphType) {
 		
 		this.graphType = graphType;

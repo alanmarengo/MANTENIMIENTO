@@ -24,7 +24,7 @@
 				<li>
 					<a class="button jump-hovimage" 
 					data-ini-src="./images/toolbar.icon.print.png"
-					data-end-src="./images/toolbar.icon.print.blue.png" href="javascript:void(0);" title="Imprimir">
+					data-end-src="./images/toolbar.icon.print.blue.png" href="javascript:void(0);" onclick="ol_stats.view.preprint();" title="Imprimir">
 						<img src="./images/toolbar.icon.print.png">
 					</a>
 				</li>
