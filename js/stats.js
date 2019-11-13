@@ -1018,7 +1018,7 @@ function ol_stats() {
 		
 	}
 	
-	this.view.preprint = function() {
+	this.preprint = function() {
 		
 		alert("Seleccione variables y pase a la siguiente pantalla");
 		
