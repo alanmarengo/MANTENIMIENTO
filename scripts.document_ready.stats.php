@@ -44,6 +44,18 @@
 		window.addEventListener("resize",onresize);
 		onresize();
 		
+		<?php if (isset($_GET["cid"])) { ?>
+		
+		$(".abr[data-cid=<?php echo $_GET["cid"]; ?>]").trigger("click");
+		
+		<?php } ?>
+		
+		<?php if (isset($_GET["dt"])) { ?>
+		
+		$(".layer-label[data-dt=<?php echo $_GET["dt"]; ?>]").trigger("click");
+		
+		<?php } ?>
+		
 	});
 			
 </script>

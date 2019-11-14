@@ -1599,8 +1599,21 @@ function ol_stats() {
 		
 		var cid = $(".abr[data-active=1]").attr("data-cid");
 		var dt = $(".layer-label-active").attr("data-dt");
+		var url = "http://observatorio.ieasa.com.ar/estadisticas.php?mode=1";
 		
-		$("#input-share").val("http://observatorio.ieasa.com.ar/estadisticas.php?dt="+dt+"&cid="+cid);
+		if (dt != undefined) {
+			
+			url += "&dt="+dt;
+			
+		}
+		
+		if (cid != undefined) {
+			
+			url += "&cid="+cid;
+			
+		}
+		
+		$("#input-share").val(url);
 		
 		$(".popup").not("#popup-busqueda").hide();
 		jwindow.open("popup-share");
