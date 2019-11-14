@@ -11,7 +11,7 @@
 	</a>
 </div>
 <div class="widget-link" style="background-color:#585dc5; right:0px; top:260px;">
-	<a href="./indicadores">
+	<a href="./indicadores.php">
 		<!--<img src="./images/icono_indicadores.png" />-->
 		<span>INDICADORES</span>
 	</a>
