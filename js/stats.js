@@ -1600,7 +1600,7 @@ function ol_stats() {
 		var cid = $(".abr[data-active=1]").attr("data-cid");
 		var dt = $(".layer-label-active").attr("data-dt");
 		
-		$("#input-share").val("http://observatorio.ieasa.com.ar/estadisticas.php?dt="+dt+"&cid="+this.current_cid);
+		$("#input-share").val("http://observatorio.ieasa.com.ar/estadisticas.php?dt="+dt+"&cid="+cid);
 		
 		$(".popup").not("#popup-busqueda").hide();
 		jwindow.open("popup-share");
