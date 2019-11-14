@@ -69,6 +69,7 @@ $dt_titulo = $_GET["dt_t"];
 	<?php include("./widget-links.php"); ?>
 	<?php include("./popup.gm.php"); ?>
 	<?php include("./html.jalert.php"); ?>
+	<?php include("./popup.share.php"); ?>
 
 </body>
 </html>

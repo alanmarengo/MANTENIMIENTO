@@ -51,6 +51,7 @@
 	
 	<?php include("./widget-links.php"); ?>
 	<?php include("./html.jalert.php"); ?>
+	<?php include("./popup.share.php"); ?>
 
 </body>
 </html>
