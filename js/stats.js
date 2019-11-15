@@ -372,7 +372,7 @@ function ol_stats() {
 					
 				this.resetSelects();
 				
-			}.bind(this);
+			}.bind(this)
 			
 		});
 		
@@ -641,7 +641,7 @@ function ol_stats() {
 						this.graficar(dt_mapeo_id);
 					}
 					
-				}
+				}.bind(this)
 				
 			});
 			
