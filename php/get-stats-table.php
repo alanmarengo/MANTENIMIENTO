@@ -64,6 +64,19 @@ $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . 
 	
 $conn = pg_connect($string_conn);
 
+$activeFilters = false;
+
+for ($i=0; $i<sizeof($filters); $i++) {
+	
+	if ($filters[$i]["filtertype"] != -1) {
+		
+		$activeFilters = true;
+		break;
+		
+	}
+	
+}
+
 if ($filters != -1) {
 	
 	$filter_str = "";
@@ -93,8 +106,8 @@ if ($filters != -1) {
 	}
 	
 	$filter_str = substr($filter_str,0,strlen($filter_str)-5);
-	echo sizeof($filters);
-	if (sizeof($filters)>3) {
+	
+	if ($activeFilters) {
 	
 		if ((!empty($fdesde)) && (!empty($fhasta))) {
 		
