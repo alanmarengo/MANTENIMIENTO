@@ -1620,6 +1620,15 @@ function ol_stats() {
 		
 	}
 	
+	this.shareStats = function() {
+		
+		$("#input-share").val(statsIniQueryString);
+		
+		$(".popup").not("#popup-busqueda").hide();
+		jwindow.open("popup-share");
+		
+	}
+	
 	this.dataset.proceed = function() {
 
 		var dt_id = this.dt_id;

@@ -10,6 +10,8 @@
 			HoldOn.close();
 		});
 		
+		statsIniQueryString = "<?php echo $_SERVER["QUERY_STRING"]; ?>";
+		
 		stats = new ol_stats();
 		stats.view.start();
 		stats.view.resetSelects();
