@@ -107,17 +107,21 @@ if ($filters != -1) {
 	
 	$filter_str = substr($filter_str,0,strlen($filter_str)-5);
 	
+	$andStr = "";
+	
 	if ($activeFilters) {
 	
-		if ((!empty($fdesde)) && (!empty($fhasta))) {
-		
-			$filter_str .= " AND mod_estadistica.filtro_temp(cod_temp,'$fdesde','$fhasta')";
-		
-		}
+		$andStr = " AND ";		
 	
+	}
+	
+	if ((!empty($fdesde)) && (!empty($fhasta))) {
+		
+		$filter_str .= $andStr . "mod_estadistica.filtro_temp(cod_temp,'$fdesde','$fhasta')";
+		
 	}else{
 		
-		$filter_str .= " mod_estadistica.filtro_temp(cod_temp,'$fdesde','$fhasta')";
+		$filter_str .= "1=1";
 		
 	}
 	
@@ -126,6 +130,10 @@ if ($filters != -1) {
 	if ((!empty($fdesde)) && (!empty($fhasta))) {
 		
 		$filter_str = " mod_estadistica.filtro_temp(cod_temp,'$fdesde','$fhasta')";
+		
+	}else{
+		
+		$filter_str .= "1=1";
 		
 	}
 	
