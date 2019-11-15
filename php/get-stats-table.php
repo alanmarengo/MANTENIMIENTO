@@ -94,7 +94,7 @@ if ($filters != -1) {
 	
 	$filter_str = substr($filter_str,0,strlen($filter_str)-5);
 	
-	echo "<p>" . $filter_str . "</p>";
+	var_dump($filter_str);
 	
 	if ((!empty($fdesde)) && (!empty($fhasta))) {
 		
@@ -232,8 +232,6 @@ if ($filter_str == "") {
 	}
 	
 }
-
-echo $pure_new_query_string;
 
 $gm = -1;
 $gm_id = -1;
