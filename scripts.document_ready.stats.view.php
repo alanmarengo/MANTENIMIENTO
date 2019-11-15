@@ -2,6 +2,10 @@
 	
 	$(document).ready(function() {
 		
+		HoldOn.open({
+			theme: "sk-rect"
+		});
+		
 		stats = new ol_stats();
 		stats.view.start();
 		stats.view.resetSelects();
@@ -42,6 +46,8 @@
 
 		window.addEventListener("resize",onresize);
 		onresize();
+		
+		HoldOn.close();
 		
 	});
 			
