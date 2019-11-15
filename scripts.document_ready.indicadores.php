@@ -1,6 +1,14 @@
 <script type="text/javascript">
 	
-	$(document).ready(function() {		
+	$(document).ready(function() {	
+	
+		$(document).ajaxStart(function () {
+			HoldOn.open({
+				theme: "sk-rect"
+			});
+		}).ajaxStop(function () {
+			HoldOn.close();
+		});
 		
 		$("[title]").tooltipster({
 			animation: 'fade',
