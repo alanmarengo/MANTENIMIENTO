@@ -341,7 +341,7 @@ function ol_stats() {
 		
 		var req = $.ajax({
 			
-			async:false,
+			//async:false,
 			data:{
 				page:page,
 				dt_id:dt_id,
@@ -350,11 +350,33 @@ function ol_stats() {
 			},
 			type:"POST",
 			url:"./php/get-stats-table-header.php",
-			success:function(d){}
+			success:function(d){
+				
+				document.getElementById("dataset-header").innerHTML = d.responseText;	
+			
+				var colgroup = $("#colgroup").val();
+					colgroup = colgroup.split(",");
+					
+				var combo = document.getElementById("group-combo-view");
+				
+				for (var i=0; i<colgroup.length; i++) {
+					
+					var option = document.createElement("option");
+						option.value = colgroup[i];
+						option.innerHTML = colgroup[i];
+						option.setAttribute("data-col-index",i);
+						
+					combo.appendChild(option);
+					
+				}
+					
+				this.resetSelects();
+				
+			}.bind(this);
 			
 		});
 		
-		document.getElementById("dataset-header").innerHTML = req.responseText;	
+		/*document.getElementById("dataset-header").innerHTML = req.responseText;	
 			
 		var colgroup = $("#colgroup").val();
 			colgroup = colgroup.split(",");
@@ -372,7 +394,7 @@ function ol_stats() {
 			
 		}
 			
-		this.resetSelects();
+		this.resetSelects();*/
 
 		
 	}
@@ -561,15 +583,69 @@ function ol_stats() {
 		
 			var req = $.ajax({
 				
-				async:false,
+				//async:false,
 				data:data,
 				type:"POST",
 				url:"./php/get-stats-table.php",
-				success:function(d){}
+				success:function(d){
+					
+					document.getElementById("dataset-content").innerHTML = d.responseText;
+			
+					$("#paging").appendTo($("#dataset-wrapper").parent());
+					
+					//this.resetSelects();
+
+					$(".page-item").each(function(i,v) {
+						
+						$(v).on("click",function() {
+							
+							var pageitem = v.getAttribute("data-page");
+							
+							this.getTable(pageitem,false,false,false);
+							
+						}.bind(this));
+						
+					}.bind(this));
+					
+					var rowWidth = $(".dataset-row").first().width();
+					var rowChilds = $(".dataset-row").first().children().length;
+					
+					var cellWidth = rowWidth / rowChilds;
+					
+					$("#dataset-inner").css("width",(rowChilds*250)+"px");
+					
+					$(".dataset-cell").css("width","250px");
+					$(".dataset-filter-row .dropdown-toggle").css("width","85%");
+					$(".dataset-filter-row .dropdown-toggle").css("margin-top","1px");
+					$(".dataset-filter-row .dropdown-toggle").css("text-transform","uppercase");
+					$(".dataset-operation-row .dropdown-toggle").css("width","100%");
+					$(".dataset-operation-row .dropdown-toggle").css("text-transform","uppercase");
+					$(".col-filter").on("keydown",function() {
+						
+						$("#update-view").prop("disabled",false);
+						
+					});
+					
+					this.updateAgroupColModals();
+					
+					if (mapear) {
+						
+						var dt_mapeo_id = $("#dataset").attr("data-gm-id");
+						this.mapear(dt_mapeo_id);
+						
+					}
+					
+					if (graficar) {
+						
+						var dt_mapeo_id = $("#dataset").attr("data-gm-id");
+						this.graficar(dt_mapeo_id);
+					}
+					
+				}
 				
 			});
 			
-			document.getElementById("dataset-content").innerHTML = req.responseText;
+			/*document.getElementById("dataset-content").innerHTML = req.responseText;
 			
 			$("#paging").appendTo($("#dataset-wrapper").parent());
 			
@@ -619,7 +695,7 @@ function ol_stats() {
 				
 				var dt_mapeo_id = $("#dataset").attr("data-gm-id");
 				this.graficar(dt_mapeo_id);
-			}
+			}*/
 		
 		}else{
 			
