@@ -260,7 +260,7 @@ if ($filter_str == "") {
 	
 }
 
-echo "<p>" . $pure_new_query_string . "</p>";
+//echo "<p>" . $pure_new_query_string . "</p>";
 
 $gm = -1;
 $gm_id = -1;
