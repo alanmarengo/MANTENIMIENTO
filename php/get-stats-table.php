@@ -96,7 +96,7 @@ if ($filters != -1) {
 	
 	if ((!empty($fdesde)) && (!empty($fhasta))) {
 		
-		$filter_str .= " AND mod_estadistica.filtro_temp(cod_temp,'$fdesde','$fhasta')";
+		$filter_str .= " mod_estadistica.filtro_temp(cod_temp,'$fdesde','$fhasta')";
 		
 	}
 	
@@ -230,8 +230,6 @@ if ($filter_str == "") {
 	}
 	
 }
-
-var_dump($filters);
 
 echo "<p>" . $pure_new_query_string . "</p>";
 
