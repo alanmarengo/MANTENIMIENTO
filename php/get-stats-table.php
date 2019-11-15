@@ -233,6 +233,8 @@ if ($filter_str == "") {
 	
 }
 
+echo $pure_new_query_string;
+
 $gm = -1;
 $gm_id = -1;
 
