@@ -64,7 +64,7 @@ $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . 
 	
 $conn = pg_connect($string_conn);
 
-if ($filters != -1) {
+if ((!$filters != -1) || (!$filters)) {
 	
 	$filter_str = "";
 	
