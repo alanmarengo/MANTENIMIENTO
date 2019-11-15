@@ -93,7 +93,7 @@ if ($filters != -1) {
 	}
 	
 	$filter_str = substr($filter_str,0,strlen($filter_str)-5);
-	
+	echo sizeof($filters);
 	if (sizeof($filters)>3) {
 	
 		if ((!empty($fdesde)) && (!empty($fhasta))) {
