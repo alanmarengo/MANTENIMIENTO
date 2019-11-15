@@ -64,7 +64,7 @@ $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . 
 	
 $conn = pg_connect($string_conn);
 
-if ((!$filters != -1) || (!$filters)) {
+if ($filters != -1) {
 	
 	$filter_str = "";
 	
@@ -93,8 +93,6 @@ if ((!$filters != -1) || (!$filters)) {
 	}
 	
 	$filter_str = substr($filter_str,0,strlen($filter_str)-5);
-	
-	var_dump($filter_str);
 	
 	if ((!empty($fdesde)) && (!empty($fhasta))) {
 		
@@ -233,7 +231,9 @@ if ($filter_str == "") {
 	
 }
 
-echo $pure_new_query_string;
+var_dump($filters);
+
+echo "<p>" . $pure_new_query_string . "</p>";
 
 $gm = -1;
 $gm_id = -1;
