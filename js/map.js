@@ -903,7 +903,7 @@ function ol_map() {
 		this.ol_object.updateSize();
 		this.ol_object.render();
 		
-		this.AddLayerActiveFromStats(query_id,layer);
+		this.panel.AddLayerActiveFromStats(query_id,layer);
 		
 	}
 	
