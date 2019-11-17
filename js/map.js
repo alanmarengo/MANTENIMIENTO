@@ -2427,8 +2427,8 @@ function ol_map() {
 		
 		$("#nolayer-active").remove();
 		
-		this.map.layerStatsIndex++;
-		this.map.layerStats.push[layer];
+		this.map.layersStatsIndex++;
+		this.map.layersStats.push[layer];
 		
 		var dataLidLabel = "data-lid";
 		
@@ -2436,8 +2436,8 @@ function ol_map() {
 		
 		var node = document.createElement("div");
 			node.className = "active-layer-node";	
-			node.setAttribute(dataLidLabel,this.map.layerStatsIndex);
-			node.setAttribute("data-cid",this.map.layerStatsIndex);
+			node.setAttribute(dataLidLabel,this.map.layersStatsIndex);
+			node.setAttribute("data-cid",this.map.layersStatsIndex);
 			
 		var nodeicons = document.createElement("div");
 			nodeicons.className = "active-layer-node-icons";
