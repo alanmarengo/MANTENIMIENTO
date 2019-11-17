@@ -2553,6 +2553,7 @@ function ol_map() {
 			
 			node.appendChild(abr);
 			node.appendChild(pretty);
+			node.appendChild(layerLabel);
 			node.appendChild(nodeicons);
 			
 			this.statsLayerIndex++;

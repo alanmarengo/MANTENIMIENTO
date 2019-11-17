@@ -95,6 +95,8 @@
 			<?php if (isset($_GET["qid"])) { ?>
 			
 			geomap.map.mapear(<?php echo $_GET["qid"]; ?>);
+			jwindow.close("popup-geovisor");
+			jwindow.open("popup-capasactivas");
 							
 			<?php } ?>
 			
