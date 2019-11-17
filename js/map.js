@@ -880,7 +880,7 @@ function ol_map() {
 				})
 			});
 		
-		this.map.ol_object.addLayer(layer);
+		this.ol_object.addLayer(layer);
 		
 		var reqExtent = $.ajax({
 			
