@@ -2429,7 +2429,8 @@ function ol_map() {
 		
 		$("#nolayer-active").remove();
 		
-		this.map.layersStatsIndex++;
+		var layer_id = this.map.layersStatsIndex++;
+		var clase_id = this.map.layersStatsIndex++;
 		this.map.layersStats.push[layer];
 		
 		var dataLidLabel = "data-lid";
@@ -2438,8 +2439,8 @@ function ol_map() {
 		
 		var node = document.createElement("div");
 			node.className = "active-layer-node";	
-			node.setAttribute(dataLidLabel,this.map.layersStatsIndex);
-			node.setAttribute("data-cid",this.map.layersStatsIndex);
+			node.setAttribute(dataLidLabel,layer_id);
+			node.setAttribute("data-cid",clase_id);
 			
 		var nodeicons = document.createElement("div");
 			nodeicons.className = "active-layer-node-icons";
@@ -2510,6 +2511,7 @@ function ol_map() {
 			pretty.className = "pretty p-default p-curve p-toggle";
 			
 		var layerCheck = document.createElement("input");
+			layerCheck.id = "layer-checkbox-"+layer_id;
 			layerCheck.className = "layer-checkbox default-empty-checkbox";
 			layerCheck.style.display = "block";
 			layerCheck.setAttribute("data-added","1");
