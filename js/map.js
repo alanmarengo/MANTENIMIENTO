@@ -2508,8 +2508,9 @@ function ol_map() {
 			pretty.className = "pretty p-default p-curve p-toggle";
 			
 		var layerCheck = document.createElement("input");
-			layerCheck.className = "layer-checkbox";
+			layerCheck.className = "layer-checkbox default-empty-checkbox";
 			layerCheck.style.display = "block";
+			layerCheck.setAttribute("data-added","1");
 			layerCheck.layer = layer;
 			layerCheck.onclick = function() {
 				
