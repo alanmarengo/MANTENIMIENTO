@@ -32,6 +32,11 @@
 		hovimage = new Jump.hovimage();
 		hovimage.refresh();
 		
+		jwindow = new Jump.window();
+		jwindow.initialize();
+		jwindow.setAllWindowsDraggable();
+		jwindow.initMinimizing();
+		
 		nav = new Jump.nav();
 		nav.hamburguer.addBehavior(function() {
 			
