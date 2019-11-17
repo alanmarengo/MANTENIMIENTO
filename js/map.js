@@ -2480,7 +2480,7 @@ function ol_map() {
 			nodezoomextimg.src = "./images/geovisor/icons/layer-bar-zoom.png";
 			
 			nodezoomext.appendChild(nodezoomexta);
-			nodezoomext.appendChild(nodezoomextimg);
+			nodezoomexta.appendChild(nodezoomextimg);
 			
 		var noderemove = document.createElement("a");
 			noderemove.className = "simple-tree-pm-button remove-layer-icon-ca";
@@ -2509,6 +2509,7 @@ function ol_map() {
 			
 		var layerCheck = document.createElement("input");
 			layerCheck.className = "layer-checkbox";
+			layerCheck.style.display = "block";
 			layerCheck.layer = layer;
 			layerCheck.onclick = function() {
 				
