@@ -10,6 +10,8 @@ function ol_map() {
 	this.map.baselayers = {};
 	this.map.layersBuffer = [];
 	this.map.layersBufferIndex = 0;
+	this.map.layersStats = [];
+	this.map.layersStatsIndex = 200000;
 	
 	this.map.geovisor = -1;
 		
@@ -2425,14 +2427,17 @@ function ol_map() {
 		
 		$("#nolayer-active").remove();
 		
+		this.map.layerStatsIndex++;
+		this.map.layerStats.push[layer];
+		
 		var dataLidLabel = "data-lid";
 		
 		var container = document.getElementById("info-capasactivas-inner");
 		
 		var node = document.createElement("div");
 			node.className = "active-layer-node";	
-			node.setAttribute(dataLidLabel,layer_id);
-			node.setAttribute("data-cid",clase_id);
+			node.setAttribute(dataLidLabel,this.map.layerStatsIndex);
+			node.setAttribute("data-cid",this.map.layerStatsIndex);
 			
 		var nodeicons = document.createElement("div");
 			nodeicons.className = "active-layer-node-icons";
