@@ -2495,7 +2495,7 @@ function ol_map() {
 			nodeicons.appendChild(noderemove);
 		
 		var abr = document.createElement("div");
-			abr.className = "abr";
+			abr.className = "abr panel-abr abr-cloned";
 			abr.style.width = "32px";
 			abr.style.backgroundColor = "rgb(245, 245, 245)";
 			abr.style.color = "rgb(136, 136, 136)";
