@@ -899,9 +899,9 @@ function ol_map() {
 			"EPSG:3857", "EPSG:3857"
 		);
 		
-		this.map.ol_object.getView().fit(extent,{duration:1000});
-		this.map.ol_object.updateSize();
-		this.map.ol_object.render();
+		this.ol_object.getView().fit(extent,{duration:1000});
+		this.ol_object.updateSize();
+		this.ol_object.render();
 		
 		this.AddLayerActiveFromStats(query_id,layer);
 		
