@@ -1620,7 +1620,7 @@ function ol_stats() {
 		
 	}
 	
-	this.shareStats = function() {
+	this.shareview = function() {
 		
 		$("#input-share").val(statsIniQueryString);
 		
