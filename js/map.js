@@ -2549,8 +2549,8 @@ function ol_map() {
 			layerCheckDivoff.appendChild(layerCheckDivoffIcon);
 			
 			pretty.appendChild(layerCheck);
-			pretty.appendChild(layerCheckDivon);
 			pretty.appendChild(layerCheckDivoff);
+			pretty.appendChild(layerCheckDivon);
 			
 		var layerLabel = document.createElement("a");
 			layerLabel.className = "layer-label";
