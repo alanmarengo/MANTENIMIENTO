@@ -1997,7 +1997,7 @@ function ol_map() {
 		$("#layer-preview-block").html(req.responseText);
 		
 		var clase_id = $(".layer-group[data-layer="+layer_id+"]").attr("data-cid");		
-		$("#btn-layer-preview-addlayer").attr("onclick","geomap.panel.AddLayer(" + clase_id + "," + layer_id + ",true)");
+		$("#btn-layer-preview-addlayer").attr("onclick","geomap.panel.AddLayer(" + clase_id + "," + layer_id + ",true,true)");
 		
 		$("#btn-layer-preview-addlayer").show();
 		$("#btn-layer-preview-gomap").show();
@@ -2285,6 +2285,8 @@ function ol_map() {
 		this.AddLayerActive(clase_id,layer_id,false,-1,-1);
 		this.map.updateLayerCount();
 		this.updateLayerCountPanelLabel(clase_id);
+		
+		document.getElementById("layer-checkbox-"+layer_id).click();
 		
 	}
 	
