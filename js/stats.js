@@ -833,6 +833,16 @@ function ol_stats() {
 		
 	}
 	
+	this.printBrowser = function() {
+		
+		$("#close-print").hide();
+		$("#icon-print").hide();
+		window.print();
+		$("#close-print").show();
+		$("#icon-print").show();
+		
+	}
+	
 	this.view.getTableCsv = function(page,bypassOp,mapear,graficar) {
 		
 		var dt_id = $("#frm-dt #dt_id").val();
