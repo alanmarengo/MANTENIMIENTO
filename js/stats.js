@@ -780,6 +780,8 @@ function ol_stats() {
 			
 			var cellWidth = rowWidth / rowChilds;
 			
+			$("#dataset-header").clone().attr("id","dataset-header-print").before("#print-body #dataset");
+			
 			$("#print-body #dataset").addClass("mt-30");
 			$("#print-body #dataset-inner").css("width",(rowChilds*250)+"px");
 			
