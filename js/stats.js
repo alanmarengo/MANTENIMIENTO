@@ -632,6 +632,8 @@ function ol_stats() {
 	
 	this.getTablePrint = function(page,bypassOp,mapear,graficar) {
 		
+		$("#print-view").show();
+		
 		var dt_id = $("#frm-dt #dt_id").val();
 		var dt_variables = $("#frm-dt #dt_v").val();
 		var dt_cruce = $("#frm-dt #dt_c").val();
