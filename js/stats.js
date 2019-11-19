@@ -758,6 +758,12 @@ function ol_stats() {
 			});			
 			
 			$(".dataset-agroup").clone().attr("id","agroup-print").appendTo("#print-body");
+			
+			var agrupadoPor = $("#group-combo-view").text();
+			var fdesde = $("#dated-search").val();
+			var fhasta = $("#dateh-search").val();
+			
+			$("#print-body").append($("<p>Agrupado por: " + agrupadoPor + ". Período, Fecha Desde: " + fdesde + " - " + fhasta + "</p>"));
 			$("#dataset-header").clone().attr("id","dataset-header-print").appendTo("#print-body");
 			
 			document.getElementById("print-body").innerHTML += req.responseText;
