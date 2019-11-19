@@ -70,26 +70,6 @@ $dt_titulo = $_GET["dt_t"];
 	<?php include("./popup.gm.php"); ?>
 	<?php include("./html.jalert.php"); ?>
 	<?php include("./popup.share.php"); ?>
-	
-	<div id="print-view">
-	
-		<div class="row jump-row">
-		
-			<div class="col col-md-12 col-xs-12 col-sm-12 col-xs-12">
-			
-				<img src="./images/print-header.png">
-			
-			</div>
-		
-		</div>
-		
-		<div class="row jump-row" id="print-body">
-		
-		
-		
-		</div>
-	
-	</div>
 
 </body>
 </html>

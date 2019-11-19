@@ -1,0 +1,13 @@
+#print-view {
+	
+	width:100%;
+	min-height:100%;
+	padding:40px;
+	position:fixed;
+	top:0;
+	left:0;
+	background-color:#FFFFFF;
+	display:none;
+	z-index:9999999999;
+	
+}
