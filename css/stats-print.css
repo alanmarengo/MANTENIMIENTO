@@ -16,7 +16,13 @@
 	
 	position:absolute;
 	right:20px;
-	top:20px;
+	top:0px;
 	z-index:10;
+	
+}
+
+#close-print i {
+	
+	color:#343a40;
 	
 }
