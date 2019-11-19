@@ -95,6 +95,8 @@ $dt_titulo = $_GET["dt_t"];
 		
 		</div>
 		
+		<hr class="mt-30">
+		
 		<div class="row jump-row" id="print-body">
 		
 		

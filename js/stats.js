@@ -764,7 +764,7 @@ function ol_stats() {
 			if (fdesde.trim() == "") { fdesde = "Sin Especificar"; }
 			if (fhasta.trim() == "") { fhasta = "Sin Especificar"; }
 			
-			$("#print-body").append($("<hr class=\"mt-30\"><p>Agrupado por: " + agrupadoPor + ". Período, Fecha Desde: " + fdesde + ", Hasta: " + fhasta + "</p>"));
+			$("#print-body").append($("<p>Agrupado por: " + agrupadoPor + ". Período, Fecha Desde: " + fdesde + ", Hasta: " + fhasta + "</p>"));
 			
 			$("#dataset-header").clone().attr("id","dataset-header-print").appendTo("#print-body");
 			
