@@ -81,7 +81,7 @@ $dt_titulo = $_GET["dt_t"];
 				
 				<a href="#" id="close-print">
 				
-					<i class="fa fa-times">
+					<i class="fa fa-times"></i>
 					
 				</a>
 			
