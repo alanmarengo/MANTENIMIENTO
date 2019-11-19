@@ -760,7 +760,7 @@ function ol_stats() {
 			$(".dataset-agroup").clone().attr("id","agroup-print").appendTo("#print-body");
 			$("#dataset-header").clone().attr("id","dataset-header-print").appendTo("#print-body");
 			
-			document.getElementById("print-body").innerHTML = req.responseText;
+			document.getElementById("print-body").innerHTML += req.responseText;
 			
 			$("#paging").appendTo($("#dataset-wrapper").parent());
 			
