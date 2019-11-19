@@ -757,7 +757,7 @@ function ol_stats() {
 				
 			});
 			
-			document.getElementById("dataset-content").innerHTML = req.responseText;
+			document.getElementById("print-body").innerHTML = req.responseText;
 			
 			$("#paging").appendTo($("#dataset-wrapper").parent());
 			
@@ -780,21 +780,21 @@ function ol_stats() {
 			
 			var cellWidth = rowWidth / rowChilds;
 			
-			$("#dataset-inner").css("width",(rowChilds*250)+"px");
+			$("#print-body #dataset-inner").css("width",(rowChilds*250)+"px");
 			
-			$(".dataset-cell").css("width","250px");
-			$(".dataset-filter-row .dropdown-toggle").css("width","85%");
-			$(".dataset-filter-row .dropdown-toggle").css("margin-top","1px");
-			$(".dataset-filter-row .dropdown-toggle").css("text-transform","uppercase");
-			$(".dataset-operation-row .dropdown-toggle").css("width","100%");
-			$(".dataset-operation-row .dropdown-toggle").css("text-transform","uppercase");
-			$(".col-filter").on("keydown",function() {
+			$("#print-body .dataset-cell").css("width","250px");
+			$("#print-body .dataset-filter-row .dropdown-toggle").css("width","85%");
+			$("#print-body .dataset-filter-row .dropdown-toggle").css("margin-top","1px");
+			$("#print-body .dataset-filter-row .dropdown-toggle").css("text-transform","uppercase");
+			$("#print-body .dataset-operation-row .dropdown-toggle").css("width","100%");
+			$("#print-body .dataset-operation-row .dropdown-toggle").css("text-transform","uppercase");
+			/*$("#print-body .col-filter").on("keydown",function() {
 				
 				$("#update-view").prop("disabled",false);
 				
 			});
 			
-			//this.updateAgroupColModals();
+			this.updateAgroupColModals();
 			
 			if (mapear) {
 				
@@ -807,14 +807,14 @@ function ol_stats() {
 				
 				var dt_mapeo_id = $("#dataset").attr("data-gm-id");
 				this.graficar(dt_mapeo_id);
-			}		
+			}*/	
 		
 			$("#print-view").show();
 			
 		}else{
 			
 			jalert(false,"Faltan seleccionar funciones para poder actualizar la vista","danger");
-			$("#update-view").prop("disabled",false);
+			//$("#update-view").prop("disabled",false);
 			
 		}
 		
