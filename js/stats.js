@@ -757,11 +757,14 @@ function ol_stats() {
 				
 			});
 			
-			var agrupadoPor = $("#group-combo-view").text();
+			var agrupadoPor = $("#group-combo-view option:selected").text();
 			var fdesde = $("#dated-search").val();
 			var fhasta = $("#dateh-search").val();
 			
-			$("#print-body").append($("<p>Agrupado por: " + agrupadoPor + ". Período, Fecha Desde: " + fdesde + " - " + fhasta + "</p>"));
+			if (fdesde.trim() == "") { fdesde = "Sin Especificar"; }
+			if (fhasta.trim() == "") { fhasta = "Sin Especificar"; }
+			
+			$("#print-body").append($("<hr class=\"mt-30\"><p>Agrupado por: " + agrupadoPor + ". Período, Fecha Desde: " + fdesde + ", Hasta: " + fhasta + "</p>"));
 			
 			$("#dataset-header").clone().attr("id","dataset-header-print").appendTo("#print-body");
 			
