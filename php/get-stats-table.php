@@ -233,7 +233,7 @@ if ($page != -1) {
 	$limit = "";
 	
 }
-
+var_dump($page);
 if ($filter_str == "") {
 
 	$pure_new_query_string = "SELECT$distinct $colstr_select FROM ($rquery_string) AS sub $group $colstr_order";
