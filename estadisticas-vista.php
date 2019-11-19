@@ -84,6 +84,12 @@ $dt_titulo = $_GET["dt_t"];
 					<i class="fa fa-times"></i>
 					
 				</a>
+				
+				<a href="#" id="icon-print" onclick="stats.printBrowser();">
+				
+					<i class="fa fa-print"></i>
+					
+				</a>
 			
 			</div>
 		

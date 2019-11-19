@@ -755,7 +755,10 @@ function ol_stats() {
 				url:"./php/get-stats-table.php",
 				success:function(d){}
 				
-			});
+			});			
+			
+			$(".dataset-agroup").clone().attr("id","agroup-print").appendTo("#print-body");
+			$("#dataset-header").clone().attr("id","dataset-header-print").appendTo("#print-body");
 			
 			document.getElementById("print-body").innerHTML = req.responseText;
 			
@@ -779,8 +782,6 @@ function ol_stats() {
 			var rowChilds = $(".dataset-row").first().children().length;
 			
 			var cellWidth = rowWidth / rowChilds;
-			
-			$("#dataset-header").clone().attr("id","dataset-header-print").before("#print-body #dataset");
 			
 			$("#print-body #dataset").addClass("mt-30");
 			$("#print-body #dataset-inner").css("width",(rowChilds*250)+"px");

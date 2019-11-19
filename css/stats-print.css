@@ -33,3 +33,25 @@
 	font-size:24px;
 	
 }
+
+#icon-print {
+	
+	position:absolute;
+	right:50px;
+	top:0px;
+	z-index:10;
+	
+}
+
+#icon-print:hover {
+	
+	opacity:0.7;
+	
+}
+
+#icon-print i {
+	
+	color:#343a40;
+	font-size:24px;
+	
+}
