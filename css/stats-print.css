@@ -11,3 +11,12 @@
 	z-index:9999999999;
 	
 }
+
+#close-print {
+	
+	position:absolute;
+	right:20px;
+	top:20px;
+	z-index:10;
+	
+}

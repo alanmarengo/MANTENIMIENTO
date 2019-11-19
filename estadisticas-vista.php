@@ -75,9 +75,15 @@ $dt_titulo = $_GET["dt_t"];
 	
 		<div class="row jump-row">
 		
-			<div class="col col-md-12 col-xs-12 col-sm-12 col-xs-12">
+			<div class="col col-md-12 col-xs-12 col-sm-12 col-xs-12 jump-posrel">
 			
 				<img src="./images/print-header.png">
+				
+				<a href="#" id="close-print">
+				
+					<i class="fa fa-times">
+					
+				</a>
 			
 			</div>
 		
