@@ -788,6 +788,7 @@ function ol_stats() {
 			$("#print-body .dataset-filter-row .dropdown-toggle").css("text-transform","uppercase");
 			$("#print-body .dataset-operation-row .dropdown-toggle").css("width","100%");
 			$("#print-body .dataset-operation-row .dropdown-toggle").css("text-transform","uppercase");
+			
 			/*$("#print-body .col-filter").on("keydown",function() {
 				
 				$("#update-view").prop("disabled",false);
@@ -807,7 +808,7 @@ function ol_stats() {
 				
 				var dt_mapeo_id = $("#dataset").attr("data-gm-id");
 				this.graficar(dt_mapeo_id);
-			}*/	
+			}*/
 		
 			$("#print-view").show();
 			
