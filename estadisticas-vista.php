@@ -79,7 +79,7 @@ $dt_titulo = $_GET["dt_t"];
 			
 				<img src="./images/print-header.png">
 				
-				<a href="#" id="close-print" onclick="$('#print-view').hide();">
+				<a href="#" id="close-print" onclick="$('#print-view').hide(); $('#print-body').empty();">
 				
 					<i class="fa fa-times"></i>
 					
