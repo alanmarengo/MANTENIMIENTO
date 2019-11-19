@@ -630,6 +630,194 @@ function ol_stats() {
 		
 	}
 	
+	this.view.getTablePrint = function(page,bypassOp,mapear,graficar) {
+		
+		var dt_id = $("#frm-dt #dt_id").val();
+		var dt_variables = $("#frm-dt #dt_v").val();
+		var dt_cruce = $("#frm-dt #dt_c").val();
+		var colstr = $("#colstr").val();
+		var colstrType = $("#coltypestr").val();
+		var colgroup = $("#colgroup").val();
+		var groupbycol = $("#group-combo-view").attr("data-group-by-column");
+		var groupby_val = $("#group-combo-view").val();
+		var groupbycol_index = $("#group-combo-view").attr("data-group-column-index");
+		var groupbycol_name = $("#group-combo-view").attr("data-group-column-index");
+		var gm_var = $("#gm-combo").val();
+		var fdesde = $("#dated-search").val();
+		var fhasta = $("#dateh-search").val();
+		
+		if ((groupby_val == 2) || (groupby_val == 3)) {
+			
+			bypassOp = true;
+			
+		}
+		
+		var filters = [];
+		
+		$(".dataset-filter-row .dataset-cell").each(function(i,v) {
+			
+			var colname = $(this).attr("data-col-name");
+			var coltype = $(this).attr("data-col-type");
+			var filtertype = $(this).find(".selectpicker").val();
+			var filterval = $(this).find(".col-filter").val();
+			
+			var column = {
+				
+				colname:colname,
+				coltype:coltype,
+				filtertype:filtertype,
+				filterval:filterval
+				
+			}
+			
+			filters.push(column);
+			
+		});
+		
+		var operations = [];
+		
+		var no_op = false;
+		
+		var indexCell = 0;
+		
+		$(".dataset-operation-row .dataset-cell").each(function(i,v) {				
+			
+			var operation = $(this).find(".selectpicker").val();
+			
+			if (groupbycol == 1) {
+				
+				if (indexCell < 3) {
+					
+					if (groupbycol_index == indexCell) {
+						
+						operation = "NONE";
+						
+					}else{
+						
+						operation = "MAX";
+						
+					}
+				
+				}else{
+					
+					if (operation == -1) {
+							
+						no_op = true;
+							
+					}
+					
+				}
+				
+			}else{
+			
+				if (operation == -1) {
+					
+					no_op = true;
+					
+				}
+			
+			}
+			
+			operations.push(operation);
+			
+			indexCell++;
+			
+		});
+		
+		var data = {
+			page:page,
+			dt_id:dt_id,
+			dt_variables:dt_variables,
+			dt_cruce:dt_cruce,
+			colstr:colstr,
+			colstrType:colstrType,
+			filters:filters,
+			operations:operations,
+			colgroup:colgroup,
+			groupbycol:groupbycol,
+			groupbycol_index:groupbycol_index,
+			groupbycol_name:groupbycol_name,
+			groupby_val:groupby_val,
+			gm_var:gm_var,
+			fdesde:fdesde,
+			fhasta:fhasta
+		}
+		
+		if ((!no_op) || (bypassOp)) {
+		
+			$("#paging").remove();
+		
+			var req = $.ajax({
+				
+				async:false,
+				data:data,
+				type:"POST",
+				url:"./php/get-stats-table.php",
+				success:function(d){}
+				
+			});
+			
+			document.getElementById("dataset-content").innerHTML = req.responseText;
+			
+			$("#paging").appendTo($("#dataset-wrapper").parent());
+			
+			//this.resetSelects();
+
+			$(".page-item").each(function(i,v) {
+				
+				$(v).on("click",function() {
+					
+					var pageitem = v.getAttribute("data-page");
+					
+					this.getTable(pageitem,false,false,false);
+					
+				}.bind(this));
+				
+			}.bind(this));
+			
+			var rowWidth = $(".dataset-row").first().width();
+			var rowChilds = $(".dataset-row").first().children().length;
+			
+			var cellWidth = rowWidth / rowChilds;
+			
+			$("#dataset-inner").css("width",(rowChilds*250)+"px");
+			
+			$(".dataset-cell").css("width","250px");
+			$(".dataset-filter-row .dropdown-toggle").css("width","85%");
+			$(".dataset-filter-row .dropdown-toggle").css("margin-top","1px");
+			$(".dataset-filter-row .dropdown-toggle").css("text-transform","uppercase");
+			$(".dataset-operation-row .dropdown-toggle").css("width","100%");
+			$(".dataset-operation-row .dropdown-toggle").css("text-transform","uppercase");
+			$(".col-filter").on("keydown",function() {
+				
+				$("#update-view").prop("disabled",false);
+				
+			});
+			
+			this.updateAgroupColModals();
+			
+			if (mapear) {
+				
+				var dt_mapeo_id = $("#dataset").attr("data-gm-id");
+				this.mapear(dt_mapeo_id);
+				
+			}
+			
+			if (graficar) {
+				
+				var dt_mapeo_id = $("#dataset").attr("data-gm-id");
+				this.graficar(dt_mapeo_id);
+			}
+		
+		}else{
+			
+			jalert(false,"Faltan seleccionar funciones para poder actualizar la vista","danger");
+			$("#update-view").prop("disabled",false);
+			
+		}
+		
+	}
+	
 	this.view.getTableCsv = function(page,bypassOp,mapear,graficar) {
 		
 		var dt_id = $("#frm-dt #dt_id").val();

@@ -103,7 +103,7 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 		
 		foreach ($r as $item => $value){
 			
-			if(( strpos( $item, "geom" ) === false) && (strpos( $item, "id" ) === false) && (strpos( $item, "cod_" ) === false)&& (strpos( $item, "origen" ) === false)) {
+			if(( strpos( $item, "geom" ) === false) && ( $item != "id" ) && (strpos( $item, "cod_" ) === false) && ( $item != "origen")) {
 			
 				$html .= "<tr>";
 				$html .= "<td>" . str_replace("_"," ",$item) . "</td>";
