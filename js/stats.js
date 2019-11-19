@@ -794,7 +794,7 @@ function ol_stats() {
 				
 			});
 			
-			this.updateAgroupColModals();
+			//this.updateAgroupColModals();
 			
 			if (mapear) {
 				
