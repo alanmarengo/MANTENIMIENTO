@@ -630,7 +630,7 @@ function ol_stats() {
 		
 	}
 	
-	this.view.getTablePrint = function(page,bypassOp,mapear,graficar) {
+	this.getTablePrint = function(page,bypassOp,mapear,graficar) {
 		
 		var dt_id = $("#frm-dt #dt_id").val();
 		var dt_variables = $("#frm-dt #dt_v").val();
