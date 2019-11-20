@@ -837,7 +837,8 @@ function ol_stats() {
 		
 		$("#close-print").hide();
 		$("#icon-print").hide();
-		window.print();
+		//window.print();
+		$("#print-view").printThis();
 		$("#close-print").show();
 		$("#icon-print").show();
 		

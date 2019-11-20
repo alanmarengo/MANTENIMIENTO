@@ -97,9 +97,9 @@
 
 <script src="./js/colorpicker/js/colorpicker.js" type="text/javascript"></script>
 
-<!-- HTML 2 CANVAS -->
+<!-- PRINT THIS -->
 
-<script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+<script src="./js/printThis/printThis.js"></script>
 
 <!-- JUMP JS -->
 
