@@ -2429,9 +2429,11 @@ function ol_map() {
 		
 		$("#nolayer-active").remove();
 		
-		var layer_id = this.map.layersStatsIndex++;
-		var clase_id = this.map.layersStatsIndex++;
-		this.map.layersStats.push[layer];
+		var layer_id = this.map.layersStatsIndex;
+		var clase_id = this.map.layersStatsIndex;
+		this.map.layersStats[this.map.layersStatsIndex] = layer;
+		
+		this.map.layersStatsIndex++;
 		
 		var dataLidLabel = "data-lid";
 		
@@ -2478,6 +2480,29 @@ function ol_map() {
 		
 		var nodezoomexta = document.createElement("a");
 			nodezoomexta.href = "javascript:void(0);";
+			nodezoomexta.onclick = function() {
+				
+				var reqExtent = $.ajax({
+			
+					async:false,
+					url:"./php/get-layer-extent-mapeo.php",
+					type:"post",
+					data:{query_id:query_id},
+					success:function(d){}
+						
+				});
+				
+				var js = JSON.parse(reqExtent.responseText);
+				
+				var extent = ol.proj.transformExtent(
+					[js.minx,js.miny,js.maxx,js.maxy],
+					"EPSG:3857", "EPSG:3857"
+				);
+				
+				this.map.ol_object.getView().fit(extent,{duration:1000});
+				this.map.ol_object.updateSize();
+				this.map.ol_object.render();
+			}
 			
 		var nodezoomextimg = document.createElement("img");
 			nodezoomextimg.src = "./images/geovisor/icons/layer-bar-zoom.png";
@@ -2487,6 +2512,13 @@ function ol_map() {
 			
 		var noderemove = document.createElement("a");
 			noderemove.className = "simple-tree-pm-button remove-layer-icon-ca";
+			noderemove.href = "javascript:void(0);";
+			noderemove.onclick = function() {
+				
+				$(noderemove).closest(".active-layer-node").remove();
+				this.map.ol_object.removeLayer(layer);
+				
+			}.bind(this);
 			
 		var noderemovei = document.createElement("i");
 			noderemovei.className = "fa fa-trash popup-panel-tree-item-icon-toggler popup-icon";
