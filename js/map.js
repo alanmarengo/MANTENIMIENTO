@@ -2554,6 +2554,7 @@ function ol_map() {
 			layerCheck.className = "layer-checkbox default-empty-checkbox";
 			layerCheck.style.display = "block";
 			layerCheck.setAttribute("data-added","1");
+			layerCheck.setAttribute("type","checkbox");
 			layerCheck.layer = layer;
 			layerCheck.onclick = function() {
 				
