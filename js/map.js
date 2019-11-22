@@ -2502,7 +2502,8 @@ function ol_map() {
 				this.map.ol_object.getView().fit(extent,{duration:1000});
 				this.map.ol_object.updateSize();
 				this.map.ol_object.render();
-			}
+				
+			}.bind(this);
 			
 		var nodezoomextimg = document.createElement("img");
 			nodezoomextimg.src = "./images/geovisor/icons/layer-bar-zoom.png";
@@ -2517,6 +2518,12 @@ function ol_map() {
 				
 				$(noderemove).closest(".active-layer-node").remove();
 				this.map.ol_object.removeLayer(layer);
+				
+				if ($("#info-capasactivas-inner").children(".active-layer-node").length == 0) {
+					
+					$("#info-capasactivas-inner").html("<p id=\"nolayer-active\" class=\"p20\">No hay capas activas, para agregar capas al mapa utilice el botón correspondiente ubicado en la barra de herramientas.</p>");
+					
+				}
 				
 			}.bind(this);
 			
