@@ -41,11 +41,11 @@ while ($r = pg_fetch_assoc($query)) {
 			
 			<div class="panel-dataset-group-list-header">
 				<span>SELECCIONAR VARIABLE DE ORIGEN: <?php echo $r["origen"]; ?></span>
-				<a href="#" class="toggeable-icon <?php if($count>1) { echo "fa-plus-circle"; } ?>" onclick="$(this).children('i').toggleClass('fa-plus-circle'); $(this).parent().next().slideToggle('fast'); scroll.refresh();">
-					<i class="fa fa-minus-circle"></i>
+				<a href="#" class="toggeable-icon" onclick="$(this).children('i').toggleClass('fa-plus-circle'); $(this).parent().next().slideToggle('fast'); scroll.refresh();">
+					<i class="fa fa-minus-circle <?php if($count>1) { echo "fa-plus-circle"; } ?>"></i>
 				</a>
 			</div>
-			<div class="panel-dataset-group-list-body <?php if($count>1) { echo "d-none"; } ?>">
+			<div class="panel-dataset-group-list-body" <?php if($count>1) { echo "style=\"display:none;\""; } ?>>
 		
 				<div class="panel-dataset-group-item">							
 					<div class="pretty p-icon p-curve">
