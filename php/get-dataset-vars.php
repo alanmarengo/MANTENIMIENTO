@@ -8,11 +8,15 @@ $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . 
 	
 $conn = pg_connect($string_conn);
 
+$query_string_origenes = "SELECT DISTINCT origen FROM mod_estadistica.get_dt_variales(".$dt_id.") ORDER BY origen ASC";
+
 $query_string = "SELECT * FROM mod_estadistica.get_dt_variales(".$dt_id.") ORDER BY origen ASC";
 
 $query = pg_query($conn,$query_string);
 
-$count = pg_num_rows($query);
+$query_origenes = pg_query($conn,$query_string_origenes);
+
+$count = pg_num_rows($query_origenes);
 
 $origen = "-1";
 
