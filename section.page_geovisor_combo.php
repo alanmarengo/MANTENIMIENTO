@@ -22,6 +22,15 @@
                     <b id="label-proyecto" style="text-transform:uppercase;"></b><br />
                     <small id="label-capa" style="text-transform:uppercase;"></small>
                 </div>
+				
+				<div class="col-md-12" style="text-align: left; padding: 0px 10px 20px 0px;">
+                    <select id="uxVisor" class="selectpicker" data-width="300">
+                       <!--<option value="">LA BARRANCOSA</option>-->
+                    </select>
+                    <div id="uxCapa">
+                        <!--<option value="">ESCALA DE PECES</option>-->
+                    </div>
+                </div>
 
                 <div id="map">
 				
@@ -64,9 +73,18 @@ function loadComboObra(proyectos) {
 		for (var i=0; i<proyectos[obraIndex].layers.length; i++) {
 			
 			$("#uxCapa").append(
-				$("<option></option>")
-				.val(proyectos[obraIndex].layers[i].layer_id)
-				.text(proyectos[obraIndex].layers[i].componente)
+				$("<p></p>")					
+					.append(
+						$("<input>")
+							.attr("type","checkbox")
+							.attr("data-layer-id",proyectos[obraIndex].layers[i].layer_id)
+					)
+					.append(
+						$("<span></span>")
+							.html(proyectos[obraIndex].layers[i].componente)
+					)
+				/*.val(proyectos[obraIndex].layers[i].layer_id)
+				.text(proyectos[obraIndex].layers[i].componente)*/
 			);
 		
 		}
