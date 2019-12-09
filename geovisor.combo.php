@@ -8,9 +8,9 @@
 	
 	#uxVisor {
 	
-		position: absolute;
-		z-index: 999;
-		padding: 20px;
+		position: absolute !important;
+		z-index: 999 !important;
+		padding: 20px !important;
 		background:white;
 		left: 10px;
 		top: 10px;
