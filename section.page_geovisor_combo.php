@@ -4,19 +4,8 @@
     <div class="row">
                 
         <!---------------------------------------------->
-        <div class="col-md-12 section-b">          
-            
-            <div class="row">
-                <div class="col-md-12" style="text-align: center; padding: 0px 10px 20px 0px;">
-                    <select id="uxVisor" class="selectpicker" data-width="300">
-                       <!--<option value="">LA BARRANCOSA</option>-->
-                    </select>
-                    <select id="uxCapa" class="selectpicker" data-width="300">
-                        <!--<option value="">ESCALA DE PECES</option>-->
-                    </select>
-                </div>
-            </div>
-
+        <div class="col-md-12 section-b">     
+		
             <div style="border: solid 1px #666; margin: 10px 15px 0px 15px; width: 100%;">
                 <div style="font-size: 10px; padding: 10px; background-color: #fff; color: #333; text-align: center;">
                     <b id="label-proyecto" style="text-transform:uppercase;"></b><br />
