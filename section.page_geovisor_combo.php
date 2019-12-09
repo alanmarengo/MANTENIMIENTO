@@ -7,10 +7,6 @@
         <div class="col-md-12 section-b">     
 		
             <div style="border: solid 1px #666; margin: 10px 15px 0px 15px; width: 100%;">
-                <div style="font-size: 10px; padding: 10px; background-color: #fff; color: #333; text-align: center;">
-                    <b id="label-proyecto" style="text-transform:uppercase;"></b><br />
-                    <small id="label-capa" style="text-transform:uppercase;"></small>
-                </div>
 				
 				<div class="col-md-12" style="text-align: left; padding: 0px 10px 20px 0px;">
                     <select id="uxVisor" class="selectpicker" data-width="300">

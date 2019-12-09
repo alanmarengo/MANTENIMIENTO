@@ -4,6 +4,30 @@
 <html lang="es">
 <head>
 
+	<style>
+	
+	#uxVisor {
+	
+		position: absolute;
+		z-index: 999;
+		padding: 20px;
+		background:white;
+		left: 10px;
+		top: 10px;
+
+	}
+	
+	#uxCapa {
+	
+		position: absolute;
+		z-index: 999;
+		padding: 20px;
+		background:white;
+		left: 10px;
+		top: 50px;
+
+	}
+
 	<title>PROYECTO</title>
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
