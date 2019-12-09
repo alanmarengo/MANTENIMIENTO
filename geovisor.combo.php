@@ -27,6 +27,8 @@
 		top: 50px;
 
 	}
+	
+	</style>
 
 	<title>PROYECTO</title>
 	
