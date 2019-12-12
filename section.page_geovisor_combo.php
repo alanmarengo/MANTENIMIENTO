@@ -100,7 +100,7 @@ function loadComboObra(proyectos) {
 									});
 									
 								}
-								
+								alert(this.prop("checked"));
 								if (this.prop("checked") == "checked") {
 								
 									this.layer.setVisible(true);
