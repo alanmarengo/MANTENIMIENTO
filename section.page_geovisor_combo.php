@@ -81,8 +81,6 @@ function loadComboObra(proyectos) {
 									
 									var layer_id = this.getAttribute("data-layer-id");
 									
-									alert("LAYER ID: " + layer_id);
-									
 									var layerData = geomap.map.getLayerData(layer_id);
 									
 									this.layer = new ol.layer.Tile({
