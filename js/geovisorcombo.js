@@ -100,11 +100,11 @@ function loadComboComponente(proyectos) {
 
 function loadLabels() {
 	
-	var proyectText = $("#uxVisor option:selected").text();
+	/*var proyectText = $("#uxVisor option:selected").text();
 	var layerText = $("#uxCapa option:selected").text();
 	
 	$("#label-proyecto").html(proyectText);
-	$("#label-capa").html(layerText);
+	$("#label-capa").html(layerText);*/
 	
 }
 
@@ -317,15 +317,9 @@ var proyectos = [
 	document.getElementById("uxVisor").addEventListener("change",function() {
 		
 		loadComboComponente(proyectos);	
-		loadLabels();
+		//loadLabels();
 		
-	});	
-	
-	document.getElementById("uxCapa").addEventListener("change",function() {
-		
-		loadLabels();
-		
-	});	
+	});
 	
 	loadComboObra(proyectos);
 
