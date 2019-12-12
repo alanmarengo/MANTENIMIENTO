@@ -639,7 +639,7 @@ function ol_map() {
 	}
 	
 	this.map.getLayerData = function(layer_id) {
-		alert("FROM GET DATA LAYER ID: " + layer_id);
+		
 		var reqExtent = $.ajax({
 			
 			async:false,
