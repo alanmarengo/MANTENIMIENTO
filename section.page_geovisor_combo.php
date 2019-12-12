@@ -77,8 +77,6 @@ function loadComboObra(proyectos) {
 							.attr("data-i",i)
 							.on("click",function() {
 								
-								console.log(this.layer);
-								
 								if (this.layer == 'undefined') {
 									
 									var layerData = geomap.map.getLayerData(this.getAttribute("data-layer-id"));
@@ -110,6 +108,8 @@ function loadComboObra(proyectos) {
 									this.layer.setVisible(false);
 									
 								}
+								
+								console.log(this.layer);
 								
 							})
 					)
