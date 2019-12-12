@@ -71,6 +71,20 @@ function loadComboComponente(proyectos) {
 				if (this.getAttribute("checked") == "checked") {
 				
 					this.layer.setVisible(true);
+					
+					geomap.map.ol_object.addLayer(geomap.map.uniqueLayer);
+	
+					var js = geomap.map.getLayerExtent(layer_id);
+					
+					var extent = ol.proj.transformExtent(
+						[js.minx,js.miny,js.maxx,js.maxy],
+						"EPSG:3857", "EPSG:3857"
+					);
+					
+					geomap.map.ol_object.getView().fit(extent,{duration:1000});
+					geomap.map.ol_object.updateSize();
+					geomap.map.ol_object.render();
+					
 				
 				}else{
 					
