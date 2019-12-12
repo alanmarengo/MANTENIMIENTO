@@ -79,7 +79,7 @@ function loadComboObra(proyectos) {
 								
 								console.log(this.layer);
 								
-								if (!this.layer) {
+								if (this.layer == 'undefined') {
 									
 									var layerData = geomap.map.getLayerData(this.getAttribute("data-layer-id"));
 									
@@ -101,7 +101,15 @@ function loadComboObra(proyectos) {
 									
 								}
 								
-								this.layer.setVisible(this.checked);
+								if (this.prop("checked") == "checked") {
+								
+									this.layer.setVisible(true);
+								
+								}else{
+									
+									this.layer.setVisible(false);
+									
+								}
 								
 							})
 					)
