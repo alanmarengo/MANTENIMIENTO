@@ -76,10 +76,11 @@ function loadComboObra(proyectos) {
 							.attr("data-oi",obraIndex)
 							.attr("data-i",i)
 							.on("click",function() {
-								console.log(this);
+								
 								if (!this.layer) {
 									
-									var layerData = geomap.map.getLayerData(this.getAttribute("data-layer-id"));
+									var layer_id = this.getAttribute("data-layer-id");
+									var layerData = geomap.map.getLayerData(layer_id);
 									
 									this.layer = new ol.layer.Tile({
 										name:layerData.layer_wms_layer,
@@ -91,7 +92,7 @@ function loadComboObra(proyectos) {
 												'VERSION': '1.1.1',
 												'FORMAT': 'image/png',
 												'TILED': false,
-												'layer_id':this.getAttribute("data-layer-id")
+												'layer_id':layer_id
 											}/*,
 											crossOrigin: 'anonymous'*/
 										})
