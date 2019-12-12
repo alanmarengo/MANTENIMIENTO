@@ -43,7 +43,7 @@ function loadComboComponente(proyectos) {
 			input.setAttribute("data-i",i);
 			input.onclick = function() {
 				
-				if (input.layer == 'undefined') {
+				if (input.layer == undefined) {
 								
 					var layerData = geomap.map.getLayerData(input.getAttribute("data-layer-id"));
 					
