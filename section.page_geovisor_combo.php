@@ -77,6 +77,10 @@ function loadComboObra(proyectos) {
 							.attr("data-i",i)
 							.on("click",function() {
 								
+								alert(this.getAttribute("data-layer-id"));
+								alert(this.getAttribute("data-oi"));
+								alert(this.getAttribute("data-i"));
+								
 								if (!this.layer) {
 									
 									var layer_id = this.getAttribute("data-layer-id");
