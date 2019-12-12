@@ -69,7 +69,7 @@ function loadComboComponente(proyectos) {
 					
 				}
 				
-				alert(this.getAttribute("checked"));
+				alert(this.checked);
 				
 				if (this.getAttribute("checked") == "checked") {
 				
