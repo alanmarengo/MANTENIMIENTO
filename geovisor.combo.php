@@ -48,6 +48,8 @@
 	<?php include("./scripts.openlayers.php"); ?>	
 	<?php include("./scripts.map.php"); ?>
 	<?php include("./scripts.onresize.php"); ?>
+
+	<script src ="./js/geovisorcombo.js" type='text/javascript'></script>
 	
 </head>
 <body>
