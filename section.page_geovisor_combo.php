@@ -51,7 +51,7 @@ function loadComboObra(proyectos) {
 			
 			"width": "340px",
 			"position": "absolute",
-			"z-index": "999",
+			"z-index": "9999",
 			"top": "10px",
 			"left": "10px"
 			
@@ -73,6 +73,35 @@ function loadComboObra(proyectos) {
 						$("<input>")
 							.attr("type","checkbox")
 							.attr("data-layer-id",proyectos[obraIndex].layers[i].layer_id)
+							.attr("data-oi",obraIndex)
+							.attr("data-i",i)
+							.on("click",function() {
+								
+								if (!this.layer) {
+									
+									var layerData = proyectos[this.getAttribute("data-oi")].layers[this.getAttribute("data-i")];
+									
+									this.layer = new ol.layer.Tile({
+										name:layerData.layer_wms_layer,
+										visible:true,
+										source: new ol.source.TileWMS({
+											url: layerData.layer_wms_server,
+											params: {
+												'LAYERS': layerData.layer_wms_layer,
+												'VERSION': '1.1.1',
+												'FORMAT': 'image/png',
+												'TILED': false,
+												'layer_id':layer_id
+											}/*,
+											crossOrigin: 'anonymous'*/
+										})
+									});
+									
+								}
+								
+								this.layer.setVisible(this.checked);
+								
+							});
 					)
 					.append(
 						$("<span></span>")
