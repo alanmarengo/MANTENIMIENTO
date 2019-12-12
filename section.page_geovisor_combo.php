@@ -76,7 +76,7 @@ function loadComboObra(proyectos) {
 							.attr("data-oi",obraIndex)
 							.attr("data-i",i)
 							.on("click",function() {
-								
+								console.log(this);
 								if (!this.layer) {
 									
 									var layerData = geomap.map.getLayerData(this.getAttribute("data-layer-id"));
