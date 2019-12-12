@@ -45,7 +45,17 @@ function loadComboObra(proyectos) {
 		
 		$("#uxVisor").selectpicker("refresh");
 		
-		loadComboComponente(proyectos);		
+		loadComboComponente(proyectos);	
+		
+		$(".bootstrap-select").css({
+			
+			"width": "340px",
+			"position": "absolute",
+			"z-index": "999",
+			"top": "10px",
+			"left": "10px"
+			
+		});
 		
 	}
 	
