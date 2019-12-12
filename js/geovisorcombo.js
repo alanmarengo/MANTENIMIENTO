@@ -46,7 +46,7 @@ function loadComboComponente(proyectos) {
 				if (this.layer == undefined) {
 								
 					var layerData = geomap.map.getLayerData(this.getAttribute("data-layer-id"));
-					console.log(layerData);
+					
 					this.layer = new ol.layer.Tile({
 						name:layerData.layer_wms_layer,
 						visible:true,
@@ -63,6 +63,8 @@ function loadComboComponente(proyectos) {
 						})
 					});
 					
+					alert("DIBUJAR CAPA: " + layerData.layer_wms_server);
+					
 					geomap.map.ol_object.addLayer(this.layer);
 					
 				}
@@ -76,8 +78,6 @@ function loadComboComponente(proyectos) {
 					this.layer.setVisible(false);
 					
 				}
-				
-				console.log(this.layer);
 				
 			}
 			
