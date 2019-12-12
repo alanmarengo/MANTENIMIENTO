@@ -6,9 +6,9 @@
         <!---------------------------------------------->
         <div class="col-md-12 section-b">     
 		
-            <div style="border: solid 1px #666; margin: 10px 15px 0px 15px; width: 100%;">
+            <div style="border: solid 1px #666; margin: 0; width: 100%;">
 				
-				<div class="col-md-12" style="text-align: left; padding: 0px 10px 20px 0px;">
+				<div class="col-md-12" style="text-align: left; padding: 0px;">
                     <select id="uxVisor" class="selectpicker" data-width="300">
                        <!--<option value="">LA BARRANCOSA</option>-->
                     </select>
