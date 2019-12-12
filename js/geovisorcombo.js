@@ -43,11 +43,11 @@ function loadComboComponente(proyectos) {
 			input.setAttribute("data-i",i);
 			input.onclick = function() {
 				
-				if (input.layer == undefined) {
+				if (this.layer == undefined) {
 								
-					var layerData = geomap.map.getLayerData(input.getAttribute("data-layer-id"));
+					var layerData = geomap.map.getLayerData(this.getAttribute("data-layer-id"));
 					
-					input.layer = new ol.layer.Tile({
+					this.layer = new ol.layer.Tile({
 						name:layerData.layer_wms_layer,
 						visible:true,
 						source: new ol.source.TileWMS({
@@ -63,19 +63,21 @@ function loadComboComponente(proyectos) {
 						})
 					});
 					
+					geomap.map.ol_object.addLayer(this.layer);
+					
 				}
 				
-				if (input.getAttribute("checked") == "checked") {
+				if (this.getAttribute("checked") == "checked") {
 				
-					input.layer.setVisible(true);
+					this.layer.setVisible(true);
 				
 				}else{
 					
-					input.layer.setVisible(false);
+					this.layer.setVisible(false);
 					
 				}
 				
-				console.log(input.layer);
+				console.log(this.layer);
 				
 			}
 			
