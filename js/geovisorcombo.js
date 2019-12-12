@@ -68,7 +68,9 @@ function loadComboComponente(proyectos) {
 					geomap.map.ol_object.addLayer(this.layer);
 					
 				}
+				
 				alert(this.getAttribute("checked"));
+				
 				if (this.getAttribute("checked") == "checked") {
 				
 					this.layer.setVisible(true);
