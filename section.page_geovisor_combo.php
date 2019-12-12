@@ -101,7 +101,7 @@ function loadComboObra(proyectos) {
 								
 								this.layer.setVisible(this.checked);
 								
-							});
+							})
 					)
 					.append(
 						$("<span></span>")
