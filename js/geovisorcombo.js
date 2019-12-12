@@ -45,7 +45,8 @@ function loadComboComponente(proyectos) {
 				
 				if (this.layer == undefined) {
 								
-					var layerData = geomap.map.getLayerData(this.getAttribute("data-layer-id"));
+					var layer_id = this.getAttribute("data-layer-id");
+					var layerData = geomap.map.getLayerData(layer_id);
 					
 					this.layer = new ol.layer.Tile({
 						name:layerData.layer_wms_layer,
@@ -58,7 +59,7 @@ function loadComboComponente(proyectos) {
 								'VERSION': '1.1.1',
 								'FORMAT': 'image/png',
 								'TILED': false,
-								'layer_id':layerData.layer_id
+								'layer_id':layer_id
 							}/*,
 							crossOrigin: 'anonymous'*/
 						})
