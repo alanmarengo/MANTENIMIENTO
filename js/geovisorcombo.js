@@ -111,7 +111,7 @@ function loadLabels() {
 
 function drawLayer() {
 	
-	var layer_id = $("#uxCapa").val();
+	/*var layer_id = $("#uxCapa").val();
 	
 	var layerData = geomap.map.getLayerData(layer_id);
 	
@@ -133,7 +133,7 @@ function drawLayer() {
 				'TILED': false,
 				'layer_id':layer_id
 			}/*,
-			crossOrigin: 'anonymous'*/
+			crossOrigin: 'anonymous'
 		})
 	});
 	
@@ -148,7 +148,7 @@ function drawLayer() {
 	
 	geomap.map.ol_object.getView().fit(extent,{duration:1000});
 	geomap.map.ol_object.updateSize();
-	geomap.map.ol_object.render();
+	geomap.map.ol_object.render();*/
 	
 }
 
@@ -319,14 +319,12 @@ var proyectos = [
 		
 		loadComboComponente(proyectos);	
 		loadLabels();
-		drawLayer();
 		
 	});	
 	
 	document.getElementById("uxCapa").addEventListener("change",function() {
 		
 		loadLabels();
-		drawLayer();
 		
 	});	
 	
