@@ -67,52 +67,53 @@ function loadComboObra(proyectos) {
 		
 		for (var i=0; i<proyectos[obraIndex].layers.length; i++) {
 			
+			var input = document.createElement("input");
+				input.type = "checkbox";
+				input.setAttribute("data-layer-id",proyectos[obraIndex].layers[i].layer_id);
+				input.setAttribute("data-oi",obraIndex);
+				input.setAttribute("data-i",i));
+				input.onclick = function() {
+					
+					if (this.layer == 'undefined') {
+									
+						var layerData = geomap.map.getLayerData(this.getAttribute("data-layer-id"));
+						
+						this.layer = new ol.layer.Tile({
+							name:layerData.layer_wms_layer,
+							visible:true,
+							source: new ol.source.TileWMS({
+								url: layerData.layer_wms_server,
+								params: {
+									'LAYERS': layerData.layer_wms_layer,
+									'VERSION': '1.1.1',
+									'FORMAT': 'image/png',
+									'TILED': false,
+									'layer_id':layerData.layer_id
+								}/*,
+								crossOrigin: 'anonymous'*/
+							})
+						});
+						
+					}
+					
+					if (this.getAttribute("checked") == "checked") {
+					
+						this.layer.setVisible(true);
+					
+					}else{
+						
+						this.layer.setVisible(false);
+						
+					}
+					
+					console.log(this.layer);
+					
+				}
+				
+			
 			$("#uxCapa").append(
 				$("<p></p>")					
-					.append(
-						$("<input>")
-							.attr("type","checkbox")
-							.attr("data-layer-id",proyectos[obraIndex].layers[i].layer_id)
-							.attr("data-oi",obraIndex)
-							.attr("data-i",i)
-							.on("click",function() {
-								
-								if (this.layer == 'undefined') {
-									
-									var layerData = geomap.map.getLayerData(this.getAttribute("data-layer-id"));
-									
-									this.layer = new ol.layer.Tile({
-										name:layerData.layer_wms_layer,
-										visible:true,
-										source: new ol.source.TileWMS({
-											url: layerData.layer_wms_server,
-											params: {
-												'LAYERS': layerData.layer_wms_layer,
-												'VERSION': '1.1.1',
-												'FORMAT': 'image/png',
-												'TILED': false,
-												'layer_id':layerData.layer_id
-											}/*,
-											crossOrigin: 'anonymous'*/
-										})
-									});
-									
-								}
-								
-								if (this.getAttribute("checked") == "checked") {
-								
-									this.layer.setVisible(true);
-								
-								}else{
-									
-									this.layer.setVisible(false);
-									
-								}
-								
-								console.log(this.layer);
-								
-							})
-					)
+					.append(input)
 					.append(
 						$("<span></span>")
 							.html(proyectos[obraIndex].layers[i].componente)
