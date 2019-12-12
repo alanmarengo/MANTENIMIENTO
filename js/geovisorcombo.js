@@ -99,6 +99,7 @@ function loadComboComponente(proyectos) {
 				.append(input)
 				.append(
 					$("<span></span>")
+						.addClass("ml-10")
 						.html(proyectos[obraIndex].layers[i].componente)
 				)
 			/*.val(proyectos[obraIndex].layers[i].layer_id)
