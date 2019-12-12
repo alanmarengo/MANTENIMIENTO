@@ -64,8 +64,6 @@ function loadComboComponente(proyectos) {
 						})
 					});
 					
-					alert("DIBUJAR CAPA: " + layerData.layer_wms_server);
-					
 					geomap.map.ol_object.addLayer(this.layer);
 					
 				}
