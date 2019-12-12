@@ -68,12 +68,10 @@ function loadComboComponente(proyectos) {
 					geomap.map.ol_object.addLayer(this.layer);
 					
 				}
-				
+				alert(this.getAttribute("checked"));
 				if (this.getAttribute("checked") == "checked") {
 				
 					this.layer.setVisible(true);
-					
-					geomap.map.ol_object.addLayer(geomap.map.uniqueLayer);
 	
 					var js = geomap.map.getLayerExtent(layer_id);
 					
