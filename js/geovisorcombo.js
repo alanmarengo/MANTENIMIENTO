@@ -40,7 +40,7 @@ function loadComboComponente(proyectos) {
 			input.type = "checkbox";
 			input.setAttribute("data-layer-id",proyectos[obraIndex].layers[i].layer_id);
 			input.setAttribute("data-oi",obraIndex);
-			input.setAttribute("data-i",i));
+			input.setAttribute("data-i",i);
 			input.onclick = function() {
 				
 				if (this.layer == 'undefined') {
