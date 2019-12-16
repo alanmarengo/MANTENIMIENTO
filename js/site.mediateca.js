@@ -105,7 +105,14 @@ $(document).ready(function() {
                 let group = $(this).data('group');
                 let item = $(this).data('item');
 
-                if (estudio == 1) {
+                if (estudio == -1) {
+                    model.filters.searchText = '';
+                    $('#main-search').val('');
+                } else if (estudio == -2) {
+                    model.filters.searchText = '';
+                    $('#main-search').val('');
+                    filtersReset();
+                } else if (estudio == 1) {
                     model.filters.mode = -1;
                     model.filters.mode_id = 0;
                     model.filters.mode_label = '';
@@ -740,6 +747,12 @@ $(document).ready(function() {
             function checkedsRender() {
                 $('#uxFiltersChecked').html('');
 
+                if (model.filters.searchText) {
+                    $('#uxFiltersChecked').append(`
+                        <a class="filters-checked btn btn-warning btn-xs" data-estudio="-1">Busqueda: ${model.filters.searchText} <i class="fa fa-times" style="padding: 0px 6px;"></i></a>
+                    `)
+                }
+
                 if (model.filters.mode_label) {
                     let nombre = '';
                     let title = model.filters.mode_label;
@@ -773,6 +786,12 @@ $(document).ready(function() {
                 }
             });
         });
+
+        if ($('#uxFiltersChecked').html()) {
+            $('#uxFiltersChecked').append(`
+                <a class="filters-checked btn btn-danger btn-xs" data-estudio="-2">Limpiar filtros</a>
+            `)
+        }
     }
 
     function fichaRender() {
@@ -1051,7 +1070,7 @@ $(document).ready(function() {
                 items: []
             },
             {
-                title: 'Area de Gestión',
+                title: '&Aacute;rea de Gestión',
                 collapsed: true,
                 visible: true,
                 items: []
