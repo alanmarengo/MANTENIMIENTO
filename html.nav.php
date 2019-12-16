@@ -35,7 +35,7 @@
 			</a>
 		</li>
 		<li>
-			<a href="./page_endesarrollo.php?q=">Plan Gestión de Calidad</a>
+			<a href="./page_endesarrollo.php?q=Plan Gestión de Calidad">Plan Gestión de Calidad</a>
 		</li>
 		<li>
 			<a href="./page_herramientas.php?target=geoservicios">Servicios Geográficos</a>
