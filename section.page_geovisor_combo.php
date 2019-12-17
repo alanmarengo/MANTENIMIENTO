@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="./css/page_template.css" />
 
 <div id="page_proyecto" class="page page_template h100p">
-    <div class="row h100px">
+    <div class="row h100p">
                 
         <!---------------------------------------------->
         <div class="col-md-12 section-b h100p p0">     
