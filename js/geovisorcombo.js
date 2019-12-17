@@ -49,7 +49,7 @@ function loadComboComponente(proyectos) {
 			input.setAttribute("data-layer-id",proyectos[obraIndex].layers[i].layer_id);
 			input.setAttribute("data-oi",obraIndex);
 			input.setAttribute("data-i",i);
-			input.checked = true;
+			//input.checked = true;
 			input.onclick = function() {
 				
 				if (this.layer == undefined) {
