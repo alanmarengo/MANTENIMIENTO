@@ -18,7 +18,7 @@ function loadComboObra(proyectos) {
 		
 		$(".bootstrap-select").css({
 			
-			"width": "340px",
+			"width": "645px",
 			"position": "absolute",
 			"z-index": "9999",
 			"top": "10px",
