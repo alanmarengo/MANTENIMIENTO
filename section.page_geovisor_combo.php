@@ -1,12 +1,12 @@
 <link rel="stylesheet" type="text/css" href="./css/page_template.css" />
 
-<div id="page_proyecto" class="page page_template">
+<div id="page_proyecto" class="page page_template h100p">
     <div class="row">
                 
         <!---------------------------------------------->
-        <div class="col-md-12 section-b p0">     
+        <div class="col-md-12 section-b h100p p0">     
 		
-            <div style="border: solid 1px #666; margin: 0; width: 100%;">
+            <div style="border: solid 1px #666; margin: 0; height:100%; width: 100%;">
 				
 				<div class="col-md-12" style="text-align: left; padding: 0px;">
                     <select id="uxVisor" class="selectpicker" data-width="300">

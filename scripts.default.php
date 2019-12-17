@@ -58,6 +58,7 @@
 <link rel="stylesheet" href="./css/geovisor/popup.css"/>
 <link rel="stylesheet" href="./css/geovisor/input.css"/>
 <link rel="stylesheet" href="./css/geovisor/spacers.css"/>
+<link rel="stylesheet" href="./css/geovisor/sizers.css"/>
 <link rel="stylesheet" href="./css/geovisor/sliders.css"/>
 <link rel="stylesheet" href="./css/geovisor/style.css"/>
 
