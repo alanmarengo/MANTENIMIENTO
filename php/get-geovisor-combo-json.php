@@ -7,6 +7,7 @@ $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . 
 $conn = pg_connect($string_conn);
 
 $sections = array("AHRSC","Cóndor Cliff","La Barrancosa","Línea de Alta Tensión");
+$id_geovisor = array(100,200,300,400);
 
 $lists = array();
 $lists[0] = "844,644,836,841";
@@ -25,6 +26,7 @@ for ($i=0; $i<sizeof($sections); $i++) {
 	$json .= "{";
 	$json .= "\"index\":" . $i . ",";
 	$json .= "\"label\":\"" . $sections[$i] . "\",";
+	$json .= "\"id_geovisor\":\"" . $id_geovisor[$i] . "\",";
 	//$json .= "\"qs\":\"" . $query_string . "\",";
 	$json .= "\"layers\":[";
 	
