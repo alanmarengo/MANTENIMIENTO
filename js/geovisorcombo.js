@@ -208,9 +208,9 @@ var req = $.ajax({
 
 var js = JSON.parse(req.responseText);
 
-console.log(js);
+var proyectos = js;
 
-var proyectos = [
+/*var proyectos = [
 
 	{
 		
@@ -339,7 +339,7 @@ var proyectos = [
 			
 		}
 		
-	];
+	];*/
 	
 	document.getElementById("uxVisor").addEventListener("change",function() {
 		
