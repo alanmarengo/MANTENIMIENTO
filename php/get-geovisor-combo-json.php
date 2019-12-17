@@ -18,14 +18,15 @@ $json = "[";
 
 for ($i=0; $i<sizeof($sections); $i++) {
 	
-	$json .= "{";
-	$json .= "\"index\":" . $i . ",";
-	$json .= "\"label\":\"" . $sections[$i] . "\",";
-	$json .= "\"layers\":[";
-	
 	$query_string = "SELECT * FROM mod_geovisores.vw_layers WHERE layer_id IN(" . $lists[$i] . ") ORDER BY preview_title ASC";
 	
 	$query = pg_query($conn,$query_string);
+	
+	$json .= "{";
+	$json .= "\"index\":" . $i . ",";
+	$json .= "\"label\":\"" . $sections[$i] . "\",";
+	$json .= "\"qs\":\"" . $query_string . "\",";
+	$json .= "\"layers\":[";
 	
 	while($r = pg_fetch_assoc($query)) {
 		
