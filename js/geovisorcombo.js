@@ -32,7 +32,7 @@ function loadComboComponente(proyectos) {
 	
 	var obraIndex = $("#uxVisor").val();
 	
-	$("#uxCapa").empty();
+	//$("#uxCapa").empty();
 	
 	var mapLayers = geomap.map.ol_object.getLayers().getArray();
 
