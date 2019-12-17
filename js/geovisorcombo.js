@@ -32,7 +32,15 @@ function loadComboComponente(proyectos) {
 	
 	var obraIndex = $("#uxVisor").val();
 	
-	$("#uxCapa").children("option").remove();
+	$("#uxCapa").empty();
+	
+	var mapLayers = geomap.map.ol_object.getLayers().getArray();
+
+	for (var i=0; i<mapLayers.length; i++) {
+	
+		geomap.map.ol_object.removeLayer(mapLayers[i]);
+	
+	}
 	
 	for (var i=0; i<proyectos[obraIndex].layers.length; i++) {
 		
@@ -41,6 +49,7 @@ function loadComboComponente(proyectos) {
 			input.setAttribute("data-layer-id",proyectos[obraIndex].layers[i].layer_id);
 			input.setAttribute("data-oi",obraIndex);
 			input.setAttribute("data-i",i);
+			input.checked = true;
 			input.onclick = function() {
 				
 				if (this.layer == undefined) {
