@@ -197,6 +197,19 @@ $('.section-footer-button2').hover(
 	}
 )
 
+var req = $.ajax({
+	
+	async:false,
+	type:"POST",
+	url:"./php/get-geovisor-combo-json.php",
+	success:function(d){}
+	
+});
+
+var js = JSON.parse(req.responseText);
+
+console.log(js);
+
 var proyectos = [
 
 	{
