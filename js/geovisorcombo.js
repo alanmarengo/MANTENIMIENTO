@@ -37,8 +37,12 @@ function loadComboComponente(proyectos) {
 	var mapLayers = geomap.map.ol_object.getLayers().getArray();
 
 	for (var i=0; i<mapLayers.length; i++) {
-	
-		geomap.map.ol_object.removeLayer(mapLayers[i]);
+		
+		if (mapLayers[i].get('name') != "google_base") {
+		
+			geomap.map.ol_object.removeLayer(mapLayers[i]);
+		
+		}
 	
 	}
 	
@@ -49,7 +53,7 @@ function loadComboComponente(proyectos) {
 			input.setAttribute("data-layer-id",proyectos[obraIndex].layers[i].layer_id);
 			input.setAttribute("data-oi",obraIndex);
 			input.setAttribute("data-i",i);
-			//input.checked = true;
+			input.checked = true;
 			input.onclick = function() {
 				
 				if (this.layer == undefined) {
@@ -217,9 +221,9 @@ var req = $.ajax({
 
 var js = JSON.parse(req.responseText);
 
-//var proyectos = js;
+var proyectos = js;
 
-var proyectos = [
+/*var proyectos = [
 
 	{
 		
@@ -348,7 +352,7 @@ var proyectos = [
 			
 		}
 		
-	];
+	];*/
 	
 	document.getElementById("uxVisor").addEventListener("change",function() {
 		
