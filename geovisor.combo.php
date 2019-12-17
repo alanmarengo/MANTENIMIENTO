@@ -63,6 +63,8 @@
 		</div>
 		
 	</div>	
+	
+	<?php include("./html.navbar-geovisor-zoom.php"); ?>
 
 </body>
 </html>
