@@ -54,9 +54,9 @@
 </head>
 <body>
 
-	<div id="page" style="background-color: #f4f4f4;">
+	<div id="page" style="background-color: #f4f4f4;" class="h100p">
 		
-		<div class="page-container">
+		<div class="page-container h100p">
 		
 			<?php include("./section.page_geovisor_combo.php"); ?>
 			

@@ -4,7 +4,7 @@
     <div class="row">
                 
         <!---------------------------------------------->
-        <div class="col-md-12 section-b">     
+        <div class="col-md-12 section-b p0">     
 		
             <div style="border: solid 1px #666; margin: 0; width: 100%;">
 				
