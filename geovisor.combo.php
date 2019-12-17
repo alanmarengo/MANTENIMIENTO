@@ -23,7 +23,7 @@
 		z-index: 999;
 		padding: 20px;
 		background:white;
-		left: 10px;
+		left: 30px;
 		top: 50px;
 
 	}

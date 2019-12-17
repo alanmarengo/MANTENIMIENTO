@@ -22,7 +22,7 @@ function loadComboObra(proyectos) {
 			"position": "absolute",
 			"z-index": "9999",
 			"top": "10px",
-			"left": "10px"
+			"left": "30px"
 			
 		});
 		
