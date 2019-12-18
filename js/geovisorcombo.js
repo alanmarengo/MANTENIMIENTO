@@ -79,7 +79,6 @@ function loadComboComponente(proyectos) {
 					});
 					
 					geomap.map.ol_object.addLayer(this.layer);
-					this.layer.setVisible(true);
 					
 				}				
 				
@@ -151,6 +150,8 @@ function loadComboComponente(proyectos) {
 			/*.val(proyectos[obraIndex].layers[i].layer_id)
 			.text(proyectos[obraIndex].layers[i].componente)*/
 		);
+		
+		input.layer.setVisible(true);
 	
 	}
 	
