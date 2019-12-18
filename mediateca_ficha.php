@@ -14,6 +14,14 @@ $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . 
 	
 $conn = pg_connect($string_conn);
 
+function limpiar($str)
+{
+	return str_replace(array("\n","\r"),'',$str);
+
+};
+
+
+
 /************************** CATEGORIA **********************************/
 /*
 	1 imagen 
@@ -55,10 +63,10 @@ $row = pg_fetch_row($recordset);
 echo "{";
 echo "\"origen_id\":\"$row[0]\","; 
 echo "\"id\":\"$row[1]\","; 
-echo "\"titulo\":\"$row[2]\",";
+echo "\"titulo\":\"".limpiar($row[2])."\",";
 echo "\"temporal\":\"$row[3]\","; 
 echo "\"autores\":\"$row[4]\","; 
-echo "\"descripcion\":\"$row[5]\",";  
+echo "\"descripcion\":\"".limpiar($row[5])."\",";  
 echo "\"estudio\":\"$row[6]\",";  
 echo "\"linkvisor\":\"$row[7]\",";  
 echo "\"linkdescarga\":\"$row[8]\",";  
