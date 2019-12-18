@@ -107,7 +107,8 @@ function loadComboComponente(proyectos) {
 			}
 			
 		var zoomTool = document.createElement("div");
-			zoomTool.className = "d-inline";
+			zoomTool.className = "d-inline ml-5 jump-posrel";
+			zoomTool.style.top = "-2px";
 			zoomTool.setAttribute("data-layer-id",proyectos[obraIndex].layers[i].layer_id);
 			zoomTool.onclick = function() {
 				
