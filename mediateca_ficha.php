@@ -65,7 +65,7 @@ echo "\"origen_id\":\"$row[0]\",";
 echo "\"id\":\"$row[1]\","; 
 echo "\"titulo\":\"".limpiar($row[2])."\",";
 echo "\"temporal\":\"$row[3]\","; 
-echo "\"autores\":\"$row[4]\","; 
+echo "\"autores\":\"".limpiar($row[4])."\","; 
 echo "\"descripcion\":\"".limpiar($row[5])."\",";  
 echo "\"estudio\":\"$row[6]\",";  
 echo "\"linkvisor\":\"$row[7]\",";  
