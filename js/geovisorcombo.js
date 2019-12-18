@@ -78,33 +78,6 @@ function loadComboComponente(proyectos) {
 				var layer_id = this.getAttribute("data-layer-id");
 				var layerData = geomap.map.getLayerData(layer_id);
 				
-				/*if (this.layer == undefined) {
-					
-					this.layer = new ol.layer.Tile({
-						name:layerData.layer_wms_layer,
-						visible:true,
-						source: new ol.source.TileWMS({
-							//url: layerData.layer_wms_server,
-							url:"http://observatorio.ieasa.com.ar:8080/geoserver/ows?",
-							params: {
-								'LAYERS': layerData.layer_wms_layer,
-								'VERSION': '1.1.1',
-								'FORMAT': 'image/png',
-								'TILED': false,
-								'layer_id':layer_id
-							}/*,
-							crossOrigin: 'anonymous'
-						})
-					});
-					
-					geomap.map.ol_object.addLayer(this.layer);
-					
-					this.layer.setVisible(true);
-					
-					geomap.map.ol_object.updateSize();
-					geomap.map.ol_object.render();
-				}*/			
-				
 				if (this.checked) {
 				
 					this.layer.setVisible(true);
@@ -128,6 +101,8 @@ function loadComboComponente(proyectos) {
 				}
 				
 			}
+			
+			geomap.map.ol_object.addLayer(input.layer);
 			
 		var zoomTool = document.createElement("div");
 			zoomTool.className = "d-inline ml-5 jump-posrel";
