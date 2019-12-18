@@ -106,10 +106,36 @@ function loadComboComponente(proyectos) {
 				
 			}
 			
+		var zoomTool = document.createElement("div");
+			zoomTool.className = "d-inline";
+			zoomTool.setAttribute("data-layer-id",proyectos[obraIndex].layers[i].layer_id);
+			zoomTool.onclick = function() {
+				
+				var layer_id = this.getAttribute("data-layer-id");
+				
+				var js = geomap.map.getLayerExtent(layer_id);
+					
+				var extent = ol.proj.transformExtent(
+					[js.minx,js.miny,js.maxx,js.maxy],
+					"EPSG:3857", "EPSG:3857"
+				);
+				
+				geomap.map.ol_object.getView().fit(extent,{duration:1000});
+				geomap.map.ol_object.updateSize();
+				geomap.map.ol_object.render();
+				
+			}
+			
+		var zoomToolImg = document.createElement("img");
+			zoomToolImg.src = "./images/geovisor/icons/layer-bar-zoom.png";
+			
+			zoomTool.appendChild(zoomToolImg);
+			
 		
 		$("#uxCapa").append(
 			$("<p></p>")					
 				.append(input)
+				.append(zoomTool)
 				.append(
 					$("<span></span>")
 						.addClass("ml-10")
