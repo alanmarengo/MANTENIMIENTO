@@ -109,8 +109,11 @@ function loadComboComponente(proyectos) {
 		var zoomTool = document.createElement("div");
 			zoomTool.className = "d-inline ml-5 jump-posrel";
 			zoomTool.style.top = "-2px";
-			zoomTool.setAttribute("data-layer-id",proyectos[obraIndex].layers[i].layer_id);
-			zoomTool.onclick = function() {
+		
+		var zoomToolA = document.createElement("a");
+			zoomToolA.href = "#";
+			zoomToolA.setAttribute("data-layer-id",proyectos[obraIndex].layers[i].layer_id);
+			zoomToolA.onclick = function() {
 				
 				var layer_id = this.getAttribute("data-layer-id");
 				
@@ -126,11 +129,12 @@ function loadComboComponente(proyectos) {
 				geomap.map.ol_object.render();
 				
 			}
-			
+		
 		var zoomToolImg = document.createElement("img");
 			zoomToolImg.src = "./images/geovisor/icons/layer-bar-zoom.png";
 			
-			zoomTool.appendChild(zoomToolImg);
+			zoomTool.appendChild(zoomToolA);
+			zoomToolA.appendChild(zoomToolImg);
 			
 		
 		$("#uxCapa").append(
