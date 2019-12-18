@@ -25,6 +25,7 @@
 		background:white;
 		left: 30px;
 		top: 50px;
+		width:450px;
 
 	}
 	

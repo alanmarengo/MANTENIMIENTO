@@ -18,7 +18,7 @@ function loadComboObra(proyectos) {
 		
 		$(".bootstrap-select").css({
 			
-			"width": "645px",
+			"width": "450px",
 			"position": "absolute",
 			"z-index": "9999",
 			"top": "10px",
@@ -113,6 +113,7 @@ function loadComboComponente(proyectos) {
 		var zoomToolA = document.createElement("a");
 			zoomToolA.href = "#";
 			zoomToolA.setAttribute("data-layer-id",proyectos[obraIndex].layers[i].layer_id);
+			zoomToolA.title = "Ir a extent de capa";
 			zoomToolA.onclick = function() {
 				
 				var layer_id = this.getAttribute("data-layer-id");
@@ -210,7 +211,14 @@ function drawLayer() {
 }
 
 $(document).ready(function() {
-
+	
+$("[title]").tooltipster({
+	animation: 'fade',
+	delay: 200,
+	theme: 'tooltipster-default',
+	trigger: 'hover'
+});
+		
 geomap = new ol_map();
 	
 geomap.map.create();
