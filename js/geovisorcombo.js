@@ -48,6 +48,9 @@ function loadComboComponente(proyectos) {
 	
 	for (var i=0; i<proyectos[obraIndex].layers.length; i++) {
 		
+		var layer_id = proyectos[obraIndex].layers[i].layer_id);
+		var layerData = geomap.map.getLayerData(layer_id);
+				
 		var input = document.createElement("input");
 			input.type = "checkbox";
 			input.setAttribute("data-layer-id",proyectos[obraIndex].layers[i].layer_id);
