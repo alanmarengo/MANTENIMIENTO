@@ -55,11 +55,11 @@ function loadComboComponente(proyectos) {
 			input.setAttribute("data-i",i);
 			input.checked = true;
 			input.onclick = function() {
+								
+			var layer_id = this.getAttribute("data-layer-id");
+			var layerData = geomap.map.getLayerData(layer_id);
 				
 				if (this.layer == undefined) {
-								
-					var layer_id = this.getAttribute("data-layer-id");
-					var layerData = geomap.map.getLayerData(layer_id);
 					
 					this.layer = new ol.layer.Tile({
 						name:layerData.layer_wms_layer,
