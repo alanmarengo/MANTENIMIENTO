@@ -79,6 +79,7 @@ function loadComboComponente(proyectos) {
 					});
 					
 					geomap.map.ol_object.addLayer(this.layer);
+					this.layer.setVisible(true);
 					
 				}				
 				
