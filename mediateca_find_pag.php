@@ -311,16 +311,16 @@ $total_3 = getTotalRegistros(3);
 //$estudio_nombre = getEstudioNombre($estudio_id);
 
 echo "{"; // JSON - Inicio
-echo "	\"paginas\":\"$total_paginas\",";
-echo "	\"solapa\": \"$solapa\",";
-echo "	\"pagina\": \"$pagina\",";
+echo "	\"paginas\":$total_paginas,";
+echo "	\"solapa\": $solapa,";
+echo "	\"pagina\": $pagina,";
 echo "	\"estudio_nombre\": \"$estudio_nombre\",";
 echo "	\"mode_label\": \"$mode_label\",";
-echo "	\"registros_total_0\": \"$total_0\",";
-echo "	\"registros_total_1\": \"$total_1\",";
-echo "	\"registros_total_2\": \"$total_2\",";
-echo "	\"registros_total_3\": \"$total_3\",";
-echo "	\"rec_per_page\": \"$salto\",";
+echo "	\"registros_total_0\": $total_0,";
+echo "	\"registros_total_1\": $total_1,";
+echo "	\"registros_total_2\": $total_2,";
+echo "	\"registros_total_3\": $total_3,";
+echo "	\"rec_per_page\": $salto,";
 echo "	\"recordset\":";
 
 $recordset = pg_query($conn,getSQL($solapa).$paginador_text);
