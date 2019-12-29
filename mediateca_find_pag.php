@@ -17,20 +17,28 @@ include("./pgconfig.php");
   * 5 Antiguos
   */
 
-$qt         =  $_REQUEST['s'];
-$desde      =  $_REQUEST['ds'];
-$hasta      =  $_REQUEST['de'];
-$proyecto   =  $_REQUEST['proyecto'];
-$clase      =  $_REQUEST['tema'];
-$subclase   =  $_REQUEST['subtema'];
-$tipo_doc   =  $_REQUEST['documento'];
-$orden      =  $_REQUEST['o'];
-$estudio_id =  $_REQUEST['estudio_id'];
-$ra 	    =  $_REQUEST['ra'];
-$solapa	    =  $_REQUEST['solapa'];
-$mode	    =  $_REQUEST['mode'];
-$mode_id	=  $_REQUEST['mode_id'];
-$mode_label =  $_REQUEST['mode_label'];
+$qt         	=  pg_escape_string($_REQUEST['s']); 
+$desde      	=  pg_escape_string($_REQUEST['ds']);
+$hasta      	=  pg_escape_string($_REQUEST['de']);
+$proyecto   	=  pg_escape_string($_REQUEST['proyecto']);
+$clase     	=  pg_escape_string($_REQUEST['tema']);
+$subclase   	=  pg_escape_string($_REQUEST['subtema']);
+$tipo_doc   	=  pg_escape_string($_REQUEST['documento']);
+$orden      	=  $_REQUEST['o'];
+$estudio_id 	=  pg_escape_string($_REQUEST['estudio_id']);
+$ra 	    	=  $_REQUEST['ra'];
+$solapa		=  $_REQUEST['solapa'];
+$mode	    	=  $_REQUEST['mode'];
+$mode_id	=  $_REQUEST['mode_id'];/* mode_id es un ID relacionado con un mode en particular */
+$mode_label 	=  $_REQUEST['mode_label'];
+
+
+/*************************** QT extras ********************************/
+
+$qt = str_replace("(","",$qt);
+$qt = str_replace(")","",$qt);
+
+
 
 /************************* ORDER BY **********************************/
 
@@ -422,6 +430,8 @@ echo "]";
 /******************************************* FIN FILTROS RECALCULADOS ********************************************/
 
 echo "}";// Fin JSON
+
+//echo "ERROR SQL ".pg_last_error($conn);
 
 pg_close($conn);
 
