@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="./css/page_template.css" />
 
-<div id="page_endesarrollo" class="page page_template">
+<div id="page_endesarrollo" class="page page_template" style="width: 100%;">
     <div class="row">
         <div class="col-md-12">
             <div class="leyenda-titulo">

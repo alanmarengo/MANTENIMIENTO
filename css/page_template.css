@@ -1,5 +1,13 @@
 .page_template {
   font-size: 12px;
+  max-width: 1400px;
+  margin: auto;
+}
+.page_template .pl-0 {
+  padding-left: 0px;
+}
+.page_template .pr-0 {
+  padding-right: 0px;
 }
 .page_template .section-sticky {
   width: 100%;

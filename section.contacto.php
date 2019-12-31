@@ -1,4 +1,4 @@
-<div id="page_contacto" class="page" style="background-color: #fff;">
+<div id="page_contacto" class="page" style="max-width: 1400px; margin: auto; width: 100%; background-color: #fff;">
     <div class="row">
         <div class="col-md-12 page-title">
             Contacto
@@ -7,7 +7,7 @@
         <div class="col-md-12 page-section-3" style="background-image: url(./images/contacto_banner.png);">
         </div>
 
-        <div class="col-md-12 page-section-4">
+        <div class="col-md-12 page-section-4" style="background-color: #fff;">
             <form style="padding-left: 40px; padding: 20px 40px 40px 40px;">
                 <div class="row">
                     <div class="col-sm-6">

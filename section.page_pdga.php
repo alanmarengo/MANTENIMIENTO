@@ -16,7 +16,7 @@
             </div>
         </div>
 
-        <div class="col-md-12">
+        <div class="col-md-12 pl-0 pr-0">
             <img src="./images/pdga_fondo.jpg" style="width: 100%; height: auto;" />
         </div>
 
@@ -161,7 +161,9 @@ Especialidades involucradas,  asesores internacionales.
             </div>
         </div>
 
-        <div id="uxFichas">
+        <div class="col-md-12">
+            <div id="uxFichas">
+            </div>
         </div>
     </div>
 

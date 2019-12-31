@@ -14,7 +14,7 @@
             </div>
         </div>
 
-        <div class="col-md-12">
+        <div class="col-md-12 pl-0 pr-0">
             <img src="./images/proyecto_fondo.jpg" style="width: 100%; height: auto;" />
         </div>
 

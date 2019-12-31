@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="./css/page_template.css" />
 
-<div id="page_ahrsc" class="page page_template">
+<div id="page_ahrsc" class="page page_template" style="max-width: 1400px; margin: auto;">
     <div class="row">
         <div class="section-sticky">
             <div class="col-md-12 page-title">

@@ -15,7 +15,7 @@
             </div>
         </div>
 
-        <div class="col-md-12">
+        <div class="col-md-12 pl-0 pr-0">
             <img src="./images/acercade_fondo.png" style="width: 100%; height: auto;" />
         </div>
 
@@ -255,6 +255,5 @@ $(document).ready(function() {
             $(this).css('background-image', 'url("./images/icono-' + key + '-relleno.png")')
         }
     )
-
 });
 </script>
