@@ -21,7 +21,7 @@
 	
 		<?php include("./html.navbar-main.php"); ?>
 		
-		<div class="page-container">
+		<div class="page-container" style="background-color: rgb(234, 234, 237);">
 		
 			<?php include("./section.contacto.php"); ?>			
 			
