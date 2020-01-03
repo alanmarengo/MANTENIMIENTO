@@ -12,23 +12,23 @@ function DrawAbrInd() {
 		
 	while ($r = pg_fetch_assoc($query)) {
 	
-		$query_string_records = "SELECT DISTINCT * FROM mod_indicadores.ind_panel WHERE clase_id = " . $r["clase_id"] . " ORDER BY ind_titulo ASC";
+		$query_string_records = "SELECT * FROM mod_indicadores.ind_panel WHERE clase_id = " . $r["clase_id"] . " ORDER BY ind_titulo ASC";
 		
-		$query_records = pg_query($conn,$query_records);
+		$query_records = pg_query($conn,$query_string_records);
 			
 		$records = pg_num_rows($query_records);
 			
-		if ($records>0) {
+		//if ($records>0) {
 		
 		?>
 		
-		<div class="abr panel-abr" data-color="#31cbfd" data-bgcolor="#FFFFFF" data-active="0" data-cid="<?php echo $r["clase_id"]; ?>">
+		<div class="abr panel-abr" data-color="#31cbfd" data-bgcolor="#FFFFFF" data-active="0" data-cid="<?php echo $r["clase_id"]; ?>" data-r="<?php echo $records; ?>">
 			<span><?php echo $r["cod_clase_alf"]; ?></span>
 		</div>
 		
 		<?php
 		
-		}
+		//}
 		
 	}
 	
