@@ -9,8 +9,16 @@ function DrawAbrInd() {
 	$query_string = "SELECT clase_id,color_hex,color_head,cod_clase_alf FROM mod_catalogo.clase ORDER BY clase_id ASC";
 	
 	$query = pg_query($conn,$query_string);
-	
+		
 	while ($r = pg_fetch_assoc($query)) {
+	
+		$query_string_records = "SELECT DISTINCT * FROM mod_indicadores.ind_panel WHERE clase_id = " . $r["clase_id"] . " ORDER BY ind_titulo ASC";
+		
+		$query_records = pg_query($conn,$query_records);
+			
+		$records = pg_num_rows($query_records);
+			
+		if ($records>0) {
 		
 		?>
 		
@@ -19,6 +27,8 @@ function DrawAbrInd() {
 		</div>
 		
 		<?php
+		
+		}
 		
 	}
 	
@@ -36,14 +46,6 @@ function DrawContainersInd() {
 	
 	while ($r = pg_fetch_assoc($query)) {
 		
-		$query_string_records = "SELECT DISTINCT * FROM mod_indicadores.ind_panel WHERE clase_id = " . $r["clase_id"] . " ORDER BY ind_titulo ASC";
-	
-		$query_records = pg_query($conn,$query_records);
-		
-		$records = pg_num_rows($query_records);
-		
-		if ($records>0) {
-		
 		?>
 		
 		<div class="layer-container" data-color="#31cbfd" data-cid="<?php echo $r["clase_id"]; ?>" style="border-color:#FFFFFF">
@@ -56,8 +58,6 @@ function DrawContainersInd() {
 		</div>
 		
 		<?php
-		
-		}
 		
 	}
 	
