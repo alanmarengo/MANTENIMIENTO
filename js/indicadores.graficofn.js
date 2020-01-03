@@ -8,9 +8,9 @@ function draw_grafico_1(container,config) {
 		accessibility: {
 			description: config.desc
 		},
-		/*title: {
-			text: config.titulo
-		},*/
+		title: {
+			text: null
+		},
 		subtitle: {
 			text: config.desc
 		},
@@ -62,9 +62,9 @@ function draw_grafico_2(container,config) {
 		chart: {
 			type: 'bar'
 		},
-		/*title: {
-			text: config.title
-		},*/
+		title: {
+			text: null
+		},
 		xAxis: {
 			categories: config.etiquetas
 		},
@@ -134,9 +134,9 @@ function draw_grafico_3(container,config) { // BUBBLE CHART
 			type: 'packedbubble',
 			height: '100%'
 		},
-		/*title: {
-			text: config.title
-		},*/
+		title: {
+			text: null
+		},
 		tooltip: {
 			useHTML: true,
 			pointFormat: '<b>{point.name}:</b> {point.value} '+config.unidad+'</sub>'
@@ -221,9 +221,9 @@ function draw_grafico_4(container,config) { // BUBBLE CHART
 			type: 'packedbubble',
 			height: '100%'
 		},
-		/*title: {
-			text: config.title
-		},*/
+		title: {
+			text: null
+		},
 		tooltip: {
 			useHTML: true,
 			pointFormat: '<b>{point.name}:</b> {point.value} ' + config.unidad
@@ -316,9 +316,9 @@ function draw_grafico_5(container,config) { // BASIC COLUMNS
 		chart: {
 			type: 'column'
 		},
-		/*title: {
-			text: config.titulo
-		},*/
+		title: {
+			text: null
+		},
 		subtitle: {
 			text: config.desc
 		},
@@ -406,9 +406,9 @@ function draw_grafico_6(container,config) { // FIXED PLACEMENT
 		chart: {
 			type: 'column'
 		},
-		/*title: {
-			text: config.titulo
-		},*/
+		title: {
+			text: null
+		},
 		xAxis: {
 			categories: labels
 		},
@@ -496,9 +496,9 @@ function draw_grafico_7(container,config) { // FIXED PLACEMENT
 		chart: {
 			type: 'column'
 		},
-		/*title: {
-			text: config.titulo
-		},*/
+		title: {
+			text: null
+		},
 		xAxis: {
 			categories: config.etiquetas
 		},
@@ -646,9 +646,9 @@ function draw_grafico_9(container,config) { // BASIC LINE
 	Highcharts.chart(container, {
 		
 		credits: { enabled:false },
-		/*title: {
-			text: config.titulo
-		},*/
+		title: {
+			text: null
+		},
 
 		subtitle: {
 			text: config.desc
@@ -715,12 +715,13 @@ function draw_grafico_10(container,config) { // SEMI CIRCLE DONUT
 			plotBorderWidth: 0,
 			plotShadow: false
 		},
-		/*title: {
-			text: config.titulo,
+		title: {
+			text: null,
+			/*text: config.titulo,*/
 			align: 'center',
 			verticalAlign: 'middle',
 			y: 60
-		},*/
+		},
 		tooltip: {
 			pointFormat: '{series.name}: <b>{point.percentage:.1f}'+config.unidad+'</b>'
 		},
@@ -757,9 +758,9 @@ function draw_grafico_11(container,config) { // PIE WITH DRILLDOWN
 		chart: {
 			type: 'pie'
 		},
-		/*title: {
-			text: config.titulo
-		},*/
+		title: {
+			text: null
+		},
 		subtitle: {
 			text: config.desc
 		},
