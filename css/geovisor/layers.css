@@ -584,3 +584,9 @@
 	padding:10px;
 	
 }
+
+#info-baselayers .pretty input[type=radio] {
+	
+	left:-10px !Important;
+	
+}
