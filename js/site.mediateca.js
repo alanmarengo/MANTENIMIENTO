@@ -223,7 +223,7 @@ $(document).ready(function() {
                                 cursor: pointer;
                                 width: 100%;
                                 height:60px;
-                                background-image: url(${linkimg});
+                                background-image: url('${linkimg}');
                                 background-repeat: no-repeat;
                                 background-position: center center;
                                 background-size: cover;    
@@ -243,7 +243,7 @@ $(document).ready(function() {
                             width: 100%;
                             height:260px;
                             cursor: pointer;
-                            background-image: url(${model.ficha.linkimagen});
+                            background-image: url('${model.ficha.linkimagen}');
                             background-repeat: no-repeat;
                             background-position: center center;
                             background-size: cover;    
@@ -875,7 +875,7 @@ $(document).ready(function() {
             let i = `
                 <div class="media col-sm-2" data-toggle="collapse" href="#uxPreview_${row}" data-id="${item.id}" data-origen="${item.origen_id}" data-row="${row}">
                     <div class="media-border">
-                        <div class="media-img" style="background-image: url(${item.link_preview});">
+                        <div class="media-img" style="background-image: url('${item.link_preview}');">
                         </div>
                         <div class="media-info">
                             ${item.title.substr(0, 40)}<br />
