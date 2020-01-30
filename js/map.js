@@ -2202,7 +2202,7 @@ function ol_map() {
 				
 				$("#palette-clear-layer").remove();
 				
-				$(".sp-palette-row").append(
+				$(".sp-palette-row-selection").append(
 					$("<span></span>")
 						.attr("class","sp-thumb")
 						.attr("id","palette-clear-layer")
