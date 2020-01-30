@@ -2206,6 +2206,13 @@ function ol_map() {
 					$("<span></span>")
 						.attr("class","sp-thumb")
 						.attr("id","palette-clear-layer")
+						.attr("title","Reiniciar Estilo")
+						.css({
+							display:"flex",
+							justifyContent:"center",
+							alignItems:"center",
+							cursor:"pointer"
+						})
 						.append($("<i></i>").attr("class","fas fa-ban").css("color","red"))
 						.on("click",function() {
 							
