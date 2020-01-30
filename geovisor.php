@@ -61,6 +61,9 @@
 		<div class="page-container">
 		
 			<div id="map" class="jump-flotant-heightfill">
+				<div id="global-coordinates-fixed">
+					<span id="global-coordinates-fixed-span"></span>
+				</div>
 				<div id="global-coordinates">
 					<span id="global-coordinates-span"></span>
 				</div>

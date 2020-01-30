@@ -73,6 +73,17 @@
 	
 }
 
+#global-coordinates-fixed {
+	
+	position:absolute;
+	right:0;
+	bottom:15px;
+	color:#fe5645;
+	font-size:10px;
+	z-index:1100;
+	
+}
+
 #global-coordinates {
 	
 	position:absolute;

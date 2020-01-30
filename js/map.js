@@ -148,8 +148,12 @@ function ol_map() {
 			if (this.infoEnabled ) {
 			
 				var pos = evt.coordinate;
-				
+								
 				console.log("POS: " + pos);
+				
+				var coord = String(pos).split(",");
+				
+				document.getElementById("global-coordinates-fixed-span").innerHTML = "Último Click: EPSG:3857 | " + coord[1] + ", " + coord[0];
 				
 				var iconFeature = new ol.Feature({
 				  geometry: new ol.geom.Point(pos)
