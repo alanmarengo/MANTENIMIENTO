@@ -2208,10 +2208,12 @@ function ol_map() {
 						.attr("id","palette-clear-layer")
 						.attr("title","Reiniciar Estilo")
 						.css({
-							display:"flex",
+							display:"inline-flex",
 							justifyContent:"center",
 							alignItems:"center",
-							cursor:"pointer"
+							cursor:"pointer",
+							width:"18px",
+							height:"18px"
 						})
 						.append($("<i></i>").attr("class","fas fa-ban").css("color","red"))
 						.on("click",function() {
