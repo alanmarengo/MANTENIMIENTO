@@ -55,7 +55,7 @@ data-minimizable="1" data-minimized-title="COORDENADAS">
 						<td><span id="cap-coord-4326"></td>
 					</td>			
 					<tr>
-						<td>Condor Clift &nbsp;&nbsp;</td>
+						<td>Condor Cliff &nbsp;&nbsp;</td>
 						<td><span id="cap-coord-100001"></td>
 					</td>
 					<tr>
