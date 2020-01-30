@@ -3,14 +3,14 @@
   padding: 0; 
 }
 
-.hamburguer {
+.hamburguesa {
 	
 	display:inline-block;
 	vertical-align:top;
 	
 }
 
-#hamburguer {
+#hamburguesa {
   width: 2.5rem;
   height: 2.25rem;
   position: relative;
@@ -27,19 +27,19 @@
   background-color:#585858;
 }
 
-#hamburguer:hover span:nth-child(1) {
+#hamburguesa:hover span:nth-child(1) {
 
 	top: 8px;
 	
 }
 
-#hamburguer:hover span:nth-child(3) {
+#hamburguesa:hover span:nth-child(3) {
 
 	top: 26px;
 	
 }
 
-#hamburguer span {
+#hamburguesa span {
   display: block;
   position: absolute;
   height: 3px;
@@ -59,19 +59,19 @@
   transition: .25s ease-in-out;
 }
 
-#hamburguer span:nth-child(1) {
+#hamburguesa span:nth-child(1) {
   top: 10px;
 }
 
-#hamburguer span:nth-child(2) {
+#hamburguesa span:nth-child(2) {
   top: 17px;
 }
 
-#hamburguer span:nth-child(3) {
+#hamburguesa span:nth-child(3) {
   top: 24px;
 }
 
-#hamburguer.open span:nth-child(1) {
+#hamburguesa.open span:nth-child(1) {
   top: 17px;
   -webkit-transform: rotate(135deg);
   -moz-transform: rotate(135deg);
@@ -79,12 +79,12 @@
   transform: rotate(135deg);
 }
 
-#hamburguer.open span:nth-child(2) {
+#hamburguesa.open span:nth-child(2) {
   opacity: 0;
   left: -60px;
 }
 
-#hamburguer.open span:nth-child(3) {
+#hamburguesa.open span:nth-child(3) {
   top: 17px;
   -webkit-transform: rotate(-135deg);
   -moz-transform: rotate(-135deg);
@@ -92,14 +92,14 @@
   transform: rotate(-135deg);
 }
 
-#hamburguer-line {
+#hamburguesa-line {
 	
 	height:2.25rem;
 	width:1px;
 	
 }
 
-#hamburguer-line span {
+#hamburguesa-line span {
 	
 	height:100%;
 	width:100%;

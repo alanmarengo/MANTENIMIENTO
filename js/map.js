@@ -2200,6 +2200,42 @@ function ol_map() {
 				layer.getSource().tileCache.clear();
 				layer.getSource().refresh();
 				
+				$("#palette-clear-layer").remove();
+				
+				$(".sp-palette-row").append(
+					$("<span></span>")
+						.attr("class","sp-thumb")
+						.attr("id","palette-clear-layer")
+						.append($("<i></i>").attr("class","fas fa-ban").css("color","red"))
+						.on("click",function() {
+							
+							var layer = document.getElementById("layer-checkbox-"+layer_id).layer;
+							var layer_name = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-layer");
+							var type = document.getElementById("layer-checkbox-"+layer_id).getAttribute("data-layer-type");
+							var layer_types = ['',0,1,2,2,1,0,0];
+							var cl = String(color);
+								cl = cl.substring(1,cl.length).trim();
+							
+							s = new sldlib();
+							
+							sld_result = s.sld_get(layer_id);
+							
+							s.clear();
+							
+							layer.getSource().updateParams({
+								
+								'sld_body':sld_result
+								
+							})
+							
+							//layer.changed();
+							layer.getSource().tileCache.expireCache({});
+							layer.getSource().tileCache.clear();
+							layer.getSource().refresh();
+							
+						})
+				);
+				
 			},
 
 			palette: [
