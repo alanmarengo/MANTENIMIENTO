@@ -7,6 +7,7 @@ $results = $_POST["results"];
 
 $layer_names = array();
 $layer_desc = array();
+$estudios_id = array();
 $gids = array();
 
 $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
@@ -17,13 +18,15 @@ for ($i=0; $i<sizeof($results); $i++) {
 	
 	$sep = explode(";",$results[$i]);
 	
-	$qs_name = "SELECT layer_desc FROM mod_geovisores.vw_layers WHERE layer_wms_layer = '" . $sep[0] . "' LIMIT 1";
+	$qs_name = "SELECT layer_desc,estudios_id FROM mod_geovisores.vw_layers WHERE layer_wms_layer = '" . $sep[0] . "' LIMIT 1";
 	$qs_query = pg_query($conn,$qs_name);
 	$qs_name_data = pg_fetch_assoc($qs_query);
 	$layer_d = $qs_name_data["layer_desc"];
+	$estudio_id = $qs_name_data["estudios_id"];
 	
 	array_push($layer_desc,$layer_d);
 	array_push($layer_names,$sep[0]);
+	array_push($estudios_id,$estudio_id);
 	
 	if (!$gids[$sep[0]]) {
 		
@@ -87,7 +90,9 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 				data-active=\"./images/geovisor/icons/popup-layer-download-active.png\"></a>";
 			$html .= "</div>";
 			$html .= "<div class=\"layer-icon\" title=\"Ver Recursos Asociados\">";
-				$html .= "<a href=\"./mediateca.php?mode=10&mode_id=".$layer_id."&mode_label=".$layer_desc[$i]."\" target=\"_blank\"><img src=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\"
+				/*$html .= "<a href=\"./mediateca.php?mode=10&mode_id=".$layer_id."&mode_label=".$layer_desc[$i]."\" target=\"_blank\"><img src=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\"
+				data-active=\"./images/geovisor/icons/popup-layer-recurso-active.png\"></a>";*/
+				$html .= "<a href=\"./mediateca.php?mode=0&mode_id=".$layer_id."&mode_label=".$layer_desc[$i]."&s=".$estudios_id[$i]."\" target=\"_blank\"><img src=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\"
 				data-active=\"./images/geovisor/icons/popup-layer-recurso-active.png\"></a>";
 			$html .= "</div>";
 		$html .= "</div>";
