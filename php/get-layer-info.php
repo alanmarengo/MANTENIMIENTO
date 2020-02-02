@@ -18,7 +18,7 @@ for ($i=0; $i<sizeof($results); $i++) {
 	
 	$sep = explode(";",$results[$i]);
 	
-	$qs_name = "SELECT layer_desc,estudios_id FROM mod_geovisores.vw_layers WHERE layer_wms_layer = '" . $sep[0] . "' LIMIT 1";
+	$qs_name = "SELECT layer_desc,cod_oficial FROM mod_geovisores.vw_layers WHERE layer_wms_layer = '" . $sep[0] . "' LIMIT 1";
 	$qs_query = pg_query($conn,$qs_name);
 	$qs_name_data = pg_fetch_assoc($qs_query);
 	$layer_d = $qs_name_data["layer_desc"];
