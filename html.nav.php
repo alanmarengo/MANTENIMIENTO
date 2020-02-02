@@ -18,7 +18,7 @@
 			<a href="./page_pdga.php">Plan de Gestión Ambiental - PGA</a>
 		</li>
 		<li>
-			<a href="./page_esia.php">Antecedentes y Marco Legal</a>
+			<a href="./page_antecedentes.php">Antecedentes y Marco Legal</a>
 		</li>
 		<li>
 			<a href="./page_endesarrollo.php?q=Participación Pública y Gestión Social">Participación Pública y Gestión Social</a>
