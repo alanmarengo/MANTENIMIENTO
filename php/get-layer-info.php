@@ -22,11 +22,11 @@ for ($i=0; $i<sizeof($results); $i++) {
 	$qs_query = pg_query($conn,$qs_name);
 	$qs_name_data = pg_fetch_assoc($qs_query);
 	$layer_d = $qs_name_data["layer_desc"];
-	$estudio_id = $qs_name_data["estudios_id"];
+	$cod_oficial = $qs_name_data["cod_oficial"];
 	
 	array_push($layer_desc,$layer_d);
 	array_push($layer_names,$sep[0]);
-	array_push($estudios_id,$estudio_id);
+	array_push($estudios_id,$cod_oficial);
 	
 	if (!$gids[$sep[0]]) {
 		
