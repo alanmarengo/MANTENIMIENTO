@@ -106,7 +106,7 @@
             </p>
         </div>
 
-        <div class="col-md-12 section-a antecedentes">
+        <div class="col-md-12 section-a antecedentes" style="padding-bottom: 0px;">
             <h3>ESTUDIO ANTECEDENTES</h3>
 
             <div class="row">
@@ -132,12 +132,14 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <img src="./images/time-line.png" style="" />
+                    <div class="embed-responsive" style="padding-top: 40%;">
+                        <iframe src="./grafico-linea-tiempo.php" frameborder="0"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-12 section-a marcolegal">
+        <div class="col-md-12 section-a marcolegal" style="padding-top: 0px;">
             <a id="marcolegal"></a>
             <h3>MARCO LEGAL</h3>
 
