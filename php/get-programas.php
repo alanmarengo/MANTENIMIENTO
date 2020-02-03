@@ -12,7 +12,7 @@ $conn = pg_connect($string_conn);
 $query_string = " SELECT 
  	pr.*,
 	(SELECT COUNT(*) FROM ambiente.vw_programas WHERE split_part = pr.split_part) AS tsp
-   FROM ambiente.vw_programas pr ORDER BY \"id\" ASC";
+   FROM ambiente.vw_programas pr ORDER BY split_part ASC, \"id\" ASC";
 
 $query = pg_query($conn,$query_string);
 
