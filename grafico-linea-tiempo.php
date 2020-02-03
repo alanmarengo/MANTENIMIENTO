@@ -30,7 +30,7 @@
 					visible: false
 				},
 				title: {
-					text: ''
+					text: 'Línea de tiempo de los AHRSC'
 				},
 				subtitle: {
 					text: ''
