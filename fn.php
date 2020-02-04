@@ -13,19 +13,19 @@ function startLink($hash) {
 	}
 
 }
-/*
-function testempty($var,$replace) {
+
+function tempty($v,$rep) {
 	
-	if (empty(trim($var))) {
-		
-		return $replace;
-		
+	if (empty(trim($v))) {
+	
+		return $rep;
+	
 	}else{
-		
-		return $var;
-		
-	}
 	
-}*/
+		return $v;
+	
+	}
+
+}
 
 ?>

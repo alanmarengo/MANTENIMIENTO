@@ -1,6 +1,7 @@
 <?php
 
 include("../pgconfig.php");
+include("../fn.php");
 
 $page = $_POST["page"];
 $dt_id = $_POST["dt_id"];
@@ -333,7 +334,7 @@ if (($groupindex == 0) || ($groupindex == 1)) {
 			?>
 			
 			<div class="dataset-cell dataset-cell-header" data-col-index="<?php echo $i; ?>">
-				<span><?php echo $r[$col[$i]; ?></span>
+				<span><?php echo tempty($r[$col[$i],"&nbsp;"); ?></span>
 			</div>
 			
 			<?php
