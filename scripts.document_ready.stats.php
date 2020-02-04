@@ -54,6 +54,10 @@
 		
 		$(".layer-label[data-dt=<?php echo $_GET["dt_id"]; ?>]").trigger("click");
 		
+		var cid = $(".layer-label[data-dt=<?php echo $_GET["dt_id"]; ?>]").closest(".layer-container").attr("data-cid");
+		
+		$(".abr[data-cid=" + cid + "]").trigger("click");
+		
 		<?php } ?>
 		
 	});
