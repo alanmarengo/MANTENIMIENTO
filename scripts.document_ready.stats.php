@@ -50,9 +50,9 @@
 		
 		<?php } ?>
 		
-		<?php if (isset($_GET["dt"])) { ?>
+		<?php if (isset($_GET["dt_id"])) { ?>
 		
-		$(".layer-label[data-dt=<?php echo $_GET["dt"]; ?>]").trigger("click");
+		$(".layer-label[data-dt=<?php echo $_GET["dt_id"]; ?>]").trigger("click");
 		
 		<?php } ?>
 		
