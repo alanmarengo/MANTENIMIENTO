@@ -334,15 +334,15 @@ if (($groupindex == 0) || ($groupindex == 1)) {
 			
 				<?php
 				
-					/*if (trim($r[$col[$i]) == "") {
+					if (trim($r[$col[$i]) == "") {
 						
-						$celltext = "\&nbsp\;";
+						$celltext = "PIJA";
 						
-					}else{*/
+					}else{
 						
 						$celltext = $r[$col[$i]];
 						
-					//}
+					}
 				
 				?>
 				
