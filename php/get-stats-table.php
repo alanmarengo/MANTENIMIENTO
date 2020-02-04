@@ -335,6 +335,12 @@ if (($groupindex == 0) || ($groupindex == 1)) {
 				<?php
 				
 					$celltext = $r[$col[$i]];
+					
+					if ($celltext == "") {
+						
+						$celltext = "-";
+						
+					}
 				
 				?>
 				
