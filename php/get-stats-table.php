@@ -337,7 +337,7 @@ if (($groupindex == 0) || ($groupindex == 1)) {
 				
 					if (trim($r[$col[$i]) == "") {
 						
-						$celltext = "&nbsp;";
+						$celltext = "\&nbsp\;";
 						
 					}else{
 						
