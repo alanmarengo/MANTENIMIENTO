@@ -341,7 +341,7 @@ if (($groupindex == 0) || ($groupindex == 1)) {
 							
 						}else{
 							
-							$r[$col[$i];
+							echo $r[$col[$i];
 							
 						}
 					?>
