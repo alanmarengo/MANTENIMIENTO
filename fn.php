@@ -13,7 +13,7 @@ function startLink($hash) {
 	}
 
 }
-
+/*
 function testempty($var,$replace) {
 	
 	if (empty(trim($var))) {
@@ -26,6 +26,6 @@ function testempty($var,$replace) {
 		
 	}
 	
-}
+}*/
 
 ?>
