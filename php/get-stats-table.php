@@ -334,20 +334,12 @@ if (($groupindex == 0) || ($groupindex == 1)) {
 			
 				<?php
 				
-					if (trim($r[$col[$i]) == "") {
-						
-						$celltext = "PIJA";
-						
-					}else{
-						
-						$celltext = $r[$col[$i]];
-						
-					}
+					$celltext = $r[$col[$i]];
 				
 				?>
 				
 			<div class="dataset-cell dataset-cell-header" data-col-index="<?php echo $i; ?>">
-				<span data-test=""><?php echo $r[$col[$i]]; ?></span>
+				<span data-test=""><?php echo $celltext; ?></span>
 			</div>
 			
 			<?php
