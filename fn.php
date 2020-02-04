@@ -14,7 +14,7 @@ function startLink($hash) {
 
 }
 
-function tempty($v,$rep) {
+/*function tempty($v,$rep) {
 	
 	if (empty(trim($v))) {
 	
@@ -26,6 +26,6 @@ function tempty($v,$rep) {
 	
 	}
 
-}
+}*/
 
 ?>
