@@ -16,7 +16,7 @@ function startLink($hash) {
 
 function testempty($var,$replace) {
 	
-	if (empty($var)) {
+	if (empty(trim($var))) {
 		
 		return $replace;
 		
