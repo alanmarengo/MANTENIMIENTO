@@ -14,4 +14,18 @@ function startLink($hash) {
 
 }
 
+function testempty($var,$replace) {
+	
+	if (empty($var)) {
+		
+		return $replace;
+		
+	}else{
+		
+		return $var;
+		
+	}
+	
+}
+
 ?>
