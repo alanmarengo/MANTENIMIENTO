@@ -32,7 +32,7 @@ $dt_titulo = $_GET["dt_t"];
 	<?php include("./scripts.onresize.php"); ?>	
 	<?php include("./scripts.openlayers.php"); ?>	
 	<?php include("./scripts.highcharts.php"); ?>
-	<?php //include("./scripts.document_ready.stats.view.php"); ?>
+	<?php include("./scripts.document_ready.stats.view.php"); ?>
 	
 	<?php// include("./scripts.default.php"); ?>
 	
