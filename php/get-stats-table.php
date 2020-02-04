@@ -333,19 +333,7 @@ if (($groupindex == 0) || ($groupindex == 1)) {
 			?>
 			
 			<div class="dataset-cell dataset-cell-header" data-col-index="<?php echo $i; ?>">
-				<span>
-					<?php 
-						if (trim($r[$col[$i]) == "") {
-							
-							echo "&nbsp;";
-							
-						}else{
-							
-							echo $r[$col[$i];
-							
-						}
-					?>
-				</span>
+				<span><?php echo $r[$col[$i]]; ?></span>
 			</div>
 			
 			<?php
