@@ -1,6 +1,5 @@
 <?php
 
-include("../fn.php");
 include("../pgconfig.php");
 
 $page = $_POST["page"];
@@ -334,7 +333,7 @@ if (($groupindex == 0) || ($groupindex == 1)) {
 			?>
 			
 			<div class="dataset-cell dataset-cell-header" data-col-index="<?php echo $i; ?>">
-				<span><?php echo testempty($r[$col[$i]],"&nbsp;"); ?></span>
+				<span><?php echo $r[$col[$i]]; ?></span>
 			</div>
 			
 			<?php
