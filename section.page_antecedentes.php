@@ -28,7 +28,7 @@
             <br />
             <p>El 21 de diciembre de 2016, una medida cautelar dictaminada por la Corte Suprema de Justicia de la Nación (CSJN) suspendió la ejecución de las obras principales de los aprovechamientos (exceptuando las tareas preliminares del proyecto ejecutivo y obras complementarias), hasta que se implementase el proceso de evaluación de impacto ambiental y la audiencia pública prevista en la Ley Nacional 23879.</p>
             <p>El Estudio cumplimentó lo solicitado en el mencionado dictamen de la Corte, conjuntamente con la realización de la Audiencia Pública en el marco del Congreso de la Nación, desarrollada el 20 y 21 de julio de 2017.</p>
-            <p>Producido el levantamiento de la medida cautelar de la Corte Suprema de Justicia de la Nación, el Comitente dio la orden de inicio en febrero de 2018, a partir de lo cual la Contratista pudo dar comienzo a la construcción de las obras principales, que están actualmente en ejecución. <a target="_blank" href="#">VER Proceso de Elaboración y Aprobación</a></p>
+            <p>Producido el levantamiento de la <a target="_blank" href="./sga/recursos/recursos_tecnicos/legales/11">medida cautelar de la Corte Suprema de Justicia de la Nación</a>, el Comitente dio la orden de inicio en febrero de 2018, a partir de lo cual la Contratista pudo dar comienzo a la construcción de las obras principales, que están actualmente en ejecución. <a target="_blank" href="#">VER Proceso de Elaboración y Aprobación</a></p>
         </div>
 
         <div class="col-md-12 section-a optimizacion">
@@ -96,7 +96,7 @@
             <p>A partir de 1975, AyEE comenzó a realizar estudios de prefactibilidad, incluyendo relevamientos geológicos y topográficos. Y en 1980 se realizaronEl Estudio de Impacto Ambiental (EsIA) es parte del proceso de Evaluación de Impacto Ambiental (EIA) y proporciona una metodología sistemática para encarar la identificación y caracterización de las posibles alteraciones del ambiente y, de acuerdo con ese estudio, proponer modificaciones, alternativas o mitigaciones en pos de que el impacto negativo del proyecto sobre el ambiente sea el menor posible. A su vez, se identifican los impactos positivos para potenciar sus efectos. </p>
             
             <p style="font-weight: bolder;">Proceso de elaboración y aprobación</p>
-            <p>El EsIA de los aprovechamientos hidroeléctricos del río Santa Cruz fue elaborado por Ebisa –ahora denominada Integración Energética Argentina S.A., luego de su fusión con Enarsa– bajo la encomienda de la Secretaría de Energía Eléctrica, a partir de una medida cautelar de la Corte Suprema de Justicia de la Nación de diciembre de 2016. El estudio es el resultado de la recopilación, integración y revisión del EsIA de Santa Cruz, la consideración de los requerimientos del Dictamen Técnico de la provincia y de las Especificaciones Técnicas Ambientales (ETA) del Ministerio de Ambiente y Desarrollo Sustentable de la Nación (MAyDS), junto con otros estudios especiales realizados por el contratista y por expertos independientes, altamente calificados y con experiencia en los principales ejes temáticos del proyecto, que fueron contratados por Ebisa.</p>
+            <p>El EsIA de los aprovechamientos hidroeléctricos del río Santa Cruz fue elaborado por Ebisa –ahora denominada Integración Energética Argentina S.A., luego de su fusión con Enarsa– bajo la encomienda de la Secretaría de Energía Eléctrica, a partir de una <a target="_blank" href="./sga/recursos/recursos_tecnicos/legales/11">medida cautelar de la Corte Suprema de Justicia de la Nación</a> de diciembre de 2016. El estudio es el resultado de la recopilación, integración y revisión del EsIA de Santa Cruz, la consideración de los requerimientos del Dictamen Técnico de la provincia y de las Especificaciones Técnicas Ambientales (ETA) del Ministerio de Ambiente y Desarrollo Sustentable de la Nación (MAyDS), junto con otros estudios especiales realizados por el contratista y por expertos independientes, altamente calificados y con experiencia en los principales ejes temáticos del proyecto, que fueron contratados por Ebisa.</p>
             <p>El enfoque metodológico adoptado en este Estudio está orientado por el marco conceptual del Manual de Gestión Ambiental de Obras Hidráulicas con Aprovechamiento Energético, según los requerimientos de la Ley 23.879 </p>
             <p>El EsIA fue aprobado a nivel nacional por el Ministerio de Energía (actualmente con rango de Secretaría) y por el Ministerio de Ambiente y Desarrollo Sustentable (MAyDS) y, a nivel provincial, por el Ministerio de Producción, Comercio e Industria y por la Secretaría de Estado de Ambiente, dependiente del Ministerio de Salud y Ambiente de la provincia de Santa Cruz.</p>
             <p>El Estudio cumplimentó lo solicitado en el mencionado dictamen de la Corte, conjuntamente con la realización de la Audiencia Pública en el marco del Congreso de la Nación, desarrollada el 20 y 21 de julio de 2017.</p>
@@ -111,24 +111,28 @@
 
             <div class="row">
                 <div class="col-md-8">
-                    <div style="background-color: #ccc; width: 100%; height: 400px;"></div>
+                    <div class="embed-responsive" style="padding-top: 55%;">
+                        <iframe src="https://www.youtube.com/embed/VqPraHZjrbU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
                 </div>
                 <div class="col-md-4">
                     <p>
                         El EsIA se basó sobre los siguientes documentos previos:
                         <br />
-                        <span class="bullet">•</span>Estudio de Impacto Ambiental presentado por el contratista a la provincia de Santa Cruz en agosto de 2015.
+                        <span class="bullet">•</span><a target="_blank" href="./sga/recursos/recursos_estudios/EIA_AHRSC_CONTRATISTA_AGO2015.zip">Estudio de Impacto Ambiental presentado por el contratista a la provincia de Santa Cruz en agosto de 2015.</a>
                         <br />
-                        <span class="bullet">•</span>Declaración de Impacto Ambiental (DIA) y Dictamen Técnico con requerimientos específicos emitidos por la Comisión Evaluadora de la provincia de Santa Cruz en diciembre de 2015.
+                        <span class="bullet">•</span><a target="_blank" href="./sga/recursos/recursos_estudios/dictamen_tecnico.zip">Declaración de Impacto Ambiental (DIA) y Dictamen Técnico con requerimientos específicos emitidos por la Comisión Evaluadora de la provincia de Santa Cruz en diciembre de 2015.</a>
                         <br />
-                        <span class="bullet">•</span>Auditoría Ambiental de Cumplimiento presentada por el contratista para obtener la renovación de la Declaración de Impacto Ambiental de2017.
+                        <span class="bullet">•</span><a target="_blank" href="./sga/recursos/recursos_estudios/auditoria_ambiental_cumplimiento.zip">Auditoría Ambiental de Cumplimiento presentada por el contratista para obtener la renovación de la Declaración de Impacto Ambiental de2017.</a>
                         <br />
-                        <span class="bullet">•</span>Actualización del EIA presentado a la provincia de Santa Cruz el 30 de marzo de 2017, que incluye la información relevada en campo desde agosto de 2015 a marzo 2017 y se aplica sobre el proyecto ejecutivo modificado.
+                        <span class="bullet">•</span><a target="_blank" href="./sga/recursos/recursos_estudios/eia_ute_actualizado2017.zip">Actualización del EIA presentado a la provincia de Santa Cruz el 30 de marzo de 2017, que incluye la información relevada en campo desde agosto de 2015 a marzo 2017 y se aplica sobre el proyecto ejecutivo modificado.</a>
                         <br />
-                        <span class="bullet">•</span>Estudios complementarios propuestos por el MAyDS en agosto 2016 y realizados por el contratista en el periodo 2016-2017. 
+                        <span class="bullet">•</span><a target="_blank" href="./sga/recursos/recursos_estudios/estudios_complementarios_madys2016-17.zip">Estudios complementarios propuestos por el MAyDS en agosto 2016 y realizados por el contratista en el periodo 2016-2017.</a> 
                     </p>
                 </div>
             </div>
+            <br />
+            <br />
 
             <div class="row">
                 <div class="col-md-12">

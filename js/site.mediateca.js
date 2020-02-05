@@ -409,6 +409,10 @@ $(document).ready(function() {
                 //console.log(url);
 
                 $.getJSON(url, function(data) {
+                    if (data == null) {
+                        return;
+                    }
+
                     filtersMerge(data.filtros);
 
                     model.tab = data.solapa;
@@ -814,7 +818,6 @@ $(document).ready(function() {
                 <div class="col-md-8">
                     <div class="ficha-title">${model.ficha.title}</div>
                     <div class="ficha-temporal">${model.ficha.temporal}</div>
-                    <div class="ficha-estudio">${model.ficha.estudio}</div>
                     <div class="ficha-autores">${model.ficha.autores}</div>
                     <div class="ficha-description">${model.ficha.description}</div>
                     ${htmlLinkVisor}
