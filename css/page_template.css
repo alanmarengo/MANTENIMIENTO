@@ -213,6 +213,15 @@
 #page_antecedentes .estudio p {
   font-size: 14px;
 }
+#page_antecedentes .marcolegal .bullet-1 {
+  padding-right: 2em;
+  font-weight: bolder;
+}
+#page_antecedentes .marcolegal .bullet-2 {
+  padding-left: 3em;
+  padding-right: 2em;
+  font-weight: bolder;
+}
 #page_esia .linea-tiempo .cuadro-tiempo {
   background-color: #fff;
   border-radius: 6px;

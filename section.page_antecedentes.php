@@ -162,6 +162,56 @@
 
             <div class="row">
                 <div class="col-md-12">
+                    <div><b>Pliegos y contrato de la obra</b></div>
+                    <span class="bullet-1">•</span><a target="_blank" href="./sga/recursos/recursos_tecnicos/legales/6.pdf">Pliego de obra</a><br />
+                    <span class="bullet-1">•</span><a target="_blank" href="./sga/recursos/recursos_tecnicos/legales/3.pdf">Contrato de obra</a><br />
+                    <br />
+                    <div><b>Normas aplicables al proyecto</b></div>
+                    <span class="bullet-2">•</span><a target="_blank" href="http://servicios.infoleg.gob.ar/infolegInternet/anexos/0-4999/804/norma.htm">Constitucional Nacional</a><br /> 
+                    <br />
+                    <span class="bullet-2">•</span>Convenios internacionales:<br />
+                    <span class="bullet-2">-</span><a target="_blank" href="https://unfccc.int/resource/docs/convkp/convsp.pdf">CONVENCIÓN MARCO DE LAS NACIONES UNIDAS SOBRE EL CAMBIO CLIMÁTICO</a><br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://servicios.infoleg.gob.ar/infolegInternet/anexos/215000-219999/215908/norma.htm">CONVENCIÓN DE LA UNESCO PARA LA PROTECCIÓN DEL PATRIMONIO MUNDIAL, CULTURAL Y NATURAL</a><br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://servicios.infoleg.gob.ar/infolegInternet/anexos/0-4999/470/norma.htm">CONVENIO 169 DE LA OIT SOBRE PUEBLOS INDÍGENAS Y TRIBALES</a><br />
+                    <br />
+                    <span class="bullet-2">•</span>Leyes Nacionales:<br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=464">LEY 24065: RÉGIMEN DE LA ENERGÍA ELÉCTRICA</a><br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=28195">LEY 15336: RÉGIMEN JURÍDICO DE LA INDUSTRIA ELÉCTRICA</a><br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=279">LEY 23879: OBRAS HIDRÁULICAS </a><br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=79980">LEY 25675: LEY GENERAL DEL AMBIENTE </a><br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=91548">LEY 25831: ACCESO A LA INFORMACIÓN AMBIENTAL </a><br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=81032">LEY 25688: GESTIÓN AMBIENTAL DE AGUAS </a><br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=136125">LEY 26331: BOSQUES NATIVOS </a><br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=174117">LEY 26639: GLACIARES </a><br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=38116">LEY 22421: CONSERVACIÓN DE LA FAUNA </a><br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=16299">LEY 22351: PARQUES NACIONALES, MONUMENTOS NATURALES Y RESERVAS NACIONALES </a><br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=86356">LEY 25743: PROTECCIÓN DEL PATRIMONIO ARQUEOLÓGICO Y PALEONTOLÓGICO </a><br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=23790">LEY 23302: COMUNIDADES INDÍGENAS </a><br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=70944">LEY 25517: RESTITUCIÓN DE ABORÍGENES </a><br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=40167">LEY 20284: CONTAMINACIÓN ATMOSFÉRICA </a><br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=40021">LEY 22428: FOMENTO A LA CONSERVACIÓN DE LOS SUELOS </a><br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=450">LEY 24051: RESIDUOS PELIGROSOS </a><br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=37292">LEY 21499: EXPROPIACIONES </a><br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=470">LEY 24071: APROBACIÓN DEL CONVENIO 169 DE OIT</a><br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://servicios.infoleg.gob.ar/infolegInternet/anexos/235000-239999/235975/norma.htm">Código Civil y Comercial de la Nación</a><br />
+                    <br />
+                    <span class="bullet-2">•</span>Normas provinciales:<br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://www.hcdelcalafate.gov.ar/files/constitucion_santacruz.pdf">CONSTITUCIÓN DE LA PROVINCIA DE SANTA CRUZ<br />
+                    <span class="bullet-2">-</span><a target="_blank" href="https://www.mininterior.gov.ar/provincias/santacruz/agua-santa-cruz.pdf">LEY 1451: CÓDIGO DE AGUAS <br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://www.santacruz.gov.ar/boletin/11/enero11/06enero11EE.pdf)">LEY 3193: COMITÉ DE CUENCA DEL RÍO SANTA CRUZ <br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://faolex.fao.org/docs/texts/arg47050.doc">LEY 229: CONSERVACIÓN DE SUELOS Y APROVECHAMIENTO DE LOS RECURSOS NATURALES <br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://www.santacruz.gov.ar/ambiente/leyes_provinciales/ley%20N_3123%20de%20Glaciares.pdf">LEY 3123: PROTECCIÓN DE GLACIARES Y PERIGLACIARES <br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://faolex.fao.org/docs/texts/arg47053.doc">LEY 65: RÉGIMEN DE BOSQUES Y TIERRAS FORESTALES <br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://www.anima.org.ar/ley-2373/">LEY 2373: FAUNA SILVESTRE <br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://argentinambiental.com/legislacion/santa-cruz/ley-1464-pesca/">LEY 1464: PESCA <br />
+                    <span class="bullet-2">-</span><a target="_blank" href="https://www.ecolex.org/details/legislation/ley-no-2829-ley-de-residuos-solidos-urbanos-lex-faoc135582/">LEY 2829: TRATAMIENTO Y DISPOSICIÓN FINAL DE RESIDUOS SÓLIDOS URBANOS <br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://www.santacruz.gov.ar/ambiente/leyes_provinciales/ley2567/Ley%20N%C2%BA%202567%20Residuos%20Peligrosos.pdf">LEY 2567 (MODIFICADA POR LA LEY 2703): RESIDUOS PELIGROSOS <br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://normasambientales.com/ver-norma-ley-2472-ley-de-patrimonio-cultural-1381.html">LEY 2472: PROTECCIÓN DEL PATRIMONIO CULTURAL <br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://www.santacruz.gov.ar/boletin/17/julio17/B.O.%205156%2006-07-17.pdf">DISPOSICIÓN N° 012: ÁREA DE USO CIENTÍFICO BAJO PROTECCIÓN ESPECIAL <br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://www.saij.gob.ar/LPZ0003192">LEY 21: EXPROPIACIONES <br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://www.santacruz.gov.ar/boletin/14/octubre14/30octubre2014BO.pdf">LEY 3389: UTILIDAD PÚBLICA <br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://www.santacruz.gov.ar/ambiente/leyes_provinciales/ley2658/Ley%20N%C2%BA%202658.pdf">LEY 2658: EVALUACIÓN DE IMPACTO AMBIENTAL <br />
+                    <span class="bullet-2">-</span><a target="_blank" href="http://www.iesc.gov.ar/iesc/Include/documents/legales/E_ley_1304.pdf">LEY 1304: SERVIDUMBRE ADMINISTRATIVA DE ELECTRODUCTOS <br />
                 </div>
             </div>
         </div>
@@ -183,6 +233,9 @@ $(document).ready(function() {
     let target = $.urlParam('target');
     if (target)
         $('#link-' + target).trigger('click');
+
+
+
 
 });
 </script>
