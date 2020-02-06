@@ -16,7 +16,7 @@ $conn = pg_connect($string_conn);
 
 function limpiar($str)
 {
-	return str_replace(array("\n","\r"),'',$str);
+	return str_replace(array("\n","\r","\""),'',$str);
 
 };
 
