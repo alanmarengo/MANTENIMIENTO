@@ -694,24 +694,55 @@ function ol_map() {
 		if (this.ptopo_draw) { this.ol_object.removeInteraction(this.ptopo_draw); }
 		
 		if ((this.drawing) && (this.drawing.source)) {
+			
+			var vectorLayer = this.drawing;
+			var source = this.drawing.source;
+			var features = this.drawing.source.getFeatures();
+				
+				features.forEach((feature) => {
+					source.removeFeature(feature);
+				});			
 						
 			this.drawing.source.clear();
-			
 		}
 		
 		if ((this.buffer) && (this.buffer.source)) {
+			
+			var vectorLayer = this.buffer;
+			var source = this.buffer.source;
+			var features = this.buffer.source.getFeatures();
+				
+				features.forEach((feature) => {
+					source.removeFeature(feature);
+				});			
 						
 			this.buffer.source.clear();
 			
 		}
 		
 		if ((this.medicion) && (this.medicion.source)) {
+			
+			var vectorLayer = this.medicion;
+			var source = this.medicion.source;
+			var features = this.medicion.source.getFeatures();
+				
+				features.forEach((feature) => {
+					source.removeFeature(feature);
+				});			
 						
 			this.medicion.source.clear();
 			
 		}
 		
 		if ((this.ptopografico) && (this.ptopografico.source)) {
+			
+			var vectorLayer = this.ptopografico;
+			var source = this.ptopografico.source;
+			var features = this.ptopografico.source.getFeatures();
+				
+				features.forEach((feature) => {
+					source.removeFeature(feature);
+				});			
 						
 			this.ptopografico.source.clear();
 			
@@ -1331,6 +1362,64 @@ function ol_map() {
 				
 				}
 				
+				this.select.on('select', function(e) {
+				
+					var features = e.target.getFeatures().getArray();
+					var len = e.target.getFeatures().getLength();
+					
+					if (len>0) {
+						
+						jwindow.open("popup-features");
+						
+						$("#info-features").empty();
+						
+						for(var i=0; i<len; i++) {
+							
+							var html = "<div class=\"tarjeta-features\">";							
+							
+							if (features[i].getGeometry().getType() == "Point") {
+								
+								html += "<p>Geometría de Punto</p>";
+								html += "<p>Coordenadas: "+features[i].getGeometry().getCoordinates()+"</p>";
+								
+							}
+							
+							if (features[i].getGeometry().getType() == "LineString") {
+								
+								html += "<p>Geometría de Líneas</p>";
+								html += "<p>Largo: "+((features[i].getGeometry().getLength())/1000)+" Km.</p>";
+								
+							}
+							
+							if (features[i].getGeometry().getType() == "Circle") {
+								
+								html += "<p>Geometría Circular</p>";
+								html += "<p>Radio: "+((features[i].getGeometry().getRadius())/1000)+" Km.</p>";
+								html += "<p>Centro: "+features[i].getGeometry().getCenter()+"</p>";
+								html += "<p>Coordenada Inicial: "+features[i].getGeometry().getFirstCoordinate()+"</p>";
+								html += "<p>Coordenada Final: "+features[i].getGeometry().getLastCoordinate()+"</p>";
+								
+							}
+							
+							if (features[i].getGeometry().getType() == "Polygon") {
+								
+								html += "<p>Geometría de Polígono</p>";
+								html += "<p>Coordenadas: "+features[i].getGeometry().getCoordinates()+"</p>";
+								html += "<p>Extent: "+features[i].getGeometry().getExtent()+"</p>";
+								html += "<p>Área: "+((features[i].getGeometry().getArea())/1000)+" Km.</p>";
+								
+							}
+							if (i!=(len-1)) { html += "<hr>"; }
+							html += "</div>";
+							
+							document.getElementById("info-features").innerHTML += html;
+						 
+						}
+					
+					}
+					 
+				});
+				
 				this.ol_object.addInteraction(this.select);	
 				this.ol_object.removeInteraction(this.draw);
 				this.ol_object.removeInteraction(this.modify);	
@@ -1380,7 +1469,7 @@ function ol_map() {
 				
 				break;
 				
-			}
+			}			
 			
 		}
 	

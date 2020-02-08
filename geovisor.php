@@ -88,6 +88,7 @@
 	<?php include("./popup.preloader.php"); ?>
 	<?php include("./popup.ptopografico.php"); ?>
 	<?php include("./popup.share.php"); ?>
+	<?php include("./popup.features.php"); ?>
 	
 	<?php include("./html.navbar-geovisor-zoom.php"); ?>
 
