@@ -92,7 +92,7 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 			$html .= "<div class=\"layer-icon\" title=\"Ver Recursos Asociados\">";
 				/*$html .= "<a href=\"./mediateca.php?mode=10&mode_id=".$layer_id."&mode_label=".$layer_desc[$i]."\" target=\"_blank\"><img src=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\"
 				data-active=\"./images/geovisor/icons/popup-layer-recurso-active.png\"></a>";*/
-				$html .= "<a href=\"./mediateca.php?mode=0&mode_id=".$layer_id."&mode_label=".$layer_desc[$i]."&s=".$estudios_id[$i]."\" target=\"_blank\"><img src=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\"
+				$html .= "<a href=\"./mediateca.php?mode=-1&solapa=0&o=0&s=".$estudios_id[$i]."\" target=\"_blank\"><img src=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\"
 				data-active=\"./images/geovisor/icons/popup-layer-recurso-active.png\"></a>";
 			$html .= "</div>";
 		$html .= "</div>";
