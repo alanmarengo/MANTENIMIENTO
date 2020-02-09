@@ -183,10 +183,10 @@ function ol_map() {
 		this.ol_object = new ol.Map({
 			layers:this.baselayers.collection,
 			target: 'map',
-			extent: [-8189395.27,-6871823.10,7315295.40,-5780312.03],
+			extent: [-13281237.21183002,-7669922.0600572005,-738226.6183457375,-1828910.1066171727],
 			controls: [],
 			view: new ol.View({
-				//center: [-7176058.888636417,-4680928.505993671],
+				center: [-7176058.888636417,-4680928.505993671],
 				zoom:3.8,
 				minZoom: 3.8,
 				maxZoom: 21
