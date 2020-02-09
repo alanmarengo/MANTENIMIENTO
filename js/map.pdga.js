@@ -110,6 +110,74 @@ function ol_map() {
 		
 		this.baselayers.collection = [this.baselayers.openstreets,this.baselayers.opentopo,this.baselayers.bing_roads,this.baselayers.bing_aerials,this.baselayers.google,this.baselayers.argenmap];
 		
+		var layer_872 = new ol.layer.Tile({
+			name:"ahrsc:cuenca_mapa_pga",
+			visible:true,
+			source: new ol.source.TileWMS({
+				url: layer_wms,
+				params: {
+					'LAYERS': "ahrsc:cuenca_mapa_pga",
+					'VERSION': '1.1.1',
+					'FORMAT': 'image/png',
+					'TILED': false,
+					'clase_id':-1,
+					'layer_id':872
+				}/*,
+				crossOrigin: 'anonymous'*/
+			})
+		});
+		
+		var layer_873 = new ol.layer.Tile({
+			name:"ahrsc:vp_geo_limites_provinciales_sit_pga",
+			visible:true,
+			source: new ol.source.TileWMS({
+				url: layer_wms,
+				params: {
+					'LAYERS': "ahrsc:vp_geo_limites_provinciales_sit_pga",
+					'VERSION': '1.1.1',
+					'FORMAT': 'image/png',
+					'TILED': false,
+					'clase_id':-1,
+					'layer_id':873
+				}/*,
+				crossOrigin: 'anonymous'*/
+			})
+		});
+		
+		var layer_874 = new ol.layer.Tile({
+			name:"ahrsc:polig_rscruz_pga",
+			visible:true,
+			source: new ol.source.TileWMS({
+				url: layer_wms,
+				params: {
+					'LAYERS': "ahrsc:polig_rscruz_pga",
+					'VERSION': '1.1.1',
+					'FORMAT': 'image/png',
+					'TILED': false,
+					'clase_id':-1,
+					'layer_id':874
+				}/*,
+				crossOrigin: 'anonymous'*/
+			})
+		});
+		
+		var layer_875 = new ol.layer.Tile({
+			name:"ahrsc:polig_obra_pga",
+			visible:true,
+			source: new ol.source.TileWMS({
+				url: layer_wms,
+				params: {
+					'LAYERS': "ahrsc:polig_obra_pga",
+					'VERSION': '1.1.1',
+					'FORMAT': 'image/png',
+					'TILED': false,
+					'clase_id':-1,
+					'layer_id':875
+				}/*,
+				crossOrigin: 'anonymous'*/
+			})
+		});
+		
 		///////document.getElementById("baselayer-default-radio").click();
 		
 		this.ol_object = new ol.Map({
@@ -125,7 +193,12 @@ function ol_map() {
 			})
 		});
 		
-		this.baseLayer = this.baselayers.openstreets;		
+		this.ol_object.addLayer(layer_872);
+		this.ol_object.addLayer(layer_873);
+		this.ol_object.addLayer(layer_874);
+		this.ol_object.addLayer(layer_875);
+		
+		this.baseLayer = this.baselayers.bing_aerials;		
 		
 		this.ol_object_mini = new ol.Map({
 			layers:[this.baselayers.google],
