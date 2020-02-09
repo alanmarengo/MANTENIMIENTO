@@ -50,7 +50,7 @@
 	<?php include("./scripts.map.pdga.php"); ?>
 	<?php include("./scripts.onresize.php"); ?>
 
-	<script src ="./js/geovisorcombo.js" type='text/javascript'></script>
+	<!--<script src ="./js/geovisorcombo.js" type='text/javascript'></script>-->
 	
 </head>
 <body>
