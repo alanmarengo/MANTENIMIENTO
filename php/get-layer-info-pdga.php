@@ -21,9 +21,6 @@ for ($i=0; $i<sizeof($results); $i++) {
 	$layer_id = $qs_name_data["layer_id"];
 	$layer_desc = $qs_name_data["layer_desc"];
 	
-	echo "<p>" . $qs_name . "</p>";
-	echo "<p>" . $layer_id . " :: " . $sep[0] . "</p>";
-	
 	array_push($layer_id_arr,$layer_id);
 	
 }
@@ -38,7 +35,7 @@ $html = "";
 for ($i=0; $i<sizeof($layer_id); $i++) {
 	
 	$query_string = "SELECT DISTINCT layer_id FROM mod_geovisores.vw_layers WHERE layer_id = '" . $layer_id[$i] . "' LIMIT 1";
-	
+	echo $query_string;
 	$query = pg_query($conn,$query_string);
 
 	$data = pg_fetch_assoc($query);
