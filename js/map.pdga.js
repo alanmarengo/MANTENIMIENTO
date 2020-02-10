@@ -280,8 +280,10 @@ function ol_map() {
 				var viewResolution = (view.getResolution());
 				var url = '';
 				
+				var len = this.getLayers().length;
+				
 				this.getLayers().forEach(function (layer, i, layers) {		
-					console.log(layer);
+					console.log(i + " :: " + len);
 					var baselayer_names = ["openstreets","opentopo","bing","bing_roads","bing_aerials","google_base"];
 					var isBase = false;
 					
@@ -554,7 +556,7 @@ function ol_map() {
 	
 	this.map.preparseGFI = function(response,containerID,wrapperID) {
 		
-		$("#popup-results-preparse").html(response);
+		$("popup-results-preparse").html(response);
 		
 		var newnodes = "";
 		
