@@ -9,5 +9,8 @@ $(document).ready(function() {
 			
 	geomap = new ol_map();	
 	geomap.map.create();
-
+	
+	scroll = new Jump.scroll();
+	scroll.refresh();
+	
 });
