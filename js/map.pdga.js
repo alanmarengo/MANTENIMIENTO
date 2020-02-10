@@ -598,9 +598,7 @@ function ol_map() {
 			
 		});
 		
-		if (entered) {		
-		
-			jwindow.close("popup-buffer");
+		if (entered) {
 			
 			$("#info-buffer").empty();
 			
@@ -616,18 +614,9 @@ function ol_map() {
 				
 			});
 			
-			document.getElementById(wrapperID).innerHTML += req.responseText;
-					
-			jwindow.open(containerID);
+			document.getElementById("map-details").innerHTML += req.responseText;
 			
 			scroll.refresh();
-			
-			$("[title]").tooltipster({
-				animation: 'fade',
-				delay: 200,
-				theme: 'tooltipster-default',
-				trigger: 'hover'
-			});
 	
 		}
 		
