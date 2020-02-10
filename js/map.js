@@ -890,9 +890,9 @@ function ol_map() {
 			
 			$("#print-legend-wrapper").hide();
 			
-			this.ol_object.infoEnabled = true;
+		});
 			
-		}.bind(this));
+		this.ol_object.infoEnabled = true;
 		
 		/*var node = document.getElementById('map');
 
