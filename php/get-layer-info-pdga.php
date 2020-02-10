@@ -97,39 +97,18 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 	$html .= "</div>";
 
 	$html .= "<div style=\"display:none;\" class=\"popup-layer-content\">";	
-	
-	while($r = pg_fetch_assoc($query2)) {
 		
 		$html .= "<table class=\"popup-table gfi-info-table\" cellpadding=\"5\">";
-		
-		$hasData = false;
-		
-		foreach ($r as $item => $value){
-			
-			if(( strpos( $item, "geom" ) === false) && ( $item != "id" ) && (strpos( $item, "cod_" ) === false) && ( $item != "origen")) {
-			
-				$html .= "<tr>";
-				$html .= "<td>" . str_replace("_"," ",$item) . "</td>";
-				$html .= "<td>" . $value . "</td>";
-				$html .= "</tr>";
+	
+		while($r = pg_fetch_assoc($query2)) {
 				
-				$hasData = true;
-			
-			}
-		
-		}
-		
-		if (!$hasData) {
-			
-			$html .= "<tr><td><p>Este registro no posee columnas habilitadas para mostrar.</p></td></tr>";
+			$html .= "<tr>";
+			$html .= "<td>" . $r["programa"] . "</td>";
+			$html .= "</tr>";
 			
 		}
 	
 		$html .= "</table>";
-		$html .= "<hr>";
-		
-	}
-	
 	$html .= "</div>";
 
 }
