@@ -1397,24 +1397,24 @@ function ol_map() {
 							if (features[i].getGeometry().getType() == "Point") {
 								
 								html += "<p>Geometría de Punto</p>";
-								html += "<p>Coordenadas: "+features[i].getGeometry().getCoordinates()+"</p>";
+								html += "<p>Coordenadas: "+features[i].getGeometry().transform('EPSG:3857', 'EPSG:4326').getCoordinates()+"</p>";
 								
 							}
 							
 							if (features[i].getGeometry().getType() == "LineString") {
 								
 								html += "<p>Geometría de Líneas</p>";
-								html += "<p>Largo: "+((features[i].getGeometry().getLength())/1000)+" Km.</p>";
+								html += "<p>Largo: "+((features[i].getGeometry().transform('EPSG:3857', 'EPSG:4326').getLength())/1000)+" Km.</p>";
 								
 							}
 							
 							if (features[i].getGeometry().getType() == "Circle") {
 								
 								html += "<p>Geometría Circular</p>";
-								html += "<p>Radio: "+((features[i].getGeometry().getRadius())/1000)+" Km.</p>";
-								html += "<p>Centro: "+features[i].getGeometry().getCenter()+"</p>";
-								html += "<p>Coordenada Inicial: "+features[i].getGeometry().getFirstCoordinate()+"</p>";
-								html += "<p>Coordenada Final: "+features[i].getGeometry().getLastCoordinate()+"</p>";
+								html += "<p>Radio: "+((features[i].getGeometry().transform('EPSG:3857', 'EPSG:4326').getRadius())/1000)+" Km.</p>";
+								html += "<p>Centro: "+features[i].getGeometry().transform('EPSG:3857', 'EPSG:4326').getCenter()+"</p>";
+								html += "<p>Coordenada Inicial: "+features[i].getGeometry().transform('EPSG:3857', 'EPSG:4326').getFirstCoordinate()+"</p>";
+								html += "<p>Coordenada Final: "+features[i].getGeometry().transform('EPSG:3857', 'EPSG:4326').getLastCoordinate()+"</p>";
 								
 							}
 							
@@ -1422,8 +1422,8 @@ function ol_map() {
 								
 								html += "<p>Geometría de Polígono</p>";
 								html += "<p>Coordenadas: "+features[i].getGeometry().getCoordinates()+"</p>";
-								html += "<p>Extent: "+features[i].getGeometry().getExtent()+"</p>";
-								html += "<p>Área: "+((features[i].getGeometry().getArea())/1000)+" Km.</p>";
+								html += "<p>Extent: "+features[i].getGeometry().transform('EPSG:3857', 'EPSG:4326').getExtent()+"</p>";
+								html += "<p>Área: "+((features[i].getGeometry().transform('EPSG:3857', 'EPSG:4326').getArea())/1000)+" Km.</p>";
 								
 							}
 							if (i!=(len-1)) { html += "<hr>"; }
