@@ -25,8 +25,15 @@ for ($i=0; $i<sizeof($results); $i++) {
 	
 }
 
+var_dump($layer_id_arr);
+
 $layer_id_arr = array_unique($layer_id_arr);
+
+var_dump($layer_id_arr);
+
 $layer_id_arr = array_values($layer_id_arr);
+
+var_dump($layer_id_arr);
 
 var_dump($layer_id_arr);
 
