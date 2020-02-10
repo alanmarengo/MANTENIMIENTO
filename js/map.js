@@ -835,7 +835,7 @@ function ol_map() {
 		$("#print-legend-wrapper").empty();
 		$("#print-legend-wrapper").show();
 		
-		var state $("#nav-panel-arrow").children(".jump-toggleimage").first().attr("data-state");
+		var state = $("#nav-panel-arrow").children(".jump-toggleimage").first().attr("data-state");
 		
 		if (state == 1) {
 			
