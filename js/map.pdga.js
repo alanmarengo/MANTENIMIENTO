@@ -183,10 +183,10 @@ function ol_map() {
 		this.ol_object = new ol.Map({
 			layers:this.baselayers.collection,
 			target: 'map',
-			extent: [-8189395.27,-6871823.10,7315295.40,-5780312.03],
+			extent: [-8758221.51045902,-7304514.551140834,-6797051.72232697,-5466971.511830861],
 			controls: [],
 			view: new ol.View({
-				//center: [-7176058.888636417,-4680928.505993671],
+				center: [-7176058.888636417,-4680928.505993671],
 				zoom:3.8,
 				minZoom: 3.8,
 				maxZoom: 21
@@ -202,6 +202,24 @@ function ol_map() {
 		layer_875.setZIndex(400);
 		layer_872.setZIndex(300);
 		layer_873.setZIndex(200);
+		
+		var js = {
+			
+			minx:-8758221.51045902,
+			miny:-7304514.551140834,
+			maxx:-6797051.72232697,
+			maxy:-5466971.511830861,
+			
+		}
+		
+		var extent = ol.proj.transformExtent(
+			[js.minx,js.miny,js.maxx,js.maxy],
+			"EPSG:3857", "EPSG:3857"
+		);
+				
+		this.ol_object.getView().fit(extent,{duration:1000});
+		this.ol_object.updateSize();
+		this.ol_object.render();
 		
 		this.baseLayer = this.baselayers.bing_aerials;		
 		
