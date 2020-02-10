@@ -837,7 +837,10 @@ function ol_map() {
 			
 		$(".layer-checkbox[data-added=1]:checked").each(function(i,v) {
 			
-			var src = $(v).parent().parent().next(".layer-body").children(".layer-legend").children("img").attr("src");
+			var layer_name = $(v).closest(".layer-group").attr("data-layer-name");
+			
+			var src = "http://observatorio.ieasa.com.ar/geoserver/ows?&version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer="+layer_name+"&format=image/png&";
+			
 			var newImage = document.createElement("img");
 				newImage.setAttribute("src",src);
 			
