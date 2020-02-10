@@ -55,7 +55,7 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 	$layer_id = $data["layer_id"];
 	
 	$query_string2 = "SELECT * FROM ambiente.gp_programas WHERE layer_id = " . $layer_id;
-	
+	echo $query_string2;
 	$query2 = pg_query($conn,$query_string2);
 	
 	$query_count = pg_num_rows($query2);
