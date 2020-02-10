@@ -25,24 +25,16 @@ for ($i=0; $i<sizeof($results); $i++) {
 	
 }
 
-var_dump($layer_id_arr);
-
 $layer_id_arr = array_unique($layer_id_arr);
-
-var_dump($layer_id_arr);
 
 $layer_id_arr = array_values($layer_id_arr);
 
-var_dump($layer_id_arr);
-
-var_dump($layer_id_arr);
-
 $html = "";
 
-for ($i=0; $i<sizeof($layer_id); $i++) {
+for ($i=0; $i<sizeof($layer_id_arr); $i++) {
 	
-	$query_string = "SELECT DISTINCT layer_id FROM mod_geovisores.vw_layers WHERE layer_id = '" . $layer_id[$i] . "' LIMIT 1";
-	echo $query_string;
+	$query_string = "SELECT DISTINCT layer_id FROM mod_geovisores.vw_layers WHERE layer_id = '" . $layer_id_arr[$i] . "' LIMIT 1";
+	
 	$query = pg_query($conn,$query_string);
 
 	$data = pg_fetch_assoc($query);
