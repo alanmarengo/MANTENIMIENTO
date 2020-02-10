@@ -12,15 +12,15 @@
 		z-index: 999 !important;
 		padding: 20px !important;
 		background:white;
-		left: 10px;
-		top: 10px;
+		left: 30px;
+		top: 30px;
 
 	}
 	
 	#uxCapa {
 	
 		position: absolute;
-		z-index: 999;
+		z-index: 899;
 		padding: 20px;
 		background:white;
 		left: 30px;
