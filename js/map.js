@@ -147,13 +147,13 @@ function ol_map() {
 			
 			if (this.infoEnabled ) {
 			
-				var pos = evt.coordinate.transform('EPSG:3857', 'EPSG:4326');
+				var pos = evt.coordinate;
 								
 				console.log("POS: " + pos);
 				
 				var coord = String(pos).split(",");
 				
-				document.getElementById("global-coordinates-fixed-span").innerHTML = "Último Click: EPSG:4326 | " + coord[1] + ", " + coord[0];
+				document.getElementById("global-coordinates-fixed-span").innerHTML = "Último Click: EPSG:3857 | " + coord[1] + ", " + coord[0];
 				
 				var iconFeature = new ol.Feature({
 				  geometry: new ol.geom.Point(pos)
@@ -274,7 +274,8 @@ function ol_map() {
 		
 		this.global_mouse_position_4326 = new ol.control.MousePosition({
 			coordinateFormat: function(coordinate) {
-			  return "EPSG:4326 | " + ol.coordinate.transform('EPSG:3857', 'EPSG:4326').format(coordinate, '{y}, {x}', 4);
+				var coordinate = ol.proj.transform(coordinate,'EPSG:3857', 'EPSG:4326');
+			  return "EPSG:4326 | " + ol.coordinate.format(coordinate, '{y}, {x}', 4);
 			},
 			projection: 'EPSG:4326',
 			className: 'custom-mouse-position',
