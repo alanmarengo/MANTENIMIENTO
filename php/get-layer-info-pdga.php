@@ -6,6 +6,7 @@ include("../tools.php");
 $results = $_POST["results"];
 
 $layer_id_arr = array();
+$layer_desc_arr = array();
 
 $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 	
@@ -22,6 +23,7 @@ for ($i=0; $i<sizeof($results); $i++) {
 	$layer_desc = $qs_name_data["layer_desc"];
 	
 	array_push($layer_id_arr,$layer_id);
+	array_push($layer_desc_arr,$layer_desc);
 	
 }
 
@@ -64,7 +66,7 @@ for ($i=0; $i<sizeof($layer_id_arr); $i++) {
 				data-active=\"./images/geovisor/icons/popup-layer-opened.png\"></a>";
 			$html .= "</div>";
 		$html .= "</div>";
-		$html .= "<a href=\"#\" class=\"layer-label\" style=\"cursor:text\" alt=\"" . $layer_desc[$i] . "\">" . $layer_desc[$i] . "</a>";
+		$html .= "<a href=\"#\" class=\"layer-label\" style=\"cursor:text\" alt=\"" . $layer_desc_arr[$i] . "\">" . $layer_desc_arr[$i] . "</a>";
 	$html .= "</div>";
 	
 	$html .= "<div style=\"display:none;\" class=\"popup-layer-content\">";	
