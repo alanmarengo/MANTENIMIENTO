@@ -181,7 +181,7 @@ function ol_map() {
 								'INFO_FORMAT': 'text/html',
 									'FEATURE_COUNT': '300'
 							});	
-							
+							console.log(url);
 							var req = $.ajax({
 								
 								async:false,
