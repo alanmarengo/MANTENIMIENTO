@@ -348,7 +348,7 @@ function ol_map() {
 					
 					}
 					
-					console.log(ii + (layers.length-1));
+					console.log(ii + " :: " + (layers.length-1));
 					if (ii==(layers.length-1)) {
 	
 						this.parseGFI();
