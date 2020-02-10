@@ -629,7 +629,7 @@ function ol_map() {
 	
 		}
 		
-		$("#popup-results").empty();
+		//$("#popup-results").empty();
 		
 	}
 	
