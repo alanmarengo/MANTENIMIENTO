@@ -297,7 +297,7 @@ function ol_map() {
 				var url = '';
 				
 				this.getLayers().forEach(function (layer, i, layers) {		
-					
+					console.log(layer);
 					var baselayer_names = ["openstreets","opentopo","bing","bing_roads","bing_aerials","google_base"];
 					var isBase = false;
 					
@@ -317,7 +317,7 @@ function ol_map() {
 					if ((layer.getVisible()) && (isBase == false)) {
 						
 						if(layer.getSource().getGetFeatureInfoUrl) {						
-				
+							console.log(url);
 							$("#popup-results").empty();
 						
 							url = layer.getSource().getGetFeatureInfoUrl(evt.coordinate, viewResolution, 'EPSG:3857', {
