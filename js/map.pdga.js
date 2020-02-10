@@ -554,7 +554,6 @@ function ol_map() {
 	
 	this.map.preparseGFI = function(response,containerID,wrapperID) {
 		
-		$("#popup-results-preparse").empty();
 		$("#popup-results-preparse").html(response);
 		
 		var newnodes = "";
@@ -621,6 +620,8 @@ function ol_map() {
 			//scroll.refresh();
 	
 		}
+		
+		$("#popup-results-preparse").empty();
 		
 	}
 	
