@@ -54,7 +54,7 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 
 	$layer_id = $data["layer_id"];
 	
-	$query_string2 = "SELECT * FROM ambiente.gp_programas WHERE layer_id IN (" . implode($layer_id) . ")";
+	$query_string2 = "SELECT * FROM ambiente.gp_programas WHERE layer_id = " . $layer_id;
 	
 	$query2 = pg_query($conn,$query_string2);
 	
@@ -95,7 +95,7 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 			$html .= "</div>";
 		$html .= "</div>";
 	$html .= "</div>";
-
+	echo $query_string2;
 	$html .= "<div style=\"display:none;\" class=\"popup-layer-content\">";	
 		
 		$html .= "<table class=\"popup-table gfi-info-table\" cellpadding=\"5\">";
