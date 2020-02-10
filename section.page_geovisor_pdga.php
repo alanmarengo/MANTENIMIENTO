@@ -17,7 +17,7 @@
 
 		<div id="map-details">
 		
-			<h2>Seleccione una capa para ver sus programas asociados.</h2>
+			<p class="p20">Seleccione una capa para ver sus programas asociados.</p>
 			
 		</div>
 		
