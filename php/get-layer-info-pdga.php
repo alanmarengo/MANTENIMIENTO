@@ -78,27 +78,15 @@ for ($i=0; $i<sizeof($layer_names); $i++) {
 			$html .= "</div>";
 		$html .= "</div>";
 		$html .= "<a href=\"#\" class=\"layer-label\" style=\"cursor:text\" alt=\"" . $layer_desc[$i] . "\">" . $layer_desc[$i] . "</a>";
-		$html .= "<div class=\"popup-layer-node-icons\">";
-			/*$html .= "<div class=\"layer-icon\">";
-				$html .= "<a href=\"" . $metadata_url . "\"" . $target . "><img src=\"./images/geovisor/icons/popup-layer-info-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-info-inactive.png\"
-				data-active=\"./images/geovisor/icons/popup-layer-info-active.png\"></a>";
-			$html .= "</div>";*/
-			$html .= "<div class=\"layer-icon\" title=\"Descargar datos en CSV\">";
-				$html .= "<a href=\"./csv.php?q=".encrypt(str_replace("geom,","",$query_string2))."\"><img src=\"./images/geovisor/icons/popup-layer-download-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-download-inactive.png\"
-				data-active=\"./images/geovisor/icons/popup-layer-download-active.png\"></a>";
-			$html .= "</div>";
-			$html .= "<div class=\"layer-icon\" title=\"Ver Recursos Asociados\">";
-				/*$html .= "<a href=\"./mediateca.php?mode=10&mode_id=".$layer_id."&mode_label=".$layer_desc[$i]."\" target=\"_blank\"><img src=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\"
-				data-active=\"./images/geovisor/icons/popup-layer-recurso-active.png\"></a>";*/
-				$html .= "<a href=\"./mediateca.php?mode=-1&solapa=0&o=0&s=".$estudios_id[$i]."\" target=\"_blank\"><img src=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\" data-inactive=\"./images/geovisor/icons/popup-layer-recurso-inactive.png\"
-				data-active=\"./images/geovisor/icons/popup-layer-recurso-active.png\"></a>";
-			$html .= "</div>";
-		$html .= "</div>";
 	$html .= "</div>";
-	echo $query_string2;
+	
 	$html .= "<div style=\"display:none;\" class=\"popup-layer-content\">";	
 		
 		$html .= "<table class=\"popup-table gfi-info-table\" cellpadding=\"5\">";
+				
+			$html .= "<tr>";
+			$html .= "<th>Programas Asociados</th>";
+			$html .= "</tr>";
 	
 		while($r = pg_fetch_assoc($query2)) {
 				
