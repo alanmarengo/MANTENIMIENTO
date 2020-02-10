@@ -280,7 +280,7 @@ function ol_map() {
 				var viewResolution = (view.getResolution());
 				var url = '';
 				
-				var len = this.getLayers().length;
+				var len = this.getLayers().getArray().length;
 				
 				this.getLayers().forEach(function (layer, i, layers) {		
 					console.log(i + " :: " + len);
