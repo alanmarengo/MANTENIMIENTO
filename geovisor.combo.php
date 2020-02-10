@@ -40,12 +40,12 @@
 	}*/
 	
 	.bootstrap-select {
-		width: 340px;
-		height: 20px;
-		position: relative;
-		z-index: 999;
-		top: 20px;
-		left: 30px;
+		width: 340px !Important;
+		height: 20px !Important;
+		position: relative !Important;
+		z-index: 999 !Important;
+		top: 20px !Important;
+		left: 30px !Important;
 	}
 		
 	</style>
