@@ -1776,7 +1776,7 @@ function ol_map() {
 			
 		}
 		
-		$(node).closest(".popup-layer-node").next(".popup-layer-content").slideToggle("fast");
+		$(node).closest(".popup-layer-node").next(".popup-layer-content").slideToggle("fast",function() { scroll.refresh(); });
 		
 	}
 	
