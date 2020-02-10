@@ -29,7 +29,7 @@
 
 	}
 	
-	.bootstrap-select {
+	/*.bootstrap-select {
 		
 		width: 340px;
 		position: absolute;
@@ -37,8 +37,17 @@
 		top: 10px;
 		left: 10px;
 		
-	}
+	}*/
 	
+	.bootstrap-select {
+		width: 340px;
+		height: 20px;
+		position: relative;
+		z-index: 999;
+		top: 20px;
+		left: 30px;
+	}
+		
 	</style>
 
 	<title>PROYECTO</title>
