@@ -225,6 +225,9 @@ function ol_map() {
 		
 		this.ol_object.addEventListener("click",function(evt) {
 			
+			$("#popup-results").empty();
+			$("#popup-results-preparse").empty();
+			
 			if (this.infoEnabled ) {
 			
 				var pos = evt.coordinate;
@@ -302,9 +305,7 @@ function ol_map() {
 					
 					if ((layer.getVisible()) && (isBase == false)) {
 						
-						if(layer.getSource().getGetFeatureInfoUrl) {						
-							console.log(layer);
-							$("#popup-results").empty();
+						if(layer.getSource().getGetFeatureInfoUrl) {	
 						
 							url = layer.getSource().getGetFeatureInfoUrl(evt.coordinate, viewResolution, 'EPSG:3857', {
 								'INFO_FORMAT': 'text/html',
