@@ -564,7 +564,7 @@ function ol_map() {
 	
 	this.map.preparseGFI = function(response,containerID,wrapperID) {
 		
-		document.getElementById("popup-results-preparse").innerHTML = response;
+		document.getElementById("popup-results-preparse").innerHTML += response;
 		
 		var newnodes = "";
 		
