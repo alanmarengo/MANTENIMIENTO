@@ -21,7 +21,7 @@ for ($i=0; $i<sizeof($results); $i++) {
 	$layer_id = $qs_name_data["layer_id"];
 	$layer_desc = $qs_name_data["layer_desc"];
 	
-	echo "<p>" . $layer_id . " :: " . $layer_name . "</p>";
+	echo "<p>" . $layer_id . " :: " . $sep[0] . "</p>";
 	
 	array_push($layer_id_arr,$layer_id);
 	
