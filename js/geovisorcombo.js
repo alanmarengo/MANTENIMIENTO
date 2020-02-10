@@ -1,7 +1,12 @@
 function loadComboObra(proyectos) {
 		
 		$("#uxVisor").children("option").remove();
-		
+		$("#uxVisor").append(
+			$("<option></option>")
+			.val(-1)
+			.text("Seleccione una Obra")
+			.attr("selected","selected")
+		);
 		for (var i=0; i<proyectos.length; i++) {
 			
 			$("#uxVisor").append(

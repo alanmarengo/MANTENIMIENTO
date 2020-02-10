@@ -66,6 +66,11 @@
 	</div>	
 	
 	<?php include("./html.navbar-geovisor-zoom.php"); ?>
+	
+	<div id="popup-combo">
+		<div id="popup-combo-body"></div>
+		<div id="popup-combo-caret"></div>
+	</div>
 
 </body>
 </html>

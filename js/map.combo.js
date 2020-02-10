@@ -272,6 +272,31 @@ function ol_map() {
 			
 			}
 			
+		});	
+		
+		this.ol_object.on("pointermove",function(evt) {
+			
+			if (this.infoEnabled ) {
+			
+				var pos = evt.coordinate;
+				
+				var pos4326 = ol.proj.transform(evt.coordinate,'EPSG:3857', 'EPSG:4326');
+				
+				var req = $.ajax({
+					
+					async:false,
+					url:"./php/get-geovisorcombo-popup.php",
+					type:"post",
+					data:{
+						lon:pos4326[0],
+						lat:pos4326[1]
+					},
+					success:function(d){}
+					
+				});
+			
+			}
+			
 		});		
 		
 		this.global_mouse_position_4326 = new ol.control.MousePosition({
