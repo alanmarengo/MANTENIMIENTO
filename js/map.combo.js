@@ -156,41 +156,6 @@ function ol_map() {
 				var coord = String(pos4326).split(",");
 				
 				document.getElementById("global-coordinates-fixed-span").innerHTML = "Último Click: EPSG:4326 | " + coord[1] + ", " + coord[0];
-				
-				var iconFeature = new ol.Feature({
-				  geometry: new ol.geom.Point(pos)
-				});
-
-			
-				var iconStyle = new ol.style.Style({
-					image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
-					anchor: [0.5, 26],
-					anchorXUnits: 'fraction',
-					anchorYUnits: 'pixels',
-					opacity: 0.95,
-					src: './images/map-marker.png'
-					}))
-				});
-
-				iconFeature.setStyle(iconStyle);
-				
-				if (!this.map_object.markersLayer) {
-
-					this.map_object.markersLayer = new ol.layer.Vector({
-						visible:true,
-						source: new ol.source.Vector({
-							features: [iconFeature]
-						})
-					});
-					
-					this.map_object.ol_object.addLayer(this.map_object.markersLayer);
-					
-				}else{
-					
-					this.map_object.markersLayer.getSource().clear();
-					this.map_object.markersLayer.getSource().addFeature(iconFeature);
-					
-				}
 			
 				$("#info-wrapper").empty();
 				
@@ -202,25 +167,11 @@ function ol_map() {
 				var viewResolution = (view.getResolution());
 				var url = '';
 				
-				this.getLayers().forEach(function (layer, i, layers) {		
-					
-					var baselayer_names = ["openstreets","opentopo","bing","bing_roads","bing_aerials","google_base"];
-					var isBase = false;
-					
-					for (var i=0; i<baselayer_names.length; i++) {
-						
-						if (layer.get('name') == baselayer_names[i]) {
-							
-							isBase = true;
-							break;
-							
-						}
-						
-					}
+				this.getLayers().forEach(function (layer, i, layers) {
 					
 					// alert("LAYER: " + layer.get('name') + " - VISIBLE: " + layer.getVisible() + " - ISBASE: " + isBase);
 					
-					if ((layer.getVisible()) && (isBase == false)) {
+					if ((layer.getVisible()) && (layer.get('name') == "ahrsc:vp_geo_prcpr_proyectoahrsc_otr1")) {
 						
 						if(layer.getSource().getGetFeatureInfoUrl) {						
 				
@@ -274,22 +225,22 @@ function ol_map() {
 			
 		});	
 		
-		/*this.ol_object.on("pointermove",function(evt) {
+		this.ol_object.on("pointermove",function(evt) {
 			
 			if (this.infoEnabled ) {
 			
 				var pos = evt.coordinate;
 				
 				var pos4326 = ol.proj.transform(evt.coordinate,'EPSG:3857', 'EPSG:4326');
-				
+				console.log();
 				var req = $.ajax({
 					
 					async:false,
 					url:"./php/get-geovisorcombo-popup.php",
 					type:"post",
 					data:{
-						lon:pos4326[0],
-						lat:pos4326[1]
+						lon:pos4326.lon,
+						lat:pos4326.lat
 					},
 					success:function(d){}
 					
@@ -297,7 +248,7 @@ function ol_map() {
 			
 			}
 			
-		});	*/	
+		});		
 		
 		this.global_mouse_position_4326 = new ol.control.MousePosition({
 			coordinateFormat: function(coordinate) {
