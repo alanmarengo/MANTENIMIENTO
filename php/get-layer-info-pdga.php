@@ -35,13 +35,14 @@ $html = "";
 
 for ($i=0; $i<sizeof($layer_id_arr); $i++) {
 	
-	$query_string = "SELECT DISTINCT layer_id FROM mod_geovisores.vw_layers WHERE layer_id = '" . $layer_id_arr[$i] . "' LIMIT 1";
+	$query_string = "SELECT DISTINCT layer_id,layer_desc FROM mod_geovisores.vw_layers WHERE layer_id = '" . $layer_id_arr[$i] . "' LIMIT 1";
 	
 	$query = pg_query($conn,$query_string);
 
 	$data = pg_fetch_assoc($query);
 
 	$layer_id = $data["layer_id"];
+	$layer_desc = $data["layer_desc"];
 	
 	$query_string2 = "SELECT * FROM ambiente.gp_programas WHERE layer_id = " . $layer_id;
 	echo $query_string2;
@@ -66,7 +67,7 @@ for ($i=0; $i<sizeof($layer_id_arr); $i++) {
 				data-active=\"./images/geovisor/icons/popup-layer-opened.png\"></a>";
 			$html .= "</div>";
 		$html .= "</div>";
-		$html .= "<a href=\"#\" class=\"layer-label\" style=\"cursor:text\" alt=\"" . $layer_desc_arr[$i] . "\">" . $layer_desc_arr[$i] . "</a>";
+		$html .= "<a href=\"#\" class=\"layer-label\" style=\"cursor:text\" alt=\"" . $layer_desc . "\">" . $layer_desc . "</a>";
 	$html .= "</div>";
 	
 	$html .= "<div style=\"display:none;\" class=\"popup-layer-content\">";	
