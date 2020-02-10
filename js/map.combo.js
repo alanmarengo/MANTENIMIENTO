@@ -161,10 +161,8 @@ function ol_map() {
 				var viewResolution = (view.getResolution());
 				var url = '';
 				
-				this.getLayers().forEach(function (layer, i, layers) {
+				this.getLayers().forEach(function (layer, i, layers) {					
 					
-					// alert("LAYER: " + layer.get('name') + " - VISIBLE: " + layer.getVisible() + " - ISBASE: " + isBase);
-					console.log(layer.get('name'));
 					if ((layer.getVisible()) && (layer.get('name') == "ahrsc:vp_geo_prcpr_proyectoahrsc_otr1")) {
 						
 						if(layer.getSource().getGetFeatureInfoUrl) {						
@@ -175,7 +173,7 @@ function ol_map() {
 								'INFO_FORMAT': 'text/html',
 									'FEATURE_COUNT': '300'
 							});	
-							console.log(url);
+							
 							var req = $.ajax({
 								
 								async:false,
@@ -185,7 +183,7 @@ function ol_map() {
 								success:function(d){}
 								
 							})
-							
+							console.log(req.responseText);
 							if (req.responseText != "") {
 							
 								var html = req.responseText;
