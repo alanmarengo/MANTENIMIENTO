@@ -227,7 +227,7 @@ function ol_map() {
 			
 				var pos = evt.coordinate;
 								
-				console.log("POS: " + pos);
+				/*console.log("POS: " + pos);
 				
 				var coord = String(pos).split(",");
 				
@@ -239,7 +239,7 @@ function ol_map() {
 
 			
 				var iconStyle = new ol.style.Style({
-					image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
+					image: new ol.style.Icon( ({
 					anchor: [0.5, 26],
 					anchorXUnits: 'fraction',
 					anchorYUnits: 'pixels',
@@ -266,7 +266,7 @@ function ol_map() {
 					this.map_object.markersLayer.getSource().clear();
 					this.map_object.markersLayer.getSource().addFeature(iconFeature);
 					
-				}
+				}*/
 			
 				$("#info-wrapper").empty();
 				
