@@ -17,7 +17,7 @@
 	
 	<style>
 	
-		#popup-results {
+		#popup-results,#popup-results-preparse {
 			
 			display:none;
 			
