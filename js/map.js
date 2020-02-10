@@ -1397,7 +1397,7 @@ function ol_map() {
 							if (features[i].getGeometry().getType() == "Point") {
 								
 								html += "<p>Geometría de Punto</p>";
-								html += "<p>Coordenadas: "+features[i].getGeometry().getCoordinates().transform('EPSG:3857', 'EPSG:4326')+"</p>";
+								html += "<p>Coordenadas: "+features[i].getGeometry().getCoordinates()+"</p>";
 								
 							}
 							
@@ -1412,16 +1412,16 @@ function ol_map() {
 								
 								html += "<p>Geometría Circular</p>";
 								html += "<p>Radio: "+((features[i].getGeometry().getRadius())/1000)+" Km.</p>";
-								html += "<p>Centro: "+features[i].getGeometry().getCenter()+"</p>";
-								html += "<p>Coordenada Inicial: "+features[i].getGeometry().getFirstCoordinate().transform('EPSG:3857', 'EPSG:4326')+"</p>";
-								html += "<p>Coordenada Final: "+features[i].getGeometry().getLastCoordinate().transform('EPSG:3857', 'EPSG:4326')+"</p>";
+								html += "<p>Centro: "+features[i].getGeometry().transform('EPSG:3857', 'EPSG:4326').getCenter()+"</p>";
+								html += "<p>Coordenada Inicial: "+features[i].getGeometry().getFirstCoordinate()+"</p>";
+								html += "<p>Coordenada Final: "+features[i].getGeometry().getLastCoordinate()+"</p>";
 								
 							}
 							
 							if (features[i].getGeometry().getType() == "Polygon") {
 								
 								html += "<p>Geometría de Polígono</p>";
-								html += "<p>Coordenadas: "+features[i].getGeometry().getCoordinates().transform('EPSG:3857', 'EPSG:4326')+"</p>";
+								html += "<p>Coordenadas: "+features[i].getGeometry().getCoordinates()+"</p>";
 								html += "<p>Extent: "+features[i].getGeometry().getExtent()+"</p>";
 								html += "<p>Área: "+((features[i].getGeometry().getArea())/1000)+" Km.</p>";
 								
