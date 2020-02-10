@@ -222,4 +222,51 @@ $(document).ready(function() {
 	geomap.map.create();
 	geomap.map.createLayers();
 
+	$('.section-sticky a').on('click', function() {
+		$('.section-sticky a').removeClass('selected');
+		$(this).addClass('selected');
+
+		let selector = $(this).data('target');
+		$('html, body').animate({
+			scrollTop: $(selector).offset().top - 200
+		}, 500)
+	});
+
+	let target = $.urlParam('target');
+	if (target)
+		$('#link-' + target).trigger('click');
+
+	$('.section-footer-button2').hover( 
+		function () {
+			let key=$(this).data('key');
+			$(this).css('background-image', 'url("./images/icono-' + key + '-relleno-hover.png")')
+		},
+		function () {
+			let key=$(this).data('key');
+			$(this).css('background-image', 'url("./images/icono-' + key + '-relleno.png")')
+		}
+	)
+
+	var req = $.ajax({
+		
+		async:false,
+		type:"POST",
+		url:"./php/get-geovisor-combo-json.php",
+		success:function(d){}
+		
+	});
+
+	var js = JSON.parse(req.responseText);
+
+	var proyectos = js;
+	
+	document.getElementById("uxVisor").addEventListener("change",function() {
+		
+		loadComboComponente(proyectos);	
+		//loadLabels();
+		
+	});
+	
+	loadComboObra(proyectos);
+
 });
