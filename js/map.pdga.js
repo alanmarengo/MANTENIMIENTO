@@ -354,7 +354,7 @@ function ol_map() {
 							
 							//map.parseGFI(req.responseText,"popup-info","info-wrapper");
 						
-							scroll.refresh();
+							//scroll.refresh();
 						
 						}
 						
