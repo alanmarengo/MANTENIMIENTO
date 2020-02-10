@@ -143,7 +143,7 @@ function ol_map() {
 		this.ol_object.infoEnabled = true;
 		this.ol_object.map_object = this;
 		
-		this.ol_object.addEventListener("click",function(evt) {
+		this.ol_object.addEventListener("pointermove",function(evt) {
 			
 			if (this.infoEnabled ) {
 			
@@ -274,7 +274,7 @@ function ol_map() {
 			
 		});	
 		
-		this.ol_object.on("pointermove",function(evt) {
+		/*this.ol_object.on("pointermove",function(evt) {
 			
 			if (this.infoEnabled ) {
 			
@@ -297,7 +297,7 @@ function ol_map() {
 			
 			}
 			
-		});		
+		});	*/	
 		
 		this.global_mouse_position_4326 = new ol.control.MousePosition({
 			coordinateFormat: function(coordinate) {
