@@ -24,9 +24,10 @@ for ($i=0; $i<sizeof($results); $i++) {
 	
 }
 
-$layer_id = array_unique($layer_names);
+$layer_id_arr = array_unique($layer_id_arr);
+$layer_id_arr = array_values($layer_id_arr);
 
-$layer_id = array_values($layer_names);
+var_dump($layer_id_arr);
 
 $html = "";
 
