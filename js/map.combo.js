@@ -170,7 +170,7 @@ function ol_map() {
 				this.getLayers().forEach(function (layer, i, layers) {
 					
 					// alert("LAYER: " + layer.get('name') + " - VISIBLE: " + layer.getVisible() + " - ISBASE: " + isBase);
-					
+					console.log(layer.get('name'));
 					if ((layer.getVisible()) && (layer.get('name') == "ahrsc:vp_geo_prcpr_proyectoahrsc_otr1")) {
 						
 						if(layer.getSource().getGetFeatureInfoUrl) {						
