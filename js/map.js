@@ -841,6 +841,8 @@ function ol_map() {
 			
 			flotant.toggle('#nav-panel');
 			
+			$("#nav-panel-arrow").children(".jump-toggleimage").children("img").first().attr("src","./images/panel.icon.arrow.0.png");
+			
 		}
 			
 		$(".layer-checkbox[data-added=1]:checked").each(function(i,v) {
@@ -888,7 +890,9 @@ function ol_map() {
 			
 			$("#print-legend-wrapper").hide();
 			
-		});
+			this.ol_object.infoEnabled = true;
+			
+		}.bind(this));
 		
 		/*var node = document.getElementById('map');
 
