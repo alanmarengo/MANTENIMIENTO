@@ -198,10 +198,10 @@ function ol_map() {
 		this.ol_object.addLayer(layer_874);
 		this.ol_object.addLayer(layer_875);
 		
-		/*layer_874.setZIndex(500);
+		layer_874.setZIndex(500);
 		layer_875.setZIndex(400);
 		layer_872.setZIndex(300);
-		layer_873.setZIndex(200);*/
+		layer_873.setZIndex(200);
 		
 		this.baseLayer = this.baselayers.bing_aerials;		
 		
