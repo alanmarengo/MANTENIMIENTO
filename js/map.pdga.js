@@ -600,7 +600,7 @@ function ol_map() {
 		
 		if (entered) {
 			
-			$("#info-buffer").empty();
+			$("#map-details").empty();
 			
 			var req = $.ajax({
 				
@@ -609,7 +609,7 @@ function ol_map() {
 				data:{
 					results:results
 				},
-				url:"./php/get-layer-info.php",
+				url:"./php/get-layer-info-pdga.php",
 				success:function(d) {}
 				
 			});
@@ -623,6 +623,8 @@ function ol_map() {
 	}
 	
 	this.map.parseGFIbuffer = function(response,containerID,wrapperID) {
+		
+		document.getElementById(wrapperID).innerHTML = "";
 		
 		document.getElementById("popup-results-buffer").innerHTML = response;
 		
