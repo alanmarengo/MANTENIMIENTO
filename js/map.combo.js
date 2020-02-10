@@ -148,16 +148,10 @@ function ol_map() {
 			if (this.infoEnabled ) {
 			
 				var pos = evt.coordinate;
-								
-				console.log("POS: " + pos);
 				
 				var pos4326 = ol.proj.transform(evt.coordinate,'EPSG:3857', 'EPSG:4326');
 				
 				var coord = String(pos4326).split(",");
-				
-				document.getElementById("global-coordinates-fixed-span").innerHTML = "Último Click: EPSG:4326 | " + coord[1] + ", " + coord[0];
-			
-				$("#info-wrapper").empty();
 				
 				this.map_object.gfiAddedLayers = [];
 				
