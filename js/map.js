@@ -1397,7 +1397,7 @@ function ol_map() {
 							if (features[i].getGeometry().getType() == "Point") {
 								
 								html += "<p>Geometría de Punto</p>";
-								html += "<p>Coordenadas: "+features[i].getGeometry().getCoordinates()+"</p>";
+								html += "<p>Coordenadas: "+features[i].getGeometry().transform('EPSG:3857', 'EPSG:4326').getCoordinates()+"</p>";
 								
 							}
 							
@@ -1421,7 +1421,7 @@ function ol_map() {
 							if (features[i].getGeometry().getType() == "Polygon") {
 								
 								html += "<p>Geometría de Polígono</p>";
-								html += "<p>Coordenadas: "+features[i].getGeometry().getCoordinates()+"</p>";
+								html += "<p>Coordenadas: "+features[i].getGeometry().transform('EPSG:3857', 'EPSG:4326').getCoordinates()+"</p>";
 								html += "<p>Extent: "+features[i].getGeometry().getExtent()+"</p>";
 								html += "<p>Área: "+((features[i].getGeometry().getArea())/1000)+" Km.</p>";
 								
