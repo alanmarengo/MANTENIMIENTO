@@ -348,10 +348,9 @@ function ol_map() {
 					
 					}
 					
-					console.log(ii + " :: " + (layers.length-1));
 					if (ii==(layers.length-1)) {
 	
-						this.parseGFI();
+						map.parseGFI();
 						
 					}
 					
@@ -586,6 +585,8 @@ function ol_map() {
 			}
 			
 		});
+		
+		document.getElementById("popup-results").innerHTML += newnodes;
 	
 	}
 	
@@ -628,7 +629,7 @@ function ol_map() {
 	
 		}
 		
-		$("#popup-results-preparse").empty();
+		$("#popup-results").empty();
 		
 	}
 	
