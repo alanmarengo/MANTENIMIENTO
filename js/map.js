@@ -834,6 +834,14 @@ function ol_map() {
 			
 		$("#print-legend-wrapper").empty();
 		$("#print-legend-wrapper").show();
+		
+		var state $("#nav-panel-arrow").children(".jump-toggleimage").first().attr("data-state");
+		
+		if (state == 1) {
+			
+			flotant.toggle('#nav-panel');
+			
+		}
 			
 		$(".layer-checkbox[data-added=1]:checked").each(function(i,v) {
 			
@@ -865,7 +873,7 @@ function ol_map() {
 		
         this.ol_object.renderSync();*/
 
-		/*html2canvas(document.querySelector("#map")).then(canvas => {
+		html2canvas(document.querySelector("#map")).then(canvas => {
 			
 			var a = document.createElement('a');
 			// toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
@@ -880,9 +888,9 @@ function ol_map() {
 			
 			$("#print-legend-wrapper").hide();
 			
-		});*/
+		});
 		
-		var node = document.getElementById('map');
+		/*var node = document.getElementById('map');
 
 		domtoimage.toPng(node)
 			.then(function (dataUrl) {
@@ -893,7 +901,7 @@ function ol_map() {
 			})
 			.catch(function (error) {
 				console.error('oops, something went wrong!', error);
-			});
+			});*/
 		
 	}
 	
