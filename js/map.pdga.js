@@ -618,7 +618,7 @@ function ol_map() {
 			
 			document.getElementById("map-details").innerHTML += req.responseText;
 			
-			scroll.refresh();
+			//scroll.refresh();
 	
 		}
 		
