@@ -1394,6 +1394,8 @@ function ol_map() {
 							
 							var html = "<div class=\"tarjeta-features\">";							
 							
+							features[i].getGeometry().transform('EPSG:3857', 'EPSG:4326');
+							
 							if (features[i].getGeometry().getType() == "Point") {
 								
 								html += "<p>Geometría de Punto</p>";
