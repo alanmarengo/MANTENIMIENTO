@@ -345,7 +345,7 @@ function ol_map() {
 						}
 						
 						map.gfiAddedLayers.push(layer.layer_id);
-						console.log(i + " :: " + (len+1));
+						console.log(i + " :: " + (len-1));
 						if (i==(len-1)) {
 		
 							this.parseGFI();
