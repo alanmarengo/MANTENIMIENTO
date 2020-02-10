@@ -108,8 +108,6 @@ function ol_map() {
 			})
 		})*/
 		
-		this.baselayers.collection = [this.baselayers.openstreets,this.baselayers.opentopo,this.baselayers.bing_roads,this.baselayers.bing_aerials,this.baselayers.google,this.baselayers.argenmap];
-		
 		var layer_872 = new ol.layer.Tile({
 			name:"ahrsc:cuenca_mapa_pga",
 			visible:true,
@@ -178,12 +176,14 @@ function ol_map() {
 			})
 		});
 		
-		this.layersn = [this.baselayers.openstreets,this.baselayers.opentopo,this.baselayers.bing_roads,this.baselayers.bing_aerials,this.baselayers.google,this.baselayers.argenmap,layer_872,layer_873,layer_874,layer_875];
+		
+		this.baselayers.collection = [this.baselayers.openstreets,this.baselayers.opentopo,this.baselayers.bing_roads,this.baselayers.bing_aerials,this.baselayers.google,this.baselayers.argenmap,layer_872,layer_873,layer_874,layer_875];
+		
 		
 		///////document.getElementById("baselayer-default-radio").click();
 		
 		this.ol_object = new ol.Map({
-			layers:this.layersn,
+			layers:this.baselayers.collection,
 			target: 'map',
 			extent: [-8758221.51045902,-7304514.551140834,-6797051.72232697,-5466971.511830861],
 			controls: [],
@@ -194,11 +194,6 @@ function ol_map() {
 				maxZoom: 21
 			})
 		});
-		
-		this.ol_object.addLayer(layer_872);
-		this.ol_object.addLayer(layer_873);
-		this.ol_object.addLayer(layer_874);
-		this.ol_object.addLayer(layer_875);
 		
 		layer_874.setZIndex(500);
 		layer_875.setZIndex(400);
@@ -223,20 +218,7 @@ function ol_map() {
 		this.ol_object.updateSize();
 		this.ol_object.render();
 		
-		this.baseLayer = this.baselayers.bing_aerials;		
-		
-		this.ol_object_mini = new ol.Map({
-			layers:[this.baselayers.google],
-			target: 'mini-map',
-			extent: [-13281237.21183002,-7669922.0600572005,-738226.6183457375,-1828910.1066171727],
-			controls: [],
-			view: new ol.View({
-				center: [-7176058.888636417,-4680928.505993671],
-				zoom:3.8,
-				minZoom: 3.8,
-				maxZoom: 21
-			})
-		});
+		this.baseLayer = this.baselayers.bing_aerials;
 		
 		this.ol_object.infoEnabled = true;
 		this.ol_object.map_object = this;
@@ -318,8 +300,8 @@ function ol_map() {
 					
 					if ((layer.getVisible()) && (isBase == false)) {
 						
-						if(layer.getSource().getGetFeatureInfoUrl) {
-							console.log(url);
+						if(layer.getSource().getGetFeatureInfoUrl) {						
+							console.log(layer);
 							$("#popup-results").empty();
 						
 							url = layer.getSource().getGetFeatureInfoUrl(evt.coordinate, viewResolution, 'EPSG:3857', {
