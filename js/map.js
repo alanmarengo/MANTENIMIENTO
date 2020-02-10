@@ -1392,9 +1392,7 @@ function ol_map() {
 						
 						for(var i=0; i<len; i++) {
 							
-							var html = "<div class=\"tarjeta-features\">";							
-							
-							features[i].getGeometry().transform('EPSG:3857', 'EPSG:4326');
+							var html = "<div class=\"tarjeta-features\">";
 							
 							if (features[i].getGeometry().getType() == "Point") {
 								
