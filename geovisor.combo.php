@@ -24,7 +24,7 @@
 		padding: 20px;
 		background:white;
 		left: 30px;
-		top: 50px;
+		top: 60px;
 		width:450px;
 
 	}
@@ -73,7 +73,7 @@
 		</div>
 		
 	</div>	
-	
+	<div id="map"></div>
 	<?php include("./html.navbar-geovisor-zoom.php"); ?>
 	
 	<div id="popup-combo">
