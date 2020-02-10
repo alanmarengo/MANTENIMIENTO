@@ -178,10 +178,12 @@ function ol_map() {
 			})
 		});
 		
+		this.layersn = [this.baselayers.openstreets,this.baselayers.opentopo,this.baselayers.bing_roads,this.baselayers.bing_aerials,this.baselayers.google,this.baselayers.argenmap,layer_872,layer_873,layer_874,layer_875];
+		
 		///////document.getElementById("baselayer-default-radio").click();
 		
 		this.ol_object = new ol.Map({
-			layers:this.baselayers.collection,
+			layers:this.layersn,
 			target: 'map',
 			extent: [-8758221.51045902,-7304514.551140834,-6797051.72232697,-5466971.511830861],
 			controls: [],
@@ -316,7 +318,7 @@ function ol_map() {
 					
 					if ((layer.getVisible()) && (isBase == false)) {
 						
-						if(layer.getSource().getGetFeatureInfoUrl) {						
+						if(layer.getSource().getGetFeatureInfoUrl) {
 							console.log(url);
 							$("#popup-results").empty();
 						
