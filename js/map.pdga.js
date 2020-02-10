@@ -345,6 +345,12 @@ function ol_map() {
 						}
 						
 						map.gfiAddedLayers.push(layer.layer_id);
+						
+						if (i==(len-1)) {
+		
+							this.parseGFI();
+							
+						}
 					
 					}
 					
@@ -556,7 +562,7 @@ function ol_map() {
 	
 	this.map.preparseGFI = function(response,containerID,wrapperID) {
 		
-		$("popup-results-preparse").html(response);
+		document.getElementById("popup-results-preparse").innerHTML += response;
 		
 		var newnodes = "";
 		
@@ -577,14 +583,10 @@ function ol_map() {
 			}
 			
 		});
-		
-		this.parseGFI(newnodes,containerID,wrapperID);
 	
 	}
 	
-	this.map.parseGFI = function(response,containerID,wrapperID) {
-		
-		document.getElementById("popup-results").innerHTML += response;
+	this.map.parseGFI = function() {
 		
 		var results = [];
 		
@@ -617,7 +619,7 @@ function ol_map() {
 				
 			});
 			
-			document.getElementById("map-details").innerHTML += req.responseText;
+			document.getElementById("map-details").innerHTML = req.responseText;
 			
 			//scroll.refresh();
 	
