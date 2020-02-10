@@ -282,8 +282,8 @@ function ol_map() {
 				
 				var len = this.getLayers().getArray().length;
 				
-				this.getLayers().forEach(function (layer, i, layers) {		
-					console.log(i + " :: " + len);
+				this.getLayers().forEach(function (layer, i, layers) {	
+				
 					var baselayer_names = ["openstreets","opentopo","bing","bing_roads","bing_aerials","google_base"];
 					var isBase = false;
 					
