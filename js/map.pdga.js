@@ -280,7 +280,7 @@ function ol_map() {
 				var viewResolution = (view.getResolution());
 				var url = '';
 				
-				var len = this.getLayers().getArray().length;
+				var ii = 0;
 				
 				this.getLayers().forEach(function (layer, i, layers) {	
 				
@@ -348,12 +348,14 @@ function ol_map() {
 					
 					}
 					
-					console.log(i + " :: " + (len-1) + " :: " + layers.length);
-					if (i==(len-1)) {
+					console.log(ii + (layers.length-1));
+					if (ii==(layers.length-1)) {
 	
 						this.parseGFI();
 						
 					}
+					
+					ii++;
 					
 				});
 			
