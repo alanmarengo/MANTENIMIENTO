@@ -77,7 +77,7 @@
 	<?php include("./html.navbar-geovisor-zoom.php"); ?>
 	
 	<div id="popup-combo">
-		<div id="popup-combo-body"></div>
+		<div id="popup-combo-body" class="jump-posrel jump-scroll"></div>
 		<div id="popup-combo-caret">
 			<div class="inner"></div>
 		</div>

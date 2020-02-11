@@ -226,6 +226,9 @@ $(document).ready(function() {
 		
 	geomap.map.create();
 	geomap.map.createLayers();
+	
+	scroll = new Jump.scroll();
+	scroll.refresh();
 
 	$('.section-sticky a').on('click', function() {
 		$('.section-sticky a').removeClass('selected');

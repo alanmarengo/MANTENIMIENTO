@@ -201,7 +201,7 @@ function ol_map() {
 								
 								$("#popup-combo").show();
 								$("#popup-combo").css("left",(pixel[0]-200)+"px");
-								$("#popup-combo").css("top",(pixel[1]-280)+"px");
+								$("#popup-combo").css("top",(pixel[1]-300)+"px");
 
 							
 							}else{
