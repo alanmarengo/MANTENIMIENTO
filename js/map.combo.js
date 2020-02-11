@@ -200,15 +200,13 @@ function ol_map() {
 								}
 								
 								$("#popup-combo").show();
-								$("#popup-combo").css("left",pixel[0]+"px");
-								$("#popup-combo").css("top",pixel[1]+"px");
+								$("#popup-combo").css("left",(pixel[0]-200)+"px");
+								$("#popup-combo").css("top",(pixel[1]-280)+"px");
 
 							
 							}else{
 								
 								$("#popup-combo").hide();
-								$("#popup-combo").css("left",pixel[0]+"px");
-								$("#popup-combo").css("top",pixel[1]+"px");
 								
 							}
 							

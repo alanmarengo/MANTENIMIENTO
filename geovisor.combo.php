@@ -78,7 +78,9 @@
 	
 	<div id="popup-combo">
 		<div id="popup-combo-body"></div>
-		<div id="popup-combo-caret"></div>
+		<div id="popup-combo-caret">
+			<div class="inner"></div>
+		</div>
 	</div>
 	<div id="popup-results-preparse"></div>
 	<div id="popup-results"></div>
