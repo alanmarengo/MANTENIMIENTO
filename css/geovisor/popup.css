@@ -787,9 +787,12 @@
 #popup-combo-body {
 
     height: 250px;
-    background:#565656;
-	border:2px solid #000000;
-	padding:10px;
+	background: #565656;
+	border: 2px solid #000000;
+	padding: 10px;
+	border-radius: 5px;
+	position: relative;
+	z-index: 10;
 
 }
 
@@ -821,7 +824,8 @@
     transform: rotate(225deg);
     position: relative;
     top: -10px;
-    background:#565656;
-	border:2px solid #000000;
+    background:#565656;border-left: 2px solid #000;
+	border-top: 2px solid #000;
+	z-index: 20;
 
 }
