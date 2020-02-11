@@ -513,7 +513,7 @@ function ol_map() {
 				
 			});
 			
-			document.getElementById("popup-combo-body").innerHTML += req.responseText;
+			document.getElementById("popup-combo-body").innerHTML = req.responseText;
 	
 		}
 		
