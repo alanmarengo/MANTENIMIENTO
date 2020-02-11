@@ -152,7 +152,7 @@ function ol_map() {
 				var pos4326 = ol.proj.transform(evt.coordinate,'EPSG:3857', 'EPSG:4326');
 				
 				var coord = String(pos4326).split(",");
-				
+				var pixel = this.getPixelFromCoordinate(evt.coordinate);
 				this.map_object.gfiAddedLayers = [];
 				
 				var view = this.getView();
@@ -183,7 +183,7 @@ function ol_map() {
 								success:function(d){}
 								
 							})
-							console.log(req.responseText);
+							
 							if (req.responseText != "") {
 							
 								var html = req.responseText;
@@ -198,7 +198,18 @@ function ol_map() {
 									
 								
 								}
+								
+								$("#popup-combo").show();
+								$("#popup-combo").css("left",pixel[0]+"px");
+								$("#popup-combo").css("top",pixel[1]+"px");
+
 							
+							}else{
+								
+								$("#popup-combo").hide();
+								$("#popup-combo").css("left",pixel[0]+"px");
+								$("#popup-combo").css("top",pixel[1]+"px");
+								
 							}
 							
 							//map.parseGFI(req.responseText,"popup-info","info-wrapper");
