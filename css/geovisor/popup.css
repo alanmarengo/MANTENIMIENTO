@@ -804,8 +804,6 @@
     display: flex;
     align-content: center;
     justify-content: center;
-    background:#565656;
-	border:2px solid #000000;
 
 }
 
@@ -821,5 +819,7 @@
     transform: rotate(225deg);
     position: relative;
     top: -10px;
+    background:#565656;
+	border:2px solid #000000;
 
 }
