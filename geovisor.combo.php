@@ -80,6 +80,8 @@
 		<div id="popup-combo-body"></div>
 		<div id="popup-combo-caret"></div>
 	</div>
+	<div id="popup-results-preparse"></div>
+	<div id="popup-results"></div>
 
 </body>
 </html>
