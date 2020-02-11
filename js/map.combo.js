@@ -199,15 +199,10 @@ function ol_map() {
 								
 								}
 								
-								$("#popup-combo").show();
 								$("#popup-combo").css("left",(pixel[0]-200)+"px");
 								$("#popup-combo").css("top",(pixel[1]-300)+"px");
 
 							
-							}else{
-								
-								$("#popup-combo").hide();
-								
 							}
 							
 							//map.parseGFI(req.responseText,"popup-info","info-wrapper");
@@ -508,12 +503,21 @@ function ol_map() {
 				data:{
 					results:results
 				},
-				url:"./php/get-layer-info.php",
+				url:"./php/get-layer-info-combo.php",
 				success:function(d) {}
 				
 			});
 			
-			document.getElementById("popup-combo-body").innerHTML = req.responseText;
+			if (req.responseText.trim() != "") {
+			
+				$("#popup-combo").show();
+				document.getElementById("popup-combo-body").innerHTML = req.responseText;
+			
+			}else{
+				
+				$("#popup-combo").hide();
+				
+			}
 	
 		}
 		
