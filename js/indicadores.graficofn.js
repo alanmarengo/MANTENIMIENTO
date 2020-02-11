@@ -1091,7 +1091,7 @@ function draw_grafico_12(container,config) { // PIE WITH DRILLDOWN
 	
 	container = document.getElementById(container);
 	
-	container.innerHTML = "<h3 style='font-size:12vw; margin:0; color:#0088cc;'>"+config.data[0].y + "</h3>";
+	container.innerHTML = "<h3 style='font-size:11vw; margin:0; color:#0088cc;'>"+config.data[0].y + "</h3>";
 	container.innerHTML += "<h4 style='font-size:3vw; margin:0;'>"+ config.unidad + "</h4>";
 	container.innerHTML += "<h5 style='font-size:2vw; margin:10px 0;'>"+config.titulo+"</h5>";
 
