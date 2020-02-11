@@ -501,11 +501,7 @@ function ol_map() {
 			
 		});
 		
-		if (entered) {		
-		
-			jwindow.close("popup-buffer");
-			
-			$("#info-buffer").empty();
+		if (entered) {
 			
 			var req = $.ajax({
 				
@@ -519,18 +515,7 @@ function ol_map() {
 				
 			});
 			
-			document.getElementById(wrapperID).innerHTML += req.responseText;
-					
-			jwindow.open(containerID);
-			
-			scroll.refresh();
-			
-			$("[title]").tooltipster({
-				animation: 'fade',
-				delay: 200,
-				theme: 'tooltipster-default',
-				trigger: 'hover'
-			});
+			document.getElementById("popup-combo-body").innerHTML += req.responseText;
 	
 		}
 		
