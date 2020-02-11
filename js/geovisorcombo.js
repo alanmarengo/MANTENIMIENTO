@@ -215,12 +215,12 @@ function drawLayer() {
 
 $(document).ready(function() {
 	
-	$("[title]").tooltipster({
+	/*$("[title]").tooltipster({
 		animation: 'fade',
 		delay: 200,
 		theme: 'tooltipster-default',
 		trigger: 'hover'
-	});
+	});*/
 			
 	geomap = new ol_map();
 		
