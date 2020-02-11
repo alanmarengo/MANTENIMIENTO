@@ -50,7 +50,37 @@ function draw_grafico_1(container,config) {
 				}
 			}
 		},
-		series:config.data
+		series:config.data,
+		responsive: {
+			rules: [{
+				condition: {
+					maxWidth: 500
+				},
+				chartOptions: {
+					legend: {
+						align: 'center',
+						verticalAlign: 'bottom',
+						layout: 'horizontal'
+					},
+					yAxis: {
+						labels: {
+							align: 'left',
+							x: 0,
+							y: -5
+						},
+						title: {
+							text: null
+						}
+					},
+					subtitle: {
+						text: null
+					},
+					credits: {
+						enabled: false
+					}
+				}
+			}]
+		}
 	});
 	
 } //  BASIC AREA
@@ -82,7 +112,37 @@ function draw_grafico_2(container,config) {
 				stacking: 'normal'
 			}
 		},
-		series: config.data
+		series: config.data,
+		responsive: {
+			rules: [{
+				condition: {
+					maxWidth: 500
+				},
+				chartOptions: {
+					legend: {
+						align: 'center',
+						verticalAlign: 'bottom',
+						layout: 'horizontal'
+					},
+					yAxis: {
+						labels: {
+							align: 'left',
+							x: 0,
+							y: -5
+						},
+						title: {
+							text: null
+						}
+					},
+					subtitle: {
+						text: null
+					},
+					credits: {
+						enabled: false
+					}
+				}
+			}]
+		}
 	});
 	
 } 
@@ -167,7 +227,37 @@ function draw_grafico_3(container,config) { // BUBBLE CHART
 				}
 			}
 		},
-		series: series
+		series: series,
+		responsive: {
+			rules: [{
+				condition: {
+					maxWidth: 500
+				},
+				chartOptions: {
+					legend: {
+						align: 'center',
+						verticalAlign: 'bottom',
+						layout: 'horizontal'
+					},
+					yAxis: {
+						labels: {
+							align: 'left',
+							x: 0,
+							y: -5
+						},
+						title: {
+							text: null
+						}
+					},
+					subtitle: {
+						text: null
+					},
+					credits: {
+						enabled: false
+					}
+				}
+			}]
+		}
 	});
 
 
@@ -257,7 +347,37 @@ function draw_grafico_4(container,config) { // BUBBLE CHART
 				}
 			}
 		},
-		series:series
+		series:series,
+		responsive: {
+			rules: [{
+				condition: {
+					maxWidth: 500
+				},
+				chartOptions: {
+					legend: {
+						align: 'center',
+						verticalAlign: 'bottom',
+						layout: 'horizontal'
+					},
+					yAxis: {
+						labels: {
+							align: 'left',
+							x: 0,
+							y: -5
+						},
+						title: {
+							text: null
+						}
+					},
+					subtitle: {
+						text: null
+					},
+					credits: {
+						enabled: false
+					}
+				}
+			}]
+		}
 	});
 
 }
@@ -346,7 +466,37 @@ function draw_grafico_5(container,config) { // BASIC COLUMNS
 				borderWidth: 0
 			}
 		},
-		series:series
+		series:series,
+		responsive: {
+			rules: [{
+				condition: {
+					maxWidth: 500
+				},
+				chartOptions: {
+					legend: {
+						align: 'center',
+						verticalAlign: 'bottom',
+						layout: 'horizontal'
+					},
+					yAxis: {
+						labels: {
+							align: 'left',
+							x: 0,
+							y: -5
+						},
+						title: {
+							text: null
+						}
+					},
+					subtitle: {
+						text: null
+					},
+					credits: {
+						enabled: false
+					}
+				}
+			}]
+		}
 	});
 }
 
@@ -436,7 +586,37 @@ function draw_grafico_6(container,config) { // FIXED PLACEMENT
 				borderWidth: 0
 			}
 		},
-		series: series
+		series: series,
+		responsive: {
+			rules: [{
+				condition: {
+					maxWidth: 500
+				},
+				chartOptions: {
+					legend: {
+						align: 'center',
+						verticalAlign: 'bottom',
+						layout: 'horizontal'
+					},
+					yAxis: {
+						labels: {
+							align: 'left',
+							x: 0,
+							y: -5
+						},
+						title: {
+							text: null
+						}
+					},
+					subtitle: {
+						text: null
+					},
+					credits: {
+						enabled: false
+					}
+				}
+			}]
+		}
 	});
 	
 }
@@ -517,7 +697,37 @@ function draw_grafico_7(container,config) { // FIXED PLACEMENT
 				stacking: 'percent'
 			}
 		},
-		series: config.data
+		series: config.data,
+		responsive: {
+			rules: [{
+				condition: {
+					maxWidth: 500
+				},
+				chartOptions: {
+					legend: {
+						align: 'center',
+						verticalAlign: 'bottom',
+						layout: 'horizontal'
+					},
+					yAxis: {
+						labels: {
+							align: 'left',
+							x: 0,
+							y: -5
+						},
+						title: {
+							text: null
+						}
+					},
+					subtitle: {
+						text: null
+					},
+					credits: {
+						enabled: false
+					}
+				}
+			}]
+		}
 	});
 	
 }
@@ -674,7 +884,37 @@ function draw_grafico_9(container,config) { // BASIC LINE
 			}
 		},
 
-		series: config.data/*,
+		series: config.data,
+		responsive: {
+			rules: [{
+				condition: {
+					maxWidth: 500
+				},
+				chartOptions: {
+					legend: {
+						align: 'center',
+						verticalAlign: 'bottom',
+						layout: 'horizontal'
+					},
+					yAxis: {
+						labels: {
+							align: 'left',
+							x: 0,
+							y: -5
+						},
+						title: {
+							text: null
+						}
+					},
+					subtitle: {
+						text: null
+					},
+					credits: {
+						enabled: false
+					}
+				}
+			}]
+		}/*,
 
 		responsive: {
 			rules: [{
@@ -746,7 +986,37 @@ function draw_grafico_10(container,config) { // SEMI CIRCLE DONUT
 			name: config.desc,
 			innerSize: '50%',
 			data: series
-		}]
+		}],
+		responsive: {
+			rules: [{
+				condition: {
+					maxWidth: 500
+				},
+				chartOptions: {
+					legend: {
+						align: 'center',
+						verticalAlign: 'bottom',
+						layout: 'horizontal'
+					},
+					yAxis: {
+						labels: {
+							align: 'left',
+							x: 0,
+							y: -5
+						},
+						title: {
+							text: null
+						}
+					},
+					subtitle: {
+						text: null
+					},
+					credits: {
+						enabled: false
+					}
+				}
+			}]
+		}
 	});
 	
 }
@@ -782,7 +1052,37 @@ function draw_grafico_11(container,config) { // PIE WITH DRILLDOWN
             name: config.titulo,
             colorByPoint: true,
 			data:config.data
-		}]
+		}],
+		responsive: {
+			rules: [{
+				condition: {
+					maxWidth: 500
+				},
+				chartOptions: {
+					legend: {
+						align: 'center',
+						verticalAlign: 'bottom',
+						layout: 'horizontal'
+					},
+					yAxis: {
+						labels: {
+							align: 'left',
+							x: 0,
+							y: -5
+						},
+						title: {
+							text: null
+						}
+					},
+					subtitle: {
+						text: null
+					},
+					credits: {
+						enabled: false
+					}
+				}
+			}]
+		}
 	});
 
 }
