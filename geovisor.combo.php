@@ -73,7 +73,7 @@
 		</div>
 		
 	</div>	
-	<div id="map"></div>
+	
 	<?php include("./html.navbar-geovisor-zoom.php"); ?>
 	
 	<div id="popup-combo">
