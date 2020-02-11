@@ -28,7 +28,7 @@
             <br />
             <p>El 21 de diciembre de 2016, una medida cautelar dictaminada por la Corte Suprema de Justicia de la Nación (CSJN) suspendió la ejecución de las obras principales de los aprovechamientos (exceptuando las tareas preliminares del proyecto ejecutivo y obras complementarias), hasta que se implementase el proceso de evaluación de impacto ambiental y la audiencia pública prevista en la Ley Nacional 23879.</p>
             <p>El Estudio cumplimentó lo solicitado en el mencionado dictamen de la Corte, conjuntamente con la realización de la Audiencia Pública en el marco del Congreso de la Nación, desarrollada el 20 y 21 de julio de 2017.</p>
-            <p>Producido el levantamiento de la <a target="_blank" href="./sga/recursos/recursos_tecnicos/legales/11">medida cautelar de la Corte Suprema de Justicia de la Nación</a>, el Comitente dio la orden de inicio en febrero de 2018, a partir de lo cual la Contratista pudo dar comienzo a la construcción de las obras principales, que están actualmente en ejecución. <a target="_blank" href="#">VER Proceso de Elaboración y Aprobación</a></p>
+            <p>Producido el levantamiento de la <a target="_blank" href="./sga/recursos/recursos_tecnicos/legales/11">medida cautelar de la Corte Suprema de Justicia de la Nación</a>, el Comitente dio la orden de inicio en febrero de 2018, a partir de lo cual la Contratista pudo dar comienzo a la construcción de las obras principales, que están actualmente en ejecución. <a id="link-elaboracion" href="#" data-target="#elaboracion">VER Proceso de Elaboración y Aprobación</a></p>
         </div>
 
         <div class="col-md-12 section-a optimizacion">
@@ -95,7 +95,9 @@
             <p>El potencial energético del río Santa Cruz comenzó a estudiarse en la década de los 50 del siglo XX. En 1955, la empresa del estado Agua y Energía Eléctrica (AyEE) dispuso la habilitación de estaciones de aforo sobre el río, además de algunas estaciones meteorológicas en la zona, lo que hizo posible contar con más datos y establecer tendencias más confiables, a pesar de la discontinuidad en las mediciones.</p>
             <p>A partir de 1975, AyEE comenzó a realizar estudios de prefactibilidad, incluyendo relevamientos geológicos y topográficos. Y en 1980 se realizaronEl Estudio de Impacto Ambiental (EsIA) es parte del proceso de Evaluación de Impacto Ambiental (EIA) y proporciona una metodología sistemática para encarar la identificación y caracterización de las posibles alteraciones del ambiente y, de acuerdo con ese estudio, proponer modificaciones, alternativas o mitigaciones en pos de que el impacto negativo del proyecto sobre el ambiente sea el menor posible. A su vez, se identifican los impactos positivos para potenciar sus efectos. </p>
             
+            <a id="elaboracion"></a>
             <p style="font-weight: bolder;">Proceso de elaboración y aprobación</p>
+            
             <p>El EsIA de los aprovechamientos hidroeléctricos del río Santa Cruz fue elaborado por Ebisa –ahora denominada Integración Energética Argentina S.A., luego de su fusión con Enarsa– bajo la encomienda de la Secretaría de Energía Eléctrica, a partir de una <a target="_blank" href="./sga/recursos/recursos_tecnicos/legales/11">medida cautelar de la Corte Suprema de Justicia de la Nación</a> de diciembre de 2016. El estudio es el resultado de la recopilación, integración y revisión del EsIA de Santa Cruz, la consideración de los requerimientos del Dictamen Técnico de la provincia y de las Especificaciones Técnicas Ambientales (ETA) del Ministerio de Ambiente y Desarrollo Sustentable de la Nación (MAyDS), junto con otros estudios especiales realizados por el contratista y por expertos independientes, altamente calificados y con experiencia en los principales ejes temáticos del proyecto, que fueron contratados por Ebisa.</p>
             <p>El enfoque metodológico adoptado en este Estudio está orientado por el marco conceptual del Manual de Gestión Ambiental de Obras Hidráulicas con Aprovechamiento Energético, según los requerimientos de la Ley 23.879 </p>
             <p>El EsIA fue aprobado a nivel nacional por el Ministerio de Energía (actualmente con rango de Secretaría) y por el Ministerio de Ambiente y Desarrollo Sustentable (MAyDS) y, a nivel provincial, por el Ministerio de Producción, Comercio e Industria y por la Secretaría de Estado de Ambiente, dependiente del Ministerio de Salud y Ambiente de la provincia de Santa Cruz.</p>
@@ -112,7 +114,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="embed-responsive" style="padding-top: 55%;">
-                        <iframe src="https://www.youtube.com/embed/VqPraHZjrbU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/QIJhdeCTgAs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                    
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -224,6 +226,13 @@ $(document).ready(function() {
         $('.section-sticky a').removeClass('selected');
         $(this).addClass('selected');
 
+        let selector = $(this).data('target');
+        $('html, body').animate({
+            scrollTop: $(selector).offset().top - 200
+        }, 500)
+    });
+
+    $('#link-elaboracion').on('click', function() {
         let selector = $(this).data('target');
         $('html, body').animate({
             scrollTop: $(selector).offset().top - 200
