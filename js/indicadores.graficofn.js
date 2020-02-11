@@ -1056,7 +1056,7 @@ function draw_grafico_11(container,config) { // PIE WITH DRILLDOWN
 		responsive: {
 			rules: [{
 				condition: {
-					maxWidth: 500
+					maxWidth: 300
 				},
 				chartOptions: {
 					legend: {
