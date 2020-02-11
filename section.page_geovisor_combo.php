@@ -8,7 +8,7 @@
 		
             <div style="border: solid 1px #666; margin: 0; height:100%; width: 100%;">
 				
-				<div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: left; padding: 0px;">
+				<div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: left; padding: 0px; height:0px;">
                     <select id="uxVisor" class="selectpicker" data-width="300">
                        <!--<option value="">LA BARRANCOSA</option>-->
                     </select>
