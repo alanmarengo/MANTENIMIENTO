@@ -67,7 +67,7 @@ function loadComboComponente(proyectos) {
 				visible:true,
 				source: new ol.source.TileWMS({
 					//url: layerData.layer_wms_server,
-					url:"http://observatorio.ieasa.com.ar:8080/geoserver/ows?",
+					url:layerData.layer_wms_server,
 					params: {
 						'LAYERS': layerData.layer_wms_layer,
 						'VERSION': '1.1.1',

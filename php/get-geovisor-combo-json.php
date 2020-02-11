@@ -36,6 +36,7 @@ for ($i=0; $i<sizeof($sections); $i++) {
 		$json .= "\"layer_id\":" . $r["layer_id"] . ",";
 		$json .= "\"schema\":\"" . $r["layer_schema"] . "\",";
 		$json .= "\"layer\":\"" . $r["layer_wms_layer"] . "\",";
+		$json .= "\"server\":\"" . $r["layer_wms_server"] . "\",";
 		$json .= "\"componente\":\"" . $r["preview_titulo"] . "\"";
 		$json .= "},";
 		
