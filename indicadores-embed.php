@@ -47,7 +47,7 @@
 			</div>
 			<div class="row jump-row">
 				
-				<div id="template-wrapper" class="jump-flotant-heightfill jump-scroll col-md-12 col-lg-12 col-sm-12 col-xs-12">
+				<div id="template-wrapper" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
 				
 					
 				
