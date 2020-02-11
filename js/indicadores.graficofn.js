@@ -3,7 +3,9 @@ function draw_grafico_1(container,config) {
 	Highcharts.chart(container, {
 		credits: { enabled:false },
 		chart: {
-			type: 'area'
+			type: 'area',
+			margin:0,
+			renderTo:'chart'
 		},
 		accessibility: {
 			description: config.desc
@@ -90,7 +92,9 @@ function draw_grafico_2(container,config) {
 	Highcharts.chart(container, {
 		credits: { enabled:false },
 		chart: {
-			type: 'bar'
+			type: 'bar',
+			margin:0,
+			renderTo:'chart'
 		},
 		title: {
 			text: null
@@ -192,7 +196,9 @@ function draw_grafico_3(container,config) { // BUBBLE CHART
 		credits: { enabled:false },
 		chart: {
 			type: 'packedbubble',
-			height: '100%'
+			height: '100%',
+			margin:0,
+			renderTo:'chart'
 		},
 		title: {
 			text: null
@@ -309,7 +315,9 @@ function draw_grafico_4(container,config) { // BUBBLE CHART
 		credits: { enabled:false },
 		chart: {
 			type: 'packedbubble',
-			height: '100%'
+			height: '100%',
+			margin:0,
+			renderTo:'chart'
 		},
 		title: {
 			text: null
@@ -434,7 +442,9 @@ function draw_grafico_5(container,config) { // BASIC COLUMNS
 	Highcharts.chart(container, {
 		credits: { enabled:false },
 		chart: {
-			type: 'column'
+			type: 'column',
+			margin:0,
+			renderTo:'chart'
 		},
 		title: {
 			text: null
@@ -554,7 +564,9 @@ function draw_grafico_6(container,config) { // FIXED PLACEMENT
 	Highcharts.chart(container, {
 		credits: { enabled:false },
 		chart: {
-			type: 'column'
+			type: 'column',
+			margin:0,
+			renderTo:'chart'
 		},
 		title: {
 			text: null
@@ -674,7 +686,9 @@ function draw_grafico_7(container,config) { // FIXED PLACEMENT
 	Highcharts.chart(container, {
 		credits: { enabled:false },
 		chart: {
-			type: 'column'
+			type: 'column',
+			margin:0,
+			renderTo:'chart'
 		},
 		title: {
 			text: null
@@ -953,7 +967,9 @@ function draw_grafico_10(container,config) { // SEMI CIRCLE DONUT
 		chart: {
 			plotBackgroundColor: null,
 			plotBorderWidth: 0,
-			plotShadow: false
+			plotShadow: false,
+			margin:0,
+			renderTo:'chart'
 		},
 		title: {
 			text: null,
@@ -1026,7 +1042,9 @@ function draw_grafico_11(container,config) { // PIE WITH DRILLDOWN
 	Highcharts.chart(container, {
 		credits: { enabled:false },
 		chart: {
-			type: 'pie'
+			type: 'pie',
+			margin:0,
+			renderTo:'chart'
 		},
 		title: {
 			text: null
