@@ -787,7 +787,14 @@
 #popup-combo-body {
 
     height: 250px;
-    background:white;
+    background:#565656;
+	border:2px solid #000000;
+
+}
+
+#popup-combo-body p {
+
+	font-size:12px;
 
 }
 
@@ -797,6 +804,8 @@
     display: flex;
     align-content: center;
     justify-content: center;
+    background:#565656;
+	border:2px solid #000000;
 
 }
 
