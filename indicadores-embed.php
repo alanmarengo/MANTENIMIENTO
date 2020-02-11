@@ -24,7 +24,7 @@
 	
 	
 </head>
-<body style="overflow:hidden;">
+<body>
 
 	<div style="display:none;">
 		<?php include("./html.panel-indicadores.php"); ?>
