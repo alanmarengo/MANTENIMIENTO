@@ -32,8 +32,10 @@
 	
 	<div id="page">
 	
-		<?php include("./html.navbar-main.php"); ?>
-		<?php include("./html.navbar-tools-indicadores.php"); ?>
+		<div style="display:none;">
+			<?php include("./html.navbar-main.php"); ?>
+			<?php include("./html.navbar-tools-indicadores.php"); ?>
+		</div>
 		
 		<div class="page-container">
 		
