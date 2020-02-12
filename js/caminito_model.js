@@ -1,5 +1,6 @@
     var caminito = [{
             id: 'aves',
+            id2: 1,
             titulo: 'Aves',
             mode_id: 0,
             link_geovisor: './geovisor.php?geovisor=3',
@@ -7,6 +8,7 @@
         },
         {
             id: 'peces',
+            id2: 2,
             titulo: 'Peces',
             mode_id: 0,
             link_geovisor: './geovisor.php?geovisor=7',
@@ -14,6 +16,7 @@
         },
         {
             id: 'humedales',
+            id2: 3,
             titulo: 'Humedales',
             mode_id: 0,
             link_geovisor: './geovisor.php?geovisor=5',
@@ -21,6 +24,7 @@
         },
         {
             id: 'vegetacion',
+            id2: 4,
             titulo: 'Vegetación',
             mode_id: 0,
             link_geovisor: './geovisor.php?geovisor=8',
@@ -28,6 +32,7 @@
         },
         {
             id: 'fauna',
+            id2: 5,
             titulo: 'Fauna silvestre',
             mode_id: 0,
             link_geovisor: './geovisor.php?geovisor=4',
@@ -35,6 +40,7 @@
         },
         {
             id: 'limnologia',
+            id2: 6,
             titulo: 'Limnología y calidad de agua',
             mode_id: 0,
             link_geovisor: './geovisor.php?geovisor=6',
@@ -42,6 +48,7 @@
         },
         {
             id: 'aguas',
+            id2: 7,
             titulo: 'Aguas subterráneas',
             mode_id: 0,
             link_geovisor: './geovisor.php?geovisor=9',
@@ -49,6 +56,7 @@
         },
         {
             id: 'sedimentos',
+            id2: 8,
             titulo: 'Sedimentos',
             link_geovisor: './geovisor.php?geovisor=15',
             mode_id: 0,
@@ -56,6 +64,7 @@
         },
         {
             id: 'hidrologia',
+            id2: 9,
             titulo: 'Hidrología',
             link_geovisor: './geovisor.php?geovisor=14',
             mode_id: 0,
@@ -63,6 +72,7 @@
         },
         {
             id: 'glaciares',
+            id2: 10,
             titulo: 'Glaciares',
             mode_id: 0,
             link_geovisor: './geovisor.php?geovisor=13',
@@ -70,6 +80,7 @@
         },
         {
             id: 'geologia',
+            id2: 11,
             titulo: 'Geología, geomorfología y sismología',
             mode_id: 0,
             link_geovisor: './geovisor.php?geovisor=11',
@@ -77,6 +88,7 @@
         },
         {
             id: 'gases',
+            id2: 12,
             titulo: 'Gases de efecto invernadero',
             mode_id: 0,
             link_geovisor: './geovisor.php?geovisor=10',
@@ -84,6 +96,7 @@
         },
         {
             id: 'suelos',
+            id2: 13,
             titulo: 'Suelos',
             mode_id: 0,
             link_geovisor: './geovisor.php?geovisor=16',
@@ -91,6 +104,7 @@
         },
         {
             id: 'gestion',
+            id2: 14,
             titulo: 'Gestión ambiental de obra',
             mode_id: 0,
             link_geovisor: './geovisor.php?geovisor=12',
@@ -98,6 +112,7 @@
         },
         {
             id: 'patrimonio',
+            id2: 15,
             titulo: 'Patrimonio natural y cultural',
             mode_id: 0,
             link_geovisor: './geovisor.php?geovisor=20',
@@ -105,6 +120,7 @@
         },
         {
             id: 'recursos',
+            id2: 16,
             titulo: 'Recursos pesqueros',
             mode_id: 0,
             link_geovisor: './geovisor.php?geovisor=22',
@@ -112,6 +128,7 @@
         },
         {
             id: 'salud',
+            id2: 17,
             titulo: 'Salud',
             mode_id: 0,
             link_geovisor: './geovisor.php?geovisor=24',
@@ -119,6 +136,7 @@
         },
         {
             id: 'comunicacion',
+            id2: 18,
             titulo: 'Comunicación y acceso a la información',
             mode_id: 0,
             link_geovisor: './geovisor.php?geovisor=19',
@@ -126,6 +144,7 @@
         },
         {
             id: 'relaciones',
+            id2: 19,
             titulo: 'Relaciones comunitarias',
             mode_id: 0,
             link_geovisor: './geovisor.php?geovisor=23',
@@ -133,6 +152,7 @@
         },
         {
             id: 'pueblos',
+            id2: 20,
             titulo: 'Pueblos originarios',
             mode_id: 0,
             link_geovisor: './geovisor.php?geovisor=21',
@@ -140,6 +160,7 @@
         },
         {
             id: 'aspectos',
+            id2: 21,
             titulo: 'Aspectos socioeconómicos',
             mode_id: 0,
             link_geovisor: './geovisor.php?geovisor=18',
@@ -147,6 +168,7 @@
         },
         {
             id: 'articulacion2',
+            id2: 22,
             titulo: 'Articulación institucional ',
             mode_id: 0,
             link_geovisor: './geovisor.php?geovisor=17',
