@@ -37,6 +37,7 @@ while($r = pg_fetch_assoc($query)) {
 		if (!$first) { $json .= "]},{"; } else { $json .= "{"; }
 		$json .= "\"id\":\"" . $r["id"] . "\",";
 		$json .= "\"name\":\"" . $r["programa"] . "\"";
+		$json .= "\"temas\":[\"" . implode("\",\"",explode(",",$r["temas"])) . "\"],";
 		$json .= ",\"subprogramas\":[";
 		
 		$interCount = 0;
@@ -51,6 +52,7 @@ while($r = pg_fetch_assoc($query)) {
 		
 		$json .= "\"id\":\"" . $r["id"] . "\",";
 		$json .= "\"name\":\"" . $r["programa"] . "\"";
+		$json .= "\"temas\":[\"" . implode("\",\"",explode(",",$r["temas"])) . "\"]";
 		
 		$json .= "},";
 	
