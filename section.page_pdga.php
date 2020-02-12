@@ -8,77 +8,17 @@
             </div>
 
             <div class="col-md-12 top-buttons">
-                <a id="link-descripcion" href="#" data-target="#descripcion">Descripción</a>
-                <a id="link-estructura" href="#" data-target="#estructura">Estructura del PDGA</a>
-                <a id="link-temas" href="#" data-target="#temas">Temas claves</a>
-                <a id="link-responsabilidades" href="#" data-target="#responsabilidades">Responsabilidades y seguimientos</a>
-                <a id="link-articulacion" href="#" data-target="#articulacion">ARTICULACIÓN INSTITUCIONAL</a>
-            </div>
-        </div>
-
-        <div class="col-md-12 pl-0 pr-0">
-            <img src="./images/pdga_fondo.jpg" style="width: 100%; height: auto;" />
-        </div>
-
-        <div class="col-md-12 section-a" style="padding-left: 8em; padding-right: 8em;">
-            <a id="descripcion"></a>
-            <h3 style="color: #8e2f4f;">DESCRIPCIóN</h3>
-
-            <div class="row">
-                <div class="col-md-6 text-justify">
-                    EL Plan Director de Gestión Ambiental - PDGA es el instrumento de gestión que permite organizar las medidas y las recomendaciones que surgen del Estudio de Impacto Ambiental - EsIA, para la mitigación de los impactos sobre el medio físico, biótico y socioeconómicos y materializar los objetivos propuestos en materia ambiental.                     <br />        
-                    <br />        
-                    <br />        
-                    El PDGA de los AHRSC (formulado en el capítulo 6 del EsIA 2017 EBISA) reúne el contenido del Plan de Gestión Ambiental - PGA comprometido por la UTE Contratista en el EsIA del 2015 y establece nuevos compromisos asumidos por el Comitente (Estado Nacional) para contribuir a la sostenibilidad de los AH sobre el rio Santa Cruz, pasando así a denominarse Plan Director.
-                </div>
-                <div class="col-md-6 text-justify">
-                Su planificación desde la priorización de estudios de acuerdo al cronograma de obra (identificando temas críticos, abordaje en etapa y zonas de prioridad) permite una gestión adaptativa del Plan, una mejor administración de recursos y el cumplimiento de metas concretas.
-La ejecución del PGA involucra actores de diversos ámbitos, con distintos niveles de compromiso. Los compromisos ya asumidos en el EsIA, han sido levantados y ratificados por distintos actores de importancia en las Audiencias públicas, resoluciones ministeriales, en dictámenes particulares y constituyen obligaciones para el Comitente y la UTE. 
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-12 section-b estructura">
-            <a id="estructura"></a>
-            <h3>ESTRUCTURA DEL PDGA</h3>
-
-            <div class="row">
-                <div class="col-md-1">
-                </div>
-                <div class="col-md-2">
-                    <a href="#">
-                        <div class="circulo">OBSERVATORIO AMBIENTAL</div>
-                    </a>
-                </div>
-                <div class="col-md-2">
-                    <a href="#">
-                        <div class="circulo">PGA de construcción </div>
-                    </a>
-                </div>
-                <div class="col-md-2">
-                    <a href="#">
-                        <div class="circulo">PGA de operación</div>
-                    </a>
-                </div>
-                <div class="col-md-2">
-                    <a href="#">
-                        <div class="circulo">SIA</div>
-                    </a>
-                </div>
-                <div class="col-md-2">
-                    <a href="#">
-                        <div class="circulo">Componentes ambientales</div>
-                    </a>
-                </div>
-                <div class="col-md-1">
-                </div>
+                <a id="link-temas" href="#" data-target="#temas">TEMAS DEL PGA</a>
+                <a id="link-plan" href="#" data-target="#plan">PLAN DE GESTI&Oacute;N AMBIENTAL</a>
+                <a id="link-programas" href="#" data-target="#programas">PROGRAMAS Y SUBPROGRAMAS DEL PGA</a>
+                <a id="link-porarea" href="#" data-target="#porarea">PROGRAMAS/SUBPROGRAMAS POR &Aacute;REA</a>
             </div>
         </div>
 
         <div class="col-md-12 section-a temas">
             <a id="temas"></a>
-            <h3 style="color: #666;">TEMAS CLAVE</h3>
-
+            <h3 style="color: #666;">TEMAS DEL PGA</h3>
+            
             <div class="row" style="padding-left: 2em; padding-right: 2em;">
                 <div class="col-md-12" style="margin-bottom: 50px; font-size: 16px;">
                     EL PDGA al mismo tiempo está conformado por programas y subprogramas (Nro de programas), que abordan un conjunto de temas claves de las distintas etapas del proyecto y con diferente alcance territorial.
@@ -111,58 +51,95 @@ La ejecución del PGA involucra actores de diversos ámbitos, con distintos nive
                 </map>
             </div>
         </div>
-        <div class="col-md-12 section-b responsabilidades">
-            <a id="responsabilidades"></a>
-            <h3 style="color: #666;">RESPONSABILIDADES Y SEGUIMIENTOS</h3>
 
-            <div class="row" style="padding-left: 2em; padding-right: 2em;">
-                <div class="col-md-6 parrafos">
-                    <p>
-                        Texto de discriminación de responsabilidades compromisos contractuales.
-                    </p>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                    </p>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                    </p>
-                </div>
-                <div class="col-md-6 parrafos">
-                    <div class="embed-responsive embed-responsive-4by3">
-                        <iframe src="./grafico-popup.php" frameborder="0"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-12 section-a articulacion">
-            <a id="articulacion"></a>
-            <h3 style="color: #666;">Articulación institucional</h3>
+        <div class="col-md-12 section-b plan">
+            <a id="plan"></a>
+            <h3 style="color: #666;">PLAN DE GESTION AMBIENTAL</h3>
 
             <div class="row" style="padding-left: 2em; padding-right: 2em;">
                 <div class="col-md-12 parrafos">
-                    <p>
-                    Para llevar adelante el PDGA intervienen una diversidad de instituciones de investigación y profesionales especialistas  Instituciones involucradas en el PDGA  contratadas por el Estado Nacional o la UTE  según las responsabilidades asignadas en el ámbito del contrato.
-Convenios o acuerdos logrados , con qué instituciones (Comitente y UTE)  
-Especialidades involucradas,  asesores internacionales.
+                    <p style="font-size: 15px;">
+                        EL Plan de Gestión Ambiental (PGA) planifica y ejecuta las actividades tendientes a darle sostenibilidad al proyecto en sus distintas etapas, organiza las medidas y las recomendaciones que surgen del Estudio de Impacto Ambiental para mitigar los impactos sobre el medio físico, biótico y socioeconómico, y potenciar las oportunidades. 
                     </p>
-                </div>
-
-                <div class="section-footer">
-                    <div class="section-footer-buttons">
-                        <a href="./mediateca.php" class="section-footer-button">
-                            MEDIATECA
-                        </a>
-                        <a href="./geovisor.php" class="section-footer-button">
-                            GEOVISOR
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-12">
-            <div id="uxFichas">
+        <div class="col-md-12 section-a programas">
+            <a id="programas"></a>
+            <h3 style="color: #666;">PROGRAMAS Y SUBPROGRAMAS DEL PGA</h3>
+
+            <div class="row" style="padding-left: 2em; padding-right: 2em;">
+                <div class="col-md-6 parrafos">
+                    <p>
+                        EL PGA está conformado por un conjunto de programas y subprogramas que abarcan las etapas de construcción y de operación de los aprovechamientos, además de algunos programas especiales que tiene una ejecución permanente (que trascienden la etapa de obra).
+                        <br />
+                        <br />
+                        La estructura de programas y subprogramas surge de Estudio de Impacto Ambiental, que es una metodología sistemática para encarar la identificación y caracterización de las posibles alteraciones del ambiente y para proponer medidas de mitigación de los impactos negativos y de potenciación de los positivos. 
+                        <br />
+                        <br />
+                        Entre los programas especiales y de la etapa de construcción, el PGA aborda 90 temáticas específicas. Para su mejor exposición, se han clasificado en 22 temas clave, considerando las áreas biótica, física y social. 
+                        <br />
+                        <br />
+                        La ejecución de algunos programas del PGA está a cargo del Comitente (Estado Nacional), otros de la UTE Represas Patagonia (contratista) y otros son de responsabilidad compartida entre ambos. En los casos correspondientes, el trabajo se articula con las autoridades respectivas de la provincia de Santa Cruz, con distintas instituciones del sistema científico argentino o con otros organismos del Estado Nacional o provincial. 
+                        <br />
+                        <br />
+                        El alcance territorial de los programas y subprogramas depende de cada uno en particular: algunos se ejecutan en zona de obra, otros en áreas específicas (por ejemplo, el programa de macá tobiano realiza campañas en zonas de cría y de invernada: lagunas de la meseta central y estuario), otros a nivel de cuenca y algunos –en general, los del área social- a nivel provincial. 
+                        <br />
+                        <br />
+                    </p>
+                </div>
+                <div class="col-md-6 parrafos">
+                    <p>
+                        La ejecución de algunos programas del PGA está a cargo del Comitente (Estado Nacional), otros de la UTE Represas Patagonia (contratista) y otros son de responsabilidad compartida entre ambos. En los casos correspondientes, el trabajo se articula con las autoridades respectivas de la provincia de Santa Cruz, con distintas instituciones del sistema científico argentino o con otros organismos del Estado Nacional o provincial. 
+                        <br />
+                        <br />
+                        El alcance territorial de los programas y subprogramas depende de cada uno en particular: algunos se ejecutan en zona de obra, otros en áreas específicas (por ejemplo, el programa de macá tobiano realiza campañas en zonas de cría y de invernada: lagunas de la meseta central y estuario), otros a nivel de cuenca y algunos –en general, los del área social- a nivel provincial. 
+                        <br />
+                        <br />
+                    </p>
+                </div>
+            </div>
+
+            <h3 style="color: #666;">RESUMEN DE PROGRAMAS/SUBPROGRAMAS:</h3>
+
+            <div class="embed-responsive" style="padding-top: 50%;">
+                <iframe src="http://observatorio.ieasa.com.ar/indicadores-embed.php?ind_id=6" frameborder="0"></iframe>
+            </div>
+
+            <h3 style="color: #666;">SISTEMA DE INFORMACI&Oacute;N AMBIENTAL (SIA-AHRSC)</h3>
+
+            <div class="row" style="padding-left: 2em; padding-right: 2em;">
+                <div class="col-md-6 parrafos">
+                    <p>
+                        Las tecnologías aplicadas a la información de datos espaciales (SIG) han permitido diseñar métodos eficientes para la organización, produccción y uso de los datos geográficos. El Sistema de Información Ambiental (SIA-AHRSC) fue diseñado especificamete para este proyecto a partir de una visión integradora de la información ambiental y de la ingeniería civil y electromecánica.
+                        <br />
+                        <br />
+                    </p>
+                </div>
+                <div class="col-md-6 parrafos">
+                    <p>
+                        El SIA  conforma una Infraestructura de Datos Espaciales (IDE) que almacena, integra y organiza la información, desarrolla recursos para su accesibilidad y para su publicación y para  fortalecer  las vinculaciones interinstitucionales generadas por el proyecto con acceso desde el Observatorio.
+                        <br />
+                        <br />
+                    </p>
+                </div>
+            </div>
+
+            <div class="embed-responsive" style="padding-top: 51%;">
+                <iframe src="http://observatorio.ieasa.com.ar/indicadores-embed.php?ind_id=7" frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <div class="col-md-12 section-b porarea">
+            <a id="porarea"></a>
+            <h3 style="color: #666;">PROGRAMAS/SUBPROGRAMAS POR &Aacute;REA</h3>
+
+            <div class="row" style="padding-left: 2em; padding-right: 2em;">
+                <div class="col-md-12 parrafos">
+                    <div id="uxProgramas">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -233,26 +210,6 @@ $(document).ready(function() {
         $('#uxFicha').modal('show');
     }
 
-    // ARMADO DE LAS FICHAS
-    caminito.forEach(item => {
-        let html = `
-            <div class="col-md-12 ficha">
-                <a id="_${item.id}"></a>    
-                <h3>${item.titulo}</h3>
-                <p>${item.texto}</p>
-            </div>
-        `;
-
-        $('#uxFichas').append(html);
-    });
-
-    $('#uxVerFicha').on('click', function () {
-        let target = $(this).data('target');
-        $('html, body').animate({
-            scrollTop: $(target).offset().top - 200
-        }, 500)
-    });
-
     $('.section-sticky a').on('click', function() {
         $('.section-sticky a').removeClass('selected');
         $(this).addClass('selected');
@@ -286,6 +243,5 @@ $(document).ready(function() {
             $(this).css('background-image', 'url("./images/icono-' + key + '-relleno.png")')
         }
     )
-
 });
 </script>
