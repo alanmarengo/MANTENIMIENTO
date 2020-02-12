@@ -40,14 +40,15 @@
 		<div class="page-container">
 		
 			<?php //include("./section.index.php"); ?>
+			
 			<div style="display:none;">
-				<?php include("./html.navs.php"); ?>
-				
+				<?php include("./html.navs.php"); ?>				
 				<?php include("./html.nav.popup.php"); ?>
 			</div>
+			
 			<div class="row jump-row">
 				
-				<div id="template-wrapper" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+				<div id="template-wrapper" class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="padding:5px;">
 				
 					
 				
