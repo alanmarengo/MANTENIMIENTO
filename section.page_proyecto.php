@@ -84,8 +84,13 @@ A diferencia de otros proyectos hidroeléctricos, los embalses no requieren reas
 
             <div class="row" style="padding-left: 2em; padding-right: 2em;">
                 <div class="col-md-6 parrafos">
-                    <div class="embed-responsive" style="padding-top: 55%;">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/_wUvp8EoyiU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-container">
+                        <video style="width: 100%; height: auto;" controls poster="./images/previewCC.png">
+                            <source
+                                src="http://observatorio.ieasa.com.ar/sga/recursos/recursos_audiovisual/video_proyecto/Video_CC.mp4"
+                                type="video/mp4" />
+                            Tu navegador no soporta reproducir este video.
+                        </video>
                     </div>
                 </div>
                 <div class="col-md-6 parrafos">
@@ -140,8 +145,13 @@ A diferencia de otros proyectos hidroeléctricos, los embalses no requieren reas
 
             <div class="row" style="padding-left: 2em; padding-right: 2em;">
                 <div class="col-md-6 parrafos">
-                    <div class="embed-responsive" style="padding-top: 55%;">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/_wUvp8EoyiU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-container">
+                        <video style="width: 100%; height: auto;" controls poster="./images/previewLB.png">
+                            <source
+                                src="http://observatorio.atic.com.ar/video_3d/LB_3.mp4"
+                                type="video/mp4" />
+                            Tu navegador no soporta reproducir este video.
+                        </video>
                     </div>
                 </div>
                 <div class="col-md-6 parrafos">

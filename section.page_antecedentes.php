@@ -113,9 +113,12 @@
 
             <div class="row">
                 <div class="col-md-8">
-                    <div class="embed-responsive" style="padding-top: 55%;">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/QIJhdeCTgAs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                    
-                    </div>
+                    <video style="width: 100%; height: auto;" controls preload="none" poster="./images/audiencia_preview.png">
+                        <source
+                            src="http://observatorio.ieasa.com.ar/sga/recursos/recursos_audiovisual/00_audiencia_publica/AUDIENCIA PÚBLICA 20-07-17.mp4"
+                            type="video/mp4" />
+                        Tu navegador no soporta reproducir este video.
+                    </video>
                 </div>
                 <div class="col-md-4">
                     <p>
