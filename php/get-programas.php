@@ -147,42 +147,44 @@ if (!$tema_id) {
 		}
 		
 		$tema_json = substr($tema_json,0,strlen($tema_json)-1);
-		
-		if ((($split_part != $r["split_part"])) && ($match)) {
-		
-		echo "<p>" . $split_part . " :: " . $r["split_part"] . "</p>";
-				
-			if (!$first) { 
-					
-				//if ($has_sp) {
-					
-					$json = substr($json,0,strlen($json)-1) . "]"; 
-					
-				//}
-			}
-				
-			//$has_sp = false;
-					
-			$rematch = $match;
-					
-			$progCount ++;
-					
+	
+		if ($split_part != $r["split_part"]) {		
+			
 			$split_part = $r["split_part"];
+		
+			if ($match) {
+			
+				if (!$first) { 
+						
+					//if ($has_sp) {
+						
+						$json = substr($json,0,strlen($json)-1) . "]"; 
+						
+					//}
+				}
 					
-			if (!$first) { $json .= "]},{"; } else { $json .= "{"; }
-			$json .= "\"id\":\"" . $r["id"] . "\",";
-			$json .= "\"name\":\"" . $r["programa"] . "\",";
-			$json .= "\"temas\":[" . $tema_json . "],";
-			$json .= "\"data\":{";
-				$json .= "\"rubro\":\"" . $r["rubro"] . "\",";
-				$json .= "\"categoria\":\"" . $r["categoria"] . "\",";
-				$json .= "\"etapa\":\"" . $r["etapa"] . "\",";
-				$json .= "\"instituciones_interv\":\"" . $r["instituciones_interv"] . "\",";
-				$json .= "\"respons_nom\":\"" . $r["respons_nom"] . "\"";
-			$json .= "}";
-			$json .= ",\"subprogramas\":[";
-				
-			$interCount = 0;
+				//$has_sp = false;
+						
+				$rematch = $match;
+						
+				$progCount ++;						
+						
+				if (!$first) { $json .= "]},{"; } else { $json .= "{"; }
+				$json .= "\"id\":\"" . $r["id"] . "\",";
+				$json .= "\"name\":\"" . $r["programa"] . "\",";
+				$json .= "\"temas\":[" . $tema_json . "],";
+				$json .= "\"data\":{";
+					$json .= "\"rubro\":\"" . $r["rubro"] . "\",";
+					$json .= "\"categoria\":\"" . $r["categoria"] . "\",";
+					$json .= "\"etapa\":\"" . $r["etapa"] . "\",";
+					$json .= "\"instituciones_interv\":\"" . $r["instituciones_interv"] . "\",";
+					$json .= "\"respons_nom\":\"" . $r["respons_nom"] . "\"";
+				$json .= "}";
+				$json .= ",\"subprogramas\":[";
+					
+				$interCount = 0;
+			
+			}
 				
 		}
 			
