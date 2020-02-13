@@ -27,9 +27,13 @@ $pretsp = false;
 while($r = pg_fetch_assoc($query)) {			
 		
 	$tema_json = "";
-	$query_tema_id_string = "SELECT tema_id,tema_nombre FROM mod_catalogo.temas WHERE tema_nombre IN('" . implode("','",explode(",",$r["temas"])) . "')";
+	
+	$temas_nombres = explode(",",$r["temas"]);
+	for ($i=0; $i<sizeof($temas_nombres); $i++) { $temas_nombres[$i] = trim($temas_nombres[$i]); }
+	
+	$query_tema_id_string = "SELECT tema_id,tema_nombre FROM mod_catalogo.temas WHERE tema_nombre IN('" . implode("','",$temas_nombres) . "')";
 	$query_tema_id = pg_query($conn,$query_tema_id_string);
-	echo $query_tema_id_string;
+	
 	while ($t = pg_fetch_assoc($query_tema_id)) {
 		
 		$tema_json .= "{";
