@@ -4,7 +4,9 @@
             color: '#71AB49',
             titulo: 'Aves',
             mode_id: 0,
-            link_geovisor: './geovisor.php?geovisor=3',
+            link_mediateca: './mediateca?s=aves',
+            link_recursos: './mediateca?mode=-1&mode_id=3',
+            link_geovisor: './pdga_visor_popup.php?tema_id=3',
             texto: `Los estudios sobre avifauna se enfocan en profundizar el conocimiento científico sobre distintas especies de aves, especialmente aquellas consideradas clave o que están en situación de vulnerabilidad(macá tobiano, cauquén colorado, gallineta chica, cóndor andino, etc.), estén o no potencialmente afectadas por las obras.Las investigaciones están destinadas a analizar tendencias poblacionales, determinar la distribución y biología de las especies estudiadas y sus hábitos reproductivos, alimenticios y migratorios, con el objetivo de hacer más eficientes los programas de preservación y realizar un seguimiento de la evolución y adaptación de las especies.Las investigaciones se realizan a través de convenios con distintos organismos de ciencia y técnica del país.`
         },
         {

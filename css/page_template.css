@@ -381,6 +381,22 @@
   background-color: #fff;
   text-transform: uppercase;
 }
+#page_pdga .pop-ficha .nav-item {
+  margin-top: 20px;
+  background-color: #949494;
+  margin-right: 10px;
+  border-radius: 4px 4px 0px 0px;
+  color: #fff;
+}
+#page_pdga .pop-ficha .nav-tabs .nav-item.show .nav-link,
+#page_pdga .pop-ficha .nav-tabs .nav-link.active {
+  background-color: #4d4c4c;
+  color: #fff;
+}
+#page_pdga .pop-ficha .nav-tabs .nav-link:focus,
+#page_pdga .pop-ficha .nav-tabs .nav-link:hover {
+  background-color: #7A7A7A;
+}
 #page_pdga .pop-ficha .pop-titulo {
   padding-top: 12px;
   color: #8e2f4f;
@@ -398,7 +414,7 @@
 #page_pdga .pop-ficha .pop-button {
   border-radius: 4px;
   color: #fff;
-  background-color: #333;
+  background-color: #4d4c4c;
   padding: 8px 32px;
 }
 #page_pdga .pop-ficha .pop-button i {
