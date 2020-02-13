@@ -39,7 +39,7 @@ while ($data = pg_fetch_assoc($query)) {
 
 }
 
-$json = substr($json,0,strlen($json)-1) . "]";
+$json = substr($json,0,strlen($json)-1) . "]}";
 
 echo $json;
 
