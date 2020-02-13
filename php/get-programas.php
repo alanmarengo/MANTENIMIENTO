@@ -29,7 +29,7 @@ while($r = pg_fetch_assoc($query)) {
 	$tema_json = "";
 	$query_tema_id_string = "SELECT tema_id,tema_nombre FROM mod_catalogo.temas WHERE tema_nombre IN('" . implode("','",explode(",",$r["temas"])) . "')";
 	$query_tema_id = pg_query($conn,$query_tema_id_string);
-		
+	echo $query_tema_id_string;
 	while ($t = pg_fetch_assoc($query_tema_id)) {
 		
 		$tema_json .= "{";
