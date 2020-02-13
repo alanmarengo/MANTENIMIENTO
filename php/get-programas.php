@@ -148,7 +148,7 @@ if (!$tema_id) {
 			
 			if ((!$first) && ($pretsp>1) && ($has_sp)) { $json = substr($json,0,strlen($json)-1); }
 			
-			if ($match) {
+			//if ($match) {
 			
 				$has_sp = false;
 				
@@ -175,7 +175,7 @@ if (!$tema_id) {
 				
 				//if ($first) { $json = str_replace("[},","[",$json); }
 			
-			}
+			//}
 			
 		}
 		
