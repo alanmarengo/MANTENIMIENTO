@@ -162,12 +162,7 @@ function ol_map(tema_id) {
 			})
 		});
 		
-		layer_874.setZIndex(500);
-		layer_875.setZIndex(400);
-		layer_872.setZIndex(300);
-		layer_873.setZIndex(200);
-		
-		var js = {
+		/*var js = {
 			
 			minx:-8758221.51045902,
 			miny:-7304514.551140834,
@@ -183,14 +178,14 @@ function ol_map(tema_id) {
 				
 		this.ol_object.getView().fit(extent,{duration:1000});
 		this.ol_object.updateSize();
-		this.ol_object.render();
+		this.ol_object.render();*/
 		
 		this.baseLayer = this.baselayers.bing_aerials;
 		
 		this.ol_object.infoEnabled = true;
 		this.ol_object.map_object = this;
 		
-		this.ol_object.addEventListener("click",function(evt) {
+		/*cthis.ol_object.addEventListener("click",function(evt) {
 			
 			$("#popup-results").empty();
 			$("#popup-results-preparse").empty();
@@ -199,7 +194,7 @@ function ol_map(tema_id) {
 			
 				var pos = evt.coordinate;
 								
-				/*console.log("POS: " + pos);
+				onsole.log("POS: " + pos);
 				
 				var coord = String(pos).split(",");
 				
@@ -238,7 +233,7 @@ function ol_map(tema_id) {
 					this.map_object.markersLayer.getSource().clear();
 					this.map_object.markersLayer.getSource().addFeature(iconFeature);
 					
-				}*/
+				}
 			
 				$("#info-wrapper").empty();
 				
@@ -328,7 +323,7 @@ function ol_map(tema_id) {
 			
 			}
 			
-		});		
+		});		*/
 		
 		this.global_mouse_position_3857 = new ol.control.MousePosition({
 			coordinateFormat: function(coordinate) {
