@@ -10,7 +10,7 @@
 	
 	<?php include("./scripts.default.php"); ?>
 	<?php include("./scripts.openlayers.php"); ?>	
-	<?php include("./scripts.map.pdga_visor.php"); ?>
+	<?php include("./scripts.map.pdga.visor.php"); ?>
 	<?php include("./scripts.onresize.php"); ?>
 
 	<script type='text/javascript'>
