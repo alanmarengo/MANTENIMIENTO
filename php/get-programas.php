@@ -146,7 +146,9 @@ if (!$tema_id) {
 	
 		if (($split_part != $r["split_part"]) && ($match)) {
 			
-			if ((!$first) && ($pretsp>1)) { $json = substr($json,0,strlen($json)-1); }
+			if ((!$first) && ($pretsp>1) && ($has_sp)) { $json = substr($json,0,strlen($json)-1); }
+			
+			$has_sp = false;
 			
 			$rematch = $match;
 			
@@ -174,7 +176,9 @@ if (!$tema_id) {
 		}
 		
 		if (($interCount > 0) && ($rematch)) {
-		
+			
+			$has_sp = true;
+			
 			$json .= "{";
 			
 			$json .= "\"id\":\"" . $r["id"] . "\",";
