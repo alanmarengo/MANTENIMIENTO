@@ -43,7 +43,7 @@ while($r = pg_fetch_assoc($query)) {
 			
 			$tema_json .= "{";
 			$tema_json .= "\"id\":" . $t["tema_id"] . ",";
-			$tema_json .= "\"nombre\":" . $t["tema_nombre"];
+			$tema_json .= "\"nombre\":\"" . $t["tema_nombre"] . "\"";
 			$tema_json .= "},";
 			
 		}
