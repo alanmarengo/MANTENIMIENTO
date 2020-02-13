@@ -186,15 +186,20 @@
                     <div class="row">
                         <div class="col-md-12" style="padding: 5px 40px;">
                             <div class="row" style="border-bottom: solid 1px #ccc; font-size: 14px;">
-                                <div style="position: absolute; width: 30px; height: 30px; cursos: pointer; right: 24px;">
+<!--                                 <div style="position: absolute; width: 30px; height: 30px; cursos: pointer; right: 24px;">
                                     <button class="close" data-dismiss="modal">
                                         <i class="fa fa-times"></i>
                                     </button>
                                 </div>
-
-                                <div id="uxFichaTitulo" class="col-md-12"
+ -->
+                                <div id="uxFichaTitulo" class="col-md-11"
                                     style="text-transform: uppercase; padding: 0px 0px 10px 0px; font-weight: bolder; color: #333;">
                                     uxFichaTitulo
+                                </div>
+                                <div class="col-md-1 text-right"
+                                    <a href="#" class="close" data-dismiss="modal" style="cursor: pointer;">
+                                        <i class="fa fa-times"></i>
+                                    </a>
                                 </div>
                             </div>
                             <div class="row pop-ficha">
