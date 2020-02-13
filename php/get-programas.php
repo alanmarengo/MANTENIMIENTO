@@ -150,15 +150,10 @@ if (!$tema_id) {
 					
 				if ($has_sp) {
 					
-					$json = substr($json,0,strlen($json)-1) . "]"; 
+					$json = substr($json,0,strlen($json)-1); 
 					$has_sp = false;
 					
-				}else{
-						
-					$json .= "]";
-						
 				}
-					
 			}
 				
 			if ($match) {
