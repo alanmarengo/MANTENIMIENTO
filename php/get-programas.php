@@ -127,6 +127,7 @@ if (!$tema_id) {
 		$tema_json = "";
 		
 		$temas_nombres = explode(",",$r["temas"]);
+		
 		for ($i=0; $i<sizeof($temas_nombres); $i++) { $temas_nombres[$i] = trim($temas_nombres[$i]); }
 		
 		$query_tema_id_string = "SELECT tema_id,tema_nombre FROM mod_catalogo.temas WHERE tema_nombre IN('" . implode("','",$temas_nombres) . "')";
@@ -153,7 +154,7 @@ if (!$tema_id) {
 					
 				//if ($has_sp) {
 					
-					//$json = substr($json,0,strlen($json)-1); 
+					$json = substr($json,0,strlen($json)-1) . "]"; 
 					
 				//}
 			}
