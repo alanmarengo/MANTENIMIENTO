@@ -126,6 +126,8 @@ function ol_map(tema_id) {
 			var layer_name = js.layers[i].layer_name_layer;
 			var layer_server = js.layers[i].layer_wms_server;
 			console.log(js.layers[i]);
+			console.log(js.layers[i].layer_name_layer);
+			console.log(js.layers[i].layer_wms_server);
 			var _layer = new ol.layer.Tile({
 				name:layer_name,
 				visible:true,
