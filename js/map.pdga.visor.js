@@ -124,17 +124,17 @@ function ol_map(tema_id) {
 		for (var i=0; i<js.layers.length; i++) {
 		
 			var _layer = new ol.layer.Tile({
-				name:js.layer_name_layer,
+				name:js.layers[i].layer_name_layer,
 				visible:true,
 				source: new ol.source.TileWMS({
-					url: js.layer_wms_server,
+					url: js.layers[i].layer_wms_server,
 					params: {
-						'LAYERS': js.layer_name_layer,
+						'LAYERS': js.layers[i].layer_name_layer,
 						'VERSION': '1.1.1',
 						'FORMAT': 'image/png',
 						'TILED': false,
 						'clase_id':-1,
-						'layer_id':873
+						'layer_id':.layers[i].layer_id
 					}/*,
 					crossOrigin: 'anonymous'*/
 				})
