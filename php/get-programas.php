@@ -146,7 +146,19 @@ if (!$tema_id) {
 	
 		if (($split_part != $r["split_part"])) {
 			
-			if ((!$first) && ($pretsp>1) && ($has_sp)) { $json = substr($json,0,strlen($json)-1) . "]"; }
+			if ((!$first) && ($pretsp>1)) { 
+				
+				if ($has_sp) {
+				
+					$json = substr($json,0,strlen($json)-1) . "]"; 
+				
+				}else{
+					
+					$json .= "]";
+					
+				}
+				
+			}
 			
 			if ($match) {
 			
