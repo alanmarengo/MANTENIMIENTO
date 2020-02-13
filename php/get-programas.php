@@ -151,6 +151,7 @@ if (!$tema_id) {
 				if ($has_sp) {
 				
 					$json = substr($json,0,strlen($json)-1) . "]"; 
+					$has_sp = false;
 				
 				}else{
 					
@@ -197,16 +198,16 @@ if (!$tema_id) {
 			
 			$json .= "{";
 			
-			$json .= "\"id\":\"" . $r["id"] . "\",";
-			$json .= "\"name\":\"" . $r["programa"] . "\",";
-			$json .= "\"temas\":[" . $tema_json . "],";
-			$json .= "\"data\":{";
-				$json .= "\"rubro\":\"" . $r["rubro"] . "\",";
-				$json .= "\"categoria\":\"" . $r["categoria"] . "\",";
-				$json .= "\"etapa\":\"" . $r["etapa"] . "\",";
-				$json .= "\"instituciones_interv\":\"" . $r["instituciones_interv"] . "\",";
-				$json .= "\"respons_nom\":\"" . $r["respons_nom"] . "\"";
-			$json .= "}";
+				$json .= "\"id\":\"" . $r["id"] . "\",";
+				$json .= "\"name\":\"" . $r["programa"] . "\",";
+				$json .= "\"temas\":[" . $tema_json . "],";
+				$json .= "\"data\":{";
+					$json .= "\"rubro\":\"" . $r["rubro"] . "\",";
+					$json .= "\"categoria\":\"" . $r["categoria"] . "\",";
+					$json .= "\"etapa\":\"" . $r["etapa"] . "\",";
+					$json .= "\"instituciones_interv\":\"" . $r["instituciones_interv"] . "\",";
+					$json .= "\"respons_nom\":\"" . $r["respons_nom"] . "\"";
+				$json .= "}";
 			
 			$json .= "},";
 		
