@@ -198,7 +198,7 @@ A diferencia de otros proyectos hidroeléctricos, los embalses no requieren reas
 
                 <div class="section-footer">
                     <div class="section-footer-buttons">
-                        <a href="./mediateca.php" class="section-footer-button">
+                        <a class="section-footer-button" title="EN DESARROLLO">
                             <i class="fa fa-file-alt"></i>
                             VER FICHA
                         </a>
