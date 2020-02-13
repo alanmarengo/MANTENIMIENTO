@@ -159,6 +159,10 @@ if (!$tema_id) {
 						
 				}
 					
+			}else{
+				
+				$first = false;
+				
 			}
 				
 			if ($match) {
