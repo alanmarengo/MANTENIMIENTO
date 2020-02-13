@@ -37,7 +37,14 @@ while($r = pg_fetch_assoc($query)) {
 		if (!$first) { $json .= "]},{"; } else { $json .= "{"; }
 		$json .= "\"id\":\"" . $r["id"] . "\",";
 		$json .= "\"name\":\"" . $r["programa"] . "\",";
-		$json .= "\"temas\":[\"" . implode("\",\"",explode(",",$r["temas"])) . "\"]";
+		$json .= "\"temas\":[\"" . implode("\",\"",explode(",",$r["temas"])) . "\"],";
+		$json .= "\"data\":{";
+			$json .= "\"rubro\":\"" . $r["rubro"] . "\",";
+			$json .= "\"categoria\":\"" . $r["categoria"] . "\",";
+			$json .= "\"etapa\":\"" . $r["etapa"] . "\",";
+			$json .= "\"instituciones_interv\":\"" . $r["instituciones_interv"] . "\",";
+			$json .= "\"respons_nom\":\"" . $r["respons_nom"] . "\"";
+		$json .= "},";
 		$json .= ",\"subprogramas\":[";
 		
 		$interCount = 0;
@@ -52,7 +59,14 @@ while($r = pg_fetch_assoc($query)) {
 		
 		$json .= "\"id\":\"" . $r["id"] . "\",";
 		$json .= "\"name\":\"" . $r["programa"] . "\",";
-		$json .= "\"temas\":[\"" . implode("\",\"",explode(",",$r["temas"])) . "\"]";
+		$json .= "\"temas\":[\"" . implode("\",\"",explode(",",$r["temas"])) . "\"],";
+		$json .= "\"data\":{";
+			$json .= "\"rubro\":\"" . $r["rubro"] . "\",";
+			$json .= "\"categoria\":\"" . $r["categoria"] . "\",";
+			$json .= "\"etapa\":\"" . $r["etapa"] . "\",";
+			$json .= "\"instituciones_interv\":\"" . $r["instituciones_interv"] . "\",";
+			$json .= "\"respons_nom\":\"" . $r["respons_nom"] . "\"";
+		$json .= "}";
 		
 		$json .= "},";
 	
