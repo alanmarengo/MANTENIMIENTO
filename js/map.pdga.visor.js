@@ -134,7 +134,7 @@ function ol_map(tema_id) {
 						'FORMAT': 'image/png',
 						'TILED': false,
 						'clase_id':-1,
-						'layer_id':.layers[i].layer_id
+						'layer_id':js.layers[i].layer_id
 					}/*,
 					crossOrigin: 'anonymous'*/
 				})
