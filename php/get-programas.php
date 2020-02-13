@@ -120,57 +120,57 @@ if (!$tema_id) {
 	
 	while($r = pg_fetch_assoc($query)) {			
 			
-	$tema_json = "";
-	
-	$temas_nombres = explode(",",$r["temas"]);
-	for ($i=0; $i<sizeof($temas_nombres); $i++) { $temas_nombres[$i] = trim($temas_nombres[$i]); }
-	
-	$query_tema_id_string = "SELECT tema_id,tema_nombre FROM mod_catalogo.temas WHERE tema_nombre IN('" . implode("','",$temas_nombres) . "')";
-	$query_tema_id = pg_query($conn,$query_tema_id_string);
-	
-	$match = false;
-	$rematch = false;
-	
-	while ($t = pg_fetch_assoc($query_tema_id)) {
+		$tema_json = "";
 		
-		if ($tema_id == $t["tema_id"]) { $match = true; }
+		$temas_nombres = explode(",",$r["temas"]);
+		for ($i=0; $i<sizeof($temas_nombres); $i++) { $temas_nombres[$i] = trim($temas_nombres[$i]); }
 		
-		$tema_json .= "{";
-		$tema_json .= "\"id\":" . $t["tema_id"] . ",";
-		$tema_json .= "\"nombre\":\"" . $t["tema_nombre"] . "\"";
-		$tema_json .= "},";
+		$query_tema_id_string = "SELECT tema_id,tema_nombre FROM mod_catalogo.temas WHERE tema_nombre IN('" . implode("','",$temas_nombres) . "')";
+		$query_tema_id = pg_query($conn,$query_tema_id_string);
 		
-	}
-	
-	$tema_json = substr($tema_json,0,strlen($tema_json)-1);
-	
-		if (($split_part != $r["split_part"])) {
+		$match = false;
+		$rematch = false;
+		
+		while ($t = pg_fetch_assoc($query_tema_id)) {
 			
-			if ((!$first) && ($pretsp>1)) { 
+			if ($tema_id == $t["tema_id"]) { $match = true; }
+			
+			$tema_json .= "{";
+			$tema_json .= "\"id\":" . $t["tema_id"] . ",";
+			$tema_json .= "\"nombre\":\"" . $t["tema_nombre"] . "\"";
+			$tema_json .= "},";
+			
+		}
+		
+		$tema_json = substr($tema_json,0,strlen($tema_json)-1);
+		
+		if (($split_part != $r["split_part"])) {
 				
+			if (!$first) { 
+					
 				if ($has_sp) {
-				
+					
 					$json = substr($json,0,strlen($json)-1) . "]"; 
 					$has_sp = false;
-				
+					
 				}else{
-					
+						
 					$json .= "]";
-					
+						
 				}
-				
+					
 			}
-			
+				
 			if ($match) {
-			
+				
 				$has_sp = false;
-				
+					
 				$rematch = $match;
-				
+					
 				$progCount ++;
-				
+					
 				$split_part = $r["split_part"];
-				
+					
 				if (!$first) { $json .= "]},{"; } else { $json .= "{"; }
 				$json .= "\"id\":\"" . $r["id"] . "\",";
 				$json .= "\"name\":\"" . $r["programa"] . "\",";
@@ -185,19 +185,19 @@ if (!$tema_id) {
 				$json .= ",\"subprogramas\":[";
 				
 				$interCount = 0;
-				
+					
 				//if ($first) { $json = str_replace("[},","[",$json); }
-			
+				
 			}
-			
+				
 		}
-		
+			
 		if (($interCount > 0) && ($rematch)) {
-			
+				
 			$has_sp = true;
-			
+				
 			$json .= "{";
-			
+				
 				$json .= "\"id\":\"" . $r["id"] . "\",";
 				$json .= "\"name\":\"" . $r["programa"] . "\",";
 				$json .= "\"temas\":[" . $tema_json . "],";
@@ -212,9 +212,9 @@ if (!$tema_id) {
 			$json .= "},";
 		
 		}else{
-			
+				
 			$interCount++;
-			
+				
 		}
 	
 	}
