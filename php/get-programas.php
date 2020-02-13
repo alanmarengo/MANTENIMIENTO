@@ -159,10 +159,6 @@ if (!$tema_id) {
 						
 				}
 					
-			}else{
-				
-				$first = false;
-				
 			}
 				
 			if ($match) {
@@ -221,9 +217,9 @@ if (!$tema_id) {
 				
 		}
 	
-	}
+		$first = false;
 	
-	$first = false;
+	}
 	
 	$pretsp = $r["tsp"];
 
