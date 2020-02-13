@@ -155,11 +155,11 @@ function ol_map(tema_id) {
 		this.ol_object = new ol.Map({
 			layers:this.baselayers.collection,
 			target: 'map',
-			extent: [-8758221.51045902,-7304514.551140834,-6797051.72232697,-5466971.511830861],
+			extent: [-13281237.21183002,-7669922.0600572005,-738226.6183457375,-1828910.1066171727],
 			controls: [],
 			view: new ol.View({
-				center: [-7176058.888636417,-4680928.505993671],
-				zoom:3.8,
+				center: [-7800040.076346466,-6356294.552683568],
+				zoom:5.8,
 				minZoom: 3.8,
 				maxZoom: 21
 			})
