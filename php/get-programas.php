@@ -151,14 +151,14 @@ if (!$tema_id) {
 				
 			if (!$first) { 
 					
-				if ($has_sp) {
+				//if ($has_sp) {
 					
-					$json = substr($json,0,strlen($json)-1); 
+					//$json = substr($json,0,strlen($json)-1); 
 					
-				}
+				//}
 			}
 				
-			$has_sp = false;
+			//$has_sp = false;
 					
 			$rematch = $match;
 					
