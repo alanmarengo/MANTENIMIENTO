@@ -10,7 +10,7 @@ $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . 
 	
 $conn = pg_connect($string_conn);
 
-$query_string = "SELECT * FROM mod_catalogo.temas_capas WHERE tema_id = " . $tema_id;
+$query_string = "SELECT DISTINCT(layer_id) FROM mod_catalogo.temas_capas WHERE tema_id = " . $tema_id;
 
 $query = pg_query($conn,$query_string);
 
@@ -19,10 +19,6 @@ while($r = pg_fetch_assoc($query)) {
 	array_push($layers_id,$r["layer_id"]);
 	
 }
-
-$layers_id = array_unique($layers_id);
-
-$layers_id = array_values($layers_id);
 
 $query_string = "SELECT layer_id,layer_desc,layer_wms_server,layer_wms_layer,layer_schema,layer_table FROM mod_geovisores.vw_layers WHERE layer_id IN(" . implode(",",$layers_id) . ")";
 
