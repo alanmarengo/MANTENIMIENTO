@@ -44,7 +44,7 @@ while($r = pg_fetch_assoc($query)) {
 			$json .= "\"etapa\":\"" . $r["etapa"] . "\",";
 			$json .= "\"instituciones_interv\":\"" . $r["instituciones_interv"] . "\",";
 			$json .= "\"respons_nom\":\"" . $r["respons_nom"] . "\"";
-		$json .= "},";
+		$json .= "}";
 		$json .= ",\"subprogramas\":[";
 		
 		$interCount = 0;
