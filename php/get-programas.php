@@ -148,6 +148,8 @@ if (!$tema_id) {
 		
 		$tema_json = substr($tema_json,0,strlen($tema_json)-1);
 		
+		echo "<p>" . $split_part . " :: " .  $r["split_part"]) . "</p>";
+		
 		if ((($split_part != $r["split_part"])) && ($match)) {
 				
 			if (!$first) { 
