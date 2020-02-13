@@ -119,7 +119,9 @@ if (!$tema_id) {
 }else{
 	
 	$rematch = false;
-		
+	
+	$first = true;
+	
 	while($r = pg_fetch_assoc($query)) {			
 			
 		$tema_json = "";
