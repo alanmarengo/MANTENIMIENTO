@@ -118,6 +118,8 @@ if (!$tema_id) {
 
 }else{
 	
+	$rematch = false;
+		
 	while($r = pg_fetch_assoc($query)) {			
 			
 		$tema_json = "";
@@ -129,7 +131,6 @@ if (!$tema_id) {
 		$query_tema_id = pg_query($conn,$query_tema_id_string);
 		
 		$match = false;
-		$rematch = false;
 		
 		while ($t = pg_fetch_assoc($query_tema_id)) {
 			
@@ -144,7 +145,7 @@ if (!$tema_id) {
 		
 		$tema_json = substr($tema_json,0,strlen($tema_json)-1);
 		
-		if (($split_part != $r["split_part"])) {
+		if ((($split_part != $r["split_part"])) && ($match)) {
 				
 			if (!$first) { 
 					
@@ -156,34 +157,28 @@ if (!$tema_id) {
 				}
 			}
 				
-			if ($match) {
+			$has_sp = false;
+					
+			$rematch = $match;
+					
+			$progCount ++;
+					
+			$split_part = $r["split_part"];
+					
+			if (!$first) { $json .= "]},{"; } else { $json .= "{"; }
+			$json .= "\"id\":\"" . $r["id"] . "\",";
+			$json .= "\"name\":\"" . $r["programa"] . "\",";
+			$json .= "\"temas\":[" . $tema_json . "],";
+			$json .= "\"data\":{";
+				$json .= "\"rubro\":\"" . $r["rubro"] . "\",";
+				$json .= "\"categoria\":\"" . $r["categoria"] . "\",";
+				$json .= "\"etapa\":\"" . $r["etapa"] . "\",";
+				$json .= "\"instituciones_interv\":\"" . $r["instituciones_interv"] . "\",";
+				$json .= "\"respons_nom\":\"" . $r["respons_nom"] . "\"";
+			$json .= "}";
+			$json .= ",\"subprogramas\":[";
 				
-				$has_sp = false;
-					
-				$rematch = $match;
-					
-				$progCount ++;
-					
-				$split_part = $r["split_part"];
-					
-				if (!$first) { $json .= "]},{"; } else { $json .= "{"; }
-				$json .= "\"id\":\"" . $r["id"] . "\",";
-				$json .= "\"name\":\"" . $r["programa"] . "\",";
-				$json .= "\"temas\":[" . $tema_json . "],";
-				$json .= "\"data\":{";
-					$json .= "\"rubro\":\"" . $r["rubro"] . "\",";
-					$json .= "\"categoria\":\"" . $r["categoria"] . "\",";
-					$json .= "\"etapa\":\"" . $r["etapa"] . "\",";
-					$json .= "\"instituciones_interv\":\"" . $r["instituciones_interv"] . "\",";
-					$json .= "\"respons_nom\":\"" . $r["respons_nom"] . "\"";
-				$json .= "}";
-				$json .= ",\"subprogramas\":[";
-				
-				$interCount = 0;
-					
-				//if ($first) { $json = str_replace("[},","[",$json); }
-				
-			}
+			$interCount = 0;
 				
 		}
 			
