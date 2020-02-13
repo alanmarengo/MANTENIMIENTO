@@ -48,7 +48,7 @@ while($r = pg_fetch_assoc($query)) {
 			
 		}
 		
-		$tema_json = substr($tema_json,0,strlen($tema_json)-1);*/
+		$tema_json = substr($tema_json,0,strlen($tema_json)-1);
 		
 		if (!$first) { $json .= "]},{"; } else { $json .= "{"; }
 		$json .= "\"id\":\"" . $r["id"] . "\",";
