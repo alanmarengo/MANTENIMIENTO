@@ -139,8 +139,6 @@ if (!$tema_id) {
 		$query_tema_id_string = "SELECT tema_id,tema_nombre FROM mod_catalogo.temas WHERE tema_nombre IN('" . implode("','",$temas_nombres) . "')";
 		$query_tema_id = pg_query($conn,$query_tema_id_string);
 		
-		$match = false;
-		
 		while ($t = pg_fetch_assoc($query_tema_id)) {
 			
 			if ($tema_id == $r["tema_id"]) { $match = true; }
@@ -153,57 +151,68 @@ if (!$tema_id) {
 		}
 		
 		$tema_json = substr($tema_json,0,strlen($tema_json)-1);
+		$match = false;
 		
-		//if ($match) {
+				
 		
-			$json .= "{";
-			$json .= "\"id\":\"" . $r["id"] . "\",";
-			$json .= "\"name\":\"" . $r["programa"] . "\",";
-			$json .= "\"temas\":[" . $tema_json . "],";
-			$json .= "\"data\":{";
-				$json .= "\"rubro\":\"" . $r["rubro"] . "\",";
-				$json .= "\"categoria\":\"" . $r["categoria"] . "\",";
-				$json .= "\"etapa\":\"" . $r["etapa"] . "\",";
-				$json .= "\"instituciones_interv\":\"" . $r["instituciones_interv"] . "\",";
-				$json .= "\"respons_nom\":\"" . $r["respons_nom"] . "\"";
-			$json .= "}";
-			$json .= ",\"subprogramas\":[";
+		while ($t = pg_fetch_assoc($query_tema_id)) {
 			
-			if ($r["tsp"] > 1) {
-				
-				$squery_string = " SELECT 
-			pr.*,
-			(SELECT COUNT(*) FROM ambiente.vw_programas WHERE split_part = pr.split_part) AS tsp
-		   FROM ambiente.vw_programas pr WHERE split_part = '" . $r["split_part"] .  "' AND split_subprog != '' ORDER BY split_part ASC, \"id\" ASC";
-				
-				$squery = pg_query($conn,$squery_string);
-				
-				while ($sub = pg_fetch_assoc($squery)) {
-		
-					$json .= "{";
-						
-						$json .= "\"id\":\"" . $sub["id"] . "\",";
-						$json .= "\"name\":\"" . $sub["programa"] . "\",";
-						$json .= "\"temas\":[],";
-						$json .= "\"data\":{";
-							$json .= "\"rubro\":\"" . $sub["rubro"] . "\",";
-							$json .= "\"categoria\":\"" . $sub["categoria"] . "\",";
-							$json .= "\"etapa\":\"" . $sub["etapa"] . "\",";
-							$json .= "\"instituciones_interv\":\"" . $sub["instituciones_interv"] . "\",";
-							$json .= "\"respons_nom\":\"" . $sub["respons_nom"] . "\"";
-						$json .= "}";
-				
-					$json .= "},";
-				
-				}
-				
-				$json = substr($json,0,strlen($json)-1);
-				
-			//}			
-
-			$json .= "]},";
-		
+			$tema_json .= "{";
+			$tema_json .= "\"id\":" . $t["tema_id"] . ",";
+			$tema_json .= "\"nombre\":\"" . $t["tema_nombre"] . "\"";
+			$tema_json .= "},";
+			
 		}
+		
+		$tema_json = substr($tema_json,0,strlen($tema_json)-1);
+		
+		$json .= "{";
+		$json .= "\"id\":\"" . $r["id"] . "\",";
+		$json .= "\"name\":\"" . $r["programa"] . "\",";
+		//$json .= "\"temas\":[" . $tema_json . "],";
+		$json .= "\"data\":{";
+			$json .= "\"rubro\":\"" . $r["rubro"] . "\",";
+			$json .= "\"categoria\":\"" . $r["categoria"] . "\",";
+			$json .= "\"etapa\":\"" . $r["etapa"] . "\",";
+			$json .= "\"instituciones_interv\":\"" . $r["instituciones_interv"] . "\",";
+			$json .= "\"respons_nom\":\"" . $r["respons_nom"] . "\"";
+		$json .= "}";
+		$json .= ",\"subprogramas\":[";
+		
+		if ($r["tsp"] > 1) {
+			
+			$squery_string = " SELECT 
+		pr.*,
+		(SELECT COUNT(*) FROM ambiente.vw_programas WHERE split_part = pr.split_part) AS tsp
+	   FROM ambiente.vw_programas pr WHERE split_part = '" . $r["split_part"] .  "' AND split_subprog != '' ORDER BY split_part ASC, \"id\" ASC";
+			
+			$squery = pg_query($conn,$squery_string);
+			
+			while ($sub = pg_fetch_assoc($squery)) {
+	
+				$json .= "{";
+					
+					$json .= "\"id\":\"" . $sub["id"] . "\",";
+					$json .= "\"name\":\"" . $sub["programa"] . "\",";
+					//$json .= "\"temas\":[" . $tema_json . "],";
+					$json .= "\"data\":{";
+						$json .= "\"rubro\":\"" . $sub["rubro"] . "\",";
+						$json .= "\"categoria\":\"" . $sub["categoria"] . "\",";
+						$json .= "\"etapa\":\"" . $sub["etapa"] . "\",";
+						$json .= "\"instituciones_interv\":\"" . $sub["instituciones_interv"] . "\",";
+						$json .= "\"respons_nom\":\"" . $sub["respons_nom"] . "\"";
+					$json .= "}";
+			
+				$json .= "},";
+			
+			}
+			
+			$json = substr($json,0,strlen($json)-1);
+			
+		}
+			
+
+		$json .= "]},";
 	
 		$first = false;
 	
