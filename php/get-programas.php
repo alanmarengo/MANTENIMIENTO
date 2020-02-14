@@ -175,12 +175,33 @@ if (!$tema_id) {
 			$squery = pg_query($conn,$squery_string);
 			
 			while ($sub = pg_fetch_assoc($squery)) {
-	
+				
+				$tema_json = "";
+					
+				$temas_nombres = explode(",",$sub["temas"]);
+				for ($i=0; $i<sizeof($temas_nombres); $i++) { $temas_nombres[$i] = trim($temas_nombres[$i]); }
+				
+				$query_tema_id_string = "SELECT tema_id,tema_nombre FROM mod_catalogo.temas WHERE tema_nombre IN('" . implode("','",$temas_nombres) . "')";
+				$query_tema_id = pg_query($conn,$query_tema_id_string);
+				
+				$match = false;				
+				
+				while ($t = pg_fetch_assoc($query_tema_id)) {
+					
+					$tema_json .= "{";
+					$tema_json .= "\"id\":" . $t["tema_id"] . ",";
+					$tema_json .= "\"nombre\":\"" . $t["tema_nombre"] . "\"";
+					$tema_json .= "},";
+					
+				}
+				
+				$tema_json = substr($tema_json,0,strlen($tema_json)-1);
+				
 				$json .= "{";
 					
 					$json .= "\"id\":\"" . $sub["id"] . "\",";
 					$json .= "\"name\":\"" . $sub["programa"] . "\",";
-					//$json .= "\"temas\":[" . $tema_json . "],";
+					$json .= "\"temas\":[" . $tema_json . "],";
 					$json .= "\"data\":{";
 						$json .= "\"rubro\":\"" . $sub["rubro"] . "\",";
 						$json .= "\"categoria\":\"" . $sub["categoria"] . "\",";
