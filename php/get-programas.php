@@ -151,16 +151,17 @@ if (!$tema_id) {
 		if ($split_part != $r["split_part"]) {		
 			
 			$split_part = $r["split_part"];
+			$interCount = 0;
 		
 			if ($match) {
 			
 				if (!$first) { 
 						
-					//if ($has_sp) {
+					if ($has_sp) {
 						
 						$json = substr($json,0,strlen($json)-1) . "]]"; 
 						
-					//}
+					}
 				}
 					
 				//$has_sp = false;
@@ -181,8 +182,6 @@ if (!$tema_id) {
 					$json .= "\"respons_nom\":\"" . $r["respons_nom"] . "\"";
 				$json .= "}";
 				$json .= ",\"subprogramas\":[";
-					
-				$interCount = 0;
 			
 			}
 				
@@ -190,26 +189,22 @@ if (!$tema_id) {
 			
 		if ($interCount > 0) {
 			
-			if ($rematch) {
-			
-				$has_sp = true;
-					
-				$json .= "{";
-					
-					$json .= "\"id\":\"" . $r["id"] . "\",";
-					$json .= "\"name\":\"" . $r["programa"] . "\",";
-					$json .= "\"temas\":[" . $tema_json . "],";
-					$json .= "\"data\":{";
-						$json .= "\"rubro\":\"" . $r["rubro"] . "\",";
-						$json .= "\"categoria\":\"" . $r["categoria"] . "\",";
-						$json .= "\"etapa\":\"" . $r["etapa"] . "\",";
-						$json .= "\"instituciones_interv\":\"" . $r["instituciones_interv"] . "\",";
-						$json .= "\"respons_nom\":\"" . $r["respons_nom"] . "\"";
-					$json .= "}";
+			$has_sp = true;
 				
-				$json .= "},";
+			$json .= "{";
+				
+				$json .= "\"id\":\"" . $r["id"] . "\",";
+				$json .= "\"name\":\"" . $r["programa"] . "\",";
+				$json .= "\"temas\":[" . $tema_json . "],";
+				$json .= "\"data\":{";
+					$json .= "\"rubro\":\"" . $r["rubro"] . "\",";
+					$json .= "\"categoria\":\"" . $r["categoria"] . "\",";
+					$json .= "\"etapa\":\"" . $r["etapa"] . "\",";
+					$json .= "\"instituciones_interv\":\"" . $r["instituciones_interv"] . "\",";
+					$json .= "\"respons_nom\":\"" . $r["respons_nom"] . "\"";
+				$json .= "}";
 			
-			}
+			$json .= "},";
 		
 		}else{
 				
