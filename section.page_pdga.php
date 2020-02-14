@@ -186,19 +186,13 @@
                     <div class="row">
                         <div class="col-md-12" style="padding: 5px 40px;">
                             <div class="row" style="border-bottom: solid 1px #ccc; font-size: 14px;">
-<!--                                 <div style="position: absolute; width: 30px; height: 30px; cursos: pointer; right: 24px;">
-                                    <button class="close" data-dismiss="modal">
-                                        <i class="fa fa-times"></i>
-                                    </button>
-                                </div>
- -->
                                 <div id="uxFichaTitulo" class="col-md-11"
                                     style="text-transform: uppercase; padding: 0px 0px 10px 0px; font-weight: bolder; color: #333;">
                                     uxFichaTitulo
                                 </div>
-                                <div class="col-md-1 text-right"
-                                    <a href="#" class="close" data-dismiss="modal" style="cursor: pointer;">
-                                        <i class="fa fa-times"></i>
+                                <div class="col-md-1 text-right" <a href="#" class="close" data-dismiss="modal"
+                                    style="cursor: pointer;">
+                                    <i class="fa fa-times"></i>
                                     </a>
                                 </div>
                             </div>
@@ -220,7 +214,7 @@
                                     </ul>
 
                                     <div class="tab-content" id="uxFichaTabContent">
-                                        <div class="tab-pane fade show active" id="descripcion" role="tabpanel">
+                                        <div class="tab-pane fade show active" id="descripcion" role="tabpanel" style="padding-top: 10px;">
                                             <div id="uxPopTexto" class="pop-content">
                                                 uxPopTexto
                                             </div>
@@ -237,24 +231,20 @@
                                                 </a>
                                             </div>
 
-                                            <div
-                                                style="display: none; height: 300px; margin-top: 50px; overflow-y: scroll;">
+                                            <div style="margin-top: 50px; margin-left: 30px;">
                                                 <div id="uxFichaProgramas" class="programas"
-                                                    style="background-color: #ccc; padding: 10px;">
+                                                    style="padding: 10px;">
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div class="tab-pane fade" id="mapa" role="tabpanel">
-                                            <div class="embed-responsive" style="padding-top: 40%;">
-                                                <iframe id="uxMapa" src=""
-                                                    frameborder="0"></iframe>
+                                        <div class="tab-pane fade" id="mapa" role="tabpanel" style="padding-top: 10px;">
+                                            <div class="embed-responsive" style="padding-top: 50%;">
+                                                <iframe id="uxMapa" src="" frameborder="0"></iframe>
                                             </div>
                                         </div>
 
-                                        <div class="tab-pane fade" id="multimedia" role="tabpanel">
-
-
+                                        <div class="tab-pane fade" id="multimedia" role="tabpanel" style="padding-top: 10px;">
                                         </div>
                                     </div>
                                 </div>
@@ -267,6 +257,8 @@
     </div>
 </div>
 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
 <script type="text/javascript" src="./js/caminito_model.js"></script>
 <script type="text/javascript" src="./js/imageMapResizer.min.js"></script>
 <script type='text/javascript'>
@@ -274,22 +266,49 @@ $(document).ready(function() {
     $('map').imageMapResize();
 
     $("map area").click(function() {
-        // LOAD MODEL FICHA FALTA
-        showFicha(parseInt($(this).attr('id')));
+        var id = parseInt($(this).attr('id'));
+        loadFicha(id);
         return false;
     });
 
-    function showFicha(id) {
-        var item = caminito.find(x => x.id === id);
-        $('#uxFichaTitulo').html(item.titulo);
-        $('#uxPopTexto').html(item.texto);
-        $('#uxVerFicha').attr('href', item.link_mediateca)
-        $('#uxVerRecursos').attr('href', item.link_recursos)
-        $('#uxMapa').attr('src', item.link_geovisor)
+    function loadFicha(id) {
+        let qs = {
+            tema_id: id
+        };
+        let url = GlobalApiUrl + '/pdga_get_popup.php?' + jQuery.param(qs);
 
-        loadProgramas(null, '#uxFichaProgramas');
+        $.getJSON(url, function(data) {
+            var item = data[0];
 
-        $('#uxFicha').modal('show');
+            $('#uxFichaTitulo').html(item.tema_nombre);
+            $('#uxPopTexto').html(item.tema_desc);
+            $('#uxVerFicha').attr('href', item.tema_ficha_path)
+            $('#uxVerRecursos').attr('href', item.tema_recursos_asociados)
+            $('#uxMapa').attr('src', item.tema_minigeovisor)
+
+            // DESTROY PREVIOUS FOTORAMA
+            $('#multimedia').html('').prepend(`
+                <div id="fotorama" class="fotorama" data-auto="false">
+                </div>                                        
+            `)
+
+            var imagenes = []
+            item.tema_imagenes.forEach(imagen => {
+                imagenes.push({
+                    img: imagen,
+                    tumb: imagen
+                })
+            })
+            $('.fotorama').fotorama({
+                width: '100%',
+                nav: 'thumbs',
+                data: imagenes
+            });
+
+            loadProgramasFichas(item.tema_id, '#uxFichaProgramas');
+
+            $('#uxFicha').modal('show');
+        });
     }
 
     $('.section-sticky a').on('click', function() {
@@ -312,7 +331,7 @@ $(document).ready(function() {
     if (pop) {
         // APERTURA POP DE CAMINITO DESDE QS
         $('#link-temas').trigger('click');
-        showFicha(pop);
+        loadFicha(pop);
     }
 
     $('.pop-button2').hover(
@@ -326,22 +345,13 @@ $(document).ready(function() {
         }
     )
 
-    loadProgramas(null, '#uxProgramas');
+    loadProgramas('#uxProgramas');
 
 
 
 
-
-
-
-
-
-
-    function loadProgramas(temaId, container) {
-        let qs = {
-            id: temaId
-        };
-        let url = GlobalApiUrl + '/php/get-programas.php?' + jQuery.param(qs);
+    function loadProgramas(container) {
+        let url = GlobalApiUrl + '/php/get-programas.php';
 
         $.getJSON(url, function(data) {
             let html = renderProgramas(container, data.programas, 0);
@@ -429,5 +439,123 @@ $(document).ready(function() {
         return htmlItem;
     }
 
+    function loadProgramasFichas(temaId, container) {
+        let qs = {
+            tema_id: temaId
+        };
+        let url = GlobalApiUrl + '/php/get-programas.php?' + jQuery.param(qs);
+
+        let data = {
+            "programas": [{
+                "id": "OA22",
+                "name": "Programa de Monitoro de Avifauna - Aves Acuáticas",
+                "temas": [{
+                    "id": 3,
+                    "nombre": "Aves"
+                }],
+                "data": {
+                    "rubro": "Biótico",
+                    "categoria": "Avifauna",
+                    "etapa": "Observatorio Ambiental",
+                    "instituciones_interv": "Centro para el estudio de sistemas marinos (CESIMAR - CONICET)",
+                    "respons_nom": "Dra. Verónica D´Amico"
+                },
+                "subprogramas": []
+            }, {
+                "id": "OA23",
+                "name": "Programa de Monitoreo de Avifauna - Cóndor Andino",
+                "temas": [{
+                    "id": 3,
+                    "nombre": "Aves"
+                }],
+                "data": {
+                    "rubro": "Biótico",
+                    "categoria": "Avifauna",
+                    "etapa": "Observatorio Ambiental",
+                    "instituciones_interv": "Universidad Nacional de Córdoba",
+                    "respons_nom": "Lic. Walter Cejas y Lic. Natalia Vreys"
+                },
+                "subprogramas": []
+            }, {
+                "id": "OA24",
+                "name": "Programa de Monitoreo de Especies Protegidas - Macá Tobiano (Podiceps gallardoi)",
+                "temas": [{
+                    "id": 3,
+                    "nombre": "Aves"
+                }],
+                "data": {
+                    "rubro": "Biótico",
+                    "categoria": "Avifauna",
+                    "etapa": "Observatorio Ambiental",
+                    "instituciones_interv": "Instituto patagónico para el estudio de los ecosistemas continentales (IPEEC - CONICET)",
+                    "respons_nom": "Dr. Julio Lancelotti"
+                },
+                "subprogramas": []
+            }, {
+                "id": "OA25",
+                "name": "Programa de Monitoreo de Especies Protegidas - Cauquén Colorado (Chloephaga rubidiceps)",
+                "temas": [{
+                    "id": 3,
+                    "nombre": "Aves"
+                }],
+                "data": {
+                    "rubro": "Biótico",
+                    "categoria": "Avifauna",
+                    "etapa": "Observatorio Ambiental",
+                    "instituciones_interv": "Centro Científico Tecnológico Mar del Plata (CCT - CONICET)  e Instituto Nacional de Tecnología Agropecuaria (INTA Balcarce)",
+                    "respons_nom": "Dra. Julieta Pedrana"
+                },
+                "subprogramas": []
+            }, {
+                "id": "OA26",
+                "name": "Programa de Monitoreo de Especies Protegidas - Gallineta Chica (Rallus antarcticus)",
+                "temas": [{
+                    "id": 3,
+                    "nombre": "Aves"
+                }],
+                "data": {
+                    "rubro": "Biótico",
+                    "categoria": "Avifauna",
+                    "etapa": "Observatorio Ambiental",
+                    "instituciones_interv": "Centro para el estudio de sistemas marinos (CESIMAR - CONICET)",
+                    "respons_nom": "Dra. María Laura Agüero"
+                },
+                "subprogramas": []
+            }]
+        }
+        let html = renderProgramasFicha(container, data.programas, 0);
+        $(container).html(html);
+
+        /*         $.getJSON(url, function(data) {
+                    let html = renderProgramasFicha(container, data.programas, 0);
+                    $(container).html(html);
+                });
+         */
+    }
+
+    function renderProgramasFicha(container, items, nivel) {
+        let htmlItems = `<ul>`;
+        items.forEach(item => {
+            htmlItems += renderProgramaFicha(container, item, nivel)
+        });
+        htmlItems += '</ul>';
+
+        return htmlItems;
+    }
+
+    function renderProgramaFicha(container, item, nivel) {
+        let htmlItem = `
+            <li>
+                ${item.name}
+        `;
+
+        if (item.subprogramas != null) {
+            htmlItem += renderProgramasFicha(container, item.subprogramas, nivel + 1)
+        }
+
+        htmlItem += `</li>`
+
+        return htmlItem;
+    }
 });
 </script>

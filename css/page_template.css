@@ -287,17 +287,17 @@
 #page_esia .linea-tiempo .cuadro-tiempo .bloque-1 {
   color: #fff;
   background-color: #475866;
-  border-left: solid 4px #ebebeb!important;
+  border-left: solid 4px #ebebeb !important;
 }
 #page_esia .linea-tiempo .cuadro-tiempo .bloque-2 {
   color: #fff;
   background-color: #075d94;
-  border-left: solid 4px #ebebeb!important;
+  border-left: solid 4px #ebebeb !important;
 }
 #page_esia .linea-tiempo .cuadro-tiempo .bloque-3 {
   color: #fff;
   background-color: #9b4361;
-  border-left: solid 4px #ebebeb!important;
+  border-left: solid 4px #ebebeb !important;
 }
 #page_esia .linea-tiempo .cuadro-tiempo .union-1 {
   background-image: url('../images/timeline-union-1.jpg');
@@ -351,7 +351,7 @@
   color: #8e2f4f;
 }
 #page_pdga .circulo {
-  color: #666!important;
+  color: #666 !important;
   border: solid 4px #ccc;
   background-color: #fff;
   border-radius: 50%;
@@ -380,6 +380,18 @@
   border-bottom: solid 1px #ccc;
   background-color: #fff;
   text-transform: uppercase;
+}
+#page_pdga .modal.fade {
+  z-index: 10000000 !important;
+}
+#page_pdga #uxFichaProgramas {
+  font-size: 14px;
+}
+#page_pdga #uxFichaProgramas ul {
+  list-style-type: square;
+}
+#page_pdga #uxFichaProgramas ul li {
+  padding-bottom: 6px;
 }
 #page_pdga .pop-ficha .nav-item {
   margin-top: 20px;
