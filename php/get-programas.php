@@ -184,7 +184,7 @@ if (!$tema_id) {
 	}
 
 	$json = substr($json,0,strlen($json)-1);
-	$json .= "]}]}";
+	$json .= "]}";
 
 	echo $json;
 	
