@@ -126,7 +126,7 @@ if (!$tema_id) {
 	
 	$old_spart = -1;
 	
-	$json = "";
+	$json = "{\"programas\":[";
 	
 	while($r = pg_fetch_assoc($query)) {			
 			
