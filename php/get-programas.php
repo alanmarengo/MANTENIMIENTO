@@ -175,15 +175,15 @@ if (!$tema_id) {
 						
 						$subjson .= "{";
 				
-							$subjson .= "\"id\":\"" . $r["id"] . "\",";
-							$subjson .= "\"name\":\"" . $r["programa"] . "\",";
+							$subjson .= "\"id\":\"" . $sub["id"] . "\",";
+							$subjson .= "\"name\":\"" . $sub["programa"] . "\",";
 							$subjson .= "\"temas\":[" . $tema_json . "],";
 							$subjson .= "\"data\":{";
-								$subjson .= "\"rubro\":\"" . $r["rubro"] . "\",";
-								$subjson .= "\"categoria\":\"" . $r["categoria"] . "\",";
-								$subjson .= "\"etapa\":\"" . $r["etapa"] . "\",";
-								$subjson .= "\"instituciones_interv\":\"" . $r["instituciones_interv"] . "\",";
-								$subjson .= "\"respons_nom\":\"" . $r["respons_nom"] . "\"";
+								$subjson .= "\"rubro\":\"" . $sub["rubro"] . "\",";
+								$subjson .= "\"categoria\":\"" . $sub["categoria"] . "\",";
+								$subjson .= "\"etapa\":\"" . $sub["etapa"] . "\",";
+								$subjson .= "\"instituciones_interv\":\"" . $sub["instituciones_interv"] . "\",";
+								$subjson .= "\"respons_nom\":\"" . $sub["respons_nom"] . "\"";
 							$subjson .= "}";
 					
 						$subjson .= "},";
