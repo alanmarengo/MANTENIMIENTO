@@ -167,22 +167,24 @@ if (!$tema_id) {
 				
 				$firstsub = true;
 				
+				$subjson = "";
+				
 				while ($sub = pg_fetch_assoc($query_sub)) {
 					
 					if (!$firstsub) {
 						
 						$subjson .= "{";
 				
-						$subjson .= "\"id\":\"" . $r["id"] . "\",";
-						$subjson .= "\"name\":\"" . $r["programa"] . "\",";
-						$subjson .= "\"temas\":[" . $tema_json . "],";
-						$subjson .= "\"data\":{";
-							$subjson .= "\"rubro\":\"" . $r["rubro"] . "\",";
-							$subjson .= "\"categoria\":\"" . $r["categoria"] . "\",";
-							$subjson .= "\"etapa\":\"" . $r["etapa"] . "\",";
-							$subjson .= "\"instituciones_interv\":\"" . $r["instituciones_interv"] . "\",";
-							$subjson .= "\"respons_nom\":\"" . $r["respons_nom"] . "\"";
-						$subjson .= "}";
+							$subjson .= "\"id\":\"" . $r["id"] . "\",";
+							$subjson .= "\"name\":\"" . $r["programa"] . "\",";
+							$subjson .= "\"temas\":[" . $tema_json . "],";
+							$subjson .= "\"data\":{";
+								$subjson .= "\"rubro\":\"" . $r["rubro"] . "\",";
+								$subjson .= "\"categoria\":\"" . $r["categoria"] . "\",";
+								$subjson .= "\"etapa\":\"" . $r["etapa"] . "\",";
+								$subjson .= "\"instituciones_interv\":\"" . $r["instituciones_interv"] . "\",";
+								$subjson .= "\"respons_nom\":\"" . $r["respons_nom"] . "\"";
+							$subjson .= "}";
 					
 						$subjson .= "},";
 						
