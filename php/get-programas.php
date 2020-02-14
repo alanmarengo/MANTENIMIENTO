@@ -214,6 +214,7 @@ if (!$tema_id) {
 				$json .= "\"respons_nom\":\"" . $r["respons_nom"] . "\"";
 			$json .= "}";
 			$json .= ",\"subprogramas\":[[SUBPROGRAMAS]]";
+			$json .= "},";
 		
 		}
 		
@@ -225,7 +226,7 @@ if (!$tema_id) {
 	
 	$pretsp = $r["tsp"];
 
-	if ($pretsp>1) { $json = substr($json,0,strlen($json)-1); }
+	$json = substr($json,0,strlen($json)-1);
 	$json .= "]}]}";
 
 	echo $json;
