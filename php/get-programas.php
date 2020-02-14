@@ -169,7 +169,7 @@ if (!$tema_id) {
 		$json .= "{";
 		$json .= "\"id\":\"" . $r["id"] . "\",";
 		$json .= "\"name\":\"" . $r["programa"] . "\",";
-		//$json .= "\"temas\":[" . $tema_json . "],";
+		$json .= "\"temas\":[" . $tema_json . "],";
 		$json .= "\"data\":{";
 			$json .= "\"rubro\":\"" . $r["rubro"] . "\",";
 			$json .= "\"categoria\":\"" . $r["categoria"] . "\",";
