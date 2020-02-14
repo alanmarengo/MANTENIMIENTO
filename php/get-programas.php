@@ -139,21 +139,7 @@ if (!$tema_id) {
 		$query_tema_id_string = "SELECT tema_id,tema_nombre FROM mod_catalogo.temas WHERE tema_nombre IN('" . implode("','",$temas_nombres) . "')";
 		$query_tema_id = pg_query($conn,$query_tema_id_string);
 		
-		while ($t = pg_fetch_assoc($query_tema_id)) {
-			
-			if ($tema_id == $r["tema_id"]) { $match = true; }
-			
-			$tema_json .= "{";
-			$tema_json .= "\"id\":" . $t["tema_id"] . ",";
-			$tema_json .= "\"nombre\":\"" . $t["tema_nombre"] . "\"";
-			$tema_json .= "},";
-			
-		}
-		
-		$tema_json = substr($tema_json,0,strlen($tema_json)-1);
-		$match = false;
-		
-				
+		$match = false;				
 		
 		while ($t = pg_fetch_assoc($query_tema_id)) {
 			
