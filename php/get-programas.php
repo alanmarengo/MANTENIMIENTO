@@ -151,7 +151,7 @@ if (!$tema_id) {
 		(SELECT COUNT(*) FROM ambiente.vw_programas WHERE split_part = pr.split_part) AS tsp
 	   FROM ambiente.vw_programas pr WHERE split_part = " . $r["split_part"] .  " AND split_subprog != '' ORDER BY split_part ASC, \"id\" ASC";
 		echo $squery_string;
-			/*$squery = pg_query($conn,$query_string);
+			$squery = pg_query($conn,$query_string);
 			
 			while ($sub = pg_fetch_assoc($squery)) {
 	
@@ -170,13 +170,13 @@ if (!$tema_id) {
 			
 				$json .= "},";
 			
-			}*/
+			}
 			
 		}
 			
 		$json = substr($json,0,strlen($json)-1);
 
-		$json .= "]},"
+		$json .= "]},";
 	
 		$first = false;
 	
