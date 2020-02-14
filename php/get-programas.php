@@ -154,7 +154,7 @@ if (!$tema_id) {
 		
 		$tema_json = substr($tema_json,0,strlen($tema_json)-1);
 		
-		if ($match) {
+		//if ($match) {
 		
 			$json .= "{";
 			$json .= "\"id\":\"" . $r["id"] . "\",";
@@ -199,7 +199,7 @@ if (!$tema_id) {
 				
 				$json = substr($json,0,strlen($json)-1);
 				
-			}			
+			//}			
 
 			$json .= "]},";
 		
