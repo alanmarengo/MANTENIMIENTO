@@ -17,12 +17,7 @@ if (isset($_GET["tema_id"])) {
 	
 }
 
-$query_string = " SELECT 
- 	pr.*,
-	(SELECT COUNT(*) FROM ambiente.vw_programas WHERE split_part = pr.split_part) AS tsp
-   FROM ambiente.vw_programas pr ORDER BY split_part ASC, \"id\" ASC";
 
-$query = pg_query($conn,$query_string);
 
 $json = "{\"programas\":[";
 
@@ -33,7 +28,12 @@ $first = true;
 $pretsp = false;
 
 if (!$tema_id) {
-
+	
+	$query_string = " SELECT 
+ 	pr.*,
+	(SELECT COUNT(*) FROM ambiente.vw_programas WHERE split_part = pr.split_part) AS tsp
+   FROM ambiente.vw_programas pr ORDER BY split_part ASC, \"id\" ASC";
+   
 	$query = pg_query($conn,$query_string);
 	
 	while($r = pg_fetch_assoc($query)) {			
@@ -119,112 +119,63 @@ if (!$tema_id) {
 	echo $json;
 
 }else{
-	
-	$rematch = false;
-	
-	$first = true;
-	
-	$old_spart = -1;
+
+	$query_string = " SELECT 
+		pr.*,
+		(SELECT COUNT(*) FROM ambiente.vw_programas WHERE split_part = pr.split_part) AS tsp
+	   FROM ambiente.vw_programas pr WHERE split_subprog = '' ORDER BY split_part ASC, \"id\" ASC";
+	   
+	$query = pg_query($conn,$query_string);
 	
 	$json = "{\"programas\":[";
 	
-	while($r = pg_fetch_assoc($query)) {			
-			
-		$tema_json = "";
+	while($r = pg_fetch_assoc($query)) {
 		
-		$temas_nombres = explode(",",$r["temas"]);
+		$json .= "{";
+		$json .= "\"id\":\"" . $r["id"] . "\",";
+		$json .= "\"name\":\"" . $r["programa"] . "\",";
+		$json .= "\"temas\":[" . $tema_json . "],";
+		$json .= "\"data\":{";
+			$json .= "\"rubro\":\"" . $r["rubro"] . "\",";
+			$json .= "\"categoria\":\"" . $r["categoria"] . "\",";
+			$json .= "\"etapa\":\"" . $r["etapa"] . "\",";
+			$json .= "\"instituciones_interv\":\"" . $r["instituciones_interv"] . "\",";
+			$json .= "\"respons_nom\":\"" . $r["respons_nom"] . "\"";
+		$json .= "}";
+		$json .= ",\"subprogramas\":[";
 		
-		for ($i=0; $i<sizeof($temas_nombres); $i++) { $temas_nombres[$i] = trim($temas_nombres[$i]); }
-		
-		$query_tema_id_string = "SELECT tema_id,tema_nombre FROM mod_catalogo.temas WHERE tema_nombre IN('" . implode("','",$temas_nombres) . "')";
-		$query_tema_id = pg_query($conn,$query_tema_id_string);
-		
-		$match = false;
-		
-		while ($t = pg_fetch_assoc($query_tema_id)) {
-			
-			if ($tema_id == $t["tema_id"]) { $match = true; }
-			
-			$tema_json .= "{";
-			$tema_json .= "\"id\":" . $t["tema_id"] . ",";
-			$tema_json .= "\"nombre\":\"" . $t["tema_nombre"] . "\"";
-			$tema_json .= "},";
-			
-		}
-		
-		$tema_json = substr($tema_json,0,strlen($tema_json)-1);
+		if ($r["tsp"] > 1) {
+			$query_string = " SELECT 
+		pr.*,
+		(SELECT COUNT(*) FROM ambiente.vw_programas WHERE split_part = pr.split_part) AS tsp
+	   FROM ambiente.vw_programas pr WHERE split_part = " . $r["split_part"] .  " AND split_subprog != '' ORDER BY split_part ASC, \"id\" ASC";
+	   
+			$query = pg_query($conn,$query_string);
 	
-		if ($split_part != $r["split_part"]) {
-
-			if (!$first) {
-				
-				$query_string_sub = " SELECT 
-					pr.*,
-					(SELECT COUNT(*) FROM ambiente.vw_programas WHERE split_part = pr.split_part) AS tsp
-				   FROM ambiente.vw_programas pr WHERE split_part = " . $old_spart . " ORDER BY split_part ASC, \"id\" ASC";
-				  
-				$query_sub = pg_query($conn,$query_string_sub);
-				
-				$firstsub = true;
-				
-				$subjson = "";
-				
-				while ($sub = pg_fetch_assoc($query_sub)) {
-					
-					if (!$firstsub) {
-						
-						$subjson .= "{";
-				
-							$subjson .= "\"id\":\"" . $sub["id"] . "\",";
-							$subjson .= "\"name\":\"" . $sub["programa"] . "\",";
-							$subjson .= "\"temas\":[" . $tema_json . "],";
-							$subjson .= "\"data\":{";
-								$subjson .= "\"rubro\":\"" . $sub["rubro"] . "\",";
-								$subjson .= "\"categoria\":\"" . $sub["categoria"] . "\",";
-								$subjson .= "\"etapa\":\"" . $sub["etapa"] . "\",";
-								$subjson .= "\"instituciones_interv\":\"" . $sub["instituciones_interv"] . "\",";
-								$subjson .= "\"respons_nom\":\"" . $sub["respons_nom"] . "\"";
-							$subjson .= "}";
-					
-						$subjson .= "},";
-						
-					}
-					
-					$firstsub = false;
-					
-				}
-				
-				$subjson = substr($subjson,0,strlen($subjson)-1);
-				
-				$json = str_replace("[SUBPROGRAMAS]",$subjson,$json);
-				
-			}
-			
-			$split_part = $r["split_part"];
-							
 			$json .= "{";
-			$json .= "\"id\":\"" . $r["id"] . "\",";
-			$json .= "\"name\":\"" . $r["programa"] . "\",";
-			$json .= "\"temas\":[" . $tema_json . "],";
-			$json .= "\"data\":{";
-				$json .= "\"rubro\":\"" . $r["rubro"] . "\",";
-				$json .= "\"categoria\":\"" . $r["categoria"] . "\",";
-				$json .= "\"etapa\":\"" . $r["etapa"] . "\",";
-				$json .= "\"instituciones_interv\":\"" . $r["instituciones_interv"] . "\",";
-				$json .= "\"respons_nom\":\"" . $r["respons_nom"] . "\"";
-			$json .= "}";
-			$json .= ",\"subprogramas\":[[SUBPROGRAMAS]]";
+				
+				$json .= "\"id\":\"" . $sub["id"] . "\",";
+				$json .= "\"name\":\"" . $sub["programa"] . "\",";
+				$json .= "\"temas\":[" . $tema_json . "],";
+				$json .= "\"data\":{";
+					$json .= "\"rubro\":\"" . $sub["rubro"] . "\",";
+					$json .= "\"categoria\":\"" . $sub["categoria"] . "\",";
+					$json .= "\"etapa\":\"" . $sub["etapa"] . "\",";
+					$json .= "\"instituciones_interv\":\"" . $sub["instituciones_interv"] . "\",";
+					$json .= "\"respons_nom\":\"" . $sub["respons_nom"] . "\"";
+				$json .= "}";
+		
 			$json .= "},";
-		
+			
 		}
-		
-		$old_spart = $r["split_part"];
+			
+		$json = substr($json,0,strlen($json)-1);
+
+		$json .= "]},"
 	
 		$first = false;
 	
 	}
-	
-	$pretsp = $r["tsp"];
 
 	$json = substr($json,0,strlen($json)-1);
 	$json .= "]}]}";
