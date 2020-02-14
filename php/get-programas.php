@@ -184,7 +184,7 @@ if (!$tema_id) {
 						
 						$json .= "\"id\":\"" . $sub["id"] . "\",";
 						$json .= "\"name\":\"" . $sub["programa"] . "\",";
-						$json .= "\"temas\":[" . $tema_json . "],";
+						$json .= "\"temas\":[],";
 						$json .= "\"data\":{";
 							$json .= "\"rubro\":\"" . $sub["rubro"] . "\",";
 							$json .= "\"categoria\":\"" . $sub["categoria"] . "\",";
