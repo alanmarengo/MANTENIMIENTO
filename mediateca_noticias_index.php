@@ -4,6 +4,14 @@ header('Content-Type: application/json');
 
 include("./pgconfig.php");
 
+
+function limpiar($str)
+{
+	return str_replace(array("\n","\r","\""),'',$str);
+};
+
+
+
 $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 
 $conn = pg_connect($string_conn);
@@ -16,10 +24,10 @@ function draw_tupla($row)
 {
        echo '{';
        echo '"path_img":"'.$row[0].'",';
-       echo '"titulo":"'.$row[1].'",';
+       echo '"titulo":"'.limpiar($row[1]).'",';
        echo '"fecha":"'.$row[2].'",';
        echo '"path_pdf":"'.$row[3].'",';
-       echo '"desc":"'.$row[4].'",';
+       echo '"desc":"'.limpiar($row[4]).'",';
        echo '"fecha_inicial":"'.$row[6].'"';
        echo '}';
        
