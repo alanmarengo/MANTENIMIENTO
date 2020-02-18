@@ -28,7 +28,7 @@
             <br />
             <p>El 21 de diciembre de 2016, una medida cautelar dictaminada por la Corte Suprema de Justicia de la Nación (CSJN) suspendió la ejecución de las obras principales de los aprovechamientos (exceptuando las tareas preliminares del proyecto ejecutivo y obras complementarias), hasta que se implementase el proceso de evaluación de impacto ambiental y la audiencia pública prevista en la Ley Nacional 23879.</p>
             <p>El Estudio cumplimentó lo solicitado en el mencionado dictamen de la Corte, conjuntamente con la realización de la Audiencia Pública en el marco del Congreso de la Nación, desarrollada el 20 y 21 de julio de 2017.</p>
-            <p>Producido el levantamiento de la <a target="_blank" href="./sga/recursos/recursos_tecnicos/legales/11">medida cautelar de la Corte Suprema de Justicia de la Nación</a>, el Comitente dio la orden de inicio en febrero de 2018, a partir de lo cual la Contratista pudo dar comienzo a la construcción de las obras principales, que están actualmente en ejecución. <a id="link-elaboracion" href="#" data-target="#elaboracion">VER Proceso de Elaboración y Aprobación</a></p>
+            <p>Producido el levantamiento de la <a target="_blank" href="./sga/recursos/recursos_tecnicos/legales/11.pdf">medida cautelar de la Corte Suprema de Justicia de la Nación</a>, el Comitente dio la orden de inicio en febrero de 2018, a partir de lo cual la Contratista pudo dar comienzo a la construcción de las obras principales, que están actualmente en ejecución. <a id="link-elaboracion" href="#" data-target="#elaboracion">VER Proceso de Elaboración y Aprobación</a></p>
         </div>
 
         <div class="col-md-12 section-a optimizacion">
