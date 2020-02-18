@@ -444,7 +444,7 @@ $(document).ready(function() {
             tema_id: temaId
         };
         let url = GlobalApiUrl + '/php/get-programas.php?' + jQuery.param(qs);
-
+/*
         let data = {
             "programas": [{
                 "id": "OA22",
@@ -525,12 +525,12 @@ $(document).ready(function() {
         }
         let html = renderProgramasFicha(container, data.programas, 0);
         $(container).html(html);
-
-        /*         $.getJSON(url, function(data) {
-                    let html = renderProgramasFicha(container, data.programas, 0);
-                    $(container).html(html);
-                });
-         */
+*/
+        $.getJSON(url, function(data) {
+            let html = renderProgramasFicha(container, data.programas, 0);
+            $(container).html(html);
+        });
+        
     }
 
     function renderProgramasFicha(container, items, nivel) {
