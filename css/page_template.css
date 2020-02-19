@@ -2,7 +2,7 @@
   background-color: #eaeaed;
 }
 .page_template {
-  font-size: 12px;
+  font-size: 14px;
   max-width: 1400px;
   margin: auto;
 }
@@ -51,7 +51,7 @@
 }
 .page_template .parrafos p {
   padding-bottom: 0px;
-  font-size: 12px;
+  font-size: 14px;
 }
 .page_template .parrafos .bullet {
   float: left;

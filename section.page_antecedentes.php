@@ -139,12 +139,9 @@
             <br />
             <br />
 
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="embed-responsive" style="padding-top: 40%;">
-                        <iframe src="./grafico-linea-tiempo.php" frameborder="0"></iframe>
-                    </div>
-                </div>
+            <h3>L&Iacute;NEA DE TIEMPO DE LOS AHRSC</h3>
+            <div class="embed-responsive" style="padding-top: 40%;">
+                <iframe src="./grafico-linea-tiempo.php" frameborder="0"></iframe>
             </div>
         </div>
 
@@ -168,8 +165,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div><b>Pliegos y contrato de la obra</b></div>
-                    <span class="bullet-1">•</span><a target="_blank" href="./sga/recursos/recursos_tecnicos/legales/6.pdf">Pliego de obra</a><br />
-                    <span class="bullet-1">•</span><a target="_blank" href="./sga/recursos/recursos_tecnicos/legales/3.pdf">Contrato de obra</a><br />
+                    <span class="bullet-2">•</span><a target="_blank" href="./sga/recursos/recursos_tecnicos/legales/6.pdf">Pliego de obra</a><br />
+                    <span class="bullet-2">•</span><a target="_blank" href="./sga/recursos/recursos_tecnicos/legales/3.pdf">Contrato de obra</a><br />
                     <br />
                     <div><b>Normas aplicables al proyecto</b></div>
                     <span class="bullet-2">•</span><a target="_blank" href="http://servicios.infoleg.gob.ar/infolegInternet/anexos/0-4999/804/norma.htm">Constitucional Nacional</a><br /> 

@@ -4,7 +4,7 @@
     <div class="row">
         <div class="section-sticky">
             <div class="col-md-12 page-title">
-                Plan director de gestión ambiental - PDGA
+                Plan director de gestión ambiental - PGA
             </div>
 
             <div class="col-md-12 top-buttons">
@@ -21,7 +21,7 @@
 
             <div class="row" style="padding-left: 2em; padding-right: 2em;">
                 <div class="col-md-12" style="margin-bottom: 50px; font-size: 16px;">
-                    EL PDGA al mismo tiempo está conformado por programas y subprogramas (Nro de programas), que abordan
+                    EL PGA al mismo tiempo está conformado por programas y subprogramas (Nro de programas), que abordan
                     un conjunto de temas claves de las distintas etapas del proyecto y con diferente alcance
                     territorial.
                 </div>
@@ -67,6 +67,10 @@
                         que surgen del Estudio de Impacto Ambiental para mitigar los impactos sobre el medio físico,
                         biótico y socioeconómico, y potenciar las oportunidades.
                     </p>
+
+                    <div class="embed-responsive" style="padding-top: 40%;">
+                        <iframe src="./geovisor.pdga.php" frameborder="0"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
@@ -410,26 +414,30 @@ $(document).ready(function() {
 
         htmlItem +=
             `<div class="collapse panel-collapse" data-flecha="flecha_${item.id}" id="${item.id}" style="margin-top: 8px;">`
-        // DATA
-        if (item.data) {
-            htmlItem += `<table class="table table-sm table-hover table-striped">`
-            Object.keys(item.data).forEach(d => {
-                htmlItem += `
-                    <tr>
-                        <td style="width: 20%; font-weight: bolder; border-top: none; padding: 4px; vertical-align: middle; text-transform: none;">
-                            ${d}:
-                        </td>
-                        <td style="width: 80%; border-top: none; padding: 4px; vertical-align: middle; text-transform: none;">
-                            ${item.data[d]}
-                        </td>
-                    </tr>
-                `;
-            });
-            htmlItem += `</table>`
-        }
 
         if (item.subprogramas != null) {
+            // SUBPROGRAMAS
             htmlItem += renderProgramas(container, item.subprogramas, nivel + 1)
+        } 
+        else
+        {
+            // DATA
+            if (item.data) {
+                htmlItem += `<table class="table table-sm table-hover table-striped">`
+                Object.keys(item.data).forEach(d => {
+                    htmlItem += `
+                        <tr>
+                            <td style="width: 20%; font-weight: bolder; border-top: none; padding: 4px; vertical-align: middle; text-transform: none;">
+                                ${d}:
+                            </td>
+                            <td style="width: 80%; border-top: none; padding: 4px; vertical-align: middle; text-transform: none;">
+                                ${item.data[d]}
+                            </td>
+                        </tr>
+                    `;
+                });
+                htmlItem += `</table>`
+            }
         }
         htmlItem += `
                 </div>
@@ -444,97 +452,14 @@ $(document).ready(function() {
             tema_id: temaId
         };
         let url = GlobalApiUrl + '/php/get-programas.php?' + jQuery.param(qs);
-/*
-        let data = {
-            "programas": [{
-                "id": "OA22",
-                "name": "Programa de Monitoro de Avifauna - Aves Acuáticas",
-                "temas": [{
-                    "id": 3,
-                    "nombre": "Aves"
-                }],
-                "data": {
-                    "rubro": "Biótico",
-                    "categoria": "Avifauna",
-                    "etapa": "Observatorio Ambiental",
-                    "instituciones_interv": "Centro para el estudio de sistemas marinos (CESIMAR - CONICET)",
-                    "respons_nom": "Dra. Verónica D´Amico"
-                },
-                "subprogramas": []
-            }, {
-                "id": "OA23",
-                "name": "Programa de Monitoreo de Avifauna - Cóndor Andino",
-                "temas": [{
-                    "id": 3,
-                    "nombre": "Aves"
-                }],
-                "data": {
-                    "rubro": "Biótico",
-                    "categoria": "Avifauna",
-                    "etapa": "Observatorio Ambiental",
-                    "instituciones_interv": "Universidad Nacional de Córdoba",
-                    "respons_nom": "Lic. Walter Cejas y Lic. Natalia Vreys"
-                },
-                "subprogramas": []
-            }, {
-                "id": "OA24",
-                "name": "Programa de Monitoreo de Especies Protegidas - Macá Tobiano (Podiceps gallardoi)",
-                "temas": [{
-                    "id": 3,
-                    "nombre": "Aves"
-                }],
-                "data": {
-                    "rubro": "Biótico",
-                    "categoria": "Avifauna",
-                    "etapa": "Observatorio Ambiental",
-                    "instituciones_interv": "Instituto patagónico para el estudio de los ecosistemas continentales (IPEEC - CONICET)",
-                    "respons_nom": "Dr. Julio Lancelotti"
-                },
-                "subprogramas": []
-            }, {
-                "id": "OA25",
-                "name": "Programa de Monitoreo de Especies Protegidas - Cauquén Colorado (Chloephaga rubidiceps)",
-                "temas": [{
-                    "id": 3,
-                    "nombre": "Aves"
-                }],
-                "data": {
-                    "rubro": "Biótico",
-                    "categoria": "Avifauna",
-                    "etapa": "Observatorio Ambiental",
-                    "instituciones_interv": "Centro Científico Tecnológico Mar del Plata (CCT - CONICET)  e Instituto Nacional de Tecnología Agropecuaria (INTA Balcarce)",
-                    "respons_nom": "Dra. Julieta Pedrana"
-                },
-                "subprogramas": []
-            }, {
-                "id": "OA26",
-                "name": "Programa de Monitoreo de Especies Protegidas - Gallineta Chica (Rallus antarcticus)",
-                "temas": [{
-                    "id": 3,
-                    "nombre": "Aves"
-                }],
-                "data": {
-                    "rubro": "Biótico",
-                    "categoria": "Avifauna",
-                    "etapa": "Observatorio Ambiental",
-                    "instituciones_interv": "Centro para el estudio de sistemas marinos (CESIMAR - CONICET)",
-                    "respons_nom": "Dra. María Laura Agüero"
-                },
-                "subprogramas": []
-            }]
-        }
-        let html = renderProgramasFicha(container, data.programas, 0);
-        $(container).html(html);
-*/
         $.getJSON(url, function(data) {
             let html = renderProgramasFicha(container, data.programas, 0);
             $(container).html(html);
         });
-        
     }
 
     function renderProgramasFicha(container, items, nivel) {
-        let htmlItems = `<ul>`;
+        let htmlItems = `<ul style="margin-left: ${nivel * 40}px">`;
         items.forEach(item => {
             htmlItems += renderProgramaFicha(container, item, nivel)
         });

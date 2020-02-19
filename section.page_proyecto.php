@@ -193,16 +193,8 @@ A diferencia de otros proyectos hidroeléctricos, los embalses no requieren reas
                         La LEAT tendrá su punto de partida en la playa de maniobras de CC y estará conectada con la instalación correspondiente en LB. La longitud de este tramo es de aproximadamente 71 km. A partir de este punto, recorre aproximadamente 102 km hasta conectarse a la estación transformadora 500/132 kV Río Santa Cruz, cercana a la localidad de Comandante Luis Piedra Buena. 
                         <br />
                         <br />
+                        <a target="_blank" href="#" title="EN DESARROLLO">Ficha t&eacute;cnica</a>
                     </p>
-                </div>
-
-                <div class="section-footer">
-                    <div class="section-footer-buttons">
-                        <a class="section-footer-button" title="EN DESARROLLO">
-                            <i class="fa fa-file-alt"></i>
-                            VER FICHA
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
