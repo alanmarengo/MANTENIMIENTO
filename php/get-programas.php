@@ -70,11 +70,11 @@ if (!$tema_id) {
 			$json .= "\"name\":\"" . $r["programa"] . "\",";
 			$json .= "\"temas\":[" . $tema_json . "],";
 			$json .= "\"data\":{";
-				$json .= "\"rubro\":\"" . $r["rubro"] . "\",";
-				$json .= "\"categoria\":\"" . $r["categoria"] . "\",";
-				$json .= "\"etapa\":\"" . $r["etapa"] . "\",";
-				$json .= "\"instituciones_interv\":\"" . $r["instituciones_interv"] . "\",";
-				$json .= "\"respons_nom\":\"" . $r["respons_nom"] . "\"";
+				$json .= "\"Rubro\":\"" . $r["rubro"] . "\",";
+				$json .= "\"Categoría\":\"" . $r["categoria"] . "\",";
+				$json .= "\"Etapa\":\"" . $r["etapa"] . "\",";
+				$json .= "\"Instituciones intervinientes\":\"" . $r["instituciones_interv"] . "\",";
+				$json .= "\"Responsable\":\"" . $r["respons_nom"] . "\"";
 			$json .= "}";
 			$json .= ",\"subprogramas\":[";
 			
@@ -92,11 +92,11 @@ if (!$tema_id) {
 			$json .= "\"name\":\"" . $r["programa"] . "\",";
 			$json .= "\"temas\":[" . $tema_json . "],";
 			$json .= "\"data\":{";
-				$json .= "\"rubro\":\"" . $r["rubro"] . "\",";
-				$json .= "\"categoria\":\"" . $r["categoria"] . "\",";
-				$json .= "\"etapa\":\"" . $r["etapa"] . "\",";
-				$json .= "\"instituciones_interv\":\"" . $r["instituciones_interv"] . "\",";
-				$json .= "\"respons_nom\":\"" . $r["respons_nom"] . "\"";
+				$json .= "\"Rubro\":\"" . $r["rubro"] . "\",";
+				$json .= "\"Categoría\":\"" . $r["categoria"] . "\",";
+				$json .= "\"Etapa\":\"" . $r["etapa"] . "\",";
+				$json .= "\"Instituciones intervinientes\":\"" . $r["instituciones_interv"] . "\",";
+				$json .= "\"Responsable\":\"" . $r["respons_nom"] . "\"";
 			$json .= "}";
 			
 			$json .= "},";
@@ -161,11 +161,11 @@ if (!$tema_id) {
 			$json .= "\"name\":\"" . $r["programa"] . "\",";
 			$json .= "\"temas\":[" . $tema_json . "],";
 			$json .= "\"data\":{";
-				$json .= "\"rubro\":\"" . $r["rubro"] . "\",";
-				$json .= "\"categoria\":\"" . $r["categoria"] . "\",";
-				$json .= "\"etapa\":\"" . $r["etapa"] . "\",";
-				$json .= "\"instituciones_interv\":\"" . $r["instituciones_interv"] . "\",";
-				$json .= "\"respons_nom\":\"" . $r["respons_nom"] . "\"";
+				$json .= "\"Rubro\":\"" . $r["rubro"] . "\",";
+				$json .= "\"Categoría\":\"" . $r["categoria"] . "\",";
+				$json .= "\"Etapa\":\"" . $r["etapa"] . "\",";
+				$json .= "\"Instituciones intervinientes\":\"" . $r["instituciones_interv"] . "\",";
+				$json .= "\"Responsable\":\"" . $r["respons_nom"] . "\"";
 			$json .= "}";
 			$json .= ",\"subprogramas\":[";
 			
@@ -207,11 +207,11 @@ if (!$tema_id) {
 						$json .= "\"name\":\"" . $sub["programa"] . "\",";
 						$json .= "\"temas\":[" . $tema_json . "],";
 						$json .= "\"data\":{";
-							$json .= "\"rubro\":\"" . $sub["rubro"] . "\",";
-							$json .= "\"categoria\":\"" . $sub["categoria"] . "\",";
-							$json .= "\"etapa\":\"" . $sub["etapa"] . "\",";
-							$json .= "\"instituciones_interv\":\"" . $sub["instituciones_interv"] . "\",";
-							$json .= "\"respons_nom\":\"" . $sub["respons_nom"] . "\"";
+							$json .= "\"Rubro\":\"" . $sub["rubro"] . "\",";
+							$json .= "\"Categoría\":\"" . $sub["categoria"] . "\",";
+							$json .= "\"Etapa\":\"" . $sub["etapa"] . "\",";
+							$json .= "\"Instituciones intervinientes\":\"" . $sub["instituciones_interv"] . "\",";
+							$json .= "\"Responsable\":\"" . $sub["respons_nom"] . "\"";
 						$json .= "}";
 				
 					$json .= "},";
