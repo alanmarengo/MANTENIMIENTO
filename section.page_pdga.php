@@ -415,11 +415,7 @@ $(document).ready(function() {
         htmlItem +=
             `<div class="collapse panel-collapse" data-flecha="flecha_${item.id}" id="${item.id}" style="margin-top: 8px;">`
 
-        if (item.subprogramas != null) {
-            // SUBPROGRAMAS
-            htmlItem += renderProgramas(container, item.subprogramas, nivel + 1)
-        } 
-        else
+        if (!item.subprogramas || item.subprogramas.length == 0)
         {
             // DATA
             if (item.data) {
@@ -438,7 +434,12 @@ $(document).ready(function() {
                 });
                 htmlItem += `</table>`
             }
+        } else
+        {
+            // SUBPROGRAMAS
+            htmlItem += renderProgramas(container, item.subprogramas, nivel + 1)
         }
+
         htmlItem += `
                 </div>
             </div>
