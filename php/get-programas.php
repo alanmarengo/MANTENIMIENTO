@@ -29,10 +29,13 @@ $pretsp = false;
 
 if (!$tema_id) {
 	
-	$query_string = " SELECT 
- 	pr.*,
-	(SELECT COUNT(*) FROM ambiente.vw_programas WHERE split_part = pr.split_part) AS tsp
-   FROM ambiente.vw_programas pr ORDER BY split_part ASC, \"id\" ASC";
+	$query_string = "SELECT pr.*,";
+	$query_string .= "(";
+		$query_string .= "SELECT string_agg(tema_id::text, ',') ";
+		$query_string .= "FROM mod_catalogo.temas_programas tp";
+		$query_string .= "WHERE programa_id = pr.programa_id";
+	$query_string .= ") AS temas_id";
+	$query_string .= " FROM mod_catalogo.programas_subprogramas pr WHERE programa_id_parent = -1 ORDER BY programa_id ASC, programa ASC";
    
 	$query = pg_query($conn,$query_string);
 	
@@ -40,10 +43,10 @@ if (!$tema_id) {
 			
 		$tema_json = "";
 		
-		$temas_nombres = explode(",",$r["temas"]);
-		for ($i=0; $i<sizeof($temas_nombres); $i++) { $temas_nombres[$i] = trim($temas_nombres[$i]); }
+		$temas_id = explode(",",$r["temas_id"]);
+		for ($i=0; $i<sizeof($temas_id); $i++) { $temas_id[$i] = trim($temas_id[$i]); }
 		
-		$query_tema_id_string = "SELECT tema_id,tema_nombre FROM mod_catalogo.temas WHERE tema_nombre IN('" . implode("','",$temas_nombres) . "')";
+		$query_tema_id_string = "SELECT tema_id,tema_nombre FROM mod_catalogo.temas WHERE tema_id IN('" . implode("','",$temas_id) . "')";
 		$query_tema_id = pg_query($conn,$query_tema_id_string);
 		
 		while ($t = pg_fetch_assoc($query_tema_id)) {
