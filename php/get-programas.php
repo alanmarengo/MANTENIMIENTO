@@ -17,228 +17,101 @@ if (isset($_GET["tema_id"])) {
 	
 }
 
-
-
 $json = "{\"programas\":[";
 
-$split_part = "-1";
-$progCount = 0;
-$interCount = 0;
-$first = true;
-$pretsp = false;
-
-if (!$tema_id) {
-	
-	$query_string = "SELECT pr.*,";
-	$query_string .= "(";
-		$query_string .= "SELECT string_agg(tema_id::text, ',') ";
-		$query_string .= "FROM mod_catalogo.temas_programas tp";
-		$query_string .= "WHERE programa_id = pr.programa_id";
-	$query_string .= ") AS temas_id";
-	$query_string .= " FROM mod_catalogo.programas_subprogramas pr WHERE programa_id_parent = -1 ORDER BY programa_id ASC, programa ASC";
-   
-	$query = pg_query($conn,$query_string);
-	
-	while($r = pg_fetch_assoc($query)) {			
-			
-		$tema_json = "";
-		
-		$temas_id = explode(",",$r["temas_id"]);
-		for ($i=0; $i<sizeof($temas_id); $i++) { $temas_id[$i] = trim($temas_id[$i]); }
-		
-		$query_tema_id_string = "SELECT tema_id,tema_nombre FROM mod_catalogo.temas WHERE tema_id IN('" . implode("','",$temas_id) . "')";
-		$query_tema_id = pg_query($conn,$query_tema_id_string);
-		
-		while ($t = pg_fetch_assoc($query_tema_id)) {
-			
-			$tema_json .= "{";
-			$tema_json .= "\"id\":" . $t["tema_id"] . ",";
-			$tema_json .= "\"nombre\":\"" . $t["tema_nombre"] . "\"";
-			$tema_json .= "},";
-			
-		}
-		
-		$tema_json = substr($tema_json,0,strlen($tema_json)-1);
-			
-		if ($split_part != $r["split_part"]) {
-			
-			if ((!$first) && ($pretsp>1)) { $json = substr($json,0,strlen($json)-1); }
-			
-			$progCount ++;
-			
-			$split_part = $r["split_part"];
-			
-			if (!$first) { $json .= "]},{"; } else { $json .= "{"; }
-			$json .= "\"id\":\"" . $r["id"] . "\",";
-			$json .= "\"name\":\"" . $r["programa"] . "\",";
-			$json .= "\"temas\":[" . $tema_json . "],";
-			$json .= "\"data\":{";
-				$json .= "\"Rubro\":\"" . $r["rubro"] . "\",";
-				$json .= "\"Categoría\":\"" . $r["categoria"] . "\",";
-				$json .= "\"Etapa\":\"" . $r["etapa"] . "\",";
-				$json .= "\"Instituciones intervinientes\":\"" . $r["instituciones_interv"] . "\",";
-				$json .= "\"Responsable\":\"" . $r["respons_nom"] . "\"";
-			$json .= "}";
-			$json .= ",\"subprogramas\":[";
-			
-			$interCount = 0;
-			
-			//if ($first) { $json = str_replace("[},","[",$json); }
-			
-		}
-		
-		if ($interCount > 0) {
-		
-			$json .= "{";
-			
-			$json .= "\"id\":\"" . $r["id"] . "\",";
-			$json .= "\"name\":\"" . $r["programa"] . "\",";
-			$json .= "\"temas\":[" . $tema_json . "],";
-			$json .= "\"data\":{";
-				$json .= "\"Rubro\":\"" . $r["rubro"] . "\",";
-				$json .= "\"Categoría\":\"" . $r["categoria"] . "\",";
-				$json .= "\"Etapa\":\"" . $r["etapa"] . "\",";
-				$json .= "\"Instituciones intervinientes\":\"" . $r["instituciones_interv"] . "\",";
-				$json .= "\"Responsable\":\"" . $r["respons_nom"] . "\"";
-			$json .= "}";
-			
-			$json .= "},";
-		
-		}else{
-			
-			$interCount++;
-			
-		}
-		
-		$first = false;
-		
-		$pretsp = $r["tsp"];
-		
-	}
-
-	if ($pretsp>1) { $json = substr($json,0,strlen($json)-1); }
-	$json .= "]}]}";
-
-	echo $json;
-
+$query_string = "SELECT pr.*,";
+$query_string .= "(";
+	$query_string .= "SELECT string_agg(tema_id::text, ',') ";
+	$query_string .= "FROM mod_catalogo.temas_programas tp ";
+	$query_string .= "WHERE programa_id = pr.programa_id";
+$query_string .= ") AS temas_id";
+if ($tema_id) {
+	$query_string .= " FROM mod_catalogo.programas_subprogramas pr WHERE programa_id_parent = -1  AND " . $tema_id . " IN (SELECT tema_id FROM mod_catalogo.temas_programas WHERE programa_id = pr.programa_id)";
 }else{
+	$query_string .= " FROM mod_catalogo.programas_subprogramas pr WHERE programa_id_parent = -1  ";
+}
+$query_string .= " ORDER BY programa_id ASC, programa ASC";
 
-	$query_string = " SELECT 
-		pr.*,
-		(SELECT COUNT(*) FROM ambiente.vw_programas WHERE split_part = pr.split_part) AS tsp
-	   FROM ambiente.vw_programas pr WHERE split_subprog = '' ORDER BY split_part ASC, \"id\" ASC";
-	   
-	$query = pg_query($conn,$query_string);
+$query = pg_query($conn,$query_string);
+
+while($r = pg_fetch_assoc($query)) {		
+		
+	$tema_json = "";
 	
-	$json = "{\"programas\":[";
+	$temas_id = explode(",",$r["temas_id"]);
+	for ($i=0; $i<sizeof($temas_id); $i++) { $temas_id[$i] = trim($temas_id[$i]); }
 	
-	while($r = pg_fetch_assoc($query)) {
+	$query_tema_id_string = "SELECT tema_id,tema_nombre FROM mod_catalogo.temas WHERE tema_id IN('" . implode("','",$temas_id) . "')";
+	$query_tema_id = pg_query($conn,$query_tema_id_string);
+	
+	while ($t = pg_fetch_assoc($query_tema_id)) {
 		
-		$tema_json = "";
+		$tema_json .= "{";
+		$tema_json .= "\"id\":" . $t["tema_id"] . ",";
+		$tema_json .= "\"nombre\":\"" . $t["tema_nombre"] . "\"";
+		$tema_json .= "},";
 		
-		$temas_nombres = explode(",",$r["temas"]);
-		for ($i=0; $i<sizeof($temas_nombres); $i++) { $temas_nombres[$i] = trim($temas_nombres[$i]); }
+	}
+	
+	$tema_json = substr($tema_json,0,strlen($tema_json)-1);
 		
-		$query_tema_id_string = "SELECT tema_id,tema_nombre FROM mod_catalogo.temas WHERE tema_nombre IN('" . implode("','",$temas_nombres) . "')";
-		$query_tema_id = pg_query($conn,$query_tema_id_string);
-		
-		$match = false;				
-		
-		while ($t = pg_fetch_assoc($query_tema_id)) {
-			
-			if ($tema_id == $t["tema_id"]) { $match = true; }
-			
-			$tema_json .= "{";
-			$tema_json .= "\"id\":" . $t["tema_id"] . ",";
-			$tema_json .= "\"nombre\":\"" . $t["tema_nombre"] . "\"";
-			$tema_json .= "},";
-			
-		}
-		
-		$tema_json = substr($tema_json,0,strlen($tema_json)-1);
-		
-		if ($match) {
-		
-			$json .= "{";
-			$json .= "\"id\":\"" . $r["id"] . "\",";
-			$json .= "\"name\":\"" . $r["programa"] . "\",";
-			$json .= "\"temas\":[" . $tema_json . "],";
-			$json .= "\"data\":{";
-				$json .= "\"Rubro\":\"" . $r["rubro"] . "\",";
-				$json .= "\"Categoría\":\"" . $r["categoria"] . "\",";
-				$json .= "\"Etapa\":\"" . $r["etapa"] . "\",";
-				$json .= "\"Instituciones intervinientes\":\"" . $r["instituciones_interv"] . "\",";
-				$json .= "\"Responsable\":\"" . $r["respons_nom"] . "\"";
+	$json .= "{";
+	$json .= "\"programa_id\":\"" . $r["programa_id"] . "\",";
+	$json .= "\"id\":\"" . $r["id"] . "\",";
+	$json .= "\"name\":\"" . $r["programa"] . "\",";
+	$json .= "\"temas\":[" . $tema_json . "],";
+	$json .= "\"data\":{";
+		$json .= "\"Rubro\":\"" . $r["rubro"] . "\",";
+		$json .= "\"Categoría\":\"" . $r["categoria"] . "\",";
+		$json .= "\"Etapa\":\"" . $r["etapa"] . "\",";
+		$json .= "\"Instituciones intervinientes\":\"" . $r["instituciones_interv"] . "\",";
+		$json .= "\"Responsable\":\"" . $r["respons_nom"] . "\"";
+	$json .= "}";
+	$json .= ",\"subprogramas\":[";
+	
+	$sp_query_string = "SELECT pr.*,";
+	$sp_query_string .= "(";
+		$sp_query_string .= "SELECT string_agg(tema_id::text, ',') ";
+		$sp_query_string .= "FROM mod_catalogo.temas_programas tp ";
+		$sp_query_string .= "WHERE programa_id = pr.programa_id";
+	$sp_query_string .= ") AS temas_id";
+	$sp_query_string .= " FROM mod_catalogo.programas_subprogramas pr WHERE programa_id_parent = " . $r["programa_id"] . " ORDER BY programa_id ASC, programa ASC";
+	
+	$sp_query = pg_query($conn,$sp_query_string);
+	
+	$has_sp = false;
+	
+	while($sp = pg_fetch_assoc($sp_query)) {
+	
+		$has_sp = true;
+	
+		$json .= "{";
+		$json .= "\"programa_id\":\"" . $sp["programa_id"] . "\",";
+		$json .= "\"id\":\"" . $sp["id"] . "\",";
+		$json .= "\"name\":\"" . $sp["programa"] . "\",";
+		$json .= "\"temas\":[" . $tema_json . "],";
+		$json .= "\"data\":{";
+			$json .= "\"Rubro\":\"" . $sp["rubro"] . "\",";
+			$json .= "\"Categoría\":\"" . $sp["categoria"] . "\",";
+			$json .= "\"Etapa\":\"" . $sp["etapa"] . "\",";
+			$json .= "\"Instituciones intervinientes\":\"" . $sp["instituciones_interv"] . "\",";
+			$json .= "\"Responsable\":\"" . $sp["respons_nom"] . "\"";
 			$json .= "}";
-			$json .= ",\"subprogramas\":[";
-			
-			if ($r["tsp"] > 1) {
-				
-				$squery_string = " SELECT 
-			pr.*,
-			(SELECT COUNT(*) FROM ambiente.vw_programas WHERE split_part = pr.split_part) AS tsp
-		   FROM ambiente.vw_programas pr WHERE split_part = '" . $r["split_part"] .  "' AND split_subprog != '' ORDER BY split_part ASC, \"id\" ASC";
-				
-				$squery = pg_query($conn,$squery_string);
-				
-				while ($sub = pg_fetch_assoc($squery)) {
-					
-					$tema_json = "";
-						
-					$temas_nombres = explode(",",$sub["temas"]);
-					for ($i=0; $i<sizeof($temas_nombres); $i++) { $temas_nombres[$i] = trim($temas_nombres[$i]); }
-					
-					$query_tema_id_string = "SELECT tema_id,tema_nombre FROM mod_catalogo.temas WHERE tema_nombre IN('" . implode("','",$temas_nombres) . "')";
-					$query_tema_id = pg_query($conn,$query_tema_id_string);
-					
-					$match = false;				
-					
-					while ($t = pg_fetch_assoc($query_tema_id)) {
-						
-						$tema_json .= "{";
-						$tema_json .= "\"id\":" . $t["tema_id"] . ",";
-						$tema_json .= "\"nombre\":\"" . $t["tema_nombre"] . "\"";
-						$tema_json .= "},";
-						
-					}
-					
-					$tema_json = substr($tema_json,0,strlen($tema_json)-1);
-					
-					$json .= "{";
-						
-						$json .= "\"id\":\"" . $sub["id"] . "\",";
-						$json .= "\"name\":\"" . $sub["programa"] . "\",";
-						$json .= "\"temas\":[" . $tema_json . "],";
-						$json .= "\"data\":{";
-							$json .= "\"Rubro\":\"" . $sub["rubro"] . "\",";
-							$json .= "\"Categoría\":\"" . $sub["categoria"] . "\",";
-							$json .= "\"Etapa\":\"" . $sub["etapa"] . "\",";
-							$json .= "\"Instituciones intervinientes\":\"" . $sub["instituciones_interv"] . "\",";
-							$json .= "\"Responsable\":\"" . $sub["respons_nom"] . "\"";
-						$json .= "}";
-				
-					$json .= "},";
-				
-				}
-				
-				$json = substr($json,0,strlen($json)-1);
-				
-			}
-
-			$json .= "]},";
-		
-		}
-	
-		$first = false;
+		$json .= "},";
 	
 	}
-
-	$json = substr($json,0,strlen($json)-1);
-	$json .= "]}";
-
-	echo $json;
+	
+	if ($has_sp) { $json = substr($json,0,strlen($json)-1); }
+	
+	$json .= "]";
+	$json .= "},";	
 	
 }
+
+$json = substr($json,0,strlen($json)-1);
+$json .= "]}";
+
+echo $json;
 
 pg_close($conn);
 
