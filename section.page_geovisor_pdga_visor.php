@@ -13,7 +13,7 @@
 		
 		<div class="jus-left row jump-row" id="btn-ver-geovisor" style="max-width:200px; display: flex; left:30px;">
 			<div style="width:200px;">
-				<a href="./geovisor.php?qid=194" class="black-button" id="veg-btn" target="_blank">VER EN GEOVISOR</a>
+				<a href="#" class="black-button" id="veg-btn" target="_blank">VER EN GEOVISOR</a>
 			</div>
 		</div>
 		

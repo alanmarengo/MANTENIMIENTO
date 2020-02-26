@@ -147,7 +147,7 @@ function ol_map(tema_id) {
 			
 		}
 		
-		document.getElementById("veg-btn").setAttribute("href",js.geovisor_link);
+		document.getElementById("veg-btn").href = js.geovisor_link;
 		
 		
 		///////document.getElementById("baselayer-default-radio").click();
