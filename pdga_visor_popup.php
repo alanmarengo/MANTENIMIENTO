@@ -59,6 +59,9 @@
 	
 	<div id="popup-results"></div>	
 	<div id="popup-results-preparse"></div>
+	<?php include("./popup.baselayers.php"); ?>
+	
+	<?php include("./html.navbar-geovisor-zoom.php"); ?>
 	
 </body>
 </html>
