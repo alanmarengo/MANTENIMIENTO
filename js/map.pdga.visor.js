@@ -121,7 +121,8 @@ function ol_map(tema_id) {
 		
 		var js = JSON.parse(req.responseText);
 		
-		console.log(js);
+		alert(js.geovisor_link);
+		console.log(document.getElementById("veg-btn"));
 		document.getElementById("veg-btn").href = js.geovisor_link;
 		
 		for (var i=0; i<js.layers.length; i++) {
