@@ -22,8 +22,11 @@
 				delay: 200,
 				theme: 'tooltipster-default',
 				trigger: 'hover'
-			});
-					
+			});					
+		
+			jwindow = new Jump.window();
+			jwindow.initialize();
+		
 			geomap = new ol_map(<?php echo $_GET["tema_id"]; ?>);	
 			geomap.map.create();
 			
