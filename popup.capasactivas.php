@@ -6,7 +6,7 @@
 			<span>Capas Activas</span>
 			
 			<div class="jump-window-icon-bar" style="margin-right:-90px;">
-				<a href="#" class="jump-window-minimize" onclick="jwindow.close('popup-capasactivas');">
+				<a href="#" class="jump-window-minimize" title="Ocultar" onclick="jwindow.close('popup-capasactivas');">
 					<img src="./images/internal-link.png">
 				</a>
 			</div>
