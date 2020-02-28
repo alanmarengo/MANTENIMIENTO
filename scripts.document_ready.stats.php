@@ -2,6 +2,13 @@
 	
 	$(document).ready(function() {
 		
+		$("[title]").tooltipster({
+			animation: 'fade',
+			delay: 200,
+			theme: 'tooltipster-default',
+			trigger: 'hover'
+		});
+		
 		stats = new ol_stats();
 		stats.panel.start();
 		stats.panel.startSearch();

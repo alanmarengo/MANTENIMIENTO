@@ -6,7 +6,7 @@ function DrawAbrInd() {
 	
 	$conn = pg_connect($string_conn);
 	
-	$query_string = "SELECT clase_id,color_hex,color_head,cod_clase_alf FROM mod_catalogo.clase ORDER BY clase_id ASC";
+	$query_string = "SELECT clase_id,clase_desc,color_hex,color_head,cod_clase_alf FROM mod_catalogo.clase ORDER BY clase_id ASC";
 	
 	$query = pg_query($conn,$query_string);
 		
@@ -22,7 +22,7 @@ function DrawAbrInd() {
 		
 		?>
 		
-		<div class="abr panel-abr" data-color="#31cbfd" data-bgcolor="#FFFFFF" data-active="0" data-cid="<?php echo $r["clase_id"]; ?>" data-r="<?php echo $records; ?>">
+		<div class="abr panel-abr" data-color="#31cbfd" data-bgcolor="#FFFFFF" data-active="0" data-cid="<?php echo $r["clase_id"]; ?>" title="<?php echo $r["clase_desc"]; ?>" data-r="<?php echo $records; ?>">
 			<span><?php echo $r["cod_clase_alf"]; ?></span>
 		</div>
 		
