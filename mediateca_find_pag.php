@@ -244,6 +244,28 @@ function getSQL($solapa) {
 			case 3: 	$SQL = ""; die("Modo desconocido."); break;
 			case 10: 	
 					/******************************* MODO RECURSOS DE CAPA *********************************************/
+					
+					$SUBQUERY  = "SELECT "
+					. "tipo_formato_solapa AS \"Solapa\","
+					. "origen_id,"
+					. "origen_id_especifico AS \"Id\","
+					. "recurso_titulo AS \"Titulo\","
+					. "recurso_desc AS \"Descripcion\","
+					. "recurso_path_url AS \"LinkImagen\","
+					. "recurso_categoria_desc AS \"MetaTag\","
+					. "CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END AS \"Autores\","
+					. "estudios_id,"
+					. "recurso_fecha AS Fecha,"
+					. "COALESCE(subclase_desc,'') AS Tema, "
+					. "mod_catalogo.get_ico(origen_id,origen_id_especifico) AS ico"
+					. " FROM mod_mediateca.mediateca_find('$qt','$desde','$hasta','$proyecto','$clase','$subclase','$tipo_doc') C "
+					. " WHERE estudios_id IN(SELECT CTA.estudios_id FROM mod_geovisores.catalogo CTA WHERE CTA.origen_id_especifico=$mode_id) " 
+					. " AND tipo_formato_solapa=$solapa ". $ORDER;
+				
+					$SQL = "SELECT row_to_json(T)::text AS r FROM ($SUBQUERY)T";
+							
+					$mode_label = "Capa ".getCapaNombre($mode_id);
+
 					break;
 			default: 	$SQL = ""; die("Modo desconocido."); break;
 		};
@@ -290,6 +312,29 @@ function getSQL($solapa) {
 	
 	return $estudio_nombre;  		
  };
+
+ function getCapaNombre($_capa_id) 
+ {
+	global $conn;
+	$capa_nombre = '';
+
+	if(IsSetVar($_capa_id))
+	{
+		$data_query	= "SELECT preview_titulo FROM mod_geovisores.layers L WHERE L.layer_id=$_capa_id limit 1;";
+		$recordset	= pg_query($conn,$data_query);
+		$row		= pg_fetch_row($recordset);
+		
+		$capa_nombre = $row[0];
+	}
+	else
+	{
+		$capa_nombre = '';
+	};
+	
+	return $capa_nombre;  		
+ };
+
+
 
 $data_query	= "SELECT COUNT(*) registros FROM (".getSQL($solapa).") A;";
 
