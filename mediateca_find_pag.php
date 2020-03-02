@@ -320,7 +320,7 @@ function getSQL($solapa) {
 
 	if(IsSetVar($_capa_id))
 	{
-		$data_query	= "SELECT preview_titulo FROM mod_geovisores.layers L WHERE L.layer_id=$_capa_id limit 1;";
+		$data_query	= "SELECT preview_titulo FROM mod_geovisores.layer L WHERE L.layer_id=$_capa_id limit 1;";
 		$recordset	= pg_query($conn,$data_query);
 		$row		= pg_fetch_row($recordset);
 		
