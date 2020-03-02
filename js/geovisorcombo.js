@@ -51,6 +51,9 @@ function loadComboComponente() {
 	
 	}
 	
+	console.log(proyectos);
+	console.log(obraIndex);
+	
 	for (var i=0; i<proyectos[obraIndex].layers.length; i++) {
 		
 		var layer_id = proyectos[obraIndex].layers[i].layer_id;
