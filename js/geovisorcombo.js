@@ -1,4 +1,4 @@
-function loadComboObra(proyectos) {
+function loadComboObra() {
 		
 		$("#uxVisor").children("option").remove();
 		$("#uxVisor").append(
@@ -33,7 +33,7 @@ function loadComboObra(proyectos) {
 		
 	}
 	
-function loadComboComponente(proyectos) {
+function loadComboComponente() {
 	
 	var obraIndex = $("#uxVisor").val();
 	
@@ -269,7 +269,7 @@ $(document).ready(function() {
 
 	var js = JSON.parse(req.responseText);
 
-	var proyectos = js;
+	proyectos = js;
 	
 	document.getElementById("uxVisor").addEventListener("change",function() {
 		
