@@ -19,7 +19,7 @@ function loadComboObra(proyectos) {
 		
 		$("#uxVisor").selectpicker("refresh");
 		
-		loadComboComponente(proyectos);	
+		loadComboComponente(proyectos);
 		
 		$(".bootstrap-select").css({
 			
@@ -279,5 +279,8 @@ $(document).ready(function() {
 	});
 	
 	loadComboObra(proyectos);
+		
+	$("#uxVisor").val(0);
+	$("#uxVisor").selectpicker("refresh");
 
 });
