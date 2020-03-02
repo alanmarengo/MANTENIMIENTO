@@ -229,7 +229,10 @@ $(document).ready(function() {
 	
 	scroll = new Jump.scroll();
 	scroll.refresh();
-
+		
+	jwindow = new Jump.window();
+	jwindow.initialize();
+			
 	$('.section-sticky a').on('click', function() {
 		$('.section-sticky a').removeClass('selected');
 		$(this).addClass('selected');

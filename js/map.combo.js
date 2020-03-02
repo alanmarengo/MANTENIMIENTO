@@ -118,27 +118,14 @@ function ol_map() {
 			extent: [-13281237.21183002,-7669922.0600572005,-738226.6183457375,-1828910.1066171727],
 			controls: [],
 			view: new ol.View({
-				center: [-7800040.076346466,-6356294.552683568],
-				zoom:5.8,
+				center: [-7943411.26420484,-6486573.461564038],
+				zoom:8.8,
 				minZoom: 3.8,
 				maxZoom: 21
 			})
 		});
 		
-		this.baseLayer = this.baselayers.openstreets;		
-		
-		this.ol_object_mini = new ol.Map({
-			layers:[this.baselayers.google],
-			target: 'mini-map',
-			extent: [-13281237.21183002,-7669922.0600572005,-738226.6183457375,-1828910.1066171727],
-			controls: [],
-			view: new ol.View({
-				center: [-7176058.888636417,-4680928.505993671],
-				zoom:3.8,
-				minZoom: 3.8,
-				maxZoom: 21
-			})
-		});
+		this.baseLayer = this.baselayers.openstreets;
 		
 		this.ol_object.infoEnabled = true;
 		this.ol_object.map_object = this;
