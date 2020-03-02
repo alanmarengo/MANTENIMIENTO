@@ -51,8 +51,14 @@ function loadComboComponente() {
 	
 	}
 	
-	console.log(proyectos);
-	console.log(obraIndex);
+	if (obraIndex == -1) { 
+	
+		obraIndex = 0; 		
+		
+		$("#uxVisor").val(0);
+		$("#uxVisor").selectpicker("refresh");
+			
+	}
 	
 	for (var i=0; i<proyectos[obraIndex].layers.length; i++) {
 		
