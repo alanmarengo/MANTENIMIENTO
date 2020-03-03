@@ -683,6 +683,8 @@ function draw_grafico_7(container,config) { // FIXED PLACEMENT
 					
 	}
 	
+	console.log(series);
+	
 	Highcharts.chart(container, {
 		credits: { enabled:false },
 		chart: {
