@@ -697,6 +697,7 @@ function draw_grafico_7(container,config) { // FIXED PLACEMENT
 	console.log(config);
 	console.log(series);
 	console.log(arrLabels);
+	console.log(container);
 	
 	Highcharts.chart(container, {
 		credits: { enabled:false },
