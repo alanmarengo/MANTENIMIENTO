@@ -689,9 +689,9 @@ function draw_grafico_7(container,config) { // FIXED PLACEMENT
 	Highcharts.chart(container, {
 		credits: { enabled:false },
 		chart: {
-			type: 'column',
+			type: 'column'/*,
 			margin:0,
-			renderTo:'chart'
+			renderTo:'chart'*/
 		},
 		title: {
 			text: null
