@@ -694,11 +694,6 @@ function draw_grafico_7(container,config) { // FIXED PLACEMENT
 					
 	}
 	
-	console.log(config);
-	console.log(series);
-	console.log(arrLabels);
-	console.log(container);
-	
 	Highcharts.chart(container, {
 		chart: {
 			type: 'column'
@@ -724,7 +719,7 @@ function draw_grafico_7(container,config) { // FIXED PLACEMENT
 				stacking: 'percent'
 			}
 		},
-		series: config.data
+		series: series
 	});
 	
 	/*Highcharts.chart(container, {
