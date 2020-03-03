@@ -712,7 +712,7 @@ function draw_grafico_7(container,config) { // FIXED PLACEMENT
 		yAxis: {
 			min: 0,
 			title: {
-				text: 'Total fruit consumption'
+				text: config.desc
 			}
 		},
 		tooltip: {

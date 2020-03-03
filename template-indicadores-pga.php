@@ -26,8 +26,7 @@
 				
 				</div>
 				
-				<div class="resource-col col col-md-12 col-lg-12 col-xs-12 col-sm-12 p0">		
-		
+				<div class="resource-col col col-md-12 col-lg-12 col-xs-12 col-sm-12 p0">
 		
 					<div class="resource-inner" id="indicador-col-pos-3" data-pos="3">
 					
