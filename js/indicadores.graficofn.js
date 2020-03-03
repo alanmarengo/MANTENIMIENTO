@@ -700,11 +700,39 @@ function draw_grafico_7(container,config) { // FIXED PLACEMENT
 	console.log(container);
 	
 	Highcharts.chart(container, {
+		chart: {
+			type: 'column'
+		},
+		title: {
+			text: ''
+		},
+		xAxis: {
+			categories: arrLabels
+		},
+		yAxis: {
+			min: 0,
+			title: {
+				text: 'Total fruit consumption'
+			}
+		},
+		tooltip: {
+			pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+			shared: true
+		},
+		plotOptions: {
+			column: {
+				stacking: 'percent'
+			}
+		},
+		series: config.data
+	});
+	
+	/*Highcharts.chart(container, {
 		credits: { enabled:false },
 		chart: {
 			type: 'column'/*,
 			margin:0,
-			renderTo:'chart'*/
+			renderTo:'chart'--*
 		},
 		title: {
 			text: ""
@@ -758,7 +786,7 @@ function draw_grafico_7(container,config) { // FIXED PLACEMENT
 				}
 			}]
 		}
-	});
+	});*/
 	
 }
 
