@@ -24,7 +24,7 @@
             <p>A partir de 1975, AyEE comenzó a realizar estudios de prefactibilidad, incluyendo relevamientos geológicos y topográficos. Y en 1980 se realizaron investigaciones complementarias sobre perfiles geológicos de la zona de Cóndor Cliff.</p>
             <p>Después de varias décadas –período en que el país discontinuó el plan de obras hidroeléctricas y se optó por la generación térmica como motor del crecimiento del parque generador–, en 2012 se licitaron las obras del río Santa Cruz y, paralelamente, se extendió la línea de trasmisión de alta tensión hasta la provincia con el objetivo de transportar la energía de las presas, además de permitir el trasporte de energía de los futuros parques eólicos de la región patagónica.</p>
             <p>En agosto de 2012, la Secretaría de Obras Públicas del entonces Ministerio de Planificación Federal, Inversión Pública y Servicios de la Nación aprobó los pliegos licitatorios de la obra y se dispuso el llamado a Licitación Pública Nacional e Internacional para la contratación de los trabajos, bajo el régimen de la Ley 13064 y del Decreto 1381. Se presentaron cinco consorcios de empresas, adjudicándose la obra al constituido por las argentinas Electroingeniería e Hidrocuyo, y por la empresa asiática China Gezhouba Group Corporation, qu conformaron el consorcio Represas Patagonia (contratista).</p>
-            <p>A partir de 2016 se realizaron cambios sustanciales al proyecto, como la reducción de la cota en Cóndor Cliff y la reducción de turbinas en función de la modificación del diseño operativo en La Barrancosa. <a target="_blank" href="./media/Optimizacion-proyecto.pdf">VER OPTIMIZACIÓN</a></p>
+            <p>A partir de 2016 se realizaron cambios sustanciales al proyecto, como la reducción de la cota en Cóndor Cliff y la reducción de turbinas en función de la modificación del diseño operativo en La Barrancosa. <a target="_blank" href="./fichas/Optimizacion-proyecto.pdf">VER OPTIMIZACIÓN</a></p>
             <br />
             <p>El 21 de diciembre de 2016, una medida cautelar dictaminada por la Corte Suprema de Justicia de la Nación (CSJN) suspendió la ejecución de las obras principales de los aprovechamientos (exceptuando las tareas preliminares del proyecto ejecutivo y obras complementarias), hasta que se implementase el proceso de evaluación de impacto ambiental y la audiencia pública prevista en la Ley Nacional 23879.</p>
             <p>El Estudio cumplimentó lo solicitado en el mencionado dictamen de la Corte, conjuntamente con la realización de la Audiencia Pública en el marco del Congreso de la Nación, desarrollada el 20 y 21 de julio de 2017.</p>
@@ -82,7 +82,7 @@
                     </p> 
                 </div>
                 <div class="col-md-12 text-center">
-                    <a target="_blank" href="./media/Optimizacion-proyecto.pdf" class="boton">OPTIMIZACI&Oacute;N DEL PROYECTO – DESCRIPCI&Oacute;N T&Eacute;CNICA</a>
+                    <a target="_blank" href="./fichas/Optimizacion-proyecto.pdf" class="boton">OPTIMIZACI&Oacute;N DEL PROYECTO – DESCRIPCI&Oacute;N T&Eacute;CNICA</a>
                 </div>
             </div>
         </div>
