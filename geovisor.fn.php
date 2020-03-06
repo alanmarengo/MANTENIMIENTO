@@ -363,7 +363,7 @@ function DrawProyectos() {
 	
 	$conn = pg_connect($string_conn);
 	
-	$query_string = "SELECT * FROM mod_catalogo.sub_proyecto ORDER BY sub_proyecto_desc ASC";
+	$query_string = "SELECT * FROM mod_catalogo.sub_proyecto WHERE sub_proyecto_id IN (SELECT DISTINCT sub_proyecto_id FROM mod_geovisores.vw_catalogo_search) ORDER BY sub_proyecto_desc ASC";
 	
 	$query = pg_query($conn,$query_string);
 	
