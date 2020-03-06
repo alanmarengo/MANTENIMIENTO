@@ -14,7 +14,7 @@ function DrawAbrStats() {
 		
 		?>
 		
-		<div class="abr panel-abr" data-color="#31cbfd" data-bgcolor="#FFFFFF" data-active="0" data-cid="<?php echo $r["clase_id"]; ?>">
+		<div class="abr panel-abr" data-color="#31cbfd" data-bgcolor="#FFFFFF" data-active="0" data-cid="<?php echo $r["clase_id"]; ?>" title="<?php echo $r["clase_desc"]; ?>">
 			<span><?php echo $r["cod_clase_alf"]; ?></span>
 		</div>
 		

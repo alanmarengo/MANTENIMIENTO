@@ -636,18 +636,29 @@ function draw_grafico_6(container,config) { // FIXED PLACEMENT
 function draw_grafico_7(container,config) { // FIXED PLACEMENT
 	
 	var series = [];
-	var labels = [];
+	var arrLabels = [];
 	var arrInd = -1;
 	var label = "";
 	var data = [];
 	
 	for (var i=0; i<config.etiquetas.length; i++) {
 		
-		if (label != config.etiquetas[i]) {
+		var found = false;
+		
+		for (j=0; j<arrLabels.length; j++) {
 			
-			labels.push(config.etiquetas[i]);
+			if (config.etiquetas[i] == arrLabels[j]) {
+				
+				found = true;
+				break;
+				
+			}
 			
-			label = config.etiquetas[i];
+		}
+		
+		if (!found) {
+			
+			arrLabels.push(config.etiquetas[i]);
 		
 		}
 		
@@ -684,17 +695,45 @@ function draw_grafico_7(container,config) { // FIXED PLACEMENT
 	}
 	
 	Highcharts.chart(container, {
-		credits: { enabled:false },
 		chart: {
-			type: 'column',
-			margin:0,
-			renderTo:'chart'
+			type: 'column'
 		},
 		title: {
-			text: null
+			text: ''
 		},
 		xAxis: {
-			categories: config.etiquetas
+			categories: arrLabels
+		},
+		yAxis: {
+			min: 0,
+			title: {
+				text: config.desc
+			}
+		},
+		tooltip: {
+			pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+			shared: true
+		},
+		plotOptions: {
+			column: {
+				stacking: 'percent'
+			}
+		},
+		series: series
+	});
+	
+	/*Highcharts.chart(container, {
+		credits: { enabled:false },
+		chart: {
+			type: 'column'/*,
+			margin:0,
+			renderTo:'chart'--*
+		},
+		title: {
+			text: ""
+		},
+		xAxis: {
+			categories: arrLabels
 		},
 		yAxis: {
 			min: 0,
@@ -742,7 +781,7 @@ function draw_grafico_7(container,config) { // FIXED PLACEMENT
 				}
 			}]
 		}
-	});
+	});*/
 	
 }
 

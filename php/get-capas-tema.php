@@ -28,7 +28,13 @@ $query_string = "SELECT DISTINCT layer_id,layer_desc,layer_wms_server,layer_wms_
 
 $query = pg_query($conn,$query_string);
 
-$json = "{\"layers\":[";
+$gl_query_string = "SELECT geovisor FROM mod_catalogo.temas WHERE tema_id = " . $tema_id;
+
+$gl_query = pg_query($conn,$gl_query_string);
+
+$gl = pg_fetch_assoc($gl_query);
+
+$json = "{\"geovisor_link\":\"" . $gl["geovisor"] . "\",\"layers\":[";
 
 while ($data = pg_fetch_assoc($query)) {
 

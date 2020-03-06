@@ -121,6 +121,8 @@ function ol_map(tema_id) {
 		
 		var js = JSON.parse(req.responseText);
 		
+		document.getElementById("veg-btn").href = js.geovisor_link;
+		
 		for (var i=0; i<js.layers.length; i++) {
 			
 			var layer_name = js.layers[i].layer_wms_layer;
@@ -146,8 +148,6 @@ function ol_map(tema_id) {
 			this.baselayers.collection.push(_layer);
 			
 		}
-		
-		
 		
 		
 		///////document.getElementById("baselayer-default-radio").click();

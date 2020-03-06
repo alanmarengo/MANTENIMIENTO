@@ -1,4 +1,4 @@
-function loadComboObra(proyectos) {
+function loadComboObra() {
 		
 		$("#uxVisor").children("option").remove();
 		$("#uxVisor").append(
@@ -19,7 +19,7 @@ function loadComboObra(proyectos) {
 		
 		$("#uxVisor").selectpicker("refresh");
 		
-		loadComboComponente(proyectos);	
+		loadComboComponente(proyectos);
 		
 		$(".bootstrap-select").css({
 			
@@ -33,7 +33,7 @@ function loadComboObra(proyectos) {
 		
 	}
 	
-function loadComboComponente(proyectos) {
+function loadComboComponente() {
 	
 	var obraIndex = $("#uxVisor").val();
 	
@@ -49,6 +49,15 @@ function loadComboComponente(proyectos) {
 		
 		}
 	
+	}
+	
+	if (obraIndex == -1) { 
+	
+		obraIndex = 0; 		
+		
+		$("#uxVisor").val(0);
+		$("#uxVisor").selectpicker("refresh");
+			
 	}
 	
 	for (var i=0; i<proyectos[obraIndex].layers.length; i++) {
@@ -229,7 +238,10 @@ $(document).ready(function() {
 	
 	scroll = new Jump.scroll();
 	scroll.refresh();
-
+		
+	jwindow = new Jump.window();
+	jwindow.initialize();
+			
 	$('.section-sticky a').on('click', function() {
 		$('.section-sticky a').removeClass('selected');
 		$(this).addClass('selected');
@@ -266,7 +278,7 @@ $(document).ready(function() {
 
 	var js = JSON.parse(req.responseText);
 
-	var proyectos = js;
+	proyectos = js;
 	
 	document.getElementById("uxVisor").addEventListener("change",function() {
 		
@@ -276,5 +288,8 @@ $(document).ready(function() {
 	});
 	
 	loadComboObra(proyectos);
+		
+	$("#uxVisor").val(0);
+	$("#uxVisor").selectpicker("refresh");
 
 });

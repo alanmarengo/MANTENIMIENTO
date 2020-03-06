@@ -13,9 +13,8 @@
 		$("[title]").tooltipster({
 			animation: 'fade',
 			delay: 200,
-			theme: 'tooltipster-dark',
-			trigger: 'hover',
-			side:"left"
+			theme: 'tooltipster-default',
+			trigger: 'hover'
 		});
 		
 		indicadores = new ol_indicadores();

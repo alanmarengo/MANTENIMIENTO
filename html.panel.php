@@ -80,11 +80,11 @@
 				<i class="fa fa-eye"></i>
 			</a>-->
 				
-			<a href="#" class="layer-label" onclick="$(this).parent().next().slideToggle('slow'); $(this).toggleClass('layer-label-active')" title="<?php echo $r["layer_desc"]; ?>">
+			<a href="#" class="layer-label" onclick="$(this).parent().next().slideToggle('slow'); $(this).toggleClass('layer-label-active')" title="<?php echo $r["layer_desc"]; ?>" title="Capas Activas">
 				<span>CAPAS ACTIVAS</span>
 			</a>
 			
-			<a href="#" class="active-layer-button" onclick="jwindow.open('popup-capasactivas');">
+			<a href="#" class="active-layer-button" onclick="jwindow.open('popup-capasactivas');" title="Mostrar">
 				<img src="./images/external-link.png">
 			</a>
 	

@@ -25,7 +25,7 @@
 		background:white;
 		left: 30px;
 		top: 60px;
-		width:450px;
+		width:340px;
 
 	}
 	
@@ -62,7 +62,7 @@
 	<script src ="./js/geovisorcombo.js" type='text/javascript'></script>
 	
 </head>
-<body>
+<body style="overflow:hidden;">
 
 	<div id="page" style="background-color: #f4f4f4;" class="h100p">
 		
@@ -75,6 +75,7 @@
 	</div>	
 	
 	<?php include("./html.navbar-geovisor-zoom.php"); ?>
+	<?php include("./popup.baselayers.flotant.php"); ?>
 	
 	<div id="popup-combo">
 		<div id="popup-combo-body" class="jump-posrel jump-scroll"></div>

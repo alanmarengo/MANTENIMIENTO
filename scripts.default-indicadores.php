@@ -67,6 +67,11 @@
 
 <link rel="stylesheet" href="./js/colorpicker/css/colorpicker.css"/>
 
+<!-- TOOLTIPSTER CSS -->
+
+<link rel="stylesheet" href="./js/tooltipster/dist/css/tooltipster.bundle.min.css"/>
+<link rel="stylesheet" href="./js/tooltipster/dist/css/tooltipster-sideTip-shadow.min.css"/>
+
 <!-- SCRIPTS -->
 
 <!-- JQUERY + UI -->	
@@ -95,6 +100,10 @@
 <!-- COLORPICKER JS -->
 
 <script src="./js/colorpicker/js/colorpicker.js" type="text/javascript"></script>
+
+<!-- TOOLTIPSTER JS -->
+
+<script src="./js/tooltipster/dist/js/tooltipster.bundle.min.js" type="text/javascript"></script>
 
 <!-- HTML 2 CANVAS -->
 

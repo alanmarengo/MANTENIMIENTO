@@ -28,7 +28,7 @@ function DrawAbr() {
 	
 	$conn = pg_connect($string_conn);
 	
-	$query_string = "SELECT clase_id,color_hex,color_head,cod_clase_alf FROM mod_catalogo.clase ORDER BY clase_id ASC";
+	$query_string = "SELECT clase_id,clase_desc,color_hex,color_head,cod_clase_alf FROM mod_catalogo.clase ORDER BY clase_id ASC";
 	
 	$query = pg_query($conn,$query_string);
 	
@@ -36,7 +36,7 @@ function DrawAbr() {
 		
 		?>
 		
-		<div class="abr panel-abr" data-color="#31cbfd" data-bgcolor="#FFFFFF" data-active="0" data-cid="<?php echo $r["clase_id"]; ?>">
+		<div class="abr panel-abr" data-color="#31cbfd" data-bgcolor="#FFFFFF" data-active="0" data-cid="<?php echo $r["clase_id"]; ?>" title="<?php echo $r["clase_desc"]; ?>">
 			<span><?php echo $r["cod_clase_alf"]; ?></span>
 		</div>
 		
@@ -363,7 +363,7 @@ function DrawProyectos() {
 	
 	$conn = pg_connect($string_conn);
 	
-	$query_string = "SELECT * FROM mod_catalogo.sub_proyecto ORDER BY sub_proyecto_desc ASC";
+	$query_string = "SELECT * FROM mod_catalogo.sub_proyecto WHERE sub_proyecto_id IN (SELECT DISTINCT sub_proyecto_id FROM mod_geovisores.vw_catalogo_search) ORDER BY sub_proyecto_desc ASC";
 	
 	$query = pg_query($conn,$query_string);
 	
