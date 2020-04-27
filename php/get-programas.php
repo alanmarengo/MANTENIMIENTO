@@ -26,9 +26,9 @@ $query_string .= "(";
 	$query_string .= "WHERE programa_id = pr.programa_id";
 $query_string .= ") AS temas_id";
 if ($tema_id) {
-	$query_string .= " FROM mod_catalogo.programas_subprogramas pr WHERE programa_id_parent = -1  AND " . $tema_id . " IN (SELECT tema_id FROM mod_catalogo.temas_programas WHERE programa_id = pr.programa_id)";
+	$query_string .= " FROM mod_catalogo.vw_programas_subprogramas pr WHERE programa_id_parent = -1  AND " . $tema_id . " IN (SELECT tema_id FROM mod_catalogo.temas_programas WHERE programa_id = pr.programa_id)";
 }else{
-	$query_string .= " FROM mod_catalogo.programas_subprogramas pr WHERE programa_id_parent = -1  ";
+	$query_string .= " FROM mod_catalogo.vw_programas_subprogramas pr WHERE programa_id_parent = -1  ";
 }
 $query_string .= " ORDER BY programa_id ASC, programa ASC";
 
@@ -61,11 +61,14 @@ while($r = pg_fetch_assoc($query)) {
 	$json .= "\"name\":\"" . $r["programa"] . "\",";
 	$json .= "\"temas\":[" . $tema_json . "],";
 	$json .= "\"data\":{";
-		$json .= "\"Rubro\":\"" . $r["rubro"] . "\",";
-		$json .= "\"Categoría\":\"" . $r["categoria"] . "\",";
-		$json .= "\"Etapa\":\"" . $r["etapa"] . "\",";
+		$json .= "\"Área temática\":\"" . $r["rubro"] . "\",";
+		$json .= "\"Tema\":\"" . $r["categoria"] . "\",";
+		$json .= "\"Responsable de Ejecución\":\"" . $r["resp_ejecucion"] . "\",";
+		//$json .= "\"Etapa\":\"" . $r["etapa"] . "\",";
 		$json .= "\"Instituciones intervinientes\":\"" . $r["instituciones_interv"] . "\",";
-		$json .= "\"Responsable\":\"" . $r["respons_nom"] . "\"";
+		$json .= "\"Responsable del Estudio más reciente\":\"" . $r["respons_nom"] . "\",";
+		$json .= "\"Estado\":\"" . $r["estado"] . "\",";
+		$json .= "\"Descripción\":\"" . $r["descripcion"] . "\"";
 	$json .= "}";
 	$json .= ",\"subprogramas\":[";
 	
@@ -75,7 +78,7 @@ while($r = pg_fetch_assoc($query)) {
 		$sp_query_string .= "FROM mod_catalogo.temas_programas tp ";
 		$sp_query_string .= "WHERE programa_id = pr.programa_id";
 	$sp_query_string .= ") AS temas_id";
-	$sp_query_string .= " FROM mod_catalogo.programas_subprogramas pr WHERE programa_id_parent = " . $r["programa_id"] . " ORDER BY programa_id ASC, programa ASC";
+	$sp_query_string .= " FROM mod_catalogo.vw_programas_subprogramas pr WHERE programa_id_parent = " . $r["programa_id"] . " ORDER BY programa_id ASC, programa ASC";
 	
 	$sp_query = pg_query($conn,$sp_query_string);
 	
