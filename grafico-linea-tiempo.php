@@ -48,13 +48,13 @@
 							description: ''
 						},
 						{
-							name: '09/02/2015',
-							label: 'Audiencia Pública provincial en Comandante Luis Piedra Buena, Santa Cruz.',
+							name: '09/12/2015',
+							label: 'Presentación del EsIA elaborado por el Contratista en Audiencia Pública provincial en Comandante Luis Piedra Buena, Santa Cruz.',
 							description: ''
 						},
 						{
 							name: '31/08/2016',
-							label: 'Se aprueban las modificaciones en el proyecto: reducción de cota de CC, reducción en el número de turbinas, régimen de operación de LB y construcción de la LEAT. ',
+							label: 'Se aprueban las modificaciones en el proyecto: reducción de cota de CC, reducción en el número de turbinas, régimen de operación de LB y construcción de la LEAT.',
 							description: ''
 						},
 						{
@@ -64,24 +64,19 @@
 						},
 						{
 							name: '20/07/2017 y 21/07/2017',
-							label: 'Audiencia Pública en el Congreso Nacional, Buenos Aires, en el marco de la Ley 23.879.',
-							description: ''
-						},
-						{
-							name: '25/08/2018',
-							label: 'Los Ministerios de Energía y Minería, y de Ambiente y Desarrollo Sustentable de la Nación emiten la Resolución Conjunta 3/17, aprobando las obras',
+							label: 'Presentación del EsIA elaborado por Ebisa en Audiencia Pública en el Congreso Nacional, Buenos Aires, en el marco de la Ley 23.879.',
 							description: ''
 						},
 						{
 							name: '08/01/2018',
-							label: 'Se reinician las obras principales de los Aprovechamientos Hidroeléctricos del Río Santa Cruz. ',
+							label: 'Luego del levantamiento de la medida cautelar de la Corte se reinician las obras principales de los Aprovechamientos Hidroeléctricos del Río Santa Cruz. ',
 							description: ''
 						},
 						{
 							name: '20/02/2019',
-							label: 'Audiencia Pública por la Línea de Alta Tensión en Comandante Luis Piedra Buena, Santa Cruz. ',
+							label: 'Presentación del EsIA de la Línea de Alta Tensión en Audiencia Pública en Comandante Luis Piedra Buena, Santa Cruz.',
 							description: ''
-						},
+						}
 					]
 				}]
 			}).reflow();
