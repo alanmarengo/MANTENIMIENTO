@@ -612,7 +612,7 @@ function ol_map() {
 			}
 		];
 		
-		var js = this.getLayerExtent(layer_id);
+		var js = extents[index];
 		
 		var extent = ol.proj.transformExtent(
 			[js.minx,js.miny,js.maxx,js.maxy],
