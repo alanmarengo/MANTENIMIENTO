@@ -14,6 +14,7 @@
 		background:white;
 		left: 30px;
 		top: 30px;
+		display:none !important;
 
 	}
 	
