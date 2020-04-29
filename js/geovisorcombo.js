@@ -285,10 +285,12 @@ $(document).ready(function() {
 		if (this.options[this.selectedIndex].value < 1) {
 		
 			$("#uxCapa").css("display","none");
-		
+			geomap.map.ol_object.infoEnabled = true;
+			
 		}else{
 		
 			$("#uxCapa").css("display","block");
+			geomap.map.ol_object.infoEnabled = false;
 			
 		}
 		
