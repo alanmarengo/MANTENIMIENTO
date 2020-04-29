@@ -282,6 +282,16 @@ $(document).ready(function() {
 	
 	document.getElementById("uxVisor").addEventListener("change",function() {
 		
+		if (this.options[this.selectedIndex].value < 2) {
+		
+			$("#uxCapa").hide();
+		
+		}else{
+		
+			$("#uxCapa").show();
+			
+		}
+		
 		loadComboComponente(proyectos);	
 		//loadLabels();
 		
