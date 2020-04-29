@@ -188,7 +188,7 @@ function ol_map() {
 								
 								}
 								
-								$("#popup-combo").css("left",(pixel[0]-117)+"px");
+								$("#popup-combo").css("left",(pixel[0]-112)+"px");
 								$("#popup-combo").css("top",(pixel[1]-85)+"px");
 
 							
