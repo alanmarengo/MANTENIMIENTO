@@ -26,6 +26,7 @@
 		left: 30px;
 		top: 60px;
 		width:340px;
+		font-size:12px;
 
 	}
 	

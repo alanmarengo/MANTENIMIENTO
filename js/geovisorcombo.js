@@ -282,7 +282,7 @@ $(document).ready(function() {
 	
 	document.getElementById("uxVisor").addEventListener("change",function() {
 		
-		if (this.options[this.selectedIndex].value < 2) {
+		if (this.options[this.selectedIndex].value < 1) {
 		
 			$("#uxCapa").hide();
 		
