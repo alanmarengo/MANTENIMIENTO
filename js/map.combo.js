@@ -112,7 +112,24 @@ function ol_map() {
 		
 		///////document.getElementById("baselayer-default-radio").click();
 		
+		var i = new ol.interaction.MouseWheelZoom();
+
+		var oldFn = i.handleEvent;
+		i.handleEvent = function(e) {
+		  var type = e.type;
+		  if (type !== "wheel" && type !== "wheel" ) {
+			return true;
+		  }
+		  
+		  if (!e.originalEvent.altKey) {
+			return true
+		  }
+
+		  oldFn.call(this,e);
+		}
+		
 		this.ol_object = new ol.Map({
+			interactions: ol.interaction.defaults({mouseWheelZoom: false}).extend([i]),
 			layers:this.baselayers.collection,
 			target: 'map',
 			extent: [-13281237.21183002,-7669922.0600572005,-738226.6183457375,-1828910.1066171727],
