@@ -284,11 +284,11 @@ $(document).ready(function() {
 		
 		if (this.options[this.selectedIndex].value < 1) {
 		
-			$("#uxCapa").hide();
+			$("#uxCapa").css("display","none");
 		
 		}else{
 		
-			$("#uxCapa").show();
+			$("#uxCapa").css("display","block");
 			
 		}
 		
