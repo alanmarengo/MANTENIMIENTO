@@ -282,7 +282,15 @@ $(document).ready(function() {
 	
 	document.getElementById("uxVisor").addEventListener("change",function() {
 		
-		if (this.options[this.selectedIndex].value < 1) {
+		 var optVal = this.options[this.selectedIndex].value;
+		
+		if (optVal >= 0) {
+		
+			geomap.map.zoomToZoneExtent(optVal);
+		
+		}
+		
+		if (optVal < 1) {
 		
 			$("#uxCapa").css("display","none");
 			geomap.map.ol_object.infoEnabled = true;

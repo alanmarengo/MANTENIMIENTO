@@ -566,6 +566,48 @@ function ol_map() {
 		
 	}
 	
+	this.map.zoomToZoneExtent = function(index) {
+		
+		var extents = [
+			{
+				minx:-8059334.63851867,
+				miny:-6549600.00520834,
+				maxx:-7604071.34389932,
+				maxy:-6340610.43756053
+			},
+			{
+				minx:-7883025.60540804,
+				miny:-6494756.13103644,
+				maxx:-7875148.75334871,
+				maxy:-6478882.4540154
+			},
+			{
+				minx:-7812318.55059425,
+				miny:-6497163.88563083,
+				maxx:-7801734.03063953,
+				maxy:-6476479.99752537
+			},
+			{
+				minx:-7890225.54049351,
+				miny:-6525918.33485518,
+				maxx:-7671642.89584723,
+				maxy:-6433640.83392161
+			}
+		];
+		
+		var js = this.getLayerExtent(layer_id);
+		
+		var extent = ol.proj.transformExtent(
+			[js.minx,js.miny,js.maxx,js.maxy],
+			"EPSG:3857", "EPSG:3857"
+		);
+		
+		this.ol_object.getView().fit(extent,{duration:1000});
+		this.ol_object.updateSize();
+		this.ol_object.render();
+		
+	}
+	
 	this.map.zoomToLayerExtent = function(layer_id) {
 		
 		var js = this.getLayerExtent(layer_id);
