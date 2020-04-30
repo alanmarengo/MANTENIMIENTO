@@ -183,15 +183,25 @@ function ol_map() {
 		///////document.getElementById("baselayer-default-radio").click();
 		
 		this.ol_object = new ol.Map({
+			interactions: ol.interaction.defaults({
+				doubleClickZoom: false,
+				dragAndDrop: false,
+				dragPan: false,
+				keyboardPan: false,
+				keyboardZoom: false,
+				mouseWheelZoom: false,
+				pointer: false,
+				select: false
+			}),
 			layers:this.baselayers.collection,
 			target: 'map',
-			extent: [-8758221.51045902,-7304514.551140834,-6797051.72232697,-5466971.511830861],
+			extent: [-8743435.457752563,-7463770.851212183,-6782265.669620513,-5626227.81190221],
 			controls: [],
 			view: new ol.View({
 				center: [-7176058.888636417,-4680928.505993671],
-				zoom:3.8,
-				minZoom: 3.8,
-				maxZoom: 21
+				zoom:5.8,
+				minZoom: 5.8,
+				maxZoom: 5.8
 			})
 		});
 		
@@ -200,12 +210,21 @@ function ol_map() {
 		layer_872.setZIndex(300);
 		layer_873.setZIndex(200);
 		
-		var js = {
+		/*var js = {
 			
 			minx:-8758221.51045902,
 			miny:-7304514.551140834,
 			maxx:-6797051.72232697,
 			maxy:-5466971.511830861,
+			
+		}*/
+		
+		var js = {
+			
+			minx:-8743435.457752563,
+			miny:-7463770.851212183,
+			maxx:-6782265.669620513,
+			maxy:-5626227.81190221
 			
 		}
 		
