@@ -27,7 +27,7 @@
             <p>El Contratista elaboró y presentó el Estudio de Impacto Ambiental (EsIA) del proyecto, de acuerdo con los requerimientos de evaluación de impacto ambiental de la provincia de Santa Cruz, en agosto de 2015. En noviembre del mismo año, la autoridad provincial emitió un dictamen técnico y se convocó a la audiencia pública, luego de lo cual se otorgó la Declaración de Impacto Ambiental (DIA), con validez de un año, que planteaba la necesidad de algunos ajustes y estudios complementarios, que se ejecutaron oportunamente.</p>
             <p>A partir de 2016 se realizaron cambios sustanciales al proyecto, como la reducción de la cota en Cóndor Cliff y la reducción de turbinas en función de la modificación del diseño operativo en La Barrancosa. <a target="_blank" href="./fichas/Optimizacion-proyecto.pdf">VER OPTIMIZACIÓN</a></p>
             <br />
-            <p>El 21 de diciembre de 2016, una medida cautelar dictaminada por la Corte Suprema de Justicia de la Nación (CSJN) suspendió la ejecución de las obras principales de los aprovechamientos (exceptuando las tareas preliminares del proyecto ejecutivo y obras complementarias), hasta que se implementase el proceso de evaluación de impacto ambiental y la audiencia pública prevista en la Ley Nacional 23879.</p>
+            <p>El 21 de diciembre de 2016, una medida cautelar dictaminada por la Corte Suprema de Justicia de la Nación (CSJN) suspendió la ejecución de las obras principales de los aprovechamientos (exceptuando las tareas preliminares del proyecto ejecutivo y obras complementarias), hasta que se implementase el proceso de evaluación de impacto ambiental y la audiencia pública prevista en la <a target="_blank" href="http://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=279">Ley Nacional 23879</a>.</p>
             <p>El Estudio cumplimentó lo solicitado en el mencionado dictamen de la Corte, conjuntamente con la realización de la Audiencia Pública en el marco del Congreso de la Nación, desarrollada el 20 y 21 de julio de 2017.</p>
             <p>Producido el levantamiento de la medida cautelar de la Corte Suprema de Justicia de la Nación, el Comitente dio la orden de inicio en febrero de 2018, a partir de lo cual la Contratista pudo dar comienzo a la construcción de las obras principales, que están actualmente en ejecución. <a id="link-elaboracion" href="#" data-target="#elaboracion">VER Proceso de Elaboración y Aprobación</a></p>
         </div>
@@ -137,7 +137,7 @@
             
             
             <p>El Estudio fue aprobado a nivel nacional por el Ministerio de Energía (actualmente con rango de Secretaría) y por el Ministerio de Ambiente y Desarrollo Sustentable (MAyDS) y, a nivel provincial, por el Ministerio de Producción, Comercio e Industria y por la Secretaría de Estado de Ambiente, dependiente del Ministerio de Salud y Ambiente de la provincia de Santa Cruz.</p>
-            <p>El Estudio cumplimentó lo solicitado en el mencionado dictamen de la Corte, conjuntamente con la realización de la <a target="_self" href="">Audiencia Pública en el marco del Congreso de la Nación</a>, desarrollada el 20 y 21 de julio de 2017.</p>
+            <p>El Estudio cumplimentó lo solicitado en el mencionado dictamen de la Corte, conjuntamente con la realización de la Audiencia Pública en el marco del Congreso de la Nación, desarrollada el 20 y 21 de julio de 2017.</p>
         </div>
 
         <div class="col-md-12 section-a pt-0 pb-0">
@@ -147,53 +147,16 @@
             <div class="row">
                 <div class="col-md-6 text-center">
                     <span>AUDIENCIA PÚBLICA SESIÓN 20-07-17</span>
-                    <video style="width: 100%; height: auto;" controls preload="none" poster="./images/audiencia_preview.png">
-                        <source
-                            src="http://observatorio.ieasa.com.ar/sga/recursos/recursos_audiovisual/00_audiencia_publica/AUDIENCIA PÚBLICA 20-07-17.mp4"
-                            type="video/mp4" />
-                        Tu navegador no soporta reproducir este video.
-                    </video>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/QIJhdeCTgAs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                
                 </div>
                 <div class="col-md-6 text-center">
                     <span>AUDIENCIA PÚBLICA SESIÓN 21-07-17</span>
-                    <video style="width: 100%; height: auto;" controls preload="none" poster="./images/audiencia_preview.png">
-                        <source
-                            src="http://observatorio.ieasa.com.ar/sga/recursos/recursos_audiovisual/00_audiencia_publica/AUDIENCIA PÚBLICA 20-07-17.mp4"
-                            type="video/mp4" />
-                        Tu navegador no soporta reproducir este video.
-                    </video>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/4yEPqpZRV8c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                
                 </div>
             </div>
         </div>
 
-        <div class="col-md-12 section-a antecedentes pb-0">
-            <b>ESTUDIO ANTECEDENTES</b>
-            <br />
-            <br />
-
-            <p>
-                El EsIA se basó sobre los siguientes documentos previos:
-                <br />
-                <ul class="ml-3">
-                    <li>
-                        Estudio de Impacto Ambiental presentado por el contratista a la provincia de Santa Cruz en agosto de 2015.                
-                    </li>
-                    <li>
-                        Declaración de Impacto Ambiental (DIA) y Dictamen Técnico con requerimientos específicos emitidos por la Comisión Evaluadora de la provincia de Santa Cruz en diciembre de 2015.                
-                    </li>
-                    <li>
-                        Auditoría Ambiental de Cumplimiento presentada por el contratista para obtener la renovación de la Declaración de Impacto Ambiental de2017.                
-                    </li>
-                    <li>
-                        Actualización del EIA presentado a la provincia de Santa Cruz el 30 de marzo de 2017, que incluye la información relevada en campo desde agosto de 2015 a marzo 2017 y se aplica sobre el proyecto ejecutivo modificado.
-                    </li>
-                    <li>
-                        Estudios complementarios propuestos por el MAyDS en agosto 2016 y realizados por el contratista en el periodo 2016-2017.
-                    </li>
-                </ul>
-            </p>
-            <br />
-
+        <div class="col-md-12 section-a antecedentes pb-0 pt-5">
             <h3>L&Iacute;NEA DE TIEMPO DE LOS AHRSC</h3>
             <div class="embed-responsive" style="padding-top: 40%;">
                 <iframe src="./grafico-linea-tiempo.php" frameborder="0"></iframe>
