@@ -125,6 +125,25 @@ function ol_map() {
 			})
 		});
 		
+		
+		var wkt = 'POLYGON((10.689 -25.092, 34.595 ' +
+			'-20.170, 38.814 -35.639, 13.502 ' +
+			'-39.155, 10.689 -25.092))';
+
+		var format = new WKT();
+
+		var feature = format.readFeature(wkt, {
+			dataProjection: 'EPSG:4326',
+			featureProjection: 'EPSG:3857'
+		});
+
+		var vector = new VectorLayer({
+			source: new VectorSource({
+				features: [feature]
+			})
+		});
+		
+		
 		var layer_873 = new ol.layer.Tile({
 			name:"ahrsc:vp_geo_limites_provinciales_sit_pga",
 			visible:true,
@@ -177,7 +196,7 @@ function ol_map() {
 		});
 		
 		
-		this.baselayers.collection = [this.baselayers.openstreets,this.baselayers.opentopo,this.baselayers.bing_roads,this.baselayers.bing_aerials,this.baselayers.google,this.baselayers.argenmap,layer_872,layer_873,layer_874,layer_875];
+		this.baselayers.collection = [this.baselayers.openstreets,this.baselayers.opentopo,this.baselayers.bing_roads,this.baselayers.bing_aerials,this.baselayers.google,this.baselayers.argenmap,layer_872,layer_873,layer_874,layer_875,vector];
 		
 		
 		///////document.getElementById("baselayer-default-radio").click();
