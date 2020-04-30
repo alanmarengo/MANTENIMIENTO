@@ -116,9 +116,9 @@
             <br />
             <br />
             
-            <p>El EsIA de los aprovechamientos hidroeléctricos del río Santa Cruz - que dio origen a la aprobación de la factibilidad de las obras en cumplimiento de la Ley Nacional N° 23.879- fue elaborado por Ebisa –ahora denominada Integración Energética Argentina S.A., luego de su fusión con Enarsa– bajo la encomienda de la Secretaría de Energía Eléctrica, a partir de una medida cautelar de la Corte Suprema de Justicia de la Nación de diciembre de 2016.</p>
+            <p>El EsIA de los aprovechamientos hidroeléctricos del río Santa Cruz - que dio origen a la aprobación de la factibilidad de las obras en cumplimiento de la <a target="_blank" href="http://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=279">Ley Nacional N° 23.879</a>- fue elaborado por Ebisa –ahora denominada Integración Energética Argentina S.A., luego de su fusión con Enarsa– bajo la encomienda de la Secretaría de Energía Eléctrica, a partir de una medida cautelar de la Corte Suprema de Justicia de la Nación de diciembre de 2016.</p>
             <p>El estudio es el resultado de la recopilación, integración y revisión del EsIA de Santa Cruz, la consideración de los requerimientos del Dictamen Técnico de la provincia y de las Especificaciones Técnicas Ambientales (ETA) del Ministerio de Ambiente y Desarrollo Sustentable de la Nación (MAyDS), junto con otros estudios especiales realizados por el contratista y por expertos independientes, altamente calificados y con experiencia en los principales ejes temáticos del proyecto, que fueron contratados por Ebisa.</p>
-            <p>El enfoque metodológico adoptado en este Estudio está orientado por el marco conceptual del Manual de Gestión Ambiental de Obras Hidráulicas con Aprovechamiento Energético, según los requerimientos de la Ley 23.879 (link).</p>
+            <p>El enfoque metodológico adoptado en este Estudio está orientado por el marco conceptual del Manual de Gestión Ambiental de Obras Hidráulicas con Aprovechamiento Energético, según los requerimientos de la <a target="_blank" href="http://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=279">Ley 23.879</a>.</p>
             
             <p>
                 El EsIA consideró como principales documentos antecedentes a los siguientes:
