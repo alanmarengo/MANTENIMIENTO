@@ -4,26 +4,32 @@
     <div class="row">
         <div class="section-sticky">
             <div class="col-md-12 page-title">
-                Plan director de gestión ambiental - PGA
+                Plan director de gestión ambiental - PDGA
             </div>
 
             <div class="col-md-12 top-buttons">
-                <a id="link-temas" href="#" data-target="#temas">TEMAS DEL PGA</a>
-                <a id="link-plan" href="#" data-target="#plan">PLAN DE GESTI&Oacute;N AMBIENTAL</a>
-                <a id="link-programas" href="#" data-target="#programas">PROGRAMAS Y SUBPROGRAMAS DEL PGA</a>
-                <a id="link-porarea" href="#" data-target="#porarea">PROGRAMAS/SUBPROGRAMAS POR &Aacute;REA</a>
+                <a id="link-temas" href="#" data-target="#temas">
+                    PLAN DE GESTI&Oacute;N AMBIENTAL
+                </a>
+                <a id="link-plan" href="#" data-target="#plan">
+                    DISTRIBUCI&Oacute;N TERRITORIAL DE PROGRAMAS PGA
+                </a>
+                <a id="link-programas" href="#" data-target="#programas">
+                    PROGRAMAS Y SUBPROGRAMAS DEL PGA
+                </a>
+                <a id="link-porarea" href="#" data-target="#porarea">
+                    BUSCADOR DE PROGRAMAS Y SUBPROGRAMAS
+                </a>
             </div>
         </div>
 
         <div class="col-md-12 section-a temas">
             <a id="temas"></a>
-            <h3 style="color: #666;">TEMAS DEL PGA</h3>
+            <h3 style="color: #666;">PLAN DE GESTI&Oacute;N AMBIENTAL</h3>
 
             <div class="row" style="padding-left: 2em; padding-right: 2em;">
                 <div class="col-md-12" style="margin-bottom: 50px; font-size: 16px;">
-                    EL PGA al mismo tiempo está conformado por programas y subprogramas (Nro de programas), que abordan
-                    un conjunto de temas claves de las distintas etapas del proyecto y con diferente alcance
-                    territorial.
+                    EL Plan de Gestión Ambiental (PGA) planifica y ejecuta las actividades tendientes a darle sostenibilidad al proyecto en sus distintas etapas, organiza las medidas y las recomendaciones que surgen del <a href="/page_antecedentes.php">Estudio de Impacto Ambiental</a> para mitigar los impactos sobre el medio físico, biótico y socioeconómico, y potenciar las oportunidades.
                 </div>
 
                 <img id="uxCaminito" src="./images/pdga_temas.jpg" usemap="#uxCaminitoMap"
@@ -57,7 +63,7 @@
 
         <div class="col-md-12 section-b plan">
             <a id="plan"></a>
-            <h3 style="color: #666;">PLAN DE GESTION AMBIENTAL</h3>
+            <h3 style="color: #666;">DISTRIBUCI&Oacute;N TERRITORIAL DE PROGRAMAS PGA</h3>
 
             <div class="row" style="padding-left: 2em; padding-right: 2em;">
                 <div class="col-md-12 parrafos">
@@ -82,52 +88,23 @@
             <div class="row" style="padding-left: 2em; padding-right: 2em;">
                 <div class="col-md-6 parrafos">
                     <p>
-                        EL PGA está conformado por un conjunto de programas y subprogramas que abarcan las etapas de
-                        construcción y de operación de los aprovechamientos, además de algunos programas especiales que
-                        tiene una ejecución permanente (que trascienden la etapa de obra).
+EL PGA está conformado por un conjunto de programas y subprogramas que abarcan las etapas de construcción y de operación de los aprovechamientos, además de algunos programas especiales que tiene una ejecución permanente (que trascienden la etapa de obra).                        
                         <br />
                         <br />
-                        La estructura de programas y subprogramas surge de Estudio de Impacto Ambiental, que es una
-                        metodología sistemática para encarar la identificación y caracterización de las posibles
-                        alteraciones del ambiente y para proponer medidas de mitigación de los impactos negativos y de
-                        potenciación de los positivos.
+La estructura de programas y subprogramas surge de Estudio de Impacto Ambiental, que es una metodología sistemática para encarar la identificación y caracterización de las posibles alteraciones del ambiente y para proponer medidas de mitigación de los impactos negativos y de potenciación de los positivos.                        
                         <br />
                         <br />
-                        Entre los programas especiales y de la etapa de construcción, el PGA aborda 90 temáticas
-                        específicas. Para su mejor exposición, se han clasificado en 22 temas clave, considerando las
-                        áreas biótica, física y social.
-                        <br />
-                        <br />
-                        La ejecución de algunos programas del PGA está a cargo del Comitente (Estado Nacional), otros de
-                        la UTE Represas Patagonia (contratista) y otros son de responsabilidad compartida entre ambos.
-                        En los casos correspondientes, el trabajo se articula con las autoridades respectivas de la
-                        provincia de Santa Cruz, con distintas instituciones del sistema científico argentino o con
-                        otros organismos del Estado Nacional o provincial.
-                        <br />
-                        <br />
-                        El alcance territorial de los programas y subprogramas depende de cada uno en particular:
-                        algunos se ejecutan en zona de obra, otros en áreas específicas (por ejemplo, el programa de
-                        macá tobiano realiza campañas en zonas de cría y de invernada: lagunas de la meseta central y
-                        estuario), otros a nivel de cuenca y algunos –en general, los del área social- a nivel
-                        provincial.
+Entre los programas especiales y de la etapa de construcción, el PGA aborda 90 temáticas específicas. Para su mejor exposición, se han clasificado en 22 temas clave, considerando las áreas biótica, física y social. 
                         <br />
                         <br />
                     </p>
                 </div>
                 <div class="col-md-6 parrafos">
                     <p>
-                        La ejecución de algunos programas del PGA está a cargo del Comitente (Estado Nacional), otros de
-                        la UTE Represas Patagonia (contratista) y otros son de responsabilidad compartida entre ambos.
-                        En los casos correspondientes, el trabajo se articula con las autoridades respectivas de la
-                        provincia de Santa Cruz, con distintas instituciones del sistema científico argentino o con
-                        otros organismos del Estado Nacional o provincial.
+La ejecución de algunos programas del PGA está a cargo del Comitente (Estado Nacional), otros de la UTE Represas Patagonia (contratista) y otros son de responsabilidad compartida entre ambos. En los casos correspondientes, el trabajo se articula con las autoridades respectivas de la provincia de Santa Cruz, con distintas instituciones del sistema científico argentino o con otros organismos del Estado Nacional o provincial. 
                         <br />
                         <br />
-                        El alcance territorial de los programas y subprogramas depende de cada uno en particular:
-                        algunos se ejecutan en zona de obra, otros en áreas específicas (por ejemplo, el programa de
-                        macá tobiano realiza campañas en zonas de cría y de invernada: lagunas de la meseta central y
-                        estuario), otros a nivel de cuenca y algunos –en general, los del área social- a nivel
-                        provincial.
+El alcance territorial de los programas y subprogramas depende de cada uno en particular: algunos se ejecutan en zona de obra, otros en áreas específicas (por ejemplo, el programa de macá tobiano realiza campañas en zonas de cría y de invernada: lagunas de la meseta central y estuario), otros a nivel de cuenca y algunos –en general, los del área social- a nivel provincial.
                         <br />
                         <br />
                     </p>
@@ -172,7 +149,7 @@
 
         <div class="col-md-12 section-b porarea">
             <a id="porarea"></a>
-            <h3 style="color: #666;">PROGRAMAS/SUBPROGRAMAS POR &Aacute;REA</h3>
+            <h3 style="color: #666;">BUSCADOR DE PROGRAMAS/SUBPROGRAMAS</h3>
 
             <div class="row" style="padding-left: 2em; padding-right: 2em;">
                 <div class="col-md-12 parrafos">

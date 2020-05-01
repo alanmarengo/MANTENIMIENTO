@@ -15,7 +15,7 @@
 			<a href="./page_proyecto.php">Proyecto - AHRSC</a>
 		</li>
 		<li>
-			<a href="./page_pdga.php">Plan de Gestión Ambiental - PGA</a>
+			<a href="./page_pdga.php">Plan Director de Gestión Ambiental - PDGA</a>
 		</li>
 		<li>
 			<a href="./page_antecedentes.php">Antecedentes y Marco Legal</a>
