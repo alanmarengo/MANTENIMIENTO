@@ -1909,22 +1909,6 @@ function ol_map() {
 		
 		if (nodeState == 0) {
 			
-			$(node).closest(".popup-layer-node").addClass("popup-layer-node-active");
-			
-			$(node).closest(".popup-layer-node").each(function(i,v) {
-				
-				$(v).find(".layer-icon").each(function(j,x) {
-					
-					var srcSource = $(x).children("a").children("img").attr("data-active");
-					
-					$(x).children("a").children("img").attr("src",srcSource);
-					
-				});
-				
-			});
-			
-			$(node).closest(".popup-layer-node").attr("data-state","1");
-			
 			for (var i=0; i<this.vectores.length; i++) {
 				
 				if (i==nodeIndex) {
@@ -1956,6 +1940,22 @@ function ol_map() {
 			});
 			
 			$(node).closest(".popup-layer-node").next(".popup-layer-content").slideDown("fast",function() { scroll.refresh(); });
+			
+			$(node).closest(".popup-layer-node").addClass("popup-layer-node-active");
+			
+			$(node).closest(".popup-layer-node").each(function(i,v) {
+				
+				$(v).find(".layer-icon").each(function(j,x) {
+					
+					var srcSource = $(x).children("a").children("img").attr("data-active");
+					
+					$(x).children("a").children("img").attr("src",srcSource);
+					
+				});
+				
+			});
+			
+			$(node).closest(".popup-layer-node").attr("data-state","1");
 		
 		}else{
 			
