@@ -762,7 +762,7 @@ function ol_map() {
 		
 		if (entered) {
 			
-			/*$("#map-details").empty();
+			$("#map-details").empty();
 			
 			var req = $.ajax({
 				
@@ -771,12 +771,14 @@ function ol_map() {
 				data:{
 					results:results
 				},
-				url:"./php/get-layer-info-pdga.php",
+				url:"./php/get-layer-info-pdga-highlight.php",
 				success:function(d) {}
 				
 			});
 			
-			document.getElementById("map-details").innerHTML = req.responseText;
+			console.log(req.responseText);
+			
+			/*document.getElementById("map-details").innerHTML = req.responseText;
 			
 			scroll.refresh();*/
 	
