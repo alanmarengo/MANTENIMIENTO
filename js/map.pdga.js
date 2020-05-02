@@ -280,6 +280,7 @@ function ol_map() {
 			})
 		});
 		
+		this.vectores = [vector_873,vector_875,vector_937,vector_938,vector_939];
 		
 		this.baselayers.collection = [
 			this.baselayers.openstreets,
@@ -776,7 +777,7 @@ function ol_map() {
 				
 			});
 			
-			console.log(req.responseText);
+			console.log(this.vectores);
 			
 			/*document.getElementById("map-details").innerHTML = req.responseText;
 			
