@@ -777,7 +777,19 @@ function ol_map() {
 				
 			});
 			
-			console.log(this.vectores);
+			for (var i=0; i<this.vectores.length; i++) {
+				
+				if (i==req.responseText) {
+					
+					this.vectores[i].setVisible(true);
+					
+				}else{
+					
+					this.vectores[i].setVisible(false);
+					
+				}
+				
+			}
 			
 			/*document.getElementById("map-details").innerHTML = req.responseText;
 			
