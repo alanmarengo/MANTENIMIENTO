@@ -1939,7 +1939,22 @@ function ol_map() {
 				
 			}
 			
-			$(".popup-layer-content").not($(node).closest(".popup-layer-node").next(".popup-layer-content")).slideUp("fast",function() { scroll.refresh(); });
+			$(".popup-layer-node").not(node).each(function(i,v) {
+				
+				$(v).attr("data-state",0);
+				
+				$(v).find(".layer-icon").each(function(j,x) {
+					
+					var srcSource = $(x).children("a").children("img").attr("data-inactive");
+					
+					$(x).children("a").children("img").attr("src",srcSource);
+					
+				});
+				
+				$(v).next(".popup-layer-content")).slideUp("fast",function() { scroll.refresh(); });
+				
+			});
+			
 			$(node).closest(".popup-layer-node").next(".popup-layer-content").slideDown("fast",function() { scroll.refresh(); });
 		
 		}else{
