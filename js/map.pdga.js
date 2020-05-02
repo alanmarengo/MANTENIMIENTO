@@ -777,7 +777,9 @@ function ol_map() {
 				
 			});
 			
-			for (var i=0; i<this.vectores.length; i++) {
+			$(".popup-layer-node[data-index=" + req.responseText + "][data-state=0]").find(".layer-icon").trigger("click");
+			
+			/*for (var i=0; i<this.vectores.length; i++) {
 				
 				if (i==req.responseText) {
 					
@@ -789,7 +791,7 @@ function ol_map() {
 					
 				}
 				
-			}
+			}*/
 			
 			/*document.getElementById("map-details").innerHTML = req.responseText;
 			
