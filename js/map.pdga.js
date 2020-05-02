@@ -1951,7 +1951,7 @@ function ol_map() {
 					
 				});
 				
-				$(v).next(".popup-layer-content")).slideUp("fast",function() { scroll.refresh(); });
+				$(v).next(".popup-layer-content").slideUp("fast",function() { scroll.refresh(); });
 				
 			});
 			
