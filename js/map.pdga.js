@@ -39,8 +39,6 @@ function ol_map() {
 		
 		document.getElementById("map-details").innerHTML = req.responseText;
 		
-		scroll.refresh();
-		
 		this.baselayers.openstreets = new ol.layer.Tile({
 			name: 'openstreets',
 			title: 'OSM',
