@@ -22,6 +22,32 @@ for ($i=0; $i<sizeof($results); $i++) {
 
 $layers_arr = array_unique($layers_arr);
 
-var_dump($layers_arr);
+$defined = false;
+
+if (in_array("ahrsc:vp_geo_hihgr_estuario_otr1",$layers_arr)) {
+	
+	die 4; // 939
+	
+}
+
+if (in_array("ahrsc:polig_obra_pga",$layers_arr)) {
+	
+	die 1; // 875
+	
+}
+
+if (in_array("ahrsc:vp_geo_hihgr_cuencamediabajarsc_otr1",$layers_arr)) {
+	
+	die 3; // 938
+	
+}
+
+if (in_array("ahrsc:vp_geo_hihgr_cuencaaltarsc_otr1",$layers_arr)) {
+	
+	die 2; // 937
+	
+}
+
+die 0; // 873
 
 ?>
