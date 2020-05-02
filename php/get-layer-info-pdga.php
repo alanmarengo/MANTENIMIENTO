@@ -11,7 +11,7 @@ $layer_desc_arr = array();
 $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 	
 $conn = pg_connect($string_conn);
-
+/*
 for ($i=0; $i<sizeof($results); $i++) {
 	
 	$sep = explode(";",$results[$i]);
@@ -25,7 +25,7 @@ for ($i=0; $i<sizeof($results); $i++) {
 	array_push($layer_id_arr,$layer_id);
 	array_push($layer_desc_arr,$layer_desc);
 	
-}
+}*/
 
 $layer_id_arr = array(873,875,937,938,939);
 

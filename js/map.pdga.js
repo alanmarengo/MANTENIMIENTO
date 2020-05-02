@@ -1,5 +1,21 @@
 function ol_map() {
 
+	var req = $.ajax({
+				
+		async:false,
+		type:"POST",
+		data:{
+			//results:results
+		},
+		url:"./php/get-layer-info-pdga.php",
+		success:function(d) {}
+		
+	});
+	
+	document.getElementById("map-details").innerHTML = req.responseText;
+	
+	scroll.refresh();
+
 	this.container = {};
 	this.nav = {};
 	this.panel = {};
@@ -748,7 +764,7 @@ function ol_map() {
 		
 		if (entered) {
 			
-			$("#map-details").empty();
+			/*$("#map-details").empty();
 			
 			var req = $.ajax({
 				
@@ -764,7 +780,7 @@ function ol_map() {
 			
 			document.getElementById("map-details").innerHTML = req.responseText;
 			
-			scroll.refresh();
+			scroll.refresh();*/
 	
 		}
 		
