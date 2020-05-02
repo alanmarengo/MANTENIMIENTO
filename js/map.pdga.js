@@ -1937,6 +1937,8 @@ function ol_map() {
 				
 				$(v).next(".popup-layer-content").slideUp("fast",function() { scroll.refresh(); });
 				
+				$(v).removeClass("popup-layer-node-active");
+				
 			});
 			
 			$(node).closest(".popup-layer-node").next(".popup-layer-content").slideDown("fast",function() { scroll.refresh(); });
