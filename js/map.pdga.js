@@ -777,7 +777,7 @@ function ol_map() {
 				
 			});
 			
-			$(".popup-layer-node[data-index=" + req.responseText + "][data-state=0]").find(".layer-icon").trigger("click");
+			$(".popup-layer-node[data-index=" + req.responseText + "][data-state=0]").find(".layer-icon").children("a").first().trigger("click");
 			
 			/*for (var i=0; i<this.vectores.length; i++) {
 				
