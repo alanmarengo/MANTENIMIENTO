@@ -27,7 +27,7 @@ for ($i=0; $i<sizeof($results); $i++) {
 	
 }
 
-$layer_id_arr = array_unique($layer_id_arr);
+$layer_id_arr = array(873,875,937,938,939);
 
 $layer_id_arr = array_values($layer_id_arr);
 
