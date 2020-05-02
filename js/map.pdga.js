@@ -763,7 +763,7 @@ function ol_map() {
 		
 		if (entered) {
 			
-			$("#map-details").empty();
+			//$("#map-details").empty();
 			
 			var req = $.ajax({
 				
@@ -1904,6 +1904,8 @@ function ol_map() {
 	this.map.togglePopupLayers = function(node) {
 		
 		var nodeState = $(node).closest(".popup-layer-node").attr("data-state");
+		var nodeLayerId = $(node).closest(".popup-layer-node").attr("data-layer");
+		var nodeIndex = $(node).closest(".popup-layer-node").attr("data-index");
 		
 		if (nodeState == 0) {
 			
@@ -1922,6 +1924,23 @@ function ol_map() {
 			});
 			
 			$(node).closest(".popup-layer-node").attr("data-state","1");
+			
+			for (var i=0; i<this.vectores.length; i++) {
+				
+				if (i==nodeIndex) {
+					
+					this.vectores[i].setVisible(true);
+					
+				}else{
+					
+					this.vectores[i].setVisible(false);
+					
+				}
+				
+			}
+			
+			$(".popup-layer-content").not($(node).closest(".popup-layer-node").next(".popup-layer-content")).slideUp("fast",function() { scroll.refresh(); });
+			$(node).closest(".popup-layer-node").next(".popup-layer-content").slideDown("fast",function() { scroll.refresh(); });
 		
 		}else{
 			
@@ -1941,9 +1960,11 @@ function ol_map() {
 			
 			$(node).closest(".popup-layer-node").attr("data-state","0");
 			
-		}
-		
-		$(node).closest(".popup-layer-node").next(".popup-layer-content").slideToggle("fast",function() { scroll.refresh(); });
+			this.vectores[nodeIndex].setVisible(false);
+			
+			$(node).closest(".popup-layer-node").next(".popup-layer-content").slideUp("fast",function() { scroll.refresh(); });
+			
+		}		
 		
 	}
 	

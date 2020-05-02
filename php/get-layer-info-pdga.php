@@ -29,7 +29,7 @@ for ($i=0; $i<sizeof($results); $i++) {
 
 $layer_id_arr = array(873,875,937,938,939);
 
-$layer_id_arr = array_values($layer_id_arr);
+//$layer_id_arr = array_values($layer_id_arr);
 
 $html = "";
 
@@ -60,7 +60,7 @@ for ($i=0; $i<sizeof($layer_id_arr); $i++) {
 						
 	}
 	
-	$html .= "<div class=\"popup-layer-node jus-between\" data-state=\"0\">";
+	$html .= "<div class=\"popup-layer-node jus-between\" data-state=\"0\" data-layer=\"".$layer_id."\" data-index=\"".$i."\">";
 		$html .= "<div class=\"popup-layer-node-icons ml-15\">";
 			$html .= "<div class=\"layer-icon\" title=\"Ver/Ocultar\">";
 				$html .= "<a href=\"#\" onclick=\"geomap.map.togglePopupLayers(this);\"><img src=\"./images/geovisor/icons/popup-layer-closed.png\" data-inactive=\"./images/geovisor/icons/popup-layer-closed.png\"
