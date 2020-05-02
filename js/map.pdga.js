@@ -1,21 +1,5 @@
 function ol_map() {
 
-	var req = $.ajax({
-				
-		async:false,
-		type:"POST",
-		data:{
-			//results:results
-		},
-		url:"./php/get-layer-info-pdga.php",
-		success:function(d) {}
-		
-	});
-	
-	document.getElementById("map-details").innerHTML = req.responseText;
-	
-	scroll.refresh();
-
 	this.container = {};
 	this.nav = {};
 	this.panel = {};
@@ -40,6 +24,22 @@ function ol_map() {
 	// MAP SCRIPTS 
 	
 	this.map.create = function() {
+
+		var req = $.ajax({
+					
+			async:false,
+			type:"POST",
+			data:{
+				//results:results
+			},
+			url:"./php/get-layer-info-pdga.php",
+			success:function(d) {}
+			
+		});
+		
+		document.getElementById("map-details").innerHTML = req.responseText;
+		
+		scroll.refresh();
 		
 		this.baselayers.openstreets = new ol.layer.Tile({
 			name: 'openstreets',
