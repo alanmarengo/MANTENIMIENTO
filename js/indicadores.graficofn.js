@@ -1153,3 +1153,77 @@ function draw_grafico_12(container,config) { // PIE WITH DRILLDOWN
 	container.innerHTML += "<h5 style='font-size:1vw; margin:10px 0;'>"+config.titulo+"</h5>";
 
 }
+
+function draw_grafico_13(container,config) { // PIE WITH DRILLDOWN
+	
+	Highcharts.chart(container, {
+		credits: { enabled:false },
+		chart: {
+			plotBackgroundColor: null,
+			plotBorderWidth: null,
+			plotShadow: false,
+			type: 'pie'
+		},
+		title: {
+			text: ''
+		},
+		subtitle: {
+			text: config.desc
+		},
+		tooltip: {
+			pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+		},
+		accessibility: {
+			point: {
+				valueSuffix: '%'
+			}
+		},
+		plotOptions: {
+			pie: {
+				allowPointSelect: true,
+				cursor: 'pointer',
+				dataLabels: {
+					enabled: false
+				},
+				showInLegend: true
+			}
+		},
+
+		series:[{
+            name: config.titulo,
+            colorByPoint: true,
+			data:config.data
+		}],
+		responsive: {
+			rules: [{
+				condition: {
+					maxWidth: 300
+				},
+				chartOptions: {
+					legend: {
+						align: 'center',
+						verticalAlign: 'bottom',
+						layout: 'horizontal'
+					},
+					yAxis: {
+						labels: {
+							align: 'left',
+							x: 0,
+							y: -5
+						},
+						title: {
+							text: ''
+						}
+					},
+					subtitle: {
+						text: ''
+					},
+					credits: {
+						enabled: false
+					}
+				}
+			}]
+		}
+	});
+
+}
