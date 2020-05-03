@@ -28,6 +28,13 @@ for ($i=0; $i<sizeof($results); $i++) {
 }*/
 
 $layer_id_arr = array(873,875,937,938,939);
+$layer_title_arr = array(
+	"Provincia de Santa Cruz",
+	"Polígonos de Obra de los AHRSC",
+	"Cuenca alta Río Santa Cruz",
+	"Cuenca media y baja Río Santa Cruz",
+	"Estuario Río Santa Cruz"
+);
 
 //$layer_id_arr = array_values($layer_id_arr);
 
@@ -44,7 +51,7 @@ for ($i=0; $i<sizeof($layer_id_arr); $i++) {
 	$layer_id = $data["layer_id"];
 	$layer_desc = $data["layer_desc"];
 	
-	$query_string2 = "SELECT * FROM ambiente.gp_programas WHERE layer_id = " . $layer_id;
+	$query_string2 = "SELECT * FROM mod_catalogo.vw_visor_pg_programas WHERE layer_id = " . $layer_id;
 	
 	$query2 = pg_query($conn,$query_string2);
 	
@@ -67,7 +74,7 @@ for ($i=0; $i<sizeof($layer_id_arr); $i++) {
 				data-active=\"./images/geovisor/icons/popup-layer-opened.png\"></a>";
 			$html .= "</div>";
 		$html .= "</div>";
-		$html .= "<a href=\"#\" class=\"layer-label\" style=\"cursor:text\" alt=\"" . $layer_desc . "\">" . $layer_desc . "</a>";
+		$html .= "<a href=\"#\" class=\"layer-label\" style=\"cursor:text\" alt=\"" . $layer_title_arr[$i] . "\">" . $layer_title_arr[$i] . "</a>";
 	$html .= "</div>";
 	
 	$html .= "<div style=\"display:none;\" class=\"popup-layer-content\">";	
