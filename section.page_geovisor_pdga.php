@@ -13,7 +13,7 @@
 		
 	</div>
 	
-	<div class="col-md-6 col-lg-6 section-b h100p jump-scroll p0" style="background:white;">
+	<div class="col-md-6 col-lg-6 section-b h100p jump-scroll jump-posrel p0" style="background:white;">
 
 		<div id="map-details">
 		

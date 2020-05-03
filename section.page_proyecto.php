@@ -40,7 +40,7 @@ A diferencia de otros proyectos hidroeléctricos, los embalses no requieren reas
         <!---------------------------------------------->
         <div class="col-md-12 section-b">
             <a id="optimizacion"></a>
-            <h3 style="margin-bottom: 1em; color: #333;">VISOR DEL MODELO 2D</h3>
+            <h3 style="margin-bottom: 1em; color: #333;">AHRSC y obras complementarias</h3>
 
             <div class="embed-responsive" style="padding-top: 40%;">
                 <iframe src="./geovisor.combo.php" frameborder="0"></iframe>
