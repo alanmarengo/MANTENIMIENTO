@@ -397,12 +397,15 @@
 .gfi-info-table th {
 	
 	padding-left:20px;
+	font-size: 14px;
 	
 }
 
 .gfi-info-table td {
 	
 	padding-left:40px;
+	font-size: 12px;
+	line-height: 24px;
 	
 }
 

@@ -5,7 +5,7 @@
 	<!---------------------------------------------->
 	<div class="col-md-6 col-lg-6 section-b h100p p0">
 
-		<div id="map">
+		<div id="map" style="cursor:pointer;">
 		
 		
 			
