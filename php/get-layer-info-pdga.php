@@ -51,7 +51,7 @@ for ($i=0; $i<sizeof($layer_id_arr); $i++) {
 	$layer_id = $data["layer_id"];
 	$layer_desc = $data["layer_desc"];
 	
-	$query_string2 = "SELECT * FROM mod_catalogo.vw_visor_pg_programas WHERE layer_id = " . $layer_id;
+	$query_string2 = "SELECT * FROM mod_catalogo.vw_visor_pg_programas WHERE layer_id = " . $layer_id . " ORDER BY programa ASC";
 	
 	$query2 = pg_query($conn,$query_string2);
 	
