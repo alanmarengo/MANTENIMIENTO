@@ -301,6 +301,7 @@ function ol_map() {
 			vector_939
 		];
 		
+		$("#prog-wrapper").css("height",$("#prog-wrapper").height()+"px");
 		
 		///////document.getElementById("baselayer-default-radio").click();
 		
