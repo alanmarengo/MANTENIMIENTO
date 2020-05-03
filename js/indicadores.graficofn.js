@@ -11,7 +11,7 @@ function draw_grafico_1(container,config) {
 			description: config.desc
 		},
 		title: {
-			text: null
+			text: ''
 		},
 		subtitle: {
 			text: config.desc
@@ -71,11 +71,11 @@ function draw_grafico_1(container,config) {
 							y: -5
 						},
 						title: {
-							text: null
+							text: ''
 						}
 					},
 					subtitle: {
-						text: null
+						text: ''
 					},
 					credits: {
 						enabled: false
@@ -97,7 +97,7 @@ function draw_grafico_2(container,config) {
 			renderTo:'chart'
 		},
 		title: {
-			text: null
+			text: ''
 		},
 		xAxis: {
 			categories: config.etiquetas
@@ -135,11 +135,11 @@ function draw_grafico_2(container,config) {
 							y: -5
 						},
 						title: {
-							text: null
+							text: ''
 						}
 					},
 					subtitle: {
-						text: null
+						text: ''
 					},
 					credits: {
 						enabled: false
@@ -201,7 +201,7 @@ function draw_grafico_3(container,config) { // BUBBLE CHART
 			renderTo:'chart'
 		},
 		title: {
-			text: null
+			text: ''
 		},
 		tooltip: {
 			useHTML: true,
@@ -252,11 +252,11 @@ function draw_grafico_3(container,config) { // BUBBLE CHART
 							y: -5
 						},
 						title: {
-							text: null
+							text: ''
 						}
 					},
 					subtitle: {
-						text: null
+						text: ''
 					},
 					credits: {
 						enabled: false
@@ -320,7 +320,7 @@ function draw_grafico_4(container,config) { // BUBBLE CHART
 			renderTo:'chart'
 		},
 		title: {
-			text: null
+			text: ''
 		},
 		tooltip: {
 			useHTML: true,
@@ -374,11 +374,11 @@ function draw_grafico_4(container,config) { // BUBBLE CHART
 							y: -5
 						},
 						title: {
-							text: null
+							text: ''
 						}
 					},
 					subtitle: {
-						text: null
+						text: ''
 					},
 					credits: {
 						enabled: false
@@ -447,7 +447,7 @@ function draw_grafico_5(container,config) { // BASIC COLUMNS
 			renderTo:'chart'
 		},
 		title: {
-			text: null
+			text: ''
 		},
 		subtitle: {
 			text: config.desc
@@ -495,11 +495,11 @@ function draw_grafico_5(container,config) { // BASIC COLUMNS
 							y: -5
 						},
 						title: {
-							text: null
+							text: ''
 						}
 					},
 					subtitle: {
-						text: null
+						text: ''
 					},
 					credits: {
 						enabled: false
@@ -569,7 +569,7 @@ function draw_grafico_6(container,config) { // FIXED PLACEMENT
 			renderTo:'chart'
 		},
 		title: {
-			text: null
+			text: ''
 		},
 		xAxis: {
 			categories: labels
@@ -617,11 +617,11 @@ function draw_grafico_6(container,config) { // FIXED PLACEMENT
 							y: -5
 						},
 						title: {
-							text: null
+							text: ''
 						}
 					},
 					subtitle: {
-						text: null
+						text: ''
 					},
 					credits: {
 						enabled: false
@@ -769,11 +769,11 @@ function draw_grafico_7(container,config) { // FIXED PLACEMENT
 							y: -5
 						},
 						title: {
-							text: null
+							text: ''
 						}
 					},
 					subtitle: {
-						text: null
+						text: ''
 					},
 					credits: {
 						enabled: false
@@ -910,7 +910,7 @@ function draw_grafico_9(container,config) { // BASIC LINE
 		
 		credits: { enabled:false },
 		title: {
-			text: null
+			text: ''
 		},
 
 		subtitle: {
@@ -956,11 +956,11 @@ function draw_grafico_9(container,config) { // BASIC LINE
 							y: -5
 						},
 						title: {
-							text: null
+							text: ''
 						}
 					},
 					subtitle: {
-						text: null
+						text: ''
 					},
 					credits: {
 						enabled: false
@@ -1011,7 +1011,7 @@ function draw_grafico_10(container,config) { // SEMI CIRCLE DONUT
 			renderTo:'chart'
 		},
 		title: {
-			text: null,
+			text: '',
 			/*text: config.titulo,*/
 			align: 'center',
 			verticalAlign: 'middle',
@@ -1060,11 +1060,11 @@ function draw_grafico_10(container,config) { // SEMI CIRCLE DONUT
 							y: -5
 						},
 						title: {
-							text: null
+							text: ''
 						}
 					},
 					subtitle: {
-						text: null
+						text: ''
 					},
 					credits: {
 						enabled: false
@@ -1086,7 +1086,7 @@ function draw_grafico_11(container,config) { // PIE WITH DRILLDOWN
 			renderTo:'chart'
 		},
 		title: {
-			text: null
+			text: ''
 		},
 		subtitle: {
 			text: config.desc
@@ -1128,11 +1128,11 @@ function draw_grafico_11(container,config) { // PIE WITH DRILLDOWN
 							y: -5
 						},
 						title: {
-							text: null
+							text: ''
 						}
 					},
 					subtitle: {
-						text: null
+						text: ''
 					},
 					credits: {
 						enabled: false
