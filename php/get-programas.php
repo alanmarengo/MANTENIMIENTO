@@ -68,7 +68,8 @@ while($r = pg_fetch_assoc($query)) {
 		$json .= "\"Instituciones intervinientes\":\"" . $r["instituciones_interv"] . "\",";
 		$json .= "\"Responsable&nbsp;del&nbsp;estudio&nbsp;más&nbsp;reciente\":\"" . $r["respons_nom"] . "\",";
 		$json .= "\"Estado\":\"" . $r["estado"] . "\",";
-		$json .= "\"Descripción\":\"" . $r["descripcion"] . "\"";
+		$json .= "\"Descripción\":\"" . $r["descripcion"] . "\",";
+		$json .= "\"Recursos Asociados\":\"<a href=\"" . $r["recursos_asociados"] . "\">Ver</a>\"";
 	$json .= "}";
 	$json .= ",\"subprogramas\":[";
 	
