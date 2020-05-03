@@ -4,7 +4,7 @@
     <div class="row">
         <div class="section-sticky">
             <div class="col-md-12 page-title">
-                Plan director de gestión ambiental - PDGA
+                Plan Director de Gestión Ambiental - PDGA
             </div>
 
             <div class="col-md-12 top-buttons">
@@ -29,7 +29,7 @@
 
             <div class="row" style="padding-left: 2em; padding-right: 2em;">
                 <div class="col-md-12" style="margin-bottom: 50px; font-size: 16px;">
-                    EL Plan de Gestión Ambiental (PGA) planifica y ejecuta las actividades tendientes a darle sostenibilidad al proyecto en sus distintas etapas, organiza las medidas y las recomendaciones que surgen del <a href="/page_antecedentes.php">Estudio de Impacto Ambiental</a> para mitigar los impactos sobre el medio físico, biótico y socioeconómico, y potenciar las oportunidades.
+                    EL Plan de Gestión Ambiental (PGA) planifica y ejecuta las actividades tendientes a darle sostenibilidad al proyecto en sus distintas etapas, organiza las medidas y las recomendaciones que surgen del <a target="_blank" href="/page_antecedentes.php">Estudio de Impacto Ambiental</a> para mitigar los impactos sobre el medio físico, biótico y socioeconómico, y potenciar las oportunidades.
                 </div>
 
                 <img id="uxCaminito" src="./images/pdga_temas.jpg" usemap="#uxCaminitoMap"
@@ -163,7 +163,7 @@ El alcance territorial de los programas y subprogramas depende de cada uno en pa
     <div class="modal fade" id="uxFicha" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-body">
+                <div class="modal-body" style="min-height: 500px;">
                     <div class="row">
                         <div class="col-md-12" style="padding: 5px 40px;">
                             <div class="row" style="border-bottom: solid 1px #ccc; font-size: 14px;">
@@ -263,7 +263,13 @@ $(document).ready(function() {
 
             $('#uxFichaTitulo').html(item.tema_nombre);
             $('#uxPopTexto').html(item.tema_desc);
-            $('#uxVerFicha').attr('href', item.tema_ficha_path)
+
+            if(item.tema_ficha_path != '') {
+                $('#uxVerFicha').attr('href', item.tema_ficha_path)
+            }
+            else {
+                $('#uxVerFicha').removeAttr('href')
+            }
             $('#uxVerRecursos').attr('href', item.tema_recursos_asociados)
             $('#uxMapa').attr('src', item.tema_minigeovisor)
 
@@ -287,7 +293,8 @@ $(document).ready(function() {
             });
 
             loadProgramasFichas(item.tema_id, '#uxFichaProgramas');
-
+            
+            $('#descripcion-tab').tab('show');
             $('#uxFicha').modal('show');
         });
     }
@@ -381,18 +388,21 @@ $(document).ready(function() {
                 });
             }
         }
+
+        let esFicha = !item.subprogramas || item.subprogramas.length == 0;
+
         htmlItem += `
                     </div>
                     <div class="col-md-1 text-right" style="font-size: 1.6em;">
-                        <i id="flecha_${item.id}" class="fa fa-chevron-down"></i>
+                        <i id="flecha_${item.id}" class="fa fa-chevron-${esFicha ? 'down' : 'up'}"></i>
                     </div>
                 </div>
         `
 
         htmlItem +=
-            `<div class="collapse panel-collapse" data-flecha="flecha_${item.id}" id="${item.id}" style="margin-top: 8px;">`
+            `<div class="collapse ${esFicha ? '' : 'show'} panel-collapse" data-flecha="flecha_${item.id}" id="${item.id}" style="margin-top: 8px;">`
 
-        if (!item.subprogramas || item.subprogramas.length == 0)
+        if (esFicha)
         {
             // DATA
             if (item.data) {
