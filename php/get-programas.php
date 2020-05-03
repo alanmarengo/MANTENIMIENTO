@@ -101,7 +101,17 @@ while($r = pg_fetch_assoc($query)) {
 			$json .= "\"Instituciones intervinientes\":\"" . $r["instituciones_interv"] . "\",";
 			$json .= "\"Responsable&nbsp;del&nbsp;estudio&nbsp;más&nbsp;reciente\":\"" . $r["respons_nom"] . "\",";
 			$json .= "\"Estado\":\"" . $r["estado"] . "\",";
-			$json .= "\"Descripción\":\"" . $r["descripcion"] . "\"";
+			$json .= "\"Descripción\":\"" . $r["descripcion"] . "\",";
+			
+
+			if ($r["recursos_asociados"]!='NULL')
+			{
+				$json .= "\"Recursos Asociados\":\"<a href='" . $r["recursos_asociados"] . "' target='_blank' ><img height='24' width='24' src='./images/icono-mediateca-relleno.png' alt='Ver recursos asociados'/> </a> \"";
+			}
+			else
+			{
+				$json .= "\"Recursos Asociados\":\"Sin recursos asociados.\"";
+			};
 			//$json .= "\"Rubro\":\"" . $sp["rubro"] . "\",";
 			//$json .= "\"Categoría\":\"" . $sp["categoria"] . "\",";
 			//$json .= "\"Etapa\":\"" . $sp["etapa"] . "\",";
