@@ -107,6 +107,10 @@ while($r = pg_fetch_assoc($query)) {
 			if ($r["recursos_asociados"]!='NULL')
 			{
 				$json .= "\"Recursos Asociados\":\"<a href='" . $r["recursos_asociados"] . "' target='_blank' ><img height='24' width='24' src='./images/icono-mediateca-relleno.png' alt='Ver recursos asociados'/> </a> \"";
+			}
+			else
+			{
+				$json .= "\"Recursos Asociados\":\"Sin recursos asociados.\"";
 			};
 			//$json .= "\"Rubro\":\"" . $sp["rubro"] . "\",";
 			//$json .= "\"Categoría\":\"" . $sp["categoria"] . "\",";
