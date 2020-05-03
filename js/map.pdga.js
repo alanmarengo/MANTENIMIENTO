@@ -798,7 +798,7 @@ function ol_map() {
 			scroll.refresh();*/
 	
 		}
-		
+		scroll.refresh();
 		//$("#popup-results").empty();
 		
 	}

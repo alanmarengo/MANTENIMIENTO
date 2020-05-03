@@ -6,11 +6,12 @@ $(document).ready(function() {
 		theme: 'tooltipster-default',
 		trigger: 'hover'
 	});
+	
+	scroll = new Jump.scroll();
 			
 	geomap = new ol_map();	
 	geomap.map.create();
 	
-	scroll = new Jump.scroll();
 	scroll.refresh();
 	
 });
