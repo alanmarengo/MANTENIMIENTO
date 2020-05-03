@@ -31,6 +31,8 @@ function loadComboObra() {
 			
 		});
 		
+		scroll.refresh();
+		
 	}
 	
 function loadComboComponente() {
@@ -167,6 +169,8 @@ function loadComboComponente() {
 	
 	$("#uxCapa").selectpicker("refresh");
 	
+	scroll.refresh();
+	
 }
 
 function loadLabels() {
@@ -237,7 +241,6 @@ $(document).ready(function() {
 	geomap.map.createLayers();
 	
 	scroll = new Jump.scroll();
-	scroll.refresh();
 		
 	jwindow = new Jump.window();
 	jwindow.initialize();
@@ -311,5 +314,7 @@ $(document).ready(function() {
 		
 	$("#uxVisor").val(0);
 	$("#uxVisor").selectpicker("refresh");
+	
+	scroll.refresh();
 
 });

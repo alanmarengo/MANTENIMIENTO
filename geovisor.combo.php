@@ -29,6 +29,8 @@
 		width:340px;
 		font-size:12px;
 		display:none;
+		max-height: 300px;
+		overflow-y: auto;
 
 	}
 	

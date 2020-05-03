@@ -12,7 +12,7 @@
                     <select id="uxVisor" class="selectpicker" data-width="300">
                        <!--<option value="">LA BARRANCOSA</option>-->
                     </select>
-                    <div id="uxCapa">
+                    <div id="uxCapa" class="jump-scroll">
                         <!--<option value="">ESCALA DE PECES</option>-->
                     </div>
                 </div>
