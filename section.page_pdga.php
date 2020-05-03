@@ -4,7 +4,7 @@
     <div class="row">
         <div class="section-sticky">
             <div class="col-md-12 page-title">
-                Plan director de gestión ambiental - PDGA
+                Plan Director de Gestión Ambiental - PDGA
             </div>
 
             <div class="col-md-12 top-buttons">
