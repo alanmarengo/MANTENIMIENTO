@@ -104,7 +104,7 @@ while($r = pg_fetch_assoc($query)) {
 			$json .= "\"Descripción\":\"" . $r["descripcion"] . "\",";
 			
 
-			if ($r["recursos_asociados"]!='')
+			if ($r["recursos_asociados"]!='NULL')
 			{
 				$json .= "\"Recursos Asociados\":\"<a href='" . $r["recursos_asociados"] . "' target='_blank' ><img height='24' width='24' src='./images/icono-mediateca-relleno.png' alt='Ver recursos asociados'/> </a> \"";
 			};
