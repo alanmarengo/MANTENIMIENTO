@@ -29,10 +29,10 @@ for ($i=0; $i<sizeof($results); $i++) {
 
 $layer_id_arr = array(873,875,937,938,939);
 $layer_title_arr = array(
-	"Provincia de Santa Cruz",
-	"Polígonos de Obra de los AHRSC",
-	"Cuenca alta Río Santa Cruz",
-	"Cuenca media y baja Río Santa Cruz",
+	"Provincia Santa Cruz",
+	"Áreas De Obra De Los Aprovechamientos Hidroeléctricos Del Río Santa Cruz",
+	"Subcuenca Alta Del Río Santa Cruz",
+	"Subcuenca Media Y Baja Del Río Santa Cruz",
 	"Estuario Río Santa Cruz"
 );
 
