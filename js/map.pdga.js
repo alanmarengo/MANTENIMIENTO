@@ -305,7 +305,7 @@ function ol_map() {
 		///////document.getElementById("baselayer-default-radio").click();
 		
 		this.ol_object = new ol.Map({
-			interactions: ol.interaction.defaults({
+			/*interactions: ol.interaction.defaults({
 				doubleClickZoom: false,
 				dragAndDrop: false,
 				dragPan: false,
@@ -314,10 +314,10 @@ function ol_map() {
 				mouseWheelZoom: false,
 				pointer: false,
 				select: false
-			}),
+			}),*/
 			layers:this.baselayers.collection,
 			target: 'map',
-			extent: [-8743435.457752563,-7463770.851212183,-6782265.669620513,-5626227.81190221],
+			extent: [-8740625.758915698,-7216517.353568012,-6779455.970783647,-5378974.314258039],
 			controls: [],
 			view: new ol.View({
 				center: [-7176058.888636417,-4680928.505993671],
@@ -355,10 +355,10 @@ function ol_map() {
 		
 		var js = {
 			
-			minx:-8743435.457752563,
-			miny:-7463770.851212183,
-			maxx:-6782265.669620513,
-			maxy:-5626227.81190221
+			minx:-8740625.758915698,
+			miny:-7216517.353568012,
+			maxx:-6779455.970783647,
+			maxy:-5378974.314258039
 			
 		}
 		
