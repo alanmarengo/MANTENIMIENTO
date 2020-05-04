@@ -44,8 +44,8 @@ function loadComboComponente() {
 	var mapLayers = geomap.map.ol_object.getLayers().getArray();
 	console.log(mapLayers);
 	for (var i=0; i<mapLayers.length; i++) {
-		
-		if (mapLayers[i].get('name') != "google_base") {
+		console.log(mapLayers[i].get('name'));
+		if ((mapLayers[i].get('name') != "google_base") && (mapLayers[i].get('name') != "bing_aerials") && (mapLayers[i].get('name') != "opentopo")) {
 		
 			geomap.map.ol_object.removeLayer(mapLayers[i]);
 		
