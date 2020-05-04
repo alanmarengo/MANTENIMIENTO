@@ -149,7 +149,9 @@ function ol_map() {
 		
 		this.ol_object.on("movestart",function(evt) {
 			
-			var coord = ol.proj.transform(this.lastClicked,'EPSG:3857', 'EPSG:4326');
+			var pos4326 = ol.proj.transform(this.lastClicked,'EPSG:3857', 'EPSG:4326');
+			
+			var coord = String(pos4326).split(",");
 			
 			var pixel = this.getPixelFromCoordinate(coord);
 			
@@ -159,7 +161,9 @@ function ol_map() {
 		
 		this.ol_object.on("moveend",function(evt) {
 			
-			var coord = ol.proj.transform(this.lastClicked,'EPSG:3857', 'EPSG:4326');
+			var pos4326 = ol.proj.transform(this.lastClicked,'EPSG:3857', 'EPSG:4326');
+			
+			var coord = String(pos4326).split(",");
 			
 			var pixel = this.getPixelFromCoordinate(coord);
 			
