@@ -42,7 +42,7 @@ function loadComboComponente() {
 	$("#uxCapa").empty();
 	
 	var mapLayers = geomap.map.ol_object.getLayers().getArray();
-
+	console.log(mapLayers);
 	for (var i=0; i<mapLayers.length; i++) {
 		
 		if (mapLayers[i].get('name') != "google_base") {
