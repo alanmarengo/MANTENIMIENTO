@@ -144,26 +144,26 @@ function ol_map() {
 		
 		this.baseLayer = this.baselayers.openstreets;
 		
-		this.ol_object.infoEnabled = true;
+		this.ol_object.isDragging = false;
 		
 		this.ol_object.on("movestart",function() {
 			
-			this.infoEnabled = false;
-			alert("start");
+			this.isDragging = true;
 			
 		});
 		
 		this.ol_object.on("moveend",function() {
 			
-			this.infoEnabled = true;
-			alert("end");
+			this.isDragging = false;
 			
 		});
+		
 		this.ol_object.map_object = this;
+		this.ol_object.infoEnabled = true;
 		
 		this.ol_object.addEventListener("pointermove",function(evt) {
 			
-			if (this.infoEnabled ) {
+			if ((this.infoEnabled ) && (!this.isDragging)) {
 			
 				var pos = evt.coordinate;
 				
