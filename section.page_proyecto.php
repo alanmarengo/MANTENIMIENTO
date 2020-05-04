@@ -15,15 +15,22 @@
         </div>
 
         <!---------------------------------------------->
+        <div class="col-md-12 section-a pl-0 pr-0">
+            <img src="./images/proyecto_fondo.jpg" style="width: 100%; height: auto;">
+        </div>
+
+        <!---------------------------------------------->
         <div class="col-md-12 section-a" style="padding-left: 8em; padding-right: 8em;">
             <div class="row">
                 <div class="col-md-6 text-justify">
-                    <img src="./images/proyecto_descripcion.png" style="width: 100%; height: auto;" />
+El río Santa Cruz, de 385 km de extensión, cruza la provincia homónima de oeste a este, partiendo del lago Argentino, a una altitud de 180 metros sobre el nivel del mar hasta su desembocadura en el océano Atlántico. La cuenca de este río tiene una superficie de 25.000 km2.
+<br />
+<br />
+El Santa Cruz tiene el mayor potencial hidroeléctrico aprovechable de los ríos interiores de nuestro país, con particularidades que optimizan su aprovechamiento, como su doble regulación natural. En primer lugar, al ser un río de aporte glaciario, su caudal no depende solo de las precipitaciones estacionales, sino de la radiación solar que fusiona los hielos. En segundo lugar, el lago Argentino hace las veces de un embalse, regulando el caudal del río. Esta regularidad en el comportamiento hidráulico del río hace posible que el diseño operativo de las obras permita evitar la afectación sobre el estuario, ya que la central La Barrancosa descargará en forma permanente el mismo caudal que ingresa al río Santa Cruz desde el lago Argentino.
+<br />
+<br />
                 </div>
                 <div class="col-md-6 text-justify">
-El río Santa Cruz posee el mayor potencial hidroeléctrico aprovechable de los ríos interiores de nuestro país. Tiene particularidades que optimizan su aprovechamiento, como su doble regulación natural. En primer lugar, al ser un río de aporte glaciario, su caudal no depende solo de las precipitaciones estacionales, sino de la radiación solar que fusiona los hielos. En segundo lugar, el lago Argentino hace las veces de un embalse, regulando el caudal del río. Esta regularidad en el comportamiento hidráulico del río hace posible que el diseño operativo de las obras permita evitar la afectación sobre el estuario, ya que la central La Barrancosa descargará en forma permanente el mismo caudal que ingresa al río Santa Cruz desde el lago Argentino.
-<br />
-<br />
 La presa CC estará ubicada en la progresiva 253 del río, a 170 km de la ciudad de El Calafate, mientras que la presa LB estará ubicada en la progresiva 187, a 135 km de la localidad de Comandante Luis Piedra Buena.
 <br />
 <br />
@@ -31,9 +38,13 @@ En su nivel máximo de operación normal (NAON), la presa CC generará un embals
 <br />
 <br />
 Los aprovechamientos fueron modificados respecto del proyecto ejecutivo de licitación (2012), reduciendo la cota en Cóndor Cliff, menor cantidad de turbinas en función de la modificación del diseño operativo en La Barrancosa y una ampliación del caudal de los descargadores de fondo, entre otras modificaciones. 
-A diferencia de otros proyectos hidroeléctricos, los embalses no requieren reasentamiento de población. Ello implica que se reduzcan sensiblemente las complejidades sociales del emprendimiento.                </div>
 <br />
 <br />
+A diferencia de otros proyectos hidroeléctricos, los embalses no requieren reasentamiento de población. Ello implica que se reduzcan sensiblemente las complejidades sociales del emprendimiento.
+<br />
+<br />
+
+                </div>
             </div>
         </div>
 
@@ -62,27 +73,40 @@ A diferencia de otros proyectos hidroeléctricos, los embalses no requieren reas
             <h3 style="margin-bottom: 1em; color: #333;">CÓNDOR CLIFF</h3>
 
             <p style="font-size: 14px;">
-                La presa Cóndor Cliff, de 2.044 m de longitud, es de materiales sueltos con pantalla impermeable de hormigón (o CFRD: concrete face rockfill dam) en su cara aguas arriba. Los materiales provistos por la naturaleza no sufren ningún proceso químico de transformación, siendo tratados y colocados mediante procedimientos de compactación propios de la mecánica de suelos. Intervienen en su composición piedras, gravas, arenas, limos y arcillas.
-                <br />
-                <br />
-                Cuenta con un vertedero (dispositivo de seguridad para evacuar el agua en condiciones extraordinarias) que se ubica sobre la margen izquierda y se compone de cuatro vanos, con una capacidad de descarga total de 4.163 m3/s, que corresponde a un caudal de recurrencia de 10.000 años (es decir que se toma en cuenta una crecida que, estadísticamente, ocurre una vez cada 10.000 años). El vertedero posee compuertas, ataguías para realizar tareas de mantenimiento y un puente de servicio que brinda conectividad a lo largo del coronamiento.
-                <br />
-                <br />
-                La obra de toma, que conduce el agua hasta la casa de máquinas, se compone de cinco módulos de 25 m de ancho, uno para cada turbina. Cada módulo tiene rejas para evitar el ingreso de elementos extraños, compuertas y ataguías de mantenimiento. El caudal que ingresa es conducido hasta las turbinas ubicadas en la casa de máquinas mediante tuberías forzadas de 9 m de diámetro y 214 m de longitud.
-                <br />
-                <br />
-                La casa de máquinas cuenta con cinco turbinas del tipo Francis de 190 MW cada una (950 MW en total), lo que implica una generación media anual de 3.190 GWh, operando en régimen de punta. Es decir, estos equipos tendrán una utilización variable, generando entre seis y ocho horas diarias, atendiendo los periodos de mayor demanda energética. La casa de máquinas incluye una nave de montaje, una nave auxiliar de servicios y un sector de galerías mecánicas y eléctricas para alojar al equipo auxiliar de generación.
-                <br />
-                <br />
-                El descargador de fondo, otro de los dispositivos de seguridad para la evacuación de agua en casos de necesidad, se ubica sobre la margen derecha de la presa y tiene una capacidad para erogar hasta 700 m3/s.
-                <br />
-                <br />
-                Además, la presa posee una escala de peces, ubicada sobre la margen izquierda, cuyo objeto es posibilitar la migración hacia aguas arriba de la fauna íctica. Esta demandará el uso de un caudal de 7 m3/s para su funcionamiento.
-                <br />
-                <br />
+La presa Cóndor Cliff, es de materiales sueltos con pantalla impermeable de hormigón (o CFRD: concrete face rockfill dam) en su cara aguas arriba. Los materiales provistos por la naturaleza no sufren ningún proceso químico de transformación, siendo tratados y colocados mediante procedimientos de compactación propios de la mecánica de suelos. Intervienen en su composición piedras, gravas, arenas, limos y arcillas.
+<br />
+<br />
+
+Cuenta con un vertedero (dispositivo de seguridad para evacuar el agua en condiciones extraordinarias) que se ubica sobre la margen izquierda y se compone de cuatro vanos, con una capacidad de descarga total de 4.163 m3/s, que corresponde a un caudal de recurrencia de 10.000 años (es decir que se toma en cuenta una crecida que, estadísticamente, ocurre una vez cada 10.000 años). El vertedero posee compuertas, ataguías para realizar tareas de mantenimiento y un puente de servicio que brinda conectividad a lo largo del coronamiento.
+<br />
+<br />
+
+La obra de toma, que conduce el agua hasta la casa de máquinas, se compone de cinco módulos de 25 m de ancho, uno para cada turbina. Cada módulo tiene rejas para evitar el ingreso de elementos extraños, compuertas y ataguías de mantenimiento. El caudal que ingresa es conducido hasta las turbinas ubicadas en la casa de máquinas mediante tuberías forzadas de 9 m de diámetro y 214 m de longitud.
+<br />
+<br />
+
+La casa de máquinas cuenta con cinco turbinas del tipo Francis de 190 MW cada una (950 MW en total), lo que implica una generación media anual de 3.190 GWh, operando en régimen de punta. Es decir, estos equipos tendrán una utilización variable, generando entre seis y ocho horas diarias, atendiendo los periodos de mayor demanda energética. La casa de máquinas incluye una nave de montaje, una nave auxiliar de servicios y un sector de galerías mecánicas y eléctricas para alojar al equipo auxiliar de generación.
+<br />
+<br />
+
+La longitud total del cierre, incluyendo presa, vertedero y central/toma, es de 2.044 metros. 
+<br />
+<br />
+
+El descargador de fondo, otro de los dispositivos de seguridad para la evacuación de agua en casos de necesidad, se ubica sobre la margen derecha de la presa y tiene una capacidad para erogar hasta 700 m3/s.
+<br />
+<br />
+
+Además, la presa posee una escala de peces, ubicada sobre la margen izquierda, cuyo objeto es posibilitar la migración hacia aguas arriba de la fauna íctica. Esta demandará el uso de un caudal de 7 m3/s para su funcionamiento.
+<br />
+<br />
             </p>
 
             <div class="row" style="padding-left: 2em; padding-right: 2em;">
+                <div class="col-md-12" style="font-size: 14px; font-weight: bolder; ">
+                    Obra de desv&Iacute;o
+                </div>
+        
                 <div class="col-md-6 parrafos">
                     <div class="video-container">
                         <video style="width: 100%; height: auto;" controls poster="./images/previewCC.png">
@@ -95,9 +119,6 @@ A diferencia de otros proyectos hidroeléctricos, los embalses no requieren reas
                 </div>
                 <div class="col-md-6 parrafos">
                     <p>
-                        <span style="font-size: 14px; font-weight: bolder; color: #267aa3;">OBRA DE DESV&Iacute;O</span>
-                        <br />
-                        <br />
                         Para posibilitar la construcción de la presa, el río será desviado sobre la margen derecha a través de un canal con una capacidad de conducción de 2.100 m3/s, correspondiente a un caudal de recurrencia de 25 años. El desvío es un proceso que se subdivide en cuatro etapas:
                         <br />
                         <br />
@@ -121,29 +142,38 @@ A diferencia de otros proyectos hidroeléctricos, los embalses no requieren reas
 
 
         <!---------------------------------------------->
-        <div class="col-md-12 section-b barrancosa">
+        <div class="col-md-12 section-a barrancosa">
             <a id="barrancosa"></a>
             <h3 style="margin-bottom: 1em; color: #333;">LA BARRANCOSA</h3>
 
             <p style="font-size: 14px;">
-                La presa La Barrancosa tiene características similares a CC, pero con una longitud mayor, de 2.445 m, y las estructuras principales estarán ubicadas en margen derecha. Estará ubicada a 65 km aguas abajo de CC.
-                <br />
-                <br />
-                El vertedero posee cinco vanos de 12 m cada uno, con capacidad de descarga de 4.163 m3/s (con una recurrencia de 10.000 años). Dentro de la estructura del vertedero se ubican los conductos y dispositivos de cierre que constituyen el descargador de fondo con capacidad para 700 m3/s.
-                <br />
-                <br />
-                La obra de toma se encuentra integrada a la casa de máquinas y está equipada con un esquema de rejas, ataguías de mantenimiento y cierre de emergencia, similares a las de CC.
-                <br />
-                <br />
-                La casa de máquinas se compone de tres módulos de 28 m de ancho cada uno y sus respectivas áreas de montaje, servicios e instalaciones auxiliares de generación. Aloja tres turbinas del tipo Kaplan de 120 MW cada una (360 MW en total). El régimen de operación es de base y la generación anual estimada es 1.903 GWh/año. Atendiendo a consideraciones ambientales, la operación de base consiste en erogar la misma cantidad de agua que ingresa al río desde el lago Argentino en cada momento, de modo tal que aguas abajo de la presa (que incluye la zona del estuario) el río se comporte de la misma manera que si ambas obras no existiesen. De esta manera, la central operará las 24 horas del día, generando la energía que el caudal medio del río le permita y manteniendo los caudales naturales horarios del río Santa Cruz.
-                <br />
-                <br />
-                La escala de peces es equivalente a nivel conceptual a la de la presa CC. Se ubica sobre la margen derecha, próxima a la casa de máquinas.                
-                <br />
-                <br />
+La presa La Barrancosa tiene características similares a CC, pero con una longitud mayor, y las estructuras principales estarán ubicadas en margen derecha. Estará ubicada a 65 km aguas abajo de CC.
+<br />
+<br />
+El vertedero posee cinco vanos de 12 m cada uno, con capacidad de descarga de 4.163 m3/s (con una recurrencia de 10.000 años). Dentro de la estructura del vertedero se ubican los conductos y dispositivos de cierre que constituyen el descargador de fondo con capacidad para 700 m3/s.
+<br />
+<br />
+
+La obra de toma se encuentra integrada a la casa de máquinas y está equipada con un esquema de rejas, ataguías de mantenimiento y cierre de emergencia, similares a las de CC.
+<br />
+<br />
+
+La longitud total del cierre, incluyendo presa, central y vertedero, es de 2.831 metros. 
+<br />
+<br />
+
+La casa de máquinas se compone de tres módulos de 28 m de ancho cada uno y sus respectivas áreas de montaje, servicios e instalaciones auxiliares de generación. Aloja tres turbinas del tipo Kaplan de 120 MW cada una (360 MW en total). El régimen de operación es de base y la generación anual estimada es 1.903 GWh/año. Atendiendo a consideraciones ambientales, la operación normal de LB consistirá en erogar el mismo volumen de agua que ingresa al río desde el lago Argentino en cada momento, de modo tal que aguas abajo de la presa (que incluye la zona del estuario) el río reciba el mismo caudal que recibiría si ambas obras no existiesen. De esta manera, la central de LB operará las 24 horas del día, generando la energía que el caudal ingresante al río le permita, respetando las variaciones naturales del río Santa Cruz en la embocadura.
+<br />
+<br />
+
+La escala de peces es equivalente a nivel conceptual a la de la presa CC. Se ubica sobre la margen derecha, próxima a la casa de máquinas.
+<br />
+<br />
             </p>
 
             <div class="row" style="padding-left: 2em; padding-right: 2em;">
+                <div class="col-md-12" style="font-size: 14px; font-weight: bolder;">Desvío del río</div>
+        
                 <div class="col-md-6 parrafos">
                     <div class="video-container">
                         <video style="width: 100%; height: auto;" controls poster="./images/previewLB.png">
@@ -156,14 +186,7 @@ A diferencia de otros proyectos hidroeléctricos, los embalses no requieren reas
                 </div>
                 <div class="col-md-6 parrafos">
                     <p>
-                        <span style="font-size: 14px; font-weight: bolder; color: #267aa3;">DESV&Iacute;O DEL RIO</span>
-                        <br />
-                        <br />
-                        El proceso de desvío tiene las mismas etapas que las señaladas para CC. La obra se compone de un canal a cielo abierto de sección trapezoidal de 120 m de ancho. En LB, el canal de desvío se transformará también en descargador de fondo, pero en este caso estará incorporado a la estructura del vertedero.
-                        <br />
-                        <br />
-                        Las presas se emplazarán en el tramo definido entre el lago Argentino y un punto ubicado a 135 km aguas arriba de la localidad de Comandante Luis Piedrabuena. El río Santa Cruz, de 385 km de extensión, cruza la provincia homónima de oeste a este, partiendo del lago Argentino, a una altitud de 180 metros sobre el nivel del mar hasta su desembocadura en el océano Atlántico. La cuenca de este río tiene una superficie de 25.000 km2.
-                        <br />
+El proceso de desvío tiene las mismas etapas que las señaladas para CC. La obra se compone de un canal a cielo abierto de sección trapezoidal de 120 m de ancho. En LB, el canal de desvío se transformará también en descargador de fondo, pero en este caso estará incorporado a la estructura del vertedero.                        <br />
                         <br />
                         <a target="_blank" href="./fichas/componentes_lb.docx">Descripción de componentes</a>
                         <br />
