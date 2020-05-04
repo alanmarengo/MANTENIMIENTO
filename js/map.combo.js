@@ -163,7 +163,7 @@ function ol_map() {
 		
 		this.ol_object.addEventListener("pointermove",function(evt) {
 			
-			if ((this.infoEnabled ) && (!this.isDragging)) {
+			if ((this.infoEnabled ) && (!evt.dragging)) {
 			
 				var pos = evt.coordinate;
 				
