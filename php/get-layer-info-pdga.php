@@ -70,7 +70,7 @@ for ($i=0; $i<sizeof($layer_id_arr); $i++) {
 	$html .= "<div class=\"popup-layer-node jus-between\" data-state=\"0\" data-layer=\"".$layer_id."\" data-index=\"".$i."\">";
 		$html .= "<div class=\"popup-layer-node-icons ml-15\">";
 			$html .= "<div class=\"layer-icon\" title=\"Ver/Ocultar\">";
-				$html .= "<a href=\"#\" onclick=\"geomap.map.togglePopupLayers(this);\"><img src=\"./images/geovisor/icons/popup-layer-closed.png\" data-inactive=\"./images/geovisor/icons/popup-layer-closed.png\"
+				$html .= "<a href=\"javascript:void(0);\" onclick=\"geomap.map.togglePopupLayers(this);\"><img src=\"./images/geovisor/icons/popup-layer-closed.png\" data-inactive=\"./images/geovisor/icons/popup-layer-closed.png\"
 				data-active=\"./images/geovisor/icons/popup-layer-opened.png\"></a>";
 			$html .= "</div>";
 		$html .= "</div>";
