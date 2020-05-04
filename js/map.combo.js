@@ -147,14 +147,17 @@ function ol_map() {
 		this.ol_object.map_object = this;
 		this.ol_object.infoEnabled = true;
 		
-	/*	this.ol_object.on("moveend",function(evt) {
+		this.ol_object.on("movestart",function(evt) {
 			
-			var pixel = this.getPixelFromCoordinate(this.lastClicked);
+			$("#popup-combo").css("display","none");
 			
-			$("#popup-combo").css("left",(pixel[0]-112)+"px");
-			$("#popup-combo").css("top",(pixel[1]-85)+"px");
+		});
+		
+		this.ol_object.on("moveend",function(evt) {
 			
-		});*/
+			$("#popup-combo").css("display","block");
+			
+		});
 		
 		this.ol_object.on("click",function(evt) {
 			
