@@ -45,14 +45,10 @@ function loadComboComponente() {
 	
 	while (len>0) {
 		
-		if ((mapLayers[i].get('name') != "google_base") && (mapLayers[i].get('name') != "bing_aerials") && (mapLayers[i].get('name') != "opentopo") && (mapLayers[i].get('name') != "capabaseargenmap")) {
+		geomap.map.ol_object.noBaseLayers.removeLayer(geomap.map.ol_object.noBaseLayers[0]);
+		geomap.map.ol_object.noBaseLayers.shift();
 		
-			geomap.map.ol_object.noBaseLayers.removeLayer(geomap.map.ol_object.noBaseLayers[0]);
-			geomap.map.ol_object.noBaseLayers.shift();
-			
-			len = geomap.map.ol_object.noBaseLayers.length;
-		
-		}
+		len = geomap.map.ol_object.noBaseLayers.length;
 	
 	}
 	
