@@ -149,7 +149,9 @@ function ol_map() {
 		
 		this.ol_object.on("movestart",function(evt) {
 			
-			var pixel = this.getPixelFromCoordinate(this.lastClicked);
+			var coord = ol.proj.transform(this.lastClicked,'EPSG:3857', 'EPSG:4326');
+			
+			var pixel = this.getPixelFromCoordinate(coord);
 			
 			$("#popup-combo").css("left",(pixel[0]-112)+"px");
 			$("#popup-combo").css("top",(pixel[1]-85)+"px");
@@ -157,7 +159,9 @@ function ol_map() {
 		
 		this.ol_object.on("moveend",function(evt) {
 			
-			var pixel = this.getPixelFromCoordinate(this.lastClicked);
+			var coord = ol.proj.transform(this.lastClicked,'EPSG:3857', 'EPSG:4326');
+			
+			var pixel = this.getPixelFromCoordinate(coord);
 			
 			$("#popup-combo").css("left",(pixel[0]-112)+"px");
 			$("#popup-combo").css("top",(pixel[1]-85)+"px");
@@ -174,7 +178,6 @@ function ol_map() {
 				var coord = String(pos4326).split(",");
 				var pixel = this.getPixelFromCoordinate(evt.coordinate);
 				this.map_object.gfiAddedLayers = [];
-				this.lastClicked = pos4326;
 				
 				var view = this.getView();
 				var map = this.map_object;
@@ -216,7 +219,7 @@ function ol_map() {
 									html = html.trim();
 									
 									$("#popup-combo").hide();
-									
+									map.ol_object.lastClicked = evt.coordinate;
 									map.preparseGFI(html,"popup-info","info-wrapper"); // PARA ACOMODAR RESPUESTA A ESTRUCTURA DE IEASA
 									
 								
