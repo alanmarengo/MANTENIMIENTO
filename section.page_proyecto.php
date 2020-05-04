@@ -103,7 +103,7 @@ Además, la presa posee una escala de peces, ubicada sobre la margen izquierda, 
             </p>
 
             <div class="row" style="padding-left: 2em; padding-right: 2em;">
-                <div class="col-md-12" style="font-size: 14px; font-weight: bolder; ">
+                <div class="col-md-12" style="font-size: 14px; font-weight: bolder; margin-bottom: 2em; margin-left: -30px;">
                     Obra de desv&Iacute;o
                 </div>
         
@@ -172,7 +172,7 @@ La escala de peces es equivalente a nivel conceptual a la de la presa CC. Se ubi
             </p>
 
             <div class="row" style="padding-left: 2em; padding-right: 2em;">
-                <div class="col-md-12" style="font-size: 14px; font-weight: bolder;">Desvío del río</div>
+                <div class="col-md-12" style="font-size: 14px; font-weight: bolder; margin-bottom: 2em; margin-left: -30px;">Desvío del río</div>
         
                 <div class="col-md-6 parrafos">
                     <div class="video-container">
