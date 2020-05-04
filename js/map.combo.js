@@ -147,30 +147,21 @@ function ol_map() {
 		this.ol_object.map_object = this;
 		this.ol_object.infoEnabled = true;
 		
-		this.ol_object.on("movestart",function(evt) {
-			
-			var coord = $("#popup-combo").attr("data-xy");
-			
-			var pixel = this.getPixelFromCoordinate(coord);
-			
-			$("#popup-combo").css("left",(pixel[0]-112)+"px");
-			$("#popup-combo").css("top",(pixel[1]-85)+"px");
-		});
-		
 		this.ol_object.on("moveend",function(evt) {
 			
-			var coord = $("#popup-combo").attr("data-xy");
-			
-			var pixel = this.getPixelFromCoordinate(coord);
+			var pixel = this.getPixelFromCoordinate(this.lastClicked);
 			
 			$("#popup-combo").css("left",(pixel[0]-112)+"px");
 			$("#popup-combo").css("top",(pixel[1]-85)+"px");
+			
 		});
 		
 		this.ol_object.on("click",function(evt) {
 			
 			if (this.infoEnabled ) {
-			
+				
+				this.lastClicked = evt.coordinate;
+				
 				var pos = evt.coordinate;
 				
 				var pos4326 = ol.proj.transform(evt.coordinate,'EPSG:3857', 'EPSG:4326');
