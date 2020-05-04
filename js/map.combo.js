@@ -149,9 +149,7 @@ function ol_map() {
 		
 		this.ol_object.on("movestart",function(evt) {
 			
-			var pos4326 = ol.proj.transform(this.lastClicked,'EPSG:3857', 'EPSG:4326');
-			
-			var coord = String(pos4326).split(",");
+			var coord = $("#popup-combo").attr("data-xy");
 			
 			var pixel = this.getPixelFromCoordinate(coord);
 			
@@ -161,9 +159,7 @@ function ol_map() {
 		
 		this.ol_object.on("moveend",function(evt) {
 			
-			var pos4326 = ol.proj.transform(this.lastClicked,'EPSG:3857', 'EPSG:4326');
-			
-			var coord = String(pos4326).split(",");
+			var coord = $("#popup-combo").attr("data-xy");
 			
 			var pixel = this.getPixelFromCoordinate(coord);
 			
@@ -231,6 +227,7 @@ function ol_map() {
 								
 								$("#popup-combo").css("left",(pixel[0]-112)+"px");
 								$("#popup-combo").css("top",(pixel[1]-85)+"px");
+								$("#popup-combo").attr("data-xy",evt.coordinate);
 
 							
 							}
