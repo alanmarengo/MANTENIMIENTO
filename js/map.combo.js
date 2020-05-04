@@ -149,13 +149,7 @@ function ol_map() {
 		
 		this.ol_object.on("movestart",function(evt) {
 			
-			$("#popup-combo").css("display","none");
-			
-		});
-		
-		this.ol_object.on("moveend",function(evt) {
-			
-			$("#popup-combo").css("display","block");
+			$("#popup-combo").hide();
 			
 		});
 		
