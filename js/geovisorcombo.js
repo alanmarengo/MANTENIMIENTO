@@ -301,6 +301,7 @@ $(document).ready(function() {
 		}else{
 		
 			$("#uxCapa").css("display","block");
+			$("#popup-combo").css("display","none");
 			//geomap.map.ol_object.infoEnabled = false;
 			
 		}
