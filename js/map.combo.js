@@ -147,9 +147,25 @@ function ol_map() {
 		this.ol_object.map_object = this;
 		this.ol_object.infoEnabled = true;
 		
-		this.ol_object.on("pointermove",function(evt) {
+		this.ol_object.on("movestart",function(evt) {
 			
-			if ((this.infoEnabled ) && (!evt.dragging)) {
+			var pixel = this.getPixelFromCoordinate(this.lastClicked);
+			
+			$("#popup-combo").css("left",(pixel[0]-112)+"px");
+			$("#popup-combo").css("top",(pixel[1]-85)+"px");
+		});
+		
+		this.ol_object.on("moveend",function(evt) {
+			
+			var pixel = this.getPixelFromCoordinate(this.lastClicked);
+			
+			$("#popup-combo").css("left",(pixel[0]-112)+"px");
+			$("#popup-combo").css("top",(pixel[1]-85)+"px");
+		});
+		
+		this.ol_object.on("click",function(evt) {
+			
+			if (this.infoEnabled ) {
 			
 				var pos = evt.coordinate;
 				
@@ -158,6 +174,7 @@ function ol_map() {
 				var coord = String(pos4326).split(",");
 				var pixel = this.getPixelFromCoordinate(evt.coordinate);
 				this.map_object.gfiAddedLayers = [];
+				this.lastClicked = pos4326;
 				
 				var view = this.getView();
 				var map = this.map_object;
