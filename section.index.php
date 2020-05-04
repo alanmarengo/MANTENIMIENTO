@@ -97,20 +97,14 @@
             <div class="row modulo-row">
                 
                 <!-- #1 -->
-                <div class="col-md-6 modulo-wrap-caja1">
-
-                    <video id="uxVideo2" class="videosize" poster="./images/index/caja1.jpg">
-                        <source src="http://observatorio.atic.com.ar/video_3d/LB_3.mp4" type="video/mp4" />
-                    </video>
-                
-                
-                    <!--  <div class="modulo-opacity"></div>
+                <a href="./page_proyecto.php" class="col-md-6 modulo-wrap modulo-1">
+                    <div class="modulo-opacity"></div>
                     <div class="modulo-text">
-                        Aprovechamientos Hidroeléctricos del Río Santa Cruz
+                        Proyecto AHRSC
                     </div>
                     <div class="modulo-hover">
-                    </div> -->
-                </div>
+                    </div>
+                </a>
 
                 <!-- #2 -->
                 <a href="./page_pdga.php" class="col-md-6 modulo-wrap modulo-2">
@@ -434,13 +428,15 @@ $(document).ready(function() {
             model.sensorIndex = 0;
     }
 
+    /*
     $('#uxVideo2').hover(
         function() { this.play(); },
         function() { this.pause(); }
     ).on('click', function() {
         window.location.href = "./page_proyecto.php";
     });
-
+    */
+    
     $('.carousel-item').hover(
         function() {
             $(this).find('.carousel-caption').hide();
