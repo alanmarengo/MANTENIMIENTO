@@ -145,6 +145,18 @@ function ol_map() {
 		this.baseLayer = this.baselayers.openstreets;
 		
 		this.ol_object.infoEnabled = true;
+		
+		this.ol_object.on("movestart",function() {
+			
+			this.infoEnabled = false;
+			
+		});
+		
+		this.ol_object.on("moveend",function() {
+			
+			this.infoEnabled = true;
+			
+		});
 		this.ol_object.map_object = this;
 		
 		this.ol_object.addEventListener("pointermove",function(evt) {
