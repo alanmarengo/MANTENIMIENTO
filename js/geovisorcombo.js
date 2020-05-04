@@ -45,7 +45,7 @@ function loadComboComponente() {
 	
 	while (len>0) {
 		
-		geomap.map.ol_object.noBaseLayers.removeLayer(geomap.map.ol_object.noBaseLayers[0]);
+		geomap.map.ol_object.removeLayer(geomap.map.ol_object.noBaseLayers[0]);
 		geomap.map.ol_object.noBaseLayers.shift();
 		
 		len = geomap.map.ol_object.noBaseLayers.length;
