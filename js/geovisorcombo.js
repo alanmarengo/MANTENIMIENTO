@@ -45,7 +45,11 @@ function loadComboComponente() {
 	
 	for (var i=0; i<added_layers.length; i++) {
 		
-		geomap.map.ol_object.removeLayer(added_layers[i]);
+		if (added_layers[i]) {
+		
+			geomap.map.ol_object.removeLayer(added_layers[i]);
+	
+		}
 	
 	}
 	
