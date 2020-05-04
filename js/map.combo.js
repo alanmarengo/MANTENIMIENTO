@@ -129,12 +129,7 @@ function ol_map() {
 		}
 		
 		this.ol_object = new ol.Map({
-			interactions: [
-				ol.interaction.defaults({mouseWheelZoom: false}).extend([i]),
-				ol.interaction.defaults({
-					dragPan: true
-				)}
-			],
+			interactions: ol.interaction.defaults({ dragPan:true, mouseWheelZoom: false }).extend([i]),
 			layers:this.baselayers.collection,
 			target: 'map',
 			extent: [-13281237.21183002,-7669922.0600572005,-738226.6183457375,-1828910.1066171727],
