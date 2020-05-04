@@ -296,12 +296,12 @@ $(document).ready(function() {
 		if (optVal < 1) {
 		
 			$("#uxCapa").css("display","none");
-			geomap.map.ol_object.infoEnabled = true;
+			//geomap.map.ol_object.infoEnabled = true;
 			
 		}else{
 		
 			$("#uxCapa").css("display","block");
-			geomap.map.ol_object.infoEnabled = false;
+			//geomap.map.ol_object.infoEnabled = false;
 			
 		}
 		
