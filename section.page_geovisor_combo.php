@@ -17,7 +17,7 @@
                     </div>
                 </div>
 
-                <div id="map">
+                <div id="map" title="ALT + scroll para acercar/alejar">
 				
 				
 					
