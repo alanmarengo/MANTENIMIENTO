@@ -144,20 +144,6 @@ function ol_map() {
 		
 		this.baseLayer = this.baselayers.openstreets;
 		
-		this.ol_object.isDragging = false;
-		
-		this.ol_object.on("movestart",function() {
-			
-			this.isDragging = true;
-			
-		});
-		
-		this.ol_object.on("moveend",function() {
-			
-			this.isDragging = false;
-			
-		});
-		
 		this.ol_object.map_object = this;
 		this.ol_object.infoEnabled = true;
 		
