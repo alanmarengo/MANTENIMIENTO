@@ -41,13 +41,16 @@ function loadComboComponente() {
 	
 	$("#uxCapa").empty();
 	
-	var mapLayers = geomap.map.ol_object.getLayers().getArray();
+	var len = geomap.map.ol_object.noBaseLayers.length;
 	
-	for (var i=0; i<mapLayers.length; i++) {
+	while (len>0) {
 		
 		if ((mapLayers[i].get('name') != "google_base") && (mapLayers[i].get('name') != "bing_aerials") && (mapLayers[i].get('name') != "opentopo") && (mapLayers[i].get('name') != "capabaseargenmap")) {
 		
-			geomap.map.ol_object.removeLayer(mapLayers[i]);
+			geomap.map.ol_object.noBaseLayers.removeLayer(geomap.map.ol_object.noBaseLayers[0]);
+			geomap.map.ol_object.noBaseLayers.shift();
+			
+			len = geomap.map.ol_object.noBaseLayers.length;
 		
 		}
 	
@@ -119,6 +122,7 @@ function loadComboComponente() {
 			}
 			
 			geomap.map.ol_object.addLayer(input.layer);
+			geomap.map.ol_object.noBaseLayers.push(input.layer);
 			
 		var zoomTool = document.createElement("div");
 			zoomTool.className = "d-inline ml-5 jump-posrel";
@@ -239,6 +243,8 @@ $(document).ready(function() {
 		
 	geomap.map.create();
 	geomap.map.createLayers();
+	
+	geomap.map.ol_object.noBaseLayers = [];
 	
 	scroll = new Jump.scroll();
 		
