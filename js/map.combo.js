@@ -149,12 +149,14 @@ function ol_map() {
 		this.ol_object.on("movestart",function() {
 			
 			this.infoEnabled = false;
+			alert("start");
 			
 		});
 		
 		this.ol_object.on("moveend",function() {
 			
 			this.infoEnabled = true;
+			alert("end");
 			
 		});
 		this.ol_object.map_object = this;
@@ -246,7 +248,7 @@ function ol_map() {
 				var pos = evt.coordinate;
 				
 				var pos4326 = ol.proj.transform(evt.coordinate,'EPSG:3857', 'EPSG:4326');
-				console.log();
+				
 				var req = $.ajax({
 					
 					async:false,
