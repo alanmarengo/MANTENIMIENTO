@@ -45,11 +45,11 @@ function loadComboComponente() {
 	console.log(mapLayers);
 	for (var i=0; i<mapLayers.length; i++) {
 		console.log(mapLayers[i].get('name'));
-		if ((mapLayers[i].get('name') != "google_base") && (mapLayers[i].get('name') != "bing_aerials") && (mapLayers[i].get('name') != "opentopo")) {
+		//if ((mapLayers[i].get('name') != "google_base") && (mapLayers[i].get('name') != "bing_aerials") && (mapLayers[i].get('name') != "opentopo") && (mapLayers[i].get('name') != "capabaseargenmap")) {
 		
 			geomap.map.ol_object.removeLayer(mapLayers[i]);
 		
-		}
+		//}
 	
 	}
 	
