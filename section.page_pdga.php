@@ -67,13 +67,6 @@
 
             <div class="row" style="padding-left: 2em; padding-right: 2em;">
                 <div class="col-md-12 parrafos">
-                    <p style="font-size: 15px;">
-                        EL Plan de Gestión Ambiental (PGA) planifica y ejecuta las actividades tendientes a darle
-                        sostenibilidad al proyecto en sus distintas etapas, organiza las medidas y las recomendaciones
-                        que surgen del Estudio de Impacto Ambiental para mitigar los impactos sobre el medio físico,
-                        biótico y socioeconómico, y potenciar las oportunidades.
-                    </p>
-
                     <div class="embed-responsive" style="padding-top: 40%;">
                         <iframe src="./geovisor.pdga.php" frameborder="0"></iframe>
                     </div>
