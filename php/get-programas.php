@@ -66,7 +66,7 @@ while($r = pg_fetch_assoc($query)) {
 		$json .= "\"Responsable de Ejecución\":\"" . $r["resp_ejecucion"] . "\",";
 		//$json .= "\"Etapa\":\"" . $r["etapa"] . "\",";
 		$json .= "\"Instituciones intervinientes\":\"" . $r["instituciones_interv"] . "\",";
-		$json .= "\"Responsable&nbsp;del&nbsp;estudio&nbsp;más&nbsp;reciente\":\"" . $r["respons_nom"] . "\",";
+		$json .= "\"Responsable&nbsp;del&nbsp;estudio&nbsp;más&nbsp;reciente\":\"" . $r["responsable"] . "\",";
 		$json .= "\"Estado\":\"" . $r["estado"] . "\",";
 		$json .= "\"Descripción\":\"" . $r["descripcion"] . "\",";
 		$json .= "\"Recursos Asociados\":\"<a href='" . $r["recursos_asociados"] . "' target='_blank' ><img height='24' width='24' src='./images/icono-mediateca-relleno.png' alt='Ver recursos asociados'/> </a> \"";
@@ -99,7 +99,7 @@ while($r = pg_fetch_assoc($query)) {
 			$json .= "\"Tema\":\"" . $r["categoria"] . "\",";
 			$json .= "\"Responsable de Ejecución\":\"" . $r["resp_ejecucion"] . "\",";
 			$json .= "\"Instituciones intervinientes\":\"" . $r["instituciones_interv"] . "\",";
-			$json .= "\"Responsable&nbsp;del&nbsp;estudio&nbsp;más&nbsp;reciente\":\"" . $r["respons_nom"] . "\",";
+			$json .= "\"Responsable&nbsp;del&nbsp;estudio&nbsp;más&nbsp;reciente\":\"" . $r["responsable"] . "\",";
 			$json .= "\"Estado\":\"" . $r["estado"] . "\",";
 			$json .= "\"Descripción\":\"" . $r["descripcion"] . "\",";
 			
