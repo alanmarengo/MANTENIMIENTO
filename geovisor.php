@@ -18,6 +18,7 @@
 		#popup-geovisor {
 			
 			display:none;
+			z-index: 10000000 !important;
 			
 		}
 	
@@ -30,6 +31,7 @@
 	#popup-geovisor {
 		
 		display:flex !Important;
+		z-index: 10000000 !important;
 		
 	}
 	

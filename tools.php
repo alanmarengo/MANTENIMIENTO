@@ -11,7 +11,7 @@ function parseSQLToCSV($recordset)
                         $fflag_delimitador = false;
  
                         $omitir_index = array();
-			$omitir_column = array("the_geom","geom");
+			$omitir_column = array("the_geom","geom","cod_","origen","id","fec_bbdd");
 			
   			for ($index = 0; $index < $TotalColum; $index++) 
   			{
