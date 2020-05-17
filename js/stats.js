@@ -1043,6 +1043,7 @@ function ol_stats() {
 	this.view.premapear = function() {		
 		
 		$("#gm-combo").val(-1);
+		$("#gm-combo").selectpicker("refresh");	
 		
 		var groupbycol = $("#group-combo-view").attr("data-group-by-column");
 		var groupby_val = $("#group-combo-view").val();
@@ -1121,6 +1122,7 @@ function ol_stats() {
 	this.view.pregraficar = function() {	
 		
 		$("#gm-combo").val(-1);	
+		$("#gm-combo").selectpicker("refresh");	
 		
 		var groupbycol = $("#group-combo-view").attr("data-group-by-column");
 		var groupby_val = $("#group-combo-view").val();
