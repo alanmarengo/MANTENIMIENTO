@@ -544,7 +544,9 @@ function ol_map() {
 					
 			jwindow.open(containerID);
 			
-			scroll.refresh();
+			scroll.refresh();			
+			
+			$("#popup-info .jump-scroll").animate({ scrollTop: 0 }, "fast");
 			
 			$("[title]").tooltipster({
 				animation: 'fade',
