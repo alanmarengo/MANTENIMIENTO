@@ -452,9 +452,9 @@ function draw_grafico_5(container,config) { // BASIC COLUMNS
 	Highcharts.chart(container, {
 		credits: { enabled:false },
 		chart: {
-			type: 'column',
+			type: 'column'/*,
 			margin:0,
-			renderTo:'chart'
+			renderTo:'chart'*/
 		},
 		title: {
 			text: ''
