@@ -21,7 +21,7 @@ if (isset($_POST["adv-search-fhasta"])) { $param["fhasta"] = $_POST["adv-search-
 if ((isset($_POST["adv-search-proyecto-combo"])) && ($_POST["adv-search-proyecto-combo"] != "-1")) { $param["proyecto_id"] = $_POST["adv-search-proyecto-combo"]; }
 if (isset($_POST["adv-search-clase-combo"])) { $param["clase_id"] = $_POST["adv-search-clase-combo"]; }
 if (isset($_POST["adv-search-subclase-combo"])) { $param["subclase_id"] = $_POST["adv-search-subclase-combo"]; }
-if (isset($_POST["adv-search-responsable-combo"])) { $param["responsable"] = $_POST["adv-search-responsable-combo"]; }
+if ((isset($_POST["adv-search-responsable-combo"])) && ($_POST["adv-search-responsable-combo"] != "-1")) { $param["responsable"] = $_POST["adv-search-responsable-combo"]; }
 if (isset($_POST["adv-search-esia-combo"])) { $param["esia_id"] = $_POST["adv-search-esia-combo"]; }
 if (isset($_POST["adv-search-objeto-combo"])) { $param["objeto_id"] = $_POST["adv-search-objeto-combo"]; }
 if (isset($_POST["geovisor"])) { $param["geovisor"] = $_POST["geovisor"]; }
