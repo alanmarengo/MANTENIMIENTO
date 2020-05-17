@@ -65,6 +65,8 @@ if ($param["geovisor"] != -1) {
 
 	
 }
+
+echo $get_layers_query_string;
 	
 $get_layers_query = pg_query($conn,$get_layers_query_string);
 
