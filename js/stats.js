@@ -792,9 +792,9 @@ function ol_stats() {
 			var cellWidth = rowWidth / rowChilds;
 			
 			//$("#print-body #dataset").addClass("mt-30");
-			$("#print-body #dataset-inner").css("width",(rowChilds*250)+"px");
+			$("#print-body #dataset-inner").css("width",(rowChilds*300)+"px");
 			
-			$("#print-body .dataset-cell").css("width","250px");
+			$("#print-body .dataset-cell").css("width","300px");
 			$("#print-body .dataset-filter-row .dropdown-toggle").css("width","85%");
 			$("#print-body .dataset-filter-row .dropdown-toggle").css("margin-top","1px");
 			$("#print-body .dataset-filter-row .dropdown-toggle").css("text-transform","uppercase");
