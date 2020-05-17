@@ -401,11 +401,18 @@
 	
 }
 
+.gfi-info-table td:first-child {
+	
+	font-weight:700;
+	
+}
+
 .gfi-info-table td {
 	
-	padding-left:40px;
-	font-size: 12px;
+	padding-right: 10px;
+	font-size: 10px;
 	line-height: 24px;
+	vertical-align:top;
 	
 }
 
