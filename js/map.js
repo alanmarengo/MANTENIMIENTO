@@ -155,7 +155,13 @@ function ol_map() {
 				
 				var coord = String(pos4326).split(",");
 				
-				document.getElementById("global-coordinates-fixed-span").innerHTML = "Último Click: EPSG:4326 | " + coord[1] + ", " + coord[0];
+				var coord_1 = coord[1].split(".");
+					coord_1 = coord_1[0] + "." + coord_1[1].substring(0,4);
+				
+				var coord_0 = coord[0].split(".");
+					coord_0 = coord_0[0] + "." + coord_0[1].substring(0,4);
+				
+				document.getElementById("global-coordinates-fixed-span").innerHTML = "Último Click: EPSG:4326 | " + coord_1 + ", " + coord_0;
 				
 				var iconFeature = new ol.Feature({
 				  geometry: new ol.geom.Point(pos)
