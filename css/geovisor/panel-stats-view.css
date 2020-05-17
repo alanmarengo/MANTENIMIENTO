@@ -232,6 +232,7 @@ body {
 	flex-grow:1;
 	position:relative;
 	text-transform:uppercase;
+	flex-shrink:0;
 	
 }
 
