@@ -4,8 +4,8 @@ function draw_grafico_1(container,config) {
 		credits: { enabled:false },
 		chart: {
 			type: 'area',
-			margin:0,
-			renderTo:'chart'
+			margin:0
+			/*//renderTo:'chart'*/
 		},
 		accessibility: {
 			description: config.desc
@@ -93,8 +93,8 @@ function draw_grafico_2(container,config) {
 		credits: { enabled:false },
 		chart: {
 			type: 'bar',
-			margin:0,
-			renderTo:'chart'
+			margin:0
+			//renderTo:'chart'
 		},
 		title: {
 			text: ''
@@ -197,8 +197,8 @@ function draw_grafico_3(container,config) { // BUBBLE CHART
 		chart: {
 			type: 'packedbubble',
 			height: '100%',
-			margin:0,
-			renderTo:'chart'
+			margin:0
+			//renderTo:'chart'
 		},
 		title: {
 			text: ''
@@ -316,8 +316,8 @@ function draw_grafico_4(container,config) { // BUBBLE CHART
 		chart: {
 			type: 'packedbubble',
 			height: '100%',
-			margin:0,
-			renderTo:'chart'
+			margin:0
+			//renderTo:'chart'
 		},
 		title: {
 			text: ''
@@ -443,8 +443,8 @@ function draw_grafico_5(container,config) { // BASIC COLUMNS
 		credits: { enabled:false },
 		chart: {
 			type: 'column',
-			margin:0,
-			renderTo:'chart'
+			margin:0
+			//renderTo:'chart'
 		},
 		title: {
 			text: ''
@@ -565,8 +565,8 @@ function draw_grafico_6(container,config) { // FIXED PLACEMENT
 		credits: { enabled:false },
 		chart: {
 			type: 'column',
-			margin:0,
-			renderTo:'chart'
+			margin:0
+			//renderTo:'chart'
 		},
 		title: {
 			text: ''
@@ -726,8 +726,8 @@ function draw_grafico_7(container,config) { // FIXED PLACEMENT
 		credits: { enabled:false },
 		chart: {
 			type: 'column'/*,
-			margin:0,
-			renderTo:'chart'--*
+			margin:0
+			//renderTo:'chart'--*
 		},
 		title: {
 			text: ""
@@ -1007,8 +1007,8 @@ function draw_grafico_10(container,config) { // SEMI CIRCLE DONUT
 			plotBackgroundColor: null,
 			plotBorderWidth: 0,
 			plotShadow: false,
-			margin:0,
-			renderTo:'chart'
+			margin:0
+			//renderTo:'chart'
 		},
 		title: {
 			text: '',
@@ -1082,8 +1082,8 @@ function draw_grafico_11(container,config) { // PIE WITH DRILLDOWN
 		credits: { enabled:false },
 		chart: {
 			type: 'pie',
-			margin:0,
-			renderTo:'chart'
+			margin:0
+			//renderTo:'chart'
 		},
 		title: {
 			text: ''
