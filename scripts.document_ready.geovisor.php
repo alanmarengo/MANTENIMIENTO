@@ -160,6 +160,16 @@
 		// SELECCIONAR PROYECTOS AL INICIAR GEOVISOR
 		$("#popup-basic-filters input[type=checkbox]").trigger("click");
 		
+		<?php if (((isset($_GET["source"])) && (isset($_GET["id"]))) || (isset($_GET["geovisor"])) || (isset($_GET["qid"]))) { ?>
+		
+		jwindow.close("popup-geovisor");
+		
+		<?php }else{ ?>	
+		
+		jwindow.open("popup-geovisor");
+	
+		<?php }?>
+		
 	});
 
 </script>
