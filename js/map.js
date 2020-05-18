@@ -840,10 +840,10 @@ function ol_map() {
 	
 	this.map.print = function() {					
 			
-		$("#print-legend-wrapper").empty();
-		$("#print-legend-wrapper").show();
+		/*$("#print-legend-wrapper").empty();
+		$("#print-legend-wrapper").show();*/
 		
-		var state = $("#nav-panel-arrow").children(".jump-toggleimage").first().attr("data-state");
+		/*var state = $("#nav-panel-arrow").children(".jump-toggleimage").first().attr("data-state");
 		
 		if (state == 1) {
 			
@@ -851,18 +851,22 @@ function ol_map() {
 			
 			$("#nav-panel-arrow").children(".jump-toggleimage").children("img").first().attr("src","./images/panel.icon.arrow.0.png");
 			
-		}
+		}*/
+		
+		var layer_names = [];
 			
 		$(".layer-checkbox[data-added=1]:checked").each(function(i,v) {
 			
 			var layer_name = $(v).closest(".layer-group").attr("data-layer-name");
 			
-			var src = "http://observatorio.ieasa.com.ar/geoserver/ows?&version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer="+layer_name+"&format=image/png&";
+			/*var src = "http://observatorio.ieasa.com.ar/geoserver/ows?&version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer="+layer_name+"&format=image/png&";
 			
 			var newImage = document.createElement("img");
 				newImage.setAttribute("src",src);
 			
-			$("#print-legend-wrapper").append(newImage);
+			$("#print-legend-wrapper").append(newImage);*/
+			
+			layer_names.push(layer_name);
 			
 			//$(v).parent().parent().next(".layer-body").children(".layer-legend").clone().appendTo("#print-legend-wrapper");
 			
@@ -887,14 +891,36 @@ function ol_map() {
 			
 			var a = document.createElement('a');
 			// toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
-			a.href = canvas.toDataURL();
-			a.download = 'captura.png';
-			
+			var url = "./print.php?map=" + canvas.toDataURL() + "&layers" + layer_names.join(",");
+			//a.href = canvas.toDataURL();
+			a.href=url;
+			//a.download = 'captura.png';
+			a.target = "_blank";
+			//console.log(canvas.toDataURL());
 			document.body.appendChild(a);
 			
-			a.click();
+			var frm = document.createElement("form");
+				frm.setAttribute("action","./print.php");
+				frm.setAttribute("method","post");
+				frm.setAttribute("target","_blank");
+
+			var inpimage = document.createElement("input");
+				inpimage.name = "imageblob";
+				inpimage.value = canvas.toDataURL();
+
+			var inplayers = document.createElement("input");
+				inplayers.name = "layers";
+				inplayers.value = layer_names.join(",");				
 			
-			$(a).remove();
+			frm.appendChild(inpimage);
+			frm.appendChild(inplayers);
+			
+			document.body.appendChild(frm);
+			
+			//a.click();
+			
+			$(frm).submit();
+			$(frm).remove();
 			
 			$("#print-legend-wrapper").hide();
 			
@@ -2422,7 +2448,7 @@ function ol_map() {
 		
 		$(".layer-group[data-layer="+layer_id+"] .layer-label").bind("click",function() {
 			
-			$("#layer-legend-"+layer_id).html("<img onload=\"geomap.map.fixLegend("+layer_id+")\"; src=\"" + layer_wms + "&version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer="+layer_name+"&format=image/png&\">");
+			$("#layer-legend-"+layer_id).html("<img onload=\"geomap.map.fixLegend("+layer_id+")\" src=\"" + layer_wms + "&version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer="+layer_name+"&format=image/png&\">");
 			
 		});
 		
