@@ -29,3 +29,11 @@
 		
     </div>
 <!--</div>-->
+
+<div style="width:200px; bottom:15px; left:10px; font-weight:bolder;" class="jump-posabs">
+			
+	<a href="./geovisor.php?geovisor=1" target="_blank" class="black-button">
+		<span>VER EN GEOVISOR</span>
+	</a>
+
+</div>
