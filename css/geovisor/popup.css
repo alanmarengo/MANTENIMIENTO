@@ -441,6 +441,11 @@
 	
 }
 
+#prog-wrapper td {
+    padding-left: 40px;
+    font-weight: 400;
+}
+
 #filtered-layer-list {
 	
 	font-size:12px;

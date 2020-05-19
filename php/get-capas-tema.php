@@ -36,7 +36,11 @@ $gl = pg_fetch_assoc($gl_query);
 
 $json = "{\"geovisor_link\":\"" . $gl["geovisor"] . "\",\"layers\":[";
 
+$entered = false;
+
 while ($data = pg_fetch_assoc($query)) {
+
+	$entered = true;
 
 	$json .= "{";
 	$json .= "\"layer_id\":" . $data["layer_id"] . ",";
@@ -49,7 +53,15 @@ while ($data = pg_fetch_assoc($query)) {
 
 }
 
-$json = substr($json,0,strlen($json)-1) . "]}";
+if ($entered) {
+
+	$json = substr($json,0,strlen($json)-1) . "]}";
+
+}else{
+	
+	$json = $json . "]}";
+	
+}
 
 echo $json;
 

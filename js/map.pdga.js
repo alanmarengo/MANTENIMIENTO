@@ -81,7 +81,7 @@ function ol_map() {
 		this.baselayers.bing_aerials = new ol.layer.Tile({
 			name:'bing_aerials',
 			preload: Infinity,
-			visible:true,
+			visible:false,
 			source: new ol.source.BingMaps({
 				key: 'AmqIEhx8ko1O3p1Npagu9_Egw7e8quBgM03p6_xdFqjSfJa6kWv_iUU2nO1htz1G',
 				imagerySet: 'Aerial',
@@ -91,7 +91,7 @@ function ol_map() {
 
 		this.baselayers.google = new ol.layer.Tile({
 			name:'google_base',
-			visible:false,
+			visible:true,
 			source: new ol.source.TileImage({ 
 				url: 'http://mt{0-3}.googleapis.com/vt?&x={x}&y={y}&z={z}&hl=es&gl=AR',
 				crossOrigin: 'anonymous'
