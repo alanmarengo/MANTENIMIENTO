@@ -178,7 +178,7 @@ La escala de peces es equivalente a nivel conceptual a la de la presa CC. Se ubi
                     <div class="video-container">
                         <video style="width: 100%; height: auto;" controls poster="./images/previewLB.png">
                             <source
-                                src="http://observatorio.atic.com.ar/video_3d/LB_3.mp4"
+                                src="./sga/recursos/recursos_audiovisual/video_proyecto/Video_LB.mp4"
                                 type="video/mp4" />
                             Tu navegador no soporta reproducir este video.
                         </video>
