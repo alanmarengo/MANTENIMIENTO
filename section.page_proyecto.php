@@ -131,8 +131,8 @@ Además, la presa posee una escala de peces, ubicada sobre la margen izquierda, 
                         4) cierre de cuatro de los ocho módulos del canal y transformación de los cuatro restantes en el descargador de fondo de la presa.
                         <br />
                         <br />
-                        <a target="_blank" href="./sga/recursos/difusion/cc_ficha.pdf">Descripción de componentes</a>
-                        <!--<a target="_blank" href="./fichas/componentes_cc.docx">Descripción de componentes</a>-->
+                        <!-- <a target="_blank" href="./sga/recursos/difusion/cc_ficha.pdf">Descripción de componentes</a>-->
+                        <a target="_blank" href="./fichas/componentes_cc.docx">Descripción de componentes</a>
                         <br />
                         <a target="_blank" href="./sga/recursos/difusion/cc_ficha.pdf">Ficha técnica</a>
                         <!--<a target="_blank" href="./fichas/ficha_tecnica_cc.pdf">Ficha técnica</a>-->
