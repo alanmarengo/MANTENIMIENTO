@@ -131,9 +131,11 @@ Además, la presa posee una escala de peces, ubicada sobre la margen izquierda, 
                         4) cierre de cuatro de los ocho módulos del canal y transformación de los cuatro restantes en el descargador de fondo de la presa.
                         <br />
                         <br />
-                        <a target="_blank" href="./fichas/componentes_cc.docx">Descripción de componentes</a>
+                        <a target="_blank" href="./sga/recursos/difusion/componentes_cc.pdf">Descripción de componentes</a>
+                        <!-- <a target="_blank" href="./fichas/componentes_cc.docx">Descripción de componentes</a>-->
                         <br />
-                        <a target="_blank" href="./fichas/ficha_tecnica_cc.pdf">Ficha técnica</a>
+                        <a target="_blank" href="./sga/recursos/difusion/cc_ficha.pdf">Ficha técnica</a>
+                        <!--<a target="_blank" href="./fichas/ficha_tecnica_cc.pdf">Ficha técnica</a>-->
                         <br />
                     </p>
                 </div>
@@ -178,7 +180,7 @@ La escala de peces es equivalente a nivel conceptual a la de la presa CC. Se ubi
                     <div class="video-container">
                         <video style="width: 100%; height: auto;" controls poster="./images/previewLB.png">
                             <source
-                                src="http://observatorio.atic.com.ar/video_3d/LB_3.mp4"
+                                src="./sga/recursos/recursos_audiovisual/video_proyecto/Video_LB.mp4"
                                 type="video/mp4" />
                             Tu navegador no soporta reproducir este video.
                         </video>
@@ -188,9 +190,11 @@ La escala de peces es equivalente a nivel conceptual a la de la presa CC. Se ubi
                     <p>
 El proceso de desvío tiene las mismas etapas que las señaladas para CC. La obra se compone de un canal a cielo abierto de sección trapezoidal de 120 m de ancho. En LB, el canal de desvío se transformará también en descargador de fondo, pero en este caso estará incorporado a la estructura del vertedero.                        <br />
                         <br />
-                        <a target="_blank" href="./fichas/componentes_lb.docx">Descripción de componentes</a>
+                        <a target="_blank" href="./sga/recursos/difusion/componentes_lb.pdf">Descripción de componentes</a>
+                        <!--<a target="_blank" href="./fichas/componentes_lb.docx">Descripción de componentes</a>-->
                         <br />
-                        <a target="_blank" href="./fichas/ficha_tecnica_lb.pdf">Ficha técnica</a>
+                        <a target="_blank" href="./sga/recursos/difusion/lb_ficha.pdf">Ficha técnica</a>
+                        <!--<a target="_blank" href="./fichas/ficha_tecnica_lb.pdf">Ficha técnica</a>-->
                         <br />
                     </p>
                 </div>
