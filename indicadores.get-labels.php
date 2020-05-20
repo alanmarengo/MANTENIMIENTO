@@ -16,7 +16,7 @@ $query = pg_query($conn,$query_string);
 
 $data = pg_fetch_assoc($query);
 
-if ((empty(trim($data["desc"]))) || (is_null(trim($data["desc"])))) {
+/*if ((empty(trim($data["desc"]))) || (is_null(trim($data["desc"])))) {
 	
 	$desc = "Este indicador no posee una descripción asociada";
 	
@@ -24,9 +24,10 @@ if ((empty(trim($data["desc"]))) || (is_null(trim($data["desc"])))) {
 	
 	$desc = $data["desc"];
 	
-}
+}*/
 
-if ((empty(trim($data["ficha_metodo_path"]))) || (is_null(trim($data["ficha_metodo_path"])))) {
+
+/*if ((empty(trim($data["ficha_metodo_path"]))) || (is_null(trim($data["ficha_metodo_path"])))) {
 	
 	$path = "javascript:alert('Este indicador no posee una ficha asociada');";
 	
@@ -34,7 +35,10 @@ if ((empty(trim($data["ficha_metodo_path"]))) || (is_null(trim($data["ficha_meto
 	
 	$path = $data["ficha_metodo_path"];
 	
-}
+}*/
+
+	$desc = $data["desc"];
+	$path = $data["ficha_metodo_path"];
 
 $out = "{";
 $out .= "\"titulo\":\"" . $data["titulo"] . "\",";
@@ -44,5 +48,6 @@ $out .= "}";
 
 echo $out;
 
+pg_close($conn);
 
 ?>
