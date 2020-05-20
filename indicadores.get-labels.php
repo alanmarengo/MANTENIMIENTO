@@ -29,11 +29,15 @@ else
 };*/
 
 
-if ((empty(trim($data["ficha_metodo_path"]))) || (is_null(trim($data["ficha_metodo_path"])))) {
+//if ((empty(trim($data["ficha_metodo_path"]))) || (is_null(trim($data["ficha_metodo_path"])))) {
 	
+if ((empty($data["ficha_metodo_path"])) || (is_null($data["ficha_metodo_path"])) ) 
+{
 	$path = "javascript:alert('Este indicador no posee una ficha asociada');";
 	
-}else{
+}
+else
+{
 	
 	$path = $data["ficha_metodo_path"];
 	
