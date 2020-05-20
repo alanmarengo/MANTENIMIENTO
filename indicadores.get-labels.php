@@ -15,8 +15,9 @@ $query_string = "SELECT * FROM mod_indicadores.vw_recursos WHERE ind_id = $ind_i
 $query = pg_query($conn,$query_string);
 
 $data = pg_fetch_assoc($query);
-/*
-if ((empty(trim($data["desc"]))) || (is_null(trim($data["desc"])))) {
+
+if ((empty($data["desc"])) || (is_null($data["desc"]))) 
+{
 	
 	$desc = "Este indicador no posee una descripción asociada";
 	
@@ -26,8 +27,7 @@ else
 	
 	$desc = $data["desc"];
 	
-};*/
-
+};
 
 //if ((empty(trim($data["ficha_metodo_path"]))) || (is_null(trim($data["ficha_metodo_path"])))) {
 	
@@ -43,7 +43,7 @@ else
 	
 };
 
-	$desc = $data["desc"];
+//	$desc = $data["desc"];
 //	$path = $data["ficha_metodo_path"];
 
 $out = "{";
