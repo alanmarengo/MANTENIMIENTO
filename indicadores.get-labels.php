@@ -15,19 +15,21 @@ $query_string = "SELECT * FROM mod_indicadores.vw_recursos WHERE ind_id = $ind_i
 $query = pg_query($conn,$query_string);
 
 $data = pg_fetch_assoc($query);
-
-/*if ((empty(trim($data["desc"]))) || (is_null(trim($data["desc"])))) {
+/*
+if ((empty(trim($data["desc"]))) || (is_null(trim($data["desc"])))) {
 	
 	$desc = "Este indicador no posee una descripción asociada";
 	
-}else{
+}
+else
+{
 	
 	$desc = $data["desc"];
 	
-}*/
+};*/
 
 
-/*if ((empty(trim($data["ficha_metodo_path"]))) || (is_null(trim($data["ficha_metodo_path"])))) {
+if ((empty(trim($data["ficha_metodo_path"]))) || (is_null(trim($data["ficha_metodo_path"])))) {
 	
 	$path = "javascript:alert('Este indicador no posee una ficha asociada');";
 	
@@ -35,10 +37,10 @@ $data = pg_fetch_assoc($query);
 	
 	$path = $data["ficha_metodo_path"];
 	
-}*/
+};
 
 	$desc = $data["desc"];
-	$path = $data["ficha_metodo_path"];
+//	$path = $data["ficha_metodo_path"];
 
 $out = "{";
 $out .= "\"titulo\":\"" . $data["titulo"] . "\",";
