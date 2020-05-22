@@ -20,7 +20,7 @@ for ($i=0; $i<sizeof($results); $i++) {
 }
 
 $query_string = "SELECT * FROM ah.\"".$sep[0]."\" WHERE id IN(" . implode(",",$gids) . ")";
-
+echo $query_string;
 $query = pg_query($conn,$query_string);
 
 while ($r = pg_fetch_assoc($query)) {
