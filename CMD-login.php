@@ -11,14 +11,14 @@
 		
 		$user_password = trim($_POST["user-password"]);
 		
-		$string_conn = "host=" . pgserver . " user=" . pguser . " port=" . pgport . " password=" . pgpassword . " dbname=" . pgdbname;
+		$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 		
 		$conn = pg_connect($string_conn);
 		
 		$query_string = "SELECT * FROM mod_login.user_data WHERE user_name = '$user_name' AND user_pass = md5('$user_password')";
 		
 		$query = pg_query($conn,$query_string);
-		var_dump($conn);
+		
 		$n_registros = pg_num_rows($query);
 		
 		$result = pg_fetch_assoc($query);
