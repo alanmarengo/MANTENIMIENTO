@@ -11,22 +11,26 @@ $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . 
 	
 $conn = pg_connect($string_conn);
 
+$qs = array();
+
+$out = "";
+
 for ($i=0; $i<sizeof($results); $i++) {
 	
 	$sep = explode(";",$results[$i]);
 	
-	array_push($gids,$sep[1]);
+	$table = explode(":",$sep[0]);
+	
+	$query_string = "SELECT * FROM ah.\"".$table."\" WHERE id = " . $sep[1];
+	
+	$query = pg_query($conn,$query_string);
+	
+	$data = pg_fetch_assoc($query);
+	
+	$out .= "<p>" . $data["NOMBRE"] . "</p>";
 	
 }
 
-$query_string = "SELECT * FROM ah.\"".$sep[0]."\" WHERE id IN(" . implode(",",$gids) . ")";
-echo $query_string;
-$query = pg_query($conn,$query_string);
-
-while ($r = pg_fetch_assoc($query)) {
-	
-	echo "<p>" . $r["identificacion"] . "</p>";
-	
-}
+echo $out;
 
 ?>
