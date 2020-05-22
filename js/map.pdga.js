@@ -191,10 +191,10 @@ function ol_map() {
 		});	
 		
 		vector_873.setVisible(false);
-		vector_875.setVisible(false);
 		vector_937.setVisible(false);
 		vector_938.setVisible(false);
 		vector_939.setVisible(false);
+		vector_875.setVisible(false);
 		
 		var layer_873 = new ol.layer.Tile({
 			name:"ahrsc:vp_geo_limites_provinciales_sit_pga",
@@ -280,7 +280,7 @@ function ol_map() {
 			})
 		});
 		
-		this.vectores = [vector_873,vector_875,vector_937,vector_938,vector_939];
+		this.vectores = [vector_873,vector_937,vector_938,vector_939,vector_875];
 		
 		this.baselayers.collection = [
 			this.baselayers.openstreets,
