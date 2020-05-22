@@ -27,35 +27,35 @@ $defined = false;
 if ((in_array("ahrsc:vp_geo_hihgr_estuario_otr1",$layers_arr))) {
 	
 	$defined = true;
-	echo 3; // 939 ++
+	echo 939; // 939
 	
 }
 
 if (((in_array("ahrsc:polig_obra_pga",$layers_arr)) && (!$defined))) {
 	
 	$defined = true;
-	echo 4; // 875
+	echo 875; // 875
 	
 }
 
 if ((in_array("ahrsc:vp_geo_hihgr_cuencamediabajarsc_otr1",$layers_arr)) && (!$defined)) {
 	
 	$defined = true;
-	echo 2; // 938
+	echo 938; // 938
 	
 }
 
 if ((in_array("ahrsc:vp_geo_hihgr_cuencaaltarsc_otr1",$layers_arr)) && (!$defined)) {
 	
 	$defined = true;
-	echo 1; // 937
+	echo 937; // 937
 	
 }
 
 if (!$defined) {
 	
 	$defined = true;
-	echo 0; // 873
+	echo 873; // 873
 
 }
 
