@@ -30,7 +30,6 @@ for ($i=0; $i<sizeof($results); $i++) {
 	$query_string = "SELECT * FROM \"".$data["layer_schema"]."\".\"".$data["layer_table"]."\" WHERE id = " . $sep[1];
 	
 	$query = pg_query($conn,$query_string);
-	echo $query_string . "<br>";
 	
 	$data = pg_fetch_assoc($query);
 	
