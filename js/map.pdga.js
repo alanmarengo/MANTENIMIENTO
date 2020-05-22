@@ -1909,7 +1909,7 @@ function ol_map() {
 		var nodeState = $(node).closest(".popup-layer-node").attr("data-state");
 		var nodeLayerId = $(node).closest(".popup-layer-node").attr("data-layer");
 		var nodeIndex = $(node).closest(".popup-layer-node").attr("data-index");
-		
+		nodeIndex = 3;
 		if (nodeState == 0) {
 			
 			for (var i=0; i<this.vectores.length; i++) {
