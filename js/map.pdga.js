@@ -290,15 +290,15 @@ function ol_map() {
 			this.baselayers.google,
 			this.baselayers.argenmap,
 			layer_873,
-			layer_875,
 			layer_937,
 			layer_938,
 			layer_939,
-			vector_873,
-			vector_875,			
+			layer_875,
+			vector_873,		
 			vector_937,
 			vector_938,
-			vector_939
+			vector_939,
+			vector_875
 		];
 		
 		$("#prog-wrapper").css("height",$("#prog-wrapper").height()+"px");
@@ -1909,7 +1909,7 @@ function ol_map() {
 		var nodeState = $(node).closest(".popup-layer-node").attr("data-state");
 		var nodeLayerId = $(node).closest(".popup-layer-node").attr("data-layer");
 		var nodeIndex = $(node).closest(".popup-layer-node").attr("data-index");
-		nodeIndex = 3;
+		
 		if (nodeState == 0) {
 			
 			for (var i=0; i<this.vectores.length; i++) {
