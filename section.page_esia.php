@@ -101,7 +101,7 @@
                     <div class="video-container">
                         <video width="700" controls preload="none" poster="./images/audiencia_preview.png">
                             <source
-                                src="http://observatorio.ieasa.com.ar/sga/recursos/recursos_audiovisual/00_audiencia_publica/AUDIENCIA PÚBLICA 20-07-17.mp4"
+                                src="./sga/recursos/recursos_audiovisual/00_audiencia_publica/AUDIENCIA PÚBLICA 20-07-17.mp4"
                                 type="video/mp4" />
                             Tu navegador no soporta reproducir este video.
                         </video>
