@@ -23,10 +23,10 @@
 		$result = pg_fetch_assoc($query);
 		
 		$logged = false;
+				
+		var_dump($result);
 		
 		if ($n_registros > 0) {
-				
-			var_dump($result);
 			
 			if ($result["user_contra_dominio"] == 't') {
 				//ldap_login($user_name,$user_password);
