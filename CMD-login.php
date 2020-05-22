@@ -15,7 +15,7 @@
 		$conn = pg_connect($string_conn);
 		
 		$query_string = "SELECT * FROM mod_login.user_data WHERE user_name = '$user_name' AND user_pass = md5('$user_password')";
-		echo $query_string;
+		
 		$query = pg_query($conn,$query_string);
 		
 		$n_registros = pg_num_rows($query);
@@ -24,6 +24,7 @@
 		
 		$logged = false;
 				
+		var_dump($n_registros);
 		var_dump($result);
 		
 		if ($n_registros > 0) {
@@ -76,7 +77,7 @@
 			?>
 			
 			<h2 class="m-v-50" style="font-size:12px;">
-				<p>Bienvenido <?php echo "Administrador de IEASA"; //echo $_SESSION["user_info"]["user_fullname"]; ?>!</p>
+				<p>Bienvenido <?php echo $_SESSION["user_info"]["user_full_name"]; ?>!</p>
 			</h2>
 			
 			<h3 class="text-success" style="font-size:14px;"> Redireccionando por favor espere... </h3>
