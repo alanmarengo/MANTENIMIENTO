@@ -401,8 +401,14 @@ $(document).ready(function() {
                 if (model.stopLoad)
                     return;
 
+                // VALIDACION FECHAS CARGADAS
+                if (model.filters.dateStart == '' && model.filters.dateEnd != '')
+                    return;
+                if (model.filters.dateStart != '' && model.filters.dateEnd == '')
+                    return;
+
                 var url = model.apiUrlBase + '/mediateca_find_pag.php?' + makeUrlFilter();
-                //console.log(url);
+                console.log(url);
 
                 // BLOCK UI
                 HoldOn.open({ theme: "sk-rect" });
