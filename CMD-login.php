@@ -1,4 +1,5 @@
 <?php include("./fn.php"); ?>
+<?php include("./ldap.php"); ?>
 <?php
 	
 	//include("../include.vars.pg.php");
@@ -9,33 +10,30 @@
 		
 		$user_password = trim($_POST["user-password"]);
 		
-		/*$string_conn = "host=" . pgserver . " user=" . pguser . " port=" . pgport . " password=" . pgpassword . " dbname=" . pgdbname;
+		$string_conn = "host=" . pgserver . " user=" . pguser . " port=" . pgport . " password=" . pgpassword . " dbname=" . pgdbname;
 		
 		$conn = pg_connect($string_conn);
 		
-		$query_string = "SELECT * FROM users.vw_users WHERE user_name = '$user_name' AND user_password = md5('$user_password')";
+		$query_string = "SELECT * FROM mod_login.user_data WHERE user_name = '$user_name' AND user_pass = md5('$user_password')";
 		
 		$query = pg_query($conn,$query_string);
 		
-		$result = pg_fetch_assoc($query);*/
+		$n_registros = pg_num_rows($query);
 		
-		$result = false;
+		$result = pg_fetch_assoc($query);
+		
 		$logged = false;
 		
-		if ($user_name == "admin" && $user_password == "adminieasa100%") {
+		if ($n_registros > 0) {
+				
+			var_dump($result);
 			
-			$result = array();
-			
-			$result["user_name"] = "Administrador";
-			$result["user_fullname"] = "Administrador";
-			$result["user_profile"] = "";
-			$result["user_type_desc"] = "";
+			if ($result["user_contra_dominio"] == 't') {
+				//ldap_login($user_name,$user_password);
+				
+			}
 			
 			$logged = true;
-			
-		}
-		
-		if ($result) {
 			
 			session_start();
 			
