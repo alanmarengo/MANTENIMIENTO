@@ -19,7 +19,7 @@ for ($i=0; $i<sizeof($results); $i++) {
 	
 }
 
-$query_string = "SELECT * FROM ah.vp_geo_prcpr_proyectoahrsc_otr1 WHERE id IN(" . implode(",",$gids) . ")";
+$query_string = "SELECT * FROM ah.\"".$sep[0]."\" WHERE id IN(" . implode(",",$gids) . ")";
 
 $query = pg_query($conn,$query_string);
 
