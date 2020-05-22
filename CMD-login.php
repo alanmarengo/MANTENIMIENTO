@@ -15,7 +15,7 @@
 		$conn = pg_connect($string_conn);
 		
 		$query_string = "SELECT * FROM mod_login.user_data WHERE user_name = '$user_name' AND user_pass = md5('$user_password')";
-		
+		echo $query_string;
 		$query = pg_query($conn,$query_string);
 		
 		$n_registros = pg_num_rows($query);
