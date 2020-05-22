@@ -19,11 +19,18 @@ for ($i=0; $i<sizeof($results); $i++) {
 	
 	$sep = explode(";",$results[$i]);
 	
-	$table = explode(":",$sep[0]);
+	$layer_name = $sep[0];
 	
-	$query_string = "SELECT * FROM ah.\"".$table[1]."\" WHERE id = " . $sep[1];
-	echo $query_string . "<br>";
+	$query_string = "SELECT * FROM mod_geovisores.vw_layers WHERE layer_wms_layer = '" . $layer_name . "'";
+	
 	$query = pg_query($conn,$query_string);
+	
+	$data = pg_fetch_assoc($query);
+	
+	$query_string = "SELECT * FROM \"".$data["layer_schema"]."\".\"".$data["layer_table"]."\" WHERE id = " . $sep[1];
+	
+	$query = pg_query($conn,$query_string);
+	echo $query_string . "<br>";
 	
 	$data = pg_fetch_assoc($query);
 	
