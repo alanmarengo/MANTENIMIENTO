@@ -115,20 +115,20 @@ El alcance territorial de los programas y subprogramas depende de cada uno en pa
             <div class="row" style="padding-left: 2em; padding-right: 2em;">
                 <div class="col-md-6 parrafos">
                     <p>
-                        Las tecnologías aplicadas a la información de datos espaciales (SIG) han permitido diseñar
-                        métodos eficientes para la organización, produccción y uso de los datos geográficos. El Sistema
-                        de Información Ambiental (SIA-AHRSC) fue diseñado especificamete para este proyecto a partir de
-                        una visión integradora de la información ambiental y de la ingeniería civil y electromecánica.
+El SIA AHRSC es un sistema integrado de información que organiza y asiste a la gestión ambiental del proyecto AHRSC. Fue diseñado a partir de un complejo sistema de información ambiental y de la ingeniería civil y electromecánica para conformar un todo funcional y dinámico para su consulta, accesibilidad y difusión.                        
+                        <br />
+                        <br />
+El SIA contiene y distingue la información vinculada al PGA, estudios e informes, capas de información espacial en formato georreferenciado, datos y series estadísticas de los monitoreos de los programas y subprogramas y material audiovisual de los trabajos de campo.
                         <br />
                         <br />
                     </p>
                 </div>
                 <div class="col-md-6 parrafos">
                     <p>
-                        El SIA conforma una Infraestructura de Datos Espaciales (IDE) que almacena, integra y organiza
-                        la información, desarrolla recursos para su accesibilidad y para su publicación y para
-                        fortalecer las vinculaciones interinstitucionales generadas por el proyecto con acceso desde el
-                        Observatorio.
+Las tecnologías aplicadas a la información de datos espaciales (SIG) han permitido diseñar en el SIA, el subsistema del PGA con métodos eficientes para la producción y uso de los datos geográficos y no geográficos, facilitando la evolución y el crecimiento continuo de los programas y subprogramas. El SIA, es una gran base de datos que constituye el “core” del <a target="_blank" href="./page_acercade.php">Observatorio AHRSC</a>, una plataforma que provee las herramientas para la gestión del conocimiento interdisciplinar y participativo de la información ambiental del proyecto.
+                        <br />
+                        <br />
+El SIA conforma una Infraestructura de Datos Espaciales (IDE), un nodo dentro en una amplia red que distribuye información a partir de protocolos internacionales y que permite generar canales de comunicación y trabajo participativo fortaleciendo las vinculaciones interinstitucionales generadas por el proyecto y facilitadas desde la plataforma del Observatorio.
                         <br />
                         <br />
                     </p>
