@@ -4,6 +4,8 @@
 <!DOCTYPE html>
 <html lang="es" style="background-color:white !Important;">
 <head>
+	
+	<?php include("./scripts.analytics.php"); ?>
 
 	<title>Inicio</title>
 	

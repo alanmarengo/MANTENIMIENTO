@@ -20,6 +20,8 @@ $dt_titulo = $_GET["dt_t"];
 <!DOCTYPE html>
 <html lang="es">
 <head>
+	
+	<?php include("./scripts.analytics.php"); ?>
 
 	<title>Estadísticas</title>
 	

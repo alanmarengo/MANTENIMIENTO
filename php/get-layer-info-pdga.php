@@ -27,7 +27,7 @@ for ($i=0; $i<sizeof($results); $i++) {
 	
 }*/
 
-$layer_id_arr = array(873,937,938,939,875);
+$layer_id_arr = array(873,938,939,875,937);
 $layer_title_arr = array(
 	"Provincia Santa Cruz",
 	"Subcuenca Alta Del Río Santa Cruz",

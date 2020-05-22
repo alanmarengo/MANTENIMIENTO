@@ -6,6 +6,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+	
+	<?php include("./scripts.analytics.php"); ?>
 
 	<title>Geovisor</title>
 	
