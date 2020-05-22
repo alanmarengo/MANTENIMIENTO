@@ -2,10 +2,6 @@ $(document).ready(function() {
 
             moment.locale('es');
 
-            HoldOn.open({
-                theme: "sk-rect"
-            });
-
             var model = {
                 apiUrlBase: GlobalApiUrl,
                 tab: 0,
@@ -255,7 +251,7 @@ $(document).ready(function() {
                             <div class="preview-estudio">${model.ficha.estudio}</div>
                             <div class="preview-autores">Autores: ${model.ficha.autores}</div>
                             <div class="preview-fecha">Fecha: ${model.ficha.fecha}</div>
-                            <div class="preview-tema-subtema">Tema/Subtema: ${model.ficha.tema_subtema}</div>
+                            <div class="preview-tema-subtema">Área/Tema: ${model.ficha.tema_subtema}</div>
                             <div class="preview-proyecto">Proyecto: ${model.ficha.proyecto}</div>
                             <div class="preview-imagenes" style="overflow: hide;">
                                 ${imagenes}
@@ -408,7 +404,12 @@ $(document).ready(function() {
                 var url = model.apiUrlBase + '/mediateca_find_pag.php?' + makeUrlFilter();
                 //console.log(url);
 
+                // BLOCK UI
+                HoldOn.open({ theme: "sk-rect" });
+
                 $.getJSON(url, function(data) {
+                    HoldOn.close();
+
                     if (data == null) {
                         return;
                     }
@@ -477,8 +478,6 @@ $(document).ready(function() {
                         }
                     });
                     dataRender();
-
-                    HoldOn.close();
                 });
             }
 
@@ -1091,13 +1090,13 @@ $(document).ready(function() {
                 items: []
             },
             {
-                title: 'Tema',
+                title: 'Área Temática',
                 collapsed: true,
                 visible: true,
                 items: []
             },
             {
-                title: 'Subtema',
+                title: 'Tema',
                 collapsed: true,
                 visible: true,
                 items: []
