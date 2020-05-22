@@ -22,7 +22,7 @@ for ($i=0; $i<sizeof($results); $i++) {
 	$table = explode(":",$sep[0]);
 	
 	$query_string = "SELECT * FROM ah.\"".$table."\" WHERE id = " . $sep[1];
-	
+	echo $query_string . "<br>";
 	$query = pg_query($conn,$query_string);
 	
 	$data = pg_fetch_assoc($query);
