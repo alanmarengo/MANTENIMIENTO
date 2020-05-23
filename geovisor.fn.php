@@ -244,7 +244,7 @@ function DrawLayers($clase_id) {
 					<div>
 					
 						<div class="multi-button">
-							<input type="text" class="input getbufferdist" id="buffer-input-<?php echo $r["layer_id"]; ?>" placeholder="Distancia en Metros...">
+							<input type="text" class="input getbufferdist" id="buffer-input-<?php echo $r["layer_id"]; ?>" placeholder="Metros...">
 							<a href="#" onclick="geomap.map.addBuffer(<?php echo $r["layer_id"]; ?>,'<?php echo $r["layer_wms_server"]; ?>&service=WFS&version=1.0.0&request=GetFeature&typeName=get_buffer&outputFormat=shape-zip&',this);">AGREGAR</a>
 						</div>	
 						
