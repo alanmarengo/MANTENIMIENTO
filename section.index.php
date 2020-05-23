@@ -206,16 +206,16 @@
                         
                         <!-- #8 -->
                         <!--<a href="./page_antecedentes.php" class="col-md-12 modulo-wrap modulo-8">-->
-                        <a href="#" class="col-md-12 modulo-wrap modulo-8">
+                        <a href="./page_endesarrollo.php?q=Patrimonio natural y cultural" class="col-md-12 modulo-wrap modulo-8">
                             <div class="modulo-opacity"></div>
                             <div class="modulo-text">
                                 <!--Antecedentes y marco legal-->
-                                En construcción
+                                <!--En construcción-->
                             </div>
                             <div class="modulo-hover">
                                 <p class="modulo-hover-text">
                                     <!--Línea de base ambiental, estudios de impacto y normativa aplicable al proyecto.--> 
-                                    En construcción
+                                    <!--En construcción-->
                                     <br />
                                     <span class="modulo-hover-icon">
                                         <i class="fa fa-plus-circle fa-2x"></i>
@@ -283,7 +283,7 @@
                     <img src="./images/index/icon1a.png" />
                 </a>
                 <a 
-                    href="./page_herramientas.php" 
+                    href="./geovisor.php" 
                     class="col-md-12 link-icon" 
                     data-img="./images/index/icon2a.png"
                     data-imghover="./images/index/icon2b.png" 
