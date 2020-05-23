@@ -147,14 +147,17 @@
                 </a>
 
                 <!-- #5 -->
-                <a href="./page_endesarrollo.php?q=Manejo integrado de cuenca" class="col-md-6 modulo-wrap modulo-5">
+                <!--<a href="./page_endesarrollo.php?q=Manejo integrado de cuenca" class="col-md-6 modulo-wrap modulo-5">-->
+				<a href="./page_antecedentes.php" class="col-md-6 modulo-wrap modulo-5">
                     <div class="modulo-opacity"></div>
                     <div class="modulo-text">
-                        Manejo integrado de cuenca
+                        <!--Manejo integrado de cuenca-->
+                        Antecedentes y marco legal
                     </div>
                     <div class="modulo-hover">
                         <p class="modulo-hover-text">
-                            Estudios, análisis y datos de los recursos de la cuenca del río Santa Cruz en base al enfoque de manejo integrado.                             <br />
+                            <!--Estudios, análisis y datos de los recursos de la cuenca del río Santa Cruz en base al enfoque de manejo integrado. -->
+                            Línea de base ambiental, estudios de impacto y normativa aplicable al proyecto.                            <br />
                             <span class="modulo-hover-icon">
                                 <i class="fa fa-plus-circle fa-2x"></i>
                             </span>
@@ -207,12 +210,12 @@
                             <div class="modulo-opacity"></div>
                             <div class="modulo-text">
                                 <!--Antecedentes y marco legal-->
-                                En construccion
+                                En construcción
                             </div>
                             <div class="modulo-hover">
                                 <p class="modulo-hover-text">
                                     <!--Línea de base ambiental, estudios de impacto y normativa aplicable al proyecto.--> 
-                                    En construccion
+                                    En construcción
                                     <br />
                                     <span class="modulo-hover-icon">
                                         <i class="fa fa-plus-circle fa-2x"></i>
