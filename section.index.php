@@ -147,14 +147,17 @@
                 </a>
 
                 <!-- #5 -->
-                <a href="./page_endesarrollo.php?q=Manejo integrado de cuenca" class="col-md-6 modulo-wrap modulo-5">
+                <!--<a href="./page_endesarrollo.php?q=Manejo integrado de cuenca" class="col-md-6 modulo-wrap modulo-5">-->
+				<a href="./page_antecedentes.php" class="col-md-6 modulo-wrap modulo-5">
                     <div class="modulo-opacity"></div>
                     <div class="modulo-text">
-                        Manejo integrado de cuenca
+                        <!--Manejo integrado de cuenca-->
+                        Antecedentes y marco legal
                     </div>
                     <div class="modulo-hover">
                         <p class="modulo-hover-text">
-                            Estudios, análisis y datos de los recursos de la cuenca del río Santa Cruz en base al enfoque de manejo integrado.                             <br />
+                            <!--Estudios, análisis y datos de los recursos de la cuenca del río Santa Cruz en base al enfoque de manejo integrado. -->
+                            Línea de base ambiental, estudios de impacto y normativa aplicable al proyecto.                            <br />
                             <span class="modulo-hover-icon">
                                 <i class="fa fa-plus-circle fa-2x"></i>
                             </span>
@@ -166,14 +169,14 @@
             <div class="row modulo-row">
 
                 <!-- #6 -->
-                <a href="./page_endesarrollo.php?q=Gestión ambiental de obra" class="col-md-6 modulo-wrap modulo-6" style="width: 50%;">
+                <a href="./page_endesarrollo.php?q=Monitoreo hidrosedimentológico e hidroambiental del río Santa Cruz" class="col-md-6 modulo-wrap modulo-6" style="width: 50%;">
                     <div class="modulo-opacity"></div>
                     <div class="modulo-text">
-                        Gestión ambiental de obra
+                        Monitoreo hidrosedimentológico e hidroambiental del río Santa Cruz
                     </div>
                     <div class="modulo-hover">
                         <p class="modulo-hover-text">
-                            Gestión de los aspectos ambientales en obra, higiene y seguridad, política de calidad en los procesos y gestión del riesgo. 
+                            Monitoreo hidrosedimentológico e hidroambiental del río Santa Cruz.
                             <span class="modulo-hover-icon">
                                 <i class="fa fa-plus-circle fa-2x"></i>
                             </span>
@@ -202,14 +205,17 @@
                         </a>
                         
                         <!-- #8 -->
-                        <a href="./page_antecedentes.php" class="col-md-12 modulo-wrap modulo-8">
+                        <!--<a href="./page_antecedentes.php" class="col-md-12 modulo-wrap modulo-8">-->
+                        <a href="./page_endesarrollo.php?q=Patrimonio natural y cultural" class="col-md-12 modulo-wrap modulo-8">
                             <div class="modulo-opacity"></div>
                             <div class="modulo-text">
-                                Antecedentes y marco legal
+                                <!--Antecedentes y marco legal-->
+                                <!--En construcción-->
                             </div>
                             <div class="modulo-hover">
                                 <p class="modulo-hover-text">
-                                    Línea de base ambiental, estudios de impacto y normativa aplicable al proyecto. 
+                                    <!--Línea de base ambiental, estudios de impacto y normativa aplicable al proyecto.--> 
+                                    <!--En construcción-->
                                     <br />
                                     <span class="modulo-hover-icon">
                                         <i class="fa fa-plus-circle fa-2x"></i>
@@ -230,10 +236,11 @@
                 </div>
                 
                 <!-- #10 -->
-                <a href="./geovisor.php?geovisor=2" class="col-md-4 modulo-wrap modulo-10">
+                <!--<a href="./geovisor.php?geovisor=2" class="col-md-4 modulo-wrap modulo-10">/page_herramientas.php-->
+                <a href="./page_herramientas.php" class="col-md-4 modulo-wrap modulo-10">
                     <div class="modulo-opacity"></div>
                     <div class="modulo-text">
-                        Visor de información geográfica 
+                        Herramientas geográficas
                     </div>
                     <div class="modulo-hover">
                         <p class="modulo-hover-text">
@@ -276,7 +283,7 @@
                     <img src="./images/index/icon1a.png" />
                 </a>
                 <a 
-                    href="./page_herramientas.php" 
+                    href="./geovisor.php" 
                     class="col-md-12 link-icon" 
                     data-img="./images/index/icon2a.png"
                     data-imghover="./images/index/icon2b.png" 

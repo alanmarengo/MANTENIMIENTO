@@ -5,17 +5,24 @@
 	
 	//include("../include.vars.pg.php");
 	
-	if ((isset($_POST["user-name"])) && (isset($_POST["user-password"]))) {
+	if ((isset($_POST["user-name"])) && (isset($_POST["user-password"]))) 
+	{
 		
-		$user_name = trim($_POST["user-name"]);
+		//$user_name = trim($_POST["user-name"]);
 		
-		$user_password = trim($_POST["user-password"]);
+		$user_name = pg_escape_string($_POST["user-name"]);
+		
+		//$user_password = trim($_POST["user-password"]);
+		
+		$user_password = pg_escape_string($_POST["user-password"]);
 		
 		$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 		
 		$conn = pg_connect($string_conn);
 		
-		$query_string = "SELECT * FROM mod_login.user_data WHERE user_name = '$user_name' AND user_pass = md5('$user_password')";
+		//$query_string = "SELECT * FROM mod_login.user_data WHERE user_name = '$user_name' AND user_pass = md5('$user_password')";
+		
+		$query_string = "SELECT * FROM mod_login.user_data WHERE user_name = '$user_name';";/* Si el usuario existe */
 		
 		$query = pg_query($conn,$query_string);
 		
@@ -24,19 +31,54 @@
 		$result = pg_fetch_assoc($query);
 		
 		$logged = false;
+<<<<<<< HEAD
 		
 		if ($n_registros > 0) {
 			
 			if ($result["user_contra_dominio"] == 't') {
 				//ldap_login($user_name,$user_password);				
 			}
+=======
+				
+		//var_dump($n_registros);
+		//var_dump($result);
+		
+		if ($n_registros > 0) {
 			
-			$logged = true;
+			if ($result["user_contra_dominio"] == 't') 
+			{
+				//ldap_login($user_name,$user_password);
+				if(ldap_login($user_name,$user_password))
+				{
+					$logged = true;
+>>>>>>> 9316d7f251b8f0a4ce36a57d6fe477a00e73b707
 			
-			session_start();
+					session_start();
 			
-			$_SESSION["user_info"] = $result;
+					$_SESSION["user_info"] = $result;
+				}
+				else	{ die("Invalid Token");	};
+			}
+			else
+			{
+				$query_string = "SELECT * FROM mod_login.user_data WHERE user_name = '$user_name' AND user_pass = md5('$user_password')";
+		
+				$query = pg_query($conn,$query_string);
+		
+				$n_registros = pg_num_rows($query);
+		
+				//$result = pg_fetch_assoc($query);
+				
+				if($n_registros>0)
+				{
+
+					$logged = true;
 			
+					session_start();
+			
+					$_SESSION["user_info"] = $result;
+				}else  { die("Invalid Token"); };
+			};
 		}
 		
 	}else{

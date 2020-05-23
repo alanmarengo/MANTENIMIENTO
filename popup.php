@@ -5,10 +5,11 @@ data-minimizable="1" data-minimized-title="BUSCAR CAPAS">
 
 		<div class="jump-window-header" id="popup-header">
 			<a href="#" class="button button-active" id="btn-bus-simple">
-				<span>BUSQUEDA</span>
+				<!--<span>BUSQUEDA</span>-->
+				<span>SELECCIÓN</span>
 			</a>
 			<a href="#" class="button ml-10" id="btn-bus-advanced">
-				<span>BUSQUEDA AVANZADA</span>
+				<span>BÚSQUEDA AVANZADA</span>
 			</a>
 			<a href="#" class="button ml-10 p0-5" id="btn-bus-reset" title="Resetear Búsqueda">
 				<img src="./images/geovisor/icons/search-reset.png">

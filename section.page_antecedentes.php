@@ -102,7 +102,7 @@
                 El Estudio de Impacto Ambiental (EsIA) forma parte del proceso administrativo de Evaluación de Impacto Ambiental (EIA) y utiliza una metodología sistemática para encarar la identificación y caracterización de los impactos positivos y negativos sobre el ambiente, además de proponer las medidas para evitar, prevenir o mitigar los impactos negativos y potenciar los positivos, de manera de brindar información para la toma de decisiones.
                 <br />
                 <br />
-                <a target="_self" href="http://observatorio.ieasa.com.ar/sga/recursos/recursos_estudios/1.pdf">Síntesis del Estudio de impacto ambiental</a>
+                <a target="_self" href="./sga/recursos/recursos_estudios/1.pdf">Síntesis del Estudio de impacto ambiental</a>
             </p>
             
             <!--
@@ -165,13 +165,13 @@
             <p>
                 <ul class="ml-3">
                     <li>
-                        <a target="_self" href="http://observatorio.ieasa.com.ar/sga/recursos/recursos_estudios/1.pdf">S&iacute;ntesis Evaluaci&oacute;n Impacto Ambiental</a>
+                        <a target="_self" href="./sga/recursos/recursos_estudios/1.pdf">S&iacute;ntesis Evaluaci&oacute;n Impacto Ambiental</a>
                     </li>
                     <li>
-                        <a target="_self" href="http://observatorio.ieasa.com.ar/mediateca.php?s=ESIAAHRSC#">Estudio de Impacto Ambiental</a>
+                        <a target="_self" href="./mediateca.php?s=ESIAAHRSC#">Estudio de Impacto Ambiental</a>
                     </li>
                     <li>
-                        <a target="_self" href="http://observatorio.ieasa.com.ar/sga/recursos/recursos_estudios/192.pdf">Plan de Gesti&oacute;n Ambiental</a>
+                        <a target="_self" href="./sga/recursos/recursos_estudios/192.pdf">Plan de Gesti&oacute;n Ambiental</a>
                     </li>
                 </ul>
             </p>
