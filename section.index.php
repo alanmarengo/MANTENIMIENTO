@@ -173,7 +173,7 @@
                     </div>
                     <div class="modulo-hover">
                         <p class="modulo-hover-text">
-                            Gestión de los aspectos ambientales en obra, higiene y seguridad, política de calidad en los procesos y gestión del riesgo. 
+                            Monitoreo hidrosedimentológico e hidroambiental del río Santa Cruz.
                             <span class="modulo-hover-icon">
                                 <i class="fa fa-plus-circle fa-2x"></i>
                             </span>
