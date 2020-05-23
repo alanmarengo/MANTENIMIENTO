@@ -202,14 +202,17 @@
                         </a>
                         
                         <!-- #8 -->
-                        <a href="./page_antecedentes.php" class="col-md-12 modulo-wrap modulo-8">
+                        <!--<a href="./page_antecedentes.php" class="col-md-12 modulo-wrap modulo-8">-->
+                        <a href="#" class="col-md-12 modulo-wrap modulo-8">
                             <div class="modulo-opacity"></div>
                             <div class="modulo-text">
-                                Antecedentes y marco legal
+                                <!--Antecedentes y marco legal-->
+                                En construccion
                             </div>
                             <div class="modulo-hover">
                                 <p class="modulo-hover-text">
-                                    Línea de base ambiental, estudios de impacto y normativa aplicable al proyecto. 
+                                    <!--Línea de base ambiental, estudios de impacto y normativa aplicable al proyecto.--> 
+                                    En construccion
                                     <br />
                                     <span class="modulo-hover-icon">
                                         <i class="fa fa-plus-circle fa-2x"></i>
