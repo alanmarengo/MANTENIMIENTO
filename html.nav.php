@@ -45,7 +45,7 @@
 			<a href="./page_herramientas.php?target=geoservicios">Servicios Geográficos</a>
 		</li>
 		<li>
-			<a href="http://observatorio.ieasa.com.ar:8080/geonetwork" tarjet="_blank" >Datos Abiertos</a>
+			<a href="http://observatorio.ieasa.com.ar:8080/geonetwork" target="_blank" >Datos Abiertos</a>
 		</li>
 		<li>
 			<a href="./contacto.php">Contacto</a>
