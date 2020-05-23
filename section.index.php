@@ -169,7 +169,7 @@
                 <a href="./page_endesarrollo.php?q=Gestión ambiental de obra" class="col-md-6 modulo-wrap modulo-6" style="width: 50%;">
                     <div class="modulo-opacity"></div>
                     <div class="modulo-text">
-                        Gestión ambiental de obra
+                        Monitoreo hidrosedimentológico e hidroambiental del río Santa Cruz
                     </div>
                     <div class="modulo-hover">
                         <p class="modulo-hover-text">
