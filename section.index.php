@@ -166,7 +166,7 @@
             <div class="row modulo-row">
 
                 <!-- #6 -->
-                <a href="./page_endesarrollo.php?q=Gestión ambiental de obra" class="col-md-6 modulo-wrap modulo-6" style="width: 50%;">
+                <a href="./page_endesarrollo.php?q=Monitoreo hidrosedimentológico e hidroambiental del río Santa Cruz" class="col-md-6 modulo-wrap modulo-6" style="width: 50%;">
                     <div class="modulo-opacity"></div>
                     <div class="modulo-text">
                         Monitoreo hidrosedimentológico e hidroambiental del río Santa Cruz
