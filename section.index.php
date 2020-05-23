@@ -236,10 +236,11 @@
                 </div>
                 
                 <!-- #10 -->
-                <a href="./geovisor.php?geovisor=2" class="col-md-4 modulo-wrap modulo-10">
+                <!--<a href="./geovisor.php?geovisor=2" class="col-md-4 modulo-wrap modulo-10">/page_herramientas.php-->
+                <a href="./page_herramientas.php" class="col-md-4 modulo-wrap modulo-10">
                     <div class="modulo-opacity"></div>
                     <div class="modulo-text">
-                        Visor de información geográfica 
+                        Herramientas geográficas
                     </div>
                     <div class="modulo-hover">
                         <p class="modulo-hover-text">
