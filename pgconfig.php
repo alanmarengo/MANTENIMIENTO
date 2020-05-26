@@ -22,7 +22,7 @@ if((strpos($_SERVER["SCRIPT_FILENAME"],"wamp64")) || (strpos($_SERVER["SCRIPT_FI
 	
 }
 
-function limpiar($str)
+function limpiar_global($str)
 {
          return str_replace(array("\n","\r","\""),'',$str);
 };

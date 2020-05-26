@@ -58,7 +58,7 @@ function draw_imagenes()
       			$fflag = true;
   		};
   
-  		echo "\"".limpiar($row[1])."\"";
+  		echo "\"".limpiar_glogal($row[1])."\"";
   
   		$row = pg_fetch_row($recordset);//NEXT
 	};
