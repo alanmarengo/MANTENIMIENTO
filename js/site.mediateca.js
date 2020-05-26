@@ -927,7 +927,7 @@ $(document).ready(function() {
                 links = `
                     <div class="doc-links">
                         <a data-solapa="0" data-mode="0" data-mode_id="${doc.estudio}" class="btn btn-dark estudios-link">DOCUMENTOS ASOCIADOS</a>
-                        <a data-solapa="0" data-mode="1" data-mode_id="${doc.estudio}" class="btn btn-dark estudios-link">RECURSOS ASOCIADOS</a>
+                        <a data-solapa="2" data-mode="1" data-mode_id="${doc.estudio}" class="btn btn-dark estudios-link">RECURSOS ASOCIADOS</a>
                     </div>
                 `;
             }

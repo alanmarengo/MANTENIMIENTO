@@ -429,6 +429,8 @@ $(document).ready(function() {
     }
 
     function loadProgramasFichas(temaId, container) {
+        $(container).html('');
+        
         let qs = {
             tema_id: temaId
         };
