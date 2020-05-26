@@ -31,14 +31,6 @@
 		$result = pg_fetch_assoc($query);
 		
 		$logged = false;
-<<<<<<< HEAD
-		
-		if ($n_registros > 0) {
-			
-			if ($result["user_contra_dominio"] == 't') {
-				//ldap_login($user_name,$user_password);				
-			}
-=======
 				
 		//var_dump($n_registros);
 		//var_dump($result);
@@ -51,7 +43,6 @@
 				if(ldap_login($user_name,$user_password))
 				{
 					$logged = true;
->>>>>>> 9316d7f251b8f0a4ce36a57d6fe477a00e73b707
 			
 					session_start();
 			
