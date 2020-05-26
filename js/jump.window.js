@@ -1,6 +1,19 @@
 Jump.window = function() {
 	
+	Jump.index = 1000000;
+	
 	this.initialize = function() {
+		
+		$(".jump-window").each(function(i,v) {
+			
+			$(v).on("click",function() {
+				
+				Jump.index++;
+				$(v).css("z-index",Jump.index);
+				
+			});
+			
+		});
 		
 		$(".jump-window-full-body").each(function(i,v) {
 			
@@ -79,6 +92,8 @@ Jump.window = function() {
 	
 	this.open = function(id) {
 		
+		Jump.index++;
+		
 		var e = document.getElementById(id);
 		
 		if (e.minimizedBar) {
@@ -88,7 +103,7 @@ Jump.window = function() {
 		}
 		
 		$(e).show();
-		$(e).css("z-index","1000000");
+		$(e).css("z-index",Jump.index);
 		$(e).children(".jump-window-inner").show();
 		
 	}
