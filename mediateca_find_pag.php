@@ -423,7 +423,7 @@ $SQL = 	"SELECT F.*,COALESCE(T.total,0) AS total "
 		."SELECT * FROM mod_mediateca.get_filtros_total_consulta_filtro('$SUBQUERY',5) WHERE valor_id IS NOT NULL UNION ALL "
 		."SELECT * FROM mod_mediateca.get_filtros_total_consulta_filtro('$SUBQUERY',4) WHERE valor_id IS NOT NULL"
 		.")T "
-		."ON F.filtro_id=T.filtro_id AND F.valor_id = T.valor_id ORDER BY valor_desc ASC";
+		."ON F.filtro_id=T.filtro_id AND F.valor_id = T.valor_id ORDER BY F.valor_desc ASC";
 	
   
 
