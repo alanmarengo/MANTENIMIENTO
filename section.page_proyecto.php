@@ -111,7 +111,7 @@ Además, la presa posee una escala de peces, ubicada sobre la margen izquierda, 
                     <div class="video-container">
                         <video style="width: 100%; height: auto;" controls poster="./images/previewCC.png">
                             <source
-                                src="http://observatorio.ieasa.com.ar/sga/recursos/recursos_audiovisual/video_proyecto/Video_CC.mp4"
+                                src="./sga/recursos/recursos_audiovisual/video_proyecto/Video_CC.mp4"
                                 type="video/mp4" />
                             Tu navegador no soporta reproducir este video.
                         </video>

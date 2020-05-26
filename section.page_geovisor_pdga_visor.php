@@ -16,8 +16,8 @@
 				<a href="#" class="black-button" id="veg-btn" target="_blank">VER EN GEOVISOR</a>
 			</div>
 		</div>
-		<div class="jus-left row jump-row" style="position:absolute; top:15px; left:30px; max-width:350px; display: flex;">
-			<div style="width:350px;">
+		<div class="jus-left row jump-row" style="position:absolute; top:15px; left:30px; max-width:325px; display: flex;">
+			<div style="width:350px; background:rgba(255,255,255,0.7); padding:10px; font-size:14px;">
 				<span>Sitios de Observación y Medición del PDGA</span>
 			</div>
 		</div>

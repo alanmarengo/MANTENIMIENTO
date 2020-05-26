@@ -23,7 +23,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <textarea type="text" class="form-control" placeholder="" rows="6"></textarea>
+                            <textarea type="text" class="form-control" placeholder="Comentarios" rows="6"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Enviar</button>
                     </div>

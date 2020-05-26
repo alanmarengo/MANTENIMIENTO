@@ -5,17 +5,24 @@
 	
 	//include("../include.vars.pg.php");
 	
-	if ((isset($_POST["user-name"])) && (isset($_POST["user-password"]))) {
+	if ((isset($_POST["user-name"])) && (isset($_POST["user-password"]))) 
+	{
 		
-		$user_name = trim($_POST["user-name"]);
+		//$user_name = trim($_POST["user-name"]);
 		
-		$user_password = trim($_POST["user-password"]);
+		$user_name = pg_escape_string($_POST["user-name"]);
+		
+		//$user_password = trim($_POST["user-password"]);
+		
+		$user_password = pg_escape_string($_POST["user-password"]);
 		
 		$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 		
 		$conn = pg_connect($string_conn);
 		
-		$query_string = "SELECT * FROM mod_login.user_data WHERE user_name = '$user_name' AND user_pass = md5('$user_password')";
+		//$query_string = "SELECT * FROM mod_login.user_data WHERE user_name = '$user_name' AND user_pass = md5('$user_password')";
+		
+		$query_string = "SELECT * FROM mod_login.user_data WHERE user_name = '$user_name';";/* Si el usuario existe */
 		
 		$query = pg_query($conn,$query_string);
 		
@@ -25,22 +32,44 @@
 		
 		$logged = false;
 				
-		var_dump($n_registros);
-		var_dump($result);
+		//var_dump($n_registros);
+		//var_dump($result);
 		
 		if ($n_registros > 0) {
 			
-			if ($result["user_contra_dominio"] == 't') {
+			if ($result["user_contra_dominio"] == 't') 
+			{
 				//ldap_login($user_name,$user_password);
-				
+				if(ldap_login($user_name,$user_password))
+				{
+					$logged = true;
+			
+					session_start();
+			
+					$_SESSION["user_info"] = $result;
+				}
+				else	{ die("Invalid Token");	};
 			}
+			else
+			{
+				$query_string = "SELECT * FROM mod_login.user_data WHERE user_name = '$user_name' AND user_pass = md5('$user_password')";
+		
+				$query = pg_query($conn,$query_string);
+		
+				$n_registros = pg_num_rows($query);
+		
+				//$result = pg_fetch_assoc($query);
+				
+				if($n_registros>0)
+				{
+
+					$logged = true;
 			
-			$logged = true;
+					session_start();
 			
-			session_start();
-			
-			$_SESSION["user_info"] = $result;
-			
+					$_SESSION["user_info"] = $result;
+				}else  { die("Invalid Token"); };
+			};
 		}
 		
 	}else{

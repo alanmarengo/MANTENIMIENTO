@@ -24,7 +24,8 @@
 			<a href="./page_endesarrollo.php?q=Participación Pública y Gestión Social">Participación Pública y Gestión Social</a>
 		</li>
 		<li>
-			<a href="./page_endesarrollo.php?q=Gestión Ambiental de Obra">Gestión Ambiental de Obra</a>
+			<a href="./page_endesarrollo.php?q=Monitoreo hidrosedimentológico e hidroambiental del río Santa Cruz">Monitoreo hidrosedimentológico e hidroambiental del río Santa Cruz</a>
+			<!--<a href="./page_endesarrollo.php?q=Gestión Ambiental de Obra">Gestión Ambiental de Obra</a> -->
 		</li>
 		<li>
 			<a href="./page_endesarrollo.php?q=Patrimonio Natural y Cultural">Patrimonio Natural y Cultural</a>
@@ -38,10 +39,13 @@
 			<a href="./page_endesarrollo.php?q=Plan Gestión de Calidad">Plan Gestión de Calidad</a>
 		</li>
 		<li>
+			<a href="./page_herramientas.php">Herramientas geográficas</a>
+		</li>
+		<li>
 			<a href="./page_herramientas.php?target=geoservicios">Servicios Geográficos</a>
 		</li>
 		<li>
-			<a href="http://observatorio.ieasa.com.ar:8080/geonetwork">Datos Abiertos</a>
+			<a href="http://observatorio.ieasa.com.ar:8080/geonetwork" target="_blank" >Datos Abiertos</a>
 		</li>
 		<li>
 			<a href="./contacto.php">Contacto</a>
