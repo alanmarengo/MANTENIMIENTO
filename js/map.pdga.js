@@ -201,7 +201,7 @@ function ol_map() {
 			name:"ahrsc:vp_geo_limites_provinciales_sit_pga",
 			visible:true,
 			source: new ol.source.TileWMS({
-				url: "http://observatorio.ieasa.com.ar/geoserver/ows?",
+				url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
 				params: {
 					'LAYERS': "ahrsc:vp_geo_limites_provinciales_sit_pga",
 					'VERSION': '1.1.1',
@@ -217,7 +217,7 @@ function ol_map() {
 			name:"ahrsc:polig_obra_pga",
 			visible:true,
 			source: new ol.source.TileWMS({
-				url: "http://observatorio.ieasa.com.ar/geoserver/ows?",
+				url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
 				params: {
 					'LAYERS': "ahrsc:polig_obra_pga",
 					'VERSION': '1.1.1',
@@ -234,7 +234,7 @@ function ol_map() {
 			name:"ahrsc:vp_geo_hihgr_cuencaaltarsc_otr1",
 			visible:true,
 			source: new ol.source.TileWMS({
-				url: "http://observatorio.ieasa.com.ar/geoserver/ows?",
+				url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
 				params: {
 					'LAYERS': "ahrsc:vp_geo_hihgr_cuencaaltarsc_otr1",
 					'VERSION': '1.1.1',
@@ -251,7 +251,7 @@ function ol_map() {
 			name:"ahrsc:vp_geo_hihgr_cuencamediabajarsc_otr1",
 			visible:true,
 			source: new ol.source.TileWMS({
-				url: "http://observatorio.ieasa.com.ar/geoserver/ows?",
+				url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
 				params: {
 					'LAYERS': "ahrsc:vp_geo_hihgr_cuencamediabajarsc_otr1",
 					'VERSION': '1.1.1',
@@ -268,7 +268,7 @@ function ol_map() {
 			name:"ahrsc:vp_geo_hihgr_estuario_otr1",
 			visible:true,
 			source: new ol.source.TileWMS({
-				url: "http://observatorio.ieasa.com.ar/geoserver/ows?",
+				url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
 				params: {
 					'LAYERS': "ahrsc:vp_geo_hihgr_estuario_otr1",
 					'VERSION': '1.1.1',
