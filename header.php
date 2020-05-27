@@ -84,7 +84,7 @@
                         <i class="fa fa-question-circle"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-help">
-						<a class="dropdown-item" href="#">Manual de Usuario</a>
+						<a class="dropdown-item" href="./images/EIASA Manual Observatorio.pdf">Manual de Usuario</a>
 						<a class="dropdown-item" href="#">Video Explicativo</a>
 					</div>
                 </li>
