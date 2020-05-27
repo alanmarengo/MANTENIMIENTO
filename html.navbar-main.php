@@ -58,7 +58,7 @@
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-help" id="dropdown-help">
 						<ul>
 							<li>
-								<a class="dropdown-item" href="#">Manual de Usuario</a>
+								<a class="dropdown-item" target="_blank" href="./images/EIASA Manual Observatorio.pdf">Manual de Usuario</a>
 							</li>
 							<li>
 								<a class="dropdown-item" href="#">Video Explicativo</a>
