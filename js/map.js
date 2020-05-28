@@ -955,7 +955,7 @@ function ol_map() {
 				visible:true,
 				singleTile: true,
 				source: new ol.source.TileWMS({
-					url: "http://observatorio.ieasa.com.ar:8080/geoserver/ows?",
+					url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
 					params: {
 						'LAYERS': capa,//'intervalos_polygons',
 						'id':query_id,
