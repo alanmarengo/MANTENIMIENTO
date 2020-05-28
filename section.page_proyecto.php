@@ -8,6 +8,7 @@
             </div>
 
             <div class="col-md-12 top-buttons">
+                <a id="link-ahrsc" href="#" data-target="#ahrsc">AHRSC Y OBRAS COMPLEMENTARIAS</a>
                 <a id="link-condor" href="#" data-target="#condor">Condor Cliff</a>
                 <a id="link-barrancosa" href="#" data-target="#barrancosa">La Barrancosa</a>
                 <a id="link-leat" href="#" data-target="#leat">Línea de Alta Tensión</a>
@@ -50,7 +51,7 @@ A diferencia de otros proyectos hidroeléctricos, los embalses no requieren reas
 
         <!---------------------------------------------->
         <div class="col-md-12 section-b">
-            <a id="optimizacion"></a>
+            <a id="ahrsc"></a>
             <h3 style="margin-bottom: 1em; color: #333;">AHRSC y obras complementarias</h3>
 
             <div class="embed-responsive" style="padding-top: 40%;">
