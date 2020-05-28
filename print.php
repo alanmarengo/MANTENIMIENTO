@@ -1,4 +1,5 @@
 <?php include("./fn.php"); ?>
+<?php include("./geovisor.fn.php"); ?>
 <?php include("./login.php"); ?>
 
 <!DOCTYPE html>
@@ -37,7 +38,7 @@
 	
 </head>
 <body style="background-color:white !Important;">
-
+	<?php var_dump($_POST); ?>
 	<div id="page">
 		
 		<div class="page-container" style="background-color: #FFFFFF !important; width:1024px;">
@@ -64,13 +65,19 @@
 					
 					for ($i=0; $i<sizeof($legends); $i++) {
 						
-						$image = "http://observatorio.ieasa.com.ar/geoserver/ows?&version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer=".$legends[$i]."&format=image/png&";
+						if (!empty($legends[$i])) {
 						
+							$image = "https://observatorio.ieasa.com.ar/geoserver/ows?&version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer=".$legends[$i]."&format=image/png&";
+							
 						?>
 						
-						<img src="<?php echo $image; ?>">
+							<p><?php echo GetLayerLabel($legends[$i]); ?></p>
+							<p><img src="<?php echo $image; ?>"></p>
+							<hr>
 						
 						<?php
+						
+						}
 						
 					}
 					
