@@ -38,7 +38,7 @@
 	
 </head>
 <body style="background-color:white !Important;">
-	<?php var_dump($_POST); ?>
+
 	<div id="page">
 		
 		<div class="page-container" style="background-color: #FFFFFF !important; width:1024px;">

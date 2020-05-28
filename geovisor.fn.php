@@ -494,7 +494,7 @@ function GetLayerLabel($layer_name) {
 	$conn = pg_connect($string_conn);
 	
 	$query_string = "SELECT * FROM mod_geovisores.vw_layers WHERE layer_wms_layer = '" . $layer_name . "'";
-	
+	echo $query_string;
 	$query = pg_query($conn,$query_string);
 	
 	$result = pg_fetch_assoc($query);
