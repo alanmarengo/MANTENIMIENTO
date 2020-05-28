@@ -812,7 +812,7 @@ $(document).ready(function() {
         // RESET FILTROS, TODOS
         if ($('#uxFiltersChecked').html()) {
             $('#uxFiltersChecked').append(`
-                <a class="filters-clear filters-checked btn btn-danger btn-xs" data-estudio="-2">Limpiar filtros</a>
+                <a class="filters-clear filters-checked btn btn-danger btn-xs" style="color: #fff;" data-estudio="-2">Limpiar filtros</a>
             `)
         }
     }
