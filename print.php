@@ -1,3 +1,4 @@
+<?php include("./pgconfig.php"); ?>
 <?php include("./fn.php"); ?>
 <?php include("./geovisor.fn.php"); ?>
 <?php include("./login.php"); ?>

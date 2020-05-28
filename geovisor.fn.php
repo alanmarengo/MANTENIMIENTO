@@ -498,8 +498,7 @@ function GetLayerLabel($layer_name) {
 	$query = pg_query($conn,$query_string);
 	
 	$result = pg_fetch_assoc($query);
-	var_dump($conn);
-	var_dump($result);
+	
 	$layer_desc = $result["layer_desc"];
 	
 	return $layer_desc;
