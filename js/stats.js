@@ -1182,7 +1182,7 @@ function ol_stats() {
 						//'VERSION': '1.1.1',
 						'FORMAT': 'image/png',
 						'TILED': false,
-						'SLD':'https://'+window.location.hostname+'/sld/'+query_id+'.sld' /* EL SLD CREADO ES SIEMPRE EL ID_MAPEO.SLD */,
+						'SLD':'http://'+window.location.hostname+'/sld/'+query_id+'.sld' /* EL SLD CREADO ES SIEMPRE EL ID_MAPEO.SLD, ES IMPORTANTE QUE SEA HTTP,PARA HTTPS JAVA NECESITA CONFIGURACIONES EXTRA */,
 						'viewparams':'id:'+query_id
 					}
 				})
