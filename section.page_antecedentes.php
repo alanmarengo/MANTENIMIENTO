@@ -102,14 +102,18 @@
                 El Estudio de Impacto Ambiental (EsIA) forma parte del proceso administrativo de Evaluación de Impacto Ambiental (EIA) y utiliza una metodología sistemática para encarar la identificación y caracterización de los impactos positivos y negativos sobre el ambiente, además de proponer las medidas para evitar, prevenir o mitigar los impactos negativos y potenciar los positivos, de manera de brindar información para la toma de decisiones.
                 <br />
                 <br />
-                <a target="_self" href="./sga/recursos/recursos_estudios/1.pdf">Síntesis del Estudio de impacto ambiental</a>
+                <ul class="ml-3">
+                    <li>
+                        <a target="_self" href="./sga/recursos/recursos_estudios/1.pdf">S&iacute;ntesis Evaluaci&oacute;n Impacto Ambiental</a>
+                    </li>
+                    <li>
+                        <a target="_self" href="./mediateca.php?s=ESIAAHRSC#">Estudio de Impacto Ambiental</a>
+                    </li>
+                    <li>
+                        <a target="_self" href="./sga/recursos/recursos_estudios/192.pdf">Plan de Gesti&oacute;n Ambiental</a>
+                    </li>
+                </ul>
             </p>
-            
-            <!--
-            <p>Los Aprovechamientos Hidroeléctricos del río Santa Cruz (AHRSC) consisten en la construcción de las presas Cóndor Cliff (CC) y La Barrancosa (LB), con sus respectivas centrales de generación, sobre el río homónimo, que proveerán electricidad al Sistema Argentino de Interconexión (SADI).</p>
-            <p>El potencial energético del río Santa Cruz comenzó a estudiarse en la década de los 50 del siglo XX. En 1955, la empresa del estado Agua y Energía Eléctrica (AyEE) dispuso la habilitación de estaciones de aforo sobre el río, además de algunas estaciones meteorológicas en la zona, lo que hizo posible contar con más datos y establecer tendencias más confiables, a pesar de la discontinuidad en las mediciones.</p>
-            <p>A partir de 1975, AyEE comenzó a realizar estudios de prefactibilidad, incluyendo relevamientos geológicos y topográficos. Y en 1980 se realizaronEl Estudio de Impacto Ambiental (EsIA) es parte del proceso de Evaluación de Impacto Ambiental (EIA) y proporciona una metodología sistemática para encarar la identificación y caracterización de las posibles alteraciones del ambiente y, de acuerdo con ese estudio, proponer modificaciones, alternativas o mitigaciones en pos de que el impacto negativo del proyecto sobre el ambiente sea el menor posible. A su vez, se identifican los impactos positivos para potenciar sus efectos. </p>
-            -->
 
             <a id="elaboracion"></a>
             <b>Proceso de elaboración y aprobación</b>
@@ -161,20 +165,6 @@
             <div class="embed-responsive" style="padding-top: 40%;">
                 <iframe src="./grafico-linea-tiempo.php" frameborder="0"></iframe>
             </div>
-
-            <p>
-                <ul class="ml-3">
-                    <li>
-                        <a target="_self" href="./sga/recursos/recursos_estudios/1.pdf">S&iacute;ntesis Evaluaci&oacute;n Impacto Ambiental</a>
-                    </li>
-                    <li>
-                        <a target="_self" href="./mediateca.php?s=ESIAAHRSC#">Estudio de Impacto Ambiental</a>
-                    </li>
-                    <li>
-                        <a target="_self" href="./sga/recursos/recursos_estudios/192.pdf">Plan de Gesti&oacute;n Ambiental</a>
-                    </li>
-                </ul>
-            </p>
         </div>
 
         <div class="col-md-12 section-a marcolegal" style="padding-top: 0px;">
