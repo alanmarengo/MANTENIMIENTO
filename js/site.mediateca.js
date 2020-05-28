@@ -96,6 +96,12 @@ $(document).ready(function() {
             });
 
             // REMOVE FILTER
+            $('body').on('click', '.filters-clear', function() {
+                filtersReset();
+                return;
+            });
+
+            // REMOVE FILTER
             $('body').on('click', '.filters-checked', function() {
                 let estudio = $(this).data('estudio');
                 let group = $(this).data('group');
@@ -526,6 +532,11 @@ $(document).ready(function() {
             }
 
             function filtersReset() {
+                model.filters.searchText = '';
+                model.filters.mode = -1;
+                model.filters.mode_id = 0;
+                model.filters.mode_label = '';
+
                 $('#uxSearchText').val('');
                 $('#uxDesde').datepicker('clearDates');
                 $('#uxHasta').datepicker('clearDates');
@@ -758,7 +769,17 @@ $(document).ready(function() {
 
                 if (model.filters.searchText) {
                     $('#uxFiltersChecked').append(`
-                        <a class="filters-checked btn btn-warning btn-xs" data-estudio="-1">Busqueda: ${model.filters.searchText} <i class="fa fa-times" style="padding: 0px 6px;"></i></a>
+                        < a class = "btn btn-warning btn-xs"
+                        data - estudio = "-1" > Busqueda: $ {
+                            model.filters.searchText
+                        } < /a>
+                    `)
+                }
+
+                // FECHAS
+                if (model.filters.dateStart != '') {
+                    $('#uxFiltersChecked').append(`
+                        <a class="btn btn-warning btn-xs">${model.filters.dateStart} - ${model.filters.dateEnd}</a>
                     `)
                 }
 
@@ -773,17 +794,9 @@ $(document).ready(function() {
                     }
 
                     $('#uxFiltersChecked').append(`
-                <a class="filters-checked btn btn-warning btn-xs" ${nombre != model.filters.mode_label ? `title="${model.filters.mode_label}"` : ``} data-estudio="1">Estudio: ${nombre} <i class="fa fa-times" style="padding: 0px 6px;"></i></a>
+                <a class="btn btn-warning btn-xs" ${nombre != model.filters.mode_label ? `title="${model.filters.mode_label}"` : ``} data-estudio="1">Estudio: ${nombre}</a>
             `)
 
-            // if (nombre = model.filters.mode_label) {
-            //     $("[title]").tooltipster({
-            //         animation: 'fade',
-            //         delay: 200,
-            //         theme: 'tooltipster-default',
-            //         trigger: 'hover'
-            //     });
-            // }
         }
 
         $.each(model.filters.groups, function (gindex, group) {
@@ -796,9 +809,10 @@ $(document).ready(function() {
             });
         });
 
+        // RESET FILTROS, TODOS
         if ($('#uxFiltersChecked').html()) {
             $('#uxFiltersChecked').append(`
-                <a class="filters-checked btn btn-danger btn-xs" data-estudio="-2">Limpiar filtros</a>
+                <a class="filters-clear filters-checked btn btn-danger btn-xs" data-estudio="-2">Limpiar filtros</a>
             `)
         }
     }
