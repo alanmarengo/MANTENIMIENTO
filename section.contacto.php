@@ -8,7 +8,7 @@
         </div>
 
         <div class="col-md-12 page-section-4" style="background-color: #fff;">
-            <form style="padding-left: 40px; padding: 20px 40px 40px 40px;">
+            <form id="contacto" style="padding-left: 40px; padding: 20px 40px 40px 40px;">
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="form-group">
@@ -26,6 +26,12 @@
                             <textarea type="text" class="form-control" placeholder="Comentarios" rows="6"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Enviar</button>
+
+                        <!-- <button class="g-recaptcha" 
+                                data-sitekey="reCAPTCHA_site_key" 
+                                data-callback='onSubmit' 
+                                data-action='submit'>Enviar</button> -->
+
                     </div>
                 </div>
             </form>
@@ -33,3 +39,9 @@
 
     </div>
 </div>
+
+<script>
+   function onSubmit(token) {
+     document.getElementById("contacto").submit();
+   }
+ </script>

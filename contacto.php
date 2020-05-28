@@ -14,6 +14,8 @@
 	<?php include("./scripts.default.php"); ?>
 	<?php include("./scripts.onresize.php"); ?>		
 	
+	<script src="https://www.google.com/recaptcha/api.js"></script>
+
 	<?php include("./scripts.document_ready.php"); ?>
 	
 </head>
