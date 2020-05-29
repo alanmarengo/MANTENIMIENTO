@@ -287,9 +287,16 @@ function getSQL($solapa) {
 
 	$data_query	= "SELECT COUNT(*) registros FROM ($subquery) A;";
 	$recordset	= pg_query($conn,$data_query);
-	$row		= pg_fetch_row($recordset);
-	
-	return $row[0];  		
+
+	if($recordset)
+	{
+		$row = pg_fetch_row($recordset);
+		return $row[0];
+	}
+	else
+	{
+		return 0;
+	};  		
  };
  
  function getEstudioNombre($_estudio_id) 
