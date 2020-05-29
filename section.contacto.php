@@ -25,12 +25,12 @@
                         <div class="form-group">
                             <textarea type="text" class="form-control" placeholder="Comentarios" rows="6"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <!--<button type="submit" class="btn btn-primary">Enviar</button> -->
 
-                        <!-- <button class="g-recaptcha" 
-                                data-sitekey="reCAPTCHA_site_key" 
+                       <button class="g-recaptcha" 
+                                data-sitekey="6LejbP0UAAAAAEtu681Yypx4F2kHrkQOpxl3JmhA" 
                                 data-callback='onSubmit' 
-                                data-action='submit'>Enviar</button> -->
+                                data-action='submit'>Enviar</button> 
 
                     </div>
                 </div>
