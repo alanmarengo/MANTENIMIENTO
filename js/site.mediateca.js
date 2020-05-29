@@ -769,10 +769,10 @@ $(document).ready(function() {
 
                 if (model.filters.searchText) {
                     $('#uxFiltersChecked').append(`
-                        < a class = "btn btn-warning btn-xs"
-                        data - estudio = "-1" > Busqueda: $ {
-                            model.filters.searchText
-                        } < /a>
+                        <a class="btn btn-warning btn-xs"
+                        data-estudio="-1"> 
+                            Busqueda: ${model.filters.searchText}
+                        </a>
                     `)
                 }
 
