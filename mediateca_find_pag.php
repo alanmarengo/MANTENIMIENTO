@@ -314,7 +314,7 @@ function getSQL($solapa) {
 	}
 	else
 	{
-		$estudio_nombre = '';
+		$estudio_nombre = 'Sin estudio asociado.';
 	};
 	
 	return $estudio_nombre;  		
