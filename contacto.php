@@ -18,6 +18,8 @@
 
 	<?php include("./scripts.document_ready.php"); ?>
 	
+	<link rel="stylesheet" type="text/css" href="./css/site2.css" />
+	
 </head>
 <body>
 
