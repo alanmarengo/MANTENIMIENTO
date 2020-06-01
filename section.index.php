@@ -11,6 +11,19 @@
         <div class="carousel-inner">
 
             <!-- 1 -->
+            
+            <a href="./page_proyecto.php" class="carousel-item active">
+                <img class="d-block w-100" src="./images/index/s1.jpg" alt="...">
+                <div class="carousel-caption">
+                    <p>Obra pública</p>
+                </div>
+                <div class="slide-hover">
+                    Aporte de energía renovable para todo el país, reducción de emisiones de gases de efecto 
+                    invernadero y fomento del desarrollo económico para la provincia y la región.
+                </div>
+            </a>
+            
+            <!--
             <a href="./page_proyecto.php" class="carousel-item active">
                 <img class="d-block w-100" src="./images/index/s1.jpg" alt="...">
                 <div class="carousel-caption">
@@ -21,6 +34,8 @@
                     potencia hidráulica instalada.
                 </div>
             </a>
+            
+             -->
 
             <!-- 2 -->
             <a href="./page_pdga.php?pop=13" class="carousel-item">
