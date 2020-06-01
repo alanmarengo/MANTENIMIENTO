@@ -141,6 +141,18 @@
             -->
 
             <!-- 6 -->
+            <a href="./page_pdga.php?pop=3" class="carousel-item">
+                <img class="d-block w-100" src="./images/index/s6.jpg" alt="...">
+                <div class="carousel-caption">
+                    <p>Investigación en aves</p>
+                </div>
+                <div class="slide-hover">
+                    Profundizar la caracterización de las comunidades de aves y los conocimientos sobre la
+                    distribución y uso de hábitat de especies clave que presentan riesgos de conservación.
+                </div>
+            </a>
+            
+            <!--
             <a href="./page_pdga.php?pop=aspectos" class="carousel-item">
                 <img class="d-block w-100" src="./images/index/s6.jpg" alt="...">
                 <div class="carousel-caption">
@@ -151,6 +163,7 @@
                     incorporan en la provincia fortalecen las perspectivas de desarrollo.
                 </div>
             </a>
+            -->
         </div>
 
         <div class="carousel-control-prev2" href="#main-slider" role="button" data-slide="prev">
