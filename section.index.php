@@ -64,6 +64,18 @@
             -->
 
             <!-- 3 -->
+            <a href="./page_pdga.php?pop=21" class="carousel-item">
+                <img class="d-block w-100" src="./images/index/s3.jpg" alt="...">
+                <div class="carousel-caption">
+                    <p>Pueblos originarios</p>
+                </div>
+                <div class="slide-hover">
+                    Promover una mirada intercultural entre el Estado y las comunidades indígenas en un 
+                    proceso de diálogo y trabajo conjunto. 
+                </div>
+            </a>
+            
+            <!--
             <a href="./page_pdga.php?pop=3" class="carousel-item">
                 <img class="d-block w-100" src="./images/index/s3.jpg" alt="...">
                 <div class="carousel-caption">
@@ -74,6 +86,7 @@
                     la zona de invernada del macá tobiano.
                 </div>
             </a>
+            -->
 
             <!-- 4 -->
             <a href="./page_pdga.php?pop=7" class="carousel-item">
