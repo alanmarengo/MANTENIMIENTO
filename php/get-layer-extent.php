@@ -19,7 +19,7 @@ st_xmin(st_expand(st_extent(st_transform(T.geom, 3857)), 200::double precision):
 st_ymin(st_expand(st_extent(st_transform(T.geom, 3857)), 200::double precision)::box3d) AS miny,
 st_xmax(st_expand(st_extent(st_transform(T.geom, 3857)), 200::double precision)::box3d) AS maxx,
 st_ymax(st_expand(st_extent(st_transform(T.geom, 3857)), 200::double precision)::box3d) AS maxy
-FROM \"" . $data["layer_schema"] . "\".\"" . $data["layer_table"] . "\" T";
+FROM \"" . trim($data["layer_schema"]) . "\".\"" . ($data["layer_table"]) . "\" T";
 
 $extent = pg_fetch_assoc(pg_query($conn,$query_string));
 
