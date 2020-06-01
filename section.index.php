@@ -115,6 +115,19 @@
             -->
 
             <!-- 5 -->
+            
+            <a href="./page_pdga.php?pop=20" class="carousel-item">
+                <img class="d-block w-100" src="./images/index/s5.jpg" alt="...">
+                <div class="carousel-caption">
+                    <p>Resguardo del patrimonio</p>
+                </div>
+                <div class="slide-hover">
+                    Rescatar los testimonios de la historia humana, paleontológica y glaciológica en la cuenca,
+                    ampliando el conocimiento disponible en las respectivas disciplinas
+                </div>
+            </a>
+            
+            <!--
             <a href="./page_endesarrollo.php?q=participación pública" class="carousel-item">
                 <img class="d-block w-100" src="./images/index/s5.jpg" alt="...">
                 <div class="carousel-caption">
@@ -125,6 +138,7 @@
                     a todos los sectores sociales interesados en el proyecto.
                 </div>
             </a>
+            -->
 
             <!-- 6 -->
             <a href="./page_pdga.php?pop=aspectos" class="carousel-item">
