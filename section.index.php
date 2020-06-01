@@ -38,6 +38,19 @@
              -->
 
             <!-- 2 -->
+            
+            <a href="./page_pdga.php?target=temas" class="carousel-item">
+                <img class="d-block w-100" src="./images/index/s2.jpg" alt="...">
+                <div class="carousel-caption">
+                    <p>Ciencia aplicada</p>
+                </div>
+                <div class="slide-hover">
+                    Articulación con los organismos del sistema científico argentino y con profesionales destacados 
+                    del país y del exterior en la ejecución del Plan de Gestión Ambiental.
+                </div>
+            </a>
+            
+            <!--
             <a href="./page_pdga.php?pop=13" class="carousel-item">
                 <img class="d-block w-100" src="./images/index/s2.jpg" alt="...">
                 <div class="carousel-caption">
@@ -48,6 +61,7 @@
                     fluctuaciones del embalse.
                 </div>
             </a>
+            -->
 
             <!-- 3 -->
             <a href="./page_pdga.php?pop=3" class="carousel-item">
