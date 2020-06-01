@@ -89,6 +89,19 @@
             -->
 
             <!-- 4 -->
+            
+             <a href="./page_pdga.php?pop=7" class="carousel-item">
+                <img class="d-block w-100" src="./images/index/s4.jpg" alt="...">
+                <div class="carousel-caption">
+                    <p>Estudios sobre peces</p>
+                </div>
+                <div class="slide-hover">
+                    Profundizar los conocimientos bio-ecológicos sobre la ictiofauna nativa y exótica y obtener
+                    información sobre la valoración socio-económica  de la pesca deportiva.
+                </div>
+            </a>
+            
+            <!--
             <a href="./page_pdga.php?pop=7" class="carousel-item">
                 <img class="d-block w-100" src="./images/index/s4.jpg" alt="...">
                 <div class="carousel-caption">
@@ -99,6 +112,7 @@
                     peces y a la pesca como una actividad de relevancia.
                 </div>
             </a>
+            -->
 
             <!-- 5 -->
             <a href="./page_endesarrollo.php?q=participación pública" class="carousel-item">
