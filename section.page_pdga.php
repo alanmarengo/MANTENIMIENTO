@@ -138,7 +138,7 @@ El SIA conforma una Infraestructura de Datos Espaciales (IDE), un nodo dentro en
 
             <div class="embed-responsive" style="padding-top: 51%;">
                 <!--<iframe src="http://observatorio.ieasa.com.ar/indicadores-embed.php?ind_id=7" frameborder="0"></iframe>-->
-                <iframe scrolling="no" src="./indicadores-embed.php?ind_id=7" frameborder="0"></iframe>
+                <!--<iframe scrolling="no" src="./indicadores-embed.php?ind_id=7" frameborder="0"></iframe>-->
             </div>
         </div>
 
