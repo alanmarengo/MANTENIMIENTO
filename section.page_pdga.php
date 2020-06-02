@@ -108,7 +108,7 @@ El alcance territorial de los programas y subprogramas depende de cada uno en pa
 
             <div class="embed-responsive" style="padding-top: 50%;">
                 <!--<iframe src="http://observatorio.ieasa.com.ar/indicadores-embed.php?ind_id=6" frameborder="0"></iframe>-->
-                <iframe src="./indicadores-embed.php?ind_id=6" frameborder="0"></iframe>
+                <!--<iframe src="./indicadores-embed.php?ind_id=6" frameborder="0"></iframe>-->
             </div>
 
             <h3 style="color: #666;">SISTEMA DE INFORMACI&Oacute;N AMBIENTAL (SIA-AHRSC)</h3>
