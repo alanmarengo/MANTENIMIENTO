@@ -65,7 +65,7 @@ function ol_indicadores() {
 			
 		}.bind(this));
 		
-		//scroll.refresh();
+		scroll.refresh();
 		
 		if (clase_id) {
 			
