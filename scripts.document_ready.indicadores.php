@@ -65,8 +65,16 @@
 		if (isset($_GET["ind_id"])) {
 			
 		?>
+		//https://observatorio.ieasa.com.ar/indicadores.php?ind_id=3&t=Empleo y Proveedores&cid=18
 		
-		indicadores.loadIndicador(<?php echo $_GET["ind_id"]; ?>,'<?php echo $_GET["ind_id"]; ?>','<?php echo $_GET["cid"]; ?>');
+		//indicadores.loadIndicador(<?php echo $_GET["ind_id"]; ?>,'<?php echo $_GET["ind_id"]; ?>','<?php echo $_GET["cid"]; ?>');
+		
+		indicadores.loadIndicador(<?php echo $_GET["ind_id"]; ?>,'<?php echo $_GET["t"]; ?>','<?php echo $_GET["cid"]; ?>');
+		
+		$('.layer-label').removeClass('layer-label-active'); 
+		//$(this).addClass('layer-label-active'); 
+		$('#nav-panel-arrow-a').trigger('click');"
+		
 		//document.getElementById("indicador-label-<?php echo $_GET["ind_id"]; ?>").click();
 		
 		<?php
