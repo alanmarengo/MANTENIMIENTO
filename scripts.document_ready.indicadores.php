@@ -71,7 +71,7 @@
 		
 		indicadores.loadIndicador(<?php echo $_GET["ind_id"]; ?>,'<?php echo $_GET["t"]; ?>','<?php echo $_GET["cid"]; ?>');
 		
-		$('.layer-label').removeClass('layer-label-active'); 
+		//$('.layer-label').removeClass('layer-label-active'); 
 		//$(this).addClass('layer-label-active'); 
 		$('#nav-panel-arrow-a').trigger('click');"
 		
