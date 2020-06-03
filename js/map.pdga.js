@@ -93,10 +93,12 @@ function ol_map() {
 			name:'google_base',
 			visible:true,
 			source: new ol.source.TileImage({ 
-				url: 'http://mt{0-3}.googleapis.com/vt?&x={x}&y={y}&z={z}&hl=es&gl=AR',
+				//url: 'http://mt{0-3}.googleapis.com/vt?&x={x}&y={y}&z={z}&hl=es&gl=AR', http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}
+				url: 'http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}&hl=es&gl=AR',
 				crossOrigin: 'anonymous'
 			})
 		})		
+		http://mt0.google.com/vt/lyrs=y&hl=en&x={x}&y={y}&z={z}
 	
 		this.baselayers.argenmap = new ol.layer.Tile({
 			name:"capabaseargenmap",
