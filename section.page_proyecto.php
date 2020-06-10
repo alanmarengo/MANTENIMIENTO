@@ -221,7 +221,8 @@ El proceso de desvío tiene las mismas etapas que las señaladas para CC. La obr
                         La LEAT tendrá su punto de partida en la playa de maniobras de CC y estará conectada con la instalación correspondiente en LB. La longitud de este tramo es de aproximadamente 71 km. A partir de este punto, recorre aproximadamente 102 km hasta conectarse a la estación transformadora 500/132 kV Río Santa Cruz, cercana a la localidad de Comandante Luis Piedra Buena. 
                         <br />
                         <br />
-                        <a target="_blank" href="#" title="EN DESARROLLO">Ficha t&eacute;cnica</a>
+                        <!--<a target="_blank" href="./sga/recursos/difusion/leat_ficha.pdf" title="EN DESARROLLO">Ficha t&eacute;cnica</a>-->
+                        <a target="_blank" href="./sga/recursos/difusion/leat_ficha.pdf">Ficha t&eacute;cnica</a>
                     </p>
                 </div>
             </div>
