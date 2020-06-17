@@ -32,12 +32,13 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 				width:width*/
 			},
 			title: {
+				//text: 'Perfil Topográfico',
 				text: 'Perfil Topográfico',
 				style: {
 					
 					fontSize:"15px",
-				//color:'#FFFFFF'
-				color:'#000000'
+				color:'#FFFFFF'
+				
 					
 				}
 			},
@@ -45,7 +46,8 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 				text: 'Distancia Total: ' + data.distancia_total + "Km.",
 				style: {
 					
-					color:'#FFFFFF'
+					//color:'#FFFFFF'
+					color:'#000000'
 					
 				}
 			},
