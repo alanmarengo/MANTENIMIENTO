@@ -49,10 +49,13 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 				}
 			},
 			xAxis: {
-				type: 'distancia'
+				//type: 'distancia',
+				title: {
+					text: 'distancia'
+				}
 			},
 			yAxis: {
-				type: 'altura',
+				//type: 'altura',
 				title: {
 					text: 'Altura'
 				}
