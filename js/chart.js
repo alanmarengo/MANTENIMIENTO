@@ -36,7 +36,8 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 				style: {
 					
 					fontSize:"15px",
-				color:'#FFFFFF'
+				//color:'#FFFFFF'
+				color:'#000000'
 					
 				}
 			},
@@ -240,7 +241,7 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 	   },
 	   labels: {
 		  style: {
-			 //color: '#707073'
+			 color: '#707073'
 		  }
 	   },
 
