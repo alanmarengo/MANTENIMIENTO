@@ -66,7 +66,7 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 				}
 			},
 			legend: {
-				enabled: true
+				enabled: false
 			},
 			plotOptions: {
 				area: {
