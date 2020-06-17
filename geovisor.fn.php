@@ -133,7 +133,7 @@ function DrawLayers($clase_id) {
 			
 				<div class="layer-icons">
 				
-					<div class="layer-icon" id="layer-icon-zoomext-<?php echo $r["layer_id"]; ?>" onclick="geomap.map.zoomToLayerExtent(<?php echo $r["layer_id"]; ?>);" title="Ir a extent de capa">
+					<div class="layer-icon" id="layer-icon-zoomext-<?php echo $r["layer_id"]; ?>" onclick="geomap.map.zoomToLayerExtent(<?php echo $r["layer_id"]; ?>);" title="ir a zoom de la capa">
 						<a href="javascript:void(0);">
 							<img src="./images/geovisor/icons/layer-bar-zoom.png">
 						</a>
@@ -146,7 +146,7 @@ function DrawLayers($clase_id) {
 					
 					if ($metadata_url == "") {
 						
-						$metadata_url = "javascript:alert('Esta capa no posee metadatos asociados');";
+						$metadata_url = "javascript:alert('Esta capa no posee Metadatos asociados');";
 						$target = "";
 						
 					}

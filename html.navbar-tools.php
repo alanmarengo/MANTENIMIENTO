@@ -25,7 +25,7 @@
 				<li class="dropdown">
 					<a class="button button-tools jump-hovimage" 
 					data-ini-src="./images/toolbar.icon.buffer.png"
-					data-end-src="./images/toolbar.icon.buffer.white.png" href="javascript:void(0);" title="Búsqueda por buffer" onclick="jwindow.close('.geovisor-flotant');" id="navbarDropdown-buffer" role="button" data-toggle="dropdown" aria-expanded="false" onclick="jwindow.close('.geovisor-flotant');">
+					data-end-src="./images/toolbar.icon.buffer.white.png" href="javascript:void(0);" title="Búsqueda por selección" onclick="jwindow.close('.geovisor-flotant');" id="navbarDropdown-buffer" role="button" data-toggle="dropdown" aria-expanded="false" onclick="jwindow.close('.geovisor-flotant');">
 						<img src="./images/toolbar.icon.buffer.png">
 					</a>
 					<div class="dropdown-menu dropdown-menu-right" id="dropdown-buffer" aria-labelledby="navbarDropdown-buffer" style="min-width:30px !Important; width:30px;">						
