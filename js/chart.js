@@ -54,13 +54,13 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 			xAxis: {
 				//type: 'distancia',
 				title: {
-					text: 'distancia'
-				},
-				style: {
+					text: 'distancia',
+					style: {
 					
 					//color:'#FFFFFF'
 					color:'#000000'
 					
+							}
 				}
 			},
 			yAxis: {
