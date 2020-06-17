@@ -22,7 +22,7 @@
 					<div class="form-group">
 				
 						<i class="fa fa-calendar"></i>
-						<input type="text" class="datepicker" placeholder="Desde..." value='<?php date("d/m/Y"); ?>' name="adv-search-fdesde">
+						<input type="text" class="datepicker" placeholder="Desde..." value='<?php echo date("d/m/Y"); ?>' name="adv-search-fdesde">
 					
 					</div>
 				
@@ -33,7 +33,7 @@
 					<div class="form-group">
 				
 						<i class="fa fa-calendar"></i>
-						<input type="text" class="datepicker" placeholder="Hasta..." value='<?php date("d/m/Y"); ?>' name="adv-search-fhasta">
+						<input type="text" class="datepicker" placeholder="Hasta..." value='<?php echo date("d/m/Y"); ?>' name="adv-search-fhasta">
 					
 					</div>
 				

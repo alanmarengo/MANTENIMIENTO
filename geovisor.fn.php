@@ -133,7 +133,7 @@ function DrawLayers($clase_id) {
 			
 				<div class="layer-icons">
 				
-					<div class="layer-icon" id="layer-icon-zoomext-<?php echo $r["layer_id"]; ?>" onclick="geomap.map.zoomToLayerExtent(<?php echo $r["layer_id"]; ?>);" title="ir a zoom de la capa">
+					<div class="layer-icon" id="layer-icon-zoomext-<?php echo $r["layer_id"]; ?>" onclick="geomap.map.zoomToLayerExtent(<?php echo $r["layer_id"]; ?>);" title="Ir a zoom de la capa">
 						<a href="javascript:void(0);">
 							<img src="./images/geovisor/icons/layer-bar-zoom.png">
 						</a>
