@@ -9,7 +9,7 @@
 
             <div class="col-md-12 top-buttons">
                 <a id="link-ahrsc" href="#" data-target="#ahrsc">AHRSC Y OBRAS COMPLEMENTARIAS</a>
-                <a id="link-condor" href="#" data-target="#condor">Condor Cliff</a>
+                <a id="link-condor" href="#" data-target="#condor">CÓNDOR CLIFF</a>
                 <a id="link-barrancosa" href="#" data-target="#barrancosa">La Barrancosa</a>
                 <a id="link-leat" href="#" data-target="#leat">Línea de Alta Tensión</a>
             </div>
