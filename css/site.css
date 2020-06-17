@@ -665,7 +665,7 @@ map area {
   height: auto;
 }
 .datepicker {
-  z-index: 1000 !important;
+  z-index: 1050000 !important;
 }
 .datepicker-days,
 .datepicker-months,
