@@ -165,7 +165,8 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 		  gridLineColor: '#707073',
 		  labels: {
 			 style: {
-				color: '#999999'
+				//color: '#999999'
+				color: '#000000'
 			 }
 		  },
 		  lineColor: '#707073',
@@ -182,7 +183,8 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 		  gridLineColor: '#707073',
 		  labels: {
 			 style: {
-				color: '#999999'
+				//color: '#999999'
+				color: '#000000'
 			 }
 		  },
 		  lineColor: '#707073',
