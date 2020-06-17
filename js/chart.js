@@ -55,7 +55,7 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 				//type: 'distancia',
 				title: {
 					text: 'distancia'
-				}
+				},
 				style: {
 					
 					//color:'#FFFFFF'
