@@ -56,6 +56,12 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 				title: {
 					text: 'distancia'
 				}
+				style: {
+					
+					//color:'#FFFFFF'
+					color:'#000000'
+					
+				}
 			},
 			yAxis: {
 				//type: 'altura',
