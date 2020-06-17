@@ -33,9 +33,8 @@
 					<div class="form-group">
 				
 						<i class="fa fa-calendar"></i>
-						<!--<input type="text" class="datepicker" placeholder="Hasta..." value='<?php echo date("d/m/Y"); ?>' name="adv-search-fhasta">-->
-						<input type="date" class="datepicker" placeholder="Hasta..." value='<?php echo date("d/m/Y"); ?>' name="adv-search-fhasta">
-					
+						<input type="text" class="datepicker" placeholder="Hasta..." value='<?php echo date("d/m/Y"); ?>' name="adv-search-fhasta">
+											
 					</div>
 				
 				</div>
