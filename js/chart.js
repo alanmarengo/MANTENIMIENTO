@@ -33,7 +33,7 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 			},
 			title: {
 				//text: 'Perfil Topográfico',
-				text: 'Perfil Topográfico',
+				text: '',
 				style: {
 					
 					fontSize:"15px",
@@ -43,7 +43,8 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 				}
 			},
 			subtitle: {
-				text: 'Distancia Total: ' + data.distancia_total + "Km.",
+				//text: 'Distancia Total: ' + data.distancia_total + "Km.",
+				text: '',
 				style: {
 					
 					//color:'#FFFFFF'
@@ -55,12 +56,7 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 				//type: 'distancia',
 				title: {
 					text: 'distancia',
-					style: {
 					
-					//color:'#FFFFFF'
-					color:'#000000'
-					
-							}
 				}
 			},
 			yAxis: {
@@ -202,7 +198,8 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 		  tickWidth: 1,
 		  title: {
 			 style: {
-				color: '#999999'
+				//color: '#999999'
+				color: '#000000'
 			 }
 		  }
 	   },
