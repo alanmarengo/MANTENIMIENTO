@@ -28,7 +28,8 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 				zoomType: 'x',
 				margin:0,
 				backgroundColor:'rgba(255, 255, 255, 0.0)',
-				height:'50%'/*,
+				/*height:'50%'*/
+				/*,
 				width:width*/
 			},
 			title: {
