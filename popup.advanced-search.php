@@ -47,8 +47,8 @@
 				
 					<div class="form-group">
 
-						<?php echo DrawComboSimple("sub_proyecto_id","sub_proyecto_desc","mod_catalogo","sub_proyecto",true,"Proyecto","-1","adv-search-proyecto-combo","adv-search-proyecto-combo"); ?>
-					
+						<?php //echo DrawComboSimple("sub_proyecto_id","sub_proyecto_desc","mod_catalogo","sub_proyecto",true,"Proyecto","-1","adv-search-proyecto-combo","adv-search-proyecto-combo"); ?>
+						<?php echo DrawComboSimple("sub_proyecto_id","sub_proyecto_desc","mod_geovisores","vw_filtros_avanzados_proyectos",true,"Proyecto","-1","adv-search-proyecto-combo","adv-search-proyecto-combo"); ?>
 					</div>
 				
 				</div>
@@ -57,8 +57,9 @@
 				
 					<div class="form-group">
 							
-						<?php echo DrawComboSimple("clase_id","clase_desc","mod_catalogo","clase",true,"Clase",-1,"adv-search-clase-combo","adv-search-clase-combo"); ?>
-					
+						<?php //echo DrawComboSimple("clase_id","clase_desc","mod_catalogo","clase",true,"Clase",-1,"adv-search-clase-combo","adv-search-clase-combo"); ?>
+						<?php echo DrawComboSimple("clase_id","clase_desc","mod_geovisores","vw_filtros_avanzados_clase",true,"Clase",-1,"adv-search-clase-combo","adv-search-clase-combo"); ?>
+
 					</div>
 				
 				</div>
@@ -67,8 +68,9 @@
 				
 					<div class="form-group">			
 				
-						<?php echo DrawComboSimple("subclase_id","subclase_desc","mod_catalogo","subclase",true,"Sub Clase",-1,"adv-search-subclase-combo","adv-search-subclase-combo"); ?>
-					
+						<?php //echo DrawComboSimple("subclase_id","subclase_desc","mod_catalogo","subclase",true,"Sub Clase",-1,"adv-search-subclase-combo","adv-search-subclase-combo"); ?>
+						<?php echo DrawComboSimple("subclase_id","subclase_desc","mod_geovisores","vw_filtros_avanzados_subclase",true,"Sub Clase",-1,"adv-search-subclase-combo","adv-search-subclase-combo"); ?>
+
 					</div>
 				
 				</div>
@@ -101,8 +103,9 @@
 				
 					<div class="form-group">			
 				
-						<?php echo DrawComboSimple("cod_esia_id","titulo","mod_catalogo","cod_esia",true,"Código ESIA",-1,"adv-search-esia-combo","adv-search-esia-combo"); ?>
-					
+						<?php //echo DrawComboSimple("cod_esia_id","titulo","mod_catalogo","cod_esia",true,"Código ESIA",-1,"adv-search-esia-combo","adv-search-esia-combo"); ?>
+						<?php echo DrawComboSimple("cod_esia_id","titulo","mod_geovisores","vw_filtros_avanzados_cod_esia",true,"Código ESIA",-1,"adv-search-esia-combo","adv-search-esia-combo"); ?>
+
 					</div>
 				
 				</div>
@@ -111,7 +114,8 @@
 				
 					<div class="form-group">
 				
-						<?php echo DrawComboSimple("objetos_id","objetos_nombre","mod_catalogo","objeto",true,"Objeto",-1,"adv-search-objeto-combo","adv-search-objeto-combo"); ?>
+						<?php //echo DrawComboSimple("objetos_id","objetos_nombre","mod_catalogo","objeto",true,"Objeto",-1,"adv-search-objeto-combo","adv-search-objeto-combo"); ?>
+						<?php echo DrawComboSimple("objetos_id","objetos_nombre","mod_geovisores","vw_filtros_avanzados_objetos",true,"Objeto",-1,"adv-search-objeto-combo","adv-search-objeto-combo"); ?>
 
 					
 					</div>
