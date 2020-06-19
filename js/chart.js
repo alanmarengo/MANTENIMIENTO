@@ -248,7 +248,8 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 	   },
 	   labels: {
 		  style: {
-			 color: '#707073'
+			 //color: '#707073'
+			 color: '#000000'
 		  }
 	   },
 
