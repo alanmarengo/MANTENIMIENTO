@@ -68,7 +68,7 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 			},
 			legend: {
 				enabled: true
-			},
+			},/*
 			plotOptions: {
 				area: {
 					fillColor: {
@@ -94,7 +94,7 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 					},
 					threshold: null
 				}
-			},
+			},*/
 
 			series: [{
 				type: 'area',
