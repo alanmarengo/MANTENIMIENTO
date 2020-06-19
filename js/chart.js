@@ -214,7 +214,8 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 	   plotOptions: {
 		  series: {
 			 dataLabels: {
-				color: '#B0B0B3'
+				//color: '#B0B0B3'
+				 color: '#000000'
 			 },
 			 marker: {
 				lineColor: '#333'
@@ -232,7 +233,8 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 	   },
 	   legend: {
 		  itemStyle: {
-			 color: '#E0E0E3'
+			 //color: '#E0E0E3'
+			  color: '#000000'
 		  },
 		  itemHoverStyle: {
 			 color: '#FFF'
