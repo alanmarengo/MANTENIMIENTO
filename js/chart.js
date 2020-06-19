@@ -56,7 +56,7 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 			xAxis: {
 				//type: 'distancia',
 				title: {
-					text: 'distancia',
+					text: 'Distancia',
 					
 				}
 			},
@@ -341,7 +341,7 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 	};
 
 	// Apply the theme
-	//Highcharts.setOptions(Highcharts.theme);	
+	Highcharts.setOptions(Highcharts.theme);	
 	
 	$("#perfil-topografico-header .flclose").bind("click",function() {
 		
