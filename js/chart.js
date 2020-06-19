@@ -66,7 +66,7 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 				}
 			},
 			legend: {
-				enabled: false
+				enabled: true
 			},
 			plotOptions: {
 				area: {
@@ -340,7 +340,7 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 	};
 
 	// Apply the theme
-	Highcharts.setOptions(Highcharts.theme);	
+	//Highcharts.setOptions(Highcharts.theme);	
 	
 	$("#perfil-topografico-header .flclose").bind("click",function() {
 		
