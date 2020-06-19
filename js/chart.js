@@ -180,7 +180,8 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 		  tickColor: '#707073',
 		  title: {
 			 style: {
-				color: '#999999'
+				//color: '#999999'
+				color: '#000000'
 
 			 }
 		  }
