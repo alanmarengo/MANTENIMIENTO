@@ -26,7 +26,7 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 			},
 			chart: {
 				zoomType: 'x',
-				margin:0,
+				/*margin:0,*/
 				backgroundColor:'rgba(255, 255, 255, 0.0)',
 				/*height:'50%'*/
 				/*,
@@ -68,7 +68,7 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 			},
 			legend: {
 				enabled: true
-			},/*
+			},
 			plotOptions: {
 				area: {
 					fillColor: {
@@ -94,7 +94,7 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 					},
 					threshold: null
 				}
-			},*/
+			},
 
 			series: [{
 				type: 'area',
