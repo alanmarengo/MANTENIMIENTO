@@ -3053,7 +3053,8 @@ function load_sub_clase(cid) {
 		success:function(d){}
 		
 	});
-	
+	alert(req.responseText);
+	alert(document.getElementById("adv-search-subclase-combo"));
 	document.getElementById("adv-search-subclase-combo").innerHTML = req.responseText;
 	$("#adv-search-subclase-combo").selectpicker("refresh");
 	
