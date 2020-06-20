@@ -24,7 +24,7 @@ data-minimizable="1" data-minimized-title="BUSCAR CAPAS">
 			</div>
 		</div>
 		
-		<?php include("./popup.advanced-search.php"); ?>
+		<?php if (!isMobile()) { include("./popup.advanced-search.php"); } ?>
 		
 		<div class="jump-window-body jump-window-full-body" id="popup-body">
 			
