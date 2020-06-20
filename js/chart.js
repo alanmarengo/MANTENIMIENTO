@@ -26,9 +26,10 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 			},
 			chart: {
 				zoomType: 'x',
-				margin:0,
+				/*margin:0,*/
 				backgroundColor:'rgba(255, 255, 255, 0.0)',
-				height:'50%'/*,
+				/*height:'50%'*/
+				/*,
 				width:width*/
 			},
 			title: {
@@ -55,7 +56,7 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 			xAxis: {
 				//type: 'distancia',
 				title: {
-					text: 'distancia',
+					text: 'Distancia',
 					
 				}
 			},
@@ -179,7 +180,8 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 		  tickColor: '#707073',
 		  title: {
 			 style: {
-				color: '#999999'
+				//color: '#999999'
+				color: '#000000'
 
 			 }
 		  }
@@ -212,7 +214,8 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 	   plotOptions: {
 		  series: {
 			 dataLabels: {
-				color: '#B0B0B3'
+				//color: '#B0B0B3'
+				 color: '#000000'
 			 },
 			 marker: {
 				lineColor: '#333'
@@ -230,7 +233,8 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 	   },
 	   legend: {
 		  itemStyle: {
-			 color: '#E0E0E3'
+			 //color: '#E0E0E3'
+			  color: '#000000'
 		  },
 		  itemHoverStyle: {
 			 color: '#FFF'
@@ -246,7 +250,8 @@ function DrawChart(wkt,layerVector,sourcePoints) {
 	   },
 	   labels: {
 		  style: {
-			 color: '#707073'
+			 //color: '#707073'
+			 color: '#000000'
 		  }
 	   },
 
