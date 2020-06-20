@@ -69,8 +69,8 @@
 				
 					<div class="form-group">
 							
-						<?php echo DrawComboSimple("clase_id","clase_desc","mod_catalogo","clase",true,"Clase",-1,"adv-search-clase-combo","adv-search-clase-combo"); ?>
-					
+						<?php echo DrawComboSimpleClase("clase_id","clase_desc","mod_catalogo","clase",true,"Clase",-1,"adv-search-clase-combo","adv-search-clase-combo"); ?>
+
 					</div>
 				
 				</div>
@@ -83,8 +83,8 @@
 				
 					<div class="form-group">			
 				
-						<?php echo DrawComboSimple("subclase_id","subclase_desc","mod_catalogo","subclase",true,"Sub Clase",-1,"adv-search-subclase-combo","adv-search-subclase-combo"); ?>
-					
+						<?php echo DrawComboSimple("subclase_id","subclase_desc","mod_geovisores","vw_filtros_avanzados_subclase",true,"Sub Clase",-1,"adv-search-subclase-combo","adv-search-subclase-combo"); ?>
+
 					</div>
 				
 				</div>
