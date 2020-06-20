@@ -3054,7 +3054,7 @@ function load_sub_clase(cid) {
 		
 	});
 	
-	$("#adv-search-subclase-combo").html(req.responseText);
+	document.getElementById("adv-search-subclase-combo").innerHTML = req.responseText;
 	$("#adv-search-subclase-combo").selectpicker("refresh");
 	
 }

@@ -492,7 +492,7 @@ function DrawComboSimpleClase($id,$desc,$schema,$table,$opini,$opini_label,$opin
 	
 	$conn = pg_connect($string_conn);				
 	
-	$query_string = "SELECT $id,$desc FROM mod_geovisores.vw_filtros_avanzados_subclase ORDER BY $desc ASC";
+	$query_string = "SELECT $id,$desc FROM mod_geovisores.vw_filtros_avanzados_subclase GROUP BY clase_id,clase_desc ORDER BY $desc ASC";
 	
 	$query = pg_query($conn,$query_string);
 				
