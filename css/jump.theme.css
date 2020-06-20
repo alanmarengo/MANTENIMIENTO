@@ -45,6 +45,7 @@ a:hover {
     border: none;
     border-radius: 0;
     padding: 0;
+	z-index:1060000;
 }
 
 .dropdown-item {

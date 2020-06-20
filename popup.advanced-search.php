@@ -57,7 +57,7 @@
 				
 					<div class="form-group">
 							
-						<?php echo DrawComboSimple("clase_id","clase_desc","mod_catalogo","clase",true,"Clase",-1,"adv-search-clase-combo","adv-search-clase-combo"); ?>
+						<?php echo DrawComboSimpleClase("clase_id","clase_desc","mod_catalogo","clase",true,"Clase",-1,"adv-search-clase-combo","adv-search-clase-combo"); ?>
 					
 					</div>
 				

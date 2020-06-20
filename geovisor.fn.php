@@ -486,6 +486,56 @@ function DrawComboSimpleFN($id,$desc,$schema,$table,$opini,$opini_label,$opini_v
 	
 }
 
+function DrawComboSimpleClase($id,$desc,$schema,$table,$opini,$opini_label,$opini_val,$hname,$hid) {
+
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+	
+	$conn = pg_connect($string_conn);				
+	
+	$query_string = "SELECT $id,$desc FROM mod_geovisores.vw_filtros_avanzados_subclase ORDER BY $desc ASC";
+	
+	$query = pg_query($conn,$query_string);
+				
+	?>
+	
+	<select class="selectpicker" data-width="100%" onchange="load_sub_clase(this.options[this.selectedIndex].value);"
+	<?php 
+		if($hname) {
+			echo "name=\"$hname\"";
+		}
+		if($hid) {
+			echo "id=\"$hid\"";
+		}?>>
+	<?php
+	
+	if ($opini) {
+			
+		?>
+			
+	<option value="<?php echo $opini_val; ?>"><?php echo $opini_label; ?></option>
+			
+		<?php
+			
+	}
+				
+	while ($r = pg_fetch_assoc($query)) {
+		
+	?>
+	
+		<option value="<?php echo $r[$id]; ?>"><?php echo $r[$desc]; ?></option>
+				
+	<?php
+					
+	}
+	
+	?>
+	
+	</select>
+	
+	<?php
+	
+}
+
 
 function GetLayerLabel($layer_name) {			
 

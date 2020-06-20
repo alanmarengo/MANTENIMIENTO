@@ -3041,3 +3041,20 @@ function ol_map() {
 	}
 	
 }
+
+function load_sub_clase(cid) {
+	
+	var req = $.ajax({
+		
+		async:false,
+		data:{cid:cid},
+		type:"post",
+		url:"./php/get-subclase-combo.php",
+		success:function(d){}
+		
+	});
+	
+	$("#adv-search-subclase-combo").html(req.responseText);
+	$("#adv-search-subclase-combo").selectpicker("refresh");
+	
+}
