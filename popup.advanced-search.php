@@ -67,7 +67,6 @@
 				
 					<div class="form-group">			
 				
-						<?php //echo DrawComboSimple("subclase_id","subclase_desc","mod_catalogo","subclase",true,"Sub Clase",-1,"adv-search-subclase-combo","adv-search-subclase-combo"); ?>
 						<?php echo DrawComboSimple("subclase_id","subclase_desc","mod_geovisores","vw_filtros_avanzados_subclase",true,"Sub Clase",-1,"adv-search-subclase-combo","adv-search-subclase-combo"); ?>
 
 					</div>
