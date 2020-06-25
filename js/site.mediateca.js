@@ -721,7 +721,8 @@ $(document).ready(function() {
                     format: "dd/mm/yyyy",
                     language: "es",
                     autoclose: true,
-                    clearBtn: true,
+                    clearBtn: true,,
+                    todayHighlight:true,
                     toggleActive: true
                 });
 
