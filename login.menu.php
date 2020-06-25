@@ -12,6 +12,7 @@ if ((isset($_SESSION)) && (sizeof($_SESSION) > 0)) {
 		</a>
 		<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-help" id="dropdown-help">
 			<ul>
+				<!--
 				<li>
 					<a class="dropdown-item" href="#">Mi Panel</a>
 				</li>
@@ -20,7 +21,7 @@ if ((isset($_SESSION)) && (sizeof($_SESSION) > 0)) {
 				</li>
 				<li>
 					<a class="dropdown-item" href="#">Cambiar Contraseña</a>
-				</li>
+				</li>-->
 				<li>
 					<a class="dropdown-item" href="./CMD-logout.php">Cerrar Sesión</a>
 				</li>
