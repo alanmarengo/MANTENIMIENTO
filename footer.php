@@ -18,7 +18,7 @@
 					<a target="_blank" href="http://hidrosantacruz.com.ar">Hidro Santa Cruz</a><br />
 				</div>
 				<div class="carousel-item">
-					<a target="_blank" href="http://mapas.ambiente.gob.ar">Ministerio de Ambiente y Desarrollo Sustentable  - IDE</a><br />
+					<a target="_blank" href="http://mapas.ambiente.gob.ar">Ministerio de Ambiente y Desarrollo Sostenible - IDE</a><br />
 					<a target="_blank" href="https://www.argentina.gob.ar/energia">Secretaría de Energía</a><br />
 				</div>
 				<div class="carousel-item">
