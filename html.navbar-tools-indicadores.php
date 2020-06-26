@@ -29,6 +29,7 @@
 						<img src="./images/toolbar.icon.print.png">
 					</a>
 				</li>
+				<!--
 				<li class="icon-divisor">
 					<span></span>												
 				</li>
@@ -39,6 +40,7 @@
 						<img src="./images/stats-fav.png">
 					</a>
 				</li>
+				-->
 				
 			</ul>
 		
