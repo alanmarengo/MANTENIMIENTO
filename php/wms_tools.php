@@ -9,7 +9,8 @@ function wms_get_layer_extent($str_layer_name)
 	$con = curl_init($wms_request);
 	
 	curl_setopt($con,CURLOPT_SSL_VERIFYPEER, false);
-	
+	echo "PRE CURL EXEC";
+
 	$response = curl_exec($con);
 
 	//echo curl_error($con);
