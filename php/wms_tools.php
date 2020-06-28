@@ -45,6 +45,6 @@ function wms_get_layer_extent($str_layer_name)
 };
 
 
-//wms_get_layer_extent('ahrsc:vp_geo_fipai_areasevaluarentornoinme_otr1'); //Demo
+echo wms_get_layer_extent('ahrsc:area_lb'); //Demo
 
 ?>
