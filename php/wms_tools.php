@@ -10,6 +10,8 @@ function wms_get_layer_extent($str_layer_name)
 	
 	$response = curl_exec($con);
 
+	echo curl_error($con);
+
 	curl_close($con);
 
 	echo $responde;
