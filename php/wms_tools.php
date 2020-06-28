@@ -28,6 +28,8 @@ function wms_get_layer_extent($str_layer_name)
 	//echo $capacidades->Capability->Layer->Layer[0]->BoundingBox[0]["CRS"]."<br>";
 	//var_dump( $capacidades->Capability->Layer->Layer[0]->BoundingBox);
 
+	$json_buffer_extent = '';
+
 	for($index_layers=0;$index_layers<sizeof($capacidades->Capability->Layer);$index_layers++)
 	{
 		if($capacidades->Capability->Layer->Layer[$index_layers]->Name==$str_layer_name)
@@ -38,17 +40,27 @@ function wms_get_layer_extent($str_layer_name)
 			{
 				if($capacidades->Capability->Layer->Layer[$index_layers]->BoundingBox[$index_boundind]["CRS"]=='EPSG:4326')
 				{
-					echo $capacidades->Capability->Layer->Layer[$index_layers]->BoundingBox[$index_boundind]["CRS"];
+					echo $capacidades->Capability->Layer->Layer[$index_layers]->BoundingBox[$index_boundind]["CRS"]."<br>";
 					echo "maxx: ".$capacidades->Capability->Layer->Layer[$index_layers]->BoundingBox[$index_boundind]["maxx"];
 					echo "maxy: ".$capacidades->Capability->Layer->Layer[$index_layers]->BoundingBox[$index_boundind]["maxy"];
 					echo "minx: ".$capacidades->Capability->Layer->Layer[$index_layers]->BoundingBox[$index_boundind]["minx"];
 					echo "miny: ".$capacidades->Capability->Layer->Layer[$index_layers]->BoundingBox[$index_boundind]["miny"];
+					
+					$json_buffer_extent .= "{";
+					$json_buffer_extent .= "\"minx\":\"".$capacidades->Capability->Layer->Layer[$index_layers]->BoundingBox[$index_boundind]["minx"]."\",";
+					$json_buffer_extent .= "\"miny\":\"".$capacidades->Capability->Layer->Layer[$index_layers]->BoundingBox[$index_boundind]["miny"]."\",";
+					$json_buffer_extent .= "\"maxx\":\"".$capacidades->Capability->Layer->Layer[$index_layers]->BoundingBox[$index_boundind]["maxx"]."\",";
+					$json_buffer_extent .= "\"maxy\":\"".$capacidades->Capability->Layer->Layer[$index_layers]->BoundingBox[$index_boundind]["maxy"]."\"";
+					$json_buffer_extent .= "}";
+
+					echo $json_buffer_extent;
+
 				};	
 			};	
 		};	
 	};
 
-	return 0;
+	return $json_buffer_extent;
 };
 
 
