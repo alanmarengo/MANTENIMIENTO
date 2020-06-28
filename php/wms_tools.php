@@ -21,7 +21,7 @@ function wms_get_layer_extent($str_layer_name)
 
 	$capacidades = new SimpleXMLElement($response);
 
-	var_dump($capacidades);
+	//var_dump($capacidades);
 
 	return 0;
 };
