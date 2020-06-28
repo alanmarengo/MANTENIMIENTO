@@ -12,11 +12,16 @@ function wms_get_layer_extent($str_layer_name)
 	
 	$response = curl_exec($con);
 
-	echo curl_error($con);
+	//echo curl_error($con);
 
 	curl_close($con);
 
-	echo $responde;
+	//echo $responde;
+
+
+	$capacidades = new SimpleXMLElement($response);
+
+	echo $capacidades->layer[0]->Name;
 
 	return 0;
 };
