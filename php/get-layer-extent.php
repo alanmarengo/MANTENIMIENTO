@@ -33,7 +33,7 @@ $json .= "\"maxx\":\"" . $extent["maxx"] . "\",";
 $json .= "\"maxy\":\"" . $extent["maxy"] . "\"";
 $json .= "}";
 
-if($extent["minx"]=='') //Algo fue mal, intentamos obtener en extent desde el servicio wms
+if($extent["minx"]=='') //Algo fue mal, intentamos obtener en extent desde el servicio WMS
 {
 	$json = wms_get_layer_extent(trim($data["layer_wms_layer"]));
 };
