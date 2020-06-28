@@ -21,7 +21,7 @@ function wms_get_layer_extent($str_layer_name)
 
 	$capacidades = simplexml_load_string($response);
 
-	var_dump($capacidades);
+	echo $capacidades->Layer[0];
 
 	return 0;
 };
