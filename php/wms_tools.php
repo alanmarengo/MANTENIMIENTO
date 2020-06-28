@@ -9,8 +9,8 @@ function wms_get_layer_extent($str_layer_name)
 	$con = curl_init($wms_request);
 	
 	curl_setopt($con,CURLOPT_SSL_VERIFYPEER, false);
-	echo "PRE CURL EXEC";
-
+	curl_setopt($con,CURLOPT_RETURNTRANSFER, true);
+	
 	$response = curl_exec($con);
 
 	//echo curl_error($con);
@@ -19,10 +19,9 @@ function wms_get_layer_extent($str_layer_name)
 
 	//echo $responde;
 
-
 	$capacidades = new SimpleXMLElement($response);
 
-	//echo $capacidades->Layer[0]->Name;
+	echo $capacidades->Layer[0]->Name;
 
 	return 0;
 };
