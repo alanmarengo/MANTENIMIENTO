@@ -39,6 +39,7 @@ function wms_get_layer_extent($str_layer_name)
 			{
 				if($capacidades->Capability->Layer[$index_layers]->BoundingBox[$index_boundind]["CRS"]=='EPSG:4326')
 				{
+					echo $capacidades->Capability->Layer[$index_layers]->BoundingBox[$index_boundind]["CRS"];
 					echo "maxx: ".$capacidades->Capability->Layer[$index_layers]->BoundingBox[$index_boundind]["maxx"];
 					echo "maxy: ".$capacidades->Capability->Layer[$index_layers]->BoundingBox[$index_boundind]["maxy"];
 					echo "minx: ".$capacidades->Capability->Layer[$index_layers]->BoundingBox[$index_boundind]["minx"];
