@@ -1,6 +1,7 @@
 <?php
 
 include("../pgconfig.php");
+include("./wms_tools.php");
 
 $layer_id = $_POST["layer_id"];
 
@@ -8,7 +9,7 @@ $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . 
 	
 $conn = pg_connect($string_conn);
 
-$query_string = "SELECT layer_schema,layer_table FROM mod_geovisores.vw_layers WHERE layer_id = " . $layer_id . " LIMIT 1";
+$query_string = "SELECT layer_schema,layer_table,layer_wms_layer FROM mod_geovisores.vw_layers WHERE layer_id = " . $layer_id . " LIMIT 1";
 
 $query = pg_query($conn,$query_string);
 
@@ -31,6 +32,11 @@ $json .= "\"miny\":\"" . $extent["miny"] . "\",";
 $json .= "\"maxx\":\"" . $extent["maxx"] . "\",";
 $json .= "\"maxy\":\"" . $extent["maxy"] . "\"";
 $json .= "}";
+
+if($extent["minx"]=='') //Algo fue mal, intentamos obtener en extent desde el servicio wms
+{
+	$json = wms_get_layer_extent(trim($data["layer_wms_layer"]));
+};
 
 echo $json;
 
