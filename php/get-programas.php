@@ -67,7 +67,7 @@ while($r = pg_fetch_assoc($query)) {
 		//$json .= "\"Etapa\":\"" . $r["etapa"] . "\",";
 		$json .= "\"Instituciones intervinientes\":\"" . $r["instituciones_interv"] . "\",";
 		$json .= "\"Responsable&nbsp;del&nbsp;estudio&nbsp;más&nbsp;reciente\":\"" . $r["responsable"] . "\",";
-		$json .= "\"Estado\":\"" . $r["estado"] . "\",";
+		/*$json .= "\"Estado\":\"" . $r["estado"] . "\",";*/
 		$json .= "\"Descripción\":\"" . $r["descripcion"] . "\",";
 		$json .= "\"Recursos Asociados\":\"<a href='" . $r["recursos_asociados"] . "' target='_blank' ><img height='24' width='24' src='./images/icono-mediateca-relleno.png' alt='Ver recursos asociados'/> </a> \"";
 	$json .= "}";
@@ -125,7 +125,7 @@ while($r = pg_fetch_assoc($query)) {
 			$json .= "\"Responsable de Ejecución\":\"" . $sp["resp_ejecucion"] . "\",";
 			$json .= "\"Instituciones intervinientes\":\"" . $sp["instituciones_interv"] . "\",";
 			$json .= "\"Responsable&nbsp;del&nbsp;estudio&nbsp;más&nbsp;reciente\":\"" . $sp["responsable"] . "\",";
-			$json .= "\"Estado\":\"" . $sp["estado"] . "\",";
+			/*$json .= "\"Estado\":\"" . $sp["estado"] . "\",";*/
 			$json .= "\"Descripción\":\"" . $sp["descripcion"] . "\",";
 			
 
