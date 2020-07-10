@@ -25,11 +25,22 @@ $query_string .= "(";
 	$query_string .= "FROM mod_catalogo.temas_programas tp ";
 	$query_string .= "WHERE programa_id = pr.programa_id";
 $query_string .= ") AS temas_id";
-if ($tema_id) {
-	$query_string .= " FROM mod_catalogo.vw_programas_subprogramas pr WHERE programa_id_parent = -1  AND " . $tema_id . " IN (SELECT tema_id FROM mod_catalogo.temas_programas WHERE programa_id = pr.programa_id)";
-}else{
+
+if ($tema_id) 
+{
+	//$query_string .= " FROM mod_catalogo.vw_programas_subprogramas pr WHERE programa_id_parent = -1  AND " . $tema_id . " IN (SELECT tema_id FROM mod_catalogo.temas_programas WHERE programa_id = pr.programa_id)";
+	$query_string .= " FROM mod_catalogo.vw_programas_subprogramas pr WHERE programa_id_parent = -1  ";
+	$query_string .= " AND pr.programa_id IN (";
+	$query_string .= " SELECT CASE WHEN programa_id_parent=-1 THEN programa_id ELSE programa_id_parent END AS programa_id_  ";
+	$query_string .= " FROM mod_catalogo.vw_programas_subprogramas ";
+	$query_string .= " WHERE programa_id IN(SELECT programa_id FROM mod_catalogo.temas_programas WHERE tema_id = $tema_id))";
+	
+}
+else
+{
 	$query_string .= " FROM mod_catalogo.vw_programas_subprogramas pr WHERE programa_id_parent = -1  ";
 }
+
 $query_string .= " ORDER BY programa_id ASC, programa ASC";
 
 $query = pg_query($conn,$query_string);
@@ -79,7 +90,18 @@ while($r = pg_fetch_assoc($query)) {
 		$sp_query_string .= "FROM mod_catalogo.temas_programas tp ";
 		$sp_query_string .= "WHERE programa_id = pr.programa_id";
 	$sp_query_string .= ") AS temas_id";
-	$sp_query_string .= " FROM mod_catalogo.vw_programas_subprogramas pr WHERE programa_id_parent = " . $r["programa_id"] . " ORDER BY programa_id ASC, programa ASC";
+	//$sp_query_string .= " FROM mod_catalogo.vw_programas_subprogramas pr WHERE programa_id_parent = " . $r["programa_id"] . " ORDER BY programa_id ASC, programa ASC";
+	if ($tema_id) 
+	{
+		$sp_query_string .= " FROM mod_catalogo.vw_programas_subprogramas pr WHERE programa_id_parent = " . $r["programa_id"];
+		$sp_query_string .= " AND pr.programa_id IN (SELECT programa_id FROM mod_catalogo.temas_programas WHERE tema_id = $tema_id) ";
+		$sp_query_string .= " ORDER BY programa_id ASC, programa ASC";
+	}
+	else
+	{
+		$sp_query_string .= " FROM mod_catalogo.vw_programas_subprogramas pr WHERE programa_id_parent = " . $r["programa_id"] . " ORDER BY programa_id ASC, programa ASC";
+	};
+	
 	
 	$sp_query = pg_query($conn,$sp_query_string);
 	
