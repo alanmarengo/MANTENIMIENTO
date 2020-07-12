@@ -1,5 +1,6 @@
 <?php
 
+/*
 session_start();
 
 $login = "<!DOCTYPE html>";
@@ -68,5 +69,5 @@ if (isset($_SESSION)) {
 	die($login);
 
 }
-
+*/
 ?>
