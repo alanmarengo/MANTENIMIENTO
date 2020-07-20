@@ -100,6 +100,9 @@ El descargador de fondo, otro de los dispositivos de seguridad para la evacuaci�
 
 Además, la presa posee una escala de peces, ubicada sobre la margen izquierda, cuyo objeto es posibilitar la migración hacia aguas arriba de la fauna íctica. Esta demandará el uso de un caudal de 7 m3/s para su funcionamiento.
 <br />
+<!-- Link   a inmagenes en la mediateka -->
+<a target="_blank" href="./mediateca.php?o=0&s=CCaudiovisual&mode=-1&solapa=1">Ver Imagenes</a>
+
 <br />
             </p>
 
@@ -171,6 +174,8 @@ La casa de máquinas se compone de tres módulos de 28 m de ancho cada uno y sus
 
 La escala de peces es equivalente a nivel conceptual a la de la presa CC. Se ubica sobre la margen derecha, próxima a la casa de máquinas.
 <br />
+<!-- Link a imagenes en mediateka -->
+<a target="_blank" href="./mediateca.php?o=0&s=LBaudiovisual&mode=-1&solapa=1">Ver Imagenes</a>
 <br />
             </p>
 
