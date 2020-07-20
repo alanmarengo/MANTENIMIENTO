@@ -102,7 +102,7 @@ Además, la presa posee una escala de peces, ubicada sobre la margen izquierda, 
 <br />
 <br />
 <!-- Link   a inmagenes en la mediateka -->
-<a target="_blank" href="./mediateca.php?o=0&s=CCaudiovisual&mode=-1&solapa=1">Ver imagenes de la obra</a>
+<a target="_blank" href="./mediateca.php?o=0&s=CCaudiovisual&mode=-1&solapa=1">Cóndor Cliff en imagenes</a>
 
 <br />
             </p>
@@ -177,7 +177,7 @@ La escala de peces es equivalente a nivel conceptual a la de la presa CC. Se ubi
 <br />
 <br />
 <!-- Link a imagenes en mediateka -->
-<a target="_blank" href="./mediateca.php?o=0&s=LBaudiovisual&mode=-1&solapa=1">Ver imagenes de la obra</a>
+<a target="_blank" href="./mediateca.php?o=0&s=LBaudiovisual&mode=-1&solapa=1">La Barrancosa en imagenes</a>
 <br />
             </p>
 
