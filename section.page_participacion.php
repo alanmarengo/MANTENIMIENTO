@@ -66,10 +66,59 @@
                     <br />
                     <a target="_blank" href="#">Acceda al listado de reuniones con la comunidad.</a>
                     <br />
+                    <br />
                 </div>
             </div>
 
-            {{SLIDE_1}}
+            
+            
+
+
+
+
+    <div id="slider-participacion1" class="carousel slide" data-ride="carousel" data-interval="5000">
+        <div class="carousel-inner">
+            <a href="./page_proyecto.php" class="carousel-item active">
+                <img class="d-block w-100" src="./images/index/s1.jpg" alt="...">
+                <div class="carousel-caption">
+                    <p>Item 1</p>
+                </div>
+            </a>
+            <a href="./page_proyecto.php" class="carousel-item">
+                <img class="d-block w-100" src="./images/index/s2.jpg" alt="...">
+                <div class="carousel-caption">
+                    <p>Item 2</p>
+                </div>
+            </a>
+            <a href="./page_proyecto.php" class="carousel-item">
+                <img class="d-block w-100" src="./images/index/s4.jpg" alt="...">
+                <div class="carousel-caption">
+                    <p>Item 3</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="carousel-control-prev" href="#slider-participacion1" role="button" data-slide="prev">
+            <i class="fa fa-chevron-left"></i>
+        </div>
+        <div class="carousel-control-next" href="#slider-participacion1" role="button" data-slide="next">
+            <i class="fa fa-chevron-right"></i>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         </div>
 

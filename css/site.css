@@ -665,7 +665,7 @@ map area {
   height: auto;
 }
 .datepicker {
-  z-index: 1050000 !important;
+  z-index: 1000 !important;
 }
 .datepicker-days,
 .datepicker-months,
@@ -1061,6 +1061,31 @@ map area {
   display: grid;
   grid-template-columns: 4fr 1fr;
   grid-template-rows: 1fr;
+}
+#slider-participacion1 {
+  position: relative;
+}
+#slider-participacion1 .carousel-inner a {
+  color: #fff;
+}
+#slider-participacion1 .carousel-control-prev {
+  opacity: 1;
+  font-size: 2em;
+  position: absolute!important;
+  width: 20px;
+  top: 0px;
+  right: 24px;
+  left: unset;
+  cursor: pointer;
+}
+#slider-participacion1 .carousel-control-next {
+  opacity: 1;
+  font-size: 2em;
+  width: 20px;
+  top: -20px;
+  right: 0px;
+  left: unset;
+  cursor: pointer;
 }
 @media (max-width: 992px) {
   .side-right {
