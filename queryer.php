@@ -9,7 +9,7 @@ $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . 
 	
 $conn = pg_connect($string_conn);
 
-$query = $_GET["q"];
+$query_string = $_GET["q"];
 
 ?>
 
@@ -24,7 +24,22 @@ $query = $_GET["q"];
 	
 		<?php
 		
-			var_dump($conn);
+			$query = pg_query($conn,$query_string);
+			
+			while ($r=pg_fetch_assoc($query)) {
+					
+				$html .= "<tr>";
+			
+				foreach ($r as $item => $value){
+					
+					$html .= "<td>" . str_replace("_"," ",$item) . "</td>";
+					$html .= "<td>" . $value . "</td>";
+				
+				}
+					
+				$html .= "</tr>";
+			
+			}
 		
 		?>
 	
