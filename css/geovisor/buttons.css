@@ -53,6 +53,14 @@
 	
 }
 
+.black-button.active {
+
+	text-decoration:none !Important;
+	color:#FFFFFF !Important;	
+	background-color:#31cbfd;
+	
+}
+
 .black-button-2 {
 	
 	background-color: #343a40;
