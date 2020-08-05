@@ -70,55 +70,17 @@
                 </div>
             </div>
 
-            
-            
-
-
-
-
-    <div id="slider-participacion1" class="carousel slide" data-ride="carousel" data-interval="5000">
-        <div class="carousel-inner">
-            <a href="./page_proyecto.php" class="carousel-item active">
-                <img class="d-block w-100" src="./images/index/s1.jpg" alt="...">
-                <div class="carousel-caption">
-                    <p>Item 1</p>
+            <div id="slider-participacion1" class="carousel slide" data-ride="carousel" data-interval="5000">
+                <div class="carousel-inner">
                 </div>
-            </a>
-            <a href="./page_proyecto.php" class="carousel-item">
-                <img class="d-block w-100" src="./images/index/s2.jpg" alt="...">
-                <div class="carousel-caption">
-                    <p>Item 2</p>
+
+                <div class="carousel-control-prev" href="#slider-participacion1" role="button" data-slide="prev">
+                    <i class="fa fa-chevron-left"></i>
                 </div>
-            </a>
-            <a href="./page_proyecto.php" class="carousel-item">
-                <img class="d-block w-100" src="./images/index/s4.jpg" alt="...">
-                <div class="carousel-caption">
-                    <p>Item 3</p>
+                <div class="carousel-control-next" href="#slider-participacion1" role="button" data-slide="next">
+                    <i class="fa fa-chevron-right"></i>
                 </div>
-            </a>
-        </div>
-
-        <div class="carousel-control-prev" href="#slider-participacion1" role="button" data-slide="prev">
-            <i class="fa fa-chevron-left"></i>
-        </div>
-        <div class="carousel-control-next" href="#slider-participacion1" role="button" data-slide="next">
-            <i class="fa fa-chevron-right"></i>
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            </div>
 
         </div>
 
@@ -209,8 +171,33 @@
     </div>
 </div>
 
+<script src="./js/slide.js"></script>
 <script type='text/javascript'>
 $(document).ready(function() {
+    var data1 = [
+        {
+            imagen: './images/index/s1.jpg',
+            texto: 'ITEM 1',
+            url: '#'
+        },
+        {
+            imagen: './images/index/s2.jpg',
+            texto: 'ITEM 2',
+            url: '#'
+        },
+        {
+            imagen: './images/index/s4.jpg',
+            texto: 'ITEM 3',
+            url: '#'
+        },
+        {
+            imagen: './images/index/s5.jpg',
+            texto: 'ITEM 4',
+            url: '#'
+        }
+    ];
+
+
     $('.section-sticky a').on('click', function() {
         $('.section-sticky a').removeClass('selected');
         $(this).addClass('selected');
@@ -234,6 +221,9 @@ $(document).ready(function() {
     let target = $.urlParam('target');
     if (target)
         $('#link-' + target).trigger('click');
+
+    slide('#slider-participacion1', data1);
+    //slide('#slider-participacion2', data2);
 
 });
 </script>
