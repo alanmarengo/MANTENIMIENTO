@@ -67,8 +67,8 @@ $query_string = $_GET["q"];
 	
 		<div style="padding:10px; border:1px solid #ccc; width:100%;">
 			
-			<textarea name="query" id="query"></textarea>
-			<button onclick="readquery();">Procesar</button>			
+			<p><textarea name="query" id="query" style="width:300px; min-height:300px;"></textarea></p>
+			<p><button onclick="readquery();">Procesar</button></p>	
 		
 			<div id="queryresult" style="margin-top:30px; border:1px dashed #ccc; padding:10px;"></div>
 			
