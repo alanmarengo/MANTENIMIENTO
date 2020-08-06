@@ -278,8 +278,10 @@ function ol_map() {
 		this.ol_object.addEventListener("click",function(evt) {
 					
 			var pos = evt.coordinate;
+			
+			var coordarray4326 = ol.proj.transform(evt.coordinate,'EPSG:3857', 'EPSG:4326');
 								
-			console.log("POS: " + pos);
+			console.log("POS: " + coordarray4326);
 				
 			var coord = String(pos).split(",");
 			

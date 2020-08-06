@@ -96,6 +96,8 @@ $query_string = $_GET["q"];
 			$html .= "</table>";
 			
 			echo $html;
+			
+			var_dump(pg_last_error($conn));
 		
 		?>
 	
