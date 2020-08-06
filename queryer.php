@@ -48,6 +48,49 @@ $query_string = $_GET["q"];
 	
 	</script>
 	
+	<style>
+	
+	body {
+			
+			width:10000px;
+			
+		}
+		
+		table {
+			
+			margin:20px;
+			
+		}
+		
+		th {
+			
+			background-color:#efefef;
+			
+		}
+		
+		td, th {
+			
+			padding:10px;
+			border-top:1px solid #ccc;
+			border-left:1px solid #ccc;
+			width:150px;
+			
+		}
+		
+		tr td:last-child,th td:last-child {			
+			
+			border-right:1px solid #ccc;
+			
+		}
+		
+		tr:last-child td,tr:last-child th {			
+			
+			border-bottom:1px solid #ccc;
+			
+		}
+		
+	</style>
+	
 	</head>
 	<body>
 	
