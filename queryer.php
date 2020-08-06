@@ -19,48 +19,34 @@ $query_string = $_GET["q"];
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="./css/pretty-checkbox.css"/>
 	
-	<style>
+	<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
 	
-		body {
+		$(document).ready(function() {
 			
-			width:10000px;
+			readquery();			
 			
-		}
+		});
 		
-		table {
+		function readquery() {
 			
-			margin:20px;
+			var req = $.ajax({
+				
+				async:false,
+				url:"./queryer-read.php",
+				type:"post",
+				data:{
+					q:$("#query").val()
+				},
+				success:function(d){}
+				
+			});
 			
-		}
-		
-		th {
-			
-			background-color:#efefef;
-			
-		}
-		
-		td, th {
-			
-			padding:10px;
-			border-top:1px solid #ccc;
-			border-left:1px solid #ccc;
-			width:150px;
-			
-		}
-		
-		tr td:last-child,th td:last-child {			
-			
-			border-right:1px solid #ccc;
-			
-		}
-		
-		tr:last-child td,tr:last-child th {			
-			
-			border-bottom:1px solid #ccc;
+			$("#queryresult").html(req.responseText);
 			
 		}
 	
-	</style>
+	</script>
 	
 	</head>
 	<body>

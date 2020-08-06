@@ -9,7 +9,7 @@ $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . 
 	
 $conn = pg_connect($string_conn);
 
-$query_string = $_GET["q"];
+$query_string = $_POST["q"];
 		
 $html = "<table>";
 
