@@ -5,10 +5,10 @@ function slide(id, data) {
         let item = data[i];
         slide.append(`
 			<a href="${item.url}" class="carousel-item ${i == 0 ? 'active' : ''}">
-				<img class="d-block w-100" src="${item.imagen}">
-				<div class="carousel-caption">
-					<p>${item.texto}</p>
-				</div>
+				<img class="d-block w-100" src="${item.media_url}">
+                <div class="carousel-caption">
+                    <p>${item.texto}</p>
+                </div>
 			</a>
 		`);
     }
