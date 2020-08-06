@@ -65,41 +65,12 @@ $query_string = $_GET["q"];
 	</head>
 	<body>
 	
-		<?php
+		<div>
+			<textarea name="query" id="query"></textarea>
+			<button onclick="readquery();">Procesar</button>
+		</div>
 		
-			$html = "<table>";
-		
-			$query = pg_query($conn,$query_string);
-			
-			$i = 0;
-			
-			while ($r=pg_fetch_assoc($query)) {
-				
-				$html .= "<tr>";
-			
-				foreach ($r as $item => $value){
-					
-					if ($i==0) {
-						$html .= "<th>" . str_replace("_"," ",$item) . "</th>";
-					}else{
-						$html .= "<td>" . $value . "</td>";
-					}
-					
-				}
-					
-				$html .= "</tr>";
-				
-				$i++;
-			
-			}
-			
-			$html .= "</table>";
-			
-			echo $html;
-			
-			var_dump(pg_last_error($conn));
-		
-		?>
+		<div id="queryresult"></div>
 	
 	</body>
 </html>
