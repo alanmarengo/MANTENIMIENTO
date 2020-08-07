@@ -4,12 +4,12 @@ include("./pgconfig.php");
 
 $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 
-$conn = pg_connect($string_conn);
+$con = pg_connect($string_conn);
 
 funcion slider_participacion_reuniones()
 {
 	
-	global $conn;
+	global $con;
 
 	$SQL  = "SELECT r.recurso_path_url,f.desc,f.tema,r.recurso_id FROM  mod_mediateca.recurso r INNER JOIN mod_mediateca.fotos_participacion f ";
 	$SQL .= "ON f.recurso_id=r.recurso_id ";
@@ -67,7 +67,7 @@ funcion slider_participacion_pueblos()
 
 	//$conn = pg_connect($string_conn);
 	
-	global $conn;
+	global $con;
 
 	$SQL  = "SELECT r.recurso_path_url,f.desc,f.tema,r.recurso_id FROM  mod_mediateca.recurso r INNER JOIN mod_mediateca.fotos_participacion f ";
 	$SQL .= "ON f.recurso_id=r.recurso_id ";
@@ -117,7 +117,9 @@ funcion slider_participacion_pueblos()
 
 };
 
-slider_participacion_reuniones();
+echo "dddd";
+
+//slider_participacion_reuniones();
 
 ?>
 
