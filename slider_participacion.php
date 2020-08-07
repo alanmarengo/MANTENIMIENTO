@@ -4,7 +4,7 @@ include("./pgconfig.php");
 
 $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 
-$con = pg_connect($string_conn);
+//$con = pg_connect($string_conn);
 
 funcion slider_participacion_reuniones()
 {
