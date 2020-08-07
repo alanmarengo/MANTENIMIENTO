@@ -236,6 +236,8 @@ $(document).ready(function() {
         }
     ];
     //-----------------------------------------------
+    
+    <?php include("./slider_participacion.php"); ?>
 
 
     $('.section-sticky a').on('click', function() {
