@@ -55,7 +55,7 @@ funcion slider_participacion_reuniones()
 
 	echo "];";
 
-	pg_close($conn);
+	pg_close($con);
 
 };
 
@@ -113,7 +113,7 @@ funcion slider_participacion_pueblos()
 
 	echo "];";
 
-	pg_close($conn);
+	pg_close($con);
 
 };
 
