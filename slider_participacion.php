@@ -117,9 +117,7 @@ function slider_participacion_pueblos()
 
 };
 
-echo "dddd";
-
-slider_participacion_reuniones();
+slider_participacion_pueblos();
 
 ?>
 
