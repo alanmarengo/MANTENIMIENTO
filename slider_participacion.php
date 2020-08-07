@@ -12,11 +12,11 @@ funcion slider_participacion_reuniones()
 	global $con;
 
 	$SQL  = "SELECT r.recurso_path_url,f.desc,f.tema,r.recurso_id FROM  mod_mediateca.recurso r INNER JOIN mod_mediateca.fotos_participacion f ";
-	$SQL .= "ON f.recurso_id=r.recurso_id ";
+	$SQL .= "ON f.recurso_id::bigint=r.recurso_id ";
 	$SQL .= "WHERE f.tema='Participación y gestió pública' ";
 	$SQL .= "ORDER BY f.tema ASC";
 
-	$recordset = pg_query($conn,$SQL);
+	$recordset = pg_query($con,$SQL);
 
 	function draw_tupla($row)
 	{
@@ -74,7 +74,7 @@ funcion slider_participacion_pueblos()
 	$SQL .= "WHERE f.tema='Pueblos Originarios' ";
 	$SQL .= "ORDER BY f.tema ASC";
 
-	$recordset = pg_query($conn,$SQL);
+	$recordset = pg_query($con,$SQL);
 
 	function draw_tupla($row)
 	{
