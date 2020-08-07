@@ -4,11 +4,11 @@ include("./pgconfig.php");
 
 $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 
-$con = pg_connect($string_conn);
+ $con = pg_connect($string_conn);
 
 	$SQL  = "SELECT r.recurso_path_url,f.desc,f.tema,r.recurso_id FROM  mod_mediateca.recurso r INNER JOIN mod_mediateca.fotos_participacion f ";
 	$SQL .= "ON f.recurso_id::bigint=r.recurso_id ";
-	$SQL .= "WHERE f.tema='Participación y gestió pública' ";
+	$SQL .= "WHERE f.tema='Participación y gestión pública' ";
 	$SQL .= "ORDER BY f.tema ASC";
 
 	$recordset = pg_query($con,$SQL);
