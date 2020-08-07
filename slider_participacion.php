@@ -4,9 +4,9 @@ include("./pgconfig.php");
 
 $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 
-//$con = pg_connect($string_conn);
+$con = pg_connect($string_conn);
 
-funcion slider_participacion_reuniones()
+function slider_participacion_reuniones()
 {
 	
 	global $con;
@@ -60,7 +60,7 @@ funcion slider_participacion_reuniones()
 };
 
 
-funcion slider_participacion_pueblos()
+function slider_participacion_pueblos()
 {
 	
 	//$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
