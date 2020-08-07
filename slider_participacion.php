@@ -6,8 +6,6 @@ $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . 
 
 $con = pg_connect($string_conn);
 
-	global $con;
-
 	$SQL  = "SELECT r.recurso_path_url,f.desc,f.tema,r.recurso_id FROM  mod_mediateca.recurso r INNER JOIN mod_mediateca.fotos_participacion f ";
 	$SQL .= "ON f.recurso_id::bigint=r.recurso_id ";
 	$SQL .= "WHERE f.tema='Participación y gestió pública' ";
@@ -60,19 +58,6 @@ $con = pg_connect($string_conn);
 	$SQL .= "ORDER BY f.tema ASC";
 
 	$recordset = pg_query($con,$SQL);
-
-	function draw_tupla($row)
-	{
-		   echo '{';
-		   echo '"media_url":"'.$row[0].'",';
-		   echo '"media_tipo":"jpg",';
-		   echo '"texto":"'.$row[1].'",';
-		   echo '"url":"#",';
-		   echo '"tema":"'.$row[2].'"';
-		   echo '}';
-		   
-		   return true;
-	};
 
 	$fflag = false;
 
