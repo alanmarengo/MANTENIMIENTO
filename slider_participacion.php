@@ -114,7 +114,7 @@ funcion slider_participacion_pueblos()
 
 };
 
-funcion slider_participacion_reuniones();
+slider_participacion_reuniones();
 
 ?>
 
