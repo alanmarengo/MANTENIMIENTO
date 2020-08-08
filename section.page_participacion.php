@@ -187,25 +187,29 @@ $(document).ready(function() {
             media_url: './images/index/s1.jpg',
             media_tipo: 'jpg',
             texto: 'Jornada informativa en Río Gallegos, previa a la Audiencia pública provincial. 16 de octubre de 2015',
-            url: '#'
+            url: '#',
+            tag: '',
         },
         {
-            media_url: './images/index/s2.jpg',
-            media_tipo: 'jpg',
-            texto: 'ITEM 2',
-            url: '#'
+            media_url: 'https://mdbootstrap.com/img/video/Agua-natural.mp4',
+            media_tipo: 'mp4',
+            texto: 'VIDEO',
+            url: '#',
+            tag: '',
         },
         {
             media_url: './images/index/s4.jpg',
             media_tipo: 'jpg',
             texto: 'ITEM 3',
-            url: '#'
+            url: '#',
+            tag: '',
         },
         {
             media_url: './images/index/s5.jpg',
             media_tipo: 'jpg',
             texto: 'ITEM 4',
-            url: '#'
+            url: '#',
+            tag: '',
         }
     ];
 
@@ -214,25 +218,29 @@ $(document).ready(function() {
             media_url: './images/index/s6.jpg',
             media_tipo: 'jpg',
             texto: 'Jornada informativa en Río Gallegos, previa a la Audiencia pública provincial. 16 de octubre de 2015',
-            url: '#'
+            url: '#',
+            tag: '',
         },
         {
             media_url: './images/index/s1.jpg',
             media_tipo: 'jpg',
             texto: 'ITEM 2',
-            url: '#'
+            url: '#',
+            tag: '',
         },
         {
             media_url: './images/index/s4.jpg',
             media_tipo: 'jpg',
             texto: 'ITEM 3',
-            url: '#'
+            url: '#',
+            tag: '',
         },
         {
             media_url: './images/index/s3.jpg',
             media_tipo: 'jpg',
             texto: 'ITEM 4',
-            url: '#'
+            url: '#',
+            tag: '',
         }
     ];
     //-----------------------------------------------
@@ -265,8 +273,8 @@ $(document).ready(function() {
         $('#link-' + target).trigger('click');
 
     //------------------------------------------------------
-    slide('#slider-participacion1', data1);
-    slide('#slider-participacion2', data2);
+    slide('#slider-participacion1', data1, '');
+    slide('#slider-participacion2', data2, '');
 
 });
 </script>
