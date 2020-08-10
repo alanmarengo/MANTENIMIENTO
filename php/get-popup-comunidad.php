@@ -22,17 +22,23 @@ while ($r = pg_fetch_assoc($query)) {
 	
 	if ($first) { $html .= "<hr>"; }
 	
-	$html .= "<h2><strong>Fecha: </strong>" . $data["FECHA"] . "</h2>";
-	$html .= "<h3><strong>Lugar de Encuentro: </strong>" . $data["LUGAR_ENCUENTRO"] . "</h3>";
-	$html .= "<p><strong>Modalidad: </strong>" . $data["MODALIDAD_ENCUENTRO"] . "</p>";
-	$html .= "<p><strong>Temática: </strong>" . $data["TEMATICA_ENCUENTRO"] . "</p>";
+	$html .= "<h2><strong>Fecha: </strong>" . $r["FECHA"] . "</h2>";
+	$html .= "<h3><strong>Lugar de Encuentro: </strong>" . $r["LUGAR_ENCUENTRO"] . "</h3>";
+	$html .= "<p><strong>Modalidad: </strong>" . $r["MODALIDAD_ENCUENTRO"] . "</p>";
+	$html .= "<p><strong>Temática: </strong>" . $r["TEMATICA_ENCUENTRO"] . "</p>";
 
 	$first = false;
 	
 }
 
-$data = pg_fetch_assoc($query);
+if ($first) {
+	
+	echo "<p>No se registraron datos para el punto clickeado</p>";
+	
+}else{
 
-echo $html;
+	echo $html;
+
+}
 
 ?>
