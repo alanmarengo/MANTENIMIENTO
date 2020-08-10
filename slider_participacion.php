@@ -54,7 +54,7 @@ $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . 
 
 
 
-	$SQL  = "SELECT r.recurso_path_url,f.desc,f.tema,r.recurso_id,upper(right(r.recurso_path_url,3))AS extension FROM  mod_mediateca.recurso r INNER JOIN mod_mediateca.fotos_participacion f ";
+	$SQL  = "SELECT r.recurso_path_url,f.desc,f.tema,r.recurso_id,lower(right(r.recurso_path_url,3))AS extension FROM  mod_mediateca.recurso r INNER JOIN mod_mediateca.fotos_participacion f ";
 	$SQL .= "ON f.recurso_id::bigint=r.recurso_id ";
 	$SQL .= "WHERE f.tema='Pueblos Originarios' ";
 	$SQL .= "ORDER BY f.tema ASC";
