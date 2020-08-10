@@ -233,6 +233,20 @@ $(document).ready(function() {
                     </div>
                 `
                     });
+                    
+                    /*  Si el recurso es formato video o audio no tiene preview, se asigna una por defecto  */
+                    
+                    preview_media = '';
+                    
+                    if (model.ficha.categoria_media in [2,3])//audio o video
+                    {
+						preview_media = './images/play.png';
+					}
+					else
+					{
+						preview_media = model.ficha.linkimagen;
+					};
+                    
 
                     let html = `
                 <div class="row">
