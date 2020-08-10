@@ -241,7 +241,7 @@ $(document).ready(function() {
                     preview_media = '';
                     console.log('categoria_media:'+model.ficha.categoria_media);
                     
-                    tipos = [2,3];//audio o video
+                    tipos = ['2','3'];//audio o video
                     
                     if (model.ficha.categoria_media in tipos)
                     {
