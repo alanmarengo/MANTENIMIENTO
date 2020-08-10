@@ -234,7 +234,9 @@ $(document).ready(function() {
                 `
                     });
                     
-                    /*  Si el recurso es formato video o audio no tiene preview, se asigna una por defecto  */
+                    /*  Si el recurso es formato video o audio no tiene preview, se asigna una por defecto  
+                     *  background-image: url('${model.ficha.linkimagen}');
+                     * */
                     
                     preview_media = '';
                     
@@ -259,7 +261,7 @@ $(document).ready(function() {
                             width: 100%;
                             height:260px;
                             cursor: pointer;
-                            background-image: url('${model.ficha.linkimagen}');
+                            background-image: url('${preview_media}');
                             background-repeat: no-repeat;
                             background-position: center center;
                             background-size: cover;    
