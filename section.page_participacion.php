@@ -245,7 +245,7 @@ $(document).ready(function() {
     ];
     //-----------------------------------------------
     
-    <?php /*include("./slider_participacion.php");*/ ?>
+    <?php include("./slider_participacion.php"); ?>
 
 
     $('.section-sticky a').on('click', function() {
