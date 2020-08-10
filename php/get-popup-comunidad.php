@@ -16,21 +16,22 @@ $query_string = "SELECT * FROM $table WHERE ST_Within(geom,ST_SetSRID(ST_Buffer(
 
 $query = pg_query($conn,$query_string);
 
+$first = true;
+
 while ($r = pg_fetch_assoc($query)) {
 	
-	var_dump($r);
+	if ($first) { $html .= "<hr>"; }
+	
+	$html .= "<h2><strong>Fecha: </strong>" . $data["FECHA"] . "</h2>";
+	$html .= "<h3><strong>Lugar de Encuentro: </strong>" . $data["LUGAR_ENCUENTRO"] . "</h3>";
+	$html .= "<p><strong>Modalidad: </strong>" . $data["MODALIDAD_ENCUENTRO"] . "</p>";
+	$html .= "<p><strong>Temática: </strong>" . $data["TEMATICA_ENCUENTRO"] . "</p>";
+
+	$first = false;
 	
 }
 
 $data = pg_fetch_assoc($query);
-
-echo $query_string;
-
-$html = "";
-$html .= "<h2>" . $data["FECHA"] . "</h2>";
-$html .= "<h3>" . $data["LUGAR_ENCUENTRO"] . "</h3>";
-$html .= "<p>" . $data["MODALIDAD_ENCUENTRO"] . "</p>";
-$html .= "<p>" . $data["TEMATICA_ENCUENTRO"] . "</p>";
 
 echo $html;
 
