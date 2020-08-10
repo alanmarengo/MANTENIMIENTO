@@ -20,7 +20,7 @@ $first = true;
 
 while ($r = pg_fetch_assoc($query)) {
 	
-	if ($first) { $html .= "<hr>"; }
+	if (!$first) { $html .= "<hr>"; }
 	
 	$html .= "<p><strong>Fecha: </strong>" . $r["FECHA"] . "</p>";
 	$html .= "<p><strong>Lugar de Encuentro: </strong>" . $r["LUGAR_ENCUENTRO"] . "</p>";
