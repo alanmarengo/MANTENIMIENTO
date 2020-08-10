@@ -251,13 +251,17 @@ function ol_map() {
 		this.ol_object.infoEnabled = true;
 		this.ol_object.map_object = this;
 		
+		this.currlayer = ""
+		
 		$("#btn-com-1").on("click",function() {
 			
 			comunidad_layer.setVisible(true);
 			poriginarios_layer.setVisible(false);
 			art_institucionales_layer.setVisible(false);
 			
-		});
+			this.currlayer = "socio.vp_geo_msrco_reunionescomuunidad_pga1";
+			
+		}.bind(this));
 		
 		$("#btn-com-2").on("click",function() {
 			
@@ -265,7 +269,9 @@ function ol_map() {
 			poriginarios_layer.setVisible(true);
 			art_institucionales_layer.setVisible(false);
 			
-		});
+			this.currlayer = "socio.vp_geo_msrpo_reunionespueblosoriginarios_pga1";
+			
+		}.bind(this));
 		
 		$("#btn-com-3").on("click",function() {
 			
@@ -273,7 +279,9 @@ function ol_map() {
 			poriginarios_layer.setVisible(false);
 			art_institucionales_layer.setVisible(true);
 			
-		});
+			this.currlayer = "socio.vp_geo_msrco_artinsititicional_pga1";
+			
+		}.bind(this));
 		
 		this.ol_object.addEventListener("click",function(evt) {
 					
@@ -283,9 +291,11 @@ function ol_map() {
 								
 			console.log("POS: " + coordarray4326);
 				
+			alert(this.currlayer);	
+			
 			var coord = String(pos).split(",");
 			
-		});		
+		}.bind(this));		
 		
 		this.global_mouse_position_3857 = new ol.control.MousePosition({
 			coordinateFormat: function(coordinate) {
