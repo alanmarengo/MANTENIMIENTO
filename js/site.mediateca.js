@@ -239,7 +239,7 @@ $(document).ready(function() {
                      * */
                     
                     preview_media = '';
-                    console.log(model.ficha.categoria_media);
+                    console.log('categoria_media:'+model.ficha.categoria_media);
                     
                     if (model.ficha.categoria_media in ['2','3'])//audio o video
                     {
