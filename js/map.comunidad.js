@@ -291,7 +291,7 @@ function ol_map() {
 								
 			console.log("POS: " + coordarray4326);
 			
-			var coord = String(pos).split(",");
+			var coord = String(coordarray4326).split(",");
 			
 			var table = this.currlayer;
 			
