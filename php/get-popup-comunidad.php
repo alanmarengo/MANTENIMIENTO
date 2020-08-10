@@ -18,6 +18,8 @@ $query = pg_query($conn,$query_string);
 
 $data = pg_fetch_assoc($query);
 
+echo $query_string;
+
 $html = "";
 $html .= "<h2>" . $data["LUGAR ENCUENTRO"] . "</h2>";
 $html .= "<h3>" . $data["MODALIDAD ENCUENTRO"] . "</h3>";
