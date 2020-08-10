@@ -16,6 +16,12 @@ $query_string = "SELECT * FROM $table WHERE ST_Within(geom,ST_SetSRID(ST_Buffer(
 
 $query = pg_query($conn,$query_string);
 
+while ($r = pg_fetch_assoc($query)) {
+	
+	var_dump($r);
+	
+}
+
 $data = pg_fetch_assoc($query);
 
 echo $query_string;
