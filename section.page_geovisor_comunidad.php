@@ -31,9 +31,9 @@
 	
 	<div class="col-md-4 col-lg-4 section-b h100p jump-scroll jump-posrel p0" id="prog-wrapper" style="background:white; overflow:auto !important;">
 
-		<div id="map-details">
+		<div id="map-details" style="padding:0 20px;">
 		
-			<p class="p20">Seleccione una capa para ver sus programas asociados.</p>
+			<p class="p20">Seleccione un elemento del mapa para ver información asociada.</p>
 			
 		</div>
 		

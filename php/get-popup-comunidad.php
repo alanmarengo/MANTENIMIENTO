@@ -22,8 +22,8 @@ while ($r = pg_fetch_assoc($query)) {
 	
 	if ($first) { $html .= "<hr>"; }
 	
-	$html .= "<h2><strong>Fecha: </strong>" . $r["FECHA"] . "</h2>";
-	$html .= "<h3><strong>Lugar de Encuentro: </strong>" . $r["LUGAR_ENCUENTRO"] . "</h3>";
+	$html .= "<p><strong>Fecha: </strong>" . $r["FECHA"] . "</p>";
+	$html .= "<p><strong>Lugar de Encuentro: </strong>" . $r["LUGAR_ENCUENTRO"] . "</p>";
 	$html .= "<p><strong>Modalidad: </strong>" . $r["MODALIDAD_ENCUENTRO"] . "</p>";
 	$html .= "<p><strong>Temática: </strong>" . $r["TEMATICA_ENCUENTRO"] . "</p>";
 
