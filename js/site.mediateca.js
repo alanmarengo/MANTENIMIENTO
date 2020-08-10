@@ -243,7 +243,7 @@ $(document).ready(function() {
                     
                     tipos = ['2','3'];//audio o video
                     
-                    if (model.ficha.categoria_media in tipos)
+                    if((model.ficha.categoria_media == 2)||(model.ficha.categoria_media == 3))
                     {
 						preview_media = './images/play.png';
 					}
