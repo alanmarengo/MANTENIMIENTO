@@ -290,10 +290,26 @@ function ol_map() {
 			var coordarray4326 = ol.proj.transform(evt.coordinate,'EPSG:3857', 'EPSG:4326');
 								
 			console.log("POS: " + coordarray4326);
-				
-			alert(this.currlayer);	
 			
 			var coord = String(pos).split(",");
+			
+			var table = this.currlayer;
+			
+			var req = $.ajax({
+				
+				async:false,
+				url:"./php/get-popup-comunidad.php",
+				type:"post",
+				data:{
+					table:table,
+					lon:coord[0],
+					lat:coord[1]
+				},
+				success:function(d){}
+				
+			});
+			
+			$("#map-details").html(req.responseText);
 			
 		}.bind(this));		
 		
