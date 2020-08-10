@@ -70,14 +70,13 @@
                 </div>
             </div>
 
-            <div id="slider-participacion1" class="carousel slide" data-ride="carousel" data-interval="5000">
+            <div id="slider-participacion1" class="carousel slide slider2" data-ride="carousel" data-interval="5000">
                 <div class="carousel-inner">
                 </div>
-
-                <div class="carousel-control-prev" href="#slider-participacion1" role="button" data-slide="prev">
+                <div class="carousel-prev" href="#slider-participacion1" role="button" data-slide="prev">
                     <i class="fa fa-chevron-left"></i>
                 </div>
-                <div class="carousel-control-next" href="#slider-participacion1" role="button" data-slide="next">
+                <div class="carousel-next" href="#slider-participacion1" role="button" data-slide="next">
                     <i class="fa fa-chevron-right"></i>
                 </div>
             </div>
@@ -109,7 +108,16 @@
                 </div>
             </div>
 
-            {{SLIDE_2}}
+            <div id="slider-participacion2" class="carousel slide slider2" data-ride="carousel" data-interval="5000">
+                <div class="carousel-inner">
+                </div>
+                <div class="carousel-prev" href="#slider-participacion2" role="button" data-slide="prev">
+                    <i class="fa fa-chevron-left"></i>
+                </div>
+                <div class="carousel-next" href="#slider-participacion2" role="button" data-slide="next">
+                    <i class="fa fa-chevron-right"></i>
+                </div>
+            </div>
 
         </div>
 
@@ -176,26 +184,68 @@
 $(document).ready(function() {
     var data1 = [
         {
-            imagen: './images/index/s1.jpg',
-            texto: 'ITEM 1',
-            url: '#'
+            media_url: './images/index/s1.jpg',
+            media_tipo: 'jpg',
+            texto: 'Jornada informativa en Río Gallegos, previa a la Audiencia pública provincial. 16 de octubre de 2015',
+            url: '#',
+            tag: '',
         },
         {
-            imagen: './images/index/s2.jpg',
-            texto: 'ITEM 2',
-            url: '#'
+            media_url: 'https://mdbootstrap.com/img/video/Agua-natural.mp4',
+            media_tipo: 'mp4',
+            texto: 'VIDEO',
+            url: '#',
+            tag: '',
         },
         {
-            imagen: './images/index/s4.jpg',
+            media_url: './images/index/s4.jpg',
+            media_tipo: 'jpg',
             texto: 'ITEM 3',
-            url: '#'
+            url: '#',
+            tag: '',
         },
         {
-            imagen: './images/index/s5.jpg',
+            media_url: './images/index/s5.jpg',
+            media_tipo: 'jpg',
             texto: 'ITEM 4',
-            url: '#'
+            url: '#',
+            tag: '',
         }
     ];
+
+    var data2 = [
+        {
+            media_url: './images/index/s6.jpg',
+            media_tipo: 'jpg',
+            texto: 'Jornada informativa en Río Gallegos, previa a la Audiencia pública provincial. 16 de octubre de 2015',
+            url: '#',
+            tag: '',
+        },
+        {
+            media_url: './images/index/s1.jpg',
+            media_tipo: 'jpg',
+            texto: 'ITEM 2',
+            url: '#',
+            tag: '',
+        },
+        {
+            media_url: './images/index/s4.jpg',
+            media_tipo: 'jpg',
+            texto: 'ITEM 3',
+            url: '#',
+            tag: '',
+        },
+        {
+            media_url: './images/index/s3.jpg',
+            media_tipo: 'jpg',
+            texto: 'ITEM 4',
+            url: '#',
+            tag: '',
+        }
+    ];
+    //-----------------------------------------------
+    
+    <?php /*include("./slider_participacion.php");*/ ?>
 
 
     $('.section-sticky a').on('click', function() {
@@ -222,8 +272,9 @@ $(document).ready(function() {
     if (target)
         $('#link-' + target).trigger('click');
 
-    slide('#slider-participacion1', data1);
-    //slide('#slider-participacion2', data2);
+    //------------------------------------------------------
+    slide('#slider-participacion1', data1, '');
+    slide('#slider-participacion2', data2, '');
 
 });
 </script>

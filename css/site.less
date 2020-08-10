@@ -1289,31 +1289,42 @@ img[usemap], map area{
 }
 
 
-#slider-participacion1 {
+.slider2 {
     position: relative;
 
     .carousel-inner {
         a { color: #fff;}
+
+        img {
+            padding-bottom: 80px;
+        }
+
+        .carousel-caption {
+            font-size: 14px;
+            bottom: -20px;
+            color: #333;
+            max-width: 80%;
+            font-style: normal; 
+        }
     } 
 
-    .carousel-control-prev {
+    .carousel-prev {
         opacity: 1;
+        color: #fff;
         font-size: 2em;
         position: absolute!important;
-        width: 20px;
-        top: 0px;
-        right: 24px;
-        left: unset;
+        top: 30px;
+        right: 60px;
         cursor: pointer;
     }
 
-    .carousel-control-next {
+    .carousel-next {
         opacity: 1;
+        color: #fff;
         font-size: 2em;
-        width: 20px;
-        top: -20px;
-        right: 0px;
-        left: unset;
+        position: absolute!important;
+        top: 30px;
+        right: 30px;
         cursor: pointer;
     }
 }

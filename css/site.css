@@ -1062,29 +1062,38 @@ map area {
   grid-template-columns: 4fr 1fr;
   grid-template-rows: 1fr;
 }
-#slider-participacion1 {
+.slider2 {
   position: relative;
 }
-#slider-participacion1 .carousel-inner a {
+.slider2 .carousel-inner a {
   color: #fff;
 }
-#slider-participacion1 .carousel-control-prev {
+.slider2 .carousel-inner img {
+  padding-bottom: 80px;
+}
+.slider2 .carousel-inner .carousel-caption {
+  font-size: 14px;
+  bottom: -20px;
+  color: #333;
+  max-width: 80%;
+  font-style: normal;
+}
+.slider2 .carousel-prev {
   opacity: 1;
+  color: #fff;
   font-size: 2em;
   position: absolute!important;
-  width: 20px;
-  top: 0px;
-  right: 24px;
-  left: unset;
+  top: 30px;
+  right: 60px;
   cursor: pointer;
 }
-#slider-participacion1 .carousel-control-next {
+.slider2 .carousel-next {
   opacity: 1;
+  color: #fff;
   font-size: 2em;
-  width: 20px;
-  top: -20px;
-  right: 0px;
-  left: unset;
+  position: absolute!important;
+  top: 30px;
+  right: 30px;
   cursor: pointer;
 }
 @media (max-width: 992px) {

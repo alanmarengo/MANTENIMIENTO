@@ -233,6 +233,25 @@ $(document).ready(function() {
                     </div>
                 `
                     });
+                    
+                    /*  Si el recurso es formato video o audio no tiene preview, se asigna una por defecto  
+                     *  background-image: url('${model.ficha.linkimagen}');
+                     * */
+                    
+                    preview_media = '';
+                    console.log('categoria_media:'+model.ficha.categoria_media);
+                    
+                    tipos = ['2','3'];//audio o video
+                    
+                    if((model.ficha.categoria_media == 2)||(model.ficha.categoria_media == 3))
+                    {
+						preview_media = './images/play.png';
+					}
+					else
+					{
+						preview_media = model.ficha.linkimagen;
+					};
+                    
 
                     let html = `
                 <div class="row">
@@ -245,7 +264,7 @@ $(document).ready(function() {
                             width: 100%;
                             height:260px;
                             cursor: pointer;
-                            background-image: url('${model.ficha.linkimagen}');
+                            background-image: url('${preview_media}');
                             background-repeat: no-repeat;
                             background-position: center center;
                             background-size: cover;    
