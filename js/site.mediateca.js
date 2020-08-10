@@ -241,7 +241,9 @@ $(document).ready(function() {
                     preview_media = '';
                     console.log('categoria_media:'+model.ficha.categoria_media);
                     
-                    if (model.ficha.categoria_media in ['2','3'])//audio o video
+                    tipos = new Array(2,3);//audio o video
+                    
+                    if (model.ficha.categoria_media in tipos)
                     {
 						preview_media = './images/play.png';
 					}
