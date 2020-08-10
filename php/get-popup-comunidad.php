@@ -27,9 +27,10 @@ $data = pg_fetch_assoc($query);
 echo $query_string;
 
 $html = "";
-$html .= "<h2>" . $data["LUGAR ENCUENTRO"] . "</h2>";
-$html .= "<h3>" . $data["MODALIDAD ENCUENTRO"] . "</h3>";
-$html .= "<p>" . $data["TEMATICA ENCUENTRO"] . "</p>";
+$html .= "<h2>" . $data["FECHA"] . "</h2>";
+$html .= "<h3>" . $data["LUGAR_ENCUENTRO"] . "</h3>";
+$html .= "<p>" . $data["MODALIDAD_ENCUENTRO"] . "</p>";
+$html .= "<p>" . $data["TEMATICA_ENCUENTRO"] . "</p>";
 
 echo $html;
 
