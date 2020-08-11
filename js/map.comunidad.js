@@ -207,7 +207,7 @@ function ol_map() {
 			interactions: ol.interaction.defaults({
 				doubleClickZoom: false,
 				dragAndDrop: false,
-				dragPan: false,
+				dragPan: true,
 				keyboardPan: false,
 				//keyboardZoom: false,
 				//mouseWheelZoom: false,
