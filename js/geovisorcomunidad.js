@@ -6,6 +6,11 @@ $(document).ready(function() {
 		theme: 'tooltipster-default',
 		trigger: 'hover'
 	});
+		
+	jwindow = new Jump.window();
+	jwindow.initialize();
+	jwindow.setAllWindowsDraggable();
+	jwindow.initMinimizing();
 	
 	scroll = new Jump.scroll();
 			
