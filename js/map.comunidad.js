@@ -289,9 +289,9 @@ function ol_map() {
 				"EPSG:3857", "EPSG:3857"
 			);
 			
-			this.map.ol_object_mini.getView().fit(extent,{duration:1000});
-			this.map.ol_object_mini.updateSize();
-			this.map.ol_object_mini.render();
+			this.ol_object.getView().fit(extent,{duration:1000});
+			this.ol_object.updateSize();
+			this.ol_object.render();
 			
 		}.bind(this));
 		
@@ -310,9 +310,9 @@ function ol_map() {
 				"EPSG:3857", "EPSG:3857"
 			);
 			
-			this.map.ol_object_mini.getView().fit(extent,{duration:1000});
-			this.map.ol_object_mini.updateSize();
-			this.map.ol_object_mini.render();
+			this.ol_object.getView().fit(extent,{duration:1000});
+			this.ol_object.updateSize();
+			this.ol_object.render();
 			
 		}.bind(this));
 		

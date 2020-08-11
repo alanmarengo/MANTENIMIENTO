@@ -81,6 +81,9 @@ if (isset($_GET["b"])) { $b = $_GET["b"]; }
 		
 	</div>
 	
+	<?php include("./html.navbar-geovisor-zoom.php"); ?>
+	<?php include("./popup.baselayers.flotant.php"); ?>
+	
 	<div id="popup-results"></div>	
 	<div id="popup-results-preparse"></div>
 	
