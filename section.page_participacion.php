@@ -173,7 +173,8 @@
             <h3 style="margin-bottom: 1em; color: #333;">LOCALIZACI&Oacute;N DE EVENTOS DE PARTICIPACI&Oacute;N P&Uacute;BLICA Y GESTI&Oacute;N SOCIAL</h3>
 
             <div class="embed-responsive" style="padding-top: 40%;">
-                <iframe id="uxVisor" src="./geovisor.combo.php" frameborder="0"></iframe>
+                <!--<iframe id="uxVisor" src="./geovisor.combo.php" frameborder="0"></iframe>-->
+                <iframe id="uxVisor" src="./geovisor.comunidad.php" frameborder="0"></iframe>
             </div>
         </div>
     </div>
