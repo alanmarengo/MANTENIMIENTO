@@ -259,6 +259,8 @@ function ol_map() {
 			poriginarios_layer.setVisible(false);
 			art_institucionales_layer.setVisible(false);
 			
+			$("#map-details").html("<p class='p20'>Seleccione un elemento del mapa para ver información asociada.</p>");
+			
 			this.currlayer = "socio.vp_geo_msrco_reunionescomuunidad_pga1";
 			
 		}.bind(this));
@@ -269,6 +271,8 @@ function ol_map() {
 			poriginarios_layer.setVisible(true);
 			art_institucionales_layer.setVisible(false);
 			
+			$("#map-details").html("<p class='p20'>Seleccione un elemento del mapa para ver información asociada.</p>");
+			
 			this.currlayer = "socio.vp_geo_msrpo_reunionespueblosoriginarios_pga1";
 			
 		}.bind(this));
@@ -278,6 +282,8 @@ function ol_map() {
 			comunidad_layer.setVisible(false);
 			poriginarios_layer.setVisible(false);
 			art_institucionales_layer.setVisible(true);
+			
+			$("#map-details").html("<p class='p20'>Seleccione un elemento del mapa para ver información asociada.</p>");
 			
 			this.currlayer = "socio.vp_geo_msrco_artinsititicional_pga1";
 			
