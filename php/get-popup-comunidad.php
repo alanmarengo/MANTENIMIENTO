@@ -19,17 +19,64 @@ $query = pg_query($conn,$query_string);
 $first = true;
 $mt = "20px;";
 
-while ($r = pg_fetch_assoc($query)) {
+switch($table) {
 	
-	if (!$first) { $html .= "<hr>"; }
-	
-	$html .= "<p style=\"margin-top:$mt;\"><strong>Fecha: </strong>" . $r["FECHA"] . "</p>";
-	$html .= "<p><strong>Lugar de Encuentro: </strong>" . $r["LUGAR_ENCUENTRO"] . "</p>";
-	$html .= "<p><strong>Modalidad: </strong>" . $r["MODALIDAD_ENCUENTRO"] . "</p>";
-	$html .= "<p><strong>Temática: </strong>" . $r["TEMATICA_ENCUENTRO"] . "</p>";
+	case "socio.vp_geo_msrco_reunionescomuunidad_pga1":
 
-	$first = false;
-	$mt = "0";
+	while ($r = pg_fetch_assoc($query)) {
+		
+		if (!$first) { $html .= "<hr>"; }
+		
+		$html .= "<p style=\"margin-top:$mt;\"><strong>Fecha: </strong>" . $r["FECHA"] . "</p>";
+		$html .= "<p><strong>Lugar de Encuentro: </strong>" . $r["LUGAR_ENCUENTRO"] . "</p>";
+		$html .= "<p><strong>Modalidad: </strong>" . $r["MODALIDAD_ENCUENTRO"] . "</p>";
+		$html .= "<p><strong>Temática: </strong>" . $r["TEMATICA_ENCUENTRO"] . "</p>";
+
+		$first = false;
+		$mt = "0";
+		
+	}
+	
+	break;
+	
+	case "socio.vp_geo_msrpo_reunionespueblosoriginarios_pga1":
+	
+	while ($r = pg_fetch_assoc($query)) {
+		
+		if (!$first) { $html .= "<hr>"; }
+		
+		$html .= "<p style=\"margin-top:$mt;\"><strong>Fecha: </strong>" . $r["FECHA"] . "</p>";
+		$html .= "<p><strong>Actividad: </strong>" . $r["ACTIVIDAD"] . "</p>";
+		$html .= "<p><strong>Ubicación: </strong>" . $r["UBICACION"] . "</p>";
+		$html .= "<p><strong>Cantidad de Asistentes: </strong>" . $r["CANTIDAD_ASISTENTES"] . "</p>";
+
+		$first = false;
+		$mt = "0";
+		
+	}
+	
+	break;
+	
+	case "socio.vp_geo_msrco_artinsititicional_pga1":
+	
+	while ($r = pg_fetch_assoc($query)) {
+		
+		if (!$first) { $html .= "<hr>"; }
+		
+		$html .= "<p style=\"margin-top:$mt;\"><strong>Fecha: </strong>" . $r["nombre"] . "</p>";
+		$html .= "<p><strong>Localidad: </strong>" . $r["loc"] . "</p>";
+		$html .= "<p><strong>Sitio Web: </strong>" . $r["pagweb"] . "</p>";
+		$html .= "<p><strong>Descripción: </strong>" . $r["descrip"] . "</p>";
+		$html .= "<p><strong>Función: </strong>" . $r["func"] . "</p>";
+		$html .= "<p><strong>Categoría: </strong>" . $r["categ"] . "</p>";
+		$html .= "<p><strong>Subcategoría: </strong>" . $r["subcateg"] . "</p>";
+
+		$first = false;
+		$mt = "0";
+		
+	}	
+	
+	break;
 	
 }
 
