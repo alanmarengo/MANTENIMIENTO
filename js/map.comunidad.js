@@ -209,8 +209,8 @@ function ol_map() {
 				dragAndDrop: false,
 				dragPan: false,
 				keyboardPan: false,
-				keyboardZoom: false,
-				mouseWheelZoom: false,
+				//keyboardZoom: false,
+				//mouseWheelZoom: false,
 				pointer: false,
 				select: false
 			}),
