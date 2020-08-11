@@ -24,7 +24,7 @@ switch($table) {
 	case "socio.vp_geo_msrco_reunionescomuunidad_pga1":
 	
 	$title = "Reuniones con la Comunidad";
-	$html = "<p style='color:#31cbfd; margin-top:20px;'>" . $title . "</p>";
+	$html = "<p style='color:#31cbfd; margin-top:20px; font-weight:700; text-transform:uppercase;'>" . $title . "</p>";
 
 	while ($r = pg_fetch_assoc($query)) {
 		
@@ -45,7 +45,7 @@ switch($table) {
 	case "socio.vp_geo_msrpo_reunionespueblosoriginarios_pga1":
 	
 	$title = "Pueblos Originarios";
-	$html = "<p style='color:#31cbfd; margin-top:20px;'>" . $title . "</p>";
+	$html = "<p style='color:#31cbfd; margin-top:20px; text-transform:uppercase;'>" . $title . "</p>";
 	
 	while ($r = pg_fetch_assoc($query)) {
 		
@@ -66,7 +66,7 @@ switch($table) {
 	case "socio.vp_geo_msrco_artinsititicional_pga1":
 	
 	$title = "Articulaciones Institucionales";
-	$html = "<p style='color:#31cbfd; margin-top:20px;'>" . $title . "</p>";
+	$html = "<p style='color:#31cbfd; margin-top:20px; text-transform:uppercase;'>" . $title . "</p>";
 	
 	while ($r = pg_fetch_assoc($query)) {
 		
