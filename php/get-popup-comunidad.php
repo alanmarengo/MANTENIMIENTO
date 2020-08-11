@@ -17,17 +17,19 @@ $query_string = "SELECT * FROM $table WHERE ST_Within(geom,ST_SetSRID(ST_Buffer(
 $query = pg_query($conn,$query_string);
 
 $first = true;
+$mt = "20px;"
 
 while ($r = pg_fetch_assoc($query)) {
 	
 	if (!$first) { $html .= "<hr>"; }
 	
-	$html .= "<p><strong>Fecha: </strong>" . $r["FECHA"] . "</p>";
+	$html .= "<p style=\"margin-top:$mt;\"><strong>Fecha: </strong>" . $r["FECHA"] . "</p>";
 	$html .= "<p><strong>Lugar de Encuentro: </strong>" . $r["LUGAR_ENCUENTRO"] . "</p>";
 	$html .= "<p><strong>Modalidad: </strong>" . $r["MODALIDAD_ENCUENTRO"] . "</p>";
 	$html .= "<p><strong>Temática: </strong>" . $r["TEMATICA_ENCUENTRO"] . "</p>";
 
 	$first = false;
+	$mt = "0";
 	
 }
 
