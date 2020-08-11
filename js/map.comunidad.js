@@ -264,7 +264,7 @@ function ol_map() {
 			this.currlayer = "socio.vp_geo_msrco_reunionescomuunidad_pga1";
 			
 			var extent = ol.proj.transformExtent(
-				[-8045291.62284454 -6732286.14865971,-7436426.76251202 -5998531.94075123],
+				[-8045291.62284454,-6732286.14865971,-7436426.76251202,-5998531.94075123],
 				"EPSG:3857", "EPSG:3857"
 			);
 			
@@ -285,7 +285,7 @@ function ol_map() {
 			this.currlayer = "socio.vp_geo_msrpo_reunionespueblosoriginarios_pga1";
 
 			var extent = ol.proj.transformExtent(
-				[-7879018.15668151 -6731647.0624845,-7671794.49446288 -6444422.24422816],
+				[-7879018.15668151,-6731647.0624845,-7671794.49446288,-6444422.24422816],
 				"EPSG:3857", "EPSG:3857"
 			);
 			
@@ -306,7 +306,7 @@ function ol_map() {
 			this.currlayer = "socio.vp_geo_msrco_artinsititicional_pga1";
 
 			var extent = ol.proj.transformExtent(
-				[-12571041.9871694 -6731647.0624845,14094835.1473394 9476684.93251899],
+				[-12571041.9871694,-6731647.0624845,14094835.1473394,9476684.93251899],
 				"EPSG:3857", "EPSG:3857"
 			);
 			
