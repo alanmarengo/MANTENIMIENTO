@@ -62,7 +62,7 @@
                     Dentro de los encuentros abiertos a la participación pública se consideran las instancias formales previstas por normas nacionales o provinciales, como las Audiencias Públicas.
                     <br />
                     <br />
-                    <a id="link-visor1" href="#" data-target="#eventos" data-url="http://observatorio.atic.com.ar/geovisor.comunidad.php?b=1">Ver la localización de las reuniones con la comunidad.</a>
+                    <a id="link-visor1" href="#" data-target="#eventos" data-url="./geovisor.comunidad.php?b=1">Ver la localización de las reuniones con la comunidad.</a>
                     <br />
                     <a target="_blank" href="#">Acceda al listado de reuniones con la comunidad.</a>
                     <br />
@@ -101,7 +101,7 @@
                     En ese marco, se realizan reuniones plenarias con diferente periodicidad, reuniones de las comunidades con sus asesores, se firmaron convenios de cooperación y se llevan adelante actividades conjuntas, en un proceso abierto que tiene como objetivo construir una mirada intercultural sobre el proyecto, la naturaleza y las ideas de desarrollo, y el reconocimiento de los derechos indígenas. 
                     <br />
                     <br />
-                    <a id="link-visor2" href="#" data-target="#eventos" data-url="#">Ver localización de las comunidades originarias.</a>
+                    <a id="link-visor2" href="#" data-target="#eventos" data-url="./geovisor.comunidad.php?b=2">Ver localización de las comunidades originarias.</a>
                     <br />
                     <a target="_blank" href="#">Acceda al listado de reuniones con las comunidades originarias.</a>
                     <br />
@@ -159,7 +159,7 @@
                     - La relación con instituciones encargadas de la gestión de la energía, el agua, la seguridad de presas y la gestión de riesgos. 
                     <br />
                     <br />
-                    <a id="link-visor3" href="#" data-target="#eventos" data-url="#">Ver la localización de las instituciones vinculadas al Proyecto.</a>
+                    <a id="link-visor3" href="#" data-target="#eventos" data-url="./geovisor.comunidad.php?b=3">Ver la localización de las instituciones vinculadas al Proyecto.</a>
                     <br />
                     <a target="_blank" href="#">Acceda al tablero de Indicadores.</a>
                     <br />
