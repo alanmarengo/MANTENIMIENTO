@@ -43,7 +43,7 @@ function ol_map() {
 			name: 'openstreets',
 			title: 'OSM',
 			type: 'base',
-			visible: true,
+			visible: false,
 			source: new ol.source.XYZ({
 				url: '//{a-c}.tile.openstreetmaps.org/{z}/{x}/{y}.png',
 				crossOrigin: 'anonymous'
@@ -91,7 +91,7 @@ function ol_map() {
 
 		this.baselayers.google = new ol.layer.Tile({
 			name:'google_base',
-			visible:false,
+			visible:true,
 			source: new ol.source.TileImage({ 
 				//url: 'http://mt{0-3}.googleapis.com/vt?&x={x}&y={y}&z={z}&hl=es&gl=AR', http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}
 				url: 'http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}&hl=es&gl=AR',
