@@ -62,7 +62,7 @@
                     Dentro de los encuentros abiertos a la participación pública se consideran las instancias formales previstas por normas nacionales o provinciales, como las Audiencias Públicas.
                     <br />
                     <br />
-                    <a id="link-visor1" href="#" data-target="#eventos" data-url="#">Ver la localización de las reuniones con la comunidad.</a>
+                    <a id="link-visor1" href="#" data-target="#eventos" data-url="./geovisor.comunidad.php?b=1">Ver la localización de las reuniones con la comunidad.</a>
                     <br />
                     <a target="_blank" href="#">Acceda al listado de reuniones con la comunidad.</a>
                     <br />
