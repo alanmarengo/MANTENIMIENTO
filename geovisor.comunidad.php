@@ -66,6 +66,12 @@ if (isset($_GET["b"])) { $b = $_GET["b"]; }
 			
 		}
 		
+		#zoom-navbar {
+			
+			position:absolute !important;
+			
+		}
+		
 	</style>
 	
 </head>
