@@ -7,15 +7,15 @@
 		
 		<div class="buttons">
 		
-			<a href="javascript:void(0);" id="btn-com-1" class="btn-com black-button">
+			<a href="javascript:void(0);" id="btn-com-1" class="btn-com black-button" style="font-weight:700;">
 				<span>REUNIONES CON LA COMUNIDAD</span>
 			</a>
 		
-			<a href="javascript:void(0);" id="btn-com-2" class="btn-com black-button">
+			<a href="javascript:void(0);" id="btn-com-2" class="btn-com black-button" style="font-weight:700;">
 				<span>PUEBLOS ORIGINARIOS</span>
 			</a>
 		
-			<a href="javascript:void(0);" id="btn-com-3" class="btn-com black-button">
+			<a href="javascript:void(0);" id="btn-com-3" class="btn-com black-button" style="font-weight:700;">
 				<span>ARTICULACIONES INSTITUCIONALES</span>
 			</a>
 		
