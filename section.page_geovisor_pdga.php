@@ -10,6 +10,9 @@
 		
 			
 		</div>
+	
+		<?php include("./html.navbar-geovisor-zoom.php"); ?>
+		<?php include("./popup.baselayers.flotant.php"); ?>
 		
 	</div>
 	
