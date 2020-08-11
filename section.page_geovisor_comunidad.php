@@ -28,7 +28,7 @@
 		</div>
 	
 		<?php include("./html.navbar-geovisor-zoom.php"); ?>
-		<?php include("./popup.baselayers.flotant.php"); ?>
+		<?php include("./popup.baselayers.flotant2.php"); ?>
 		
 	</div>
 	
