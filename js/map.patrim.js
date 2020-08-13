@@ -26,7 +26,6 @@ function ol_map() {
 	this.map.create = function(btn) {
 		
 		btn = Number(btn);
-
 		/*var req = $.ajax({
 					
 			async:false,
@@ -141,13 +140,13 @@ function ol_map() {
 
 		var format = new ol.format.WKT();*/
 		
-		var comunidad_layer = new ol.layer.Tile({
-			name:"ahrsc:vp_geo_msrco_reunionescomuunidad_pga1",
+		var paleontologia_layer = new ol.layer.Tile({
+			name:"ahrsc:vp_geo_pappa_areasitios_lba1",
 			visible:true,
 			source: new ol.source.TileWMS({
 				url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
 				params: {
-					'LAYERS': "ahrsc:vp_geo_msrco_reunionescomuunidad_pga1",
+					'LAYERS': "ahrsc:vp_geo_pappa_areasitios_lba1",
 					'VERSION': '1.1.1',
 					'FORMAT': 'image/png',
 					'TILED': false,
@@ -157,13 +156,13 @@ function ol_map() {
 			})
 		});
 		
-		var poriginarios_layer = new ol.layer.Tile({
-			name:"ahrsc:vp_geo_msrpo_reunionespueblosoriginarios_pga1",
+		var arqueologia_layer = new ol.layer.Tile({
+			name:"ahrsc:vp_geo_papar_areasitios_pga1",
 			visible:false,
 			source: new ol.source.TileWMS({
 				url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
 				params: {
-					'LAYERS': "ahrsc:vp_geo_msrpo_reunionespueblosoriginarios_pga1",
+					'LAYERS': "ahrsc:vp_geo_papar_areasitios_pga1",
 					'VERSION': '1.1.1',
 					'FORMAT': 'image/png',
 					'TILED': false,
@@ -173,13 +172,13 @@ function ol_map() {
 			})
 		});
 		
-		var art_institucionales_layer = new ol.layer.Tile({
-			name:"ahrsc:vp_geo_msrco_artinsititicional_pga1",
+		var rgeologico_layer = new ol.layer.Tile({
+			name:"ahrsc:vp_geo_papge_rescate_pga1",
 			visible:false,
 			source: new ol.source.TileWMS({
 				url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
 				params: {
-					'LAYERS': "ahrsc:vp_geo_msrco_artinsititicional_pga1",
+					'LAYERS': "ahrsc:vp_geo_papge_rescate_pga1",
 					'VERSION': '1.1.1',
 					'FORMAT': 'image/png',
 					'TILED': false,
@@ -196,31 +195,31 @@ function ol_map() {
 			this.baselayers.bing_aerials,
 			this.baselayers.google,
 			this.baselayers.argenmap,
-			comunidad_layer,
-			poriginarios_layer,
-			art_institucionales_layer
+			paleontologia_layer,
+			arqueologia_layer,
+			rgeologico_layer
 		];
 		
 		$("#prog-wrapper").css("height",$("#prog-wrapper").height()+"px");
 		
+		///////document.getElementById("baselayer-default-radio").click();
+		
 		switch (btn) {
 
 			case 1:
-			starterExtent = [-8045291.62284454,-6732286.14865971,-7436426.76251202,-5998531.94075123];
+			starterExtent = [-7914828.94308397,-6495937.58082188,-7809118.97478327,-6475807.20353778];
 			break;
 
 			case 2:
-			starterExtent = [-7879018.15668151,-6731647.0624845,-7671794.49446288,-6444422.24422816];
+			starterExtent = [-7887981.72708539,-6499376.28351644,-7788289.24788467,-6441156.39587124];
 			break;
 
 			case 3:
-			starterExtent = [-12571041.9871694,-6731647.0624845,14094835.1473394,9476684.93251899];
+			starterExtent = [-8006879.93908176,-6493714.55466452,-7928477.20863899,-6475289.49514116];
 			break;
 
 		}
-		
-		///////document.getElementById("baselayer-default-radio").click();
-		
+
 		this.ol_object = new ol.Map({
 			interactions: ol.interaction.defaults({
 				doubleClickZoom: false,
@@ -257,6 +256,8 @@ function ol_map() {
 		
 		this.baseLayer = this.baselayers.bing_aerials;
 		
+		this.baseLayer = this.baselayers.bing_aerials;
+		
 		this.ol_object.infoEnabled = true;
 		this.ol_object.map_object = this;
 		
@@ -264,16 +265,23 @@ function ol_map() {
 		
 		$("#btn-com-1").on("click",function() {
 			
-			comunidad_layer.setVisible(true);
-			poriginarios_layer.setVisible(false);
-			art_institucionales_layer.setVisible(false);
-			
-			$("#map-details").html("<p class='p20'>Seleccione un elemento del mapa para ver información asociada.</p>");
+			paleontologia_layer.setVisible(true);
+			arqueologia_layer.setVisible(false);
+			rgeologico_layer.setVisible(false);
 
-			this.currlayer = "socio.vp_geo_msrco_reunionescomuunidad_pga1";
+			var titulo = "Titulo de item";
+			var descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+			var imagen = "./images/visorpatrim_imagen_1.jpg";
+			
+			$("#map-details").empty();
+			$("#map-details").append("<h3>" + titulo + "</h3>");
+			$("#map-details").append("<p>" + descripcion + "</p>");
+			$("#map-details").append("<img src='" + imagen + "'>");
+
+			this.currlayer = "patrim.vp_geo_pappa_areasitios_lba1";
 			
 			var extent = ol.proj.transformExtent(
-				[-8045291.62284454,-6732286.14865971,-7436426.76251202,-5998531.94075123],
+				[-7914828.94308397,-6495937.58082188,-7809118.97478327,-6475807.20353778],
 				"EPSG:3857", "EPSG:3857"
 			);
 			
@@ -285,16 +293,23 @@ function ol_map() {
 		
 		$("#btn-com-2").on("click",function() {
 			
-			comunidad_layer.setVisible(false);
-			poriginarios_layer.setVisible(true);
-			art_institucionales_layer.setVisible(false);
+			paleontologia_layer.setVisible(false);
+			arqueologia_layer.setVisible(true);
+			rgeologico_layer.setVisible(false);
+
+			var titulo = "Titulo de item";
+			var descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+			var imagen = "./images/visorpatrim_imagen_2.jpg";
 			
-			$("#map-details").html("<p class='p20'>Seleccione un elemento del mapa para ver información asociada.</p>");
+			$("#map-details").empty();
+			$("#map-details").append("<h3>" + titulo + "</h3>");
+			$("#map-details").append("<p>" + descripcion + "</p>");
+			$("#map-details").append("<img src='" + imagen + "'>");
 			
-			this.currlayer = "socio.vp_geo_msrpo_reunionespueblosoriginarios_pga1";
+			this.currlayer = "patrim.vp_geo_papar_areasitios_pga1";
 
 			var extent = ol.proj.transformExtent(
-				[-7879018.15668151,-6731647.0624845,-7671794.49446288,-6444422.24422816],
+				[-7887981.72708539,-6499376.28351644,-7788289.24788467,-6441156.39587124],
 				"EPSG:3857", "EPSG:3857"
 			);
 			
@@ -306,16 +321,23 @@ function ol_map() {
 		
 		$("#btn-com-3").on("click",function() {
 			
-			comunidad_layer.setVisible(false);
-			poriginarios_layer.setVisible(false);
-			art_institucionales_layer.setVisible(true);
+			paleontologia_layer.setVisible(false);
+			arqueologia_layer.setVisible(false);
+			rgeologico_layer.setVisible(true);
+
+			var titulo = "Titulo de item";
+			var descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+			var imagen = "./images/visorpatrim_imagen_3.jpg";
 			
-			$("#map-details").html("<p class='p20'>Seleccione un elemento del mapa para ver información asociada.</p>");
+			$("#map-details").empty();
+			$("#map-details").append("<h3>" + titulo + "</h3>");
+			$("#map-details").append("<p>" + descripcion + "</p>");
+			$("#map-details").append("<img src='" + imagen + "'>");
 			
-			this.currlayer = "socio.vp_geo_msrco_artinsititicional_pga1";
+			this.currlayer = "patrim.vp_geo_papge_rescate_pga1";
 
 			var extent = ol.proj.transformExtent(
-				[-12571041.9871694,-6731647.0624845,14094835.1473394,9476684.93251899],
+				[-8006879.93908176,-6493714.55466452,-7928477.20863899,-6475289.49514116],
 				"EPSG:3857", "EPSG:3857"
 			);
 			
