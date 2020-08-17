@@ -37,7 +37,7 @@ En el marco del Programa de Gestión Ambiental se ejecutan programas que tienen 
             <h3 style="margin-bottom: 1em; color: #333;">&Aacute;REAS DE IMPORTANCIA CIENT&Iacute;FICA Y REGISTROS VISUALES</h3>
 
             <div class="embed-responsive" style="padding-top: 40%;">
-                <iframe id="uxVisor" src="./geovisor.combo.php" frameborder="0"></iframe>
+                <iframe id="uxVisor" src="./geovisor.patrim.php" frameborder="0"></iframe>
             </div>
         </div>
 
