@@ -1,6 +1,8 @@
 function slide(id, data, tag) {
     let slide = $(id).find('.carousel-inner');
+    slide.html('');
 
+    let x = 0;
     for (let i = 0; i < data.length; i++) {
         let item = data[i];
 
@@ -8,6 +10,7 @@ function slide(id, data, tag) {
         if (tag != '' && item.tag != tag)
             continue;
 
+        x++;
         let htmlMedia = '';
         if (item.media_tipo == 'jpg') {
             htmlMedia = `<img class="d-block w-100" src="${item.media_url}">`;
@@ -20,12 +23,12 @@ function slide(id, data, tag) {
         }
 
         slide.append(`
-			<a href="${item.url}" class="carousel-item ${i == 0 ? 'active' : ''}">
+			<a href="${item.url}" class="carousel-item ${x == 1 ? 'active' : ''}">
                 ${htmlMedia}
                 <div class="carousel-caption">
                     <p>${item.texto}</p>
                 </div>
 			</a>
-		`);
+        `);
     }
 }
