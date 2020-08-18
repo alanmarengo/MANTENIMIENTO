@@ -6,9 +6,9 @@
 
 	$con = pg_connect($string_conn);
 
-	$SQL  = "SELECT r.recurso_path_url,f.desc,f.tema,r.recurso_id,lower(right(r.recurso_path_url,3))AS extension,'geologia'::text AS categoria FROM  mod_mediateca.recurso r INNER JOIN mod_mediateca.fotos_participacion f ";
+	$SQL  = "SELECT r.recurso_path_url,f.desc,f.tema,r.recurso_id,lower(right(r.recurso_path_url,3))AS extension,''::text AS categoria FROM  mod_mediateca.recurso r INNER JOIN mod_mediateca.fotos_participacion f ";
 	$SQL .= "ON f.recurso_id::bigint=r.recurso_id ";
-	$SQL .= "WHERE f.tema IN ('Patrimonio') ";
+	$SQL .= "WHERE f.tema IN ('Geología','Arqueología','Paleontología') ";
 	$SQL .= "ORDER BY f.tema ASC";
 
 	$recordset = pg_query($con,$SQL);
@@ -21,7 +21,7 @@
 		   echo '"media_tipo":"'.$row[4].'",';
 		   echo '"texto":"'.$row[1].'",';
 		   echo '"url":"#",';
-		   echo '"tag":"'.$row[5].'",';
+		   echo '"tag":"'.$row[2].'",';
 		   echo '"tema":"'.$row[2].'"';
 		   echo '}';
 		   
