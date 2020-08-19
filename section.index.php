@@ -340,7 +340,7 @@
                 <a href="./geovisor.php?geovisor=1" class="col-md-4 modulo-wrap modulo-11">
                     <div class="modulo-opacity"></div>
                     <div class="modulo-text">
-                        SIG Santa Cruz
+                        SIG Ambiental Santa Cruz
                     </div>
                     <div class="modulo-hover">
                         <p class="modulo-hover-text">
