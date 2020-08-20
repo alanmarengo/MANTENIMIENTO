@@ -44,9 +44,9 @@ En el marco del Programa de Gestión Ambiental se ejecutan programas que tienen 
         <!---------------------------------------------->
         <div class="col-md-12 section-a">
             <div class="col-md-12 buttons">
-                <a href="#" class="slider-tag" data-tag="arqueologia">ARQUEOLOGIA</a>
-                <a href="#" class="slider-tag" data-tag="paleontologia">PALEONTOLOGIA</a>
-                <a href="#" class="slider-tag" data-tag="geologia">GEOLOGIA</a>
+                <a href="#" class="slider-tag button button-selected" data-tag="arqueologia">ARQUEOLOGIA</a>
+                <a href="#" class="slider-tag button" data-tag="paleontologia">PALEONTOLOGIA</a>
+                <a href="#" class="slider-tag button" data-tag="geologia">GEOLOGIA</a>
             </div>
 
 
@@ -240,6 +240,10 @@ $(document).ready(function() {
     $('.slider-tag').on('click', function() {
         let tag = $(this).data('tag');
         slide('#slider', data, tag);
+
+        $('.slider-tag').removeClass('button-selected')
+        $(this).addClass('button-selected')
+
         return false;
     });
 
