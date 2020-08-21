@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="./css/page_template.css" />
+<link rel="stylesheet" href="./css/magnific-popup.css"/>
 
 <div id="page_huella" class="page page_template">
     <div class="row">
@@ -84,7 +85,9 @@ La cuenca se abandona hace unos mil años en relación con un periodo de aridez.
 Al norte del río santa cruz, las primeras ocupaciones están datadas unos 8000 años atrás, pero no hay registro de que hayan permanecido en la zona. La mayor parte de las evidencias tienen unos 2000 años de antigüedad. Se trata de grabados que no han sido hallados al sur del río. 
 <br />
 <br />
-<img src="./images/info1.png" style="width: 100%;" />
+<a class="image-zoom" href="./images/info1_big.png">
+    <img src="./images/info1.png" style="width: 100%;" />
+</a>
                 </div>
             </div>
         </div>
@@ -109,7 +112,9 @@ Los sedimentos de mayor importancia paleontológica son los continentales de la 
 Las dos zonas de mayor sensibilidad afectadas por las obras (que quedarán bajo la cota de inundación) están situadas en la margen sur del río: Yaten Huageno (embalse Cóndor Cliff) y Segundas Barrancas Blancas (embalse La Barrancosa).                
 <br />
 <br />
-<img src="./images/info2.png" style="width: 100%;" />
+<a class="image-zoom" href="./images/info2_big.png">
+    <img src="./images/info2.png" style="width: 100%;" />
+</a>
                 </div>
             </div>
         </div>
@@ -136,13 +141,17 @@ Si bien el área de interés geológico es amplia y se extiende más allá del f
 Las formaciones más antiguas (Santa Cruz, Estancia 25 de mayo, etc.) tienen afloramientos importantes en otras regiones no afectadas por el proyecto, además de estar más extensamente estudiadas.                
 <br />
 <br />
-<img src="./images/info3.png" style="width: 100%;" />
+<a class="image-zoom" href="./images/info3_big.png">
+    <img src="./images/info3.png" style="width: 100%;" />
+</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+
+<script src="./js/jquery.magnific-popup.min.js"></script>
 <script src="./js/slide.js"></script>
 <script type='text/javascript'>
 $(document).ready(function() {
@@ -246,6 +255,14 @@ $(document).ready(function() {
 
         return false;
     });
-
+    //----------------------------------------------------
+    $('.image-zoom').magnificPopup({
+          type: 'image',
+          closeOnContentClick: true,
+          mainClass: 'mfp-img-mobile',
+          image: {
+            verticalFit: true
+          }
+    });
 });
 </script>
