@@ -45,9 +45,9 @@ En el marco del Programa de Gestión Ambiental se ejecutan programas que tienen 
         <!---------------------------------------------->
         <div class="col-md-12 section-a">
             <div class="col-md-12 buttons">
-                <a href="#" class="slider-tag button button-selected" data-tag="arqueologia">ARQUEOLOGIA</a>
-                <a href="#" class="slider-tag button" data-tag="paleontologia">PALEONTOLOGIA</a>
-                <a href="#" class="slider-tag button" data-tag="geologia">GEOLOGIA</a>
+                <a href="#" class="slider-tag button button-selected" data-tag="arqueologia">ARQUEOLOGÍA</a>
+                <a href="#" class="slider-tag button" data-tag="paleontologia">PALEONTOLOGÍA</a>
+                <a href="#" class="slider-tag button" data-tag="geologia">GEOLOGÍA</a>
             </div>
 
 
