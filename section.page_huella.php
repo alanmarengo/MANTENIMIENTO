@@ -276,7 +276,7 @@ $(document).ready(function() {
 	document.getElementById('info_normal1').href 	= infografias[0][0];
 	document.getElementById('info_big1').src 		= infografias[0][1];
 	
-	alert(document.getElementById('info_normal1'));
+	console.log(document.getElementById('info_normal1').href);
 	
 	document.getElementById('info_normal2').href 	= infografias[1][0];
 	document.getElementById('info_big2').src 		= infografias[1][1];
