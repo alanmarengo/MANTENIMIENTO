@@ -269,9 +269,9 @@ $(document).ready(function() {
     /* infografias[] , el segundo valor es la imagen a mostrar en el popup */
     
     var infografias = [
-							["./images/info1.png","./images/info1.png"],
-							["./images/info2.png","./images/info2.png"],
-							["./images/info3.png","./images/info3.png"] 
+							["./images/info1.png","./images/info1.png"], /* ARQUEOLOGÍA   */
+							["./images/info2.png","./images/info2.png"], /* PALEONTOLOGÍA */
+							["./images/info3.png","./images/info3.png"]  /* GEOLOGÍA 	  */
 					  ];
 					  
 	 <?php /*include("./infografias_huellas.php");*/ ?>
