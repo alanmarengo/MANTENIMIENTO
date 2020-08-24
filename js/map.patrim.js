@@ -276,9 +276,9 @@ function ol_map() {
 			var imagen = "./images/visorpatrim_imagen_1.jpg";
 			
 			$("#map-details").empty();
-			$("#map-details").append("<h3>" + titulo + "</h3>");
+			//$("#map-details").append("<h3>" + titulo + "</h3>");
 			$("#map-details").append("<p>" + descripcion + "</p>");
-			$("#map-details").append("<img src='" + imagen + "'>");
+			//$("#map-details").append("<img src='" + imagen + "'>");
 
 			this.currlayer = "patrim.vp_geo_pappa_areasitios_lba1";
 			
@@ -305,9 +305,9 @@ function ol_map() {
 			var imagen = "./images/visorpatrim_imagen_2.jpg";
 			
 			$("#map-details").empty();
-			$("#map-details").append("<h3>" + titulo + "</h3>");
+			//$("#map-details").append("<h3>" + titulo + "</h3>");
 			$("#map-details").append("<p>" + descripcion + "</p>");
-			$("#map-details").append("<img src='" + imagen + "'>");
+			//$("#map-details").append("<img src='" + imagen + "'>");
 			
 			this.currlayer = "patrim.vp_geo_papar_areasitios_pga1";
 
@@ -334,9 +334,9 @@ function ol_map() {
 			var imagen = "./images/visorpatrim_imagen_3.jpg";
 			
 			$("#map-details").empty();
-			$("#map-details").append("<h3>" + titulo + "</h3>");
+			//$("#map-details").append("<h3>" + titulo + "</h3>");
 			$("#map-details").append("<p>" + descripcion + "</p>");
-			$("#map-details").append("<img src='" + imagen + "'>");
+			//$("#map-details").append("<img src='" + imagen + "'>");
 			
 			this.currlayer = "patrim.vp_geo_papge_rescate_pga1";
 
