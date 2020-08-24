@@ -260,15 +260,10 @@ $(document).ready(function() {
     $('.image-zoom').magnificPopup({
           type: 'image',
           closeOnContentClick: true,
-          mainClass: 'mfp-with-zoom mfp-img-mobile',
+          mainClass: 'mfp-img-mobile',
           image: {
             verticalFit: true
-          },
-          zoom: {
-					enabled: true, // By default it's false, so don't forget to enable it
-
-					duration: 300
-				}
+          }
     });
     
     /* infografias[] , el segundo valor es la imagen a mostrar en el popup */
