@@ -263,13 +263,7 @@ $(document).ready(function() {
           mainClass: 'mfp-with-zoom mfp-img-mobile',
           image: {
             verticalFit: true
-          },
-          zoom: {
-			enabled: true,
-			duration: 300, // don't foget to change the duration also in CSS
-			opener: function(element) {
-				return null;
-			}
+          }
     });
     
     /* infografias[] , el segundo valor es la imagen a mostrar en el popup */
