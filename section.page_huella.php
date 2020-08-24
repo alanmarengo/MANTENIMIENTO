@@ -260,7 +260,7 @@ $(document).ready(function() {
     $('.image-zoom').magnificPopup({
           type: 'image',
           closeOnContentClick: true,
-          mainClass: 'mfp-img-mobile',
+          mainClass: 'mfp-with-zoom mfp-img-mobile',
           image: {
             verticalFit: true
           }
