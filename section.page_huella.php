@@ -219,27 +219,7 @@ $(document).ready(function() {
     <?php /*include("./slider_huellas.php");*/ ?>
     
     
-    /* infografias[] , el segundo valor es la imagen a mostrar en el popup */
     
-    infografias = [
-					["./images/info1.png","./images/info1.png"],
-					["./images/info2.png","./images/info2.png"],
-					["./images/info3.png","./images/info3.png"] 
-				  ];
-				  
-	document.getElementById('info_normal1').href 	= infografias[0][0];
-	document.getElementById('info_big1').src 		= infografias[0][1];
-	
-	console.log(document.getElementById('info_big1').src);
-	
-	document.getElementById('info_normal2').href 	= infografias[1][0];
-	document.getElementById('info_big2').src 		= infografias[1][1];
-	
-	document.getElementById('info_normal3').href 	= infografias[2][0];
-	document.getElementById('info_big3').src 		= infografias[2][1];
-				  
-
-
     $('.section-sticky a').on('click', function() {
         $('.section-sticky a').removeClass('selected');
         $(this).addClass('selected');
@@ -286,7 +266,24 @@ $(document).ready(function() {
           }
     });
     
+    /* infografias[] , el segundo valor es la imagen a mostrar en el popup */
     
+    infografias = [
+					["./images/info1.png","./images/info1.png"],
+					["./images/info2.png","./images/info2.png"],
+					["./images/info3.png","./images/info3.png"] 
+				  ];
+				  
+	document.getElementById('info_normal1').setAttribute("href",infografias[0][0]);
+	document.getElementById('info_big1').src 		= infografias[0][1];
+	
+	console.log(document.getElementById('info_big1').src);
+	
+	document.getElementById('info_normal2').href 	= infografias[1][0];
+	document.getElementById('info_big2').src 		= infografias[1][1];
+	
+	document.getElementById('info_normal3').href 	= infografias[2][0];
+	document.getElementById('info_big3').src 		= infografias[2][1];
         
 });
 </script>
