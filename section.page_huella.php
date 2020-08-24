@@ -268,13 +268,13 @@ $(document).ready(function() {
     
     /* infografias[] , el segundo valor es la imagen a mostrar en el popup */
     
-    infografias = [
-					["./images/info1.png","./images/info1.png"],
-					["./images/info2.png","./images/info2.png"],
-					["./images/info3.png","./images/info3.png"] 
-				  ];
+    var infografias = [
+							["./images/info11.png","./images/info1.png"],
+							["./images/info2.png","./images/info2.png"],
+							["./images/info3.png","./images/info3.png"] 
+					  ];
 				  
-	document.getElementById('info_normal1').setAttribute("href",infografias[0][0]);
+	document.getElementById('info_normal1').href 	= infografias[0][0];
 	document.getElementById('info_big1').src 		= infografias[0][1];
 	
 	console.log(document.getElementById('info_big1').src);
