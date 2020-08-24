@@ -85,8 +85,8 @@ La cuenca se abandona hace unos mil años en relación con un periodo de aridez.
 Al norte del río santa cruz, las primeras ocupaciones están datadas unos 8000 años atrás, pero no hay registro de que hayan permanecido en la zona. La mayor parte de las evidencias tienen unos 2000 años de antigüedad. Se trata de grabados que no han sido hallados al sur del río. 
 <br />
 <br />
-<a class="image-zoom" href="./images/info1_big.png">
-    <img src="./images/info1.png" style="width: 100%;" />
+<a class="image-zoom" id="info_big1" href="./images/info1_big.png">
+    <img id="info_normal1" src="./images/info1.png" style="width: 100%;" />
 </a>
                 </div>
             </div>
@@ -112,8 +112,8 @@ Los sedimentos de mayor importancia paleontológica son los continentales de la 
 Las dos zonas de mayor sensibilidad afectadas por las obras (que quedarán bajo la cota de inundación) están situadas en la margen sur del río: Yaten Huageno (embalse Cóndor Cliff) y Segundas Barrancas Blancas (embalse La Barrancosa).                
 <br />
 <br />
-<a class="image-zoom" href="./images/info2_big.png">
-    <img src="./images/info2.png" style="width: 100%;" />
+<a class="image-zoom" id="info_big2" href="./images/info2_big.png">
+    <img id="info_normal2" src="./images/info2.png" style="width: 100%;" />
 </a>
                 </div>
             </div>
@@ -141,8 +141,8 @@ Si bien el área de interés geológico es amplia y se extiende más allá del f
 Las formaciones más antiguas (Santa Cruz, Estancia 25 de mayo, etc.) tienen afloramientos importantes en otras regiones no afectadas por el proyecto, además de estar más extensamente estudiadas.                
 <br />
 <br />
-<a class="image-zoom" href="./images/info3_big.png">
-    <img src="./images/info3.png" style="width: 100%;" />
+<a class="image-zoom" id="info_big3" href="./images/info3_big.png">
+    <img id="info_normal3" src="./images/info3.png" style="width: 100%;" />
 </a>
                 </div>
             </div>
@@ -264,5 +264,24 @@ $(document).ready(function() {
             verticalFit: true
           }
     });
+    
+    /* infografias[] , el segundo valor es la imagen a mostrar en el popup */
+    
+    infografias = [
+					["./images/info1.png","./images/info1.png"],
+					["./images/info2.png","./images/info2.png"],
+					["./images/info3.png","./images/info3.png"] 
+				  ];
+				  
+	document.getElementById('info_normal1').href 	= infografias[0][0];
+	document.getElementById('info_big1').src 		= infografias[0][1];
+	
+	document.getElementById('info_normal2').href 	= infografias[1][0];
+	document.getElementById('info_big2').src 		= infografias[1][1];
+	
+	document.getElementById('info_normal3').href 	= infografias[2][0];
+	document.getElementById('info_big3').src 		= infografias[2][1];
+				  
+        
 });
 </script>
