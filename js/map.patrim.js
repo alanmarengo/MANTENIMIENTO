@@ -270,7 +270,9 @@ function ol_map() {
 			rgeologico_layer.setVisible(false);
 
 			var titulo = "Titulo de item";
-			var descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+			//var descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+			var descripcion = "En paleontología se realiza prospección sistemática, extracción, rescate y acondicionamiento del patrimonio paleontológico en los sectores de obra y embalses, determinando el grado de esterilidad  de las áreas prospectadas en cuanto a contenido fosilífero para clasificarlas como “aptas” o “no aptas” para el inicio de las obras. Se rescatan las áreas reconocidas con un Valor de Importancia Paleontológica (VP) media a alta. Los fósiles recuperados corresponden a faunas de vertebrados; mayormente a una gran diversidad de mamíferos y, en menor medida, a aves y anuros. El Programa lo ejecuta el personal especializado del Museo Paleontológico Egidio Feruglio (MEF).";
+			
 			var imagen = "./images/visorpatrim_imagen_1.jpg";
 			
 			$("#map-details").empty();
@@ -298,7 +300,8 @@ function ol_map() {
 			rgeologico_layer.setVisible(false);
 
 			var titulo = "Titulo de item";
-			var descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+			//var descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+			var descripcion = "Los estudios de arqueología en las áreas indicadas tienen como objetivo la conservación y su posterior rescate o protección in situ. Todos los hallazgos son analizados, descriptos e inventariados para asegurar la correcta preservación de las condiciones en que fueron encontrados, con criterios metodológicos consensuados con la Dirección de Patrimonio Cultural de Santa Cruz. Participan de las tareas de relevamiento Técnicos Interculturales de las comunidades originarias de la provincia.";
 			var imagen = "./images/visorpatrim_imagen_2.jpg";
 			
 			$("#map-details").empty();
@@ -326,7 +329,8 @@ function ol_map() {
 			rgeologico_layer.setVisible(true);
 
 			var titulo = "Titulo de item";
-			var descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+			//var descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+			var descripcion = "Los estudios geológicos se enfocan en las acumulaciones pertenecientes a las glaciaciones Arroyo Verde y El Tranquilo, de edad pleistocena. El estudio se realiza a través del relevamiento de perfiles estratigráficos de detalle y la extracción de muestras sedimentológicas y paleoambientales expuestas en la sección fluvial superior del río Santa Cruz. Las muestran extraídas son etiquetadas en campo, inventariadas y almacenadas en el IGEBA. En una segunda etapa, se realiza análisis de laboratorio para conocer la granulometría, composición mineralógica y edad absoluta del material.";
 			var imagen = "./images/visorpatrim_imagen_3.jpg";
 			
 			$("#map-details").empty();
