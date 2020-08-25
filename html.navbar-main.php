@@ -60,9 +60,11 @@
 							<li>
 								<a class="dropdown-item" target="_blank" href="./images/EIASA Manual Observatorio.pdf">Manual de Usuario</a>
 							</li>
+							<!--
 							<li>
 								<a class="dropdown-item" href="#">Video Explicativo</a>
 							</li>
+							-->
 						</ul>
 					</div>            
 				</li>
