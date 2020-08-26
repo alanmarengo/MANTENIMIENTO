@@ -274,7 +274,7 @@ $(document).ready(function() {
 							["./images/info3.png","./images/info3.png"]  /* GEOLOGÍA 	  */
 					  ];
 					  
-	 <?php include("./infografias_huellas.php"); ?>
+	 <?php /*include("./infografias_huellas.php");*/ ?>
 				  
 	document.getElementById('info_normal1').src 	= infografias[0][0];
 	document.getElementById('info_big1').href 		= infografias[0][1];
