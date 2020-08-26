@@ -216,7 +216,7 @@ $(document).ready(function() {
 
     //-----------------------------------------------
     
-    <?php include("./slider_huellas.php"); ?>
+    <?php /*include("./slider_huellas.php");*/ ?>
     
     
     
