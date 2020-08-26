@@ -32,7 +32,7 @@
 
 	$fflag = false;
 
-	echo "var infografias = [";
+	echo "infografias = [";
 
 	$row = pg_fetch_row($recordset);
 
