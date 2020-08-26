@@ -20,7 +20,7 @@
 
 	$recordset = pg_query($con,$SQL);
 
-	function draw_tupla($row)
+	function draw_tupla_info($row)
 	{
 		   echo '[';
 		   echo '"'.$row[0].'",'; /* infografia caja */
@@ -47,7 +47,7 @@
 		  $fflag = true;
 	  };
 	  
-	  draw_tupla($row);
+	  draw_tupla_info($row);
 	  
 	  $row = pg_fetch_row($recordset);//NEXT
 	};
