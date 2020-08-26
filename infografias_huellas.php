@@ -1,6 +1,6 @@
 <?php
 
-	include("./pgconfig.php");
+	include_once("./pgconfig.php");
 
 	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 
