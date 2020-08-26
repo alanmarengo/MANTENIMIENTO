@@ -40,7 +40,7 @@
 
 	$fflag = false;
 
-	echo "var data = [";
+	echo "data = [";
 
 	$row = pg_fetch_row($recordset);
 
