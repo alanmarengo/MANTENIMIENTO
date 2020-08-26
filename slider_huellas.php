@@ -31,7 +31,7 @@
 		   echo '"media_tipo":"'.$tmedia.'",';
 		   echo '"texto":"'.$row[1].'",';
 		   echo '"url":"#",';
-		   echo 'tag:"'.$row[2].'",';
+		   echo '"tag":"'.$row[2].'",';
 		   echo '"tema":"'.$row[2].'"';
 		   echo '}';
 		   
