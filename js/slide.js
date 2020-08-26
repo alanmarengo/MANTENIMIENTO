@@ -6,6 +6,8 @@ function slide(id, data, tag) {
     for (let i = 0; i < data.length; i++) {
         let item = data[i];
 
+		console.log('tag:'+tag);
+
         // FILTRA SOLO LOS DEL TAG SELECCIONADO
         if (tag != '' && item.tag != tag)
             continue;
