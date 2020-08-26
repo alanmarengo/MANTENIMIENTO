@@ -4,7 +4,7 @@
 
 	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 
-	$con = pg_connect($string_conn);
+	$con_h = pg_connect($string_conn);
 	
 	$SQL  = "SELECT r.recurso_path_url,f.desc,f.tema,r.recurso_id,lower(right(r.recurso_path_url,3))AS extension,''::text AS categoria, ";
 	$SQL .= "CASE  ";
@@ -18,7 +18,7 @@
 	$SQL .= "ORDER BY orden ASC;";
 	
 
-	$recordset = pg_query($con,$SQL);
+	$recordset = pg_query($con_h,$SQL);
 
 	function draw_tupla($row)
 	{
@@ -55,7 +55,7 @@
 	echo "];";
 
 
-	pg_close($con);
+	pg_close($con_h);
 
 
 ?>
