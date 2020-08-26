@@ -7,7 +7,7 @@ function slide(id, data, tag) {
         let item = data[i];
 
         // FILTRA SOLO LOS DEL TAG SELECCIONADO
-        if (tag != '' && item.tag != tag)
+        if (tag != "" && item.tag != tag)
             continue;
 
         x++;
