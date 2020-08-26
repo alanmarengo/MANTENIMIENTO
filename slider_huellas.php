@@ -15,10 +15,20 @@
 
 	function draw_tupla($row)
 	{
+		   if ($row[4]!='mp4')
+		   {
+			  $tmedia = 'jpg'; 
+		   }
+		   else 
+		   {
+			   $tmedia = $row[4];
+		   };
+		   
 		   echo '{';
 		   echo '"media_url":"'.$row[0].'",';
 		   //echo '"media_tipo":"jpg",';
-		   echo '"media_tipo":"'.$row[4].'",';
+		   //echo '"media_tipo":"'.$row[4].'",';
+		   echo '"media_tipo":"'.$tmedia.'",';
 		   echo '"texto":"'.$row[1].'",';
 		   echo '"url":"#",';
 		   echo '"tag":"'.$row[2].'",';
