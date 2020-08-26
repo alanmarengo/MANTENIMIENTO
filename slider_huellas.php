@@ -8,7 +8,7 @@
 
 	$SQL  = "SELECT r.recurso_path_url,f.desc,f.tema,r.recurso_id,lower(right(r.recurso_path_url,3))AS extension,''::text AS categoria FROM  mod_mediateca.recurso r INNER JOIN mod_mediateca.fotos_participacion f ";
 	$SQL .= "ON f.recurso_id::bigint=r.recurso_id ";
-	$SQL .= "WHERE f.tema IN ('Geología','Arqueología','Paleontología') ";
+	$SQL .= "WHERE f.tema IN ('geologia','arqueologia','paleontologia') ";
 	$SQL .= "ORDER BY f.tema ASC";
 
 	$recordset = pg_query($con,$SQL);
