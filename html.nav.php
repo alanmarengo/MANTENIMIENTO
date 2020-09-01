@@ -21,10 +21,13 @@
 			<a href="./page_antecedentes.php">Antecedentes y Marco Legal</a>
 		</li>
 		<li>
-			<a href="./page_endesarrollo.php?q=Participación Pública y Gestión Social">Participación Pública y Gestión Social</a>
+			<!--<a href="./page_endesarrollo.php?q=Participación Pública y Gestión Social">Participación Pública y Gestión Social</a>-->
+			<a href="./page_participacion.php">Participación Pública y Gestión Social</a>
 		</li>
 		<li>
-			<a href="./page_endesarrollo.php?q=Patrimonio Natural y Cultural">Patrimonio Natural y Cultural</a>
+			<!--<a href="./page_endesarrollo.php?q=Patrimonio Natural y Cultural">Patrimonio Natural y Cultural</a>-->
+			<a href="./page_huella.php">Patrimonio Natural y Cultural</a>
+			
 		</li>
 		<li>
 			<a href="./page_endesarrollo.php?q=Monitoreo hidrosedimentológico e hidroambiental del río Santa Cruz">Monitoreo hidrosedimentológico e hidroambiental</a>

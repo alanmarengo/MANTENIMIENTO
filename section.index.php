@@ -214,7 +214,8 @@
             <div class="row modulo-row">
                 
                 <!-- #4 -->
-                <a href="./page_endesarrollo.php?q=Participación pública y gestión social" class="col-md-6 modulo-wrap modulo-4">
+                <!--<a href="./page_endesarrollo.php?q=Participación pública y gestión social" class="col-md-6 modulo-wrap modulo-4">-->
+				<a href="./page_participacion.php" class="col-md-6 modulo-wrap modulo-4">
                     <div class="modulo-opacity"></div>
                     <div class="modulo-text">
                         Participación pública y gestión social
@@ -271,7 +272,8 @@
                     <div class="row">
 
                         <!-- #7 -->
-                        <a href="./page_endesarrollo.php?q=Patrimonio natural y cultural" class="col-md-12 modulo-wrap modulo-7">
+                        <!--<a href="./page_endesarrollo.php?q=Patrimonio natural y cultural" class="col-md-12 modulo-wrap modulo-7">-->
+						<a href="./page_huella.php" class="col-md-12 modulo-wrap modulo-7">
                             <div class="modulo-opacity"></div>
                             <div class="modulo-text">
                                 Patrimonio natural y cultural
