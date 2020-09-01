@@ -26,7 +26,7 @@
 		</li>
 		<li>
 			<!--<a href="./page_endesarrollo.php?q=Patrimonio Natural y Cultural">Patrimonio Natural y Cultural</a>-->
-			<a href="./page_huella.php">Patrimonio Natural y Cultural</a>
+			<a href="./page_huella.php">Huellas del pasado</a>
 			
 		</li>
 		<li>

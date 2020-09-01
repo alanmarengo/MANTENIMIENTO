@@ -276,7 +276,8 @@
 						<a href="./page_huella.php" class="col-md-12 modulo-wrap modulo-7">
                             <div class="modulo-opacity"></div>
                             <div class="modulo-text">
-                                Patrimonio natural y cultural
+                                <!--Patrimonio natural y cultural-->
+                                Huellas del pasado
                             </div>
                             <div class="modulo-hover">
                                 <p class="modulo-hover-text">
