@@ -72,7 +72,8 @@ switch($table) {
 		
 		if (!$first) { $html .= "<hr>"; }
 		
-		$html .= "<p style=\"margin-top:$mt;\"><strong>Fecha: </strong>" . $r["nombre"] . "</p>";
+		//$html .= "<p style=\"margin-top:$mt;\"><strong>Fecha: </strong>" . $r["nombre"] . "</p>"; 
+		$html .= "<p style=\"margin-top:$mt;\"><strong>Nombre/Institución: </strong>" . $r["nombre"] . "</p>";
 		$html .= "<p><strong>Localidad: </strong>" . $r["loc"] . "</p>";
 		$html .= "<p><strong>Sitio Web: </strong>" . $r["pagweb"] . "</p>";
 		$html .= "<p><strong>Descripción: </strong>" . $r["descrip"] . "</p>";
