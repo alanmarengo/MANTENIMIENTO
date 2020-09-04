@@ -241,7 +241,7 @@ function ol_map() {
 				zoom:5.8,
 				minZoom: 3.8,
 				//maxZoom: 15.8
-				maxZoom: 18
+				maxZoom: 14
 			})
 		});
 		
