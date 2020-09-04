@@ -240,7 +240,8 @@ function ol_map() {
 				center: [-7176058.888636417,-4680928.505993671],
 				zoom:5.8,
 				minZoom: 3.8,
-				maxZoom: 15.8
+				//maxZoom: 15.8
+				maxZoom: 20
 			})
 		});
 		
