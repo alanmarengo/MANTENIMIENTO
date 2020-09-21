@@ -8,15 +8,14 @@
 	$api_secret	='xqhmnwqlc9rtrgperbcosajzxszpz7ie';
 	$t			= time();
 	
-	$estacion_id='63426'
+	$estacion_id='63426';
 	
 	$api_signature_string='api-key'.$api_key.'end-timestamp'.$fecha_hasta.'start-timestamp'.$fecha_desde.'station-id'.$estacion_id.'t'.$t;
 	
 	$apiSignature = hash_hmac("sha256", $api_signature_string, $api_secret);
 	
-	$request=$url.'historic/'.$estacion_id.'?api-key='.$api_key.'&t='.$t.'&start-timestamp='.$fecha_desde.'&end-timestamp='.$fecha_hasta.'&api-signature='.$api_signature
- 
-	
+	$request=$url.'historic/'.$estacion_id.'?api-key='.$api_key.'&t='.$t.'&start-timestamp='.$fecha_desde.'&end-timestamp='.$fecha_hasta.'&api-signature='.$api_signature;
+ 	
 	$con = curl_init($request);
 	
 	curl_setopt($con,CURLOPT_SSL_VERIFYPEER, false);
