@@ -29,6 +29,6 @@
 	
 	echo "request: ".$request;
 	
-	echo "bar: ".var_dump($datos);//->sensors[0]->data[0]->bar;
+	echo "bar: ".$datos->sensors[0]->data[0]->bar;
 	
 ?>
