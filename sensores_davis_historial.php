@@ -12,7 +12,7 @@
 	
 	$api_signature_string='api-key'.$api_key.'end-timestamp'.$fecha_hasta.'start-timestamp'.$fecha_desde.'station-id'.$estacion_id.'t'.$t;
 	
-	$apiSignature = hash_hmac("sha256", $api_signature_string, $api_secret);
+	$api_signature = hash_hmac("sha256", $api_signature_string, $api_secret);
 	
 	$request=$url.'historic/'.$estacion_id.'?api-key='.$api_key.'&t='.$t.'&start-timestamp='.$fecha_desde.'&end-timestamp='.$fecha_hasta.'&api-signature='.$api_signature;
  	
