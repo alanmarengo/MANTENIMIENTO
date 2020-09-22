@@ -88,6 +88,12 @@ Al norte del río santa cruz, las primeras ocupaciones están datadas unos 8000 
 <a class="image-zoom" id="info_big1" href="./images/info1_big.png">
     <img id="info_normal1" src="./images/info1.png" style="width: 100%;" />
 </a>
+<br />
+<br />
+<a href="./mediateca.php" class="button button-2">
+    VER RECURSOS ASOCIADOS
+    <img src="./images/icono-mediateca-br.png" style="height: 20px; width: 20px;" />
+</a>
                 </div>
             </div>
         </div>
@@ -114,6 +120,12 @@ Las dos zonas de mayor sensibilidad afectadas por las obras (que quedarán bajo 
 <br />
 <a class="image-zoom" id="info_big2" href="./images/info2_big.png">
     <img id="info_normal2" src="./images/info2.png" style="width: 100%;" />
+</a>
+<br />
+<br />
+<a href="./mediateca.php" class="button button-2">
+    VER RECURSOS ASOCIADOS
+    <img src="./images/icono-mediateca-br.png" style="height: 20px; width: 20px;" />
 </a>
                 </div>
             </div>
@@ -143,6 +155,12 @@ Las formaciones más antiguas (Santa Cruz, Estancia 25 de mayo, etc.) tienen afl
 <br />
 <a class="image-zoom" id="info_big3" href="./images/info3_big.png">
     <img id="info_normal3" src="./images/info3.png" style="width: 100%;" />
+</a>
+<br />
+<br />
+<a href="./mediateca.php" class="button button-2">
+    VER RECURSOS ASOCIADOS
+    <img src="./images/icono-mediateca-br.png" style="height: 20px; width: 20px;" />
 </a>
                 </div>
             </div>
