@@ -1,6 +1,6 @@
 <?php
 
-define("tools_wms_server",'https://observatorio.ieasa.com.ar/geoserver/ows?');
+define("tools_wms_server",'http://geo.ambiente.gob.ar/geoserver/ows?');
 
 function wms_get_layer_extent($str_layer_name)
 {
