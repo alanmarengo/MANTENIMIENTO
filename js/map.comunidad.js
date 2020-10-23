@@ -141,6 +141,8 @@ function ol_map() {
 
 		var format = new ol.format.WKT();*/
 		
+		/**** CAPAS COMUNIDAD *****/
+			
 		var comunidad_layer = new ol.layer.Tile({
 			name:"ahrsc:vp_geo_msrco_reunionescomuunidad_pga1",
 			visible:true,
@@ -157,6 +159,25 @@ function ol_map() {
 			})
 		});
 		
+		var comunidad_cluster = new ol.layer.Tile({
+			name:"ahrsc:vp_geo_msrco_cantreunionescomuunidad_pga1",
+			visible:true,
+			source: new ol.source.TileWMS({
+				url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
+				params: {
+					'LAYERS': "ahrsc:vp_geo_msrco_cantreunionescomuunidad_pga1",
+					'VERSION': '1.1.1',
+					'FORMAT': 'image/png',
+					'TILED': false,
+					'clase_id':-1,
+					'layer_id':873
+				}
+			})
+		});
+		
+		
+		/**** CAPAS PUEBLOS ORIGINARIOS *****/
+		
 		var poriginarios_layer = new ol.layer.Tile({
 			name:"ahrsc:vp_geo_msrpo_reunionespueblosoriginarios_pga1",
 			visible:false,
@@ -172,6 +193,8 @@ function ol_map() {
 				}
 			})
 		});
+		
+		/**** CAPAS ARTICULACION *****/
 		
 		var art_institucionales_layer = new ol.layer.Tile({
 			name:"ahrsc:vp_geo_msrco_artinsititicional_pga1",
@@ -197,6 +220,7 @@ function ol_map() {
 			this.baselayers.google,
 			this.baselayers.argenmap,
 			comunidad_layer,
+			comunidad_cluster,
 			poriginarios_layer,
 			art_institucionales_layer
 		];
@@ -266,6 +290,8 @@ function ol_map() {
 		$("#btn-com-1").on("click",function() {
 			
 			comunidad_layer.setVisible(true);
+			comunidad_cluster.setVisible(true);
+			
 			poriginarios_layer.setVisible(false);
 			art_institucionales_layer.setVisible(false);
 			
@@ -287,6 +313,8 @@ function ol_map() {
 		$("#btn-com-2").on("click",function() {
 			
 			comunidad_layer.setVisible(false);
+			comunidad_cluster.setVisible(false);
+			
 			poriginarios_layer.setVisible(true);
 			art_institucionales_layer.setVisible(false);
 			
@@ -308,6 +336,8 @@ function ol_map() {
 		$("#btn-com-3").on("click",function() {
 			
 			comunidad_layer.setVisible(false);
+			comunidad_cluster.setVisible(false);
+			
 			poriginarios_layer.setVisible(false);
 			art_institucionales_layer.setVisible(true);
 			
