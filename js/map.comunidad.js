@@ -228,6 +228,22 @@ function ol_map() {
 			})
 		});
 		
+		var art_institucionales_cluster = new ol.layer.Tile({
+			name:"ahrsc:vp_geo_msrco_cantartinsititicional_pga1",
+			visible:false,
+			source: new ol.source.TileWMS({
+				url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
+				params: {
+					'LAYERS': "ahrsc:vp_geo_msrco_cantartinsititicional_pga1",
+					'VERSION': '1.1.1',
+					'FORMAT': 'image/png',
+					'TILED': false,
+					'clase_id':-1,
+					'layer_id':873
+				}
+			})
+		});
+		
 		this.baselayers.collection = [
 			this.baselayers.openstreets,
 			this.baselayers.opentopo,
@@ -239,7 +255,8 @@ function ol_map() {
 			comunidad_cluster,
 			poriginarios_layer,
 			poriginarios_cluster,
-			art_institucionales_layer
+			art_institucionales_layer,
+			art_institucionales_cluster
 		];
 		
 		$("#prog-wrapper").css("height",$("#prog-wrapper").height()+"px");
@@ -251,7 +268,8 @@ function ol_map() {
 			break;
 
 			case 2:
-			starterExtent = [-7879018.15668151,-6731647.0624845,-7671794.49446288,-6444422.24422816];
+			//starterExtent = [-7879018.15668151,-6731647.0624845,-7671794.49446288,-6444422.24422816];
+			starterExtent = [-8045291.62284454,-6732286.14865971,-7436426.76251202,-5998531.94075123];
 			break;
 
 			case 3:
@@ -313,6 +331,7 @@ function ol_map() {
 			poriginarios_cluster.setVisible(false);
 			
 			art_institucionales_layer.setVisible(false);
+			art_institucionales_cluster.setVisible(false);
 			
 			$("#map-details").html("<p class='p20'>Seleccione un elemento del mapa para ver información asociada.</p>");
 
@@ -338,6 +357,7 @@ function ol_map() {
 			poriginarios_cluster.setVisible(true);
 			
 			art_institucionales_layer.setVisible(false);
+			art_institucionales_cluster.setVisible(false);
 			
 			$("#map-details").html("<p class='p20'>Seleccione un elemento del mapa para ver información asociada.</p>");
 			
@@ -363,6 +383,7 @@ function ol_map() {
 			poriginarios_cluster.setVisible(false);
 			
 			art_institucionales_layer.setVisible(true);
+			art_institucionales_cluster.setVisible(true);
 			
 			$("#map-details").html("<p class='p20'>Seleccione un elemento del mapa para ver información asociada.</p>");
 			
