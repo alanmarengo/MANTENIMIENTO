@@ -347,7 +347,8 @@
                     </div>
                     <div class="modulo-hover">
                         <p class="modulo-hover-text">
-                            Información espacial de la provincia de Santa Cruz orientada a la gestión y análisis de políticas públicas en diversas temáticas.                             <br />
+                            <!--Información espacial de la provincia de Santa Cruz orientada a la gestión y análisis de políticas públicas en diversas temáticas.                             <br /> -->
+                            Visualizador oficial de geoinformación ambiental de la provincia de Santa Cruz desarrollado en cooperación entre el Gobierno de Santa Cruz y la Estación Experimental Agropecuaria Santa Cruz de INTA  <br />
                             <span class="modulo-hover-icon">
                                 <i class="fa fa-plus-circle fa-2x"></i>
                             </span>

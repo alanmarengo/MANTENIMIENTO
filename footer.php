@@ -47,6 +47,7 @@
 				</div>
 				<div class="carousel-item">
 					<a target="_blank" href="http://www.represaspatagonia.com.ar/index.php/es/">UTE Represas Patagonia</a><br />
+					<a target="_blank" href="http://visor.geointa.inta.gob.ar/">GeoINTA</a><br />
 				</div>
 			</div>
 

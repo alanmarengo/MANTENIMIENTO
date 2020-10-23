@@ -31,11 +31,17 @@
                 </div>
                 <div class="col-md-4 page-box">
                     <a href="./geovisor.php?geovisor=1" class="box">
-                        <div class="page-box-image" style="background-image: url(./images/herramientas/5.png);"></div>
-                        <p class="page-box-title">SIG Santa Cruz</p>
-                        <p class="page-box-description">Accedé al geovisor del Sistema de Información Territorial de
+                        <!--<div class="page-box-image" style="background-image: url(./images/herramientas/5.png);"></div>-->
+                        <div class="page-box-image" style="background-image: url(./images/index/caja11.jpg);"></div>
+                        <!--<p class="page-box-title">SIG Santa Cruz</p>-->
+                        <p class="page-box-title">SIG Ambiental Santa Cruz</p>
+
+                        <!--<p class="page-box-description">Accedé al geovisor del Sistema de Información Territorial de
                             Santa Cruz (SIT) con información espacial pública de la provincia orientadas a la gestión y
-                            toma de decisiones.</p>
+                            toma de decisiones.</p>-->
+                        <p class="page-box-description">Visualizador oficial de geoinformación ambiental 
+                        de la provincia de Santa Cruz desarrollado en cooperación entre el Gobierno de Santa Cruz y
+                         la Estación Experimental Agropecuaria Santa Cruz de INTA.</p>
                     </a>
                 </div>
                 <div class="col-md-4 page-box">
