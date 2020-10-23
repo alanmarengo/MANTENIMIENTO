@@ -194,6 +194,22 @@ function ol_map() {
 			})
 		});
 		
+		var poriginarios_cluster = new ol.layer.Tile({
+			name:"ahrsc:vp_geo_msrpo_cantreunionespueblosoriginarios_pga1",
+			visible:false,
+			source: new ol.source.TileWMS({
+				url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
+				params: {
+					'LAYERS': "ahrsc:vp_geo_msrpo_cantreunionespueblosoriginarios_pga1",
+					'VERSION': '1.1.1',
+					'FORMAT': 'image/png',
+					'TILED': false,
+					'clase_id':-1,
+					'layer_id':873
+				}
+			})
+		});
+		
 		/**** CAPAS ARTICULACION *****/
 		
 		var art_institucionales_layer = new ol.layer.Tile({
@@ -222,6 +238,7 @@ function ol_map() {
 			comunidad_layer,
 			comunidad_cluster,
 			poriginarios_layer,
+			poriginarios_cluster,
 			art_institucionales_layer
 		];
 		
@@ -293,6 +310,8 @@ function ol_map() {
 			comunidad_cluster.setVisible(true);
 			
 			poriginarios_layer.setVisible(false);
+			poriginarios_cluster.setVisible(false);
+			
 			art_institucionales_layer.setVisible(false);
 			
 			$("#map-details").html("<p class='p20'>Seleccione un elemento del mapa para ver información asociada.</p>");
@@ -316,6 +335,8 @@ function ol_map() {
 			comunidad_cluster.setVisible(false);
 			
 			poriginarios_layer.setVisible(true);
+			poriginarios_cluster.setVisible(true);
+			
 			art_institucionales_layer.setVisible(false);
 			
 			$("#map-details").html("<p class='p20'>Seleccione un elemento del mapa para ver información asociada.</p>");
@@ -339,6 +360,8 @@ function ol_map() {
 			comunidad_cluster.setVisible(false);
 			
 			poriginarios_layer.setVisible(false);
+			poriginarios_cluster.setVisible(false);
+			
 			art_institucionales_layer.setVisible(true);
 			
 			$("#map-details").html("<p class='p20'>Seleccione un elemento del mapa para ver información asociada.</p>");
