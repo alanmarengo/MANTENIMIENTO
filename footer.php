@@ -43,11 +43,11 @@
 				</div>
 				<div class="carousel-item">
 					<a target="_blank" href="http://www.glaciaresargentinos.gob.ar/">Inventario Nacional de Glaciares (ING)</a><br />
-					<a target="_blank" href="http://www.plahe.com.ar/">Plataforma Argentina de Hidroenergía (PLAHE)</a><br />
+					<!--<a target="_blank" href="http://www.plahe.com.ar/">Plataforma Argentina de Hidroenergía (PLAHE)</a><br /> -->
+					<a target="_blank" href="http://visor.geointa.inta.gob.ar/">GeoINTA</a><br />
 				</div>
 				<div class="carousel-item">
 					<a target="_blank" href="http://www.represaspatagonia.com.ar/index.php/es/">UTE Represas Patagonia</a><br />
-					<a target="_blank" href="http://visor.geointa.inta.gob.ar/">GeoINTA</a><br />
 				</div>
 			</div>
 
