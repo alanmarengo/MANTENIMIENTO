@@ -15,8 +15,11 @@ if ($type == "LineString") {
 
 }else{
 	
-	$query_string = "SELECT ST_Perimeter(ST_GeomFromText('".$wkt."')) / 1000 AS km,ST_Area(ST_GeomFromText('".$wkt."')) / 1000 AS area;";
-	echo "<!--$query_string-->";
+	//$query_string = "SELECT ST_Perimeter(ST_GeomFromText('".$wkt."')) / 1000 AS km,ST_Area(ST_GeomFromText('".$wkt."')) / 1000 AS area;";
+	
+	$query_string = "SELECT ST_Perimeter(ST_GeomFromText('".$wkt."')) / 1000 AS km,ST_Area(ST_Transform(ST_GeomFromText('".$wkt."',3857),4326)::geography) AS area;";
+	
+	//echo "<!--$query_string-->";
 }
 
 $query = pg_query($conn,$query_string);
