@@ -12,7 +12,7 @@ $table = $_POST["table"];
 $lon = $_POST["lon"];
 $lat = $_POST["lat"];
 
-$query_string = "SELECT * FROM $table WHERE ST_Within(geom,ST_SetSRID(ST_Buffer(ST_GeomFromText('POINT($lon $lat)'), 0.5),4326));";
+$query_string = "SELECT * FROM $table WHERE ST_Within(geom,ST_SetSRID(ST_Buffer(ST_GeomFromText('POINT($lon $lat)'), 0.9),4326));";
 
 $query = pg_query($conn,$query_string);
 
@@ -74,12 +74,12 @@ switch($table) {
 		
 		//$html .= "<p style=\"margin-top:$mt;\"><strong>Fecha: </strong>" . $r["nombre"] . "</p>"; 
 		$html .= "<p style=\"margin-top:$mt;\"><strong>Nombre/Institución: </strong>" . $r["nombre"] . "</p>";
-		$html .= "<p><strong>Localidad: </strong>" . $r["loc"] . "</p>";
-		$html .= "<p><strong>Sitio Web: </strong>" . $r["pagweb"] . "</p>";
-		$html .= "<p><strong>Descripción: </strong>" . $r["descrip"] . "</p>";
-		$html .= "<p><strong>Función: </strong>" . $r["func"] . "</p>";
-		$html .= "<p><strong>Categoría: </strong>" . $r["categ"] . "</p>";
-		$html .= "<p><strong>Subcategoría: </strong>" . $r["subcateg"] . "</p>";
+		$html .= "<p><strong>Ubicación: </strong>" . $r["loc"] . "</p>";
+		//$html .= "<p><strong>Sitio Web: </strong>" . $r["pagweb"] . "</p>";
+		$html .= "<p><strong>Descripción: </strong>" . $r["descripcion"] . "</p>";
+		$html .= "<p><strong>Función: </strong>" . $r["funcion"] . "</p>";
+		//$html .= "<p><strong>Categoría: </strong>" . $r["categ"] . "</p>";
+		//$html .= "<p><strong>Subcategoría: </strong>" . $r["subcateg"] . "</p>";
 
 		$first = false;
 		$mt = "0";
