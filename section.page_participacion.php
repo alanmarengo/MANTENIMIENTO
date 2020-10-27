@@ -161,7 +161,7 @@
                     <br />
                     <a id="link-visor3" href="#" data-target="#eventos" data-url="./geovisor.comunidad.php?b=3">Ver la localización de las instituciones vinculadas al Proyecto.</a>
                     <br />
-                    <a target="_blank" href="#">Acceda al tablero de Indicadores.</a>
+                    <a target="_blank" href="./indicadores.php?ind_id=8&t=Comunicacion&cid=21">Acceda al tablero de Indicadores.</a>
                     <br />
                 </div>
             </div>
