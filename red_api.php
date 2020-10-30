@@ -21,6 +21,7 @@ $tipo_estacion_id 	= clear_json(pg_escape_string($_REQUEST["tipo_estacion_id"]))
 $solapa 			= clear_json(pg_escape_string($_REQUEST["solapa"]));
 
 
+
 switch ($mode) 
 {
     case 0:
@@ -74,7 +75,9 @@ function hidro_get_solapa_desc($estacion_id,$tipo_estacion_id)
 		$json .= '"parametros":"' 		. clear_json($r["parametros"]) . '",';
 		$json .= '"inicio_opera":"' 	. clear_json($r["inicio_opera"]) . '",';
 		$json .= '"objetivo":"' 		. clear_json($r["objetivo"]) . '",';
-		$json .= '"proveedor":"' 		. clear_json($r["proveedor"]) . '"';
+		$json .= '"proveedor":"' 		. clear_json($r["proveedor"]) . '",';
+		$json .= '"categoria_parametros":' . get_estacion_categorias_parametros($estacion_id) . '';
+		
 		$json .= "},";
 
 		$entered = true;
@@ -92,6 +95,50 @@ function hidro_get_solapa_desc($estacion_id,$tipo_estacion_id)
 	pg_close($conn);
 	
 };
+
+function get_estacion_categorias_parametros($estacion_id)
+{
+	//http://observ.net/red_api.php?estacion_id=9&tipo_estacion_id=4&mode=1
+	
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+		
+	$conn = pg_connect($string_conn);
+	
+	//mod_sensores.vp_tab_descaforos_pga1 y mod_sensores.vp_tab_deschidroambiental_pga1
+	
+	$query_string   = "SELECT DISTINCT categoria_parametro_id,categoria_parametro_desc FROM mod_sensores.vw_red_monitoreo ";
+	$query_string  .= "WHERE estacion_id=$estacion_id;";
+	
+	$query = pg_query($conn,$query_string);
+	
+	$entered = false;
+	
+	$json = "[";
+	
+	while ($r = pg_fetch_assoc($query)) 
+	{
+		
+		$json .= '{';
+		$json .= '"categoria_parametro_id":"' . clear_json($r["categoria_parametro_id"]) . '",';
+		$json .= '"categoria_parametro_desc":"' . clear_json($r["categoria_parametro_desc"]) . '"';
+		$json .= "},";
+
+		$entered = true;
+	}
+	
+	if($entered) 
+	{
+		$json = substr($json,0,strlen($json)-1);
+	};
+	
+	$json .= "]";
+	
+	pg_close($conn);
+	
+	return $json;
+	
+};
+
 
 /*************** MODO 1 AFORO ************/
 
@@ -150,7 +197,7 @@ function aforo_get_solapa_desc($estacion_id)
 
 /*************** MODO 2 hidrometricas ************/
 
-function hidro_get_solapa_datos_diarios($estacion_id,$tipo_estacion_id)
+function hidro_get_solapa_datos_diarios($estacion_id,$tipo_categoria_parametro_id)
 {
 	//http://observ.net/red_api.php?estacion_id=7&tipo_estacion_id=4&mode=2
 	
@@ -158,7 +205,7 @@ function hidro_get_solapa_datos_diarios($estacion_id,$tipo_estacion_id)
 		
 	$conn = pg_connect($string_conn);
 	
-	$query_string   = "SELECT * FROM mod_sensores.get_estacion_datos_diarios($estacion_id,$tipo_estacion_id) ";
+	$query_string   = "SELECT * FROM mod_sensores.get_estacion_datos_diarios($estacion_id,$tipo_categoria_parametro_id) ";
 	$query_string  .= "ORDER BY parametro_nombre ASC;";
 	
 	$query = pg_query($conn,$query_string);
