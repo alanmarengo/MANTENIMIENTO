@@ -14,8 +14,6 @@ $(document).ready(function() {
 
     geomap.map.ol_object.noBaseLayers = [];
 
-    console.log("pinochin afina el cortachurros");
-
     scroll = new Jump.scroll();
 
     jwindow = new Jump.window();

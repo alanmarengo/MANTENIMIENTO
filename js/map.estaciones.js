@@ -25,6 +25,8 @@ function ol_map() {
 
     this.map.create = function() {
 
+        console.log("crear");
+
         this.baselayers.openstreets = new ol.layer.Tile({
             name: 'openstreets',
             title: 'OSM',
