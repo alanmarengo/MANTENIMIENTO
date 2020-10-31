@@ -98,6 +98,21 @@ function ol_map() {
 				crossOrigin: 'anonymous'*/
 			})
 		})
+
+		var layer = new ol.layer.Tile({
+			visible:true,
+			singleTile: true,
+			source: new ol.source.TileWMS({
+				url: "http://observatorio.ieasa.com.ar:8080/geoserver/ows?",
+				params: {
+					'LAYERS': 'ahrsc:vp_geo_himet_ubicacionestaciones_pga1',//'intervalos_polygons',
+					'id':1,
+					//'VERSION': '1.1.1',
+					'FORMAT': 'image/png',
+					'TILED': false
+				}
+			})
+		});
 	
 		/*this.baselayers.argenmap = new ol.layer.Tile({
 			name:'capabaseargenmap',
@@ -108,97 +123,63 @@ function ol_map() {
 			})
 		})*/
 		
-		this.baselayers.collection = [this.baselayers.openstreets,this.baselayers.opentopo,this.baselayers.bing_roads,this.baselayers.bing_aerials,this.baselayers.google,this.baselayers.argenmap];
+		this.baselayers.collection = [this.baselayers.openstreets,this.baselayers.opentopo,this.baselayers.bing_roads,this.baselayers.bing_aerials,this.baselayers.google,this.baselayers.argenmap,layer];
 		
 		///////document.getElementById("baselayer-default-radio").click();
 		
+		var i = new ol.interaction.MouseWheelZoom();
+
+		var oldFn = i.handleEvent;
+		i.handleEvent = function(e) {
+		  var type = e.type;
+		  if (type !== "wheel" && type !== "wheel" ) {
+			return true;
+		  }
+		  
+		  if (!e.originalEvent.altKey) {
+			return true
+		  }
+
+		  oldFn.call(this,e);
+		}
+		
 		this.ol_object = new ol.Map({
+			interactions: ol.interaction.defaults({ dragPan:true, mouseWheelZoom: false }).extend([i]),
 			layers:this.baselayers.collection,
 			target: 'map',
 			extent: [-13281237.21183002,-7669922.0600572005,-738226.6183457375,-1828910.1066171727],
 			controls: [],
 			view: new ol.View({
-				center: [-7176058.888636417,-4680928.505993671],
-				zoom:3.8,
+				center: [-7845071.804914552,-6485168.6121456055],
+				zoom:8.8,
 				minZoom: 3.8,
 				maxZoom: 21
 			})
 		});
 		
-		this.baseLayer = this.baselayers.openstreets;		
+		this.baseLayer = this.baselayers.openstreets;
 		
-		this.ol_object_mini = new ol.Map({
-			layers:[this.baselayers.google],
-			target: 'mini-map',
-			extent: [-13281237.21183002,-7669922.0600572005,-738226.6183457375,-1828910.1066171727],
-			controls: [],
-			view: new ol.View({
-				center: [-7176058.888636417,-4680928.505993671],
-				zoom:3.8,
-				minZoom: 3.8,
-				maxZoom: 21
-			})
-		});
-		
-		this.ol_object.infoEnabled = true;
 		this.ol_object.map_object = this;
+		this.ol_object.infoEnabled = true;
 		
-		this.ol_object.addEventListener("click",function(evt) {
+		this.ol_object.on("movestart",function(evt) {
+			
+			$("#popup-combo").hide();
+			
+		});
+		
+		this.ol_object.on("click",function(evt) {
 			
 			if (this.infoEnabled ) {
-			
+				
+				this.lastClicked = evt.coordinate;
+				
 				var pos = evt.coordinate;
-								
-				console.log("POS: " + pos);
 				
 				var pos4326 = ol.proj.transform(evt.coordinate,'EPSG:3857', 'EPSG:4326');
 				
 				var coord = String(pos4326).split(",");
-				
-				var coord_1 = coord[1].split(".");
-					coord_1 = coord_1[0] + "." + coord_1[1].substring(0,4);
-				
-				var coord_0 = coord[0].split(".");
-					coord_0 = coord_0[0] + "." + coord_0[1].substring(0,4);
-				
-				document.getElementById("global-coordinates-fixed-span").innerHTML = "Último Click: EPSG:4326 | " + coord_1 + ", " + coord_0;
-				
-				var iconFeature = new ol.Feature({
-				  geometry: new ol.geom.Point(pos)
-				});
-			
-				var iconStyle = new ol.style.Style({
-					image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
-					anchor: [0.5, 26],
-					anchorXUnits: 'fraction',
-					anchorYUnits: 'pixels',
-					opacity: 0.95,
-					src: './images/map-marker.png'
-					}))
-				});
-
-				iconFeature.setStyle(iconStyle);
-				
-				if (!this.map_object.markersLayer) {
-
-					this.map_object.markersLayer = new ol.layer.Vector({
-						visible:true,
-						source: new ol.source.Vector({
-							features: [iconFeature]
-						})
-					});
-					
-					this.map_object.ol_object.addLayer(this.map_object.markersLayer);
-					
-				}else{
-					
-					this.map_object.markersLayer.getSource().clear();
-					this.map_object.markersLayer.getSource().addFeature(iconFeature);
-					
-				}
-			
-				$("#info-wrapper").empty();
-				
+				var pixel = this.getPixelFromCoordinate(evt.coordinate);
 				this.map_object.gfiAddedLayers = [];
 				
 				var view = this.getView();
@@ -207,25 +188,9 @@ function ol_map() {
 				var viewResolution = (view.getResolution());
 				var url = '';
 				
-				this.getLayers().forEach(function (layer, i, layers) {		
+				this.getLayers().forEach(function (layer, i, layers) {					
 					
-					var baselayer_names = ["openstreets","opentopo","bing","bing_roads","bing_aerials","google_base"];
-					var isBase = false;
-					
-					for (var i=0; i<baselayer_names.length; i++) {
-						
-						if (layer.get('name') == baselayer_names[i]) {
-							
-							isBase = true;
-							break;
-							
-						}
-						
-					}
-					
-					// alert("LAYER: " + layer.get('name') + " - VISIBLE: " + layer.getVisible() + " - ISBASE: " + isBase);
-					
-					if ((layer.getVisible()) && (isBase == false)) {
+					if ((layer.getVisible()) && (layer.get('name') == "ahrsc:vp_geo_prcpr_proyectoahrsc_otr1")) {
 						
 						if(layer.getSource().getGetFeatureInfoUrl) {						
 				
@@ -256,10 +221,17 @@ function ol_map() {
 									html = html[1].substring(0,html[1].length-2);
 									html = html.trim();
 									
+									$("#popup-combo").hide();
+									map.ol_object.lastClicked = evt.coordinate;
 									map.preparseGFI(html,"popup-info","info-wrapper"); // PARA ACOMODAR RESPUESTA A ESTRUCTURA DE IEASA
 									
 								
 								}
+								
+								$("#popup-combo").css("left",(pixel[0]-112)+"px");
+								$("#popup-combo").css("top",(pixel[1]-85)+"px");
+								$("#popup-combo").attr("data-xy",evt.coordinate);
+
 							
 							}
 							
@@ -277,7 +249,32 @@ function ol_map() {
 			
 			}
 			
-		});		
+		});	
+		
+		/*this.ol_object.on("click",function(evt) {
+			
+			if (this.infoEnabled ) {
+			
+				var pos = evt.coordinate;
+				
+				var pos4326 = ol.proj.transform(evt.coordinate,'EPSG:3857', 'EPSG:4326');
+				
+				var req = $.ajax({
+					
+					async:false,
+					url:"./php/get-geovisorcombo-popup.php",
+					type:"post",
+					data:{
+						lon:pos4326.lon,
+						lat:pos4326.lat
+					},
+					success:function(d){}
+					
+				});
+			
+			}
+			
+		});	*/	
 		
 		this.global_mouse_position_4326 = new ol.control.MousePosition({
 			coordinateFormat: function(coordinate) {
@@ -527,11 +524,7 @@ function ol_map() {
 			
 		});
 		
-		if (entered) {		
-		
-			jwindow.close("popup-buffer");
-			
-			$("#info-buffer").empty();
+		if (entered) {
 			
 			var req = $.ajax({
 				
@@ -540,25 +533,21 @@ function ol_map() {
 				data:{
 					results:results
 				},
-				url:"./php/get-layer-info.php",
+				url:"./php/get-layer-info-combo.php",
 				success:function(d) {}
 				
 			});
 			
-			document.getElementById(wrapperID).innerHTML += req.responseText;
-					
-			jwindow.open(containerID);
+			if (req.responseText.trim() != "") {
 			
-			scroll.refresh();			
+				$("#popup-combo").show();
+				document.getElementById("popup-combo-body").innerHTML = req.responseText;
 			
-			$("#popup-info .jump-scroll").animate({ scrollTop: 0 }, "fast");
-			
-			$("[title]").tooltipster({
-				animation: 'fade',
-				delay: 200,
-				theme: 'tooltipster-default',
-				trigger: 'hover'
-			});
+			}else{
+				
+				$("#popup-combo").hide();
+				
+			}
 	
 		}
 		
@@ -615,6 +604,48 @@ function ol_map() {
 			});
 	
 		}
+		
+	}
+	
+	this.map.zoomToZoneExtent = function(index) {
+		
+		var extents = [
+			{
+				minx:-8059334.63851867,
+				miny:-6549600.00520834,
+				maxx:-7604071.34389932,
+				maxy:-6340610.43756053
+			},
+			{
+				minx:-7883025.60540804,
+				miny:-6494756.13103644,
+				maxx:-7875148.75334871,
+				maxy:-6478882.4540154
+			},
+			{
+				minx:-7812318.55059425,
+				miny:-6497163.88563083,
+				maxx:-7801734.03063953,
+				maxy:-6476479.99752537
+			},
+			{
+				minx:-7890225.54049351,
+				miny:-6525918.33485518,
+				maxx:-7671642.89584723,
+				maxy:-6433640.83392161
+			}
+		];
+		
+		var js = extents[index];
+		
+		var extent = ol.proj.transformExtent(
+			[js.minx,js.miny,js.maxx,js.maxy],
+			"EPSG:3857", "EPSG:3857"
+		);
+		
+		this.ol_object.getView().fit(extent,{duration:1000});
+		this.ol_object.updateSize();
+		this.ol_object.render();
 		
 	}
 	
@@ -839,10 +870,10 @@ function ol_map() {
 	
 	this.map.print = function() {					
 			
-		/*$("#print-legend-wrapper").empty();
-		$("#print-legend-wrapper").show();*/
+		$("#print-legend-wrapper").empty();
+		$("#print-legend-wrapper").show();
 		
-		/*var state = $("#nav-panel-arrow").children(".jump-toggleimage").first().attr("data-state");
+		var state = $("#nav-panel-arrow").children(".jump-toggleimage").first().attr("data-state");
 		
 		if (state == 1) {
 			
@@ -850,22 +881,18 @@ function ol_map() {
 			
 			$("#nav-panel-arrow").children(".jump-toggleimage").children("img").first().attr("src","./images/panel.icon.arrow.0.png");
 			
-		}*/
-		
-		var layer_names = [];
+		}
 			
 		$(".layer-checkbox[data-added=1]:checked").each(function(i,v) {
 			
 			var layer_name = $(v).closest(".layer-group").attr("data-layer-name");
 			
-			/*var src = "http://observatorio.ieasa.com.ar/geoserver/ows?&version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer="+layer_name+"&format=image/png&";
+			var src = "http://observatorio.ieasa.com.ar/geoserver/ows?&version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer="+layer_name+"&format=image/png&";
 			
 			var newImage = document.createElement("img");
 				newImage.setAttribute("src",src);
 			
-			$("#print-legend-wrapper").append(newImage);*/
-			
-			layer_names.push(layer_name);
+			$("#print-legend-wrapper").append(newImage);
 			
 			//$(v).parent().parent().next(".layer-body").children(".layer-legend").clone().appendTo("#print-legend-wrapper");
 			
@@ -890,36 +917,14 @@ function ol_map() {
 			
 			var a = document.createElement('a');
 			// toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
-			var url = "./print.php?map=" + canvas.toDataURL() + "&layers" + layer_names.join(",");
-			//a.href = canvas.toDataURL();
-			a.href=url;
-			//a.download = 'captura.png';
-			a.target = "_blank";
-			//console.log(canvas.toDataURL());
+			a.href = canvas.toDataURL();
+			a.download = 'captura.png';
+			
 			document.body.appendChild(a);
 			
-			var frm = document.createElement("form");
-				frm.setAttribute("action","./print.php");
-				frm.setAttribute("method","post");
-				frm.setAttribute("target","_blank");
-
-			var inpimage = document.createElement("input");
-				inpimage.name = "imageblob";
-				inpimage.value = canvas.toDataURL();
-
-			var inplayers = document.createElement("input");
-				inplayers.name = "layers";
-				inplayers.value = layer_names.join(",");				
+			a.click();
 			
-			frm.appendChild(inpimage);
-			frm.appendChild(inplayers);
-			
-			document.body.appendChild(frm);
-			
-			//a.click();
-			
-			$(frm).submit();
-			$(frm).remove();
+			$(a).remove();
 			
 			$("#print-legend-wrapper").hide();
 			
@@ -954,7 +959,7 @@ function ol_map() {
 				visible:true,
 				singleTile: true,
 				source: new ol.source.TileWMS({
-					url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
+					url: "http://observatorio.ieasa.com.ar:8080/geoserver/ows?",
 					params: {
 						'LAYERS': capa,//'intervalos_polygons',
 						'id':query_id,
@@ -2447,7 +2452,7 @@ function ol_map() {
 		
 		$(".layer-group[data-layer="+layer_id+"] .layer-label").bind("click",function() {
 			
-			$("#layer-legend-"+layer_id).html("<img onload=\"geomap.map.fixLegend("+layer_id+")\" src=\"" + layer_wms + "&version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer="+layer_name+"&format=image/png&\">");
+			$("#layer-legend-"+layer_id).html("<img onload=\"geomap.map.fixLegend("+layer_id+")\"; src=\"" + layer_wms + "&version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer="+layer_name+"&format=image/png&\">");
 			
 		});
 		
@@ -3038,22 +3043,5 @@ function ol_map() {
 		$(".popup").draggable({handle:".popup-header"});
 		
 	}
-	
-}
-
-function load_sub_clase(cid) {
-	
-	var req = $.ajax({
-		
-		async:false,
-		data:{cid:cid},
-		type:"post",
-		url:"./php/get-subclase-combo.php",
-		success:function(d){}
-		
-	});
-	
-	document.getElementById("adv-search-subclase-combo").innerHTML = req.responseText;
-	$("#adv-search-subclase-combo").selectpicker("refresh");
 	
 }
