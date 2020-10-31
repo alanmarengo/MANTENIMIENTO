@@ -100,19 +100,21 @@ function ol_map() {
 		})
 
 		var layer = new ol.layer.Tile({
-			visible:true,
-			singleTile: true,
-			source: new ol.source.TileWMS({
-				url: "http://observatorio.ieasa.com.ar:8080/geoserver/ows?",
-				params: {
-					'LAYERS': 'ahrsc:vp_geo_himet_ubicacionestaciones_pga1',//'intervalos_polygons',
-					'id':1,
-					//'VERSION': '1.1.1',
-					'FORMAT': 'image/png',
-					'TILED': false
-				}
-			})
-		});
+				visible:true,
+				singleTile: true,
+				source: new ol.source.TileWMS({
+					url: "http://observatorio.ieasa.com.ar:8080/geoserver/ows?",
+					params: {
+						'LAYERS': 'ahrsc:vp_geo_himet_ubicacionestaciones_pga1',//'intervalos_polygons',
+						'id':query_id,
+						//'VERSION': '1.1.1',
+						'FORMAT': 'image/png',
+						'TILED': false,
+						'SLD':'http://'+window.location.hostname+'/sld/'+query_id+'.sld' /* EL SLD CREADO ES SIEMPRE EL ID_MAPEO.SLD */,
+						'viewparams':'id:'+query_id
+					}
+				})
+			});
 	
 		/*this.baselayers.argenmap = new ol.layer.Tile({
 			name:'capabaseargenmap',
