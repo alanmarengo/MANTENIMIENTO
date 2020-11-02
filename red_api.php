@@ -24,6 +24,7 @@ $categoria_parametro_id = clear_json(pg_escape_string($_REQUEST["categoria_param
 $parametro_id			= clear_json(pg_escape_string($_REQUEST["parametro_id"]));
 $fd						= clear_json(pg_escape_string($_REQUEST["fd"]));
 $fh						= clear_json(pg_escape_string($_REQUEST["fh"]));
+$cod_temp				= clear_json(pg_escape_string($_REQUEST["cod_temp"]));
 
 
 switch ($mode) 
@@ -46,7 +47,12 @@ switch ($mode)
 	case 5:
 		aforo_get_campañas();
 		break;
-		
+	case 6:
+		aforo_get_solapa_datos_campaña($estacion_id,$cod_temp);
+		break;
+	case 7:
+		aforo_get_solapa_hq($estacion_id);
+		break;
 };
 
 
@@ -424,14 +430,15 @@ function aforo_get_campañas()
 };
 
 
-function aforo_get_solapa_datos_campaña($estacion_id,$año_camapaña,$cod_temp)
+function aforo_get_solapa_datos_campaña($estacion_id,$cod_temp)
 {
+	// http://observ.net/red_api.php?estacion_id=14&cod_temp=1810&mode=6
+	
 	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 		
 	$conn = pg_connect($string_conn);
 	
-	$query_string   = "SELECT * FROM mod_sensores.get_estacion_datos_fechas($estacion_id::bigint,$parametro_id::bigint,$tipo_categoria_parametro_id::bigint,'$fd'::timestamp with time zone,'$fd'::timestamp with time zone) ";
-	$query_string  .= "ORDER BY parametro_nombre ASC;";
+	$query_string   = "SELECT * FROM mod_sensores.get_aforo_estacion_datos_campaña($estacion_id::bigint,$cod_temp::bigint); ";
 	
 	//echo $query_string;
 	
@@ -445,15 +452,17 @@ function aforo_get_solapa_datos_campaña($estacion_id,$año_camapaña,$cod_temp)
 	{
 		
 		$json .= '{';
-		$json .= '"tab":"Hidro - consultar datos",';
-		$json .= '"estacion_id":"' 		. clear_json($r["estacion_id"]) . '",';
-		$json .= '"categoria_parametro_id":"' 	. clear_json($r["categoria_parametro_id"]) . '",';
-		$json .= '"parametro_id":"' 	. clear_json($r["parametro_id"]) . '",';
-		$json .= '"parametro_nombre":"' . clear_json($r["parametro_nombre"]) . '",';
-		$json .= '"min_dato":"' 		. clear_json($r["min_valor"]) . '",';
-		$json .= '"med_dato":"' 		. clear_json($r["med_valor"]) . '",';
-		$json .= '"max_dato":"' 		. clear_json($r["max_valor"]) . '",';
-		$json .= '"url_grafico":"' 		. './get_grafico.php?definir=0' . '"';
+		$json .= '"tab":"Aforo - datos campaña",';
+		$json .= '"fecha_campania":"' 				. clear_json($r["fecha_campania"]) . '",';
+		$json .= '"altura_rio":"' 					. clear_json($r["altura_rio"]) . '",';
+		$json .= '"caudal_liq":"' 					. clear_json($r["caudal_liq"]) . '",';
+		$json .= '"con_med_frac_fina":"' 			. clear_json($r["con_med_frac_fina"]) . '",';
+		$json .= '"con_med_frac_gruesa":"' 			. clear_json($r["con_med_frac_gruesa"]) . '",';
+		$json .= '"trans_frac_fina":"' 				. clear_json($r["trans_frac_fina"]) . '",';
+		$json .= '"trans_frac_gruesa":"' 			. clear_json($r["trans_frac_gruesa"]) . '",';
+		$json .= '"link_grafico":"' 				. clear_json($r["path_grafico"]) . '",'; 
+		$json .= '"link_informe_campaña":"' 		. clear_json($r["path_informe_campaña"]) . '",';
+		$json .= '"link_audio_visual":"' 			. clear_json($r["link_registro_audiovisual"]) . '"';
 		$json .= "},";
 
 		$entered = true;
@@ -471,6 +480,53 @@ function aforo_get_solapa_datos_campaña($estacion_id,$año_camapaña,$cod_temp)
 	pg_close($conn);
 	
 };
+
+
+function aforo_get_solapa_hq($estacion_id)
+{
+	// http://observ.net/red_api.php?estacion_id=14&cod_temp=1810&mode=6
+	
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+		
+	$conn = pg_connect($string_conn);
+	
+	$query_string   = "SELECT * FROM mod_sensores.aforos_hq WHERE estacion_id::bigint=$estacion_id; ";
+	
+	//echo $query_string;
+	
+	$query = pg_query($conn,$query_string);
+	
+	$entered = false;
+	
+	$json = "[";
+	
+	while ($r = pg_fetch_assoc($query)) 
+	{
+		
+		$json .= '{';
+		$json .= '"tab":"Aforo - curva hq",';
+		$json .= '"cero_escala":"' 					. clear_json($r["cero_escala"]) . '",';
+		$json .= '"cero_escala_unidad":"' 			. clear_json($r["unidad_cero"]) . '",';
+		$json .= '"q_path":"' 						. clear_json($r["q_path"]) . '"';
+		$json .= "},";
+
+		$entered = true;
+	}
+	
+	if($entered) 
+	{
+		$json = substr($json,0,strlen($json)-1);
+	};
+	
+	$json .= "]";
+	
+	echo $json;
+	
+	pg_close($conn);
+	
+};
+
+
 
 
 
