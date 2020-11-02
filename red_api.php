@@ -43,6 +43,10 @@ switch ($mode)
 	case 4:
 		hidro_get_solapa_datos_fechas($estacion_id,$categoria_parametro_id,$parametro_id,$fd,$fh);
 		break;
+	case 5:
+		aforo_get_campañas();
+		break;
+		
 };
 
 
@@ -347,6 +351,126 @@ function hidro_get_solapa_datos_fechas($estacion_id,$tipo_categoria_parametro_id
 	
 };
 
+function aforo_get_campañas()
+{
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+		
+	$conn = pg_connect($string_conn);
+	
+	$query_string   = "SELECT * FROM mod_sensores.red_aforos_campania ";
+	$query_string  .= "ORDER BY anio,mes ASC;";
+	
+	//echo $query_string;
+	
+	$query = pg_query($conn,$query_string);
+	
+	$entered = false;
+	
+	$json = '{"campañas":[';
+	
+	while ($r = pg_fetch_assoc($query)) 
+	{
+		
+		$json .= '{';
+		$json .= '"tab":"Aforo - datos campaña",';
+		$json .= '"anio":"' 		. clear_json($r["anio"]) . '",';
+		$json .= '"mes":"' 			. clear_json($r["mes"]) . '",';
+		$json .= '"cod_temp":"' 	. clear_json($r["cod_temp"]) . '"';
+		$json .= "},";
+
+		$entered = true;
+	};
+	
+	if($entered) 
+	{
+		$json = substr($json,0,strlen($json)-1);
+	};
+	
+	$json .= "],";
+	
+	$query_string   = "SELECT DISTINCT anio FROM mod_sensores.red_aforos_campania ";
+	$query_string  .= "ORDER BY anio ASC;";
+	
+	//echo $query_string;
+	
+	$query = pg_query($conn,$query_string);
+	
+	$entered = false;
+	
+	$json .= '"años":[';
+	
+	while ($r = pg_fetch_assoc($query)) 
+	{
+		
+		$json .= '{';
+		$json .= '"tab":"Aforo - datos campaña años",';
+		$json .= '"anio":"' 		. clear_json($r["anio"]) . '"';
+		$json .= "},";
+
+		$entered = true;
+	};
+	
+	if($entered) 
+	{
+		$json = substr($json,0,strlen($json)-1);
+	};
+	
+	$json .= "]}";
+	
+	echo $json;
+	
+	pg_close($conn);
+	
+};
+
+
+function aforo_get_solapa_datos_campaña($estacion_id,$año_camapaña,$cod_temp)
+{
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+		
+	$conn = pg_connect($string_conn);
+	
+	$query_string   = "SELECT * FROM mod_sensores.get_estacion_datos_fechas($estacion_id::bigint,$parametro_id::bigint,$tipo_categoria_parametro_id::bigint,'$fd'::timestamp with time zone,'$fd'::timestamp with time zone) ";
+	$query_string  .= "ORDER BY parametro_nombre ASC;";
+	
+	//echo $query_string;
+	
+	$query = pg_query($conn,$query_string);
+	
+	$entered = false;
+	
+	$json = "[";
+	
+	while ($r = pg_fetch_assoc($query)) 
+	{
+		
+		$json .= '{';
+		$json .= '"tab":"Hidro - consultar datos",';
+		$json .= '"estacion_id":"' 		. clear_json($r["estacion_id"]) . '",';
+		$json .= '"categoria_parametro_id":"' 	. clear_json($r["categoria_parametro_id"]) . '",';
+		$json .= '"parametro_id":"' 	. clear_json($r["parametro_id"]) . '",';
+		$json .= '"parametro_nombre":"' . clear_json($r["parametro_nombre"]) . '",';
+		$json .= '"min_dato":"' 		. clear_json($r["min_valor"]) . '",';
+		$json .= '"med_dato":"' 		. clear_json($r["med_valor"]) . '",';
+		$json .= '"max_dato":"' 		. clear_json($r["max_valor"]) . '",';
+		$json .= '"url_grafico":"' 		. './get_grafico.php?definir=0' . '"';
+		$json .= "},";
+
+		$entered = true;
+	}
+	
+	if($entered) 
+	{
+		$json = substr($json,0,strlen($json)-1);
+	};
+	
+	$json .= "]";
+	
+	echo $json;
+	
+	pg_close($conn);
+	
+};
 
 
 
