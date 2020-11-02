@@ -64,7 +64,7 @@
                     <br />
                     <a id="link-visor1" href="#" data-target="#eventos" data-url="./geovisor.comunidad.php?b=1">Ver la localización de las reuniones con la comunidad.</a>
                     <br />
-                    <a target="_blank" href="./indicadores.php?ind_id=8&t=Comunicacion&cid=21">Acceda al listado de reuniones con la comunidad.</a>
+                    <a target="_blank" href="./indicadores.php?ind_id=8&t=Participación pública y gestión social&cid=21">Acceda al listado de reuniones con la comunidad.</a>
                     <br />
                     <br />
                 </div>
@@ -103,7 +103,7 @@
                     <br />
                     <a id="link-visor2" href="#" data-target="#eventos" data-url="./geovisor.comunidad.php?b=2">Ver localización de las comunidades originarias.</a>
                     <br />
-                    <a target="_blank" href="./indicadores.php?ind_id=8&t=Comunicacion&cid=21">Acceda al listado de reuniones con las comunidades originarias.</a>
+                    <a target="_blank" href="./indicadores.php?ind_id=8&t=Participación pública y gestión social&cid=21">Acceda al listado de reuniones con las comunidades originarias.</a>
                     <br />
                 </div>
             </div>
@@ -161,7 +161,7 @@
                     <br />
                     <a id="link-visor3" href="#" data-target="#eventos" data-url="./geovisor.comunidad.php?b=3">Ver la localización de las instituciones vinculadas al Proyecto.</a>
                     <br />
-                    <a target="_blank" href="./indicadores.php?ind_id=8&t=Comunicacion&cid=21">Acceda al tablero de Indicadores.</a>
+                    <a target="_blank" href="./indicadores.php?ind_id=8&t=Participación pública y gestión social&cid=21">Acceda al tablero de Indicadores.</a>
                     <br />
                 </div>
             </div>
