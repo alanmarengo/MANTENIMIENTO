@@ -166,7 +166,6 @@ function ol_map() {
 				var iconFeature = new ol.Feature({
 				  geometry: new ol.geom.Point(pos)
 				});
-
 			
 				var iconStyle = new ol.style.Style({
 					image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
