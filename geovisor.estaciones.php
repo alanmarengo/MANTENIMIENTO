@@ -23,7 +23,7 @@
 </head>
 <body style="overflow:hidden;">
 
-	<div id="cards col-md-3 col-lg-3 col-xs-11 col-sm-11">
+	<div id="cards" class="col-md-3 col-lg-3 col-xs-11 col-sm-11">
 
 		<div class="card">
 
