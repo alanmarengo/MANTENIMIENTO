@@ -12,6 +12,20 @@
     width: 100%;
 }
 
-.pretty-input {
+.pretty {
+    margin: 5px !important;
+}
+
+.pretty input {
     left: -10px !important;
+}
+
+.pretty .state label::before {
+    border: #8d3050 2px solid;
+    border-radius: 0px !important;
+    left: -12px;
+}
+
+.pretty .state label {
+    font-weight: 700;
 }
