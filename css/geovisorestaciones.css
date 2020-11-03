@@ -1,0 +1,11 @@
+#cards {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.card {
+    padding: 20px;
+    background: white;
+    border: 2px solid #464542;
+}
