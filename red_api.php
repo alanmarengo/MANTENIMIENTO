@@ -26,6 +26,8 @@ $fd						= clear_json(pg_escape_string($_REQUEST["fd"]));
 $fh						= clear_json(pg_escape_string($_REQUEST["fh"]));
 $cod_temp				= clear_json(pg_escape_string($_REQUEST["cod_temp"]));
 
+$tipo_estaciones		= clear_json(pg_escape_string($_REQUEST["tipo_estaciones"]));
+
 
 switch ($mode) 
 {
@@ -59,7 +61,9 @@ switch ($mode)
 	case 9:
 		aforo_get_estacion_parametros($estacion_id);
 		break;
-		
+	case 10:
+		get_estacion_estaciones($tipo_estaciones);/*1=aforo; <>1 las demas */
+		break;
 		
 };
 
@@ -628,6 +632,68 @@ function aforo_get_estacion_parametros($estacion_id)
 	pg_close($conn);
 	
 };
+
+
+
+function get_estacion_estaciones($tipo_estaciones)/* Si son hidrometricas o de aforo */
+{
+	//http://observ.net/red_api.php?tipo_estaciones=0&mode=10
+	//http://observ.net/red_api.php?tipo_estaciones=1&mode=10
+	
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+		
+	$conn = pg_connect($string_conn);
+	
+	if($tipo_estaciones=='1')/* AFORO */
+	{
+		$query_string    = "SELECT DISTINCT estacion_id,estacion_nombre ";
+		$query_string   .= " FROM mod_sensores.vw_red_monitoreo ";
+		$query_string   .= " WHERE tipo_estacion_desc='Aforo';";
+		
+		$tipo_est = 'Aforo';
+	}
+	else /* HIDRO */
+	{
+		$query_string    = "SELECT DISTINCT estacion_id,estacion_nombre ";
+		$query_string   .= " FROM mod_sensores.vw_red_monitoreo ";
+		$query_string   .= " WHERE tipo_estacion_desc<>'Aforo';";
+		
+		$tipo_est = 'Hidro';
+	};
+	
+	$query = pg_query($conn,$query_string);
+	
+	$entered = false;
+	
+	$json = "[";
+	
+	while ($r = pg_fetch_assoc($query)) 
+	{
+		
+		$json .= '{';
+		$json .= '"estacion_id":"' 		. clear_json($r["estacion_id"]) . '",';
+		$json .= '"estacion_nombre":"' 	. clear_json($r["estacion_nombre"]) . '",';
+		$json .= '"tipo":"' 			. $tipo_est . '"';
+		$json .= "},";
+
+		$entered = true;
+	}
+	
+	if($entered) 
+	{
+		$json = substr($json,0,strlen($json)-1);
+	};
+	
+	$json .= "]";
+	
+	echo $json;
+	
+	pg_close($conn);
+	
+};
+
+
+
 
 
 
