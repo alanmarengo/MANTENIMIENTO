@@ -9,9 +9,67 @@
             <div style="border: solid 1px #666; margin: 0; height:100%; width: 100%;">
 				
 				<div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: left; padding: 0px; height:0px;">
-                    <select id="uxVisor" class="selectpicker" data-width="300">
-                       <!--<option value="">LA BARRANCOSA</option>-->
-                    </select>
+                    <div class="jump-window-body p20">
+        
+                        <div id="info-baselayers" class="jump-scrollble">
+                    
+                            <div class="pretty p-default p-round" style="font-size:20px;">
+                                <input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.openstreets);">
+                                <div class="state">
+                                    <label>Openstreets Maps</label>
+                                </div>
+                            </div>
+                            
+                            <br>
+                        
+                            <div class="pretty p-default p-round" style="font-size:20px;">
+                                <input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.opentopo);">
+                                <div class="state">
+                                    <label>Open Topo</label>
+                                </div>
+                            </div>
+                            
+                            <br>
+                        
+                            <div class="pretty p-default p-round" style="font-size:20px;">
+                                <input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_roads);">
+                                <div class="state">
+                                    <label>Bing Caminos</label>
+                                </div>
+                            </div>
+                            
+                            <br>
+                        
+                            <div class="pretty p-default p-round" style="font-size:20px;">
+                                <input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
+                                <div class="state">
+                                    <label>Bing Satelital</label>
+                                </div>
+                            </div>
+                            
+                            <br>
+                        
+                            <div class="pretty p-default p-round" style="font-size:20px;">
+                                <input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.argenmap);">
+                                <div class="state">
+                                    <label>Argenmap</label>
+                                </div>
+                            </div>
+                            
+                            <br>
+                        
+                            <div class="pretty p-default p-round" style="font-size:20px;">
+                                <input type="radio" checked="checked" name="radio-baselayers" id="baselayer-default-radio" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.google);">
+                                <div class="state">
+                                    <label>Google Maps</label>
+                                </div>
+                            </div>
+                            
+                            <br>
+                        
+                        </div>
+                        
+                    </div>
                     <div id="uxCapa" class="jump-scroll">
                         <!--<option value="">ESCALA DE PECES</option>-->
                     </div>
