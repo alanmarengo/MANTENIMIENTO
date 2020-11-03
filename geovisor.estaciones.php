@@ -71,27 +71,22 @@
 </head>
 <body style="overflow:hidden;">
 
-	<div id="page" style="background-color: #f4f4f4;" class="h100p">
-		
-		<div class="page-container h100p">
-		
-			<?php include("./section.page_geovisor_estaciones.php"); ?>
-			
+	<div id="cards">
+
+		<div class="card">
+
 		</div>
-		
-	</div>	
+
+		<div class="card">
+
+		</div>
+
+	</div>
+
+	<div id="map"></div>
 	
 	<?php include("./html.navbar-geovisor-zoom.php"); ?>
 	<?php include("./popup.baselayers.flotant.php"); ?>
-	
-	<div id="popup-combo">
-		<div id="popup-combo-body" class="jump-posrel jump-scroll"></div>
-		<div id="popup-combo-caret">
-			<div class="inner"></div>
-		</div>
-	</div>
-	<div id="popup-results-preparse"></div>
-	<div id="popup-results"></div>
 
 </body>
 </html>
