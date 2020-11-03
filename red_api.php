@@ -56,6 +56,11 @@ switch ($mode)
 	case 8:
 		aforo_get_solapa_datos_fechas($estacion_id,$parametro_id,$fd,$fh);
 		break;
+	case 9:
+		aforo_get_estacion_parametros($estacion_id);
+		break;
+		
+		
 };
 
 
@@ -580,6 +585,49 @@ function aforo_get_solapa_datos_fechas($estacion_id,$parametro_id,$fd,$fh)
 	
 };
 
+
+
+
+function aforo_get_estacion_parametros($estacion_id)
+{
+	//http://observ.net/red_api.php?estacion_id=14&mode=9
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+		
+	$conn = pg_connect($string_conn);
+	
+	$query_string    = "SELECT parametro_id,parametro_desc||parametro_unidad AS parametro ";
+	$query_string   .= " FROM mod_sensores.vw_red_monitoreo ";
+	$query_string   .= " WHERE estacion_id=$estacion_id";
+	
+	$query = pg_query($conn,$query_string);
+	
+	$entered = false;
+	
+	$json = "[";
+	
+	while ($r = pg_fetch_assoc($query)) 
+	{
+		
+		$json .= '{';
+		$json .= '"parametro_id":"' 		. clear_json($r["parametro_id"]) . '",';
+		$json .= '"parametro_nombre":"' 	. clear_json($r["parametro"]) . '"';
+		$json .= "},";
+
+		$entered = true;
+	}
+	
+	if($entered) 
+	{
+		$json = substr($json,0,strlen($json)-1);
+	};
+	
+	$json .= "]";
+	
+	echo $json;
+	
+	pg_close($conn);
+	
+};
 
 
 
