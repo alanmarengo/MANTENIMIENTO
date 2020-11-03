@@ -53,6 +53,9 @@ switch ($mode)
 	case 7:
 		aforo_get_solapa_hq($estacion_id);
 		break;
+	case 8:
+		aforo_get_solapa_datos_fechas($estacion_id,$parametro_id,$fd,$fh);
+		break;
 };
 
 
@@ -311,11 +314,13 @@ function hidro_get_solapa_datos_diarios($estacion_id,$tipo_categoria_parametro_i
 
 function hidro_get_solapa_datos_fechas($estacion_id,$tipo_categoria_parametro_id,$parametro_id,$fd,$fh)
 {
+	//http://observ.net/red_api.php?estacion_id=7&categoria_parametro_id=4&parametro_id=5&fd=01/01/2020&fh=31/12/2020&mode=4
+	
 	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 		
 	$conn = pg_connect($string_conn);
 	
-	$query_string   = "SELECT * FROM mod_sensores.get_estacion_datos_fechas($estacion_id::bigint,$parametro_id::bigint,$tipo_categoria_parametro_id::bigint,'$fd'::timestamp with time zone,'$fd'::timestamp with time zone) ";
+	$query_string   = "SELECT * FROM mod_sensores.get_estacion_datos_fechas($estacion_id::bigint,$parametro_id::bigint,$tipo_categoria_parametro_id::bigint,'$fd'::timestamp with time zone,'$fh'::timestamp with time zone) ";
 	$query_string  .= "ORDER BY parametro_nombre ASC;";
 	
 	//echo $query_string;
@@ -508,6 +513,55 @@ function aforo_get_solapa_hq($estacion_id)
 		$json .= '"cero_escala":"' 					. clear_json($r["cero_escala"]) . '",';
 		$json .= '"cero_escala_unidad":"' 			. clear_json($r["unidad_cero"]) . '",';
 		$json .= '"q_path":"' 						. clear_json($r["q_path"]) . '"';
+		$json .= "},";
+
+		$entered = true;
+	}
+	
+	if($entered) 
+	{
+		$json = substr($json,0,strlen($json)-1);
+	};
+	
+	$json .= "]";
+	
+	echo $json;
+	
+	pg_close($conn);
+	
+};
+
+function aforo_get_solapa_datos_fechas($estacion_id,$parametro_id,$fd,$fh)
+{
+	//http://observ.net/red_api.php?estacion_id=14&parametro_id=28&fd=01/01/2020&fh=31/12/2020&mode=8
+	
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+		
+	$conn = pg_connect($string_conn);
+	
+	$query_string   = "SELECT * FROM mod_sensores.get_estacion_aforo_datos_fechas($estacion_id::bigint,$parametro_id::bigint,'$fd'::timestamp with time zone,'$fh'::timestamp with time zone) ";
+	$query_string  .= "ORDER BY parametro_nombre ASC;";
+	
+	//echo $query_string;
+	
+	$query = pg_query($conn,$query_string);
+	
+	$entered = false;
+	
+	$json = "[";
+	
+	while ($r = pg_fetch_assoc($query)) 
+	{
+		
+		$json .= '{';
+		$json .= '"tab":"Aforo - consultar datos fechas",';
+		$json .= '"estacion_id":"' 		. clear_json($r["estacion_id"]) . '",';
+		$json .= '"parametro_id":"' 	. clear_json($r["parametro_id"]) . '",';
+		$json .= '"parametro_nombre":"' . clear_json($r["parametro_nombre"]) . '",';
+		$json .= '"min_dato":"' 		. clear_json($r["min_valor"]) . '",';
+		$json .= '"med_dato":"' 		. clear_json($r["med_valor"]) . '",';
+		$json .= '"max_dato":"' 		. clear_json($r["max_valor"]) . '",';
+		$json .= '"url_grafico":"' 		. './get_grafico.php?definir=0' . '"';
 		$json .= "},";
 
 		$entered = true;
