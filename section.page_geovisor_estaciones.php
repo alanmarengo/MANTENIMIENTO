@@ -4,11 +4,11 @@
     <div class="row h100p">
                 
         <!---------------------------------------------->
-        <div class="col col-xs-11 col-sm-11 col-md-4 col-lg-4 section-b h100p p0">     
+        <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 section-b h100p p0">     
 		
             <div style="border: solid 1px #666; margin: 0; height:100%; width: 100%;">
 				
-				<div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12" style="position:relative; z-index:999; text-align: left; padding: 0px; height:0px;">
+				<div class="col col-xs-11 col-sm-11 col-md-4 col-lg-4" style="position:relative; z-index:999; text-align: left; padding: 0px; height:0px;">
                     <div class="jump-window-body p20">
         
                         <div id="info-baselayers" class="jump-scrollble">
