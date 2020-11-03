@@ -14,7 +14,7 @@
                         <div id="filter-estaciones" class="jump-scrollble">
                     
                             <div class="pretty p-default p-round" style="font-size:20px;">
-                                <input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.openstreets);">
+                                <input type="checkbox" name="estaciones-tipo" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.openstreets);">
                                 <div class="state">
                                     <label>Estaciones hidrométricas</label>
                                 </div>
@@ -23,7 +23,7 @@
                             <br>
                         
                             <div class="pretty p-default p-round" style="font-size:20px;">
-                                <input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.opentopo);">
+                                <input type="checkbox" name="estaciones-tipo" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.opentopo);">
                                 <div class="state">
                                     <label>Estaciones meteorológicas</label>
                                 </div>
@@ -32,7 +32,7 @@
                             <br>
                         
                             <div class="pretty p-default p-round" style="font-size:20px;">
-                                <input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_roads);">
+                                <input type="checkbox" name="estaciones-tipo" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_roads);">
                                 <div class="state">
                                     <label>Estaciones hidrometeorológicas</label>
                                 </div>
@@ -41,7 +41,7 @@
                             <br>
                         
                             <div class="pretty p-default p-round" style="font-size:20px;">
-                                <input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
+                                <input type="checkbox" name="estaciones-tipo" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
                                 <div class="state">
                                     <label>Estaciones hidroambientales</label>
                                 </div>
@@ -63,7 +63,7 @@
                         <div id="filter-estaciones-area" class="jump-scrollble">
                     
                             <div class="pretty p-default p-round" style="font-size:20px;">
-                                <input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.openstreets);">
+                                <input type="checkbox" name="estaciones-area" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.openstreets);">
                                 <div class="state">
                                     <label>Cuenca alta</label>
                                 </div>
@@ -72,7 +72,7 @@
                             <br>
                         
                             <div class="pretty p-default p-round" style="font-size:20px;">
-                                <input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.opentopo);">
+                                <input type="checkbox" name="estaciones-area" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.opentopo);">
                                 <div class="state">
                                     <label>Cuenca media</label>
                                 </div>
@@ -81,7 +81,7 @@
                             <br>
                         
                             <div class="pretty p-default p-round" style="font-size:20px;">
-                                <input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_roads);">
+                                <input type="checkbox" name="estaciones-area" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_roads);">
                                 <div class="state">
                                     <label>Estuario</label>
                                 </div>
@@ -90,7 +90,7 @@
                             <br>
                         
                             <div class="pretty p-default p-round" style="font-size:20px;">
-                                <input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
+                                <input type="checkbox" name="estaciones-area" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
                                 <div class="state">
                                     <label>Presa Condor Cliff</label>
                                 </div>
@@ -99,7 +99,7 @@
                             <br>
                         
                             <div class="pretty p-default p-round" style="font-size:20px;">
-                                <input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
+                                <input type="checkbox" name="estaciones-area" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
                                 <div class="state">
                                     <label>Presa La Barrancosa</label>
                                 </div>
@@ -108,7 +108,7 @@
                             <br>
                         
                             <div class="pretty p-default p-round" style="font-size:20px;">
-                                <input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
+                                <input type="checkbox" name="estaciones-area" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
                                 <div class="state">
                                     <label>Embalse Condor Cliff</label>
                                 </div>
@@ -117,7 +117,7 @@
                             <br>
                         
                             <div class="pretty p-default p-round" style="font-size:20px;">
-                                <input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
+                                <input type="checkbox" name="estaciones-area" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
                                 <div class="state">
                                     <label>Embalse La Barrancosa</label>
                                 </div>
