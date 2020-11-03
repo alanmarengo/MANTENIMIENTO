@@ -65,7 +65,7 @@
 
 		</div>
 
-		<div class="card">
+		<div class="card mt-30">
 
 			<div class="pretty p-default p-round" style="font-size:20px;">
 				<input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.openstreets);">
