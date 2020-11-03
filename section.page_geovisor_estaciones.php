@@ -8,15 +8,15 @@
 		
             <div style="border: solid 1px #666; margin: 0; height:100%; width: 100%;">
 				
-				<div class="col col-xs-11 col-sm-11 col-md-4 col-lg-4" style="margin:20px 30px; position:absolute; z-index:999; text-align: left; padding: 0px; height:0px;">
+				<div class="col col-xs-11 col-sm-11 col-md-3 col-lg-3" style="margin:20px 30px; position:absolute; z-index:999; text-align: left; padding: 0px; height:0px;">
                     <div class="jump-window-body p20">
         
-                        <div id="info-baselayers" class="jump-scrollble">
+                        <div id="filter-estaciones" class="jump-scrollble">
                     
                             <div class="pretty p-default p-round" style="font-size:20px;">
                                 <input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.openstreets);">
                                 <div class="state">
-                                    <label>Openstreets Maps</label>
+                                    <label>Estaciones hidrométricas</label>
                                 </div>
                             </div>
                             
@@ -25,7 +25,7 @@
                             <div class="pretty p-default p-round" style="font-size:20px;">
                                 <input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.opentopo);">
                                 <div class="state">
-                                    <label>Open Topo</label>
+                                    <label>Estaciones meteorológicas</label>
                                 </div>
                             </div>
                             
@@ -34,7 +34,7 @@
                             <div class="pretty p-default p-round" style="font-size:20px;">
                                 <input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_roads);">
                                 <div class="state">
-                                    <label>Bing Caminos</label>
+                                    <label>Estaciones hidrometeorológicas</label>
                                 </div>
                             </div>
                             
@@ -43,25 +43,83 @@
                             <div class="pretty p-default p-round" style="font-size:20px;">
                                 <input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
                                 <div class="state">
-                                    <label>Bing Satelital</label>
+                                    <label>Estaciones hidroambientales</label>
+                                </div>
+                            </div>
+                            
+                            <br>
+                        
+                        </div>
+                        
+                    </div>
+                    <div id="uxCapa" class="jump-scroll">
+                        <!--<option value="">ESCALA DE PECES</option>-->
+                    </div>
+                </div>
+
+                <div class="col col-xs-11 col-sm-11 col-md-3 col-lg-3" style="margin:20px 30px; position:absolute; z-index:999; text-align: left; padding: 0px; height:0px;">
+                    <div class="jump-window-body p20">                    
+        
+                        <div id="filter-estaciones-area" class="jump-scrollble">
+                    
+                            <div class="pretty p-default p-round" style="font-size:20px;">
+                                <input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.openstreets);">
+                                <div class="state">
+                                    <label>Cuenca alta</label>
                                 </div>
                             </div>
                             
                             <br>
                         
                             <div class="pretty p-default p-round" style="font-size:20px;">
-                                <input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.argenmap);">
+                                <input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.opentopo);">
                                 <div class="state">
-                                    <label>Argenmap</label>
+                                    <label>Cuenca media</label>
                                 </div>
                             </div>
                             
                             <br>
                         
                             <div class="pretty p-default p-round" style="font-size:20px;">
-                                <input type="radio" checked="checked" name="radio-baselayers" id="baselayer-default-radio" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.google);">
+                                <input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_roads);">
                                 <div class="state">
-                                    <label>Google Maps</label>
+                                    <label>Estuario</label>
+                                </div>
+                            </div>
+                            
+                            <br>
+                        
+                            <div class="pretty p-default p-round" style="font-size:20px;">
+                                <input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
+                                <div class="state">
+                                    <label>Presa Condor Cliff</label>
+                                </div>
+                            </div>
+                            
+                            <br>
+                        
+                            <div class="pretty p-default p-round" style="font-size:20px;">
+                                <input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
+                                <div class="state">
+                                    <label>Presa La Barrancosa</label>
+                                </div>
+                            </div>
+                            
+                            <br>
+                        
+                            <div class="pretty p-default p-round" style="font-size:20px;">
+                                <input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
+                                <div class="state">
+                                    <label>Embalse Condor Cliff</label>
+                                </div>
+                            </div>
+                            
+                            <br>
+                        
+                            <div class="pretty p-default p-round" style="font-size:20px;">
+                                <input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
+                                <div class="state">
+                                    <label>Embalse La Barrancosa</label>
                                 </div>
                             </div>
                             
