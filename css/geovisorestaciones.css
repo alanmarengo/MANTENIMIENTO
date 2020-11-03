@@ -2,10 +2,12 @@
     position: absolute;
     top: 20px;
     left: 20px;
+    z-index: 9999;
 }
 
 .card {
     padding: 20px;
     background: white;
     border: 2px solid #464542;
+    width: 100%;
 }

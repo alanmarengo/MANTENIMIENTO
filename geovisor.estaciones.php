@@ -23,9 +23,9 @@
 </head>
 <body style="overflow:hidden;">
 
-	<div id="cards">
+	<div id="cards col-md-3 col-lg-3 col-xs-11 col-sm-11">
 
-		<div class="card col-md-3 col-lg-3">
+		<div class="card">
 
 			<div class="pretty p-default p-round" style="font-size:20px;">
 				<input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.openstreets);">
@@ -65,7 +65,7 @@
 
 		</div>
 
-		<div class="card col-md-3 col-lg-3">
+		<div class="card">
 
 			<div class="pretty p-default p-round" style="font-size:20px;">
 				<input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.openstreets);">
