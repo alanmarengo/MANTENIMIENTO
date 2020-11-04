@@ -12,6 +12,11 @@
     width: 100%;
 }
 
+.card-title {
+    font-size: 14px;
+    color: #8d3050;
+}
+
 .pretty {
     margin: 5px !important;
 }
