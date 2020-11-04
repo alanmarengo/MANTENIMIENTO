@@ -83,7 +83,7 @@ switch ($mode)
 		break;
 	case 12:
 		//http://observ.net/red_api.php?estacion_id=7&categoria_parametro_id=4&parametro_id=5&mode=12
-		hidro_get_datos_graficos_mes($estacion_id,$categoria_parametro_id,$parametro_id);
+		get_estacion_parametro_grafico_30_dias($estacion_id,$categoria_parametro_id,$parametro_id);
 		break;
 	
 			
@@ -764,15 +764,15 @@ function get_parametro_datos($lista_estaciones,$parametro_id,$fd,$fh)
 
 
 
-function hidro_get_datos_graficos_mes($estacion_id,$tipo_categoria_parametro_id,$parametro_id)
+function get_estacion_parametro_grafico_30_dias($estacion_id,$tipo_categoria_parametro_id,$parametro_id)
 {
 	
 	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 		
 	$conn = pg_connect($string_conn);
 	
-	$query_string   = "SELECT * FROM mod_sensores.get_estacion_parametro_grafico($estacion_id,$tipo_categoria_parametro_id,$parametro_id) ";
-	$query_string  .= "ORDER BY año_g,mes_g ASC;";
+	$query_string   = "SELECT * FROM mod_sensores.get_estacion_parametro_grafico_30_dias($estacion_id,$tipo_categoria_parametro_id,$parametro_id,190) ";
+	$query_string  .= "ORDER BY fecha ASC;";
 
 	$query = pg_query($conn,$query_string);
 	
@@ -784,18 +784,16 @@ function hidro_get_datos_graficos_mes($estacion_id,$tipo_categoria_parametro_id,
 	{
 		
 		$json .= '{';
-		$json .= '"tab":"Hidro - datos graficos",';
+		$json .= '"tab":"Hidro - datos graficos ultimos 30 dias",';
 		$json .= '"estacion_id":"' 		. clear_json($r["estacion_id"]) . '",';
 		$json .= '"estacion_tipo":"' 	. clear_json($r["estacion_tipo"]) . '",';
 		$json .= '"parametro_id":"' 	. clear_json($r["parametro_id"]) . '",';
 		$json .= '"parametro_nombre":"' . clear_json($r["parametro_nombre"]) . '",';
-		$json .= '"ultimo_dato":"' 		. clear_json($r["ultimo_dato"]) . '",';
 		$json .= '"min_dato":"' 		. clear_json($r["min_dato"]) . '",';
 		$json .= '"med_dato":"' 		. clear_json($r["med_dato"]) . '",';
 		$json .= '"max_dato":"' 		. clear_json($r["max_dato"]) . '",';
-		$json .= '"mes":"' 				. clear_json($r["mes"]) . '",';
-		$json .= '"mes_g":"' 			. clear_json($r["mes_g"]) . '",';
-		$json .= '"año_g":"' 			. clear_json($r["año_g"]) . '"';
+		$json .= '"dia":"' 				. clear_json($r["dia"]) . '",';
+		$json .= '"fecha":"' 			. clear_json($r["fecha"]) . '"';
 		$json .= "},";
 
 		$entered = true;
