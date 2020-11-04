@@ -162,7 +162,7 @@
 
 	</div>
 
-	<div id="popup" class="roverlay" data-col="6">
+	<div id="popup" class="roverlay" data-col="4">
 		MAQUET
 	</div>
 
