@@ -46,4 +46,6 @@ $(document).ready(function() {
 
     scroll.refresh();
 
+    $(".roverlay").each(function(i, v) { $(v).Roverlay(); });
+
 });

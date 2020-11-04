@@ -170,7 +170,7 @@ function ol_map() {
 
         this.ol_object.on("click", function(evt) {
 
-            $("#popup").roverlay("open");
+            $("#popup").Roverlay("open");
 
         });
 
