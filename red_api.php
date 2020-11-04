@@ -41,6 +41,7 @@ switch ($mode)
         aforo_get_solapa_desc($estacion_id);
         break;
     case 2:
+		//http://observ.net/red_api.php?estacion_id=7&tipo_estacion_id=4&mode=2
         hidro_get_solapa_datos_diarios($estacion_id,$tipo_estacion_id);
         break;   
     case 3:
@@ -80,9 +81,12 @@ switch ($mode)
 		//http://observ.net/red_api.php?lista_estaciones=3,4&parametro_id=25&fd=01/01/2020&fh=31/12/2020&mode=11
 		get_parametro_datos($lista_estaciones,$parametro_id,$fd,$fh);
 		break;
-		
-		
-		
+	case 12:
+		//http://observ.net/red_api.php?estacion_id=7&categoria_parametro_id=4&parametro_id=5&mode=12
+		hidro_get_datos_graficos_mes($estacion_id,$categoria_parametro_id,$parametro_id);
+		break;
+	
+			
 };
 
 
@@ -760,7 +764,55 @@ function get_parametro_datos($lista_estaciones,$parametro_id,$fd,$fh)
 
 
 
+function hidro_get_datos_graficos_mes($estacion_id,$tipo_categoria_parametro_id,$parametro_id)
+{
+	
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+		
+	$conn = pg_connect($string_conn);
+	
+	$query_string   = "SELECT * FROM mod_sensores.get_estacion_parametro_grafico($estacion_id,$tipo_categoria_parametro_id,$parametro_id) ";
+	$query_string  .= "ORDER BY año_g,mes_g ASC;";
 
+	$query = pg_query($conn,$query_string);
+	
+	$entered = false;
+	
+	$json = "[";
+	
+	while ($r = pg_fetch_assoc($query)) 
+	{
+		
+		$json .= '{';
+		$json .= '"tab":"Hidro - datos graficos",';
+		$json .= '"estacion_id":"' 		. clear_json($r["estacion_id"]) . '",';
+		$json .= '"estacion_tipo":"' 	. clear_json($r["estacion_tipo"]) . '",';
+		$json .= '"parametro_id":"' 	. clear_json($r["parametro_id"]) . '",';
+		$json .= '"parametro_nombre":"' . clear_json($r["parametro_nombre"]) . '",';
+		$json .= '"ultimo_dato":"' 		. clear_json($r["ultimo_dato"]) . '",';
+		$json .= '"min_dato":"' 		. clear_json($r["min_dato"]) . '",';
+		$json .= '"med_dato":"' 		. clear_json($r["med_dato"]) . '",';
+		$json .= '"max_dato":"' 		. clear_json($r["max_dato"]) . '",';
+		$json .= '"mes":"' 				. clear_json($r["mes"]) . '",';
+		$json .= '"mes_g":"' 			. clear_json($r["mes_g"]) . '",';
+		$json .= '"año_g":"' 			. clear_json($r["año_g"]) . '"';
+		$json .= "},";
+
+		$entered = true;
+	}
+	
+	if($entered) 
+	{
+		$json = substr($json,0,strlen($json)-1);
+	};
+	
+	$json .= "]";
+	
+	echo $json;
+	
+	pg_close($conn);
+	
+};
 
 
 
