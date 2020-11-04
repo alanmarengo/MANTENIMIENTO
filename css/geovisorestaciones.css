@@ -66,8 +66,9 @@
 }
 
 #popup .nav-tabs .btn-tab {
-    background-color: #343a40 !important;
+    background-color: #343a40;
     color: #FFFFFF !Important;
     font-family: "Montserrat", sans-serif !Important;
-    font-size: 10px !important;
+    font-size: 12px !Important;
+    padding: 10px 20px !Important;
 }
