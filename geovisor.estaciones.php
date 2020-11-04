@@ -172,10 +172,10 @@
 			</div>
 			<div class="tabs">
 				<ul class="nav nav-tabs">
-					<li class="active"><a data-toggle="tab" id="tab-ha-1" href="#panel-ha-1" aria-expanded="true">Descripción</a></li>
-					<li><a data-toggle="tab" id="tab-ha-2" href="#panel-ha-2" aria-expanded="true">Registro Diario</a></li>
-					<li><a data-toggle="tab" id="tab-ha-3" href="#panel-ha-3" aria-expanded="true">Consultar Datos</a></li>
-					<li><a data-toggle="tab" id="tab-ha-4" href="#panel-ha-4" aria-expanded="true">Registro Mensual y Anual</a></li>
+					<li class="active"><a class="btn-tab" data-toggle="tab" id="tab-ha-1" href="#panel-ha-1" aria-expanded="true">Descripción</a></li>
+					<li><a class="btn-tab" data-toggle="tab" id="tab-ha-2" href="#panel-ha-2" aria-expanded="true">Registro Diario</a></li>
+					<li><a class="btn-tab" data-toggle="tab" id="tab-ha-3" href="#panel-ha-3" aria-expanded="true">Consultar Datos</a></li>
+					<li><a class="btn-tab" data-toggle="tab" id="tab-ha-4" href="#panel-ha-4" aria-expanded="true">Registro Mensual y Anual</a></li>
 				</ul>
 				<div class="tab-content p30">
 					<div id="panel-ha-1" class="tab-pane fade in active">1</div>

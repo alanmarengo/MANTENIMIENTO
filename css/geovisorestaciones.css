@@ -49,6 +49,10 @@
     padding: 20px;
 }
 
+#popup-inner {
+    width: 100%;
+}
+
 #popup .header {
     width: 100%;
     display: flex;
@@ -57,6 +61,13 @@
 
 #popup .header .title {
     font-size: 14px;
-    color: #464542;
+    color: #343a40;
     font-weight: 700;
+}
+
+#popup .nav-tabs .btn-tab {
+    background-color: #343a40 !important;
+    color: #FFFFFF !Important;
+    font-family: "Montserrat", sans-serif !Important;
+    font-size: 10px !important;
 }
