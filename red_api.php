@@ -28,42 +28,60 @@ $cod_temp				= clear_json(pg_escape_string($_REQUEST["cod_temp"]));
 
 $tipo_estaciones		= clear_json(pg_escape_string($_REQUEST["tipo_estaciones"]));
 
+$lista_estaciones		= clear_json(pg_escape_string($_REQUEST["lista_estaciones"]));/* Valores separados por coma */
 
 switch ($mode) 
 {
     case 0:
+		//http://observ.net/red_api.php?estacion_id=6&tipo_estacion_id=1&mode=0
         hidro_get_solapa_desc($estacion_id,$tipo_estacion_id);
         break;
     case 1: 
+		//http://observ.net/red_api.php?estacion_id=9&tipo_estacion_id=4&mode=1
         aforo_get_solapa_desc($estacion_id);
         break;
     case 2:
         hidro_get_solapa_datos_diarios($estacion_id,$tipo_estacion_id);
         break;   
     case 3:
+		//http://observ.net/red_api.php?estacion_id=7&categoria_parametro_id=4&mode=3
 		hidro_get_estacion_parametros($estacion_id,$categoria_parametro_id);
 		break;
 	case 4:
+		//http://observ.net/red_api.php?estacion_id=7&categoria_parametro_id=4&parametro_id=5&fd=01/01/2020&fh=31/12/2020&mode=4
 		hidro_get_solapa_datos_fechas($estacion_id,$categoria_parametro_id,$parametro_id,$fd,$fh);
 		break;
 	case 5:
+		//http://observ.net/red_api.php?estacion_id=7&tipo_estacion_id=4&mode=5
 		aforo_get_campañas();
 		break;
 	case 6:
+		//http://observ.net/red_api.php?estacion_id=14&cod_temp=1810&mode=6
 		aforo_get_solapa_datos_campaña($estacion_id,$cod_temp);
 		break;
 	case 7:
+		//http://observ.net/red_api.php?estacion_id=9&mode=7
 		aforo_get_solapa_hq($estacion_id);
 		break;
 	case 8:
+		//http://observ.net/red_api.php?estacion_id=14&parametro_id=28&fd=01/01/2020&fh=31/12/2020&mode=8
 		aforo_get_solapa_datos_fechas($estacion_id,$parametro_id,$fd,$fh);
 		break;
 	case 9:
+		//http://observ.net/red_api.php?estacion_id=14&mode=9
 		aforo_get_estacion_parametros($estacion_id);
 		break;
 	case 10:
-		get_estacion_estaciones($tipo_estaciones);/*1=aforo; <>1 las demas */
+		//http://observ.net/red_api.php?tipo_estaciones=0&mode=10 estaciones hidro
+		//http://observ.net/red_api.php?tipo_estaciones=1&mode=10 estaciones aforo
+		get_estaciones($tipo_estaciones);/*1=aforo; <>1 las demas */
 		break;
+	case 11:
+		//http://observ.net/red_api.php?lista_estaciones=3,4&parametro_id=25&fd=01/01/2020&fh=31/12/2020&mode=11
+		get_parametro_datos($lista_estaciones,$parametro_id,$fd,$fh);
+		break;
+		
+		
 		
 };
 
@@ -498,7 +516,7 @@ function aforo_get_solapa_datos_campaña($estacion_id,$cod_temp)
 
 function aforo_get_solapa_hq($estacion_id)
 {
-	// http://observ.net/red_api.php?estacion_id=14&cod_temp=1810&mode=6
+	//http://observ.net/red_api.php?estacion_id=14&cod_temp=1810&mode=6
 	
 	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 		
@@ -635,7 +653,7 @@ function aforo_get_estacion_parametros($estacion_id)
 
 
 
-function get_estacion_estaciones($tipo_estaciones)/* Si son hidrometricas o de aforo */
+function get_estaciones($tipo_estaciones)/* Si son hidrometricas o de aforo */
 {
 	//http://observ.net/red_api.php?tipo_estaciones=0&mode=10
 	//http://observ.net/red_api.php?tipo_estaciones=1&mode=10
@@ -691,6 +709,54 @@ function get_estacion_estaciones($tipo_estaciones)/* Si son hidrometricas o de a
 	pg_close($conn);
 	
 };
+
+
+
+function get_parametro_datos($lista_estaciones,$parametro_id,$fd,$fh)
+{
+	//http://observ.net/red_api.php?lista_estaciones=3,4&parametro_id=25&fd=01/01/2020&fh=31/12/2020&mode=11
+	
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+		
+	$conn = pg_connect($string_conn);
+
+	$query_string    = "SELECT * ";
+	$query_string   .= " FROM mod_sensores.get_parametro_datos('$lista_estaciones'::text,$parametro_id::bigint,'$fd'::timestamp with time zone,'$fh'::timestamp with time zone) ";
+	$query_string   .= " ORDER BY estacion_nombre ASC;";
+	
+	$query = pg_query($conn,$query_string);
+	
+	$entered = false;
+	
+	$json = "[";
+	
+	while ($r = pg_fetch_assoc($query)) 
+	{
+		
+		$json .= '{';
+		$json .= '"estacion_id":"' 		. clear_json($r["estacion_id"]) . '",';
+		$json .= '"estacion_nombre":"' 	. clear_json($r["estacion_nombre"]) . '",';
+		$json .= '"min_dato":"' 		. clear_json($r["min_dato"]) . '",';
+		$json .= '"med_dato":"' 		. clear_json($r["med_dato"]) . '",';
+		$json .= '"max_dato":"' 		. clear_json($r["max_dato"]) . '"';
+		$json .= "},";
+
+		$entered = true;
+	}
+	
+	if($entered) 
+	{
+		$json = substr($json,0,strlen($json)-1);
+	};
+	
+	$json .= "]";
+	
+	echo $json;
+	
+	pg_close($conn);
+	
+};
+
 
 
 
