@@ -29,3 +29,10 @@
 .pretty .state label {
     font-weight: 700;
 }
+
+.pretty.p-icon .state .icon {
+    font-size: .8em;
+    left: -12px;
+    top: 3px;
+    color: #8d3050;
+}
