@@ -153,6 +153,15 @@
 	
 	<?php include("./html.navbar-geovisor-zoom.php"); ?>
 	<?php include("./popup.baselayers.flotant.php"); ?>
+	
+	<div style="width:200px; bottom:15px; left:10px; font-weight:bolder;" class="jump-posabs">
+			
+		<a href="./geovisor.php?geovisor=2" target="_blank" class="black-button">
+			<span>VER EN GEOVISOR</span>
+		</a>
+
+	</div>
+
 
 </body>
 </html>
