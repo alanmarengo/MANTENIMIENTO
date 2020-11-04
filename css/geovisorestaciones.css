@@ -71,4 +71,9 @@
     font-family: "Montserrat", sans-serif !Important;
     font-size: 12px !Important;
     padding: 10px 20px !Important;
+    margin-left: 10px;
+}
+
+#popup .nav-tabs .btn-tab:first-child {
+    margin-left: 0px !Important;
 }
