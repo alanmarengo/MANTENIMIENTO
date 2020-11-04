@@ -163,7 +163,7 @@
 	</div>
 
 	<div id="popup" class="roverlay" data-col="6">
-		MAQUET
+		<p>MAQUETADO</p>
 	</div>
 
 
