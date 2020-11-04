@@ -25,8 +25,6 @@ function ol_map() {
 
     this.map.create = function() {
 
-        console.log("crear");
-
         this.baselayers.openstreets = new ol.layer.Tile({
             name: 'openstreets',
             title: 'OSM',
@@ -172,84 +170,7 @@ function ol_map() {
 
         this.ol_object.on("click", function(evt) {
 
-            if (this.infoEnabled) {
-
-                this.lastClicked = evt.coordinate;
-
-                var pos = evt.coordinate;
-
-                var pos4326 = ol.proj.transform(evt.coordinate, 'EPSG:3857', 'EPSG:4326');
-
-                var coord = String(pos4326).split(",");
-                var pixel = this.getPixelFromCoordinate(evt.coordinate);
-                this.map_object.gfiAddedLayers = [];
-
-                var view = this.getView();
-                var map = this.map_object;
-
-                var viewResolution = (view.getResolution());
-                var url = '';
-
-                this.getLayers().forEach(function(layer, i, layers) {
-
-                    if ((layer.getVisible()) && (layer.get('name') == "ahrsc:vp_geo_prcpr_proyectoahrsc_otr1")) {
-
-                        if (layer.getSource().getGetFeatureInfoUrl) {
-
-                            $("#popup-results").empty();
-
-                            url = layer.getSource().getGetFeatureInfoUrl(evt.coordinate, viewResolution, 'EPSG:3857', {
-                                'INFO_FORMAT': 'text/html',
-                                'FEATURE_COUNT': '300'
-                            });
-
-                            var req = $.ajax({
-
-                                async: false,
-                                type: "GET",
-                                url: url,
-                                //url:"urldeprueba.php",
-                                success: function(d) {}
-
-                            })
-
-                            if (req.responseText != "") {
-
-                                var html = req.responseText;
-                                html = html.split("body>");
-
-                                if (html.length > 0) {
-
-                                    html = html[1].substring(0, html[1].length - 2);
-                                    html = html.trim();
-
-                                    $("#popup-combo").hide();
-                                    map.ol_object.lastClicked = evt.coordinate;
-                                    map.preparseGFI(html, "popup-info", "info-wrapper"); // PARA ACOMODAR RESPUESTA A ESTRUCTURA DE IEASA
-
-
-                                }
-
-                                $("#popup-combo").css("left", (pixel[0] - 112) + "px");
-                                $("#popup-combo").css("top", (pixel[1] - 85) + "px");
-                                $("#popup-combo").attr("data-xy", evt.coordinate);
-
-
-                            }
-
-                            //map.parseGFI(req.responseText,"popup-info","info-wrapper");
-
-                            scroll.refresh();
-
-                        }
-
-                        map.gfiAddedLayers.push(layer.layer_id);
-
-                    }
-
-                });
-
-            }
+            $("#popup").show();
 
         });
 
