@@ -1,18 +1,13 @@
 .roverlay-header {
-	
-	font-family: "Crossten Bold";
-	color: #FFFFFF;
-	background-color: #243469;
-	
+    font-family: "Crossten Bold";
+    color: #FFFFFF;
+    background-color: #243469;
 }
 
 .roverlay-body {
-	
-	min-height:200px;
-	padding:10px;
-	display:flex;
-	background-color: white;
-	font-family: "Crossten Bold";
-	color:#999999;
-	
+    min-height: 200px;
+    padding: 10px;
+    display: flex;
+    background-color: white;
+    color: #999999;
 }

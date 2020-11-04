@@ -48,3 +48,16 @@
     border: 2px solid #CCCCCC;
     padding: 20px;
 }
+
+#popup .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#popup .header .title {
+    font-size: 14px;
+    color: #464542;
+    margin: 5px 0 5px -7px;
+    font-weight: 700;
+}
