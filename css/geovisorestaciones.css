@@ -45,13 +45,7 @@
 }
 
 #popup {
-    padding: 20px;
-    width: 50%;
-    height: 80%;
     background: white;
     border: 2px solid #CCCCCC;
     padding: 20px;
-    position: fixed;
-    left: -25%;
-    top: -40%;
 }
