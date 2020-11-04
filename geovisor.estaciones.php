@@ -27,36 +27,42 @@
 
 		<div class="card">
 
-			<div class="pretty p-default p-round" style="font-size:20px;">
-				<input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.openstreets);">
+			<h3 class="card-title">RED HIDROAMBIENTAL</h3>
+
+			<div class="pretty p-icon p-curve" style="font-size:20px;">
+				<input type="checkbox" name="filtro-estacion-tipo-1" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.openstreets);">
 				<div class="state">
+					<i class="icon mdi mdi-check"></i>
 					<label>Estaciones hidrométricas</label>
 				</div>
 			</div>
 			
 			<br>
 		
-			<div class="pretty p-default p-round" style="font-size:20px;">
-				<input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.opentopo);">
+			<div class="pretty p-icon p-curve" style="font-size:20px;">
+				<input type="checkbox" name="filtro-estacion-tipo-2" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.opentopo);">
 				<div class="state">
+					<i class="icon mdi mdi-check"></i>
 					<label>Estaciones meteorológicas</label>
 				</div>
 			</div>
 			
 			<br>
 		
-			<div class="pretty p-default p-round" style="font-size:20px;">
-				<input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_roads);">
+			<div class="pretty p-icon p-curve" style="font-size:20px;">
+				<input type="checkbox" name="filtro-estacion-tipo-3" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_roads);">
 				<div class="state">
+					<i class="icon mdi mdi-check"></i>
 					<label>Estaciones hidrometeorológicas</label>
 				</div>
 			</div>
 			
 			<br>
 		
-			<div class="pretty p-default p-round" style="font-size:20px;">
-				<input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
+			<div class="pretty p-icon p-curve" style="font-size:20px;">
+				<input type="checkbox" name="filtro-estacion-tipo-4" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
 				<div class="state">
+					<i class="icon mdi mdi-check"></i>
 					<label>Estaciones hidroambientales</label>
 				</div>
 			</div>
@@ -67,63 +73,72 @@
 
 		<div class="card mt-30">
 
-			<div class="pretty p-default p-round" style="font-size:20px;">
-				<input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.openstreets);">
+			<h3 class="card-title">ESTACIONES POR ÁREA DE INTERÉS</h3>
+
+			<div class="pretty p-icon p-curve" style="font-size:20px;">
+				<input type="checkbox" name="filtro-estacion-area-1" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.openstreets);">
 				<div class="state">
+					<i class="icon mdi mdi-check"></i>
 					<label>Cuenca alta</label>
 				</div>
 			</div>
 			
 			<br>
 		
-			<div class="pretty p-default p-round" style="font-size:20px;">
-				<input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.opentopo);">
+			<div class="pretty p-icon p-curve" style="font-size:20px;">
+				<input type="checkbox" name="filtro-estacion-area-2" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.opentopo);">
 				<div class="state">
+					<i class="icon mdi mdi-check"></i>
 					<label>Cuenca media</label>
 				</div>
 			</div>
 			
 			<br>
 		
-			<div class="pretty p-default p-round" style="font-size:20px;">
-				<input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_roads);">
+			<div class="pretty p-icon p-curve" style="font-size:20px;">
+				<input type="checkbox" name="filtro-estacion-area-3" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_roads);">
 				<div class="state">
+					<i class="icon mdi mdi-check"></i>
 					<label>Estuario</label>
 				</div>
 			</div>
 			
 			<br>
 		
-			<div class="pretty p-default p-round" style="font-size:20px;">
-				<input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
+			<div class="pretty p-icon p-curve" style="font-size:20px;">
+				<input type="checkbox" name="filtro-estacion-area-4" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
 				<div class="state">
+					<i class="icon mdi mdi-check"></i>
 					<label>Presa Condor Cliff</label>
 				</div>
 			</div>
 			
 			<br>
 		
-			<div class="pretty p-default p-round" style="font-size:20px;">
-				<input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
+			<div class="pretty p-icon p-curve" style="font-size:20px;">
+				<input type="checkbox" name="filtro-estacion-area-5" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
 				<div class="state">
+					<i class="icon mdi mdi-check"></i>
 					<label>Presa La Barrancosa</label>
 				</div>
 			</div>
 			
 			<br>
 		
-			<div class="pretty p-default p-round" style="font-size:20px;">
-				<input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
+			<div class="pretty p-icon p-curve" style="font-size:20px;">
+				<input type="checkbox" name="filtro-estacion-area-6" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
 				<div class="state">
+					<i class="icon mdi mdi-check"></i>
 					<label>Embalse Condor Cliff</label>
 				</div>
 			</div>
 			
 			<br>
 		
-			<div class="pretty p-default p-round" style="font-size:20px;">
-				<input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
+			<div class="pretty p-icon p-curve" style="font-size:20px;">
+				<input type="checkbox" name="filtro-estacion-area-7" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
 				<div class="state">
+					<i class="icon mdi mdi-check"></i>
 					<label>Embalse La Barrancosa</label>
 				</div>
 			</div>
