@@ -65,15 +65,24 @@
     font-weight: 700;
 }
 
+#popup .nav-tabs li {
+    padding: 10px 20px !Important;
+    margin-left: 10px;
+}
+
+#popup .nav-tabs .li:first-child {
+    margin-left: 0px !Important;
+}
+
 #popup .nav-tabs .btn-tab {
     background-color: #343a40;
     color: #FFFFFF !Important;
     font-family: "Montserrat", sans-serif !Important;
     font-size: 12px !Important;
-    padding: 10px 20px !Important;
-    margin-left: 10px;
-}
-
-#popup .nav-tabs .btn-tab:first-child {
-    margin-left: 0px !Important;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
