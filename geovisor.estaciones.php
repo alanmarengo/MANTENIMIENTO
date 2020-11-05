@@ -196,7 +196,7 @@
 					<label>Hidroambientales</label>
 				</div>
 			</div>			
-			<div class="tab-content p30">
+			<div class="tab-content mt-20" id="popup-tab-content">
 				<div id="panel-ha-1" class="tab-pane fade in show">
 					<div class="row">
 						<div class="col col-md-6 col-lg-6 col-xs-12 col-sm-12">

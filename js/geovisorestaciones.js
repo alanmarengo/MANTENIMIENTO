@@ -57,8 +57,10 @@ function reCalcPopup() {
     let h2 = $("#popup-inner").children(".tabs").height();
     let h3 = $("#popup-inner").children(".categories").height();
 
-    console.log(h1);
-    console.log(h2);
-    console.log(h3);
+    let hp = $("#popup").height();
+
+    let nh = hp - (h1 + h2 + h3);
+
+    $("#popup-tab-content").css("height", nh + "px");
 
 }
