@@ -103,6 +103,8 @@
 
 #popup .categories {
     justify-content: space-between;
+    display: flex;
+    padding: 0 7px;
 }
 
 #popup .category {
@@ -114,4 +116,5 @@
     color: #8d3050;
     font-weight: 700;
     font-size: 12px;
+    margin: 0 0 0 3px;
 }
