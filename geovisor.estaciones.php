@@ -180,19 +180,19 @@
 			</div>
 			<div class="categories mt-10">
 				<div class="category">
-					<input type="radio" name="hidrometricas">
+					<input type="radio" name="categoria" checked="checked">
 					<label>Hidrométricas</label>
 				</div>
 				<div class="category">
-					<input type="radio" name="hidrometeorologicas">
+					<input type="radio" name="categoria">
 					<label>Hidrometeorológicas</label>
 				</div>
 				<div class="category">
-					<input type="radio" name="meteorologicas">
+					<input type="radio" name="categoria">
 					<label>Meteorológicas</label>
 				</div>
 				<div class="category">
-					<input type="radio" name="hidroambientales">
+					<input type="radio" name="categoria">
 					<label>Hidroambientales</label>
 				</div>
 			</div>			
