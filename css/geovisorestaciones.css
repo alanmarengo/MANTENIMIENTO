@@ -263,7 +263,7 @@
     border-bottom: none;
 }
 
-#panel-ha-4 .nav-tabs .btn-tab:first-child {
+#panel-ha-4 .nav-tabs li:first-child .btn-tab {
     -webkit-border-top-left-radius: 3px;
     -webkit-border-bottom-left-radius: 3px;
     -moz-border-radius-topleft: 3px;
@@ -276,7 +276,7 @@
     margin: 0 !important;
 }
 
-#panel-ha-4 .nav-tabs .btn-tab:last-child {
+#panel-ha-4 .nav-tabs li:last-child .btn-tab {
     -webkit-border-top-right-radius: 3px;
     -webkit-border-bottom-right-radius: 3px;
     -moz-border-radius-topright: 3px;
