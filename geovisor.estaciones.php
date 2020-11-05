@@ -264,7 +264,7 @@
 							<?php
 						}
 						?>
-						<div class="col col-md-2 col-lg-2 p10">
+						<div class="col col-md-2 col-lg-2 p5">
 							<div class="indicador">
 								<p class="title">Nivel del Agua</p>
 								<p class="value">1,73 (m)</p>
