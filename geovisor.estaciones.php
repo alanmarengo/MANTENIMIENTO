@@ -14,6 +14,7 @@
 	
 	<?php include("./scripts.default.php"); ?>
 	<?php include("./scripts.openlayers.php"); ?>	
+	<?php include("./scripts.highcharts.php"); ?>	
 	<?php include("./scripts.map.estaciones.php"); ?>
 	<?php include("./scripts.onresize.php"); ?>
 
