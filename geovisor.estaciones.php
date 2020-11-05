@@ -334,7 +334,7 @@
 				<div id="panel-ha-4" class="tab-pane fade in">
 
 					<ul class="nav nav-tabs type2">
-						<li class="active"><a class="btn-tab show" data-toggle="tab" id="tab-ha4-1" href="#panel-ha4-1" aria-expanded="true">VALORES MEDIOS MENSUALES</a></li>
+						<li class="active"><a class="btn-tab active show" data-toggle="tab" id="tab-ha4-1" href="#panel-ha4-1" aria-expanded="true">VALORES MEDIOS MENSUALES</a></li>
 						<li class="m0"><a class="btn-tab" data-toggle="tab" id="tab-ha4-2" href="#panel-ha4-2" aria-expanded="true">VALORES MEDIOS ANUALES</a></li>
 					</ul>
 					
