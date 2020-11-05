@@ -313,3 +313,15 @@
 #panel-ha-4 .nav-tabs .btn-tab.active {
     color: white !important;
 }
+
+.ico-list li {
+    display: flex;
+    align-items: center;
+}
+
+.ico-list li span {
+    margin-left: 10px;
+    font-size: 12px;
+    color: #343a40;
+    font-weight: 700;
+}

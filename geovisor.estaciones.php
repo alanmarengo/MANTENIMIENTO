@@ -340,7 +340,7 @@
 					
 					<div class="tab-content p20" id="popup-tab-content-ha4">
 						<div id="panel-ha4-1" class="tab-pane fade in active show">
-							<ul>
+							<ul class="ico-list">
 								<?php for($i=0; $i<8; $i++) { ?>
 								<li>
 									<img src="./images/panel-h4-ico.png">
@@ -350,7 +350,7 @@
 							</ul>
 						</div>
 						<div id="panel-ha4-2" class="tab-pane fade in">
-						<ul>
+							<ul class="ico-list">
 								<?php for($i=0; $i<8; $i++) { ?>
 								<li>
 									<img src="./images/panel-h4-ico.png">
