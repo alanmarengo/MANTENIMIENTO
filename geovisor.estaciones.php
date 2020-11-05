@@ -172,7 +172,7 @@
 			</div>
 			<div class="tabs mt-10">
 				<ul class="nav nav-tabs">
-					<li class="active"><a class="btn-tab" data-toggle="tab" id="tab-ha-1" href="#panel-ha-1" aria-expanded="true">Descripción</a></li>
+					<li class="active"><a class="btn-tab show" data-toggle="tab" id="tab-ha-1" href="#panel-ha-1" aria-expanded="true">Descripción</a></li>
 					<li><a class="btn-tab" data-toggle="tab" id="tab-ha-2" href="#panel-ha-2" aria-expanded="true">Registro Diario</a></li>
 					<li><a class="btn-tab" data-toggle="tab" id="tab-ha-3" href="#panel-ha-3" aria-expanded="true">Consultar Datos</a></li>
 					<li><a class="btn-tab" data-toggle="tab" id="tab-ha-4" href="#panel-ha-4" aria-expanded="true">Registro Mensual y Anual</a></li>
