@@ -200,7 +200,7 @@
 				<div id="panel-ha-1" class="tab-pane fade in show">
 					<div class="row">
 						<div class="col col-md-6 col-lg-6 col-xs-12 col-sm-12">
-							<p><img src="./imamges/sample.jpg" width="100%"></p>
+							<p><img src="./images/sample.jpg" width="100%"></p>
 							<p class="mt-20">
 								<a href="#" class="btn-1">Monografía de la Estación</a>
 							</p>
