@@ -47,6 +47,12 @@
 #popup {
     border: 2px solid #CCCCCC;
     padding: 20px;
+    height: 80%;
+    top: 50%;
+    margin-top: -40%;
+    width: 50%;
+    left: 50%;
+    margin-left: -25%;
 }
 
 #popup-inner {

@@ -162,7 +162,7 @@
 
 	</div>
 
-	<div id="popup" class="roverlay" data-col="6">
+	<div id="popup">
 		<div id="popup-inner">
 			<div class="header">
 				<span class="title">Estación de Monitoreo</span>
