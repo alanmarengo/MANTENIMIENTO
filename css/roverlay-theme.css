@@ -11,3 +11,7 @@
     background-color: white;
     color: #999999;
 }
+
+.roverlay-outer-closer {
+    display: none;
+}
