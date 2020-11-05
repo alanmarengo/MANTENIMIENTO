@@ -280,7 +280,31 @@
 					</div>
 				</div>
 				<div id="panel-ha-3" class="tab-pane fade in">
-
+					<div class="row">
+						<div class="col col-md-6 col-lg-6">
+							<div class="form-group">
+								<label>Parámetros</label>
+								<select>
+									<option value="1">Param 1</option>
+									<option value="2">Param 2</option>
+									<option value="3">Param 3</option>
+									<option value="4">Param 4</option>
+								</select>
+							</div>
+						</div>
+						<div class="col col-md-3 col-lg-3">
+							<div class="form-group">
+								<label>Desde</label>
+								<input type="text" class="datepicker">
+							</div>
+						</div>
+						<div class="col col-md-3 col-lg-3">
+							<div class="form-group">
+								<label>Hasta</label>
+								<input type="text" class="datepicker">
+							</div>
+						</div>
+					</div>
 				</div>
 				<div id="panel-ha-4" class="tab-pane fade in">
 
