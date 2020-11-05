@@ -61,8 +61,11 @@
 
 #popup-inner {
     width: 100%;
-    overflow-y: auto;
+}
+
+#popup-tab-content {
     overflow-x: hidden;
+    overflow-y: auto;
 }
 
 #popup .header {
