@@ -68,12 +68,6 @@
 
 #popup .nav-tabs li {
     margin-left: 10px;
-    -webkit-border-top-left-radius: 3px;
-    -webkit-border-top-right-radius: 3px;
-    -moz-border-radius-topleft: 3px;
-    -moz-border-radius-topright: 3px;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
 }
 
 #popup .nav-tabs li.active a {
@@ -90,11 +84,17 @@
     font-size: 12px !Important;
     text-transform: uppercase;
     font-weight: 400;
-    padding: 3px 20px !Important;
+    padding: 6px 20px !Important;
     background-color: #343a40;
     display: block;
     width: 100%;
     height: 100%;
+    -webkit-border-top-left-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-topright: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 }
 
 #popup .nav-tabs .btn-tab:hover {
