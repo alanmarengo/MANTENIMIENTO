@@ -290,7 +290,7 @@
     font-family: "Montserrat", sans-serif !Important;
     font-size: 12px !Important;
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 600;
     padding: 6px 20px !Important;
     background-color: #efefef;
     display: block;
@@ -305,5 +305,5 @@
 }
 
 #panel-ha-4 .nav-tabs .btn-tab.active {
-    color: white;
+    color: white !important;
 }
