@@ -263,7 +263,7 @@
     border-bottom: none;
 }
 
-#popup .nav-tabs.type2 li:first-child .tab {
+#panel-ha-4 .nav-tabs li:first-child .tab {
     -webkit-border-top-left-radius: 3px;
     -webkit-border-bottom-left-radius: 3px;
     -moz-border-radius-topleft: 3px;
@@ -272,11 +272,11 @@
     border-bottom-left-radius: 3px;
 }
 
-#popup .nav-tabs.type2 li:last-child {
+#panel-ha-4 .nav-tabs li:last-child {
     margin: 0 !important;
 }
 
-#popup .nav-tabs.type2 li:last-child .tab {
+#panel-ha-4 .nav-tabs li:last-child .tab {
     -webkit-border-top-right-radius: 3px;
     -webkit-border-bottom-right-radius: 3px;
     -moz-border-radius-topright: 3px;
