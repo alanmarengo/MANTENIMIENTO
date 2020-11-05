@@ -283,7 +283,7 @@
 					<div class="row">
 						<div class="col col-md-6 col-lg-6">
 							<div class="form-group">
-								<label>Parámetros</label>
+								<label>Parámetro:</label>
 								<select>
 									<option value="1">Param 1</option>
 									<option value="2">Param 2</option>
@@ -294,14 +294,16 @@
 						</div>
 						<div class="col col-md-3 col-lg-3">
 							<div class="form-group">
-								<label>Desde</label>
+								<label>Desde:</label>
 								<input type="text" class="datepicker">
+								<i class="fa fa-calendar-alt"></i>
 							</div>
 						</div>
 						<div class="col col-md-3 col-lg-3">
 							<div class="form-group">
-								<label>Hasta</label>
+								<label>Hasta:</label>
 								<input type="text" class="datepicker">
+								<i class="fa fa-calendar-alt"></i>
 							</div>
 						</div>
 					</div>
