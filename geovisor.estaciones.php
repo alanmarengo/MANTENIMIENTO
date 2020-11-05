@@ -255,7 +255,7 @@
 					</div>
 				</div>
 				<div id="panel-ha-2" class="tab-pane fade in">
-					<div class="row">
+					<div class="row mt-10">
 						<?php for($i=0; $i<12; $i++) { ?>
 						<?php 
 						if (($i!=0) && ($i%6==0)) {
