@@ -59,6 +59,12 @@
     justify-content: space-between;
 }
 
+#popup .header a {
+    font-size: 12px !Important;
+    color: #343a40;
+    font-weight: 600;
+}
+
 #popup .header .title {
     font-size: 14px;
     color: #343a40;
