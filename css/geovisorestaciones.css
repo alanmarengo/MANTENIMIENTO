@@ -178,13 +178,14 @@
 #popup .indicador .title {
     font-size: 10px;
     color: #8d3050;
-    font-weight: 600;
+    font-weight: 700;
+    margin-bottom: 7px;
 }
 
-#popup .indicador .valor {
+#popup .indicador .value {
     font-size: 16px;
     color: #343a40;
-    font-weight: 700;
+    font-weight: bold;
 }
 
 #popup .indicador .text-default {
