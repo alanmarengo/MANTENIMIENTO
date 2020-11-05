@@ -272,7 +272,7 @@
 								<p class="text-default">(med.) 1.99</p>
 								<p class="text-default">(max.) 2.32</p>
 								<p class="date"><img src="./images/indicador-ico.png"></p>
-								<p class="date">10/09/2020</p>
+								<p class="date mt-10">10/09/2020</p>
 								<p class="date">00:00hs.</p>
 							</div>
 						</div>
