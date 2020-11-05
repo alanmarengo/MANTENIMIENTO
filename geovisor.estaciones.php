@@ -323,7 +323,7 @@
 								<p class="value">1,73 (°C)</p>
 							</div>
 							<p class="mt-10">
-								<a href="#" class="btn-1">Descarga de la Serie de Datos</a>
+								<a href="#" class="btn-2">Descarga de la Serie de Datos</a>
 							</p>
 						</div>
 						<div class="col col-md-9 col-lg-9">

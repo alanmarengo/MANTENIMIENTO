@@ -152,6 +152,19 @@
     border-radius: 3px;
 }
 
+#popup .btn-2 {
+    color: #FFFFFF !Important;
+    font-family: "Montserrat", sans-serif !Important;
+    font-size: 10px !Important;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 10px 20px !Important;
+    background-color: #8d3050;
+    border-radius: 3px;
+    display: block;
+    text-align: center;
+}
+
 #popup .btn-1:hover {
     opacity: 0.7;
 }
