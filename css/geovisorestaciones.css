@@ -317,6 +317,7 @@
 .ico-list li {
     display: flex;
     align-items: center;
+    border-bottom: 1px solid #efefef;
 }
 
 .ico-list li span {
