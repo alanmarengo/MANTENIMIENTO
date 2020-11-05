@@ -49,8 +49,11 @@ $(document).ready(function() {
     $(".roverlay").each(function(i, v) { $(v).Roverlay(); });
     $("#tab-ha-1").trigger("click");
 
+});
+
+function reCalcPopup() {
+
     let height = $("#popup").children(".header").height() + $("#popup").children(".tabs").height() + $("#popup").children(".categories").height();
 
     alert(height);
-
-});
+}

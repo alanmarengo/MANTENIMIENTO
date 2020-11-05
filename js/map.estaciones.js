@@ -171,6 +171,7 @@ function ol_map() {
         this.ol_object.on("click", function(evt) {
 
             $("#popup").show();
+            reCalcPopup();
 
         });
 
