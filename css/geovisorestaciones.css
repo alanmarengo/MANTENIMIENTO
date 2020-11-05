@@ -236,3 +236,11 @@
     z-index: 99999;
     right: 15px;
 }
+
+#popup .indicador.mini {
+    align-items: center;
+}
+
+#popup .indicador.mini .value {
+    margin: 0;
+}
