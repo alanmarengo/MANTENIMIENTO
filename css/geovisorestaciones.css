@@ -297,8 +297,6 @@
     border-bottom-left-radius: 0px;
 }
 
-
-}
 #panel-ha-4 .nav-tabs .btn-tab {
     color: #343a40 !Important;
     font-family: "Montserrat", sans-serif !Important;
@@ -311,6 +309,7 @@
     width: 100%;
     height: 100%;
 }
+
 #panel-ha-4 .nav-tabs .btn-tab.active {
     color: white !important;
 }
