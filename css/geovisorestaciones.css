@@ -303,3 +303,7 @@
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
 }
+
+#panel-ha-4 .nav-tabs .btn-tab.active {
+    color: white;
+}
