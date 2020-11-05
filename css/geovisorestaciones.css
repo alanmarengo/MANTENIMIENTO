@@ -173,6 +173,7 @@
     padding: 20px;
     border-radius: 3px;
     display: inline-flex;
+    flex-direction: column;
 }
 
 #popup .indicador .title {
