@@ -257,7 +257,14 @@
 				<div id="panel-ha-2" class="tab-pane fade in">
 					<div class="row">
 						<?php for($i=0; $i<12; $i++) { ?>
-						<div class="col col-md-2 col-lg-2">
+						<?php 
+						if (($i!=0) && ($i%6==0)) {
+							?>
+							</div><div class="row">
+							<?php
+						}
+						?>
+						<div class="col col-md-2 col-lg-2 p0">
 							<div class="indicador">
 								<p class="title">Nivel del Agua</p>
 								<p class="value">1,73 (m)</p>
@@ -269,13 +276,6 @@
 								<p class="date">00:00hs.</p>
 							</div>
 						</div>
-						<?php 
-						if (($i!=0) && ($i%6==0)) {
-							?>
-							</div><div class="row">
-							<?php
-						}
-						?>
 						<?php } ?>
 					</div>
 				</div>
