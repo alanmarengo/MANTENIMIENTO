@@ -208,6 +208,50 @@
 								<a href="#" class="btn-1">Descarga de la Serie de Datos Completa</a>
 							</p>
 						</div>
+						<div class="col col-md-6 col-lg-6 col-xs-12 col-sm-12">
+							<p>
+								<span class="popup-label">Coordenadas:</span>
+								<span class="popup-value">LAT: -50.295556 LONG: -72.305092</span>
+							</p>
+							<p>
+								<span class="popup-label">Nombre:</span>
+								<span class="popup-value">Lago Argentino Boya</span>
+							</p>
+							<p>
+								<span class="popup-label">Localización:</span>
+								<span class="popup-value">En el Lago Argentino frente al Calafate</span>
+							</p>
+							<p>
+								<span class="popup-label">ID:</span>
+								<span class="popup-value">XX</span>
+							</p>
+							<p>
+								<span class="popup-label">Parámetros:</span>
+								<ul>
+									<li>Clorofila</li>
+									<li>Oxígeno disuelto</li>
+									<li>Conductividad</li>
+									<li>Material en suspensión</li>
+									<li>Altura de olas</li>
+									<li>Período de olas</li>
+									<li>Temperatura del agua</li>
+									<li>Temperatura del aire</li>
+									<li>Velocidad del viento</li>
+								</ul>
+							</p>
+							<p>
+								<span class="popup-label">Inicio de Operación:</span>
+								<span class="popup-value">Instalada no activa</span>
+							</p>
+							<p>
+								<span class="popup-label">Objetivo:</span>
+								<span class="popup-value">Monitoreo de parámetros de calidad del agua del lago. Inicio del sistema del RSC.</span>
+							</p>
+							<p>
+								<span class="popup-label">Proveedor:</span>
+								<span class="popup-value">Iado</span>
+							</p>
+						</div>
 					</div>
 				</div>
 				<div id="panel-ha-2" class="tab-pane fade in">
