@@ -339,7 +339,7 @@
 					</ul>
 					
 					<div class="tab-content mt-20" id="popup-tab-content-ha4">
-						<div id="panel-ha4-1" class="tab-pane fade in show">
+						<div id="panel-ha4-1" class="tab-pane fade in active show">
 							valores mensuales
 						</div>
 						<div id="panel-ha4-2" class="tab-pane fade in">
