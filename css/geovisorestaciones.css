@@ -175,7 +175,7 @@
     display: inline-flex;
     flex-direction: column;
     margin: 5px;
-    width: 16%;
+    width: 100%;
 }
 
 #popup .indicador .title {

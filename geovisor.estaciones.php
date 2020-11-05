@@ -255,18 +255,29 @@
 					</div>
 				</div>
 				<div id="panel-ha-2" class="tab-pane fade in">
-					<?php for($i=0; $i<12; $i++) { ?>
-					<div class="indicador">
-						<p class="title">Nivel del Agua</p>
-						<p class="value">1,73 (m)</p>
-						<p class="text-default">(min.) 1.66</p>
-						<p class="text-default">(med.) 1.99</p>
-						<p class="text-default">(max.) 2.32</p>
-						<p class="date"><img src="./images/indicador-ico.png"></p>
-						<p class="date">10/09/2020</p>
-						<p class="date">00:00hs.</p>
+					<div class="row">
+						<?php for($i=0; $i<12; $i++) { ?>
+						<div class="col col-md-2 col-lg-2">
+							<div class="indicador">
+								<p class="title">Nivel del Agua</p>
+								<p class="value">1,73 (m)</p>
+								<p class="text-default">(min.) 1.66</p>
+								<p class="text-default">(med.) 1.99</p>
+								<p class="text-default">(max.) 2.32</p>
+								<p class="date"><img src="./images/indicador-ico.png"></p>
+								<p class="date">10/09/2020</p>
+								<p class="date">00:00hs.</p>
+							</div>
+						</div>
+						<?php 
+						if (($i!=0) && ($i%6==0)) {
+							?>
+							</div><div class="row">
+							<?php
+						}
+						?>
+						<?php } ?>
 					</div>
-					<?php } ?>
 				</div>
 				<div id="panel-ha-3" class="tab-pane fade in">
 
