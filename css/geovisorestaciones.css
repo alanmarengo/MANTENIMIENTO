@@ -137,11 +137,13 @@
 }
 
 #popup .popup-label {
-    font-size: 10px !Important;
+    font-size: 12px !Important;
     color: #8d3050;
+    font-weight: 600;
 }
 
 #popup .popup-value {
-    font-size: 10px !Important;
+    font-size: 12px !Important;
     color: #343a40;
+    font-weight: 600;
 }
