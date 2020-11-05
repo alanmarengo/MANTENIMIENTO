@@ -259,6 +259,10 @@
     margin: 0;
 }
 
+#popup .nav-tabs.type2 {
+    border-bottom: none;
+}
+
 #popup .nav-tabs.type2 li .tab {
     margin: 0;
 }
