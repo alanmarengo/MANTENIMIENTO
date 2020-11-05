@@ -197,10 +197,28 @@
 				</div>
 			</div>			
 			<div class="tab-content p30">
-				<div id="panel-ha-1" class="tab-pane fade in show">1</div>
-				<div id="panel-ha-2" class="tab-pane fade in">2</div>
-				<div id="panel-ha-3" class="tab-pane fade in">3</div>
-				<div id="panel-ha-4" class="tab-pane fade in">4</div>				
+				<div id="panel-ha-1" class="tab-pane fade in show">
+					<div class="row">
+						<div class="col col-md-6 col-lg-6 col-xs-12 col-sm-12">
+							<img src="./imamges/sample.jpg" width="100%">
+							<p>
+								<a href="#" class="btn-1">Monografía de la Estación</a>
+							</p>
+							<p>
+								<a href="#" class="btn-1">Monografía de la Estación</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div id="panel-ha-2" class="tab-pane fade in">
+
+				</div>
+				<div id="panel-ha-3" class="tab-pane fade in">
+
+				</div>
+				<div id="panel-ha-4" class="tab-pane fade in">
+
+				</div>				
 			</div>
 		</div>
 	</div>

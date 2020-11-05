@@ -117,4 +117,21 @@
     font-weight: 700;
     font-size: 12px;
     margin: 0 0 0 3px;
+    text-transform: uppercase;
+}
+
+#popup .btn-1 {
+    color: #FFFFFF !Important;
+    font-family: "Montserrat", sans-serif !Important;
+    font-size: 12px !Important;
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 6px 20px !Important;
+    background-color: #8d3050;
+    -webkit-border-top-left-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-topright: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 }
