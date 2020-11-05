@@ -152,6 +152,10 @@
     border-radius: 3px;
 }
 
+#popup .btn-1:hover {
+    opacity: 0.7;
+}
+
 #popup .popup-label {
     font-size: 12px !Important;
     color: #8d3050;
