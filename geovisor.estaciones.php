@@ -338,12 +338,26 @@
 						<li class="m0"><a class="btn-tab" data-toggle="tab" id="tab-ha4-2" href="#panel-ha4-2" aria-expanded="true">VALORES MEDIOS ANUALES</a></li>
 					</ul>
 					
-					<div class="tab-content mt-20" id="popup-tab-content-ha4">
+					<div class="tab-content p20" id="popup-tab-content-ha4">
 						<div id="panel-ha4-1" class="tab-pane fade in active show">
-							valores mensuales
+							<ul>
+								<?php for($i=0; $i<8; $i++) ?>
+								<li>
+									<img src="./images/panel-h4-ico.png">
+									<span>MENSUAL ITEM: Lorem ipsum is simply dummy text of the printing any typesetting industry</span>
+								</li>
+								<?php } ?>
+							</ul>
 						</div>
 						<div id="panel-ha4-2" class="tab-pane fade in">
-							valores anuales
+						<ul>
+								<?php for($i=0; $i<8; $i++) ?>
+								<li>
+									<img src="./images/panel-h4-ico.png">
+									<span>ANUAL ITEM: Lorem ipsum is simply dummy text of the printing any typesetting industry</span>
+								</li>
+								<?php } ?>
+							</ul>
 						</div>
 					</div>
 
