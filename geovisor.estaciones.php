@@ -313,15 +313,15 @@
 								<p class="title"VALOR MÍNIMO</p>
 								<p class="value">1,73 (m)</p>
 							</div>
-							<div class="indicador">
+							<div class="indicador mt-10">
 								<p class="title"VALOR MÁXIMO</p>
 								<p class="value">1,73 (m)</p>
 							</div>
-							<div class="indicador">
+							<div class="indicador mt-10">
 								<p class="title"PROMEDIO</p>
 								<p class="value">1,73 (m)</p>
 							</div>
-							<p>
+							<p class="mt-10">
 								<a href="#" class="btn-1">Descarga de la Serie de Datos</a>
 							</p>
 						</div>
