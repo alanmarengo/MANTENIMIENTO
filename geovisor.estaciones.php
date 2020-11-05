@@ -335,7 +335,7 @@
 
 					<ul class="nav nav-tabs type2">
 						<li class="active"><a class="btn-tab show" data-toggle="tab" id="tab-ha-1" href="#panel-ha-1" aria-expanded="true">VALORES MEDIOS MENSUALES</a></li>
-						<li><a class="btn-tab" data-toggle="tab" id="tab-ha-2" href="#panel-ha-2" aria-expanded="true">VALORES MEDIOS ANUALES</a></li>
+						<li class="m0"><a class="btn-tab" data-toggle="tab" id="tab-ha-2" href="#panel-ha-2" aria-expanded="true">VALORES MEDIOS ANUALES</a></li>
 					</ul>
 
 				</div>				
