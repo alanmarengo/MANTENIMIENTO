@@ -263,6 +263,21 @@
     border-bottom: none;
 }
 
-#popup .nav-tabs.type2 li .tab {
-    margin: 0;
+#popup .nav-tabs.type2 li .tab:first-child {
+    -webkit-border-top-left-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+#popup .nav-tabs.type2 li .tab:last-child {
+    margin: 0 !important;
+    -webkit-border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
