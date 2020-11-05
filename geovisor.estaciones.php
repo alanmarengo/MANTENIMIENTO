@@ -341,7 +341,7 @@
 					<div class="tab-content p20" id="popup-tab-content-ha4">
 						<div id="panel-ha4-1" class="tab-pane fade in active show">
 							<ul>
-								<?php for($i=0; $i<8; $i++) ?>
+								<?php for($i=0; $i<8; $i++) { ?>
 								<li>
 									<img src="./images/panel-h4-ico.png">
 									<span>MENSUAL ITEM: Lorem ipsum is simply dummy text of the printing any typesetting industry</span>
@@ -351,7 +351,7 @@
 						</div>
 						<div id="panel-ha4-2" class="tab-pane fade in">
 						<ul>
-								<?php for($i=0; $i<8; $i++) ?>
+								<?php for($i=0; $i<8; $i++) { ?>
 								<li>
 									<img src="./images/panel-h4-ico.png">
 									<span>ANUAL ITEM: Lorem ipsum is simply dummy text of the printing any typesetting industry</span>
