@@ -184,6 +184,24 @@
 					<div id="panel-ha-4" class="tab-pane fade in">4</div>				
 				</div>
 			</div>
+			<div class="categories">
+				<div class="category">
+					<input type="radio" name="hidrometricas">
+					<label>Hidrométricas</label>
+				</div>
+				<div class="category">
+					<input type="radio" name="hidrometeorologicas">
+					<label>Hidrometeorológicas</label>
+				</div>
+				<div class="category">
+					<input type="radio" name="meteorologicas">
+					<label>Meteorológicas</label>
+				</div>
+				<div class="category">
+					<input type="radio" name="hidroambientales">
+					<label>Hidroambientales</label>
+				</div>
+			</div>
 		</div>
 	</div>
 
