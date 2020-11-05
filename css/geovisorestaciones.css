@@ -258,3 +258,7 @@
 #popup .indicador.mini .value {
     margin: 0;
 }
+
+#popup .nav-tabs.type2 .tab {
+    margin: 0;
+}
