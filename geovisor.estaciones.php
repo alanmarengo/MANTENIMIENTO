@@ -227,7 +227,7 @@
 							</p>
 							<p>
 								<span class="popup-label">Parámetros:</span>
-								<ul>
+								<ul class="popup-value">
 									<li>Clorofila</li>
 									<li>Oxígeno disuelto</li>
 									<li>Conductividad</li>
