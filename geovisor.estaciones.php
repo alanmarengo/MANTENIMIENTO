@@ -170,7 +170,7 @@
 					<i class="fa fa-times"></i>
 				</a>
 			</div>
-			<div class="tabs mt-20">
+			<div class="tabs mt-10">
 				<ul class="nav nav-tabs">
 					<li class="active"><a class="btn-tab" data-toggle="tab" id="tab-ha-1" href="#panel-ha-1" aria-expanded="true">Descripción</a></li>
 					<li><a class="btn-tab" data-toggle="tab" id="tab-ha-2" href="#panel-ha-2" aria-expanded="true">Registro Diario</a></li>
