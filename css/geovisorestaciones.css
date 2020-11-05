@@ -165,7 +165,8 @@
     text-align: center;
 }
 
-#popup .btn-1:hover {
+#popup .btn-1:hover,
+#popup .btn-2:hover {
     opacity: 0.7;
 }
 
