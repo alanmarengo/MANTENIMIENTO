@@ -308,7 +308,7 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col col-md-3 col-lg-3">
+						<div class="col col-md-3 col-lg-3 mt-10">
 							<div class="indicador mini text-center">
 								<p class="title">VALOR MÍNIMO</p>
 								<p class="value">1,73 (°C)</p>
@@ -326,7 +326,7 @@
 							</p>
 						</div>
 						<div class="col col-md-9 col-lg-9">
-
+							<div id="chart-sample-1"></div>
 						</div>
 					</div>
 				</div>
