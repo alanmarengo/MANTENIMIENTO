@@ -78,6 +78,10 @@
     background-color: #343a40;
 }
 
+#popup .nav-tabs li.active {
+    background-color: #8d3050;
+}
+
 #popup .nav-tabs .li:first-child {
     margin-left: 0px !Important;
 }
@@ -88,4 +92,8 @@
     font-size: 12px !Important;
     text-transform: uppercase;
     font-weight: 400;
+}
+
+#popup .nav-tabs .btn-tab:hover {
+    opacity: 0.7;
 }
