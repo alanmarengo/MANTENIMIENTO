@@ -48,4 +48,6 @@ $(document).ready(function() {
 
     $(".roverlay").each(function(i, v) { $(v).Roverlay(); });
 
+    $("#popup-inner").css("height", $("#popup").children(".roverlay-inner").height() + "px");
+
 });
