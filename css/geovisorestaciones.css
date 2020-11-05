@@ -46,6 +46,7 @@
 
 #popup {
     border: 2px solid #CCCCCC;
+    background: white;
     padding: 20px;
     height: 80%;
     top: 50%;
