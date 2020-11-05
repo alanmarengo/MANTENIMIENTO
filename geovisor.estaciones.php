@@ -307,6 +307,28 @@
 							</div>
 						</div>
 					</div>
+					<div class="row">
+						<div class="col col-md-3 col-lg-3">
+							<div class="indicador">
+								<p class="title"VALOR MÍNIMO</p>
+								<p class="value">1,73 (m)</p>
+							</div>
+							<div class="indicador">
+								<p class="title"VALOR MÁXIMO</p>
+								<p class="value">1,73 (m)</p>
+							</div>
+							<div class="indicador">
+								<p class="title"PROMEDIO</p>
+								<p class="value">1,73 (m)</p>
+							</div>
+							<p>
+								<a href="#" class="btn-1">Descarga de la Serie de Datos</a>
+							</p>
+						</div>
+						<div class="col col-md-9 col-lg-9">
+
+						</div>
+					</div>
 				</div>
 				<div id="panel-ha-4" class="tab-pane fade in">
 
