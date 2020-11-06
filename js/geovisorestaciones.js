@@ -46,4 +46,79 @@ $(document).ready(function() {
 
     scroll.refresh();
 
+    $(".roverlay").each(function(i, v) { $(v).Roverlay(); });
+    $("#tab-ha-1").trigger("click");
+
+
+
+    Highcharts.chart('chart-sample-1', {
+
+        chart: {
+            type: 'column'
+        },
+
+        title: {
+            text: 'Total fruit consumption, grouped by gender'
+        },
+
+        xAxis: {
+            categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+        },
+
+        yAxis: {
+            allowDecimals: false,
+            min: 0,
+            title: {
+                text: 'Number of fruits'
+            }
+        },
+
+        tooltip: {
+            formatter: function() {
+                return '<b>' + this.x + '</b><br/>' +
+                    this.series.name + ': ' + this.y + '<br/>' +
+                    'Total: ' + this.point.stackTotal;
+            }
+        },
+
+        plotOptions: {
+            column: {
+                stacking: 'normal'
+            }
+        },
+
+        series: [{
+            name: 'John',
+            data: [5, 3, 4, 7, 2],
+            stack: 'male'
+        }, {
+            name: 'Joe',
+            data: [3, 4, 4, 2, 5],
+            stack: 'male'
+        }, {
+            name: 'Jane',
+            data: [2, 5, 6, 2, 1],
+            stack: 'female'
+        }, {
+            name: 'Janet',
+            data: [3, 0, 4, 4, 3],
+            stack: 'female'
+        }]
+    });
+
+
 });
+
+function reCalcPopup() {
+
+    let h1 = $("#popup-inner").children(".header").height();
+    let h2 = $("#popup-inner").children(".tabs").height();
+    let h3 = $("#popup-inner").children(".categories").height();
+
+    let hp = $("#popup").height();
+
+    let nh = hp - (h1 + h2 + h3 + 40 /*margin*/ );
+
+    $("#popup-tab-content").css("height", nh + "px");
+
+}
