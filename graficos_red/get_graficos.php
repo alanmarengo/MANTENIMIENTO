@@ -75,7 +75,7 @@ function get_estacion_parametro_grafico_30_dias($estacion_id,$categoria_parametr
 	$serie_max	.= ']';
 	$serie_med	.= ']';
 	
-	preg_match('/\([\x{00B0}a-zA-Z0-9]{1,}\)/',$parametro_nombre, $parametro_unidad);
+	preg_match('/\([a-zA-Z0-9°º]{1,}\)/',$parametro_nombre, $parametro_unidad);
 		
 	$parametro_unidad = $parametro_unidad[0];
 	
