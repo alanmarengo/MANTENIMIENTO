@@ -88,7 +88,7 @@ function get_estacion_parametro_grafico_30_dias($estacion_id,$categoria_parametr
 		Highcharts.chart('container', 
 		{
 
-		title: { text: '$parametro_nombre - Datos de los ultimos 30 dias' },
+		title: { text: '$parametro_nombre - Datos de los últimos 30 días' },
 		legend: { itemDistance: 50 },
 		yAxis: {
 				title: {
