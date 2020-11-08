@@ -1,33 +1,52 @@
 
-function nuevo_mapa()
+function abrir_en_geobi()
 {
-	document.getElementById("mapa_id_current").innerHTML = "<span>Sin Mapa Seleccionado</span>";
-	document.getElementById("mapa_id_current").mapa_id = -1;/* -1 = nueva capa */
-	//document.getElementById("layer_abm_preview").src='./images/no_map.png';
-			
-	document.getElementById("mapa_id").value='';
-	document.getElementById("mapa_nombre").value='';
-	document.getElementById("mapa_desc").value='';
-	document.getElementById("mapa_fecha").value='';
-	document.getElementById("mapa_fuente").value='';
-	document.getElementById("extent").value='';
-	
-	document.getElementById("tab-link-mapa").click();
+	var url = window.location.origin+'/geovisor.php?source=1&id='+document.getElementById("current_capa_id").layer_id;
+	window.open(url,'_blank');
 };
 
-function borrar_mapa()
+function cargar_preview()
 {
-	if(confirm('Esta seguro desea eliminar el mapa?'))
+	var url = window.location.origin+'/mediateca_preview.php?origen_id=0&r='+document.getElementById("current_capa_id").layer_id;
+	document.getElementById("preview_id").src=url;
+};
+
+
+function nueva_capa()
+{
+			document.getElementById("layer_id").value='';
+			document.getElementById("layer_desc").value='';
+			document.getElementById("layer_wms_server").value='';
+			document.getElementById("layer_wms_layer").value='';
+			document.getElementById("layer_wms_server_alter").value='';
+			document.getElementById("layer_wms_layer_alter").value=''; 
+			document.getElementById("layer_alter_activo").value=''; 	
+			document.getElementById("layer_metadata_url").value=''; 	
+			document.getElementById("layer_schema").value=''; 			
+			document.getElementById("layer_table").value=''; 			
+			document.getElementById("tipo_layer_id").value=''; 		
+			document.getElementById("preview_desc").value=''; 			
+			document.getElementById("preview_titulo").value='';
+	
+			document.getElementById("current_capa_id").innerHTML = "<span>Sin Capa Seleccionada</span>";
+			document.getElementById("current_capa_id").layer_id = -1;/* -1 = nueva capa */
+		
+			document.getElementById("tab-link-b").click();
+};
+
+function borrar_capa()
+{
+	if(confirm('Esta seguro desea eliminar la capa?'))
 	{
 		
 	var retorno = $.ajax
 				({
-					url: "../php/abm-mapas.php",
+					url: "./abm-layers.php",
 					async:false,
 					data:
 					{
-								mode:9,
-								mapa_id:document.getElementById("mapa_id_current").mapa_id
+								mode:2,
+								layer_id:document.getElementById("current_capa_id").layer_id
 					},
 					dataType: "json"
 				});
@@ -37,7 +56,7 @@ function borrar_mapa()
 	if(s.status_code=="0")
 	{
 		//alert('Se guardo el registro correctamente');
-		nuevo_mapa();
+		nueva_capa();
 		
 		return true;
 	}
@@ -51,153 +70,29 @@ function borrar_mapa()
 
 };
 
-
-function borrar_capa_mapa(mapa_id,layer_id)
-{
-	if(confirm('Esta seguro de quitar la Capa?'))
-	{
-		
-	var retorno = $.ajax
-				({
-					url: "../php/abm-mapas.php",
-					async:false,
-					data:
-					{
-								mode:8,
-								mapa_id:mapa_id,
-								layer_id:layer_id
-					},
-					dataType: "json"
-				});
-	
-	s = JSON.parse(retorno.responseText); /* status */
-	
-	if(s.status_code=="0")
-	{
-		//alert('Se guardo el registro correctamente');
-		
-		return true;
-	}
-	else
-	{
-		alert('No se pudo guardar el registro. Mensaje:'+s.error_desc);
-		return false;
-	};
-	
-	}return false;
-
-};
-
-function nuevo_capa_mapa(mapa_id,layer_id,orden)
-{
-	var retorno = $.ajax
-				({
-					url: "../php/abm-mapas.php",
-					async:false,
-					data:
-					{
-								mode:7,
-								mapa_id:mapa_id,
-								layer_id:layer_id,
-								orden:orden
-					},
-					dataType: "json"
-				});
-	
-	s = JSON.parse(retorno.responseText); /* status */
-	
-	if(s.status_code=="0")
-	{
-		alert('Se guardo el registro correctamente');
-		
-		return true;
-	}
-	else
-	{
-		alert('No se pudo guardar el registro. Mensaje:'+s.error_desc);
-		return false;
-	};
-
-};
-
-function nuevo_subtema_mapa(mapa_id,subtema_id)
-{
-	var retorno = $.ajax
-				({
-					url: "../php/abm-mapas.php",
-					async:false,
-					data:
-					{
-								mode:4,
-								mapa_id:mapa_id,
-								subtema_id:subtema_id
-					},
-					dataType: "json"
-				});
-	
-	s = JSON.parse(retorno.responseText); /* status */
-	
-	if(s.status_code=="0")
-	{
-		alert('Se guardo el registro correctamente');
-		
-		return true;
-	}
-	else
-	{
-		alert('No se pudo guardar el registro. Mensaje:'+s.error_desc);
-		return false;
-	};
-
-};
-
-function borrar_subtema_mapa(mapa_id,subtema_id)
-{
-	var retorno = $.ajax
-				({
-					url: "../php/abm-mapas.php",
-					async:false,
-					data:
-					{
-								mode:3,
-								mapa_id:mapa_id,
-								subtema_id:subtema_id
-					},
-					dataType: "json"
-				});
-	
-	s = JSON.parse(retorno.responseText); /* status */
-	
-	if(s.status_code=="0")
-	{
-		alert('Se guardo el registro correctamente');
-		
-		return true;
-	}
-	else
-	{
-		alert('No se pudo guardar el registro. Mensaje:'+s.error_desc);
-		return false;
-	};
-
-};
-
-function guardar_mapa()
+function guardar_capa()
 {
 	
 	var retorno = $.ajax
 				({
-					url: "../php/abm-mapas.php",
+					url: "./abm-layers.php",
 					async:false,
 					data:
 					{
 								mode:1,
-								mapa_id:document.getElementById("mapa_id_current").mapa_id,
-								mapa_nombre:document.getElementById("mapa_nombre").value,
-								mapa_desc:document.getElementById("mapa_desc").value,
-								mapa_fecha:document.getElementById("mapa_fecha").value,
-								mapa_fuente:document.getElementById("mapa_fuente").value,
-								extent:document.getElementById("extent").value
+								layer_id:document.getElementById("current_capa_id").layer_id,
+								layer_desc:document.getElementById("layer_desc").value,
+								layer_wms_server:document.getElementById("layer_wms_server").value,
+								layer_wms_layer:document.getElementById("layer_wms_layer").value,
+								layer_wms_server_alter:document.getElementById("layer_wms_server_alter").value,
+								layer_wms_layer_alter:document.getElementById("layer_wms_layer_alter").value,
+								layer_alter_activo:document.getElementById("layer_alter_activo").value,	
+								layer_metadata_url:document.getElementById("layer_metadata_url").value,	
+								layer_schema:document.getElementById("layer_schema").value,		
+								layer_table:document.getElementById("layer_table").value,			
+								tipo_layer_id:document.getElementById("tipo_layer_id").value,		
+								preview_desc:document.getElementById("preview_desc").value, 			
+								preview_titulo:document.getElementById("preview_titulo").value
 								
 					},
 					dataType: "json"
@@ -211,9 +106,11 @@ function guardar_mapa()
 	{
 		alert('Se guardaron correctamente los datos');
 		
-		document.getElementById("mapa_id").value=s.mapa_id;
-		document.getElementById("mapa_id_current").mapa_id=s.mapa_id;
-		document.getElementById("mapa_id_current").innerHTML = "<span>Capa Actual: " + document.getElementById("mapa_nombre").value +"("+s.mapa_id+")</span>";
+		document.getElementById("layer_id").value=s.layer_id;
+		document.getElementById("current_capa_id").layer_id=s.layer_id;
+		document.getElementById("current_capa_id").innerHTML = "<span>Capa Actual: " + document.getElementById("layer_desc").value +"("+s.layer_id+")</span>";
+		
+		cargar_preview();
 		
 		return true;
 	}
@@ -256,16 +153,12 @@ function()
 			document.getElementById("preview_desc").value=args.item.preview_desc; 			
 			document.getElementById("preview_titulo").value=args.item.preview_titulo;
 			
+			document.getElementById("current_capa_id").layer_id=args.item.layer_id;
+			document.getElementById("current_capa_id").innerHTML = "<span>Capa Actual: " + args.item.layer_desc +"("+args.item.layer_id+")</span>";
 					
+			cargar_preview();
+			
 			document.getElementById("tab-link-b").click();
-			
-			//$("#grid-mapa-subtemas").jsGrid('loadData');
-			//$("#grid-capa-mapa").jsGrid('loadData');
-			
-			//$("#grid-capa-subtemas").jsGrid('loadData');
-			//$("#grid-datos-capa").jsGrid('loadData');
-		
-        
         },
 		controller: 
 		{
@@ -307,189 +200,6 @@ function()
 			{name: "preview_titulo", 		width: 800}
 		]
 		});
-		
-		/************* GRILLA SUBTEMAS ****************/
-		
-		$("#grid-subtemas").jsGrid({
-		width: "100%",
-		height: "auto",
-		autoload:   true,
-		paging:     true,
-		pageSize:   5,
-		pageButtonCount: 5,
-		pageIndex:  1,
-		rowClick: function(args) 
-		{
-			mapa_id = document.getElementById("mapa_id_current").mapa_id;
-		
-			nuevo_subtema_mapa(mapa_id,args.item.subtema_id);
-			
-			$("#grid-mapa-subtemas").jsGrid('loadData');
-        },
-		controller: 
-		{
-			loadData: function(filter) 
-			{
-				var b = document.getElementById('subtemasBusqueda').value;
-				
-				return $.ajax
-				({
-					url: "./php/abm-layers.php",/* REUTILIZAMOS LOS DATOS */
-					data:
-					{
-								mode:4,
-								s:b
-					},
-					dataType: "json"
-				});
-			}
-		},
-		fields: 
-		[
-			{name: "subtema_id", type: "number",width: 60},
-			{name: "subtema_titulo", width: 200}
-		]
-		});
-       
-		
-		/************* GRILLA SUBTEMAS DE LA MAPA ****************/
-		
-		$("#grid-mapa-subtemas").jsGrid({
-		width: "100%",
-		height: "auto",
-		autoload:   true,
-		paging:     true,
-		pageSize:   5,
-		pageButtonCount: 5,
-		pageIndex:  1,
-		rowClick: function(args) 
-		{
-			borrar_subtema_mapa(args.item.mapa_id,args.item.subtema_id);
-			$("#grid-mapa-subtemas").jsGrid('loadData');
-        },
-		controller: 
-		{
-			loadData: function(filter) 
-			{
-				mapa_id = document.getElementById("mapa_id_current").mapa_id;
-				
-				console.log('mapa_id: '+mapa_id);
-				
-				return $.ajax
-				({
-					url: "./php/abm-mapas.php",
-					data:
-					{
-								mode:2,
-								mapa_id:mapa_id
-					},
-					dataType: "json"
-				});
-			}
-		},
-		fields: 
-		[
-			{name: "mapa_id", type: "number",width: 60},
-			{name: "subtema_id", type: "number",width: 60},
-			{name: "subtema_titulo", width: 200}
-		]
-		});
-		
-		/************* GRILLA CAPAS ****************/
-		
-		$("#grid-capas").jsGrid({
-		width: "100%",
-		height: "auto",
-		autoload:   true,
-		paging:     true,
-		pageSize:   5,
-		pageButtonCount: 5,
-		pageIndex:  1,
-		rowClick: function(args) 
-		{
-			mapa_id = document.getElementById("mapa_id_current").mapa_id;
-			orden = document.getElementById("orden").value;
-			
-			if(orden!='')
-			{
-				
-				nuevo_capa_mapa(mapa_id,args.item.layer_id,orden);
-				
-				$("#grid-capa-mapa").jsGrid('loadData');
-				
-			}else alert('Ingrese un orden valido.');
-
-        },
-		controller: 
-		{
-			loadData: function(filter) 
-			{
-				var b = document.getElementById('capasBusqueda').value;
-				
-				return $.ajax
-				({
-					url: "./php/abm-mapas.php",
-					data:
-					{
-								mode:5,
-								s:b
-					},
-					dataType: "json"
-				});
-			}
-		},
-		fields: 
-		[
-			{name: "layer_id", width: 100},
-			{name: "layer_titulo", width: 200}
-		]
-		});
-		
-		/************* GRILLA CAPAS DEL MAPA ****************/
-		
-		$("#grid-capa-mapa").jsGrid({
-		width: "100%",
-		height: "auto",
-		autoload:   true,
-		paging:     true,
-		pageSize:   5,
-		pageButtonCount: 5,
-		pageIndex:  1,
-		rowClick: function(args) 
-		{
-			
-			borrar_capa_mapa(args.item.mapa_id,args.item.layer_id);
-			
-			$("#grid-capa-mapa").jsGrid('loadData');
-
-        },
-		controller: 
-		{
-			loadData: function(filter) 
-			{
-				var mapa_id = document.getElementById("mapa_id_current").mapa_id;
-				
-				return $.ajax
-				({
-					url: "./php/abm-mapas.php",
-					data:
-					{
-								mode:6,
-								mapa_id:mapa_id
-					},
-					dataType: "json"
-				});
-			}
-		},
-		fields: 
-		[
-			{name: "mapa_id", width: 100},
-			{name: "layer_id", width: 100},
-			{name: "layer_titulo", width: 200},
-			{name: "orden_capas", width: 200}			
-		]
-		});
-		
 		
 		
 

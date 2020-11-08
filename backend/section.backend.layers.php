@@ -8,7 +8,7 @@
 					
 		<div class="row">				
 			
-			<div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12" id="recurso_current">
+			<div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12" id="current_capa_id">
 				<span>Sin Capa Seleccionada</span>
 			</div>
 		
@@ -17,7 +17,7 @@
 		<ul class="nav nav-tabs mt-20">
 			<li class="nav-item"><a class="nav-link active" data-toggle="tab" id="tab-link-busqueda" href="#tab-buscar">Buscar</a></li>
 			<li class="nav-item"><a class="nav-link" data-toggle="tab" id="tab-link-b" href="#tab-b">Datos Capa</a></li>
-			<li class="nav-item"><a class="nav-link" data-toggle="tab" id="tab-link-c" href="#tab-c">Preview</a></li>
+			<!--<li class="nav-item"><a class="nav-link" data-toggle="tab" id="tab-link-c" href="#tab-c">Preview</a></li>-->
 
 		</ul>
 		
@@ -39,7 +39,7 @@
 					<div class="input-group mb-1 col col-xs-12 col-sm-12 col-md-1 col-lg-1 p0"></div>
 				
 					<div class="mb-1 col col-xs-12 col-sm-12 col-md-4 col-lg-4 p0">
-						<button class="btn btn-primary" type="button" id="dtNuevoBtnBusqueda" onclick="">
+						<button class="btn btn-primary" type="button" id="dtNuevoBtnBusqueda" onclick="nueva_capa();">
 							<i class="fa fa-plus"></i> Nuevo
 						</button>
 					</div>
@@ -129,24 +129,27 @@
 								<?php get_combo_db("mod_mediateca","recurso_categoria","recurso_categoria_id","recurso_categoria_desc",test_get_var($recurso_data["recurso_categoria_id"],"1"),"recurso_categoria_id"); ?>
 							</div>-->
 							
-							<button type="button" class="btn btn-primary" onclick="">Guardar</button>
-							<button type="button" class="btn btn-danger" onclick="">Eliminar Recurso</button>
+							<button type="button" class="btn btn-primary" onclick="guardar_capa();">Guardar</button>
+							<button type="button" class="btn btn-danger" onclick="borrar_capa();">Eliminar Capa</button>
 						</form>
 					
 					</div>
 					
 					<div class="col col-xs-12 col-sm-12 col-md-3 col-lg-3 backend-files-wrapper mt-30">
 						
-						<h5>Archivos para este Recurso</h5>
-						
-						<div id="recursos_archivos" class="file-dropper mt-30">
-							
+						<h5>Vista Previa</h5>
+						<img src="" id="preview_id" width="100%" height="200px">
+						<!--<div id="recursos_archivos" class="file-dropper mt-30">
+														
 							<div class="file-dropper-hint">Arrastre un archivo para asignarlo a este recurso</div>
-								
 						
-						</div>
+						</div>-->
 							
 							<div id="recurso_lista_archivos" class="directory-reader mt-30"></div>
+						<br>
+						<br>
+						<button type="button" style="width:100%;" class="btn btn-primary" onclick="abrir_en_geobi();">Ver en Geobi</button>
+						
 						<br>
 						<br>
 						<button type="button" style="width:100%;" class="btn btn-primary" onclick="">Regenerar Catálogo</button>
@@ -161,8 +164,9 @@
 							 
 				
 			</div> <!-- FIN TAB B -->
-			
-			<div class="tab-pane" id="tab-c">  <!-- INICIO TAB C -->
+			 <!-- INICIO TAB C -->
+			<!-- 
+			<div class="tab-pane" id="tab-c"> 
 				
 				<div class="row">
 							
@@ -172,7 +176,7 @@
 					
 				</div>
 			
-			</div> <!-- FIN TAB C -->
+			</div> --> <!-- FIN TAB C -->
 			
 			
 		</div>

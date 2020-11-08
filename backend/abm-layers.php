@@ -35,20 +35,19 @@ $mode 	= $_REQUEST["mode"];
 
 $s 		= clear_json(pg_escape_string($_REQUEST["s"]));
 
-$_layer_id 				= clear_json(pg_escape_string($_REQUEST["layer_id"]));    
-$_layer_titulo			= clear_json(pg_escape_string($_REQUEST["layer_titulo"]));
-$_layer_desc			= clear_json(pg_escape_string($_REQUEST["layer_desc"]));
-$_layer_wms_layer		= clear_json(pg_escape_string($_REQUEST["layer_wms_layer"]));
-$_layer_wms_server		= clear_json(pg_escape_string($_REQUEST["layer_wms_server"]));
-$_layer_link_metadato	= clear_json(pg_escape_string($_REQUEST["layer_link_metadato"]));
-$_palabras_clave		= clear_json(pg_escape_string($_REQUEST["palabras_clave"]));
-$_columna_clave_gfi		= clear_json(pg_escape_string($_REQUEST["columna_clave_gfi"]));
-
-$_subtema_id			= clear_json(pg_escape_string($_REQUEST["subtema_id"]));
-
-$_entidad_id 			= clear_json(pg_escape_string($_REQUEST["entidad_id"]));    
-$_entidad_tipo			= clear_json(pg_escape_string($_REQUEST["entidad_tipo"]));    
-$_gid					= clear_json(pg_escape_string($_REQUEST["gid"]));    
+$layer_id				=$_REQUEST['layer_id'];
+$layer_desc				=$_REQUEST['layer_desc'];
+$layer_wms_server		=$_REQUEST['layer_wms_server'];
+$layer_wms_layer		=$_REQUEST['layer_wms_layer'];
+$layer_wms_server_alter	=$_REQUEST['layer_wms_server_alter'];
+$layer_wms_layer_alter	=$_REQUEST['layer_wms_layer_alter']; 
+$layer_alter_activo		=$_REQUEST['layer_alter_activo']; 	
+$layer_metadata_url		=$_REQUEST['layer_metadata_url']; 	
+$layer_schema			=$_REQUEST['layer_schema']; 			
+$layer_table			=$_REQUEST['layer_table']; 			
+$tipo_layer_id			=$_REQUEST['tipo_layer_id']; 		
+$preview_desc			=$_REQUEST['preview_desc']; 			
+$preview_titulo			=$_REQUEST['preview_titulo'];
 
 switch ($mode) 
 {
@@ -58,33 +57,131 @@ switch ($mode)
     case 1: /* NUEVA/ACTUALIZAR CAPA */
         layers_guardar();
         break;
-    case 2:
+    case 2: /* BORRAR CAPA */
         layers_borrar();
         break;
-    case 3:
-        get_subtemas_capa($_layer_id);
-        break;
-    case 4:
-        get_subtemas($s);
-        break;
-    case 5:
-        layers_subtema_borrar($_layer_id,$_subtema_id);
-        break;
-    case 6:
-        layers_subtema_nuevo($_layer_id,$_subtema_id);
-        break;
-    case 7:
-        get_datos_recursos($s);
-        break;
-    case 8:
-        get_datos_recursos_capa($_layer_id);
-        break;
-    case 9:
-        layers_datos_nuevo($_layer_id,$_entidad_id,$_entidad_tipo,$_gid);
-        break;  
-    case 10:
-        layers_datos_borrar($_layer_id,$_entidad_id,$_entidad_tipo,$_gid);
-        break;  
+};
+
+
+function layers_borrar()
+{
+	global $layer_id;
+		
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+		
+	$conn = pg_connect($string_conn);
+
+	$query_string .="DELETE FROM mod_geovisores.layer WHERE layer_id=$layer_id RETURNING layer_id;";
+
+	$query = pg_query($conn,$query_string);
+	
+	if(!$query)
+	{
+		$error_1 = clear_json(pg_last_error($conn));
+		echo '{"status_code":"2","status":"No se pudo borrar el registro","error_desc":"'.$error_1.'"}';
+	}
+	else
+	{
+		$r = pg_fetch_assoc($query);
+		echo '{"status_code":"0","status":"Ok","layer_id":"'. $r["layer_id"].'"}';
+	};
+	
+	pg_close($conn);
+	
+};
+
+
+
+function layers_guardar()
+{
+	global	$layer_id;
+	global	$layer_desc;
+	global	$layer_wms_server;
+	global	$layer_wms_layer;
+	global	$layer_wms_server_alter;
+	global	$layer_wms_layer_alter; 
+	global	$layer_alter_activo;
+	global	$layer_metadata_url;	
+	global	$layer_schema;			
+	global	$layer_table;	
+	global	$tipo_layer_id;	
+	global	$preview_desc;		
+	global	$preview_titulo;
+	
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+		
+	$conn = pg_connect($string_conn);
+	
+	if($layer_id==-1)
+	{
+		$query_string = "INSERT INTO mod_geovisores.layer(";
+		$query_string .= "layer_desc,";
+		$query_string .= "layer_wms_server,";
+		$query_string .= "layer_wms_layer,";
+		$query_string .= "layer_wms_server_alter,";
+		$query_string .= "layer_wms_layer_alter,";
+		$query_string .= "layer_alter_activo,";
+		$query_string .= "layer_metadata_url,";	
+		$query_string .= "layer_schema,";	
+		$query_string .= "layer_table,";
+		$query_string .= "tipo_layer_id,";	
+		$query_string .= "preview_desc,";
+		$query_string .= "tipo_origen_id,";		
+		$query_string .= "preview_titulo";
+		$query_string .=")VALUES(";
+		$query_string .= "'$layer_desc',";
+		$query_string .= "'$layer_wms_server',";
+		$query_string .= "'$layer_wms_layer',";
+		$query_string .= "'$layer_wms_server_alter',";
+		$query_string .= "'$layer_wms_layer_alter',";
+		$query_string .= "'$layer_alter_activo',";
+		$query_string .= "'$layer_metadata_url',";
+		$query_string .= "'$layer_schema',";
+		$query_string .= "'$layer_table',";
+		$query_string .= "$tipo_layer_id,";	
+		$query_string .= "'$preview_desc',";
+		$query_string .= "1,";
+		$query_string .= "'$preview_titulo'";
+		$query_string .= ")RETURNING layer_id;";
+	
+	}
+	else
+	{
+		
+		$query_string = "UPDATE  mod_geovisores.layer SET ";
+		$query_string .="layer_desc = '$layer_desc',";
+		$query_string .="layer_wms_server = '$layer_wms_server',";
+		$query_string .="layer_wms_layer = '$layer_wms_layer',";
+		$query_string .="layer_wms_server_alter = '$layer_wms_server_alter',";
+		$query_string .="layer_wms_layer_alter= '$layer_wms_layer_alter',";
+		$query_string .="layer_alter_activo = '$layer_alter_activo',";
+		$query_string .="layer_metadata_url = '$layer_metadata_url',";
+		$query_string .="layer_schema = '$layer_schema',";		
+		$query_string .="layer_table = '$layer_table',";
+		$query_string .="tipo_layer_id = $tipo_layer_id,";	
+		$query_string .="preview_desc = '$preview_desc',";	
+		$query_string .="preview_titulo = '$preview_titulo' ";
+		$query_string .="WHERE layer_id=$layer_id RETURNING layer_id;";
+	
+	};
+    
+    //echo $query_string;
+    
+	$query = pg_query($conn,$query_string);
+	
+	if(!$query)
+	{
+		$error_1 = clear_json(pg_last_error($conn));
+		echo '{"status_code":"1","status":"No se puedo guardar","error_desc":"'.$error_1.'"}';
+	}
+	else
+	{
+		$r = pg_fetch_assoc($query);
+		echo '{"status_code":"0","status":"Ok","layer_id":"'. $r["layer_id"].'"}';
+	};
+	
+	pg_close($conn);
+	
 };
 
 
@@ -137,7 +234,7 @@ function layers_subtema_borrar($layer_id,$subtema_id)
 	pg_close($conn);
 };
 
-function layers_borrar()
+function layers_borrar_old()
 {
 	global $_layer_id;
 		
@@ -165,7 +262,7 @@ function layers_borrar()
 };
 
 
-function layers_guardar()
+function layers_guardar_old()
 {
 	global $_layer_id;
 	global $_layer_titulo;
