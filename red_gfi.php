@@ -13,6 +13,8 @@
 	
 	$response = curl_exec($con);
 
+	echo curl_error($con);
+
 	curl_close($con);
 	
 	echo $response;
