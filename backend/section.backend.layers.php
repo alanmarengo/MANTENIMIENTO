@@ -16,8 +16,8 @@
 		
 		<ul class="nav nav-tabs mt-20">
 			<li class="nav-item"><a class="nav-link active" data-toggle="tab" id="tab-link-busqueda" href="#tab-buscar">Buscar</a></li>
-			<li class="nav-item"><a class="nav-link" data-toggle="tab" id="tab-link-dataset" href="#tab-b">Datos Capa</a></li>
-			<li class="nav-item"><a class="nav-link" data-toggle="tab" id="tab-link-permisos" href="#tab-c">Preview</a></li>
+			<li class="nav-item"><a class="nav-link" data-toggle="tab" id="tab-link-b" href="#tab-b">Datos Capa</a></li>
+			<li class="nav-item"><a class="nav-link" data-toggle="tab" id="tab-link-c" href="#tab-c">Preview</a></li>
 
 		</ul>
 		
@@ -68,8 +68,8 @@
 					
 						<form name="frm-backend-main" id="frm-backend-main">
 							<div class="form-group">
-								<label for="recurso_id">ID</label>
-								<input type="text" class="form-control" name="recurso_id" id="recurso_id" aria-describedby="recurso_id"  readonly="readonly" placeholder="ID Recurso...">
+								<label for="layer_id">Id de la capa</label>
+								<input type="text" class="form-control" name="layer_id" id="layer_id" aria-describedby="layer_id"  readonly="readonly" placeholder="ID de Capa...">
 							</div>
 							<div class="form-group">
 								<label for="layer_desc">Descripción</label>

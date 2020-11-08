@@ -242,27 +242,29 @@ function()
 		pageIndex:  1,
 		rowClick: function(args) 
 		{
-			/*
-            document.getElementById("mapa_id_current").innerHTML = "<span>Mapa Actual: " + args.item.mapa_nombre +"("+args.item.mapa_id+")</span>";
-			document.getElementById("mapa_id_current").mapa_id = args.item.mapa_id;
-			//document.getElementById("layer_abm_preview").src=get_preview(args.item.layer_wms_server,args.item.layer_wms_layer);
+			document.getElementById("layer_id").value=args.item.layer_id;
+			document.getElementById("layer_desc").value=args.item.layer_desc;
+			document.getElementById("layer_wms_server").value=args.item.layer_wms_server;
+			document.getElementById("layer_wms_layer").value=args.item.layer_wms_layer;
+			document.getElementById("layer_wms_server_alter").value=args.item.layer_wms_server_alter;
+			document.getElementById("layer_wms_layer_alter").value=args.item.layer_wms_layer_alter; 
+			document.getElementById("layer_alter_activo").value=args.item.layer_alter_activo; 	
+			document.getElementById("layer_metadata_url").value=args.item.layer_metadata_url; 	
+			document.getElementById("layer_schema").value=args.item.layer_schema; 			
+			document.getElementById("layer_table").value=args.item.layer_table; 			
+			document.getElementById("tipo_layer_id").value=args.item.tipo_layer_id; 		
+			document.getElementById("preview_desc").value=args.item.preview_desc; 			
+			document.getElementById("preview_titulo").value=args.item.preview_titulo;
 			
-			document.getElementById("mapa_id").value=args.item.mapa_id;
-			document.getElementById("mapa_nombre").value=args.item.mapa_nombre;
-			document.getElementById("mapa_desc").value=args.item.mapa_desc;
-			document.getElementById("mapa_fecha").value=args.item.mapa_fecha;
-			document.getElementById("mapa_fuente").value=args.item.mapa_fuente;
-			document.getElementById("extent").value=args.item.extent;
+					
+			document.getElementById("tab-link-b").click();
 			
-			
-			document.getElementById("tab-link-mapa").click();
-			
-			$("#grid-mapa-subtemas").jsGrid('loadData');
-			$("#grid-capa-mapa").jsGrid('loadData');
+			//$("#grid-mapa-subtemas").jsGrid('loadData');
+			//$("#grid-capa-mapa").jsGrid('loadData');
 			
 			//$("#grid-capa-subtemas").jsGrid('loadData');
 			//$("#grid-datos-capa").jsGrid('loadData');
-		*/
+		
         
         },
 		controller: 
