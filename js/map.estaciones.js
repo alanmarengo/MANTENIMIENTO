@@ -104,7 +104,7 @@ function ol_map() {
             visible: true,
             singleTile: true,
             source: new ol.source.TileWMS({
-                url: "http://observatorio.ieasa.com.ar:8080/geoserver/ows?",
+                url: "https://observatorio.ieasa.com.ar:8080/geoserver/ows?",
                 params: {
                     'LAYERS': 'ahrsc:vp_geo_himet_ubicacionestaciones_pga1', //'intervalos_polygons',
                     //'VERSION': '1.1.1',
