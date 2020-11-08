@@ -188,7 +188,8 @@ function ol_map() {
             $("#popup").show();
             reCalcPopup();
 
-        });
+        }.bind(this));
+
 
         this.getGFIUrl = function(e, wkt) {
 
@@ -253,6 +254,12 @@ function ol_map() {
             }
 
             return newurl;
+
+        }
+
+        this.parseGFI = function(features) {
+
+            var fid = "";
 
         }
 
