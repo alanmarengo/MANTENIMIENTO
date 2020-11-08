@@ -172,6 +172,8 @@ function ol_map() {
 
             var newurl = this.getGFIUrl(e, false);
 
+            console.log(newurl);
+
             var reqGFI = $.ajax({
 
                 async: false,
