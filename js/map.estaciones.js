@@ -222,7 +222,7 @@ function ol_map() {
 
                 if ((varparam[0] == "QUERY_LAYERS") || (varparam[0] == "LAYERS")) {
 
-                    newurl += "&" + varparam[0] + "=" + this.estaciones_layer.name;
+                    newurl += "&" + varparam[0] + "=ahrsc:vp_geo_himet_ubicacionestaciones_pga1";
 
                 } else {
 
