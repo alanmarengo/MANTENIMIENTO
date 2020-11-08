@@ -176,7 +176,7 @@ function ol_map() {
 
                 async: false,
                 data: { url: encodeURIComponent(newurl) },
-                type: "get",
+                type: "post",
                 url: "./red_gfi.php",
                 success: function(d) {}
 
