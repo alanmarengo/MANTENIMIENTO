@@ -170,10 +170,93 @@ function ol_map() {
 
         this.ol_object.on("click", function(evt) {
 
+            var newurl = this.getGFIUrl(e, false);
+
+            var reqGFI = $.ajax({
+
+                async: false,
+                type: "get",
+                url: newurl,
+                success: function(d) {}
+
+            });
+
+            var js = JSON.parse(reqGFI.responseText);
+
+            this.parseGFI(js.features);
+
+            break;
+
             $("#popup").show();
             reCalcPopup();
 
         });
+
+        this.getGFIUrl = function(e, wkt) {
+
+            if (e) {
+
+                var coordinate = e.coordinate;
+
+            } else {
+
+                var coordinate = this.ol_object.getView().getCenter();
+
+            }
+
+            for (var i = 0; i < this.activeLayers.length; i++) {
+
+                var layer = this.layers[this.activeLayers[i]];
+                var viewResolution = this.ol_object.getView().getResolution();
+
+                url = layer.getSource().getGetFeatureInfoUrl( /*e.*/ coordinate, viewResolution, 'EPSG:3857', {
+                    'INFO_FORMAT': 'text/html',
+                    'FEATURE_COUNT': '300'
+                });
+
+                break; // SOLO NECESITO 1 URL LUEGO CONCATENO LAS CAPAS
+
+            }
+
+            var layer_names = this.getActiveLayerNames();
+
+            url = url.split("&");
+
+            var newurl = url[0];
+
+            for (var i = 1; i < url.length; i++) {
+
+                var varparam = url[i].split("=");
+
+                if ((varparam[0] == "QUERY_LAYERS") || (varparam[0] == "LAYERS")) {
+
+                    newurl += "&" + varparam[0] + "=" + layer_names;
+
+                } else {
+
+                    if (varparam[0] == "INFO_FORMAT") {
+
+                        newurl += "&INFO_FORMAT=application/json";
+
+                    } else {
+
+                        newurl += "&" + varparam[0] + "=" + varparam[1];
+
+                    }
+
+                }
+
+            }
+
+            if (!e) {
+
+                newurl += "&cql_filter=WITHIN(the_geom, " + wkt + ")";
+
+            }
+
+            return newurl;
+
+        }
 
         /*this.ol_object.on("click",function(evt) {
         	
