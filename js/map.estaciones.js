@@ -210,7 +210,7 @@ function ol_map() {
                 'FEATURE_COUNT': '300'
             });
 
-            console.log(url);
+            url = url.replace('http://', 'https://');
 
             url = url.split("&");
 
