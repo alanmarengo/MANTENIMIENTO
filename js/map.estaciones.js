@@ -100,11 +100,11 @@ function ol_map() {
             })
         })
 
-        var layer = new ol.layer.Tile({
+        this.estaciones_layer = new ol.layer.Tile({
             visible: true,
             singleTile: true,
             source: new ol.source.TileWMS({
-                url: "http://observatorio.ieasa.com.ar:8080/geoserver/ows?",
+                url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
                 params: {
                     'LAYERS': 'ahrsc:vp_geo_himet_ubicacionestaciones_pga1', //'intervalos_polygons',
                     //'VERSION': '1.1.1',
@@ -123,7 +123,7 @@ function ol_map() {
         	})
         })*/
 
-        this.baselayers.collection = [this.baselayers.openstreets, this.baselayers.opentopo, this.baselayers.bing_roads, this.baselayers.bing_aerials, this.baselayers.google, this.baselayers.argenmap, layer];
+        this.baselayers.collection = [this.baselayers.openstreets, this.baselayers.opentopo, this.baselayers.bing_roads, this.baselayers.bing_aerials, this.baselayers.google, this.baselayers.argenmap, this.estaciones_layer];
 
         ///////document.getElementById("baselayer-default-radio").click();
 
@@ -168,12 +168,93 @@ function ol_map() {
 
         });
 
-        this.ol_object.on("click", function(evt) {
+        this.ol_object.on("click", function(e) {
+
+            var newurl = this.getGFIUrl(e, false);
+
+            var reqGFI = $.ajax({
+
+                async: false,
+                type: "get",
+                url: newurl,
+                success: function(d) {}
+
+            });
+
+            var js = JSON.parse(reqGFI.responseText);
+
+            this.parseGFI(js.features);
 
             $("#popup").show();
             reCalcPopup();
 
-        });
+        }.bind(this));
+
+
+        this.getGFIUrl = function(e, wkt) {
+
+            if (e) {
+
+                var coordinate = e.coordinate;
+
+            } else {
+
+                var coordinate = this.ol_object.getView().getCenter();
+
+            }
+
+            var viewResolution = this.ol_object.getView().getResolution();
+
+            url = this.estaciones_layer.getSource().getGetFeatureInfoUrl( /*e.*/ coordinate, viewResolution, 'EPSG:3857', {
+                'INFO_FORMAT': 'text/html',
+                'FEATURE_COUNT': '300'
+            });
+
+            url = url.replace('http://', 'https://');
+
+            url = url.split("&");
+
+            var newurl = url[0];
+
+            for (var i = 1; i < url.length; i++) {
+
+                var varparam = url[i].split("=");
+
+                if ((varparam[0] == "QUERY_LAYERS") || (varparam[0] == "LAYERS")) {
+
+                    newurl += "&" + varparam[0] + "=ahrsc:vp_geo_himet_ubicacionestaciones_pga1";
+
+                } else {
+
+                    if (varparam[0] == "INFO_FORMAT") {
+
+                        newurl += "&INFO_FORMAT=application/json";
+
+                    } else {
+
+                        newurl += "&" + varparam[0] + "=" + varparam[1];
+
+                    }
+
+                }
+
+            }
+
+            if (!e) {
+
+                newurl += "&cql_filter=WITHIN(the_geom, " + wkt + ")";
+
+            }
+
+            return newurl;
+
+        }
+
+        this.parseGFI = function(features) {
+
+            var fid = "";
+
+        }
 
         /*this.ol_object.on("click",function(evt) {
         	
