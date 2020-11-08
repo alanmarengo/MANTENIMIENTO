@@ -172,13 +172,12 @@ function ol_map() {
 
             var newurl = this.getGFIUrl(e, false);
 
-            console.log(newurl);
-
             var reqGFI = $.ajax({
 
                 async: false,
+                data: { url: newurl.encodeURI() },
                 type: "get",
-                url: newurl,
+                url: "./red_gfi.php",
                 success: function(d) {}
 
             });
