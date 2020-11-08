@@ -168,7 +168,7 @@ function ol_map() {
 
         });
 
-        this.ol_object.on("click", function(evt) {
+        this.ol_object.on("click", function(e) {
 
             var newurl = this.getGFIUrl(e, false);
 
