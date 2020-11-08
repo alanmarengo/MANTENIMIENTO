@@ -100,7 +100,7 @@ function ol_map() {
             })
         })
 
-        var layer = new ol.layer.Tile({
+        this.estaciones_layer = new ol.layer.Tile({
             visible: true,
             singleTile: true,
             source: new ol.source.TileWMS({
@@ -123,7 +123,7 @@ function ol_map() {
         	})
         })*/
 
-        this.baselayers.collection = [this.baselayers.openstreets, this.baselayers.opentopo, this.baselayers.bing_roads, this.baselayers.bing_aerials, this.baselayers.google, this.baselayers.argenmap, layer];
+        this.baselayers.collection = [this.baselayers.openstreets, this.baselayers.opentopo, this.baselayers.bing_roads, this.baselayers.bing_aerials, this.baselayers.google, this.baselayers.argenmap, this.estaciones_layer];
 
         ///////document.getElementById("baselayer-default-radio").click();
 
@@ -203,21 +203,12 @@ function ol_map() {
 
             }
 
-            for (var i = 0; i < this.activeLayers.length; i++) {
+            var viewResolution = this.ol_object.getView().getResolution();
 
-                var layer = this.layers[this.activeLayers[i]];
-                var viewResolution = this.ol_object.getView().getResolution();
-
-                url = layer.getSource().getGetFeatureInfoUrl( /*e.*/ coordinate, viewResolution, 'EPSG:3857', {
-                    'INFO_FORMAT': 'text/html',
-                    'FEATURE_COUNT': '300'
-                });
-
-                break; // SOLO NECESITO 1 URL LUEGO CONCATENO LAS CAPAS
-
-            }
-
-            var layer_names = this.getActiveLayerNames();
+            url = this.estaciones_layer.getSource().getGetFeatureInfoUrl( /*e.*/ coordinate, viewResolution, 'EPSG:3857', {
+                'INFO_FORMAT': 'text/html',
+                'FEATURE_COUNT': '300'
+            });
 
             url = url.split("&");
 
@@ -229,7 +220,7 @@ function ol_map() {
 
                 if ((varparam[0] == "QUERY_LAYERS") || (varparam[0] == "LAYERS")) {
 
-                    newurl += "&" + varparam[0] + "=" + layer_names;
+                    newurl += "&" + varparam[0] + "=" + this.estaciones_layer.name;
 
                 } else {
 
