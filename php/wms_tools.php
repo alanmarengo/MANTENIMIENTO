@@ -45,6 +45,8 @@ function wms_get_layer_extent($str_layer_name)
 };
 
 
+
+
 //echo wms_get_layer_extent('ahrsc:area_lb'); //Demo
 
 ?>
