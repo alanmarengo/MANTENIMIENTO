@@ -175,7 +175,7 @@ function ol_map() {
             var reqGFI = $.ajax({
 
                 async: false,
-                data: { url: newurl.encodeURI() },
+                data: { url: encodeURIComponent(newurl) },
                 type: "get",
                 url: "./red_gfi.php",
                 success: function(d) {}
