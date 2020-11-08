@@ -474,3 +474,12 @@
 #page_pdga #uxFichas .ficha {
   margin-bottom: 40px;
 }
+#page_monitoreo .button {
+  padding: 8px 20px;
+  margin-right: 10px;
+  background-color: #333!important;
+  color: #fff;
+  border-radius: 6px;
+  font-style: normal!important;
+  font-weight: bold;
+}
