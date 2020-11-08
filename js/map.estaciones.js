@@ -210,6 +210,9 @@ function ol_map() {
                 'FEATURE_COUNT': '300'
             });
 
+            url = url.split(":");
+            url = url[0] + "s:" + url[1];
+
             url = url.split("&");
 
             var newurl = url[0];
