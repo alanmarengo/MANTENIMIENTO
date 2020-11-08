@@ -2,10 +2,10 @@
 
 	header('Content-Type: application/json');
 
-	$url = $_RESQUEST['url'];
+	$url = $_REQUEST["url"];
 
 	$wms_request = $url;
-
+	
 	$con = curl_init($wms_request);
 	
 	curl_setopt($con,CURLOPT_SSL_VERIFYPEER, false);
