@@ -110,16 +110,16 @@ $(document).ready(function() {
 
 });
 
-function reCalcPopup() {
+function reCalcPopup(id) {
 
-    let h1 = $("#popup-inner").children(".header").height();
-    let h2 = $("#popup-inner").children(".tabs").height();
-    let h3 = $("#popup-inner").children(".categories").height();
+    let h1 = $("#" + id).children(".header").height();
+    let h2 = $("#" + id).children(".tabs").height();
+    let h3 = $("#" + id).children(".categories").height();
 
-    let hp = $("#popup").height();
+    let hp = $("#" + id).height();
 
     let nh = hp - (h1 + h2 + h3 + 40 /*margin*/ );
 
-    $("#popup-tab-content").css("height", nh + "px");
+    $("#popup-aforo-tab-content").css("height", nh + "px");
 
 }

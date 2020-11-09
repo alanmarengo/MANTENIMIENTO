@@ -371,7 +371,7 @@
 		<div id="popup-aforo-inner">
 			<div class="header">
 				<span class="title">Estación de Monitoreo</span>
-				<a href="javascript:void(0);" onclick="$('#popup').hide();">
+				<a href="javascript:void(0);" onclick="$('#popup-aforo').hide();">
 					<i class="fa fa-times"></i>
 				</a>
 			</div>

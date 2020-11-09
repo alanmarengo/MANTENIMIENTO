@@ -186,8 +186,6 @@ function ol_map() {
 
             this.parseGFI(js.features[0].properties);
 
-            reCalcPopup();
-
         }.bind(this));
 
 
@@ -254,8 +252,10 @@ function ol_map() {
 
             if (js.tipo_estacion_id == 5) {
                 $("#popup-aforo").show();
+                reCalcPopup("popup-aforo");
             } else {
                 $("#popup").show();
+                reCalcPopup("popup");
             }
 
         }
