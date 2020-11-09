@@ -49,6 +49,8 @@ $tipo_layer_id			=$_REQUEST['tipo_layer_id'];
 $preview_desc			=$_REQUEST['preview_desc']; 			
 $preview_titulo			=$_REQUEST['preview_titulo'];
 
+
+
 switch ($mode) 
 {
     case 0: /* BUSCAR CAPAS */
@@ -59,6 +61,9 @@ switch ($mode)
         break;
     case 2: /* BORRAR CAPA */
         layers_borrar();
+        break;
+    case 3: /* AGREGAR A CATALOGO */
+        catalogo_agregar();
         break;
 };
 
@@ -84,6 +89,60 @@ function layers_borrar()
 	{
 		$r = pg_fetch_assoc($query);
 		echo '{"status_code":"0","status":"Ok","layer_id":"'. $r["layer_id"].'"}';
+	};
+	
+	pg_close($conn);
+	
+};
+
+function catalogo_agregar()
+{
+    global	$layer_id;
+	global	$layer_schema;			
+	global	$layer_table;	
+	global	$layer_desc;
+	global	$preview_desc;		
+	global	$preview_titulo;
+	
+	
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+		
+	$conn = pg_connect($string_conn);
+	
+	$query_string  = "DELETE FROM mod_geovisores.catalogo WHERE origen_id=0 AND origen_id_especifico=$layer_id;";
+	$query_string .= "INSERT INTO mod_geovisores.catalogo(origen,origen_id,origen_id_especifico,origen_search_text,subclase_id,estudios_id,cod_esia_id,cod_temporalidad_id,objetos_id) ";
+	$query_string .= "SELECT DISTINCT 'GIS'::TEXT,0::BIGINT,";
+	$query_string .= "$layer_id::BIGINT,";
+	$query_string .= "'$layer_desc $preview_desc $preview_titulo',";
+	$query_string .= "subclase_id::BIGINT,estudios_id::BIGINT,cod_esia_id::BIGINT,cod_temporalidad_id::BIGINT,objetos_id::bigint ";
+	$query_string .= "FROM $layer_schema.$layer_table;";
+		
+	$query = pg_query($conn,$query_string);
+	
+	if(!$query)
+	{
+		$error_1 = clear_json(pg_last_error($conn));
+		
+		/* Valores por default */
+		$query_string  = "DELETE FROM mod_geovisores.catalogo WHERE origen_id=0 AND origen_id_especifico=$layer_id;";
+		$query_string .= "INSERT INTO mod_geovisores.catalogo(origen,origen_id,origen_id_especifico,origen_search_text,subclase_id,estudios_id,cod_esia_id,cod_temporalidad_id,objetos_id) ";
+		$query_string .= "SELECT 'GIS'::TEXT,0::BIGINT,";
+		$query_string .= "$layer_id::BIGINT,";
+		$query_string .= "'$layer_desc $preview_desc $preview_titulo',";
+		$query_string .= "1::BIGINT,NULL::BIGINT,NULL::BIGINT,NULL::BIGINT,NULL::bigint; ";
+		
+		$query = pg_query($conn,$query_string);
+				
+		$error_2 = clear_json(pg_last_error($conn));
+		
+		$error_1 .= ' '.$error_2;
+		
+		echo '{"status_code":"1","status":"No se pudo guardar los datos en el catalogo,por favor controle que existan los campos requeridos","error_desc":"'.$error_1.'"}';
+	}
+	else
+	{
+		$r = pg_fetch_assoc($query);
+		echo '{"status_code":"0","status":"Ok","layer_id":"'. $layer_id.'"}';
 	};
 	
 	pg_close($conn);
@@ -186,131 +245,6 @@ function layers_guardar()
 
 
 
-function layers_subtema_nuevo($_layer_id,$_subtema_id)
-{
-	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
-		
-	$conn = pg_connect($string_conn);
-
-	$query_string .="INSERT INTO sinia_geovisor.layer_subtema(layer_id,subtema_id)VALUES($_layer_id,$_subtema_id) RETURNING layer_id;";
-
-	$query = pg_query($conn,$query_string);
-	
-	if(!$query)
-	{
-		$error_1 = clear_json(pg_last_error($conn));
-		echo '{"status_code":"2","status":"No se pudo cargar el registro","error_desc":"'.$error_1.'"}';
-	}
-	else
-	{
-		$r = pg_fetch_assoc($query);
-		echo '{"status_code":"0","status":"Ok","layer_id":"'. $r["layer_id"].'"}';
-	};
-	
-	pg_close($conn);
-};
-
-function layers_subtema_borrar($layer_id,$subtema_id)
-{
-	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
-		
-	$conn = pg_connect($string_conn);
-
-	$query_string .="DELETE FROM sinia_geovisor.layer_subtema WHERE layer_id=$layer_id AND subtema_id=$subtema_id RETURNING layer_id;";
-
-	$query = pg_query($conn,$query_string);
-	
-	if(!$query)
-	{
-		$error_1 = clear_json(pg_last_error($conn));
-		echo '{"status_code":"2","status":"No se pudo borrar el registro","error_desc":"'.$error_1.'"}';
-	}
-	else
-	{
-		$r = pg_fetch_assoc($query);
-		echo '{"status_code":"0","status":"Ok","layer_id":"'. $r["layer_id"].'"}';
-	};
-	
-	pg_close($conn);
-};
-
-function layers_borrar_old()
-{
-	global $_layer_id;
-		
-	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
-		
-	$conn = pg_connect($string_conn);
-
-	$query_string .="DELETE FROM sinia_geovisor.layer WHERE layer_id=$_layer_id RETURNING layer_id;";
-
-	$query = pg_query($conn,$query_string);
-	
-	if(!$query)
-	{
-		$error_1 = clear_json(pg_last_error($conn));
-		echo '{"status_code":"2","status":"No se pudo borrar el registro","error_desc":"'.$error_1.'"}';
-	}
-	else
-	{
-		$r = pg_fetch_assoc($query);
-		echo '{"status_code":"0","status":"Ok","layer_id":"'. $r["layer_id"].'"}';
-	};
-	
-	pg_close($conn);
-	
-};
-
-
-function layers_guardar_old()
-{
-	global $_layer_id;
-	global $_layer_titulo;
-	global $_layer_desc;
-	global $_layer_wms_layer;
-	global $_layer_wms_server;
-	global $_layer_link_metadato;
-	global $_palabras_clave;
-	global $_columna_clave_gfi;
-	
-	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
-		
-	$conn = pg_connect($string_conn);
-	
-	if($_layer_id==-1)
-	{
-		$query_string = "INSERT INTO sinia_geovisor.layer(tipo_geom_id,layer_titulo,layer_desc,layer_wms_layer,layer_wms_server,layer_link_metadato,palabras_clave,columna_clave_gfi)VALUES";
-		$query_string .="(1,'$_layer_titulo','$_layer_desc','$_layer_wms_layer','$_layer_wms_server','$_layer_link_metadato','$_palabras_clave','$_columna_clave_gfi')RETURNING layer_id;";
-	}
-	else
-	{
-		$query_string = "UPDATE sinia_geovisor.layer SET ";
-		$query_string .="layer_titulo = '$_layer_titulo',";
-		$query_string .="layer_desc = '$_layer_desc',";
-		$query_string .="layer_wms_layer = '$_layer_wms_layer',";
-		$query_string .="layer_wms_server = '$_layer_wms_server',";
-		$query_string .="layer_link_metadato = '$_layer_link_metadato',";
-		$query_string .="columna_clave_gfi = '$_columna_clave_gfi',";
-		$query_string .="palabras_clave = '$_palabras_clave' ";
-		$query_string .="WHERE layer_id=$_layer_id RETURNING layer_id;";
-	};
-	
-	$query = pg_query($conn,$query_string);
-	
-	if(!$query)
-	{
-		$error_1 = clear_json(pg_last_error($conn));
-		echo '{"status_code":"1","status":"No se puedo guardar","error_desc":"'.$error_1.'"}';
-	}
-	else
-	{
-		$r = pg_fetch_assoc($query);
-		echo '{"status_code":"0","status":"Ok","layer_id":"'. $r["layer_id"].'"}';
-	};
-	
-	pg_close($conn);
-	
-};
 
 function layers_buscar($busqueda) 
 {
@@ -325,14 +259,10 @@ function layers_buscar($busqueda)
 	
 	$entered = false;
 	
-	//echo pg_last_error($conn);
-	
 	$json = "[";
 	
 	while ($r = pg_fetch_assoc($query)) 
 	{
-		//$url_preview_t = wms_get_layer_preview(clear_json($r["layer_wms_server"]),clear_json($r["layer_wms_layer"]));
-		
 		$json .= '{';
 		$json .= '"layer_id":"'					. 	$r["layer_id"] .'",';
 		$json .= '"layer_desc":"'				. 	clear_json($r["layer_desc"]) .'",';
@@ -407,189 +337,8 @@ function get_subtemas($busqueda)
 
 };
 
-function get_subtemas_capa($_layer_id) 
-{
-	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
-		
-	$conn = pg_connect($string_conn);
-	
-	$query_string  = "SELECT layer_id,subtema_id,";
-	$query_string .= "(SELECT subtema_titulo||' - Tema '||tema_nombre FROM sinia_catalogo.vw_subtema_tema  T WHERE T.subtema_id=LS.subtema_id limit 1) AS stn ";
-	$query_string .= "FROM sinia_geovisor.layer_subtema LS WHERE LS.layer_id=$_layer_id;";
-	
-	$query = pg_query($conn,$query_string);
-	
-	$entered = false;
-	
-	$json = "[";
-	
-	while ($r = pg_fetch_assoc($query)) {
-		
-		$json .= "{";
-		$json .= "\"layer_id\":" . $r["layer_id"] . ",";
-		$json .= "\"subtema_id\":" . $r["subtema_id"] . ",";
-		$json .= "\"subtema_titulo\":\"" . clear_json($r["stn"]) . "\"";
-		$json .= "},";
-		//var_dump($r);
-		$entered = true;
-	}
-	
-	if ($entered) {
-		
-		$json = substr($json,0,strlen($json)-1);
-		
-	}
-	
-	$json .= "]";
-	
-	echo $json;
-	
-	pg_close($conn);
 
-};
 
-function get_datos_recursos($busqueda) 
-{
-	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
-		
-	$conn = pg_connect($string_conn);
-	
-	$query_string  = "SELECT * FROM (";
-	$query_string .= "SELECT 'Grafico'::TEXT AS tipo_dato,grafico_titulo as titulo,grafico_desc AS desc,grafico_id as dato_id,0 as dato_tipo_id,'./types/indicadores.png' as ico from sinia_graficos.grafico ";
-	$query_string .= "UNION ALL ";
-	$query_string .= "SELECT 'Recurso'::TEXT AS tipo_dato,titulo,descripcion as desc,origen_id_propio dato_id,1 as dato_tipo_id,ico_path as ico from sinia_recursos.vw_catalogo "; 
-	$query_string .= ")T WHERE T.titulo ILIKE '%$busqueda%' ORDER BY titulo ASC;";
-	
-	$query = pg_query($conn,$query_string);
-	
-	$entered = false;
-	
-	$json = "[";
-	
-	while ($r = pg_fetch_assoc($query)) {
-		
-		$json .= '{';
-		$json .= '"tipo_dato":"'.		clear_json($r["tipo_dato"]).'",';
-		$json .= '"titulo":"'.	clear_json($r["titulo"]).'",';
-		//$json .= '"desc":"'.clear_json($r["desc"]).'",';
-		$json .= '"dato_id":"'.clear_json($r["dato_id"]).'",';
-		$json .= '"dato_tipo_id":"'.		clear_json($r["dato_tipo_id"]).'",';
-		$json .= '"ico":"'.	clear_json($r["ico"]).'"';
-		$json .= '},';
-		//var_dump($r);
-		$entered = true;
-	}
-	
-	if ($entered) {
-		
-		$json = substr($json,0,strlen($json)-1);
-		
-	}
-	
-	$json .= "]";
-	
-	echo $json;
-	
-	pg_close($conn);
-
-};
-
-function get_datos_recursos_capa($layer_id) 
-{
-	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
-		
-	$conn = pg_connect($string_conn);
-	
-	$query_string  = "SELECT *,D.layer_id,D.layer_gid FROM (";
-	$query_string .= "SELECT 'Grafico'::TEXT AS tipo_dato,grafico_titulo as titulo,grafico_desc AS desc,grafico_id as dato_id,0 as dato_tipo_id,'./types/indicadores.png' as ico from sinia_graficos.grafico ";
-	$query_string .= "UNION ALL ";
-	$query_string .= "SELECT 'Recurso'::TEXT AS tipo_dato,titulo,descripcion as desc,origen_id_propio dato_id,1 as dato_tipo_id,ico_path as ico from sinia_recursos.vw_catalogo "; 
-	$query_string .= ")T INNER JOIN sinia_geovisor.capa_fila_datos D ON T.dato_tipo_id=D.entidad_tipo AND T.dato_id=D.entidad_id ";
-	$query_string .= " WHERE D.layer_id=$layer_id;";
-	
-	$query = pg_query($conn,$query_string);
-	
-	$entered = false;
-	
-	$json = "[";
-	
-	while ($r = pg_fetch_assoc($query)) {
-		
-		$json .= '{';
-		$json .= '"layer_id":"'.		clear_json($r["layer_id"]).'",';
-		$json .= '"tipo_dato":"'.		clear_json($r["tipo_dato"]).'",';
-		$json .= '"titulo":"'.	clear_json($r["titulo"]).'",';
-		$json .= '"layer_gid":"'.clear_json($r["layer_gid"]).'",';
-		$json .= '"dato_id":"'.clear_json($r["dato_id"]).'",';
-		$json .= '"dato_tipo_id":"'.		clear_json($r["dato_tipo_id"]).'",';
-		$json .= '"ico":"'.	clear_json($r["ico"]).'"';
-		$json .= '},';
-		//var_dump($r);
-		$entered = true;
-	}
-	
-	if ($entered) {
-		
-		$json = substr($json,0,strlen($json)-1);
-		
-	}
-	
-	$json .= "]";
-	
-	echo $json;
-	
-	pg_close($conn);
-
-};
-
-function layers_datos_nuevo($layer_id,$entidad_id,$entidad_tipo,$gid)
-{
-	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
-		
-	$conn = pg_connect($string_conn);
-
-	$query_string ="INSERT INTO sinia_geovisor.capa_fila_datos(layer_id,layer_gid,entidad_id,entidad_tipo)VALUES($layer_id,$gid,$entidad_id,$entidad_tipo) RETURNING layer_id;";
-
-	$query = pg_query($conn,$query_string);
-	
-	if(!$query)
-	{
-		$error_1 = clear_json(pg_last_error($conn));
-		echo '{"status_code":"2","status":"No se pudo cargar el registro","error_desc":"'.$error_1.'"}';
-	}
-	else
-	{
-		$r = pg_fetch_assoc($query);
-		echo '{"status_code":"0","status":"Ok","layer_id":"'. $r["layer_id"].'"}';
-	};
-	
-	pg_close($conn);
-};
-
-function layers_datos_borrar($layer_id,$entidad_id,$entidad_tipo,$gid)
-{
-	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
-		
-	$conn = pg_connect($string_conn);
-
-	$query_string .="DELETE FROM sinia_geovisor.capa_fila_datos WHERE ";
-	$query_string .="layer_id=$layer_id AND layer_gid=$gid AND entidad_id=$entidad_id AND entidad_tipo=$entidad_tipo RETURNING layer_id;";
-	
-	$query = pg_query($conn,$query_string);
-	
-	if(!$query)
-	{
-		$error_1 = clear_json(pg_last_error($conn));
-		echo '{"status_code":"2","status":"No se pudo borrar el registro","error_desc":"'.$error_1.'"}';
-	}
-	else
-	{
-		$r = pg_fetch_assoc($query);
-		echo '{"status_code":"0","status":"Ok","layer_id":"'. $r["layer_id"].'"}';
-	};
-	
-	pg_close($conn);
-};
 
 
 

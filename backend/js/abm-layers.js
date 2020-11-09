@@ -70,6 +70,52 @@ function borrar_capa()
 
 };
 
+function guardar_catalogo()
+{
+	
+	var retorno = $.ajax
+				({
+					url: "./abm-layers.php",
+					async:false,
+					data:
+					{
+								mode:3,
+								layer_id:document.getElementById("current_capa_id").layer_id,
+								layer_desc:document.getElementById("layer_desc").value,
+								layer_wms_server:document.getElementById("layer_wms_server").value,
+								layer_wms_layer:document.getElementById("layer_wms_layer").value,
+								layer_wms_server_alter:document.getElementById("layer_wms_server_alter").value,
+								layer_wms_layer_alter:document.getElementById("layer_wms_layer_alter").value,
+								layer_alter_activo:document.getElementById("layer_alter_activo").value,	
+								layer_metadata_url:document.getElementById("layer_metadata_url").value,	
+								layer_schema:document.getElementById("layer_schema").value,		
+								layer_table:document.getElementById("layer_table").value,			
+								tipo_layer_id:document.getElementById("tipo_layer_id").value,		
+								preview_desc:document.getElementById("preview_desc").value, 			
+								preview_titulo:document.getElementById("preview_titulo").value
+								
+					},
+					dataType: "json"
+				});
+	
+	//console.log(retorno.responseText);
+	
+	s = JSON.parse(retorno.responseText); /* status */
+	
+	if(s.status_code=="0")
+	{
+		alert('Se guardaron correctamente los datos');
+		
+		return true;
+	}
+	else
+	{
+		alert('Hubo problemas para registrar en el catalogo. Mensaje:'+s.error_desc);
+		return false;
+	};
+	
+};
+
 function guardar_capa()
 {
 	

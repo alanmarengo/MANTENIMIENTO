@@ -139,11 +139,11 @@
 						
 						<h5>Vista Previa</h5>
 						<img src="" id="preview_id" width="100%" height="200px">
-						<!--<div id="recursos_archivos" class="file-dropper mt-30">
+						<div id="recursos_archivos" class="file-dropper mt-30" style="display:none;">
 														
 							<div class="file-dropper-hint">Arrastre un archivo para asignarlo a este recurso</div>
 						
-						</div>-->
+						</div>
 							
 							<div id="recurso_lista_archivos" class="directory-reader mt-30"></div>
 						<br>
@@ -152,10 +152,8 @@
 						
 						<br>
 						<br>
-						<button type="button" style="width:100%;" class="btn btn-primary" onclick="">Regenerar Catálogo</button>
-						<br>
-						<br>
-						<button type="button" style="width:100%;" class="btn btn-primary" onclick="">Generar Backup de Catálogo</button>
+						<button type="button" style="width:100%;" title="Es necesario registrar los datos en el catalogo, esto permite buscar, categorizar la capa" class="btn btn-primary" onclick="guardar_catalogo();">Registrar en Catálogo</button>
+
 					</div>
 					
 			    
