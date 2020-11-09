@@ -110,17 +110,16 @@ $(document).ready(function() {
 
 });
 
-function reCalcPopup(id) {
+function reCalcPopup(idPrefix) {
 
-    let h1 = $("#" + id + "-inner").children(".header").height();
-    let h2 = $("#" + id + "-inner").children(".tabs").height();
-    let h3 = $("#" + id + "-inner").children(".categories").height();
+    let h1 = $("#" + idPrefix + "-inner").children(".header").height();
+    let h2 = $("#" + idPrefix + "-inner").children(".tabs").height();
+    let h3 = $("#" + idPrefix + "-inner").children(".categories").height();
 
-    let hp = $("#" + id).height();
+    let hp = $("#" + idPrefix).height();
 
     let nh = hp - (h1 + h2 + h3 + 40 /*margin*/ );
-    alert(h1 + "-" + h2 + "-" + h3 + "-" + hp);
 
-    $("#popup-aforo-tab-content").css("height", nh + "px");
+    $("#" + idPrefix + "-tab-content").css("height", nh + "px");
 
 }
