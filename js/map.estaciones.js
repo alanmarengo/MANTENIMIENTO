@@ -186,7 +186,6 @@ function ol_map() {
 
             this.parseGFI(js.features[0].properties);
 
-            $("#popup").show();
             reCalcPopup();
 
         }.bind(this));
@@ -253,7 +252,11 @@ function ol_map() {
 
         this.parseGFI = function(js) {
 
-            console.log(js);
+            if (js.tipo_estacion_id == 5) {
+                $("#popup-aforo").show();
+            } else {
+                $("#popup").show();
+            }
 
         }
 
