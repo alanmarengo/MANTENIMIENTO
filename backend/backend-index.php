@@ -30,12 +30,12 @@ include("./pgconfig.php");
 			
 				<div class="col col-xs-12 col-sm-12 col-lg-4 col-md-4"></div>
 				<div class="col col-xs-12 col-sm-12 col-lg-4 col-md-4 pv-30">
-					<p><a href="./backend-main.php" class="btn btn-primary">Modulo Mediateca</a></p>
-					<p><a href="./backend-layers.php" class="btn btn-primary">Catalogo de Capas</a></p>
-					<p><a href="./backend-main.php" class="btn btn-primary">Modulo Geovisores</a></p>
-					<p><a href="./backend-main.php" class="btn btn-primary">Modulo Indicadores</a></p>
-					<p><a href="./backend-main.php" class="btn btn-primary">Modulo Estadistico</a></p>
-					<p><a href="./backend-main.php" class="btn btn-primary">Gestion de Usuarios</a></p>
+					<p><a href="./backend-main.php" class="btn btn-primary"><img src="./images/icono-mediateca-relleno.png"  width="24px" height="24px"> Modulo Mediateca</a></p>
+					<p><a href="./backend-layers.php" class="btn btn-primary"><img src="./images/icono-geovisores-relleno.png"  width="24px" height="24px"> Catalogo de Capas</a></p>
+					<p><a href="./backend-geovisores.php" class="btn btn-primary"><img src="./images/icono-geovisores-relleno.png"  width="24px" height="24px"> Modulo Geovisores</a></p>
+					<p><a href="./backend-main.php" class="btn btn-primary"><img src="./images/icono-indicadores-relleno.png"  width="24px" height="24px"> Modulo Indicadores</a></p>
+					<p><a href="./backend-main.php" class="btn btn-primary"><img src="./images/icono-estadisticas-relleno.png"  width="24px" height="24px"> Modulo Estadistico</a></p>
+					<p><a href="./backend-main.php" class="btn btn-primary"><img src="./images/user.png"  width="24px" height="24px"> Gestion de Usuarios</a></p>
 				</div>
 			
 			</div>
