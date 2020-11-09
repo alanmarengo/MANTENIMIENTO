@@ -1,6 +1,6 @@
 function abrir_en_geobi()
 {
-	var url = window.location.origin+'/geovisor.php?source=1&id='+document.getElementById("current_capa_id").layer_id;
+	var url = window.location.origin+'/geovisor.php?geovisor='+document.getElementById("current_geovisor_id").geovisor_id;
 	window.open(url,'_blank');
 };
 
@@ -171,9 +171,9 @@ function guardar_capa()
 $(
 function() 
 {
-	 /**************** GRILLA DE MAPAS ****************/
+	 /**************** GRILLA DE GEOVISORES ****************/
 	 
-     $("#grid-layers").jsGrid({
+     $("#grid-geovisores").jsGrid({
 		width: "100%",
 		height: "auto",
 		autoload:   true,
@@ -184,24 +184,14 @@ function()
 		pageIndex:  1,
 		rowClick: function(args) 
 		{
-			document.getElementById("layer_id").value=args.item.layer_id;
-			document.getElementById("layer_desc").value=args.item.layer_desc;
-			document.getElementById("layer_wms_server").value=args.item.layer_wms_server;
-			document.getElementById("layer_wms_layer").value=args.item.layer_wms_layer;
-			document.getElementById("layer_wms_server_alter").value=args.item.layer_wms_server_alter;
-			document.getElementById("layer_wms_layer_alter").value=args.item.layer_wms_layer_alter; 
-			document.getElementById("layer_alter_activo").value=args.item.layer_alter_activo; 	
-			document.getElementById("layer_metadata_url").value=args.item.layer_metadata_url; 	
-			document.getElementById("layer_schema").value=args.item.layer_schema; 			
-			document.getElementById("layer_table").value=args.item.layer_table; 			
-			document.getElementById("tipo_layer_id").value=args.item.tipo_layer_id; 		
-			document.getElementById("preview_desc").value=args.item.preview_desc; 			
-			document.getElementById("preview_titulo").value=args.item.preview_titulo;
+			document.getElementById("geovisor_id").value=args.item.geovisor_id;
+			document.getElementById("geovisor_desc").value=args.item.geovisor_desc;
+			document.getElementById("geovisor_extent").value=args.item.geovisor_extent;
 			
-			document.getElementById("current_capa_id").layer_id=args.item.layer_id;
-			document.getElementById("current_capa_id").innerHTML = "<span>Capa Actual: " + args.item.layer_desc +"("+args.item.layer_id+")</span>";
+			document.getElementById("current_geovisor_id").geovisor_id=args.item.geovisor_id;
+			document.getElementById("current_geovisor_id").innerHTML = "<span>Geovisor Actual: " + args.item.geovisor_desc +"("+args.item.geovisor_id+")</span>";
 					
-			cargar_preview();
+			$("#grid-geovisores-capas").jsGrid('loadData');
 			
 			document.getElementById("tab-link-b").click();
         },
@@ -215,7 +205,7 @@ function()
 				
 				return $.ajax
 				({
-					url: "./abm-layers.php",
+					url: "./abm-geovisores.php",
 					data:
 					{
 								mode:0,
@@ -227,24 +217,99 @@ function()
 		},
 		fields: 
 		[
-			{name: "layer_id", 				width: 100},
-			{name: "layer_desc", 			width: 200},
-			{name: "layer_wms_server", 		width: 200},
-			{name: "layer_wms_layer", 		width: 200},
-			{name: "layer_wms_server_alter",width: 200},
-			{name: "layer_wms_layer_alter", width: 200},
-			{name: "layer_alter_activo", 	width: 200},
-			{name: "layer_metadata_url", 	width: 200},
-			{name: "layer_wms_sld", 		width: 200},
-			{name: "layer_schema", 			width: 200},
-			{name: "layer_table", 			width: 200},
-			{name: "tipo_layer_id", 		width: 200},
-			{name: "tipo_origen_id", 		width: 200},
-			{name: "preview_desc", 			width: 200},
-			{name: "preview_link", 			width: 200},
-			{name: "preview_titulo", 		width: 800}
+			{name: "geovisor_id", 				width: 100},
+			{name: "geovisor_desc", 			width: 200},
+			{name: "geovisor_extent", 			width: 400}
+			
 		]
 		});
+		
+		 /**************** GRILLA DE CAPAS ****************/
+	 
+		$("#grid-capas").jsGrid({
+		width: "100%",
+		height: "auto",
+		autoload:   true,
+		paging:     true,
+		pageSize:   5,
+		sorting: true,
+		pageButtonCount: 5,
+		pageIndex:  1,
+		rowClick: function(args) 
+		{
+			
+        },
+		controller: 
+		{
+			loadData: function(filter) 
+			{
+				var b = document.getElementById('layersBusqueda').value;
+				
+				console
+				
+				return $.ajax
+				({
+					url: "./abm-geovisores.php",
+					data:
+					{
+								mode:4,
+								s:b
+					},
+					dataType: "json"
+				});
+			}
+		},
+		fields: 
+		[
+			{name: "layer_id", 				width: 100},
+			{name: "layer_desc", 			width: 300},
+			{name: "preview_titulo", 		width: 800},
+			{name: "preview_desc", 			width: 800}
+		]
+		});
+		
+		 /**************** GRILLA DE CAPAS DE GEOVISOR ****************/
+	 
+		$("#grid-geovisores-capas").jsGrid({
+		width: "100%",
+		height: "auto",
+		autoload:   true,
+		paging:     true,
+		pageSize:   5,
+		sorting: true,
+		pageButtonCount: 5,
+		pageIndex:  1,
+		rowClick: function(args) 
+		{
+			
+        },
+		controller: 
+		{
+			loadData: function(filter) 
+			{
+							
+				return $.ajax
+				({
+					url: "./abm-geovisores.php",
+					data:
+					{
+								mode:5,
+								geovisor_id:document.getElementById("current_geovisor_id").geovisor_id
+					},
+					dataType: "json"
+				});
+			}
+		},
+		fields: 
+		[
+			{name: "layer_id", 				width: 100},
+			{name: "nombre_capa", 			width: 200},
+			{name: "geovisor_id", 			width: 100},
+			{name: "iniciar_visible", 		width: 100}
+			
+		]
+		});
+		
 		
 		
 

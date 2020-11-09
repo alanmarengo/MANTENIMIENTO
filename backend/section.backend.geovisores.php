@@ -9,16 +9,16 @@
 					
 		<div class="row">				
 			
-			<div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12" id="current_capa_id">
-				<span>Sin Capa Seleccionada</span>
+			<div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12" id="current_geovisor_id">
+				<span>Sin Geovisor Seleccionado</span>
 			</div>
 		
 		</div>
 		
 		<ul class="nav nav-tabs mt-20">
 			<li class="nav-item"><a class="nav-link active" data-toggle="tab" id="tab-link-busqueda" href="#tab-buscar">Buscar</a></li>
-			<li class="nav-item"><a class="nav-link" data-toggle="tab" id="tab-link-b" href="#tab-b">Datos Capa</a></li>
-			<!--<li class="nav-item"><a class="nav-link" data-toggle="tab" id="tab-link-c" href="#tab-c">Preview</a></li>-->
+			<li class="nav-item"><a class="nav-link" data-toggle="tab" id="tab-link-b" href="#tab-b">Datos de Geovisor</a></li>
+			<li class="nav-item"><a class="nav-link" data-toggle="tab" id="tab-link-c" href="#tab-c">Capas del Geovisor</a></li>
 
 		</ul>
 		
@@ -31,7 +31,7 @@
 					<div class="input-group mb-1 col col-xs-12 col-sm-12 col-md-4 col-lg-4 p0">
 						<input id="dtBusqueda" type="text" class="form-control" placeholder="Buscar">
 						<div class="input-group-append">
-							<button class="btn btn-primary" type="button" id="boton_buscar" onclick="$('#grid-layers').jsGrid('loadData');">
+							<button class="btn btn-primary" type="button" id="boton_buscar" onclick="$('#grid-geovisores').jsGrid('loadData');">
 								<i class="fa fa-search"></i>
 							</button>
 						</div>
@@ -51,9 +51,7 @@
 				
 					<div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12">
 						
-						<div id="grid-layers" class="mt-30">
-						
-						</div>
+						<div id="grid-geovisores" class="mt-30"></div>
 				
 					</div>
 				
@@ -69,67 +67,18 @@
 					
 						<form name="frm-backend-main" id="frm-backend-main">
 							<div class="form-group">
-								<label for="layer_id">Id de la capa</label>
-								<input type="text" class="form-control" name="layer_id" id="layer_id" aria-describedby="layer_id"  readonly="readonly" placeholder="ID de Capa...">
+								<label for="geovisor_id">Id del geovisor</label>
+								<input type="text" class="form-control" name="geovisor_id" id="geovisor_id" aria-describedby="geovisor_id"  readonly="readonly" placeholder="ID de geovisor...">
 							</div>
 							<div class="form-group">
-								<label for="layer_desc">Descripción</label>
-								<input type="text" class="form-control" name="layer_desc" id="layer_desc" aria-describedby="layer_desc" r placeholder="Descripción...">
+								<label for="geovisor_desc">Descripción</label>
+								<input type="text" class="form-control" name="geovisor_desc" id="geovisor_desc" aria-describedby="geovisor_desc" r placeholder="Descripción...">
 							</div>
 							<div class="form-group">
-								<label for="layer_wms_server">Servidor WMS</label>
-								<input type="text" class="form-control" name="layer_wms_server" id="layer_wms_server" aria-describedby="layer_wms_server"  placeholder="Servidor WMS...">
+								<label for="geovisor_extent">Extent Inicial (EPSG:3857)</label>
+								<input type="text" class="form-control" name="geovisor_extent" id="geovisor_extent" aria-describedby="geovisor_extent"  placeholder="[minx,miny,maxx,maxy]...">
 							</div>
-							<div class="form-group">
-								<label for="layer_wms_layer">Nombre capa en el WMS</label>
-								<input type="text" class="form-control" name="layer_wms_layer" id="layer_wms_layer" aria-describedby="layer_wms_layer"  placeholder="Nombre capa en el WMS...">
-							</div>
-							<div class="form-group">
-								<label for="layer_wms_server_alter">Servidor WMS alternativo</label>
-								<input type="text" class="form-control" name="layer_wms_server_alter" id="layer_wms_server_alter" aria-describedby="layer_wms_server_alter"  placeholder="Servidor WMS alternativo...">
-							</div>
-							<div class="form-group">
-								<label for="layer_wms_layer_alter">Nombre capa en el WMS alternativo</label>
-								<input type="text" class="form-control" name="layer_wms_layer_alter" id="layer_wms_layer_alter" aria-describedby="layer_wms_layer_alter"  placeholder="Nombre capa en el WMS alternativo...">
-							</div>
-							<div class="form-group">
-								<label for="layer_alter_activo">Recurso WMS Alternativo activo?</label>
-								<select name="layer_alter_activo" id="layer_alter_activo" class="form-control">
-									<option value="f">Desactivado</option>
-									<option value="t">Activado</option>
-								</select>
-							</div>
-							<div class="form-group">
-								<label for="layer_metadata_url">URL GeoNetWork Metadatos</label>
-								<input type="text" class="form-control" name="layer_metadata_url" id="layer_metadata_url" aria-describedby="layer_metadata_url"  placeholder="URL GeoNetWork Metadatos...">
-							</div>
-							<div class="form-group">
-								<label for="layer_schema">Schema de la capa en DB</label>
-								<input type="text" class="form-control" name="layer_schema" id="layer_schema" aria-describedby="layer_schema"  placeholder="Schema de la capa en db...">
-							</div>
-							<div class="form-group">
-								<label for="layer_table">Tabla de la capa</label>
-								<input type="text" class="form-control" name="layer_table" id="layer_table" aria-describedby="layer_table"  placeholder="Tabla de la capa...">
-							</div>
-							<div class="form-group">
-								<label for="tipo_layer_id">Tipo capa</label>
-								<?php get_combo_db("mod_geovisores","tipo_layer","tipo_layer_id","tipo_layer_desc",null,"tipo_layer_id"); ?>
-
-							</div>
-							<div class="form-group">
-								<label for="preview_desc">Descripción para preview</label>
-								<input type="text" class="form-control" name="preview_desc" id="preview_desc" aria-describedby="preview_desc"  placeholder="Descripción para preview...">
-							</div>
-							<div class="form-group">
-								<label for="preview_titulo">Titulo para preview</label>
-								<input type="text" class="form-control" name="preview_titulo" id="preview_titulo" aria-describedby="preview_titulo"  placeholder="Titulo para preview...">
-							</div>
-							
-							<!--<div class="form-group">
-								<label for="recurso_categoria_id">Categoría de Recurso</label>
-								<?php get_combo_db("mod_mediateca","recurso_categoria","recurso_categoria_id","recurso_categoria_desc",test_get_var($recurso_data["recurso_categoria_id"],"1"),"recurso_categoria_id"); ?>
-							</div>-->
-							
+						
 							<button type="button" class="btn btn-primary" onclick="guardar_capa();">Guardar</button>
 							<button type="button" class="btn btn-danger" onclick="borrar_capa();">Eliminar Capa</button>
 						</form>
@@ -149,12 +98,9 @@
 							<div id="recurso_lista_archivos" class="directory-reader mt-30"></div>
 						<br>
 						<br>
-						<button type="button" style="width:100%;" class="btn btn-primary" onclick="abrir_en_geobi();">Ver en Geobi</button>
+						<button type="button" style="width:100%;" class="btn btn-primary" onclick="abrir_en_geobi();">Ver Geovisor</button>
 						
-						<br>
-						<br>
-						<button type="button" style="width:100%;" title="Es necesario registrar los datos en el catalogo, esto permite buscar, categorizar la capa" class="btn btn-primary" onclick="guardar_catalogo();">Registrar en Catálogo</button>
-
+						
 					</div>
 					
 			    
@@ -164,18 +110,56 @@
 				
 			</div> <!-- FIN TAB B -->
 			 <!-- INICIO TAB C -->
-			<!-- 
+			
 			<div class="tab-pane" id="tab-c"> 
+				<!-- GRIDS -->
+				<div class="row">
 				
-				<div class="row">
-							
-				</div>		
-			
-				<div class="row">
-					
+					<div class="input-group mb-1 col col-xs-12 col-sm-12 col-md-8 col-lg-8 p0"></div>
+					<div class="input-group mb-1 col col-xs-12 col-sm-12 col-md-4 col-lg-4 p0">
+						<input id="layersBusqueda" type="text" class="form-control" placeholder="Buscar capas">
+						<div class="input-group-append">
+							<button class="btn btn-primary" type="button" id="buscar_capas" onclick="$('#grid-capas').jsGrid('loadData');">
+								<i class="fa fa-search"></i>
+							</button>
+						</div>
+					</div>
+				
 				</div>
+				
+				<div class="row mt-30">
+				
+					<div class="col col-xs-12 col-sm-12 col-md-6 col-lg-6">
+						
+						<p>Lista de capas en este Geovisor (Click para desvincular)</p>
+						
+						<div id="grid-geovisores-capas" class="mt-30">
+						
+						</div>
+				
+					</div>
+				
+					<div class="col col-xs-12 col-sm-12 col-md-6 col-lg-6">
+						
+						<label for="layer_alter_activo">Inicia Visible?</label>
+								<select name="iniciar_visible" id="iniciar_visible" class="form-control">
+									<option value="f">No</option>
+									<option value="t">Si</option>
+								</select>
+							
+						<p>Lista de capas (Click para agregar al geovisor)</p>
+						<div id="grid-capas" class="mt-30">
+						
+						</div>
+				
+					</div>
+				
+				</div>
+				
+				<!-- GRIDS -->
+				
 			
-			</div> --> <!-- FIN TAB C -->
+			</div> <!-- FIN TAB C -->
 			
 			
 		</div>

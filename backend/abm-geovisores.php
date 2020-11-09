@@ -50,12 +50,15 @@ $tipo_layer_id			=$_REQUEST['tipo_layer_id'];
 $preview_desc			=$_REQUEST['preview_desc']; 			
 $preview_titulo			=$_REQUEST['preview_titulo'];
 
+$geovisor_id				=$_REQUEST['geovisor_id'];
+$geovisor_desc				=$_REQUEST['geovisor_desc'];
+$geovisor_extent			=$_REQUEST['geovisor_extent'];
 
 
 switch ($mode) 
 {
     case 0: /* BUSCAR CAPAS */
-        layers_buscar($s);
+        geovisor_buscar($s);
         break;
     case 1: /* NUEVA/ACTUALIZAR CAPA */
         layers_guardar();
@@ -66,6 +69,13 @@ switch ($mode)
     case 3: /* AGREGAR A CATALOGO */
         catalogo_agregar();
         break;
+    case 4: /* BUSCAR CAPAS */
+         get_capas($s) ;
+        break;
+    case 5: /* BUSCAR CAPAS */
+         get_capas_geovisor($geovisor_id);
+        break;
+         
 };
 
 
@@ -247,14 +257,14 @@ function layers_guardar()
 
 
 
-function layers_buscar($busqueda) 
+function geovisor_buscar($busqueda) 
 {
 	
 	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 		
 	$conn = pg_connect($string_conn);
 	
-	$query_string = "SELECT * FROM mod_geovisores.layer WHERE layer_desc ILIKE '%$busqueda%' ORDER BY layer_desc ASC";
+	$query_string = "SELECT * FROM  mod_geovisores.geovisor WHERE geovisor_desc ILIKE '%$busqueda%' ORDER BY geovisor_desc ASC";
 
 	$query = pg_query($conn,$query_string);
 	
@@ -265,22 +275,9 @@ function layers_buscar($busqueda)
 	while ($r = pg_fetch_assoc($query)) 
 	{
 		$json .= '{';
-		$json .= '"layer_id":"'					. 	$r["layer_id"] .'",';
-		$json .= '"layer_desc":"'				. 	clear_json($r["layer_desc"]) .'",';
-		$json .= '"layer_wms_server":"'			. 	clear_json($r["layer_wms_server"]) .'",';
-		$json .= '"layer_wms_layer":"'			. 	clear_json($r["layer_wms_layer"]) .'",';
-		$json .= '"layer_wms_server_alter":"'	. 	clear_json($r["layer_wms_server_alter"]) .'",';
-		$json .= '"layer_wms_layer_alter":"'	. 	clear_json($r["layer_wms_layer_alter"]) .'",';
-		$json .= '"layer_alter_activo":"'		. 	clear_json($r["layer_alter_activo"]) .'",';
-		$json .= '"layer_metadata_url":"'		. 	clear_json($r["layer_metadata_url"]) .'",';
-		$json .= '"layer_wms_sld":"'			. 	clear_json($r["layer_wms_sld"]) .'",';
-		$json .= '"layer_schema":"'				. 	clear_json($r["layer_schema"]) .'",';
-		$json .= '"layer_table":"'				. 	clear_json($r["layer_table"]) .'",';
-		$json .= '"tipo_layer_id":"'			. 	clear_json($r["tipo_layer_id"]) .'",';
-		$json .= '"tipo_origen_id":"'			. 	clear_json($r["tipo_origen_id"]) .'",';
-		$json .= '"preview_desc":"'				. 	clear_json($r["preview_desc"]) .'",';
-		$json .= '"preview_link":"'				. 	clear_json($r["preview_link"]) .'",';
-		$json .= '"preview_titulo":"'			. 	clear_json($r["preview_titulo"]) .'"';
+		$json .= '"geovisor_id":"'					. 	$r["geovisor_id"] .'",';
+		$json .= '"geovisor_desc":"'				. 	clear_json($r["geovisor_desc"]) .'",';
+		$json .= '"geovisor_extent":"'				. 	clear_json($r["geovisor_extent"]) .'"';
 		$json .= "},";
 		
 
@@ -300,13 +297,13 @@ function layers_buscar($busqueda)
 
 };
 
-function get_subtemas($busqueda) 
+function get_capas($busqueda) 
 {
 	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 		
 	$conn = pg_connect($string_conn);
 	
-	$query_string = "SELECT subtema_id,subtema_titulo||' - Tema '||tema_nombre AS subtema_titulo FROM sinia_catalogo.vw_subtema_tema WHERE subtema_titulo||tema_nombre ILIKE '%$busqueda%' ORDER BY subtema_desc ASC";
+	$query_string = "SELECT layer_id,layer_desc,preview_titulo,preview_desc FROM mod_geovisores.layer WHERE layer_desc||preview_titulo ILIKE '%$busqueda%' ORDER BY layer_desc ASC";
 	
 	$query = pg_query($conn,$query_string);
 	
@@ -317,8 +314,10 @@ function get_subtemas($busqueda)
 	while ($r = pg_fetch_assoc($query)) {
 		
 		$json .= "{";
-		$json .= "\"subtema_id\":" . $r["subtema_id"] . ",";
-		$json .= "\"subtema_titulo\":\"" . clear_json($r["subtema_titulo"]) . "\"";
+		$json .= "\"layer_id\":" . $r["layer_id"] . ",";
+		$json .= "\"layer_desc\":\"" . clear_json($r["layer_desc"]) . "\",";
+		$json .= "\"preview_titulo\":\"" . clear_json($r["preview_titulo"]) . "\",";
+		$json .= "\"preview_desc\":\"" . clear_json($r["preview_desc"]) . "\"";
 		$json .= "},";
 		//var_dump($r);
 		$entered = true;
@@ -338,6 +337,47 @@ function get_subtemas($busqueda)
 
 };
 
+function get_capas_geovisor($geovisor_id) 
+{
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+		
+	$conn = pg_connect($string_conn);
+	
+	$query_string = "select *,";
+	$query_string .= "(SELECT layer_desc FROM mod_geovisores.layer L WHERE L.layer_id=G.layer_id)AS nombre_capa ";
+	$query_string .= "FROM mod_geovisores.geovisor_capa_inicial G WHERE geovisor_id=$geovisor_id;";
+	
+	$query = pg_query($conn,$query_string);
+	
+	$entered = false;
+	
+	$json = "[";
+	
+	while ($r = pg_fetch_assoc($query)) {
+		
+		$json .= "{";
+		$json .= "\"geovisor_id\":" . $r["geovisor_id"] . ",";
+		$json .= "\"layer_id\":\"" . clear_json($r["layer_id"]) . "\",";
+		$json .= "\"nombre_capa\":\"" . clear_json($r["nombre_capa"]) . "\",";
+		$json .= "\"iniciar_visible\":\"" . clear_json($r["iniciar_visible"]) . "\"";
+		$json .= "},";
+		//var_dump($r);
+		$entered = true;
+	}
+	
+	if ($entered) {
+		
+		$json = substr($json,0,strlen($json)-1);
+		
+	}
+	
+	$json .= "]";
+	
+	echo $json;
+	
+	pg_close($conn);
+
+};
 
 
 

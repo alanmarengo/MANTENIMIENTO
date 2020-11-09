@@ -27,7 +27,7 @@ include("./pgconfig.php");
 	<div id="index">
 		<div class="page-container">
 			<?php include("./header.php"); ?>
-			<?php include("./section.backend.layers.php"); ?>
+			<?php include("./section.backend.geovisores.php"); ?>
 			<?php include("./footer.php"); ?>
 		</div>
 	</div>	
