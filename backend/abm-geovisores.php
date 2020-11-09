@@ -36,24 +36,12 @@ $mode 	= $_REQUEST["mode"];
 
 $s 		= clear_json(pg_escape_string($_REQUEST["s"]));
 
+$geovisor_id			=$_REQUEST['geovisor_id'];
+$geovisor_desc			=$_REQUEST['geovisor_desc'];
+$geovisor_extent		=$_REQUEST['geovisor_extent'];
+
 $layer_id				=$_REQUEST['layer_id'];
-$layer_desc				=$_REQUEST['layer_desc'];
-$layer_wms_server		=$_REQUEST['layer_wms_server'];
-$layer_wms_layer		=$_REQUEST['layer_wms_layer'];
-$layer_wms_server_alter	=$_REQUEST['layer_wms_server_alter'];
-$layer_wms_layer_alter	=$_REQUEST['layer_wms_layer_alter']; 
-$layer_alter_activo		=$_REQUEST['layer_alter_activo']; 	
-$layer_metadata_url		=$_REQUEST['layer_metadata_url']; 	
-$layer_schema			=$_REQUEST['layer_schema']; 			
-$layer_table			=$_REQUEST['layer_table']; 			
-$tipo_layer_id			=$_REQUEST['tipo_layer_id']; 		
-$preview_desc			=$_REQUEST['preview_desc']; 			
-$preview_titulo			=$_REQUEST['preview_titulo'];
-
-$geovisor_id				=$_REQUEST['geovisor_id'];
-$geovisor_desc				=$_REQUEST['geovisor_desc'];
-$geovisor_extent			=$_REQUEST['geovisor_extent'];
-
+$iniciar_visible		=$_REQUEST['iniciar_visible'];		
 
 switch ($mode) 
 {
@@ -61,33 +49,37 @@ switch ($mode)
         geovisor_buscar($s);
         break;
     case 1: /* NUEVA/ACTUALIZAR CAPA */
-        layers_guardar();
+        geovisor_guardar();
         break;
     case 2: /* BORRAR CAPA */
-        layers_borrar();
+        geovisor_borrar();
         break;
-    case 3: /* AGREGAR A CATALOGO */
-        catalogo_agregar();
+    case 3: /* AGREGAR A capas del visor */
+        agregar_capa_visor();
         break;
     case 4: /* BUSCAR CAPAS */
          get_capas($s) ;
         break;
-    case 5: /* BUSCAR CAPAS */
+    case 5: /* capas del geovisor */
          get_capas_geovisor($geovisor_id);
         break;
-         
+    case 6: /* quitar capas del visor */
+        quitar_capa_visor();
+        break;
+
+            
 };
 
 
-function layers_borrar()
+function geovisor_borrar()
 {
-	global $layer_id;
+	global $geovisor_id;
 		
 	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 		
 	$conn = pg_connect($string_conn);
 
-	$query_string .="DELETE FROM mod_geovisores.layer WHERE layer_id=$layer_id RETURNING layer_id;";
+	$query_string .="DELETE FROM mod_geovisores.geovisor WHERE geovisor_id=$geovisor_id RETURNING geovisor_id;";
 
 	$query = pg_query($conn,$query_string);
 	
@@ -99,34 +91,23 @@ function layers_borrar()
 	else
 	{
 		$r = pg_fetch_assoc($query);
-		echo '{"status_code":"0","status":"Ok","layer_id":"'. $r["layer_id"].'"}';
+		echo '{"status_code":"0","status":"Ok","geovisor_id":"'. $r["geovisor_id"].'"}';
 	};
 	
 	pg_close($conn);
 	
 };
 
-function catalogo_agregar()
+function quitar_capa_visor()
 {
-    global	$layer_id;
-	global	$layer_schema;			
-	global	$layer_table;	
-	global	$layer_desc;
-	global	$preview_desc;		
-	global	$preview_titulo;
-	
+    global	$geovisor_id;
+	global	$layer_id;			
 	
 	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 		
 	$conn = pg_connect($string_conn);
 	
-	$query_string  = "DELETE FROM mod_geovisores.catalogo WHERE origen_id=0 AND origen_id_especifico=$layer_id;";
-	$query_string .= "INSERT INTO mod_geovisores.catalogo(origen,origen_id,origen_id_especifico,origen_search_text,subclase_id,estudios_id,cod_esia_id,cod_temporalidad_id,objetos_id) ";
-	$query_string .= "SELECT DISTINCT 'GIS'::TEXT,0::BIGINT,";
-	$query_string .= "$layer_id::BIGINT,";
-	$query_string .= "'$layer_desc $preview_desc $preview_titulo',";
-	$query_string .= "subclase_id::BIGINT,estudios_id::BIGINT,cod_esia_id::BIGINT,cod_temporalidad_id::BIGINT,objetos_id::bigint ";
-	$query_string .= "FROM $layer_schema.$layer_table;";
+	$query_string  = "DELETE FROM mod_geovisores.geovisor_capa_inicial WHERE $geovisor_id=geovisor_id AND layer_id=$layer_id RETURNING geovisor_id";
 		
 	$query = pg_query($conn,$query_string);
 	
@@ -134,26 +115,12 @@ function catalogo_agregar()
 	{
 		$error_1 = clear_json(pg_last_error($conn));
 		
-		/* Valores por default */
-		$query_string  = "DELETE FROM mod_geovisores.catalogo WHERE origen_id=0 AND origen_id_especifico=$layer_id;";
-		$query_string .= "INSERT INTO mod_geovisores.catalogo(origen,origen_id,origen_id_especifico,origen_search_text,subclase_id,estudios_id,cod_esia_id,cod_temporalidad_id,objetos_id) ";
-		$query_string .= "SELECT 'GIS'::TEXT,0::BIGINT,";
-		$query_string .= "$layer_id::BIGINT,";
-		$query_string .= "'$layer_desc $preview_desc $preview_titulo',";
-		$query_string .= "1::BIGINT,NULL::BIGINT,NULL::BIGINT,NULL::BIGINT,NULL::bigint; ";
-		
-		$query = pg_query($conn,$query_string);
-				
-		$error_2 = clear_json(pg_last_error($conn));
-		
-		$error_1 .= ' '.$error_2;
-		
-		echo '{"status_code":"1","status":"No se pudo guardar los datos en el catalogo,por favor controle que existan los campos requeridos","error_desc":"'.$error_1.'"}';
+		echo '{"status_code":"1","status":"No se pudo eliminar los datos. ","error_desc":"'.$error_1.'"}';
 	}
 	else
 	{
 		$r = pg_fetch_assoc($query);
-		echo '{"status_code":"0","status":"Ok","layer_id":"'. $layer_id.'"}';
+		echo '{"status_code":"0","status":"Ok","geovisor_id":"'. $geovisor_id.'"}';
 	};
 	
 	pg_close($conn);
@@ -162,80 +129,66 @@ function catalogo_agregar()
 
 
 
-function layers_guardar()
+function agregar_capa_visor()
 {
-	global	$layer_id;
-	global	$layer_desc;
-	global	$layer_wms_server;
-	global	$layer_wms_layer;
-	global	$layer_wms_server_alter;
-	global	$layer_wms_layer_alter; 
-	global	$layer_alter_activo;
-	global	$layer_metadata_url;	
-	global	$layer_schema;			
-	global	$layer_table;	
-	global	$tipo_layer_id;	
-	global	$preview_desc;		
-	global	$preview_titulo;
+    global	$geovisor_id;
+	global	$layer_id;			
+	global	$iniciar_visible;	
 	
 	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 		
 	$conn = pg_connect($string_conn);
 	
-	if($layer_id==-1)
+	$query_string  = "INSERT INTO mod_geovisores.geovisor_capa_inicial(geovisor_id,layer_id,iniciar_visible)VALUES(";
+	$query_string  .= "$geovisor_id,$layer_id,'$iniciar_visible')RETURNING geovisor_id;";
+		
+	$query = pg_query($conn,$query_string);
+	
+	if(!$query)
 	{
-		$query_string = "INSERT INTO mod_geovisores.layer(";
-		$query_string .= "layer_desc,";
-		$query_string .= "layer_wms_server,";
-		$query_string .= "layer_wms_layer,";
-		$query_string .= "layer_wms_server_alter,";
-		$query_string .= "layer_wms_layer_alter,";
-		$query_string .= "layer_alter_activo,";
-		$query_string .= "layer_metadata_url,";	
-		$query_string .= "layer_schema,";	
-		$query_string .= "layer_table,";
-		$query_string .= "tipo_layer_id,";	
-		$query_string .= "preview_desc,";
-		$query_string .= "tipo_origen_id,";		
-		$query_string .= "preview_titulo";
-		$query_string .=")VALUES(";
-		$query_string .= "'$layer_desc',";
-		$query_string .= "'$layer_wms_server',";
-		$query_string .= "'$layer_wms_layer',";
-		$query_string .= "'$layer_wms_server_alter',";
-		$query_string .= "'$layer_wms_layer_alter',";
-		$query_string .= "'$layer_alter_activo',";
-		$query_string .= "'$layer_metadata_url',";
-		$query_string .= "'$layer_schema',";
-		$query_string .= "'$layer_table',";
-		$query_string .= "$tipo_layer_id,";	
-		$query_string .= "'$preview_desc',";
-		$query_string .= "1,";
-		$query_string .= "'$preview_titulo'";
-		$query_string .= ")RETURNING layer_id;";
+		$error_1 = clear_json(pg_last_error($conn));
+		
+		echo '{"status_code":"1","status":"No se pudo guardar los datos. ","error_desc":"'.$error_1.'"}';
+	}
+	else
+	{
+		$r = pg_fetch_assoc($query);
+		echo '{"status_code":"0","status":"Ok","geovisor_id":"'. $geovisor_id.'"}';
+	};
+	
+	pg_close($conn);
+	
+};
+
+
+
+function geovisor_guardar()
+{
+	global $geovisor_id;
+	global $geovisor_desc;
+	global $geovisor_extent;
+	
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+		
+	$conn = pg_connect($string_conn);
+	
+	if($geovisor_id==-1)
+	{
+		$query_string = "INSERT INTO mod_geovisores.geovisor(geovisor_desc,geovisor_extent)VALUES(";
+		$query_string .= "'$geovisor_desc',";
+		$query_string .= "'$geovisor_extent'";
+		$query_string .= ")RETURNING geovisor_id;";
 	
 	}
 	else
 	{
 		
-		$query_string = "UPDATE  mod_geovisores.layer SET ";
-		$query_string .="layer_desc = '$layer_desc',";
-		$query_string .="layer_wms_server = '$layer_wms_server',";
-		$query_string .="layer_wms_layer = '$layer_wms_layer',";
-		$query_string .="layer_wms_server_alter = '$layer_wms_server_alter',";
-		$query_string .="layer_wms_layer_alter= '$layer_wms_layer_alter',";
-		$query_string .="layer_alter_activo = '$layer_alter_activo',";
-		$query_string .="layer_metadata_url = '$layer_metadata_url',";
-		$query_string .="layer_schema = '$layer_schema',";		
-		$query_string .="layer_table = '$layer_table',";
-		$query_string .="tipo_layer_id = $tipo_layer_id,";	
-		$query_string .="preview_desc = '$preview_desc',";	
-		$query_string .="preview_titulo = '$preview_titulo' ";
-		$query_string .="WHERE layer_id=$layer_id RETURNING layer_id;";
+		$query_string = "UPDATE  mod_geovisores.geovisor SET ";
+		$query_string .="geovisor_desc = '$geovisor_desc',";
+		$query_string .="geovisor_extent = '$geovisor_extent' ";
+		$query_string .="WHERE geovisor_id=$geovisor_id RETURNING geovisor_id;";
 	
 	};
-    
-    //echo $query_string;
     
 	$query = pg_query($conn,$query_string);
 	
@@ -247,7 +200,7 @@ function layers_guardar()
 	else
 	{
 		$r = pg_fetch_assoc($query);
-		echo '{"status_code":"0","status":"Ok","layer_id":"'. $r["layer_id"].'"}';
+		echo '{"status_code":"0","status":"Ok","geovisor_id":"'. $r["geovisor_id"].'"}';
 	};
 	
 	pg_close($conn);

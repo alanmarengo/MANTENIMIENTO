@@ -40,7 +40,7 @@
 					<div class="input-group mb-1 col col-xs-12 col-sm-12 col-md-1 col-lg-1 p0"></div>
 				
 					<div class="mb-1 col col-xs-12 col-sm-12 col-md-4 col-lg-4 p0">
-						<button class="btn btn-primary" type="button" id="dtNuevoBtnBusqueda" onclick="nueva_capa();">
+						<button class="btn btn-primary" type="button" id="dtNuevoBtnBusqueda" onclick="nuevo_geovisor();">
 							<i class="fa fa-plus"></i> Nuevo
 						</button>
 					</div>
@@ -79,8 +79,8 @@
 								<input type="text" class="form-control" name="geovisor_extent" id="geovisor_extent" aria-describedby="geovisor_extent"  placeholder="[minx,miny,maxx,maxy]...">
 							</div>
 						
-							<button type="button" class="btn btn-primary" onclick="guardar_capa();">Guardar</button>
-							<button type="button" class="btn btn-danger" onclick="borrar_capa();">Eliminar Capa</button>
+							<button type="button" class="btn btn-primary" onclick="guardar_geovisor();">Guardar</button>
+							<button type="button" class="btn btn-danger" onclick="borrar_geovisor();">Eliminar Geovisor</button>
 						</form>
 					
 					</div>

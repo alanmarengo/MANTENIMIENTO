@@ -11,41 +11,32 @@ function cargar_preview()
 };
 
 
-function nueva_capa()
+function nuevo_geovisor()
 {
-			document.getElementById("layer_id").value='';
-			document.getElementById("layer_desc").value='';
-			document.getElementById("layer_wms_server").value='';
-			document.getElementById("layer_wms_layer").value='';
-			document.getElementById("layer_wms_server_alter").value='';
-			document.getElementById("layer_wms_layer_alter").value=''; 
-			document.getElementById("layer_alter_activo").value=''; 	
-			document.getElementById("layer_metadata_url").value=''; 	
-			document.getElementById("layer_schema").value=''; 			
-			document.getElementById("layer_table").value=''; 			
-			document.getElementById("tipo_layer_id").value=''; 		
-			document.getElementById("preview_desc").value=''; 			
-			document.getElementById("preview_titulo").value='';
-	
-			document.getElementById("current_capa_id").innerHTML = "<span>Sin Capa Seleccionada</span>";
-			document.getElementById("current_capa_id").layer_id = -1;/* -1 = nueva capa */
+			document.getElementById("geovisor_id").value='';
+			document.getElementById("geovisor_desc").value='';
+			document.getElementById("geovisor_extent").value='';
+			
+			document.getElementById("current_geovisor_id").geovisor_id=-1;
+			document.getElementById("current_geovisor_id").innerHTML = "<span>Sin Geovisor Seleccionado</span>";
+					
 		
 			document.getElementById("tab-link-b").click();
 };
 
-function borrar_capa()
+function borrar_geovisor()
 {
-	if(confirm('Esta seguro desea eliminar la capa?'))
+	if(confirm('Esta seguro desea eliminar el geovisor?'))
 	{
 		
 	var retorno = $.ajax
 				({
-					url: "./abm-layers.php",
+					url: "./abm-geovisores.php",
 					async:false,
 					data:
 					{
 								mode:2,
-								layer_id:document.getElementById("current_capa_id").layer_id
+								geovisor_id:document.getElementById("current_geovisor_id").geovisor_id
 					},
 					dataType: "json"
 				});
@@ -55,7 +46,7 @@ function borrar_capa()
 	if(s.status_code=="0")
 	{
 		//alert('Se guardo el registro correctamente');
-		nueva_capa();
+		nuevo_geovisor();
 		
 		return true;
 	}
@@ -69,29 +60,19 @@ function borrar_capa()
 
 };
 
-function guardar_catalogo()
+function guardar_capa_geovisor(_layer_id)
 {
 	
 	var retorno = $.ajax
 				({
-					url: "./abm-layers.php",
+					url: "./abm-geovisores.php",
 					async:false,
 					data:
 					{
 								mode:3,
-								layer_id:document.getElementById("current_capa_id").layer_id,
-								layer_desc:document.getElementById("layer_desc").value,
-								layer_wms_server:document.getElementById("layer_wms_server").value,
-								layer_wms_layer:document.getElementById("layer_wms_layer").value,
-								layer_wms_server_alter:document.getElementById("layer_wms_server_alter").value,
-								layer_wms_layer_alter:document.getElementById("layer_wms_layer_alter").value,
-								layer_alter_activo:document.getElementById("layer_alter_activo").value,	
-								layer_metadata_url:document.getElementById("layer_metadata_url").value,	
-								layer_schema:document.getElementById("layer_schema").value,		
-								layer_table:document.getElementById("layer_table").value,			
-								tipo_layer_id:document.getElementById("tipo_layer_id").value,		
-								preview_desc:document.getElementById("preview_desc").value, 			
-								preview_titulo:document.getElementById("preview_titulo").value
+								geovisor_id:document.getElementById("current_geovisor_id").geovisor_id,
+								iniciar_visible:document.getElementById("iniciar_visible").value,
+								layer_id:_layer_id
 								
 					},
 					dataType: "json"
@@ -115,29 +96,54 @@ function guardar_catalogo()
 	
 };
 
-function guardar_capa()
+function quitar_capa_geovisor(_layer_id,_geovisor_id)
 {
 	
 	var retorno = $.ajax
 				({
-					url: "./abm-layers.php",
+					url: "./abm-geovisores.php",
+					async:false,
+					data:
+					{
+								mode:6,
+								geovisor_id:_geovisor_id,
+								layer_id:_layer_id
+								
+					},
+					dataType: "json"
+				});
+	
+	//console.log(retorno.responseText);
+	
+	s = JSON.parse(retorno.responseText); /* status */
+	
+	if(s.status_code=="0")
+	{
+		alert('Se quitaron correctamente los datos');
+		
+		return true;
+	}
+	else
+	{
+		alert('No se pudo quitar el dato. Mensaje:'+s.error_desc);
+		return false;
+	};
+	
+};
+
+function guardar_geovisor()
+{
+	
+	var retorno = $.ajax
+				({
+					url: "./abm-geovisores.php",
 					async:false,
 					data:
 					{
 								mode:1,
-								layer_id:document.getElementById("current_capa_id").layer_id,
-								layer_desc:document.getElementById("layer_desc").value,
-								layer_wms_server:document.getElementById("layer_wms_server").value,
-								layer_wms_layer:document.getElementById("layer_wms_layer").value,
-								layer_wms_server_alter:document.getElementById("layer_wms_server_alter").value,
-								layer_wms_layer_alter:document.getElementById("layer_wms_layer_alter").value,
-								layer_alter_activo:document.getElementById("layer_alter_activo").value,	
-								layer_metadata_url:document.getElementById("layer_metadata_url").value,	
-								layer_schema:document.getElementById("layer_schema").value,		
-								layer_table:document.getElementById("layer_table").value,			
-								tipo_layer_id:document.getElementById("tipo_layer_id").value,		
-								preview_desc:document.getElementById("preview_desc").value, 			
-								preview_titulo:document.getElementById("preview_titulo").value
+								geovisor_id:document.getElementById("current_geovisor_id").geovisor_id,
+								geovisor_desc:document.getElementById("geovisor_desc").value,
+								geovisor_extent:document.getElementById("geovisor_extent").value
 								
 					},
 					dataType: "json"
@@ -151,11 +157,9 @@ function guardar_capa()
 	{
 		alert('Se guardaron correctamente los datos');
 		
-		document.getElementById("layer_id").value=s.layer_id;
-		document.getElementById("current_capa_id").layer_id=s.layer_id;
-		document.getElementById("current_capa_id").innerHTML = "<span>Capa Actual: " + document.getElementById("layer_desc").value +"("+s.layer_id+")</span>";
-		
-		cargar_preview();
+		document.getElementById("geovisor_id").value=s.geovisor_id;
+		document.getElementById("current_geovisor_id").geovisor_id=s.geovisor_id;
+		document.getElementById("current_geovisor_id").innerHTML = "<span>Geovisor Actual: " + document.getElementById("geovisor_desc").value +"("+s.geovisor_id+")</span>";
 		
 		return true;
 	}
@@ -237,7 +241,8 @@ function()
 		pageIndex:  1,
 		rowClick: function(args) 
 		{
-			
+			guardar_capa_geovisor(args.item.layer_id);
+			$("#grid-geovisores-capas").jsGrid('loadData');
         },
 		controller: 
 		{
@@ -282,6 +287,9 @@ function()
 		rowClick: function(args) 
 		{
 			
+				quitar_capa_geovisor(args.item.layer_id,args.item.geovisor_id);
+				$("#grid-geovisores-capas").jsGrid('loadData');
+		
         },
 		controller: 
 		{
