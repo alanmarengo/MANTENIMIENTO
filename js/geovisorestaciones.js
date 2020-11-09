@@ -119,7 +119,8 @@ function reCalcPopup(id) {
     let hp = $("#" + id).height();
 
     let nh = hp - (h1 + h2 + h3 + 40 /*margin*/ );
-    alert(id + "::" + nh);
+    alert(h1 + "-" + h2 + "-" + h3 + "-" + hp);
+
     $("#popup-aforo-tab-content").css("height", nh + "px");
 
 }
