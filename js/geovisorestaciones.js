@@ -48,6 +48,7 @@ $(document).ready(function() {
 
     $(".roverlay").each(function(i, v) { $(v).Roverlay(); });
     $("#tab-ha-1").trigger("click");
+    $("#tab-aforo-ha-1").trigger("click");
 
 
 
