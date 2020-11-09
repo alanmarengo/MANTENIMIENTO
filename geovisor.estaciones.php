@@ -382,24 +382,6 @@
 					<li><a class="btn-tab" data-toggle="tab" id="tab-aforo-ha-3" href="#panel-aforo-ha-3" aria-expanded="true">Consultar Datos</a></li>
 					<li><a class="btn-tab" data-toggle="tab" id="tab-aforo-ha-4" href="#panel-aforo-ha-4" aria-expanded="true">Registro Mensual y Anual</a></li>
 				</ul>
-			</div>
-			<div class="categories mt-10">
-				<div class="category">
-					<input type="radio" name="categoria" checked="checked">
-					<label>Hidrométricas</label>
-				</div>
-				<div class="category">
-					<input type="radio" name="categoria">
-					<label>Hidrometeorológicas</label>
-				</div>
-				<div class="category">
-					<input type="radio" name="categoria">
-					<label>Meteorológicas</label>
-				</div>
-				<div class="category">
-					<input type="radio" name="categoria">
-					<label>Hidroambientales</label>
-				</div>
 			</div>			
 			<div class="tab-content mt-20" id="popup-aforo-tab-content">
 				<div id="panel-aforo-ha-1" class="tab-pane fade in show">
