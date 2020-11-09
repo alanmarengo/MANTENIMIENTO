@@ -184,7 +184,7 @@ function ol_map() {
 
             var js = JSON.parse(reqGFI.responseText);
 
-            this.parseGFI(js);
+            this.parseGFI(js.features[0].properties);
 
             $("#popup").show();
             reCalcPopup();
