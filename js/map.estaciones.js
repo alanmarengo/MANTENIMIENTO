@@ -278,7 +278,7 @@ function ol_map() {
 
         this.popupTab1 = function(estacion_id, tipo_estacion_id) {
 
-            let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + = "&mode=0";
+            let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
             let js = this.requestApi(url);
 
             console.log(js);
