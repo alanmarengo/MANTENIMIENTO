@@ -175,7 +175,7 @@
 								<input type="text" class="form-control" name="dt_cruce_etiqueta" id="dt_cruce_etiqueta" aria-describedby="dt_cruce_etiqueta"  placeholder="Etiqueta a mostra para columna...">
 						</div>
 	
-						<button type="button" class="btn btn-primary" onclick="guardar_geovisor();">Agregar</button>
+						<button type="button" class="btn btn-primary" onclick="guardar_capa_dt();">Agregar</button>
 									
 					   <!--<div id="grid-capas" class="mt-30">-->
 						

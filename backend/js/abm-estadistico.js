@@ -64,31 +64,30 @@ function borrar_geovisor()
 
 };
 
-function guardar_capa_geovisor(_layer_id)
+function guardar_capa_dt()
 {
-	
 	var retorno = $.ajax
 				({
-					url: "./abm-geovisores.php",
+					url: "./abm-estadistico.php",
 					async:false,
 					data:
 					{
 								mode:3,
-								geovisor_id:document.getElementById("current_geovisor_id").geovisor_id,
-								iniciar_visible:document.getElementById("iniciar_visible").value,
-								layer_id:_layer_id
-								
+								dt_id:document.getElementById("current_id").id_actual,
+								dt_cruce_table:document.getElementById("dt_cruce_table").value,
+								dt_cruce_column_display:document.getElementById("dt_cruce_column_display").value,
+								dt_cruce_etiqueta:document.getElementById("dt_cruce_etiqueta").value								
 					},
 					dataType: "json"
 				});
-	
-	//console.log(retorno.responseText);
 	
 	s = JSON.parse(retorno.responseText); /* status */
 	
 	if(s.status_code=="0")
 	{
-		alert('Se guardaron correctamente los datos');
+		$("#grid-dt-capas").jsGrid('loadData');
+		
+		alert('Se guardaron correctamente los datos');		
 		
 		return true;
 	}
@@ -100,18 +99,19 @@ function guardar_capa_geovisor(_layer_id)
 	
 };
 
-function quitar_capa_geovisor(_layer_id,_geovisor_id)
+function quitar_capa_dt(_cruce_id)
 {
-	
+	if(confirm('Esta seguro desea quitar el dato?'))
+	{
+		
 	var retorno = $.ajax
 				({
-					url: "./abm-geovisores.php",
+					url: "./abm-estadistico.php",
 					async:false,
 					data:
 					{
 								mode:6,
-								geovisor_id:_geovisor_id,
-								layer_id:_layer_id
+								dt_cruce_id:_cruce_id
 								
 					},
 					dataType: "json"
@@ -132,6 +132,8 @@ function quitar_capa_geovisor(_layer_id,_geovisor_id)
 		alert('No se pudo quitar el dato. Mensaje:'+s.error_desc);
 		return false;
 	};
+	
+	}else return false;
 	
 };
 
@@ -207,6 +209,7 @@ function()
 			document.getElementById("current_id").innerHTML = "<span>Dataset Actual: " + args.item.dt_titulo +"("+args.item.dt_id+")</span>";
 					
 			//$("#grid-geovisores-capas").jsGrid('loadData');
+			$("#grid-dt-capas").jsGrid('loadData');
 			
 			document.getElementById("tab-link-b").click();
         },
@@ -244,7 +247,7 @@ function()
 		
 		 /**************** GRILLA DE CAPAS ****************/
 	 
-		$("#grid-capas").jsGrid({
+		$("#grid-dt-capas").jsGrid({
 		width: "100%",
 		height: "auto",
 		autoload:   true,
@@ -255,24 +258,22 @@ function()
 		pageIndex:  1,
 		rowClick: function(args) 
 		{
-			guardar_capa_geovisor(args.item.layer_id);
-			$("#grid-geovisores-capas").jsGrid('loadData');
+			quitar_capa_dt(args.item.dt_cruce_id);
+			$("#grid-dt-capas").jsGrid('loadData');
+		
         },
 		controller: 
 		{
 			loadData: function(filter) 
 			{
-				var b = document.getElementById('layersBusqueda').value;
-				
-				console
-				
+					
 				return $.ajax
 				({
-					url: "./abm-geovisores.php",
+					url: "./abm-estadistico.php",
 					data:
 					{
 								mode:4,
-								s:b
+								dt_id:document.getElementById("current_id").id_actual
 					},
 					dataType: "json"
 				});
@@ -280,10 +281,11 @@ function()
 		},
 		fields: 
 		[
-			{name: "layer_id", 				width: 100},
-			{name: "layer_desc", 			width: 300},
-			{name: "preview_titulo", 		width: 800},
-			{name: "preview_desc", 			width: 800}
+			{name: "dt_cruce_table", 		width: 200},
+			{name: "dt_cruce_column_display", 	width: 200},
+			{name: "dt_cruce_etiqueta", 		width: 200},
+			{name: "dt_cruce_id", 				width: 100},
+			{name: "dt_id", 					width: 100}
 		]
 		});
 		

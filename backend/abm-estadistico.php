@@ -66,7 +66,7 @@ switch ($mode)
         agregar_capa_dt();
         break;
     case 4: 
-         get_cruces($s);
+         get_cruces($dt_id);
         break;
     case 5: /* capas del geovisor */
          get_capas_geovisor($geovisor_id);
@@ -74,8 +74,6 @@ switch ($mode)
     case 6: /* quitar capas del visor */
         quitar_capa_dt();
         break;
-
-            
 };
 
 
@@ -277,14 +275,14 @@ function estadistico_buscar($busqueda)
 
 };
 
-function get_cruces($busqueda) 
+function get_cruces($dt_id) 
 {
 	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 		
 	$conn = pg_connect($string_conn);
 	
-	$query_string = "SELECT * FROM mod_estadistica.dt_cruce WHERE layer_desc||preview_titulo ILIKE '%$busqueda%' ORDER BY layer_desc ASC";
-	
+	$query_string = "SELECT * FROM mod_estadistica.dt_cruce WHERE dt_id =$dt_id ORDER BY dt_cruce_table ASC";
+
 	$query = pg_query($conn,$query_string);
 	
 	$entered = false;
@@ -296,10 +294,10 @@ function get_cruces($busqueda)
 		
 		$json .= "{";
 		$json .= "\"dt_cruce_id\":" 				. $r["dt_cruce_id"] . ",";
-		$json .= "\"dt_id\":" 						. $r["layer_id"] . ",";
-		$json .= "\"layerdt_cruce_table_desc\":\"" 	. clear_json($r["layer_desc"]) . "\",";
-		$json .= "\"dt_cruce_column_display\":\"" 	. clear_json($r["preview_titulo"]) . "\",";
-		$json .= "\"dt_cruce_etiqueta\":\"" 		. clear_json($r["preview_desc"]) . "\"";
+		$json .= "\"dt_id\":" 						. $r["dt_id"] . ",";
+		$json .= "\"dt_cruce_table\":\"" 		. clear_json($r["dt_cruce_table"]) . "\",";
+		$json .= "\"dt_cruce_column_display\":\"" 	. clear_json($r["dt_cruce_column_display"]) . "\",";
+		$json .= "\"dt_cruce_etiqueta\":\"" 		. clear_json($r["dt_cruce_etiqueta"]) . "\"";
 		$json .= "},";
 		//var_dump($r);
 		$entered = true;
