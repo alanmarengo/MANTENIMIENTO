@@ -265,12 +265,20 @@ function ol_map() {
             this.current_tipo_estacion_id = js.tipo_estacion_id;
 
             if (js.tipo_estacion_id == 5) {
+
+                alert("abrir aforo");
+
+                $("#popup").hide();
                 $("#popup-aforo").show();
                 reCalcPopup("popup-aforo");
 
                 $("#tab-ha-1").trigger("click");
 
             } else {
+
+                alert("abrir comun");
+
+                $("#popup-aforo").hide();
                 $("#popup").show();
                 reCalcPopup("popup");
 
