@@ -12,6 +12,7 @@ function ol_map() {
     this.map.layersBufferIndex = 0;
     this.map.layersStats = [];
     this.map.layersStatsIndex = 200000;
+    this.apiUrl = "http://observatorio.atic.com.ar/red_api.php";
 
     this.map.geovisor = -1;
 
@@ -254,10 +255,10 @@ function ol_map() {
                 $("#popup-aforo").show();
                 reCalcPopup("popup-aforo");
 
-                $("#tab-ha-1").on("click", () => { this.popupTab1(js.estacion_id) });
-                $("#tab-ha-2").on("click", () => { this.popupTab2(js.estacion_id) });
-                $("#tab-ha-3").on("click", () => { this.popupTab3(js.estacion_id) });
-                $("#tab-ha-4").on("click", () => { this.popupTab4(js.estacion_id) });
+                $("#tab-ha-1").on("click", () => { this.popupTab1(js.estacion_id, js.tipo_estacion_id) });
+                $("#tab-ha-2").on("click", () => { this.popupTab2(js.estacion_id, js.tipo_estacion_id) });
+                $("#tab-ha-3").on("click", () => { this.popupTab3(js.estacion_id, js.tipo_estacion_id) });
+                $("#tab-ha-4").on("click", () => { this.popupTab4(js.estacion_id, js.tipo_estacion_id) });
 
                 $("#tab-ha-1").trigger("click");
 
@@ -265,46 +266,67 @@ function ol_map() {
                 $("#popup").show();
                 reCalcPopup("popup");
 
-                $("#tab-aforo-ha-1").on("click", () => { this.popupTabAforo1(js.estacion_id) });
-                $("#tab-aforo-ha-2").on("click", () => { this.popupTabAforo2(js.estacion_id) });
-                $("#tab-aforo-ha-3").on("click", () => { this.popupTabAforo3(js.estacion_id) });
-                $("#tab-aforo-ha-4").on("click", () => { this.popupTabAforo4(js.estacion_id) });
+                $("#tab-aforo-ha-1").on("click", () => { this.popupTabAforo1(js.estacion_id, js.tipo_estacion_id) });
+                $("#tab-aforo-ha-2").on("click", () => { this.popupTabAforo2(js.estacion_id, js.tipo_estacion_id) });
+                $("#tab-aforo-ha-3").on("click", () => { this.popupTabAforo3(js.estacion_id, js.tipo_estacion_id) });
+                $("#tab-aforo-ha-4").on("click", () => { this.popupTabAforo4(js.estacion_id, js.tipo_estacion_id) });
 
                 $("#tab-ha-1").trigger("click");
             }
 
         }
 
-        this.popupTab1 = function(estacion_id) {
+        this.popupTab1 = function(estacion_id, tipo_estacion_id) {
+
+            let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + = "&mode=0";
+            let js = this.requestApi(url);
+
+            console.log(js);
+        }
+
+        this.popupTab2 = function(estacion_id, tipo_estacion_id) {
             console.log(estacion_id);
         }
 
-        this.popupTab2 = function(estacion_id) {
+        this.popupTab3 = function(estacion_id, tipo_estacion_id) {
             console.log(estacion_id);
         }
 
-        this.popupTab3 = function(estacion_id) {
+        this.popupTab4 = function(estacion_id, tipo_estacion_id) {
             console.log(estacion_id);
         }
 
-        this.popupTab4 = function(estacion_id) {
+        this.popupTabAforo1 = function(estacion_id, tipo_estacion_id) {
             console.log(estacion_id);
         }
 
-        this.popupTabAforo1 = function(estacion_id) {
+        this.popupTabAforo2 = function(estacion_id, tipo_estacion_id) {
             console.log(estacion_id);
         }
 
-        this.popupTabAforo2 = function(estacion_id) {
+        this.popupTabAforo3 = function(estacion_id, tipo_estacion_id) {
             console.log(estacion_id);
         }
 
-        this.popupTabAforo3 = function(estacion_id) {
+        this.popupTabAforo4 = function(estacion_id, tipo_estacion_id) {
             console.log(estacion_id);
         }
 
-        this.popupTabAforo4 = function(estacion_id) {
-            console.log(estacion_id);
+        this.requestApi = function(url) {
+
+            var req = $.ajax({
+
+                async: false,
+                url: url,
+                type: "POST",
+                success: function(d) {}
+
+            });
+
+            var js = JSON.parse(req.responseText);
+
+            return js;
+
         }
 
         /*this.ol_object.on("click",function(evt) {
