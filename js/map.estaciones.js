@@ -255,6 +255,11 @@ function ol_map() {
                 $("#popup-aforo").show();
                 reCalcPopup("popup-aforo");
 
+                $("#tab-ha-1").un("click", () => { this.popupTab1(js.estacion_id, js.tipo_estacion_id) });
+                $("#tab-ha-2").un("click", () => { this.popupTab2(js.estacion_id, js.tipo_estacion_id) });
+                $("#tab-ha-3").un("click", () => { this.popupTab3(js.estacion_id, js.tipo_estacion_id) });
+                $("#tab-ha-4").un("click", () => { this.popupTab4(js.estacion_id, js.tipo_estacion_id) });
+
                 $("#tab-ha-1").on("click", () => { this.popupTab1(js.estacion_id, js.tipo_estacion_id) });
                 $("#tab-ha-2").on("click", () => { this.popupTab2(js.estacion_id, js.tipo_estacion_id) });
                 $("#tab-ha-3").on("click", () => { this.popupTab3(js.estacion_id, js.tipo_estacion_id) });
@@ -265,6 +270,11 @@ function ol_map() {
             } else {
                 $("#popup").show();
                 reCalcPopup("popup");
+
+                $("#tab-aforo-ha-1").un("click", () => { this.popupTabAforo1(js.estacion_id, js.tipo_estacion_id) });
+                $("#tab-aforo-ha-2").un("click", () => { this.popupTabAforo2(js.estacion_id, js.tipo_estacion_id) });
+                $("#tab-aforo-ha-3").un("click", () => { this.popupTabAforo3(js.estacion_id, js.tipo_estacion_id) });
+                $("#tab-aforo-ha-4").un("click", () => { this.popupTabAforo4(js.estacion_id, js.tipo_estacion_id) });
 
                 $("#tab-aforo-ha-1").on("click", () => { this.popupTabAforo1(js.estacion_id, js.tipo_estacion_id) });
                 $("#tab-aforo-ha-2").on("click", () => { this.popupTabAforo2(js.estacion_id, js.tipo_estacion_id) });
