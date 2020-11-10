@@ -271,7 +271,7 @@ function ol_map() {
                 $("#tab-aforo-ha-3").on("click", () => { this.popupTabAforo3(js.estacion_id, js.tipo_estacion_id) });
                 $("#tab-aforo-ha-4").on("click", () => { this.popupTabAforo4(js.estacion_id, js.tipo_estacion_id) });
 
-                $("#tab-ha-1").trigger("click");
+                $("#tab-aforo-ha-1").trigger("click");
             }
 
         }
@@ -346,7 +346,7 @@ function ol_map() {
 
                 async: false,
                 url: url,
-                type: "POST",
+                type: "GET",
                 success: function(d) {}
 
             });
