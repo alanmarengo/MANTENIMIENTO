@@ -51,6 +51,12 @@ $dt_cruce_column_display 	= $_REQUEST["dt_cruce_column_display"];
 $dt_cruce_etiqueta			= $_REQUEST["dt_cruce_etiqueta"];
 
 
+$dt_variable_id			= $_REQUEST["dt_variable_id"];
+$dt_variable_nombre		= $_REQUEST["dt_variable_nombre"];
+$dt_variable_defincion	= $_REQUEST["dt_variable_defincion"];
+$dt_variable_origen		= $_REQUEST["dt_variable_origen"];
+
+
 switch ($mode) 
 {
     case 0: 
@@ -74,8 +80,56 @@ switch ($mode)
     case 6: /* quitar capas del visor */
         quitar_capa_dt();
         break;
+    case 7: /* quitar capas del visor */
+        registrar_variables();
+        break;
+    case 8: /* quitar capas del visor */
+        get_variables($dt_id);
+        break;
+    case 9: 
+          editar_variables();
+        break;
+    case 10: 
+          borrar_variables();
+        break;
+        
+      
+
 };
 
+
+
+function registrar_variables()
+{
+	global $dt_id;
+	global $dt_titulo;
+	global $dt_table_source;
+		
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+		
+	$conn = pg_connect($string_conn);
+
+	$query_string .= " DELETE FROM mod_estadistica.dt_variable WHERE dt_id_ref=$dt_id;";
+    $query_string .= " INSERT INTO mod_estadistica.dt_variable(dt_id_ref, dt_variable_id_original, dt_variable_cod_var, dt_variable_nombre, dt_variable_defincion,dt_variable_origen)";
+	$query_string .= " SELECT DISTINCT $dt_id AS dataset_id,-1 AS dt_variable_id_original,\"indicador\",\"indicador\" ,\"indicador\" ,'$dt_titulo' AS dt_variable_origen";
+	$query_string .= " FROM $dt_table_source;";
+
+	$query = pg_query($conn,$query_string);
+	
+	if(!$query)
+	{
+		$error_1 = clear_json(pg_last_error($conn));
+		echo '{"status_code":"2","status":"No se pudo borrar el registro","error_desc":"'.$error_1.'"}';
+	}
+	else
+	{
+		$r = pg_fetch_assoc($query);
+		echo '{"status_code":"0","status":"Ok","dt_id":"'. $r["dt_id"].'"}';
+	};
+	
+	pg_close($conn);
+	
+};
 
 function estadistico_borrar()
 {
@@ -266,6 +320,112 @@ function estadistico_buscar($busqueda)
 	{
 		$json = substr($json,0,strlen($json)-1);
 	};
+	
+	$json .= "]";
+	
+	echo $json;
+	
+	pg_close($conn);
+
+};
+
+function editar_variables() 
+{
+	global $dt_variable_id;
+	global $dt_variable_nombre;
+	global $dt_variable_defincion;
+	global $dt_variable_origen;
+	
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+		
+	$conn = pg_connect($string_conn);
+	
+	$query_string  = "UPDATE mod_estadistica.dt_variable  SET ";
+	$query_string .= "dt_variable_nombre='$dt_variable_nombre',";
+	$query_string .= "dt_variable_defincion='$dt_variable_defincion',";
+	$query_string .= "dt_variable_origen='$dt_variable_origen'";
+	$query_string .= " WHERE dt_variable_id =$dt_variable_id RETURNING dt_variable_id;";
+
+	$query = pg_query($conn,$query_string);
+	
+	if(!$query)
+	{
+		$error_1 = clear_json(pg_last_error($conn));
+		echo '{"status_code":"1","status":"No se puedo guardar","error_desc":"'.$error_1.'"}';
+	}
+	else
+	{
+		$r = pg_fetch_assoc($query);
+		echo '{"status_code":"0","status":"Ok","dt_variable_id":"'. $r["dt_variable_id"].'"}';
+	};
+		
+	
+	pg_close($conn);
+
+};
+
+function borrar_variables() 
+{
+	global $dt_variable_id;
+		
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+		
+	$conn = pg_connect($string_conn);
+	
+	$query_string .= "DELETE FROM  mod_estadistica.dt_variable WHERE dt_variable_id =$dt_variable_id RETURNING dt_variable_id;";
+
+	$query = pg_query($conn,$query_string);
+	
+	if(!$query)
+	{
+		$error_1 = clear_json(pg_last_error($conn));
+		echo '{"status_code":"1","status":"No se puedo guardar","error_desc":"'.$error_1.'"}';
+	}
+	else
+	{
+		$r = pg_fetch_assoc($query);
+		echo '{"status_code":"0","status":"Ok","dt_variable_id":"'. $r["dt_variable_id"].'"}';
+	};
+		
+	
+	pg_close($conn);
+
+};
+
+function get_variables($dt_id) 
+{
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+		
+	$conn = pg_connect($string_conn);
+	
+	$query_string = "SELECT * FROM mod_estadistica.dt_variable WHERE dt_id_ref =$dt_id ORDER BY dt_variable_nombre ASC";
+
+	$query = pg_query($conn,$query_string);
+	
+	$entered = false;
+	
+	$json = "[";
+	
+	while ($r = pg_fetch_assoc($query)) 
+	{
+		
+		$json .= "{";
+		$json .= "\"dt_variable_id\":" 				. $r["dt_variable_id"] . ",";
+		$json .= "\"dt_id_ref\":" 						. $r["dt_id_ref"] . ",";
+		$json .= "\"dt_variable_cod_var\":\"" 		. $r["dt_variable_cod_var"] . "\",";
+		$json .= "\"dt_variable_nombre\":\"" 		. clear_json($r["dt_variable_nombre"]) . "\",";
+		$json .= "\"dt_variable_defincion\":\"" 	. clear_json($r["dt_variable_defincion"]) . "\",";
+		$json .= "\"dt_variable_origen\":\"" 		. clear_json($r["dt_variable_origen"]) . "\"";
+		$json .= "},";
+		//var_dump($r);
+		$entered = true;
+	}
+	
+	if ($entered) {
+		
+		$json = substr($json,0,strlen($json)-1);
+		
+	}
 	
 	$json .= "]";
 	

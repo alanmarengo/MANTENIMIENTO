@@ -114,10 +114,10 @@
 						
 						</div>
 							<div style="display:none;" id="recurso_lista_archivos" class="directory-reader mt-30"></div>
-						<button type="button" style="width:100%;" class="btn btn-primary" onclick="abrir_en_geobi();">Registrar Variables</button>
+						<button type="button" style="width:100%;" class="btn btn-primary" onclick="generar_vairables();">Registrar Variables</button>
 						<br>
 						<br>
-						<button type="button" style="width:100%;" class="btn btn-primary" onclick="abrir_en_geobi();">Ver en Mod. Estadistico</button>
+						<button type="button" style="width:100%;" class="btn btn-primary" onclick="abrir_en_est();">Ver en Mod. Estadistico</button>
 
 						
 					</div>
@@ -131,21 +131,7 @@
 			 <!-- INICIO TAB C -->
 			
 			<div class="tab-pane" id="tab-c"> 
-				<!-- GRIDS -->
-				<!--<div class="row">
-				
-					<div class="input-group mb-1 col col-xs-12 col-sm-12 col-md-8 col-lg-8 p0"></div>
-					<div class="input-group mb-1 col col-xs-12 col-sm-12 col-md-4 col-lg-4 p0">
-						<input id="layersBusqueda" type="text" class="form-control" placeholder="Buscar capas">
-						<div class="input-group-append">
-							<button class="btn btn-primary" type="button" id="buscar_capas" onclick="$('#grid-capas').jsGrid('loadData');">
-								<i class="fa fa-search"></i>
-							</button>
-						</div>
-					</div>
-				
-				</div>-->
-				
+								
 				<div class="row mt-30">
 				
 					<div class="col col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -207,6 +193,10 @@
 						<p>Datos de variable</p>
 						
 						<div class="form-group">
+								<label for="dt_variable_id">Id Variable</label>
+								<input type="text" class="form-control" name="dt_variable_id" id="dt_variable_id" aria-describedby="dt_variable_id"  readonly="readonly" placeholder="Id de variable...">
+						</div>
+						<div class="form-group">
 								<label for="dt_variable_nombre">Nombre columna</label>
 								<input type="text" class="form-control" name="dt_variable_nombre" id="dt_variable_nombre" aria-describedby="dt_variable_nombre"  placeholder="Nombre de variable...">
 						</div>
@@ -219,8 +209,8 @@
 								<input type="text" class="form-control" name="dt_variable_origen" id="dt_variable_origen" aria-describedby="dt_variable_origen"  placeholder="Agrupamiento...">
 						</div>
 	
-						<button type="button" class="btn btn-primary" onclick="guardar_geovisor();">Agregar</button>
-						<button type="button" class="btn btn-primary" onclick="guardar_geovisor();">Eliminar</button>
+						<button type="button" class="btn btn-primary" onclick="guardar_variable();">Guardar cambios</button>
+						<button type="button" class="btn btn-primary" onclick="borrar_variable();">Eliminar</button>
 									
 					   <!--<div id="grid-capas" class="mt-30">-->
 						

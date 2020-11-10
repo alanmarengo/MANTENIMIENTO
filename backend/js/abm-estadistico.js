@@ -1,16 +1,46 @@
 
-function abrir_en_geobi()
+function abrir_en_est()
 {
-	var url = window.location.origin+'/geovisor.php?geovisor='+document.getElementById("current_geovisor_id").geovisor_id;
+	var url = window.location.origin+'/estadisticas.php?mode=1&dt='+document.getElementById("current_id").id_actual+'&cid='+document.getElementById("clase_id").value;
 	window.open(url,'_blank');
 };
 
-function cargar_preview()
+function generar_vairables()
 {
-	var url = window.location.origin+'/mediateca_preview.php?origen_id=0&r='+document.getElementById("current_capa_id").layer_id;
-	document.getElementById("preview_id").src=url;
+	if(confirm('Esta seguro que desea registrar las variables (este proceso borrar la configuracion anterior)?'))
+	{
+		var retorno = $.ajax
+					({
+						url: "./abm-estadistico.php",
+						async:false,
+						data:
+						{
+									mode:7,
+									dt_id:document.getElementById("current_id").id_actual,
+									dt_titulo:document.getElementById("dt_titulo").value,
+									dt_table_source:document.getElementById("dt_table_source").value								
+						},
+						dataType: "json"
+					});
+		
+		s = JSON.parse(retorno.responseText); /* status */
+		
+		if(s.status_code=="0")
+		{
+			$("#grid-dt-capas").jsGrid('loadData');
+			
+			alert('Se guardaron correctamente los datos');		
+			
+			return true;
+		}
+		else
+		{
+			alert('Hubo problemas para registrar las variables. Mensaje:'+s.error_desc);
+			return false;
+		};
+		
+	}else return false;	
 };
-
 
 function nuevo()
 {
@@ -210,6 +240,7 @@ function()
 					
 			//$("#grid-geovisores-capas").jsGrid('loadData');
 			$("#grid-dt-capas").jsGrid('loadData');
+			$("#grid-dt-variables").jsGrid('loadData');
 			
 			document.getElementById("tab-link-b").click();
         },
@@ -291,21 +322,22 @@ function()
 		
 		 /**************** GRILLA DE CAPAS DE GEOVISOR ****************/
 	 
-		$("#grid-geovisores-capas").jsGrid({
+		$("#grid-dt-variables").jsGrid({
 		width: "100%",
 		height: "auto",
 		autoload:   true,
 		paging:     true,
-		pageSize:   5,
+		pageSize:   10,
 		sorting: true,
 		pageButtonCount: 5,
 		pageIndex:  1,
 		rowClick: function(args) 
 		{
-			
-				quitar_capa_geovisor(args.item.layer_id,args.item.geovisor_id);
-				$("#grid-geovisores-capas").jsGrid('loadData');
-		
+			document.getElementById("dt_variable_id").value=args.item.dt_variable_id;
+			document.getElementById("dt_variable_nombre").value=args.item.dt_variable_nombre;
+			document.getElementById("dt_variable_defincion").value=args.item.dt_variable_defincion;
+			document.getElementById("dt_variable_origen").value=args.item.dt_variable_origen;
+	
         },
 		controller: 
 		{
@@ -314,11 +346,11 @@ function()
 							
 				return $.ajax
 				({
-					url: "./abm-geovisores.php",
+					url: "./abm-estadistico.php",
 					data:
 					{
-								mode:5,
-								geovisor_id:document.getElementById("current_geovisor_id").geovisor_id
+								mode:8,
+								dt_id:document.getElementById("current_id").id_actual
 					},
 					dataType: "json"
 				});
@@ -326,10 +358,13 @@ function()
 		},
 		fields: 
 		[
-			{name: "layer_id", 				width: 100},
-			{name: "nombre_capa", 			width: 200},
-			{name: "geovisor_id", 			width: 100},
-			{name: "iniciar_visible", 		width: 100}
+			
+			{name: "dt_variable_nombre", 	width: 200},
+			{name: "dt_variable_defincion", width: 200},
+			{name: "dt_variable_origen", 	width: 200},
+			{name: "dt_variable_cod_var", 	width: 200},
+			{name: "dt_id_ref", 			width: 100},
+			{name: "dt_variable_id", 		width: 100}
 			
 		]
 		});
@@ -338,3 +373,79 @@ function()
 		
 
 });
+
+
+function guardar_variable()
+{
+	var retorno = $.ajax
+				({
+					url: "./abm-estadistico.php",
+					async:false,
+					data:
+					{
+								mode:9,
+								dt_variable_id:document.getElementById("dt_variable_id").value,
+								dt_variable_nombre:document.getElementById("dt_variable_nombre").value,
+								dt_variable_defincion:document.getElementById("dt_variable_defincion").value,
+								dt_variable_origen:document.getElementById("dt_variable_origen").value
+					},
+					dataType: "json"
+				});
+	
+	//console.log(retorno.responseText);
+	
+	s = JSON.parse(retorno.responseText); /* status */
+	
+	if(s.status_code=="0")
+	{
+		alert('Se guardaron correctamente los datos');
+		
+		$("#grid-dt-variables").jsGrid('loadData');
+		
+		return true;
+	}
+	else
+	{
+		alert('No se puedo guardar el registro. Mensaje:'+s.error_desc);
+		return false;
+	};
+	
+	
+};
+
+
+function borrar_variable()
+{
+	var retorno = $.ajax
+				({
+					url: "./abm-estadistico.php",
+					async:false,
+					data:
+					{
+								mode:10,
+								dt_variable_id:document.getElementById("dt_variable_id").value
+					},
+					dataType: "json"
+				});
+	
+	//console.log(retorno.responseText);
+	
+	s = JSON.parse(retorno.responseText); /* status */
+	
+	if(s.status_code=="0")
+	{
+		alert('Se borraron correctamente los datos');
+		
+		$("#grid-dt-variables").jsGrid('loadData');
+		
+		return true;
+	}
+	else
+	{
+		alert('No se puedo guardar el registro. Mensaje:'+s.error_desc);
+		return false;
+	};
+	
+	
+};
+
