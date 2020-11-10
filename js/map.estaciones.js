@@ -281,35 +281,63 @@ function ol_map() {
             let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
             let js = this.requestApi(url);
 
-            console.log(js);
+            console.log(this.apiUrl);
         }
 
         this.popupTab2 = function(estacion_id, tipo_estacion_id) {
-            console.log(estacion_id);
+
+            let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
+            let js = this.requestApi(url);
+
+            console.log(this.apiUrl);
         }
 
         this.popupTab3 = function(estacion_id, tipo_estacion_id) {
-            console.log(estacion_id);
+
+            let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
+            let js = this.requestApi(url);
+
+            console.log(this.apiUrl);
         }
 
         this.popupTab4 = function(estacion_id, tipo_estacion_id) {
-            console.log(estacion_id);
+
+            let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
+            let js = this.requestApi(url);
+
+            console.log(this.apiUrl);
         }
 
         this.popupTabAforo1 = function(estacion_id, tipo_estacion_id) {
-            console.log(estacion_id);
+
+            let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
+            let js = this.requestApi(url);
+
+            console.log(this.apiUrl);
         }
 
         this.popupTabAforo2 = function(estacion_id, tipo_estacion_id) {
-            console.log(estacion_id);
+
+            let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
+            let js = this.requestApi(url);
+
+            console.log(this.apiUrl);
         }
 
         this.popupTabAforo3 = function(estacion_id, tipo_estacion_id) {
-            console.log(estacion_id);
+
+            let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
+            let js = this.requestApi(url);
+
+            console.log(this.apiUrl);
         }
 
         this.popupTabAforo4 = function(estacion_id, tipo_estacion_id) {
-            console.log(estacion_id);
+
+            let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
+            let js = this.requestApi(url);
+
+            console.log(this.apiUrl);
         }
 
         this.requestApi = function(url) {
