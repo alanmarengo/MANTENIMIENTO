@@ -12,7 +12,7 @@ function ol_map() {
     this.map.layersBufferIndex = 0;
     this.map.layersStats = [];
     this.map.layersStatsIndex = 200000;
-    this.apiUrl = "http://observatorio.atic.com.ar/red_api.php";
+    this.map.apiUrl = "http://observatorio.atic.com.ar/red_api.php";
 
     this.map.geovisor = -1;
 
