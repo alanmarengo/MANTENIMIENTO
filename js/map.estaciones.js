@@ -272,7 +272,7 @@ function ol_map() {
                 $("#popup-aforo").show();
                 reCalcPopup("popup-aforo");
 
-                $("#tab-ha-1").trigger("click");
+                $("#tab-aforo-ha-1").trigger("click");
 
             } else {
 
@@ -282,7 +282,7 @@ function ol_map() {
                 $("#popup").show();
                 reCalcPopup("popup");
 
-                $("#tab-aforo-ha-1").trigger("click");
+                $("#tab-ha-1").trigger("click");
             }
 
         }
