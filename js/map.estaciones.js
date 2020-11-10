@@ -253,11 +253,58 @@ function ol_map() {
             if (js.tipo_estacion_id == 5) {
                 $("#popup-aforo").show();
                 reCalcPopup("popup-aforo");
+
+                $("#tab-ha-1").on("click", () => { this.popupTab1(js.estacion_id) });
+                $("#tab-ha-2").on("click", () => { this.popupTab2(js.estacion_id) });
+                $("#tab-ha-3").on("click", () => { this.popupTab3(js.estacion_id) });
+                $("#tab-ha-4").on("click", () => { this.popupTab4(js.estacion_id) });
+
+                $("#tab-ha-1").trigger("click");
+
             } else {
                 $("#popup").show();
                 reCalcPopup("popup");
+
+                $("#tab-aforo-ha-1").on("click", () => { this.popupTabAforo1(js.estacion_id) });
+                $("#tab-aforo-ha-2").on("click", () => { this.popupTabAforo2(js.estacion_id) });
+                $("#tab-aforo-ha-3").on("click", () => { this.popupTabAforo3(js.estacion_id) });
+                $("#tab-aforo-ha-4").on("click", () => { this.popupTabAforo4(js.estacion_id) });
+
+                $("#tab-ha-1").trigger("click");
             }
 
+        }
+
+        this.popupTab1 = function(estacion_id) {
+            console.log(estacion_id);
+        }
+
+        this.popupTab2 = function(estacion_id) {
+            console.log(estacion_id);
+        }
+
+        this.popupTab3 = function(estacion_id) {
+            console.log(estacion_id);
+        }
+
+        this.popupTab4 = function(estacion_id) {
+            console.log(estacion_id);
+        }
+
+        this.popupTabAforo1 = function(estacion_id) {
+            console.log(estacion_id);
+        }
+
+        this.popupTabAforo2 = function(estacion_id) {
+            console.log(estacion_id);
+        }
+
+        this.popupTabAforo3 = function(estacion_id) {
+            console.log(estacion_id);
+        }
+
+        this.popupTabAforo4 = function(estacion_id) {
+            console.log(estacion_id);
         }
 
         /*this.ol_object.on("click",function(evt) {
