@@ -277,6 +277,7 @@ function ol_map() {
         }
 
         this.popupTab1 = function(estacion_id, tipo_estacion_id) {
+            alert("HIDROAMB 1");
 
             let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
             let js = this.requestApi(url);
@@ -309,7 +310,7 @@ function ol_map() {
         }
 
         this.popupTabAforo1 = function(estacion_id, tipo_estacion_id) {
-
+            alert("AFORO 1");
             let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=1";
             let js = this.requestApi(url);
 
