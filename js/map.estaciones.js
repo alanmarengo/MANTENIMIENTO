@@ -301,12 +301,22 @@ function ol_map() {
             let html = ``;
 
             for (var i = 0; i < js.categoria_parametros.length; i++) {
+
+                let checked = "";
+
+                if (i == 0) {
+                    current_categoria_id = js.categoria_parametros[i].categoria_parametro_id;
+                    checked = `checked="checked"`;
+                }
+
                 html += `
                 <div class="category">
-                    <input type="radio" name="categoria" checked="checked" value="${js.categoria_parametros[i].categoria_parametro_id}">
+                    <input ${checked} type="radio" name="categoria" checked="checked" value="${js.categoria_parametros[i].categoria_parametro_id}">
                     <label>${js.categoria_parametros[i].categoria_parametro_desc}</label>
                 </div>
                 `;
+
+                checked = "";
             }
 
             $("#popup-inner").children(".categories").empty();
