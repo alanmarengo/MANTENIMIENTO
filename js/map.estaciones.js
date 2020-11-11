@@ -330,6 +330,7 @@ function ol_map() {
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&mode=2";
             let js = this.requestApi(url);
+            console.log(js);
             let html = `<div class="row mt-10">`;
 
             for (let i = 0; i < js.length; i++) {
