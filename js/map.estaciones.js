@@ -375,7 +375,7 @@ function ol_map() {
 
             var js = JSON.parse(req.responseText);
 
-            return js;
+            return js[0];
 
         }
 
