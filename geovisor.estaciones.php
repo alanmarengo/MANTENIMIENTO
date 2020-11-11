@@ -210,48 +210,40 @@
 								<a href="#" class="btn-1">Descarga de la Serie de Datos Completa</a>
 							</p>
 						</div>
-						<div class="col col-md-6 col-lg-6 col-xs-12 col-sm-12">
-							<p>
+						<div class="col col-md-6 col-lg-6 col-xs-12 col-sm-12 api-tab-1">
+							<p class="coordenadas">
 								<span class="popup-label">Coordenadas:</span>
-								<span class="popup-value">LAT: -50.295556 LONG: -72.305092</span>
+								<span class="popup-value"></span>
 							</p>
-							<p>
+							<p class="nombre">
 								<span class="popup-label">Nombre:</span>
-								<span class="popup-value">Lago Argentino Boya</span>
+								<span class="popup-value"></span>
 							</p>
-							<p>
+							<p class="localizacion">
 								<span class="popup-label">Localización:</span>
-								<span class="popup-value">En el Lago Argentino frente al Calafate</span>
+								<span class="popup-value"></span>
 							</p>
-							<p>
+							<p class="id">
 								<span class="popup-label">ID:</span>
-								<span class="popup-value">XX</span>
+								<span class="popup-value"></span>
 							</p>
-							<p>
+							<p class="parametros">
 								<span class="popup-label">Parámetros:</span>
 								<ul class="popup-value">
-									<li>Clorofila</li>
-									<li>Oxígeno disuelto</li>
-									<li>Conductividad</li>
-									<li>Material en suspensión</li>
-									<li>Altura de olas</li>
-									<li>Período de olas</li>
-									<li>Temperatura del agua</li>
-									<li>Temperatura del aire</li>
-									<li>Velocidad del viento</li>
+									
 								</ul>
 							</p>
-							<p>
+							<p class="inicio-operacion">
 								<span class="popup-label">Inicio de Operación:</span>
-								<span class="popup-value">Instalada no activa</span>
+								<span class="popup-value"></span>
 							</p>
-							<p>
+							<p class="objetivo">
 								<span class="popup-label">Objetivo:</span>
-								<span class="popup-value">Monitoreo de parámetros de calidad del agua del lago. Inicio del sistema del RSC.</span>
+								<span class="popup-value"></span>
 							</p>
-							<p>
+							<p class="proveedor">
 								<span class="popup-label">Proveedor:</span>
-								<span class="popup-value">Iado</span>
+								<span class="popup-value"></span>
 							</p>
 						</div>
 					</div>
@@ -395,48 +387,40 @@
 								<a href="#" class="btn-1">Descarga de la Serie de Datos Completa</a>
 							</p>
 						</div>
-						<div class="col col-md-6 col-lg-6 col-xs-12 col-sm-12">
-							<p>
+						<div class="col col-md-6 col-lg-6 col-xs-12 col-sm-12 api-tab-1">
+							<p class="coordenadas">
 								<span class="popup-label">Coordenadas:</span>
-								<span class="popup-value">LAT: -50.295556 LONG: -72.305092</span>
+								<span class="popup-value"></span>
 							</p>
-							<p>
+							<p class="nombre">
 								<span class="popup-label">Nombre:</span>
-								<span class="popup-value">Lago Argentino Boya</span>
+								<span class="popup-value"></span>
 							</p>
-							<p>
+							<p class="localizacion">
 								<span class="popup-label">Localización:</span>
-								<span class="popup-value">En el Lago Argentino frente al Calafate</span>
+								<span class="popup-value"></span>
 							</p>
-							<p>
+							<p class="id">
 								<span class="popup-label">ID:</span>
-								<span class="popup-value">XX</span>
+								<span class="popup-value"></span>
 							</p>
-							<p>
+							<p class="parametros">
 								<span class="popup-label">Parámetros:</span>
 								<ul class="popup-value">
-									<li>Clorofila</li>
-									<li>Oxígeno disuelto</li>
-									<li>Conductividad</li>
-									<li>Material en suspensión</li>
-									<li>Altura de olas</li>
-									<li>Período de olas</li>
-									<li>Temperatura del agua</li>
-									<li>Temperatura del aire</li>
-									<li>Velocidad del viento</li>
+									
 								</ul>
 							</p>
-							<p>
+							<p class="inicio-operacion">
 								<span class="popup-label">Inicio de Operación:</span>
-								<span class="popup-value">Instalada no activa</span>
+								<span class="popup-value"></span>
 							</p>
-							<p>
+							<p class="objetivo">
 								<span class="popup-label">Objetivo:</span>
-								<span class="popup-value">Monitoreo de parámetros de calidad del agua del lago. Inicio del sistema del RSC.</span>
+								<span class="popup-value"></span>
 							</p>
-							<p>
+							<p class="proveedor">
 								<span class="popup-label">Proveedor:</span>
-								<span class="popup-value">Iado</span>
+								<span class="popup-value"></span>
 							</p>
 						</div>
 					</div>

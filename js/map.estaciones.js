@@ -288,12 +288,19 @@ function ol_map() {
         }
 
         this.popupTab1 = function(estacion_id, tipo_estacion_id) {
-            alert("HIDROAMB 1");
 
             let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
             let js = this.requestApi(url);
 
-            console.log(this.apiUrl);
+            $("#panel-ha-1 .api-tab-1 .coordenadas .popup-value").html(js.lat + "," + js.long);
+            $("#panel-ha-1 .api-tab-1 .nombre .popup-value").html(js.estacion);
+            $("#panel-ha-1 .api-tab-1 .localizacion .popup-value").html(js.localizacion);
+            $("#panel-ha-1 .api-tab-1 .id .popup-value").html(js.id);
+            $("#panel-ha-1 .api-tab-1 .parametros .popup-value").html(js.parametros);
+            $("#panel-ha-1 .api-tab-1 .inicio-operacion .popup-value").html(js.inicio_opera);
+            $("#panel-ha-1 .api-tab-1 .objetivo .popup-value").html(js.objetivo);
+            $("#panel-ha-1 .api-tab-1 .proveedor .popup-value").html(js.proveedor);
+
         }
 
         this.popupTab2 = function(estacion_id, tipo_estacion_id) {
