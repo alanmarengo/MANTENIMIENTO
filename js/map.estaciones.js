@@ -359,9 +359,9 @@ function ol_map() {
                         <p class="text-default m0 mt-3">Min: ${js[i].min_dato}</p>
                         <p class="text-default m0 mt-3">Med: ${js[i].med_dato}</p>
                         <p class="text-default m0 mt-3">Max: ${js[i].max_dato}</p>
-                        <p class="date"><img src="./images/indicador-ico.png"></p>
+                        <p class="date mt-10"><img src="./images/indicador-ico.png"></p>
                         <p class="date mt-10">${fecha}</p>
-                        <p class="date mt-10">${hora}</p>
+                        <p class="date m0">${hora}</p>
                     </div>
                 </div>
                 `;
