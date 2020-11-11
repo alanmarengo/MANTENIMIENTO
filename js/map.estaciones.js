@@ -382,8 +382,6 @@ function ol_map() {
 
             });
 
-            $("#panel-ha-2").find(".indicador").height(highestBox);
-
         }
 
         this.popupTab3 = function() {
