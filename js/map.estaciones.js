@@ -345,7 +345,7 @@ function ol_map() {
 
                 let fecha = itemDate[0];
                 let hora = itemDate[1].split(":");
-                hora = hora[0];
+                hora = hora[0] + ":" + hora[1];
 
                 html += `<div class="col col-md-2 col-lg-2 p5">
                     <div class="indicador">
