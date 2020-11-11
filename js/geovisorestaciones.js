@@ -119,3 +119,12 @@ function reCalcPopup(idPrefix) {
     $("#" + idPrefix + "-tab-content").css("height", nh + "px");
 
 }
+
+function get_li(str) {
+    let str = str.split(",");
+    let html = "";
+    for (let i = 0; i < str.length; i++) {
+        html += `<li>${str[i]}</li>`;
+    }
+    return html;
+}
