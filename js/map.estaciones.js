@@ -366,9 +366,9 @@ function ol_map() {
                 </div>
                 `;
 
-                html += "</div>";
-
             }
+
+            html += "</div>";
 
             $("#panel-ha-2").html(html);
 
