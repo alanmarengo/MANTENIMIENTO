@@ -76,7 +76,7 @@
 								<input type="text" class="form-control" name="user_name" id="user_name" aria-describedby="user_name" placeholder="Nombre Login...">
 							</div>
 							<div class="form-group">
-								<label for="user_full_name">Nomre de usuario</label>
+								<label for="user_full_name">Nombre de usuario</label>
 								<input type="text" class="form-control" name="user_full_name" id="user_full_name" aria-describedby="user_full_name" placeholder="Nombre Usuario...">
 							</div>
 							<div class="form-group">
