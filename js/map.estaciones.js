@@ -355,10 +355,10 @@ function ol_map() {
                 html += `<div class="col col-md-2 col-lg-2 p5">
                     <div class="indicador">
                         <p class="title">${js[i].parametro_nombre}</p>
-                        <p class="value">${js[i].ultimo_dato}</p>
-                        <p class="text-default">${js[i].min_dato}</p>
-                        <p class="text-default">${js[i].med_dato}</p>
-                        <p class="text-default">${js[i].max_dato}</p>
+                        <p class="value m0">${js[i].ultimo_dato}</p>
+                        <p class="text-default m0 mt-3">Min: ${js[i].min_dato}</p>
+                        <p class="text-default m0 mt-3">Med: ${js[i].med_dato}</p>
+                        <p class="text-default m0 mt-3">Max: ${js[i].max_dato}</p>
                         <p class="date"><img src="./images/indicador-ico.png"></p>
                         <p class="date mt-10">${fecha}</p>
                         <p class="date mt-10">${hora}</p>
