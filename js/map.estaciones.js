@@ -389,7 +389,21 @@ function ol_map() {
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&mode=3";
             let js = this.requestApi(url);
 
-            console.log(js);
+            $("#combo-parametros").empty();
+
+            for (var i = 0; i < js.length; i++) {
+
+                if (i == 0) {
+                    this.current_parametro_id = js[i].parametro_id;
+                }
+
+                let option = document.createElement("option");
+                option.value = js[i].parametro_id;
+                option.innerHTML = js[i].parametro_nombre;
+
+                $("#combo-parametros").append(option);
+
+            }
         }
 
         this.popupTab4 = function() {
