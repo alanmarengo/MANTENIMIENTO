@@ -42,7 +42,8 @@ switch ($mode)
         break;
     case 2:
 		//http://observ.net/red_api.php?estacion_id=7&tipo_estacion_id=4&mode=2
-        hidro_get_solapa_datos_diarios($estacion_id,$tipo_estacion_id);
+        //hidro_get_solapa_datos_diarios($estacion_id,$tipo_estacion_id);
+        hidro_get_solapa_datos_diarios($estacion_id,$categoria_parametro_id);
         break;   
     case 3:
 		//http://observ.net/red_api.php?estacion_id=7&categoria_parametro_id=4&mode=3
