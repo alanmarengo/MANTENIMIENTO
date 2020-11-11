@@ -307,7 +307,7 @@ function ol_map() {
                 let checked = "";
 
                 if (i == 0) {
-                    current_categoria_id = js.categoria_parametros[i].categoria_parametro_id;
+                    this.current_categoria_id = js.categoria_parametros[i].categoria_parametro_id;
                     checked = `checked="checked"`;
                 }
 
@@ -328,7 +328,7 @@ function ol_map() {
 
         this.popupTab2 = function(estacion_id, tipo_estacion_id) {
 
-            let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
+            let url = this.apiUrl + "?estacion_id=" + estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&mode=0";
             let js = this.requestApi(url);
         }
 
