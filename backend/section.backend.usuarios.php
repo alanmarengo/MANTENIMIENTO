@@ -1,5 +1,6 @@
 
-<script type="text/javascript" src="./js/abm-graficos.js"></script>
+
+<script type="text/javascript" src="./js/abm-usuarios.js"></script>
 
 <div class="row pv-30">
 
@@ -9,16 +10,16 @@
 		<div class="row">				
 			
 			<div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12" id="current_id">
-				<span>Sin grafico Seleccionado</span>
+				<span>Sin Usuario Seleccionado</span>
 			</div>
 		
 		</div>
 		
 		<ul class="nav nav-tabs mt-20">
 			<li class="nav-item"><a class="nav-link active" data-toggle="tab" id="tab-link-busqueda" href="#tab-buscar">Buscar</a></li>
-			<li class="nav-item"><a class="nav-link" data-toggle="tab" id="tab-link-b" href="#tab-b">Datos del grafico</a></li>
-			<!--<li class="nav-item"><a class="nav-link" data-toggle="tab" id="tab-link-c" href="#tab-c">Cruces espaciales</a></li>
-			<li class="nav-item"><a class="nav-link" data-toggle="tab" id="tab-link-d" href="#tab-d">Variables</a></li>-->
+			<li class="nav-item"><a class="nav-link" data-toggle="tab" id="tab-link-b" href="#tab-b">Datos Usuario</a></li>
+			<li class="nav-item"><a class="nav-link" data-toggle="tab" id="tab-link-c" href="#tab-c">Cambiar password</a></li>
+			<!--<li class="nav-item"><a class="nav-link" data-toggle="tab" id="tab-link-d" href="#tab-d">Variables</a></li>-->
 		</ul>
 		
 		<div class="tab-content p30">	
@@ -66,33 +67,40 @@
 					
 						<form name="frm-backend-main" id="frm-backend-main">
 							<div class="form-group">
-								<label for="grafico_id">Id del grafico</label>
-								<input type="text" class="form-control" name="grafico_id" id="grafico_id" aria-describedby="grafico_id"  readonly="readonly" placeholder="ID del grafico...">
+								<label for="user_id">Id del grafico</label>
+								<input type="text" class="form-control" name="user_id" id="user_id" aria-describedby="user_id"  readonly="readonly" placeholder="ID del usuario...">
+							</div>
+							
+							<div class="form-group">
+								<label for="user_name">Nombre Login</label>
+								<input type="text" class="form-control" name="user_name" id="user_name" aria-describedby="user_name" placeholder="Nombre Login...">
 							</div>
 							<div class="form-group">
-								<label for="clase_id">Tipo de grafico</label>
-								<?php get_combo_db("mod_graficos","grafico_tipo","grafico_tipo_id","grafico_tipo_desc",null,"grafico_tipo_id"); ?>
+								<label for="user_full_name">Nomre de usuario</label>
+								<input type="text" class="form-control" name="user_full_name" id="user_full_name" aria-describedby="user_full_name" placeholder="Nombre Usuario...">
 							</div>
 							<div class="form-group">
-								<label for="grafico_desc">Descripción</label>
-								<input type="text" class="form-control" name="grafico_desc" id="grafico_desc" aria-describedby="grafico_desc" r placeholder="Descripcion...">
+								<label for="clase_id">Estado</label>
+								<?php get_combo_db("mod_login","user_estado","user_estado_id","user_estado_desc",null,"user_estado_id"); ?>
 							</div>
 							<div class="form-group">
-								<label for="grafico_titulo">Titulo</label>
-								<input type="text" class="form-control" name="grafico_titulo" id="grafico_titulo" aria-describedby="grafico_titulo" r placeholder="Titulo...">
+								<label for="clase_id">Perfil</label>
+								<?php get_combo_db("mod_login","perfil_usuario","perfil_usuario_id","perfil_usuario_desc",null,"perfil_usuario_id"); ?>
 							</div>
+							
+							
+							
 							<div class="form-group">
-								<label for="grafico_data_schema">Schema</label>
-								<input type="text" class="form-control" name="grafico_data_schema" id="grafico_data_schema" aria-describedby="grafico_data_schema"  placeholder="Schema...">
+								<label for="user_contra_dominio">Se logea contra dominio?</label>
+								<select name="user_contra_dominio" id="user_contra_dominio" class="form-control">
+									<option value="f">No</option>
+									<option value="t">Si</option>
+								</select>
 							</div>
-							<div class="form-group">
-								<label for="grafico_data_tabla">Tabla</label>
-								<input type="text" class="form-control" name="grafico_data_tabla" id="grafico_data_tabla" aria-describedby="grafico_data_tabla" r placeholder="Tabla...">
-							</div>
+							
 												
 							<button type="button" class="btn btn-primary" onclick="guardar();">Guardar</button>
-							<button type="button" class="btn btn-danger" onclick="borrar();">Eliminar</button>
-						</form>
+					</form>
 					
 					</div>
 					
@@ -117,6 +125,36 @@
 							 
 				
 			</div> <!-- FIN TAB B -->
+			
+			<div class="tab-pane" id="tab-c">
+				
+				<div class="row">
+							
+						<div class="input-group mb-1 col col-xs-12 col-sm-12 col-md-4 col-lg-4 p0">
+							<div class="form-group">
+								<label for="passw">Password</label>
+								<input type="password" class="form-control" name="passw" id="passw" aria-describedby="passw" placeholder="Password...">
+							</div>
+							<div class="form-group">
+								<label for="passwc">Repetir Password</label>
+								<input style="width:100%;" type="password" class="form-control" name="passwc" id="passwc" aria-describedby="passwc" placeholder="Repita Password...">
+							</div>
+
+							<button type="button" style="width:60%;" class="btn btn-primary" onclick="guardar_pw();">Guardar</button>
+
+						</div>
+							
+
+				</div>		
+			
+				<div class="row">
+					<div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div id="grid-permisos" class="mt-30"></div>
+					</div>
+				</div>
+			
+			</div> <!-- FIN TAB C-->
+			
 		
 				
 			

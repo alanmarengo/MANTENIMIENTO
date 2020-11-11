@@ -36,7 +36,7 @@ include("./pgconfig.php");
 					<p><a href="./backend-main.php" class="btn btn-primary"><img src="./images/icono-indicadores-relleno.png"  width="24px" height="24px"> Modulo Indicadores</a></p>
 					<p><a href="./backend-graficos.php" class="btn btn-primary"><img src="./images/icono-indicadores-relleno.png"  width="24px" height="24px"> Modulo Gráficos</a></p>
 					<p><a href="./backend-estadistico.php" class="btn btn-primary"><img src="./images/icono-estadisticas-relleno.png"  width="24px" height="24px"> Modulo Estadistico</a></p>
-					<p><a href="./backend-main.php" class="btn btn-primary"><img src="./images/user.png"  width="24px" height="24px"> Gestion de Usuarios</a></p>
+					<p><a href="./backend-usuarios.php" class="btn btn-primary"><img src="./images/user.png"  width="24px" height="24px"> Gestion de Usuarios</a></p>
 				</div>
 			
 			</div>
