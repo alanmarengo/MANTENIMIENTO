@@ -303,32 +303,24 @@ function ol_map() {
 
             let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
             let js = this.requestApi(url);
-
-            console.log(this.apiUrl);
         }
 
         this.popupTab3 = function(estacion_id, tipo_estacion_id) {
 
             let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
             let js = this.requestApi(url);
-
-            console.log(this.apiUrl);
         }
 
         this.popupTab4 = function(estacion_id, tipo_estacion_id) {
 
             let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
             let js = this.requestApi(url);
-
-            console.log(this.apiUrl);
         }
 
         this.popupTabAforo1 = function(estacion_id, tipo_estacion_id) {
 
             let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=1";
             let js = this.requestApi(url);
-
-            console.log(js.parametros);
 
             $("#panel-aforo-ha-1 .api-tab-1 .coordenadas .popup-value").html(js.lat + "," + js.long);
             $("#panel-aforo-ha-1 .api-tab-1 .nombre .popup-value").html(js.estacion);
@@ -344,24 +336,18 @@ function ol_map() {
 
             let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
             let js = this.requestApi(url);
-
-            console.log(this.apiUrl);
         }
 
         this.popupTabAforo3 = function(estacion_id, tipo_estacion_id) {
 
             let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
             let js = this.requestApi(url);
-
-            console.log(this.apiUrl);
         }
 
         this.popupTabAforo4 = function(estacion_id, tipo_estacion_id) {
 
             let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
             let js = this.requestApi(url);
-
-            console.log(this.apiUrl);
         }
 
         this.requestApi = function(url) {
