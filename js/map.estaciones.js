@@ -352,7 +352,6 @@ function ol_map() {
                         <p class="text-default">${js[i].max_dato}</p>
                         <p class="date"><img src="./images/indicador-ico.png"></p>
                         <p class="date mt-10">${itemDate.getDay()}/${itemDate.getMonth()}/${itemDate.getFullYear()}}</p>
-                        <p class="date">${itemDate.getHour()}:${itemDate.getSeconds()}</p>
                     </div>
                 </div>
                 `;
