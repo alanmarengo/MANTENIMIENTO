@@ -303,8 +303,8 @@ function ol_map() {
             for (var i = 0; i < js.categoria_parametros.length; i++) {
                 html += `
                 <div class="category">
-                    <input type="radio" name="categoria" checked="checked" value="${js.categoria_parametros.categoria_parametro_id}">
-                    <label>${js.categoria_parametros.categoria_parametro_desc}</label>
+                    <input type="radio" name="categoria" checked="checked" value="${js.categoria_parametros[i].categoria_parametro_id}">
+                    <label>${js.categoria_parametros[i].categoria_parametro_desc}</label>
                 </div>
                 `;
             }
