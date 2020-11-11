@@ -386,8 +386,10 @@ function ol_map() {
 
         this.popupTab3 = function() {
 
-            let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
+            let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&mode=3";
             let js = this.requestApi(url);
+
+            console.log(js);
         }
 
         this.popupTab4 = function() {

@@ -254,6 +254,7 @@
 
 #popup .indicador.mini {
     align-items: center;
+    height: auto;
 }
 
 #popup .indicador.mini .value {
