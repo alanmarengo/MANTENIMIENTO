@@ -372,6 +372,18 @@ function ol_map() {
 
             $("#panel-ha-2").html(html);
 
+            var highestBox = 0;
+
+            $("#panel-ha-2").find(".indicador").each(function(i, v) {
+
+                if ($(v).height > highestBox) {
+                    highestBox = $(v);
+                }
+
+            });
+
+            $("#panel-ha-2").find(".indicador").height(highestBox);
+
         }
 
         this.popupTab3 = function() {
