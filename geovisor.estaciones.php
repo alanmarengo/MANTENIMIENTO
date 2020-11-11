@@ -229,9 +229,7 @@
 							</p>
 							<p class="parametros">
 								<span class="popup-label">Parámetros:</span>
-								<ul class="popup-value">
-									
-								</ul>
+								<ul class="popup-value"></ul>
 							</p>
 							<p class="inicio-operacion">
 								<span class="popup-label">Inicio de Operación:</span>
@@ -406,9 +404,7 @@
 							</p>
 							<p class="parametros">
 								<span class="popup-label">Parámetros:</span>
-								<ul class="popup-value">
-									
-								</ul>
+								<ul class="popup-value"></ul>
 							</p>
 							<p class="inicio-operacion">
 								<span class="popup-label">Inicio de Operación:</span>
