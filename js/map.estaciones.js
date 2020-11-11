@@ -286,7 +286,7 @@ function ol_map() {
         this.popupTab1 = function() {
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + this.current_tipo_estacion_id + "&mode=0";
-            let js = this.requestApi(url);
+            let js = this.requestApi(url)[0];
             let param = get_li(js.parametros);
 
             $("#popup-inner").children(".header").children(".title").html(js.estacion);
@@ -330,7 +330,7 @@ function ol_map() {
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&mode=2";
             let js = this.requestApi(url);
-            console.log(js);
+
             let html = `<div class="row mt-10">`;
 
             for (let i = 0; i < js.length; i++) {
@@ -380,7 +380,7 @@ function ol_map() {
         this.popupTabAforo1 = function() {
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + this.current_tipo_estacion_id + "&mode=0";
-            let js = this.requestApi(url);
+            let js = this.requestApi(url)[0];
             let param = get_li(js.parametros);
 
             $("#popup-aforo-inner").children(".header").children(".title").html(js.estacion);
@@ -426,7 +426,7 @@ function ol_map() {
 
             var js = JSON.parse(req.responseText);
 
-            return js[0];
+            return js;
 
         }
 
