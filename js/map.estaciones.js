@@ -341,7 +341,11 @@ function ol_map() {
 
                 }
 
-                let itemDate = new Date(js[i].fecha_dato);
+                let itemDate = js[i].fecha_dato.split(" ");
+
+                let fecha = itemDate[0];
+                let hora = itemDate[1].split(":");
+                hora = hora[0];
 
                 html += `<div class="col col-md-2 col-lg-2 p5">
                     <div class="indicador">
@@ -351,7 +355,8 @@ function ol_map() {
                         <p class="text-default">${js[i].med_dato}</p>
                         <p class="text-default">${js[i].max_dato}</p>
                         <p class="date"><img src="./images/indicador-ico.png"></p>
-                        <p class="date mt-10">${itemDate.getDay()}/${itemDate.getMonth()}/${itemDate.getFullYear()}}</p>
+                        <p class="date mt-10">${fecha}}</p>
+                        <p class="date mt-10">${hora}}</p>
                     </div>
                 </div>
                 `;
