@@ -289,6 +289,8 @@ function ol_map() {
             let js = this.requestApi(url);
             let param = get_li(js.parametros);
 
+            $("#popup-inner").children(".header").children(".title").html(js.estacion);
+
             $("#panel-ha-1 .api-tab-1 .coordenadas .popup-value").html(js.lat + "," + js.long);
             $("#panel-ha-1 .api-tab-1 .nombre .popup-value").html(js.estacion);
             $("#panel-ha-1 .api-tab-1 .localizacion .popup-value").html(js.localizacion);
@@ -347,6 +349,8 @@ function ol_map() {
             let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=1";
             let js = this.requestApi(url);
             let param = get_li(js.parametros);
+
+            $("#popup-aforo-inner").children(".header").children(".title").html(js.estacion);
 
             $("#panel-aforo-ha-1 .api-tab-1 .coordenadas .popup-value").html(js.lat + "," + js.long);
             $("#panel-aforo-ha-1 .api-tab-1 .nombre .popup-value").html(js.estacion);
