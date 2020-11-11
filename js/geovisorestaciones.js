@@ -121,10 +121,10 @@ function reCalcPopup(idPrefix) {
 }
 
 function get_li(str) {
-    let str = str.split(",");
+    let strnew = str.split(",");
     let html = "";
-    for (let i = 0; i < str.length; i++) {
-        html += `<li>${str[i]}</li>`;
+    for (let i = 0; i < strnew.length; i++) {
+        html += `<li>${strnew[i]}</li>`;
     }
     return html;
 }
