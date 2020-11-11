@@ -340,16 +340,18 @@ function ol_map() {
 
                 }
 
+                let itemDate = new Date(js[i].fecha_dato);
+
                 html += `<div class="col col-md-2 col-lg-2 p5">
                     <div class="indicador">
-                        <p class="title">Nivel del Agua</p>
-                        <p class="value">1,73 (m)</p>
-                        <p class="text-default">(min.) 1.66</p>
-                        <p class="text-default">(med.) 1.99</p>
-                        <p class="text-default">(max.) 2.32</p>
+                        <p class="title">${js[i].parametro_nombre}</p>
+                        <p class="value">${js[i].ultimo_dato}</p>
+                        <p class="text-default">${js[i].min_dato}</p>
+                        <p class="text-default">${js[i].med_dato}</p>
+                        <p class="text-default">${js[i].max_dato}</p>
                         <p class="date"><img src="./images/indicador-ico.png"></p>
-                        <p class="date mt-10">10/09/2020</p>
-                        <p class="date">00:00hs.</p>
+                        <p class="date mt-10">${itemDate.getDay()}/${itemDate.getMonth()}/${itemDate.getFullYear()}}</p>
+                        <p class="date">${itemDate.getHour()}:${itemDate.getSeconds()}</p>
                     </div>
                 </div>
                 `;
