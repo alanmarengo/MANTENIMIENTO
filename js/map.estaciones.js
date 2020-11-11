@@ -347,6 +347,11 @@ function ol_map() {
                 let hora = itemDate[1].split(":");
                 hora = hora[0] + ":" + hora[1];
 
+                js[i].ultimo_dato = round(js[i].ultimo_dato, 2);
+                js[i].min_dato = round(js[i].min_dato, 2);
+                js[i].med_dato = round(js[i].med_dato, 2);
+                js[i].max_dato = round(js[i].max_dato, 2);
+
                 html += `<div class="col col-md-2 col-lg-2 p5">
                     <div class="indicador">
                         <p class="title">${js[i].parametro_nombre}</p>
@@ -355,8 +360,8 @@ function ol_map() {
                         <p class="text-default">${js[i].med_dato}</p>
                         <p class="text-default">${js[i].max_dato}</p>
                         <p class="date"><img src="./images/indicador-ico.png"></p>
-                        <p class="date mt-10">${fecha}}</p>
-                        <p class="date mt-10">${hora}}</p>
+                        <p class="date mt-10">${fecha}</p>
+                        <p class="date mt-10">${hora}</p>
                     </div>
                 </div>
                 `;
@@ -3227,5 +3232,14 @@ function ol_map() {
         $(".popup").draggable({ handle: ".popup-header" });
 
     }
+
+}
+
+function round(num, decimales) {
+
+    let tmp = num.split(".");
+    let tmpDec = tmp[1].substring(0, decimales);
+
+    return tmp[0] + "." + tmpDec;
 
 }
