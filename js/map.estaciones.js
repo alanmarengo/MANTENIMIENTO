@@ -289,6 +289,8 @@ function ol_map() {
             let js = this.requestApi(url);
             let param = get_li(js.parametros);
 
+            alert(param);
+
             $("#panel-ha-1 .api-tab-1 .coordenadas .popup-value").html(js.lat + "," + js.long);
             $("#panel-ha-1 .api-tab-1 .nombre .popup-value").html(js.estacion);
             $("#panel-ha-1 .api-tab-1 .localizacion .popup-value").html(js.localizacion);
