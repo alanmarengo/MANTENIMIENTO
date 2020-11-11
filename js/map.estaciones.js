@@ -330,6 +330,36 @@ function ol_map() {
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&mode=2";
             let js = this.requestApi(url);
+            let html = `<div class="row mt-10">`;
+
+            for (let i = 0; i < js.length; i++) {
+
+                if ((i != 0) && (i % 6 == 0)) {
+
+                    html += `</div><div class="row">`;
+
+                }
+
+                html += `<div class="col col-md-2 col-lg-2 p5">
+                    <div class="indicador">
+                        <p class="title">Nivel del Agua</p>
+                        <p class="value">1,73 (m)</p>
+                        <p class="text-default">(min.) 1.66</p>
+                        <p class="text-default">(med.) 1.99</p>
+                        <p class="text-default">(max.) 2.32</p>
+                        <p class="date"><img src="./images/indicador-ico.png"></p>
+                        <p class="date mt-10">10/09/2020</p>
+                        <p class="date">00:00hs.</p>
+                    </div>
+                </div>
+                `;
+
+                html += "</div>";
+
+            }
+
+            $("#panel-ha-2").html(html);
+
         }
 
         this.popupTab3 = function() {
