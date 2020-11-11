@@ -189,15 +189,15 @@ function ol_map() {
 
         }.bind(this));
 
-        $("#tab-ha-1").on("click", () => { this.popupTab1(this.current_estacion_id, this.current_tipo_estacion_id) });
-        $("#tab-ha-2").on("click", () => { this.popupTab2(this.current_estacion_id, this.current_tipo_estacion_id) });
-        $("#tab-ha-3").on("click", () => { this.popupTab3(this.current_estacion_id, this.current_tipo_estacion_id) });
-        $("#tab-ha-4").on("click", () => { this.popupTab4(this.current_estacion_id, this.current_tipo_estacion_id) });
+        $("#tab-ha-1").on("click", () => { this.popupTab1() });
+        $("#tab-ha-2").on("click", () => { this.popupTab2() });
+        $("#tab-ha-3").on("click", () => { this.popupTab3() });
+        $("#tab-ha-4").on("click", () => { this.popupTab4() });
 
-        $("#tab-aforo-ha-1").on("click", () => { this.popupTabAforo1(this.current_estacion_id, this.current_tipo_estacion_id) });
-        $("#tab-aforo-ha-2").on("click", () => { this.popupTabAforo2(this.current_estacion_id, this.current_tipo_estacion_id) });
-        $("#tab-aforo-ha-3").on("click", () => { this.popupTabAforo3(this.current_estacion_id, this.current_tipo_estacion_id) });
-        $("#tab-aforo-ha-4").on("click", () => { this.popupTabAforo4(this.current_estacion_id, this.current_tipo_estacion_id) });
+        $("#tab-aforo-ha-1").on("click", () => { this.popupTabAforo1() });
+        $("#tab-aforo-ha-2").on("click", () => { this.popupTabAforo2() });
+        $("#tab-aforo-ha-3").on("click", () => { this.popupTabAforo3() });
+        $("#tab-aforo-ha-4").on("click", () => { this.popupTabAforo4() });
 
 
         this.getGFIUrl = function(e, wkt) {
@@ -283,9 +283,9 @@ function ol_map() {
 
         }
 
-        this.popupTab1 = function(estacion_id, tipo_estacion_id) {
+        this.popupTab1 = function() {
 
-            let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
+            let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + this.current_tipo_estacion_id + "&mode=0";
             let js = this.requestApi(url);
             let param = get_li(js.parametros);
 
@@ -344,9 +344,9 @@ function ol_map() {
             let js = this.requestApi(url);
         }
 
-        this.popupTabAforo1 = function(estacion_id, tipo_estacion_id) {
+        this.popupTabAforo1 = function() {
 
-            let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=1";
+            let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + this.current_tipo_estacion_id + "&mode=0";
             let js = this.requestApi(url);
             let param = get_li(js.parametros);
 
@@ -362,19 +362,19 @@ function ol_map() {
             $("#panel-aforo-ha-1 .api-tab-1 .proveedor .popup-value").html(js.proveedor);
         }
 
-        this.popupTabAforo2 = function(estacion_id, tipo_estacion_id) {
+        this.popupTabAforo2 = function() {
 
             let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
             let js = this.requestApi(url);
         }
 
-        this.popupTabAforo3 = function(estacion_id, tipo_estacion_id) {
+        this.popupTabAforo3 = function() {
 
             let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
             let js = this.requestApi(url);
         }
 
-        this.popupTabAforo4 = function(estacion_id, tipo_estacion_id) {
+        this.popupTabAforo4 = function() {
 
             let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
             let js = this.requestApi(url);
