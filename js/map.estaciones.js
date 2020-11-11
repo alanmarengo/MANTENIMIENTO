@@ -289,8 +289,6 @@ function ol_map() {
             let js = this.requestApi(url);
             let param = get_li(js.parametros);
 
-            alert(param);
-
             $("#panel-ha-1 .api-tab-1 .coordenadas .popup-value").html(js.lat + "," + js.long);
             $("#panel-ha-1 .api-tab-1 .nombre .popup-value").html(js.estacion);
             $("#panel-ha-1 .api-tab-1 .localizacion .popup-value").html(js.localizacion);
@@ -299,6 +297,20 @@ function ol_map() {
             $("#panel-ha-1 .api-tab-1 .inicio-operacion .popup-value").html(js.inicio_opera);
             $("#panel-ha-1 .api-tab-1 .objetivo .popup-value").html(js.objetivo);
             $("#panel-ha-1 .api-tab-1 .proveedor .popup-value").html(js.proveedor);
+
+            let html = ``;
+
+            for (var i = 0; i < js.categoria_parametros.length; i++) {
+                html += `
+                <div class="category">
+                    <input type="radio" name="categoria" checked="checked" value="${js.categoria_parametros.categoria_parametro_id}">
+                    <label>${js.categoria_parametros.categoria_parametro_desc}</label>
+                </div>
+                `;
+            }
+
+            $("#popup-inner").children(".categories").empty();
+            $("#popup-inner").children(".categories").html(html);
 
         }
 
