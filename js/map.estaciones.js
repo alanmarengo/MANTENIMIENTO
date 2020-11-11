@@ -266,8 +266,6 @@ function ol_map() {
 
             if (js.tipo_estacion_id == 5) {
 
-                alert("abrir aforo");
-
                 $("#popup").hide();
                 $("#popup-aforo").show();
                 reCalcPopup("popup-aforo");
@@ -275,8 +273,6 @@ function ol_map() {
                 $("#tab-aforo-ha-1").trigger("click");
 
             } else {
-
-                alert("abrir comun");
 
                 $("#popup-aforo").hide();
                 $("#popup").show();
