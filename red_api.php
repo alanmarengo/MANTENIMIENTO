@@ -309,7 +309,7 @@ function hidro_get_solapa_datos_diarios($estacion_id,$tipo_categoria_parametro_i
 	
 	$entered = false;
 	
-	$json = "[";
+	$json = '{"datos_diarios":[';
 	
 	while ($r = pg_fetch_assoc($query)) 
 	{
@@ -336,7 +336,28 @@ function hidro_get_solapa_datos_diarios($estacion_id,$tipo_categoria_parametro_i
 		$json = substr($json,0,strlen($json)-1);
 	};
 	
-	$json .= "]";
+	$json .= "],";
+	
+	$query_string   = "SELECT * FROM  mod_sensores.get_estacion_datos_diarios_dv($estacion_id,$tipo_categoria_parametro_id) ";
+	$query_string  .= "ORDER BY parametro_nombre ASC;";
+	
+	$query = pg_query($conn,$query_string);
+	
+	$r = pg_fetch_assoc($query);
+	
+	$json .= '"DV":';
+	
+	$json .= '{';
+	$json .= '"tab":"datos direccion del viento",';
+	$json .= '"estacion_id":"' 		. clear_json($r["estacion_id"]) . '",';
+	$json .= '"estacion_tipo":"' 	. clear_json($r["estacion_tipo"]) . '",';
+	$json .= '"parametro_id":"' 	. clear_json($r["parametro_id"]) . '",';
+	$json .= '"parametro_nombre":"' . clear_json($r["parametro_nombre"]) . '",';
+	$json .= '"ultimo_dato":"' 		. clear_json($r["ultimo_dato"]) . '",';
+	$json .= '"fecha_dato":"' 		. clear_json($r["fecha_dato"]) . '",';
+	$json .= '"dv_moda":"' 		. clear_json($r["dv_moda"]) . '"';
+	$json .= "}}";
+
 	
 	echo $json;
 	
