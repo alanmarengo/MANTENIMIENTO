@@ -366,7 +366,7 @@ function ol_map() {
             $("#panel-ha-1 .api-tab-1 .objetivo .popup-value").html(js.objetivo);
             $("#panel-ha-1 .api-tab-1 .proveedor .popup-value").html(js.proveedor);
 
-            let html = ``;
+            html = ``;
 
             for (var i = 0; i < js.categoria_parametros.length; i++) {
 
