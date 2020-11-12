@@ -502,6 +502,8 @@ function ol_map() {
             document.getElementById("tab3-fdesde").onchange = () => this.popupTab3Graficar();
             document.getElementById("tab3-fhasta").onchange = () => this.popupTab3Graficar();
 
+            this.popupTab3Graficar();
+
         }
 
         this.popupTab3Graficar = function() {
