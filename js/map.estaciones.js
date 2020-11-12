@@ -436,7 +436,7 @@ function ol_map() {
 
             let url = this.apiGraficosUrl + "?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&parametro_id=" + parametro_id + "&mode=0";
 
-            let iframe = `<iframe src="${url}"></iframe>`;
+            let iframe = `<iframe src="${url}" width="100%" style="border:none;"></iframe>`;
 
             document.getElementById("tab2-grafico").innerHTML = iframe;
 

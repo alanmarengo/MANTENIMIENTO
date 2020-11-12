@@ -407,7 +407,7 @@
 	<div id="popup-tab2-grafico">
 		<div id="popup-tab2-grafico-inner">
 			<div class="header">
-				<span class="title">Gráfico</span>
+				<span class="title"></span>
 				<a href="javascript:void(0);" onclick="$('#popup-tab2-grafico').hide();">
 					<i class="fa fa-times"></i>
 				</a>
