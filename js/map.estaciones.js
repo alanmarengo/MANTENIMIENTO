@@ -730,7 +730,7 @@ function ol_map() {
                         </div>
                     </div>                    
                     <div class="col col-md-4 col-lg-4 api-tab-4">
-                        <div class="indicador mini text-center mt-10">
+                        <div class="indicador mini text-center">
                             <p class="title">Caudal sólido</p>
                             <p class="text m0">Transacción fracción fina</p>
                             <p class="value trans_frac_fina"></p>
@@ -739,7 +739,7 @@ function ol_map() {
                         </div>
                     </div>
                     <div class="col col-md-4 col-lg-4 api-tab-4">
-                        <div class="indicador mini text-center mt-10">
+                        <div class="indicador mini text-center">
                             <p class="title">Patrón hidrodinámico de medio flujo</p>
                             <p id="patdin_med_flu">
                                 
