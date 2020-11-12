@@ -676,12 +676,6 @@ function ol_map() {
 
             let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
             let js = this.requestApi(url);
-        }
-
-        this.popupTabAforo3 = function() {
-
-            let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
-            let js = this.requestApi(url);
 
             let html = `
                 <div class="row">
@@ -737,9 +731,15 @@ function ol_map() {
                 </div>
             `;
 
-            $("#panel-aforo-ha-3").html(html);
+            $("#panel-aforo-ha-2").html(html);
 
             updateDatepicker();
+        }
+
+        this.popupTabAforo3 = function() {
+
+            let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
+            let js = this.requestApi(url);
 
         }
 
