@@ -561,13 +561,13 @@ function ol_map() {
 
                 series: [{
                     name: 'Mínimo',
-                    data: [minval]
+                    data: [parseFloat(minval)]
                 }, {
                     name: 'Medio',
-                    data: [medval]
+                    data: [parseFloat(medval)]
                 }, {
                     name: 'Máximo',
-                    data: [maxval]
+                    data: [parseFloat(maxval)]
                 }]
             });
 
