@@ -809,7 +809,7 @@ function ol_map() {
         }
 
         this.popupTabAforo2_cargarCamp = function() {
-            alert(1);
+
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&cod_temp=" + this.current_tabaf2_cod_temp + "&mode=6";
             let js = this.requestApi(url);
 
