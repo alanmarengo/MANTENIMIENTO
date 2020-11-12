@@ -48,7 +48,7 @@ $(document).ready(function() {
 
     $(".roverlay").each(function(i, v) { $(v).Roverlay(); });
 
-    Highcharts.chart('chart-sample-1', {
+    /*Highcharts.chart('chart-sample-1', {
 
         chart: {
             type: 'column'
@@ -101,7 +101,7 @@ $(document).ready(function() {
             data: [3, 0, 4, 4, 3],
             stack: 'female'
         }]
-    });
+    });*/
 
 
 });
