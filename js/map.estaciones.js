@@ -787,10 +787,10 @@ function ol_map() {
                     }
 
                     let option = document.createElement("option");
-                    option.value = js["años"][i].anio;
-                    option.innerHTML = js["años"][i].anio;
+                    option.value = js["años"][i].cod_temp;
+                    option.innerHTML = js["años"][i].cod_temp;
 
-                    $(comboAnios).append(option);
+                    $(comboCamp).append(option);
 
                 }
 
