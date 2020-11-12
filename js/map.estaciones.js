@@ -3431,7 +3431,11 @@ function ol_map() {
 function round(num, decimales) {
 
     let tmp = num.split(".");
-    let tmpDec = tmp[1].substring(0, decimales);
+    var tmpDec = "";
+
+    if (tmp[1]) {
+        tmpDec = tmp[1].substring(0, decimales);
+    }
 
     return tmp[0] + "." + tmpDec;
 
