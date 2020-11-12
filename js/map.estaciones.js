@@ -788,7 +788,7 @@ function ol_map() {
 
                     let option = document.createElement("option");
                     option.value = js["campañas"][i].cod_temp;
-                    option.innerHTML = js["campañas"][i].cod_temp;
+                    option.innerHTML = js["campañas"][i].mes;
 
                     $(comboCamp).append(option);
 
