@@ -514,9 +514,13 @@ function ol_map() {
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&parametro_id=" + this.current_parametro_id + "&fd=" + fd + "&fh=" + fh + "&mode=4";
             let js = this.requestApi(url);
 
-            $(".api-tab-3 .minval").html(round(js[0].min_dato, 2));
-            $(".api-tab-3 .medval").html(round(js[0].med_dato));
-            $(".api-tab-3 .maxval").html(round(js[0].max_dato));
+            let minval = round(js[0].min_dato, 2);
+            let med_dato = round(js[0].med_dato, 2);
+            let max_dato = round(js[0].max_dato, 2);
+
+            $(".api-tab-3 .minval").html(minval);
+            $(".api-tab-3 .medval").html(med_dato);
+            $(".api-tab-3 .maxval").html(max_dato);
 
             Highcharts.chart('tab3-chart', {
 
@@ -550,19 +554,20 @@ function ol_map() {
 
                 plotOptions: {
                     column: {
-                        stacking: 'normal'
+                        pointPadding: 0.2,
+                        borderWidth: 0
                     }
                 },
 
                 series: [{
                     name: 'Mínimo',
-                    data: [round(js[0].min_dato, 2)]
+                    data: [minval]
                 }, {
                     name: 'Medio',
-                    data: [round(js[0].med_dato, 2)]
+                    data: [medval]
                 }, {
                     name: 'Máximo',
-                    data: [round(js[0].max_dato, 2)]
+                    data: [maxval]
                 }]
             });
 
