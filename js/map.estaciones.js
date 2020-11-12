@@ -3390,7 +3390,7 @@ function updateDatepicker() {
 
     $(".datepicker").datepicker({
         defaultDate: null,
-        dateFormat: "yy-mm-dd",
+        dateFormat: "dd/mm/yy",
         firstDay: 0,
         changeMonth: true,
         changeYear: true,
