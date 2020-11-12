@@ -346,23 +346,32 @@ function ol_map() {
 
             html = ``;
 
+            let first = true;
+
             for (var i = 0; i < js.categoria_parametros.length; i++) {
 
-                let checked = "";
+                if (js.categoria_parametros[i].categoria_parametro_id < 5) {
 
-                if (i == 0) {
-                    this.current_categoria_id = js.categoria_parametros[i].categoria_parametro_id;
-                    checked = `checked="checked"`;
-                } else {
-                    checked = ``;
+                    let checked = "";
+
+                    if (first) {
+                        this.current_categoria_id = js.categoria_parametros[i].categoria_parametro_id;
+                        checked = `checked="checked"`;
+                    } else {
+                        checked = ``;
+                    }
+
+                    html += `
+                    <div class="category">
+                        <input ${checked} type="radio" name="categoria" value="${js.categoria_parametros[i].categoria_parametro_id}" onclick="geomap.map.current_categoria_id=this.value; geomap.map.popupTab3();">
+                        <label>${js.categoria_parametros[i].categoria_parametro_desc}</label>
+                    </div>
+                    `;
+
+                    first = false;
+
                 }
 
-                html += `
-                <div class="category">
-                    <input ${checked} type="radio" name="categoria" value="${js.categoria_parametros[i].categoria_parametro_id}" onclick="geomap.map.current_categoria_id=this.value; geomap.map.popupTab3();">
-                    <label>${js.categoria_parametros[i].categoria_parametro_desc}</label>
-                </div>
-                `;
             }
 
             $("#popup-inner").children(".categories").empty();
