@@ -261,14 +261,14 @@
 						<div class="col col-md-3 col-lg-3">
 							<div class="form-group">
 								<label>Desde:</label>
-								<input type="text" class="datepicker">
+								<input type="text" class="datepicker" id="tab3-fdesde">
 								<i class="fa fa-calendar-alt"></i>
 							</div>
 						</div>
 						<div class="col col-md-3 col-lg-3">
 							<div class="form-group">
 								<label>Hasta:</label>
-								<input type="text" class="datepicker">
+								<input type="text" class="datepicker" id="tab3-fhasta">
 								<i class="fa fa-calendar-alt"></i>
 							</div>
 						</div>

@@ -404,6 +404,24 @@ function ol_map() {
                 $("#combo-parametros").append(option);
 
             }
+
+            document.getElementById("combo-parametros").onclick = () => {
+
+                let curr_val = document.getElementById("combo-parametros").options[document.getElementById("combo-parametros").selectedIndex].value;
+                this.current_parametro_id = curr_val;
+                this.popupTab3Graficar();
+            }
+
+        }
+
+        this.popupTab3Graficar = function() {
+
+            let fd = $("#tab3-fd").val();
+            let fh = $("#tab3-fh").val();
+
+            let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&parametro_id=" + this.current_parametro_id + +"&fd=" + fd + "&fh=" + fh + "&mode=4";
+            let js = this.requestApi(url);
+
         }
 
         this.popupTab4 = function() {
