@@ -707,13 +707,13 @@ function ol_map() {
                         </div>
                     </div>                    
                     <div class="col col-md-4 col-lg-4 api-tab-4">
-                        <div class="indicador mini text-center mt-10">
+                        <div class="indicador mini text-center">
                             <p class="title">ALTURA DEL RÍO</p>
                             <p class="value altura_rio"></p>
                         </div>
                     </div>
                     <div class="col col-md-4 col-lg-4 api-tab-4">
-                        <div class="indicador mini text-center mt-10">
+                        <div class="indicador mini text-center">
                             <p class="title">CAUDAL LÍQUIDO</p>
                             <p class="value caudal_liquido"></p>
                         </div>
@@ -751,7 +751,7 @@ function ol_map() {
                     <div class="col col-md-3 col-lg-3 api-tab-4">
                         <a href="#" class="btn-2" id="2"link_informe_campana">INFORME DE CAMPAÑA</a>
                     </div>
-                    <div class="col col-md-3 col-lg-3 api-tab-4">
+                    <div class="col col-md-5 col-lg-5 api-tab-4">
                         <a href="#" class="btn-2" target="_blank" id="reg_audiovisual_campana">REGISTRO AUDIOVISUAL DE LA CAMPAÑA</a>
                     </div>
                 </div>
