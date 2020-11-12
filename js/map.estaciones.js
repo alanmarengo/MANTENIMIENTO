@@ -748,10 +748,12 @@ function ol_map() {
                     </div>
                 </div>                
                 <div class="row mt-20 api-tab-2">
-                    <p class="mt-10">
+                    <div class="col col-md-3 col-lg-3 api-tab-4">
                         <a href="#" class="btn-2" id="2"link_informe_campana">INFORME DE CAMPAÑA</a>
+                    </div>
+                    <div class="col col-md-3 col-lg-3 api-tab-4">
                         <a href="#" class="btn-2" id="reg_audiovisual_campana">REGISTRO AUDIOVISUAL DE LA CAMPAÑA</a>
-                    </p>
+                    </div>
                 </div>
             `;
 
