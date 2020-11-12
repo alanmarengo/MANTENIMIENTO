@@ -514,7 +514,7 @@ function ol_map() {
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&parametro_id=" + this.current_parametro_id + "&fd=" + fd + "&fh=" + fh + "&mode=4";
             let js = this.requestApi(url);
 
-            console.log(js);
+            console.log("GRAFI: " + js);
 
             $(".api-tab-3.minval").html(js[0].min_dato);
             $(".api-tab-3.medval").html(js[0].med_dato);
