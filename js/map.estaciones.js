@@ -796,10 +796,10 @@ function ol_map() {
 
             }
 
-            comboAnios.onchange = () => {
+            comboCamp.onchange = () => {
 
-                let val = comboAnios.options[comboAnios.selectedIndex].value;
-                this.current_tabaf2_ano = val;
+                let val = comboCamp.options[comboCamp.selectedIndex].value;
+                this.current_tabaf2_cod_temp = val;
                 this.popupTabAforo2_cargarCamp();
 
             }
