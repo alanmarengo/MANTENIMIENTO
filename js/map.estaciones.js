@@ -353,6 +353,8 @@ function ol_map() {
                 if (i == 0) {
                     this.current_categoria_id = js.categoria_parametros[i].categoria_parametro_id;
                     checked = `checked="checked"`;
+                } else {
+                    checked = ``;
                 }
 
                 html += `
@@ -361,8 +363,6 @@ function ol_map() {
                     <label>${js.categoria_parametros[i].categoria_parametro_desc}</label>
                 </div>
                 `;
-
-                checked = "";
             }
 
             $("#popup-inner").children(".categories").empty();
