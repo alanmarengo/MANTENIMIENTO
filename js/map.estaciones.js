@@ -731,10 +731,10 @@ function ol_map() {
                     </div>                    
                     <div class="col col-md-4 col-lg-4 api-tab-4">
                         <div class="indicador mini text-center mt-10">
-                            <p class="title m0">Caudal sólido</p>
-                            <p class="text">Transacción fracción fina</p>
-                            <p class="value mt-10 trans_frac_fina"></p>
-                            <p class="text">Transacción fracción gruesa</p>
+                            <p class="title">Caudal sólido</p>
+                            <p class="text m0">Transacción fracción fina</p>
+                            <p class="value trans_frac_fina"></p>
+                            <p class="text mt-10">Transacción fracción gruesa</p>
                             <p class="value trans_frac_gruesa"></p>
                         </div>
                     </div>
