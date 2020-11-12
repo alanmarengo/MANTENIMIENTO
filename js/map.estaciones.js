@@ -412,7 +412,11 @@ function ol_map() {
                         <p class="text-default m0 mt-3">Min: ${js[i].min_dato}</p>
                         <p class="text-default m0 mt-3">Med: ${js[i].med_dato}</p>
                         <p class="text-default m0 mt-3">Max: ${js[i].max_dato}</p>
-                        <p class="date mt-10"><img src="./images/indicador-ico.png"></p>
+                        <p class="date mt-10">
+                            <a href="javascript:void(0);" popupTab2_getGrafico(${js[i].parametro_id});>
+                                <img src="./images/indicador-ico.png">
+                            </a>
+                        </p>
                         <p class="date mt-10">${fecha}</p>
                         <p class="date m0">${hora}</p>
                     </div>
@@ -424,6 +428,14 @@ function ol_map() {
             html += "</div>";
 
             $("#panel-ha-2").html(html);
+
+        }
+
+        this.popupTab2_getGrafico = function(parametro_id) {
+
+            let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&parametro_id=" + parametro_id + "&mode=0";
+
+            document.getElementById("tab2-grafico").src = url;
 
         }
 
