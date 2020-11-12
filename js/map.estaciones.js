@@ -357,7 +357,7 @@ function ol_map() {
 
                 html += `
                 <div class="category">
-                    <input ${checked} type="radio" name="categoria" checked="checked" value="${js.categoria_parametros[i].categoria_parametro_id}">
+                    <input ${checked} type="radio" name="categoria" checked="checked" value="${js.categoria_parametros[i].categoria_parametro_id}" onclick="geomap.current_categoria_id=this.value">
                     <label>${js.categoria_parametros[i].categoria_parametro_desc}</label>
                 </div>
                 `;
