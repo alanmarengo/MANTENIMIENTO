@@ -723,17 +723,17 @@ function ol_map() {
                     <div class="col col-md-4 col-lg-4 api-tab-4">
                         <div class="indicador mini text-center">
                             <p class="title">Sedimentos en suspensión</p>
-                            <p class="text">Concentración media fracción fina</p>
+                            <p class="text m0">Concentración media fracción fina</p>
                             <p class="value con_med_frac_fina"></p>
-                            <p class="text">Concentración media fracción gruesa</p>
+                            <p class="text mt-10">Concentración media fracción gruesa</p>
                             <p class="value con_med_frac_gruesa"></p>
                         </div>
                     </div>                    
                     <div class="col col-md-4 col-lg-4 api-tab-4">
                         <div class="indicador mini text-center mt-10">
-                            <p class="title">Caudal sólido</p>
+                            <p class="title m0">Caudal sólido</p>
                             <p class="text">Transacción fracción fina</p>
-                            <p class="value trans_frac_fina"></p>
+                            <p class="value mt-10 trans_frac_fina"></p>
                             <p class="text">Transacción fracción gruesa</p>
                             <p class="value trans_frac_gruesa"></p>
                         </div>
