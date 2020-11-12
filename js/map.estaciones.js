@@ -726,7 +726,95 @@ function ol_map() {
             $("#panel-aforo-ha-2").html(html);
 
             updateDatepicker();
+
+            this.popupTabAforo2_cargarComboAnio(js);
         }
+
+        this.popupTabAforo2_cargarComboAnio = function(js) {
+
+            let comboAnios = document.getElementById("combo-tab2af-ano");
+
+            $(comboAnios).empty();
+
+            for (let i = 0; i < js["años"].length; i++) {
+
+                if (i == 0) {
+
+                    this.current_tabaf2_ano = js["años"][i].anio;
+
+                }
+
+                let option = document.createElement("option");
+                option.value = js["años"][i].anio;
+                option.innerHTML = js["años"][i].anio;
+
+                $(comboAnios).append(option);
+
+            }
+
+            comboAnios.onchange = () => {
+
+                let val = comboAnios.options[comboAnios.selectedIndex].value;
+                this.current_tabaf2_ano = val;
+                this.popupTabAforo2_cargarComboCamp();
+
+            }
+
+            this.popupTabAforo2_cargarComboCamp();
+
+        }
+
+        this.popupTabAforo2_cargarComboCamp = function() {
+
+            let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + this.current_tipo_estacion_id + "&mode=5";
+            let js = this.requestApi(url);
+
+            let comboCamp = document.getElementById("combo-tab2af-camp");
+
+            $(comboCamp).empty();
+
+            let first = true;
+
+            for (let i = 0; i < js["campañas"].length; i++) {
+
+                if (js["campañas"][i].anio == this.current_tabaf2_ano) {
+
+                    if (first) {
+
+                        this.current_tabaf2_cod_temp = js["campañas"][i].cod_temp;
+                        first = false;
+
+                    }
+
+                    let option = document.createElement("option");
+                    option.value = js["años"][i].anio;
+                    option.innerHTML = js["años"][i].anio;
+
+                    $(comboAnios).append(option);
+
+                }
+
+            }
+
+            comboAnios.onchange = () => {
+
+                let val = comboAnios.options[comboAnios.selectedIndex].value;
+                this.current_tabaf2_ano = val;
+                this.popupTabAforo2_cargarCamp();
+
+            }
+
+            this.popupTabAforo2_cargarCamp();
+
+        }
+
+        this.popupTabAforo2_cargarCamp = function() {
+
+            let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&cod_temp=" + this.current_tabaf2_cod_temp + "&mode=6";
+            let js = this.requestApi(url);
+
+        }
+
 
         this.popupTabAforo3 = function() {
 
