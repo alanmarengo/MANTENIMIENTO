@@ -181,120 +181,17 @@
 				</ul>
 			</div>
 			<div class="categories mt-10">
-				<div class="category">
-					<input type="radio" name="categoria" checked="checked">
-					<label>Hidrométricas</label>
-				</div>
-				<div class="category">
-					<input type="radio" name="categoria">
-					<label>Hidrometeorológicas</label>
-				</div>
-				<div class="category">
-					<input type="radio" name="categoria">
-					<label>Meteorológicas</label>
-				</div>
-				<div class="category">
-					<input type="radio" name="categoria">
-					<label>Hidroambientales</label>
-				</div>
+				
 			</div>			
 			<div class="tab-content mt-20" id="popup-tab-content">
 				<div id="panel-ha-1" class="tab-pane fade in show">
-					<div class="row">
-						<div class="col col-md-6 col-lg-6 col-xs-12 col-sm-12">
-							<p><img src="./images/sample.jpg" width="100%"></p>
-							<p class="mt-20">
-								<a href="#" class="btn-1">Monografía de la Estación</a>
-							</p>
-							<p>
-								<a href="#" class="btn-1">Descarga de la Serie de Datos Completa</a>
-							</p>
-						</div>
-						<div class="col col-md-6 col-lg-6 col-xs-12 col-sm-12 api-tab-1">
-							<p class="coordenadas">
-								<span class="popup-label">Coordenadas:</span>
-								<span class="popup-value"></span>
-							</p>
-							<p class="nombre">
-								<span class="popup-label">Nombre:</span>
-								<span class="popup-value"></span>
-							</p>
-							<p class="localizacion">
-								<span class="popup-label">Localización:</span>
-								<span class="popup-value"></span>
-							</p>
-							<p class="id">
-								<span class="popup-label">ID:</span>
-								<span class="popup-value"></span>
-							</p>
-							<p class="parametros">
-								<span class="popup-label">Parámetros:</span>
-								<ul class="popup-value"></ul>
-							</p>
-							<p class="inicio-operacion">
-								<span class="popup-label">Inicio de Operación:</span>
-								<span class="popup-value"></span>
-							</p>
-							<p class="objetivo">
-								<span class="popup-label">Objetivo:</span>
-								<span class="popup-value"></span>
-							</p>
-							<p class="proveedor">
-								<span class="popup-label">Proveedor:</span>
-								<span class="popup-value"></span>
-							</p>
-						</div>
-					</div>
+					
 				</div>
 				<div id="panel-ha-2" class="tab-pane fade in">
 					
 				</div>
 				<div id="panel-ha-3" class="tab-pane fade in">
-					<div class="row">
-						<div class="col col-md-6 col-lg-6">
-							<div class="form-group">
-								<label>Parámetro:</label>
-								<select id="combo-parametros">
-								</select>
-							</div>
-						</div>
-						<div class="col col-md-3 col-lg-3">
-							<div class="form-group">
-								<label>Desde:</label>
-								<input type="text" class="datepicker" id="tab3-fdesde">
-								<i class="fa fa-calendar-alt"></i>
-							</div>
-						</div>
-						<div class="col col-md-3 col-lg-3">
-							<div class="form-group">
-								<label>Hasta:</label>
-								<input type="text" class="datepicker" id="tab3-fhasta">
-								<i class="fa fa-calendar-alt"></i>
-							</div>
-						</div>
-					</div>
-					<div class="row mt-20">
-						<div class="col col-md-3 col-lg-3">
-							<div class="indicador mini text-center">
-								<p class="title">VALOR MÍNIMO</p>
-								<p class="value">1,73 (°C)</p>
-							</div>
-							<div class="indicador mini text-center mt-10">
-								<p class="title">VALOR MÁXIMO</p>
-								<p class="value">1,73 (°C)</p>
-							</div>
-							<div class="indicador mini text-center mt-10">
-								<p class="title">PROMEDIO</p>
-								<p class="value">1,73 (°C)</p>
-							</div>
-							<p class="mt-10">
-								<a href="#" class="btn-2">Descarga de la Serie de Datos</a>
-							</p>
-						</div>
-						<div class="col col-md-9 col-lg-9">
-							<div id="chart-sample-1"></div>
-						</div>
-					</div>
+					
 				</div>
 				<div id="panel-ha-4" class="tab-pane fade in">
 
