@@ -13,6 +13,7 @@ function ol_map() {
     this.map.layersStats = [];
     this.map.layersStatsIndex = 200000;
     this.map.apiUrl = "http://observatorio.atic.com.ar/red_api.php";
+    this.map.apiGraficosUrl = "http://observatorio.atic.com.ar/get_graficos.php";
 
     this.map.geovisor = -1;
 
@@ -433,7 +434,7 @@ function ol_map() {
 
         this.popupTab2_getGrafico = function(parametro_id) {
 
-            let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&parametro_id=" + parametro_id + "&mode=0";
+            let url = this.apiGraficosUrl + "?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&parametro_id=" + parametro_id + "&mode=0";
 
             let iframe = `<iframe src="${url}"></iframe>`;
 
