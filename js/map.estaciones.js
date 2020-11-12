@@ -437,7 +437,7 @@ function ol_map() {
 
             let iframe = `<iframe src="${url}"></iframe>`;
 
-            document.getElementById("popup-tab2-grafico-inner").innerHTML = iframe;
+            document.getElementById("tab2-grafico").innerHTML = iframe;
 
             $("#popup-tab2-grafico").show();
 

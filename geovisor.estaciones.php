@@ -406,6 +406,15 @@
 
 	<div id="popup-tab2-grafico">
 		<div id="popup-tab2-grafico-inner">
+			<div class="header">
+				<span class="title">Gráfico</span>
+				<a href="javascript:void(0);" onclick="$('#popup-tab2-grafico').hide();">
+					<i class="fa fa-times"></i>
+				</a>
+			</div>
+			<div class="mt-10" id="tab2-grafico">
+
+			</div>
 		</div>
 	</div>
 
