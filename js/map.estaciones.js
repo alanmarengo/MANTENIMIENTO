@@ -284,7 +284,7 @@ function ol_map() {
 
         this.popupTab1 = function() {
 
-            let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + this.current_tipo_estacion_id + "&mode=" + this.current_estacion_mode;
+            let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + this.current_tipo_estacion_id + "&mode=0";
             let js = this.requestApi(url)[0];
             let param = get_li(js.parametros);
 
@@ -616,7 +616,7 @@ function ol_map() {
 
         this.popupTabAforo1 = function() {
 
-            let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + this.current_tipo_estacion_id + "&mode=0";
+            let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + this.current_tipo_estacion_id + "&mode=1";
             let js = this.requestApi(url)[0];
             let param = get_li(js.parametros);
 
