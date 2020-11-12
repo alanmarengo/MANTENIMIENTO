@@ -403,12 +403,13 @@
 			</div>
 		</div>
 	</div>
-
+	<div class="modal" id="modal">
+	</div>
 	<div id="popup-tab2-grafico">
 		<div id="popup-tab2-grafico-inner">
 			<div class="header">
 				<span class="title"></span>
-				<a href="javascript:void(0);" onclick="$('#popup-tab2-grafico').hide();">
+				<a href="javascript:void(0);" onclick="$('#popup-tab2-grafico').hide(); $('#modal').hide();">
 					<i class="fa fa-times"></i>
 				</a>
 			</div>

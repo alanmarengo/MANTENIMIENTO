@@ -440,6 +440,7 @@ function ol_map() {
 
             document.getElementById("tab2-grafico").innerHTML = iframe;
 
+            $("#modal").show();
             $("#popup-tab2-grafico").show();
 
             let nheight = $("#tab2-grafico").width();
