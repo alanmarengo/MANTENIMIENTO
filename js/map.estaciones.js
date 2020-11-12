@@ -466,7 +466,7 @@ function ol_map() {
                         </p>
                     </div>
                     <div class="col col-md-9 col-lg-9">
-                        <div id="chart-sample-1"></div>
+                        <div id="tab3-chart"></div>
                     </div>
                 </div>
             `;
@@ -514,11 +514,57 @@ function ol_map() {
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&parametro_id=" + this.current_parametro_id + "&fd=" + fd + "&fh=" + fh + "&mode=4";
             let js = this.requestApi(url);
 
-            console.log("GRAFI: " + js);
-
             $(".api-tab-3 .minval").html(round(js[0].min_dato, 2));
             $(".api-tab-3 .medval").html(round(js[0].med_dato));
             $(".api-tab-3 .maxval").html(round(js[0].max_dato));
+
+            Highcharts.chart('tab3-chart', {
+
+                chart: {
+                    type: 'column'
+                },
+
+                title: {
+                    text: 'Total fruit consumption, grouped by gender'
+                },
+
+                xAxis: {
+                    categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                },
+
+                yAxis: {
+                    allowDecimals: false,
+                    min: 0,
+                    title: {
+                        text: 'Number of fruits'
+                    }
+                },
+
+                tooltip: {
+                    formatter: function() {
+                        return '<b>' + this.x + '</b><br/>' +
+                            this.series.name + ': ' + this.y + '<br/>' +
+                            'Total: ' + this.point.stackTotal;
+                    }
+                },
+
+                plotOptions: {
+                    column: {
+                        stacking: 'normal'
+                    }
+                },
+
+                series: [{
+                    name: 'Mínimo',
+                    data: [round(js[0].min_dato, 2)]
+                }, {
+                    name: 'Medio',
+                    data: [round(js[0].med_dato, 2)]
+                }, {
+                    name: 'Máximo',
+                    data: [round(js[0].max_dato, 2)]
+                }]
+            });
 
         }
 
