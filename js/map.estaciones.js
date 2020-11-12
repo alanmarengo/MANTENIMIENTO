@@ -752,7 +752,7 @@ function ol_map() {
                         <a href="#" class="btn-2" id="2"link_informe_campana">INFORME DE CAMPAÑA</a>
                     </div>
                     <div class="col col-md-3 col-lg-3 api-tab-4">
-                        <a href="#" class="btn-2" id="reg_audiovisual_campana">REGISTRO AUDIOVISUAL DE LA CAMPAÑA</a>
+                        <a href="#" class="btn-2" target="_blank" id="reg_audiovisual_campana">REGISTRO AUDIOVISUAL DE LA CAMPAÑA</a>
                     </div>
                 </div>
             `;
@@ -855,8 +855,7 @@ function ol_map() {
             $("#panel-aforo-ha-2 .api-tab-2 .trans_frac_fina").html(js.trans_frac_fina);
             $("#panel-aforo-ha-2 .api-tab-2 .trans_frac_gruesa").html(js.trans_frac_gruesa);
             $("#link_informe_campana").html(js["link_informe_campaña"]);
-            $("#reg_audiovisual_campana").html(js["link_audio_visual"]);
-            $("#reg_audiovisual_campana").html(js["link_audio_visual"]);
+            $("#reg_audiovisual_campana").attr("src", js["link_audio_visual"]);
             if (js.link_grafico != "") {
                 $("#patdin_med_flu").html("<img src=\"" + js.link_grafico + "\">");
             } else {
