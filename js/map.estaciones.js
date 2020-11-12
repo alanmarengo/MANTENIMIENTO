@@ -3453,6 +3453,7 @@ function updateDatepicker() {
         firstDay: 0,
         changeMonth: true,
         changeYear: true,
+        autoclose: true,
         yearRange: (year - 100) + ':' + (year),
         monthNames: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
         monthNamesShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
