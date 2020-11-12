@@ -16,12 +16,28 @@ function ol_map() {
 
     this.map.geovisor = -1;
 
+
+    var date = new Date();
+
+    var year = date.getFullYear();
+
+    $(".datepicker").val("");
+
     $(".datepicker").datepicker({
+        defaultDate: null,
+        dateFormat: "yy-mm-dd",
+        firstDay: 0,
+        changeMonth: true,
+        changeYear: true,
+        yearRange: (year - 100) + ':' + (year),
+        monthNames: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+        monthNamesShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
+        dayNamesShort: ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"],
+        dayNamesMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
+        dayNames: ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado"],
+        onSelect: function() {}
 
-        language: 'es'
-
-    });
-
+    }).datepicker("setDate", new Date());
     // MAP SCRIPTS 
 
     this.map.create = function() {
@@ -413,15 +429,15 @@ function ol_map() {
                 this.popupTab3Graficar();
             }
 
-            document.getElementById("tab3-fd").onchange = () => this.popupTab3Graficar();
-            document.getElementById("tab3-fh").onchange = () => this.popupTab3Graficar();
+            document.getElementById("tab3-fdesde").onchange = () => this.popupTab3Graficar();
+            document.getElementById("tab3-fhasta").onchange = () => this.popupTab3Graficar();
 
         }
 
         this.popupTab3Graficar = function() {
 
-            let fd = $("#tab3-fd").val();
-            let fh = $("#tab3-fh").val();
+            let fd = $("#tab3-fdesde").val();
+            let fh = $("#tab3-fhasta").val();
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&parametro_id=" + this.current_parametro_id + +"&fd=" + fd + "&fh=" + fh + "&mode=4";
             let js = this.requestApi(url);
