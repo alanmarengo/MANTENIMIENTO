@@ -181,7 +181,22 @@
 				</ul>
 			</div>
 			<div class="categories mt-10">
-				
+				<div class="category">
+					<input type="radio" name="categoria" checked="checked">
+					<label>Hidrométricas</label>
+				</div>
+				<div class="category">
+					<input type="radio" name="categoria">
+					<label>Hidrometeorológicas</label>
+				</div>
+				<div class="category">
+					<input type="radio" name="categoria">
+					<label>Meteorológicas</label>
+				</div>
+				<div class="category">
+					<input type="radio" name="categoria">
+					<label>Hidroambientales</label>
+				</div>
 			</div>			
 			<div class="tab-content mt-20" id="popup-tab-content">
 				<div id="panel-ha-1" class="tab-pane fade in show">
@@ -231,7 +246,8 @@
 						</div>
 					</div>
 				</div>
-				<div id="panel-ha-2" class="tab-pane fade in"></div>
+				<div id="panel-ha-2" class="tab-pane fade in">
+					
 				</div>
 				<div id="panel-ha-3" class="tab-pane fade in">
 					<div class="row">
