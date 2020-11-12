@@ -123,13 +123,14 @@
 }
 
 #popup .categories {
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     display: flex;
     padding: 0 7px;
 }
 
 #popup .category {
     display: inline-flex;
+    margin-right: 12px;
 }
 
 #popup .category label {
