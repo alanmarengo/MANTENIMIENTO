@@ -845,9 +845,7 @@ function ol_map() {
         this.popupTabAforo2_cargarCamp = function() {
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&cod_temp=" + this.current_tabaf2_cod_temp + "&mode=6";
-            let js = this.requestApi(url);
-
-            console.log(js);
+            let js = this.requestApi(url)[0];
 
             $("#panel-aforo-ha-2 .api-tab-2 .fecha_camp").html(js.fecha_campania);
             $("#panel-aforo-ha-2 .api-tab-2 .altura_rio").html(js.altura_rio);
