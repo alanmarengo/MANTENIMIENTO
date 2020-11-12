@@ -423,6 +423,8 @@ function ol_map() {
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&mode=3";
             let js = this.requestApi(url);
 
+            console.log(js);
+
             let html = `
                 <div class="row">
                     <div class="col col-md-6 col-lg-6">
