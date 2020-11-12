@@ -265,6 +265,8 @@ function ol_map() {
                 $("#popup-aforo").show();
                 reCalcPopup("popup-aforo");
 
+                this.current_estacion_mode = 1;
+
                 $("#tab-aforo-ha-1").trigger("click");
 
             } else {
@@ -273,6 +275,8 @@ function ol_map() {
                 $("#popup").show();
                 reCalcPopup("popup");
 
+                this.current_estacion_mode = 0;
+
                 $("#tab-ha-1").trigger("click");
             }
 
@@ -280,7 +284,7 @@ function ol_map() {
 
         this.popupTab1 = function() {
 
-            let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + this.current_tipo_estacion_id + "&mode=0";
+            let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + this.current_tipo_estacion_id + "&mode=" + this.current_estacion_mode;
             let js = this.requestApi(url)[0];
             let param = get_li(js.parametros);
 
