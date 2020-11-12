@@ -680,16 +680,24 @@ function ol_map() {
             let html = `
                 <div class="row">
                     <div class="col col-md-6 col-lg-6">
-                        <span>SELECCIONAR CAMPAÑA</span>
-                        <div class="form-group">
-                            <label>Año:</label>
-                            <select id="combo-parametros">
-                            </select>
-                        </div>                        
-                        <div class="form-group">
-                            <label>Campaña:</label>
-                            <select id="combo-parametros">
-                            </select>
+                        <div class="row">
+                            <div class="col-md-4 col-lg-4">                                
+                                <label>SELECCIONAR CAMPAÑA</label>
+                            </div>
+                            <div class="col-md-4 col-lg-4">
+                                <div class="form-group">
+                                    <label>Año:</label>
+                                    <select id="combo-parametros">
+                                    </select>
+                                </div> 
+                            </div>    
+                            <div class="col-md-4 col-lg-4">                   
+                                <div class="form-group">
+                                    <label>Campaña:</label>
+                                    <select id="combo-parametros">
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col col-md-3 col-lg-3">
