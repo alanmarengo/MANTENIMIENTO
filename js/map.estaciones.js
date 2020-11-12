@@ -682,6 +682,65 @@ function ol_map() {
 
             let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
             let js = this.requestApi(url);
+
+            let html = `
+                <div class="row">
+                    <div class="col col-md-6 col-lg-6">
+                        <span>SELECCIONAR CAMPAÑA</span>
+                        <div class="form-group">
+                            <label>Año:</label>
+                            <select id="combo-parametros">
+                            </select>
+                        </div>                        
+                        <div class="form-group">
+                            <label>Campaña:</label>
+                            <select id="combo-parametros">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col col-md-3 col-lg-3">
+                        <div class="form-group">
+                            <label>Desde:</label>
+                            <input type="text" class="datepicker" id="tab3-fdesde">
+                            <i class="fa fa-calendar-alt"></i>
+                        </div>
+                    </div>
+                    <div class="col col-md-3 col-lg-3">
+                        <div class="form-group">
+                            <label>Hasta:</label>
+                            <input type="text" class="datepicker" id="tab3-fhasta">
+                            <i class="fa fa-calendar-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-20">
+                    <div class="col col-md-3 col-lg-3 api-tab-3">
+                        <div class="indicador mini text-center">
+                            <p class="title">VALOR MÍNIMO</p>
+                            <p class="value minval"></p>
+                        </div>
+                        <div class="indicador mini text-center mt-10">
+                            <p class="title">VALOR MEDIO</p>
+                            <p class="value medval"></p>
+                        </div>
+                        <div class="indicador mini text-center mt-10">
+                            <p class="title">VALOR MÁXIMO</p>
+                            <p class="value maxval"></p>
+                        </div>
+                        <p class="mt-10">
+                            <a href="#" class="btn-2">Descarga de la Serie de Datos</a>
+                        </p>
+                    </div>
+                    <div class="col col-md-9 col-lg-9">
+                        <div id="tab3-chart"></div>
+                    </div>
+                </div>
+            `;
+
+            $("#panel-aforo-ha-3").html(html);
+
+            updateDatepicker();
+
         }
 
         this.popupTabAforo4 = function() {
