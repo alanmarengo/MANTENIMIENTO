@@ -529,26 +529,24 @@ function ol_map() {
                 },
 
                 title: {
-                    text: 'Total fruit consumption, grouped by gender'
+                    text: 'Gráfico de Estación'
                 },
 
                 xAxis: {
-                    categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                    categories: ['Elementos']
                 },
 
                 yAxis: {
                     allowDecimals: false,
                     min: 0,
                     title: {
-                        text: 'Number of fruits'
+                        text: 'Valores'
                     }
                 },
 
                 tooltip: {
                     formatter: function() {
-                        return '<b>' + this.x + '</b><br/>' +
-                            this.series.name + ': ' + this.y + '<br/>' +
-                            'Total: ' + this.point.stackTotal;
+                        return this.series.name + ': ' + this.y + '<br/>';
                     }
                 },
 
