@@ -435,7 +435,9 @@ function ol_map() {
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&parametro_id=" + parametro_id + "&mode=0";
 
-            document.getElementById("tab2-grafico").src = url;
+            document.getElementById("tab2-grafico").setAttribute("src", url);
+
+
 
         }
 
