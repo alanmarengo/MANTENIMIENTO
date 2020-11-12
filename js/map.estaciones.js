@@ -413,7 +413,7 @@ function ol_map() {
                         <p class="text-default m0 mt-3">Med: ${js[i].med_dato}</p>
                         <p class="text-default m0 mt-3">Max: ${js[i].max_dato}</p>
                         <p class="date mt-10">
-                            <a href="javascript:void(0);" onclick="popupTab2_getGrafico(${js[i].parametro_id})";>
+                            <a href="javascript:void(0);" onclick="geomap.map.popupTab2_getGrafico(${js[i].parametro_id})";>
                                 <img src="./images/indicador-ico.png">
                             </a>
                         </p>
