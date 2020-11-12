@@ -423,8 +423,6 @@ function ol_map() {
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&mode=3";
             let js = this.requestApi(url);
 
-            console.log(js);
-
             let html = `
                 <div class="row">
                     <div class="col col-md-6 col-lg-6">
@@ -450,18 +448,18 @@ function ol_map() {
                     </div>
                 </div>
                 <div class="row mt-20">
-                    <div class="col col-md-3 col-lg-3">
+                    <div class="col col-md-3 col-lg-3 api-tab-3">
                         <div class="indicador mini text-center">
                             <p class="title">VALOR MÍNIMO</p>
-                            <p class="value">${js[0].min_dato}</p>
+                            <p class="value minval"></p>
                         </div>
                         <div class="indicador mini text-center mt-10">
                             <p class="title">VALOR MEDIO</p>
-                            <p class="value">${js[0].med_dato}</p>
+                            <p class="value medval"></p>
                         </div>
                         <div class="indicador mini text-center mt-10">
                             <p class="title">VALOR MÁXIMO</p>
-                            <p class="value">${js[0].max_dato}</p>
+                            <p class="value maxval"></p>
                         </div>
                         <p class="mt-10">
                             <a href="#" class="btn-2">Descarga de la Serie de Datos</a>
@@ -515,6 +513,10 @@ function ol_map() {
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&parametro_id=" + this.current_parametro_id + "&fd=" + fd + "&fh=" + fh + "&mode=4";
             let js = this.requestApi(url);
+
+            $(".api-tab-3.minval").html(js[0].min_dato);
+            $(".api-tab-3.medval").html(js[0].med_dato);
+            $(".api-tab-3.maxval").html(js[0].max_dato);
 
         }
 
