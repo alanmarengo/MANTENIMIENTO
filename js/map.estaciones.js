@@ -679,39 +679,21 @@ function ol_map() {
 
             let html = `
                 <div class="row">
-                    <div class="col col-md-6 col-lg-6">
-                        <div class="row">
-                            <div class="col-md-4 col-lg-4">                                
-                                <label>SELECCIONAR CAMPAÑA</label>
-                            </div>
-                            <div class="col-md-4 col-lg-4">
-                                <div class="form-group">
-                                    <label>Año:</label>
-                                    <select id="combo-parametros">
-                                    </select>
-                                </div> 
-                            </div>    
-                            <div class="col-md-4 col-lg-4">                   
-                                <div class="form-group">
-                                    <label>Campaña:</label>
-                                    <select id="combo-parametros">
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-md-4 col-lg-4">                                
+                        <label>SELECCIONAR CAMPAÑA</label>
                     </div>
-                    <div class="col col-md-3 col-lg-3">
+                    <div class="col-md-4 col-lg-4">
                         <div class="form-group">
-                            <label>Desde:</label>
-                            <input type="text" class="datepicker" id="tab3-fdesde">
-                            <i class="fa fa-calendar-alt"></i>
-                        </div>
-                    </div>
-                    <div class="col col-md-3 col-lg-3">
+                            <label>Año:</label>
+                            <select id="combo-parametros">
+                            </select>
+                        </div> 
+                    </div>    
+                    <div class="col-md-4 col-lg-4">                   
                         <div class="form-group">
-                            <label>Hasta:</label>
-                            <input type="text" class="datepicker" id="tab3-fhasta">
-                            <i class="fa fa-calendar-alt"></i>
+                            <label>Campaña:</label>
+                            <select id="combo-parametros">
+                            </select>
                         </div>
                     </div>
                 </div>
