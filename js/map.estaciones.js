@@ -451,15 +451,15 @@ function ol_map() {
                     <div class="col col-md-3 col-lg-3">
                         <div class="indicador mini text-center">
                             <p class="title">VALOR MÍNIMO</p>
-                            <p class="value">1,73 (°C)</p>
+                            <p class="value">${js.min_dato}</p>
+                        </div>
+                        <div class="indicador mini text-center mt-10">
+                            <p class="title">VALOR MEDIO</p>
+                            <p class="value">${js.med_dato}</p>
                         </div>
                         <div class="indicador mini text-center mt-10">
                             <p class="title">VALOR MÁXIMO</p>
-                            <p class="value">1,73 (°C)</p>
-                        </div>
-                        <div class="indicador mini text-center mt-10">
-                            <p class="title">PROMEDIO</p>
-                            <p class="value">1,73 (°C)</p>
+                            <p class="value">${js.max_dato}</p>
                         </div>
                         <p class="mt-10">
                             <a href="#" class="btn-2">Descarga de la Serie de Datos</a>
