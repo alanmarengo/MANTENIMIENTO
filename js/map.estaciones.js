@@ -674,7 +674,7 @@ function ol_map() {
 
         this.popupTabAforo2 = function() {
 
-            let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
+            let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + this.current_tipo_estacion_id + "&mode=0";
             let js = this.requestApi(url);
 
             let html = `
