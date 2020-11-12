@@ -405,13 +405,16 @@ function ol_map() {
 
             }
 
-            document.getElementById("combo-parametros").onclick = () => {
+            document.getElementById("combo-parametros").onchange = () => {
 
                 let curr_val = document.getElementById("combo-parametros").options[document.getElementById("combo-parametros").selectedIndex].value;
-                alert(curr_val);
+
                 this.current_parametro_id = curr_val;
                 this.popupTab3Graficar();
             }
+
+            document.getElementById("tab3-fd").onchange = () => this.popupTab3Graficar();
+            document.getElementById("tab3-fh").onchange = () => this.popupTab3Graficar();
 
         }
 
