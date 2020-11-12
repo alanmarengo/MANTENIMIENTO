@@ -636,29 +636,21 @@ function ol_map() {
                             <span class="popup-label">Coordenadas:</span>
                             <span class="popup-value"></span>
                         </p>
-                        <p class="nombre">
-                            <span class="popup-label">Nombre:</span>
+                        <p class="seccion">
+                            <span class="popup-label">Sección:</span>
                             <span class="popup-value"></span>
                         </p>
-                        <p class="localizacion">
-                            <span class="popup-label">Localización:</span>
+                        <p class="metodoaforos">
+                            <span class="popup-label">Metodo de aforos:</span>
                             <span class="popup-value"></span>
                         </p>
-                        <p class="id">
-                            <span class="popup-label">ID:</span>
+                        <p class="metodo-ubverticales">
+                            <span class="popup-label">Método de ubicación de verticales:</span>
                             <span class="popup-value"></span>
                         </p>
-                        <p class="parametros">
-                            <span class="popup-label">Parámetros:</span>
+                        <p class="inicio-campa">
+                            <span class="popup-label">Inicio Campaña:</span>
                             <ul class="popup-value"></ul>
-                        </p>
-                        <p class="inicio-operacion">
-                            <span class="popup-label">Inicio de Operación:</span>
-                            <span class="popup-value"></span>
-                        </p>
-                        <p class="objetivo">
-                            <span class="popup-label">Objetivo:</span>
-                            <span class="popup-value"></span>
                         </p>
                         <p class="proveedor">
                             <span class="popup-label">Proveedor:</span>
@@ -673,12 +665,11 @@ function ol_map() {
             $("#popup-aforo-ha-inner").children(".header").children(".title").html(js.estacion);
 
             $("#panel-aforo-ha-1 .api-tab-1 .coordenadas .popup-value").html(js.lat + "," + js.long);
-            $("#panel-aforo-ha-1 .api-tab-1 .nombre .popup-value").html(js.estacion);
-            $("#panel-aforo-ha-1 .api-tab-1 .localizacion .popup-value").html(js.localizacion);
-            $("#panel-aforo-ha-1 .api-tab-1 .id .popup-value").html(js.id_orig);
-            $("#panel-ha-1 .api-tab-1 .parametros .popup-value").html(param);
-            $("#panel-aforo-ha-1 .api-tab-1 .inicio-operacion .popup-value").html(js.inicio_opera);
-            $("#panel-aforo-ha-1 .api-tab-1 .objetivo .popup-value").html(js.objetivo);
+            $("#panel-aforo-ha-1 .api-tab-1 .seccion .popup-value").html(js.seccion);
+            $("#panel-aforo-ha-1 .api-tab-1 .metodoaforos .popup-value").html(js.met_aforo);
+            $("#panel-aforo-ha-1 .api-tab-1 .metodo-ubverticales .popup-value").html(js.met_vert);
+            //$("#panel-ha-1 .api-tab-1 .parametros .popup-value").html(param);
+            $("#panel-aforo-ha-1 .api-tab-1 .inicio-campa .popup-value").html(js.inicio_camp);
             $("#panel-aforo-ha-1 .api-tab-1 .proveedor .popup-value").html(js.proveedor);
         }
 
