@@ -20,7 +20,7 @@ $dt_data = array();
 		<ul class="nav nav-tabs mt-20">
 			<li class="nav-item"><a class="nav-link active" data-toggle="tab" id="tab-link-busqueda" href="#tab-busqueda">Búsqueda</a></li>
 			<li class="nav-item"><a class="nav-link" data-toggle="tab" id="tab-link-dataset" href="#tab-dataset">Recurso</a></li>
-			<li class="nav-item"><a class="nav-link" data-toggle="tab" id="tab-link-permisos" href="#tab-permisos">Permisos</a></li>
+			<!--<li class="nav-item"><a class="nav-link" data-toggle="tab" id="tab-link-permisos" href="#tab-permisos">Permisos</a></li>-->
 
 		</ul>
 		
@@ -142,16 +142,16 @@ $dt_data = array();
 					
 					<div class="col col-xs-12 col-sm-12 col-md-3 col-lg-3 backend-files-wrapper mt-30">
 						
-						<h5>Archivos para este Recurso</h5>
+						<!--<h5>Archivos para este Recurso</h5>-->
 						
-						<div id="recursos_archivos" class="file-dropper mt-30">
+						<div style="display:none;" id="recursos_archivos" class="file-dropper mt-30">
 							
 							<div class="file-dropper-hint">Arrastre un archivo para asignarlo a este recurso</div>
 								
 						
 						</div>
 							
-							<div id="recurso_lista_archivos" class="directory-reader mt-30"></div>
+							<div style="display:none;" id="recurso_lista_archivos" class="directory-reader mt-30"></div>
 						<br>
 						<br>
 						<button type="button" style="width:100%;" class="btn btn-primary" onclick="">Generar/Ver Preview</button>
@@ -164,31 +164,7 @@ $dt_data = array();
 				
 			</div> <!-- END PANEL 1 -->
 			
-			<div class="tab-pane" id="tab-permisos">
-				
-				<div class="row">
-							
-						<div class="input-group mb-1 col col-xs-12 col-sm-12 col-md-4 col-lg-4 p0">
-							<div class="input-group-append">
-								<?php get_combo_db("mod_catalogo","territorio","territorio_id","descripcion",test_get_var($recurso_data["territorio_id"],"1"),"territorio_id"); ?>
-							</div>
-							<div class="input-group-append">
-								<button class="btn btn-primary" type="button" id="agregar_perfil" onclick="">
-									Asignar Perfil al Recurso
-								</button>
-							</div>
-						</div>
-							
-
-				</div>		
-			
-				<div class="row">
-					<div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<div id="grid-permisos" class="mt-30"></div>
-					</div>
-				</div>
-			
-			</div> <!-- FIN TAB PERMISOS-->
+		
 			
 			
 		</div>

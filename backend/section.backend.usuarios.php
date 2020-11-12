@@ -91,7 +91,7 @@
 							
 							
 							<div class="form-group">
-								<label for="user_contra_dominio">Se logea contra dominio?</label>
+								<label for="user_contra_dominio">Se loguea contra dominio?</label>
 								<select name="user_contra_dominio" id="user_contra_dominio" class="form-control">
 									<option value="f">No</option>
 									<option value="t">Si</option>
