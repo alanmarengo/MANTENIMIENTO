@@ -440,13 +440,13 @@ function ol_map() {
 
             document.getElementById("tab2-grafico").innerHTML = iframe;
 
+            $("#popup-tab2-grafico").show();
+
             let nheight = $("#tab2-grafico").width();
 
             nheight = nheight / 3;
 
             $("#iframe-grafico2").attr("height", nheight);
-
-            $("#popup-tab2-grafico").show();
 
         }
 
