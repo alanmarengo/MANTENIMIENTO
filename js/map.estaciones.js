@@ -847,13 +847,13 @@ function ol_map() {
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&cod_temp=" + this.current_tabaf2_cod_temp + "&mode=6";
             let js = this.requestApi(url);
 
-            $("#panel-aforo-ha-2 .api-tab-2 .fecha_camp .popup-value").html(js.fecha_campania);
-            $("#panel-aforo-ha-2 .api-tab-2 .altura_rio .popup-value").html(js.altura_rio);
-            $("#panel-aforo-ha-2 .api-tab-2 .caudal_liquido .popup-value").html(js.caudal_liq);
-            $("#panel-aforo-ha-2 .api-tab-2 .con_med_frac_fina .popup-value").html(js.con_med_frac_fina);
-            $("#panel-aforo-ha-2 .api-tab-2 .con_med_frac_gruesa .popup-value").html(js.con_med_frac_gruesa);
-            $("#panel-aforo-ha-2 .api-tab-2 .trans_frac_fina .popup-value").html(js.trans_frac_fina);
-            $("#panel-aforo-ha-2 .api-tab-2 .trans_frac_gruesa .popup-value").html(js.trans_frac_gruesa);
+            $("#panel-aforo-ha-2 .api-tab-2 .fecha_camp").html(js.fecha_campania);
+            $("#panel-aforo-ha-2 .api-tab-2 .altura_rio").html(js.altura_rio);
+            $("#panel-aforo-ha-2 .api-tab-2 .caudal_liquido").html(js.caudal_liq);
+            $("#panel-aforo-ha-2 .api-tab-2 .con_med_frac_fina").html(js.con_med_frac_fina);
+            $("#panel-aforo-ha-2 .api-tab-2 .con_med_frac_gruesa").html(js.con_med_frac_gruesa);
+            $("#panel-aforo-ha-2 .api-tab-2 .trans_frac_fina").html(js.trans_frac_fina);
+            $("#panel-aforo-ha-2 .api-tab-2 .trans_frac_gruesa").html(js.trans_frac_gruesa);
             $("#link_informe_campana").html(js["link_informe_campaña"]);
             $("#reg_audiovisual_campana").html(js["link_audio_visual"]);
             $("#reg_audiovisual_campana").html(js["link_audio_visual"]);
