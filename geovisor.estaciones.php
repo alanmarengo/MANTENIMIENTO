@@ -403,6 +403,11 @@
 		</div>
 	</div>
 
+	<div id="popup-tab2-grafico">
+		<div id="popup-tab2-grafico-inner">
+		</div>
+	</div>
+
 	<div id="popupTab2-grafico">
 
 		<iframe id="tab2-grafico">

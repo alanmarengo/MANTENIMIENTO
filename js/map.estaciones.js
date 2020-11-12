@@ -435,9 +435,11 @@ function ol_map() {
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&parametro_id=" + parametro_id + "&mode=0";
 
-            document.getElementById("tab2-grafico").setAttribute("src", url);
+            let iframe = `<iframe src="${url}"></iframe>`;
 
+            document.getElementById("popup-tab2-grafico-inner").innerHTML = iframe;
 
+            $("#popup-tab2-grafico").show();
 
         }
 
