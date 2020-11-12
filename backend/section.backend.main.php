@@ -4,6 +4,55 @@ $dt_data = array();
 
 ?>
 
+<script>
+function abrir_preview()
+{
+	var url = window.location.origin+'/mediateca_preview.php?r='+document.getElementById("recurso_id").value+'&origen_id=5';//Siempre mediateca
+	window.open(url,'','_blank');
+};
+
+function regenerar_preview()
+{
+	if(confirm('Esta seguro desea regenerar la preview?'))
+	{
+		
+	var retorno = $.ajax
+				({
+					url: "./regen_p.php",
+					async:false,
+					data:
+					{
+								r:document.getElementById("recurso_id").value								
+					},
+					dataType: "json"
+				});
+	
+	//console.log(retorno.responseText);
+	
+	s = JSON.parse(retorno.responseText); /* status */
+	
+	if(s.status_code=="0")
+	{
+		alert('Se quiaron correctamente los datos');
+		
+		$("#grid-perfiles-recurso").jsGrid('loadData');
+		
+		
+		return true;
+	}
+	else
+	{
+		alert('Hubo problemas para quitar los datos. Mensaje:'+s.error_desc);
+		return false;
+	};
+	
+	}else return false;
+	
+};
+
+
+</script>
+
 <div class="row pv-30">
 
 	<div class="col hidden-xs hidden-sm col-md-1 col-lg-1"></div>
@@ -12,7 +61,7 @@ $dt_data = array();
 		<div class="row">				
 			
 			<div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12" id="recurso_current">
-				<span>Sin Dataset Actual</span>
+				<span>Sin Recurso Seleccionado</span>
 			</div>
 		
 		</div>
@@ -21,7 +70,6 @@ $dt_data = array();
 			<li class="nav-item"><a class="nav-link active" data-toggle="tab" id="tab-link-busqueda" href="#tab-busqueda">Búsqueda</a></li>
 			<li class="nav-item"><a class="nav-link" data-toggle="tab" id="tab-link-dataset" href="#tab-dataset">Recurso</a></li>
 			<!--<li class="nav-item"><a class="nav-link" data-toggle="tab" id="tab-link-permisos" href="#tab-permisos">Permisos</a></li>-->
-
 		</ul>
 		
 		<div class="tab-content p30">	
@@ -154,7 +202,11 @@ $dt_data = array();
 							<div style="display:none;" id="recurso_lista_archivos" class="directory-reader mt-30"></div>
 						<br>
 						<br>
-						<button type="button" style="width:100%;" class="btn btn-primary" onclick="">Generar/Ver Preview</button>
+						<button type="button" style="width:100%;" class="btn btn-primary" onclick="abrir_preview();">Ver Preview</button>
+						<br>
+						<br>
+						<button type="button" style="width:100%;" class="btn btn-primary" onclick="regenerar_preview();">Regenerar Preview</button>
+							
 					</div>
 					
 			    

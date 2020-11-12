@@ -33,5 +33,6 @@ include("./pgconfig.php");
 	<script type="text/javascript" src="./js/jsgrid/jsgrid.min.js"></script>
 	<script type="text/javascript" src="./js/grid-recursos.js"></script>
 
+
 </body>
 </html>

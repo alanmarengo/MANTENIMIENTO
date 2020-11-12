@@ -1,3 +1,5 @@
+
+
 $(document).ready(function() {
 	
 	$(".nav-tabs .nav-link").bind("click",function(e) {

@@ -6,10 +6,13 @@
 		
 		$conn = pg_connect($string_conn);
 		
-		$query_string = "SELECT * FROM $table WHERE 1=1 ";
+		$s=$param['busqueda'];
+		
+		$query_string = "SELECT * FROM mod_mediateca.recurso WHERE recurso_titulo||recurso_desc ILIKE '%$s%' order by recurso_titulo asc;";
 		
 		$col_types = get_column_types($table);
 		
+		/*
 		$where = "";
 		
 		foreach ($param as $keyname => $val) {
@@ -30,8 +33,11 @@
 		}
 		
 		$query_string .= $where;
+		* */
 		
 		$query = pg_query($conn,$query_string);
+		
+		//echo pg_last_error($conn);
 		
 		$entered = false;
 		
