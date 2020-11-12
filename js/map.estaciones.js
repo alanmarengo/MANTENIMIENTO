@@ -855,7 +855,7 @@ function ol_map() {
             $("#panel-aforo-ha-2 .api-tab-2 .trans_frac_fina").html(js.trans_frac_fina);
             $("#panel-aforo-ha-2 .api-tab-2 .trans_frac_gruesa").html(js.trans_frac_gruesa);
             $("#link_informe_campana").html(js["link_informe_campaña"]);
-            $("#reg_audiovisual_campana").attr("src", js["link_audio_visual"]);
+            $("#reg_audiovisual_campana").attr("href", js["link_audio_visual"]);
             if (js.link_grafico != "") {
                 $("#patdin_med_flu").html("<img src=\"" + js.link_grafico + "\">");
             } else {
