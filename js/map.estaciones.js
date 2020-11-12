@@ -620,7 +620,57 @@ function ol_map() {
             let js = this.requestApi(url)[0];
             let param = get_li(js.parametros);
 
-            $("#popup-aforo-inner").children(".header").children(".title").html(js.estacion);
+            let html = `
+                <div class="row">
+                    <div class="col col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                        <p><img src="./images/sample.jpg" width="100%"></p>
+                        <p class="mt-20">
+                            <a href="#" class="btn-1">Monografía de la Estación</a>
+                        </p>
+                        <p>
+                            <a href="#" class="btn-1">Descarga de la Serie de Datos Completa</a>
+                        </p>
+                    </div>
+                    <div class="col col-md-6 col-lg-6 col-xs-12 col-sm-12 api-tab-1">
+                        <p class="coordenadas">
+                            <span class="popup-label">Coordenadas:</span>
+                            <span class="popup-value"></span>
+                        </p>
+                        <p class="nombre">
+                            <span class="popup-label">Nombre:</span>
+                            <span class="popup-value"></span>
+                        </p>
+                        <p class="localizacion">
+                            <span class="popup-label">Localización:</span>
+                            <span class="popup-value"></span>
+                        </p>
+                        <p class="id">
+                            <span class="popup-label">ID:</span>
+                            <span class="popup-value"></span>
+                        </p>
+                        <p class="parametros">
+                            <span class="popup-label">Parámetros:</span>
+                            <ul class="popup-value"></ul>
+                        </p>
+                        <p class="inicio-operacion">
+                            <span class="popup-label">Inicio de Operación:</span>
+                            <span class="popup-value"></span>
+                        </p>
+                        <p class="objetivo">
+                            <span class="popup-label">Objetivo:</span>
+                            <span class="popup-value"></span>
+                        </p>
+                        <p class="proveedor">
+                            <span class="popup-label">Proveedor:</span>
+                            <span class="popup-value"></span>
+                        </p>
+                    </div>
+                </div>
+            `;
+
+            $("#panel-aforo-ha-1").html(html);
+
+            $("#popup-aforo-ha-inner").children(".header").children(".title").html(js.estacion);
 
             $("#panel-aforo-ha-1 .api-tab-1 .coordenadas .popup-value").html(js.lat + "," + js.long);
             $("#panel-aforo-ha-1 .api-tab-1 .nombre .popup-value").html(js.estacion);
