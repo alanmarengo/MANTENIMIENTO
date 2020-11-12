@@ -20,6 +20,7 @@
 
 	<script src ="./js/geovisorestaciones.js" type='text/javascript'></script>
 	<link rel="stylesheet" href="./css/geovisorestaciones.css" type="text/css">
+	<link rel="stylesheet" href="./css/geovisorestaciones-tab2.css" type="text/css">
 	<link rel="stylesheet" href="./css/geovisorestaciones-aforo.css" type="text/css">
 	
 </head>

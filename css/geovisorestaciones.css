@@ -44,7 +44,7 @@
     color: #8d3050;
 }
 
-#popup-tab2-grafico {
+#popup {
     border: 2px solid #CCCCCC;
     background: white;
     padding: 20px;
@@ -59,47 +59,47 @@
     display: none;
 }
 
-#popup-tab2-grafico-inner {
+#popup-inner {
     width: 100%;
 }
 
-#popup-tab2-grafico-tab-content {
+#popup-tab-content {
     overflow-x: hidden;
     overflow-y: auto;
 }
 
-#popup-tab2-grafico .header {
+#popup .header {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-#popup-tab2-grafico .header a {
+#popup .header a {
     font-size: 14px !Important;
     color: #343a40;
     font-weight: 600;
 }
 
-#popup-tab2-grafico .header .title {
+#popup .header .title {
     font-size: 14px;
     color: #343a40;
     font-weight: 600;
     text-transform: uppercase;
 }
 
-#popup-tab2-grafico .nav-tabs li {
+#popup .nav-tabs li {
     margin-left: 10px;
 }
 
-#popup-tab2-grafico .nav-tabs li .show {
+#popup .nav-tabs li .show {
     background-color: #8d3050;
 }
 
-#popup-tab2-grafico .nav-tabs .li:first-child {
+#popup .nav-tabs .li:first-child {
     margin-left: 0px !Important;
 }
 
-#popup-tab2-grafico .nav-tabs .btn-tab {
+#popup .nav-tabs .btn-tab {
     color: #FFFFFF !Important;
     font-family: "Montserrat", sans-serif !Important;
     font-size: 12px !Important;
@@ -118,21 +118,21 @@
     border-top-right-radius: 3px;
 }
 
-#popup-tab2-grafico .nav-tabs .btn-tab:hover {
+#popup .nav-tabs .btn-tab:hover {
     opacity: 0.7;
 }
 
-#popup-tab2-grafico .categories {
+#popup .categories {
+    justify-content: space-between;
     display: flex;
     padding: 0 7px;
 }
 
-#popup-tab2-grafico .category {
+#popup .category {
     display: inline-flex;
-    margin-right: 12px;
 }
 
-#popup-tab2-grafico .category label {
+#popup .category label {
     display: inline-flex;
     color: #8d3050;
     font-weight: 600;
@@ -141,7 +141,7 @@
     text-transform: uppercase;
 }
 
-#popup-tab2-grafico .btn-1 {
+#popup .btn-1 {
     color: #FFFFFF !Important;
     font-family: "Montserrat", sans-serif !Important;
     font-size: 10px !Important;
@@ -152,7 +152,7 @@
     border-radius: 3px;
 }
 
-#popup-tab2-grafico .btn-2 {
+#popup .btn-2 {
     color: #FFFFFF !Important;
     font-family: "Montserrat", sans-serif !Important;
     font-size: 10px !Important;
@@ -165,24 +165,24 @@
     text-align: center;
 }
 
-#popup-tab2-grafico .btn-1:hover,
-#popup-tab2-grafico .btn-2:hover {
+#popup .btn-1:hover,
+#popup .btn-2:hover {
     opacity: 0.7;
 }
 
-#popup-tab2-grafico .popup-label {
+#popup .popup-label {
     font-size: 12px !Important;
     color: #8d3050;
     font-weight: 600;
 }
 
-#popup-tab2-grafico .popup-value {
+#popup .popup-value {
     font-size: 12px !Important;
     color: #343a40;
     font-weight: 600;
 }
 
-#popup-tab2-grafico .indicador {
+#popup .indicador {
     background: #efefef;
     padding: 20px;
     border-radius: 3px;
@@ -192,26 +192,26 @@
     height: 100%;
 }
 
-#popup-tab2-grafico .indicador .title {
+#popup .indicador .title {
     font-size: 10px;
     color: #8d3050;
     font-weight: 700;
     margin-bottom: 7px;
 }
 
-#popup-tab2-grafico .indicador .value {
+#popup .indicador .value {
     font-size: 16px;
     color: #343a40;
     font-weight: bold;
 }
 
-#popup-tab2-grafico .indicador .text-default {
+#popup .indicador .text-default {
     font-size: 12px;
     color: #343a40;
     font-weight: 700;
 }
 
-#popup-tab2-grafico .indicador .date {
+#popup .indicador .date {
     font-size: 12px;
     color: #343a40;
     font-weight: 700;
@@ -219,14 +219,14 @@
     text-align: center;
 }
 
-#popup-tab2-grafico .form-group {
+#popup .form-group {
     display: flex;
     flex-direction: column;
     border: none !important;
     position: relative;
 }
 
-#popup-tab2-grafico .form-group label {
+#popup .form-group label {
     display: flex;
     flex-direction: column;
     border: none !important;
@@ -235,33 +235,33 @@
     font-weight: 700;
 }
 
-#popup-tab2-grafico .form-group input[type=text] {
+#popup .form-group input[type=text] {
     border: 1px solid #efefef;
     padding: 5px 20px;
 }
 
-#popup-tab2-grafico .form-group select {
+#popup .form-group select {
     border: 1px solid #efefef;
     padding: 5px 20px;
 }
 
-#popup-tab2-grafico .form-group i {
+#popup .form-group i {
     position: absolute;
     bottom: 12px;
     z-index: 99999;
     right: 15px;
 }
 
-#popup-tab2-grafico .indicador.mini {
+#popup .indicador.mini {
     align-items: center;
     height: auto;
 }
 
-#popup-tab2-grafico .indicador.mini .value {
+#popup .indicador.mini .value {
     margin: 0;
 }
 
-#popup-tab2-grafico .nav-tabs.type2 {
+#popup .nav-tabs.type2 {
     border-bottom: none;
 }
 

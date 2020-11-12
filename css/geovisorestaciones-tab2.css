@@ -44,7 +44,7 @@
     color: #8d3050;
 }
 
-#popup {
+#popup-tab2-grafico {
     border: 2px solid #CCCCCC;
     background: white;
     padding: 20px;
@@ -59,47 +59,47 @@
     display: none;
 }
 
-#popup-inner {
+#popup-tab2-grafico-inner {
     width: 100%;
 }
 
-#popup-tab-content {
+#popup-tab2-grafico-tab-content {
     overflow-x: hidden;
     overflow-y: auto;
 }
 
-#popup .header {
+#popup-tab2-grafico .header {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-#popup .header a {
+#popup-tab2-grafico .header a {
     font-size: 14px !Important;
     color: #343a40;
     font-weight: 600;
 }
 
-#popup .header .title {
+#popup-tab2-grafico .header .title {
     font-size: 14px;
     color: #343a40;
     font-weight: 600;
     text-transform: uppercase;
 }
 
-#popup .nav-tabs li {
+#popup-tab2-grafico .nav-tabs li {
     margin-left: 10px;
 }
 
-#popup .nav-tabs li .show {
+#popup-tab2-grafico .nav-tabs li .show {
     background-color: #8d3050;
 }
 
-#popup .nav-tabs .li:first-child {
+#popup-tab2-grafico .nav-tabs .li:first-child {
     margin-left: 0px !Important;
 }
 
-#popup .nav-tabs .btn-tab {
+#popup-tab2-grafico .nav-tabs .btn-tab {
     color: #FFFFFF !Important;
     font-family: "Montserrat", sans-serif !Important;
     font-size: 12px !Important;
@@ -118,21 +118,21 @@
     border-top-right-radius: 3px;
 }
 
-#popup .nav-tabs .btn-tab:hover {
+#popup-tab2-grafico .nav-tabs .btn-tab:hover {
     opacity: 0.7;
 }
 
-#popup .categories {
+#popup-tab2-grafico .categories {
     display: flex;
     padding: 0 7px;
 }
 
-#popup .category {
+#popup-tab2-grafico .category {
     display: inline-flex;
     margin-right: 12px;
 }
 
-#popup .category label {
+#popup-tab2-grafico .category label {
     display: inline-flex;
     color: #8d3050;
     font-weight: 600;
@@ -141,7 +141,7 @@
     text-transform: uppercase;
 }
 
-#popup .btn-1 {
+#popup-tab2-grafico .btn-1 {
     color: #FFFFFF !Important;
     font-family: "Montserrat", sans-serif !Important;
     font-size: 10px !Important;
@@ -152,7 +152,7 @@
     border-radius: 3px;
 }
 
-#popup .btn-2 {
+#popup-tab2-grafico .btn-2 {
     color: #FFFFFF !Important;
     font-family: "Montserrat", sans-serif !Important;
     font-size: 10px !Important;
@@ -165,24 +165,24 @@
     text-align: center;
 }
 
-#popup .btn-1:hover,
-#popup .btn-2:hover {
+#popup-tab2-grafico .btn-1:hover,
+#popup-tab2-grafico .btn-2:hover {
     opacity: 0.7;
 }
 
-#popup .popup-label {
+#popup-tab2-grafico .popup-label {
     font-size: 12px !Important;
     color: #8d3050;
     font-weight: 600;
 }
 
-#popup .popup-value {
+#popup-tab2-grafico .popup-value {
     font-size: 12px !Important;
     color: #343a40;
     font-weight: 600;
 }
 
-#popup .indicador {
+#popup-tab2-grafico .indicador {
     background: #efefef;
     padding: 20px;
     border-radius: 3px;
@@ -192,26 +192,26 @@
     height: 100%;
 }
 
-#popup .indicador .title {
+#popup-tab2-grafico .indicador .title {
     font-size: 10px;
     color: #8d3050;
     font-weight: 700;
     margin-bottom: 7px;
 }
 
-#popup .indicador .value {
+#popup-tab2-grafico .indicador .value {
     font-size: 16px;
     color: #343a40;
     font-weight: bold;
 }
 
-#popup .indicador .text-default {
+#popup-tab2-grafico .indicador .text-default {
     font-size: 12px;
     color: #343a40;
     font-weight: 700;
 }
 
-#popup .indicador .date {
+#popup-tab2-grafico .indicador .date {
     font-size: 12px;
     color: #343a40;
     font-weight: 700;
@@ -219,14 +219,14 @@
     text-align: center;
 }
 
-#popup .form-group {
+#popup-tab2-grafico .form-group {
     display: flex;
     flex-direction: column;
     border: none !important;
     position: relative;
 }
 
-#popup .form-group label {
+#popup-tab2-grafico .form-group label {
     display: flex;
     flex-direction: column;
     border: none !important;
@@ -235,33 +235,33 @@
     font-weight: 700;
 }
 
-#popup .form-group input[type=text] {
+#popup-tab2-grafico .form-group input[type=text] {
     border: 1px solid #efefef;
     padding: 5px 20px;
 }
 
-#popup .form-group select {
+#popup-tab2-grafico .form-group select {
     border: 1px solid #efefef;
     padding: 5px 20px;
 }
 
-#popup .form-group i {
+#popup-tab2-grafico .form-group i {
     position: absolute;
     bottom: 12px;
     z-index: 99999;
     right: 15px;
 }
 
-#popup .indicador.mini {
+#popup-tab2-grafico .indicador.mini {
     align-items: center;
     height: auto;
 }
 
-#popup .indicador.mini .value {
+#popup-tab2-grafico .indicador.mini .value {
     margin: 0;
 }
 
-#popup .nav-tabs.type2 {
+#popup-tab2-grafico .nav-tabs.type2 {
     border-bottom: none;
 }
 
