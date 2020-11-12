@@ -267,6 +267,7 @@ function ol_map() {
                 $("#tab-aforo-ha-1").trigger("click");
 
             } else {
+                alert(1);
 
                 $("#popup-aforo").hide();
                 $("#popup").show();
