@@ -16,28 +16,6 @@ function ol_map() {
 
     this.map.geovisor = -1;
 
-
-    var date = new Date();
-
-    var year = date.getFullYear();
-
-    $(".datepicker").val("");
-
-    $(".datepicker").datepicker({
-        defaultDate: null,
-        dateFormat: "yy-mm-dd",
-        firstDay: 0,
-        changeMonth: true,
-        changeYear: true,
-        yearRange: (year - 100) + ':' + (year),
-        monthNames: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
-        monthNamesShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
-        dayNamesShort: ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"],
-        dayNamesMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
-        dayNames: ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado"],
-        onSelect: function() {}
-
-    }).datepicker("setDate", new Date());
     // MAP SCRIPTS 
 
     this.map.create = function() {
@@ -494,6 +472,8 @@ function ol_map() {
             `;
 
             $("#panel-ha-3").html(html);
+
+            updateDatepicker();
 
             $("#combo-parametros").empty();
 
@@ -3395,5 +3375,31 @@ function round(num, decimales) {
     let tmpDec = tmp[1].substring(0, decimales);
 
     return tmp[0] + "." + tmpDec;
+
+}
+
+function updateDatepicker() {
+
+    var date = new Date();
+
+    var year = date.getFullYear();
+
+    $(".datepicker").val("");
+
+    $(".datepicker").datepicker({
+        defaultDate: null,
+        dateFormat: "yy-mm-dd",
+        firstDay: 0,
+        changeMonth: true,
+        changeYear: true,
+        yearRange: (year - 100) + ':' + (year),
+        monthNames: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+        monthNamesShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
+        dayNamesShort: ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"],
+        dayNamesMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
+        dayNames: ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado"],
+        onSelect: function() {}
+
+    }).datepicker("setDate", new Date());
 
 }
