@@ -444,8 +444,6 @@ function ol_map() {
 
             let nheight = $("#tab2-grafico").width();
 
-            nheight = nheight / 3;
-
             $("#iframe-grafico2").attr("height", nheight);
 
         }
