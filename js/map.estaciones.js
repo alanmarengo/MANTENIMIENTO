@@ -699,26 +699,60 @@ function ol_map() {
                         </div>
                     </div>
                 </div>
-                <div class="row mt-20">
-                    <div class="col col-md-3 col-lg-3 api-tab-3">
+                <div class="row mt-20 api-tab-2">
+                    <div class="col col-md-4 col-lg-4 api-tab-4">
                         <div class="indicador mini text-center">
-                            <p class="title">VALOR MÍNIMO</p>
-                            <p class="value minval"></p>
+                            <p class="title">FECHA DE CAMPAÑA</p>
+                            <p class="value fecha_camp"></p>
                         </div>
+                    </div>                    
+                    <div class="col col-md-4 col-lg-4 api-tab-4">
                         <div class="indicador mini text-center mt-10">
-                            <p class="title">VALOR MEDIO</p>
-                            <p class="value medval"></p>
+                            <p class="title">ALTURA DEL RÍO</p>
+                            <p class="value altura_rio"></p>
                         </div>
-                        <div class="indicador mini text-center mt-10">
-                            <p class="title">VALOR MÁXIMO</p>
-                            <p class="value maxval"></p>
-                        </div>
-                        <p class="mt-10">
-                            <a href="#" class="btn-2">Descarga de la Serie de Datos</a>
-                        </p>
                     </div>
-                    <div class="col col-md-9 col-lg-9">
-                        <div id="tab3-chart"></div>
+                    <div class="col col-md-4 col-lg-4 api-tab-4">
+                        <div class="indicador mini text-center mt-10">
+                            <p class="title">CAUDAL LÍQUIDO</p>
+                            <p class="value caudal_liquido"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-20 api-tab-2">
+                    <div class="col col-md-4 col-lg-4 api-tab-4">
+                        <div class="indicador mini text-center">
+                            <p class="title">Sedimentos en suspensión</p>
+                            <p class="text">Concentración media fracción fina</p>
+                            <p class="value con_med_frac_fina"></p>
+                            <p class="text">Concentración media fracción gruesa</p>
+                            <p class="value con_med_frac_gruesa"></p>
+                        </div>
+                    </div>                    
+                    <div class="col col-md-4 col-lg-4 api-tab-4">
+                        <div class="indicador mini text-center mt-10">
+                            <p class="title">Caudal sólido</p>
+                            <p class="text">Transacción fracción fina</p>
+                            <p class="value trans_frac_fina"></p>
+                            <p class="text">Transacción fracción gruesa</p>
+                            <p class="value trans_frac_gruesa"></p>
+                        </div>
+                    </div>
+                    <div class="col col-md-4 col-lg-4 api-tab-4">
+                        <div class="indicador mini text-center mt-10">
+                            <p class="title">Patrón hidrodinámico de medio flujo</p>
+                            <p id="patdin_med_flu">
+                                
+                            </p>
+                        </div>
+                    </div>
+                </div>                
+                <div class="row mt-20 api-tab-2">
+                    <div class="col col-md-3 col-lg-3 api-tab-4">
+                        <a href="#" class="btn-2" id="2"link_informe_campana">INFORME DE CAMPAÑA</a>
+                    </div>
+                    <div class="col col-md-3 col-lg-3 api-tab-4">
+                        <a href="#" class="btn-2" id="reg_audiovisual_campana">REGISTRO AUDIOVISUAL DE LA CAMPAÑA</a>
                     </div>
                 </div>
             `;
@@ -796,10 +830,10 @@ function ol_map() {
 
             }
 
-            comboAnios.onchange = () => {
+            comboCamp.onchange = () => {
 
-                let val = comboAnios.options[comboAnios.selectedIndex].value;
-                this.current_tabaf2_ano = val;
+                let val = comboCamp.options[comboCamp.selectedIndex].value;
+                this.current_tabaf2_cod_temp = val;
                 this.popupTabAforo2_cargarCamp();
 
             }
@@ -809,9 +843,25 @@ function ol_map() {
         }
 
         this.popupTabAforo2_cargarCamp = function() {
-            alert(1);
+
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&cod_temp=" + this.current_tabaf2_cod_temp + "&mode=6";
             let js = this.requestApi(url);
+
+            $("#panel-aforo-ha-2 .api-tab-2 .fecha_camp .popup-value").html(js.fecha_campania);
+            $("#panel-aforo-ha-2 .api-tab-2 .altura_rio .popup-value").html(js.altura_rio);
+            $("#panel-aforo-ha-2 .api-tab-2 .caudal_liquido .popup-value").html(js.caudal_liq);
+            $("#panel-aforo-ha-2 .api-tab-2 .con_med_frac_fina .popup-value").html(js.con_med_frac_fina);
+            $("#panel-aforo-ha-2 .api-tab-2 .con_med_frac_gruesa .popup-value").html(js.con_med_frac_gruesa);
+            $("#panel-aforo-ha-2 .api-tab-2 .trans_frac_fina .popup-value").html(js.trans_frac_fina);
+            $("#panel-aforo-ha-2 .api-tab-2 .trans_frac_gruesa .popup-value").html(js.trans_frac_gruesa);
+            $("#link_informe_campana").html(js["link_informe_campaña"]);
+            $("#reg_audiovisual_campana").html(js["link_audio_visual"]);
+            $("#reg_audiovisual_campana").html(js["link_audio_visual"]);
+            if (js.link_grafico != "") {
+                $("#patdin_med_flu").html("<img src=\"" + js.link_grafico + "\">");
+            } else {
+                $("#patdin_med_flu").html("");
+            }
 
         }
 
