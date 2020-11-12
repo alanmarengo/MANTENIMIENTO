@@ -439,7 +439,7 @@ function ol_map() {
             let fd = $("#tab3-fdesde").val();
             let fh = $("#tab3-fhasta").val();
 
-            let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&parametro_id=" + this.current_parametro_id + +"&fd=" + fd + "&fh=" + fh + "&mode=4";
+            let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&parametro_id=" + this.current_parametro_id + "&fd=" + fd + "&fh=" + fh + "&mode=4";
             let js = this.requestApi(url);
 
         }
