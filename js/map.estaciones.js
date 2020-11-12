@@ -516,9 +516,9 @@ function ol_map() {
 
             console.log("GRAFI: " + js);
 
-            $(".api-tab-3 .minval").html(js[0].min_dato);
-            $(".api-tab-3 .medval").html(js[0].med_dato);
-            $(".api-tab-3 .maxval").html(js[0].max_dato);
+            $(".api-tab-3 .minval").html(round(js[0].min_dato, 2));
+            $(".api-tab-3 .medval").html(round(js[0].med_dato));
+            $(".api-tab-3 .maxval").html(round(js[0].max_dato));
 
         }
 
