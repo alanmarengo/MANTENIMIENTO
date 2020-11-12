@@ -515,12 +515,12 @@ function ol_map() {
             let js = this.requestApi(url);
 
             let minval = round(js[0].min_dato, 2);
-            let med_dato = round(js[0].med_dato, 2);
-            let max_dato = round(js[0].max_dato, 2);
+            let medval = round(js[0].med_dato, 2);
+            let maxval = round(js[0].max_dato, 2);
 
             $(".api-tab-3 .minval").html(minval);
-            $(".api-tab-3 .medval").html(med_dato);
-            $(".api-tab-3 .maxval").html(max_dato);
+            $(".api-tab-3 .medval").html(medval);
+            $(".api-tab-3 .maxval").html(maxval);
 
             Highcharts.chart('tab3-chart', {
 
