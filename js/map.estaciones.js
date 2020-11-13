@@ -430,6 +430,35 @@ function ol_map() {
 
             }
 
+            let itemDate = js["DV"].fecha_dato.split(" ");
+
+            let fecha = itemDate[0];
+            let hora = itemDate[1].split(":");
+            hora = hora[0] + ":" + hora[1];
+
+            js["DV"].ultimo_dato = round(js["DV"].ultimo_dato, 2);
+            js["DV"].min_dato = round(js["DV"].min_dato, 2);
+            js["DV"].med_dato = round(js["DV"].med_dato, 2);
+            js["DV"].max_dato = round(js["DV"].max_dato, 2);
+
+            html += `<div class="col col-md-2 col-lg-2 p5">
+                    <div class="indicador">
+                        <p class="title">${js["DV"].parametro_nombre}</p>
+                        <p class="value m0">${js["DV"].ultimo_dato}</p>
+                        <p class="text-default m0 mt-3">Min: ${js["DV"].min_dato}</p>
+                        <p class="text-default m0 mt-3">Med: ${js["DV"].med_dato}</p>
+                        <p class="text-default m0 mt-3">Max: ${js["DV"].max_dato}</p>
+                        <p class="date mt-10">
+                            <a href="javascript:void(0);" onclick="geomap.map.popupTab2_getGrafico(${js["DV"].parametro_id})";>
+                                <img src="./images/indicador-ico.png">
+                            </a>
+                        </p>
+                        <p class="date mt-10">${fecha}</p>
+                        <p class="date m0">${hora}</p>
+                    </div>
+                </div>
+                `;
+
             html += "</div>";
 
             $("#panel-ha-2").html(html);
