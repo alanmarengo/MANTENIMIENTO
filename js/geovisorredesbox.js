@@ -57,9 +57,7 @@ function getEstaciones() {
 
     for (let i = 0; i < js.length; i++) {
         let item = `
-            <div class="switcher-box" data-estacion-id="${js[i].estacion_id}" onclick="est_select(this);">
-                <div class="switcher-item">${js[i].estacion_nombre}</div>
-            </div>
+            <div class="switcher-item"  data-estacion-id="${js[i].estacion_id}" onclick="est_select(this);">${js[i].estacion_nombre}</div>
         `;
 
         $("#estaciones-lista").append(item);
