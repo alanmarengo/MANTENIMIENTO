@@ -1,6 +1,14 @@
+body {
+    background-color: #CCC;
+}
+
 .container {
     padding: 20px;
-    background-color: #CCC;
+    width: 100%;
+}
+
+.title {
+    font-weight: 700;
 }
 
 #cards {
