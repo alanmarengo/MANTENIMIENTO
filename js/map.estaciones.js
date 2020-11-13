@@ -943,7 +943,7 @@ function ol_map() {
                 let curr_val = document.getElementById("combo-parametros-aforo").options[document.getElementById("combo-parametros-aforo").selectedIndex].value;
 
                 this.current_aforo_parametro_id = curr_val;
-                this.popupTab3Graficar();
+                this.popupTab3AforoGraficar();
             }
 
             document.getElementById("tab3-fdesde-aforo").onchange = () => this.popupTab3AforoGraficar();
