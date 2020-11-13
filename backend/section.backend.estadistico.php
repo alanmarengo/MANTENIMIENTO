@@ -99,7 +99,7 @@
 						
 						
 							<button type="button" class="btn btn-primary" onclick="guardar();">Guardar</button>
-							<button type="button" class="btn btn-danger" onclick="borrar_geovisor();">Eliminar Geovisor</button>
+							<button type="button" class="btn btn-danger" onclick="borrar_geovisor();">Eliminar dataset</button>
 						</form>
 					
 					</div>
