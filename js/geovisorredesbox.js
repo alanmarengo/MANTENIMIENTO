@@ -197,23 +197,23 @@ function getData() {
 
         if (js[i].min_dato == "") {
             js[i].min_dato = "-";
-            serieMin[i].push(0);
+            serieMin.push(0);
         } else {
-            serieMin[i].push(parseInt(js[i].min_dato));
+            serieMin.push(parseInt(js[i].min_dato));
         }
 
         if (js[i].med_dato == "") {
             js[i].med_dato = "-";
-            serieMed[i].push(0);
+            serieMed.push(0);
         } else {
-            serieMed[i].push(parseInt(js[i].med_dato));
+            serieMed.push(parseInt(js[i].med_dato));
         }
 
         if (js[i].max_dato == "") {
             js[i].max_dato = "-";
-            serieMax[i].push(0);
+            serieMax.push(0);
         } else {
-            serieMax[i].push(parseInt(js[i].max_dato));
+            serieMax.push(parseInt(js[i].max_dato));
         }
 
         html += `
