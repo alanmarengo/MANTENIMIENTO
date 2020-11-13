@@ -318,13 +318,16 @@ function getData() {
 function getDataCsv() {
 
     let lista_estaciones = getEstacionesSeleccionadas();
-    let url = apiUrl + "?lista_estaciones=" + lista_estaciones.join(",") + "&parametro_id=" + $("#combo-parametros-redes").val() + "&fd=" + $("#tab-redes-fdesde").val() + "&fh=" + $("#tab-redes-fhasta").val() + "&mode=15";
-    let js = this.requestApi(url);
 
     let req = $.ajax({
         async: false,
-        url: "./csv.php",
-        data: { q: encodeURIComponent(js.q) },
+        url: "./csv_redes.php",
+        data: {
+            lista_estaciones: lista_estaciones.join(","),
+            parametro_id: $("#combo-parametros-redes").val(),
+            fd: $("#tab-redes-fdesde").val(),
+            fh: $("#tab-redes-fhasta").val()
+        },
         type: "GET",
         success: function(d) {}
     });
