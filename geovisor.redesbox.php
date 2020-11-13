@@ -81,9 +81,9 @@
 
 		</div>
 
-		<div class="row est-tabla" id="est-tabla-inner">
+		<div class="row est-tabla mt-20" id="est-tabla-inner">
 			
-			<div class="row mt-20">
+			<div class="row">
 				
 				<div class="form-group form-group-header">
 					<label>Tabla de valores:</label>
