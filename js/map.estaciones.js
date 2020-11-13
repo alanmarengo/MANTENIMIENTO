@@ -1063,19 +1063,17 @@ function ol_map() {
 
         this.updateLayerFilters = function() {
 
-            let est_selected = $.map(
-                $(".filtro-estacion:checked"),
-                function(i, v) {
-                    return this.value;
-                }
-            );
+            let est_selected = [];
 
-            let ai_selected = $.map(
-                $.map(".filtro-area-interes:checked"),
-                function(i, v) {
-                    return this.value;
-                }
-            );
+            $(".filtro-estacion:checked").each(function(i, v) {
+                est_selected.push(this.value);
+            });
+
+            let ai_selected = [];
+
+            $(".filtro-area-interes:checked").each(function(i, v) {
+                ai_selected.push(this.value);
+            });
 
             alert(est_selected);
             alert(ai_selected);

@@ -48,8 +48,13 @@ $(document).ready(function() {
 
     $(".roverlay").each(function(i, v) { $(v).Roverlay(); });
 
-    $(".card-est").find("input[type=checkbox]:checked").val("");
-    $(".card-ai").find("input[type=checkbox]:checked").val("");
+    $(".filtro-estacion:checked").each(function(i, v) {
+        this.value = "";
+    });
+
+    $(".filtro-area-interes:checked").each(function(i, v) {
+        this.value = "";
+    });
 
     /*Highcharts.chart('chart-sample-1', {
 
