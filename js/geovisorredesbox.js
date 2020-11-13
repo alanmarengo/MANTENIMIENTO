@@ -321,34 +321,36 @@ function getDataCsv() {
     let url = apiUrl + "?lista_estaciones=" + lista_estaciones.join(",") + "&parametro_id=" + $("#combo-parametros-redes").val() + "&fd=" + $("#tab-redes-fdesde").val() + "&fh=" + $("#tab-redes-fhasta").val() + "&mode=15";
     let js = this.requestApi(url);
 
+}
 
-    function getEstacionesSeleccionadas() {
 
-        let selected = [];
+function getEstacionesSeleccionadas() {
 
-        $("#estaciones-lista-seleccionadas").children(".switcher-item").each(function(i, v) {
+    let selected = [];
 
-            selected.push($(this).attr("data-estacion-id"));
+    $("#estaciones-lista-seleccionadas").children(".switcher-item").each(function(i, v) {
 
-        });
+        selected.push($(this).attr("data-estacion-id"));
 
-        return selected;
+    });
 
-    }
+    return selected;
 
-    function requestApi(url) {
+}
 
-        var req = $.ajax({
+function requestApi(url) {
 
-            async: false,
-            url: url,
-            type: "GET",
-            success: function(d) {}
+    var req = $.ajax({
 
-        });
+        async: false,
+        url: url,
+        type: "GET",
+        success: function(d) {}
 
-        var js = JSON.parse(req.responseText);
+    });
 
-        return js;
+    var js = JSON.parse(req.responseText);
 
-    }
+    return js;
+
+}
