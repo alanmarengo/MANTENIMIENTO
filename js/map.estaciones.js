@@ -437,7 +437,7 @@ function ol_map() {
                         <p class="title">${js["DV"].parametro_nombre}</p>
                         <p class="value m0">${js["DV"].ultimo_dato}</p>
                         <p class="text-default m0 mt-3">Fecha Dato: ${js["DV"].fecha_dato}</p>
-                        <p class="text-default m0 mt-3">Moda: ${js["DV"].moda}</p>
+                        <p class="text-default m0 mt-3">Moda: ${js["DV"].dv_moda}</p>
                     </div>
                 </div>
                 `;
