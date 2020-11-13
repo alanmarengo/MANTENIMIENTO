@@ -244,9 +244,7 @@ function getData() {
     }
 
     $("#est-tabla-inner").html(html);
-    console.log("MIN: " + serieMin);
-    console.log("MED: " + serieMed);
-    console.log("MAX: " + serieMax);
+
     Highcharts.chart('est-chart-inner', {
 
         chart: {
@@ -284,13 +282,13 @@ function getData() {
 
         series: [{
             name: 'Mínimo',
-            data: serieMin
+            data: [serieMin]
         }, {
             name: 'Medio',
-            data: serieMed
+            data: [serieMed]
         }, {
             name: 'Máximo',
-            data: serieMax
+            data: [serieMax]
         }]
     });
 
