@@ -22,7 +22,7 @@
 	<link rel="stylesheet" href="./css/geovisorredesbox.css" type="text/css">
 	
 </head>
-<body style="overflow:hidden;">
+<body style="height:auto;">
 
 	<div class="container">
 		<p class="title">REGISTRO ESTADÍSTICO Y GRÁFICO DE LA RED DE MONITOREO HÍDRICO DE LA CUENCA DEL RÍO SANTA CRUZ</p>		
