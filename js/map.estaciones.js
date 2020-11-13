@@ -3896,14 +3896,24 @@ function ol_map() {
 
 function round(num, decimales) {
 
-    let tmp = num.split(".");
-    var tmpDec = "";
+    if (num != "") {
 
-    if (tmp[1]) {
-        tmpDec = tmp[1].substring(0, decimales);
+        let tmp = num.split(".");
+        var tmpDec = "";
+
+        if (tmp[1]) {
+            tmpDec = tmp[1].substring(0, decimales);
+        }
+
+        return tmp[0] + "." + tmpDec;
+
+    } else {
+
+        console.log("ROUND: Failed to round number");
+
+        return num;
+
     }
-
-    return tmp[0] + "." + tmpDec;
 
 }
 
