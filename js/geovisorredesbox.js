@@ -324,7 +324,7 @@ function getDataCsv() {
     let req = $.ajax({
         async: false,
         url: "./csv.php",
-        data: { q: js.q },
+        data: { q: encodeURIComponent(js.q) },
         type: "GET",
         success: function(d) {}
     });
