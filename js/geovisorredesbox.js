@@ -129,6 +129,42 @@ function getData() {
     let url = apiUrl + "?lista_estaciones=" + lista_estaciones.join(",") + "&parametro_id=" + $("#combo-parametros-redes").val() + "&fd=" + $("#tab-redes-fdesde").val() + "&fh=" + $("#tab-redes-fhasta").val() + "&mode=11";
     let js = this.requestApi(url);
 
+    $("#est-tabla-inner").find(".row").not(".row-main").not(".row-header").remove();
+
+    for (let i = 0; i < js.length; i++) {
+
+        let html = `
+            <div class="row" data-row-estacion-id="${js.estacion_id}">
+
+                <div class="col-md-3 col-lg-3">
+                    <div class="column">
+                        <div class="cell">${js.estacion_nombre}</div>		
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-lg-3">
+                    <div class="column">
+                        <div class="cell">${js[i].min_dato}</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-lg-3">
+                    <div class="column">
+                        <div class="cell">${js[i].med_dato}</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-lg-3">
+                    <div class="column">
+                        <div class="cell">${js[i].max_dato}</div>
+                    </div>
+                </div>
+
+            </div>
+        `;
+
+    }
+
 }
 
 function getEstacionesSeleccionadas() {

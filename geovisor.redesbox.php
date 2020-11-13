@@ -83,7 +83,7 @@
 
 		<div class="row est-tabla m0 mt-20" id="est-tabla-inner">
 			
-			<div class="row">
+			<div class="row row-main">
 				
 				<div class="form-group form-group-header">
 					<label>Tabla de valores:</label>
@@ -115,118 +115,6 @@
 				<div class="col-md-3 col-lg-3">
 					<div class="column">
 						<div class="cell header">Promedio</div>
-					</div>
-				</div>
-
-			</div>		
-
-			<div class="row">
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>		
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>
-					</div>
-				</div>
-
-			</div>		
-
-			<div class="row">
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>		
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>
-					</div>
-				</div>
-
-			</div>		
-
-			<div class="row">
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>		
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>
-					</div>
-				</div>
-
-			</div>		
-
-			<div class="row">
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>		
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>
 					</div>
 				</div>
 
