@@ -405,10 +405,10 @@ function ol_map() {
                 let hora = itemDate[1].split(":");
                 hora = hora[0] + ":" + hora[1];
 
-                js[i].ultimo_dato = round(js.datos_diarios[i].ultimo_dato, 2);
-                js[i].min_dato = round(js.datos_diarios[i].min_dato, 2);
-                js[i].med_dato = round(js.datos_diarios[i].med_dato, 2);
-                js[i].max_dato = round(js.datos_diarios[i].max_dato, 2);
+                js.datos_diarios[i].ultimo_dato = round(js.datos_diarios[i].ultimo_dato, 2);
+                js.datos_diarios[i].min_dato = round(js.datos_diarios[i].min_dato, 2);
+                js.datos_diarios[i].med_dato = round(js.datos_diarios[i].med_dato, 2);
+                js.datos_diarios[i].max_dato = round(js.datos_diarios[i].max_dato, 2);
 
                 html += `<div class="col col-md-2 col-lg-2 p5">
                     <div class="indicador">
