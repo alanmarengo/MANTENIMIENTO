@@ -42,7 +42,7 @@
 				<div class="col col-md-4 col-lg-4">
 				<div class="form-group">
 					<label>Desde:</label>
-					<input type="text" class="datepicker" id="tatab-redes-fdesde">
+					<input type="text" class="datepicker" id="tab-redes-fdesde">
 					<i class="fa fa-calendar-alt"></i>
 				</div>
 			</div>

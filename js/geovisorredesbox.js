@@ -109,6 +109,29 @@ function est_unselect(node, estacion_id) {
 
 }
 
+function getData() {
+
+    let lista_estaciones = getEstacionesSeleccionadas();
+    let url = apiUrl + "?lista_estaciones=" + lista_estaciones.join(",") + "&parametro_id=" + $("#combo-parametros-redes").val() + "&fd=" + $("#tab-redes-fdesde").val() + "&fh=" + $("#tab-redes-fhasta").val() + "&mode=11";
+    let js = this.requestApi(url);
+
+
+}
+
+function getEstacionesSeleccionadas() {
+
+    let selected = [];
+
+    $("#estaciones-lista-seleccionadas").children(".switcher-item").each(function(i, v) {
+
+        selected.push($(this).attr("data-estacion-id"));
+
+    });
+
+    return selected;
+
+}
+
 function requestApi(url) {
 
     var req = $.ajax({
