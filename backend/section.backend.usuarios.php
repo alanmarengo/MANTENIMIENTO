@@ -67,12 +67,12 @@
 					
 						<form name="frm-backend-main" id="frm-backend-main">
 							<div class="form-group">
-								<label for="user_id">Id del grafico</label>
+								<label for="user_id">Id del usuario</label>
 								<input type="text" class="form-control" name="user_id" id="user_id" aria-describedby="user_id"  readonly="readonly" placeholder="ID del usuario...">
 							</div>
 							
 							<div class="form-group">
-								<label for="user_name">Nombre Login</label>
+								<label for="user_name">Nombre login</label>
 								<input type="text" class="form-control" name="user_name" id="user_name" aria-describedby="user_name" placeholder="Nombre Login...">
 							</div>
 							<div class="form-group">
