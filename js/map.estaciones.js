@@ -430,12 +430,6 @@ function ol_map() {
 
             }
 
-            let itemDate = js["DV"].fecha_dato.split(" ");
-
-            let fecha = itemDate[0];
-            let hora = itemDate[1].split(":");
-            hora = hora[0] + ":" + hora[1];
-
             js["DV"].ultimo_dato = round(js["DV"].ultimo_dato, 2);
             js["DV"].min_dato = round(js["DV"].min_dato, 2);
             js["DV"].med_dato = round(js["DV"].med_dato, 2);
