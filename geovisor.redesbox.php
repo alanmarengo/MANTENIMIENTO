@@ -96,29 +96,25 @@
 
 				<div class="col-md-3 col-lg-3">
 					<div class="column">
-						<div class="cell header">ESTACIONES</div>
-						<div id="estaciones-lista"></div>				
+						<div class="cell header">Estaciones</div>		
 					</div>
 				</div>
 
 				<div class="col-md-3 col-lg-3">
 					<div class="column">
-						<div class="cell header">SELECCIONADAS</div>
-						<div id="estaciones-lista-seleccionadas"></div>
+						<div class="cell header">Valor Mínimo</div>
 					</div>
 				</div>
 
 				<div class="col-md-3 col-lg-3">
 					<div class="column">
-						<div class="cell header">SELECCIONADAS</div>
-						<div id="estaciones-lista-seleccionadas"></div>
+						<div class="cell header">Valor Máximo</div>
 					</div>
 				</div>
 
 				<div class="col-md-3 col-lg-3">
 					<div class="column">
-						<div class="cell header">SELECCIONADAS</div>
-						<div id="estaciones-lista-seleccionadas"></div>
+						<div class="cell header">Promedio</div>
 					</div>
 				</div>
 
