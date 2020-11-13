@@ -431,9 +431,6 @@ function ol_map() {
             }
 
             js["DV"].ultimo_dato = round(js["DV"].ultimo_dato, 2);
-            js["DV"].min_dato = round(js["DV"].min_dato, 2);
-            js["DV"].med_dato = round(js["DV"].med_dato, 2);
-            js["DV"].max_dato = round(js["DV"].max_dato, 2);
 
             html += `<div class="col col-md-2 col-lg-2 p5">
                     <div class="indicador">
