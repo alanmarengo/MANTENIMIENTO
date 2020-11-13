@@ -345,6 +345,7 @@ body {
     font-weight: 700;
     border-bottom: 1px solid #fefefe;
     padding: 5px 10px;
+    background-color: #FFFFFF;
 }
 
 .switcher-item.header {
