@@ -3,6 +3,7 @@
     top: 20px;
     left: 0;
     z-index: 9999;
+    width: 22%;
 }
 
 .card {
@@ -102,7 +103,7 @@
 #popup .nav-tabs .btn-tab {
     color: #FFFFFF !Important;
     font-family: "Montserrat", sans-serif !Important;
-    font-size: 12px !Important;
+    font-size: 10px !Important;
     text-transform: uppercase;
     font-weight: 600;
     padding: 6px 20px !Important;
