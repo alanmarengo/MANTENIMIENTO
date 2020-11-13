@@ -318,7 +318,10 @@ function getData() {
 function getDataCsv() {
 
     let lista_estaciones = getEstacionesSeleccionadas();
-    let url = "./csv_redes.php?lista_estaciones=" + lista_estaciones + "&parametro_id=" + $("#combo-parametros-redes").val() + "&fd=" + $("#tab-redes-fdesde").val() + "&fh="
+    let url = "./csv_redes.php?lista_estaciones=" + lista_estaciones + "&parametro_id=" + $("#combo-parametros-redes").val() + "&fd=" + $("#tab-redes-fdesde").val() + "&fh=" + $("#tab-redes-fhasta").val();
+
+    alert(url);
+
     $("#tab-redes-fhasta").val();
 
     let flink = document.createElement("a");
