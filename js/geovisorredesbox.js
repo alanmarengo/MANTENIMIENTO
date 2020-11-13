@@ -13,7 +13,7 @@ $(document).ready(function() {
         getEstaciones();
 
     });
-
+    alert("dr");
     getEstaciones();
 
 });
