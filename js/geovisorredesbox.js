@@ -302,6 +302,8 @@ function getData() {
         series: series
     });
 
+    console.log(series);
+
 }
 
 function getEstacionesSeleccionadas() {
