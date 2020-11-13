@@ -30,29 +30,6 @@
 			<li class="active"><a class="btn-tab active show" data-toggle="tab" id="tab-redes-1" href="#panel-redes-1" aria-expanded="true">MONITOREO HIDROAMBIENTAL</a></li>
 			<li class="m0"><a class="btn-tab" data-toggle="tab" id="tab-redes-2" href="#panel-redes-2" aria-expanded="true">MONITOREO HIDROSEDIMENTOLÓGICO</a></li>
 		</ul>
-		
-		<div class="tab-content p20" id="popup-redes-tab-content">
-			<div id="panel-redes-1" class="tab-pane fade in active show">
-				<ul class="ico-list">
-					<?php for($i=0; $i<8; $i++) { ?>
-					<li>
-						<img src="./images/panel-h4-ico.png">
-						<span>MENSUAL ITEM: Lorem ipsum is simply dummy text of the printing any typesetting industry</span>
-					</li>
-					<?php } ?>
-				</ul>
-			</div>
-			<div id="panel-redes-2" class="tab-pane fade in">
-				<ul class="ico-list">
-					<?php for($i=0; $i<8; $i++) { ?>
-					<li>
-						<img src="./images/panel-h4-ico.png">
-						<span>ANUAL ITEM: Lorem ipsum is simply dummy text of the printing any typesetting industry</span>
-					</li>
-					<?php } ?>
-				</ul>
-			</div>
-		</div>
 
 		<div class="row">
 			<div class="col col-md-4 col-lg-4">

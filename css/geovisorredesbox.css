@@ -90,10 +90,6 @@ body {
     text-transform: uppercase;
 }
 
-.container .nav-tabs li {
-    margin-left: 10px;
-}
-
 .container .nav-tabs li .show {
     background-color: #8d3050;
 }
