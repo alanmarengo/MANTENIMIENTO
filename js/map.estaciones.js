@@ -445,16 +445,8 @@ function ol_map() {
                     <div class="indicador">
                         <p class="title">${js["DV"].parametro_nombre}</p>
                         <p class="value m0">${js["DV"].ultimo_dato}</p>
-                        <p class="text-default m0 mt-3">Min: ${js["DV"].min_dato}</p>
-                        <p class="text-default m0 mt-3">Med: ${js["DV"].med_dato}</p>
-                        <p class="text-default m0 mt-3">Max: ${js["DV"].max_dato}</p>
-                        <p class="date mt-10">
-                            <a href="javascript:void(0);" onclick="geomap.map.popupTab2_getGrafico(${js["DV"].parametro_id})";>
-                                <img src="./images/indicador-ico.png">
-                            </a>
-                        </p>
-                        <p class="date mt-10">${fecha}</p>
-                        <p class="date m0">${hora}</p>
+                        <p class="text-default m0 mt-3">Fecha Dato: ${js["DV"].fecha_dato}</p>
+                        <p class="text-default m0 mt-3">Moda: ${js["DV"].moda}</p>
                     </div>
                 </div>
                 `;
