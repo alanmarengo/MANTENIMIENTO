@@ -127,9 +127,11 @@
         <div class="col-md-12 section-b">
             <a id="registro"></a>
             <h3 style="margin-bottom: 1em; color: #333;">REGISTRO ESTAD&Iacute;STICO Y GR&Aacute;FICO DE LA RED DE MONITOREO H&Iacute;DRICO DE LA CUENCA DEL R&Iacute;O SANTA CRUZ</h3>
-
+			
+			<!--<iframe id="box4" src="./geovisor.redesbox.php" frameborder="0"></iframe>-->
 
         </div>
+       
     </div>
 </div>
 

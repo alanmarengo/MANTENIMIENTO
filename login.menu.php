@@ -1,5 +1,7 @@
 <?php 
 
+//include("./login.php");
+
 error_reporting(0);
 
 if ((isset($_SESSION)) && (sizeof($_SESSION) > 0)) {
@@ -19,9 +21,9 @@ if ((isset($_SESSION)) && (sizeof($_SESSION) > 0)) {
 				<li>
 					<a class="dropdown-item" href="#">Mi Colección</a>
 				</li>
-				<li>
-					<a class="dropdown-item" href="#">Cambiar Contraseña</a>
-				</li>-->
+				-->
+				<?php if( $_SESSION["user_info"]["perfil_usuario_id"]=='3'){echo '<li><a class="dropdown-item" href="./backend/backend-index.php">Ir a ABM</a></li>'; }; ?>
+				
 				<li>
 					<a class="dropdown-item" href="./CMD-logout.php">Cerrar Sesión</a>
 				</li>

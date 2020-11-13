@@ -1,8 +1,9 @@
 <?php
 
-/*
+
 session_start();
 
+/*
 $login = "<!DOCTYPE html>";
 $login .= "<html lang=\"es\">";
 $login .= "<head>";
