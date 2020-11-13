@@ -54,14 +54,14 @@ function getParametros() {
     let url = apiUrl + "?tipo_estaciones=" + (currentTab - 1) + "&mode=13";
     let js = this.requestApi(url);
 
-    let combo = $("#combo-parametros-redes");
+    $("#combo-parametros-redes").empty();
 
     for (let i = 0; i < js.length; i++) {
         let item = `
-            <div class="switcher-item"  data-estacion-id="${js[i].estacion_id}" onclick="est_select(this);">${js[i].estacion_nombre}</div>
+            <option value="${js[i].parametro_id}">${js[i].parametro_desc}</option>
         `;
 
-        $("#estaciones-lista").append(item);
+        $("#combo-parametros-redes").append(item);
     }
 
 }
