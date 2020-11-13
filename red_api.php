@@ -90,7 +90,7 @@ switch ($mode)
 		//http://observ.net/red_api.php?estacion_id=7&categoria_parametro_id=4&parametro_id=5&mode=12
 		get_parametros($tipo_estaciones);
 		break;
-	case 11:
+	case 15:
 		//http://observ.net/red_api.php?lista_estaciones=3,4&parametro_id=25&fd=01/01/2020&fh=31/12/2020&mode=11
 		get_parametro_datos_csv($lista_estaciones,$parametro_id,$fd,$fh);
 	break;
