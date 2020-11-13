@@ -37,7 +37,7 @@ $query_string   .= " FROM mod_sensores.get_parametro_datos('$lista_estaciones'::
 $query_string   .= " ORDER BY estacion_nombre ASC;";
 
 $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
-	
+	echo $query_string;
 $conn = pg_connect($string_conn);
 
 $query_string = decrypt($query_string);
