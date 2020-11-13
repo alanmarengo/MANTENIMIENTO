@@ -13,6 +13,7 @@ $(document).ready(function() {
 
         currentTab = tabNum;
 
+        getParametros();
         getEstaciones();
 
     });
@@ -45,6 +46,23 @@ function updateDatepicker() {
         onSelect: function() {}
 
     }).datepicker("setDate", new Date());
+
+}
+
+function getParametros() {
+
+    let url = apiUrl + "?tipo_estaciones=" + (currentTab - 1) + "&mode=13";
+    let js = this.requestApi(url);
+
+    let combo = $("#combo-parametros-redes");
+
+    for (let i = 0; i < js.length; i++) {
+        let item = `
+            <div class="switcher-item"  data-estacion-id="${js[i].estacion_id}" onclick="est_select(this);">${js[i].estacion_nombre}</div>
+        `;
+
+        $("#estaciones-lista").append(item);
+    }
 
 }
 
