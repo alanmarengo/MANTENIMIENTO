@@ -182,6 +182,9 @@ function getData() {
         </div>
     `;
 
+    let serieMin = [];
+    let serieMed = [];
+    let serieMax = [];
     let serieEstacion = [];
     let serieEstacionVal = []
 
@@ -194,23 +197,23 @@ function getData() {
 
         if (js[i].min_dato == "") {
             js[i].min_dato = "-";
-            serieEstacionVal[i].push(0);
+            serieMin[i].push(0);
         } else {
-            serieEstacionVal[i].push(parseInt(js[i].min_dato));
+            serieMin[i].push(parseInt(js[i].min_dato));
         }
 
         if (js[i].med_dato == "") {
             js[i].med_dato = "-";
-            serieEstacionVal[i].push(0);
+            serieMed[i].push(0);
         } else {
-            serieEstacionVal[i].push(parseInt(js[i].med_dato));
+            serieMed[i].push(parseInt(js[i].med_dato));
         }
 
         if (js[i].max_dato == "") {
             js[i].max_dato = "-";
-            serieEstacionVal[i].push(0);
+            serieMax[i].push(0);
         } else {
-            serieEstacionVal[i].push(parseInt(js[i].max_dato));
+            serieMax[i].push(parseInt(js[i].max_dato));
         }
 
         html += `
@@ -252,12 +255,21 @@ function getData() {
 
         xaxis[i] = serieEstacion[i];
 
-        series[i] = {
-            name: serieEstacion[i],
-            data: serieEstacionVal[i]
-        };
-
     }
+
+    series = [{
+            name: "Mínimo",
+            data: serieMin
+        },
+        {
+            name: "Medio",
+            data: serieMed
+        },
+        {
+            name: "Máximo",
+            data: serieMax
+        },
+    ];
 
     $("#est-tabla-inner").html(html);
 
