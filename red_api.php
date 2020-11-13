@@ -86,6 +86,12 @@ switch ($mode)
 		//http://observ.net/red_api.php?estacion_id=7&categoria_parametro_id=4&parametro_id=5&mode=12
 		get_estacion_parametro_grafico_30_dias($estacion_id,$categoria_parametro_id,$parametro_id);
 		break;
+	case 13:
+		//http://observ.net/red_api.php?estacion_id=7&categoria_parametro_id=4&parametro_id=5&mode=12
+		get_parametros($tipo_estaciones);
+		break;
+		
+		
 	
 			
 };
@@ -717,6 +723,64 @@ function get_estaciones($tipo_estaciones)/* Si son hidrometricas o de aforo */
 		$json .= '{';
 		$json .= '"estacion_id":"' 		. clear_json($r["estacion_id"]) . '",';
 		$json .= '"estacion_nombre":"' 	. clear_json($r["estacion_nombre"]) . '",';
+		$json .= '"tipo":"' 			. $tipo_est . '"';
+		$json .= "},";
+
+		$entered = true;
+	}
+	
+	if($entered) 
+	{
+		$json = substr($json,0,strlen($json)-1);
+	};
+	
+	$json .= "]";
+	
+	echo $json;
+	
+	pg_close($conn);
+	
+};
+
+
+function get_parametros($tipo_estaciones)/* Si son hidrometricas o de aforo */
+{
+	//http://observ.net/red_api.php?tipo_estaciones=0&mode=13
+	//http://observ.net/red_api.php?tipo_estaciones=1&mode=13
+	
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+		
+	$conn = pg_connect($string_conn);
+	
+	if($tipo_estaciones=='1')/* AFORO */
+	{
+		$query_string    = "SELECT DISTINCT parametro_id,parametro_desc ";
+		$query_string   .= " FROM mod_sensores.vw_red_monitoreo ";
+		$query_string   .= " WHERE tipo_estacion_desc='Aforo';";
+		
+		$tipo_est = 'Aforo';
+	}
+	else /* HIDRO */
+	{
+		$query_string    = "SELECT DISTINCT parametro_id,parametro_desc ";
+		$query_string   .= " FROM mod_sensores.vw_red_monitoreo ";
+		$query_string   .= " WHERE tipo_estacion_desc<>'Aforo';";
+		
+		$tipo_est = 'Hidro';
+	};
+	
+	$query = pg_query($conn,$query_string);
+	
+	$entered = false;
+	
+	$json = "[";
+	
+	while ($r = pg_fetch_assoc($query)) 
+	{
+		
+		$json .= '{';
+		$json .= '"estacion_id":"' 		. clear_json($r["parametro_id"]) . '",';
+		$json .= '"estacion_nombre":"' 	. clear_json($r["parametro_desc"]) . '",';
 		$json .= '"tipo":"' 			. $tipo_est . '"';
 		$json .= "},";
 
