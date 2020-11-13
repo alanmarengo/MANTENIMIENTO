@@ -321,6 +321,16 @@ function getDataCsv() {
     let url = apiUrl + "?lista_estaciones=" + lista_estaciones.join(",") + "&parametro_id=" + $("#combo-parametros-redes").val() + "&fd=" + $("#tab-redes-fdesde").val() + "&fh=" + $("#tab-redes-fhasta").val() + "&mode=15";
     let js = this.requestApi(url);
 
+    let req = $.ajax({
+        async: false,
+        url: "./csv.php",
+        data: { q: js.q },
+        type: "GET",
+        success: function(d) {}
+    });
+
+    console.log(req.responseText);
+
 }
 
 
