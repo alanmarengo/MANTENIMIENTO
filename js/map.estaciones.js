@@ -1063,7 +1063,7 @@ function ol_map() {
 
         this.updateLayerFilters = function() {
 
-            let est_selected = $.map(
+            let est_selected = $.filter(
                 $(".card-est").find("input[type=checkbox]:checked"),
                 function(i, v) {
                     return this.value;
@@ -1071,7 +1071,7 @@ function ol_map() {
             );
 
             let ai_selected = $.map(
-                $(".card-ai").find("input[type=checkbox]:checked"),
+                $(".card-ai").filter("input[type=checkbox]:checked"),
                 function(i, v) {
                     return this.value;
                 }

@@ -345,7 +345,7 @@ function getDataCsv() {
         success: function(d) {}
     });*/
 
-    console.log(req.responseText);
+    // console.log(req.responseText);
 
 }
 
