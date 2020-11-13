@@ -186,32 +186,34 @@ function getData() {
     let serieMed = [];
     let serieMax = [];
     let serieEstacion = [];
+    let serieEstacionVal = []
 
     for (let i = 0; i < js.length; i++) {
 
         serieEstacion.push(js[i].estacion_nombre);
+        serieEstacionVal[i] = [];
 
         if (js[i].estacion_nombre == "") { js[i].estacion_nombre = "-"; }
 
         if (js[i].min_dato == "") {
             js[i].min_dato = "-";
-            serieMin.push(0);
+            serieEstacionVal[i].push(0);
         } else {
-            serieMin.push(parseInt(js[i].min_dato));
+            serieEstacionVal[i].push(parseInt(js[i].min_dato));
         }
 
         if (js[i].med_dato == "") {
             js[i].med_dato = "-";
-            serieMed.push(0);
+            serieEstacionVal[i].push(0);
         } else {
-            serieMed.push(parseInt(js[i].med_dato));
+            serieEstacionVal[i].push(parseInt(js[i].med_dato));
         }
 
         if (js[i].max_dato == "") {
             js[i].max_dato = "-";
-            serieMax.push(0);
+            serieEstacionVal[i].push(0);
         } else {
-            serieMax.push(parseInt(js[i].max_dato));
+            serieEstacionVal[i].push(parseInt(js[i].max_dato));
         }
 
         html += `
@@ -246,6 +248,20 @@ function getData() {
 
     }
 
+    let series = [];
+    let xaxis = [];
+
+    for (let i = 0; i < serieEstacion.length; i++) {
+
+        xaxis[i] = serieEstacion[i];
+
+        series[i] = {
+            name: serieEstacion[i],
+            data: [serieEstacionVal]
+        };
+
+    }
+
     $("#est-tabla-inner").html(html);
 
     Highcharts.chart('est-chart-inner', {
@@ -259,7 +275,7 @@ function getData() {
         },
 
         xAxis: {
-            categories: [serieEstacion]
+            categories: [xaxis]
         },
 
         yAxis: {
@@ -283,16 +299,7 @@ function getData() {
             }
         },
 
-        series: [{
-            name: 'Mínimo',
-            data: [serieMin]
-        }, {
-            name: 'Medio',
-            data: [serieMed]
-        }, {
-            name: 'Máximo',
-            data: [serieMax]
-        }]
+        series: series
     });
 
 }
