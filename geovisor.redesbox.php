@@ -18,6 +18,7 @@
 	<?php include("./scripts.map.estaciones.php"); ?>
 	<?php include("./scripts.onresize.php"); ?>
 
+	<script src ="./js/geovisorredesbox.js" type='text/javascript'></script>
 	<link rel="stylesheet" href="./css/geovisorredesbox.css" type="text/css">
 	
 </head>
