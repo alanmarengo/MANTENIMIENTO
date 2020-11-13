@@ -31,7 +31,7 @@
 			<li class="m0"><a class="btn-tab" data-toggle="tab" id="tab-redes-2" href="#panel-redes-2" aria-expanded="true">MONITOREO HIDROSEDIMENTOLÓGICO</a></li>
 		</ul>
 
-		<div class="row">
+		<div class="row mt-20">
 			<div class="col col-md-4 col-lg-4">
 				<div class="form-group">
 					<label>Parámetro:</label>
