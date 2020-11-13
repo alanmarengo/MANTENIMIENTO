@@ -128,7 +128,7 @@
             <!--<a id="registro"></a>-->
             <!--<h3 style="margin-bottom: 1em; color: #333;">REGISTRO ESTAD&Iacute;STICO Y GR&Aacute;FICO DE LA RED DE MONITOREO H&Iacute;DRICO DE LA CUENCA DEL R&Iacute;O SANTA CRUZ</h3>-->
 			
-			<iframe id="box4" src="./geovisor.redesbox.php" frameborder="0" style="overflow:hidden;min-height:1000px;height:100%;width:100%" height="100%" width="100%"></iframe>
+			<iframe id="box4" src="./geovisor.redesbox.php" frameborder="0" style="overflow:hidden;height:100vh;width:100%" height="100%" width="100%"></iframe>
 
         </div>
        
