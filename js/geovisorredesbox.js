@@ -24,6 +24,18 @@ $(document).ready(function() {
 
     });
 
+    $("#tab-redes-fdesde").on("change", function() {
+
+        getData();
+
+    });
+
+    $("#tab-redes-fhasta").on("change", function() {
+
+        getData();
+
+    });
+
     getParametros();
     getEstaciones();
 
@@ -171,6 +183,11 @@ function getData() {
     `;
 
     for (let i = 0; i < js.length; i++) {
+
+        if (js[i].estacion_nombre == "") { js[i].estacion_nombre = "-"; }
+        if (js[i].min_dato == "") { js[i].min_dato = "-"; }
+        if (js[i].med_dato == "") { js[i].med_dato = "-"; }
+        if (js[i].max_dato == "") { js[i].max_dato = "-"; }
 
         html += `
             <div class="row" data-row-estacion-id="${js.estacion_id}">
