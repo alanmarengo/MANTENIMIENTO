@@ -48,6 +48,9 @@ $(document).ready(function() {
 
     $(".roverlay").each(function(i, v) { $(v).Roverlay(); });
 
+    $(".card-est").find("input[type=checkbox]:checked").val("");
+    $(".card-ai").find("input[type=checkbox]:checked").val("");
+
     /*Highcharts.chart('chart-sample-1', {
 
         chart: {
