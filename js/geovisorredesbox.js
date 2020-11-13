@@ -148,7 +148,7 @@ function getData() {
 				
             <div class="form-group form-group-header">
                 <label>Tabla de valores:</label>
-                <a href="javascript:void(0);" class="linkaux">Ver datos completos</a>
+                <a href="javascript:void(0);" class="linkaux" onclick="getDataCsv();">Ver datos completos</a>
             </div>
                     
         </div>
@@ -284,7 +284,7 @@ function getData() {
         },
 
         xAxis: {
-            categories: [xaxis]
+            categories: xaxis
         },
 
         yAxis: {
@@ -314,6 +314,15 @@ function getData() {
     console.log(series);
 
 }
+
+function getDataCsv() {
+
+    let lista_estaciones = getEstacionesSeleccionadas();
+    let url = apiUrl + "?lista_estaciones=" + lista_estaciones.join(",") + "&parametro_id=" + $("#combo-parametros-redes").val() + "&fd=" + $("#tab-redes-fdesde").val() + "&fh=" + $("#tab-redes-fhasta").val() + "&mode=15";
+    let js = this.requestApi(url);
+
+}
+
 
 function getEstacionesSeleccionadas() {
 

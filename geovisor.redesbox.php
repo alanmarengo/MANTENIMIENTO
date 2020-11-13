@@ -98,7 +98,7 @@
 		</div>
 		
 		<div class="row m0">
-			<a href="javascript:void(0);" class="btn-2">VER DATOS COMPLETOS</a>
+			<a href="javascript:void(0);" onclick="getDataCsv();" class="btn-2">VER DATOS COMPLETOS</a>
 		</div>
 
 	</div>

@@ -90,6 +90,10 @@ switch ($mode)
 		//http://observ.net/red_api.php?estacion_id=7&categoria_parametro_id=4&parametro_id=5&mode=12
 		get_parametros($tipo_estaciones);
 		break;
+	case 15:
+		//http://observ.net/red_api.php?lista_estaciones=3,4&parametro_id=25&fd=01/01/2020&fh=31/12/2020&mode=11
+		get_parametro_datos_csv($lista_estaciones,$parametro_id,$fd,$fh);
+	break;
 		
 		
 	
@@ -843,6 +847,25 @@ function get_parametro_datos($lista_estaciones,$parametro_id,$fd,$fh)
 	
 	echo $json;
 	
+	pg_close($conn);
+	
+};
+function get_parametro_datos_csv($lista_estaciones,$parametro_id,$fd,$fh)
+{
+	//http://observ.net/red_api.php?lista_estaciones=3,4&parametro_id=25&fd=01/01/2020&fh=31/12/2020&mode=15
+	
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+		
+	$conn = pg_connect($string_conn);
+
+	$query_string    = "SELECT * ";
+	$query_string   .= " FROM mod_sensores.get_parametro_datos('$lista_estaciones'::text,$parametro_id::bigint,'$fd'::timestamp with time zone,'$fh'::timestamp with time zone) ";
+	$query_string   .= " ORDER BY estacion_nombre ASC;";
+	
+	$json = "{\"q\":\"$query_string\"}";
+
+	echo $json;
+
 	pg_close($conn);
 	
 };
