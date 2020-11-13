@@ -318,8 +318,20 @@ function getData() {
 function getDataCsv() {
 
     let lista_estaciones = getEstacionesSeleccionadas();
+    let url = "./csv_redes.php?lista_estaciones=" + lista_estaciones + "&parametro_id=" + $("#combo-parametros-redes").val() + "&fd=" + $("#tab-redes-fdesde").val() + "&fh="
+    $("#tab-redes-fhasta").val();
 
-    let req = $.ajax({
+    let flink = document.createElement("a");
+    flink.target = "_blank";
+    flink.href = url;
+
+    document.body.appendChild(flink);
+
+    flink.click();
+
+    $(flink).remove();
+
+    /*let req = $.ajax({
         async: false,
         url: "./csv_redes.php",
         data: {
@@ -330,7 +342,7 @@ function getDataCsv() {
         },
         type: "GET",
         success: function(d) {}
-    });
+    });*/
 
     console.log(req.responseText);
 
