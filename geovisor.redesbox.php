@@ -39,29 +39,6 @@
 					<select id="combo-parametros-redes"></select>
 				</div>
 			</div>
-			<div class="col col-md-4 col-lg-4">
-				<div class="form-group">
-					<label>Desde:</label>
-					<input type="text" class="datepicker" id="tatab-redes-fdesde">
-					<i class="fa fa-calendar-alt"></i>
-				</div>
-			</div>
-			<div class="col col-md-4 col-lg-4">
-				<div class="form-group">
-					<label>Hasta:</label>
-					<input type="text" class="datepicker" id="tab-redes-fhasta">
-					<i class="fa fa-calendar-alt"></i>
-				</div>
-			</div>
-		</div>
-
-		<div class="row mt-20">
-			<div class="col col-md-4 col-lg-4">
-				<div class="form-group">
-					<label>Parámetro:</label>
-					<select id="combo-parametros-redes"></select>
-				</div>
-			</div>
 				<div class="col col-md-4 col-lg-4">
 				<div class="form-group">
 					<label>Desde:</label>
@@ -90,11 +67,13 @@
 
 			<div class="col-md-6 col-lg-6">
 				<div class="switcher-box">
+					<div class="switcher-item header">ESTACIONES</div>
 				</div>
 			</div>
 
 			<div class="col-md-6 col-lg-6">
 				<div class="switcher-box">
+					<div class="switcher-item header">SELECCIONADAS</div>
 				</div>
 			</div>
 
