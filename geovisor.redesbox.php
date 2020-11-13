@@ -28,8 +28,8 @@
 		<p class="title">REGISTRO ESTADÍSTICO Y GRÁFICO DE LA RED DE MONITOREO HÍDRICO DE LA CUENCA DEL RÍO SANTA CRUZ</p>		
 
 		<ul class="nav nav-tabs type2">
-			<li class="active"><a class="btn-tab active show" data-toggle="tab" id="tab-redes-1" href="#panel-redes-1" aria-expanded="true">MONITOREO HIDROAMBIENTAL</a></li>
-			<li class="m0"><a class="btn-tab" data-toggle="tab" id="tab-redes-2" href="#panel-redes-2" aria-expanded="true">MONITOREO HIDROSEDIMENTOLÓGICO</a></li>
+			<li class="active"><a class="btn-tab active show" data-toggle="tab" id="tab-redes-1" href="#panel-redes-1" aria-expanded="true" data-tab="1">MONITOREO HIDROAMBIENTAL</a></li>
+			<li class="m0"><a class="btn-tab" data-toggle="tab" id="tab-redes-2" href="#panel-redes-2" aria-expanded="true" data-tab="2">MONITOREO HIDROSEDIMENTOLÓGICO</a></li>
 		</ul>
 
 		<div class="row mt-20">

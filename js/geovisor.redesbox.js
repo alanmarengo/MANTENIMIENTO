@@ -4,16 +4,6 @@ $(document).ready(function() {
 
     currentTab = 1;
 
-    $(".btn-tab").on("click", function() {
-
-        let tabNum = $(this).attr("data-tab");
-
-        currentTab = tabNum;
-
-        alert(currentTab);
-
-    });
-
 });
 
 function updateDatepicker() {
