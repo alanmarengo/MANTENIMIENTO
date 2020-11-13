@@ -67,10 +67,14 @@ function getEstaciones() {
 
 function est_select(node, estacion_id) {
 
-    $(node).appendTo("#estaciones-lista-seleccionadas");
+    if ($("#estaciones-lista-seleccionadas").children(".switcher-item").length < 5) {
 
-    node.onclick = function() {
-        est_unselect(this);
+        $(node).appendTo("#estaciones-lista-seleccionadas");
+
+        node.onclick = function() {
+            est_unselect(this);
+        }
+
     }
 
 }
