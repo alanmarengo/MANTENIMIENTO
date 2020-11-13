@@ -867,6 +867,159 @@ function ol_map() {
 
         this.popupTabAforo3 = function() {
 
+            let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&mode=3";
+            let js = this.requestApi(url);
+
+            let html = `
+                <div class="row">
+                    <div class="col col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label>Parámetro:</label>
+                            <select id="combo-parametros-aforo">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col col-md-3 col-lg-3">
+                        <div class="form-group">
+                            <label>Desde:</label>
+                            <input type="text" class="datepicker" id="tab3-fdesde-aforo">
+                            <i class="fa fa-calendar-alt"></i>
+                        </div>
+                    </div>
+                    <div class="col col-md-3 col-lg-3">
+                        <div class="form-group">
+                            <label>Hasta:</label>
+                            <input type="text" class="datepicker" id="tab3-fhasta-aforo">
+                            <i class="fa fa-calendar-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-20">
+                    <div class="col col-md-3 col-lg-3 api-tab-3">
+                        <div class="indicador mini text-center">
+                            <p class="title">VALOR MÍNIMO</p>
+                            <p class="value minval"></p>
+                        </div>
+                        <div class="indicador mini text-center mt-10">
+                            <p class="title">VALOR MEDIO</p>
+                            <p class="value medval"></p>
+                        </div>
+                        <div class="indicador mini text-center mt-10">
+                            <p class="title">VALOR MÁXIMO</p>
+                            <p class="value maxval"></p>
+                        </div>
+                        <p class="mt-10">
+                            <a href="#" class="btn-2">Descarga de la Serie de Datos</a>
+                        </p>
+                    </div>
+                    <div class="col col-md-9 col-lg-9">
+                        <div id="tab3-aforo-chart"></div>
+                    </div>
+                </div>
+            `;
+
+            $("#panel-aforo-ha-3").html(html);
+
+            updateDatepicker();
+
+            $("#combo-parametros-aforo").empty();
+
+            for (var i = 0; i < js.length; i++) {
+
+                if (i == 0) {
+                    this.current_aforo_parametro_id = js[i].parametro_id;
+                }
+
+                let option = document.createElement("option");
+                option.value = js[i].parametro_id;
+                option.innerHTML = js[i].parametro_nombre;
+
+                $("#combo-parametros-aforo").append(option);
+
+            }
+
+            document.getElementById("combo-parametros-aforo").onchange = () => {
+
+                let curr_val = document.getElementById("combo-parametros-aforo").options[document.getElementById("combo-parametros-aforo").selectedIndex].value;
+
+                this.current_aforo_parametro_id = curr_val;
+                this.popupTab3Graficar();
+            }
+
+            document.getElementById("tab3-fdesde-aforo").onchange = () => this.popupTab3AforoGraficar();
+            document.getElementById("tab3-fhasta-aforo").onchange = () => this.popupTab3AforoGraficar();
+
+            this.popupTab3AforoGraficar();
+
+        }
+
+        this.popupTab3AforoGraficar = function() {
+
+            let fd = $("#tab3-fdesde-aforo").val();
+            let fh = $("#tab3-fhasta-aforo").val();
+
+            let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&&parametro_id=" + this.current_aforo_parametro_id + "&fd=" + fd + "&fh=" + fh + "&mode=4";
+            let js = this.requestApi(url);
+
+            let minval = round(js[0].min_dato, 2);
+            let medval = round(js[0].med_dato, 2);
+            let maxval = round(js[0].max_dato, 2);
+
+            $("#panel-aforo-ha-3 .api-tab-3 .minval").html(minval);
+            $("panel-aforo-ha-3 .api-tab-3 .medval").html(medval);
+            $("panel-aforo-ha-3 .api-tab-3 .maxval").html(maxval);
+
+            Highcharts.chart('tab3-aforo-chart', {
+
+                chart: {
+                    type: 'column'
+                },
+
+                title: {
+                    text: 'Gráfico de Estación'
+                },
+
+                xAxis: {
+                    categories: ['Elementos']
+                },
+
+                yAxis: {
+                    allowDecimals: false,
+                    min: 0,
+                    title: {
+                        text: 'Valores'
+                    }
+                },
+
+                tooltip: {
+                    formatter: function() {
+                        return this.series.name + ': ' + this.y + '<br/>';
+                    }
+                },
+
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                },
+
+                series: [{
+                    name: 'Mínimo',
+                    data: [parseFloat(minval)]
+                }, {
+                    name: 'Medio',
+                    data: [parseFloat(medval)]
+                }, {
+                    name: 'Máximo',
+                    data: [parseFloat(maxval)]
+                }]
+            });
+
+        }
+
+        this.popupTabAforo4 = function() {
+
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&mode=7";
             let js = this.requestApi(url)[0];
 
@@ -882,14 +1035,7 @@ function ol_map() {
                 </div>
             `;
 
-            $("#panel-aforo-ha-3").html(html);
-
-        }
-
-        this.popupTabAforo4 = function() {
-
-            let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
-            let js = this.requestApi(url);
+            $("#panel-aforo-ha-4").html(html);
         }
 
         this.requestApi = function(url) {
