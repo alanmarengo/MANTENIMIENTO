@@ -235,7 +235,9 @@ function getData() {
     }
 
     $("#est-tabla-inner").html(html);
-
+    console.log(serieMin);
+    console.log(serieMed);
+    console.log(serieMax);
     Highcharts.chart('est-chart-inner', {
 
         chart: {
