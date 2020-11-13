@@ -257,7 +257,7 @@ function getData() {
 
         series[i] = {
             name: serieEstacion[i],
-            data: [serieEstacionVal]
+            data: serieEstacionVal
         };
 
     }
