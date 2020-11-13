@@ -1061,6 +1061,27 @@ function ol_map() {
 
         }
 
+        this.updateLayerFilters = function() {
+
+            let est_selected = $.map(
+                $(".card-est").find("input[type=checkbox]:checked"),
+                function(i, v) {
+                    return this.value;
+                }
+            );
+
+            let ai_selected = $.map(
+                $(".card-ai").find("input[type=checkbox]:checked"),
+                function(i, v) {
+                    return this.value;
+                }
+            );
+
+            alert(est_selected);
+            alert(ai_selected);
+
+        }
+
         /*this.ol_object.on("click",function(evt) {
         	
         	if (this.infoEnabled ) {
