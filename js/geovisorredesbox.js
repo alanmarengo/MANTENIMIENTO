@@ -185,8 +185,11 @@ function getData() {
     let serieMin = [];
     let serieMed = [];
     let serieMax = [];
+    let serieEstacion = [];
 
     for (let i = 0; i < js.length; i++) {
+
+        serieEstacion.push(js[i].estacion_nombre);
 
         if (js[i].estacion_nombre == "") { js[i].estacion_nombre = "-"; }
 
@@ -256,7 +259,7 @@ function getData() {
         },
 
         xAxis: {
-            categories: ["Mínimo", "Medio", "Máximo"]
+            categories: [serieEstacion]
         },
 
         yAxis: {
