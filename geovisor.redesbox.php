@@ -55,7 +55,7 @@
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row mt-20">
 			
 			<div class="form-group">
 				<label>Seleccionar las estaciones (seleccionar hasta 5):</label>
@@ -63,7 +63,7 @@
 					
 		</div>
 
-		<div class="row mt-20 est-switcher">
+		<div class="row est-switcher">
 
 			<div class="col-md-6 col-lg-6">
 				<div class="switcher-box">
