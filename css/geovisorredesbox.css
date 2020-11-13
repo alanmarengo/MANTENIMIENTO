@@ -57,6 +57,11 @@ body {
     color: #8d3050;
 }
 
+.nav-tabs.type2 li {
+    width: 50%;
+    text-align: center;
+}
+
 #popup {
     border: 2px solid #CCCCCC;
     background: white;
