@@ -189,18 +189,27 @@ function getData() {
     for (let i = 0; i < js.length; i++) {
 
         if (js[i].estacion_nombre == "") { js[i].estacion_nombre = "-"; }
+
         if (js[i].min_dato == "") {
             js[i].min_dato = "-";
             serieMin.push(0);
-        } else { serieMin.push(js[i].min_dato); }
+        } else {
+            serieMin.push(js[i].min_dato);
+        }
+
         if (js[i].med_dato == "") {
             js[i].med_dato = "-";
             serieMed.push(0);
-        } else { serieMin.push(js[i].med_dato); }
+        } else {
+            serieMed.push(js[i].med_dato);
+        }
+
         if (js[i].max_dato == "") {
             js[i].max_dato = "-";
             serieMax.push(0);
-        } else { serieMin.push(js[i].max_dato); }
+        } else {
+            serieMax.push(js[i].max_dato);
+        }
 
         html += `
             <div class="row" data-row-estacion-id="${js.estacion_id}">
