@@ -86,6 +86,12 @@
 			
 
 		</div>
+
+		<div class="row est-tabla m0 mt-20" id="est-chart-inner">
+			
+			
+
+		</div>
 		
 		<div class="row mt-20">
 			<div id="chart"></div>
