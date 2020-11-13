@@ -18,6 +18,12 @@ $(document).ready(function() {
 
     });
 
+    $("#combo-parametros-redes").on("change", function() {
+
+        getData();
+
+    });
+
     getParametros();
     getEstaciones();
 
@@ -65,6 +71,8 @@ function getParametros() {
         $("#combo-parametros-redes").append(item);
     }
 
+    getData();
+
 }
 
 function getEstaciones() {
@@ -83,6 +91,8 @@ function getEstaciones() {
         $("#estaciones-lista").append(item);
     }
 
+    getData();
+
 }
 
 function est_select(node, estacion_id) {
@@ -97,6 +107,8 @@ function est_select(node, estacion_id) {
 
     }
 
+    getData();
+
 }
 
 function est_unselect(node, estacion_id) {
@@ -107,6 +119,8 @@ function est_unselect(node, estacion_id) {
         est_select(this);
     }
 
+    getData();
+
 }
 
 function getData() {
@@ -114,7 +128,6 @@ function getData() {
     let lista_estaciones = getEstacionesSeleccionadas();
     let url = apiUrl + "?lista_estaciones=" + lista_estaciones.join(",") + "&parametro_id=" + $("#combo-parametros-redes").val() + "&fd=" + $("#tab-redes-fdesde").val() + "&fh=" + $("#tab-redes-fhasta").val() + "&mode=11";
     let js = this.requestApi(url);
-
 
 }
 
