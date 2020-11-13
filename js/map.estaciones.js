@@ -1063,15 +1063,15 @@ function ol_map() {
 
         this.updateLayerFilters = function() {
 
-            let est_selected = $.filter(
-                $(".card-est").find("input[type=checkbox]:checked"),
+            let est_selected = $.map(
+                $(".filtro-estacion:checked"),
                 function(i, v) {
                     return this.value;
                 }
             );
 
             let ai_selected = $.map(
-                $(".card-ai").filter("input[type=checkbox]:checked"),
+                $.map(".filtro-area-interes:checked"),
                 function(i, v) {
                     return this.value;
                 }

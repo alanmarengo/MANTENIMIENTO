@@ -33,7 +33,7 @@
 			<h3 class="card-title">RED HIDROAMBIENTAL</h3>
 
 			<div class="pretty p-icon p-curve" style="font-size:20px;">
-				<input type="checkbox" name="filtro-estacion" value="1" onclick="geomap.map.updateLayerFilters();">
+				<input type="checkbox" class="filtro-estacion" name="filtro-estacion" value="1" onclick="geomap.map.updateLayerFilters();">
 				<div class="state">
 					<i class="icon mdi mdi-check"></i>
 					<label>Estaciones hidrométricas</label>
@@ -43,7 +43,7 @@
 			<br>
 		
 			<div class="pretty p-icon p-curve" style="font-size:20px;">
-				<input type="checkbox" name="filtro-estacion" value="2" onclick="geomap.map.updateLayerFilters();">
+				<input type="checkbox" class="filtro-estacion" name="filtro-estacion" value="2" onclick="geomap.map.updateLayerFilters();">
 				<div class="state">
 					<i class="icon mdi mdi-check"></i>
 					<label>Estaciones meteorológicas</label>
@@ -53,7 +53,7 @@
 			<br>
 		
 			<div class="pretty p-icon p-curve" style="font-size:20px;">
-				<input type="checkbox" name="filtro-estacion" value="3" onclick="geomap.map.updateLayerFilters();">
+				<input type="checkbox" class="filtro-estacion" name="filtro-estacion" value="3" onclick="geomap.map.updateLayerFilters();">
 				<div class="state">
 					<i class="icon mdi mdi-check"></i>
 					<label>Estaciones hidroambientales</label>
@@ -63,7 +63,7 @@
 			<br>
 		
 			<div class="pretty p-icon p-curve" style="font-size:20px;">
-				<input type="checkbox" name="filtro-estacion" value="4" onclick="geomap.map.updateLayerFilters();">
+				<input type="checkbox" class="filtro-estacion" name="filtro-estacion" value="4" onclick="geomap.map.updateLayerFilters();">
 				<div class="state">
 					<i class="icon mdi mdi-check"></i>
 					<label>Estaciones hidrometeorológicas</label>
@@ -75,7 +75,7 @@
 			<h3 class="card-title m0 mt-10">RED HIDROSEDIMENTOLÓGICA</h3>
 		
 			<div class="pretty p-icon p-curve" style="font-size:20px;">
-				<input type="checkbox" name="filtro-estacion" value="5" onclick="geomap.map.updateLayerFilters();">
+				<input type="checkbox" class="filtro-estacion" name="filtro-estacion" value="5" onclick="geomap.map.updateLayerFilters();">
 				<div class="state">
 					<i class="icon mdi mdi-check"></i>
 					<label>Estaciones de aforos</label>
@@ -89,7 +89,7 @@
 			<h3 class="card-title">ESTACIONES POR ÁREA DE INTERÉS</h3>
 
 			<div class="pretty p-icon p-curve" style="font-size:20px;">
-				<input type="checkbox" name="filtro-area-interes" value="1" onclick="geomap.map.updateLayerFilters();">
+				<input type="checkbox" class="filtro-area-interes" name="filtro-area-interes" value="1" onclick="geomap.map.updateLayerFilters();">
 				<div class="state">
 					<i class="icon mdi mdi-check"></i>
 					<label>Cuenca alta</label>
@@ -99,7 +99,7 @@
 			<br>
 		
 			<div class="pretty p-icon p-curve" style="font-size:20px;">
-				<input type="checkbox" name="filtro-area-interes" value="2" onclick="geomap.map.updateLayerFilters();">
+				<input type="checkbox" class="filtro-area-interes" name="filtro-area-interes" value="2" onclick="geomap.map.updateLayerFilters();">
 				<div class="state">
 					<i class="icon mdi mdi-check"></i>
 					<label>Cuenca baja</label>
@@ -109,7 +109,7 @@
 			<br>
 		
 			<div class="pretty p-icon p-curve" style="font-size:20px;">
-				<input type="checkbox" name="filtro-area-interes" value="3" onclick="geomap.map.updateLayerFilters();">
+				<input type="checkbox" class="filtro-area-interes" name="filtro-area-interes" value="3" onclick="geomap.map.updateLayerFilters();">
 				<div class="state">
 					<i class="icon mdi mdi-check"></i>
 					<label>Estuario</label>
@@ -119,7 +119,7 @@
 			<br>
 		
 			<div class="pretty p-icon p-curve" style="font-size:20px;">
-				<input type="checkbox" name="filtro-area-interes" value="4" onclick="geomap.map.updateLayerFilters();">
+				<input type="checkbox" class="filtro-area-interes" name="filtro-area-interes" value="4" onclick="geomap.map.updateLayerFilters();">
 				<div class="state">
 					<i class="icon mdi mdi-check"></i>
 					<label>Presa Condor Cliff</label>
@@ -129,7 +129,7 @@
 			<br>
 		
 			<div class="pretty p-icon p-curve" style="font-size:20px;">
-				<input type="checkbox" name="filtro-area-interes" value="5" onclick="geomap.map.updateLayerFilters();">
+				<input type="checkbox" class="filtro-area-interes" name="filtro-area-interes" value="5" onclick="geomap.map.updateLayerFilters();">
 				<div class="state">
 					<i class="icon mdi mdi-check"></i>
 					<label>Presa La Barrancosa</label>
@@ -139,7 +139,7 @@
 			<br>
 		
 			<div class="pretty p-icon p-curve" style="font-size:20px;">
-				<input type="checkbox" name="filtro-area-interes" value="6" onclick="geomap.map.updateLayerFilters();">
+				<input type="checkbox" class="filtro-area-interes" name="filtro-area-interes" value="6" onclick="geomap.map.updateLayerFilters();">
 				<div class="state">
 					<i class="icon mdi mdi-check"></i>
 					<label>Embalse Condor Cliff</label>
@@ -149,7 +149,7 @@
 			<br>
 		
 			<div class="pretty p-icon p-curve" style="font-size:20px;">
-				<input type="checkbox" name="filtro-area-interes" value="7" onclick="geomap.map.updateLayerFilters();">
+				<input type="checkbox" class="filtro-area-interes" name="filtro-area-interes" value="7" onclick="geomap.map.updateLayerFilters();">
 				<div class="state">
 					<i class="icon mdi mdi-check"></i>
 					<label>Embalse La Barrancosa</label>
