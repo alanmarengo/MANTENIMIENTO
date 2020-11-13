@@ -330,6 +330,10 @@ body {
     color: white !important;
 }
 
+.container .nav-tabs li .show {
+    background-color: #8d3050;
+}
+
 .ico-list li {
     display: flex;
     align-items: center;
