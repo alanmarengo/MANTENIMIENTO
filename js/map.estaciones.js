@@ -870,6 +870,20 @@ function ol_map() {
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&mode=7";
             let js = this.requestApi(url);
 
+            let html = `
+                <div class="row">
+                    <div class="col-md-4 col-lg-4">
+                        <div class="indicador white mini text-center">
+                            <p class="title">CERO DE ESCALA</p>
+                            <p class="value">${js.cero_escala} ${js.cero_unidad}</p>
+                        </div>              
+                    </div>
+
+                </div>
+            `;
+
+            $("#panel-aforo-ha-3").html(html);
+
         }
 
         this.popupTabAforo4 = function() {
