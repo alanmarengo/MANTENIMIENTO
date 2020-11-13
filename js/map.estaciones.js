@@ -391,7 +391,7 @@ function ol_map() {
 
             let html = `<div class="row mt-10">`;
 
-            for (let i = 0; i < js.length; i++) {
+            for (let i = 0; i < js.datos_diarios.length; i++) {
 
                 if ((i != 0) && (i % 6 == 0)) {
 
@@ -399,26 +399,26 @@ function ol_map() {
 
                 }
 
-                let itemDate = js[i].fecha_dato.split(" ");
+                let itemDate = js.datos_diarios[i].fecha_dato.split(" ");
 
                 let fecha = itemDate[0];
                 let hora = itemDate[1].split(":");
                 hora = hora[0] + ":" + hora[1];
 
-                js[i].ultimo_dato = round(js[i].ultimo_dato, 2);
-                js[i].min_dato = round(js[i].min_dato, 2);
-                js[i].med_dato = round(js[i].med_dato, 2);
-                js[i].max_dato = round(js[i].max_dato, 2);
+                js.datos_diarios[i].ultimo_dato = round(js.datos_diarios[i].ultimo_dato, 2);
+                js.datos_diarios[i].min_dato = round(js.datos_diarios[i].min_dato, 2);
+                js.datos_diarios[i].med_dato = round(js.datos_diarios[i].med_dato, 2);
+                js.datos_diarios[i].max_dato = round(js.datos_diarios[i].max_dato, 2);
 
                 html += `<div class="col col-md-2 col-lg-2 p5">
                     <div class="indicador">
-                        <p class="title">${js[i].parametro_nombre}</p>
-                        <p class="value m0">${js[i].ultimo_dato}</p>
-                        <p class="text-default m0 mt-3">Min: ${js[i].min_dato}</p>
-                        <p class="text-default m0 mt-3">Med: ${js[i].med_dato}</p>
-                        <p class="text-default m0 mt-3">Max: ${js[i].max_dato}</p>
+                        <p class="title">${js.datos_diarios[i].parametro_nombre}</p>
+                        <p class="value m0">${js.datos_diarios[i].ultimo_dato}</p>
+                        <p class="text-default m0 mt-3">Min: ${js.datos_diarios[i].min_dato}</p>
+                        <p class="text-default m0 mt-3">Med: ${js.datos_diarios[i].med_dato}</p>
+                        <p class="text-default m0 mt-3">Max: ${js.datos_diarios[i].max_dato}</p>
                         <p class="date mt-10">
-                            <a href="javascript:void(0);" onclick="geomap.map.popupTab2_getGrafico(${js[i].parametro_id})";>
+                            <a href="javascript:void(0);" onclick="geomap.map.popupTab2_getGrafico(${js.datos_diarios[i].parametro_id})";>
                                 <img src="./images/indicador-ico.png">
                             </a>
                         </p>
@@ -429,6 +429,18 @@ function ol_map() {
                 `;
 
             }
+
+            js["DV"].ultimo_dato = round(js["DV"].ultimo_dato, 2);
+
+            html += `<div class="col col-md-2 col-lg-2 p5">
+                    <div class="indicador">
+                        <p class="title">Dirección del Viento</p>
+                        <p class="value m0">${js["DV"].ultimo_dato}</p>
+                        <p class="text-default m0 mt-3">Fecha Dato: ${js["DV"].fecha_dato}</p>
+                        <p class="text-default m0 mt-3">Moda: ${js["DV"].dv_moda}</p>
+                    </div>
+                </div>
+                `;
 
             html += "</div>";
 
@@ -1058,6 +1070,28 @@ function ol_map() {
             var js = JSON.parse(req.responseText);
 
             return js;
+
+        }
+
+        this.updateLayerFilters = function() {
+
+            let est_selected = [];
+
+            $(".filtro-estacion:checked").each(function(i, v) {
+                est_selected.push(this.value);
+            });
+
+            let ai_selected = [];
+
+            $(".filtro-area-interes:checked").each(function(i, v) {
+                ai_selected.push(this.value);
+            });
+
+            this.estaciones_layer.getSource().updateParams({
+
+                'view_params': 'tipo_estacion:' + est_selected.join(",") + ';area_interes:' + ai_selected.join(',')
+
+            });
 
         }
 
@@ -3859,14 +3893,24 @@ function ol_map() {
 
 function round(num, decimales) {
 
-    let tmp = num.split(".");
-    var tmpDec = "";
+    if (num != "") {
 
-    if (tmp[1]) {
-        tmpDec = tmp[1].substring(0, decimales);
+        let tmp = num.split(".");
+        var tmpDec = "";
+
+        if (tmp[1]) {
+            tmpDec = tmp[1].substring(0, decimales);
+        }
+
+        return tmp[0] + "." + tmpDec;
+
+    } else {
+
+        console.log("ROUND: Failed to round number");
+
+        return num;
+
     }
-
-    return tmp[0] + "." + tmpDec;
 
 }
 

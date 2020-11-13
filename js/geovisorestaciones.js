@@ -48,6 +48,16 @@ $(document).ready(function() {
 
     $(".roverlay").each(function(i, v) { $(v).Roverlay(); });
 
+    $(".filtro-estacion").each(function(i, v) {
+        this.checked = "";
+        this.checked = false;
+    });
+
+    $(".filtro-area-interes").each(function(i, v) {
+        this.checked = "";
+        this.checked = false;
+    });
+
     /*Highcharts.chart('chart-sample-1', {
 
         chart: {
