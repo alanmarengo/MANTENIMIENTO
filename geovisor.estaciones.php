@@ -69,8 +69,18 @@
 					<label>Estaciones hidroambientales</label>
 				</div>
 			</div>
-			
-			<br>
+
+			<hr class="m3">
+
+			<h3 class="card-title m0 mt-10">RED HIDROSEDIMENTOLÓGICA</h3>
+		
+			<div class="pretty p-icon p-curve" style="font-size:20px;">
+				<input type="checkbox" name="filtro-estacion-tipo-4" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
+				<div class="state">
+					<i class="icon mdi mdi-check"></i>
+					<label>Estaciones de aforos</label>
+				</div>
+			</div>
 
 		</div>
 
@@ -240,9 +250,9 @@
 			<div class="tabs mt-10">
 				<ul class="nav nav-tabs">
 					<li class="active"><a class="btn-tab show" data-toggle="tab" id="tab-aforo-ha-1" href="#panel-aforo-ha-1" aria-expanded="true">Descripción</a></li>
-					<li><a class="btn-tab" data-toggle="tab" id="tab-aforo-ha-2" href="#panel-aforo-ha-2" aria-expanded="true">Registro Diario</a></li>
+					<li><a class="btn-tab" data-toggle="tab" id="tab-aforo-ha-2" href="#panel-aforo-ha-2" aria-expanded="true">Datos Campaña</a></li>
 					<li><a class="btn-tab" data-toggle="tab" id="tab-aforo-ha-3" href="#panel-aforo-ha-3" aria-expanded="true">Consultar Datos</a></li>
-					<li><a class="btn-tab" data-toggle="tab" id="tab-aforo-ha-4" href="#panel-aforo-ha-4" aria-expanded="true">Registro Mensual y Anual</a></li>
+					<li><a class="btn-tab" data-toggle="tab" id="tab-aforo-ha-4" href="#panel-aforo-ha-4" aria-expanded="true">Curva H+Q</a></li>
 				</ul>
 			</div>			
 			<div class="tab-content mt-20" id="popup-aforo-tab-content">

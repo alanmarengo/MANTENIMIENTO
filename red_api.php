@@ -58,7 +58,7 @@ switch ($mode)
 		aforo_get_campañas();
 		break;
 	case 6:
-		//http://observ.net/red_api.php?estacion_id=14&cod_temp=1810&mode=6
+		//http://observ.net/red_api.php?git
 		aforo_get_solapa_datos_campaña($estacion_id,$cod_temp);
 		break;
 	case 7:
