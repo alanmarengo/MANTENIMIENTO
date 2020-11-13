@@ -315,33 +315,40 @@ function getData() {
 
 }
 
-function getEstacionesSeleccionadas() {
+function getDataCsv() {
 
-    let selected = [];
+    let lista_estaciones = getEstacionesSeleccionadas();
+    let url = apiUrl + "?lista_estaciones=" + lista_estaciones.join(",") + "&parametro_id=" + $("#combo-parametros-redes").val() + "&fd=" + $("#tab-redes-fdesde").val() + "&fh=" + $("#tab-redes-fhasta").val() + "&mode=15";
+    let js = this.requestApi(url);
 
-    $("#estaciones-lista-seleccionadas").children(".switcher-item").each(function(i, v) {
 
-        selected.push($(this).attr("data-estacion-id"));
+    function getEstacionesSeleccionadas() {
 
-    });
+        let selected = [];
 
-    return selected;
+        $("#estaciones-lista-seleccionadas").children(".switcher-item").each(function(i, v) {
 
-}
+            selected.push($(this).attr("data-estacion-id"));
 
-function requestApi(url) {
+        });
 
-    var req = $.ajax({
+        return selected;
 
-        async: false,
-        url: url,
-        type: "GET",
-        success: function(d) {}
+    }
 
-    });
+    function requestApi(url) {
 
-    var js = JSON.parse(req.responseText);
+        var req = $.ajax({
 
-    return js;
+            async: false,
+            url: url,
+            type: "GET",
+            success: function(d) {}
 
-}
+        });
+
+        var js = JSON.parse(req.responseText);
+
+        return js;
+
+    }
