@@ -70,7 +70,9 @@
 				</div>
 			</div>
 
-			<h3 class="card-title">RED HIDROSEDIMENTOLÓGICA</h3>
+			<hr>
+
+			<h3 class="card-title mt-10">RED HIDROSEDIMENTOLÓGICA</h3>
 		
 			<div class="pretty p-icon p-curve" style="font-size:20px;">
 				<input type="checkbox" name="filtro-estacion-tipo-4" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
