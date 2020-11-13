@@ -412,7 +412,7 @@ function ol_map() {
 
                 html += `<div class="col col-md-2 col-lg-2 p5">
                     <div class="indicador">
-                        <p class="title">${js.datos_diarios[i].parametro_nombre}</p>
+                        <p class="title">Dirección del Viento</p>
                         <p class="value m0">${js.datos_diarios[i].ultimo_dato}</p>
                         <p class="text-default m0 mt-3">Min: ${js.datos_diarios[i].min_dato}</p>
                         <p class="text-default m0 mt-3">Med: ${js.datos_diarios[i].med_dato}</p>
