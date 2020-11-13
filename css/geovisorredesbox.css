@@ -62,7 +62,7 @@ body {
     text-align: center;
 }
 
-#popup {
+.container {
     border: 2px solid #CCCCCC;
     background: white;
     padding: 20px;
@@ -77,47 +77,47 @@ body {
     display: none;
 }
 
-#popup-inner {
+.container-inner {
     width: 100%;
 }
 
-#popup-tab-content {
+.container-tab-content {
     overflow-x: hidden;
     overflow-y: auto;
 }
 
-#popup .header {
+.container .header {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-#popup .header a {
+.container .header a {
     font-size: 14px !Important;
     color: #343a40;
     font-weight: 600;
 }
 
-#popup .header .title {
+.container .header .title {
     font-size: 14px;
     color: #343a40;
     font-weight: 600;
     text-transform: uppercase;
 }
 
-#popup .nav-tabs li {
+.container .nav-tabs li {
     margin-left: 10px;
 }
 
-#popup .nav-tabs li .show {
+.container .nav-tabs li .show {
     background-color: #8d3050;
 }
 
-#popup .nav-tabs .li:first-child {
+.container .nav-tabs .li:first-child {
     margin-left: 0px !Important;
 }
 
-#popup .nav-tabs .btn-tab {
+.container .nav-tabs .btn-tab {
     color: #FFFFFF !Important;
     font-family: "Montserrat", sans-serif !Important;
     font-size: 12px !Important;
@@ -136,22 +136,22 @@ body {
     border-top-right-radius: 3px;
 }
 
-#popup .nav-tabs .btn-tab:hover {
+.container .nav-tabs .btn-tab:hover {
     opacity: 0.7;
 }
 
-#popup .categories {
+.container .categories {
     /*justify-content: space-between;*/
     display: flex;
     padding: 0 7px;
 }
 
-#popup .category {
+.container .category {
     display: inline-flex;
     margin-right: 12px;
 }
 
-#popup .category label {
+.container .category label {
     display: inline-flex;
     color: #8d3050;
     font-weight: 600;
@@ -160,7 +160,7 @@ body {
     text-transform: uppercase;
 }
 
-#popup .btn-1 {
+.container .btn-1 {
     color: #FFFFFF !Important;
     font-family: "Montserrat", sans-serif !Important;
     font-size: 10px !Important;
@@ -171,7 +171,7 @@ body {
     border-radius: 3px;
 }
 
-#popup .btn-2 {
+.container .btn-2 {
     color: #FFFFFF !Important;
     font-family: "Montserrat", sans-serif !Important;
     font-size: 10px !Important;
@@ -184,24 +184,24 @@ body {
     text-align: center;
 }
 
-#popup .btn-1:hover,
-#popup .btn-2:hover {
+.container .btn-1:hover,
+.container .btn-2:hover {
     opacity: 0.7;
 }
 
-#popup .popup-label {
+.container .popup-label {
     font-size: 12px !Important;
     color: #8d3050;
     font-weight: 600;
 }
 
-#popup .popup-value {
+.container .popup-value {
     font-size: 12px !Important;
     color: #343a40;
     font-weight: 600;
 }
 
-#popup .indicador {
+.container .indicador {
     background: #efefef;
     padding: 20px;
     border-radius: 3px;
@@ -211,26 +211,26 @@ body {
     height: 100%;
 }
 
-#popup .indicador .title {
+.container .indicador .title {
     font-size: 10px;
     color: #8d3050;
     font-weight: 700;
     margin-bottom: 7px;
 }
 
-#popup .indicador .value {
+.container .indicador .value {
     font-size: 16px;
     color: #343a40;
     font-weight: bold;
 }
 
-#popup .indicador .text-default {
+.container .indicador .text-default {
     font-size: 12px;
     color: #343a40;
     font-weight: 700;
 }
 
-#popup .indicador .date {
+.container .indicador .date {
     font-size: 12px;
     color: #343a40;
     font-weight: 700;
@@ -238,14 +238,14 @@ body {
     text-align: center;
 }
 
-#popup .form-group {
+.container .form-group {
     display: flex;
     flex-direction: column;
     border: none !important;
     position: relative;
 }
 
-#popup .form-group label {
+.container .form-group label {
     display: flex;
     flex-direction: column;
     border: none !important;
@@ -254,33 +254,33 @@ body {
     font-weight: 700;
 }
 
-#popup .form-group input[type=text] {
+.container .form-group input[type=text] {
     border: 1px solid #efefef;
     padding: 5px 20px;
 }
 
-#popup .form-group select {
+.container .form-group select {
     border: 1px solid #efefef;
     padding: 5px 20px;
 }
 
-#popup .form-group i {
+.container .form-group i {
     position: absolute;
     bottom: 12px;
     z-index: 99999;
     right: 15px;
 }
 
-#popup .indicador.mini {
+.container .indicador.mini {
     align-items: center;
     height: auto;
 }
 
-#popup .indicador.mini .value {
+.container .indicador.mini .value {
     margin: 0;
 }
 
-#popup .nav-tabs.type2 {
+.container .nav-tabs.type2 {
     border-bottom: none;
 }
 
