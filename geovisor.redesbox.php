@@ -87,7 +87,7 @@
 				
 				<div class="form-group form-group-header">
 					<label>Tabla de valores:</label>
-					<a href="javascript:void(0);">Ver datos completos</a>
+					<a href="javascript:void(0);" class="linkaux">Ver datos completos</a>
 				</div>
 						
 			</div>

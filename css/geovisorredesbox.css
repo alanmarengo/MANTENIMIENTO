@@ -367,6 +367,14 @@ body {
     justify-content: space-between;
 }
 
+#est-tabla-inner .form-group-header label {
+    display: inline-flex;
+}
+
+#est-tabla-inner .form-group-header .linkaux {
+    display: inline-flex;
+}
+
 #est-tabla-inner .cell {
     font-size: 12px;
     color: black;
