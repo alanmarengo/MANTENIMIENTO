@@ -81,6 +81,42 @@
 
 		</div>
 
+		<div class="row est-tabla" id="est-tabla-inner">
+
+			<div class="row row-header">
+
+				<div class="col-md-3 col-lg-3">
+					<div class="column">
+						<div class="column header">ESTACIONES</div>
+						<div id="estaciones-lista"></div>				
+					</div>
+				</div>
+
+				<div class="col-md-3 col-lg-3">
+					<div class="column">
+						<div class="column header">SELECCIONADAS</div>
+						<div id="estaciones-lista-seleccionadas"></div>
+					</div>
+				</div>
+
+				<div class="col-md-3 col-lg-3">
+					<div class="column">
+						<div class="column header">SELECCIONADAS</div>
+						<div id="estaciones-lista-seleccionadas"></div>
+					</div>
+				</div>
+
+				<div class="col-md-3 col-lg-3">
+					<div class="column">
+						<div class="column header">SELECCIONADAS</div>
+						<div id="estaciones-lista-seleccionadas"></div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
 	</div>
 
 </body>
