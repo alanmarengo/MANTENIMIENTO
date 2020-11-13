@@ -152,7 +152,7 @@ body {
     border-radius: 3px;
 }
 
-.container .btn-2 {
+.btn-2 {
     color: #FFFFFF !Important;
     font-family: "Montserrat", sans-serif !Important;
     font-size: 10px !Important;
@@ -166,7 +166,7 @@ body {
 }
 
 .container .btn-1:hover,
-.container .btn-2:hover {
+.btn-2:hover {
     opacity: 0.7;
 }
 
