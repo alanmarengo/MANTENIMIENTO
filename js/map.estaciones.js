@@ -1026,11 +1026,11 @@ function ol_map() {
             let html = `
                 <div class="row">
                     <div class="col-md-4 col-lg-4">
-                        <div class="indicador white mini">
+                        <div class="indicador white mini left">
                             <p class="title">CERO DE ESCALA</p>
                             <p class="value">${js.cero_escala} ${js.cero_escala_unidad}</p>
                         </div>                    
-                        <div class="indicador white mini">
+                        <div class="indicador white mini left">
                             <p class="title">EXPRESIÓN H+Q PARA LA SECCIÓN</p>
                             <p class="value">
                                 <img src="${js.q_path}">
