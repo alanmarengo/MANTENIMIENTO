@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+    apiUrl = "http://observatorio.atic.com.ar/red_api.php";
+    apiGraficosUrl = "http://observatorio.atic.com.ar/graficos_red/get_graficos.php";
+
     updateDatepicker();
 
     currentTab = 1;
@@ -47,7 +50,7 @@ function updateDatepicker() {
 
 function getEstaciones() {
 
-    let url = this.apiUrl + "?tipo_estaciones=" + (currentTab - 1) + "&mode=10";
+    let url = apiUrl + "?tipo_estaciones=" + (currentTab - 1) + "&mode=10";
     let js = this.requestApi(url);
 
     $("#estaciones-lista").empty();
