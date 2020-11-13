@@ -862,9 +862,11 @@ function get_parametro_datos_csv($lista_estaciones,$parametro_id,$fd,$fh)
 	$query_string   .= " FROM mod_sensores.get_parametro_datos('$lista_estaciones'::text,$parametro_id::bigint,'$fd'::timestamp with time zone,'$fh'::timestamp with time zone) ";
 	$query_string   .= " ORDER BY estacion_nombre ASC;";
 	
+	$json = "{\"q\":\"$query_string\"}";
+
+	echo $json;
+
 	pg_close($conn);
-	
-	return $query_string;
 	
 };
 
