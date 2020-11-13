@@ -83,42 +83,7 @@
 
 		<div class="row est-tabla m0 mt-20" id="est-tabla-inner">
 			
-			<div class="row row-main">
-				
-				<div class="form-group form-group-header">
-					<label>Tabla de valores:</label>
-					<a href="javascript:void(0);" class="linkaux">Ver datos completos</a>
-				</div>
-						
-			</div>
-
-			<div class="row row-header">
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell header">Estaciones</div>		
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell header">Valor Mínimo</div>
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell header">Valor Máximo</div>
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell header">Promedio</div>
-					</div>
-				</div>
-
-			</div>
+			
 
 		</div>
 		

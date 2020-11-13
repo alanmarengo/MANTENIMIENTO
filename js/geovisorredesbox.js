@@ -129,11 +129,50 @@ function getData() {
     let url = apiUrl + "?lista_estaciones=" + lista_estaciones.join(",") + "&parametro_id=" + $("#combo-parametros-redes").val() + "&fd=" + $("#tab-redes-fdesde").val() + "&fh=" + $("#tab-redes-fhasta").val() + "&mode=11";
     let js = this.requestApi(url);
 
-    $("#est-tabla-inner").find(".row").not(".row-main").not(".row-header").remove();
+    $("#est-tabla-inner").empty();
+
+    let html = `
+        <div class="row">
+				
+            <div class="form-group form-group-header">
+                <label>Tabla de valores:</label>
+                <a href="javascript:void(0);" class="linkaux">Ver datos completos</a>
+            </div>
+                    
+        </div>
+
+        <div class="row row-header">
+
+            <div class="col-md-3 col-lg-3">
+                <div class="column">
+                    <div class="cell header">Estaciones</div>		
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3">
+                <div class="column">
+                    <div class="cell header">Valor Mínimo</div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3">
+                <div class="column">
+                    <div class="cell header">Valor Máximo</div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3">
+                <div class="column">
+                    <div class="cell header">Promedio</div>
+                </div>
+            </div>
+
+        </div>
+    `;
 
     for (let i = 0; i < js.length; i++) {
 
-        let html = `
+        html += `
             <div class="row" data-row-estacion-id="${js.estacion_id}">
 
                 <div class="col-md-3 col-lg-3">
@@ -164,6 +203,8 @@ function getData() {
         `;
 
     }
+
+    $("#est-tabla-inner").html(html);
 
 }
 
