@@ -145,6 +145,10 @@
     width: 100%;
 }
 
+#popup-aforo .indicador.white {
+    background: #ffffff;
+}
+
 #popup-aforo .indicador .title {
     font-size: 10px;
     color: #8d3050;
