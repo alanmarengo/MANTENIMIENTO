@@ -284,7 +284,7 @@ function getData() {
         },
 
         xAxis: {
-            categories: [xaxis]
+            categories: xaxis
         },
 
         yAxis: {
