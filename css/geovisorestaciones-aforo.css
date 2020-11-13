@@ -147,6 +147,7 @@
 
 #popup-aforo .indicador.white {
     background: #ffffff;
+    align-items: left !important;
 }
 
 #popup-aforo .indicador .title {
