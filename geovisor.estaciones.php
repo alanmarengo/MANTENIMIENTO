@@ -70,7 +70,7 @@
 				</div>
 			</div>
 
-			<hr>
+			<hr class="m3">
 
 			<h3 class="card-title m0">RED HIDROSEDIMENTOLÓGICA</h3>
 		
