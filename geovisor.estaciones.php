@@ -240,9 +240,9 @@
 			<div class="tabs mt-10">
 				<ul class="nav nav-tabs">
 					<li class="active"><a class="btn-tab show" data-toggle="tab" id="tab-aforo-ha-1" href="#panel-aforo-ha-1" aria-expanded="true">Descripción</a></li>
-					<li><a class="btn-tab" data-toggle="tab" id="tab-aforo-ha-2" href="#panel-aforo-ha-2" aria-expanded="true">Registro Diario</a></li>
+					<li><a class="btn-tab" data-toggle="tab" id="tab-aforo-ha-2" href="#panel-aforo-ha-2" aria-expanded="true">Datos Campaña</a></li>
 					<li><a class="btn-tab" data-toggle="tab" id="tab-aforo-ha-3" href="#panel-aforo-ha-3" aria-expanded="true">Consultar Datos</a></li>
-					<li><a class="btn-tab" data-toggle="tab" id="tab-aforo-ha-4" href="#panel-aforo-ha-4" aria-expanded="true">Registro Mensual y Anual</a></li>
+					<li><a class="btn-tab" data-toggle="tab" id="tab-aforo-ha-4" href="#panel-aforo-ha-4" aria-expanded="true">Curva H+Q</a></li>
 				</ul>
 			</div>			
 			<div class="tab-content mt-20" id="popup-aforo-tab-content">
