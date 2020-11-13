@@ -120,6 +120,36 @@
 
 			</div>
 
+			
+
+			<div class="row">
+
+				<div class="col-md-3 col-lg-3">
+					<div class="column">
+						<div class="cell">-</div>		
+					</div>
+				</div>
+
+				<div class="col-md-3 col-lg-3">
+					<div class="column">
+						<div class="cell">-</div>
+					</div>
+				</div>
+
+				<div class="col-md-3 col-lg-3">
+					<div class="column">
+						<div class="cell">-</div>
+					</div>
+				</div>
+
+				<div class="col-md-3 col-lg-3">
+					<div class="column">
+						<div class="cell">-</div>
+					</div>
+				</div>
+
+			</div>
+
 		</div>
 
 	</div>
