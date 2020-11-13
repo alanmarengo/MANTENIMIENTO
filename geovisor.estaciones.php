@@ -69,8 +69,16 @@
 					<label>Estaciones hidroambientales</label>
 				</div>
 			</div>
-			
-			<br>
+
+			<h3 class="card-title">RED HIDROSEDIMENTOLÓGICA</h3>
+		
+			<div class="pretty p-icon p-curve" style="font-size:20px;">
+				<input type="checkbox" name="filtro-estacion-tipo-4" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.bing_aerials);">
+				<div class="state">
+					<i class="icon mdi mdi-check"></i>
+					<label>Estaciones de aforos</label>
+				</div>
+			</div>
 
 		</div>
 
