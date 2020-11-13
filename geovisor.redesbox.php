@@ -81,7 +81,7 @@
 
 		</div>
 
-		<div class="row est-tabla mt-20" id="est-tabla-inner">
+		<div class="row est-tabla m0 mt-20" id="est-tabla-inner">
 			
 			<div class="row">
 				
