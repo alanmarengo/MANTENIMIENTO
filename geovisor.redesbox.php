@@ -82,33 +82,42 @@
 		</div>
 
 		<div class="row est-tabla" id="est-tabla-inner">
+			
+			<div class="row mt-20">
+				
+				<div class="form-group form-group-header">
+					<label>Tabla de valores:</label>
+					<a href="javascript:void(0);">Ver datos completos</a>
+				</div>
+						
+			</div>
 
 			<div class="row row-header">
 
 				<div class="col-md-3 col-lg-3">
 					<div class="column">
-						<div class="column header">ESTACIONES</div>
+						<div class="cell header">ESTACIONES</div>
 						<div id="estaciones-lista"></div>				
 					</div>
 				</div>
 
 				<div class="col-md-3 col-lg-3">
 					<div class="column">
-						<div class="column header">SELECCIONADAS</div>
+						<div class="cell header">SELECCIONADAS</div>
 						<div id="estaciones-lista-seleccionadas"></div>
 					</div>
 				</div>
 
 				<div class="col-md-3 col-lg-3">
 					<div class="column">
-						<div class="column header">SELECCIONADAS</div>
+						<div class="cell header">SELECCIONADAS</div>
 						<div id="estaciones-lista-seleccionadas"></div>
 					</div>
 				</div>
 
 				<div class="col-md-3 col-lg-3">
 					<div class="column">
-						<div class="column header">SELECCIONADAS</div>
+						<div class="cell header">SELECCIONADAS</div>
 						<div id="estaciones-lista-seleccionadas"></div>
 					</div>
 				</div>
