@@ -27,12 +27,12 @@
 		<p class="title">REGISTRO ESTADÍSTICO Y GRÁFICO DE LA RED DE MONITOREO HÍDRICO DE LA CUENCA DEL RÍO SANTA CRUZ</p>		
 
 		<ul class="nav nav-tabs type2">
-			<li class="active"><a class="btn-tab active show" data-toggle="tab" id="tab-aforo-ha4-1" href="#panel-aforo-ha4-1" aria-expanded="true">VALORES MEDIOS MENSUALES</a></li>
-			<li class="m0"><a class="btn-tab" data-toggle="tab" id="tab-aforo-ha4-2" href="#panel-aforo-ha4-2" aria-expanded="true">VALORES MEDIOS ANUALES</a></li>
+			<li class="active"><a class="btn-tab active show" data-toggle="tab" id="tab-redes-1" href="#panel-redes-1" aria-expanded="true">MONITOREO HIDROAMBIENTAL</a></li>
+			<li class="m0"><a class="btn-tab" data-toggle="tab" id="tab-redes-2" href="#panel-redes-2" aria-expanded="true">MONITOREO HIDROSEDIMENTOLÓGICO</a></li>
 		</ul>
 		
-		<div class="tab-content p20" id="popup-aforo-tab-content-ha4">
-			<div id="panel-aforo-ha4-1" class="tab-pane fade in active show">
+		<div class="tab-content p20" id="popup-redes-tab-content">
+			<div id="panel-redes-1" class="tab-pane fade in active show">
 				<ul class="ico-list">
 					<?php for($i=0; $i<8; $i++) { ?>
 					<li>
@@ -42,7 +42,7 @@
 					<?php } ?>
 				</ul>
 			</div>
-			<div id="panel-aforo-ha4-2" class="tab-pane fade in">
+			<div id="panel-redes-2" class="tab-pane fade in">
 				<ul class="ico-list">
 					<?php for($i=0; $i<8; $i++) { ?>
 					<li>
@@ -53,7 +53,7 @@
 				</ul>
 			</div>
 		</div>
-		
+
 	</div>
 
 </body>
