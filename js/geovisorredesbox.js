@@ -14,6 +14,8 @@ $(document).ready(function() {
 
     });
 
+    getEstaciones();
+
 });
 
 function updateDatepicker() {
