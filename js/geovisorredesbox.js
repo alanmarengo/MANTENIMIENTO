@@ -13,7 +13,7 @@ $(document).ready(function() {
         getEstaciones();
 
     });
-    alert("dr");
+
     getEstaciones();
 
 });
@@ -47,6 +47,7 @@ function updateDatepicker() {
 
 function getEstaciones() {
 
+    alert("getest");
     let url = this.apiUrl + "?tipo_estaciones=" + (currentTab - 1) + "&mode=10";
     let js = this.requestApi(url)[0];
 
