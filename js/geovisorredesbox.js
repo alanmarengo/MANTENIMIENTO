@@ -328,7 +328,7 @@ function getDataCsv() {
             fd: $("#tab-redes-fdesde").val(),
             fh: $("#tab-redes-fhasta").val()
         },
-        type: "POST",
+        type: "GET",
         success: function(d) {}
     });
 
