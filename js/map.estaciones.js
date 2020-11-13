@@ -1029,9 +1029,15 @@ function ol_map() {
                         <div class="indicador white mini text-left">
                             <p class="title">CERO DE ESCALA</p>
                             <p class="value">${js.cero_escala} ${js.cero_escala_unidad}</p>
+                        </div>                    
+                        <div class="indicador white mini text-left">
+                            <p class="title">EXPRESIÓN H+Q PARA LA SECCIÓN</p>
+                            <p class="value">
+                                <img src="${js.q_path}">
+                            </p>
                         </div>              
-                    </div>
 
+                    </div>
                 </div>
             `;
 
