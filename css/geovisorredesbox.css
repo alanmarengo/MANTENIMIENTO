@@ -369,10 +369,12 @@ body {
 
 #est-tabla-inner .form-group-header label {
     display: inline-flex;
+    width: 150px;
 }
 
 #est-tabla-inner .form-group-header .linkaux {
     display: inline-flex;
+    width: 150px;
 }
 
 #est-tabla-inner .col-md-3 {
