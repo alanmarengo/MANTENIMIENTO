@@ -61,9 +61,9 @@ function getEstaciones() {
                 <div class="switcher-item">${js[i].estacion_nombre}</div>
             </div>
         `;
-    }
 
-    $("#estaciones-lista").append(item);
+        $("#estaciones-lista").append(item);
+    }
 
 }
 
