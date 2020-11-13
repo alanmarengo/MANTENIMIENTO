@@ -132,6 +132,7 @@
         '.'; // SERVER
 
     echo "var GlobalApiUrl = '$api_url';";
+    //echo "var GlobalApiUrl = '.';";
 ?>
 
 

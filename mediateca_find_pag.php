@@ -3,6 +3,13 @@
 header('Content-Type: application/json');
 
 include("./pgconfig.php");
+include("./login.php");
+
+if ((isset($_SESSION)) && (sizeof($_SESSION) > 0))
+{
+	$perfil_id = $_SESSION["user_info"]["perfil_usuario_id"];
+}else $perfil_id = -1; /* usuario publico, no hay perfil */
+
 
 /*
  * s=condor&o=0&ds=19%2F06%2F2019&de=18%2F06%2F2019&proyecto=1&documento=1%2C3&tema=5&subtema=37
@@ -116,6 +123,8 @@ function getSQL($solapa) {
 	global $ra;
 	global $ORDER;
 	global $SUBQUERY;
+	
+	global $perfil_id;
 
 	$SQL = "";
 
@@ -138,9 +147,9 @@ function getSQL($solapa) {
 					. "COALESCE(subclase_desc,'') AS Tema,"
 					. "mod_catalogo.get_ico(origen_id,origen_id_especifico) AS ico"
 					. " FROM mod_mediateca.mediateca_find('$qt','$desde','$hasta','$proyecto','$clase','$subclase','$tipo_doc') "
-					. " WHERE tipo_formato_solapa=$solapa " 
+					. " WHERE tipo_formato_solapa=$solapa AND mod_login.check_permisos(origen_id, origen_id_especifico, $perfil_id) " 
 					//. " GROUP BY mod_catalogo.get_ico(origen_id,origen_id_especifico),recurso_fecha,COALESCE(subclase_desc,''),tipo_formato_solapa,origen_id,origen_id_especifico,recurso_titulo,recurso_desc,recurso_path_url,recurso_categoria_desc,CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END"
-					. $ORDER;
+					. $ORDER; 
 	
 		$SQL = "SELECT row_to_json(T)::text AS r FROM ($SUBQUERY)T";
 		
@@ -164,7 +173,7 @@ function getSQL($solapa) {
 							. "mod_catalogo.get_ico(origen_id,origen_id_especifico) AS ico"
 							. " FROM mod_catalogo.vw_catalogo_data C WHERE "
 							. " (C.estudios_id IN(SELECT sub_estudio_id FROM mod_catalogo.estudio_subestudio WHERE estudios_id=$estudio_id) "
-							. " OR C.estudios_id=$estudio_id)  AND  tipo_formato_solapa=$solapa " /* Tambíen incluye el mismo estudio */ 
+							. " OR C.estudios_id=$estudio_id)  AND  tipo_formato_solapa=$solapa AND mod_login.check_permisos(origen_id, origen_id_especifico, $perfil_id) " /* Tambíen incluye el mismo estudio */ 
 							. $ORDER;
 				
 				$SQL = "SELECT row_to_json(T)::text AS r FROM ($SUBQUERY)T";
@@ -184,7 +193,7 @@ function getSQL($solapa) {
 							. "recurso_fecha AS Fecha,"
 							. "COALESCE(subclase_desc,'') AS Tema, "
 							. "mod_catalogo.get_ico(origen_id,origen_id_especifico) AS ico"
-							. " FROM mod_catalogo.vw_catalogo_data C WHERE estudios_id=$estudio_id AND tipo_formato_solapa=$solapa "
+							. " FROM mod_catalogo.vw_catalogo_data C WHERE estudios_id=$estudio_id AND tipo_formato_solapa=$solapa AND mod_login.check_permisos(origen_id, origen_id_especifico, $perfil_id) "
 							. $ORDER;
 				
 			   $SQL = "SELECT row_to_json(T)::text AS r FROM ($SUBQUERY)T";
@@ -212,7 +221,7 @@ function getSQL($solapa) {
 							. "mod_catalogo.get_ico(origen_id,origen_id_especifico) AS ico"
 							. " FROM mod_mediateca.mediateca_find('$qt','$desde','$hasta','$proyecto','$clase','$subclase','$tipo_doc') C WHERE "
 							. " (C.estudios_id IN(SELECT sub_estudio_id FROM mod_catalogo.estudio_subestudio WHERE estudios_id=$mode_id) "
-							. " OR C.estudios_id=$mode_id)  AND  tipo_formato_solapa=$solapa " /* Tambíen incluye el mismo estudio */ 
+							. " OR C.estudios_id=$mode_id)  AND  tipo_formato_solapa=$solapa AND mod_login.check_permisos(origen_id, origen_id_especifico, $perfil_id) " /* Tambíen incluye el mismo estudio */ 
 							. $ORDER;
 				
 							$SQL = "SELECT row_to_json(T)::text AS r FROM ($SUBQUERY)T";
@@ -234,7 +243,7 @@ function getSQL($solapa) {
 							. "recurso_fecha AS Fecha,"
 							. "COALESCE(subclase_desc,'') AS Tema, "
 							. "mod_catalogo.get_ico(origen_id,origen_id_especifico) AS ico"
-							. " FROM mod_mediateca.mediateca_find('$qt','$desde','$hasta','$proyecto','$clase','$subclase','$tipo_doc') C WHERE estudios_id=$mode_id AND tipo_formato_solapa=$solapa "
+							. " FROM mod_mediateca.mediateca_find('$qt','$desde','$hasta','$proyecto','$clase','$subclase','$tipo_doc') C WHERE estudios_id=$mode_id AND tipo_formato_solapa=$solapa AND mod_login.check_permisos(origen_id, origen_id_especifico, $perfil_id) "
 							. $ORDER;
 				
 							$SQL = "SELECT row_to_json(T)::text AS r FROM ($SUBQUERY)T";
@@ -260,7 +269,7 @@ function getSQL($solapa) {
 					. "mod_catalogo.get_ico(origen_id,origen_id_especifico) AS ico"
 					. " FROM mod_mediateca.mediateca_find('$qt','$desde','$hasta','$proyecto','$clase','$subclase','$tipo_doc') C "
 					. " WHERE estudios_id IN(SELECT CTA.estudios_id FROM mod_geovisores.catalogo CTA WHERE CTA.origen_id_especifico=$mode_id) " 
-					. " AND tipo_formato_solapa=$solapa ". $ORDER;
+					. " AND tipo_formato_solapa=$solapa AND mod_login.check_permisos(origen_id, origen_id_especifico, $perfil_id) ". $ORDER;
 				
 					$SQL = "SELECT row_to_json(T)::text AS r FROM ($SUBQUERY)T";
 							
