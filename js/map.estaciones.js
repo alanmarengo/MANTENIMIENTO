@@ -867,7 +867,7 @@ function ol_map() {
 
         this.popupTabAforo3 = function() {
 
-            let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&mode=3";
+            let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&mode=9";
             let js = this.requestApi(url);
 
             let html = `
@@ -958,7 +958,7 @@ function ol_map() {
             let fd = $("#tab3-fdesde-aforo").val();
             let fh = $("#tab3-fhasta-aforo").val();
 
-            let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&&parametro_id=" + this.current_aforo_parametro_id + "&fd=" + fd + "&fh=" + fh + "&mode=4";
+            let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&&parametro_id=" + this.current_aforo_parametro_id + "&fd=" + fd + "&fh=" + fh + "&mode=8";
             let js = this.requestApi(url);
 
             let minval = round(js[0].min_dato, 2);
