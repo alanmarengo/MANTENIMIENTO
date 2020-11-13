@@ -1,5 +1,15 @@
 <?php
 
+include("./login.php");
+
+if ((isset($_SESSION)) && (sizeof($_SESSION) > 0))
+{
+	$perfil_id = $_SESSION["user_info"]["perfil_usuario_id"];
+}else $perfil_id = -1; /* usuario publico, no hay perfil */
+
+
+
+
 function DrawAbrStats() {
 	
 	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
@@ -53,13 +63,15 @@ function DrawContainersStats() {
 	
 }
 
-function DrawDatasets($clase_id) {			
+function DrawDatasets($clase_id) {	
+	
+	global $perfil_id;		
 
 	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 	
 	$conn = pg_connect($string_conn);
 	
-	$query_string = "SELECT DISTINCT * FROM mod_estadistica.vw_dt WHERE clase_id = " . $clase_id . " ORDER BY dt_titulo ASC";
+	$query_string = "SELECT DISTINCT * FROM mod_estadistica.vw_dt WHERE clase_id = " . $clase_id . "  AND mod_login.check_permisos(2, dt_id, $perfil_id) ORDER BY dt_titulo ASC";
 	
 	$query = pg_query($conn,$query_string);
 	
