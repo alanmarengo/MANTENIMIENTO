@@ -396,3 +396,7 @@ body {
 #est-tabla-inner .cell.header {
     color: #8d3050;
 }
+
+#est-chart-inner {
+    background-color: #FFFFFF;
+}
