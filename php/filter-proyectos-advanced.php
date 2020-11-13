@@ -2,6 +2,14 @@
 
 include("../pgconfig.php");
 
+include("../login.php");
+
+if ((isset($_SESSION)) && (sizeof($_SESSION) > 0))
+{
+	$perfil_id = $_SESSION["user_info"]["perfil_usuario_id"];
+}else $perfil_id = -1; /* usuario publico, no hay perfil */
+
+
 $param = array();
 
 $param["busqueda"] = "";
@@ -46,7 +54,7 @@ if ($param["geovisor"] != -1) {
 	$get_layers_query_string .= "'".$param["responsable"]."',";
 	$get_layers_query_string .= "".$param["esia_id"].",";
 	$get_layers_query_string .= "".$param["objeto_id"]."";
-	$get_layers_query_string .= ") WHERE layer_id IN(SELECT layer_id FROM mod_geovisores.geovisor_capa_inicial WHERE geovisor_id = " . $param["geovisor"] . ");";
+	$get_layers_query_string .= ") WHERE layer_id IN(SELECT layer_id FROM mod_geovisores.geovisor_capa_inicial WHERE geovisor_id = " . $param["geovisor"] . ")   AND mod_login.check_permisos(0, layer_id, $perfil_id) ;";
 
 }else{
 	
@@ -61,7 +69,7 @@ if ($param["geovisor"] != -1) {
 	$get_layers_query_string .= "'".$param["responsable"]."',";
 	$get_layers_query_string .= "".$param["esia_id"].",";
 	$get_layers_query_string .= "".$param["objeto_id"]."";
-	$get_layers_query_string .= ");";
+	$get_layers_query_string .= ") WHERE mod_login.check_permisos(0, layer_id, $perfil_id) ;";
 
 	
 }

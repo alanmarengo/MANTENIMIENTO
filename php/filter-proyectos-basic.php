@@ -2,6 +2,13 @@
 
 include("../pgconfig.php");
 
+include("../login.php");
+
+if ((isset($_SESSION)) && (sizeof($_SESSION) > 0))
+{
+	$perfil_id = $_SESSION["user_info"]["perfil_usuario_id"];
+}else $perfil_id = -1; /* usuario publico, no hay perfil */
+
 $proyectos = $_POST["proyectos"];
 $geovisor = $_POST["geovisor"];
 
@@ -13,12 +20,11 @@ if (isset($proyectos)>0) {
 	
 	if ($geovisor != -1) {
 	
-		$get_layers_query_string = "SELECT string_agg(layer_id::text, ', ') AS layer_ids FROM mod_geovisores.layers_find('','','','".implode(",",$proyectos)."',-1,-1,-1,'',-1,-1) WHERE layer_id IN(SELECT layer_id FROM mod_geovisores.geovisor_capa_inicial WHERE geovisor_id = " . $geovisor . ");";
-	
+		$get_layers_query_string = "SELECT string_agg(layer_id::text, ', ') AS layer_ids FROM mod_geovisores.layers_find('','','','".implode(",",$proyectos)."',-1,-1,-1,'',-1,-1) WHERE layer_id IN(SELECT layer_id FROM mod_geovisores.geovisor_capa_inicial WHERE geovisor_id = " . $geovisor . ")   AND mod_login.check_permisos(0, layer_id, $perfil_id) ;";
+		
 	}else{
 		
-		$get_layers_query_string = "SELECT string_agg(layer_id::text, ', ') AS layer_ids FROM mod_geovisores.layers_find('','','','".implode(",",$proyectos)."',-1,-1,-1,'',-1,-1);";
-		
+		$get_layers_query_string = "SELECT string_agg(layer_id::text, ', ') AS layer_ids FROM mod_geovisores.layers_find('','','','".implode(",",$proyectos)."',-1,-1,-1,'',-1,-1)   WHERE mod_login.check_permisos(0, layer_id, $perfil_id) ;";
 	}
 	
 	$get_layers_query = pg_query($conn,$get_layers_query_string);
@@ -29,7 +35,7 @@ if (isset($proyectos)>0) {
 	
 	if ($layer_ids != "") {
 	
-		$query_string = "SELECT clase_id,subclase_id,clase_desc,subclase_desc FROM mod_geovisores.vw_layers WHERE layer_id IN ($layer_ids) GROUP BY clase_id,subclase_id,clase_desc,subclase_desc ORDER BY clase_desc ASC, subclase_desc ASC;";
+		$query_string = "SELECT clase_id,subclase_id,clase_desc,subclase_desc FROM mod_geovisores.vw_layers WHERE layer_id IN ($layer_ids)   AND mod_login.check_permisos(0, layer_id, $perfil_id)  GROUP BY clase_id,subclase_id,clase_desc,subclase_desc ORDER BY clase_desc ASC, subclase_desc ASC;";
 
 		$query = pg_query($conn,$query_string);
 
@@ -108,7 +114,7 @@ if (isset($proyectos)>0) {
 					
 						<?php
 						
-						$layer_query_string = "SELECT DISTINCT clase_id,layer_id,tipo_layer_id,layer_desc,layer_wms_layer,layer_wms_server FROM mod_geovisores.vw_layers WHERE clase_id = " . $r["clase_id"] . " AND subclase_id = " . $r["subclase_id"] . " AND layer_id IN (" . $layer_ids . ") ORDER BY layer_desc ASC";
+						$layer_query_string = "SELECT DISTINCT clase_id,layer_id,tipo_layer_id,layer_desc,layer_wms_layer,layer_wms_server FROM mod_geovisores.vw_layers WHERE clase_id = " . $r["clase_id"] . " AND subclase_id = " . $r["subclase_id"] . " AND layer_id IN (" . $layer_ids . ")   AND mod_login.check_permisos(0, layer_id, $perfil_id) ORDER BY layer_desc ASC";
 						$layer_query = pg_query($conn,$layer_query_string);
 						
 						while($l = pg_fetch_assoc($layer_query)) {
