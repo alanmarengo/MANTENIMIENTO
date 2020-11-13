@@ -256,7 +256,7 @@ function getData() {
         },
 
         xAxis: {
-            categories: ['Elementos']
+            categories: ["Mínimo", "Medio", "Máximo"]
         },
 
         yAxis: {
