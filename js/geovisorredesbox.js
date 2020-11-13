@@ -177,7 +177,7 @@ function getData() {
 
                 <div class="col-md-3 col-lg-3">
                     <div class="column">
-                        <div class="cell">${js.estacion_nombre}</div>		
+                        <div class="cell">${js[i].estacion_nombre}</div>		
                     </div>
                 </div>
 
