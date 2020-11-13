@@ -22,7 +22,7 @@
 	<link rel="stylesheet" href="./css/geovisorredesbox.css" type="text/css">
 	
 </head>
-<body style="overflow:hidden;">
+<body style="height:auto;">
 
 	<div class="container">
 		<p class="title">REGISTRO ESTADÍSTICO Y GRÁFICO DE LA RED DE MONITOREO HÍDRICO DE LA CUENCA DEL RÍO SANTA CRUZ</p>		
@@ -42,7 +42,7 @@
 				<div class="col col-md-4 col-lg-4">
 				<div class="form-group">
 					<label>Desde:</label>
-					<input type="text" class="datepicker" id="tatab-redes-fdesde">
+					<input type="text" class="datepicker" id="tab-redes-fdesde">
 					<i class="fa fa-calendar-alt"></i>
 				</div>
 			</div>
@@ -83,154 +83,13 @@
 
 		<div class="row est-tabla m0 mt-20" id="est-tabla-inner">
 			
-			<div class="row">
-				
-				<div class="form-group form-group-header">
-					<label>Tabla de valores:</label>
-					<a href="javascript:void(0);" class="linkaux">Ver datos completos</a>
-				</div>
-						
-			</div>
+			
 
-			<div class="row row-header">
+		</div>
 
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell header">Estaciones</div>		
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell header">Valor Mínimo</div>
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell header">Valor Máximo</div>
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell header">Promedio</div>
-					</div>
-				</div>
-
-			</div>		
-
-			<div class="row">
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>		
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>
-					</div>
-				</div>
-
-			</div>		
-
-			<div class="row">
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>		
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>
-					</div>
-				</div>
-
-			</div>		
-
-			<div class="row">
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>		
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>
-					</div>
-				</div>
-
-			</div>		
-
-			<div class="row">
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>		
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>
-					</div>
-				</div>
-
-				<div class="col-md-3 col-lg-3">
-					<div class="column">
-						<div class="cell">-</div>
-					</div>
-				</div>
-
-			</div>
+		<div class="row est-tabla m0 mt-20" id="est-chart-inner">
+			
+			
 
 		</div>
 		

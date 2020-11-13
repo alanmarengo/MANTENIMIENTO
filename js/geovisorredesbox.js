@@ -13,10 +13,30 @@ $(document).ready(function() {
 
         currentTab = tabNum;
 
+        getParametros();
         getEstaciones();
 
     });
 
+    $("#combo-parametros-redes").on("change", function() {
+
+        getData();
+
+    });
+
+    $("#tab-redes-fdesde").on("change", function() {
+
+        getData();
+
+    });
+
+    $("#tab-redes-fhasta").on("change", function() {
+
+        getData();
+
+    });
+
+    getParametros();
     getEstaciones();
 
 });
@@ -48,6 +68,25 @@ function updateDatepicker() {
 
 }
 
+function getParametros() {
+
+    let url = apiUrl + "?tipo_estaciones=" + (currentTab - 1) + "&mode=13";
+    let js = this.requestApi(url);
+
+    $("#combo-parametros-redes").empty();
+
+    for (let i = 0; i < js.length; i++) {
+        let item = `
+            <option value="${js[i].parametro_id}">${js[i].parametro_desc}</option>
+        `;
+
+        $("#combo-parametros-redes").append(item);
+    }
+
+    getData();
+
+}
+
 function getEstaciones() {
 
     let url = apiUrl + "?tipo_estaciones=" + (currentTab - 1) + "&mode=10";
@@ -64,6 +103,8 @@ function getEstaciones() {
         $("#estaciones-lista").append(item);
     }
 
+    getData();
+
 }
 
 function est_select(node, estacion_id) {
@@ -78,6 +119,8 @@ function est_select(node, estacion_id) {
 
     }
 
+    getData();
+
 }
 
 function est_unselect(node, estacion_id) {
@@ -87,6 +130,202 @@ function est_unselect(node, estacion_id) {
     node.onclick = function() {
         est_select(this);
     }
+
+    getData();
+
+}
+
+function getData() {
+
+    let lista_estaciones = getEstacionesSeleccionadas();
+    let url = apiUrl + "?lista_estaciones=" + lista_estaciones.join(",") + "&parametro_id=" + $("#combo-parametros-redes").val() + "&fd=" + $("#tab-redes-fdesde").val() + "&fh=" + $("#tab-redes-fhasta").val() + "&mode=11";
+    let js = this.requestApi(url);
+
+    $("#est-tabla-inner").empty();
+
+    let html = `
+        <div class="row">
+				
+            <div class="form-group form-group-header">
+                <label>Tabla de valores:</label>
+                <a href="javascript:void(0);" class="linkaux">Ver datos completos</a>
+            </div>
+                    
+        </div>
+
+        <div class="row row-header">
+
+            <div class="col-md-3 col-lg-3">
+                <div class="column">
+                    <div class="cell header">Estaciones</div>		
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3">
+                <div class="column">
+                    <div class="cell header">Valor Mínimo</div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3">
+                <div class="column">
+                    <div class="cell header">Valor Máximo</div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3">
+                <div class="column">
+                    <div class="cell header">Promedio</div>
+                </div>
+            </div>
+
+        </div>
+    `;
+
+    let serieMin = [];
+    let serieMed = [];
+    let serieMax = [];
+    let serieEstacion = [];
+    let serieEstacionVal = []
+
+    for (let i = 0; i < js.length; i++) {
+
+        serieEstacion.push(js[i].estacion_nombre);
+        serieEstacionVal[i] = [];
+
+        if (js[i].estacion_nombre == "") { js[i].estacion_nombre = "-"; }
+
+        if (js[i].min_dato == "") {
+            js[i].min_dato = "-";
+            serieMin.push(0);
+        } else {
+            serieMin.push(parseInt(js[i].min_dato));
+        }
+
+        if (js[i].med_dato == "") {
+            js[i].med_dato = "-";
+            serieMed.push(0);
+        } else {
+            serieMed.push(parseInt(js[i].med_dato));
+        }
+
+        if (js[i].max_dato == "") {
+            js[i].max_dato = "-";
+            serieMax.push(0);
+        } else {
+            serieMax.push(parseInt(js[i].max_dato));
+        }
+
+        html += `
+            <div class="row" data-row-estacion-id="${js.estacion_id}">
+
+                <div class="col-md-3 col-lg-3">
+                    <div class="column">
+                        <div class="cell">${js[i].estacion_nombre}</div>		
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-lg-3">
+                    <div class="column">
+                        <div class="cell">${js[i].min_dato}</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-lg-3">
+                    <div class="column">
+                        <div class="cell">${js[i].med_dato}</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-lg-3">
+                    <div class="column">
+                        <div class="cell">${js[i].max_dato}</div>
+                    </div>
+                </div>
+
+            </div>
+        `;
+
+    }
+
+    let series = [];
+    let xaxis = [];
+
+    for (let i = 0; i < serieEstacion.length; i++) {
+
+        xaxis[i] = serieEstacion[i];
+
+    }
+
+    series = [{
+            name: "Mínimo",
+            data: serieMin
+        },
+        {
+            name: "Medio",
+            data: serieMed
+        },
+        {
+            name: "Máximo",
+            data: serieMax
+        },
+    ];
+
+    $("#est-tabla-inner").html(html);
+
+    Highcharts.chart('est-chart-inner', {
+
+        chart: {
+            type: 'column'
+        },
+
+        title: {
+            text: 'Gráfico de Estación'
+        },
+
+        xAxis: {
+            categories: [xaxis]
+        },
+
+        yAxis: {
+            allowDecimals: false,
+            min: 0,
+            title: {
+                text: 'Valores'
+            }
+        },
+
+        tooltip: {
+            formatter: function() {
+                return this.series.name + ': ' + this.y + '<br/>';
+            }
+        },
+
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+
+        series: series
+    });
+
+    console.log(series);
+
+}
+
+function getEstacionesSeleccionadas() {
+
+    let selected = [];
+
+    $("#estaciones-lista-seleccionadas").children(".switcher-item").each(function(i, v) {
+
+        selected.push($(this).attr("data-estacion-id"));
+
+    });
+
+    return selected;
 
 }
 

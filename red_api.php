@@ -779,8 +779,8 @@ function get_parametros($tipo_estaciones)/* Si son hidrometricas o de aforo */
 	{
 		
 		$json .= '{';
-		$json .= '"estacion_id":"' 		. clear_json($r["parametro_id"]) . '",';
-		$json .= '"estacion_nombre":"' 	. clear_json($r["parametro_desc"]) . '",';
+		$json .= '"parametro_id":"' 		. clear_json($r["parametro_id"]) . '",';
+		$json .= '"parametro_desc":"' 	. clear_json($r["parametro_desc"]) . '",';
 		$json .= '"tipo":"' 			. $tipo_est . '"';
 		$json .= "},";
 
