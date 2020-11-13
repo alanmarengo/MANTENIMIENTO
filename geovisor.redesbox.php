@@ -233,6 +233,14 @@
 			</div>
 
 		</div>
+		
+		<div class="row mt-20">
+			<div id="chart"></div>
+		</div>
+		
+		<div class="row m0">
+			<a href="javascript:void(0);" class="btn-tab">VER DATOS COMPLETOS</a>
+		</div>
 
 	</div>
 
