@@ -54,6 +54,7 @@ function getEstaciones() {
     let js = this.requestApi(url);
 
     $("#estaciones-lista").empty();
+    $("#estaciones-lista-seleccionadas").empty();
 
     for (let i = 0; i < js.length; i++) {
         let item = `
