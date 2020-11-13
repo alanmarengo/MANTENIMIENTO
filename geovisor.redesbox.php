@@ -69,12 +69,14 @@
 				<div class="switcher-box">
 					<div class="switcher-item header">ESTACIONES</div>
 				</div>
+				<div id="estaciones-lista"></div>
 			</div>
 
 			<div class="col-md-6 col-lg-6">
 				<div class="switcher-box">
 					<div class="switcher-item header">SELECCIONADAS</div>
 				</div>
+				<div id="estaciones-lista-seleccionadas"></div>
 			</div>
 
 		</div>

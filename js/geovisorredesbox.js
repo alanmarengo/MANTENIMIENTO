@@ -10,7 +10,7 @@ $(document).ready(function() {
 
         currentTab = tabNum;
 
-        alert(currentTab);
+        getEstaciones();
 
     });
 
@@ -40,5 +40,61 @@ function updateDatepicker() {
         onSelect: function() {}
 
     }).datepicker("setDate", new Date());
+
+}
+
+function getEstaciones() {
+
+    let url = this.apiUrl + "?tipo_estaciones=" + (currentTab - 1) + "&mode=10";
+    let js = this.requestApi(url)[0];
+
+    $("#estaciones-lista").empty();
+
+    for (let i = 0; i < js.length; i++) {
+        let item = `
+            <div class="switcher-box" data-estacion-id="${js[i].estacion_id}" onclick="est_select(this);">
+                <div class="switcher-item">${js[i].estacion_nombre}</div>
+            </div>
+        `;
+    }
+
+    $("#estaciones-lista").append(item);
+
+}
+
+function est_select(node, estacion_id) {
+
+    $(node).appendTo("#estaciones-lista-seleccionadas");
+
+    node.onclick = function() {
+        est_unselect(this);
+    }
+
+}
+
+function est_unselect(node, estacion_id) {
+
+    $(node).appendTo("#estaciones-lista");
+
+    node.onclick = function() {
+        est_select(this);
+    }
+
+}
+
+function requestApi(url) {
+
+    var req = $.ajax({
+
+        async: false,
+        url: url,
+        type: "GET",
+        success: function(d) {}
+
+    });
+
+    var js = JSON.parse(req.responseText);
+
+    return js;
 
 }
