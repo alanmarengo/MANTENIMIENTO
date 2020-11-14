@@ -22,7 +22,7 @@ if ((isset($_SESSION)) && (sizeof($_SESSION) > 0)) {
 					<a class="dropdown-item" href="#">Mi Colección</a>
 				</li>
 				-->
-				<?php if( $_SESSION["user_info"]["perfil_usuario_id"]=='3'){echo '<li><a class="dropdown-item" href="./backend/backend-index.php">Ir a ABM</a></li>'; }; ?>
+				<?php if( $_SESSION["user_info"]["perfil_usuario_id"]=='3'){echo '<li><a class="dropdown-item" href="./backend/backend-index.php">Gestión de contenidos</a></li>'; }; ?>
 				
 				<li>
 					<a class="dropdown-item" href="./CMD-logout.php">Cerrar Sesión</a>
