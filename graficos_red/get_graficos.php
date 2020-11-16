@@ -118,7 +118,7 @@ function get_curva_hq($estacion_id)
 				xAxis: {
 					title: {
 						enabled: true,
-						text: 'Caudal (m3s)'
+						text: 'Caudal (m3s)' 
 					},
 					startOnTick: true,
 					endOnTick: true,
@@ -126,7 +126,7 @@ function get_curva_hq($estacion_id)
 				},
 				yAxis: {
 					title: {
-						text: 'Altura del río'
+						text: 'Altura del río' 
 					}
 				},
 				legend: {
@@ -159,7 +159,7 @@ function get_curva_hq($estacion_id)
 						},
 						tooltip: {
 							headerFormat: '<b>{series.name}</b><br>',
-							pointFormat: '{point.x} Altura, {point.y} Caudal'
+							pointFormat: '{point.x} Caudal, {point.y} Altura'
 						}
 					}
 				},
