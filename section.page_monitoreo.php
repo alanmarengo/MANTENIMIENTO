@@ -20,7 +20,7 @@
             <a id="hidrico"></a>
             <h3 style="margin-bottom: 1em; color: #333;">RED DE MONITOREO H&Iacute;DRICO DE LA CUENCA DEL R&Iacute;O SANTA CRUZ</h3>
 
-            <div class="embed-responsive" style="padding-top: 40%; height:120vh;">
+            <div class="embed-responsive" style="padding-top: 40%; height:100vh;">
                 <iframe id="uxVisor" src="./geovisor.estaciones.php" frameborder="0" width="100%"></iframe>
             </div>
         </div>
