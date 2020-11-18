@@ -59,7 +59,7 @@ function get_curva_hq($estacion_id)
 
 	$query = pg_query($conn,$query_string);
 	
-	echo pg_last_error($conn);
+	//echo pg_last_error($conn);
 	
 	$entered = false;
 	
