@@ -1047,13 +1047,28 @@ function ol_map() {
                             <p class="value">
                                 <img src="${js.q_path}">
                             </p>
-                        </div>              
-
+                        </div>
+                    </div>                    
+                    <div class="col-md-8 col-lg-8">
+                        <div id="est-chart-hq"></div>
                     </div>
                 </div>
             `;
 
             $("#panel-aforo-ha-4").html(html);
+
+            let urlg = this.apiGraficosUrl + "?estacion_id=" + this.current_estacion_id + "&mode=2";
+
+            let iframe = `<iframe id="iframe-grafico4" src="${urlg}" width="100%" style="border:none;"></iframe>`;
+
+            document.getElementById("est-chart-hq").innerHTML = iframe;
+
+            /*let nheight = $("#tab2-grafico").width();
+
+            nheight = ((nheight / 4) * 3);
+
+            $("#iframe-grafico2").attr("height", nheight);*/
+
         }
 
         this.requestApi = function(url) {
