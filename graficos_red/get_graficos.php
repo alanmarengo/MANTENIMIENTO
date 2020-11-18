@@ -29,6 +29,151 @@ $tipo_estacion_id 		= clear_json(pg_escape_string($_REQUEST["tipo_estacion_id"])
 $solapa 				= clear_json(pg_escape_string($_REQUEST["solapa"]));
 $categoria_parametro_id = clear_json(pg_escape_string($_REQUEST["categoria_parametro_id"]));
 
+function get_curva_hq($estacion_id)
+{
+	/*
+	 * alt_escala el parámetro de altura del río
+	 * Q1_tot_m3s para caudal líquido
+	 * */
+	
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+		
+	$conn = pg_connect($string_conn);
+	
+	$query_string    = "select estacion_id,tipo_estacion_id,P.parametro_tabla ";
+	$query_string   .= "from ";
+	$query_string   .= "mod_sensores.red_estacion_parametro P ";
+	$query_string   .= "inner join ";
+	$query_string   .= "mod_sensores.red_categoria_parametro C ON C.categoria_parametro_id=P.categoria_parametro_id ";
+	$query_string   .= "WHERE C.tipo_estacion_id=5 AND estacion_id=$estacion_id limit 1;";
+	
+	$query = pg_query($conn,$query_string);
+	
+	$r = pg_fetch_assoc($query);
+	
+	$tabla = $r['parametro_tabla'];
+	
+	$query_string   = "SELECT alt_escala AS altura,ql_tot_m3s AS caudal,
+					   (select descripcion from mod_catalogo.cod_temporalidad where cod_temporalidad_id::bigint=D.cod_temp::bigint LIMIT 1) AS campaña
+					   FROM $tabla D ORDER BY campaña ASC;";
+
+	$query = pg_query($conn,$query_string);
+	
+	echo pg_last_error($conn);
+	
+	$entered = false;
+	
+	$data = '[';
+	
+	$cat = '';
+	
+	$flag = false;
+		
+	while ($r = pg_fetch_assoc($query)) 
+	{
+		
+		$alt = $r['altura'];
+		$cau = $r['caudal'];
+		
+		if($cat!=$r['campaña'])
+		{
+				$cat 	= $r['campaña'];
+				if ($flag)
+				{
+					$data .= "]},";
+				}else $flag = true;
+				
+				$color = '#'.substr(str_shuffle('ABCDEF0123456789'), 0, 6);
+				
+				$data .= "{name:'$cat', color:'$color' ,data: ["; //rgba(223, 83, 83, .5)
+		}
+		else
+		{
+			$data .= ",";
+		};
+		
+		$data .= "[$cau,$alt]";
+
+	};
+	
+	$data .= ']}]';
+		
+	pg_close($conn);
+		
+	$grafico = "
+	function loadgrafico()
+	{
+					
+			Highcharts.chart('container', {
+				chart: {
+					type: 'scatter',
+					zoomType: 'xy'
+				},
+				title: {
+					text: ''
+				},
+				subtitle: {
+					text: ''
+				},
+				xAxis: {
+					title: {
+						enabled: true,
+						text: 'Caudal (m3s)' 
+					},
+					startOnTick: true,
+					endOnTick: true,
+					showLastLabel: true
+				},
+				yAxis: {
+					title: {
+						text: 'Altura del río' 
+					}
+				},
+				legend: {
+					layout: 'vertical',
+					align: 'left',
+					verticalAlign: 'top',
+					x: 100,
+					y: 70,
+					floating: true,
+					backgroundColor: Highcharts.defaultOptions.chart.backgroundColor,
+					borderWidth: 1
+				},
+				plotOptions: {
+					scatter: {
+						marker: {
+							radius: 5,
+							states: {
+								hover: {
+									enabled: true,
+									lineColor: 'rgb(100,100,100)'
+								}
+							}
+						},
+						states: {
+							hover: {
+								marker: {
+									enabled: false
+								}
+							}
+						},
+						tooltip: {
+							headerFormat: '<b>{series.name}</b><br>',
+							pointFormat: '{point.x} Caudal, {point.y} Altura'
+						}
+					}
+				},
+				series: $data
+			});
+	};
+	";
+	echo $grafico; 
+	
+	
+};
+
+
+
 function get_estacion_parametro_grafico_30_dias($estacion_id,$categoria_parametro_id,$parametro_id)
 {
 	
@@ -308,6 +453,11 @@ function get_estacion_lluvias_grafico_30_dias($estacion_id,$categoria_parametro_
 				//http://observ.net/graficos_red/get_graficos.php?estacion_id=7&categoria_parametro_id=4&parametro_id=1&mode=0
 				get_estacion_lluvias_grafico_30_dias($estacion_id,$categoria_parametro_id,$parametro_id);
 			break;
+			case 2:
+				//http://observ.net/graficos_red/get_graficos.php?estacion_id=9&mode=2
+				get_curva_hq($estacion_id);
+			break;
+		
 		};
 		
 		?>
