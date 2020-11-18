@@ -1057,9 +1057,9 @@ function ol_map() {
 
             $("#panel-aforo-ha-4").html(html);
 
-            let url = this.apiGraficosUrl + "?estacion_id=" + this.current_estacion_id + "&mode=2";
+            let urlg = this.apiGraficosUrl + "?estacion_id=" + this.current_estacion_id + "&mode=2";
 
-            let iframe = `<iframe id="iframe-grafico4" src="${url}" width="100%" style="border:none;"></iframe>`;
+            let iframe = `<iframe id="iframe-grafico4" src="${urlg}" width="100%" style="border:none;"></iframe>`;
 
             document.getElementById("est-chart-hq").innerHTML = iframe;
 
