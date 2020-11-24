@@ -71,9 +71,57 @@ switch ($mode)
     case 4: 
         panel_guardar_item();
         break;
-    
+    case 5: 
+        panel_quitar_item();
+        break;
+   
 };
 
+
+function panel_quitar_item()
+{
+	global $tipo;
+	global $valor;
+	global $ind_id;
+		
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+		
+	$conn = pg_connect($string_conn);
+	
+	switch ($tipo) 
+	{
+		case 0: /* Graficos */ 
+        	$query_string  = "DELETE FROM mod_indicadores.ind_grafico WHERE ind_id=$ind_id AND grafico_id=$valor";
+        break;
+        case 1: /* Recursos */ 
+			$query_string  = "DELETE FROM mod_indicadores.ind_recurso WHERE ind_id=$ind_id AND recurso_id=$valor";
+        break;
+        case 2: /* Capas */ 
+			$query_string  = "DELETE FROM mod_indicadores.ind_capa WHERE ind_id=$ind_id AND layer_id=$valor";
+        break;
+        case 3: /* Tablas */ 
+			$query_string  = "DELETE FROM mod_indicadores.ind_tabla WHERE ind_id=$ind_id AND ind_tabla_id=$valor";
+        break;
+    };
+
+   //echo $query_string;
+	
+   $query = pg_query($conn,$query_string);
+	
+	if(!$query)
+	{
+		$error_1 = clear_json(pg_last_error($conn));
+		echo '{"status_code":"2","status":"No se pudo agregar el registro","error_desc":"'.$error_1.'"}';
+	}
+	else
+	{
+		$r = pg_fetch_assoc($query);
+		echo '{"status_code":"0","status":"Ok","ind_id":"'. $ind_id.'"}';
+	};
+	
+	pg_close($conn);
+	
+};
 
 
 function panel_guardar_item()
@@ -377,6 +425,7 @@ function get_item_panel($ind_id)
 		$json .= '"posicion":"'				. 	clear_json($r["posicion"]) .'",';
 		$json .= '"titulo":"'				. 	clear_json($r["titulo"]) .'",';
 		$json .= '"desc":"'					. 	clear_json($r["desc"]) .'",';
+		$json .= '"tipo":"'					. 	clear_json($r["tipo"]) .'",';
 		$json .= '"ficha_metodo_path":"'	. 	clear_json($r["ficha_metodo_path"]) .'"';
 		$json .= "},";
 

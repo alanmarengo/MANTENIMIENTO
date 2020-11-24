@@ -23,19 +23,22 @@ function nuevo()
 			document.getElementById("tab-link-b").click();
 };
 
-function borrar()
+function quitar_item(ind_id,valor,tipo)
 {
-	if(confirm('Esta seguro desea eliminar el grafico?'))
+	if(confirm('Esta seguro desea eliminar el item?'))
 	{
 		
 	var retorno = $.ajax
 				({
-					url: "./abm-graficos.php",
+					url: "./abm-indicadores.php",
 					async:false,
 					data:
 					{
-								mode:2,
-								grafico_id:document.getElementById("current_id").id_actual
+								mode:5,
+								ind_id:ind_id,
+								valor:valor,
+								tipo:tipo
+								
 					},
 					dataType: "json"
 				});
@@ -45,7 +48,8 @@ function borrar()
 	if(s.status_code=="0")
 	{
 		//alert('Se guardo el registro correctamente');
-		nuevo();
+		
+		$("#grid-items-panel").jsGrid('loadData');
 		
 		return true;
 	}
@@ -229,19 +233,30 @@ function()
 		rowClick: function(args) 
 		{
 			
-			guardar_item
-			(
-				document.getElementById('posicion').value,
-				document.getElementById('titulo').value ,
-				document.getElementById('desc').value ,	
-				document.getElementById('ficha_metodo_path').value ,
-				document.getElementById('extent').value ,
-				args.item.tipo,
-				args.item.valor,
-				document.getElementById("current_id").id_actual
-			);
+			var pos = document.getElementById('posicion').value;
+			var titu = 	document.getElementById('titulo').value; 
 			
-			$("#grid-items-panel").jsGrid('loadData');
+			if((pos!='')&&(titu!=''))
+			{
+			
+				guardar_item
+				(
+					document.getElementById('posicion').value,
+					document.getElementById('titulo').value ,
+					document.getElementById('desc').value ,	
+					document.getElementById('ficha_metodo_path').value ,
+					document.getElementById('extent').value ,
+					args.item.tipo,
+					args.item.valor,
+					document.getElementById("current_id").id_actual
+				);
+				
+				$("#grid-items-panel").jsGrid('loadData');
+			}
+			else
+			{
+					alert('Ingrese una posición y titulo validos');
+			};
 		
         },
 		controller: 
@@ -283,10 +298,7 @@ function()
 		pageIndex:  1,
 		rowClick: function(args) 
 		{
-			document.getElementById("dt_variable_id").value=args.item.dt_variable_id;
-			document.getElementById("dt_variable_nombre").value=args.item.dt_variable_nombre;
-			document.getElementById("dt_variable_defincion").value=args.item.dt_variable_defincion;
-			document.getElementById("dt_variable_origen").value=args.item.dt_variable_origen;
+			quitar_item(args.item.ind_id,args.item.valor,args.item.tipo);
         },
 		controller: 
 		{
@@ -313,7 +325,8 @@ function()
 			{name: "desc", 			width: 400},
 			{name: "ind_id", 		width: 100},
 			{name: "valor", 		width: 100},
-			{name: "ficha_metodo_path", 	width: 100}
+			{name: "ficha_metodo_path", 	width: 100},
+			{name: "tipo", 			width: 100}
 			
 		]
 		});
