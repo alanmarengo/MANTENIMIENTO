@@ -91,7 +91,8 @@ function guardar()
 		document.getElementById("current_id").id_actual=s.user_id;
 		document.getElementById("current_id").innerHTML = "<span>Usuario Actual: " + document.getElementById("user_full_name").value +"("+s.user_id+")</span>";
 			
-		if(estado==-1){alert('Defina la contraseña'); document.getElementById("tab-link-c").click(); };
+		dom = document.getElementById("user_contra_dominio").value
+		if((estado==-1)&&(dom=='f')) {alert('Defina la contraseña'); document.getElementById("tab-link-c").click(); };
 		
 		return true;
 	}
