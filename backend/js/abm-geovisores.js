@@ -235,7 +235,7 @@ function()
 		height: "auto",
 		autoload:   true,
 		paging:     true,
-		pageSize:   5,
+		pageSize:   20,
 		sorting: true,
 		pageButtonCount: 5,
 		pageIndex:  1,
