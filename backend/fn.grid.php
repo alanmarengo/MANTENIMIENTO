@@ -1,4 +1,14 @@
 <?php
+    function clear_json_rec($str) 
+    {
+	
+		$bad = array("\n","\r","\"");
+	
+		$good = array("","","");
+	
+		return str_replace($bad,$good,$str);
+	
+	};
 
 	function get_grilla($param,$table) {
 		
@@ -8,7 +18,7 @@
 		
 		$s=$param['busqueda'];
 		
-		$query_string = "SELECT * FROM mod_mediateca.recurso WHERE recurso_titulo||recurso_desc ILIKE '%$s%' order by recurso_titulo asc;";
+		$query_string = "SELECT * FROM mod_mediateca.recurso WHERE recurso_titulo||recurso_desc ILIKE '%$s%' order by recurso_titulo asc limit 100;";
 		
 		$col_types = get_column_types($table);
 		
@@ -59,7 +69,7 @@
 					
 				}
 				
-				$json .= "\"" . $keyname . "\":" . $slash . $val . $slash . ",";
+				$json .= "\"" . $keyname . "\":" . $slash . clear_json_rec($val) . $slash . ",";
 				
 			}
 			
