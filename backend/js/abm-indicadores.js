@@ -63,6 +63,44 @@ function quitar_item(ind_id,valor,tipo)
 
 };
 
+function borrar_panel()
+{
+	if(confirm('Esta seguro desea eliminar el panel?'))
+	{
+		
+	var retorno = $.ajax
+				({
+					url: "./abm-indicadores.php",
+					async:false,
+					data:
+					{
+								mode:6,
+								ind_id:document.getElementById("current_id").id_actual
+					},
+					dataType: "json"
+				});
+	
+	s = JSON.parse(retorno.responseText); /* status */
+	
+	if(s.status_code=="0")
+	{
+		//alert('Se guardo el registro correctamente');
+		
+		$("#grid-items-panel").jsGrid('loadData');
+		nuevo();
+		
+		return true;
+	}
+	else
+	{
+		alert('No se pudo borrar el registro. Mensaje:'+s.error_desc);
+		return false;
+	};
+	
+	}return false;
+
+};
+
 function guardar()
 {
 

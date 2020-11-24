@@ -89,6 +89,7 @@
 							</div>
 												
 							<button type="button" class="btn btn-primary" onclick="guardar();">Guardar</button>
+							<button type="button" class="btn btn-danger" onclick="borrar_panel();">Eliminar panel</button>
 					</form>
 					
 					</div>

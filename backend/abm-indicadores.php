@@ -74,9 +74,41 @@ switch ($mode)
     case 5: 
         panel_quitar_item();
         break;
+    case 6: 
+        borrar_panel();
+        break;
    
 };
 
+
+function borrar_panel()
+{
+    global	$ind_id;
+
+	
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+		
+	$conn = pg_connect($string_conn);
+	
+	$query_string  = "DELETE FROM  mod_indicadores.ind_panel WHERE $ind_id=ind_id RETURNING ind_id";
+		
+	$query = pg_query($conn,$query_string);
+	
+	if(!$query)
+	{
+		$error_1 = clear_json(pg_last_error($conn));
+		
+		echo '{"status_code":"1","status":"No se pudo eliminar los datos. ","error_desc":"'.$error_1.'"}';
+	}
+	else
+	{
+		$r = pg_fetch_assoc($query);
+		echo '{"status_code":"0","status":"Ok","ind_id":"'. $ind_id.'"}';
+	};
+	
+	pg_close($conn);
+	
+};
 
 function panel_quitar_item()
 {
