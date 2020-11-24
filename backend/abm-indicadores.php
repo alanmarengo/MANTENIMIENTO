@@ -46,9 +46,13 @@ $template_id			= clear_json(pg_escape_string($_REQUEST["template_id"]));
 
 
 
-$grafico_data_schema	= clear_json(pg_escape_string($_REQUEST["grafico_data_schema"]));		
-$grafico_data_tabla		= clear_json(pg_escape_string($_REQUEST["grafico_data_tabla"]));
-
+$posicion			= clear_json(pg_escape_string($_REQUEST["posicion"]));		
+$titulo				= clear_json(pg_escape_string($_REQUEST["titulo"]));
+$desc				= clear_json(pg_escape_string($_REQUEST["desc"]));		
+$ficha_metodo_path	= clear_json(pg_escape_string($_REQUEST["ficha_metodo_path"]));
+$extent				= clear_json(pg_escape_string($_REQUEST["extent"]));
+$tipo				= clear_json(pg_escape_string($_REQUEST["tipo"]));
+$valor				= clear_json(pg_escape_string($_REQUEST["valor"]));
 
 switch ($mode) 
 {
@@ -64,38 +68,62 @@ switch ($mode)
     case 3: 
         get_item_panel($ind_id);
         break;
-
-
+    case 4: 
+        panel_guardar_item();
+        break;
+    
 };
 
 
 
 function panel_guardar_item()
 {
-	global $dt_id;
-	global $dt_titulo;
-	global $dt_table_source;
+	global $posicion;
+	global $titulo;
+	global $desc;		
+	global $ficha_metodo_path;
+	global $extent;
+	global $tipo;
+	global $valor;
+	global $ind_id;
 		
 	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 		
 	$conn = pg_connect($string_conn);
+	
+	switch ($tipo) 
+	{
+		case 0: /* Graficos */ 
+			$query_string  = " INSERT INTO mod_indicadores.ind_grafico(ind_id,posicion,titulo,\"desc\",ficha_metodo_path,grafico_id)VALUES";
+        	$query_string .= " ($ind_id,$posicion,'$titulo','$desc','$ficha_metodo_path',$valor)RETURNING ind_id;";
+        break;
+        case 1: /* Recursos */ 
+			$query_string  = " INSERT INTO mod_indicadores.ind_recurso(ind_id,posicion,titulo,\"desc\",ficha_metodo_path,recurso_id)VALUES";
+			$query_string .= " ($ind_id,$posicion,'$titulo','$desc','$ficha_metodo_path',$valor)RETURNING ind_id;";
+        break;
+        case 2: /* Capas */ 
+			$query_string  = " INSERT INTO mod_indicadores.ind_capa(ind_id,posicion,titulo,\"desc\",ficha_metodo_path,layer_id,extent)VALUES";
+			$query_string .= " ($ind_id,$posicion,'$titulo','$desc','$ficha_metodo_path',$valor,'$extent')RETURNING ind_id;";
+        break;
+        case 3: /* Tablas */ 
+			$query_string  = " INSERT INTO mod_indicadores.ind_tabla(ind_id,posicion,titulo,\"desc\",ficha_metodo_path,ind_tabla_fuente)VALUES";
+			$query_string .= " ($ind_id,$posicion,'$titulo','$desc','$ficha_metodo_path','$valor')RETURNING ind_id;";
+        break;
+    };
 
-	$query_string .= " DELETE FROM mod_estadistica.dt_variable WHERE dt_id_ref=$dt_id;";
-    $query_string .= " INSERT INTO mod_estadistica.dt_variable(dt_id_ref, dt_variable_id_original, dt_variable_cod_var, dt_variable_nombre, dt_variable_defincion,dt_variable_origen)";
-	$query_string .= " SELECT DISTINCT $dt_id AS dataset_id,-1 AS dt_variable_id_original,\"indicador\",\"indicador\" ,\"indicador\" ,'$dt_titulo' AS dt_variable_origen";
-	$query_string .= " FROM $dt_table_source;";
-
-	$query = pg_query($conn,$query_string);
+   //echo $query_string;
+	
+   $query = pg_query($conn,$query_string);
 	
 	if(!$query)
 	{
 		$error_1 = clear_json(pg_last_error($conn));
-		echo '{"status_code":"2","status":"No se pudo borrar el registro","error_desc":"'.$error_1.'"}';
+		echo '{"status_code":"2","status":"No se pudo agregar el registro","error_desc":"'.$error_1.'"}';
 	}
 	else
 	{
 		$r = pg_fetch_assoc($query);
-		echo '{"status_code":"0","status":"Ok","dt_id":"'. $r["dt_id"].'"}';
+		echo '{"status_code":"0","status":"Ok","ind_id":"'. $r["ind_id"].'"}';
 	};
 	
 	pg_close($conn);

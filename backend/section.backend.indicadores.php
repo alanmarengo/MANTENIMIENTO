@@ -135,7 +135,7 @@
 						
 						<div class="form-group">
 								<label for="posicion">Posición</label>
-								<input type="text" class="form-control" name="posicion" id="posicion" aria-describedby="posicion"  placeholder="Posición en el temaplate...">
+								<input type="text" class="form-control" name="posicion" id="posicion" aria-describedby="posicion"  placeholder="Posición en el template...">
 						</div>
 						<div class="form-group">
 								<label for="titulo">Titulo</label>
@@ -146,28 +146,26 @@
 								<input type="text" class="form-control" name="desc" id="desc" aria-describedby="desc"  placeholder="Descripción...">
 						</div>
 						<div class="form-group">
-								<label for="ficha_metodo_path">Ficha metodológica(path)</label>
+								<label for="ficha_metodo_path">Ficha metodológica (path)</label>
 								<input type="text" class="form-control" name="ficha_metodo_path" id="ficha_metodo_path" aria-describedby="desc"  placeholder="Ficha metodológica...">
 						</div>
 						<div class="form-group">
-								<label for="extent">Extent(EPSG:3857 solp capas)</label>
+								<label for="extent">Extent (EPSG:3857 solo capas)</label>
 								<input type="text" class="form-control" name="extent" id="extent" aria-describedby="extent"  placeholder="Extent...">
 						</div>
 						
 						 <label for="dt_cruce_etiqueta">Item a asignar(Click para agregar)</label>
 						 <div class="input-group mb-1 col col-xs-12 col-sm-12 col-md-4 col-lg-4 p0">
-						 <input id="layersBusqueda" type="text" class="form-control" placeholder="Buscar items">
+						 <input id="buscar_items" type="text" class="form-control" placeholder="Buscar items">
 						 <div class="input-group-append">
-							<button class="btn btn-primary" type="button" id="buscar_items" onclick="$('#grid-items').jsGrid('loadData');">
+							<button class="btn btn-primary" type="button" id="buscar_items_b" onclick="$('#grid-items').jsGrid('loadData');">
 								<i class="fa fa-search"></i>
 							</button>
 						</div>
 						</div>
 						 <div id="grid-items" class="mt-30">
 	
-						<button type="button" class="btn btn-primary" onclick="guardar_capa_dt();">Agregar</button>
-									
-					  
+									  
 						
 						</div>
 				

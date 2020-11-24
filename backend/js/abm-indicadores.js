@@ -17,6 +17,8 @@ function nuevo()
 
 			document.getElementById("current_id").id_actual=-1;
 			document.getElementById("current_id").innerHTML = "<span>Sin panel seleccionado</span>";
+			
+			$("#grid-items-panel").jsGrid('loadData');
 					
 			document.getElementById("tab-link-b").click();
 };
@@ -99,20 +101,34 @@ function guardar()
 	
 };
 
-function guardar_pw()
+function guardar_item(
+posicion,
+titulo,
+desc,	
+ficha_metodo_path,
+extent,
+tipo,
+valor,
+ind_id
+)
 {
 	var estado = document.getElementById("current_id").id_actual;
 	
 	var retorno = $.ajax
 				({
-					url: "./abm-usuarios.php",
+					url: "./abm-indicadores.php",
 					async:false,
 					data:
 					{
-								mode:2,
-								user_id:document.getElementById("current_id").id_actual,
-								passw:document.getElementById("passw").value,
-								passwc:document.getElementById("passwc").value
+								mode:4,
+								posicion:posicion,
+								titulo:titulo,
+								desc:desc,
+								ficha_metodo_path:ficha_metodo_path,
+								extent:extent,
+								tipo:tipo,
+								valor:valor,
+								ind_id:ind_id
 					},
 					dataType: "json"
 				});
@@ -213,7 +229,19 @@ function()
 		rowClick: function(args) 
 		{
 			
-			//$("#grid-dt-capas").jsGrid('loadData');
+			guardar_item
+			(
+				document.getElementById('posicion').value,
+				document.getElementById('titulo').value ,
+				document.getElementById('desc').value ,	
+				document.getElementById('ficha_metodo_path').value ,
+				document.getElementById('extent').value ,
+				args.item.tipo,
+				args.item.valor,
+				document.getElementById("current_id").id_actual
+			);
+			
+			$("#grid-items-panel").jsGrid('loadData');
 		
         },
 		controller: 
