@@ -22,7 +22,7 @@
 		
 		//$query_string = "SELECT * FROM mod_login.user_data WHERE user_name = '$user_name' AND user_pass = md5('$user_password')";
 		
-		$query_string = "SELECT * FROM mod_login.user_data WHERE user_name = '$user_name';";/* Si el usuario existe */
+		$query_string = "SELECT * FROM mod_login.user_data WHERE user_name = '$user_name' AND user_estado_id=1;";/* Si el usuario existe */
 		
 		$query = pg_query($conn,$query_string);
 		
