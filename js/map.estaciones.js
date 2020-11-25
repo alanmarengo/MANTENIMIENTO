@@ -1107,9 +1107,11 @@ function ol_map() {
                 ai_selected.push(this.value);
             });
 
-            this.estaciones_layer.getSource().updateParams({
+            this.estaciones_layer.getSource().updateParams
+            ({
 
-                'view_params': 'tipo_estacion:' + est_selected.join(",") + ';area_interes:' + ai_selected.join(',')
+                //'view_params': 'tipo_estacion:' + est_selected.join(",") + ';area_interes:' + ai_selected.join(',')
+                'view_params': 'tipo_estacion:' + est_selected.join("_") + ';area_interes:' + ai_selected.join('_')
 
             });
 
