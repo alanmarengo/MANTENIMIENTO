@@ -105,7 +105,8 @@ function ol_map() {
             source: new ol.source.TileWMS({
                 url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
                 params: {
-                    'LAYERS': 'ahrsc:vp_geo_himet_ubicacionestaciones_pga1', //'intervalos_polygons',
+                    //'LAYERS': 'ahrsc:vp_geo_himet_ubicacionestaciones_pga1', //'intervalos_polygons',
+                    'LAYERS': 'ahrsc:estaciones_filtros', /* CAPA FILTROS */
                     //'VERSION': '1.1.1',
                     'FORMAT': 'image/png',
                     'TILED': false
@@ -229,7 +230,8 @@ function ol_map() {
 
                 if ((varparam[0] == "QUERY_LAYERS") || (varparam[0] == "LAYERS")) {
 
-                    newurl += "&" + varparam[0] + "=ahrsc:vp_geo_himet_ubicacionestaciones_pga1";
+                    //newurl += "&" + varparam[0] + "=ahrsc:vp_geo_himet_ubicacionestaciones_pga1";ahrsc:estaciones_filtros
+                    newurl += "&" + varparam[0] + "=ahrsc:estaciones_filtros";/* CAPA FILTROS */
 
                 } else {
 

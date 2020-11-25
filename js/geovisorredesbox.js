@@ -1,7 +1,10 @@
 $(document).ready(function() {
 
-    apiUrl = "http://observatorio.atic.com.ar/red_api.php";
-    apiGraficosUrl = "http://observatorio.atic.com.ar/graficos_red/get_graficos.php";
+    //apiUrl = "http://observatorio.atic.com.ar/red_api.php";
+    //apiGraficosUrl = "http://observatorio.atic.com.ar/graficos_red/get_graficos.php";
+    
+    apiUrl = "./red_api.php";
+    apiGraficosUrl = "./graficos_red/get_graficos.php";
 
     updateDatepicker();
 
