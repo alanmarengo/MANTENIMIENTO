@@ -68,7 +68,7 @@ $login .= "<html lang=\"es\">";
 					
 						$login .= "<p><img src=\"./images/logologin.png\" height=\"128\"></p>";
 					
-						$login .= "<form name=\"frm-backend-main\" id=\"frm-backend-main\" class=\"mt-20\" action=\"./CMD-login.php\" method=\"post\">";
+						$login .= "<form name=\"frm-backend-main\" id=\"frm-backend-main\" class=\"mt-20\" action=\"../CMD-login.php\" method=\"post\">";
 							
 							$login .= "<div class=\"form-group\">";
 								$login .= "<label for=\"usuario_login_name\">Usuario</label>";
