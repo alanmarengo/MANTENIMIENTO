@@ -60,7 +60,7 @@
 		
 				//$result = pg_fetch_assoc($query);
 				
-				if($n_registros>0)
+				if(($n_registros>0)&&(strlen($user_password)>0))
 				{
 
 					$logged = true;
