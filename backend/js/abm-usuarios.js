@@ -108,35 +108,39 @@ function guardar_pw()
 {
 	var estado = document.getElementById("current_id").id_actual;
 	
-	var retorno = $.ajax
-				({
-					url: "./abm-usuarios.php",
-					async:false,
-					data:
-					{
-								mode:2,
-								user_id:document.getElementById("current_id").id_actual,
-								passw:document.getElementById("passw").value,
-								passwc:document.getElementById("passwc").value
-					},
-					dataType: "json"
-				});
-	
-	//console.log(retorno.responseText);
-	
-	s = JSON.parse(retorno.responseText); /* status */
-	
-	if(s.status_code=="0")
+	if(document.getElementById("user_contra_dominio").value=='f')
 	{
-		alert('Se guardaron correctamente los datos');
+	
+		var retorno = $.ajax
+					({
+						url: "./abm-usuarios.php",
+						async:false,
+						data:
+						{
+									mode:2,
+									user_id:document.getElementById("current_id").id_actual,
+									passw:document.getElementById("passw").value,
+									passwc:document.getElementById("passwc").value
+						},
+						dataType: "json"
+					});
 		
-		return true;
-	}
-	else
-	{
-		alert('No se puedo guardar el registro. Mensaje:'+s.error_desc);
-		return false;
-	};
+		//console.log(retorno.responseText);
+		
+		s = JSON.parse(retorno.responseText); /* status */
+		
+		if(s.status_code=="0")
+		{
+			alert('Se guardaron correctamente los datos');
+			
+			return true;
+		}
+		else
+		{
+			alert('No se puedo guardar el registro. Mensaje:'+s.error_desc);
+			return false;
+		};
+	}else{alert('El usuario ingresa contra dominio, no es necesario ingresar contraseña.');};
 	
 };
 
