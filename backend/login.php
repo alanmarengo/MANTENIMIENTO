@@ -72,12 +72,16 @@ $login .= "<html lang=\"es\">";
 							
 							$login .= "<div class=\"form-group\">";
 								$login .= "<label for=\"usuario_login_name\">Usuario</label>";
-								$login .= "<input type=\"text\" class=\"form-control\" name=\"usuario_login_name\" id=\"usuario_login_name\" aria-describedby=\"usuario_login_name\" placeholder=\"Usuario...\">";
+								//$login .= "<input type=\"text\" class=\"form-control\" name=\"usuario_login_name\" id=\"usuario_login_name\" aria-describedby=\"usuario_login_name\" placeholder=\"Usuario...\">";
+								$login .= "<input type=\"text\" class=\"form-control\" name=\"user-name\" id=\"usuario_login_name\" aria-describedby=\"usuario_login_name\" placeholder=\"Usuario...\">";
+
 							$login .= "</div>";
 						
 							$login .= "<div class=\"form-group\">";
 								$login .= "<label for=\"usuario_pass\">Contraseña</label>";
-								$login .= "<input type=\"password\" class=\"form-control\" name=\"usuario_pass\" id=\"usuario_pass\" aria-describedby=\"usuario_pass\" placeholder=\"Contraseña...\">";
+								//$login .= "<input type=\"password\" class=\"form-control\" name=\"usuario_pass\" id=\"usuario_pass\" aria-describedby=\"usuario_pass\" placeholder=\"Contraseña...\">";
+								$login .= "<input type=\"password\" class=\"form-control\" name=\"user-password\" id=\"usuario_pass\" aria-describedby=\"usuario_pass\" placeholder=\"Contraseña...\">";
+
 							$login .= "</div>";
 						
 							$login .= "<div class=\"form-group\">";
