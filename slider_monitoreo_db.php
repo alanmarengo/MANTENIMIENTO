@@ -6,9 +6,9 @@ $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . 
 
  $con = pg_connect($string_conn);
 
-	$SQL  = "SELECT r.recurso_path_url,r.recurso_desc as desc,f.tema,r.recurso_id,lower(right(r.recurso_path_url,3))AS extension FROM  mod_mediateca.recurso r INNER JOIN mod_sensores.red_imagenes f ";
+	$SQL  = "SELECT r.recurso_path_url,f.desc,f.tema,r.recurso_id,lower(right(r.recurso_path_url,3))AS extension FROM  mod_mediateca.recurso r INNER JOIN mod_sensores.red_imagenes_slide f ";
 	$SQL .= "ON f.recurso_id::bigint=r.recurso_id ";
-	$SQL .= "WHERE f.tema='foto_descripcion_ha' ";
+	$SQL .= "WHERE f.tema='Hidroambiental' ";
 	$SQL .= "ORDER BY f.tema ASC";
 
 	$recordset = pg_query($con,$SQL);
@@ -63,11 +63,9 @@ $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . 
 
 	echo "];";
 
-
-
-	$SQL  = "SELECT r.recurso_path_url,r.recurso_desc as desc,f.tema,r.recurso_id,lower(right(r.recurso_path_url,3))AS extension FROM  mod_mediateca.recurso r INNER JOIN mod_sensores.red_imagenes f ";
+	$SQL  = "SELECT r.recurso_path_url,f.desc,f.tema,r.recurso_id,lower(right(r.recurso_path_url,3))AS extension FROM  mod_mediateca.recurso r INNER JOIN mod_sensores.red_imagenes_slide f ";
 	$SQL .= "ON f.recurso_id::bigint=r.recurso_id ";
-	$SQL .= "WHERE f.tema='foto_descripcion_hs' ";
+	$SQL .= "WHERE f.tema='Hidrosedimentologico' ";
 	$SQL .= "ORDER BY f.tema ASC";
 
 	$recordset = pg_query($con,$SQL);
