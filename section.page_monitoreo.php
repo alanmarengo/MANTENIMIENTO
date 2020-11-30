@@ -201,7 +201,7 @@ $(document).ready(function() {
     ];
     //-----------------------------------------------
     
-    <?php //include("./slider_monitoreo_db.php"); ?>
+    <?php include("./slider_monitoreo_db.php"); ?>
 
     $('.section-sticky a').on('click', function() {
         $('.section-sticky a').removeClass('selected');
