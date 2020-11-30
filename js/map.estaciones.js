@@ -1106,12 +1106,26 @@ function ol_map() {
             $(".filtro-area-interes:checked").each(function(i, v) {
                 ai_selected.push(this.value);
             });
+            
+            /************************************************
+             * Geoserver tiene muchosss problemas con filtro
+             * Controles se tiene que ajustar aqui.
+             * 
+             * **********************************************/
+             
+             var te = '';
+             var ai = '';
+             
+             if(est_selected.join("_")!='_') te = 'tipo_estacion:' + est_selected.join("_")+';';
+             if(ai_selected.join("_")!='_')  ai = 'area_interes:' + ai_selected.join('_')+';';
+             
 
             this.estaciones_layer.getSource().updateParams
             ({
 
                 //'view_params': 'tipo_estacion:' + est_selected.join(",") + ';area_interes:' + ai_selected.join(',')
-                'view_params': 'tipo_estacion:' + est_selected.join("_") + ';area_interes:' + ai_selected.join('_')
+                //'view_params': 'tipo_estacion:' + est_selected.join("_") + ';area_interes:' + ai_selected.join('_')
+                'view_params': te+ai
 
             });
 
