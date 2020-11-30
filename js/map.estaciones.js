@@ -1108,16 +1108,17 @@ function ol_map() {
             });
             
             /************************************************
-             * Geoserver tiene muchosss problemas con filtro
+             * Geoserver tiene muchooos problemas con filtros
              * Controles se tiene que ajustar aqui.
-             * 
              * **********************************************/
              
              var te = '';
              var ai = '';
              
-             if(est_selected.join("_")!='_') te = 'tipo_estacion:' + est_selected.join("_")+';';
-             if(ai_selected.join("_")!='_')  ai = 'area_interes:' + ai_selected.join('_')+';';
+             if(est_selected!='')te = 'tipo_estacion:' + est_selected.join("_")+';';
+             if(ai_selected!='')ai = 'area_interes:' + ai_selected.join('_')+';';
+             
+             console.log('ai_selected:'+ai_selected);
              
 
             this.estaciones_layer.getSource().updateParams
@@ -1125,7 +1126,7 @@ function ol_map() {
 
                 //'view_params': 'tipo_estacion:' + est_selected.join(",") + ';area_interes:' + ai_selected.join(',')
                 //'view_params': 'tipo_estacion:' + est_selected.join("_") + ';area_interes:' + ai_selected.join('_')
-                'view_params': te+ai
+                'viewparams': te+ai
 
             });
 
