@@ -41,7 +41,7 @@ function ol_map() {
         contentAsHTML: true,
         interactive: true,
         content: estacionLayersHtml,
-        side: ["left", "bottom"],
+        side: ["bottom", "left"],
         zIndex: 999,
         multiple: true
 
