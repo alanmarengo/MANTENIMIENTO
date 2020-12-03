@@ -349,3 +349,8 @@
 .tooltipster-box ul li a.active {
     color: #31cbfd !important;
 }
+
+.tooltipster-arrow-border {
+    border-left: none !important;
+    border: none !important;
+}

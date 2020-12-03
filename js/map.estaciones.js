@@ -23,11 +23,12 @@ function ol_map() {
     let estacionLayersHtml = `
         <div class="tooltip-white-list">
             <ul>
-                <li><a href="javascrit:void(0);" onclick="ol_map.setBaseLayer(ol_map.baselayers.argenmap);" class="alphalink">CUENCAS PROVINCIA</a></li>
-                <li><a href="javascrit:void(0);" onclick="ol_map.setBaseLayer(ol_map.baselayers.argenmap);" class="alphalink">RÍOS PROVINCIA</a></li>
-                <li><a href="javascrit:void(0);" onclick="ol_map.setBaseLayer(ol_map.baselayers.argenmap);" class="alphalink">EJES DE LAS OBRAS</a></li>
-                <li><a href="javascrit:void(0);" onclick="ol_map.setBaseLayer(ol_map.baselayers.argenmap);" class="alphalink">EMBALSES</a></li>
-                <li><a href="javascrit:void(0);" onclick="ol_map.setBaseLayer(ol_map.baselayers.argenmap);" class="alphalink">ESTUARIO</a></li>
+                <li><a href="javascrit:void(0);" onclick="ol_map.setEstacionesLayer(0,this);" class="alphalink estacion-layer">CUENCAS PROVINCIA</a></li>
+                <li><a href="javascrit:void(0);" onclick="ol_map.setEstacionesLayer(1,this);" class="alphalink estacion-layer">RÍOS PROVINCIA</a></li>
+                <li><a href="javascrit:void(0);" onclick="ol_map.setEstacionesLayer(2,this);" class="alphalink estacion-layer">EJES DE LAS OBRAS</a></li>
+                <li><a href="javascrit:void(0);" onclick="ol_map.setEstacionesLayer(3,this);" class="alphalink estacion-layer">ÁREAS DE LAS OBRAS</a></li>
+                <li><a href="javascrit:void(0);" onclick="ol_map.setEstacionesLayer(4,this);" class="alphalink estacion-layer">EMBALSES</a></li>
+                <li><a href="javascrit:void(0);" onclick="ol_map.setEstacionesLayer(5,this);" class="alphalink estacion-layer">ESTUARIO</a></li>
             </ul>
         </div>
     `;
@@ -157,7 +158,7 @@ function ol_map() {
             let layer_name = this.estacionLayerNames[i];
 
             this.estacionLayers[i] = new ol.layer.Tile({
-                visible: true,
+                visible: false,
                 singleTile: true,
                 source: new ol.source.TileWMS({
                     url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
@@ -171,6 +172,23 @@ function ol_map() {
                     }
                 })
             });
+
+        }
+
+        this.setEstacionesLayer = function(index, node) {
+
+            $(".estacion-layer").removeClass("active");
+            $(node).addClass("active");
+
+            for (var i = 0; i < this.estacionLayerNames.length; i++) {
+
+                if (i == index) {
+                    this.estacionLayers[i].setVisible(true);
+                } else {
+                    this.estacionLayers[i].setVisible(false);
+                }
+
+            }
 
         }
 
