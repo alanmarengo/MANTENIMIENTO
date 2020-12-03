@@ -1353,6 +1353,23 @@ function ol_map() {
 
     }
 
+    this.setEstacionesLayer = function(index, node) {
+
+        $(".estacion-layer").removeClass("active");
+        $(node).addClass("active");
+
+        for (var i = 0; i < this.estacionLayerNames.length; i++) {
+
+            if (i == index) {
+                this.estacionLayers[i].setVisible(true);
+            } else {
+                this.estacionLayers[i].setVisible(false);
+            }
+
+        }
+
+    }
+
     this.map.getBaseLayer = function() {
 
         return this.baseLayer;
@@ -2659,23 +2676,6 @@ function ol_map() {
             var n_h = (pb_h - s_h - 300);
 
             $("#dynbox-popup-layers").css("height", n_h + "px");
-
-        }
-
-    }
-
-    this.map.setEstacionesLayer = function(index, node) {
-
-        $(".estacion-layer").removeClass("active");
-        $(node).addClass("active");
-
-        for (var i = 0; i < this.estacionLayerNames.length; i++) {
-
-            if (i == index) {
-                this.estacionLayers[i].setVisible(true);
-            } else {
-                this.estacionLayers[i].setVisible(false);
-            }
 
         }
 
