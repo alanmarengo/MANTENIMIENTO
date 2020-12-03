@@ -23,12 +23,12 @@ function ol_map() {
     let estacionLayersHtml = `
         <div class="tooltip-white-list">
             <ul>
-                <li><a href="javascrit:void(0);" onclick="geomap.map.setEstacionesLayer(0,this);" class="alphalink estacion-layer">CUENCAS PROVINCIA</a></li>
-                <li><a href="javascrit:void(0);" onclick="geomap.map.setEstacionesLayer(1,this);" class="alphalink estacion-layer">RÍOS PROVINCIA</a></li>
-                <li><a href="javascrit:void(0);" onclick="geomap.map.setEstacionesLayer(2,this);" class="alphalink estacion-layer">EJES DE LAS OBRAS</a></li>
-                <li><a href="javascrit:void(0);" onclick="geomap.map.setEstacionesLayer(3,this);" class="alphalink estacion-layer">ÁREAS DE LAS OBRAS</a></li>
-                <li><a href="javascrit:void(0);" onclick="geomap.map.setEstacionesLayer(4,this);" class="alphalink estacion-layer">EMBALSES</a></li>
-                <li><a href="javascrit:void(0);" onclick="geomap.map.setEstacionesLayer(5,this);" class="alphalink estacion-layer">ESTUARIO</a></li>
+                <li><a href="javascrit:void(0);" data-state="0" onclick="geomap.map.setEstacionesLayer(0,this);" class="alphalink estacion-layer">CUENCAS PROVINCIA</a></li>
+                <li><a href="javascrit:void(0);" data-state="0" onclick="geomap.map.setEstacionesLayer(1,this);" class="alphalink estacion-layer">RÍOS PROVINCIA</a></li>
+                <li><a href="javascrit:void(0);" data-state="0" onclick="geomap.map.setEstacionesLayer(2,this);" class="alphalink estacion-layer">EJES DE LAS OBRAS</a></li>
+                <li><a href="javascrit:void(0);" data-state="0" onclick="geomap.map.setEstacionesLayer(3,this);" class="alphalink estacion-layer">ÁREAS DE LAS OBRAS</a></li>
+                <li><a href="javascrit:void(0);" data-state="0" onclick="geomap.map.setEstacionesLayer(4,this);" class="alphalink estacion-layer">EMBALSES</a></li>
+                <li><a href="javascrit:void(0);" data-state="0" onclick="geomap.map.setEstacionesLayer(5,this);" class="alphalink estacion-layer">ESTUARIO</a></li>
             </ul>
         </div>
     `;
@@ -1356,12 +1356,22 @@ function ol_map() {
     this.map.setEstacionesLayer = function(index, node) {
 
         $(".estacion-layer").removeClass("active");
-        $(node).addClass("active");
+
+        let state = $(node).attr("data-state");
+        let enableLayer = false;
+
+        if (state == 0) {
+            $(node).attr("data-state", 1);
+            $(node).addClass("active");
+            enableLayer = true;
+        } else {
+            $(node).attr("data-state", 0);
+        }
 
         for (var i = 0; i < this.estacionLayerNames.length; i++) {
 
             if (i == index) {
-                this.estacionLayers[i].setVisible(true);
+                this.estacionLayers[i].setVisible(enableLayer);
             } else {
                 this.estacionLayers[i].setVisible(false);
             }
