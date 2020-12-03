@@ -36,7 +36,6 @@ function ol_map() {
         contentAsHTML: true,
         interactive: true,
         content: baseLayerContent,
-        theme: "tooltipster-shadow",
         side: ["left", "top"],
         zIndex: 999,
         multiple: true
