@@ -81,7 +81,7 @@
 
 		</div>
 		
-		<div class="row m0">
+		<div class="row m0 mt-30">
 			<a href="javascript:void(0);" class="btn-2" onclick="getData();">VER RESULTADOS</a>
 		</div>
 
