@@ -164,7 +164,7 @@
 
 	<div id="map"></div>
 	
-	<?php include("./html.navbar-geovisor-zoom.php"); ?>
+	<?php include("./html.navbar-geovisor-estaciones-zoom.php"); ?>
 	<?php include("./popup.baselayers.estaciones.flotant.php"); ?>
 	
 	<div style="width:200px; bottom:15px; left:10px; font-weight:bolder;" class="jump-posabs">

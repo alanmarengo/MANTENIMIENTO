@@ -20,10 +20,7 @@
 			<div id="info-baselayers" class="jump-scrollble">
 		
 				<div class="pretty p-default p-round" style="font-size:20px;">
-					<input type="radio" name="radio-baselayers" onclick="geomap.map.setBaseLayer(geomap.map.baselayers.openstreets);">
-					<div class="state">
-						<label>Cuencas Provincia</label>
-					</div>
+					<a href="javascript:void(0);">Cuencas Provincia</a>
 				</div>
 				
 				<br>

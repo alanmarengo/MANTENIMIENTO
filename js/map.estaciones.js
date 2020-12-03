@@ -14,11 +14,34 @@ function ol_map() {
     this.map.layersStatsIndex = 200000;
     //this.map.apiUrl = "http://observatorio.atic.com.ar/red_api.php";
     //this.map.apiGraficosUrl = "http://observatorio.atic.com.ar/graficos_red/get_graficos.php";
-    
+
     this.map.apiUrl = "../red_api.php";
     this.map.apiGraficosUrl = "../graficos_red/get_graficos.php";
 
     this.map.geovisor = -1;
+
+    var baseLayerContent = "<div class=\"tooltip-white-list\">";
+    baseLayerContent += "<ul>";
+    baseLayerContent += "<li><a href=\"#\" onclick=\"ol_map.setBaseLayer(ol_map.baselayers.argenmap);\" class=\"alphalink\">ARGEN MAP</a></li>";
+    baseLayerContent += "<li><a href=\"#\" onclick=\"ol_map.setBaseLayer(ol_map.baselayers.google);\" class=\"alphalink\">GOOGLE</a></li>";
+    baseLayerContent += "<li><a href=\"#\" onclick=\"ol_map.setBaseLayer(ol_map.baselayers.openstreets);\" class=\"alphalink\">OPEN STREETS</a></li>";
+    baseLayerContent += "</ul>";
+    baseLayerContent += "</div>";
+
+    $("#capas-estaciones-boton").tooltipster({
+
+        position: "left",
+        trigger: "click",
+        animation: "grow",
+        contentAsHTML: true,
+        interactive: true,
+        content: baseLayerContent,
+        theme: "tooltipster-shadow",
+        side: ["left", "top"],
+        zIndex: 999,
+        multiple: true
+
+    });
 
     // MAP SCRIPTS 
 
@@ -106,7 +129,8 @@ function ol_map() {
                 url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
                 params: {
                     //'LAYERS': 'ahrsc:vp_geo_himet_ubicacionestaciones_pga1', //'intervalos_polygons',
-                    'LAYERS': 'ahrsc:estaciones_filtros', /* CAPA FILTROS */
+                    'LAYERS': 'ahrsc:estaciones_filtros',
+                    /* CAPA FILTROS */
                     //'VERSION': '1.1.1',
                     'FORMAT': 'image/png',
                     'TILED': false
@@ -231,7 +255,7 @@ function ol_map() {
                 if ((varparam[0] == "QUERY_LAYERS") || (varparam[0] == "LAYERS")) {
 
                     //newurl += "&" + varparam[0] + "=ahrsc:vp_geo_himet_ubicacionestaciones_pga1";ahrsc:estaciones_filtros
-                    newurl += "&" + varparam[0] + "=ahrsc:estaciones_filtros";/* CAPA FILTROS */
+                    newurl += "&" + varparam[0] + "=ahrsc:estaciones_filtros"; /* CAPA FILTROS */
 
                 } else {
 
@@ -1106,27 +1130,26 @@ function ol_map() {
             $(".filtro-area-interes:checked").each(function(i, v) {
                 ai_selected.push(this.value);
             });
-            
+
             /************************************************
              * Geoserver tiene muchooos problemas con filtros
              * Controles se tiene que ajustar aqui.
              * **********************************************/
-             
-             var te = '';
-             var ai = '';
-             
-             if(est_selected!='')te = 'tipo_estacion:' + est_selected.join("_")+';';
-             if(ai_selected!='')ai = 'area_interes:' + ai_selected.join('_')+';';
-             
-             console.log('ai_selected:'+ai_selected);
-             
 
-            this.estaciones_layer.getSource().updateParams
-            ({
+            var te = '';
+            var ai = '';
+
+            if (est_selected != '') te = 'tipo_estacion:' + est_selected.join("_") + ';';
+            if (ai_selected != '') ai = 'area_interes:' + ai_selected.join('_') + ';';
+
+            console.log('ai_selected:' + ai_selected);
+
+
+            this.estaciones_layer.getSource().updateParams({
 
                 //'view_params': 'tipo_estacion:' + est_selected.join(",") + ';area_interes:' + ai_selected.join(',')
                 //'view_params': 'tipo_estacion:' + est_selected.join("_") + ';area_interes:' + ai_selected.join('_')
-                'viewparams': te+ai
+                'viewparams': te + ai
 
             });
 
