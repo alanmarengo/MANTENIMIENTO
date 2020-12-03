@@ -331,3 +331,21 @@
     font-weight: 700;
     padding: 10px 0;
 }
+
+.tooltipster-box,
+.tooltipster-arrow {
+    border: none !important;
+}
+
+.tooltipster-box ul {
+    margin: 0;
+    list-style-type: none;
+}
+
+.tooltipster-box ul li {
+    padding: 5px 10px;
+}
+
+.tooltipster-box ul li a.active {
+    color: #31cbfd !important;
+}

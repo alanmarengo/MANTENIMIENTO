@@ -20,13 +20,17 @@ function ol_map() {
 
     this.map.geovisor = -1;
 
-    var baseLayerContent = "<div class=\"tooltip-white-list\">";
-    baseLayerContent += "<ul>";
-    baseLayerContent += "<li><a href=\"#\" onclick=\"ol_map.setBaseLayer(ol_map.baselayers.argenmap);\" class=\"alphalink\">ARGEN MAP</a></li>";
-    baseLayerContent += "<li><a href=\"#\" onclick=\"ol_map.setBaseLayer(ol_map.baselayers.google);\" class=\"alphalink\">GOOGLE</a></li>";
-    baseLayerContent += "<li><a href=\"#\" onclick=\"ol_map.setBaseLayer(ol_map.baselayers.openstreets);\" class=\"alphalink\">OPEN STREETS</a></li>";
-    baseLayerContent += "</ul>";
-    baseLayerContent += "</div>";
+    let estacionLayersHtml = `
+        <div class="tooltip-white-list">
+            <ul>
+                <li><a href="javascrit:void(0);" onclick="ol_map.setBaseLayer(ol_map.baselayers.argenmap);" class="alphalink">CUENCAS PROVINCIA</a></li>
+                <li><a href="javascrit:void(0);" onclick="ol_map.setBaseLayer(ol_map.baselayers.argenmap);" class="alphalink">RÍOS PROVINCIA</a></li>
+                <li><a href="javascrit:void(0);" onclick="ol_map.setBaseLayer(ol_map.baselayers.argenmap);" class="alphalink">EJES DE LAS OBRAS</a></li>
+                <li><a href="javascrit:void(0);" onclick="ol_map.setBaseLayer(ol_map.baselayers.argenmap);" class="alphalink">EMBALSES</a></li>
+                <li><a href="javascrit:void(0);" onclick="ol_map.setBaseLayer(ol_map.baselayers.argenmap);" class="alphalink">ESTUARIO</a></li>
+            </ul>
+        </div>
+    `;
 
     $("#capas-estaciones-boton").tooltipster({
 
@@ -35,8 +39,8 @@ function ol_map() {
         animation: "grow",
         contentAsHTML: true,
         interactive: true,
-        content: baseLayerContent,
-        side: ["left", "top"],
+        content: estacionLayersHtml,
+        side: ["left", "bottom"],
         zIndex: 999,
         multiple: true
 
@@ -137,6 +141,39 @@ function ol_map() {
             })
         });
 
+        this.estacionLayerNames = [
+            "ahrsc:vp_geo_hihgr_cuencassantacruz_ext1",
+            "ahrsc:vp_geo_hihgr_cuerposaguasantacruz_ext1",
+            "ahrsc:vp_geo_prcpr_ejes_otr1",
+            "ahrsc:vp_geo_prain_obrauso_otr1",
+            "ahrsc:vp_geo_prcpr_embalsesnexpr_otr1",
+            "ahrsc:vp_geo_hihgr_estuario_otr1"
+        ];
+
+        this.estacionLayers = [];
+
+        for (var i = 0; i < this.estacionLayerNames.length; i++) {
+
+            let layer_name = this.estacionLayerNames[i];
+
+            this.estacionLayers[i] = new ol.layer.Tile({
+                visible: true,
+                singleTile: true,
+                source: new ol.source.TileWMS({
+                    url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
+                    params: {
+                        //'LAYERS': 'ahrsc:vp_geo_himet_ubicacionestaciones_pga1', //'intervalos_polygons',
+                        'LAYERS': layer_name,
+                        /* CAPA FILTROS */
+                        //'VERSION': '1.1.1',
+                        'FORMAT': 'image/png',
+                        'TILED': false
+                    }
+                })
+            });
+
+        }
+
         /*this.baselayers.argenmap = new ol.layer.Tile({
         	name:'capabaseargenmap',
         	visible:true,
@@ -146,7 +183,21 @@ function ol_map() {
         	})
         })*/
 
-        this.baselayers.collection = [this.baselayers.openstreets, this.baselayers.opentopo, this.baselayers.bing_roads, this.baselayers.bing_aerials, this.baselayers.google, this.baselayers.argenmap, this.estaciones_layer];
+        this.baselayers.collection = [
+            this.baselayers.openstreets,
+            this.baselayers.opentopo,
+            this.baselayers.bing_roads,
+            this.baselayers.bing_aerials,
+            this.baselayers.google,
+            this.baselayers.argenmap,
+            this.estaciones_layer,
+            this.estacionLayers[0],
+            this.estacionLayers[1],
+            this.estacionLayers[2],
+            this.estacionLayers[3],
+            this.estacionLayers[4],
+            this.estacionLayers[5]
+        ];
 
         ///////document.getElementById("baselayer-default-radio").click();
 
