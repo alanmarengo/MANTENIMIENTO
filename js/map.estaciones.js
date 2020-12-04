@@ -371,7 +371,7 @@ function ol_map() {
             let html = `
                 <div class="row">
                     <div class="col col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                        <p><img src="./images/sample.jpg" width="100%"></p>
+                        <p><img id="popup_hidro_foto" src="./images/sample.jpg" width="100%"></p>
                         <p class="mt-20">
                             <a href="#" class="btn-1">Monografía de la Estación</a>
                         </p>
@@ -419,7 +419,12 @@ function ol_map() {
             $("#panel-ha-1").html(html);
 
             $("#popup-inner").children(".header").children(".title").html(js.estacion);
-
+            
+            if(js.foto_estacion!='')
+            {
+              document.getElementById('popup_hidro_foto').src=js.foto_estacion;
+			};
+			
             $("#panel-ha-1 .api-tab-1 .coordenadas .popup-value").html(js.lat + "," + js.long);
             $("#panel-ha-1 .api-tab-1 .nombre .popup-value").html(js.estacion);
             $("#panel-ha-1 .api-tab-1 .localizacion .popup-value").html(js.localizacion);
