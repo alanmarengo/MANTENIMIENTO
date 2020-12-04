@@ -111,7 +111,7 @@ function hidro_get_solapa_desc($estacion_id,$tipo_estacion_id)
 	
 	$query_string    = "SELECT *";
 	$query_string   .= " FROM mod_sensores.vp_tab_deschidroambiental_pga1 ";
-	$query_string   .= "WHERE estacion_id=$estacion_id AND tipo_estacionid=$tipo_estacion_id;";
+	$query_string   .= "WHERE estacion_id::bigint=$estacion_id AND tipo_estacionid::bigint=$tipo_estacion_id;";
 	
 	$query = pg_query($conn,$query_string);
 	
