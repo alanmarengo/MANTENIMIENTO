@@ -714,7 +714,7 @@ function ol_map() {
             let html = `
                 <div class="row">
                     <div class="col col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                        <p><img src="./images/sample.jpg" width="100%"></p>
+                        <p><img id="popup_aforo_img" src="./images/sample.jpg" width="100%"></p>
                         <p class="mt-20">
                             <a href="#" class="btn-1">Monografía de la Estación</a>
                         </p>
@@ -754,6 +754,11 @@ function ol_map() {
             $("#panel-aforo-ha-1").html(html);
 
             $("#popup-aforo-ha-inner").children(".header").children(".title").html(js.estacion);
+            
+            if(js.foto_estacion!="")
+            {
+				document.getElementById('popup_aforo_img').src=js.foto_estacion;
+			};
 
             $("#panel-aforo-ha-1 .api-tab-1 .coordenadas .popup-value").html(js.lat + "," + js.long);
             $("#panel-aforo-ha-1 .api-tab-1 .seccion .popup-value").html(js.seccion);
