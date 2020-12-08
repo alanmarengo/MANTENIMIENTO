@@ -351,6 +351,9 @@ function hidro_get_solapa_datos_diarios($estacion_id,$tipo_categoria_parametro_i
 	
 	$r = pg_fetch_assoc($query);
 	
+	if (pg_num_rows($r)>0)
+	{
+	
 	$json .= '"DV":';
 	
 	$json .= '{';
@@ -362,7 +365,11 @@ function hidro_get_solapa_datos_diarios($estacion_id,$tipo_categoria_parametro_i
 	$json .= '"ultimo_dato":"' 		. clear_json($r["ultimo_dato"]) . '",';
 	$json .= '"fecha_dato":"' 		. clear_json($r["fecha_dato"]) . '",';
 	$json .= '"dv_moda":"' 		. clear_json($r["dv_moda"]) . '"';
-	$json .= "}}";
+	$json .= "}";
+	
+	};
+	
+	$json .= "}";
 
 	
 	echo $json;
