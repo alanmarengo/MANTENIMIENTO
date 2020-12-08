@@ -709,7 +709,7 @@ function ol_map() {
 
         this.popupTab4 = function() {
 
-            let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=14";
+            let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + this.current_tipo_estacion_id + "&mode=14";
             let js = this.requestApi(url);
 
             let html_mensual = `<ul class="ico-list">`;
