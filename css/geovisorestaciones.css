@@ -58,6 +58,7 @@
     position: absolute;
     z-index: 50000;
     display: none;
+    overflow-y: auto;
 }
 
 #popup-inner {
