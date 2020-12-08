@@ -342,7 +342,7 @@ function hidro_get_solapa_datos_diarios($estacion_id,$tipo_categoria_parametro_i
 		$json = substr($json,0,strlen($json)-1);
 	};
 	
-	$json .= "],";
+	$json .= "]";
 	
 	$query_string   = "SELECT * FROM  mod_sensores.get_estacion_datos_diarios_dv($estacion_id,$tipo_categoria_parametro_id) ";
 	$query_string  .= "ORDER BY parametro_nombre ASC;";
@@ -354,6 +354,7 @@ function hidro_get_solapa_datos_diarios($estacion_id,$tipo_categoria_parametro_i
 	if (pg_num_rows($r)>0)
 	{
 	
+	$json .= ",";
 	$json .= '"DV":';
 	
 	$json .= '{';
