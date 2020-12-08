@@ -515,17 +515,20 @@ function ol_map() {
 
             }
 
-            js["DV"].ultimo_dato = round(js["DV"].ultimo_dato, 2);
+			if(js["DV"])
+			{
+				js["DV"].ultimo_dato = round(js["DV"].ultimo_dato, 2);
 
-            html += `<div class="col col-md-2 col-lg-2 p5">
-                    <div class="indicador">
-                        <p class="title">Dirección del Viento</p>
-                        <p class="value m0">${js["DV"].ultimo_dato}</p>
-                        <p class="text-default m0 mt-3">Fecha Dato: ${js["DV"].fecha_dato}</p>
-                        <p class="text-default m0 mt-3">Moda: ${js["DV"].dv_moda}</p>
-                    </div>
-                </div>
-                `;
+				html += `<div class="col col-md-2 col-lg-2 p5">
+						<div class="indicador">
+							<p class="title">Dirección del Viento</p>
+							<p class="value m0">${js["DV"].ultimo_dato}</p>
+							<p class="text-default m0 mt-3">Fecha Dato: ${js["DV"].fecha_dato}</p>
+							<p class="text-default m0 mt-3">Moda: ${js["DV"].dv_moda}</p>
+						</div>
+					</div>
+					`;
+			};
 
             html += "</div>";
 
