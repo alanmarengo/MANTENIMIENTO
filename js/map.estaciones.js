@@ -515,7 +515,7 @@ function ol_map() {
 
             }
 
-			if(js["DV"])
+			if(js["DV"].estacion_id!='')
 			{
 				js["DV"].ultimo_dato = round(js["DV"].ultimo_dato, 2);
 
