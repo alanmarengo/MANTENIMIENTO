@@ -455,7 +455,7 @@ function ol_map() {
 
                     html += `
                     <div class="category">
-                        <input ${checked} type="radio" name="categoria" value="${js.categoria_parametros[i].categoria_parametro_id}" onclick="geomap.map.current_categoria_id=this.value; geomap.map.popupTab2(); geomap.map.popupTab3();">
+                        <input ${checked} type="radio" name="categoria" value="${js.categoria_parametros[i].categoria_parametro_id}" onclick="geomap.map.current_categoria_id=this.value; geomap.map.popupTab2(); geomap.map.popupTab3();  geomap.map.popupTab4();">
                         <label>${js.categoria_parametros[i].categoria_parametro_desc}</label>
                     </div>
                     `;
@@ -719,23 +719,27 @@ function ol_map() {
 
             for (var i = 0; i < js.length; i++) {
 
-                if (js[i].tipo_desc == 'ANUAL') {
+                if (js[i].categoria_parametro_id == this.current_categoria_id) {
 
-                    html_anual += `
-                        <li>
-                            <img src="./images/panel-h4-ico.png">
-                            <a href="${js[i].link}" target="_blank"><span>${js[i].link_titulo}</span></a>
-                        </li>
-                    `;
+                    if (js[i].tipo_desc == 'ANUAL') {
 
-                } else {
+                        html_anual += `
+                            <li>
+                                <img src="./images/panel-h4-ico.png">
+                                <a href="${js[i].link}" target="_blank"><span>${js[i].link_titulo}</span></a>
+                            </li>
+                        `;
 
-                    html_mensual += `
-                        <li>
-                            <img src="./images/panel-h4-ico.png">
-                            <a href="${js[i].link}" target="_blank"><span>${js[i].link_titulo}</span></a>
-                        </li>
-                    `;
+                    } else {
+
+                        html_mensual += `
+                            <li>
+                                <img src="./images/panel-h4-ico.png">
+                                <a href="${js[i].link}" target="_blank"><span>${js[i].link_titulo}</span></a>
+                            </li>
+                        `;
+
+                    }
 
                 }
 
