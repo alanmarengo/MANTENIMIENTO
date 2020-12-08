@@ -351,7 +351,7 @@ function hidro_get_solapa_datos_diarios($estacion_id,$tipo_categoria_parametro_i
 	
 	$r = pg_fetch_assoc($query);
 	
-	if (pg_num_rows($r)>0)
+	if (pg_num_rows($query)>0)
 	{
 	
 	$json .= ",";
