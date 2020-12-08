@@ -90,6 +90,11 @@ switch ($mode)
 		//http://observ.net/red_api.php?estacion_id=7&categoria_parametro_id=4&parametro_id=5&mode=12
 		get_parametros($tipo_estaciones);
 		break;
+	case 14:
+		hidro_popup4_links($estacion_id);
+		break;
+		
+		
 		
 		
 	
@@ -905,6 +910,54 @@ function get_estacion_parametro_grafico_30_dias($estacion_id,$tipo_categoria_par
 
 
 
+
+function hidro_popup4_links($estacion_id)
+{
+	//http://observ.net/red_api.php?estacion_id=7&categoria_parametro_id=4&parametro_id=5&fd=01/01/2020&fh=31/12/2020&mode=4
+	
+	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
+		
+	$conn = pg_connect($string_conn);
+	
+	$query_string   = "SELECT * FROM mod_sensores.popup4_hidro_links WHERE estacion_id::bigint=$estacion_id ";
+	$query_string  .= "ORDER BY tipo_id,tipo_desc,link_titulo ASC;";
+	
+	//echo $query_string;
+	
+	$query = pg_query($conn,$query_string);
+	
+	$entered = false;
+	
+	$json = "[";
+	
+	while ($r = pg_fetch_assoc($query)) 
+	{
+		
+		$json .= '{';
+		$json .= '"tab":"Hidro - popup4 links",';
+		$json .= '"estacion_id":"' 		. clear_json($r["estacion_id"]) . '",';
+		$json .= '"categoria_parametro_id":"' 	. clear_json($r["categoria_parametro_id"]) . '",';
+		$json .= '"link":"' 			. clear_json($r["link"]) . '",';
+		$json .= '"link_titulo":"' 		. clear_json($r["link_titulo"]) . '",';
+		$json .= '"tipo_id":"' 			. clear_json($r["tipo_id"]) . '",';
+		$json .= '"tipo_desc":"' 		. clear_json($r["tipo_desc"]) . '"';
+		$json .= "},";
+
+		$entered = true;
+	}
+	
+	if($entered) 
+	{
+		$json = substr($json,0,strlen($json)-1);
+	};
+	
+	$json .= "]";
+	
+	echo $json;
+	
+	pg_close($conn);
+	
+};
 
 
 
