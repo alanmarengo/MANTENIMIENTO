@@ -22,8 +22,8 @@ function ol_map() {
 
     let estacionLayersHtml = `
         <div class="tooltip-white-list">
-            <p class="text-center">CAPAS BASE</p>
-            <hr style="margin:7px 0;">
+            <p class="text-center m0">CAPAS BASE</p>
+            <hr style="margin:10px 0;">
             <ul>
                 <li><a href="javascrit:void(0);" data-state="0" onclick="geomap.map.setEstacionesLayer(0,this);" class="alphalink estacion-layer">CUENCAS PROVINCIA</a></li>
                 <li><a href="javascrit:void(0);" data-state="0" onclick="geomap.map.setEstacionesLayer(1,this);" class="alphalink estacion-layer">RÍOS PROVINCIA</a></li>
