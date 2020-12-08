@@ -50,6 +50,7 @@ function ol_map() {
     // MAP SCRIPTS 
 
     this.map.create = function() {
+        ''
 
         this.baselayers.openstreets = new ol.layer.Tile({
             name: 'openstreets',
@@ -419,12 +420,11 @@ function ol_map() {
             $("#panel-ha-1").html(html);
 
             $("#popup-inner").children(".header").children(".title").html(js.estacion);
-            
-            if(js.foto_estacion!='')
-            {
-              document.getElementById('popup_hidro_foto').src=js.foto_estacion;
-			};
-			
+
+            if (js.foto_estacion != '') {
+                document.getElementById('popup_hidro_foto').src = js.foto_estacion;
+            };
+
             $("#panel-ha-1 .api-tab-1 .coordenadas .popup-value").html(js.lat + "," + js.long);
             $("#panel-ha-1 .api-tab-1 .nombre .popup-value").html(js.estacion);
             $("#panel-ha-1 .api-tab-1 .localizacion .popup-value").html(js.localizacion);
@@ -515,11 +515,10 @@ function ol_map() {
 
             }
 
-			if(js["DV"])
-			{
-				js["DV"].ultimo_dato = round(js["DV"].ultimo_dato, 2);
+            if (js["DV"]) {
+                js["DV"].ultimo_dato = round(js["DV"].ultimo_dato, 2);
 
-				html += `<div class="col col-md-2 col-lg-2 p5">
+                html += `<div class="col col-md-2 col-lg-2 p5">
 						<div class="indicador">
 							<p class="title">Dirección del Viento</p>
 							<p class="value m0">${js["DV"].ultimo_dato}</p>
@@ -528,7 +527,7 @@ function ol_map() {
 						</div>
 					</div>
 					`;
-			};
+            };
 
             html += "</div>";
 
@@ -710,8 +709,42 @@ function ol_map() {
 
         this.popupTab4 = function() {
 
-            let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=0";
+            let url = this.apiUrl + "?estacion_id=" + estacion_id + "&tipo_estacion_id=" + tipo_estacion_id + "&mode=14";
             let js = this.requestApi(url);
+
+            let html_mensual = `<ul class="ico-list">`;
+            let html_anual = `<ul class="ico-list">`;
+
+            for (var i = 0; i < js.length; i++) {
+
+                if (js[i].tipo_desc == 'ANUAL') {
+
+                    html_anual += `
+                        <li>
+                            <img src="./images/panel-h4-ico.png">
+                            <a href="${js[i].link}" target="_blank"><span>${js[i].link_titulo}</span></a>
+                        </li>
+                    `;
+
+                } else {
+
+                    html_mensual += `
+                        <li>
+                            <img src="./images/panel-h4-ico.png">
+                            <a href="${js[i].link}" target="_blank"><span>${js[i].link_titulo}</span></a>
+                        </li>
+                    `;
+
+                }
+
+            }
+
+            html_mensual += "</ul>";
+            html_anual += "</ul>";
+
+            document.getElementById("panel-ha4-1").innerHTML = html_mensual;
+            document.getElementById("panel-ha4-2").innerHTML = html_anual;
+
         }
 
         this.popupTabAforo1 = function() {
@@ -762,11 +795,10 @@ function ol_map() {
             $("#panel-aforo-ha-1").html(html);
 
             $("#popup-aforo-ha-inner").children(".header").children(".title").html(js.estacion);
-            
-            if(js.foto_estacion!="")
-            {
-				document.getElementById('popup_aforo_img').src=js.foto_estacion;
-			};
+
+            if (js.foto_estacion != "") {
+                document.getElementById('popup_aforo_img').src = js.foto_estacion;
+            };
 
             $("#panel-aforo-ha-1 .api-tab-1 .coordenadas .popup-value").html(js.lat + "," + js.long);
             $("#panel-aforo-ha-1 .api-tab-1 .seccion .popup-value").html(js.seccion);
