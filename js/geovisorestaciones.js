@@ -1,11 +1,12 @@
 $(document).ready(function() {
 
-    /*$("[title]").tooltipster({
-    	animation: 'fade',
-    	delay: 200,
-    	theme: 'tooltipster-default',
-    	trigger: 'hover'
-    });*/
+    $("[title]").tooltipster({
+        animation: 'fade',
+        delay: 200,
+        theme: 'tooltipster-default',
+        trigger: 'hover',
+        multiple: true
+    });
 
     geomap = new ol_map();
 
