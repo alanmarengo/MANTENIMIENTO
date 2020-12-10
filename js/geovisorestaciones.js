@@ -6,7 +6,7 @@ $(document).ready(function() {
         theme: 'tooltipster-default',
         trigger: 'hover',
         multiple: true,
-        position: left
+        position: "left"
     });
 
     geomap = new ol_map();
