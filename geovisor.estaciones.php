@@ -39,8 +39,6 @@
 					<label>Estaciones hidrométricas</label>
 				</div>
 			</div>
-			
-			<br>
 		
 			<div class="pretty p-icon p-curve" style="font-size:20px;">
 				<input type="checkbox" class="filtro-estacion" name="filtro-estacion" value="2" onclick="geomap.map.updateLayerFilters();">
@@ -49,8 +47,6 @@
 					<label>Estaciones meteorológicas</label>
 				</div>
 			</div>
-			
-			<br>
 		
 			<div class="pretty p-icon p-curve" style="font-size:20px;">
 				<input type="checkbox" class="filtro-estacion" name="filtro-estacion" value="3" onclick="geomap.map.updateLayerFilters();">
@@ -59,8 +55,6 @@
 					<label>Estaciones hidroambientales</label>
 				</div>
 			</div>
-			
-			<br>
 		
 			<div class="pretty p-icon p-curve" style="font-size:20px;">
 				<input type="checkbox" class="filtro-estacion" name="filtro-estacion" value="4" onclick="geomap.map.updateLayerFilters();">
@@ -95,8 +89,6 @@
 					<label>Cuenca alta</label>
 				</div>
 			</div>
-			
-			<br>
 		
 			<div class="pretty p-icon p-curve" style="font-size:20px;">
 				<input type="checkbox" class="filtro-area-interes" name="filtro-area-interes" value="2" onclick="geomap.map.updateLayerFilters();">
@@ -105,8 +97,6 @@
 					<label>Cuenca baja</label>
 				</div>
 			</div>
-			
-			<br>
 		
 			<div class="pretty p-icon p-curve" style="font-size:20px;">
 				<input type="checkbox" class="filtro-area-interes" name="filtro-area-interes" value="3" onclick="geomap.map.updateLayerFilters();">
@@ -115,8 +105,6 @@
 					<label>Estuario</label>
 				</div>
 			</div>
-			
-			<br>
 		
 			<div class="pretty p-icon p-curve" style="font-size:20px;">
 				<input type="checkbox" class="filtro-area-interes" name="filtro-area-interes" value="4" onclick="geomap.map.updateLayerFilters();">
@@ -125,8 +113,6 @@
 					<label>Presa Condor Cliff</label>
 				</div>
 			</div>
-			
-			<br>
 		
 			<div class="pretty p-icon p-curve" style="font-size:20px;">
 				<input type="checkbox" class="filtro-area-interes" name="filtro-area-interes" value="5" onclick="geomap.map.updateLayerFilters();">
@@ -135,8 +121,6 @@
 					<label>Presa La Barrancosa</label>
 				</div>
 			</div>
-			
-			<br>
 		
 			<div class="pretty p-icon p-curve" style="font-size:20px;">
 				<input type="checkbox" class="filtro-area-interes" name="filtro-area-interes" value="6" onclick="geomap.map.updateLayerFilters();">
@@ -145,8 +129,6 @@
 					<label>Embalse Condor Cliff</label>
 				</div>
 			</div>
-			
-			<br>
 		
 			<div class="pretty p-icon p-curve" style="font-size:20px;">
 				<input type="checkbox" class="filtro-area-interes" name="filtro-area-interes" value="7" onclick="geomap.map.updateLayerFilters();">
@@ -155,8 +137,6 @@
 					<label>Embalse La Barrancosa</label>
 				</div>
 			</div>
-			
-			<br>
 
 		</div>
 
