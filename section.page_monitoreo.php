@@ -32,7 +32,7 @@
 
             <div class="row">
                 <div class="col-md-6 text-justify">
-                    La medición de diferentes variables físicas, químicas y biológicas relacionadas con el clima y la hidrología de la cuenca es esencial para el proyecto, para concretar un sistema de alerta ante eventos hidrometeorologicos de diferente magnitud y para ampliar el conocimiento de la cuenca. A su vez, permite conocer el sistema en los momentos previo y posterior a la formación de los embalses y evaluar los cambios que se produzcan.
+                    La medición de diferentes variables físicas, químicas y biológicas relacionadas con el clima y la hidrología de la cuenca es esencial para el proyecto, para concretar un sistema de alerta ante eventos hidrometeorologicos de diferente magnitud y para ampliar el conocimiento de la cuenca. A su vez, permite conocer el sistema en los momentos previos y posteriores a la formación de los embalses y evaluar los cambios que se produzcan.
                     <br />
                     <br />
                     La información será de utilidad para la gestión del recurso y la mitigación de impactos potenciales; a su vez podrá ser utilizada por diversos proyectos y actividades que se desarrollan en la actualidad o que se planifiquen en el futuro.
@@ -46,7 +46,7 @@
                     Las primeras medirán, entre otras, las siguientes variables: oxígeno disuelto, clorofila, conductividad eléctrica, material en suspensión, nivel del agua, temperatura del agua y del aire, pluviometría, velocidad del viento y radiación solar. 
                     <br />
                     <br />
-                    Las boyas medirán entre otras variables: altura y periodo de olas, perfil de temperatura del agua en 6 niveles de profundidad y dirección y velocidad del viento, además de otras variables que también serán registradas por las estaciones fijas. 
+                    Las boyas medirán entre otras variables: altura y periodo de olas, perfil de temperatura del agua en 6 niveles de profundidad, dirección y velocidad del viento, además de otras variables que también serán registradas por las estaciones fijas. 
                     <br />
                     <br />
                     La provisión de datos está prevista con una frecuencia de entre 1 y 2 horas, dependiendo de la capacidad de transmisión de datos.
