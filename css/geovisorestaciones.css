@@ -14,7 +14,7 @@
 }
 
 .card-title {
-    font-size: 14px;
+    font-size: 12px;
     color: #8d3050;
     margin: 5px 0 5px -7px;
     font-weight: 600;
@@ -354,4 +354,12 @@
 .tooltipster-arrow-border {
     border-left: none !important;
     border: none !important;
+}
+
+.pretty .state label {
+    text-transform: none !important
+}
+
+.pretty {
+    margin: 2px !important;
 }
