@@ -34,10 +34,10 @@ if ((isset($_SESSION)) && (sizeof($_SESSION) > 0)) {
 <?php }else{ ?>
 	
 	<li class="dropdown">
-		<a href="#" id="navbarDropdown-help"title="Acceder" role="button" data-toggle="dropdown" aria-expanded="false" title="Menu de usuario">
+		<a href="#" id="navbarDropdown-user"title="Acceder" role="button" data-toggle="dropdown" aria-expanded="false" title="Menu de usuario">
 			<i class="fa fa-user"></i>
 		</a>
-		<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-help" id="dropdown-help">
+		<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-user" id="dropdown-user">
 			<form method="post" action="./CMD-login.php" id="frm">
 				<ul>
 					<li>
