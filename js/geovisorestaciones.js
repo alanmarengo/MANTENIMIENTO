@@ -1,11 +1,12 @@
 $(document).ready(function() {
 
-    $("[title]").tooltipster({
+    $("#zoom-navbar ul li a").tooltipster({
         animation: 'fade',
         delay: 200,
         theme: 'tooltipster-default',
         trigger: 'hover',
-        multiple: true
+        multiple: true,
+        position: left
     });
 
     geomap = new ol_map();
