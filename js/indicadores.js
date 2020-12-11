@@ -144,6 +144,13 @@ function ol_indicadores() {
 				
 			}
 			
+			console.log('extent: '+js.extent);
+			
+			if(js.extent=='')
+			{
+				console.log('extent por defecto');
+				//[-13281237.21183002,-7669922.0600572005,-738226.6183457375,-1828910.1066171727]
+			}else console.log('extent de usuario: '+js.extent);
 			
 			
 			var indMap = new ol.Map({
