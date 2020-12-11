@@ -164,15 +164,18 @@ function ol_indicadores() {
 				layers:map_layers,
 				target: "indicador-inner-"+pos,
 				extent: [-13281237.21183002,-7669922.0600572005,-738226.6183457375,-1828910.1066171727],
-				//extent: extent_indi,
 				controls: [],
 				view: new ol.View({
-					//center: [-7176058.888636417,-4680928.505993671],
+					center: [-7176058.888636417,-4680928.505993671],
 					zoom:3.8,
 					minZoom: 3.8,
 					maxZoom: 21
 				})
 			});
+			
+			indMap.getView().fit(extent_indi,{duration:1000});
+			indMap.updateSize();
+			indMap.render();
 			
 			break;
 			
