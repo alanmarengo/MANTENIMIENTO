@@ -9,7 +9,7 @@ $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . 
 	
 $conn = pg_connect($string_conn);
 
-$query_string = "SELECT * FROM mod_indicadores.vw_recursos WHERE ind_id = $ind_id AND posicion = $pos";
+$query_string = "SELECT *,(select extent from mod_indicadores.ind_capa where ind_id=$ind_id and posicion=$pos limit 1)as ext FROM mod_indicadores.vw_recursos WHERE ind_id = $ind_id AND posicion = $pos";
 //$query_string = "SELECT * FROM mod_indicadores.vw_recursos WHERE ind_id = 1 AND posicion = 1";
 
 $query = pg_query($conn,$query_string);
@@ -17,6 +17,7 @@ $query = pg_query($conn,$query_string);
 $layer_id = array();
 $layer_name = array();
 $layer_server = array();
+$layer_extent = '';/*Fix*/
 
 $sliderItem = array();
 
@@ -34,6 +35,7 @@ while($r = pg_fetch_assoc($query)) {
 		array_push($layer_id,$r["resource_id"]);
 		array_push($layer_name,$r["layer_name"]);
 		array_push($layer_server,$r["layer_server"]);
+		$layer_extent = $r["ext"]; /*Fix*/
 		break;
 		
 		case "tabla":
@@ -186,6 +188,7 @@ switch($type) {
 	$out .= "\"ind_titulo\":\"" . $titulo_ind . "\",";
 	$out .= "\"ind_desc\":\"" . $desc_ind . "\",";
 	$out .= "\"layers\":[\"".implode("\",\"",$layer_name)."\"],";
+	$out .= "\"extent\":\"".$layer_extent."\","; /*FIX Borrar en caso de falla */
 	$out .= "\"layers_server\":[\"".implode("\",\"",$layer_server)."\"]";
 	$out .= "}";
 	break;

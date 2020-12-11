@@ -144,6 +144,8 @@ function ol_indicadores() {
 				
 			}
 			
+			
+			
 			var indMap = new ol.Map({
 				layers:map_layers,
 				target: "indicador-inner-"+pos,
