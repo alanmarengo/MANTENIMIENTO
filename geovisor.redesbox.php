@@ -25,7 +25,7 @@
 <body style="height:auto;">
 
 	<div class="container">
-		<p class="title">REGISTRO ESTADÍSTICO Y GRÁFICO DE LA RED DE MONITOREO HÍDRICO DE LA CUENCA DEL RÍO SANTA CRUZ</p>		
+		<!--<p class="title">REGISTRO ESTADÍSTICO Y GRÁFICO DE LA RED DE MONITOREO HÍDRICO DE LA CUENCA DEL RÍO SANTA CRUZ</p>		-->
 
 		<ul class="nav nav-tabs type2">
 			<li class="active"><a class="btn-tab active show" data-toggle="tab" id="tab-redes-1" href="#panel-redes-1" aria-expanded="true" data-tab="1">MONITOREO HIDROAMBIENTAL</a></li>
