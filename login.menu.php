@@ -12,7 +12,7 @@ if ((isset($_SESSION)) && (sizeof($_SESSION) > 0)) {
 		<a href="#" id="navbarDropdown-help" title="Datos de Usuario" role="button" data-toggle="dropdown" aria-expanded="false" title="Menu de usuario">
 			<i class="fa fa-user"></i>
 		</a>
-		<div class="dropdown-menu dropdown-menu-right p10" aria-labelledby="navbarDropdown-help" id="dropdown-help">
+		<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-help" id="dropdown-help">
 			<ul>
 				<!--
 				<li>
@@ -40,7 +40,7 @@ if ((isset($_SESSION)) && (sizeof($_SESSION) > 0)) {
 		<a href="#" id="navbarDropdown-user"title="Acceder" role="button" data-toggle="dropdown" aria-expanded="false" title="Menu de usuario">
 			<i class="fa fa-user"></i>
 		</a>
-		<div class="dropdown-menu dropdown-menu-right p10" aria-labelledby="navbarDropdown-user" id="dropdown-user">
+		<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-user" id="dropdown-user">
 			<form method="post" action="./CMD-login.php" id="frm">
 				<ul>
 					<li>
