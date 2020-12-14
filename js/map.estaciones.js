@@ -1466,6 +1466,8 @@ function ol_map() {
             </div>
         `;
 
+        alert(estacionLayersHtml);
+
         $("#capas-estaciones-boton").tooltipster({
 
             position: "left",
