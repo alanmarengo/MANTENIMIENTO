@@ -46,7 +46,8 @@ function ol_map() {
         interactive: true,
         content: estacionLayersHtml,
         side: ["left", "top"],
-        zIndex: 999
+        zIndex: 999,
+        multiple: true
 
     });
 
@@ -1472,7 +1473,8 @@ function ol_map() {
             interactive: true,
             content: estacionLayersHtml,
             side: ["left", "top"],
-            zIndex: 999
+            zIndex: 999,
+            multiple: true
 
         });
 
