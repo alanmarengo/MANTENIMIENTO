@@ -31,7 +31,7 @@ $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . 
 		   //echo '"media_tipo":"'.$row[4].'",';
 		   echo '"media_tipo":"'.$tmedia.'",';
 		   echo '"texto":"'.$row[1].'",';
-		   echo '"url":"#",';
+		   echo '"url":"javascript:void(0);",';
 		   echo '"tag":"",';
 		   echo '"tema":"'.$row[2].'"';
 		   echo '}';
