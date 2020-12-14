@@ -1426,6 +1426,8 @@ function ol_map() {
 
     this.map.setEstacionesLayer = function(index, node) {
 
+        alert(index);
+
         this.estacionLayerIsBase = index;
 
         $(".estacion-layer").removeClass("active");
