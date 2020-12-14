@@ -1450,9 +1450,9 @@ function ol_map() {
             if (i == index) {
                 this.estacionLayers[i].setVisible(enableLayer);
                 this.estacionLayerIsBase[i] = true;
-                estacionLayersHtml += `<li><a href="javascrit:void(0);" data-state="1" onclick="geomap.map.setEstacionesLayer(${i},this);" class="alphalink estacion-layer active">${estacionLayersLabels[i]}</a></li>`;
+                thisestacionLayersHtml += `<li><a href="javascrit:void(0);" data-state="1" onclick="geomap.map.setEstacionesLayer(${i},this);" class="alphalink estacion-layer active">${this.estacionLayersLabels[i]}</a></li>`;
             } else {
-                estacionLayersHtml += `<li><a href="javascrit:void(0);" data-state="0" onclick="geomap.map.setEstacionesLayer(${i},this);" class="alphalink estacion-layer">${estacionLayersLabels[i]}</a></li>`;
+                thisestacionLayersHtml += `<li><a href="javascrit:void(0);" data-state="0" onclick="geomap.map.setEstacionesLayer(${i},this);" class="alphalink estacion-layer">${this.estacionLayersLabels[i]}</a></li>`;
                 this.estacionLayers[i].setVisible(false);
                 this.estacionLayerIsBase[i] = false;
             }
