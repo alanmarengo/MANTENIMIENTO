@@ -102,7 +102,7 @@
 		</div>
 		
 		<div class="row m0">
-			<a href="javascript:void(0);" class="btn-2">VER DATOS COMPLETOS</a>
+			<a href="./estadisticas.php?mode=1&cid=16" target="_blank" class="btn-2">VER DATOS COMPLETOS</a>
 		</div>
 
 	</div>
