@@ -43,14 +43,14 @@
 				<div class="form-group">
 					<label>Desde:</label>
 					<input type="text" class="datepicker" id="tab-redes-fdesde">
-					<i class="fa fa-calendar-alt"></i>
+					<i class="fa fa-calendar-alt" style="cursor:pointer;" onclick="$(this).prev().focus();"></i>
 				</div>
 			</div>
 			<div class="col col-md-4 col-lg-4">
 				<div class="form-group">
 					<label>Hasta:</label>
 					<input type="text" class="datepicker" id="tab-redes-fhasta">
-					<i class="fa fa-calendar-alt"></i>
+					<i class="fa fa-calendar-alt" style="cursor:pointer;" onclick="$(this).prev().focus();"></i>
 				</div>
 			</div>
 		</div>
