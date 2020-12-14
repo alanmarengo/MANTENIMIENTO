@@ -46,8 +46,7 @@ function ol_map() {
         interactive: true,
         content: estacionLayersHtml,
         side: ["left", "top"],
-        zIndex: 999,
-        multiple: true
+        zIndex: 999
 
     });
 
@@ -1464,8 +1463,6 @@ function ol_map() {
             </div>
         `;
 
-        $("#capas-estaciones-boton").tooltipster("destroy");
-
         $("#capas-estaciones-boton").tooltipster({
 
             position: "left",
@@ -1475,8 +1472,7 @@ function ol_map() {
             interactive: true,
             content: estacionLayersHtml,
             side: ["left", "top"],
-            zIndex: 999,
-            multiple: true
+            zIndex: 999
 
         });
 
