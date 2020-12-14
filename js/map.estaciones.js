@@ -1426,10 +1426,6 @@ function ol_map() {
 
     this.map.setEstacionesLayer = function(index, node) {
 
-        alert(index);
-
-        this.estacionLayerIsBase = index;
-
         $(".estacion-layer").removeClass("active");
 
         let state = $(node).attr("data-state");
@@ -1468,10 +1464,9 @@ function ol_map() {
             </div>
         `;
 
-        $("#capas-estaciones-boton").tooltipster("destroy");
-
         $("#capas-estaciones-boton").tooltipster({
 
+            delay: 500,
             position: "left",
             trigger: "click",
             animation: "grow",
@@ -1483,6 +1478,8 @@ function ol_map() {
             multiple: true
 
         });
+
+        $("#capas-estaciones-boton").tooltipster("destroy");
 
     }
 
