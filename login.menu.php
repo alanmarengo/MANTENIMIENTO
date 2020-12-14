@@ -27,6 +27,9 @@ if ((isset($_SESSION)) && (sizeof($_SESSION) > 0)) {
 				<li>
 					<a class="dropdown-item" href="./CMD-logout.php">Cerrar Sesión</a>
 				</li>
+				<li style="line-height:10px; height:10px;">
+					<span></span>
+				</li>
 			</ul>
 		</div>            
 	</li>
@@ -60,6 +63,9 @@ if ((isset($_SESSION)) && (sizeof($_SESSION) > 0)) {
 					<!--<li class="form-group form-group-link">
 						<a href="#">Olvidé mi contraseña</a>
 					</li>-->
+					<li style="line-height:10px; height:10px;">
+						<span></span>
+					</li>
 				</ul>
 			</form>
 		</div>
