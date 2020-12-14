@@ -12,6 +12,8 @@ function ol_map() {
     this.map.layersBufferIndex = 0;
     this.map.layersStats = [];
     this.map.layersStatsIndex = 200000;
+    this.map.currentBaseLayerString = "";
+    this.estacionLayerIsBase = [];
     //this.map.apiUrl = "http://observatorio.atic.com.ar/red_api.php";
     //this.map.apiGraficosUrl = "http://observatorio.atic.com.ar/graficos_red/get_graficos.php";
 
@@ -152,6 +154,24 @@ function ol_map() {
             "ahrsc:vp_geo_prain_obrauso_otr1",
             "ahrsc:vp_geo_prcpr_embalsesnexpr_otr1",
             "ahrsc:vp_geo_hihgr_estuario_otr1"
+        ];
+
+        this.estacionLayerLabels = [
+            "CUENCAS PROVINCIA",
+            "RÍOS PROVINCIA",
+            "EJES DE LAS OBRAS",
+            "ÁREAS DE LAS OBRAS",
+            "EMBALSES",
+            "ESTUARIO"
+        ];
+
+        this.estacionLayerIsBase = [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
         ];
 
         this.estacionLayers = [];
@@ -1406,6 +1426,8 @@ function ol_map() {
 
     this.map.setEstacionesLayer = function(index, node) {
 
+        this.estacionLayerIsBase = index;
+
         $(".estacion-layer").removeClass("active");
 
         let state = $(node).attr("data-state");
@@ -1419,15 +1441,44 @@ function ol_map() {
             $(node).attr("data-state", 0);
         }
 
+        let estacionLayersHtml = `
+            <div class="tooltip-white-list">
+                <p class="text-center m0">CAPAS BASE</p>
+                <hr style="margin:10px 0;">
+                <ul>`;
+
         for (var i = 0; i < this.estacionLayerNames.length; i++) {
 
             if (i == index) {
                 this.estacionLayers[i].setVisible(enableLayer);
+                this.estacionLayerIsBase[i] = true;
+                estacionLayersHtml += `<li><a href="javascrit:void(0);" data-state="1" onclick="geomap.map.setEstacionesLayer(${i},this);" class="alphalink estacion-layer active">${estacionLayersLabels[i]}</a></li>`;
             } else {
+                estacionLayersHtml += `<li><a href="javascrit:void(0);" data-state="0" onclick="geomap.map.setEstacionesLayer(${i},this);" class="alphalink estacion-layer">${estacionLayersLabels[i]}</a></li>`;
                 this.estacionLayers[i].setVisible(false);
+                this.estacionLayerIsBase[i] = false;
             }
 
         }
+
+        estacionLayersHtml += `
+                </ul>
+            </div>
+        `;
+
+        $("#capas-estaciones-boton").tooltipster({
+
+            position: "left",
+            trigger: "click",
+            animation: "grow",
+            contentAsHTML: true,
+            interactive: true,
+            content: estacionLayersHtml,
+            side: ["left", "top"],
+            zIndex: 999,
+            multiple: true
+
+        });
 
     }
 
