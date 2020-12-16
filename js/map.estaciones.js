@@ -1204,7 +1204,7 @@ function ol_map() {
                         <div class="indicador white mini left">
                             <p class="title">EXPRESIÓN H+Q PARA LA SECCIÓN</p>
                             <p class="value">
-                                <img src="${js.q_path}">
+                                <img src="${js.q_path}" width="100%">
                             </p>
                         </div>
                     </div>                    
