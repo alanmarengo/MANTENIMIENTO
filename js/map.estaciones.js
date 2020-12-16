@@ -1128,60 +1128,64 @@ function ol_map() {
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&&parametro_id=" + this.current_aforo_parametro_id + "&fd=" + fd + "&fh=" + fh + "&mode=8";
             let js = this.requestApi(url);
 
-            let minval = round(js[0].min_dato, 2);
-            let medval = round(js[0].med_dato, 2);
-            let maxval = round(js[0].max_dato, 2);
+            if (js[0]) {
 
-            $("#panel-aforo-ha-3 .api-tab-3 .minval").html(minval);
-            $("panel-aforo-ha-3 .api-tab-3 .medval").html(medval);
-            $("panel-aforo-ha-3 .api-tab-3 .maxval").html(maxval);
+                let minval = round(js[0].min_dato, 2);
+                let medval = round(js[0].med_dato, 2);
+                let maxval = round(js[0].max_dato, 2);
 
-            Highcharts.chart('tab3-aforo-chart', {
+                $("#panel-aforo-ha-3 .api-tab-3 .minval").html(minval);
+                $("panel-aforo-ha-3 .api-tab-3 .medval").html(medval);
+                $("panel-aforo-ha-3 .api-tab-3 .maxval").html(maxval);
 
-                chart: {
-                    type: 'column'
-                },
+                Highcharts.chart('tab3-aforo-chart', {
 
-                title: {
-                    text: 'Gráfico de Estación'
-                },
+                    chart: {
+                        type: 'column'
+                    },
 
-                xAxis: {
-                    categories: ['Elementos']
-                },
-
-                yAxis: {
-                    allowDecimals: false,
-                    min: 0,
                     title: {
-                        text: 'Valores'
-                    }
-                },
+                        text: 'Gráfico de Estación'
+                    },
 
-                tooltip: {
-                    formatter: function() {
-                        return this.series.name + ': ' + this.y + '<br/>';
-                    }
-                },
+                    xAxis: {
+                        categories: ['Elementos']
+                    },
 
-                plotOptions: {
-                    column: {
-                        pointPadding: 0.2,
-                        borderWidth: 0
-                    }
-                },
+                    yAxis: {
+                        allowDecimals: false,
+                        min: 0,
+                        title: {
+                            text: 'Valores'
+                        }
+                    },
 
-                series: [{
-                    name: 'Mínimo',
-                    data: [parseFloat(minval)]
-                }, {
-                    name: 'Medio',
-                    data: [parseFloat(medval)]
-                }, {
-                    name: 'Máximo',
-                    data: [parseFloat(maxval)]
-                }]
-            });
+                    tooltip: {
+                        formatter: function() {
+                            return this.series.name + ': ' + this.y + '<br/>';
+                        }
+                    },
+
+                    plotOptions: {
+                        column: {
+                            pointPadding: 0.2,
+                            borderWidth: 0
+                        }
+                    },
+
+                    series: [{
+                        name: 'Mínimo',
+                        data: [parseFloat(minval)]
+                    }, {
+                        name: 'Medio',
+                        data: [parseFloat(medval)]
+                    }, {
+                        name: 'Máximo',
+                        data: [parseFloat(maxval)]
+                    }]
+                });
+
+            }
 
         }
 
