@@ -4154,7 +4154,7 @@ function round(num, decimales) {
 
         console.log("ROUND: Failed to round number, NUM: " + num + ", Decimales: " + decimales);
 
-        return num;
+        return 0;
 
     }
 
