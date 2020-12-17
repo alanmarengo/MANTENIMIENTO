@@ -500,7 +500,7 @@ function ol_map() {
 
             for (let i = 0; i < js.datos_diarios.length; i++) {
 
-                if ((i != 0) && (i % 6 == 0)) {
+                if ((i != 0) && (i % 4 == 0)) {
 
                     html += `</div><div class="row">`;
 
@@ -517,7 +517,7 @@ function ol_map() {
                 js.datos_diarios[i].med_dato = round(js.datos_diarios[i].med_dato, 2);
                 js.datos_diarios[i].max_dato = round(js.datos_diarios[i].max_dato, 2);
 
-                html += `<div class="col col-md-2 col-lg-2 p5">
+                html += `<div class="col col-md-3 col-lg-3 p5">
                     <div class="indicador">
                         <p class="title">${js.datos_diarios[i].parametro_nombre}</p>
                         <p class="value m0">${js.datos_diarios[i].ultimo_dato}</p>
@@ -540,7 +540,7 @@ function ol_map() {
             if (js["DV"]) {
                 js["DV"].ultimo_dato = round(js["DV"].ultimo_dato, 2);
 
-                html += `<div class="col col-md-2 col-lg-2 p5">
+                html += `<div class="col col-md-3 col-lg-3 p5">
 						<div class="indicador">
 							<p class="title">Dirección del Viento</p>
 							<p class="value m0">${js["DV"].ultimo_dato}</p>
