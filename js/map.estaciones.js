@@ -824,8 +824,7 @@ function ol_map() {
 
             $("#panel-aforo-ha-1").html(html);
 
-            $("#popup-aforo-ha-inner").children(".header").children(".title").html(js.seccion);
-            console.log(js);
+            $("#popup-aforo-inner").children(".header").children(".title").html(js.seccion);
 
             if (js.foto_estacion != "") {
                 document.getElementById('popup_aforo_img').src = js.foto_estacion;
