@@ -887,7 +887,7 @@ function ol_map() {
                     </div>
                 </div>
                 <div class="row mt-20 api-tab-2">
-                    <div class="col col-md-4 col-lg-4 api-tab-4">
+                    <div class="col col-md-4 col-lg-6 api-tab-4">
                         <div class="indicador mini text-center">
                             <p class="title">Sedimentos en suspensión</p>
                             <p class="text m0">Concentración media fracción fina</p>
@@ -896,7 +896,7 @@ function ol_map() {
                             <p class="value con_med_frac_gruesa"></p>
                         </div>
                     </div>                    
-                    <div class="col col-md-4 col-lg-4 api-tab-4">
+                    <div class="col col-md-4 col-lg-6 api-tab-4">
                         <div class="indicador mini text-center">
                             <p class="title">Caudal sólido</p>
                             <p class="text m0">Transacción fracción fina</p>
@@ -905,7 +905,9 @@ function ol_map() {
                             <p class="value trans_frac_gruesa"></p>
                         </div>
                     </div>
-                    <div class="col col-md-4 col-lg-4 api-tab-4">
+                </div>
+                <div class="row mt-20 api-tab-2">
+                    <div class="col col-md-12 col-lg-12 api-tab-4">
                         <div class="indicador mini text-center">
                             <p class="title">Patrón hidrodinámico de medio flujo</p>
                             <p id="patdin_med_flu">
@@ -1024,7 +1026,7 @@ function ol_map() {
             $("#link_informe_campana").html(js["link_informe_campaña"]);
             $("#reg_audiovisual_campana").attr("href", js["link_audio_visual"]);
             if (js.link_grafico != "") {
-                $("#patdin_med_flu").html("<img src=\"" + js.link_grafico + "\">");
+                $("#patdin_med_flu").html("<img src=\"" + js.link_grafico + "\" width=\"100%\">");
             } else {
                 $("#patdin_med_flu").html("");
             }
