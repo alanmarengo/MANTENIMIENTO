@@ -147,7 +147,8 @@ function ol_map() {
 			name:"ahrsc:vp_geo_msrco_reunionescomuunidad_pga1",
 			visible:true,
 			source: new ol.source.TileWMS({
-				url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
+				url: "https://observatorio.enarsa.ar/geoserver/ows?",
+				//url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
 				params: {
 					'LAYERS': "ahrsc:vp_geo_msrco_reunionescomuunidad_pga1",
 					'VERSION': '1.1.1',
@@ -163,7 +164,8 @@ function ol_map() {
 			name:"ahrsc:vp_geo_msrco_cantreunionescomuunidad_pga1",
 			visible:true,
 			source: new ol.source.TileWMS({
-				url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
+				url: "https://observatorio.enarsa.ar/geoserver/ows?",
+				//url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
 				params: {
 					'LAYERS': "ahrsc:vp_geo_msrco_cantreunionescomuunidad_pga1",
 					'VERSION': '1.1.1',
@@ -182,7 +184,8 @@ function ol_map() {
 			name:"ahrsc:vp_geo_msrpo_reunionespueblosoriginarios_pga1",
 			visible:false,
 			source: new ol.source.TileWMS({
-				url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
+				url: "https://observatorio.enarsa.ar/geoserver/ows?",
+				//url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
 				params: {
 					'LAYERS': "ahrsc:vp_geo_msrpo_reunionespueblosoriginarios_pga1",
 					'VERSION': '1.1.1',
@@ -198,7 +201,8 @@ function ol_map() {
 			name:"ahrsc:vp_geo_msrpo_cantreunionespueblosoriginarios_pga1",
 			visible:false,
 			source: new ol.source.TileWMS({
-				url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
+				url: "https://observatorio.enarsa.ar/geoserver/ows?",
+				//url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
 				params: {
 					'LAYERS': "ahrsc:vp_geo_msrpo_cantreunionespueblosoriginarios_pga1",
 					'VERSION': '1.1.1',
@@ -216,7 +220,8 @@ function ol_map() {
 			name:"ahrsc:vp_geo_msrco_artinsititicional_pga1",
 			visible:false,
 			source: new ol.source.TileWMS({
-				url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
+				url: "https://observatorio.enarsa.ar/geoserver/ows?",
+				//url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
 				params: {
 					'LAYERS': "ahrsc:vp_geo_msrco_artinsititicional_pga1",
 					'VERSION': '1.1.1',
@@ -232,7 +237,8 @@ function ol_map() {
 			name:"ahrsc:vp_geo_msrco_cantartinsititicional_pga1",
 			visible:false,
 			source: new ol.source.TileWMS({
-				url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
+				url: "https://observatorio.enarsa.ar/geoserver/ows?",
+				//url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
 				params: {
 					'LAYERS': "ahrsc:vp_geo_msrco_cantartinsititicional_pga1",
 					'VERSION': '1.1.1',
