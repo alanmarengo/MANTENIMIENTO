@@ -510,7 +510,11 @@ function ol_map() {
 
                 let fecha = itemDate[0];
                 let hora = itemDate[1].split(":");
+
                 hora = hora[0] + ":" + hora[1];
+
+                fecha = fecha.split("-");
+                fecha = fecha[2] + "-" + fecha[1] + "-" + fecha[0];
 
                 js.datos_diarios[i].ultimo_dato = round(js.datos_diarios[i].ultimo_dato, 2);
                 js.datos_diarios[i].min_dato = round(js.datos_diarios[i].min_dato, 2);
@@ -530,7 +534,7 @@ function ol_map() {
                             </a>
                         </p>
                         <p class="date mt-10">${fecha}</p>
-                        <p class="date m0">${hora}</p>
+                        <p class="date m0">${hora}hs.</p>
                     </div>
                 </div>
                 `;
