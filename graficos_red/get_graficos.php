@@ -195,14 +195,16 @@ function get_curva_hq($estacion_id)
 	};
 	
 	Highcharts.setOptions({
-		lang: {
-			contextButtonTitle:\"Menu Contextual\",
+		lang:{
 			viewFullscreen:\"Pantalla Completa\",
-			printChart:\"Imprimir Gráfico\",
-			downloadPNG:\"Descargar PNG\",
-			downloadJPEG:\"Descargar JPG\",
-			downloadPDF:\"Descargar PDF\",
-			downloadSVG:\"Descargar SVG\"
+			printChart:\"Imprimir\",
+			downloadCSV:\"Descargar en CSV\",
+			downloadJPEG:\"Descargar en JPG\",
+			downloadPDF:\"Descargar en PDF\",
+			downloadPNG:\"Descargar en PNG\",
+			downloadSVG:\"Descargar en SVG\",
+			downloadXLS:\"Descargar en XLS\",
+			viewData:\"Ver Tabla de Datos\"
 		}
 	});
 	
