@@ -1,6 +1,7 @@
 <html>
 <head>
-	
+
+<script src="../js/jquery-3.2.1.min.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
