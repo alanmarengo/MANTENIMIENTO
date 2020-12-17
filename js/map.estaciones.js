@@ -510,11 +510,14 @@ function ol_map() {
 
                 let fecha = itemDate[0];
                 let hora = itemDate[1].split(":");
-
-                hora = hora[0] + ":" + hora[1];
+                let unidad = js.datos_diarios[i].parametro_nombre.split("(");
 
                 fecha = fecha.split("-");
                 fecha = fecha[2] + "-" + fecha[1] + "-" + fecha[0];
+
+                hora = hora[0] + ":" + hora[1];
+
+                unidad = "(" + unidad[unidad.length - 1];
 
                 js.datos_diarios[i].ultimo_dato = round(js.datos_diarios[i].ultimo_dato, 2);
                 js.datos_diarios[i].min_dato = round(js.datos_diarios[i].min_dato, 2);
@@ -525,9 +528,9 @@ function ol_map() {
                     <div class="indicador">
                         <p class="title">${js.datos_diarios[i].parametro_nombre}</p>
                         <p class="value m0">${js.datos_diarios[i].ultimo_dato}</p>
-                        <p class="text-default m0 mt-3">Min: ${js.datos_diarios[i].min_dato}</p>
-                        <p class="text-default m0 mt-3">Med: ${js.datos_diarios[i].med_dato}</p>
-                        <p class="text-default m0 mt-3">Max: ${js.datos_diarios[i].max_dato}</p>
+                        <p class="text-default m0 mt-3">Min: ${js.datos_diarios[i].min_dato} ${unidad}</p>
+                        <p class="text-default m0 mt-3">Med: ${js.datos_diarios[i].med_dato} ${unidad}</p>
+                        <p class="text-default m0 mt-3">Max: ${js.datos_diarios[i].max_dato} ${unidad}</p>
                         <p class="date mt-10">
                             <a href="javascript:void(0);" onclick="geomap.map.popupTab2_getGrafico(${js.datos_diarios[i].parametro_id})";>
                                 <img src="./images/indicador-ico.png">
