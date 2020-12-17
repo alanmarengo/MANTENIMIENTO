@@ -193,6 +193,19 @@ function get_curva_hq($estacion_id)
 				series: $data
 			});
 	};
+	
+	Highcharts.setOptions({
+		lang: {
+			contextButtonTitle:\"Menu Contextual\",
+			viewFullscreen:\"Pantalla Completa\",
+			printChart:\"Imprimir Gráfico\",
+			downloadPNG:\"Descargar PNG\",
+			downloadJPEG:\"Descargar JPG\",
+			downloadPDF:\"Descargar PDF\",
+			downloadSV:\"Descargar SVG\"
+		}
+	});
+	
 	";
 	echo $grafico; 
 	
