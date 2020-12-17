@@ -202,7 +202,7 @@ function get_curva_hq($estacion_id)
 			downloadPNG:\"Descargar PNG\",
 			downloadJPEG:\"Descargar JPG\",
 			downloadPDF:\"Descargar PDF\",
-			downloadSV:\"Descargar SVG\"
+			downloadSVG:\"Descargar SVG\"
 		}
 	});
 	
