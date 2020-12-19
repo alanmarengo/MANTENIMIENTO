@@ -1,7 +1,8 @@
 <div class="row footer">
 	<div class="col-md-3">
 		<a target="_blank" href="http://www.ieasa.com.ar/">
-			<img src="./images/logo-footer.png" style="width:80%; max-width: 150px; height: auto;" />
+			<!--<img src="./images/logo-footer.png" style="width:80%; max-width: 150px; height: auto;" />-->
+			<img src="./images/logo-footer.png" style="width:80%; max-width: 250px; height: auto;" />
 		</a>	
 	</div>
 	<div class="col-md-3" style="font-size: .9em; padding: 10px;">
