@@ -157,11 +157,11 @@ function get_curva_hq($estacion_id)
 					}
 				},
 				legend: {
-					layout: 'vertical',
-					align: 'left',
-					verticalAlign: 'top',
-					x: 100,
-					y: 70,
+					layout: 'horizontal',/*vertical*/
+					align: 'center',/*left*/
+					verticalAlign: 'bottom',/*top*/
+					x: 0, /*100*/
+					y: 0,  /*70*/
 					floating: true,
 					backgroundColor: Highcharts.defaultOptions.chart.backgroundColor,
 					borderWidth: 1
