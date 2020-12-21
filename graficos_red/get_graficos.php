@@ -162,7 +162,7 @@ function get_curva_hq($estacion_id)
 					verticalAlign: 'top',
 					x: 100,
 					y: 70,
-					floating: true,
+					floating: false,
 					backgroundColor: Highcharts.defaultOptions.chart.backgroundColor,
 					borderWidth: 1
 				},
