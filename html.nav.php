@@ -30,7 +30,8 @@
 			
 		</li>
 		<li>
-			<a href="./page_endesarrollo.php?q=Monitoreo hidrosedimentológico e hidroambiental del río Santa Cruz">Monitoreo hidrosedimentológico e hidroambiental</a>
+			<a href="./page_monitoreo.php">Monitoreo hidrosedimentológico e hidroambiental</a>
+			<!--<a href="./page_endesarrollo.php?q=Monitoreo hidrosedimentológico e hidroambiental del río Santa Cruz">Monitoreo hidrosedimentológico e hidroambiental</a>-->
 			<!--<a href="./page_endesarrollo.php?q=Gestión Ambiental de Obra">Gestión Ambiental de Obra</a> -->
 		</li>
 		
