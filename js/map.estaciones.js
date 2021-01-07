@@ -1278,56 +1278,22 @@ function ol_map() {
 
         this.requestApi = function(url) {
 			
-			var req = null;
-			var js = null;
-			
 			HoldOn.open({ theme: "sk-rect" });
 			
-			return new Promise(function(resolve, reject) { 
-  
-				// Setting 2000 ms time 
-				setTimeout(resolve, 2000); 
-			}).then(function() { 
-				req = $.ajax({
+            var req = $.ajax({
 
-					async: false,
-					url: url,
-					type: "GET",
-					success: function(d) {}
+                //async: false,
+                url: url,
+                type: "GET",
+                success: function(d) {}
 
-				});
+            });
 
-				js = JSON.parse(req.responseText);
-				console.log(js);
-				HoldOn.close();
-				
-				return js;
-				
-			}); 
+            var js = JSON.parse(req.responseText);
 			
-			/*setTimeout(function() {
-				
-				req = $.ajax({
+			HoldOn.close();
 
-					async: false,
-					url: url,
-					type: "GET",
-					success: function(d) {}
-
-				});
-
-				js = JSON.parse(req.responseText);
-				
-			},10);
-			
-            setTimeout(function() {
-				
-				HoldOn.close();
-				console.log("JS: " + js);
-				
-			},100);
-
-            return js;*/
+            return js;
 
         }
 
