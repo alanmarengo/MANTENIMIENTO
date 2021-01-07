@@ -1286,7 +1286,7 @@ function ol_map() {
                 url: url,
                 type: "GET",
                 success: function(d) {},
-				done:function(d} {
+				done:function(d) {
 					var js = JSON.parse(req.responseText);
 					return js;
 				}
