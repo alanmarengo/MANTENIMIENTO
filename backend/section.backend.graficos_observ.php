@@ -70,17 +70,19 @@
 								<input type="text" class="form-control" name="grafico_id" id="grafico_id" aria-describedby="grafico_id"  readonly="readonly" placeholder="ID del grafico...">
 							</div>
 							<div class="form-group">
-								<label for="clase_id">Tipo de grafico</label>
-								<?php get_combo_db("mod_graficos","grafico_tipo","grafico_tipo_id","grafico_tipo_desc",null,"grafico_tipo_id"); ?>
+								<label for="grafico_titulo">Titulo</label>
+								<input type="text" class="form-control" name="grafico_titulo" id="grafico_titulo" aria-describedby="grafico_titulo" r placeholder="Titulo...">
 							</div>
 							<div class="form-group">
 								<label for="grafico_desc">Descripción</label>
 								<input type="text" class="form-control" name="grafico_desc" id="grafico_desc" aria-describedby="grafico_desc" r placeholder="Descripcion...">
 							</div>
+							
 							<div class="form-group">
-								<label for="grafico_titulo">Titulo</label>
-								<input type="text" class="form-control" name="grafico_titulo" id="grafico_titulo" aria-describedby="grafico_titulo" r placeholder="Titulo...">
+								<label for="clase_id">Tipo de grafico</label>
+								<?php get_combo_db("mod_graficos","grafico_tipo","grafico_tipo_id","grafico_tipo_desc",null,"grafico_tipo_id"); ?>
 							</div>
+							
 							<div class="form-group">
 								<label for="grafico_data_schema">Schema</label>
 								<input type="text" class="form-control" name="grafico_data_schema" id="grafico_data_schema" aria-describedby="grafico_data_schema"  placeholder="Schema...">

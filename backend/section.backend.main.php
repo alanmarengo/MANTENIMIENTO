@@ -126,10 +126,7 @@ function regenerar_preview()
 								<label for="recurso_categoria_id">Categoría de Recurso</label>
 								<?php get_combo_db("mod_mediateca","recurso_categoria","recurso_categoria_id","recurso_categoria_desc",test_get_var($recurso_data["recurso_categoria_id"],"1"),"recurso_categoria_id"); ?>
 							</div>
-							<div class="form-group">
-								<label for="recurso_categoria_id">Estudios</label>
-								<?php get_combo_db("mod_catalogo","estudios","estudios_id","nombre",test_get_var($recurso_data["estudios_id"],"1"),"estudios_id"); ?>
-							</div>
+							
 							<div class="form-group">
 								<label for="recurso_categoria_id">Tipo Recurso</label>
 								<?php get_combo_db("mod_mediateca","tipo_recurso","tipo_recurso_id","tipo_recurso_desc",test_get_var($recurso_data["tipo_recurso_id"],"1"),"tipo_recurso_id"); ?>
@@ -139,8 +136,16 @@ function regenerar_preview()
 								<?php get_combo_db("mod_mediateca","formato","formato_id","formato_desc",test_get_var($recurso_data["formato_id"],"1"),"formato_id"); ?>
 							</div>
 							<div class="form-group">
+								<label for="recurso_categoria_id">Estudios</label>
+								<?php get_combo_db("mod_catalogo","estudios","estudios_id","nombre",test_get_var($recurso_data["estudios_id"],"1"),"estudios_id"); ?>
+							</div>
+							<div class="form-group">
 								<label for="recurso_titulo">Título</label>
 								<input type="text" class="form-control" name="recurso_titulo" id="recurso_titulo" aria-describedby="recurso_titulo" placeholder="Titulo...">
+							</div>
+							<div class="form-group">
+								<label for="recurso_autores">Autores</label>
+								<input type="text" class="form-control" name="recurso_autores" id="recurso_autores" aria-describedby="recurso_autores" placeholder="Recurso Autores...">
 							</div>
 							<div class="form-group">
 								<label for="recurso_desc">Descripción</label>
@@ -149,19 +154,7 @@ function regenerar_preview()
 							<div class="form-group">
 								<label for="recurso_fecha">Fecha</label>
 								<input type="text" class="datepicker form-control" name="recurso_fecha" id="recurso_fecha" aria-describedby="recurso_fecha" placeholder="Fecha...">
-							</div>
-							<div class="form-group">
-								<label for="recurso_autores">Autores</label>
-								<input type="text" class="form-control" name="recurso_autores" id="recurso_autores" aria-describedby="recurso_autores" placeholder="Recurso Autores...">
-							</div>
-							<div class="form-group">
-								<label for="recurso_path_url">URL Recurso</label>
-								<input type="text" class="form-control" name="recurso_path_url" id="recurso_path_url" aria-describedby="recurso_path_url" placeholder="URL Recurso...">
-							</div>
-							<div class="form-group">
-								<label for="recurso_size">Tamaño Recurso</label>
-								<input type="text" class="form-control" name="recurso_size" id="recurso_size" aria-describedby="recurso_size" placeholder="Tamaño de Recurso...">
-							</div>
+							</div>	
 							<div class="form-group">
 								<label for="recurso_categoria_id">Sub Proyecto</label>
 								<?php get_combo_db("mod_catalogo","sub_proyecto","sub_proyecto_id","sub_proyecto_desc",test_get_var($recurso_data["sub_proyecto_id"],"1"),"sub_proyecto_id"); ?>
@@ -179,8 +172,16 @@ function regenerar_preview()
 								<?php get_combo_db("mod_catalogo","territorio","territorio_id","descripcion",test_get_var($recurso_data["territorio_id"],"1"),"territorio_id"); ?>
 							</div>
 							<div class="form-group">
+								<label for="recurso_path_url">URL Recurso</label>
+								<input type="text" class="form-control" name="recurso_path_url" id="recurso_path_url" aria-describedby="recurso_path_url" placeholder="URL Recurso...">
+							</div>
+							<div class="form-group">
+								<label for="recurso_size">Tamaño Recurso</label>
+								<input type="text" class="form-control" name="recurso_size" id="recurso_size" aria-describedby="recurso_size" placeholder="Tamaño de Recurso...">
+							</div>
+							<div class="form-group">
 								<label for="recurso_preview_path">Recurso Vista Previa</label>
-								<input type="text" class="form-control" name="recurso_preview_path" id="recurso_preview_path" aria-describedby="recurso_preview_path" placeholder="Tamaño de Recurso...">
+								<input type="text" class="form-control" name="recurso_preview_path" id="recurso_preview_path" aria-describedby="recurso_preview_path" placeholder="Recurso Vista Previa...">
 							</div>
 							<button type="button" class="btn btn-primary" onclick="dataset_ob.save(document.getElementById('frm-backend-main'));">Guardar</button>
 							<button type="button" class="btn btn-danger" onclick="dataset_ob.drop();">Eliminar Recurso</button>
