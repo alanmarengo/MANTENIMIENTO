@@ -1299,7 +1299,7 @@ function ol_map() {
 				HoldOn.close();
 				
 			},10);            
-			console.log("REQUEST:" + js);
+			console.log("REQUEST:" + req);
 			console.log("JS:" + js);
             return js;
 
