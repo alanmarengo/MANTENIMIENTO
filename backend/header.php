@@ -3,7 +3,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light nav-top">
         <a class="navbar-brand" href="#">
-            <img class="logo" src="./images/logo_observatorio_ieasa.png" />
+            <img class="logo" style="height:auto;" src="./images/logo_observatorio_ieasa.png" />
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
