@@ -1,6 +1,6 @@
 <div class="row footer">
 	<div class="col-md-3">
-		<a target="_blank" href="http://www.ieasa.com.ar/">
+		<a target="_blank" href="http://enarsa.ar/">
 			<!--<img src="./images/logo-footer.png" style="width:80%; max-width: 150px; height: auto;" />-->
 			<img src="./images/logo-footer.png" style="width:80%; max-width: 250px; height: auto;" />
 		</a>	
@@ -15,7 +15,7 @@
 		<div id="footer-slider" class="carousel slide" data-ride="carousel" data-interval="3000">
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-					<a target="_blank" href="http://www.ieasa.com.ar">ENARSA</a><br />
+					<a target="_blank" href="http://enarsa.ar">ENARSA</a><br />
 					<a target="_blank" href="http://hidrosantacruz.com.ar">Hidro Santa Cruz</a><br />
 				</div>
 				<div class="carousel-item">

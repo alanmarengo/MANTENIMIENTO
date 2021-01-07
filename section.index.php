@@ -293,7 +293,7 @@
                         
                         <!-- #8 -->
                         <!--<a href="./page_antecedentes.php" class="col-md-12 modulo-wrap modulo-8">-->
-                        <a href="./page_endesarrollo.php?q=Patrimonio natural y cultural" class="col-md-12 modulo-wrap modulo-8">
+                        <a href="./page_huella.php" class="col-md-12 modulo-wrap modulo-8">
                             <div class="modulo-opacity"></div>
                             <div class="modulo-text">
                                 <!--Antecedentes y marco legal-->
