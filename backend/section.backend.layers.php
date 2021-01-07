@@ -72,9 +72,31 @@
 								<input type="text" class="form-control" name="layer_id" id="layer_id" aria-describedby="layer_id"  readonly="readonly" placeholder="ID de Capa...">
 							</div>
 							<div class="form-group">
+								<label for="preview_desc">Descripción para preview</label>
+								<input type="text" class="form-control" name="preview_desc" id="preview_desc" aria-describedby="preview_desc"  placeholder="Descripción para preview...">
+							</div>
+							<div class="form-group">
+								<label for="preview_titulo">Titulo para preview</label>
+								<input type="text" class="form-control" name="preview_titulo" id="preview_titulo" aria-describedby="preview_titulo"  placeholder="Titulo para preview...">
+							</div>
+							<div class="form-group">
 								<label for="layer_desc">Descripción</label>
 								<input type="text" class="form-control" name="layer_desc" id="layer_desc" aria-describedby="layer_desc" r placeholder="Descripción...">
 							</div>
+							<div class="form-group">
+								<label for="tipo_layer_id">Tipo capa</label>
+								<?php get_combo_db("mod_geovisores","tipo_layer","tipo_layer_id","tipo_layer_desc",null,"tipo_layer_id"); ?>
+
+							</div>
+							<div class="form-group">
+								<label for="layer_schema">Schema de la capa en DB</label>
+								<input type="text" class="form-control" name="layer_schema" id="layer_schema" aria-describedby="layer_schema"  placeholder="Schema de la capa en db...">
+							</div>
+							<div class="form-group">
+								<label for="layer_table">Tabla de la capa</label>
+								<input type="text" class="form-control" name="layer_table" id="layer_table" aria-describedby="layer_table"  placeholder="Tabla de la capa...">
+							</div>
+							
 							<div class="form-group">
 								<label for="layer_wms_server">Servidor WMS</label>
 								<input type="text" class="form-control" name="layer_wms_server" id="layer_wms_server" aria-describedby="layer_wms_server"  placeholder="Servidor WMS...">
@@ -102,27 +124,8 @@
 								<label for="layer_metadata_url">URL GeoNetWork Metadatos</label>
 								<input type="text" class="form-control" name="layer_metadata_url" id="layer_metadata_url" aria-describedby="layer_metadata_url"  placeholder="URL GeoNetWork Metadatos...">
 							</div>
-							<div class="form-group">
-								<label for="layer_schema">Schema de la capa en DB</label>
-								<input type="text" class="form-control" name="layer_schema" id="layer_schema" aria-describedby="layer_schema"  placeholder="Schema de la capa en db...">
-							</div>
-							<div class="form-group">
-								<label for="layer_table">Tabla de la capa</label>
-								<input type="text" class="form-control" name="layer_table" id="layer_table" aria-describedby="layer_table"  placeholder="Tabla de la capa...">
-							</div>
-							<div class="form-group">
-								<label for="tipo_layer_id">Tipo capa</label>
-								<?php get_combo_db("mod_geovisores","tipo_layer","tipo_layer_id","tipo_layer_desc",null,"tipo_layer_id"); ?>
-
-							</div>
-							<div class="form-group">
-								<label for="preview_desc">Descripción para preview</label>
-								<input type="text" class="form-control" name="preview_desc" id="preview_desc" aria-describedby="preview_desc"  placeholder="Descripción para preview...">
-							</div>
-							<div class="form-group">
-								<label for="preview_titulo">Titulo para preview</label>
-								<input type="text" class="form-control" name="preview_titulo" id="preview_titulo" aria-describedby="preview_titulo"  placeholder="Titulo para preview...">
-							</div>
+							
+							
 							
 							<!--<div class="form-group">
 								<label for="recurso_categoria_id">Categoría de Recurso</label>

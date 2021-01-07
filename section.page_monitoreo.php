@@ -67,7 +67,7 @@
             </div>
 
             <div class="text-center" style="margin-top: 2em;">
-                <a href="./mediateca.php" class="button button-2">
+                <a href="./mediateca.php?mode=-1&s=RedHidroAmb" class="button button-2">
                     VER RECURSOS ASOCIADOS
                     <img src="./images/icono-mediateca-br.png" style="height: 20px; width: 20px;" />
                 </a>
@@ -116,7 +116,7 @@
             </div>
 
             <div class="text-center" style="margin-top: 2em;">
-                <a href="./mediateca.php" class="button button-2">
+                <a href="./mediateca.php?mode=-1&s=RedHidroAforo" class="button button-2">
                     VER RECURSOS ASOCIADOS
                     <img src="./images/icono-mediateca-br.png" style="height: 20px; width: 20px;" />
                 </a>
