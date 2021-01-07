@@ -76,7 +76,7 @@ function getParametros() {
     let url = apiUrl + "?tipo_estaciones=" + (currentTab - 1) + "&mode=13";
     let js = this.requestApi(url);
 	
-	$("#combo-parametros-redes").on("change",getEstaciones);
+	$("#combo-parametros-redes").on("change",()=>{getEstaciones();});
 
     $("#combo-parametros-redes").empty();
 
