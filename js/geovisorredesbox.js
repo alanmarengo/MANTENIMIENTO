@@ -92,7 +92,9 @@ function getParametros() {
 
 function getEstaciones() {
 
-    let url = apiUrl + "?tipo_estaciones=" + (currentTab - 1) + "&mode=10";
+	let param
+    //let url = apiUrl + "?tipo_estaciones=" + (currentTab - 1) + "&mode=10";
+    let url = apiUrl + "?tipo_estaciones=" + (currentTab - 1) + "&parametro_id=" + $("#combo-parametros-redes").val() + "&mode=10";
     let js = this.requestApi(url);
 
     $("#estaciones-lista").empty();
