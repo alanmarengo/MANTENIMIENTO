@@ -1284,7 +1284,7 @@ function ol_map() {
 			
             let req = $.ajax({
 
-                //async: false,
+                async: false,
                 url: url,
                 type: "GET",
 				beforeSend: function() {
@@ -1292,6 +1292,8 @@ function ol_map() {
 				},done:function(d) {
 					retvar = d.responseText
 					HoldOn.close();
+			
+					return JSON.parse(retvar);
 				}
                 /*success: function(d) {},
 				done:function(d) {
@@ -1300,8 +1302,6 @@ function ol_map() {
 				}*/
 
             });
-			
-			return JSON.parse(retvar);
 
         }
 
