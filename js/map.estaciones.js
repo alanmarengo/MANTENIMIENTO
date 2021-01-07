@@ -270,7 +270,7 @@ function ol_map() {
 
         this.ol_object.on("click", function(e) {			
 			
-            HoldOn.open({ theme: "sk-rect" });
+            
 
             var newurl = this.getGFIUrl(e, false);
 
@@ -393,7 +393,7 @@ function ol_map() {
 
         this.popupTab1 = function() {		
 			
-            HoldOn.open({ theme: "sk-rect" });
+            
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + this.current_tipo_estacion_id + "&mode=0";
             let js = this.requestApi(url)[0];
@@ -503,7 +503,7 @@ function ol_map() {
 
         this.popupTab2 = function() {
 			
-            HoldOn.open({ theme: "sk-rect" });
+            
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&mode=2";
             let js = this.requestApi(url);
@@ -599,7 +599,7 @@ function ol_map() {
 
         this.popupTab3 = function() {
 			
-            HoldOn.open({ theme: "sk-rect" });
+            
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&mode=3";
             let js = this.requestApi(url);
@@ -760,7 +760,7 @@ function ol_map() {
 
         this.popupTab4 = function() {
 			
-            HoldOn.open({ theme: "sk-rect" });
+            
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + this.current_tipo_estacion_id + "&mode=14";
             let js = this.requestApi(url);
@@ -808,7 +808,7 @@ function ol_map() {
 
         this.popupTabAforo1 = function() {
 			
-            HoldOn.open({ theme: "sk-rect" });
+            
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + this.current_tipo_estacion_id + "&mode=1";
             let js = this.requestApi(url)[0];
@@ -875,7 +875,7 @@ function ol_map() {
 
         this.popupTabAforo2 = function() {
 			
-            HoldOn.open({ theme: "sk-rect" });
+            
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + this.current_tipo_estacion_id + "&mode=5";
             let js = this.requestApi(url);
@@ -1074,7 +1074,7 @@ function ol_map() {
 
         this.popupTabAforo3 = function() {
 			
-            HoldOn.open({ theme: "sk-rect" });
+            
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&mode=9";
             let js = this.requestApi(url);
@@ -1235,7 +1235,7 @@ function ol_map() {
 
         this.popupTabAforo4 = function() {
 			
-            HoldOn.open({ theme: "sk-rect" });
+            
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&mode=7";
             let js = this.requestApi(url)[0];
@@ -1280,18 +1280,25 @@ function ol_map() {
 
         this.requestApi = function(url) {
 
-            return JSON.parse($.ajax({
+            let req = $.ajax({
 
                 //async: false,
                 url: url,
                 type: "GET",
+				beforeSend: function() {
+					HoldOn.open({ theme: "sk-rect" });
+				},done:function() {
+					HoldOn.close();
+				}
                 /*success: function(d) {},
 				done:function(d) {
 					var js = JSON.parse(req.responseText);
 					return js;
 				}*/
 
-            }).responseText);            
+            });   
+
+			return JSON.parse(req.responseText);
 
         }
 
