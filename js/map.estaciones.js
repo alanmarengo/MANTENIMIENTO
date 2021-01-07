@@ -1298,7 +1298,7 @@ function ol_map() {
 				HoldOn.close();
 				
 			},10);            
-
+			console.log(js);
             return js;
 
         }
