@@ -1280,18 +1280,18 @@ function ol_map() {
 
         this.requestApi = function(url) {
 
-            var req = $.ajax({
+            return JSON.parse($.ajax({
 
                 //async: false,
                 url: url,
                 type: "GET",
-                success: function(d) {},
+                /*success: function(d) {},
 				done:function(d) {
 					var js = JSON.parse(req.responseText);
 					return js;
-				}
+				}*/
 
-            });            
+            }).responseText);            
 
         }
 
