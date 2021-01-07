@@ -1279,12 +1279,13 @@ function ol_map() {
         this.requestApi = function(url) {
 			
 			var js = "";
+			var req = "";
 			
 			HoldOn.open({ theme: "sk-rect" });
 			
 			setTimeout(function() {
 				
-				var req = $.ajax({
+				req = $.ajax({
 
 					async: false,
 					url: url,
@@ -1292,13 +1293,12 @@ function ol_map() {
 					success: function(d) {}
 
 				});
-
-				js = JSON.parse(req.responseText);
 				
 				HoldOn.close();
 				
 			},10);            
-			console.log(js);
+			console.log("REQUEST:" + js);
+			console.log("JS:" + js);
             return js;
 
         }
