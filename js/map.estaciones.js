@@ -391,7 +391,9 @@ function ol_map() {
 
         }
 
-        this.popupTab1 = function() {
+        this.popupTab1 = function() {		
+			
+            HoldOn.open({ theme: "sk-rect" });
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + this.current_tipo_estacion_id + "&mode=0";
             let js = this.requestApi(url)[0];
@@ -494,10 +496,14 @@ function ol_map() {
 
             $("#popup-inner").children(".categories").empty();
             $("#popup-inner").children(".categories").html(html);
+			
+            HoldOn.close();
 
         }
 
         this.popupTab2 = function() {
+			
+            HoldOn.open({ theme: "sk-rect" });
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&mode=2";
             let js = this.requestApi(url);
@@ -567,6 +573,8 @@ function ol_map() {
             html += "</div>";
 
             $("#panel-ha-2").html(html);
+			
+            HoldOn.close();
 
         }
 
@@ -590,6 +598,8 @@ function ol_map() {
         }
 
         this.popupTab3 = function() {
+			
+            HoldOn.open({ theme: "sk-rect" });
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&mode=3";
             let js = this.requestApi(url);
@@ -674,6 +684,8 @@ function ol_map() {
             document.getElementById("tab3-fhasta").onchange = () => this.popupTab3Graficar();
 
             this.popupTab3Graficar();
+			
+            HoldOn.close();
 
         }
 
@@ -747,6 +759,8 @@ function ol_map() {
         }
 
         this.popupTab4 = function() {
+			
+            HoldOn.open({ theme: "sk-rect" });
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + this.current_tipo_estacion_id + "&mode=14";
             let js = this.requestApi(url);
@@ -787,10 +801,14 @@ function ol_map() {
 
             document.getElementById("panel-ha4-1").innerHTML = html_mensual;
             document.getElementById("panel-ha4-2").innerHTML = html_anual;
+			
+            HoldOn.close();
 
         }
 
         this.popupTabAforo1 = function() {
+			
+            HoldOn.open({ theme: "sk-rect" });
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + this.current_tipo_estacion_id + "&mode=1";
             let js = this.requestApi(url)[0];
@@ -850,9 +868,14 @@ function ol_map() {
             //$("#panel-ha-1 .api-tab-1 .parametros .popup-value").html(param);
             $("#panel-aforo-ha-1 .api-tab-1 .inicio-campa .popup-value").html(js.inicio_camp);
             $("#panel-aforo-ha-1 .api-tab-1 .proveedor .popup-value").html(js.proveedor);
+			
+            HoldOn.close();
+			
         }
 
         this.popupTabAforo2 = function() {
+			
+            HoldOn.open({ theme: "sk-rect" });
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + this.current_tipo_estacion_id + "&mode=5";
             let js = this.requestApi(url);
@@ -944,6 +967,8 @@ function ol_map() {
             updateDatepicker();
 
             this.popupTabAforo2_cargarComboAnio(js);
+			
+            HoldOn.close();
         }
 
         this.popupTabAforo2_cargarComboAnio = function(js) {
@@ -1048,6 +1073,8 @@ function ol_map() {
 
 
         this.popupTabAforo3 = function() {
+			
+            HoldOn.open({ theme: "sk-rect" });
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&mode=9";
             let js = this.requestApi(url);
@@ -1132,6 +1159,8 @@ function ol_map() {
             document.getElementById("tab3-fhasta-aforo").onchange = () => this.popupTab3AforoGraficar();
 
             this.popupTab3AforoGraficar();
+			
+            HoldOn.close();
 
         }
 
@@ -1205,6 +1234,8 @@ function ol_map() {
         }
 
         this.popupTabAforo4 = function() {
+			
+            HoldOn.open({ theme: "sk-rect" });
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&mode=7";
             let js = this.requestApi(url)[0];
@@ -1242,6 +1273,8 @@ function ol_map() {
             nheight = ((nheight / 4) * 3);
 
             $("#iframe-grafico2").attr("height", nheight);*/
+			
+            HoldOn.close();
 
         }
 
