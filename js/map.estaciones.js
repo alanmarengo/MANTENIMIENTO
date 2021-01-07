@@ -1276,19 +1276,19 @@ function ol_map() {
 
         }
 
-        this.requestApi = function(url) {			
+        this.requestApi = function(url) {
 			
             var req = $.ajax({
 
                 async: false,
                 url: url,
-                type: "GET"
-                //success: function(d) {}
+                type: "GET",
+                success: function(d) {}
 
             });
-			
+
             var js = JSON.parse(req.responseText);
-			
+
             return js;
 
         }
