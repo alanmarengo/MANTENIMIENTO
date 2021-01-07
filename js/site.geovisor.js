@@ -27,6 +27,10 @@ $(document).ready(function() {
 	
 });
 
+$( document ).ajaxStart(function() {
+  alert("call up");
+});
+
 $.urlParam = function(name) {
     var results = new RegExp('[\?&]' + name + '=([^&#]*)')
         .exec(window.location.search);
