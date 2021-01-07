@@ -1282,16 +1282,16 @@ function ol_map() {
 
             var req = $.ajax({
 
-                async: false,
+                //async: false,
                 url: url,
                 type: "GET",
-                success: function(d) {}
+                success: function(d) {},
+				done:function(d} {
+					var js = JSON.parse(req.responseText);
+					return js;
+				}
 
-            });
-
-            var js = JSON.parse(req.responseText);
-
-            return js;
+            });            
 
         }
 
