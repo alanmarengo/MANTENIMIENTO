@@ -1278,21 +1278,18 @@ function ol_map() {
 
         this.requestApi = function(url) {
 			
-			HoldOn.open({ theme: "sk-rect" });
 			
             var req = $.ajax({
 
-                //async: false,
+                async: false,
                 url: url,
                 type: "GET",
                 success: function(d) {}
 
             });
-			console.log(req.responseText);
+			
             var js = JSON.parse(req.responseText);
 			
-			HoldOn.close();
-
             return js;
 
         }
