@@ -496,8 +496,6 @@ function ol_map() {
 
             $("#popup-inner").children(".categories").empty();
             $("#popup-inner").children(".categories").html(html);
-			
-            HoldOn.close();
 
         }
 
@@ -1280,28 +1278,22 @@ function ol_map() {
 
         this.requestApi = function(url) {
 			
-			var retvar = "";
+			HoldOn.open({ theme: "sk-rect" });
 			
-            let req = $.ajax({
+            var req = $.ajax({
 
                 async: false,
                 url: url,
                 type: "GET",
-				beforeSend: () => {
-					HoldOn.open({ theme: "sk-rect" });
-				},done:(d) => {
-					retvar = d.responseText
-					HoldOn.close();
-			
-					return JSON.parse(retvar);
-				}
-                /*success: function(d) {},
-				done:function(d) {
-					var js = JSON.parse(req.responseText);
-					return js;
-				}*/
+                success: function(d) {}
 
             });
+
+            var js = JSON.parse(req.responseText);
+			
+			HoldOn.close();
+
+            return js;
 
         }
 
