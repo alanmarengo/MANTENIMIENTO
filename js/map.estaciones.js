@@ -1283,7 +1283,29 @@ function ol_map() {
 			
 			HoldOn.open({ theme: "sk-rect" });
 			
-			setTimeout(function() {
+			return new Promise(function(resolve, reject) { 
+  
+				// Setting 2000 ms time 
+				setTimeout(resolve, 2000); 
+			}).then(function() { 
+				req = $.ajax({
+
+					async: false,
+					url: url,
+					type: "GET",
+					success: function(d) {}
+
+				});
+
+				js = JSON.parse(req.responseText);
+				
+				HoldOn.close();
+				
+				return js;
+				
+			}); 
+			
+			/*setTimeout(function() {
 				
 				req = $.ajax({
 
@@ -1305,7 +1327,7 @@ function ol_map() {
 				
 			},100);
 
-            return js;
+            return js;*/
 
         }
 
