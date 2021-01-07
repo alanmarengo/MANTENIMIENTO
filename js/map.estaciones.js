@@ -1279,7 +1279,9 @@ function ol_map() {
         }
 
         this.requestApi = function(url) {
-
+			
+			var retvar = "";
+			
             let req = $.ajax({
 
                 //async: false,
@@ -1287,7 +1289,8 @@ function ol_map() {
                 type: "GET",
 				beforeSend: function() {
 					HoldOn.open({ theme: "sk-rect" });
-				},done:function() {
+				},done:function(d) {
+					retvar = d.responseText
 					HoldOn.close();
 				}
                 /*success: function(d) {},
@@ -1297,8 +1300,8 @@ function ol_map() {
 				}*/
 
             });
-			console.log(req.responseText);
-			return JSON.parse(req.responseText);
+			
+			return JSON.parse(retvar);
 
         }
 
