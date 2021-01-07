@@ -1296,8 +1296,8 @@ function ol_map() {
 					return js;
 				}*/
 
-            });   
-
+            });
+			console.log(req.responseText);
 			return JSON.parse(req.responseText);
 
         }
