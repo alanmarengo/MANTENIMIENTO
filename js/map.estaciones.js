@@ -1298,7 +1298,7 @@ function ol_map() {
 				});
 
 				js = JSON.parse(req.responseText);
-				
+				console.log(js);
 				HoldOn.close();
 				
 				return js;
