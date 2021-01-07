@@ -1287,9 +1287,9 @@ function ol_map() {
                 async: false,
                 url: url,
                 type: "GET",
-				beforeSend: function() {
+				beforeSend: () => {
 					HoldOn.open({ theme: "sk-rect" });
-				},done:function(d) {
+				},done:(d) => {
 					retvar = d.responseText
 					HoldOn.close();
 			
