@@ -25,25 +25,6 @@ $(document).ready(function() {
         }
     });
 	
-
-	$.ajaxSetup({
-	  beforeSend: function() {
-		 HoldOn.open({ theme: "sk-rect" });
-	  },
-	  complete: function(){
-		 HoldOn.close();
-	  },
-	  success: function() {}
-	});/*
-		
-	$(document)
-	  .ajaxStart(function () {
-		HoldOn.open({ theme: "sk-rect" });
-	  })
-	  .ajaxStop(function () {
-		HoldOn.close();
-	  });*/
-	
 });
 
 $.urlParam = function(name) {
