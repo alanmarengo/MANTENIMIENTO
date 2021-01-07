@@ -24,11 +24,11 @@ $(document).ready(function() {
 				
         }
     });
-	
-});
 
-$( document ).ajaxStart(function() {
-  alert("call up");
+	$( document ).ajaxStart(function() {
+	  alert("call up");
+	});
+	
 });
 
 $.urlParam = function(name) {
