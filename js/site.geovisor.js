@@ -24,14 +24,15 @@ $(document).ready(function() {
 				
         }
     });
-	$(document)
-	  .ajaxStart(function () {
-		HoldOn.open({ theme: "sk-rect" });
-	  })
-	  .ajaxStop(function () {
-		HoldOn.close();
-	  });
 });
+	
+$(document)
+  .ajaxStart(function () {
+	HoldOn.open({ theme: "sk-rect" });
+  })
+  .ajaxStop(function () {
+	HoldOn.close();
+  });
 
 $.urlParam = function(name) {
     var results = new RegExp('[\?&]' + name + '=([^&#]*)')
