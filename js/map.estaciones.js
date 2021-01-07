@@ -268,7 +268,9 @@ function ol_map() {
 
         });
 
-        this.ol_object.on("click", function(e) {
+        this.ol_object.on("click", function(e) {			
+			
+            HoldOn.open({ theme: "sk-rect" });
 
             var newurl = this.getGFIUrl(e, false);
 
@@ -384,6 +386,8 @@ function ol_map() {
 
                 $("#tab-ha-1").trigger("click");
             }
+			
+            HoldOn.close();
 
         }
 
