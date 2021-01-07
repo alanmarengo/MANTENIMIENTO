@@ -1294,6 +1294,8 @@ function ol_map() {
 
 				});
 				
+				console.log(req.responseText);
+				
 				HoldOn.close();
 				
 			},10);            
