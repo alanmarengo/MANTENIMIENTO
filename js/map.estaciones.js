@@ -1204,6 +1204,8 @@ function ol_map() {
                 $("#panel-aforo-ha-3 .api-tab-3 .minval").html(minval);
                 $("#panel-aforo-ha-3 .api-tab-3 .medval").html(medval);
                 $("#panel-aforo-ha-3 .api-tab-3 .maxval").html(maxval);
+				
+				let category = $("#combo-parametros-aforo option:selected").text() + ", " + fd + " - " + fh;
 
                 Highcharts.chart('tab3-aforo-chart', {
 
@@ -1216,7 +1218,7 @@ function ol_map() {
                     },
 
                     xAxis: {
-                        categories: ['Elementos']
+                        categories: [category]
                     },
 
                     yAxis: {
