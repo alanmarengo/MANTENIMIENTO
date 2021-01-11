@@ -740,7 +740,8 @@ function ol_map() {
 
                     series: [{
                         name: 'Mínimo',
-                        data: [parseFloat(minval)]
+                        //data: [parseFloat(minval)]
+						data:-10
                     }, {
                         name: 'Medio',
                         data: [parseFloat(medval)]
