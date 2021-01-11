@@ -337,7 +337,7 @@ function hidro_get_solapa_datos_diarios($estacion_id,$tipo_categoria_parametro_i
 	
 	if($id_usuario==-1)/* Si no esta logeado */
 	{
-		$query_string   .= " AND parametro_id NOT IN(1,2,3) "; /* Ninguna Bateria*/
+		$query_string   .= " WHERE parametro_id NOT IN(1,2,3) "; /* Ninguna Bateria*/
 	};
 	
 	$query_string  .= "ORDER BY parametro_nombre ASC;";
