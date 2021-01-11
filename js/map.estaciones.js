@@ -729,14 +729,14 @@ function ol_map() {
                         formatter: function() {
                             return this.series.name + ': ' + this.y + '<br/>';
                         }
-                    },
+                    }/*,
 
                     plotOptions: {
                         column: {
                             pointPadding: 0.2,
                             borderWidth: 0
                         }
-                    },
+                    },*/,
 
                     series: [{
                         name: 'Mínimo',
