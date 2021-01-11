@@ -394,6 +394,9 @@ function ol_map() {
         this.popupTab1 = function() {	
 		
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + this.current_tipo_estacion_id + "&mode=0";
+			
+			if (this.current_categoria_id) { url += "&categoria_parametro_id=" + this.current_categoria_id; }
+			
             let js = this.requestApi(url)[0];
             let param = get_li(js.parametros);
 
@@ -481,7 +484,7 @@ function ol_map() {
 
                     html += `
                     <div class="category">
-                        <input ${checked} type="radio" name="categoria" value="${js.categoria_parametros[i].categoria_parametro_id}" onclick="geomap.map.current_categoria_id=this.value; geomap.map.popupTab1(); geomap.map.popupTab2(); geomap.map.popupTab3();  geomap.map.popupTab4();">
+                        <input ${checked} type="radio" name="categoria" value="${js.categoria_parametros[i].categoria_parametro_id}" onclick="geomap.map.current_categoria_id=this.value; geomap.map.popupTab1(); geomap.map.popupTab2(); geomap.map.popupTab2(); geomap.map.popupTab3();  geomap.map.popupTab4();">
                         <label>${js.categoria_parametros[i].categoria_parametro_desc}</label>
                     </div>
                     `;
