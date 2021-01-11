@@ -164,25 +164,25 @@ function getData() {
 
         <div class="row row-header">
 
-            <div class="col-md-3 col-lg-3">
+            <div class="col-md-6 col-lg-6">
                 <div class="column">
                     <div class="cell header">Estaciones</div>		
                 </div>
             </div>
 
-            <div class="col-md-3 col-lg-3">
+            <div class="col-md-2 col-lg-2">
                 <div class="column">
                     <div class="cell header">Valor Mínimo</div>
                 </div>
             </div>
 
-            <div class="col-md-3 col-lg-3">
+            <div class="col-md-2 col-lg-2">
                 <div class="column">
                     <div class="cell header">Valor Máximo</div>
                 </div>
             </div>
 
-            <div class="col-md-3 col-lg-3">
+            <div class="col-md-2 col-lg-2">
                 <div class="column">
                     <div class="cell header">Promedio</div>
                 </div>
@@ -228,25 +228,25 @@ function getData() {
         html += `
             <div class="row" data-row-estacion-id="${js.estacion_id}">
 
-                <div class="col-md-3 col-lg-3">
+                <div class="col-md-6 col-lg-6">
                     <div class="column">
                         <div class="cell">${js[i].estacion_nombre}</div>		
                     </div>
                 </div>
 
-                <div class="col-md-3 col-lg-3">
+                <div class="col-md-2 col-lg-2">
                     <div class="column">
                         <div class="cell">${js[i].min_dato}</div>
                     </div>
                 </div>
 
-                <div class="col-md-3 col-lg-3">
+                <div class="col-md-2 col-lg-2">
                     <div class="column">
                         <div class="cell">${js[i].med_dato}</div>
                     </div>
                 </div>
 
-                <div class="col-md-3 col-lg-3">
+                <div class="col-md-2 col-lg-2">
                     <div class="column">
                         <div class="cell">${js[i].max_dato}</div>
                     </div>
