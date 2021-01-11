@@ -1197,13 +1197,13 @@ function ol_map() {
 
             if (js[0]) {
 
-                let minval = /*round(*/js[0].min_dato/*, 2)*/;
-                let medval = /*round(*/js[0].med_dato/*, 2)*/;
-                let maxval = /*round(*/js[0].max_dato/*, 2)*/;
+                let minval = round(js[0].min_dato, 2);
+                let medval = round(js[0].med_dato, 2);
+                let maxval = round(js[0].max_dato, 2);
 
                 $("#panel-aforo-ha-3 .api-tab-3 .minval").html(minval);
-                $("panel-aforo-ha-3 .api-tab-3 .medval").html(medval);
-                $("panel-aforo-ha-3 .api-tab-3 .maxval").html(maxval);
+                $("#panel-aforo-ha-3 .api-tab-3 .medval").html(medval);
+                $("#panel-aforo-ha-3 .api-tab-3 .maxval").html(maxval);
 
                 Highcharts.chart('tab3-aforo-chart', {
 
