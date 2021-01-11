@@ -1,8 +1,11 @@
 <?php
 
+session_start();
+
 header('Content-Type: application/json');
 
 include("./pgconfig.php");
+include("./login.php");
 
 function clear_json($str) {
 	
@@ -29,6 +32,10 @@ $cod_temp				= clear_json(pg_escape_string($_REQUEST["cod_temp"]));
 $tipo_estaciones		= clear_json(pg_escape_string($_REQUEST["tipo_estaciones"]));
 
 $lista_estaciones		= clear_json(pg_escape_string($_REQUEST["lista_estaciones"]));/* Valores separados por coma */
+
+$id_usuario = $_SESSION["user_info"]["id_user"];
+
+echo $id_usuario;
 
 switch ($mode) 
 {

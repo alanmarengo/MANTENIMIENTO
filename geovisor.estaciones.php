@@ -393,7 +393,5 @@
 		</div>
 	</div>
 
-	<input type="hidden" id="aui" value="<?php echo $_SESSION["user_info"]["user_id"]; ?>">
-
 </body>
 </html>
