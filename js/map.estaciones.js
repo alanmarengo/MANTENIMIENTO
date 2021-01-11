@@ -803,8 +803,6 @@ function ol_map() {
         }
 
         this.popupTabAforo1 = function() {
-			
-            
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + this.current_tipo_estacion_id + "&mode=1";
             let js = this.requestApi(url)[0];
