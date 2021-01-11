@@ -183,7 +183,7 @@ function hidro_get_estacion_parametros($estacion_id,$categoria_parametro_id)
 	
 	$query_string    = "SELECT parametro_id,parametro_desc||parametro_unidad AS parametro ";
 	$query_string   .= " FROM mod_sensores.vw_red_monitoreo ";
-	$query_string   .= " WHERE estacion_id=$estacion_id AND categoria_parametro_id=$categoria_parametro_id;";
+	$query_string   .= " WHERE estacion_id=$estacion_id AND categoria_parametro_id=$categoria_parametro_id ";
 	
 	
 	
