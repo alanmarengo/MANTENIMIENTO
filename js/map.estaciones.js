@@ -401,9 +401,9 @@ function ol_map() {
                 <div class="row">
                     <div class="col col-md-6 col-lg-6 col-xs-12 col-sm-12">
                         <p><img id="popup_hidro_foto" src="./images/sample.jpg" width="100%"></p>
-                        <p class="mt-20">
+                        <!--<p class="mt-20">
                             <a href="#" class="btn-1">Monografía de la Estación</a>
-                        </p>
+                        </p>-->
                         <p>
                             <a href="./estadisticas.php?mode=1&cid=16" target="_blank" class="btn-1">Descarga de la Serie de Datos Completa</a>
                         </p>
@@ -813,9 +813,9 @@ function ol_map() {
                 <div class="row">
                     <div class="col col-md-6 col-lg-6 col-xs-12 col-sm-12">
                         <p><img id="popup_aforo_img" src="./images/sample.jpg" width="100%"></p>
-                        <p class="mt-20">
+                        <!--<p class="mt-20">
                             <a href="#" class="btn-1">Monografía de la Estación</a>
-                        </p>
+                        </p>-->
                         <p>
                             <a href="#" class="btn-1">Descarga de la Serie de Datos Completa</a>
                         </p>
