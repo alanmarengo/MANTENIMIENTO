@@ -188,6 +188,8 @@ function hidro_get_estacion_parametros($estacion_id,$categoria_parametro_id)
 	$query_string   .= " FROM mod_sensores.vw_red_monitoreo ";
 	$query_string   .= " WHERE estacion_id=$estacion_id AND categoria_parametro_id=$categoria_parametro_id;";
 	
+	global $id_usuario;
+	
 	if($id_usuario==-1)/* Si no esta logeado */
 	{
 		$query_string   .= " AND parametro_id NOT IN(1,2,3) "; /* Ninguna Bateria*/
@@ -687,6 +689,8 @@ function aforo_get_estacion_parametros($estacion_id)
 	$query_string   .= " FROM mod_sensores.vw_red_monitoreo ";
 	$query_string   .= " WHERE estacion_id=$estacion_id";
 	
+	global $id_usuario;
+	
 	if($id_usuario==-1)/* Si no esta logeado */
 	{
 		$query_string   .= " AND parametro_id NOT IN(1,2,3) "; /* Ninguna Bateria*/
@@ -795,7 +799,7 @@ function get_parametros($tipo_estaciones)/* Si son hidrometricas o de aforo */
 	{
 		$query_string    = "SELECT DISTINCT parametro_id,parametro_desc ";
 		$query_string   .= " FROM mod_sensores.vw_red_monitoreo ";
-		$query_string   .= " WHERE tipo_estacion_desc='Aforo' ORDER BY parametro_desc ASC;";
+		$query_string   .= " WHERE tipo_estacion_desc='Aforo' ;";
 		
 		$tipo_est = 'Aforo';
 	}
@@ -803,10 +807,19 @@ function get_parametros($tipo_estaciones)/* Si son hidrometricas o de aforo */
 	{
 		$query_string    = "SELECT DISTINCT parametro_id,parametro_desc ";
 		$query_string   .= " FROM mod_sensores.vw_red_monitoreo ";
-		$query_string   .= " WHERE tipo_estacion_desc<>'Aforo' ORDER BY parametro_desc ASC;";
+		$query_string   .= " WHERE tipo_estacion_desc<>'Aforo' ;";
 		
 		$tipo_est = 'Hidro';
 	};
+	
+	global $id_usuario;
+	
+	if($id_usuario==-1)/* Si no esta logeado */
+	{
+		$query_string   .= " AND parametro_id NOT IN(1,2,3) "; /* Ninguna Bateria*/
+	};
+	
+	$query_string   .= " ORDER BY parametro_desc ASC;";
 	
 	$query = pg_query($conn,$query_string);
 	
