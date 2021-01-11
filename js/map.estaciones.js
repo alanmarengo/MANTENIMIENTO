@@ -724,7 +724,10 @@ function ol_map() {
 
                 $(".api-tab-3 .minval").html(minval);
                 $(".api-tab-3 .medval").html(medval);
-                $(".api-tab-3 .maxval").html(maxval);
+                $(".api-tab-3 .maxval").html(maxval);				
+				
+				let category = $("#combo-parametros option:selected").text() + ", " + fd + " - " + fh;
+
 
                 Highcharts.chart('tab3-chart', {
 
@@ -737,7 +740,7 @@ function ol_map() {
                     },
 
                     xAxis: {
-                        categories: ['Elementos']
+                        categories: [category]
                     },
 
                     yAxis: {
