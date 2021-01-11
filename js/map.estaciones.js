@@ -1077,7 +1077,7 @@ function ol_map() {
             $("#link_informe_campana").html(js["link_informe_campaña"]);
             $("#reg_audiovisual_campana").attr("href", js["link_audio_visual"]);
             if (js.link_grafico != "") {
-                $("#patdin_med_flu").html("<img src=\"" + js.link_grafico + "\" width=\"100%\">");
+                $("#patdin_med_flu").html("<img src=\"" + js.link_grafico + "\" width=\"100%\" title=\"Velocidades longitudinales (m/s) de una de las diferentes transectas. Datos procesados con el programa River Surveyor Live\">");
             } else {
                 $("#patdin_med_flu").html("");
             }
