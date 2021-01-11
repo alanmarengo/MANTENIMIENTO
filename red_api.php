@@ -175,6 +175,8 @@ function hidro_get_solapa_desc($estacion_id,$tipo_estacion_id)
 
 function hidro_get_estacion_parametros($estacion_id,$categoria_parametro_id)
 {
+	global $id_usuario;
+	
 	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 		
 	$conn = pg_connect($string_conn);
@@ -183,7 +185,7 @@ function hidro_get_estacion_parametros($estacion_id,$categoria_parametro_id)
 	$query_string   .= " FROM mod_sensores.vw_red_monitoreo ";
 	$query_string   .= " WHERE estacion_id=$estacion_id AND categoria_parametro_id=$categoria_parametro_id;";
 	
-	global $id_usuario;
+	
 	
 	if($id_usuario==-1)/* Si no esta logeado */
 	{
