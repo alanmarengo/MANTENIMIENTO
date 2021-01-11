@@ -33,9 +33,15 @@ $tipo_estaciones		= clear_json(pg_escape_string($_REQUEST["tipo_estaciones"]));
 
 $lista_estaciones		= clear_json(pg_escape_string($_REQUEST["lista_estaciones"]));/* Valores separados por coma */
 
-$id_usuario = $_SESSION["user_info"]["id_user"];
+if (sizeof($_SESSION) > 0) {
 
-var_dump($_SESSION);
+	$id_usuario = $_SESSION["user_info"]["user_id"];
+
+}else{
+	
+	$id_usuario = -1;
+	
+}
 
 switch ($mode) 
 {
