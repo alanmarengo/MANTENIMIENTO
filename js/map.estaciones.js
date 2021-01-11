@@ -990,7 +990,7 @@ function ol_map() {
 
             $(comboAnios).empty();
 
-            for (let i = js["años"].length; i > 0; i--) {
+            for (let i = 0; i < js["años"].length; i++) {
 
                 if (i == 0) {
 

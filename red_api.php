@@ -488,7 +488,7 @@ function aforo_get_campañas()
 	$json .= "],";
 	
 	$query_string   = "SELECT DISTINCT anio FROM mod_sensores.red_aforos_campania ";
-	$query_string  .= "ORDER BY anio ASC;";
+	$query_string  .= "ORDER BY anio DESC;";
 	
 	//echo $query_string;
 	
