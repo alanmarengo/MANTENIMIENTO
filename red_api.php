@@ -785,7 +785,7 @@ function get_parametros($tipo_estaciones)/* Si son hidrometricas o de aforo */
 	{
 		$query_string    = "SELECT DISTINCT parametro_id,parametro_desc ";
 		$query_string   .= " FROM mod_sensores.vw_red_monitoreo ";
-		$query_string   .= " WHERE tipo_estacion_desc='Aforo';";
+		$query_string   .= " WHERE tipo_estacion_desc='Aforo' ORDER BY parametro_desc ASC;";
 		
 		$tipo_est = 'Aforo';
 	}
@@ -793,7 +793,7 @@ function get_parametros($tipo_estaciones)/* Si son hidrometricas o de aforo */
 	{
 		$query_string    = "SELECT DISTINCT parametro_id,parametro_desc ";
 		$query_string   .= " FROM mod_sensores.vw_red_monitoreo ";
-		$query_string   .= " WHERE tipo_estacion_desc<>'Aforo';";
+		$query_string   .= " WHERE tipo_estacion_desc<>'Aforo' ORDER BY parametro_desc ASC;";
 		
 		$tipo_est = 'Hidro';
 	};
@@ -883,7 +883,7 @@ function get_estacion_parametro_grafico_30_dias($estacion_id,$tipo_categoria_par
 		
 	$conn = pg_connect($string_conn);
 	
-	$query_string   = "SELECT * FROM mod_sensores.get_estacion_parametro_grafico_30_dias($estacion_id,$tipo_categoria_parametro_id,$parametro_id,190) ";
+	$query_string   = "SELECT * FROM mod_sensores.get_estacion_parametro_grafico_30_dias($estacion_id,$tipo_categoria_parametro_id,$parametro_id,30) ";
 	$query_string  .= "ORDER BY fecha ASC;";
 
 	$query = pg_query($conn,$query_string);
