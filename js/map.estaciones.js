@@ -969,7 +969,7 @@ function ol_map() {
                 </div>                
                 <div class="row mt-20 api-tab-2">
                     <div class="col col-md-3 col-lg-3 api-tab-4">
-                        <a href="#" class="btn-2" id="2"link_informe_campana">INFORME DE CAMPAÑA</a>
+                        <a href="#" class="btn-2" id="link_informe_campana">INFORME DE CAMPAÑA</a>
                     </div>
                     <div class="col col-md-5 col-lg-5 api-tab-4">
                         <a href="#" class="btn-2" target="_blank" id="reg_audiovisual_campana">REGISTRO AUDIOVISUAL DE LA CAMPAÑA</a>
