@@ -35,7 +35,7 @@ $lista_estaciones		= clear_json(pg_escape_string($_REQUEST["lista_estaciones"]))
 
 if ((isset($_SESSION)) && (sizeof($_SESSION) > 0))
 {
-	$id_usuario = $_SESSION["user_info"]["perfil_usuario_id"];
+	$id_usuario = 1;
 }else $id_usuario = -1; /* usuario publico, no hay perfil */
 
 switch ($mode) 
