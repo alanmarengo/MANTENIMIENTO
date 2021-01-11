@@ -474,13 +474,25 @@ function ol_map() {
                 if (js.categoria_parametros[i].categoria_parametro_id < 5) {
 
                     let checked = "";
-
-                    if (first) {
-                        this.current_categoria_id = js.categoria_parametros[i].categoria_parametro_id;
-                        checked = `checked="checked"`;
-                    } else {
-                        checked = ``;
-                    }
+					
+					if (!this.current_categoria_id) {
+					
+						if (first) {
+							this.current_categoria_id = js.categoria_parametros[i].categoria_parametro_id;
+							checked = `checked="checked"`;
+						} else {
+							checked = ``;
+						}
+					
+					}else{
+						
+						if (this.current_categoria_id == js.categoria_parametros[i].categoria_parametro_id) {
+							checked = `checked="checked"`;
+						} else {
+							checked = ``;
+						}
+						
+					}
 
                     html += `
                     <div class="category">
