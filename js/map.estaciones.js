@@ -639,7 +639,7 @@ function ol_map() {
                             <p class="value maxval"></p>
                         </div>
                         <p class="mt-10">
-                            <a href="#" class="btn-2">Descarga de la Serie de Datos</a>
+                            <a href="./estadisticas.php?mode=1&cid=16" target="_blank" class="btn-2">Descarga de la Serie de Datos</a>
                         </p>
                     </div>
                     <div class="col col-md-9 col-lg-9">
@@ -813,7 +813,7 @@ function ol_map() {
                             <a href="#" class="btn-1">Monografía de la Estación</a>
                         </p>-->
                         <p>
-                            <a href="#" class="btn-1">Descarga de la Serie de Datos Completa</a>
+                            <a href="./estadisticas.php?mode=1&cid=16" class="btn-1">Descarga de la Serie de Datos Completa</a>
                         </p>
                     </div>
                     <div class="col col-md-6 col-lg-6 col-xs-12 col-sm-12 api-tab-1">
@@ -1110,7 +1110,7 @@ function ol_map() {
                             <p class="value maxval"></p>
                         </div>
                         <p class="mt-10">
-                            <a href="#" class="btn-2">Descarga de la Serie de Datos</a>
+                            <a href="./estadisticas.php?mode=1&cid=16" class="btn-2">Descarga de la Serie de Datos</a>
                         </p>
                     </div>
                     <div class="col col-md-9 col-lg-9">
