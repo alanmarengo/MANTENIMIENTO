@@ -1085,7 +1085,7 @@ function ol_map() {
 					theme: 'tooltipster-default',
 					trigger: 'hover',
 					multiple: true,
-					position: "left"
+					position: "top"
 				});
 			
 			} else {
