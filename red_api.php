@@ -1,6 +1,6 @@
 <?php
 
-/*session_start();*/
+session_start();
 
 header('Content-Type: application/json');
 
@@ -33,14 +33,13 @@ $tipo_estaciones		= clear_json(pg_escape_string($_REQUEST["tipo_estaciones"]));
 
 $lista_estaciones		= clear_json(pg_escape_string($_REQUEST["lista_estaciones"]));/* Valores separados por coma */
 
-if (sizeof($_SESSION) > 0) {
-
+if (sizeof($_SESSION) > 0) 
+{
 	$id_usuario = $_SESSION["user_info"]["user_id"];
-
-}else{
-	
+}
+else
+{
 	$id_usuario = -1;
-	
 }
 
 switch ($mode) 
