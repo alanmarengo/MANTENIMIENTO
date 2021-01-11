@@ -393,10 +393,15 @@ function ol_map() {
 
         this.popupTab1 = function() {	
 		
-            let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + this.current_tipo_estacion_id + "&mode=0";
-			
-			if (this.current_categoria_id) { url += "&categoria_parametro_id=" + this.current_categoria_id; }
-			
+			let param = this.current_tipo_estacion_id;
+		
+			if (this.current_categoria_id) { 
+				url += "&categoria_parametro_id=" + this.current_categoria_id; 
+				param = this.current_categoria_id;
+			}
+		
+            let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + param + "&mode=0";
+						
             let js = this.requestApi(url)[0];
             let param = get_li(js.parametros);
 
