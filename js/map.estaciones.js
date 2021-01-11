@@ -481,7 +481,7 @@ function ol_map() {
 
                     html += `
                     <div class="category">
-                        <input ${checked} type="radio" name="categoria" value="${js.categoria_parametros[i].categoria_parametro_id}" onclick="geomap.map.current_categoria_id=this.value; geomap.map.popupTab2(); geomap.map.popupTab3();  geomap.map.popupTab4();">
+                        <input ${checked} type="radio" name="categoria" value="${js.categoria_parametros[i].categoria_parametro_id}" onclick="geomap.map.current_categoria_id=this.value; geomap.map.popupTab1(); geomap.map.popupTab2(); geomap.map.popupTab3();  geomap.map.popupTab4();">
                         <label>${js.categoria_parametros[i].categoria_parametro_desc}</label>
                     </div>
                     `;

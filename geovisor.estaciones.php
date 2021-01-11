@@ -94,7 +94,7 @@
 				<input type="checkbox" class="filtro-area-interes" name="filtro-area-interes" value="2" onclick="geomap.map.updateLayerFilters();">
 				<div class="state">
 					<i class="icon mdi mdi-check"></i>
-					<label>Cuenca baja</label>
+					<label>Cuenca media</label>
 				</div>
 			</div>
 		
