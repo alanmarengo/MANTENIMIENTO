@@ -185,8 +185,6 @@ function hidro_get_estacion_parametros($estacion_id,$categoria_parametro_id)
 	$query_string   .= " FROM mod_sensores.vw_red_monitoreo ";
 	$query_string   .= " WHERE estacion_id=$estacion_id AND categoria_parametro_id=$categoria_parametro_id ";
 	
-	
-	
 	if($id_usuario==-1)/* Si no esta logeado */
 	{
 		$query_string   .= " AND parametro_id NOT IN(1,2,3) "; /* Ninguna Bateria*/
@@ -677,6 +675,7 @@ function aforo_get_solapa_datos_fechas($estacion_id,$parametro_id,$fd,$fh)
 
 function aforo_get_estacion_parametros($estacion_id)
 {
+	global $id_usuario;
 	//http://observ.net/red_api.php?estacion_id=14&mode=9
 	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
 		
@@ -684,9 +683,9 @@ function aforo_get_estacion_parametros($estacion_id)
 	
 	$query_string    = "SELECT parametro_id,parametro_desc||parametro_unidad AS parametro ";
 	$query_string   .= " FROM mod_sensores.vw_red_monitoreo ";
-	$query_string   .= " WHERE estacion_id=$estacion_id";
+	$query_string   .= " WHERE estacion_id=$estacion_id ";
 	
-	global $id_usuario;
+	
 	
 	if($id_usuario==-1)/* Si no esta logeado */
 	{
@@ -796,7 +795,7 @@ function get_parametros($tipo_estaciones)/* Si son hidrometricas o de aforo */
 	{
 		$query_string    = "SELECT DISTINCT parametro_id,parametro_desc ";
 		$query_string   .= " FROM mod_sensores.vw_red_monitoreo ";
-		$query_string   .= " WHERE tipo_estacion_desc='Aforo' ;";
+		$query_string   .= " WHERE tipo_estacion_desc='Aforo' ";
 		
 		$tipo_est = 'Aforo';
 	}
@@ -804,7 +803,7 @@ function get_parametros($tipo_estaciones)/* Si son hidrometricas o de aforo */
 	{
 		$query_string    = "SELECT DISTINCT parametro_id,parametro_desc ";
 		$query_string   .= " FROM mod_sensores.vw_red_monitoreo ";
-		$query_string   .= " WHERE tipo_estacion_desc<>'Aforo' ;";
+		$query_string   .= " WHERE tipo_estacion_desc<>'Aforo' ";
 		
 		$tipo_est = 'Hidro';
 	};
