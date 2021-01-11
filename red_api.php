@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+/*session_start();*/
 
 header('Content-Type: application/json');
 
@@ -681,6 +681,11 @@ function aforo_get_estacion_parametros($estacion_id)
 	$query_string    = "SELECT parametro_id,parametro_desc||parametro_unidad AS parametro ";
 	$query_string   .= " FROM mod_sensores.vw_red_monitoreo ";
 	$query_string   .= " WHERE estacion_id=$estacion_id";
+	
+	if($id_usuario==-1)/* Si no esta logeado */
+	{
+		$query_string   .= " AND parametro_id NOT IN(1,2,3) "; /* Ninguna Bateria*/
+	};
 	
 	$query = pg_query($conn,$query_string);
 	
