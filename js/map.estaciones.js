@@ -982,8 +982,6 @@ function ol_map() {
             updateDatepicker();
 
             this.popupTabAforo2_cargarComboAnio(js);
-			
-            HoldOn.close();
         }
 
         this.popupTabAforo2_cargarComboAnio = function(js) {
@@ -992,7 +990,7 @@ function ol_map() {
 
             $(comboAnios).empty();
 
-            for (let i = 0; i < js["años"].length; i++) {
+            for (let i = js["años"].length; i > 0; i--) {
 
                 if (i == 0) {
 
@@ -1070,12 +1068,12 @@ function ol_map() {
             let js = this.requestApi(url)[0];
 
             $("#panel-aforo-ha-2 .api-tab-2 .fecha_camp").html(js.fecha_campania);
-            $("#panel-aforo-ha-2 .api-tab-2 .altura_rio").html(js.altura_rio);
-            $("#panel-aforo-ha-2 .api-tab-2 .caudal_liquido").html(js.caudal_liq);
-            $("#panel-aforo-ha-2 .api-tab-2 .con_med_frac_fina").html(js.con_med_frac_fina);
-            $("#panel-aforo-ha-2 .api-tab-2 .con_med_frac_gruesa").html(js.con_med_frac_gruesa);
-            $("#panel-aforo-ha-2 .api-tab-2 .trans_frac_fina").html(js.trans_frac_fina);
-            $("#panel-aforo-ha-2 .api-tab-2 .trans_frac_gruesa").html(js.trans_frac_gruesa);
+            $("#panel-aforo-ha-2 .api-tab-2 .altura_rio").html(js.altura_rio + " (m)");
+            $("#panel-aforo-ha-2 .api-tab-2 .caudal_liquido").html(js.caudal_liq + " (m3/seg)");
+            $("#panel-aforo-ha-2 .api-tab-2 .con_med_frac_fina").html(js.con_med_frac_fina + " (mg/l)");
+            $("#panel-aforo-ha-2 .api-tab-2 .con_med_frac_gruesa").html(js.con_med_frac_gruesa + " (mg/l)");
+            $("#panel-aforo-ha-2 .api-tab-2 .trans_frac_fina").html(js.trans_frac_fina + " (kg/l)");
+            $("#panel-aforo-ha-2 .api-tab-2 .trans_frac_gruesa").html(js.trans_frac_gruesa + " (kg/l)");
             $("#link_informe_campana").html(js["link_informe_campaña"]);
             $("#reg_audiovisual_campana").attr("href", js["link_audio_visual"]);
             if (js.link_grafico != "") {
