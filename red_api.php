@@ -35,7 +35,7 @@ $lista_estaciones		= clear_json(pg_escape_string($_REQUEST["lista_estaciones"]))
 
 $id_usuario = $_SESSION["user_info"]["id_user"];
 
-echo $id_usuario;
+var_dump($_SESSION);
 
 switch ($mode) 
 {
