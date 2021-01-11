@@ -325,6 +325,8 @@ function aforo_get_solapa_desc($estacion_id)
 
 function hidro_get_solapa_datos_diarios($estacion_id,$tipo_categoria_parametro_id)
 {
+	global $id_usuario;
+	
 	//http://observ.net/red_api.php?estacion_id=7&tipo_estacion_id=4&mode=2
 	
 	$string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
@@ -332,6 +334,12 @@ function hidro_get_solapa_datos_diarios($estacion_id,$tipo_categoria_parametro_i
 	$conn = pg_connect($string_conn);
 	
 	$query_string   = "SELECT * FROM mod_sensores.get_estacion_datos_diarios($estacion_id,$tipo_categoria_parametro_id) ";
+	
+	if($id_usuario==-1)/* Si no esta logeado */
+	{
+		$query_string   .= " AND parametro_id NOT IN(1,2,3) "; /* Ninguna Bateria*/
+	};
+	
 	$query_string  .= "ORDER BY parametro_nombre ASC;";
 	
 	$query = pg_query($conn,$query_string);
