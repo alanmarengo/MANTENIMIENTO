@@ -1074,7 +1074,7 @@ function ol_map() {
             $("#panel-aforo-ha-2 .api-tab-2 .con_med_frac_gruesa").html(js.con_med_frac_gruesa + " (mg/l)");
             $("#panel-aforo-ha-2 .api-tab-2 .trans_frac_fina").html(js.trans_frac_fina + " (kg/l)");
             $("#panel-aforo-ha-2 .api-tab-2 .trans_frac_gruesa").html(js.trans_frac_gruesa + " (kg/l)");
-            $("#link_informe_campana").html(js["link_informe_campaña"]);
+            $("#link_informe_campana").attr("href",js["link_informe_campaña"]);
             $("#reg_audiovisual_campana").attr("href", js["link_audio_visual"]);
             if (js.link_grafico != "") {
                 $("#patdin_med_flu").html("<img id=\"patdin_med_flu_img\" src=\"" + js.link_grafico + "\" width=\"100%\" title=\"Velocidades longitudinales (m/s) de una de las diferentes transectas. Datos procesados con el programa River Surveyor Live\">");
