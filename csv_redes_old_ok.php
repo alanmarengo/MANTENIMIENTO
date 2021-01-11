@@ -23,7 +23,7 @@ $fh						= clear_json(pg_escape_string($_REQUEST["fh"]));
 $lista_estaciones		= pg_escape_string($_REQUEST["lista_estaciones"]);/* Valores separados por coma */
 
 $query_string    = "SELECT * ";
-$query_string   .= " FROM mod_sensores.get_parametro_datos_sin_agrupar('$lista_estaciones'::text,$parametro_id::bigint,'$fd'::timestamp with time zone,'$fh'::timestamp with time zone) ";
+$query_string   .= " FROM mod_sensores.get_parametro_datos('$lista_estaciones'::text,$parametro_id::bigint,'$fd'::timestamp with time zone,'$fh'::timestamp with time zone) ";
 $query_string   .= " ORDER BY estacion_nombre ASC;";
 
 $string_conn = "host=" . pg_server . " user=" . pg_user . " port=" . pg_portv . " password=" . pg_password . " dbname=" . pg_db;
