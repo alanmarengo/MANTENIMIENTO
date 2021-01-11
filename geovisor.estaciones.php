@@ -159,7 +159,7 @@
 		<div id="popup-inner">
 			<div class="header">
 				<span class="title">Estación de Monitoreo</span>
-				<a href="javascript:void(0);" onclick="$('#popup').hide(); geomap.map.current_categoria_id=1">
+				<a href="javascript:void(0);" onclick="$('#popup').hide(); geomap.map.current_categoria_id=false">
 					<i class="fa fa-times"></i>
 				</a>
 			</div>
@@ -207,7 +207,7 @@
 		<div id="popup-aforo-inner">
 			<div class="header">
 				<span class="title">Estación de Monitoreo</span>
-				<a href="javascript:void(0);" onclick="$('#popup-aforo').hide(); geomap.map.current_categoria_id=1">
+				<a href="javascript:void(0);" onclick="$('#popup-aforo').hide(); geomap.map.current_categoria_id=false">
 					<i class="fa fa-times"></i>
 				</a>
 			</div>
