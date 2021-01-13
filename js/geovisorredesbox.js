@@ -281,6 +281,8 @@ function getData() {
     ];
 
     $("#est-tabla-inner").html(html);
+	
+	console.log(serieEstacion);
 
     Highcharts.chart('est-chart-inner', {
 
