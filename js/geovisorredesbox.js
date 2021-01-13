@@ -156,7 +156,7 @@ function getData() {
         <div class="row">
 				
             <div class="form-group form-group-header">
-                <label>Tabla de valores de ${paramtext}</label>
+                <label>Tabla de valores de </label>
                 <a href="javascript:void(0);" class="linkaux" onclick="getDataCsv();">Ver datos completos</a>
             </div>
                     
@@ -259,9 +259,8 @@ function getData() {
 
     let series = [];
     let xaxis = [paramtext];
-    //let xaxis = [];
 
-   /* for (let i = 0; i < serieEstacion.length; i++) {
+    /*for (let i = 0; i < serieEstacion.length; i++) {
 
         xaxis[i] = serieEstacion[i];
 
@@ -282,8 +281,6 @@ function getData() {
     ];
 
     $("#est-tabla-inner").html(html);
-	
-	console.log(serieEstacion);
 
     Highcharts.chart('est-chart-inner', {
 
@@ -297,7 +294,6 @@ function getData() {
 
         xAxis: {
             categories: xaxis
-            //categories: serieEstacion
         },
 
         yAxis: {
