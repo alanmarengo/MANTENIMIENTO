@@ -199,7 +199,8 @@ function getData() {
 
     for (let i = 0; i < js.length; i++) {
 
-        serieEstacion.push(js[i].estacion_nombre);
+        //serieEstacion.push(js[i].estacion_nombre);
+        serieEstacion[i] = js[i].estacion_nombre;
         serieEstacionVal[i] = [];
 
         if (js[i].estacion_nombre == "") { js[i].estacion_nombre = "-"; }
@@ -265,7 +266,9 @@ function getData() {
         xaxis[i] = serieEstacion[i];
 
     }*/
-
+	
+	console.log(serieEstacion);
+	
     series = [{
             name: "Mínimo",
             data: serieMin
