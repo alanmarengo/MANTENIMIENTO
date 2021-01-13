@@ -293,7 +293,8 @@ function getData() {
         },
 
         xAxis: {
-            categories: xaxis
+            //categories: xaxis
+            categories: serieEstacion
         },
 
         yAxis: {
