@@ -295,8 +295,8 @@ function getData() {
         },
 
         xAxis: {
-            //categories: xaxis
-            categories: serieEstacion
+            categories: xaxis
+            //categories: serieEstacion
         },
 
         yAxis: {
