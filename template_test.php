@@ -32,7 +32,7 @@
 		
 		<div class="page-container" style="background-color: #EAEAED; min-height:500px; padding:50px 0px">
 		
-			<?php include("./template-ieasa-7.php"); ?>
+			<?php include("./" . $_GET["tpl"] . ".php"); ?>
 			
 		</div>
 		
