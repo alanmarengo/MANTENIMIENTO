@@ -259,6 +259,7 @@ function getData() {
 
     let series = [];
     //let xaxis = [paramtext];
+    let xaxis = [];
 
     for (let i = 0; i < serieEstacion.length; i++) {
 
