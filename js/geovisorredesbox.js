@@ -258,13 +258,13 @@ function getData() {
     }
 
     let series = [];
-    let xaxis = [paramtext];
+    //let xaxis = [paramtext];
 
-    /*for (let i = 0; i < serieEstacion.length; i++) {
+    for (let i = 0; i < serieEstacion.length; i++) {
 
         xaxis[i] = serieEstacion[i];
 
-    }*/
+    }
 
     series = [{
             name: "Mínimo",
