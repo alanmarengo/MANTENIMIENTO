@@ -410,6 +410,7 @@ function ol_map() {
 
 			let tmp_param = js.parametros;
 				tmp_param = tmp_param.split(",");
+				alert(tmp_param);
 				
 			let param = "<ul>";
 				
