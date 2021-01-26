@@ -833,7 +833,7 @@ function ol_map() {
             document.getElementById("panel-ha4-1").innerHTML = html_mensual;
             document.getElementById("panel-ha4-2").innerHTML = html_anual;
 			
-            HoldOn.close();
+            //HoldOn.close();
 
         }
 		
@@ -996,7 +996,7 @@ function ol_map() {
                 <div class="row mt-20 api-tab-2">
                     <div class="col col-md-12 col-lg-12 api-tab-4">
                         <div class="indicador mini text-center">
-                            <p class="title" style="font-size:14px;">Patrón hidrodinámico de medio flujo</p>
+                            <p class="title" style="font-size:14px;">Patrón hidrodinámico de medio flujo (m/s)</p>
                             <p id="patdin_med_flu">
                                 
                             </p>
