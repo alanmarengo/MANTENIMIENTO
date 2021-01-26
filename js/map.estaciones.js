@@ -926,9 +926,7 @@ function ol_map() {
 			
         }
 
-        this.popupTabAforo2 = function() {
-			
-            
+        this.popupTabAforo2 = function() {           
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + this.current_tipo_estacion_id + "&mode=5";
             let js = this.requestApi(url);
@@ -1028,9 +1026,9 @@ function ol_map() {
 
             $(comboAnios).empty();
 
-            for (let i = 0; i < js["años"].length; i++) {
+            for (let i = js["años"].length; i > 0; i--) {
 
-                if (i == 0) {
+                if (i == js["años"].length) {
 
                     this.current_tabaf2_ano = js["años"][i].anio;
 
@@ -1067,7 +1065,7 @@ function ol_map() {
 
             let first = true;
 
-            for (let i = 0; i < js["campañas"].length; i++) {
+            for (let i = js["campañas"].length; i > 0; i--) {
 
                 if (js["campañas"][i].anio == this.current_tabaf2_ano) {
 
