@@ -362,7 +362,7 @@ function ol_map() {
         }
 
         this.parseGFI = function(js) {
-
+			this.current_tab = 1;
             this.current_estacion_id = js.estacion_id;
             this.current_tipo_estacion_id = js.tipo_estacion_id;
 
@@ -392,6 +392,8 @@ function ol_map() {
         }
 
         this.popupTab1 = function() {	
+		
+			this.current_tab = 1;
 		
 			let param_tc = this.current_tipo_estacion_id;		
 								
@@ -513,7 +515,7 @@ function ol_map() {
 
                     html += `
                     <div class="category">
-                        <input ${checked} type="radio" name="categoria" value="${js.categoria_parametros[i].categoria_parametro_id}" onclick="geomap.map.current_categoria_id=this.value; geomap.map.popupTab1(); geomap.map.popupTab2(); geomap.map.popupTab2(); geomap.map.popupTab3();  geomap.map.popupTab4();">
+                        <input ${checked} type="radio" name="categoria" value="${js.categoria_parametros[i].categoria_parametro_id}" onclick="geomap.map.current_categoria_id=this.value; geomap.map.popupTabOpenCurr();">
                         <label>${js.categoria_parametros[i].categoria_parametro_desc}</label>
                     </div>
                     `;
@@ -529,9 +531,9 @@ function ol_map() {
 
         }
 
-        this.popupTab2 = function() {
-			
-            
+        this.popupTab2 = function() {	
+		
+			this.current_tab = 2;
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&mode=2";
             let js = this.requestApi(url);
@@ -626,8 +628,8 @@ function ol_map() {
         }
 
         this.popupTab3 = function() {
-			
-            
+		
+			this.current_tab = 3;
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&mode=3";
             let js = this.requestApi(url);
@@ -787,10 +789,10 @@ function ol_map() {
 
         }
 
-        this.popupTab4 = function() {
+        this.popupTab4 = function() {	
+		
+			this.current_tab = 4;
 			
-            
-
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + this.current_tipo_estacion_id + "&mode=14";
             let js = this.requestApi(url);
 
@@ -834,6 +836,30 @@ function ol_map() {
             HoldOn.close();
 
         }
+		
+		this.popupTabOpenCurr = function() {
+			
+			switch(this.current_tab) {
+				
+				case 1:
+				this.popupTab1();
+				break;
+				
+				case 2:
+				this.popupTab2();
+				break;
+				
+				case 3:
+				this.popupTab3();
+				break;
+				
+				case 4:
+				this.popupTab4();
+				break;
+				
+			}
+			
+		}
 
         this.popupTabAforo1 = function() {
 

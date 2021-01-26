@@ -81,7 +81,7 @@ function get_curva_hq($estacion_id)
 	*/
 	$query_string   = "SELECT alt_escala AS altura,ql_tot_m3s AS caudal,
 					   (select descripcion from mod_catalogo.cod_temporalidad where cod_temporalidad_id::bigint=D.cod_temporalidad_id::bigint LIMIT 1) AS campaña
-					   FROM $tabla D WHERE alt_escala IS NOT NULL AND ql_tot_m3s IS NOT NULL ORDER BY campaña::date ASC;";
+					   FROM $tabla D WHERE alt_escala IS NOT NULL AND ql_tot_m3s IS NOT NULL ORDER BY campaña ASC;";
 
 
 	$query = pg_query($conn,$query_string);
