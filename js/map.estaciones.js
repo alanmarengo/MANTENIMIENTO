@@ -412,13 +412,11 @@ function ol_map() {
 				tmp_param = tmp_param.split(",");
 				alert(tmp_param);
 				
-			let param = "<ul>";
+			let param = "";
 				
 			for (let i=0; i<tmp_param.length; i++) {
 				param += "<li>" + tmp_param[i] + "</li>";
 			}
-			
-			param += "</ul>";
 
             let html = `
                 <div class="row">
