@@ -300,8 +300,7 @@ function getData() {
         },
 
         yAxis: {
-            allowDecimals: false,
-            min: 0,
+            allowDecimals: true,
             title: {
                 text: 'Valores'
             }
