@@ -410,7 +410,6 @@ function ol_map() {
 
 			let tmp_param = js.parametros;
 				tmp_param = tmp_param.split(",");
-				alert(tmp_param);
 				
 			let param = "";
 				
@@ -871,7 +870,7 @@ function ol_map() {
                         </p>
                         <p class="inicio-campa">
                             <span class="popup-label">Inicio Campaña:</span>
-                            <ul class="popup-value"></ul>
+                            <span class="popup-value"></span>
                         </p>
                         <p class="proveedor">
                             <span class="popup-label">Proveedor:</span>
