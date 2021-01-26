@@ -209,21 +209,21 @@ function getData() {
             js[i].min_dato = "-";
             serieMin.push(0);
         } else {
-            serieMin.push(parseInt(js[i].min_dato));
+            serieMin.push(parseFloat(js[i].min_dato));
         }
 
         if (js[i].med_dato == "") {
             js[i].med_dato = "-";
             serieMed.push(0);
         } else {
-            serieMed.push(parseInt(js[i].med_dato));
+            serieMed.push(parseFloat(js[i].med_dato));
         }
 
         if (js[i].max_dato == "") {
             js[i].max_dato = "-";
             serieMax.push(0);
         } else {
-            serieMax.push(parseInt(js[i].max_dato));
+            serieMax.push(parseFloat(js[i].max_dato));
         }
 
         html += `
