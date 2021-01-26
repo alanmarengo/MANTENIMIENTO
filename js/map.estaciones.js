@@ -406,7 +406,18 @@ function ol_map() {
 			}
 			
             let js = this.requestApi(url)[0];
-            let param = get_li(js.parametros);
+            //let param = get_li(js.parametros);
+
+			let tmp_param = js.parametros;
+				tmp_param = tmp_param.split(",");
+				
+			let param = "<ul>";
+				
+			for (let i=0; i<tmp_param.length; i++) {
+				param += "<li>" + tmp_param[i] + "</li>";
+			}
+			
+			param += "</ul>";
 
             let html = `
                 <div class="row">
@@ -972,7 +983,7 @@ function ol_map() {
                 </div>                
                 <div class="row mt-20 api-tab-2">
                     <div class="col col-md-3 col-lg-3 api-tab-4">
-                        <a href="#" class="btn-2" id="link_informe_campana">INFORME DE CAMPAÑA</a>
+                        <a href="#" class="btn-2" id="link_informe_campana" target="_blank">INFORME DE CAMPAÑA</a>
                     </div>
                     <div class="col col-md-5 col-lg-5 api-tab-4">
                         <a href="#" class="btn-2" target="_blank" id="reg_audiovisual_campana">REGISTRO AUDIOVISUAL DE LA CAMPAÑA</a>
@@ -1263,8 +1274,6 @@ function ol_map() {
 
         this.popupTabAforo4 = function() {
 			
-            
-
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&mode=7";
             let js = this.requestApi(url)[0];
 
@@ -1291,7 +1300,7 @@ function ol_map() {
             $("#panel-aforo-ha-4").html(html);
 
             let urlg = this.apiGraficosUrl + "?estacion_id=" + this.current_estacion_id + "&mode=2";
-
+			
             let iframe = `<iframe id="iframe-grafico4" src="${urlg}" width="100%" style="border:none;" height="400"></iframe>`;
 
             document.getElementById("est-chart-hq").innerHTML = iframe;
