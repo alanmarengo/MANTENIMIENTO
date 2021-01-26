@@ -448,7 +448,7 @@ function ol_map() {
                         </p>
                         <p class="parametros">
                             <span class="popup-label">Parámetros:</span>
-                            <ul class="popup-value"></ul>
+                            <ul class="popup-value tab1-params"></ul>
                         </p>
                         <p class="inicio-operacion">
                             <span class="popup-label">Inicio de Operación:</span>
@@ -478,7 +478,7 @@ function ol_map() {
             $("#panel-ha-1 .api-tab-1 .nombre .popup-value").html(js.estacion);
             $("#panel-ha-1 .api-tab-1 .localizacion .popup-value").html(js.localizacion);
             $("#panel-ha-1 .api-tab-1 .id .popup-value").html(js.id_orig);
-            $("#panel-ha-1 .api-tab-1 .parametros .popup-value").html(param);
+            $("#panel-ha-1 .tab1-params").html(param);
             $("#panel-ha-1 .api-tab-1 .inicio-operacion .popup-value").html(js.inicio_opera);
             $("#panel-ha-1 .api-tab-1 .objetivo .popup-value").html(js.objetivo);
             $("#panel-ha-1 .api-tab-1 .proveedor .popup-value").html(js.proveedor);
