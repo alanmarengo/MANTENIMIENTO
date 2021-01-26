@@ -251,7 +251,7 @@ function ol_map() {
             controls: [],
             view: new ol.View({
                 center: [-7946811.957705357, -6526108.294615954],
-                zoom: 8,
+                zoom: 9,
                 minZoom: 3.8,
                 maxZoom: 21
             })
