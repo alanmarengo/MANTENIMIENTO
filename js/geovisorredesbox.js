@@ -292,7 +292,7 @@ function getData() {
         },
 
         title: {
-            text: 'Gráfico de Estación'
+            text: 'Gráfico de Estación ' + $("#combo-parametros-redes option:selected").text()
         },
 
         xAxis: {
