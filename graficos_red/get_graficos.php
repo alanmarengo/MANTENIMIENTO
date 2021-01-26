@@ -223,7 +223,7 @@ function get_estacion_parametro_grafico_30_dias($estacion_id,$categoria_parametr
 		
 	$conn = pg_connect($string_conn);
 	
-	$query_string   = "SELECT * FROM mod_sensores.get_estacion_parametro_grafico_30_dias($estacion_id,$categoria_parametro_id,$parametro_id,190) ";
+	$query_string   = "SELECT * FROM mod_sensores.get_estacion_parametro_grafico_30_dias($estacion_id,$categoria_parametro_id,$parametro_id,30) ";
 	$query_string  .= "ORDER BY fecha ASC;";
 
 	$query = pg_query($conn,$query_string);
@@ -319,7 +319,7 @@ function get_estacion_lluvias_grafico_30_dias($estacion_id,$categoria_parametro_
 		
 	$conn = pg_connect($string_conn);
 	
-	$query_string   = "SELECT * FROM mod_sensores.get_estacion_lluvias_grafico_30_dias($estacion_id,$categoria_parametro_id,$parametro_id,150) ";
+	$query_string   = "SELECT * FROM mod_sensores.get_estacion_lluvias_grafico_30_dias($estacion_id,$categoria_parametro_id,$parametro_id,30) ";
 	$query_string  .= "ORDER BY fecha ASC;";
 
 	$query = pg_query($conn,$query_string);
