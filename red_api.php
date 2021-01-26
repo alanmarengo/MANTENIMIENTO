@@ -467,7 +467,7 @@ function aforo_get_campañas()
 	$conn = pg_connect($string_conn);
 	
 	$query_string   = "SELECT * FROM mod_sensores.red_aforos_campania ";
-	$query_string  .= "ORDER BY anio,mes ASC;";
+	$query_string  .= "ORDER BY anio,mes DESC;";
 	
 	//echo $query_string;
 	
