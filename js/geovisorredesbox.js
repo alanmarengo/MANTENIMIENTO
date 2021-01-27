@@ -274,7 +274,7 @@ function getData() {
             data: serieMin
         },
         {
-            name: "Medio",
+            name: "Promedio",
             data: serieMed
         },
         {
