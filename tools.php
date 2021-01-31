@@ -31,7 +31,7 @@ function parseSQLToCSV($recordset)
                                 };
   			};
   			
-  			$json.= "\n";
+  			$json.= "\n"; // \n\r se reemplazó por \n
     
   			$flagFirstSeparator = true;
                          
@@ -41,7 +41,7 @@ function parseSQLToCSV($recordset)
 				if($flagFirstSeparator)
    				{
    	 			 $flagFirstSeparator = false;
-   				}else $json.= "\n";
+   				}else $json.= "\n"; // \n\r se reemplazó por \n
                                 
                                 $fflag_delimitador  = false;
    
