@@ -178,13 +178,13 @@ function getData() {
 
             <div class="col-md-2 col-lg-2 p0">
                 <div class="column">
-                    <div class="cell header">Promedio</div>
+                    <div class="cell header">Valor Máximo</div>
                 </div>
             </div>
 
             <div class="col-md-2 col-lg-2 p0">
                 <div class="column">
-                    <div class="cell header">Valor Máximo</div>
+                    <div class="cell header">Promedio</div>
                 </div>
             </div>
 
@@ -243,13 +243,13 @@ function getData() {
 
                 <div class="col-md-2 col-lg-2 p0">
                     <div class="column">
-                        <div class="cell">${js[i].med_dato}</div>
+                        <div class="cell">${js[i].max_dato}</div>
                     </div>
                 </div>
 
                 <div class="col-md-2 col-lg-2 p0">
                     <div class="column">
-                        <div class="cell">${js[i].max_dato}</div>
+                        <div class="cell">${js[i].med_dato}</div>
                     </div>
                 </div>
 
