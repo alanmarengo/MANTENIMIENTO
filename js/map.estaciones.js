@@ -135,8 +135,8 @@ function ol_map() {
             visible: true,
             singleTile: true,
             source: new ol.source.TileWMS({
-				url: "https://observatorio.enarsa.ar/geoserver/ows?",
-                //url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
+				//url: "https://observatorio.enarsa.ar/geoserver/ows?",
+                url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
                 params: {
                     //'LAYERS': 'ahrsc:vp_geo_himet_ubicacionestaciones_pga1', //'intervalos_polygons',
                     'LAYERS': 'ahrsc:estaciones_filtros',
@@ -185,8 +185,8 @@ function ol_map() {
                 visible: false,
                 singleTile: true,
                 source: new ol.source.TileWMS({
-					url: "https://observatorio.enarsa.ar/geoserver/ows?",
-                    //url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
+					//url: "https://observatorio.enarsa.ar/geoserver/ows?",
+                    url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
                     params: {
                         //'LAYERS': 'ahrsc:vp_geo_himet_ubicacionestaciones_pga1', //'intervalos_polygons',
                         'LAYERS': layer_name,

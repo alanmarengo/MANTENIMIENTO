@@ -15,7 +15,7 @@
 		<div id="footer-slider" class="carousel slide" data-ride="carousel" data-interval="3000">
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-					<a target="_blank" href="http://enarsa.ar">ENARSA</a><br />
+					<a target="_blank" href="http://ieasa.com.ar">Integración Energética Argentina SA</a><br />
 					<a target="_blank" href="http://hidrosantacruz.com.ar">Hidro Santa Cruz</a><br />
 				</div>
 				<div class="carousel-item">
