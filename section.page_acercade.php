@@ -29,7 +29,7 @@
                 <div class="col-md-6 text-justify">
                     El proyecto Aprovechamiento Hidroeléctrico del río Santa Cruz (AHRSC), es un emprendimiento hidroeléctrico estratégico para el desarrollo del país que se enmarca dentro de los preceptos de la energía renovable y se fundamenta bajo criterios de sostenibilidad.
                     <br />
-                    ENARSA, como organización pública que gestiona el proyecto, se compromete en un proceso de gestión del conocimiento abierto, de uso libre y gratuito, aportando visibilidad de sus acciones y acceso a la información para la aplicación en soluciones y toma de decisiones para el bien público.
+                    IEASA, como organización pública que gestiona el proyecto, se compromete en un proceso de gestión del conocimiento abierto, de uso libre y gratuito, aportando visibilidad de sus acciones y acceso a la información para la aplicación en soluciones y toma de decisiones para el bien público.
                     <br />
                     En 2017 se presentó en Audiencia Pública en el Congreso de la Nación, prevista en la Ley Nº 23.879, el Estudio de Impacto Ambiental (EsIA) que permitió respaldar la factibilidad técnica, económica y ambiental del Proyecto. 
                     <br />
