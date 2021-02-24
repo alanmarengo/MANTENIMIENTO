@@ -1259,8 +1259,8 @@ function draw_grafico_14(container,config) { // WIND BARB
 }
 
 function draw_grafico_15(container,config) { // POLAR RADAR
-	
-	Highcharts.chart('container', {
+	console.log(config);
+	Highcharts.chart(container, {
 
 		chart: {
 			polar: true
