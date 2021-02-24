@@ -1403,6 +1403,7 @@ function draw_grafico_18(container,config) {
 
 	var series = [];
 	var pieObject = false;
+	var pieTitle = "";
 
 	for (var i=0; i<config.data.length; i++) {
 
@@ -1421,6 +1422,8 @@ function draw_grafico_18(container,config) {
 						enabled: false
 					}
 				}
+
+				pieTitle = config.etiquetas[i];
 
 			}
 
@@ -1457,7 +1460,7 @@ function draw_grafico_18(container,config) {
 		},
 		labels: {
 			items: [{
-				html: '',
+				html: pieTitle,
 				style: {
 					left: '50px',
 					top: '18px',
