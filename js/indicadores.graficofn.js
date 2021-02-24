@@ -1519,7 +1519,7 @@ function draw_grafico_20(container,config) {
 				color: 'black',
 				dashStyle: 'dot',
 				width: 2,
-				value:config.etiquetas.x_valor_ref,
+				value:50/*config.etiquetas.x_valor_ref*/,
 				label: {
 					rotation: 0,
 					y: 15,
@@ -1549,7 +1549,7 @@ function draw_grafico_20(container,config) {
 				color: 'black',
 				dashStyle: 'dot',
 				width: 2,
-				value: config.etiquetas.y_valor_ref,
+				value: 65/*config.etiquetas.y_valor_ref*/,
 				label: {
 					align: 'right',
 					style: {
