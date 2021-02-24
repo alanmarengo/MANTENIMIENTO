@@ -1332,15 +1332,17 @@ function draw_grafico_16(container,config) {
 
 function draw_grafico_17(container,config) {
 
+	console.log(config);
+
 	Highcharts.chart(container, {
 		chart: {
 			zoomType: 'xy'
 		},
 		title: {
-			text: 'Average Monthly Temperature and Rainfall in Tokyo'
+			text: config.title
 		},
 		subtitle: {
-			text: 'Source: WorldClimate.com'
+			text: config.subtitle
 		},
 		xAxis: [{
 			categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
