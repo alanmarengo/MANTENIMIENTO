@@ -216,7 +216,7 @@ switch($type) {
 	break;
 	
 	case "grafico":
-	$out = ,str_replace('"','[BQ]',$data_out);
+	$out = str_replace('"','[BQ]',$data_out);
 	break;
 	
 	case "recurso":
