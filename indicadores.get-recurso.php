@@ -132,7 +132,7 @@ while($r = pg_fetch_assoc($query)) {
 				
 			}
 			
-			array_push($seriesArr[$curInd],str_replace('"','[BQ]',$s["valor"]));
+			array_push($seriesArr[$curInd]$s["valor"]);
 			
 		}
 		
@@ -216,7 +216,7 @@ switch($type) {
 	break;
 	
 	case "grafico":
-	$out = $data_out;
+	$out = ,str_replace('"','[BQ]',$data_out);
 	break;
 	
 	case "recurso":
