@@ -98,84 +98,125 @@ while($r = pg_fetch_assoc($query)) {
 		$g_desc = $data["grafico_desc"];
 		$g_data_schema = $data["grafico_data_schema"];
 		$g_data_tabla = $data["grafico_data_tabla"];
-		
-		$query_grafico_data_string = "SELECT * FROM \"" . $g_data_schema . "\".\"" . $g_data_tabla . "\"";
-		$query_grafico_data = pg_query($conn,$query_grafico_data_string);
-		
-		$sector = "-1";
-		$labels = array();
-		$labelUnique = array();
-		$sectorArr = array();
-		$seriesArr = array();
-		$typeArr = array();
-		$unitArr = array();
-		$curInd = -1;
-		$unidad = "";
-		
-		while ($s = pg_fetch_assoc($query_grafico_data)) {
-			
-			$unidad = $s["unidad"];
 
-			array_push($labelUnique,$s["etiqueta"]);
-			
-			if ($sector != $s["sector"]) {
-				
-				$curInd++;
-				
-				$labels[$curInd] = $s["etiqueta"];
-				$sectorArr[$curInd] = $s["sector"];
-				if (isset($s["unit"])) { $typeArr[$curInd] = $s["type"]; }
-				if (isset($s["type"])) { $unitArr[$curInd] = $s["unit"]; }
-				$seriesArr[$curInd] = array();
-				
-				$sector = $s["sector"];
-				
-			}
-			
-			array_push($seriesArr[$curInd],$s["valor"]);
-			
-		}
-		
-		$data_string = "";
-		
-		for ($i=0; $i<sizeof($sectorArr); $i++) {
-			
-			$data_string .= "{";
-			$data_string .= "\"name\":\"" . $sectorArr[$i] . "\",";
-			if (isset($typeArr[$i])) { $data_string .= "\"type\":\"" . $typeArr[$i] . "\","; }
-			if (isset($unitArr[$i])) { $data_string .= "\"unit\":\"" . $unitArr[$i] . "\","; }
-		
-			if(sizeof($seriesArr[$i]) > 1) {
-				
-				$data_string .= "\"data\":[" . implode(",",$seriesArr[$i]) . "]";
-				
-			}else{
-				
-				$data_string .= "\"y\":" . implode(",",$seriesArr[$i]);
-				
-			}
-			
-			$data_string .= "},";
-		
-		}
+		switch ($g_data_tabla) {
 
-		$labelUnique = array_unique($labelUnique);
-		
-		$data_string = substr($data_string,0,strlen($data_string)-1);		
-		
-		$data_out = "{";
-		$data_out .= "\"type\":\"grafico\",";
-		$data_out .= "\"ind_titulo\":\"" . $titulo_ind . "\",";
-		$data_out .= "\"ind_desc\":\"" . $desc_ind . "\",";
-		$data_out .= "\"grafico_id\":" . $data["grafico_id"] . ",";
-		$data_out .= "\"grafico_tipo_id\":" . $data["grafico_tipo_id"] . ",";
-		$data_out .= "\"titulo\":\"" . $g_titulo . "\",";
-		$data_out .= "\"desc\":\"" . $g_desc . "\",";
-		$data_out .= "\"unidad\":\"" . $unidad . "\",";
-		$data_out .= "\"etiquetas\":[\"" . implode("\",\"",$labels) . "\"],";
-		$data_out .= "\"etiquetasUnique\":[\"" . implode("\",\"",$labelUnique) . "\"],";
-		$data_out .= "\"data\":[" . $data_string . "]";
-		$data_out .= "}";
+			case 'bubble':
+
+				$query_grafico_data_string = "SELECT * FROM \"" . $g_data_schema . "\".\"" . $g_data_tabla . "\"";
+				$query_grafico_data = pg_query($conn,$query_grafico_data_string);
+
+				$etiquetaArr = array();
+				$sectorArr = array();
+				$valorArr = array();
+
+				while ($s = pg_fetch_assoc($query_grafico_data)) {
+
+					array_push($etiquetaArr,$s["etiqueta"]);
+					array_push($sectorArr,$s["sector"]);
+					array_push($valorArr,$s["valor"]);
+
+				}
+				
+				$data_out = "{";
+				$data_out .= "\"type\":\"grafico\",";
+				$data_out .= "\"ind_titulo\":\"" . $titulo_ind . "\",";
+				$data_out .= "\"ind_desc\":\"" . $desc_ind . "\",";
+				$data_out .= "\"grafico_id\":" . $data["grafico_id"] . ",";
+				$data_out .= "\"grafico_tipo_id\":" . $data["grafico_tipo_id"] . ",";
+				$data_out .= "\"titulo\":\"" . $g_titulo . "\",";
+				$data_out .= "\"desc\":\"" . $g_desc . "\",";
+				$data_out .= "\"unidad\":\"" . $unidad . "\",";
+				$data_out .= "\"etiquetas\":[\"" . implode("\",\"",$etiquetaArr) . "\"],";
+				$data_out .= "\"sector\":[\"" . implode("\",\"",$sectorArr) . "\"],";
+				$data_out .= "\"valor\":[\"" . implode("\",\"",$valorArr) . "\"],";
+				$data_out .= "}";
+
+			break;
+			
+			case default:
+				
+				$query_grafico_data_string = "SELECT * FROM \"" . $g_data_schema . "\".\"" . $g_data_tabla . "\"";
+				$query_grafico_data = pg_query($conn,$query_grafico_data_string);
+				
+				$sector = "-1";
+				$labels = array();
+				$labelUnique = array();
+				$sectorArr = array();
+				$seriesArr = array();
+				$typeArr = array();
+				$unitArr = array();
+				$curInd = -1;
+				$unidad = "";
+				
+				while ($s = pg_fetch_assoc($query_grafico_data)) {
+					
+					$unidad = $s["unidad"];
+
+					array_push($labelUnique,$s["etiqueta"]);
+					
+					if ($sector != $s["sector"]) {
+						
+						$curInd++;
+						
+						$labels[$curInd] = $s["etiqueta"];
+						$sectorArr[$curInd] = $s["sector"];
+						if (isset($s["unit"])) { $typeArr[$curInd] = $s["type"]; }
+						if (isset($s["type"])) { $unitArr[$curInd] = $s["unit"]; }
+						$seriesArr[$curInd] = array();
+						
+						$sector = $s["sector"];
+						
+					}
+					
+					array_push($seriesArr[$curInd],$s["valor"]);
+					
+				}
+				
+				$data_string = "";
+				
+				for ($i=0; $i<sizeof($sectorArr); $i++) {
+					
+					$data_string .= "{";
+					$data_string .= "\"name\":\"" . $sectorArr[$i] . "\",";
+					if (isset($typeArr[$i])) { $data_string .= "\"type\":\"" . $typeArr[$i] . "\","; }
+					if (isset($unitArr[$i])) { $data_string .= "\"unit\":\"" . $unitArr[$i] . "\","; }
+				
+					if(sizeof($seriesArr[$i]) > 1) {
+						
+						$data_string .= "\"data\":[" . implode(",",$seriesArr[$i]) . "]";
+						
+					}else{
+						
+						$data_string .= "\"y\":" . implode(",",$seriesArr[$i]);
+						
+					}
+					
+					$data_string .= "},";
+				
+				}
+
+				$labelUnique = array_unique($labelUnique);
+				
+				$data_string = substr($data_string,0,strlen($data_string)-1);		
+				
+				$data_out = "{";
+				$data_out .= "\"type\":\"grafico\",";
+				$data_out .= "\"ind_titulo\":\"" . $titulo_ind . "\",";
+				$data_out .= "\"ind_desc\":\"" . $desc_ind . "\",";
+				$data_out .= "\"grafico_id\":" . $data["grafico_id"] . ",";
+				$data_out .= "\"grafico_tipo_id\":" . $data["grafico_tipo_id"] . ",";
+				$data_out .= "\"titulo\":\"" . $g_titulo . "\",";
+				$data_out .= "\"desc\":\"" . $g_desc . "\",";
+				$data_out .= "\"unidad\":\"" . $unidad . "\",";
+				$data_out .= "\"etiquetas\":[\"" . implode("\",\"",$labels) . "\"],";
+				$data_out .= "\"etiquetasUnique\":[\"" . implode("\",\"",$labelUnique) . "\"],";
+				$data_out .= "\"data\":[" . $data_string . "]";
+				$data_out .= "}";
+
+			break;
+
+		}
 		
 		break;
 		
