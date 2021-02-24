@@ -1501,10 +1501,6 @@ function draw_grafico_20(container,config) {
 			text: config.title
 		},
 	
-		subtitle: {
-			text: config.desc
-		},
-	
 		accessibility: {
 			point: {
 				valueDescriptionFormat: '{index}. {point.name}, fat: {point.x}g, sugar: {point.y}g, obesity: {point.z}%.'
@@ -1523,7 +1519,7 @@ function draw_grafico_20(container,config) {
 				color: 'black',
 				dashStyle: 'dot',
 				width: 2,
-				value: config.etiquetas.x_valor_ref,
+				value:config.etiquetas.x_valor_ref,
 				label: {
 					rotation: 0,
 					y: 15,
@@ -1546,7 +1542,7 @@ function draw_grafico_20(container,config) {
 				text: config.etiquetas.y_titulo
 			},
 			labels: {
-				format: '{value} ' +  + config.etiquetas.y_unidad
+				format: '{value} ' + config.etiquetas.y_unidad
 			},
 			maxPadding: 0.2,
 			plotLines: [{
