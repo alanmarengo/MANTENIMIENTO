@@ -1259,7 +1259,7 @@ function draw_grafico_14(container,config) { // WIND BARB
 }
 
 function draw_grafico_15(container,config) { // POLAR RADAR
-	console.log(config);
+	
 	Highcharts.chart(container, {
 
 		chart: {
@@ -1304,18 +1304,18 @@ function draw_grafico_15(container,config) { // POLAR RADAR
 		},
 	
 		series: [{
-			type: 'column',
-			name: 'Column',
-			data: [8, 7, 6, 5, 4, 3, 2, 1],
+			type: config.etiquetas[0],
+			name: config.data[0].name,
+			data: config.data[0],
 			pointPlacement: 'between'
 		}, {
-			type: 'line',
-			name: 'Line',
-			data: [1, 2, 3, 4, 5, 6, 7, 8]
+			type: config.etiquetas[1],
+			name: config.data[1].name,
+			data: config.data[1],
 		}, {
-			type: 'area',
-			name: 'Area',
-			data: [1, 8, 2, 7, 3, 6, 4, 5]
+			type: config.etiquetas[2],
+			name: config.data[2].name,
+			data: config.data[2],
 		}]
 	});
 
