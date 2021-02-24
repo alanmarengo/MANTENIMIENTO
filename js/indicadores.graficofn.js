@@ -1455,7 +1455,7 @@ function draw_grafico_18(container,config) {
 			text: 'Combination chart'
 		},
 		xAxis: {
-			categories: ['Apples', 'Oranges', 'Pears', 'Bananas', 'Plums']
+			categories: config.etiquetasUnique
 		},
 		labels: {
 			items: [{
