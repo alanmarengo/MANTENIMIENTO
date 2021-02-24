@@ -1306,16 +1306,16 @@ function draw_grafico_15(container,config) { // POLAR RADAR
 		series: [{
 			type: config.etiquetas[0],
 			name: config.data[0].name,
-			data: config.data[0],
+			data: config.data[0].data,
 			pointPlacement: 'between'
 		}, {
 			type: config.etiquetas[1],
 			name: config.data[1].name,
-			data: config.data[1],
+			data: config.data[1].data,
 		}, {
 			type: config.etiquetas[2],
 			name: config.data[2].name,
-			data: config.data[2],
+			data: config.data[2].data,
 		}]
 	});
 
