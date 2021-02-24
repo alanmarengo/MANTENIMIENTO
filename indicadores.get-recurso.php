@@ -128,7 +128,7 @@ while($r = pg_fetch_assoc($query)) {
 				$data_out .= "\"desc\":\"" . $g_desc . "\",";
 				$data_out .= "\"unidad\":\"" . $unidad . "\",";
 				$data_out .= "\"etiquetas\":[\"" . implode("\",\"",$etiquetaArr) . "\"],";
-				$data_out .= "\"sector\":[\"" . implode("\",\"",$sectorArr) . "\"],";
+				$data_out .= "\"sector\":[\"" . str_replace('"',"'",implode("\",\"",$sectorArr)) . "\"],";
 				$data_out .= "\"valor\":[\"" . implode("\",\"",$valorArr) . "\"],";
 				$data_out .= "}";
 
