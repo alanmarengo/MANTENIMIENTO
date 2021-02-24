@@ -1513,7 +1513,7 @@ function draw_grafico_20(container,config) {
 				text: config.etiquetas.x_titulo
 			},
 			labels: {
-				format: '{value} ' + config.etiquetas.x_unidad
+				format: '{value} gr'/* + config.etiquetas.x_unidad*/
 			},
 			plotLines: [{
 				color: 'black',
@@ -1526,12 +1526,12 @@ function draw_grafico_20(container,config) {
 					style: {
 						fontStyle: 'italic'
 					},
-					text: config.etiquetas.x_valor_ref_texto
+					text: 'ref_texto_x'/*config.etiquetas.x_valor_ref_texto*/,
 				},
 				zIndex: 3
 			}],
 			accessibility: {
-				rangeDescription: config.etiquetas.x_titulo_abcisa
+				rangeDescription: 'desc_texto_x'/*config.etiquetas.x_titulo_abcisa*/
 			}
 		},
 	
@@ -1542,7 +1542,7 @@ function draw_grafico_20(container,config) {
 				text: config.etiquetas.y_titulo
 			},
 			labels: {
-				format: '{value} ' + config.etiquetas.y_unidad
+				format: '{value} gr'/* + config.etiquetas.y_unidad*/
 			},
 			maxPadding: 0.2,
 			plotLines: [{
@@ -1555,13 +1555,13 @@ function draw_grafico_20(container,config) {
 					style: {
 						fontStyle: 'italic'
 					},
-					text: config.etiquetas.y_valor_ref_texto,
+					text: 'ref_texto_y' /*config.etiquetas.y_valor_ref_texto*/,
 					x: -10
 				},
 				zIndex: 3
 			}],
 			accessibility: {
-				rangeDescription: config.etiquetas.y_titulo_abcisa
+				rangeDescription: 'desc_texto_y'/*config.etiquetas.y_titulo_abcisa*/
 			}
 		},
 	
