@@ -1331,8 +1331,40 @@ function draw_grafico_16(container,config) {
 }
 
 function draw_grafico_17(container,config) {
+	
+	var axis = [];
+	var series = [];
 
-	console.log(config);
+	for (var i=0; i<config.data.length; i++) {
+
+		var o = {
+			name: config.data[i].name,
+			type: config.data[i].type,
+			data: config.data[i].data,
+			tooltip:{
+				valueSuffix:config.data[i].unit
+			}
+		}
+
+		var y = { // Primary yAxis
+			labels: {
+				format: '{value}'+config.data[i].unit,
+				style: {
+					color: Highcharts.getOptions().colors[i]
+				}
+			},
+			title: {
+				text: config.data[i].name,
+				style: {
+					color: Highcharts.getOptions().colors[i]
+				}
+			}
+		}
+
+		series.push(o);
+		axis.push(y);
+
+	}
 
 	Highcharts.chart(container, {
 		chart: {
@@ -1345,38 +1377,10 @@ function draw_grafico_17(container,config) {
 			text: config.subtitle
 		},
 		xAxis: [{
-			categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-				'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+			categories: config.etiquetasUnique,
 			crosshair: true
 		}],
-		yAxis: [{ // Primary yAxis
-			labels: {
-				format: '{value}°C',
-				style: {
-					color: Highcharts.getOptions().colors[1]
-				}
-			},
-			title: {
-				text: 'Temperature',
-				style: {
-					color: Highcharts.getOptions().colors[1]
-				}
-			}
-		}, { // Secondary yAxis
-			title: {
-				text: 'Rainfall',
-				style: {
-					color: Highcharts.getOptions().colors[0]
-				}
-			},
-			labels: {
-				format: '{value} mm',
-				style: {
-					color: Highcharts.getOptions().colors[0]
-				}
-			},
-			opposite: true
-		}],
+		yAxis:axis,
 		tooltip: {
 			shared: true
 		},
@@ -1391,23 +1395,7 @@ function draw_grafico_17(container,config) {
 				Highcharts.defaultOptions.legend.backgroundColor || // theme
 				'rgba(255,255,255,0.25)'
 		},
-		series: [{
-			name: 'Rainfall',
-			type: 'column',
-			yAxis: 1,
-			data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
-			tooltip: {
-				valueSuffix: ' mm'
-			}
-	
-		}, {
-			name: 'Temperature',
-			type: 'spline',
-			data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6],
-			tooltip: {
-				valueSuffix: '°C'
-			}
-		}]
+		series: series
 	});
 	
 }
