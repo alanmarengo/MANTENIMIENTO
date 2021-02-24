@@ -134,7 +134,7 @@ while($r = pg_fetch_assoc($query)) {
 
 			break;
 			
-			case default:
+			default:
 				
 				$query_grafico_data_string = "SELECT * FROM \"" . $g_data_schema . "\".\"" . $g_data_tabla . "\"";
 				$query_grafico_data = pg_query($conn,$query_grafico_data_string);
