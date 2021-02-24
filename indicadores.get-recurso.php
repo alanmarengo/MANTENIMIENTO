@@ -104,6 +104,7 @@ while($r = pg_fetch_assoc($query)) {
 		
 		$sector = "-1";
 		$labels = array();
+		$labelUnique = array();
 		$sectorArr = array();
 		$seriesArr = array();
 		$typeArr = array();
@@ -114,6 +115,8 @@ while($r = pg_fetch_assoc($query)) {
 		while ($s = pg_fetch_assoc($query_grafico_data)) {
 			
 			$unidad = $s["unidad"];
+
+			array_push($labelUnique,$s["etiqueta"]);
 			
 			if ($sector != $s["sector"]) {
 				
@@ -155,6 +158,8 @@ while($r = pg_fetch_assoc($query)) {
 			$data_string .= "},";
 		
 		}
+
+		$labelUnique = array_unique($labelUnique);
 		
 		$data_string = substr($data_string,0,strlen($data_string)-1);		
 		
@@ -168,6 +173,7 @@ while($r = pg_fetch_assoc($query)) {
 		$data_out .= "\"desc\":\"" . $g_desc . "\",";
 		$data_out .= "\"unidad\":\"" . $unidad . "\",";
 		$data_out .= "\"etiquetas\":[\"" . implode("\",\"",$labels) . "\"],";
+		$data_out .= "\"etiquetasUnique\":[\"" . implode("\",\"",$labelUnique) . "\"],";
 		$data_out .= "\"data\":[" . $data_string . "]";
 		$data_out .= "}";
 		
