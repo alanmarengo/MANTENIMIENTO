@@ -106,6 +106,8 @@ while($r = pg_fetch_assoc($query)) {
 		$labels = array();
 		$sectorArr = array();
 		$seriesArr = array();
+		$typeArr = array();
+		$unitArr = array();
 		$curInd = -1;
 		$unidad = "";
 		
@@ -119,6 +121,8 @@ while($r = pg_fetch_assoc($query)) {
 				
 				$labels[$curInd] = $s["etiqueta"];
 				$sectorArr[$curInd] = $s["sector"];
+				if (isset($s["unit"])) { $typeArr[$curInd] = $s["type"]; }
+				if (isset($s["type"])) { $unitArr[$curInd] = $s["unit"]; }
 				$seriesArr[$curInd] = array();
 				
 				$sector = $s["sector"];
@@ -135,6 +139,8 @@ while($r = pg_fetch_assoc($query)) {
 			
 			$data_string .= "{";
 			$data_string .= "\"name\":\"" . $sectorArr[$i] . "\",";
+			if (isset($typeArr[$i])) { $data_string .= "\"type\":\"" . $typeArr[$i] . "\","; }
+			if (isset($unitArr[$i])) { $data_string .= "\"unit\":\"" . $unitArr[$i] . "\","; }
 		
 			if(sizeof($seriesArr[$i]) > 1) {
 				
