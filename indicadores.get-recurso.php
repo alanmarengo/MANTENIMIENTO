@@ -106,15 +106,24 @@ while($r = pg_fetch_assoc($query)) {
 				$query_grafico_data_string = "SELECT * FROM \"" . $g_data_schema . "\".\"" . $g_data_tabla . "\"";
 				$query_grafico_data = pg_query($conn,$query_grafico_data_string);
 
-				$etiquetaArr = array();
-				$sectorArr = array();
+				$etiqueta = array();
+				$sector = array();
 				$valorArr = array();
+
+				$first = true;
 
 				while ($s = pg_fetch_assoc($query_grafico_data)) {
 
-					array_push($etiquetaArr,$s["etiqueta"]);
-					array_push($sectorArr,$s["sector"]);
+					if ($first) {
+
+						$etiqueta = $s["etiqueta"];
+						$sector = $s["sector"];
+
+					}
+					
 					array_push($valorArr,$s["valor"]);
+
+					$first = false;
 
 				}
 				
@@ -127,8 +136,8 @@ while($r = pg_fetch_assoc($query)) {
 				$data_out .= "\"titulo\":\"" . $g_titulo . "\",";
 				$data_out .= "\"desc\":\"" . $g_desc . "\",";
 				$data_out .= "\"unidad\":\"" . $unidad . "\",";
-				$data_out .= "\"etiquetas\":[\"" . implode("\",\"",$etiquetaArr) . "\"],";
-				$data_out .= "\"sector\":[\"" . str_replace('"',"'",implode("\",\"",$sectorArr)) . "\"],";
+				$data_out .= "\"etiquetas\":\"" . $etiqueta . "\",";
+				$data_out .= "\"sector\":\" . $sector . \"],";
 				$data_out .= "\"valor\":[\"" . implode("\",\"",$valorArr) . "\"],";
 				$data_out .= "}";
 
