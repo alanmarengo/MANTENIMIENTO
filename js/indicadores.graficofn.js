@@ -1259,7 +1259,25 @@ function draw_grafico_14(container,config) { // WIND BARB
 }
 
 function draw_grafico_15(container,config) { // POLAR RADAR
-	console.log(config);
+	
+	var series = [];
+
+	for (var i=0; i<config.data.length; i++) {
+
+		var o = {
+			type: config.etiquetas[i],
+			name: config.data[i].name,
+			data: config.data[i].data
+		}
+
+		if (config.data[i].name == 'column') {
+			o.pointPlacement = 'between';
+		}
+
+		series.push(o);
+
+	}
+
 	Highcharts.chart(container, {
 
 		chart: {
@@ -1303,20 +1321,7 @@ function draw_grafico_15(container,config) { // POLAR RADAR
 			}
 		},
 	
-		series: [{
-			type: config.etiquetas[0],
-			name: config.data[0].name,
-			data: config.data[0].data,
-			pointPlacement: 'between'
-		}, {
-			type: config.etiquetas[1],
-			name: config.data[1].name,
-			data: config.data[1].data,
-		}, {
-			type: config.etiquetas[2],
-			name: config.data[2].name,
-			data: config.data[2].data,
-		}]
+		series: series
 	});
 
 }
