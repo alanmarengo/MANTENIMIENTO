@@ -1531,8 +1531,8 @@ function draw_grafico_20(container,config) {
 
 	series.push(pieObject);
 
-	/*config.sector = config.sector.replace(/[/g, "<");
-	config.sector = config.sector.replace(/]/g, ">");*/
+	config.sector = config.sector.replace(/\[/g, "<");
+	config.sector = config.sector.replace(/\]/g, ">");
 
 	Highcharts.chart(container, {
 
