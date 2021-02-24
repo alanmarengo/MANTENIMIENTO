@@ -1482,55 +1482,6 @@ function draw_grafico_19(container,config) {
 
 function draw_grafico_20(container,config) {
 
-	console.log(config);
-
-	var series = [];
-	var pieObject = false;
-
-	for (var i=0; i<config.data.length; i++) {
-
-		if (config.data[i].type == "pie") {
-
-			if (!pieObject) {
-
-				pieObject = {
-					type: config.data[i].type,
-					name: config.etiquetasUnique[i],
-					data: [],
-					center: [100, 80],
-					size: 100,
-					showInLegend: false,
-					dataLabels: {
-						enabled: false
-					}
-				}
-
-			}
-
-			pieObject.data.push({
-
-				name: config.data[i].name,
-				y: config.data[i].y,
-				color: Highcharts.getOptions().colors[i] // Jane's color
-
-			});
-
-		}else{
-
-			var o = {
-				name: config.data[i].name,
-				type: config.data[i].type,
-				data: config.data[i].data
-			}
-	
-			series.push(o);
-
-		}
-
-	}
-
-	series.push(pieObject);
-
 	config.sector = config.sector.replace(/\[/g, "<");
 	config.sector = config.sector.replace(/\]/g, ">");
 
