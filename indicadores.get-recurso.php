@@ -132,7 +132,7 @@ while($r = pg_fetch_assoc($query)) {
 				
 			}
 			
-			array_push($seriesArr[$curInd]$s["valor"]);
+			array_push($seriesArr[$curInd],$s["valor"]);
 			
 		}
 		
