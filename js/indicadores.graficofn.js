@@ -1285,11 +1285,11 @@ function draw_grafico_15(container,config) { // POLAR RADAR
 		},
 	
 		title: {
-			text: 'Highcharts Polar Chart'
+			text: config.title
 		},
 	
 		subtitle: {
-			text: 'Also known as Radar Chart'
+			text: config.subtitle
 		},
 	
 		pane: {
@@ -1302,7 +1302,7 @@ function draw_grafico_15(container,config) { // POLAR RADAR
 			min: 0,
 			max: 360,
 			labels: {
-				format: '{value}°'
+				format: '{value}'
 			}
 		},
 	
@@ -1324,4 +1324,26 @@ function draw_grafico_15(container,config) { // POLAR RADAR
 		series: series
 	});
 
+}
+
+function draw_grafico_16(container,config) {
+
+}
+
+function draw_grafico_17(container,config) {
+
+
+	
+}
+
+function draw_grafico_18(container,config) {
+	
+}
+
+function draw_grafico_19(container,config) {
+	
+}
+
+function draw_grafico_20(container,config) {
+	
 }
