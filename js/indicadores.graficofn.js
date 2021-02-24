@@ -1457,7 +1457,7 @@ function draw_grafico_18(container,config) {
 		},
 		labels: {
 			items: [{
-				html: 'Total fruit consumption',
+				html: '',
 				style: {
 					left: '50px',
 					top: '18px',
