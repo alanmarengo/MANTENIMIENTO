@@ -1403,39 +1403,52 @@ function draw_grafico_18(container,config) {
 
 	console.log(config);
 
-	var axis = [];
 	var series = [];
+	var pieObject = false;
 
 	for (var i=0; i<config.data.length; i++) {
 
-		var o = {
-			name: config.data[i].name,
-			type: config.data[i].type,
-			data: config.data[i].data,
-			tooltip:{
-				valueSuffix:config.data[i].unit
-			}
-		}
+		if (config.data[i].type == "pie") {
 
-		var y = { // Primary yAxis
-			labels: {
-				format: '{value}'+config.data[i].unit,
-				style: {
-					color: Highcharts.getOptions().colors[i]
-				}
-			},
-			title: {
-				text: config.data[i].name,
-				style: {
-					color: Highcharts.getOptions().colors[i]
-				}
-			}
-		}
+			if (!pieObject) {
 
-		series.push(o);
-		axis.push(y);
+				pieObject = {
+					type: config.data[i].type,
+					name: config.etiquetasUnique[i],
+					data: [],
+					center: [100, 80],
+					size: 100,
+					showInLegend: false,
+					dataLabels: {
+						enabled: false
+					}
+				}
+
+			}
+
+			pieObject.data.push({
+
+				name: config.data[i].name,
+				y: config.data[i].y,
+				color: Highcharts.getOptions().colors[i] // Jane's color
+
+			});
+
+		}else{
+
+			var o = {
+				name: config.data[i].name,
+				type: config.data[i].type,
+				data: config.data[i].data
+			}
+	
+			series.push(o);
+
+		}
 
 	}
+
+	series.push(pieObject);
 
 	Highcharts.chart(container, {
 		title: {
@@ -1457,50 +1470,7 @@ function draw_grafico_18(container,config) {
 				}
 			}]
 		},
-		series: [{
-			type: 'column',
-			name: 'Jane',
-			data: [3, 2, 1, 3, 4]
-		}, {
-			type: 'column',
-			name: 'John',
-			data: [2, 3, 5, 7, 6]
-		}, {
-			type: 'column',
-			name: 'Joe',
-			data: [4, 3, 3, 9, 0]
-		}, {
-			type: 'spline',
-			name: 'Average',
-			data: [3, 2.67, 3, 6.33, 3.33],
-			marker: {
-				lineWidth: 2,
-				lineColor: Highcharts.getOptions().colors[3],
-				fillColor: 'white'
-			}
-		}, {
-			type: 'pie',
-			name: 'Total consumption',
-			data: [{
-				name: 'Jane',
-				y: 13,
-				color: Highcharts.getOptions().colors[0] // Jane's color
-			}, {
-				name: 'John',
-				y: 23,
-				color: Highcharts.getOptions().colors[1] // John's color
-			}, {
-				name: 'Joe',
-				y: 19,
-				color: Highcharts.getOptions().colors[2] // Joe's color
-			}],
-			center: [100, 80],
-			size: 100,
-			showInLegend: false,
-			dataLabels: {
-				enabled: false
-			}
-		}]
+		series: series
 	});
 
 }
