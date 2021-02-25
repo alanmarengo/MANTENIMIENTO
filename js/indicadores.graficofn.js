@@ -1568,14 +1568,11 @@ function draw_grafico_20(container,config) {
 				rangeDescription: config.etiquetas.y_titulo_abcisa
 			}
 		},
-		
+
 		tooltip: {
 			useHTML: true,
 			headerFormat: '<table>',
-			pointFormat: '<tr><th colspan="2"><h3>{point.country}</h3></th></tr>' +
-				'<tr><th>Fat intake:</th><td>{point.x}g</td></tr>' +
-				'<tr><th>Sugar intake:</th><td>{point.y}g</td></tr>' +
-				'<tr><th>Obesity (adults):</th><td>{point.z}%</td></tr>',
+			pointFormat: config.sector,
 			footerFormat: '</table>',
 			followPointer: true
 		},
