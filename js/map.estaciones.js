@@ -801,7 +801,7 @@ function ol_map() {
 
             for (var i = 0; i < js.length; i++) {
 
-                //if (js[i].categoria_parametro_id == this.current_categoria_id) {
+                if (js[i].categoria_parametro_id == this.current_categoria_id) {
 
                     if (js[i].tipo_desc == 'ANUAL') {
 
@@ -823,7 +823,7 @@ function ol_map() {
 
                     }
 
-                //}
+                }
 
             }
 
