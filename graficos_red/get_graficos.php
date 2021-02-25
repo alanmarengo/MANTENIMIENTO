@@ -79,11 +79,60 @@ function get_curva_hq($estacion_id)
 					   (select descripcion from mod_catalogo.cod_temporalidad where cod_temporalidad_id::bigint=D.cod_temp::bigint LIMIT 1) AS campaña
 					   FROM $tabla D WHERE alt_escala IS NOT NULL AND ql_tot_m3s IS NOT NULL ORDER BY campaña ASC;";
 	*/
-	$query_string   = "SELECT alt_escala AS altura,ql_tot_m3s AS caudal,
-					   (select descripcion from mod_catalogo.cod_temporalidad where cod_temporalidad_id::bigint=D.cod_temporalidad_id::bigint LIMIT 1) AS campaña
-					   FROM $tabla D WHERE alt_escala IS NOT NULL AND ql_tot_m3s IS NOT NULL ORDER BY campaña ASC;";
+	$query_string   = "SELECT 
+						c.*,
+						CONCAT('01-',REPLACE(
+							REPLACE(
+								REPLACE(
+									REPLACE(
+										REPLACE(
+											REPLACE(
+												REPLACE(
+													REPLACE(
+														REPLACE(
+															REPLACE(
+																REPLACE(
+																	REPLACE(
+																		c.campaña,'ene-','01-20'
+																	),'feb-','02-20'
+																),'mar-','03-20'
+															),'abr-','04-20'
+														),'may-','05-20'
+													),'jun-','06-20'
+												),'jul-','06-20'
+											),'ago-','06-20'
+										),'sep-','06-20'
+									),'oct-','06-20'
+								),'nov-','06-20'
+							),'dic-','06-20'
+						))
+					FROM mod_catalogo.vw_hq_curva c
+					ORDER BY CONCAT('01-',REPLACE(
+							REPLACE(
+								REPLACE(
+									REPLACE(
+										REPLACE(
+											REPLACE(
+												REPLACE(
+													REPLACE(
+														REPLACE(
+															REPLACE(
+																REPLACE(
+																	REPLACE(
+																		c.campaña,'ene-','01-20'
+																	),'feb-','02-20'
+																),'mar-','03-20'
+															),'abr-','04-20'
+														),'may-','05-20'
+													),'jun-','06-20'
+												),'jul-','06-20'
+											),'ago-','06-20'
+										),'sep-','06-20'
+									),'oct-','06-20'
+								),'nov-','06-20'
+							),'dic-','06-20'
+						)):: DATE ASC";
 
-	echo $query_string;
 	$query = pg_query($conn,$query_string);
 	
 	//echo pg_last_error($conn);
