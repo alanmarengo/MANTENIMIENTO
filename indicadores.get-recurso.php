@@ -98,8 +98,10 @@ while($r = pg_fetch_assoc($query)) {
 		$g_desc = $data["grafico_desc"];
 		$g_data_schema = $data["grafico_data_schema"];
 		$g_data_tabla = $data["grafico_data_tabla"];
-
+$scatter = false;
 		switch ($g_data_tabla) {
+
+			$scatter = true;
 
 			case 'scatter':
 				
@@ -334,6 +336,7 @@ switch($type) {
 	break;
 	
 	case "grafico":
+		if ($scatter) { echo $data_out; }
 	$out = $data_out;
 	break;
 	
