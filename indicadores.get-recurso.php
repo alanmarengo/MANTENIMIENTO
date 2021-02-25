@@ -111,14 +111,36 @@ while($r = pg_fetch_assoc($query)) {
 				$axis = array();
 				$values = array();
 				$type = array();
+				$temp = array();
+
+				$val = -1;
+				$i=0;
 
 				while ($s = pg_fetch_assoc($query_grafico_data)) {
 					
 					array_push($axis,$s["axis"]);
-					array_push($values,"[" . $s["values"] . "]");
+					array_push($temp,"[" . $s["values"] . "]");
 					array_push($type,$s["type"]);
 
+					if ($val != $s["values"]) {
+
+						$values[$i] = array();
+
+						array_push($values,$temp);
+
+						$temp = array();
+
+						$i++
+
+					}
+
 				}
+
+				$values[$i] = array();
+
+				array_push($values,$temp);
+
+				$temp = array();
 
 				$axis = explode(",",$axis[0]);
 				$axis = array_unique($axis);
