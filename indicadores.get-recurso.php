@@ -334,8 +334,6 @@ switch($type) {
 	break;
 	
 	case "grafico":
-	echo "es grafico";
-	echo $data_out;
 	$out = $data_out;
 	break;
 	
