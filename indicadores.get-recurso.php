@@ -111,6 +111,7 @@ while($r = pg_fetch_assoc($query)) {
 				$axis = array();
 				$values = array();
 				$type = array();
+				$color = array();
 
 				$valtext = "[[";
 
@@ -123,6 +124,7 @@ while($r = pg_fetch_assoc($query)) {
 					array_push($axis,$s["axis"]);
 					//array_push($values,"[" . $s["values"] . "]");
 					array_push($type,$s["type"]);
+					array_push($color,$s["color"]);
 
 					$valtext .= "[" . $s["values"] . "],";
 
@@ -156,6 +158,7 @@ while($r = pg_fetch_assoc($query)) {
 				$data_out .= "\"titulo\":\"" . $g_titulo . "\",";
 				$data_out .= "\"desc\":\"" . $g_desc . "\",";
 				$data_out .= "\"axis\":[\"" . implode("\",\"",array_unique($axis)) . "\"],";
+				$data_out .= "\"color\":[\"" . implode("\",\"",array_unique($color)) . "\"],";
 				$data_out .= "\"values\":$valtext,";
 				$data_out .= "\"serietype\":[\"" . implode("\",\"",array_unique($type)) . "\"]";
 				$data_out .= "}";
