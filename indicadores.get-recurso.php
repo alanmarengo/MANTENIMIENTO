@@ -119,6 +119,9 @@ while($r = pg_fetch_assoc($query)) {
 					array_push($type,$s["type"]);
 
 				}
+
+				$axis = explode(",",$axis[0]);
+				$axis = array_unique($axis);
 				
 				$data_out = "{";
 				$data_out .= "\"type\":\"grafico\",";
