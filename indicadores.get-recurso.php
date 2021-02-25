@@ -124,9 +124,11 @@ while($r = pg_fetch_assoc($query)) {
 					//array_push($values,"[" . $s["values"] . "]");
 					array_push($type,$s["type"]);
 
-					$valtext .= "[" . $s["values"] . "]";
+					$valtext .= "[" . $s["values"] . "],";
 
 					if ($val != $s["type"]) {
+
+						$valtext = substr($valtext,0,strlen($valtext)-1);
 
 						$valtext .= "],[";
 
