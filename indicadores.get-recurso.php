@@ -133,6 +133,8 @@ while($r = pg_fetch_assoc($query)) {
 				$data_out .= "\"type\":[\"" . implode("\",\"",$type) . "\"]";
 				$data_out .= "}";
 
+				var_dump($data_out);
+
 			break;
 
 			case 'windbar':
