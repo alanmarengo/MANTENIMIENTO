@@ -136,6 +136,8 @@ while($r = pg_fetch_assoc($query)) {
 
 				}
 
+				$valtext = substr($valtext,0,strlen($valtext)-1);
+
 				$valtext .= "]]";
 
 				$axis = explode(",",$axis[0]);
