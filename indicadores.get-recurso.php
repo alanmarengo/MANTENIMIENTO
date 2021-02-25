@@ -111,38 +111,30 @@ while($r = pg_fetch_assoc($query)) {
 				$axis = array();
 				$values = array();
 				$type = array();
-				$temp = array();
 
-				$val = -1;
-				$i=0;
+				$valtext = "[[";
+
+				$first = true;
 
 				while ($s = pg_fetch_assoc($query_grafico_data)) {
+
+					if ($first) { $val = $s["type"]; }
 					
 					array_push($axis,$s["axis"]);
-					array_push($temp,"[" . $s["values"] . "]");
+					//array_push($values,"[" . $s["values"] . "]");
 					array_push($type,$s["type"]);
 
-					if ($val != $s["values"]) {
+					$valtext .= "[" . $s["values"] . "]";
 
-						$values[$i] = array();
+					if ($val != $s["type"]) {
 
-						array_push($values,$temp);
-
-						$temp = array();
-
-						$i++;
+						$valtext .= "],["
 
 					}
 
 				}
 
-				$values[$i] = array();
-
-				array_push($values,$temp);
-
-				$temp = array();
-				
-				var_dump($values);
+				$valtext .= "]]";
 
 				$axis = explode(",",$axis[0]);
 				$axis = array_unique($axis);
@@ -156,7 +148,7 @@ while($r = pg_fetch_assoc($query)) {
 				$data_out .= "\"titulo\":\"" . $g_titulo . "\",";
 				$data_out .= "\"desc\":\"" . $g_desc . "\",";
 				$data_out .= "\"axis\":[\"" . implode("\",\"",array_unique($axis)) . "\"],";
-				$data_out .= "\"values\":[$valtext],";
+				$data_out .= "\"values\":$valtext,";
 				$data_out .= "\"serietype\":[\"" . implode("\",\"",array_unique($type)) . "\"]";
 				$data_out .= "}";
 
