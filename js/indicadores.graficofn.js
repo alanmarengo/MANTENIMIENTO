@@ -1791,7 +1791,7 @@ function draw_grafico_21(container,config) {
 		xAxis: {
 			title: {
 				enabled: true,
-				text: 'Height (cm)'
+				text: config.axis[0]
 			},
 			startOnTick: true,
 			endOnTick: true,
@@ -1799,7 +1799,7 @@ function draw_grafico_21(container,config) {
 		},
 		yAxis: {
 			title: {
-				text: 'Weight (kg)'
+				text: config.axis[1]
 			}
 		},
 		legend: {
