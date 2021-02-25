@@ -105,7 +105,7 @@ while($r = pg_fetch_assoc($query)) {
 
 			$query_grafico_data_string = "SELECT * FROM \"" . $g_data_schema . "\".\"" . $g_data_tabla . "\"";
 			$query_grafico_data = pg_query($conn,$query_grafico_data_string);
-echo $query_grafico_data_string;
+			
 			$axis = array();
 			$values = array();
 			$type = array();
@@ -166,6 +166,8 @@ echo $query_grafico_data_string;
 				$data_out .= "\"direccion\":[" . implode(",",$direccion) . "],";
 				$data_out .= "\"fecha\":[\"" . implode("\",\"",$fecha) . "\"]";
 				$data_out .= "}";
+
+				echo $data_out;
 
 			break;
 			
