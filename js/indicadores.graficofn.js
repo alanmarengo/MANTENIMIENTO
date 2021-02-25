@@ -1828,8 +1828,20 @@ function draw_grafico_21(container,config) {
 		title: {
 			text: config.title
 		},
-		xAxis: axisArr[0],
-		yAxis: axisArr[1],
+		xAxis: {
+			title: {
+				enabled: true,
+				text: config.axis[0]
+			},
+			startOnTick: true,
+			endOnTick: true,
+			showLastLabel: true
+		},
+		yAxis: {
+			title: {
+				text: config.axis[1]
+			}
+		},
 		legend: {
 			layout: 'vertical',
 			align: 'left',
