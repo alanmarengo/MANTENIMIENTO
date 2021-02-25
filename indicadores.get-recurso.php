@@ -114,25 +114,14 @@ while($r = pg_fetch_assoc($query)) {
 
 				$valIndex = -1;
 
-				$val = -1;
+				$val = -1
 
 				while ($s = pg_fetch_assoc($query_grafico_data)) {
 					
-					if ($val != $s["values"]) {
-						$val++;
-						$values[$val] = array();
-					}
-
-					array_push($values[$val],$s["values"]);
-
 					array_push($axis,$s["axis"]);
-					//array_push($values,"[" . $s["values"] . "]");
+					array_push($values,"[" . $s["values"] . "]");
 					array_push($type,$s["type"]);
 
-				}
-
-				for ($i=0; $i<sizeof($values); $i++) {
-					array_push($values,$values[$i]);
 				}
 
 				$axis = explode(",",$axis[0]);
