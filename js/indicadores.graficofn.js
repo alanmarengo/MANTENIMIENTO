@@ -1829,8 +1829,7 @@ function draw_grafico_21(container,config) {
 			text: config.title
 		},
 		xAxis: axisArr[0],
-		yAxis: axisArr[1]
-		},
+		yAxis: axisArr[1],
 		legend: {
 			layout: 'vertical',
 			align: 'left',
