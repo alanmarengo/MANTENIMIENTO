@@ -102,7 +102,7 @@ while($r = pg_fetch_assoc($query)) {
 		switch ($g_data_tabla) {
 
 			case 'scatter':
-				echo "ES SCATTER";
+				
 				$query_grafico_data_string = "SELECT * FROM \"" . $g_data_schema . "\".\"" . $g_data_tabla . "\"";
 				$query_grafico_data = pg_query($conn,$query_grafico_data_string);
 				
@@ -334,6 +334,8 @@ switch($type) {
 	break;
 	
 	case "grafico":
+	echo "es grafico";
+	echo $data_out;
 	$out = $data_out;
 	break;
 	
