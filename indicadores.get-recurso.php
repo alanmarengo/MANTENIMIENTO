@@ -114,7 +114,7 @@ while($r = pg_fetch_assoc($query)) {
 
 				$valIndex = -1;
 
-				$val = -1
+				$val = -1;
 
 				while ($s = pg_fetch_assoc($query_grafico_data)) {
 					
