@@ -129,7 +129,7 @@ while($r = pg_fetch_assoc($query)) {
 				$data_out .= "\"titulo\":\"" . $g_titulo . "\",";
 				$data_out .= "\"desc\":\"" . $g_desc . "\",";
 				$data_out .= "\"axis\":[\"" . implode("\",\"",array_unique($axis)) . "\"],";
-				$data_out .= "\"values\":[ . implode("\",\"",$values) . "],";
+				$data_out .= "\"values\":[" . implode("\",\"",$values) . "],";
 				$data_out .= "\"serietype\":[\"" . implode("\",\"",array_unique($type)) . "\"]";
 				$data_out .= "}";
 
