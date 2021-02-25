@@ -83,7 +83,7 @@ function get_curva_hq($estacion_id)
 					   (select descripcion from mod_catalogo.cod_temporalidad where cod_temporalidad_id::bigint=D.cod_temporalidad_id::bigint LIMIT 1) AS campaña
 					   FROM $tabla D WHERE alt_escala IS NOT NULL AND ql_tot_m3s IS NOT NULL ORDER BY campaña ASC;";
 
-
+	echo $query_string;
 	$query = pg_query($conn,$query_string);
 	
 	//echo pg_last_error($conn);
