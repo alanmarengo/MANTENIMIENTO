@@ -830,7 +830,7 @@ function ol_map() {
             html_mensual += "</ul>";
             html_anual += "</ul>";
 
-            //console.log(html_mensual);
+            console.log(html_mensual);
 
             document.getElementById("panel-ha4-1").innerHTML = html_mensual;
             document.getElementById("panel-ha4-2").innerHTML = html_anual;
