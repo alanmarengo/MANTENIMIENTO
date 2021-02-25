@@ -1369,64 +1369,14 @@ function draw_grafico_16(container,config) { // MULTIPLE AXES
 			zoomType: 'xy'
 		},
 		title: {
-			text: 'Average Monthly Weather Data for Tokyo',
-			align: 'left'
-		},
-		subtitle: {
-			text: 'Source: WorldClimate.com',
+			text: config.title,
 			align: 'left'
 		},
 		xAxis: [{
-			categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-				'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+			categories: config.etiquetasUnique,
 			crosshair: true
 		}],
-		yAxis: [{ // Primary yAxis
-			labels: {
-				format: '{value}°C',
-				style: {
-					color: Highcharts.getOptions().colors[2]
-				}
-			},
-			title: {
-				text: 'Temperature',
-				style: {
-					color: Highcharts.getOptions().colors[2]
-				}
-			},
-			opposite: true
-	
-		}, { // Secondary yAxis
-			gridLineWidth: 0,
-			title: {
-				text: 'Rainfall',
-				style: {
-					color: Highcharts.getOptions().colors[0]
-				}
-			},
-			labels: {
-				format: '{value} mm',
-				style: {
-					color: Highcharts.getOptions().colors[0]
-				}
-			}
-	
-		}, { // Tertiary yAxis
-			gridLineWidth: 0,
-			title: {
-				text: 'Sea-Level Pressure',
-				style: {
-					color: Highcharts.getOptions().colors[1]
-				}
-			},
-			labels: {
-				format: '{value} mb',
-				style: {
-					color: Highcharts.getOptions().colors[1]
-				}
-			},
-			opposite: true
-		}],
+		yAxis: axis,
 		tooltip: {
 			shared: true
 		},
