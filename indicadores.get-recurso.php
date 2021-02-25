@@ -105,20 +105,16 @@ while($r = pg_fetch_assoc($query)) {
 
 			$query_grafico_data_string = "SELECT * FROM \"" . $g_data_schema . "\".\"" . $g_data_tabla . "\"";
 			$query_grafico_data = pg_query($conn,$query_grafico_data_string);
-
+echo $query_grafico_data_string;
 			$axis = array();
 			$values = array();
 			$type = array();
-
-			$first = true;
 
 			while ($s = pg_fetch_assoc($query_grafico_data)) {
 				
 				array_push($axis,$s["axis"]);
 				array_push($values,$s["values"]);
 				array_push($type,$s["type"]);
-
-				$first = false;
 
 			}
 			
