@@ -1328,6 +1328,8 @@ function draw_grafico_15(container,config) { // POLAR RADAR
 
 function draw_grafico_16(container,config) { // MULTIPLE AXES
 	
+	console.log(config);
+
 	var axis = [];
 	var series = [];
 
@@ -1374,10 +1376,57 @@ function draw_grafico_16(container,config) { // MULTIPLE AXES
 			text: 'Source: WorldClimate.com',
 			align: 'left'
 		},
-		xAxis: {
-			categories: config.etiquetasUnique
-		},
-		yAxis:axis,
+		xAxis: [{
+			categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+				'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+			crosshair: true
+		}],
+		yAxis: [{ // Primary yAxis
+			labels: {
+				format: '{value}°C',
+				style: {
+					color: Highcharts.getOptions().colors[2]
+				}
+			},
+			title: {
+				text: 'Temperature',
+				style: {
+					color: Highcharts.getOptions().colors[2]
+				}
+			},
+			opposite: true
+	
+		}, { // Secondary yAxis
+			gridLineWidth: 0,
+			title: {
+				text: 'Rainfall',
+				style: {
+					color: Highcharts.getOptions().colors[0]
+				}
+			},
+			labels: {
+				format: '{value} mm',
+				style: {
+					color: Highcharts.getOptions().colors[0]
+				}
+			}
+	
+		}, { // Tertiary yAxis
+			gridLineWidth: 0,
+			title: {
+				text: 'Sea-Level Pressure',
+				style: {
+					color: Highcharts.getOptions().colors[1]
+				}
+			},
+			labels: {
+				format: '{value} mb',
+				style: {
+					color: Highcharts.getOptions().colors[1]
+				}
+			},
+			opposite: true
+		}],
 		tooltip: {
 			shared: true
 		},
