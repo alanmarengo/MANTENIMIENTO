@@ -157,7 +157,7 @@ function getData() {
 				
             <div class="form-group form-group-header">
                 <label>Tabla de valores de ${paramtext}</label>
-                <a href="javascript:void(0);" class="linkaux" onclick="getDataCsv();">Ver datos completos</a>
+                <a href="javascript:void(0);" class="linkaux" onclick="getDataCsv();">Descarga de serie de datos</a>
             </div>
                     
         </div>
