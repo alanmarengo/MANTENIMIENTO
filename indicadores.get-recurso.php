@@ -112,10 +112,6 @@ while($r = pg_fetch_assoc($query)) {
 				$values = array();
 				$type = array();
 
-				$valIndex = -1;
-
-				$val = -1
-
 				while ($s = pg_fetch_assoc($query_grafico_data)) {
 					
 					array_push($axis,$s["axis"]);
