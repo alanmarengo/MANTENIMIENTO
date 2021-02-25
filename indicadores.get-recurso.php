@@ -131,6 +131,8 @@ while($r = pg_fetch_assoc($query)) {
 			$data_out .= "\"type\":[\"" . implode("\",\"",$type) . "\"]";
 			$data_out .= "}";
 
+			echo $data_out;
+
 			break;
 
 			case 'windbar':
@@ -166,8 +168,6 @@ while($r = pg_fetch_assoc($query)) {
 				$data_out .= "\"direccion\":[" . implode(",",$direccion) . "],";
 				$data_out .= "\"fecha\":[\"" . implode("\",\"",$fecha) . "\"]";
 				$data_out .= "}";
-
-				echo $data_out;
 
 			break;
 			
