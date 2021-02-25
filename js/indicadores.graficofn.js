@@ -1362,7 +1362,7 @@ function draw_grafico_16(container,config) { // MULTIPLE AXES
 
 	}
 
-	Highcharts.chart('container', {
+	Highcharts.chart(container, {
 		chart: {
 			zoomType: 'xy'
 		},
