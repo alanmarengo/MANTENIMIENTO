@@ -153,7 +153,7 @@ while($r = pg_fetch_assoc($query)) {
 						$comma = ",";
 					}
 
-					$valtext .= "]"
+					$valtext .= "]";
 
 				}
 
