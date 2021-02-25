@@ -141,6 +141,21 @@ while($r = pg_fetch_assoc($query)) {
 				array_push($values,$temp);
 
 				$temp = array();
+				$valtext = "";
+
+				for ($i=0; $i<sizeof($axis); $i++) {
+
+					$comma = "";
+					$valtext = "[";
+
+					for($j=0; $j<sizeof($values[$i]); $j++) {
+						$valtext .= $comma . "[$values[$i][$j][0],[$values[$i][$j][1]";
+						$comma = ",";
+					}
+
+					$valtext .= "]"
+
+				}
 
 				$axis = explode(",",$axis[0]);
 				$axis = array_unique($axis);
@@ -154,7 +169,7 @@ while($r = pg_fetch_assoc($query)) {
 				$data_out .= "\"titulo\":\"" . $g_titulo . "\",";
 				$data_out .= "\"desc\":\"" . $g_desc . "\",";
 				$data_out .= "\"axis\":[\"" . implode("\",\"",array_unique($axis)) . "\"],";
-				$data_out .= "\"values\":[" . implode(",",$values) . "],";
+				$data_out .= "\"values\":[$valtext],";
 				$data_out .= "\"serietype\":[\"" . implode("\",\"",array_unique($type)) . "\"]";
 				$data_out .= "}";
 
