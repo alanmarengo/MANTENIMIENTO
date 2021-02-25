@@ -1255,8 +1255,30 @@ function draw_grafico_13(container,config) { // PIE WITH DRILLDOWN
 }
 
 function draw_grafico_14(container,config) { // WIND BARB
+	
+	var series = [];
+	var ano;
+	var mes;
+	var dia;
 
-	console.log(config);
+	Highcharts.seriesTypes.windbarb.prototype.beaufortName = [
+		'Calma', 'Aire ligero', 'Brisa ligera',
+		'Brisa suave', 'Brisa moderada', 'Brisa fresca',
+		'Brisa fuerte', 'Vendaval cercano', 'Vendaval', 'Vendaval fuerte', 'Tormenta',
+		'Tormenta violenta', 'Huracán'];
+
+	for (var i=0; i<config.direccion.length; i++) {
+
+		if (i==0) {
+			var fechaTemp = config.fecha[i].split("-");
+			ano = fechaTemp[0];
+			mes = parseInt(fechaTemp[1])-1;
+			dia = parseInt(fechaTemp[2]);
+		}
+
+		series.push([config.intensidad[i],config.direccion[i]]);
+
+	}
 
 	Highcharts.chart(container, {
 
@@ -1271,40 +1293,15 @@ function draw_grafico_14(container,config) { // WIND BARB
 	
 		plotOptions: {
 			series: {
-				pointStart: Date.UTC(2017, 0, 29),
+				pointStart: Date.UTC(ano, mes, dia),
 				pointInterval: 36e5
 			}
 		},
 	
 		series: [{
 			type: 'windbarb',
-			data: [
-				[9.8, 177.9],
-				[10.1, 177.2],
-				[11.3, 179.7],
-				[10.9, 175.5],
-				[9.3, 159.9],
-				[8.8, 159.6],
-				[7.8, 162.6],
-				[5.6, 186.2],
-				[6.8, 146.0],
-				[6.4, 139.9],
-				[3.1, 180.2],
-				[4.3, 177.6],
-				[5.3, 191.8],
-				[6.3, 173.1],
-				[7.7, 140.2],
-				[8.5, 136.1],
-				[9.4, 142.9],
-				[10.0, 140.4],
-				[5.3, 142.1],
-				[3.8, 141.0],
-				[3.3, 116.5],
-				[1.5, 327.5],
-				[0.1, 1.1],
-				[1.2, 11.1]
-			],
-			name: 'Wind',
+			data: series,
+			name: 'Viento',
 			color: Highcharts.getOptions().colors[1],
 			showInLegend: false,
 			tooltip: {
@@ -1313,32 +1310,7 @@ function draw_grafico_14(container,config) { // WIND BARB
 		}, {
 			type: 'area',
 			keys: ['y', 'rotation'], // rotation is not used here
-			data: [
-				[9.8, 177.9],
-				[10.1, 177.2],
-				[11.3, 179.7],
-				[10.9, 175.5],
-				[9.3, 159.9],
-				[8.8, 159.6],
-				[7.8, 162.6],
-				[5.6, 186.2],
-				[6.8, 146.0],
-				[6.4, 139.9],
-				[3.1, 180.2],
-				[4.3, 177.6],
-				[5.3, 191.8],
-				[6.3, 173.1],
-				[7.7, 140.2],
-				[8.5, 136.1],
-				[9.4, 142.9],
-				[10.0, 140.4],
-				[5.3, 142.1],
-				[3.8, 141.0],
-				[3.3, 116.5],
-				[1.5, 327.5],
-				[0.1, 1.1],
-				[1.2, 11.1]
-			],
+			data: series,
 			color: Highcharts.getOptions().colors[0],
 			fillColor: {
 				linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
@@ -1351,7 +1323,7 @@ function draw_grafico_14(container,config) { // WIND BARB
 					]
 				]
 			},
-			name: 'Wind speed',
+			name: 'Velocidad del Viento',
 			tooltip: {
 				valueSuffix: ' m/s'
 			},
