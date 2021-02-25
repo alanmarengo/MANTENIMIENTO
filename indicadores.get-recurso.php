@@ -130,7 +130,7 @@ while($r = pg_fetch_assoc($query)) {
 
 						$temp = array();
 
-						$i++
+						$i++;
 
 					}
 
