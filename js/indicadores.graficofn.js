@@ -1785,28 +1785,6 @@ function draw_grafico_21(container,config) {
 
 	for (var i=0; i<config.axis.length; i++) {
 
-		if (i==0) {
-
-			var axisItem = {
-				title: {
-					enabled: true,
-					text: config.axis[i]
-				},
-				startOnTick: true,
-				endOnTick: true,
-				showLastLabel: true
-			};
-
-		}else{
-			
-			var axisItem = {
-				title: {
-					text: config.axis[i]
-				}
-			};
-
-		}
-
 		var serieItem = {
 
 			name = config.serietype[i],
