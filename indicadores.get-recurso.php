@@ -136,6 +136,8 @@ while($r = pg_fetch_assoc($query)) {
 
 					}
 
+					$first = false;
+
 				}
 
 				$valtext = substr($valtext,0,strlen($valtext)-1);
