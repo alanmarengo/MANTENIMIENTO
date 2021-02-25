@@ -133,8 +133,6 @@ while($r = pg_fetch_assoc($query)) {
 				$data_out .= "\"serietype\":[\"" . implode("\",\"",array_unique($type)) . "\"]";
 				$data_out .= "}";
 
-				var_dump($data_out);
-
 			break;
 
 			case 'windbar':
