@@ -101,6 +101,42 @@ while($r = pg_fetch_assoc($query)) {
 
 		switch ($g_data_tabla) {
 
+			case 'windbar':
+
+				$query_grafico_data_string = "SELECT * FROM \"" . $g_data_schema . "\".\"" . $g_data_tabla . "\"";
+				$query_grafico_data = pg_query($conn,$query_grafico_data_string);
+
+				$intensidad = array();
+				$direccion = array();
+				$fecha = array();
+
+				$first = true;
+
+				while ($s = pg_fetch_assoc($query_grafico_data)) {
+					
+					array_push($intensidad,$s["viento_intensidad"]);
+					array_push($direccion,$s["viento_direccion"]);
+					array_push($fecha,$s["fecha"]);
+
+					$first = false;
+
+				}
+				
+				$data_out = "{";
+				$data_out .= "\"type\":\"grafico\",";
+				$data_out .= "\"ind_titulo\":\"" . $titulo_ind . "\",";
+				$data_out .= "\"ind_desc\":\"" . $desc_ind . "\",";
+				$data_out .= "\"grafico_id\":" . $data["grafico_id"] . ",";
+				$data_out .= "\"grafico_tipo_id\":" . $data["grafico_tipo_id"] . ",";
+				$data_out .= "\"titulo\":\"" . $g_titulo . "\",";
+				$data_out .= "\"desc\":\"" . $g_desc . "\",";
+				$data_out .= "\"intensidad\":[" . implode(",",$intensidad) . "],";
+				$data_out .= "\"direccion\":[" . implode(",",$direccion) . "],";
+				$data_out .= "\"fecha\":[\"" . implode("\",\"",$fecha) . "\"]";
+				$data_out .= "}";
+
+			break;
+			
 			case 'bubble':
 
 				$query_grafico_data_string = "SELECT * FROM \"" . $g_data_schema . "\".\"" . $g_data_tabla . "\"";
