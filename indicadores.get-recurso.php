@@ -128,7 +128,7 @@ while($r = pg_fetch_assoc($query)) {
 
 					if ($val != $s["type"]) {
 
-						$valtext .= "],["
+						$valtext .= "],[";
 
 					}
 
