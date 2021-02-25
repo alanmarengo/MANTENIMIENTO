@@ -141,21 +141,8 @@ while($r = pg_fetch_assoc($query)) {
 				array_push($values,$temp);
 
 				$temp = array();
-				$valtext = "";
-
-				for ($i=0; $i<sizeof($axis); $i++) {
-
-					$comma = "";
-					$valtext = "[";
-
-					for($j=0; $j<sizeof($values[$i]); $j++) {
-						$valtext .= $comma . "[$values[$i][$j][0],[$values[$i][$j][1]";
-						$comma = ",";
-					}
-
-					$valtext .= "]";
-
-				}
+				
+				var_dump($values);
 
 				$axis = explode(",",$axis[0]);
 				$axis = array_unique($axis);
