@@ -795,7 +795,7 @@ function ol_map() {
 			
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + this.current_tipo_estacion_id + "&mode=14";
             let js = this.requestApi(url);
-
+            console.log(js);
             let html_mensual = `<ul class="ico-list">`;
             let html_anual = `<ul class="ico-list">`;
 
@@ -829,8 +829,6 @@ function ol_map() {
 
             html_mensual += "</ul>";
             html_anual += "</ul>";
-
-            console.log(html_mensual);
 
             document.getElementById("panel-ha4-1").innerHTML = html_mensual;
             document.getElementById("panel-ha4-2").innerHTML = html_anual;
