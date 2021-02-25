@@ -132,6 +132,8 @@ while($r = pg_fetch_assoc($query)) {
 
 						$valtext .= "],[";
 
+						$val = $s["type"];
+
 					}
 
 				}
