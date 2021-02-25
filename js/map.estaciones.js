@@ -747,7 +747,7 @@ function ol_map() {
                     },
 
                     title: {
-                        text: $("#panel-ha-3 #combo-parametros").val()
+                        text: $("#panel-ha-3 #combo-parametros").text()
                     },
 
                     xAxis: {
