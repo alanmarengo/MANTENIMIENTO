@@ -1780,6 +1780,8 @@ function draw_grafico_20(container,config) {
 
 function draw_grafico_21(container,config) {
 
+	console.log(config);
+
 	Highcharts.chart(container, {
 		chart: {
 			type: 'scatter',

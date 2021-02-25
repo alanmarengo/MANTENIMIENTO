@@ -100,6 +100,42 @@ while($r = pg_fetch_assoc($query)) {
 		$g_data_tabla = $data["grafico_data_tabla"];
 
 		switch ($g_data_tabla) {
+			
+			case 'scatter':
+
+			$query_grafico_data_string = "SELECT * FROM \"" . $g_data_schema . "\".\"" . $g_data_tabla . "\"";
+			$query_grafico_data = pg_query($conn,$query_grafico_data_string);
+
+			$axis = array();
+			$values = array();
+			$type = array();
+
+			$first = true;
+
+			while ($s = pg_fetch_assoc($query_grafico_data)) {
+				
+				array_push($axis,$s["axis"]);
+				array_push($values,$s["values"]);
+				array_push($type,$s["type"]);
+
+				$first = false;
+
+			}
+			
+			$data_out = "{";
+			$data_out .= "\"type\":\"grafico\",";
+			$data_out .= "\"ind_titulo\":\"" . $titulo_ind . "\",";
+			$data_out .= "\"ind_desc\":\"" . $desc_ind . "\",";
+			$data_out .= "\"grafico_id\":" . $data["grafico_id"] . ",";
+			$data_out .= "\"grafico_tipo_id\":" . $data["grafico_tipo_id"] . ",";
+			$data_out .= "\"titulo\":\"" . $g_titulo . "\",";
+			$data_out .= "\"desc\":\"" . $g_desc . "\",";
+			$data_out .= "\"axis\":[\"" . implode("\",\"",$axis) . "\"]";
+			$data_out .= "\"values\":[\"" . implode("\",\"",$values) . "\"]";
+			$data_out .= "\"type\":[\"" . implode("\",\"",$type) . "\"]";
+			$data_out .= "}";
+
+			break;
 
 			case 'windbar':
 
