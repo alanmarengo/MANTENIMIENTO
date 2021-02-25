@@ -130,8 +130,8 @@ while($r = pg_fetch_assoc($query)) {
 			$data_out .= "\"grafico_tipo_id\":" . $data["grafico_tipo_id"] . ",";
 			$data_out .= "\"titulo\":\"" . $g_titulo . "\",";
 			$data_out .= "\"desc\":\"" . $g_desc . "\",";
-			$data_out .= "\"axis\":[\"" . implode("\",\"",$axis) . "\"]";
-			$data_out .= "\"values\":[\"" . implode("\",\"",$values) . "\"]";
+			$data_out .= "\"axis\":[\"" . implode("\",\"",$axis) . "\"],";
+			$data_out .= "\"values\":[\"" . implode("\",\"",$values) . "\"],";
 			$data_out .= "\"type\":[\"" . implode("\",\"",$type) . "\"]";
 			$data_out .= "}";
 
