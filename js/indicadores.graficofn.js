@@ -1780,9 +1780,6 @@ function draw_grafico_20(container,config) {
 
 function draw_grafico_21(container,config) {
 
-	config.sector = config.sector.replace(/\[/g, "<");
-	config.sector = config.sector.replace(/\]/g, ">");
-
 	Highcharts.chart(container, {
 		chart: {
 			type: 'scatter',
