@@ -747,7 +747,7 @@ function ol_map() {
                     },
 
                     title: {
-                        text: 'Gráfico de Estación'
+                        text: $("#panel-ha-3 #combo-parametros").val()
                     },
 
                     xAxis: {
