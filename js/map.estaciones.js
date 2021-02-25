@@ -795,13 +795,13 @@ function ol_map() {
 			
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + this.current_tipo_estacion_id + "&mode=14";
             let js = this.requestApi(url);
-            console.log(js);
+            
             let html_mensual = `<ul class="ico-list">`;
             let html_anual = `<ul class="ico-list">`;
 
             for (var i = 0; i < js.length; i++) {
 
-                if (js[i].categoria_parametro_id == this.current_categoria_id) {
+                //if (js[i].categoria_parametro_id == this.current_categoria_id) {
 
                     if (js[i].tipo_desc == 'ANUAL') {
 
@@ -823,7 +823,7 @@ function ol_map() {
 
                     }
 
-                }
+                //}
 
             }
 
