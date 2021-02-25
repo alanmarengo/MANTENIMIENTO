@@ -1359,6 +1359,14 @@ function draw_grafico_16(container,config) { // MULTIPLE AXES
 			}
 		}
 
+		if ((i==0) || (i==2)) {
+			y.opposite = true;
+		}
+
+		if (i>0) {
+			y.gridLineWidth = 0;
+		}
+
 		series.push(o);
 		axis.push(y);
 
