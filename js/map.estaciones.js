@@ -4341,7 +4341,7 @@ function getSerieDatosUrl(type) {
 function getCsvTab3() {
 
     let url = getSerieDatosUrl();
-    alert(url);
+    //alert(url);
     window.open(url,"_blank");
 
 }
@@ -4349,7 +4349,7 @@ function getCsvTab3() {
 function getCsvTab3Aforo() {
 
     let url = getSerieDatosUrl("aforo");
-    alert(url);
+    //alert(url);
     window.open(url,"_blank");
 
 }
