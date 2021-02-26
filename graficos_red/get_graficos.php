@@ -131,7 +131,7 @@ function get_curva_hq($estacion_id)
 									),'oct-','10-20'
 								),'nov-','11-20'
 							),'dic-','12-20'
-						)):: DATE ASC;
+						)):: DATE ASC";
 
 	$query = pg_query($conn,$query_string);
 	
