@@ -632,7 +632,13 @@ function ol_map() {
 			this.current_tab = 3;
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&mode=3";
-            let js = this.requestApi(url);
+            let js = this.requestApi(url);            
+
+            let parametro_id = $("#combo-parametros").val();
+            let fd = $("#tab3-fdesde").val();
+            let fh = $("#tab3-fhasta").val();
+
+            let urlSerieDatos = "./csv_redes_hidro.php?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&fd="+fd+"&fh="+fh+"&parametro_id="+parametro_id;
 
             let html = `
                 <div class="row">
@@ -673,7 +679,7 @@ function ol_map() {
                             <p class="value maxval"></p>
                         </div>
                         <p class="mt-10">
-                            <a href="./estadisticas.php?mode=1&cid=16" target="_blank" class="btn-2">Descarga de la Serie de Datos</a>
+                            <a href="${url_serie_datos}" target="_blank" class="btn-2">Descarga de la Serie de Datos</a>
                         </p>
                     </div>
                     <div class="col col-md-9 col-lg-9">
@@ -1131,12 +1137,16 @@ function ol_map() {
         }
 
 
-        this.popupTabAforo3 = function() {
-			
-            
+        this.popupTabAforo3 = function() {            
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&mode=9";
             let js = this.requestApi(url);
+            
+            let parametro_id = $("#combo-parametros-aforo").val();
+            let fd = $("#tab3-fdesde-aforo").val();
+            let fh = $("#tab3-fhasta-aforo").val();
+
+            let urlSerieDatos = "./csv_redes_hidro.php?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&fd="+fd+"&fh="+fh+"&parametro_id="+parametro_id;
 
             let html = `
                 <div class="row">
@@ -1177,7 +1187,7 @@ function ol_map() {
                             <p class="value maxval"></p>
                         </div>
                         <p class="mt-10">
-                            <a href="./estadisticas.php?mode=1&cid=16" class="btn-2">Descarga de la Serie de Datos</a>
+                            <a href="${url_serie_datos}" class="btn-2">Descarga de la Serie de Datos</a>
                         </p>
                     </div>
                     <div class="col col-md-9 col-lg-9">
