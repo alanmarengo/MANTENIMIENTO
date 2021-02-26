@@ -32,8 +32,8 @@ $conn = pg_connect($string_conn);
 
 $query = pg_query($conn,$query_string);
 
-echo $query_string;
-echo pg_last_error($conn);
+//echo $query_string;
+//echo pg_last_error($conn);
 
 $csv = parseSQLToCSV($query);
 
