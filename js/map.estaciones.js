@@ -4332,12 +4332,16 @@ function getSerieDatosUrl(type) {
 
 function getCsvTab3() {
 
-    window.open(getSerieDatosUrl(),"_blank");
+    let url = getSerieDatosUrl();
+    alert(url);
+    window.open(url,"_blank");
 
 }
 
 function getCsvTab3Aforo() {
 
-    window.open(getSerieDatosUrl("aforo"),"_blank");
+    let url = getSerieDatosUrl("aforo");
+    alert(url);
+    window.open(url,"_blank");
 
 }
