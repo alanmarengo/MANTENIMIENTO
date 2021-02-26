@@ -99,12 +99,12 @@ function get_curva_hq($estacion_id)
 															),'abr-','04-20'
 														),'may-','05-20'
 													),'jun-','06-20'
-												),'jul-','06-20'
-											),'ago-','06-20'
-										),'sep-','06-20'
-									),'oct-','06-20'
-								),'nov-','06-20'
-							),'dic-','06-20'
+												),'jul-','07-20'
+											),'ago-','08-20'
+										),'sep-','09-20'
+									),'oct-','10-20'
+								),'nov-','11-20'
+							),'dic-','12-20'
 						))
 					FROM mod_catalogo.vw_hq_curva c
 					ORDER BY CONCAT('01-',REPLACE(
@@ -125,13 +125,13 @@ function get_curva_hq($estacion_id)
 															),'abr-','04-20'
 														),'may-','05-20'
 													),'jun-','06-20'
-												),'jul-','06-20'
-											),'ago-','06-20'
-										),'sep-','06-20'
-									),'oct-','06-20'
-								),'nov-','06-20'
-							),'dic-','06-20'
-						)):: DATE ASC";
+												),'jul-','07-20'
+											),'ago-','08-20'
+										),'sep-','09-20'
+									),'oct-','10-20'
+								),'nov-','11-20'
+							),'dic-','12-20'
+						)):: DATE ASC;
 
 	$query = pg_query($conn,$query_string);
 	
