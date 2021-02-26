@@ -679,7 +679,7 @@ function ol_map() {
                             <p class="value maxval"></p>
                         </div>
                         <p class="mt-10">
-                            <a href="${url_serie_datos}" target="_blank" class="btn-2">Descarga de la Serie de Datos</a>
+                            <a href="${urlSerieDatos}" target="_blank" class="btn-2">Descarga de la Serie de Datos</a>
                         </p>
                     </div>
                     <div class="col col-md-9 col-lg-9">
@@ -1187,7 +1187,7 @@ function ol_map() {
                             <p class="value maxval"></p>
                         </div>
                         <p class="mt-10">
-                            <a href="${url_serie_datos}" class="btn-2">Descarga de la Serie de Datos</a>
+                            <a href="${urlSerieDatos}" class="btn-2">Descarga de la Serie de Datos</a>
                         </p>
                     </div>
                     <div class="col col-md-9 col-lg-9">
