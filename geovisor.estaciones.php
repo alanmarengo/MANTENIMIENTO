@@ -26,6 +26,9 @@
 </head>
 <body style="overflow:hidden;">
 
+	<input type="hidden" id="hidden_estacion_id">
+	<input type="hidden" id="hidden_categoria_parametro_id">
+
 	<div id="cards" class="col-md-3 col-lg-3 col-xs-11 col-sm-11">
 
 		<div class="card card-est">

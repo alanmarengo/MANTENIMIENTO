@@ -366,6 +366,8 @@ function ol_map() {
             this.current_estacion_id = js.estacion_id;
             this.current_tipo_estacion_id = js.tipo_estacion_id;
 
+            $("#hidden_estacion_id").val(js.estacion_id);
+
             if (js.tipo_estacion_id == 5) {
 
                 $("#popup").hide();
@@ -499,6 +501,9 @@ function ol_map() {
 						if (first) {
 							this.current_categoria_id = js.categoria_parametros[i].categoria_parametro_id;
 							checked = `checked="checked"`;
+
+                            $("#hidden_categoria_parametro_id").val(js.categoria_parametros[i].categoria_parametro_id);
+
 						} else {
 							checked = ``;
 						}
@@ -4307,6 +4312,9 @@ function updateDatepicker() {
 function getSerieDatosUrl(type) { 
 
     let urlSerieDatos;
+
+    let current_estacion_id = $("#hidden_estacion_id").val();
+    let current_categoria_id = $("#hidden_categoria_parametro_id").val();
             
     if (type == "aforo") {
     
@@ -4314,7 +4322,7 @@ function getSerieDatosUrl(type) {
         let fd = $("#tab3-fdesde-aforo").val();
         let fh = $("#tab3-fhasta-aforo").val();
 
-        urlSerieDatos = "./csv_redes_hidro.php?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&fd="+fd+"&fh="+fh+"&parametro_id="+parametro_id;
+        urlSerieDatos = "./csv_redes_hidro.php?estacion_id=" + current_estacion_id + "&categoria_parametro_id=" + current_categoria_id + "&fd="+fd+"&fh="+fh+"&parametro_id="+parametro_id;
 
     }else{                
     
@@ -4322,7 +4330,7 @@ function getSerieDatosUrl(type) {
         let fd = $("#tab3-fdesde").val();
         let fh = $("#tab3-fhasta").val();
 
-        urlSerieDatos = "./csv_redes_hidro.php?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&fd="+fd+"&fh="+fh+"&parametro_id="+parametro_id;
+        urlSerieDatos = "./csv_redes_hidro.php?estacion_id=" + current_estacion_id + "&categoria_parametro_id=" + current_categoria_id + "&fd="+fd+"&fh="+fh+"&parametro_id="+parametro_id;
 
     }
 
