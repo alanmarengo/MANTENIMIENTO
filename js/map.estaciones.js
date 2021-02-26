@@ -679,7 +679,7 @@ function ol_map() {
                             <p class="value maxval"></p>
                         </div>
                         <p class="mt-10">
-                            <a href="${urlSerieDatos}" target="_blank" class="btn-2">Descarga de la Serie de Datos</a>
+                            <a href="javascript:void(0);" onclick="getCsvTab3();" class="btn-2">Descarga de la Serie de Datos</a>
                         </p>
                     </div>
                     <div class="col col-md-9 col-lg-9">
@@ -1187,7 +1187,7 @@ function ol_map() {
                             <p class="value maxval"></p>
                         </div>
                         <p class="mt-10">
-                            <a href="${urlSerieDatos}" class="btn-2">Descarga de la Serie de Datos</a>
+                            <a href="javascript:void(0);" onclick="getCsvTab3Aforo();" class="btn-2">Descarga de la Serie de Datos</a>
                         </p>
                     </div>
                     <div class="col col-md-9 col-lg-9">
@@ -4301,5 +4301,43 @@ function updateDatepicker() {
         onSelect: function() {}
 
     }).datepicker("setDate", new Date());
+
+}
+
+function getSerieDatosUrl(type) { 
+
+    let urlSerieDatos;
+            
+    if (type == "aforo") {
+    
+        let parametro_id = $("#combo-parametros-aforo").val();
+        let fd = $("#tab3-fdesde-aforo").val();
+        let fh = $("#tab3-fhasta-aforo").val();
+
+        urlSerieDatos = "./csv_redes_hidro.php?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&fd="+fd+"&fh="+fh+"&parametro_id="+parametro_id;
+
+    }else{                
+    
+        let parametro_id = $("#combo-parametros").val();
+        let fd = $("#tab3-fdesde").val();
+        let fh = $("#tab3-fhasta").val();
+
+        urlSerieDatos = "./csv_redes_hidro.php?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&fd="+fd+"&fh="+fh+"&parametro_id="+parametro_id;
+
+    }
+
+    return urlSerieDatos;
+
+}
+
+function getCsvTab3() {
+
+    window.open(getSerieDatosUrl(),"_blank");
+
+}
+
+function getCsvTab3Aforo() {
+
+    window.open(getSerieDatosUrl("aforo"),"_blank");
 
 }
