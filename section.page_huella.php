@@ -90,7 +90,7 @@ Al norte del río santa cruz, las primeras ocupaciones están datadas unos 8000 
 </a>
 <br />
 <br />
-<a href="./mediateca.php?mode=-1&s=HuellasArqueo" class="button button-2">
+<a href="./mediateca.php?mode=-1&s=HuellasArqueo" class="button button-2" target="_blank">
     VER RECURSOS ASOCIADOS
     <img src="./images/icono-mediateca-br.png" style="height: 20px; width: 20px;" />
 </a>
@@ -123,7 +123,7 @@ Las dos zonas de mayor sensibilidad afectadas por las obras (que quedarán bajo 
 </a>
 <br />
 <br />
-<a href="./mediateca.php?mode=-1&s=HuellasPaleo" class="button button-2">
+<a href="./mediateca.php?mode=-1&s=HuellasPaleo" class="button button-2" target="_blank">
     VER RECURSOS ASOCIADOS
     <img src="./images/icono-mediateca-br.png" style="height: 20px; width: 20px;" />
 </a>
@@ -158,7 +158,7 @@ Las formaciones más antiguas (Santa Cruz, Estancia 25 de mayo, etc.) tienen afl
 </a>
 <br />
 <br />
-<a href="./mediateca.php?mode=-1&s=HuellasGeolo" class="button button-2">
+<a href="./mediateca.php?mode=-1&s=HuellasGeolo" class="button button-2" target="_blank">
     VER RECURSOS ASOCIADOS
     <img src="./images/icono-mediateca-br.png" style="height: 20px; width: 20px;" />
 </a>
