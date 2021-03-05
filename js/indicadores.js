@@ -112,10 +112,6 @@ function ol_indicadores() {
 			case "layer":
 			
 			var height = $("#indicador-col-pos-"+pos).height();
-
-			setTimeout(function(){
-				$("#indicador-inner-"+pos).css("height",height+"px");
-			},1000);
 			
 			var map_layers = [];
 		
@@ -178,6 +174,15 @@ function ol_indicadores() {
 			indMap.getView().fit(extent_indi,{duration:1000});
 			indMap.updateSize();
 			indMap.render();
+
+			setTimeout(function(){
+				
+				$("#indicador-inner-"+pos).css("height",height+"px");
+
+				indMap.updateSize();
+				indMap.render();
+
+			},1000);
 			
 			break;
 			
