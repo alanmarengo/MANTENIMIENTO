@@ -112,8 +112,10 @@ function ol_indicadores() {
 			case "layer":
 			
 			var height = $("#indicador-col-pos-"+pos).height();
-			
-			$("#indicador-inner-"+pos).css("height",height+"px");
+
+			setTimeout(function(){
+				$("#indicador-inner-"+pos).css("height",height+"px");
+			},1000);
 			
 			var map_layers = [];
 		
