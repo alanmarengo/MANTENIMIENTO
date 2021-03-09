@@ -12,6 +12,7 @@ $conn = pg_connect($string_conn);
 if ($type == "LineString") {
 
 	$query_string = "SELECT ST_Length(ST_GeomFromText('".$wkt."')::geography,true) / 1000 AS km;";
+	echo $query_string;
 
 }else{
 	
