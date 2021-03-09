@@ -13,7 +13,7 @@ if ($type == "LineString") {
 
 	//$query_string = "SELECT ST_Length(ST_GeomFromText('".$wkt."')::geography,true) / 1000 AS km;";
 	$query_string = "SELECT ST_Length(st_transform(ST_GeomFromText('".$wkt."',3857)::geography,true),4326) / 1000 AS km;";
-	//echo $query_string;
+	echo $query_string;
 
 }else{
 	
