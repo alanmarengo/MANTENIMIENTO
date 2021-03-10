@@ -948,14 +948,14 @@ function draw_grafico_9(container,config) { // BASIC LINE
 			floating:false
 		},
 
-		plotOptions: {
+		/*plotOptions: {
 			series: {
 				label: {
 					connectorAllowed: false
 				},
 				pointStart: 2010
 			}
-		},
+		},*/
 
 		series: config.data,
 		responsive: {
