@@ -915,7 +915,7 @@ function draw_grafico_9(container,config) { // BASIC LINE
 	}
 	
 	for (var i=0; i<series.length; i++) {
-		
+		console.log("DATA :" + data[i]);
 		series[i].data = data[i];
 		
 	}
