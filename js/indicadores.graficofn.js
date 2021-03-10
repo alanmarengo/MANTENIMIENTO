@@ -915,7 +915,6 @@ function draw_grafico_9(container,config) { // BASIC LINE
 	}
 	
 	for (var i=0; i<series.length; i++) {
-		console.log("DATA :" + data[i]);
 		series[i].data = data[i];
 		
 	}
@@ -932,7 +931,10 @@ function draw_grafico_9(container,config) { // BASIC LINE
 		subtitle: {
 			text: config.desc
 		},
-
+		xAxis: {
+			categories: config.etiquetasUnique,
+    		tickWidth: 1
+		},
 		yAxis: {
 			title: {
 				text: config.titulo
