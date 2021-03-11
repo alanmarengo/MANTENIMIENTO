@@ -1,6 +1,10 @@
 <?php include("./fn.php"); ?>
 <?php include("./login.php"); ?>
 
+<?php include_once("./pgconfig.php"); ?>
+
+<?php modo_mantenimiento();//Verifica si esta en modo mantenimiento ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
