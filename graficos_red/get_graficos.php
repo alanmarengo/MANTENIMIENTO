@@ -74,11 +74,11 @@ function get_curva_hq($estacion_id)
 	$r = pg_fetch_assoc($query);
 	
 	$tabla = $r['parametro_tabla'];
-	/*
-	$query_string   = "SELECT alt_escala AS altura,ql_tot_m3s AS caudal,
+	
+	$query_string_base   = "(SELECT alt_escala AS altura,ql_tot_m3s AS caudal,
 					   (select descripcion from mod_catalogo.cod_temporalidad where cod_temporalidad_id::bigint=D.cod_temp::bigint LIMIT 1) AS campaña
-					   FROM $tabla D WHERE alt_escala IS NOT NULL AND ql_tot_m3s IS NOT NULL ORDER BY campaña ASC;";
-	*/
+					   FROM $tabla D WHERE alt_escala IS NOT NULL AND ql_tot_m3s IS NOT NULL ORDER BY campaña ASC)";
+	
 	$query_string   = "SELECT 
 						c.*,
 						CONCAT('01-',REPLACE(
@@ -106,7 +106,7 @@ function get_curva_hq($estacion_id)
 								),'nov-','11-20'
 							),'dic-','12-20'
 						))
-					FROM mod_catalogo.vw_hq_curva c
+					FROM $query_string_base c
 					ORDER BY CONCAT('01-',REPLACE(
 							REPLACE(
 								REPLACE(
