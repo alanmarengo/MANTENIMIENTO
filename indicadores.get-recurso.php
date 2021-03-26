@@ -280,7 +280,12 @@ while($r = pg_fetch_assoc($query)) {
 						
 					}
 					
-					array_push($seriesArr[$curInd],$s["valor"]);
+					//array_push($seriesArr[$curInd],$s["valor"]);
+					if($s["valor"]=='')
+					{
+						$valor_control = 'null';
+					}else $valor_control = $s["valor"];
+					array_push($seriesArr[$curInd],$valor_control);
 					
 				}
 				
