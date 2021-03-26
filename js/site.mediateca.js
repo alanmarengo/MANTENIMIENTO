@@ -840,6 +840,12 @@ if ($('#uxFiltersChecked').html()) {
 }
 
 function fichaRender() {
+let title = model.ficha.title
+if(model.ficha.title.includes('- Estudio:')){
+    let titleDiv = model.ficha.title.split('- Estudio:')
+    title = titleDiv[0];
+}
+
 let htmlLinkVisor = '';
 if (model.ficha.linkvisor != '')
     htmlLinkVisor = `<a href="${model.ficha.linkvisor}" target="_blank" class="btn btn-xs btn-warning">Visualizar</a>`;
@@ -857,7 +863,7 @@ html += `
             </div>
         </div>
         <div class="col-md-8">
-            <div class="ficha-title">${model.ficha.title}</div>
+            <div class="ficha-title">${title}</div>
             <div class="ficha-temporal">${model.ficha.temporal}</div>
             <div class="ficha-autores">${model.ficha.autores}</div>
             <div class="ficha-description">${model.ficha.description}</div>
@@ -1123,7 +1129,7 @@ if (doc.estudio > 0) {
             `;   
         }
 }else{
-        links = `
+            links = `
                     <a data-solapa="0" data-mode="0" data-mode_id="${doc.estudio}" 
                     class="mt-1 btn btn-dark estudios-link text-white links-modal${doc.id}">
                     DOCUMENTOS ASOCIADOS</a>
