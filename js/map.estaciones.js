@@ -1556,7 +1556,13 @@ function ol_map() {
 
     this.map.setEstacionesLayer = function(index, node) {
 
-        $(".estacion-layer").removeClass("active");
+        //$(".estacion-layer").removeClass("active"); //Se remplaza por lo de abajo
+        if($(node).hasClass("active")){
+            $(node).removeClass("active");
+        }
+
+                
+        console.log(node)
 
         let state = $(node).attr("data-state");
         let enableLayer = false;
@@ -1582,9 +1588,9 @@ function ol_map() {
                 this.estacionLayerIsBase[i] = true;
                 estacionLayersHtml += `<li><a href="javascrit:void(0);" data-state="1" onclick="geomap.map.setEstacionesLayer(${i},this);" class="alphalink estacion-layer active">${this.estacionLayerLabels[i]}</a></li>`;
             } else {
-                estacionLayersHtml += `<li><a href="javascrit:void(0);" data-state="0" onclick="geomap.map.setEstacionesLayer(${i},this);" class="alphalink estacion-layer">${this.estacionLayerLabels[i]}</a></li>`;
+/*                 estacionLayersHtml += `<li><a href="javascrit:void(0);" data-state="0" onclick="geomap.map.setEstacionesLayer(${i},this);" class="alphalink estacion-layer">${this.estacionLayerLabels[i]}</a></li>`;
                 this.estacionLayers[i].setVisible(false);
-                this.estacionLayerIsBase[i] = false;
+                this.estacionLayerIsBase[i] = false; */
             }
 
         }

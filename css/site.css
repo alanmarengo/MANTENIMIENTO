@@ -767,10 +767,18 @@ map area {
   border: none;
 }
 #page_mediateca .doc {
-  padding: 15px;
+  padding: 15px 15px 0 15px;
   margin-right: 10px;
-  border-top: 1px solid #eee;
+}
+#page_mediateca .fichaBtn{
+  padding: 0px 15x 15px 15px;
+  margin-right: 10px;   
+}
+
+#page_mediateca #ficha{
+  padding: 0px 0px 15px 0px;
   border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee;
 }
 #page_mediateca .doc .doc-title {
   font-size: 1.2em;
@@ -809,7 +817,7 @@ map area {
   margin-top: 4px;
 }
 #page_mediateca .doc .doc-links {
-  padding-top: 20px;
+  padding-top: 5px;
 }
 #page_mediateca .doc .doc-links .btn-dark {
   color: #fff;
@@ -818,8 +826,10 @@ map area {
   border-color: #fea91a;
   background-color: #fea91a;
 }
-#page_mediateca .doc:hover {
+#page_mediateca #ficha:hover{
   background-color: #F9F7F7;
+}
+#page_mediateca .doc:hover {
   cursor: pointer;
 }
 #page_mediateca .news {
@@ -1125,6 +1135,7 @@ map area {
   background-color: #2BBBF2;
   color: #fff;
 }
+
 @media (max-width: 992px) {
   .side-right {
     padding: 10px 40px 10px 30px!important;
