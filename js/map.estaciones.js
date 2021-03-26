@@ -1561,8 +1561,7 @@ function ol_map() {
             $(node).removeClass("active");
         }
 
-                
-        console.log(node)
+
 
         let state = $(node).attr("data-state");
         let enableLayer = false;
@@ -1575,6 +1574,7 @@ function ol_map() {
             $(node).attr("data-state", 0);
         }
 
+     
         let estacionLayersHtml = `
             <div class="tooltip-white-list">
                 <p class="text-center m0">CAPAS BASE</p>
@@ -1582,15 +1582,16 @@ function ol_map() {
                 <ul>`;
 
         for (var i = 0; i < this.estacionLayerNames.length; i++) {
-
+           
             if (i == index) {
                 this.estacionLayers[i].setVisible(enableLayer);
                 this.estacionLayerIsBase[i] = true;
+            }
+
+            if(this.estacionLayers[i].values_.visible == true){
                 estacionLayersHtml += `<li><a href="javascrit:void(0);" data-state="1" onclick="geomap.map.setEstacionesLayer(${i},this);" class="alphalink estacion-layer active">${this.estacionLayerLabels[i]}</a></li>`;
-            } else {
-/*                 estacionLayersHtml += `<li><a href="javascrit:void(0);" data-state="0" onclick="geomap.map.setEstacionesLayer(${i},this);" class="alphalink estacion-layer">${this.estacionLayerLabels[i]}</a></li>`;
-                this.estacionLayers[i].setVisible(false);
-                this.estacionLayerIsBase[i] = false; */
+            }else{
+                estacionLayersHtml += `<li><a href="javascrit:void(0);" data-state="0" onclick="geomap.map.setEstacionesLayer(${i},this);" class="alphalink estacion-layer">${this.estacionLayerLabels[i]}</a></li>`;
             }
 
         }
