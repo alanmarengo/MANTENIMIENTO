@@ -20,7 +20,7 @@
 	<?php include("./scripts.map.php"); ?>	
 	<?php include("./scripts.document_ready.geovisor.php"); ?>
 	
-	<?php// include("./scripts.default.php"); ?>
+	<?php // include("./scripts.default.php"); ?>
 	
 	
 	

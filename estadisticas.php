@@ -19,7 +19,7 @@
 	<?php include("./scripts.onresize.php"); ?>	
 	<?php include("./scripts.document_ready.stats.php"); ?>
 	
-	<?php// include("./scripts.default.php"); ?>
+	<?php // include("./scripts.default.php"); ?>
 	
 	
 	

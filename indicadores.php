@@ -21,7 +21,7 @@
 	<?php include("./scripts.onresize.php"); ?>	
 	<?php include("./scripts.document_ready.indicadores.php"); ?>
 	
-	<?php// include("./scripts.default.php"); ?>
+	<?php // include("./scripts.default.php"); ?>
 	
 	
 	

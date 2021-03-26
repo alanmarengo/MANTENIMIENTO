@@ -36,7 +36,7 @@ $dt_titulo = $_GET["dt_t"];
 	<?php include("./scripts.highcharts.php"); ?>
 	<?php include("./scripts.document_ready.stats.view.php"); ?>
 	
-	<?php// include("./scripts.default.php"); ?>
+	<?php // include("./scripts.default.php"); ?>
 	
 </head>
 <body>

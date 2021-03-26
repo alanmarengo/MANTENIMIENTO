@@ -133,25 +133,27 @@ function getSQL($solapa) {
 		if (!IsSetVar($estudio_id))
 		{
 			
-		$SUBQUERY  = "SELECT "
-					. "tipo_formato_solapa AS \"Solapa\","
-					. "origen_id,"
-					. "origen_id_especifico AS \"Id\","
-					. "recurso_titulo AS \"Titulo\","
-					. "recurso_desc AS \"Descripcion\","
-					. "recurso_path_url AS \"LinkImagen\","
-					. "recurso_categoria_desc AS \"MetaTag\","
-					. "CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END AS \"Autores\","
-					. "mod_catalogo.get_estudio(origen_id,origen_id_especifico) AS estudios_id,"
-					. "recurso_fecha AS Fecha,"
-					. "COALESCE(subclase_desc,'') AS Tema,"
-					. "mod_catalogo.get_ico(origen_id,origen_id_especifico) AS ico"
-					. " FROM mod_mediateca.mediateca_find('$qt','$desde','$hasta','$proyecto','$clase','$subclase','$tipo_doc') "
-					. " WHERE tipo_formato_solapa=$solapa AND mod_login.check_permisos(origen_id, origen_id_especifico, $perfil_id) " 
-					//. " GROUP BY mod_catalogo.get_ico(origen_id,origen_id_especifico),recurso_fecha,COALESCE(subclase_desc,''),tipo_formato_solapa,origen_id,origen_id_especifico,recurso_titulo,recurso_desc,recurso_path_url,recurso_categoria_desc,CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END"
-					. $ORDER; 
-	
-		$SQL = "SELECT row_to_json(T)::text AS r FROM ($SUBQUERY)T";
+			$SUBQUERY  = "SELECT "
+			. "tipo_formato_solapa AS \"Solapa\","
+			. "origen_id,"
+			. "origen_id_especifico AS \"Id\","
+			. "recurso_titulo AS \"Titulo\","
+			. "recurso_desc AS \"Descripcion\","
+			. "recurso_path_url AS \"LinkImagen\","
+			. "recurso_categoria_desc AS \"MetaTag\","
+			. "CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END AS \"Autores\","
+			. "mod_catalogo.get_estudio(origen_id,origen_id_especifico) AS estudios_id,"
+			. "recurso_fecha AS Fecha,"
+			. "COALESCE(subclase_desc,'') AS Tema,"
+			. "mod_catalogo.get_ico(origen_id,origen_id_especifico) AS ico"
+			. " FROM mod_mediateca.mediateca_find('$qt','$desde','$hasta','$proyecto','$clase','$subclase','$tipo_doc') "
+			. " WHERE tipo_formato_solapa=$solapa AND mod_login.check_permisos(origen_id, origen_id_especifico, $perfil_id) "
+			." AND recurso_titulo IS NOT NULL" 
+			//. " GROUP BY mod_catalogo.get_ico(origen_id,origen_id_especifico),recurso_fecha,COALESCE(subclase_desc,''),tipo_formato_solapa,origen_id,origen_id_especifico,recurso_titulo,recurso_desc,recurso_path_url,recurso_categoria_desc,CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END"
+			. $ORDER; 
+		$SUBQUERY2=str_replace('"','',$SUBQUERY);
+	    $SQLSUBQUERYAUX="SELECT DISTINCT(T.Id) AS Id,T.Solapa AS Solapa,T.origen_id,T.Titulo AS Titulo,T.Descripcion AS Descripcion,T.LinkImagen AS LinkImagen,T.MetaTag AS MetaTag,T.Autores AS Autores ,T.estudios_id AS estudios_id,T.Fecha AS Fecha,T.Tema AS Tema,T.ico AS ico FROM ($SUBQUERY2)T ";
+		$SQL = "SELECT row_to_json(A)::text AS r FROM ($SQLSUBQUERYAUX)A";
 		
 		}
 		else
@@ -173,30 +175,35 @@ function getSQL($solapa) {
 							. "mod_catalogo.get_ico(origen_id,origen_id_especifico) AS ico"
 							. " FROM mod_catalogo.vw_catalogo_data C WHERE "
 							. " (C.estudios_id IN(SELECT sub_estudio_id FROM mod_catalogo.estudio_subestudio WHERE estudios_id=$estudio_id) "
-							. " OR C.estudios_id=$estudio_id)  AND  tipo_formato_solapa=$solapa AND mod_login.check_permisos(origen_id, origen_id_especifico, $perfil_id) " /* Tambíen incluye el mismo estudio */ 
+							. " OR C.estudios_id=$estudio_id)  AND  tipo_formato_solapa=$solapa AND mod_login.check_permisos(origen_id, origen_id_especifico, $perfil_id) " /* Tambíen incluye el mismo estudio */
+							." AND recurso_titulo IS NOT NULL"  
 							. $ORDER;
-				
-				$SQL = "SELECT row_to_json(T)::text AS r FROM ($SUBQUERY)T";
+							$SUBQUERY2=str_replace('"','',$SUBQUERY);
+							$SQLSUBQUERYAUX="SELECT DISTINCT(T.Id) AS Id,T.Solapa AS Solapa,T.origen_id,T.Titulo AS Titulo,T.Descripcion AS Descripcion,T.LinkImagen AS LinkImagen,T.MetaTag AS MetaTag,T.Autores AS Autores ,T.estudios_id AS estudios_id,T.Fecha AS Fecha,T.Tema AS Tema,T.ico AS ico FROM ($SUBQUERY2)T ";
+				$SQL = "SELECT row_to_json(A)::text AS r FROM ($SQLSUBQUERYAUX)A";
 			   }
 			   else
 			   {
 				$SUBQUERY  = "SELECT "
-							. "tipo_formato_solapa AS \"Solapa\","
-							. "origen_id,"
-							. "origen_id_especifico AS \"Id\","
-							. "recurso_titulo AS \"Titulo\","
-							. "recurso_desc AS \"Descripcion\","
-							. "recurso_path_url AS \"LinkImagen\","
-							. "recurso_categoria_desc AS \"MetaTag\","
-							. "CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END AS \"Autores\","
-							. "estudios_id,"
-							. "recurso_fecha AS Fecha,"
-							. "COALESCE(subclase_desc,'') AS Tema, "
-							. "mod_catalogo.get_ico(origen_id,origen_id_especifico) AS ico"
-							. " FROM mod_catalogo.vw_catalogo_data C WHERE estudios_id=$estudio_id AND tipo_formato_solapa=$solapa AND mod_login.check_permisos(origen_id, origen_id_especifico, $perfil_id) "
-							. $ORDER;
+				. "tipo_formato_solapa AS \"Solapa\","
+				. "origen_id,"
+				. "origen_id_especifico AS \"Id\","
+				. "recurso_titulo AS \"Titulo\","
+				. "recurso_desc AS \"Descripcion\","
+				. "recurso_path_url AS \"LinkImagen\","
+				. "recurso_categoria_desc AS \"MetaTag\","
+				. "CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END AS \"Autores\","
+				. "estudios_id,"
+				. "recurso_fecha AS Fecha,"
+				. "COALESCE(subclase_desc,'') AS Tema, "
+				. "mod_catalogo.get_ico(origen_id,origen_id_especifico) AS ico"
+				. " FROM mod_catalogo.vw_catalogo_data C WHERE estudios_id=$estudio_id AND tipo_formato_solapa=$solapa AND mod_login.check_permisos(origen_id, origen_id_especifico, $perfil_id) "
+				." AND recurso_titulo IS NOT NULL"  
+				. $ORDER;
 				
-			   $SQL = "SELECT row_to_json(T)::text AS r FROM ($SUBQUERY)T";
+				$SUBQUERY2=str_replace('"','',$SUBQUERY);
+				$SQLSUBQUERYAUX="SELECT DISTINCT(T.Id) AS Id,T.Solapa AS Solapa,T.origen_id,T.Titulo AS Titulo,T.Descripcion AS Descripcion,T.LinkImagen AS LinkImagen,T.MetaTag AS MetaTag,T.Autores AS Autores ,T.estudios_id AS estudios_id,T.Fecha AS Fecha,T.Tema AS Tema,T.ico AS ico FROM ($SUBQUERY2)T ";
+			    $SQL = "SELECT row_to_json(A)::text AS r FROM ($SQLSUBQUERYAUX)A";
 			   };
 		};
 	}
@@ -222,9 +229,11 @@ function getSQL($solapa) {
 							. " FROM mod_mediateca.mediateca_find('$qt','$desde','$hasta','$proyecto','$clase','$subclase','$tipo_doc') C WHERE "
 							. " (C.estudios_id IN(SELECT sub_estudio_id FROM mod_catalogo.estudio_subestudio WHERE estudios_id=$mode_id) "
 							. " OR C.estudios_id=$mode_id)  AND  tipo_formato_solapa=$solapa AND mod_login.check_permisos(origen_id, origen_id_especifico, $perfil_id) " /* Tambíen incluye el mismo estudio */ 
+							." AND recurso_titulo IS NOT NULL"  
 							. $ORDER;
-				
-							$SQL = "SELECT row_to_json(T)::text AS r FROM ($SUBQUERY)T";
+							$SUBQUERY2=str_replace('"','',$SUBQUERY);
+							$SQLSUBQUERYAUX="SELECT DISTINCT(T.Id) AS Id,T.Solapa AS Solapa,T.origen_id,T.Titulo AS Titulo,T.Descripcion AS Descripcion,T.LinkImagen AS LinkImagen,T.MetaTag AS MetaTag,T.Autores AS Autores ,T.estudios_id AS estudios_id,T.Fecha AS Fecha,T.Tema AS Tema,T.ico AS ico FROM ($SUBQUERY2)T ";
+							$SQL = "SELECT row_to_json(A)::text AS r FROM ($SQLSUBQUERYAUX)A";
 							
 							$mode_label = getEstudioNombre($mode_id);
 					break;
@@ -244,9 +253,11 @@ function getSQL($solapa) {
 							. "COALESCE(subclase_desc,'') AS Tema, "
 							. "mod_catalogo.get_ico(origen_id,origen_id_especifico) AS ico"
 							. " FROM mod_mediateca.mediateca_find('$qt','$desde','$hasta','$proyecto','$clase','$subclase','$tipo_doc') C WHERE estudios_id=$mode_id AND tipo_formato_solapa=$solapa AND mod_login.check_permisos(origen_id, origen_id_especifico, $perfil_id) "
+							." AND recurso_titulo IS NOT NULL"  
 							. $ORDER;
-				
-							$SQL = "SELECT row_to_json(T)::text AS r FROM ($SUBQUERY)T";
+							$SUBQUERY2=str_replace('"','',$SUBQUERY);
+							$SQLSUBQUERYAUX="SELECT DISTINCT(T.Id) AS Id,T.Solapa AS Solapa,T.origen_id,T.Titulo AS Titulo,T.Descripcion AS Descripcion,T.LinkImagen AS LinkImagen,T.MetaTag AS MetaTag,T.Autores AS Autores ,T.estudios_id AS estudios_id,T.Fecha AS Fecha,T.Tema AS Tema,T.ico AS ico FROM ($SUBQUERY2)T ";
+							$SQL = "SELECT row_to_json(A)::text AS r FROM ($SQLSUBQUERYAUX)A";
 							
 							$mode_label = getEstudioNombre($mode_id);
 					break;
@@ -254,10 +265,9 @@ function getSQL($solapa) {
 			case 10: 	
 					/******************************* MODO RECURSOS DE CAPA *********************************************/
 					
-					$SUBQUERY  = "SELECT "
+					$SUBQUERY  = "SELECT origen_id_especifico AS Id,"
 					. "tipo_formato_solapa AS \"Solapa\","
-					. "origen_id,"
-					. "origen_id_especifico AS \"Id\","
+					. "origen_id,"					
 					. "recurso_titulo AS \"Titulo\","
 					. "recurso_desc AS \"Descripcion\","
 					. "recurso_path_url AS \"LinkImagen\","
@@ -269,9 +279,10 @@ function getSQL($solapa) {
 					. "mod_catalogo.get_ico(origen_id,origen_id_especifico) AS ico"
 					. " FROM mod_mediateca.mediateca_find('$qt','$desde','$hasta','$proyecto','$clase','$subclase','$tipo_doc') C "
 					. " WHERE estudios_id IN(SELECT CTA.estudios_id FROM mod_geovisores.catalogo CTA WHERE CTA.origen_id_especifico=$mode_id) " 
-					. " AND tipo_formato_solapa=$solapa AND mod_login.check_permisos(origen_id, origen_id_especifico, $perfil_id) ". $ORDER;
-				
-					$SQL = "SELECT row_to_json(T)::text AS r FROM ($SUBQUERY)T";
+					. " AND tipo_formato_solapa=$solapa AND mod_login.check_permisos(origen_id, origen_id_especifico, $perfil_id) AND recurso_titulo IS NOT NULL ". $ORDER;
+					$SUBQUERY2=str_replace('"','',$SUBQUERY);
+					$SQLSUBQUERYAUX="SELECT DISTINCT(T.Id) AS Id,T.Solapa AS Solapa,T.origen_id,T.Titulo AS Titulo,T.Descripcion AS Descripcion,T.LinkImagen AS LinkImagen,T.MetaTag AS MetaTag,T.Autores AS Autores ,T.estudios_id AS estudios_id,T.Fecha AS Fecha,T.Tema AS Tema,T.ico AS ico FROM ($SUBQUERY2)T ";
+					$SQL = "SELECT row_to_json(A)::text AS r FROM ($SQLSUBQUERYAUX)A";
 							
 					$mode_label = "Capa ".getCapaNombre($mode_id);
 
@@ -394,14 +405,70 @@ echo "	\"recordset\":";
 
 $recordset = pg_query($conn,getSQL($solapa).$paginador_text);
 
+class Estudios{
+	var $Estudio;
+	var $Estudio_ID;
+ 
+	public function __construct($Estudio,$Estudio_ID){
+	  $this->Estudio=$Estudio;
+	  $this->Estudio_ID=$Estudio_ID;
+	}
+ }
+function Get_Estudios_Y_Relleno_de_Coleccion($CAPAID)
+{
+	global $conn;
+	$Array_Estudios=array();
+    $SQLESTUDIOS="SELECT DISTINCT(CES.nombre) as Estudio,CES.estudios_id as Estudio_ID FROM mod_geovisores.catalogo as GCA INNER JOIN mod_catalogo.estudios as CES ON CES.estudios_id=GCA.estudios_id WHERE GCA.origen_id_especifico=$CAPAID";
+	$SQLAUXILIAR = "SELECT row_to_json(T)::text AS r FROM ($SQLESTUDIOS)T";
+    $RESULT=pg_query($conn,$SQLAUXILIAR);
+	while($row=pg_fetch_row($RESULT)){
+		$Objeto=json_decode($row[0]);
+		$record= new Estudios($Objeto->estudio,$Objeto->estudio_id);
+		array_push($Array_Estudios,$record);
+	}
+	return $Array_Estudios;
+}
+
+class Record{
+      var $solapa;
+	  var $origen_id;
+	  var $Id;
+	  var $Titulo;
+	  var $Descripcion;
+	  var $LinkImagen;
+	  var $MetaTag;
+	  var $Autores;
+	  var $estudios_id;
+	  var $fecha;
+	  var $tema;
+	  var $ico;
+	  var $estudios=array();
+	  
+
+	  public function __construct($solapa, $origen_id,$Id,$Titulo,$Descripcion,$LinkImagen,$MetaTag,$Autores,$estudio_id,$fecha,$tema,$ico)
+    {
+        $this->Solapa = $solapa;
+        $this->origen_id = $origen_id;
+		$this->Id=$Id;
+		$this->Titulo=$Titulo;
+		$this->Descripcion=$Descripcion;
+		$this->LinkImagen=$LinkImagen;
+		$this->MetaTag=$MetaTag;
+		$this->Autores=$Autores;
+		$this->estudios_id=$estudio_id;
+		$this->fecha=$fecha;
+		$this->tema=$tema;
+		$this->ico=$ico;
+		$this->estudios=Get_Estudios_Y_Relleno_de_Coleccion($this->Id);
+    }
+}
 $fflag = false;
 $sflag = null; /* Solapa */
 
 echo "[";
 
-$row = pg_fetch_row($recordset);
 
-while($row)
+while($row=pg_fetch_row($recordset))
 {
   if ($fflag)
   {
@@ -412,9 +479,10 @@ while($row)
       $fflag = true;
   };
   
-  echo $row[0];
-  
-  $row = pg_fetch_row($recordset);//NEXT
+  $Objeto=json_decode($row[0]);
+  $record= new Record($solapa,$Objeto->origen_id,$Objeto->id,$Objeto->titulo,$Objeto->descripcion,$Objeto->linkimagen,$Objeto->metatag,$Objeto->autores,$Objeto->estudios_id,$Objeto->fecha,$Objeto->tema,$Objeto->ico);
+  echo json_encode($record); 
+
 };
 
 echo "],";
