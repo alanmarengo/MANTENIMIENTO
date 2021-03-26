@@ -879,10 +879,11 @@ $.each(model.data.docs, function (index, doc) {
     let selects = ''
     let links = '';
     let title = doc.title
-
+    if(title.includes('- Estudio:')){
+        let titleDiv = doc.title.split('- Estudio:')
+        title = titleDiv[0];
+    }
 if(doc.estudios.length > 1){
-    let titleDiv = doc.title.split('- Estudio:')
-    title = titleDiv;
 
         let optionEstudios = ''    
         $.each(doc.estudios, function (index, estudio) {
@@ -1054,68 +1055,74 @@ $('#uxData').html(html);
 
 function techsRender() {
 let html = '';
+let tituloTmp = ''
 $.each(model.data.techs, function (index, doc) {
 
     let selects = '';
     let links = '';
     let title = doc.title
+if(title.includes('- Estudio:')){
+    let titleDiv = doc.title.split('- Estudio:')
+    title = titleDiv[0];
+}
 if (doc.estudio > 0) {
     if(doc.estudios.length > 1){
-        let titleDiv = doc.title.split('- Estudio:')
-        title = titleDiv[0]
 
-        let optionEstudios = ''    
-        $.each(doc.estudios, function (index, estudio) {
-                optionEstudios += `<option value=${estudio.Estudio_ID}> ${estudio.Estudio}</option>`    
-        })
+        if(title !== tituloTmp){
+            tituloTmp = title
+            let optionEstudios = ''    
+            $.each(doc.estudios, function (index, estudio) {
+                    optionEstudios += `<option value=${estudio.Estudio_ID}> ${estudio.Estudio}</option>`    
+            })
 
-        selects = `                    
-            <select class="form-select-sm custom-select select-estudios" id="select-estudios${doc.id}" data-id="${doc.id}" style="width: 80%;">
-                <option selected disabled> Seleccione un estudio... </option>
-                ${optionEstudios}
-            </select>
-        `
-        links = `
-            <div class="col-3 " style="padding-right: 0px; width: 90%;"> </div>
-            <div class=" col-9" >
-                <div>
-                        ${selects}
-                </div>
-                <div class="doc-links">
-                    <a data-solapa="0" data-mode="0" data-mode_id="${doc.estudio}" 
-                    class="disabled mt-1 btn btn-dark estudios-link text-white links-modal${doc.id}">
-                    DOCUMENTOS ASOCIADOS</a>
-                    <a data-solapa="2" data-mode="1" data-mode_id="${doc.estudio}" 
-                    class="disabled mt-1 btn btn-dark estudios-link text-white links-modal${doc.id}">
-                    RECURSOS ASOCIADOS</a>
-                </div>
-            </div>
-        `;
-        html += `
-        <div id="ficha">
-            <div class="doc row" data-id="${doc.id}" data-origen="${doc.origen_id}">
-                <div class="col-3 " style="padding-right: 0px;">
-                    <div class="doc-preview">
-                        <img src="${doc.link_preview}" />
-                    </div>
-                </div>
-                <div class="col-9 ">
-                    <div class="doc-title">
-                        <div class="doc-title-icon"> <img src="${doc.ico}" /> </div>
-                        <div class="doc-title-text"> ${title}  </div>
-                    </div>
+            selects = `                    
+                <select class="form-select-sm custom-select select-estudios" id="select-estudios${doc.id}" data-id="${doc.id}" style="width: 80%;">
+                    <option selected disabled> Seleccione un estudio... </option>
+                    ${optionEstudios}
+                </select>
+            `
+            links = `
+                <div class="col-3 " style="padding-right: 0px; width: 90%;"> </div>
+                <div class=" col-9" >
                     <div>
-                        <div class="doc-autores">${doc.autores}</div>
-                        <div class="doc-description">${doc.description}</div>
+                            ${selects}
+                    </div>
+                    <div class="doc-links">
+                        <a data-solapa="0" data-mode="0" data-mode_id="${doc.estudio}" 
+                        class="disabled mt-1 btn btn-dark estudios-link text-white links-modal${doc.id}">
+                        DOCUMENTOS ASOCIADOS</a>
+                        <a data-solapa="2" data-mode="1" data-mode_id="${doc.estudio}" 
+                        class="disabled mt-1 btn btn-dark estudios-link text-white links-modal${doc.id}">
+                        RECURSOS ASOCIADOS</a>
                     </div>
                 </div>
+            `;
+            html += `
+            <div id="ficha">
+                <div class="doc row" data-id="${doc.id}" data-origen="${doc.origen_id}">
+                    <div class="col-3 " style="padding-right: 0px;">
+                        <div class="doc-preview">
+                            <img src="${doc.link_preview}" />
+                        </div>
+                    </div>
+                    <div class="col-9 ">
+                        <div class="doc-title">
+                            <div class="doc-title-icon"> <img src="${doc.ico}" /> </div>
+                            <div class="doc-title-text"> ${title}  </div>
+                        </div>
+                        <div>
+                            <div class="doc-autores">${doc.autores}</div>
+                            <div class="doc-description">${doc.description}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="doc row fichaBtn" style="padding-top: 0px;">
+                    ${links}
+                </div>
             </div>
-            <div class="doc row fichaBtn" style="padding-top: 0px;">
-                ${links}
-            </div>
-        </div>
-        `;
-    }else{
+            `;   
+        }
+}else{
         links = `
                     <a data-solapa="0" data-mode="0" data-mode_id="${doc.estudio}" 
                     class="mt-1 btn btn-dark estudios-link text-white links-modal${doc.id}">
