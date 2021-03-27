@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" type="text/css" href="./css/page_template.css" />
 
 <div id="page_monitoreo" class="page page_template">

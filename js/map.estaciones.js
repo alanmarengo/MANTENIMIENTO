@@ -14,11 +14,11 @@ function ol_map() {
     this.map.layersStatsIndex = 200000;
     this.map.currentBaseLayerString = "";
     this.estacionLayerIsBase = [];
-    //this.map.apiUrl = "http://observatorio.atic.com.ar/red_api.php";
-    //this.map.apiGraficosUrl = "http://observatorio.atic.com.ar/graficos_red/get_graficos.php";
+    this.map.apiUrl = "http://observatorio.atic.com.ar/red_api.php";
+    this.map.apiGraficosUrl = "http://observatorio.atic.com.ar/graficos_red/get_graficos.php";
 
-    this.map.apiUrl = "../red_api.php";
-    this.map.apiGraficosUrl = "../graficos_red/get_graficos.php";
+    //this.map.apiUrl = "../red_api.php";
+    //this.map.apiGraficosUrl = "../graficos_red/get_graficos.php";
 
     this.map.geovisor = -1;
 
@@ -147,7 +147,7 @@ function ol_map() {
                 }
             })
         });
-
+        
         this.estacionLayerNames = [
             "ahrsc:vp_geo_hihgr_cuencassantacruz_ext1",
             "ahrsc:vp_geo_hihgr_cuerposaguasantacruz_ext1",
@@ -165,7 +165,7 @@ function ol_map() {
             "EMBALSES",
             "ESTUARIO"
         ];
-
+        
         this.estacionLayerIsBase = [
             false,
             false,
@@ -941,7 +941,6 @@ function ol_map() {
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&tipo_estacion_id=" + this.current_tipo_estacion_id + "&mode=5";
             let js = this.requestApi(url);
-
             let html = `
                 <div class="row">
                     <div class="col-md-4 col-lg-4">
@@ -1146,7 +1145,7 @@ function ol_map() {
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&mode=9";
             let js = this.requestApi(url);
-            
+ 
             let parametro_id = $("#combo-parametros-aforo").val();
             let fd = $("#tab3-fdesde-aforo").val();
             let fh = $("#tab3-fhasta-aforo").val();
@@ -1164,14 +1163,16 @@ function ol_map() {
                     </div>
                     <div class="col col-md-3 col-lg-3">
                         <div class="form-group">
-                            <label>Desde:</label>
+                            <label>Desde:</label><br/>
+                            <span> Primer dia del mes</span>
                             <input type="text" class="datepicker" id="tab3-fdesde-aforo">
                             <i class="fa fa-calendar-alt"></i>
                         </div>
                     </div>
                     <div class="col col-md-3 col-lg-3">
                         <div class="form-group">
-                            <label>Hasta:</label>
+                            <label>Hasta:</label><br/>
+                            <span> Ultimo dia del mes</span>
                             <input type="text" class="datepicker" id="tab3-fhasta-aforo">
                             <i class="fa fa-calendar-alt"></i>
                         </div>
@@ -1239,9 +1240,15 @@ function ol_map() {
         }
 
         this.popupTab3AforoGraficar = function() {
+            //Selecciona el ultimo dia
+            let fhPrev = $("#tab3-fhasta-aforo").val();
+            let fhDiv = fhPrev.split('/')
+            var ultimoDia = new Date(Number(fhDiv[1]), Number(fhDiv[0]), 0);
 
-            let fd = $("#tab3-fdesde-aforo").val();
-            let fh = $("#tab3-fhasta-aforo").val();
+            let fd = 01 +'/'+$("#tab3-fdesde-aforo").val();
+            let fh = ultimoDia.getDate()+'/'+fhPrev
+            //let fh = $("#tab3-fhasta-aforo").val();
+            console.log('Desde: ' + fd + ' Hasta: ' + fh)
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&&parametro_id=" + this.current_aforo_parametro_id + "&fd=" + fd + "&fh=" + fh + "&mode=8";
             let js = this.requestApi(url);
@@ -1313,26 +1320,38 @@ function ol_map() {
 			
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&mode=7";
             let js = this.requestApi(url)[0];
+            
 
-            let html = `
+            let html = '';
+            if($("#popup-aforo-inner").children(".header").children(".title")[0].innerText == 'LA LEONA SUR'){
+                html = `
                 <div class="row">
-                    <div class="col-md-4 col-lg-4">
-                        <div class="indicador white mini left">
-                            <p class="title">CERO DE ESCALA</p>
-                            <p class="value">${js.cero_escala} ${js.cero_escala_unidad}</p>
-                        </div>                    
-                        <div class="indicador white mini left">
-                            <p class="title">EXPRESIÓN H+Q PARA LA SECCIÓN</p>
-                            <p class="value">
-                                <img src="${js.q_path}" width="100%">
-                            </p>
+                        <div class="alert alert-warning col-12 text-center" role="alert">
+                            Datos para la curva HQ en preparación 
                         </div>
-                    </div>                    
-                    <div class="col-md-8 col-lg-8">
-                        <div id="est-chart-hq"></div>
-                    </div>
                 </div>
-            `;
+                `;
+            }else{            
+                html = `
+                    <div class="row">
+                        <div class="col-md-4 col-lg-4">
+                            <div class="indicador white mini left">
+                                <p class="title">CERO DE ESCALA</p>
+                                <p class="value">${js.cero_escala} ${js.cero_escala_unidad}</p>
+                            </div>                    
+                            <div class="indicador white mini left">
+                                <p class="title">EXPRESIÓN H+Q PARA LA SECCIÓN</p>
+                                <p class="value">
+                                    <img src="${js.q_path}" width="100%">
+                                </p>
+                            </div>
+                        </div>                    
+                        <div class="col-md-8 col-lg-8">
+                            <div id="est-chart-hq"></div>
+                        </div>
+                    </div>
+                `;
+            }
 
             $("#panel-aforo-ha-4").html(html);
 
@@ -1382,6 +1401,7 @@ function ol_map() {
             $(".filtro-area-interes:checked").each(function(i, v) {
                 ai_selected.push(this.value);
             });
+        
 
             /************************************************
              * Geoserver tiene muchooos problemas con filtros
@@ -1574,7 +1594,7 @@ function ol_map() {
             $(node).attr("data-state", 0);
         }
 
-     
+ 
         let estacionLayersHtml = `
             <div class="tooltip-white-list">
                 <p class="text-center m0">CAPAS BASE</p>
@@ -4298,8 +4318,10 @@ function updateDatepicker() {
     $(".datepicker").val("");
 
     $(".datepicker").datepicker({
+        startView: "years",
+        minViewMode: "months",
         defaultDate: null,
-        format: 'dd/mm/yyyy',
+        format: 'mm/yyyy',
         firstDay: 0,
         changeMonth: true,
         changeYear: true,
@@ -4313,6 +4335,7 @@ function updateDatepicker() {
         onSelect: function() {}
 
     }).datepicker("setDate", new Date());
+
 
 }
 
