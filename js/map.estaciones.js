@@ -14,11 +14,11 @@ function ol_map() {
     this.map.layersStatsIndex = 200000;
     this.map.currentBaseLayerString = "";
     this.estacionLayerIsBase = [];
-    this.map.apiUrl = "http://observatorio.atic.com.ar/red_api.php";
-    this.map.apiGraficosUrl = "http://observatorio.atic.com.ar/graficos_red/get_graficos.php";
+    //this.map.apiUrl = "http://observatorio.atic.com.ar/red_api.php";
+    //this.map.apiGraficosUrl = "http://observatorio.atic.com.ar/graficos_red/get_graficos.php";
 
-    //this.map.apiUrl = "../red_api.php";
-    //this.map.apiGraficosUrl = "../graficos_red/get_graficos.php";
+    this.map.apiUrl = "../red_api.php";
+    this.map.apiGraficosUrl = "../graficos_red/get_graficos.php";
 
     this.map.geovisor = -1;
 
