@@ -19,7 +19,7 @@ function ol_map() {
 
     this.map.apiUrl = "../red_api.php";
     this.map.apiGraficosUrl = "../graficos_red/get_graficos.php";
-
+ 
     this.map.geovisor = -1;
 
     let estacionLayersHtml = `
@@ -1164,7 +1164,6 @@ function ol_map() {
                     <div class="col col-md-3 col-lg-3">
                         <div class="form-group">
                             <label>Desde:</label><br/>
-                            <span> Primer dia del mes</span>
                             <input type="text" class="datepicker" id="tab3-fdesde-aforo">
                             <i class="fa fa-calendar-alt"></i>
                         </div>
@@ -1172,7 +1171,6 @@ function ol_map() {
                     <div class="col col-md-3 col-lg-3">
                         <div class="form-group">
                             <label>Hasta:</label><br/>
-                            <span> Ultimo dia del mes</span>
                             <input type="text" class="datepicker" id="tab3-fhasta-aforo">
                             <i class="fa fa-calendar-alt"></i>
                         </div>
@@ -1241,12 +1239,12 @@ function ol_map() {
 
         this.popupTab3AforoGraficar = function() {
             //Selecciona el ultimo dia
-            let fhPrev = $("#tab3-fhasta-aforo").val();
-            let fhDiv = fhPrev.split('/')
-            var ultimoDia = new Date(Number(fhDiv[1]), Number(fhDiv[0]), 0);
+            let fhPrev = $("#tab3-fhasta-aforo").val(); //obtengo la fecha seleccionada (mes y año)
+            let fhDiv = fhPrev.split('/') //Separo el mes y año
+            var ultimoDia = new Date(Number(fhDiv[1]), Number(fhDiv[0]), 0); //Busco la fecha para sacar el ultimo dia
 
-            let fd = 01 +'/'+$("#tab3-fdesde-aforo").val();
-            let fh = ultimoDia.getDate()+'/'+fhPrev
+            let fd = 01 +'/'+$("#tab3-fdesde-aforo").val(); //Para la fecha "desde", siempre va el primer dia del mes
+            let fh = ultimoDia.getDate()+'/'+fhPrev //Para la fecha "hasta, se le coloca el ultimo dia del mes que obtuvimos antes
             //let fh = $("#tab3-fhasta-aforo").val();
             console.log('Desde: ' + fd + ' Hasta: ' + fh)
 
