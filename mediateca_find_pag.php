@@ -133,7 +133,7 @@ function getSQL($solapa) {
 		if (!IsSetVar($estudio_id))
 		{
 			
-			$SUBQUERY  = "SELECT "
+			$SUBQUERY  = "SELECT DISTINCT "
 			. "tipo_formato_solapa AS \"Solapa\","
 			. "origen_id,"
 			. "origen_id_especifico AS \"Id\","
@@ -151,9 +151,11 @@ function getSQL($solapa) {
 			." AND recurso_titulo IS NOT NULL" 
 			//. " GROUP BY mod_catalogo.get_ico(origen_id,origen_id_especifico),recurso_fecha,COALESCE(subclase_desc,''),tipo_formato_solapa,origen_id,origen_id_especifico,recurso_titulo,recurso_desc,recurso_path_url,recurso_categoria_desc,CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END"
 			. $ORDER; 
-		$SUBQUERY2=str_replace('"','',$SUBQUERY);
-	    $SQLSUBQUERYAUX="SELECT DISTINCT(T.Id) AS Id,T.Solapa AS Solapa,T.origen_id,T.Titulo AS Titulo,T.Descripcion AS Descripcion,T.LinkImagen AS LinkImagen,T.MetaTag AS MetaTag,T.Autores AS Autores ,T.estudios_id AS estudios_id,T.Fecha AS Fecha,T.Tema AS Tema,T.ico AS ico FROM ($SUBQUERY2)T ";
-		$SQL = "SELECT row_to_json(A)::text AS r FROM ($SQLSUBQUERYAUX)A";
+		//$SUBQUERY2=str_replace('"','',$SUBQUERY);
+	    //$SQLSUBQUERYAUX="SELECT DISTINCT(T.Id) AS Id,T.Solapa AS Solapa,T.origen_id,T.Titulo AS Titulo,T.Descripcion AS Descripcion,T.LinkImagen AS LinkImagen,T.MetaTag AS MetaTag,T.Autores AS Autores ,T.estudios_id AS estudios_id,T.Fecha AS Fecha,T.Tema AS Tema,T.ico AS ico FROM ($SUBQUERY2)T ";
+		//$SQL = "SELECT row_to_json(A)::text AS r FROM ($SQLSUBQUERYAUX)A";
+		
+		$SQL = "SELECT row_to_json(A)::text AS r FROM ($SUBQUERY)A";
 		
 		}
 		else
