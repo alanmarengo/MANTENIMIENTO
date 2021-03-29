@@ -131,8 +131,8 @@
         'http://observatorio.atic.com.ar' : // LOCAL
         '.'; // SERVER
 
-    echo "var GlobalApiUrl = '$api_url';";
-    //echo "var GlobalApiUrl = '.';";
+    // "var GlobalApiUrl = '$api_url';";
+    echo "var GlobalApiUrl = '.';";
 ?>
 
 
