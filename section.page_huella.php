@@ -1,6 +1,8 @@
 <link rel="stylesheet" type="text/css" href="./css/page_template.css" />
 <link rel="stylesheet" href="./css/magnific-popup.css"/>
-
+<?php
+include("./Get_Link.php");
+?>
 <div id="page_huella" class="page page_template">
     <div class="row">
         <div class="section-sticky">
@@ -90,7 +92,7 @@ Al norte del río santa cruz, las primeras ocupaciones están datadas unos 8000 
 </a>
 <br />
 <br />
-<a href="./mediateca.php?mode=-1&s=HuellasArqueo" class="button button-2" target="_blank">
+<a href="<?php  echo GET_LINK(3);?>" class="button button-2" target="_blank">
     VER RECURSOS ASOCIADOS
     <img src="./images/icono-mediateca-br.png" style="height: 20px; width: 20px;" />
 </a>
@@ -123,7 +125,7 @@ Las dos zonas de mayor sensibilidad afectadas por las obras (que quedarán bajo 
 </a>
 <br />
 <br />
-<a href="./mediateca.php?mode=-1&s=HuellasPaleo" class="button button-2" target="_blank">
+<a href="<?php echo GET_LINK(4); ?>" class="button button-2" target="_blank">
     VER RECURSOS ASOCIADOS
     <img src="./images/icono-mediateca-br.png" style="height: 20px; width: 20px;" />
 </a>
@@ -158,7 +160,7 @@ Las formaciones más antiguas (Santa Cruz, Estancia 25 de mayo, etc.) tienen afl
 </a>
 <br />
 <br />
-<a href="./mediateca.php?mode=-1&s=HuellasGeolo" class="button button-2" target="_blank">
+<a href="<?php echo GET_LINK(5); ?>" class="button button-2" target="_blank">
     VER RECURSOS ASOCIADOS
     <img src="./images/icono-mediateca-br.png" style="height: 20px; width: 20px;" />
 </a>

@@ -1,5 +1,7 @@
 <link rel="stylesheet" type="text/css" href="./css/page_template.css" />
-
+<?php
+include("./Get_Link.php");
+?>
 <div id="page_monitoreo" class="page page_template">
     <div class="row">
         <div class="section-sticky">
@@ -67,7 +69,7 @@
             </div>
 
             <div class="text-center" style="margin-top: 2em;">
-                <a href="./mediateca.php?mode=-1&s=RedHidroAmb" class="button button-2">
+                <a href="<?php echo GET_LINK(1); ?>" class="button button-2">
                     VER RECURSOS ASOCIADOS
                     <img src="./images/icono-mediateca-br.png" style="height: 20px; width: 20px;" />
                 </a>
@@ -116,7 +118,7 @@
             </div>
 
             <div class="text-center" style="margin-top: 2em;">
-                <a href="./mediateca.php?mode=-1&s=RedHidroAforo" class="button button-2">
+                <a href="<?php echo GET_LINK(2); ?>" class="button button-2">
                     VER RECURSOS ASOCIADOS
                     <img src="./images/icono-mediateca-br.png" style="height: 20px; width: 20px;" />
                 </a>
