@@ -258,10 +258,10 @@ function ol_map() {
             this.capasAiLayers[0],
             this.capasAiLayers[1],
             this.capasAiLayers[2],
-            this.capasAiLayers[3],
-            this.capasAiLayers[4],
             this.capasAiLayers[5],
             this.capasAiLayers[6],
+            this.capasAiLayers[3],
+            this.capasAiLayers[4],
             this.estaciones_layer
         ];
 
@@ -1452,8 +1452,6 @@ function ol_map() {
             if (est_selected != '') te = 'tipo_estacion:' + est_selected.join("_") + ';';
             if (ai_selected != '') ai = 'area_interes:' + ai_selected.join('_') + ';';
 
-            console.log(ai_selected);
-            console.log(ai)
 
             this.estaciones_layer.getSource().updateParams({
 
