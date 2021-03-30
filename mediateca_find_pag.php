@@ -142,7 +142,7 @@ function getSQL($solapa) {
 			. "recurso_path_url AS \"LinkImagen\","
 			. "recurso_categoria_desc AS \"MetaTag\","
 			. "CASE WHEN recurso_autores IS NULL THEN responsable::TEXT ELSE recurso_autores::TEXT END AS \"Autores\","
-			. "CASE WHEN origen_id=0 THEN -1 ELSE mod_catalogo.get_estudio(origen_id,origen_id_especifico)::int END AS estudios_id,"
+			. "mod_catalogo.get_estudio(origen_id,origen_id_especifico) AS estudios_id,"
 			. "recurso_fecha AS Fecha,"
 			. "COALESCE(subclase_desc,'') AS Tema,"
 			. "mod_catalogo.get_ico(origen_id,origen_id_especifico) AS ico"
