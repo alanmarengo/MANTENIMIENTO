@@ -59,9 +59,7 @@
 	<?php include("./widget-links.php"); ?>	
 
 </body>
-<script type="text/javascript"> 
 
-</script>
 
 
 </html>

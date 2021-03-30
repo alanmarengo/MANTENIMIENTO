@@ -147,7 +147,40 @@ function ol_map() {
                 }
             })
         });
-        
+
+        this.capaAreaInteresName = [
+            "ahrsc:vp_geo_hihgr_cuencaaltarsc_otr1",
+            "ahrsc:vp_geo_hihgr_cuencamediabajarsc_otr1",
+            "ahrsc:vp_geo_hihgr_estuario_otr1",
+            "ahrsc:vp_geo_prcpr_poligonocc_otr1",
+            "ahrsc:vp_geo_prcpr_poligonolb_otr1",
+            "ahrsc:vp_geo_prcpr_embalsesnmncc_otr1",
+            "ahrsc:vp_geo_prcpr_embalsesnmnlb_otr1"
+        ];
+
+        this.capasAiLayers = [];
+        for (var i = 0; i < this.capaAreaInteresName.length; i++) {
+
+            let layer_name = this.capaAreaInteresName[i];
+
+            this.capasAiLayers[i] = new ol.layer.Tile({
+                visible: false,
+                singleTile: true,
+                source: new ol.source.TileWMS({
+					//url: "https://observatorio.enarsa.ar/geoserver/ows?",
+                    url: "https://observatorio.ieasa.com.ar/geoserver/ows?",
+                    params: {
+                        //'LAYERS': 'ahrsc:vp_geo_himet_ubicacionestaciones_pga1', //'intervalos_polygons',
+                        'LAYERS': layer_name,
+                        /* CAPA FILTROS */
+                        //'VERSION': '1.1.1',
+                        'FORMAT': 'image/png',
+                        'TILED': false
+                    }
+                })
+            });
+        }
+
         this.estacionLayerNames = [
             "ahrsc:vp_geo_hihgr_cuencassantacruz_ext1",
             "ahrsc:vp_geo_hihgr_cuerposaguasantacruz_ext1",
@@ -216,13 +249,20 @@ function ol_map() {
             this.baselayers.bing_aerials,
             this.baselayers.google,
             this.baselayers.argenmap,
-            this.estaciones_layer,
             this.estacionLayers[0],
             this.estacionLayers[1],
             this.estacionLayers[2],
             this.estacionLayers[3],
             this.estacionLayers[4],
-            this.estacionLayers[5]
+            this.estacionLayers[5],
+            this.capasAiLayers[0],
+            this.capasAiLayers[1],
+            this.capasAiLayers[2],
+            this.capasAiLayers[3],
+            this.capasAiLayers[4],
+            this.capasAiLayers[5],
+            this.capasAiLayers[6],
+            this.estaciones_layer
         ];
 
         ///////document.getElementById("baselayer-default-radio").click();
@@ -1412,8 +1452,8 @@ function ol_map() {
             if (est_selected != '') te = 'tipo_estacion:' + est_selected.join("_") + ';';
             if (ai_selected != '') ai = 'area_interes:' + ai_selected.join('_') + ';';
 
-            console.log('ai_selected:' + ai_selected);
-
+            console.log(ai_selected);
+            console.log(ai)
 
             this.estaciones_layer.getSource().updateParams({
 
@@ -1423,7 +1463,48 @@ function ol_map() {
 
             });
 
+            if(ai_selected.includes("1")){
+                this.capasAiLayers[0].setVisible(true)
+            }else{
+                this.capasAiLayers[0].setVisible(false)
+            }
+            if(ai_selected.includes("2")){
+                this.capasAiLayers[1].setVisible(true)
+            }else{
+                this.capasAiLayers[1].setVisible(false)
+            }
+            if(ai_selected.includes("3")){
+                this.capasAiLayers[2].setVisible(true)
+            }else{
+                this.capasAiLayers[2].setVisible(false)
+            }
+            if(ai_selected.includes("4")){
+                this.capasAiLayers[3].setVisible(true)
+            }else{
+                this.capasAiLayers[3].setVisible(false)
+            }
+            if(ai_selected.includes("5")){
+                this.capasAiLayers[4].setVisible(true)
+            }else{
+                this.capasAiLayers[4].setVisible(false)
+            }
+            if(ai_selected.includes("6")){
+                this.capasAiLayers[5].setVisible(true)
+            }else{
+                this.capasAiLayers[5].setVisible(false)
+            }
+            if(ai_selected.includes("7")){
+                this.capasAiLayers[6].setVisible(true)
+            }else{
+                this.capasAiLayers[6].setVisible(false)
+            }
+
         }
+
+
+
+
+
 
         /*this.ol_object.on("click",function(evt) {
         	
