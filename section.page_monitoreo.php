@@ -5,7 +5,8 @@
         const url = "./Get_Link.php?id="+id
         $.get(url,function(data){
             console.log(data)
-            $(location).attr('href',data);
+            //$(location).attr('href',data);
+            window.open(data, '_blank')
         })
     }
 </script>
