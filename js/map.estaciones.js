@@ -175,7 +175,7 @@ function ol_map() {
                         /* CAPA FILTROS */
                         //'VERSION': '1.1.1',
                         'FORMAT': 'image/png',
-                        'TILED': false
+                        'TILED': false,
                     }
                 })
             });
@@ -1462,36 +1462,43 @@ function ol_map() {
             });
 
             if(ai_selected.includes("1")){
+                this.capasAiLayers[0].setOpacity(0.5)
                 this.capasAiLayers[0].setVisible(true)
             }else{
                 this.capasAiLayers[0].setVisible(false)
             }
             if(ai_selected.includes("2")){
+                this.capasAiLayers[1].setOpacity(0.5)
                 this.capasAiLayers[1].setVisible(true)
             }else{
                 this.capasAiLayers[1].setVisible(false)
             }
             if(ai_selected.includes("3")){
+                this.capasAiLayers[2].setOpacity(0.5)
                 this.capasAiLayers[2].setVisible(true)
             }else{
                 this.capasAiLayers[2].setVisible(false)
             }
             if(ai_selected.includes("4")){
+
                 this.capasAiLayers[3].setVisible(true)
             }else{
                 this.capasAiLayers[3].setVisible(false)
             }
             if(ai_selected.includes("5")){
+
                 this.capasAiLayers[4].setVisible(true)
             }else{
                 this.capasAiLayers[4].setVisible(false)
             }
             if(ai_selected.includes("6")){
+                this.capasAiLayers[5].setOpacity(0.5)
                 this.capasAiLayers[5].setVisible(true)
             }else{
                 this.capasAiLayers[5].setVisible(false)
             }
             if(ai_selected.includes("7")){
+                this.capasAiLayers[6].setOpacity(0.5)
                 this.capasAiLayers[6].setVisible(true)
             }else{
                 this.capasAiLayers[6].setVisible(false)
