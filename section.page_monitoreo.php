@@ -1,8 +1,14 @@
-
 <link rel="stylesheet" type="text/css" href="./css/page_template.css" />
-<?php
-include("./Get_Link.php");
-?>
+<script type="text/javascript">
+    function getLink(event, id){
+        event.preventDefault();
+        const url = "./Get_Link.php?id="+id
+        $.get(url,function(data){
+            console.log(data)
+            $(location).attr('href',data);
+        })
+    }
+</script>
 <div id="page_monitoreo" class="page page_template">
     <div class="row">
         <div class="section-sticky">
@@ -70,7 +76,7 @@ include("./Get_Link.php");
             </div>
 
             <div class="text-center" style="margin-top: 2em;">
-                <a href="<?php echo GET_LINK(1); ?>" class="button button-2">
+                <a class="button button-2 pe-auto" onclick="getLink(event, 1)" style="cursor: pointer;">
                     VER RECURSOS ASOCIADOS
                     <img src="./images/icono-mediateca-br.png" style="height: 20px; width: 20px;" />
                 </a>
@@ -119,7 +125,7 @@ include("./Get_Link.php");
             </div>
 
             <div class="text-center" style="margin-top: 2em;">
-                <a href="<?php echo GET_LINK(2); ?>" class="button button-2">
+                <a class="button button-2 pe-auto" onclick="getLink(event, 2)" style="cursor: pointer;">
                     VER RECURSOS ASOCIADOS
                     <img src="./images/icono-mediateca-br.png" style="height: 20px; width: 20px;" />
                 </a>
