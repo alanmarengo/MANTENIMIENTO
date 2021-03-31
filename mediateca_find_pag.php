@@ -155,6 +155,8 @@ function getSQL($solapa) {
 	    $SQLSUBQUERYAUX="SELECT DISTINCT(T.Id) AS Id,T.Solapa AS Solapa,T.origen_id,T.Titulo AS Titulo,T.Descripcion AS Descripcion,T.LinkImagen AS LinkImagen,T.MetaTag AS MetaTag,T.Autores AS Autores ,T.estudios_id AS estudios_id,T.Fecha AS Fecha,T.Tema AS Tema,T.ico AS ico FROM ($SUBQUERY2)T ";
 		$SQL = "SELECT row_to_json(A)::text AS r FROM ($SQLSUBQUERYAUX)A";
 		
+		//$SQL = "SELECT row_to_json(A)::text AS r FROM ($SUBQUERY)A";
+		
 		}
 		else
 		{

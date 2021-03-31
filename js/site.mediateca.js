@@ -1071,7 +1071,7 @@ if(title.includes('- Estudio:')){
     let titleDiv = doc.title.split('- Estudio:')
     title = titleDiv[0];
 }
-if (doc.estudio > 0) {
+
     if(doc.estudios.length > 1){
 
         if(title !== tituloTmp){
@@ -1129,6 +1129,7 @@ if (doc.estudio > 0) {
             `;   
         }
 }else{
+    if (doc.estudio > 0) {
             links = `
                     <a data-solapa="0" data-mode="0" data-mode_id="${doc.estudio}" 
                     class="mt-1 btn btn-dark estudios-link text-white links-modal${doc.id}">
@@ -1137,6 +1138,7 @@ if (doc.estudio > 0) {
                     class="mt-1 btn btn-dark estudios-link text-white links-modal${doc.id}">
                     RECURSOS ASOCIADOS</a>
         `;
+    }
     
         html += `
         <div id="ficha">
@@ -1164,7 +1166,6 @@ if (doc.estudio > 0) {
         `;
     }
 
-}
 });
 
 if (html == '') {
