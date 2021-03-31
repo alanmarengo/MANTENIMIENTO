@@ -30,7 +30,7 @@
 		<div class="modalMonitoreo">
 		<div id="basePopup"> 
 			<div id="contenedorPopup"> 
-				<div id="tituloPopup"> <h5> Atención </h5></div>
+				<div id="tituloPopup"> <h5> Aclaración </h5></div>
 				<div id="contenidoPopup"> 
 					Se recuerda a los potenciales usuarios de esta información que en todo momento se debe tener cuidado con las conclusiones que puedan derivarse del análisis de las series de datos hidroambientales pues son el resultado de una reconstrucción y por ende no son mediciones reales en el sentido estrictamente académico. <b>Los datos de los últimos dos meses de estas estaciones son datos en tiempo real y pueden mostrar resultados afectados por problemas técnicos.</b>
 				</div>
