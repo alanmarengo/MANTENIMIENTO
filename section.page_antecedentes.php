@@ -1,5 +1,7 @@
 <link rel="stylesheet" type="text/css" href="./css/page_template.css" />
-
+<?php
+include("./Get_Link.php");
+?>
 <div id="page_antecedentes" class="page page_template">
     <div class="row">
         <div class="section-sticky">
@@ -103,7 +105,7 @@
                 <br />
                 <ul class="ml-3">
                     <li>
-                        <a target="_self" href="./sga/recursos/recursos_estudios/1.pdf">S&iacute;ntesis Evaluaci&oacute;n Impacto Ambiental</a>
+                        <a target="_self" href="<?php  echo GET_LINK(6);?>" >S&iacute;ntesis Evaluaci&oacute;n Impacto Ambiental</a>
                     </li>
                     <li>
                         <a target="_self" href="./mediateca.php?s=ESIAAHRSC#">Estudio de Impacto Ambiental</a>

@@ -1,5 +1,7 @@
 <link rel="stylesheet" type="text/css" href="./css/page_template.css" />
-
+<?php
+include("./Get_Link.php");
+?>
 <div id="page_proyecto" class="page page_template">
     <div class="row">
         <div class="section-sticky">
@@ -102,7 +104,7 @@ Además, la presa posee una escala de peces, ubicada sobre la margen izquierda, 
 <br />
 <br />
 <!-- Link   a inmagenes en la mediateka -->
-<a target="_blank" href="./mediateca.php?o=0&s=CCaudiovisual&mode=-1&solapa=1">Cóndor Cliff en imágenes</a>
+<a target="_blank" href="<?php  echo GET_LINK(8);?>" >Cóndor Cliff en imágenes</a>
 
 <br />
             </p>
@@ -177,7 +179,7 @@ La escala de peces es equivalente a nivel conceptual a la de la presa CC. Se ubi
 <br />
 <br />
 <!-- Link a imagenes en mediateka -->
-<a target="_blank" href="./mediateca.php?o=0&s=LBaudiovisual&mode=-1&solapa=1">La Barrancosa en imágenes</a>
+<a target="_blank" href="<?php  echo GET_LINK(7);?>" >La Barrancosa en imágenes</a>
 <br />
             </p>
 
