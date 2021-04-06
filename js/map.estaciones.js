@@ -14,11 +14,11 @@ function ol_map() {
     this.map.layersStatsIndex = 200000;
     this.map.currentBaseLayerString = "";
     this.estacionLayerIsBase = [];
-    //this.map.apiUrl = "http://observatorio.atic.com.ar/red_api.php";
-    //this.map.apiGraficosUrl = "http://observatorio.atic.com.ar/graficos_red/get_graficos.php";
+    this.map.apiUrl = "http://observatorio.atic.com.ar/red_api.php";
+    this.map.apiGraficosUrl = "http://observatorio.atic.com.ar/graficos_red/get_graficos.php";
 
-    this.map.apiUrl = "../red_api.php";
-    this.map.apiGraficosUrl = "../graficos_red/get_graficos.php";
+    //this.map.apiUrl = "../red_api.php";
+    //this.map.apiGraficosUrl = "../graficos_red/get_graficos.php";
  
     this.map.geovisor = -1;
 
@@ -771,9 +771,13 @@ function ol_map() {
         }
 
         this.popupTab3Graficar = function() {
+            let fhPrev = $("#tab3-fhasta").val();
+            let fhDiv = fhPrev.split('/') 
+            let ultimoDia = new Date(Number(fhDiv[1]), Number(fhDiv[0]), 0); 
 
-            let fd = $("#tab3-fdesde").val();
-            let fh = $("#tab3-fhasta").val();
+            let fd = 01 +'/'+$("#tab3-fdesde").val();
+            let fh = ultimoDia.getDate()+'/'+fhPrev
+            console.log('Desde: ' + fd + ' Hasta: ' + fh)
 
             let url = this.apiUrl + "?estacion_id=" + this.current_estacion_id + "&categoria_parametro_id=" + this.current_categoria_id + "&parametro_id=" + this.current_parametro_id + "&fd=" + fd + "&fh=" + fh + "&mode=4";
             let js = this.requestApi(url);
@@ -1281,9 +1285,9 @@ function ol_map() {
             //Selecciona el ultimo dia
             let fhPrev = $("#tab3-fhasta-aforo").val(); //obtengo la fecha seleccionada (mes y año)
             let fhDiv = fhPrev.split('/') //Separo el mes y año
-            var ultimoDia = new Date(Number(fhDiv[1]), Number(fhDiv[0]), 0); //Busco la fecha para sacar el ultimo dia
+            let ultimoDia = new Date(Number(fhDiv[1]), Number(fhDiv[0]), 0); //Busco la fecha para sacar el ultimo dia
 
-            let fd = 01 +'/'+$("#tab3-fdesde-aforo").val(); //Para la fecha "desde", siempre va el primer dia del mes
+            let fd = 01+'/'+$("#tab3-fdesde-aforo").val(); //Para la fecha "desde", siempre va el primer dia del mes
             let fh = ultimoDia.getDate()+'/'+fhPrev //Para la fecha "hasta, se le coloca el ultimo dia del mes que obtuvimos antes
             //let fh = $("#tab3-fhasta-aforo").val();
             console.log('Desde: ' + fd + ' Hasta: ' + fh)
