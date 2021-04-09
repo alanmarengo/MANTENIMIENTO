@@ -2,7 +2,7 @@
 
 	<div class="row" >
 
-		<div class="resource-col col col-md-4 col-lg-4 col-xs-12 col-sm-12">
+		<div class="col col-md-4 col-lg-4 col-xs-12 col-sm-12">
 		
 			<div class="row">
 			
