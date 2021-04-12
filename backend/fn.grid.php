@@ -18,7 +18,7 @@
 		
 		$s=$param['busqueda'];
 		
-		$query_string = "SELECT * FROM mod_mediateca.recurso WHERE recurso_titulo||recurso_desc ILIKE '%$s%' order by recurso_titulo asc limit 100;";
+		$query_string = "SELECT * FROM mod_mediateca.recurso WHERE recurso_titulo||recurso_desc ILIKE '%$s%' order by recurso_id DESC limit 1000";
 		
 		$col_types = get_column_types($table);
 		
